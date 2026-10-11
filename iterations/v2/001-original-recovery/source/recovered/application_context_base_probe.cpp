@@ -197,7 +197,7 @@ void* __cdecl application_context_heap_state_005e4fe8() {
 std::uint32_t __cdecl application_context_heap_selector_005e4fec() {
     return read32(selector_cell);
 }
-void* __cdecl application_context_new_head_0059eeb0(
+void __cdecl application_context_new_head_0059eeb0(
     std::uint32_t kind, std::uint32_t slot) {
     event("newhead59eeb0:" + hex32(kind) + ":" + hex32(slot));
     write32(kManager + 0x40, kHead);
@@ -206,7 +206,6 @@ void* __cdecl application_context_new_head_0059eeb0(
         write32(kManager + 0x28, kLock + 0x10);
         write32(kHead + 4, kHeadNext);
     }
-    return reinterpret_cast<void*>(kHead);
 }
 void __cdecl heap_enter_005322b0(void* lock) {
     event("enter322b0:" + hex32(static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(lock))));
@@ -220,10 +219,11 @@ void __fastcall application_context_unlink_005262e0(
     if (active_id == 7 && key == 0x55667788u)
         write32(kListNode + 8, kListNode + 0x100);
 }
-void __fastcall application_context_release_node_004e4560(
+void* __fastcall application_context_release_node_004e4560(
     void* member, void*, std::uint32_t flags) {
     event("releasenode4e4560:" + hex32(static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(member))) + ":" + hex32(flags));
     if (active_id == 7) write32(kListNode + 8, 0);
+    return member;
 }
 void __cdecl application_context_notify_node_004d7da0(void* node, std::uint32_t flags) {
     event("notify4d7da0:" + hex32(static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(node))) + ":" + hex32(flags));

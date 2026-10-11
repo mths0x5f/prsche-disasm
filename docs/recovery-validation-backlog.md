@@ -7,7 +7,7 @@
 и визуальное соответствие — отдельные результаты.
 
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
-  Блокер: Run136 game-link имеет259 unresolved symbols /278 references;
+  Блокер: Run143 game-link имеет285 unresolved symbols /314 references;
   compiler errors и other linker errors —0. Возврат: после устранения
   зависимостей; сначала запуск/выход, затем кадр, ввод, меню и режимы игры.
 - [ ] Проверить закрытие через WM_CLOSE→GetMessage=0→исходный timer callback,
@@ -86,3 +86,18 @@
 ни один end-to-end пункт выше не объявлен выполненным. Run133 device имеет10
 bounded cases после overlap/authoritative pointer-cell fixes; это не проверка
 настоящего audio device. Активных назначений исполнителей нет.
+
+Checkpoint143:28 новых полных функций приняты с исходными ABI/state/effect checks.
+139 pooled memory callbacks,140 CRT bootstrap/fatal,141 application bridges,
+142 audio lifecycle,144 strings/dialog,145 network lifecycle включены в общую библиотеку.
+CRT error path:94 connected cases с реальными string/dialog bodies;17 свежих
+original-x86 reports/7928 comparisons и4 composed cases не закрывают live startup.
+Новые Win32 imports compiled и сверены с IAT, но отдельного live dialog/error OS
+fixture ещё нет. Возврат: проверить реальные module-name/stdhandle/WriteFile и
+lazy user32 resolution без terminal fatal до полноценного game startup.
+142 устраняет duplicate656868/9 storage через aliases. Audio virtual mode
+не ограничен исходным consumer004a6a00: signed-domain blocker131 остаётся.
+145 storage trace подтверждает count/table005e8bfc/005e8c00, но максимальный
+extent и canonical owner не доказаны; source таблица остаётся unresolved.
+Готовые147/148/149 требуют общей приёмки; x87 Unicorn flags не считать аппаратной
+истиной:147 содержит отдельный actual-original hardware oracle, принятие впереди.

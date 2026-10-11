@@ -1,0 +1,2641 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "004a6960",
+    "004a6e30",
+    "0048dad0",
+    "0048e6f0"
+  ],
+  "full_function_vas": [
+    "004a6960",
+    "004a6e30",
+    "0048dad0",
+    "0048e6f0"
+  ],
+  "partial_function_vas": [],
+  "cases": 126,
+  "native_cpp_equal_original_x86": true,
+  "comparison_boundary": "Complete four bodies; full application arena, reset BSS span, existing eight audio records, audio active/buffer cells, both network objects, lock-cell state, ordered boundary calls including ECX/callee-pop args and post-callback rereads; original nonvolatile registers/ESP. Return EAX is undefined and unused by known callers.",
+  "caller_vas": [
+    "004b6a50",
+    "00509170",
+    "0050a4b0"
+  ],
+  "index_query": "Porsche.exe addresses 004b68f0/004a6960/004a6e30/0048dad0/0048e6f0; inspect callers/callees and full ASM. 004b68f0 is traced but not recovered in this packet.",
+  "unresolved_effects": [
+    "005659f0",
+    "00531f90",
+    "004ae310",
+    "004ab4b0",
+    "00565890",
+    "005a177b",
+    "005322b0",
+    "005322c0",
+    "0048c870",
+    "0048e9c0",
+    "0048e1a0",
+    "004935c0",
+    "0059f050"
+  ],
+  "unresolved_storage": [
+    "005e8bfc count followed by unsized 005e8c00 table; contiguous view declared, no guessed production extent/owner"
+  ],
+  "new_storage": [
+    {
+      "va": "00655d48",
+      "bytes": 696,
+      "initial": "PE section zero-fill"
+    },
+    {
+      "va": "005d1738",
+      "bytes": 4,
+      "initial": 1
+    }
+  ],
+  "aliases": {
+    "00656510": "application_audio_records_006564a0[7].raw_00",
+    "00656518": "application_audio_records_006564a0[7].raw_08"
+  },
+  "original_functions": [
+    {
+      "va": "004a6960",
+      "body_bytes": 153,
+      "body_sha256": "9c9f54394f8217c0ab6820a4a7d82db967b30376b3e875169c969d3bfe0a3584"
+    },
+    {
+      "va": "004a6e30",
+      "body_bytes": 217,
+      "body_sha256": "5d8df822a0ffc697c1f801734fffe1af0bcfb759a8805fc3cd67281a8acacc5a"
+    },
+    {
+      "va": "0048dad0",
+      "body_bytes": 218,
+      "body_sha256": "41f03855242959f2f25dc7bd1a9d12124ce062088bca716473234e78062f3c18"
+    },
+    {
+      "va": "0048e6f0",
+      "body_bytes": 153,
+      "body_sha256": "62dd0185ff0ddb9f0af1e5f9c38b699fbf5275e468e0bb62075f01310ebc9baa"
+    }
+  ],
+  "cases_summary": [
+    {
+      "index": 0,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 1,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        0,
+        0,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 2,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        1,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 3,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        0,
+        1,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 4,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        1,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 5,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 6,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        1,
+        0,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 7,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 8,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        2147483648,
+        0,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 9,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        2147483648,
+        0,
+        587214848,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 10,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 11,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 12,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        8190,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 13,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        8191,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 14,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        8192,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 15,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        16382,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 16,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        16383,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 17,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        2147483647,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 18,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        2147483648,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 19,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 20,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        1,
+        587214848,
+        4294959103,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 21,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        0,
+        8191,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 22,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        8192,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 23,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        0,
+        8191,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 24,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        8192,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 25,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        0,
+        8191,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 26,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        8192,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 27,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        0,
+        8191,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 28,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        8192,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 29,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        0,
+        8191,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 30,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        8192,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 31,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        0,
+        305419896,
+        0,
+        0,
+        0,
+        8191,
+        31,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 32,
+      "function_va": "004a6960",
+      "input": [
+        0,
+        587216384,
+        305419896,
+        1,
+        0,
+        587214848,
+        8192,
+        31,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 7
+    },
+    {
+      "index": 33,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 34,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 35,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 36,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        0,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 37,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        0,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 38,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 39,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 40,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 41,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        1,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 42,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        1,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 43,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 44,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 45,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 46,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 47,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 48,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 49,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 50,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        3,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 51,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        3,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 52,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        3,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 53,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        4294967295,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 54,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        4294967295,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 55,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        4294967295,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 56,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        4294967295,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 57,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        4294967295,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 58,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483648,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 59,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483648,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 60,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483648,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 61,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483648,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 62,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483648,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 63,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483647,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 64,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483647,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 65,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483647,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 66,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483647,
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 67,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2147483647,
+        1,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 68,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 69,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        2,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 70,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 71,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        4294967295,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 72,
+      "function_va": "004a6e30",
+      "input": [
+        1,
+        2,
+        2147483647,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 73,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 74,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 75,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 76,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 77,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 78,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        255,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 79,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 80,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 81,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 82,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 83,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 84,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 85,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 86,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 87,
+      "function_va": "0048dad0",
+      "input": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        31,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 88,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 89,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 90,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 91,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 92,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 93,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 94,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 95,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 96,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 97,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 98,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 99,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 100,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 101,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 102,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 103,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 104,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 105,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 106,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 107,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 108,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 109,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        1,
+        255,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 110,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 111,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 112,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        3,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 113,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        3,
+        255,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 114,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2147483648,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 115,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2147483648,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 116,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2147483648,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 117,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        2147483648,
+        255,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 118,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        4294967295,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 119,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        4294967295,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    },
+    {
+      "index": 120,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        4294967295,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 121,
+      "function_va": "0048e6f0",
+      "input": [
+        3,
+        4294967295,
+        255,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 122,
+      "function_va": "0048e6f0",
+      "input": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 123,
+      "function_va": "0048e6f0",
+      "input": [
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 124,
+      "function_va": "0048e6f0",
+      "input": [
+        4,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 3
+    },
+    {
+      "index": 125,
+      "function_va": "0048e6f0",
+      "input": [
+        4,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 1
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/141-application-services-next/CMakeLists.txt": "1ee1b22bebc6966c31649fe7af5f6d664587421531b6449f5943fd9f35e15846",
+    "iterations/v2/001-original-recovery/runs/141-application-services-next/README.md": "a9244c511071033e1ab3724eb7fa6a75cb87bb20720f333d2febd948f94a4df0",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "28034cf36ad84c0b23b94bdc166b5065a6e37c119bf4bb8a10c2d32930fd26a2",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_services.hpp": "94c6ad95ed594eb1b8f6e74070871fcdd1d2997fd9e103a534c362bd58af0167",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_services_next.hpp": "61850310ac64fcf72319aeabb4d05c0ccac1b34402b6893e6b4e084e3594dd07",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_state.hpp": "8609be1d87e02af50f3f6ae3b0f9c55300e78b51460f187ccbb1e46ca3379315",
+    "iterations/v2/001-original-recovery/source/include/porsche/engine_service_427a60.hpp": "add655ee87cdcaa6e412f0b179c2867a48f3fad81253c182ebcc684dded4c18f",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/game_setup.hpp": "45b8c0e8c46b0bffbbbeeda9fa4b01f9c17562d7ca4510d53564ddcf42ead2eb",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/install_paths.hpp": "8fcc8eeb15e9079a2d546919709a4ae2ab0557eb26c2e41e5ac1a746cbeebd0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_activate.hpp": "0780e60abce4841853e63bcdaa5118bd7e3956cc7d033192acc415857b85d93f",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp": "f32055181c315a54038c6aaf2bd2ab54f4d773f50551f761aee0e9b27bad9e2d",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_objects.hpp": "fe39c468e43754b7c16be4e8aae3d383f15b73b1405df4bf9cbe867125577287",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_startup.hpp": "2ec73bd3650c89fc8fc23615c0db52b4eb03a4c1fb166d060719670d06402cc0",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/splash_progress.hpp": "99145e6a8c74eca4a49353eaa917c1d356350de9086a29b7186dd3eeb9f743ec",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup_sequence.hpp": "175b7c3059c8a232f918198b8b45f487f6deaf41db99ac745b9f7888a7d21cce",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup_services.hpp": "18165f0f29be587af92f0ec1d245ee69fcdd03b2ead7b0f77be9290ff41a9720",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_shutdown.hpp": "f7dc9946688c6e1f891621c3133a9b7a848f8fada0335a649dc00e69a7106c3d",
+    "iterations/v2/001-original-recovery/source/recovered/application_services_next_probe.cpp": "b0c9108687750ae4bf8e0592448e3fceb0f986227e3e280512e44252505c2af7",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_services.cpp": "5a45f6aa171b538529968b9268634fa762676827ecb51e765ab721930d86ba19",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_services_next.cpp": "dbe761920f5fc015f820f056ce63144d1d34b01ea30ad924a2447ff7808efa3a",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_state.cpp": "a1ad65f8506af7e03fecda2bd24880074ce9c926c8aa657135508b11aaf75f76",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/install_paths_storage.cpp": "28ae46fac8894f6099410ba807f86ab5c2ef21b8e700c69250827056d76a31cf",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-application-services-next.py": "1e58de6849cd4b0914eb0cecf8934bda1446e6b3a237e067a62a649c4c3c6959"
+  }
+}

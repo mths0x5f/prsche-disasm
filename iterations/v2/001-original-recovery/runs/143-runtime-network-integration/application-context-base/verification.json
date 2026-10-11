@@ -1,0 +1,608 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00525e20",
+    "005294c0",
+    "005295b0",
+    "00529a20",
+    "00529a40",
+    "005299d0",
+    "00525ec0"
+  ],
+  "full_function_vas": [
+    "00525e20",
+    "005294c0",
+    "005295b0",
+    "00529a20",
+    "00529a40",
+    "005299d0"
+  ],
+  "partial_function_vas": [
+    "00525ec0"
+  ],
+  "original_body_pins": [
+    {
+      "entry_va": "00525e20",
+      "ranges": [
+        {
+          "start_va": "00525e20",
+          "end_va_inclusive": "00525ebd",
+          "bytes": 158,
+          "sha256": "b2c565a0a38535c4873169cb5e5bc0a1102869b3bbb5061b027e0f3ef3febfef"
+        }
+      ]
+    },
+    {
+      "entry_va": "005294c0",
+      "ranges": [
+        {
+          "start_va": "005294c0",
+          "end_va_inclusive": "0052958a",
+          "bytes": 203,
+          "sha256": "91ca6914a0698371e8d18e3f9cc3d7a72dd6a723044a21ce81b4108752bb0cdf"
+        }
+      ]
+    },
+    {
+      "entry_va": "005295b0",
+      "ranges": [
+        {
+          "start_va": "005295b0",
+          "end_va_inclusive": "00529648",
+          "bytes": 153,
+          "sha256": "22e119705ff90e7ddf4bc221e72e04c77934231c0d49914eb76d473aab393066"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529a20",
+      "ranges": [
+        {
+          "start_va": "00529a20",
+          "end_va_inclusive": "00529a36",
+          "bytes": 23,
+          "sha256": "3b4e06c960fb83600fa6701f6e08539eaa64e976384676f688a5b7dd2564eb8e"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529a40",
+      "ranges": [
+        {
+          "start_va": "00529a40",
+          "end_va_inclusive": "00529a75",
+          "bytes": 54,
+          "sha256": "3472f235237aca2189fb02992e96062dfec334dff72df5112f578b7ef738cb83"
+        }
+      ]
+    },
+    {
+      "entry_va": "005299d0",
+      "ranges": [
+        {
+          "start_va": "005299d0",
+          "end_va_inclusive": "005299ee",
+          "bytes": 31,
+          "sha256": "488dbddb9d91612e9d16686d3d0c8a7fbc851b9899b24fcd7433007989a8b2ad"
+        }
+      ]
+    },
+    {
+      "entry_va": "00525ec0",
+      "ranges": [
+        {
+          "start_va": "00525ec0",
+          "end_va_inclusive": "00525f3b",
+          "bytes": 124,
+          "sha256": "8c3fc02650c45d6a5a6290e2d0c2780d0a5f0eacdcf6df97db96cf5df900fb54"
+        }
+      ]
+    },
+    {
+      "entry_va": "005299f0",
+      "ranges": [
+        {
+          "start_va": "005299f0",
+          "end_va_inclusive": "00529a18",
+          "bytes": 41,
+          "sha256": "d423f935b2b4ed45f4a6d8e5f0da89a9313ee389b77c429455d06cdfbc611161"
+        }
+      ]
+    },
+    {
+      "entry_va": "004d1a90",
+      "ranges": [
+        {
+          "start_va": "004d1a90",
+          "end_va_inclusive": "004d1b3b",
+          "bytes": 172,
+          "sha256": "df604cbc032122480f75184bc1f2f26408bf163d44f9a54441a214a8be4f597b"
+        }
+      ]
+    },
+    {
+      "entry_va": "004d1ba0",
+      "ranges": [
+        {
+          "start_va": "004d1ba0",
+          "end_va_inclusive": "004d1bcd",
+          "bytes": 46,
+          "sha256": "4d791d00efdfbb6d3d7ec32f61ddb37b8953320a4c9d96a7fc5520c39c7a2e0b"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529c20",
+      "ranges": [
+        {
+          "start_va": "00529c20",
+          "end_va_inclusive": "00529c4b",
+          "bytes": 44,
+          "sha256": "857385443d1632f94f53a373dac66ad110d3207d0a02ec42fb51973d5f3d8901"
+        }
+      ]
+    }
+  ],
+  "original_global_pins": [
+    {
+      "va": "005e4fe8",
+      "bytes_hex": "183e5e00",
+      "pointer_value": "005e3e18",
+      "sha256": "b32d7895c54e7230419721d4553f700f9500b0db6978b731e9578af6bc9c9ab3"
+    },
+    {
+      "va": "005e4fec",
+      "bytes_hex": "74f36a00",
+      "pointer_value": "006af374",
+      "sha256": "a7b40496a558c9441f9071682b50094c5626ee4222de1b6563d25faba81b923e"
+    }
+  ],
+  "native_toolchain": {
+    "compiler_id": "MSVC",
+    "compiler_version": "19.44.35229.0",
+    "compiler": "F:/claude/porsche disasm/local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe",
+    "pointer_size": 4,
+    "generator_platform": "Win32",
+    "native_pe_machine": "014c",
+    "native_pe_magic": "010b"
+  },
+  "cases": 20,
+  "native_cpp_equal_original_x86": false,
+  "verified_contract_equal_original_x86": true,
+  "comparison": "Full object spans and 0x70000 poisoned arena bytes before/after, constructor/copy EAX, non-null destructor EAX, 36-byte by-value compare payload and ordered typed-boundary effects; mutation, overlap, empty/reversed range and composed context cases.",
+  "partial_reason": "00525ec0 null-allocation path preserves arbitrary incoming EAX; C++ return is normalized to zero and source-level return contract is unproved.",
+  "partial_isolation": "application_context_base_destroy_partial.cpp is compiled only by private Run135; common library must leave 00525ec0 unresolved.",
+  "null_allocation_eax": [
+    {
+      "case": 0,
+      "original_preserved_eax": "13579bdf",
+      "cpp_normalized_eax": "00000000",
+      "parity_claimed": false
+    },
+    {
+      "case": 18,
+      "original_preserved_eax": "a5b6c7d8",
+      "cpp_normalized_eax": "00000000",
+      "parity_claimed": false
+    }
+  ],
+  "original_abi_checks": [
+    {
+      "case": 0,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "calls": [
+        {
+          "va": "004d1a90",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "004d1ba0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 6,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 7,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 8,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 9,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 10,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 11,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "calls": [
+        {
+          "va": "005299d0",
+          "stack_pop": 4,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 13,
+      "calls": [
+        {
+          "va": "00529a20",
+          "stack_pop": 4,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 14,
+      "calls": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 15,
+      "calls": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 16,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 17,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 18,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "00525ec0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 19,
+      "calls": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    }
+  ],
+  "unknown_boundaries": [
+    "005e4fe8 pointer cell (initially 005e3e18; ctor directly accesses +28/+40; storage owner unresolved)",
+    "005e4fec selector pointer cell (initially 006af374)",
+    "0059ef90",
+    "0059f050",
+    "0059eeb0",
+    "005262e0",
+    "004e4560",
+    "004d7da0",
+    "004237d0",
+    "004211d0",
+    "0059ecb0",
+    "00529c20",
+    "00441200"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/135-application-context-base/CMakeLists.txt": "73095d1e6b88aed79a9caf7335f73169d9fbb71debbe91075d9c3e4a6249b7eb",
+    "iterations/v2/001-original-recovery/runs/135-application-context-base/README.md": "7087c1f00dbbe96363a188ba81b555a0d83b66c5aa869996f115c9eb9a485072",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_init.hpp": "2219028eb833dc382c74db5ebb9ff11de96e30d466b4360e30966ff947f3332b",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/application_context_base_probe.cpp": "6762d5d623e5b91f5abd4e21f70f78b7c1e04247a620076365ac570ba2c35b31",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context.cpp": "fb6417484d3cb97603102073e89fd96225d159ce5f09983df813a2d84185e766",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_base.cpp": "5ad9dd5dea449d706386d71c5f43202c6279086db593454bc16cc14a168aa153",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_base_destroy_partial.cpp": "c2dacb0cba3dfbdc749de26e6f45cf63a1ae041576fc5bdb1b6e753417f62a25",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-application-context-base.py": "51fc7e840fabf992d7431efd0855dd2550fb46b98948fd874d72310a6be22346"
+  },
+  "probe_sha256": "93c19f3d628c034d1d7fdeebaee3f46ead0c29e2763f85a81aece81224e177b3",
+  "fixtures": [
+    {
+      "case": 0,
+      "name": "base-allocation-null",
+      "sha256": "499e8994b7c27c9bff12236d79e83fd37a6c23acd761fda803d4badcb6355977"
+    },
+    {
+      "case": 1,
+      "name": "base-new-head",
+      "sha256": "e18eadbd80ceab6b452695888245bcca25031b1b88a2c4d5983c9c5a39982602"
+    },
+    {
+      "case": 2,
+      "name": "base-existing-head-one-node",
+      "sha256": "3a2910393a75cfdd7f44672848bd511c9ac42da69d8655af10b6c2680123db8e"
+    },
+    {
+      "case": 3,
+      "name": "member-allocation-null",
+      "sha256": "f4119c289f12a5c4ecfc5db3c67ce2eb291b2a7696f6d82eaf55d1c16e17e53a"
+    },
+    {
+      "case": 4,
+      "name": "member-one-block",
+      "sha256": "149be8ba9ddf8297cfe1bb6d25bbdeb564196a94160dbe2e6189e7f20c051ad6"
+    },
+    {
+      "case": 5,
+      "name": "composed-context",
+      "sha256": "d974c6714b9b4a281a8d7f6f174e671bb7940a9c6df938da1f88b81ba86a43db"
+    },
+    {
+      "case": 6,
+      "name": "base-new-head-mutates-lock-and-next",
+      "sha256": "6edfb4aa5c2f8f9897fa04f92bfd72c1a23d3a1ed7a2e078584b757bebb24bcf"
+    },
+    {
+      "case": 7,
+      "name": "base-two-nodes-callback-mutations",
+      "sha256": "defec4c73b0dea1817da3437db35b421134bacbd567f2987f9b999c83ee1de3e"
+    },
+    {
+      "case": 8,
+      "name": "base-count-nonzero-list-empty",
+      "sha256": "d2d83dfb7c80e78ca1d9ca577e8f7c73f0d32762714e708df3f82bbc04adeffb"
+    },
+    {
+      "case": 9,
+      "name": "member-array-callback-changes-count",
+      "sha256": "069e8ab72c1ff34d1bd84106b5d9f3b0ca2cae77d729bbf7661d4c4a8f4aa559"
+    },
+    {
+      "case": 10,
+      "name": "member-finalize-nulls-array",
+      "sha256": "60cf6226ca3f04d7eac4936ccf345c6f0e6ad4234b2c4fbeb6cbaa2c77dd0fe1"
+    },
+    {
+      "case": 11,
+      "name": "member-callbacks-change-bounds-count-array",
+      "sha256": "912d904b0bb87fb30e1ecaef586069fe26979221bc976b1e5bf9532abe834fd3"
+    },
+    {
+      "case": 12,
+      "name": "copy-forward-overlap",
+      "sha256": "401e454739b477d8e47ce38de44e56d0750b178cdefda14ce4331945984615d0"
+    },
+    {
+      "case": 13,
+      "name": "range-link-overlapping-source-field",
+      "sha256": "2a3aa11d78a41504d5d8d8072d2e51aa7554fcf41fd60467d8a79f52cf4911d5"
+    },
+    {
+      "case": 14,
+      "name": "blocks-three-changing-selector-pointer",
+      "sha256": "6d5a82df36b4127a7dd5acfaa6b2ddc6fcc7e1ef82ae602b371e853d6a2f071c"
+    },
+    {
+      "case": 15,
+      "name": "blocks-reversed-range",
+      "sha256": "97f4b8ef47e41d866c2a5782d48a22d431dcfc07767e2c2ac8d019873ded62c2"
+    },
+    {
+      "case": 16,
+      "name": "member-null-block-result",
+      "sha256": "38b4fc22d53a1f4ebae160bfbecc37c61bd46b135b2a8fe25d2ecd7555e1fbf3"
+    },
+    {
+      "case": 17,
+      "name": "member-finalize-zeroes-count",
+      "sha256": "a41f33ab1d582c36198fb3c36945577695cae5654a40dd2535873f8093c7de91"
+    },
+    {
+      "case": 18,
+      "name": "base-null-preserves-second-eax-seed",
+      "sha256": "10dcac46c23207bd91ccc4d416d7364036e6edb7d7cc96db247f668e34911642"
+    },
+    {
+      "case": 19,
+      "name": "blocks-empty-range",
+      "sha256": "97f4b8ef47e41d866c2a5782d48a22d431dcfc07767e2c2ac8d019873ded62c2"
+    }
+  ]
+}

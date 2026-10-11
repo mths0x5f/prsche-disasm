@@ -1,0 +1,453 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "004211d0",
+    "004237d0",
+    "00441200",
+    "00424000",
+    "005262e0",
+    "0059ecb0",
+    "0059ecd0"
+  ],
+  "full_function_vas": [
+    "004211d0",
+    "004237d0",
+    "00441200",
+    "00424000",
+    "005262e0",
+    "0059ecb0",
+    "0059ecd0"
+  ],
+  "partial_function_vas": [],
+  "cases": 24,
+  "native_cpp_equal_original_x86": true,
+  "original_body_pins": [
+    {
+      "entry_va": "004211d0",
+      "ranges": [
+        {
+          "start_va": "004211d0",
+          "end_va_inclusive": "0042125d",
+          "bytes": 142,
+          "sha256": "afd08f85abc65c2de9e91dc460768424cb39c0fac2c625ce284e86ad75723927"
+        }
+      ]
+    },
+    {
+      "entry_va": "004237d0",
+      "ranges": [
+        {
+          "start_va": "004237d0",
+          "end_va_inclusive": "00423836",
+          "bytes": 103,
+          "sha256": "5fb776c5edfcc0ff10ddec0873da6b802e66efee51880ce0138df3a60e2370ba"
+        }
+      ]
+    },
+    {
+      "entry_va": "00441200",
+      "ranges": [
+        {
+          "start_va": "00441200",
+          "end_va_inclusive": "00441250",
+          "bytes": 81,
+          "sha256": "d7e95c486ed7ca7885240b1b6dbb7e1fe79c488969c61fa4a76537c5ba1de366"
+        }
+      ]
+    },
+    {
+      "entry_va": "00424000",
+      "ranges": [
+        {
+          "start_va": "00424000",
+          "end_va_inclusive": "00424054",
+          "bytes": 85,
+          "sha256": "7ecf57ad28879bd14c8bd32b58b58ca5eeebad086e93ec7ed4b85f2fb087b20e"
+        }
+      ]
+    },
+    {
+      "entry_va": "005262e0",
+      "ranges": [
+        {
+          "start_va": "005262e0",
+          "end_va_inclusive": "00526344",
+          "bytes": 101,
+          "sha256": "4dedc7a1be36a59d4b168ae83dbf258b2d2557d096a1e79f6b82d498cc2f4491"
+        }
+      ]
+    },
+    {
+      "entry_va": "0059ecb0",
+      "ranges": [
+        {
+          "start_va": "0059ecb0",
+          "end_va_inclusive": "0059ecca",
+          "bytes": 27,
+          "sha256": "ad9cb89607e55750b6a757ccb91b11aef0c266f68e177a00a6a0747f1a487498"
+        }
+      ]
+    },
+    {
+      "entry_va": "0059ecd0",
+      "ranges": [
+        {
+          "start_va": "0059ecd0",
+          "end_va_inclusive": "0059ecdf",
+          "bytes": 16,
+          "sha256": "67d4dcbd15ecef616dda2905269eaaa792b0ec37766ac603ce551c71f0dad4d9"
+        }
+      ]
+    },
+    {
+      "entry_va": "0059eeb0",
+      "ranges": [
+        {
+          "start_va": "0059eeb0",
+          "end_va_inclusive": "0059ef88",
+          "bytes": 217,
+          "sha256": "f30101b7047dddbcba6563aa31f06adee7773772cd9173db495efbf626ea81ab"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529c20",
+      "ranges": [
+        {
+          "start_va": "00529c20",
+          "end_va_inclusive": "00529c4b",
+          "bytes": 44,
+          "sha256": "857385443d1632f94f53a373dac66ad110d3207d0a02ec42fb51973d5f3d8901"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529c50",
+      "ranges": [
+        {
+          "start_va": "00529c50",
+          "end_va_inclusive": "00529c7d",
+          "bytes": 46,
+          "sha256": "2c1cd9ccb0436682806bf339b1710e2e838f86c9268469263474051698dc654b"
+        }
+      ]
+    }
+  ],
+  "native_toolchain": {
+    "compiler_id": "MSVC",
+    "compiler_version": "19.44.35229.0",
+    "compiler": "F:/claude/porsche disasm/local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe",
+    "pointer_size": 4,
+    "generator_platform": "Win32",
+    "native_pe_machine": "014c",
+    "native_pe_magic": "010b"
+  },
+  "comparison": "Full 8192-byte poisoned mapped arena, manager pointer, allocation pointer returns, ordered callbacks; original stack cleanup/nonvolatile registers. Void functions have no EAX contract.",
+  "unknown_boundaries": [
+    "0059eeb0 pool refill",
+    "005322b0/005322c0 canonical locks",
+    "manager indirect allocation/release callbacks",
+    "00529c20/00529c50 remain unrecovered range services"
+  ],
+  "original_global_pins": [
+    {
+      "va": "005e4fe8",
+      "bytes_hex": "183e5e00",
+      "sha256": "b32d7895c54e7230419721d4553f700f9500b0db6978b731e9578af6bc9c9ab3"
+    },
+    {
+      "va": "005e4fec",
+      "bytes_hex": "74f36a00",
+      "sha256": "a7b40496a558c9441f9071682b50094c5626ee4222de1b6563d25faba81b923e"
+    }
+  ],
+  "original_abi_checks": [
+    {
+      "case": 0,
+      "va": "0059ecb0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 1,
+      "va": "0059ecb0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 2,
+      "va": "0059ecd0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 3,
+      "va": "004237d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 4,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 5,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 6,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 7,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 8,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 9,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 10,
+      "va": "004211d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": true
+    },
+    {
+      "case": 11,
+      "va": "004237d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 12,
+      "va": "004237d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 13,
+      "va": "004237d0",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 14,
+      "va": "00441200",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 15,
+      "va": "00441200",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 16,
+      "va": "00424000",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 17,
+      "va": "00424000",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 18,
+      "va": "00424000",
+      "stack_pop": 0,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 19,
+      "va": "005262e0",
+      "stack_pop": 4,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 20,
+      "va": "005262e0",
+      "stack_pop": 4,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 21,
+      "va": "005262e0",
+      "stack_pop": 4,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 22,
+      "va": "005262e0",
+      "stack_pop": 4,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    },
+    {
+      "case": 23,
+      "va": "005262e0",
+      "stack_pop": 4,
+      "callee_saved_preserved": true,
+      "eax_compared": false
+    }
+  ],
+  "fixtures": [
+    {
+      "case": 0,
+      "sha256": "eccb1f01d29c9dbb7596ae8ddcadbcaf807c0fcf87727fed734b552779c4964a"
+    },
+    {
+      "case": 1,
+      "sha256": "ded597cd82f6e2d76b1ecdcf94bc9b74652f3bed51014662ac08f4bf1cf49779"
+    },
+    {
+      "case": 2,
+      "sha256": "ed8e8b79d1e5b20896b068ae677820d742240b8f8d561cf99c2cc3b26c06a2cd"
+    },
+    {
+      "case": 3,
+      "sha256": "208e5183171607f0b8fedc14b4912c60a90965a447b90946adbe77824a9e7bfa"
+    },
+    {
+      "case": 4,
+      "sha256": "18e2ed8d654de5c89e327bc824db73586e92751d36cd5d0d700abdabcc050f99"
+    },
+    {
+      "case": 5,
+      "sha256": "a4cef1bb83d7e7ee2dffdddaba33044b15ae5903129cf6ae6ab804888c7df5f8"
+    },
+    {
+      "case": 6,
+      "sha256": "95269d28c8f48c2668d6103b3a86ad130c7a733f6ee9367183e8b9814c6a5284"
+    },
+    {
+      "case": 7,
+      "sha256": "7bf2ce7acca92d846ae1bdcd06f3b3fe2553f210dc194bdeec0a7e85ef84d6d8"
+    },
+    {
+      "case": 8,
+      "sha256": "a03c8d7c5171fce56f46ba40792ef1dc74e6b0e86dc2358f381456ea94afc3f7"
+    },
+    {
+      "case": 9,
+      "sha256": "2defe77358a93748b6378cabecce165182f7ee489639ee7056b438f45824d6f5"
+    },
+    {
+      "case": 10,
+      "sha256": "74f3c4fa2e3cad3bbb820a824d6a5a664a6593baf226207a6e2868921616469b"
+    },
+    {
+      "case": 11,
+      "sha256": "123abb4bf91bcdcb51a54680a9648a95cb8f0066c17ed4cd978e60a3c40719f7"
+    },
+    {
+      "case": 12,
+      "sha256": "42cd3aca833fdb44595039a7209bc740d604083ff4eb5214270a247776d83787"
+    },
+    {
+      "case": 13,
+      "sha256": "0f692ce3c4a53e20a6dd96f4aab8d3b4018288eda2d958422342cb93aa397ca4"
+    },
+    {
+      "case": 14,
+      "sha256": "6a2d5ef2b5913f3cc69e1895059d1d5bc6d6193b1e6ffaeb2a7b5c0f8a31391a"
+    },
+    {
+      "case": 15,
+      "sha256": "5dcf0c4219d9ebe0f9bd7e6a4b6485399e9860fe2a97dd10875b6ff0b48979d3"
+    },
+    {
+      "case": 16,
+      "sha256": "5a97299ef3166b0557839740bc641ca61bef222e0dd53c04de4630d62673ce12"
+    },
+    {
+      "case": 17,
+      "sha256": "886372ac08614fd3891de89b6154c1e902decddd4dd003e363aea3a13d79b202"
+    },
+    {
+      "case": 18,
+      "sha256": "3a780794b9ebb58630d4e1257461811e80cffa4758ce181c0a501643ee557f62"
+    },
+    {
+      "case": 19,
+      "sha256": "910481aeb23360e4da2e5ff0f1fc7b30393ad271066e75cf894eab92cf2a2f66"
+    },
+    {
+      "case": 20,
+      "sha256": "b709dfd47906f3d1a5cb43c134da7f716356d9a3b9655e18600a3080cbf902b3"
+    },
+    {
+      "case": 21,
+      "sha256": "0460b785366425b3f0e8e53f8ac0ed7d9e9ae38dbb421bbbd88cb1c4226f3400"
+    },
+    {
+      "case": 22,
+      "sha256": "833c691ef4769b8680ec7c7d4105709fb5c178b10689b69b739fee936cdbb312"
+    },
+    {
+      "case": 23,
+      "sha256": "98479367a099d80e0350b52f2777a6b01248a7d87b061557774dd22928c7ec7b"
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/139-context-effects/CMakeLists.txt": "c7dc650ff8426984b2453fca1d7006cf6e8006884e4ee09baba362881dc2e3e1",
+    "iterations/v2/001-original-recovery/runs/139-context-effects/README.md": "154ad734f6f221c2526abc541f060e272d8243038889fb54ba6f7b6ca684926a",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/context_effects.hpp": "76cacc6b99877d6e27aefbd1a7900bd4e7a3fbebe2a17689d3061cdba8185b2e",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/context_effects_probe.cpp": "6950616866c9036d54c6a26f1da9971ca8a2294d4fd1f3670540ba6735b2260f",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_effects.cpp": "e84eac5c7ad905582c63c544823d143022cdb94cb22e4da08fad5cf9757c758d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-context-effects.py": "27768f0899e480cd4ce32fba079ba6c5eed3219a1a581d8f398521aa16748693"
+  },
+  "probe_sha256": "7c6ab900c1c59a0e38bb73240e582fff1e713bbf669ab662efefce47dbca0a64"
+}

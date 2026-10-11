@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "0053c270",
+    "00564eb0",
+    "00564fa0",
+    "00565030",
+    "005a4ab2",
+    "005a4ae7",
+    "005a4b18",
+    "005a4b50",
+    "005a4b5d",
+    "005a4b6d"
+  ],
+  "full_function_vas": [
+    "0053c270",
+    "00564eb0",
+    "00564fa0",
+    "00565030",
+    "005a4ab2",
+    "005a4ae7",
+    "005a4b18",
+    "005a4b50",
+    "005a4b5d",
+    "005a4b6d"
+  ],
+  "partial_function_vas": [],
+  "cases": 4,
+  "native_cpp_equal_original_x86": true,
+  "binary_matched": false,
+  "game_launch_verified": false,
+  "comparison": "Three component verifiers execute the accepted timer cluster, six formatter helpers, and auxiliary signal against original x86. The composed probe calls the real timer-producer tail, which signals the canonical worker event and then the canonical auxiliary event through recovered 0055fb30; it separately checks formatter span bytes and opaque descriptor tail. No call edge between timer diagnostics and formatter is claimed.",
+  "boundaries": {
+    "WinMM": "Common production bridge maps the recovered timer boundary signatures directly to timeGetDevCaps/timeBeginPeriod/timeSetEvent/timeKillEvent/timeEndPeriod and links winmm. Component oracle fixtures control API outcomes; composed producer-tail cases do not schedule host timers.",
+    "diagnostic_handler_005debf0": "Unknown diagnostic callback remains explicit; the composed probe does not invoke timer setup diagnostic paths and supplies only the existing timer_diagnostic_boundary fixture required to link timer_setup.cpp.",
+    "formatter_core_005a4371": "Parser is not recovered or called; no fake-success parser is included.",
+    "formatter_cleanup_005a4259": "The helper cleanup edge remains a separate typed recording boundary, not an adapter to Run108 cleanup. Composed formatter case stays within output capacity.",
+    "live_thread_and_WM_CLOSE": "No live timer thread or end-to-end WM_CLOSE producer is claimed; those routes remain open."
+  },
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/CMakeLists.txt": "5bf49009119e90e8dda525d7ab47617822942f54005a3fd0fc3b20eb0d9cc709",
+    "iterations/v2/001-original-recovery/runs/121-formatter-timer-integration/CMakeLists.txt": "f00317e508bcfcfdcf15b57e915aea60f9fa658ebd79f7d14b6cd59bb6afa872",
+    "iterations/v2/001-original-recovery/runs/121-formatter-timer-integration/README.md": "79f078b5f44be9b1ff3f190977e49b038784d395689ecbb0118203937e21529e",
+    "iterations/v2/001-original-recovery/source/include/porsche/auxiliary_wait.hpp": "e36669595dee32006426c0d468224603de0afbf010513eba7ca16179733bdaa0",
+    "iterations/v2/001-original-recovery/source/include/porsche/clock_worker.hpp": "5b483a4968a47ef0d6c1bab5b5171346f29d3150e41ff7e071584ceef40ef69b",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp": "e3535f0fdf85141719d4741e60a900d6c454b9e6140fc7ec283fa5f18a33ef76",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/object_update.hpp": "b648b612de0f910609420d770bc2f67dec229d77663ae109887b7001e180f3ff",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/timer_setup.hpp": "b17aea941674cbd59a2c8aeaf84db1285ce9219803ed2d38418aed89928d2787",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_create.hpp": "227f5127eca5c565bc7980c3c9a9a41bc0e87976e3791334c0d53c7927c5d902",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_runtime.hpp": "251834cade05b25efb0ff60fee9035da800d5d051f476fffac7a7698c6fec3b9",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_state.hpp": "77f52e368e15cf55e8aa80946bb4c37fea999a3caa172011c2cd8aa0ee9de01f",
+    "iterations/v2/001-original-recovery/source/platform/startup_timer_links.cpp": "82009db5a616b17a1e7a6e5b52f00e1a257d184b07fa843ad4df7888afb0b8da",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp": "b10aaffe1bf9cdeac940bf3ec940f5eb74d40ad07df194368cd90745f96fa621",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/clock_worker.cpp": "8ca2ad1a684e486cf67248863e5fb3b4e348486f11381d9c1d7ad2b28c66e015",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/file_events.cpp": "bd4c4af16c0071324bae11c5102ab0c26968fa901434a8e5421a11add855f33d",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp": "614b9f628fec7e177b5038c3ce71f38df870a362bc93cb45211acc96132a71fa",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/shared_runtime_globals.cpp": "fa56877fdc040c687823d4e67eb25fc3d8a3738205bdf20c41492135f7086314",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp": "2b040a5ca5e59b6452c6861fecf6f5f28389d8714a900483a774c100ca9fc658",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_runtime.cpp": "7f78bf064607eeb7b598b374c02b8b6d6e459aacf10830b7f4f4c468890c019a",
+    "iterations/v2/001-original-recovery/source/recovered/sources.cmake": "c8941525e73bdc336500b3b09a88c9572de3f9ef56fdf366de4f34acabd8125a",
+    "iterations/v2/001-original-recovery/source/recovered/startup_timing_integration_probe.cpp": "db4ac579f382bff98eddfd569954a43a80728e58ab5219f65651473a8cee24f7",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-auxiliary-wait.py": "8e52aa33ba8fe70bac3f8764e938b19ae5877ac8b7dfc27cd34af9dfca3a5743",
+    "scripts/research/verify-v2-formatter-original.py": "da79cd9981d951656722dc09feeeb206e2032578b72aa6f850fa1cc274abd323",
+    "scripts/research/verify-v2-formatter-timer-integration.py": "781954adddb79b520c88d568105e24305dfafe777fe1a505c2e17512ecd76120",
+    "scripts/research/verify-v2-timer-setup.py": "3cb0653d9caf241b79aae5c79574706d54fbf28100792c2a18b138c3b3d61f6a"
+  },
+  "probe_sha256": "c084dee2a2d69655155dd5ae398ee457229424ee2857f1ff9428c8e607348d95",
+  "component_reports": {
+    "timer-setup": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/timer-setup/verification.json",
+    "formatter-original": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/formatter-original/verification.json",
+    "auxiliary-wait": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/auxiliary-wait/verification.json"
+  },
+  "fixtures": [
+    {
+      "case": "timer_tail",
+      "worker_event": "0x11111111",
+      "auxiliary_event": "0x22222222",
+      "saved_clock": 0,
+      "clock": 4097,
+      "fraction": 2,
+      "signals": [
+        "0x11111111",
+        "0x22222222"
+      ]
+    },
+    {
+      "case": "timer_tail",
+      "worker_event": "0x00000000",
+      "auxiliary_event": "0x33333333",
+      "saved_clock": 0,
+      "clock": 4097,
+      "fraction": 2,
+      "signals": [
+        "0x33333333"
+      ]
+    },
+    {
+      "case": "timer_tail",
+      "worker_event": "0x11111111",
+      "auxiliary_event": "0x00000000",
+      "saved_clock": 1,
+      "clock": 4097,
+      "fraction": 2,
+      "signals": []
+    },
+    {
+      "case": "formatter_span",
+      "bytes": "4100ff",
+      "remaining": 5,
+      "emitted": 3,
+      "tail": "a0a1a2a3a4a5a6a7a8a9aaabacadaeaf"
+    }
+  ]
+}

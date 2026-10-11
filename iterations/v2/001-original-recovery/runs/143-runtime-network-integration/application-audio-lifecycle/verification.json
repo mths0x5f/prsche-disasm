@@ -1,0 +1,690 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "004a6a00",
+    "004ab470",
+    "004ab4b0",
+    "00565890"
+  ],
+  "full_function_vas": [
+    "004a6a00",
+    "004ab470",
+    "004ab4b0",
+    "00565890"
+  ],
+  "partial_function_vas": [],
+  "cases": 26,
+  "native_cpp_equal_original_x86": true,
+  "original_body_pins": {
+    "004a6a00": {
+      "bytes": 375,
+      "ranges": [
+        [
+          "004a6a00",
+          "004a6b76"
+        ]
+      ],
+      "sha256": "762494c40fcb08a00e36678874ed0431cb2f8a08ae5177ba668aadcf62e86e20"
+    },
+    "004ab470": {
+      "bytes": 63,
+      "ranges": [
+        [
+          "004ab470",
+          "004ab4ae"
+        ]
+      ],
+      "sha256": "710d9045f93130c61a39b26ab8b598846c71b5e1ccfc7f1d694eb3bff022123b"
+    },
+    "004ab4b0": {
+      "bytes": 47,
+      "ranges": [
+        [
+          "004ab4b0",
+          "004ab4de"
+        ]
+      ],
+      "sha256": "46320b059c8b27c049d0245ff583c5cdbd7347ca1716b66f634df49228901e5c"
+    },
+    "00565890": {
+      "bytes": 135,
+      "ranges": [
+        [
+          "00565890",
+          "00565916"
+        ]
+      ],
+      "sha256": "138c0e7ebe84900d5a7bda5f2327dd58eafe861411fc2efabf15399d2a41595b"
+    }
+  },
+  "comparison": "Entire canonical application arena, all eight audio records, preceding/state audio bytes, exact effect order/arguments, return of00565890; three cases execute original004a6840 with real shutdown bodies.",
+  "void_return_contract": "004a6a00,004ab470,004ab4b0 callers ignore incidental EAX; no arbitrary register return parity is claimed.",
+  "scope": [
+    "004a6a00 writes unbounded virtual-method-derived mode unchanged; this does not establish the input domain of004a66b0.",
+    "Actual allocation/audio/control/initializer effects are controlled boundaries; no live audio or startup acceptance.",
+    "New state cells are PE zero-fill; existing arena, records and device bytes reuse canonical owners."
+  ],
+  "case_results": [
+    {
+      "case": "transition_success",
+      "input": [
+        0,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 5,
+      "state_sha256": "76ea9f092b45c3ddbfaaddf49a1cb9f95638fece0f24ac24d5391338b7fe8c22"
+    },
+    {
+      "case": "transition_init_failure",
+      "input": [
+        0,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        0,
+        1,
+        0
+      ],
+      "ordered_calls": 3,
+      "state_sha256": "b7b5eb79f42ba1d50136e769cbfb0018a5eeec78ec782da521604874bde5cfb4"
+    },
+    {
+      "case": "transition_null_allocate",
+      "input": [
+        0,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        0,
+        0
+      ],
+      "ordered_calls": 5,
+      "state_sha256": "ecd49be608e187fef51a8a23aee554e29eebbf06425072e89e197e1ad21ee5f4"
+    },
+    {
+      "case": "transition_disabled",
+      "input": [
+        0,
+        1,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 0,
+      "state_sha256": "cdde38132bd2a44f09ff35b1835fd28704758ab8c1a789a76a160a364f2c8eae"
+    },
+    {
+      "case": "transition_high_disable_byte",
+      "input": [
+        0,
+        256,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 5,
+      "state_sha256": "76ea9f092b45c3ddbfaaddf49a1cb9f95638fece0f24ac24d5391338b7fe8c22"
+    },
+    {
+      "case": "transition_mode3_forces_disabled",
+      "input": [
+        0,
+        0,
+        3,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 0,
+      "state_sha256": "4d9af62ff54a4a402ad5a80a59c35ea08316e6f361f349a4dd5f05cadb1b6c05"
+    },
+    {
+      "case": "transition_early_equal",
+      "input": [
+        0,
+        0,
+        2,
+        0,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 0,
+      "state_sha256": "82fa0687a20d13b720d30a23acb141ca2487d66e12348fd53d7cff6fe7796718"
+    },
+    {
+      "case": "transition_equal_flag_forces_work",
+      "input": [
+        0,
+        0,
+        2,
+        0,
+        1024,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 5,
+      "state_sha256": "d73db2b0586c3cf5c6b8c01d966a0e97cab3e3c6ba58b3118f9b2184f1cb697b"
+    },
+    {
+      "case": "transition_negative_mode_unclamped",
+      "input": [
+        0,
+        0,
+        4294967286,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 5,
+      "state_sha256": "0030f834cdaceed286331839b515be11bf8a9ae3ec1abdd28f90643dbf258ffe"
+    },
+    {
+      "case": "transition_release_and_restart",
+      "input": [
+        0,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        305418240,
+        2882400000,
+        1432778632,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 22,
+      "state_sha256": "75572ee4151ef790370c2b4da3366daa40e8cde6da5e4a72650538fe47dc6fca"
+    },
+    {
+      "case": "transition_release_disabled",
+      "input": [
+        0,
+        257,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        305418240,
+        2882400000,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 16,
+      "state_sha256": "744151697d9f68e74447cd98b2fcf76487402861a8b78739fbda8beb4f275104"
+    },
+    {
+      "case": "transition_mutated_callback_reload",
+      "input": [
+        0,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        305418240,
+        2882400000,
+        1432778632,
+        1,
+        15,
+        1,
+        1,
+        63
+      ],
+      "ordered_calls": 22,
+      "state_sha256": "99d82db28d4fe1d32c9666bb7c567b36cf02238817aac781c50cc149705a9b4a"
+    },
+    {
+      "case": "finish_empty",
+      "input": [
+        1,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 1,
+      "state_sha256": "76265e5b6d75bcd008f63f1189b47926ae767d2261899e241937d1f179a00a6f"
+    },
+    {
+      "case": "finish_release",
+      "input": [
+        1,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        2882400000,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 2,
+      "state_sha256": "fc24e5819741e15f5aa970673ed8e0623f5cb57358b8ea7f573b93f5afa5068f"
+    },
+    {
+      "case": "finish_control_rebinds_pointer",
+      "input": [
+        1,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        2882400000,
+        0,
+        1,
+        15,
+        1,
+        1,
+        1
+      ],
+      "ordered_calls": 2,
+      "state_sha256": "ba5c29f9b22ef741fc7aa739d22fadda0437a7ec3e81f5046088b5e131db7a3d"
+    },
+    {
+      "case": "measure_inactive",
+      "input": [
+        2,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 0,
+      "state_sha256": "3a930b1b9745cabcf35fb23094f78e8d180339bff73e21c033fd288c5aa678a7"
+    },
+    {
+      "case": "measure_no_callbacks",
+      "input": [
+        2,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 7,
+      "state_sha256": "82e95a2f0a7a97a2c919fbbfc2c81172e73a37763581d2dfba3ab9d4bf8d97dd"
+    },
+    {
+      "case": "measure_all_callbacks",
+      "input": [
+        2,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 11,
+      "state_sha256": "8317af0e33247f81d26c05baecc513ad22a555b812986271a42e07c76e33bb87"
+    },
+    {
+      "case": "measure_callback_rebind_and_clear",
+      "input": [
+        2,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        6
+      ],
+      "ordered_calls": 11,
+      "state_sha256": "d470df7d64306348e75431dab30598eb62eadd542266c3a507e7a6c7872e7168"
+    },
+    {
+      "case": "measure_quiet_installs_callback",
+      "input": [
+        2,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        7,
+        1,
+        1,
+        8
+      ],
+      "ordered_calls": 11,
+      "state_sha256": "8317af0e33247f81d26c05baecc513ad22a555b812986271a42e07c76e33bb87"
+    },
+    {
+      "case": "measure_backend_rebinds_release",
+      "input": [
+        2,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        48
+      ],
+      "ordered_calls": 11,
+      "state_sha256": "9d8290e14c43ee965904bbaf28bfab47feea5d3f1beffef9dad2bc6321629208"
+    },
+    {
+      "case": "post_not_configured",
+      "input": [
+        3,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 1,
+      "state_sha256": "855272265fd78cc34fd6082baa417a1a8b77e93adcfc16dc0bbead72dfad04f4"
+    },
+    {
+      "case": "post_configured",
+      "input": [
+        3,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 2,
+      "state_sha256": "ef0aeaba04bf8bf7e9a34c45a30d0c1285135618f06756137af644b3f9ea0711"
+    },
+    {
+      "case": "setup_composed_shutdown",
+      "input": [
+        4,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 17,
+      "state_sha256": "daefa98e88728e8d3ccbcfa68dcae2ac77d15691137a298f3c72ce4bddede29f"
+    },
+    {
+      "case": "setup_composed_null_callbacks",
+      "input": [
+        4,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "ordered_calls": 13,
+      "state_sha256": "62167151dda43e99d060c503e9a510e3ac4be613148d1bd3ffa18b6da0f176bd"
+    },
+    {
+      "case": "setup_composed_init_failure",
+      "input": [
+        4,
+        0,
+        1,
+        262144,
+        1024,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        15,
+        0,
+        1,
+        0
+      ],
+      "ordered_calls": 3,
+      "state_sha256": "b7b5eb79f42ba1d50136e769cbfb0018a5eeec78ec782da521604874bde5cfb4"
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/142-audio-lifecycle/CMakeLists.txt": "4aa1c9a714f4acb6b288ad27ad710ac071c8ceaffc55c30ed9d8f02db50b018a",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_audio_device.hpp": "94b59054950c0fb1f199f95391d8290142b5ae53f3f9a6fc8145acb8006e8472",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_audio_lifecycle.hpp": "6d411b89688e926c2666c508038093a4e58b38bbc8785f3b34abe8d752a4d5e3",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "28034cf36ad84c0b23b94bdc166b5065a6e37c119bf4bb8a10c2d32930fd26a2",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_services.hpp": "94c6ad95ed594eb1b8f6e74070871fcdd1d2997fd9e103a534c362bd58af0167",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_state.hpp": "8609be1d87e02af50f3f6ae3b0f9c55300e78b51460f187ccbb1e46ca3379315",
+    "iterations/v2/001-original-recovery/source/include/porsche/engine_service_427a60.hpp": "add655ee87cdcaa6e412f0b179c2867a48f3fad81253c182ebcc684dded4c18f",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/frame_services.hpp": "95959ccb18b23642aa7eefe9fd9023825c4324fb141c2ab6b26a2ed5fb8af220",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/application_audio_lifecycle_probe.cpp": "93c7e0e4bf8d6a7924d4fc014c706b86717a9e21f05b32a0a1b37ba85305f871",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_audio_lifecycle.cpp": "219db4e6324fe3a433537f5d6622858d64de443f2f00bcdca4c25830ff9ffaba",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_services.cpp": "5a45f6aa171b538529968b9268634fa762676827ecb51e765ab721930d86ba19",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_state.cpp": "a1ad65f8506af7e03fecda2bd24880074ce9c926c8aa657135508b11aaf75f76",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-application-audio-lifecycle.py": "c29da958afb4e463c5bbaeaf5466a6451b364759c5c36e4fafddf6ae98ec6f65"
+  },
+  "probe_sha256": "5dcd6532dc1ab9374a8ce3314c27254ef1a55f17ef0fbb7e7b2b629bbc1a690a",
+  "game_launch_verified": false,
+  "binary_matched": false
+}

@@ -1,0 +1,753 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00525e20",
+    "005294c0",
+    "005295b0",
+    "00529a20",
+    "00529a40",
+    "005299d0"
+  ],
+  "full_function_vas": [
+    "00525e20",
+    "005294c0",
+    "005295b0",
+    "00529a20",
+    "00529a40",
+    "005299d0"
+  ],
+  "partial_function_vas": [],
+  "original_body_pins": [
+    {
+      "entry_va": "00525e20",
+      "ranges": [
+        {
+          "start_va": "00525e20",
+          "end_va_inclusive": "00525ebd",
+          "bytes": 158,
+          "sha256": "b2c565a0a38535c4873169cb5e5bc0a1102869b3bbb5061b027e0f3ef3febfef"
+        }
+      ]
+    },
+    {
+      "entry_va": "005294c0",
+      "ranges": [
+        {
+          "start_va": "005294c0",
+          "end_va_inclusive": "0052958a",
+          "bytes": 203,
+          "sha256": "91ca6914a0698371e8d18e3f9cc3d7a72dd6a723044a21ce81b4108752bb0cdf"
+        }
+      ]
+    },
+    {
+      "entry_va": "005295b0",
+      "ranges": [
+        {
+          "start_va": "005295b0",
+          "end_va_inclusive": "00529648",
+          "bytes": 153,
+          "sha256": "22e119705ff90e7ddf4bc221e72e04c77934231c0d49914eb76d473aab393066"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529a20",
+      "ranges": [
+        {
+          "start_va": "00529a20",
+          "end_va_inclusive": "00529a36",
+          "bytes": 23,
+          "sha256": "3b4e06c960fb83600fa6701f6e08539eaa64e976384676f688a5b7dd2564eb8e"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529a40",
+      "ranges": [
+        {
+          "start_va": "00529a40",
+          "end_va_inclusive": "00529a75",
+          "bytes": 54,
+          "sha256": "3472f235237aca2189fb02992e96062dfec334dff72df5112f578b7ef738cb83"
+        }
+      ]
+    },
+    {
+      "entry_va": "005299d0",
+      "ranges": [
+        {
+          "start_va": "005299d0",
+          "end_va_inclusive": "005299ee",
+          "bytes": 31,
+          "sha256": "488dbddb9d91612e9d16686d3d0c8a7fbc851b9899b24fcd7433007989a8b2ad"
+        }
+      ]
+    },
+    {
+      "entry_va": "005299f0",
+      "ranges": [
+        {
+          "start_va": "005299f0",
+          "end_va_inclusive": "00529a18",
+          "bytes": 41,
+          "sha256": "d423f935b2b4ed45f4a6d8e5f0da89a9313ee389b77c429455d06cdfbc611161"
+        }
+      ]
+    },
+    {
+      "entry_va": "00529c20",
+      "ranges": [
+        {
+          "start_va": "00529c20",
+          "end_va_inclusive": "00529c4b",
+          "bytes": 44,
+          "sha256": "857385443d1632f94f53a373dac66ad110d3207d0a02ec42fb51973d5f3d8901"
+        }
+      ]
+    }
+  ],
+  "original_global_pins": [
+    {
+      "va": "005e4fe8",
+      "bytes_hex": "183e5e00",
+      "pointer_value": "005e3e18",
+      "sha256": "b32d7895c54e7230419721d4553f700f9500b0db6978b731e9578af6bc9c9ab3"
+    },
+    {
+      "va": "005e4fec",
+      "bytes_hex": "74f36a00",
+      "pointer_value": "006af374",
+      "sha256": "a7b40496a558c9441f9071682b50094c5626ee4222de1b6563d25faba81b923e"
+    }
+  ],
+  "native_toolchain": {
+    "compiler_id": "MSVC",
+    "compiler_version": "19.44.35229.0",
+    "compiler": "F:/claude/porsche disasm/local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe",
+    "pointer_size": 4,
+    "generator_platform": "Win32",
+    "native_pe_machine": "014c",
+    "native_pe_magic": "010b"
+  },
+  "cases": 16,
+  "native_cpp_equal_original_x86": true,
+  "verified_contract_equal_original_x86": true,
+  "comparison": "Scoped full-body proof only: four base-constructor phases captured before partial destruction, seven full member ctor/dtor cases, five direct-helper cases. All recorded memory, returns, traces and original ABI checks match.",
+  "original_abi_checks": [
+    {
+      "case": 0,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 6,
+      "calls": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 9,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 10,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 11,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "calls": [
+        {
+          "va": "005299d0",
+          "stack_pop": 4,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 13,
+      "calls": [
+        {
+          "va": "00529a20",
+          "stack_pop": 4,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 14,
+      "calls": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 15,
+      "calls": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 16,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 17,
+      "calls": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 19,
+      "calls": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    }
+  ],
+  "unknown_boundaries": [
+    "005e4fe8 pointer cell (initially 005e3e18; ctor directly accesses +28/+40; storage owner unresolved)",
+    "005e4fec selector pointer cell (initially 006af374)",
+    "0059ef90",
+    "0059f050",
+    "0059eeb0",
+    "005262e0",
+    "004e4560",
+    "004d7da0",
+    "004237d0",
+    "004211d0",
+    "0059ecb0",
+    "00529c20",
+    "00441200"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/135-application-context-base/CMakeLists.txt": "73095d1e6b88aed79a9caf7335f73169d9fbb71debbe91075d9c3e4a6249b7eb",
+    "iterations/v2/001-original-recovery/runs/135-application-context-base/README.md": "7087c1f00dbbe96363a188ba81b555a0d83b66c5aa869996f115c9eb9a485072",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_init.hpp": "2219028eb833dc382c74db5ebb9ff11de96e30d466b4360e30966ff947f3332b",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/application_context_base_probe.cpp": "6762d5d623e5b91f5abd4e21f70f78b7c1e04247a620076365ac570ba2c35b31",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context.cpp": "fb6417484d3cb97603102073e89fd96225d159ce5f09983df813a2d84185e766",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_base.cpp": "5ad9dd5dea449d706386d71c5f43202c6279086db593454bc16cc14a168aa153",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_base_destroy_partial.cpp": "c2dacb0cba3dfbdc749de26e6f45cf63a1ae041576fc5bdb1b6e753417f62a25",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-application-context-base.py": "51fc7e840fabf992d7431efd0855dd2550fb46b98948fd874d72310a6be22346"
+  },
+  "probe_sha256": "93c19f3d628c034d1d7fdeebaee3f46ead0c29e2763f85a81aece81224e177b3",
+  "fixtures": [
+    {
+      "case": 0,
+      "name": "base-allocation-null",
+      "phase": "base-constructor-only-before-partial-destructor",
+      "compared_fields": [
+        "before",
+        "scratch_before",
+        "base_ctor_result",
+        "constructor_trace"
+      ],
+      "sha256": "0394b09e9f3755ad83ba92b6e985b79d8c6fd5001ab493f55c487ede732d88e9",
+      "original_abi_checks": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "name": "base-new-head",
+      "phase": "base-constructor-only-before-partial-destructor",
+      "compared_fields": [
+        "before",
+        "scratch_before",
+        "base_ctor_result",
+        "constructor_trace"
+      ],
+      "sha256": "5c48bbfe930c350d822dc8ca178a166045d8cdca8b361e901e60e1ec5b76757f",
+      "original_abi_checks": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "name": "base-existing-head-one-node",
+      "phase": "base-constructor-only-before-partial-destructor",
+      "compared_fields": [
+        "before",
+        "scratch_before",
+        "base_ctor_result",
+        "constructor_trace"
+      ],
+      "sha256": "5599d5ac1ebea86f9e70c9580053c4fb0fe6c0ac5d4a6c5c05a3a6be3ac629f3",
+      "original_abi_checks": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "name": "member-allocation-null",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "8b166631a64ebe83e09484f6b5eb631525c21426c002dbeca8046c5dab9768ab",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "name": "member-one-block",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "c8af7c8619397c1cccd76ddc076ec4ac2597c1b9f0f56331b8727b4341330286",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 6,
+      "name": "base-new-head-mutates-lock-and-next",
+      "phase": "base-constructor-only-before-partial-destructor",
+      "compared_fields": [
+        "before",
+        "scratch_before",
+        "base_ctor_result",
+        "constructor_trace"
+      ],
+      "sha256": "b0ce9e6cf6bdd466bda451102d309f9dd8d7d606718e9195c5f8df0581a45768",
+      "original_abi_checks": [
+        {
+          "va": "00525e20",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 9,
+      "name": "member-array-callback-changes-count",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "c8421021d9e501384f3fb739649f0a9812447372553cdb54be427c0b1149abb9",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 10,
+      "name": "member-finalize-nulls-array",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "a45f393a15862a558dd4f3d7fdbe7dea038b60ec012f1176251c07dde911b870",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 11,
+      "name": "member-callbacks-change-bounds-count-array",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "cc85abd3c6d0db0bb2a1041309dda91a9261433ad74a7c4ca3ffc16f89624c50",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "name": "copy-forward-overlap",
+      "phase": "direct-helper",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "79517c07afc4eb78314c2747c5518b963938b9151265ba466f78c4e83abde416",
+      "original_abi_checks": [
+        {
+          "va": "005299d0",
+          "stack_pop": 4,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 13,
+      "name": "range-link-overlapping-source-field",
+      "phase": "direct-helper",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "bfb19d0a8786c3bb3f17775f2558fbe519309664d646cc34542c01836b3a9b4d",
+      "original_abi_checks": [
+        {
+          "va": "00529a20",
+          "stack_pop": 4,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 14,
+      "name": "blocks-three-changing-selector-pointer",
+      "phase": "direct-helper",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "f1a4bc1744874197b2531863030c2047c2c67924b176357ad237648829e0b526",
+      "original_abi_checks": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 15,
+      "name": "blocks-reversed-range",
+      "phase": "direct-helper",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "27d111e74240d6e17d979ccfb2ed7ff8b5af2bd2abe2e407879e6337d6bde356",
+      "original_abi_checks": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 16,
+      "name": "member-null-block-result",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "9496482c125ffc8adb29c4881a94085d83db09b7ec1384eaa3cb3225e3a2899f",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 17,
+      "name": "member-finalize-zeroes-count",
+      "phase": "member-ctor-dtor",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "046c3b81f55c84978483c5b61668a6d42a80016c991bd3d6e542f8fadc5880d8",
+      "original_abi_checks": [
+        {
+          "va": "005294c0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        },
+        {
+          "va": "005295b0",
+          "stack_pop": 0,
+          "callee_saved_preserved": true
+        }
+      ]
+    },
+    {
+      "case": 19,
+      "name": "blocks-empty-range",
+      "phase": "direct-helper",
+      "compared_fields": [
+        "before",
+        "after",
+        "scratch_before",
+        "scratch",
+        "trace",
+        "member_ctor_result",
+        "result"
+      ],
+      "sha256": "27d111e74240d6e17d979ccfb2ed7ff8b5af2bd2abe2e407879e6337d6bde356",
+      "original_abi_checks": [
+        {
+          "va": "00529a40",
+          "stack_pop": 8,
+          "callee_saved_preserved": true
+        }
+      ]
+    }
+  ],
+  "scope": "525ec0 is excluded. The private probe links its partial file only for separate packet evidence. No partial destructor memory, trace, or EAX outcome enters this full proof.",
+  "packet_report": "verification.json"
+}

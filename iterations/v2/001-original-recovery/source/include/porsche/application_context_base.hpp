@@ -24,11 +24,11 @@ void* __fastcall application_context_copy_range_005299d0(
 // Returns the current pointer stored at 005e4fe8, not **005e4fe8.
 void* __cdecl application_context_heap_state_005e4fe8();
 std::uint32_t __cdecl application_context_heap_selector_005e4fec();
-void* __cdecl application_context_new_head_0059eeb0(
+void __cdecl application_context_new_head_0059eeb0(
     std::uint32_t kind, std::uint32_t slot);
 void __fastcall application_context_unlink_005262e0(
     void* root, void* unused_edx, std::uint32_t key);
-void __fastcall application_context_release_node_004e4560(
+void* __fastcall application_context_release_node_004e4560(
     void* member, void* unused_edx, std::uint32_t flags);
 void __cdecl application_context_notify_node_004d7da0(
     void* node, std::uint32_t flags);

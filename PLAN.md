@@ -1,11 +1,11 @@
 # План восстановления Porsche Unleashed
 
-Текущий результат — [Run136](iterations/v2/001-original-recovery/runs/136-formatter-context-integration/README.md): **267 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:120 projects /230 unique TUs;105 comparison/alias targets,4 native OS и3 link fixtures.
-25 свежих original-x86 отчётов /4952 сравнений плюс4 component-proven composed cases; все7 native/link проверок прошли.
-Соединены actual formatter wrapper/parser/cleanup и runtime leaves; приняты audio device и6 full context bodies.
-Run138 добавляет initial-image storage:8 ranges /5057 bytes /10 PE relocations,0 функций.
-Game-link:0 compile errors /259 unresolved symbols /278 references /0 other diagnostics; игрового EXE нет.
+Текущий результат — [Run143](iterations/v2/001-original-recovery/runs/143-runtime-network-integration/README.md): **295 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:128 projects /243 unique TUs;113 comparison/alias targets,4 native OS и3 link fixtures.
+17 свежих original-x86 отчётов /7928 сравнений плюс4 component-proven composed cases; все7 native/link проверок прошли.
+Приняты28 новых функций: context allocator/free, CRT fatal/bootstrap/strings/dialog, audio lifecycle и network reset/lists.
+Connected CRT error path выполняет реальные string/dialog bodies; Win32 imports восстановлены по IAT.
+Game-link:0 compile errors /285 unresolved symbols /314 references /0 other diagnostics; игрового EXE нет.
 Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
 Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, context services и live CRT открыты.
@@ -13,17 +13,19 @@ Game-link:0 compile errors /259 unresolved symbols /278 references /0 other diag
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 
 
+Активно параллельно:150 context services,151 network services,152 CRT lowio. Root: checkpoint143 и приёмка готовых147/148/149.
+
 ## Ближайшая цель: полный игровой EXE из C/C++
 
 Уточнение пользователя2026-10-11: результат этапа — компиляция и полный запуск игры.
-Checkpoint126 запушен482f28d; принят следующий пакет136. Общая библиотека и проверочные программы собираются;
-реальный игровой target ещё не линкуется:259 видимых unresolved symbols /278 references. Это текущая
+Checkpoint136 запушенec8c49a; принят следующий пакет143. Общая библиотека и проверочные программы собираются;
+реальный игровой target ещё не линкуется:285 видимых unresolved symbols /314 references. Это текущая
 граница восстановленного графа, а не число всех оставшихся функций: новые тела могут
 открыть новые зависимости, включая косвенные вызовы и частично восстановленные consumers.
 
-1. После принятой136 интеграции продолжить context allocator/list/range services
-   и полный004d3420; проверить signed mode producer004a6a00 для isolated131.
-   Formatter: fatal005abee8→005a2e22, callback writer005a0f5d и lowio005a953e.
+1. После принятой143 интеграции продолжить context range/services и network graph
+   и полный004d3420; 004a6a00 восстановлен, но virtual mode всё ещё не ограничен:131 остаётся isolated.
+   Formatter fatal/bootstrap и strings приняты143; далее float helpers147 и lowio005a953e.
    Partial00525ec0 требует исходного EAX contract; не подключать guessed return.
 2. По actual game-link report восстанавливать целые связанные блоки startup/application,
    render/driver и resource services. После каждого пакета повторять линковку настоящего

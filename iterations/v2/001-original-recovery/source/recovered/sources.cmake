@@ -107,4 +107,10 @@ list(APPEND PORSCHE_RECOVERED_SOURCES
     "${PORSCHE_SOURCE_ROOT}/platform/formatter_runtime_links.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_runtime_storage.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/application_context_base.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_bootstrap.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/application_services_next.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/application_audio_lifecycle.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/context_effects.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_strings.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_lifecycle.cpp"
 )

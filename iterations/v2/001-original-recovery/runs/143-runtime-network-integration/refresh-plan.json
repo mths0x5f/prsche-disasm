@@ -1,0 +1,85 @@
+{
+  "tasks": [
+    {
+      "script": "scripts/research/verify-v2-disk-open.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-disk-open.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\disk-open",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\disk_open_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\disk-open\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-fe-callbacks.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-fe-callbacks.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\fe-callbacks",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\fe_callbacks_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\fe-callbacks\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-input-buffer.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-input-buffer.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\input-buffer",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\input_buffer_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\input-buffer\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-input-state.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-input-state.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\input-state",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\input_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\input-state\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-render-startup.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-render-startup.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\render-startup",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\render_startup_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\render-startup\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-resource-paths.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-resource-paths.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\resource-paths",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\resource_paths_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\143-runtime-network-integration\\resource-paths\\verification.json"
+    }
+  ],
+  "replacements": {
+    "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/disk-open/verification.json": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/disk-open/verification.json",
+    "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/fe-callbacks/verification.json": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/fe-callbacks/verification.json",
+    "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/input-buffer/verification.json": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-buffer/verification.json",
+    "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/input-state/verification.json": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-state/verification.json",
+    "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/render-startup/verification.json": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/render-startup/verification.json",
+    "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/resource-paths/verification.json": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/resource-paths/verification.json"
+  },
+  "unsupported": []
+}

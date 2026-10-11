@@ -3,33 +3,31 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —136:267 full +6 registered partial;126 запушен482f28d.
-Общая MSVC Win32 сборка:120 projects /230 unique TUs;105 comparison/alias targets,
+Текущий принятый пакет —143:295 full +6 registered partial;136 запушенec8c49a.
+Общая MSVC Win32 сборка:128 projects /243 unique TUs;113 comparison/alias targets,
 4 native OS и3 link fixtures. Все7 native/link checks прошли.
-25 свежих original-x86 reports /4952 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /259 unresolved symbols /278 refs /0 other diagnostics; игрового EXE нет.
-Manual index35 /36622 entries; новые пакеты не добавляют function boundaries.
-136 соединяет108 actual formatter wrapper→124 parser→119 helpers→132 cleanup;
-canonical descriptor32 сохраняет opaque stack tail, wrapper пишет только исходный prefix.
-124 parser:62 cases после lead-byte table/zero hex prefix/wide padding fixes.
-132 cleanup:23 cases с callback flags rereads;134 actual formatter:12 connected cases
-с настоящими137 unsigned divide/remainder.137 runtime:72 cases.
-133 audio device:10 cases после overlapping copy и authoritative pointer-cell fixes.
-135:6 full context base/member bodies приняты по отдельному16-case scoped proof;
-20-case whole packet честно сохраняет partial00525ec0 с различием null-path EAX.
-Partial destructor — отдельный private TU, не зарегистрирован и не связан в production.
-138 accepted initial-image storage:8 ranges /5057 bytes /10 PE relocations,0 функций;
-исходные callback identities не означают выполненный runtime initialization.
-131 audio-init остаётся isolated:8 cases, signed timer half исправлен, но signed mode
-producer/domain не доказан. Original guard отсутствует; не подключать guessed clamp.
-Активных назначений исполнителей нет; дальнейшее восстановление и приёмка — координатор.
-Ближайший шаг: context allocator/list/range services→полный004d3420; audio mode
-producer004a6a00; formatter005abee8→005a2e22, затем005a0f5d/lowio005a953e.
-[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён136:
-полный C++ игровой EXE/запуск, live timer/WM_CLOSE,005e8e50 alias и визуальная приёмка открыты.
-Команды/evidence —runs/136-formatter-context-integration/README.md,acceptance.json,
-compile-link-proof.json. Свежие totals включают135 scoped proof, исключают его partial packet.
-История ниже не является активным назначением. Итерация и игровой запуск не завершены.
+17 свежих original-x86 reports /7928 comparisons плюс4 component-proven composed cases.
+Game-link:0 compile errors /285 unresolved symbols /314 refs /0 other diagnostics; игрового EXE нет.
+Manual index35 /36622 entries;143 не добавляет function boundaries.
+143 принимает139 context effects(7),140 CRT bootstrap(6),141 application services(4),
+142 audio lifecycle(4),144 strings/dialog(4),145 network lifecycle(3).
+139 pooled release сохраняет исходный mode, class index и callback/lock reloads.
+142 использует aliases к существующим frame bytes656868/9, не дублирует storage;
+004a6a00 переносит signed virtual mode без clamp. Это не закрывает domain131.
+CRT error integration:94 cases с реальными144 strings/dialog и137 strlen;
+shutdown/float callbacks и Win32 эффекты остаются явно ограниченными seams.
+135 partial00525ec0 всё ещё отдельный private TU; null-path EAX contract не доказан.
+131 audio-init остаётся isolated; не подключать guessed clamp.
+Активно параллельно:150 context services,151 network services,152 CRT lowio.
+Готовы к следующей приёмке:147 float helpers(9),148 network services(5),149 context ranges(5).
+Root владеет registry/CMake/общими проверками и checkpoint143.
+Следующий шаг: принять143, затем147/148/149 с manual-index дополнением147;
+продолжить полный004d3420 и реальные backend graphs по game-link frontier.
+[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён143:
+полный C++ игровой EXE/запуск, live timer/WM_CLOSE, formatter lowio/float,
+audio init domain, context parser, global owners и visual acceptance остаются открыты.
+Цель пользователя — компиляция и полный запуск игры; архитектурная схема и Rust
+идут после восстановления и проверки. Итерация не завершена.
 
 ## Цель и готовность 001
 

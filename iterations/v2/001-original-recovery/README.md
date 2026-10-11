@@ -1,11 +1,11 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Текущий результат — [Run136](runs/136-formatter-context-integration/README.md): **267 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:120 projects /230 unique TUs;105 comparison/alias targets,4 native OS и3 link fixtures.
-25 свежих original-x86 отчётов /4952 сравнений плюс4 component-proven composed cases; все7 native/link проверок прошли.
-Соединены actual formatter wrapper/parser/cleanup и runtime leaves; приняты audio device и6 full context bodies.
-Run138 добавляет initial-image storage:8 ranges /5057 bytes /10 PE relocations,0 функций.
-Game-link:0 compile errors /259 unresolved symbols /278 references /0 other diagnostics; игрового EXE нет.
+Текущий результат — [Run143](runs/143-runtime-network-integration/README.md): **295 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:128 projects /243 unique TUs;113 comparison/alias targets,4 native OS и3 link fixtures.
+17 свежих original-x86 отчётов /7928 сравнений плюс4 component-proven composed cases; все7 native/link проверок прошли.
+Приняты28 новых функций: context allocator/free, CRT fatal/bootstrap/strings/dialog, audio lifecycle и network reset/lists.
+Connected CRT error path выполняет реальные string/dialog bodies; Win32 imports восстановлены по IAT.
+Game-link:0 compile errors /285 unresolved symbols /314 references /0 other diagnostics; игрового EXE нет.
 Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
 Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, context services и live CRT открыты.
