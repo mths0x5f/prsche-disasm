@@ -15,6 +15,7 @@ NATIVE = (
     ('native_thread_smoke', 'native-thread'),
     ('native_window_smoke', 'native-window'),
     ('native_window_lifecycle', 'native-window-lifecycle'),
+    ('formatter_error_native_probe', 'native-formatter-error'),
 )
 LINK = ('native_window_chain', 'window_links_probe',
         'win32_window_bindings_compile_fixture')

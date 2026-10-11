@@ -1,0 +1,27 @@
+{
+  "schema": 2,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "partial_function_vas": [
+    "00532e10"
+  ],
+  "full_function_vas": [
+    "0056fd00",
+    "0056fd30",
+    "0056fce0"
+  ],
+  "cases": 1026,
+  "native_cpp_equal_original_x86": true,
+  "binary_matched": false,
+  "game_launch_verified": false,
+  "boundary": "DirectInput vtable methods recorded with controlled HRESULT and data; 0x532e10 modes 1/2/8 and negative indexes not accepted",
+  "probe_sha256": "dcb5dfc47cc1a027bd33893f09364b01e76ff644c07fa0eb59d23a4ec605b979",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/CMakeLists.txt": "fff5ceb1c92cadd5d30c2c371d350fb2b0982e06c81d2cc50edafa3054d989ed",
+    "iterations/v2/001-original-recovery/source/include/porsche/input_state.hpp": "6716815012fe2bc907bcb4d568e7d47be22ca5da844c5a256b8736b86e190b68",
+    "iterations/v2/001-original-recovery/source/recovered/input_probe.cpp": "4a34c11263c7b2e462de200609e29d7c77c9cce52c67e6909eb6b9a83c4ac93a",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/input_state.cpp": "c6f2a5b3397bca1c10bc3f4e1da6adef3eb90e642b9d0d3174e8d4aa28b6b471",
+    "iterations/v2/001-original-recovery/source/recovered/sources.cmake": "73a51d54789b7743411436c8e0175cabf35182db092f678c76b2d8795e87611d",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-input-state.py": "4d341ba4a861e790792d83194530715ea1b386334e277c145340e16c89324dad"
+  }
+}

@@ -395,6 +395,12 @@ add_subdirectory(runs/139-context-effects context-effects-139)
 add_subdirectory(runs/144-crt-strings crt-strings-144)
 add_subdirectory(runs/145-network-lifecycle network-lifecycle-145)
 add_subdirectory(runs/143-runtime-network-integration runtime-network-integration-143)
+add_subdirectory(runs/147-float-helpers float-helpers-147)
+add_subdirectory(runs/148-network-services network-services-148)
+add_subdirectory(runs/149-context-ranges context-ranges-149)
+add_subdirectory(runs/150-context-services context-services-150)
+add_subdirectory(runs/151-network-cleanup network-cleanup-151)
+add_subdirectory(runs/153-services-integration services-integration-153)
 
 # The native platform target is defined by Run055's add_subdirectory above.
 if(TARGET porsche_platform_win32)
@@ -412,6 +418,6 @@ foreach(probe engine_service_427a60_probe frame_services_probe resource_predicat
     set_target_properties(${probe} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 endforeach()
 
-foreach(probe formatter_parser_probe formatter_cleanup_probe application_audio_device_probe formatter_integration_probe formatter_runtime_probe application_context_base_probe formatter_runtime_storage_probe formatter_bootstrap_probe application_services_next_probe application_audio_lifecycle_probe context_effects_probe formatter_strings_probe formatter_strings_production_probe network_lifecycle_probe)
+foreach(probe formatter_parser_probe formatter_cleanup_probe application_audio_device_probe formatter_integration_probe formatter_runtime_probe application_context_base_probe formatter_runtime_storage_probe formatter_bootstrap_probe application_services_next_probe application_audio_lifecycle_probe context_effects_probe formatter_strings_probe formatter_strings_production_probe network_lifecycle_probe formatter_float_helpers_probe network_services_probe context_ranges_probe context_range_wrapper_probe context_services_probe network_cleanup_probe)
     set_target_properties(${probe} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 endforeach()

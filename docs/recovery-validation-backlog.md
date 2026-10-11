@@ -7,7 +7,7 @@
 и визуальное соответствие — отдельные результаты.
 
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
-  Блокер: Run143 game-link имеет285 unresolved symbols /314 references;
+  Блокер: Run153 game-link имеет282 unresolved symbols /313 references;
   compiler errors и other linker errors —0. Возврат: после устранения
   зависимостей; сначала запуск/выход, затем кадр, ввод, меню и режимы игры.
 - [ ] Проверить закрытие через WM_CLOSE→GetMessage=0→исходный timer callback,
@@ -101,3 +101,16 @@ lazy user32 resolution без terminal fatal до полноценного game 
 extent и canonical owner не доказаны; source таблица остаётся unresolved.
 Готовые147/148/149 требуют общей приёмки; x87 Unicorn flags не считать аппаратной
 истиной:147 содержит отдельный actual-original hardware oracle, принятие впереди.
+
+Checkpoint153:35 новых full bodies приняты147..151.18 fresh original-x86 reports/
+5816 comparisons (включая256 actual-original CPU x87 cases),4 composed cases и
+8 native/link checks прошли. Native CRT error bindings проверены real OS fixture:
+module path/truncation, stdhandles, WriteFile roundtrip/invalid handle и user32
+symbol lookup. Live MessageBox, terminal fatal и полный CRT startup остаются открыты.
+147 сохраняет128 Unicorn flag discrepancies; аппаратные FPU flags сверены с
+реальными исходными24 байтами (единственный zero operand relocation проверен).
+149 native walker read trace проверен private PAGE_GUARD/VEH observer; production
+body без инструментации.150 context copy ещё использует typed005a1a40 boundary.
+151 original vtable identities005b4968/70 ещё требуют canonical native relocation
+и consumers; raw literal identity в oracle не доказывает native virtual dispatch.
+152 lowio,154 context move,155 network sessions находятся в параллельной работе.

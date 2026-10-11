@@ -3,29 +3,32 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —143:295 full +6 registered partial;136 запушенec8c49a.
-Общая MSVC Win32 сборка:128 projects /243 unique TUs;113 comparison/alias targets,
-4 native OS и3 link fixtures. Все7 native/link checks прошли.
-17 свежих original-x86 reports /7928 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /285 unresolved symbols /314 refs /0 other diagnostics; игрового EXE нет.
-Manual index35 /36622 entries;143 не добавляет function boundaries.
-143 принимает139 context effects(7),140 CRT bootstrap(6),141 application services(4),
-142 audio lifecycle(4),144 strings/dialog(4),145 network lifecycle(3).
-139 pooled release сохраняет исходный mode, class index и callback/lock reloads.
-142 использует aliases к существующим frame bytes656868/9, не дублирует storage;
-004a6a00 переносит signed virtual mode без clamp. Это не закрывает domain131.
-CRT error integration:94 cases с реальными144 strings/dialog и137 strlen;
-shutdown/float callbacks и Win32 эффекты остаются явно ограниченными seams.
-135 partial00525ec0 всё ещё отдельный private TU; null-path EAX contract не доказан.
-131 audio-init остаётся isolated; не подключать guessed clamp.
-Активно параллельно:150 context services,151 network services,152 CRT lowio.
-Готовы к следующей приёмке:147 float helpers(9),148 network services(5),149 context ranges(5).
-Root владеет registry/CMake/общими проверками и checkpoint143.
-Следующий шаг: принять143, затем147/148/149 с manual-index дополнением147;
-продолжить полный004d3420 и реальные backend graphs по game-link frontier.
-[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён143:
-полный C++ игровой EXE/запуск, live timer/WM_CLOSE, formatter lowio/float,
-audio init domain, context parser, global owners и visual acceptance остаются открыты.
+Текущий принятый пакет —153:330 full +6 registered partial;143 запушен7a49898.
+Общая MSVC Win32 сборка:135 projects /254 unique TUs;119 comparison/alias targets,
+5 native OS и3 link fixtures. Все8 native/link checks прошли.
+18 свежих original-x86 reports /5816 comparisons плюс4 component-proven composed cases.
+Game-link:0 compile errors /282 unresolved symbols /313 refs /0 other diagnostics; игрового EXE нет.
+Manual index37 /36624 entries:147 дополняет3e8d/3edb по callback writer005a0f5d,
+полным RET, byte SHA и internal control flow; это не новый полный анализ корпуса.
+153 принимает147 float helpers(9),148 network services(5),149 context ranges(5),
+150 string/vector utilities(11),151 network cleanup(5).1533 новых packet cases прошли.
+147 sign:256 actual-original CPU comparisons сохраняют CW/SW/tag/TOP и80-bit stack;
+128 Unicorn flag disagreements не маскируются. Decimal parsing/packing cores unresolved.
+149 wrapper forwarding проверен отдельным private seam; actual walker reads проверены
+PAGE_GUARD/VEH native observer против original read trace, без observer в production.
+151 canonical BSS00628c60/64 подтверждены refs/writers; original vtable literals
+005b4968/70 сохраняют identity, native relocation/consumers ещё не восстановлены.
+Win32 CRT error fixture проходит real module path/truncation/stdhandles/WriteFile и
+lazy user32 symbol resolution; MessageBox и terminal fatal не вызываются.
+135 partial00525ec0 и131 audio-init остаются isolated/unregistered; не угадывать
+null-path EAX или signed audio mode clamp.Полный startup context004d3420 открыт.
+Активно параллельно:152 CRT lowio,154 context move005a1a40,155 network sessions.
+Root: checkpoint153 и последующая интеграция готовых152/154/155.
+Ближайший шаг: закрыть context_move и handle initialization, session lifecycle;
+повторять actual game-link по полному recovered graph, без fake production effects.
+[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён153.
+Полный EXE/запуск, live timer/WM_CLOSE, formatter engines, audio mode domain,
+canonical owners/vtables и visual acceptance остаются открытыми.
 Цель пользователя — компиляция и полный запуск игры; архитектурная схема и Rust
 идут после восстановления и проверки. Итерация не завершена.
 

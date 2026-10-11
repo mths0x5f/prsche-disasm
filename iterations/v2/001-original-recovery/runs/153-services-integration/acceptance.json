@@ -1,0 +1,116 @@
+{
+  "full_functions": 330,
+  "partial_functions": 6,
+  "fresh_original_reports": 18,
+  "fresh_original_comparisons": 5816,
+  "actual_hardware_original_x87_cases": 256,
+  "composed_integration_cases": 4,
+  "comparison_and_alias_targets": 119,
+  "native_os_targets": 5,
+  "non_gui_link_targets": 3,
+  "native_game_launch": false,
+  "unresolved_game_symbols": 282,
+  "unresolved_game_references": 313,
+  "compile_errors": 0,
+  "isolated_partial_functions": [
+    "00525ec0",
+    "004a66b0"
+  ],
+  "reports": [
+    {
+      "report": "clock-worker/verification.json",
+      "cases": 6,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "context-ranges/verification.json",
+      "cases": 38,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "context-services/verification.json",
+      "cases": 64,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "disk-open/verification.json",
+      "cases": 1672,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "event-lifecycle/verification.json",
+      "cases": 21,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "fe-callbacks/verification.json",
+      "cases": 1320,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "formatter-error-integration/verification.json",
+      "cases": 94,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "formatter-float-helpers/verification.json",
+      "cases": 1196,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "input-buffer/verification.json",
+      "cases": 37,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "input-state/verification.json",
+      "cases": 1026,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "mouse-input/verification.json",
+      "cases": 10,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "network-cleanup/verification.json",
+      "cases": 97,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "network-services/verification.json",
+      "cases": 138,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "render-startup/verification.json",
+      "cases": 26,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "resource-paths/verification.json",
+      "cases": 48,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "timer-formatter/auxiliary-wait/verification.json",
+      "cases": 3,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "timer-formatter/formatter-original/verification.json",
+      "cases": 11,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "timer-formatter/timer-setup/verification.json",
+      "cases": 9,
+      "kind": "original-x86 differential"
+    },
+    {
+      "report": "timer-formatter/verification.json",
+      "cases": 4,
+      "kind": "component-proven composed"
+    }
+  ]
+}

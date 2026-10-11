@@ -137,3 +137,5 @@ Run126: отдельно индексированы callback entries0053c0f0 (12
 35 supplementary entries /36622 catalog entries.0053c170 — shared tail автоматической
 0053c1d0: это новая точка входа, не новое покрытие инструкций. SHA/ASM/literal callers/RET —
 [Run126 event-index](../../iterations/v2/001-original-recovery/runs/126-event-integration/event-index.json).
+
+Run147: callback entries005a3e8d(78B) и005a3edb(24B) дополнены по literal writer005a0f5d, SHA, полным RET и internal control flow.37 supplementary entries /36624 catalog entries; свидетельства — iterations/v2/001-original-recovery/runs/147-float-helpers/manual-entry-evidence.json.

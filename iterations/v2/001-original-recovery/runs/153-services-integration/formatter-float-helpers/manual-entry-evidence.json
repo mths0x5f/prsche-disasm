@@ -1,0 +1,103 @@
+[
+  {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "entry_va": "005a3e8d",
+    "ranges": [
+      [
+        "005a3e8d",
+        "005a3eda"
+      ]
+    ],
+    "body_bytes": 78,
+    "body_sha256": "ed1dde4ffdcb55e59e09a639bf532881b5a1bf4d92acf72bfc1cc239a06c4094",
+    "file_offset": 1719949,
+    "terminal_ret_vas": [
+      "005a3eda"
+    ],
+    "control_flow_edges": [
+      {
+        "from_va": "005a3e9b",
+        "to_va": "005a3ea9",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3e9f",
+        "to_va": "005a3ea9",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3ea7",
+        "to_va": "005a3e9d",
+        "mnemonic": "jne"
+      },
+      {
+        "from_va": "005a3eae",
+        "to_va": "005a3eda",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3eb4",
+        "to_va": "005a3ec3",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3eb9",
+        "to_va": "005a3ec3",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3ebe",
+        "to_va": "005a3ec3",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3ec1",
+        "to_va": "005a3eb0",
+        "mnemonic": "jmp"
+      },
+      {
+        "from_va": "005a3ec9",
+        "to_va": "005a3ec5",
+        "mnemonic": "je"
+      },
+      {
+        "from_va": "005a3ecd",
+        "to_va": "005a3ed0",
+        "mnemonic": "jne"
+      },
+      {
+        "from_va": "005a3ed8",
+        "to_va": "005a3ed0",
+        "mnemonic": "jne"
+      }
+    ],
+    "control_flow": "contiguous; all branches internal; no calls; literal callback writer005a0f5d"
+  },
+  {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "entry_va": "005a3edb",
+    "ranges": [
+      [
+        "005a3edb",
+        "005a3ef2"
+      ]
+    ],
+    "body_bytes": 24,
+    "body_sha256": "1a2009ab9c19b46f571fbc2149ff42fd7b018b05d1a4b9923230499935bf204d",
+    "file_offset": 1720027,
+    "terminal_ret_vas": [
+      "005a3eef",
+      "005a3ef2"
+    ],
+    "control_flow_edges": [
+      {
+        "from_va": "005a3eea",
+        "to_va": "005a3ef0",
+        "mnemonic": "jb"
+      }
+    ],
+    "control_flow": "contiguous; all branches internal; no calls; literal callback writer005a0f5d"
+  }
+]

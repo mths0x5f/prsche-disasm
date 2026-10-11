@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "0053bfe0",
+    "0053c060",
+    "0053c0f0",
+    "0053c170",
+    "0053c1d0"
+  ],
+  "full_function_vas": [
+    "0053bfe0",
+    "0053c060",
+    "0053c0f0",
+    "0053c170",
+    "0053c1d0"
+  ],
+  "partial_function_vas": [],
+  "anonymous_entry_evidence": [
+    {
+      "va": "0053c0f0",
+      "bytes": 120,
+      "body_sha256": "45d5eaf0ec3ec1e8ca0cb57661cb345802247a8fb6dd72e2d7044f5263f739ec",
+      "role": "worker callback literal passed by 0053c060; supplementary indexed entry"
+    },
+    {
+      "va": "0053c170",
+      "bytes": 87,
+      "body_sha256": "751bccade15fb553706212dbc010791c9fa12e5be925f06523b41108ab4f49e3",
+      "role": "registered shutdown callback; supplementary entry shares automatic0053c1d0 tail"
+    }
+  ],
+  "original_functions": [
+    {
+      "name": "0053bfe0",
+      "va": "0053bfe0",
+      "body_bytes": 121,
+      "body_sha256": "6fe2973230c8f86660b2ae26cafaec53cc4450ea17d34d527382fb7c0e034f09"
+    },
+    {
+      "name": "0053c060",
+      "va": "0053c060",
+      "body_bytes": 134,
+      "body_sha256": "0ca73b0da7bdfda562c2f0811029793db3dcacebb2272a26412fe6b4e02cb30b"
+    },
+    {
+      "name": "anonymous_0053c0f0",
+      "va": "0053c0f0",
+      "body_bytes": 120,
+      "body_sha256": "45d5eaf0ec3ec1e8ca0cb57661cb345802247a8fb6dd72e2d7044f5263f739ec"
+    },
+    {
+      "name": "anonymous_0053c170",
+      "va": "0053c170",
+      "body_bytes": 87,
+      "body_sha256": "751bccade15fb553706212dbc010791c9fa12e5be925f06523b41108ab4f49e3"
+    },
+    {
+      "name": "0053c1d0",
+      "va": "0053c1d0",
+      "body_bytes": 146,
+      "body_sha256": "d58ea9bed659f53c402ade7c0d381c1d2261657682b79ed111cabe0fcb698402"
+    }
+  ],
+  "indexed_function_rows": [
+    {
+      "va": "0053bfe0",
+      "ranges": [
+        [
+          "0053bfe0",
+          "0053c058"
+        ]
+      ],
+      "body_bytes": 121,
+      "body_sha256": "6fe2973230c8f86660b2ae26cafaec53cc4450ea17d34d527382fb7c0e034f09"
+    },
+    {
+      "va": "0053c060",
+      "ranges": [
+        [
+          "0053c060",
+          "0053c0e5"
+        ]
+      ],
+      "body_bytes": 134,
+      "body_sha256": "0ca73b0da7bdfda562c2f0811029793db3dcacebb2272a26412fe6b4e02cb30b"
+    },
+    {
+      "va": "0053c1d0",
+      "ranges": [
+        [
+          "0053c170",
+          "0053c1c6"
+        ],
+        [
+          "0053c1d0",
+          "0053c261"
+        ]
+      ],
+      "body_bytes": 233,
+      "body_sha256": "cb384eb9fc921162674cfd4fb7fba06caf54d68c0a126aa7c1d8a4fbb26c3f91"
+    }
+  ],
+  "cases": 21,
+  "native_cpp_equal_original_x86": true,
+  "state_vas": [
+    "0069e5b4",
+    "0069e5d4",
+    "0069e5d8",
+    "0069e5dc",
+    "006bd9c0"
+  ],
+  "boundaries": [
+    "0055fa10 uses canonical Run127 declaration; this component probe controls its result; connected execution is verified separately",
+    "0055f420 canonical recovered thread start; fixture controls output record and success result",
+    "0055fb20/0055fb90/0055fb30/0055fc10/0055f780 event and thread APIs are controlled fixture boundaries",
+    "005322b0/005322c0/005321f0/005322d0 heap-lock APIs are recorded boundaries",
+    "00557380 CRT exit registration and 005debf0 diagnostic callback are recorded boundaries",
+    "0069e5dc event HANDLE owner is reused from Run122; no duplicate definition"
+  ],
+  "cases_detail": [
+    {
+      "case": 0,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 1,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 2,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 3,
+      "trace_events": 7,
+      "equal": true
+    },
+    {
+      "case": 4,
+      "trace_events": 8,
+      "equal": true
+    },
+    {
+      "case": 5,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 6,
+      "trace_events": 7,
+      "equal": true
+    },
+    {
+      "case": 7,
+      "trace_events": 5,
+      "equal": true
+    },
+    {
+      "case": 8,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 9,
+      "trace_events": 6,
+      "equal": true
+    },
+    {
+      "case": 10,
+      "trace_events": 3,
+      "equal": true
+    },
+    {
+      "case": 11,
+      "trace_events": 0,
+      "equal": true
+    },
+    {
+      "case": 12,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 13,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 14,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 15,
+      "trace_events": 2,
+      "equal": true
+    },
+    {
+      "case": 16,
+      "trace_events": 12,
+      "equal": true
+    },
+    {
+      "case": 17,
+      "trace_events": 5,
+      "equal": true
+    },
+    {
+      "case": 18,
+      "trace_events": 6,
+      "equal": true
+    },
+    {
+      "case": 19,
+      "trace_events": 5,
+      "equal": true
+    },
+    {
+      "case": 20,
+      "trace_events": 13,
+      "equal": true
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/123-event-lifecycle/CMakeLists.txt": "d31fb90462cc19825f09866eb504eeb8f83b351c1ae3cebfbcfbb550887326b6",
+    "iterations/v2/001-original-recovery/runs/123-event-lifecycle/README.md": "d02329dfcb5cf9aed96475949196077c63caeb3eb1d1fd7aa9792e0bef316b67",
+    "iterations/v2/001-original-recovery/source/include/porsche/auxiliary_wait.hpp": "e36669595dee32006426c0d468224603de0afbf010513eba7ca16179733bdaa0",
+    "iterations/v2/001-original-recovery/source/include/porsche/event_lifecycle.hpp": "f767b99c65dce0a9494458e31d1fbd07acaa0d5bbca20fc2fa7c6b37f467eee1",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp": "e3535f0fdf85141719d4741e60a900d6c454b9e6140fc7ec283fa5f18a33ef76",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap_locks.hpp": "2aadb26f89cdf7ee84259187e6087d33beb3e9b969ac9a9885919429f4d6b92e",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/thread_wait.hpp": "40f1de3967d18e73a227d8a36cac4951ed970a868275e3e1d8a04d89512f77dc",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_create.hpp": "227f5127eca5c565bc7980c3c9a9a41bc0e87976e3791334c0d53c7927c5d902",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_runtime.hpp": "251834cade05b25efb0ff60fee9035da800d5d051f476fffac7a7698c6fec3b9",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_state.hpp": "77f52e368e15cf55e8aa80946bb4c37fea999a3caa172011c2cd8aa0ee9de01f",
+    "iterations/v2/001-original-recovery/source/recovered/event_lifecycle_probe.cpp": "5d5121742edc4a8267437529f5d2fa73a8cff50959016db71616d9b25c968eb1",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp": "b10aaffe1bf9cdeac940bf3ec940f5eb74d40ad07df194368cd90745f96fa621",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/event_lifecycle.cpp": "72afc430282e716fb53dd1229a42c1850aa8e1113db6b7bbd2cf948807c575b0",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/shared_runtime_globals.cpp": "fa56877fdc040c687823d4e67eb25fc3d8a3738205bdf20c41492135f7086314",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/manual-functions.jsonl": "66fb89260d95e9ce960436f44e8337b3f34d9c1efc65e650ba93620d70a9bfbf",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts/research/index-v2-event-lifecycle.py": "b00ff3b143d675cced02a8e78956817cc4276767d3f5b24011309410cbc2f1d1",
+    "scripts/research/v2_manual_index.py": "69978db446a31f10335b5dfcfdcef95a3d0a00422be7e1aae43053cb91759904",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-event-lifecycle.py": "6d913610a535bc1e7d198a04f4fa1371024fe1d47279bdd9b2a1000bc7a336c8"
+  },
+  "compiled_translation_units": [
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\event_lifecycle_probe.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\auxiliary_wait.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\event_lifecycle.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\shared_runtime_globals.cpp"
+  ]
+}

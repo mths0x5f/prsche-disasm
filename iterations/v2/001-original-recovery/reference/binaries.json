@@ -14,11 +14,11 @@
     "analyzed_functions": 36587,
     "unclassified_executable_bytes": 3199385,
     "automatic_pseudo_c_functions": 36583,
-    "supplementary_manual_functions": 35,
-    "indexed_functions": 36622,
+    "supplementary_manual_functions": 37,
+    "indexed_functions": 36624,
     "decompile_failures": 4,
     "pseudo_c_warning_functions": 5639,
-    "recovered_functions": 295,
+    "recovered_functions": 330,
     "partially_verified_functions": 6,
     "matched_functions": 0,
     "matched_modules": 0
@@ -2932,7 +2932,7 @@
       "bytes": 2129965,
       "format": "PE",
       "role": "unclassified",
-      "recovered_functions": 295,
+      "recovered_functions": 330,
       "matched_functions": 0,
       "matched_binary": false,
       "machine": "0x14c",
@@ -3518,9 +3518,35 @@
               "0053c1c6"
             ]
           ]
+        },
+        {
+          "entry_va": "005a3e8d",
+          "name": "recovered_005a3e8d",
+          "status": "manual-disassembly-index",
+          "reason": "Literal callback stored by005a0f5d; contiguous disassembly with internal control flow and complete RET; Run147 manual-entry-evidence.json.",
+          "body_bytes": 78,
+          "ranges": [
+            [
+              "005a3e8d",
+              "005a3eda"
+            ]
+          ]
+        },
+        {
+          "entry_va": "005a3edb",
+          "name": "recovered_005a3edb",
+          "status": "manual-disassembly-index",
+          "reason": "Literal callback stored by005a0f5d; contiguous disassembly with internal control flow and complete RET; Run147 manual-entry-evidence.json.",
+          "body_bytes": 24,
+          "ranges": [
+            [
+              "005a3edb",
+              "005a3ef2"
+            ]
+          ]
         }
       ],
-      "supplementary_function_count": 35
+      "supplementary_function_count": 37
     },
     {
       "sha256": "4c01963618be1e78375f16d8f71aebd90438b49921c97c938edef364534566cb",

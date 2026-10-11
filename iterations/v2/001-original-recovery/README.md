@@ -1,14 +1,14 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Текущий результат — [Run143](runs/143-runtime-network-integration/README.md): **295 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:128 projects /243 unique TUs;113 comparison/alias targets,4 native OS и3 link fixtures.
-17 свежих original-x86 отчётов /7928 сравнений плюс4 component-proven composed cases; все7 native/link проверок прошли.
-Приняты28 новых функций: context allocator/free, CRT fatal/bootstrap/strings/dialog, audio lifecycle и network reset/lists.
-Connected CRT error path выполняет реальные string/dialog bodies; Win32 imports восстановлены по IAT.
-Game-link:0 compile errors /285 unresolved symbols /314 references /0 other diagnostics; игрового EXE нет.
+Текущий результат — [Run153](runs/153-services-integration/README.md): **330 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:135 projects /254 unique TUs;119 comparison/alias targets,5 native OS и3 link fixtures.
+18 свежих original-x86 отчётов /5816 сравнений плюс4 component-proven composed cases; все8 native/link проверок прошли.
+Приняты35 новых функций: float helpers, context ranges/string/vector, network serialization/lists/cleanup.
+256 x87 случаев сверены с исходными машинными байтами на CPU;128 расхождений Unicorn сохранены явно.
+Game-link:0 compile errors /282 unresolved symbols /313 references /0 other diagnostics; игрового EXE нет.
 Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
-Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, context services и live CRT открыты.
+Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, context move, lowio и live CRT открыты.
 Маршрут: проверенный полный C/C++ baseline → схема устройства игры → Rust native/web.
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 

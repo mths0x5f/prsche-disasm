@@ -1622,7 +1622,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1639,7 +1639,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1656,7 +1656,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1758,7 +1758,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1772,7 +1772,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1786,7 +1786,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1806,7 +1806,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
       "verification_boundary": "Only mode6 and valid exits accepted; unknown modes and negative/unmapped index boundaries are explicit.",
       "unrecovered_branches": [
         "mode1",
@@ -1927,7 +1927,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1947,7 +1947,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1961,7 +1961,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-buffer/verification.json",
       "verification_boundary": "37 original x86 cases with typed COM property/capabilities endpoints."
     },
     {
@@ -1979,7 +1979,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-buffer/verification.json",
       "verification_boundary": "Capabilities-failure exit only; original success branch unrecovered.",
       "unrecovered_branches": [
         "capabilities_success_0056fdf9..0056ff7e"
@@ -2055,7 +2055,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-resource-paths.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/resource-paths/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/resource-paths/verification.json",
       "verification_boundary": "023-resource-paths: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -2084,7 +2084,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-render-startup.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/render-startup/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/render-startup/verification.json",
       "verification_boundary": "024-render-startup: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -3564,7 +3564,7 @@
       "unrecovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-mouse-input.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/mouse-input/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/mouse-input/verification.json",
       "verification_boundary": "Bounded original-x86 comparison of state, return values and ordered boundary calls. Unknown callees remain explicit typed boundaries; game launch is not claimed.",
       "dependency_scope": "Direct targets classified from original call index; indirect and manually omitted call edges remain documented in package reports.",
       "integration_verification_report": "iterations/v2/001-original-recovery/runs/117-install-integration/render-event-route/verification.json"
@@ -3663,6 +3663,7 @@
       "recovered_dependencies": [
         "00467470",
         "00467fc0",
+        "0048da60",
         "0048dad0",
         "0048e6f0",
         "004a4a70",
@@ -3694,7 +3695,6 @@
         "00467740",
         "00471b60",
         "0048cdf0",
-        "0048da60",
         "0048dcb0",
         "0048e1a0",
         "004a54b0",
@@ -4564,7 +4564,7 @@
         "thread bootstrap 0055f420"
       ],
       "verification": "scripts/research/verify-v2-clock-worker.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/clock-worker/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/clock-worker/verification.json",
       "verification_boundary": "Worker state and event/callback order differential against original x86; thread producer/bootstrap is not wired.",
       "status": "native-differential-verified",
       "binary_matched": false,
@@ -4690,7 +4690,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564eb0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4708,7 +4708,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564fa0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4726,7 +4726,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00565030",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4749,7 +4749,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ab2",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4767,7 +4767,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ae7",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4785,7 +4785,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b18",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4803,7 +4803,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b50",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4819,7 +4819,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b5d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4835,7 +4835,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b6d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4850,7 +4850,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "0053c270",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp",
@@ -4870,7 +4870,7 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/event_lifecycle.cpp",
       "calling_convention": "cdecl; exact x86 ABI documented in packet",
       "verification": "scripts/research/verify-v2-event-lifecycle.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/event-lifecycle/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/event-lifecycle/verification.json",
       "recovered_dependencies": [
         "005322b0",
         "005322c0",
@@ -4888,7 +4888,7 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/event_lifecycle.cpp",
       "calling_convention": "cdecl; exact x86 ABI documented in packet",
       "verification": "scripts/research/verify-v2-event-lifecycle.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/event-lifecycle/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/event-lifecycle/verification.json",
       "recovered_dependencies": [
         "005321f0",
         "005322b0",
@@ -4911,7 +4911,7 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/event_lifecycle.cpp",
       "calling_convention": "cdecl; exact x86 ABI documented in packet",
       "verification": "scripts/research/verify-v2-event-lifecycle.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/event-lifecycle/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/event-lifecycle/verification.json",
       "recovered_dependencies": [],
       "unrecovered_dependencies": [],
       "verification_boundary": "Original body/controlled boundaries; see runs/123-event-lifecycle/README.md. Not complete game or live-scheduler acceptance."
@@ -4925,7 +4925,7 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/event_lifecycle.cpp",
       "calling_convention": "cdecl; exact x86 ABI documented in packet",
       "verification": "scripts/research/verify-v2-event-lifecycle.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/event-lifecycle/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/event-lifecycle/verification.json",
       "recovered_dependencies": [],
       "unrecovered_dependencies": [],
       "verification_boundary": "Original body/controlled boundaries; see runs/123-event-lifecycle/README.md. Not complete game or live-scheduler acceptance.",
@@ -4940,7 +4940,7 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/event_lifecycle.cpp",
       "calling_convention": "cdecl; exact x86 ABI documented in packet",
       "verification": "scripts/research/verify-v2-event-lifecycle.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/126-event-integration/event-lifecycle/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/event-lifecycle/verification.json",
       "recovered_dependencies": [
         "005322b0",
         "005322c0",
@@ -5173,7 +5173,7 @@
       "recovered_dependencies": [],
       "unrecovered_dependencies": [],
       "verification_boundary": "Recovered full body relative to controlled external effects, with pinned original-x86 comparisons. No complete CRT/backend, game-launch or visual acceptance claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5216,12 +5216,12 @@
       "verification": "scripts/research/verify-v2-application-context-base.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/application-context-base/full-verification.json",
       "recovered_dependencies": [
-        "0059ef90",
         "005322b0",
-        "005322c0"
+        "005322c0",
+        "0059eeb0",
+        "0059ef90"
       ],
       "unrecovered_dependencies": [
-        "0059eeb0",
         "005e4fe8"
       ],
       "verification_boundary": "Six full bodies compared by16 scoped original-x86 cases. Partial00525ec0 is excluded and remains unresolved in the production library; no live context/startup or unknown-callee parity claim."
@@ -5259,11 +5259,10 @@
         "004237d0",
         "00441200",
         "005299d0",
+        "00529c20",
         "0059f050"
       ],
-      "unrecovered_dependencies": [
-        "00529c20"
-      ],
+      "unrecovered_dependencies": [],
       "verification_boundary": "Six full bodies compared by16 scoped original-x86 cases. Partial00525ec0 is excluded and remains unresolved in the production library; no live context/startup or unknown-callee parity claim."
     },
     {
@@ -5325,11 +5324,10 @@
       "recovered_dependencies": [
         "005322b0",
         "005322c0",
-        "0059ecb0"
-      ],
-      "unrecovered_dependencies": [
+        "0059ecb0",
         "0059eeb0"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim."
     },
@@ -5460,7 +5458,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5480,7 +5478,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5498,7 +5496,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5524,7 +5522,7 @@
       ],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5540,7 +5538,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5558,7 +5556,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5609,12 +5607,11 @@
       "verification": "scripts/research/verify-v2-application-services-next.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/application-services-next/verification.json",
       "recovered_dependencies": [
+        "0048c870",
         "005322b0",
         "005322c0"
       ],
-      "unrecovered_dependencies": [
-        "0048c870"
-      ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim."
     },
@@ -5629,12 +5626,12 @@
       "verification": "scripts/research/verify-v2-application-services-next.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/application-services-next/verification.json",
       "recovered_dependencies": [
+        "0048c870",
         "0048e9c0",
         "004935c0",
         "0059f050"
       ],
       "unrecovered_dependencies": [
-        "0048c870",
         "0048e1a0"
       ],
       "unrecovered_indirect_dependencies": [],
@@ -5739,7 +5736,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5755,7 +5752,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5771,7 +5768,7 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5790,7 +5787,7 @@
       ],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim.",
-      "integration_verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/formatter-error-integration/verification.json"
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-error-integration/verification.json"
     },
     {
       "module": "Porsche.exe",
@@ -5803,6 +5800,10 @@
       "verification": "scripts/research/verify-v2-network-lifecycle.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/network-lifecycle/verification.json",
       "recovered_dependencies": [
+        "0048aed0",
+        "0048c580",
+        "0048c870",
+        "0048e790",
         "004935c0",
         "005322b0",
         "005322c0",
@@ -5811,10 +5812,6 @@
       ],
       "unrecovered_dependencies": [
         "0048a9a0",
-        "0048aed0",
-        "0048c580",
-        "0048c870",
-        "0048e790",
         "00491fc0",
         "00492260",
         "0053c380"
@@ -5861,6 +5858,625 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed body compared against original x86; remaining callees are recording seams. Report pins ABI, state/effect comparisons and exclusions. No live game or unknown-callee parity claim."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3e33",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a2248",
+        "005a2eae"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3e8d",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3edb",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3ef3",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [
+        "005abc9f",
+        "005abccc"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a41e3",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a3f31",
+        "005a4054",
+        "005a4150"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abc9f",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [
+        "005abc73"
+      ],
+      "unrecovered_dependencies": [
+        "005ac716"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abccc",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [
+        "005abc89"
+      ],
+      "unrecovered_dependencies": [
+        "005ac716"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abc73",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005abb07"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abc89",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; sign preserves x87 state via exact FLD/FCOMP sequence",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005abb07"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048c870",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall facade; action cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048da60",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall facade; action cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-services/verification.json",
+      "recovered_dependencies": [
+        "0048c870",
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048b660",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall facade; action cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-services/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00493180",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall facade; action cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-services/verification.json",
+      "recovered_dependencies": [
+        "0048b660"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048e790",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall facade; action cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-services/verification.json",
+      "recovered_dependencies": [
+        "0048b660",
+        "0048c430",
+        "004904d0",
+        "00493180",
+        "004c3150",
+        "00531f90",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00529c20",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_ranges.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; range wrapper nine DWORD by-value layout; node destructor ECX/RET4 via fastcall",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-ranges.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-ranges/verification.json",
+      "recovered_dependencies": [
+        "005299d0",
+        "00529c50"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00529c50",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_ranges.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; range wrapper nine DWORD by-value layout; node destructor ECX/RET4 via fastcall",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-ranges.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-ranges/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004e4560",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_ranges.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; range wrapper nine DWORD by-value layout; node destructor ECX/RET4 via fastcall",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-ranges.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-ranges/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "0059ecd0",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d7da0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_ranges.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; range wrapper nine DWORD by-value layout; node destructor ECX/RET4 via fastcall",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-ranges.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-ranges/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "0059ecd0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0059eeb0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_ranges.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; range wrapper nine DWORD by-value layout; node destructor ECX/RET4 via fastcall",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-ranges.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-ranges/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [
+        "0059e9c0"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00423610",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00505810",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d55c0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d64a0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [
+        "004211d0"
+      ],
+      "unrecovered_dependencies": [
+        "005a1a40"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004298a0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [
+        "004211d0"
+      ],
+      "unrecovered_dependencies": [
+        "005a1a40"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00429bf0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [
+        "004211d0"
+      ],
+      "unrecovered_dependencies": [
+        "005a1a40"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00429840",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "0059ecd0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d6510",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d6520",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d6530",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004d67b0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_services.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl leaves and ECX members via fastcall; original RET4/RET8 contracts",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-services.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048c430",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_cleanup.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; close transport cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-cleanup.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-cleanup/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004904d0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_cleanup.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; close transport cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-cleanup.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-cleanup/verification.json",
+      "recovered_dependencies": [
+        "0048b660",
+        "00531f90",
+        "005322b0",
+        "005322c0",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004c3150",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_cleanup.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; close transport cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-cleanup.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-cleanup/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048c580",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_cleanup.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; close transport cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-cleanup.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-cleanup/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "005322d0",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [
+        "0055d9b0"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048aed0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_cleanup.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; close transport cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-cleanup.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/network-cleanup/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "005322d0"
+      ],
+      "unrecovered_dependencies": [
+        "0055d1b0"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     }
   ]
 }

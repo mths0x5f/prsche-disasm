@@ -114,3 +114,12 @@ list(APPEND PORSCHE_RECOVERED_SOURCES
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_strings.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_lifecycle.cpp"
 )
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_float_helpers.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_services.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/context_ranges.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/context_services.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_cleanup.cpp")
