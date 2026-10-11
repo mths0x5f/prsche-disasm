@@ -409,6 +409,10 @@ add_subdirectory(runs/157-crt-runtime crt-runtime-157)
 add_subdirectory(runs/158-formatter-text formatter-text-158)
 add_subdirectory(runs/159-network-workers-members network-workers-members-159)
 add_subdirectory(runs/160-crt-text-workers-integration crt-text-workers-integration-160)
+add_subdirectory(runs/161-small-heap small-heap-161)
+add_subdirectory(runs/162-formatter-locale formatter-locale-162)
+add_subdirectory(runs/163-network-groups network-groups-163)
+add_subdirectory(runs/165-heap-locale-groups-integration heap-locale-groups-integration-165)
 
 # The native platform target is defined by Run055's add_subdirectory above.
 if(TARGET porsche_platform_win32)
@@ -417,7 +421,8 @@ if(TARGET porsche_platform_win32)
         "${PORSCHE_SOURCE_ROOT}/platform/application_service_links.cpp"
         "${PORSCHE_SOURCE_ROOT}/platform/formatter_error_links.cpp"
         "${PORSCHE_SOURCE_ROOT}/platform/formatter_lowio_links.cpp"
-        "${PORSCHE_SOURCE_ROOT}/platform/formatter_crt_links.cpp")
+        "${PORSCHE_SOURCE_ROOT}/platform/formatter_crt_links.cpp"
+        "${PORSCHE_SOURCE_ROOT}/platform/formatter_locale_heap_links.cpp")
 endif()
 
 foreach(probe engine_service_427a60_probe frame_services_probe resource_predicate_probe formatter_entry_probe resource_leaf_probe clock_worker_probe resource_dispatch_probe process_exit_probe install_paths_probe install_paths_integration_probe timer_setup_probe formatter_original_probe auxiliary_wait_probe startup_timing_integration_probe)
@@ -428,6 +433,6 @@ foreach(probe engine_service_427a60_probe frame_services_probe resource_predicat
     set_target_properties(${probe} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 endforeach()
 
-foreach(probe formatter_parser_probe formatter_cleanup_probe application_audio_device_probe formatter_integration_probe formatter_runtime_probe application_context_base_probe formatter_runtime_storage_probe formatter_bootstrap_probe application_services_next_probe application_audio_lifecycle_probe context_effects_probe formatter_strings_probe formatter_strings_production_probe network_lifecycle_probe formatter_float_helpers_probe network_services_probe context_ranges_probe context_range_wrapper_probe context_services_probe network_cleanup_probe formatter_lowio_probe context_move_probe network_session_probe formatter_crt_runtime_probe formatter_crt_runtime_trace_probe)
+foreach(probe formatter_parser_probe formatter_cleanup_probe application_audio_device_probe formatter_integration_probe formatter_runtime_probe application_context_base_probe formatter_runtime_storage_probe formatter_bootstrap_probe application_services_next_probe application_audio_lifecycle_probe context_effects_probe formatter_strings_probe formatter_strings_production_probe network_lifecycle_probe formatter_float_helpers_probe network_services_probe context_ranges_probe context_range_wrapper_probe context_services_probe network_cleanup_probe formatter_lowio_probe context_move_probe network_session_probe formatter_crt_runtime_probe formatter_crt_runtime_trace_probe formatter_small_heap_probe)
     set_target_properties(${probe} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 endforeach()

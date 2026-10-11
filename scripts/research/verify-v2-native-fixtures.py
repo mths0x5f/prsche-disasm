@@ -18,6 +18,7 @@ NATIVE = (
     ('formatter_error_native_probe', 'native-formatter-error'),
     ('formatter_lowio_native_probe', 'native-formatter-lowio'),
     ('formatter_crt_native_probe', 'native-formatter-crt'),
+    ('formatter_locale_heap_native_probe', 'native-formatter-locale-heap'),
 )
 LINK = ('native_window_chain', 'window_links_probe',
         'win32_window_bindings_compile_fixture')

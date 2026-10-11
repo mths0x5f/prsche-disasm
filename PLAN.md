@@ -1,11 +1,11 @@
 # План восстановления Porsche Unleashed
 
-Текущий результат — [Run160](iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/README.md): **386 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:144 projects /270 unique TUs;126 comparison/alias targets,7 native OS и3 link fixtures.
-12 свежих original-x86 отчётов /14491 сравнений плюс4 component-proven composed cases; все10 native/link проверок прошли.
-Приняты43 новые функции: CRT heap/TLS/locks, текст/locale consumers и сетевые workers/members.
-SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с на текущем корпусе.
-Game-link:0 compile errors /279 unresolved symbols /312 references /0 other diagnostics; игрового EXE нет.
+Текущий результат — [Run165](iterations/v2/001-original-recovery/runs/165-heap-locale-groups-integration/README.md): **411 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:148 projects /278 unique TUs;129 comparison/alias targets,8 native OS и3 link fixtures.
+13 свежих original-x86 отчётов /8082 сравнений плюс4 component-proven composed cases; все11 native/link проверок прошли.
+Приняты25 новых функций: original smallblock heap, locale engines и сетевые группы.
+SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с в замере156.
+Game-link:0 compile errors /273 unresolved symbols /308 references /0 other diagnostics; игрового EXE нет.
 Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
 Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, CRT engines и live startup открыты.
@@ -13,17 +13,17 @@ Game-link:0 compile errors /279 unresolved symbols /312 references /0 other diag
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 
 
-Активно параллельно:161 smallblock allocator,164 network vtable targets,166 formatter output;162/163 готовы. Root: checkpoint160; далее общая приёмка161/162/163 и native vtable relocations.
+Активно параллельно:167 float output,168 network transport,170 float parse/pack. Root: checkpoint165; далее169 приёмка готовых164/166 и native vtable integration.
 
 ## Ближайшая цель: полный игровой EXE из C/C++
 
 Уточнение пользователя2026-10-11: результат этапа — компиляция и полный запуск игры.
-Checkpoint156 запушен6fd070a; принят следующий пакет160. Общая библиотека и проверочные программы собираются;
-реальный игровой target ещё не линкуется:279 видимых unresolved symbols /312 references. Это текущая
+Checkpoint160 запушенc1a67fd; принят следующий пакет165. Общая библиотека и проверочные программы собираются;
+реальный игровой target ещё не линкуется:273 видимых unresolved symbols /308 references. Это текущая
 граница восстановленного графа, а не число всех оставшихся функций: новые тела могут
 открыть новые зависимости, включая косвенные вызовы и частично восстановленные consumers.
 
-1. После принятой160 интеграции продолжить CRT smallblock heap, locale engines и network dispatch
+1. После принятой165 интеграции продолжить network vtable dispatch и formatter output
    и полный004d3420; 004a6a00 восстановлен, но virtual mode всё ещё не ограничен:131 остаётся isolated.
    Formatter fatal/bootstrap и strings приняты143; float helpers147 приняты; lowio005a953e принят156; далее decimal/locale engines.
    Partial00525ec0 требует исходного EAX contract; не подключать guessed return.

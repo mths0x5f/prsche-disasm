@@ -11,6 +11,7 @@ import unittest
 from unittest.mock import patch
 
 from v2_proof_cache import ProofCache
+import v2_manual_index
 
 
 class ProofCacheTests(unittest.TestCase):
@@ -48,6 +49,39 @@ class ProofCacheTests(unittest.TestCase):
             with patch.object(Path, 'read_bytes', autospec=True, side_effect=mutate):
                 with self.assertRaisesRegex(RuntimeError, 'changed during audit'):
                     ProofCache().digest(path)
+
+
+class ManualIndexCacheTests(unittest.TestCase):
+    def fixture(self, root):
+        path=root/'local/game/Porsche.exe';path.parent.mkdir(parents=True)
+        # CRLF must remain binary bytes, with each indexed body ending in RET.
+        data=b'\r\n\xc3'*100;path.write_bytes(data)
+        sha=hashlib.sha256(data).hexdigest()
+        rows=[{'sha256':sha,'entry_va':f'{0x400000+i*3:08x}',
+               'path':'Porsche.exe','file_offset':i*3,'body_bytes':3,
+               'body_sha256':hashlib.sha256(b'\r\n\xc3').hexdigest(),
+               'ranges':[[f'{0x400000+i*3:08x}',f'{0x400002+i*3:08x}']]}
+              for i in range(100)]
+        index=root/'index.jsonl';index.write_text('\n'.join(map(json.dumps,rows)))
+        return path,index
+
+    def test_hundred_functions_read_one_original_binary(self):
+        with TemporaryDirectory() as directory:
+            root=Path(directory);path,index=self.fixture(root)
+            read_bytes=Path.read_bytes
+            with patch.object(v2_manual_index,'ROOT',root),patch.object(v2_manual_index,'INDEX',index),patch.object(Path,'read_bytes',autospec=True,side_effect=read_bytes) as read:
+                self.assertEqual(len(v2_manual_index.records()),100)
+                self.assertEqual(read.call_count,1)
+
+    def test_binary_mutation_during_read_rejected(self):
+        with TemporaryDirectory() as directory:
+            root=Path(directory);path,index=self.fixture(root)
+            read_bytes=Path.read_bytes
+            def mutate(file):
+                data=read_bytes(file);file.write_bytes(data+b'changed');return data
+            with patch.object(v2_manual_index,'ROOT',root),patch.object(v2_manual_index,'INDEX',index),patch.object(Path,'read_bytes',autospec=True,side_effect=mutate):
+                with self.assertRaisesRegex(RuntimeError,'changed during audit'):
+                    v2_manual_index.records()
 
 
 class RefreshPlanTests(unittest.TestCase):

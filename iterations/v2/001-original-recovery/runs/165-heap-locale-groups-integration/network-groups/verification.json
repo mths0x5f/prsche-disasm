@@ -1,0 +1,3715 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "0048bda0",
+    "0048c220",
+    "0048c300",
+    "00490b70",
+    "0048a390",
+    "0048baa0"
+  ],
+  "full_function_vas": [
+    "0048bda0",
+    "0048c220",
+    "0048c300",
+    "00490b70",
+    "0048a390",
+    "0048baa0"
+  ],
+  "partial_function_vas": [],
+  "cases": 173,
+  "native_cpp_equal_original_x86": true,
+  "comparison_boundary": "Six complete bodies; actual recovered 48c870 and48b660. Exact packets, call order/arguments and boundary state, all group/member/session/list/manager backing bytes, original ESP/nonvolatile registers and RET4/8/12. Private lock/fill/copy/virtual-send fixtures mutate index/masks/receiver/links/manager/pool/count at call boundaries. Text storage is a private fixture, production remains unsized unresolved.",
+  "index_query": "48bda0 unresolved from complete492770, then all callers/callees48c220/48c300/490b70/48a390/48baa0; references to5b4968/70/78, original table words and PE HIGHLOW relocations.",
+  "unresolved_effects": [
+    "005e8e50 unsized char data; owner and aliases remain unresolved",
+    "existing canonical heap lock/fill/copy and virtual-slot0 providers"
+  ],
+  "deferred": [
+    "native vtable relocation for5b4968/70/78 and exact targets48ad70/5a1056/48b340",
+    "005e8bfc table owner/extent",
+    "0048dcb0 poll/0048e1a0 wait"
+  ],
+  "original_functions": [
+    {
+      "va": "0048bda0",
+      "body_bytes": 311,
+      "body_sha256": "38790f6237272fc74408e05ff756d88e23427e0b232e1f884d837fa7eb8ded27"
+    },
+    {
+      "va": "0048c220",
+      "body_bytes": 135,
+      "body_sha256": "fdefb2150591d1e3c69a0814fb975d950107ca055f9ec396402ab01242e09f11"
+    },
+    {
+      "va": "0048c300",
+      "body_bytes": 85,
+      "body_sha256": "cb2c6f13e7e0116acee471a614cf59e9b8dcb505955f2ac97492f14a0c36cd11"
+    },
+    {
+      "va": "00490b70",
+      "body_bytes": 50,
+      "body_sha256": "214142cd941833ae894ce985e83044313bef1f05da5c8306d40b8d33c21e03ba"
+    },
+    {
+      "va": "0048a390",
+      "body_bytes": 61,
+      "body_sha256": "ffea46b6566f67a8427e953d80546b1ca3b909eea2aa1e41b46d42d9c18267fd"
+    },
+    {
+      "va": "0048baa0",
+      "body_bytes": 134,
+      "body_sha256": "fe5d1681d18519415c38ba1a01b10c983a5807312bf7789d020d835028719626"
+    }
+  ],
+  "vtable_relocation_evidence": {
+    "words": [
+      {
+        "va": "005b4964",
+        "value": "005c5190",
+        "relocation": "HIGHLOW"
+      },
+      {
+        "va": "005b4968",
+        "value": "0048ad70",
+        "relocation": "HIGHLOW"
+      },
+      {
+        "va": "005b496c",
+        "value": "005c51d8",
+        "relocation": "HIGHLOW"
+      },
+      {
+        "va": "005b4970",
+        "value": "005a1056",
+        "relocation": "HIGHLOW"
+      },
+      {
+        "va": "005b4974",
+        "value": "005c5228",
+        "relocation": "HIGHLOW"
+      },
+      {
+        "va": "005b4978",
+        "value": "0048b340",
+        "relocation": "HIGHLOW"
+      }
+    ],
+    "assignments": [
+      {
+        "from_va": "0048aa21",
+        "to_va": "005b4970",
+        "from_function": "0048aa10",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4970",
+        "immediate_relocation_va": "0048aa23"
+      },
+      {
+        "from_va": "0048aa84",
+        "to_va": "005b4968",
+        "from_function": "0048aa10",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4968",
+        "immediate_relocation_va": "0048aa86"
+      },
+      {
+        "from_va": "0048aed8",
+        "to_va": "005b4968",
+        "from_function": "0048aed0",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4968",
+        "immediate_relocation_va": "0048aeda"
+      },
+      {
+        "from_va": "0048af63",
+        "to_va": "005b4970",
+        "from_function": "0048aed0",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4970",
+        "immediate_relocation_va": "0048af65"
+      },
+      {
+        "from_va": "0048af92",
+        "to_va": "005b4970",
+        "from_function": "0048af80",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4970",
+        "immediate_relocation_va": "0048af95"
+      },
+      {
+        "from_va": "0048b015",
+        "to_va": "005b4978",
+        "from_function": "0048af80",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4978",
+        "immediate_relocation_va": "0048b018"
+      },
+      {
+        "from_va": "0048b25a",
+        "to_va": "005b4978",
+        "from_function": "0048b250",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4978",
+        "immediate_relocation_va": "0048b25c"
+      },
+      {
+        "from_va": "0048b2fd",
+        "to_va": "005b4970",
+        "from_function": "0048b250",
+        "type": "DATA",
+        "source": "ANALYSIS",
+        "target_symbol": "PTR_LAB_005b4970",
+        "immediate_relocation_va": "0048b2ff"
+      }
+    ],
+    "slot0_consumers": [
+      {
+        "va": "0048a3b8",
+        "instruction": "0048a3b8  ff10  CALL dword ptr [EAX]"
+      },
+      {
+        "va": "0048bb1c",
+        "instruction": "0048bb1c  ff10  CALL dword ptr [EAX]"
+      },
+      {
+        "va": "0048c946",
+        "instruction": "0048c946  ff10  CALL dword ptr [EAX]"
+      },
+      {
+        "va": "0048c96e",
+        "instruction": "0048c96e  ff16  CALL dword ptr [ESI]"
+      }
+    ],
+    "target_coverage_gaps": [
+      {
+        "va": "0048ad70",
+        "body_bytes": 188,
+        "body_sha256": "2572b61aae6f823fbde2aad3e676c048b68937e621d9c2837e6c84ba46a393c1",
+        "index_coverage": "absent",
+        "ret_pop": 12
+      },
+      {
+        "va": "0048b340",
+        "body_bytes": 122,
+        "body_sha256": "b59e9315207f09c46edf7b8938789c3d773dec55a22dba7e82e47a75b1a7e875",
+        "index_coverage": "absent",
+        "ret_pop": 12
+      },
+      {
+        "va": "005a1056",
+        "body_bytes": 9,
+        "body_sha256": "6bc67debc4ceeef6320e2e769f8277b9d337a1eb5ccd72be2ce4aa15e3b522c8",
+        "index_coverage": "absent",
+        "ret_pop": 0
+      }
+    ],
+    "confirmed": "Each slot0 pointer and preceding RTTI pointer is HIGHLOW relocated. Native thiscall send ABI has three stack arguments and RET12.48ad70 ignores destination and queues packet;48b340 dereferences destination then calls48a3d0 and conditionally inserts it.5a1056 calls CRT fatal service5a2e22 with code25.",
+    "next_step": "Supplement omitted target index coverage, recover targets48ad70/48b340 and full list/send callees48a920/48a8d0/48a3d0/55d4a0, trace RTTI consumers, then install one canonical native table owner and replace frozen151/155 literal identities in a new integration packet. No table size/RTTI layout or fatal-return behavior is guessed here."
+  },
+  "cases_summary": [
+    {
+      "index": 0,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 1,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        1,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 16
+    },
+    {
+      "index": 2,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 3,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 126
+    },
+    {
+      "index": 4,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 5,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        1,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 6,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 7,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 74
+    },
+    {
+      "index": 8,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 9,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        1,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 10,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 11,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 12,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 13,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        1,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 14,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 15,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 24
+    },
+    {
+      "index": 16,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 0
+    },
+    {
+      "index": 17,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        1,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 18,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 19,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 20,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 21,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        1,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 22,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 23,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 24,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        0,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 25,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        0,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 26,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        0,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 27,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        0,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 28,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        7,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 29,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        7,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 30,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        7,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 31,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        7,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 32,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        8,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 33,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        8,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 34,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        8,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 35,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        8,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 36,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        31,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 37,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        31,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 38,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        31,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 39,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        31,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 40,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        32,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 41,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        32,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 42,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        32,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 43,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        32,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 44,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        63,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 45,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        63,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 46,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        63,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 47,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        63,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 48,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        127,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 49,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        127,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 50,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        127,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 51,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        127,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 52,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        128,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 53,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        128,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 54,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        128,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 55,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        128,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 56,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        255,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 57,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        255,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 58,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        255,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 59,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        255,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 60,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        305419904,
+        4294967294,
+        255,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 61,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        305419904,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 62,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        305419904,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 63,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        305419904,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 64,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        0,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 65,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        0,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 66,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        1,
+        1,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 67,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        1,
+        1,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 68,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        255,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 28
+    },
+    {
+      "index": 69,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        255,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 70,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        3,
+        1,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 71,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        3,
+        1,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 72,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        4,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 73,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        4,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 74,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        0,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 75,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        1,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 76,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967295,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 77,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        2147483648,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 2
+    },
+    {
+      "index": 78,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 79,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        1,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 80,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        20,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 81,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        210,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 82,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        0,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 83,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 84,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        1,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 85,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        20,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 86,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        210,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 87,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 44
+    },
+    {
+      "index": 88,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 126
+    },
+    {
+      "index": 89,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        1,
+        0,
+        0
+      ],
+      "boundary_calls": 126
+    },
+    {
+      "index": 90,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        20,
+        0,
+        0
+      ],
+      "boundary_calls": 126
+    },
+    {
+      "index": 91,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        6,
+        210,
+        0,
+        0
+      ],
+      "boundary_calls": 126
+    },
+    {
+      "index": 92,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        6,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 118
+    },
+    {
+      "index": 93,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 94,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 95,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 96,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 97,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        4294967295,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 98,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        4294967295,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 99,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        2147483648,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 100,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        0,
+        1,
+        2147483648,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 101,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 102,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        2,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 103,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        4,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 32
+    },
+    {
+      "index": 104,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        8,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 105,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        16,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 40
+    },
+    {
+      "index": 106,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        32,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 107,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        64,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 108,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        96,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 109,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        128,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 110,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        256,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 111,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        512,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 48
+    },
+    {
+      "index": 112,
+      "function_va": "0048bda0",
+      "input": [
+        0,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1023,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 24
+    },
+    {
+      "index": 113,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 114,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        2,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 115,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        4,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 8
+    },
+    {
+      "index": 116,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        8,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 117,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        16,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 118,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        32,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 119,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        64,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 120,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        96,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 121,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        128,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 122,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        256,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 123,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        512,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 20
+    },
+    {
+      "index": 124,
+      "function_va": "0048c220",
+      "input": [
+        1,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1023,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 8
+    },
+    {
+      "index": 125,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 126,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        2,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 127,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        4,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 128,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        8,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 129,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        16,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 130,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        32,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 131,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        64,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 132,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        96,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 133,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        128,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 134,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        256,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 135,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        512,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 136,
+      "function_va": "0048c300",
+      "input": [
+        2,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1023,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 137,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 138,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        2,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 139,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        4,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 140,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        8,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 141,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        16,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 142,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        32,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 143,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        64,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 144,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        96,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 145,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        128,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 146,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        256,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 147,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        512,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 148,
+      "function_va": "00490b70",
+      "input": [
+        3,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1023,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 12
+    },
+    {
+      "index": 149,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 150,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        2,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 151,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        4,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 152,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        8,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 153,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        16,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 154,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        32,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 155,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        64,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 156,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        96,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 157,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        128,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 158,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        256,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 159,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        512,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 160,
+      "function_va": "0048a390",
+      "input": [
+        4,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1023,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 6
+    },
+    {
+      "index": 161,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 162,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        2,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 163,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        4,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 164,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        8,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 165,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        16,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 166,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        32,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 167,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        64,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 168,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        96,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 169,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        128,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 170,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        256,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 171,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        512,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    },
+    {
+      "index": 172,
+      "function_va": "0048baa0",
+      "input": [
+        5,
+        3,
+        2,
+        4294967294,
+        255,
+        0,
+        1,
+        1023,
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      "boundary_calls": 4
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/163-network-groups/CMakeLists.txt": "7ae2ddbc38e4cd87a7e86344c80fd4f8b61369c11fb44f6e10b62e5c41f7a419",
+    "iterations/v2/001-original-recovery/runs/163-network-groups/README.md": "253bee8baa740a0bfcdad1f118d97256aa7675a61b48b2eab3587e41eddc7f64",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_services_next.hpp": "61850310ac64fcf72319aeabb4d05c0ccac1b34402b6893e6b4e084e3594dd07",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp": "e3535f0fdf85141719d4741e60a900d6c454b9e6140fc7ec283fa5f18a33ef76",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_cleanup.hpp": "4a5d5260445a08f1a450f34306f3f89af57363217511f527ab8bf2242c40725c",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_groups.hpp": "25f1449c6c555a3851dbc9b4e9d5b14e1fefd496c62707ec0f99e1a90833f431",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_lifecycle.hpp": "2cc6070ccb94d7d1025a1d59a59bdb91562e71cfa70f42a7d9baad47dc7c6f46",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_services.hpp": "2548d0e9fa453f0bdbefcc9411465d43619bfd98c740d6257b75134115fba75e",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_session.hpp": "0cd8c5006af8e8166f8f2835fc0ae7d1f2cdbd5cc39adf70270adaa7d5fe21dc",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_workers_members.hpp": "1c4bc63f3cc1c15bf0f260ee2f47f92553208719829485eabfa2b46e329d6d6d",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup_services.hpp": "18165f0f29be587af92f0ec1d245ee69fcdd03b2ead7b0f77be9290ff41a9720",
+    "iterations/v2/001-original-recovery/source/recovered/network_groups_probe.cpp": "efba83f8f97f69e14860d9904161268bb53d84355e474cab17bf36ad6cc13f2d",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_groups.cpp": "27859f6a63df300dc6912b27d03bbb573a36309216fb857250ebc4532399bf88",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_services.cpp": "0b2b72d510dbad3176cbd9e3c4374f3c827c0e6ca665a5dea0f6d10adc9666fd",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-network-groups.py": "5f38f049a78c9a5fd85addea95bb564ca194adbedb1f7d67556e81867b534e81"
+  }
+}

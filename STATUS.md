@@ -1,11 +1,11 @@
 # Состояние проекта
 
-Текущий результат — [Run160](iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/README.md): **386 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:144 projects /270 unique TUs;126 comparison/alias targets,7 native OS и3 link fixtures.
-12 свежих original-x86 отчётов /14491 сравнений плюс4 component-proven composed cases; все10 native/link проверок прошли.
-Приняты43 новые функции: CRT heap/TLS/locks, текст/locale consumers и сетевые workers/members.
-SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с на текущем корпусе.
-Game-link:0 compile errors /279 unresolved symbols /312 references /0 other diagnostics; игрового EXE нет.
+Текущий результат — [Run165](iterations/v2/001-original-recovery/runs/165-heap-locale-groups-integration/README.md): **411 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:148 projects /278 unique TUs;129 comparison/alias targets,8 native OS и3 link fixtures.
+13 свежих original-x86 отчётов /8082 сравнений плюс4 component-proven composed cases; все11 native/link проверок прошли.
+Приняты25 новых функций: original smallblock heap, locale engines и сетевые группы.
+SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с в замере156.
+Game-link:0 compile errors /273 unresolved symbols /308 references /0 other diagnostics; игрового EXE нет.
 Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
 Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, CRT engines и live startup открыты.

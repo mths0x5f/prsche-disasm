@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00467470"
+  ],
+  "cases": 26,
+  "native_cpp_equal_original_x86": true,
+  "binary_matched": false,
+  "game_launch_verified": false,
+  "original_body_sha256": {
+    "00467470": "133bc54aa7ba8de306fa5feaa8bc50e5b9a2cbd18f9e45243bee84f6dde55582"
+  },
+  "boundary": "allocators, constructors, registry, format, display, misc and virtual first call controlled; null-allocation original faults excluded; no real render acceptance",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/CMakeLists.txt": "51e37aafc3c1fcdbfa8c097632b82ab0967a7d14d8bc2710d2b0b5ade8096b22",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_main.hpp": "e6d177a4e6a340affc66f4570c8271ce1c3d8069d6dfb5d37fe8f1f40be34c0f",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_state.hpp": "8609be1d87e02af50f3f6ae3b0f9c55300e78b51460f187ccbb1e46ca3379315",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp": "f32055181c315a54038c6aaf2bd2ab54f4d773f50551f761aee0e9b27bad9e2d",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_mode.hpp": "51bd4f84e2ac30a21bd9a48c324595249e336c86e14857fa12b2370813c5953c",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_objects.hpp": "fe39c468e43754b7c16be4e8aae3d383f15b73b1405df4bf9cbe867125577287",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_settings.hpp": "e665a1b514af6213ed2a447d3f535e00315de3d11b5ca3cad29dc737ed3731e0",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_startup.hpp": "2ec73bd3650c89fc8fc23615c0db52b4eb03a4c1fb166d060719670d06402cc0",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup.hpp": "9ab14c148623bf71355cce6a782b8e213c4d4e8fffbe7bc7389fee166ec874c9",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_globals.cpp": "5381aa64f8354ae4a668558cd5d1d07018c78f8aa14fe4b01fa703616bbb86a1",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_state.cpp": "a1ad65f8506af7e03fecda2bd24880074ce9c926c8aa657135508b11aaf75f76",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_startup.cpp": "f01351ca6379b31e06e2df68d66d513638d1ab6b69dcac6da5020a01ac0d3f82",
+    "iterations/v2/001-original-recovery/source/recovered/render_startup_probe.cpp": "65ff631505f632f2f30f803643c2ac9d39095a6dd314d1fcd90d20c37e1676d6",
+    "iterations/v2/001-original-recovery/source/recovered/sources.cmake": "083f89d78632af7c6dfffa316e96d19ee1c564685f1ec79e58487a22a220edaa",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-render-startup.py": "462302bf794858c4350f25dcb59b041c0d4bf0c72698c054f9a774d3c9131cbd"
+  },
+  "probe_sha256": "e3f6e167a6f6369528e0c6f046c1e6fb2c3f4eef34e5ed69b53abef8e363ae6d",
+  "fixtures": [
+    {
+      "input": "676c696465|6478|38303078363030|7072656669785f|0|640|480|0|5",
+      "output_sha256": "76e5bb6657844564d3d4a8eb9eaac62d4f3ebab43172bea4c1cd336fd853d191"
+    },
+    {
+      "input": "676c696465|6478|38303078363030|7072656669785f|3|640|480|0|5",
+      "output_sha256": "88ec41982283ea9ec96188518102c05cdf4011135f53836c9a7a30acfe58f624"
+    },
+    {
+      "input": "676c696465|6478|38303078363030|7072656669785f|2271560481|640|480|0|5",
+      "output_sha256": "0570121d9715ffe2fb3a74c6aa0d69be6a96e1c9db50c9fa7c7f173cafb7be5d"
+    },
+    {
+      "input": "676c696465|6478|38303078363030|7072656669785f|0|640|480|1|5",
+      "output_sha256": "2649761f09fb4cc3f1c06f548b45decacef4ecfb14f7ded93760a6db5ff95f99"
+    },
+    {
+      "input": "676c696465|6478|38303078363030|7072656669785f|3|640|480|1|5",
+      "output_sha256": "2649761f09fb4cc3f1c06f548b45decacef4ecfb14f7ded93760a6db5ff95f99"
+    },
+    {
+      "input": "676c696465|6478|38303078363030|7072656669785f|2271560481|640|480|1|5",
+      "output_sha256": "2649761f09fb4cc3f1c06f548b45decacef4ecfb14f7ded93760a6db5ff95f99"
+    },
+    {
+      "input": "7265676973747279|6478|38303078363030|7072656669785f|0|640|480|0|5",
+      "output_sha256": "90e2918fb141416a7ddd2d02bf3fe79f05da5b1261df9b3c8c4da5b72704a357"
+    },
+    {
+      "input": "7265676973747279|6478|38303078363030|7072656669785f|3|640|480|0|5",
+      "output_sha256": "90e2918fb141416a7ddd2d02bf3fe79f05da5b1261df9b3c8c4da5b72704a357"
+    },
+    {
+      "input": "7265676973747279|6478|38303078363030|7072656669785f|2271560481|640|480|0|5",
+      "output_sha256": "90e2918fb141416a7ddd2d02bf3fe79f05da5b1261df9b3c8c4da5b72704a357"
+    },
+    {
+      "input": "7265676973747279|6478|38303078363030|7072656669785f|0|640|480|1|5",
+      "output_sha256": "dab6d213d22887ff1f1b3b83b1d3e2d442d8f3c6796f36b7cf2cf816b479ca91"
+    },
+    {
+      "input": "7265676973747279|6478|38303078363030|7072656669785f|3|640|480|1|5",
+      "output_sha256": "dab6d213d22887ff1f1b3b83b1d3e2d442d8f3c6796f36b7cf2cf816b479ca91"
+    },
+    {
+      "input": "7265676973747279|6478|38303078363030|7072656669785f|2271560481|640|480|1|5",
+      "output_sha256": "dab6d213d22887ff1f1b3b83b1d3e2d442d8f3c6796f36b7cf2cf816b479ca91"
+    },
+    {
+      "input": "7265676973747279|676c696465|38303078363030|7072656669785f|0|640|480|0|5",
+      "output_sha256": "e8f369727ecc7c06aa748b5eaccd49b826d7b0e6026d774e5018784a67b9be5d"
+    },
+    {
+      "input": "7265676973747279|676c696465|38303078363030|7072656669785f|3|640|480|0|5",
+      "output_sha256": "e8f369727ecc7c06aa748b5eaccd49b826d7b0e6026d774e5018784a67b9be5d"
+    },
+    {
+      "input": "7265676973747279|676c696465|38303078363030|7072656669785f|2271560481|640|480|0|5",
+      "output_sha256": "e8f369727ecc7c06aa748b5eaccd49b826d7b0e6026d774e5018784a67b9be5d"
+    },
+    {
+      "input": "7265676973747279|676c696465|38303078363030|7072656669785f|0|640|480|1|5",
+      "output_sha256": "5c0773ab80f4e6d516e4a18b57b1fa5cfface0eb3478af9dda051a53eeb1a97a"
+    },
+    {
+      "input": "7265676973747279|676c696465|38303078363030|7072656669785f|3|640|480|1|5",
+      "output_sha256": "5c0773ab80f4e6d516e4a18b57b1fa5cfface0eb3478af9dda051a53eeb1a97a"
+    },
+    {
+      "input": "7265676973747279|676c696465|38303078363030|7072656669785f|2271560481|640|480|1|5",
+      "output_sha256": "5c0773ab80f4e6d516e4a18b57b1fa5cfface0eb3478af9dda051a53eeb1a97a"
+    },
+    {
+      "input": "7265676973747279|7a|38303078363030|7072656669785f|0|640|480|0|5",
+      "output_sha256": "8b21fe6b40f63757d36eee466f6fc93f55d66b8c24aec1dbb1ac990ec2448383"
+    },
+    {
+      "input": "7265676973747279|7a|38303078363030|7072656669785f|3|640|480|0|5",
+      "output_sha256": "8b21fe6b40f63757d36eee466f6fc93f55d66b8c24aec1dbb1ac990ec2448383"
+    },
+    {
+      "input": "7265676973747279|7a|38303078363030|7072656669785f|2271560481|640|480|0|5",
+      "output_sha256": "8b21fe6b40f63757d36eee466f6fc93f55d66b8c24aec1dbb1ac990ec2448383"
+    },
+    {
+      "input": "7265676973747279|7a|38303078363030|7072656669785f|0|640|480|1|5",
+      "output_sha256": "5c0773ab80f4e6d516e4a18b57b1fa5cfface0eb3478af9dda051a53eeb1a97a"
+    },
+    {
+      "input": "7265676973747279|7a|38303078363030|7072656669785f|3|640|480|1|5",
+      "output_sha256": "5c0773ab80f4e6d516e4a18b57b1fa5cfface0eb3478af9dda051a53eeb1a97a"
+    },
+    {
+      "input": "7265676973747279|7a|38303078363030|7072656669785f|2271560481|640|480|1|5",
+      "output_sha256": "5c0773ab80f4e6d516e4a18b57b1fa5cfface0eb3478af9dda051a53eeb1a97a"
+    },
+    {
+      "input": "6f74686572|6478|3130323478373638|6465766963655f|7|1024|768|0|2",
+      "output_sha256": "390e39102f3f6b6955160d163ccccd8f81b99339171cf5551170cf52b911e400"
+    },
+    {
+      "input": "7265676973747279|6478|36343078343830|-|0|800|600|0|0",
+      "output_sha256": "ac22706c42efb7636296204ebc800d833f06536ab5efb6f7d1d08806aadc58ed"
+    }
+  ]
+}

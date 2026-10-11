@@ -33,6 +33,10 @@ class ProofCache:
             self._digests[path] = hashlib.sha256(data.replace(b'\r\n', b'\n')).hexdigest()
         return self._digests[path]
 
+    def data(self, path):
+        """Unmodified bytes for binary SHA/range checks; never normalize PE data."""
+        return self._read(path)[1]
+
     def document(self, path):
         path, data = self._read(path)
         if path not in self._json:

@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "script": "scripts/research/verify-v2-event-lifecycle.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-event-lifecycle.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\165-heap-locale-groups-integration\\event-lifecycle",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\event_lifecycle_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\165-heap-locale-groups-integration\\event-lifecycle\\verification.json"
+    }
+  ],
+  "replacements": {
+    "iterations/v2/001-original-recovery/runs/153-services-integration/event-lifecycle/verification.json": "iterations/v2/001-original-recovery/runs/165-heap-locale-groups-integration/event-lifecycle/verification.json"
+  },
+  "unsupported": []
+}

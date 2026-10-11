@@ -7,7 +7,7 @@
 и визуальное соответствие — отдельные результаты.
 
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
-  Блокер: Run160 game-link имеет279 unresolved symbols /312 references;
+  Блокер: Run165 game-link имеет273 unresolved symbols /308 references;
   compiler errors и other linker errors —0. Возврат: после устранения
   зависимостей; сначала запуск/выход, затем кадр, ввод, меню и режимы игры.
 - [ ] Проверить закрытие через WM_CLOSE→GetMessage=0→исходный timer callback,
@@ -144,3 +144,21 @@ scripts/research/audit-v2-proofs.py с новым --report; исходники �
  Production native virtual dispatch ещё не принят.5e8e50 и5e8bfc/5e8c00 extent/owners открыты.
 - [ ] Вернуться к полному004d3420 и запуску игры.279 unresolved symbols — текущая
  граница, не число всего остатка. Batch SHA/cache сокращает повторную работу, не заменяет original проверки.
+
+## Checkpoint165: small heap, locale and groups
+
+- [x] Принять161/162/163:25 full bodies/3909 packet cases;148projects/278TUs,
+ 13 fresh original reports/8082 comparisons +4 composedcases;11 native/linkfixtures PASS.
+ 161pins15207intermediate/14936preboundary snapshots иcopyalias835B/46HIGHLOW.
+ 162pins34 actualprotectedexceptions,originalscopes/handlerbytes/nativeFS restoration.
+- [x] Проверить15 platform adapters с real Win32 heap/VM lifecycle,
+ LCMapString/characterconversion/classification/CPInfo.Это OS smoke, не complete game parity.
+- [x] Batch original SHA в manualindex:37functions→1binaryread/hash, concurrentchanges
+ отклоняются;9cache/refresh/manualindex tests PASS. Historical reports unchanged.
+- [ ] Live original smallblock allocator/TLS/locale initialization/concurrency/stackoverflow
+ с настоящими ресурсами остаются открытыми. Native VM fixture не доказывает весьallocator.
+- [ ] Принять164vtabletargets/166output; indexgap48ad70/48b340/5a1056 дополнитьпоSHA.
+ Raw constructorvptr и identitycomparisons заменить вместе canonicalnativeowners;
+ RTTI и sharedemptystring extent требуют originalconsumers, fixturedata не переноситьвgame.
+- [ ] Полный игровой EXE:273unresolved/308refs;compile/otherdiagnostics0.
+ Послеclosingfrontier вернутьсякstartup004d3420,режимам/карьерам/live/visual acceptance.

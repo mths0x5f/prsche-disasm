@@ -3,35 +3,34 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —160:386 full +6 registered partial;156 запушен6fd070a.
-Общая MSVC Win32 сборка:144 projects /270 unique TUs;126 comparison/alias targets,
-7 native OS и3 link fixtures. Все10 native/link checks прошли.
-12 свежих original-x86 reports /14491 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /279 unresolved symbols /312 refs /0 other diagnostics; игрового EXE нет.
-Manual index37 /36624 entries; новых границ160 не добавляет.
-160 принимает157 CRT runtime(17),158 text helpers(11),159 network workers/members(15).
-10339 новых packet cases прошли:1972 CRT production+trace,8178 text,189 network.
-В стыковке обнаружен недостаточный CRT lock-table prefix: consumer использует19,
-locale setter005a6895 —25. Канонический prefix расширен до26 DWORD по104 исходным
-байтам/SHA; initial aliases и lazy/existing19/25 проверены, общий размер таблицы не угадан.
-Root10 точных IAT bindings: HeapAlloc/Free, TLS, last error/threadID, Interlocked inc/dec.
-Native fixture проверил zero-fill/free, thread-local isolation, error, atomic wrap/concurrency.
-Original vtable identities5b4968/70/78 ещё требуют canonical native relocations.
-131 audio-init и525ec0 partial destructor остаются isolated/unregistered.
-Оптимизации сохраняются: связанные пакеты функций, batch SHA аудит с кешем уникальных
-файлов и защитой от concurrent changes;7 safety/refresh-plan tests прошли156.
-Измеренное ускорение inventory в156:9.2897→2.3805с при одинаковых counts.
-Независимые original comparisons/refresh запускаются параллельно; общий build последовательно.
-Исторические отчёты не перезаписываются; режимы connected/production/wrapper сохранены.
-Активные владельцы: small_heap_resume —161, locale_resume —166 formatter output (162 готов), network_vtables_resume —164;
-root —160 integration/acceptance, shared index/registry/platform/docs/commit.
-162 locale(9) и163 network groups(6) готовы к следующей общей приёмке вместе с161/162;
-164 восстанавливает vtable targets и документирует пропуски index для root.
-Ближайший шаг: принять161/162/163 после общего build+original+native+game-link;
-затем canonical native vtables/полный004d3420 и startup/backend chains.
-[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён160.
-Цель — полная исходная игра, обе карьеры/экономика/used cars/режимы, live startup,
-visual acceptance. Body acceptance не закрывает весь граф; затем архитектура и Rust.
+Текущий принятый пакет —165:411 full +6 registered partial;160 запушенc1a67fd.
+Общая MSVC Win32 сборка:148 projects /278 unique TUs;129 comparison/alias targets,
+8 native OS и3 link fixtures. Все11 native/link checks прошли.
+13 свежих original-x86 reports /8082 comparisons плюс4 component-proven composed cases.
+Game-link:0 compile errors /273 unresolved symbols /308 refs /0 other diagnostics; игрового EXE нет.
+Manual index37 /36624 entries; новые границы164 будут добавлены при его приёмке169.
+165 принимает161 small heap(10),162 locale engines(9),163 network groups(6).
+3909 packet cases:2315 allocator,1421 locale(34 SEH failures),173 groups.
+161 сравнивает15207 intermediate и14936 preboundary state snapshots, полныеbytes,
+APIorder и ABI10entries; copyalias5a7ad0 доказан835B/46HIGHLOW и154orderedaccessproof.
+162 проверяет original scope table/filter/handlers, actual native protected failures,
+FS:[0] restoration,248B presets и initializedstorage. Native OS/game parity отдельно.
+Root15 IAT adapters: heapresize/size/create/destroy,VirtualAlloc/Free и9locale APIs;
+новый nativefixture проверил heap/VM lifecycle,map/convert/classify/CPInfo.9cache tests PASS.
+160 locktable fix сохранён: proven26DWORD prefix covers19/25,104B originalSHA;
+общая полная extent и runtimeinitialization не предполагаются.
+Оптимизации: связанные пакеты, paralleloriginal/refresh, batchSHA cache с mutationchecks.
+Дополнительно manualindex теперь читает/хеширует37 originalrecords из одного PE одинраз;
+local isolatedaudit0.0566→0.0186s при идентичныхrecords, без общего game/performance claim.
+131 audio-init/525ec0 остаются isolated; original networkrawvtables требуют native relocation.
+Владельцы: small_heap_resume —167 float output; network_vtables_resume —168 transport;
+locale_resume —170 parse/pack; root —shared index/registry/platform/docs/integration169.
+Готовы164 network vtable targets(11) и166 formatter output(9); принять общим169пакетом,
+добавить3пропущенных originaltargetвindex по164vtable-evidence, обновить rawassignments
+и identitycomparisons вместе; RTTI/5e8e50/5e8bfc extents остаются explicitdependencies.
+Следующий шаг:169 commonbuild/original/native/game-link, далее полный004d3420/startup.
+Validation backlog обновлён165. Цель —полная исходная игра; probes не равны live/visual
+приёмке. После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001
 
