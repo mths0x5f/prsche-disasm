@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "0053c270"
+  ],
+  "full_function_vas": [
+    "0053c270"
+  ],
+  "partial_function_vas": [],
+  "cases": 3,
+  "native_cpp_equal_original_x86": true,
+  "original_functions": [
+    {
+      "va": "0053c270",
+      "body_bytes": 17,
+      "body_sha256": "b1ab5b177aaf62f340218d569d61109d671db1d72d62513da406deec3901d6a0",
+      "abi": "cdecl, zero arguments, RET; SetEvent return ignored"
+    }
+  ],
+  "state_vas": [
+    "0069e5dc"
+  ],
+  "storage": {
+    "va": "0069e5dc",
+    "type": "one pointer-sized Win32 event HANDLE cell",
+    "initialization": "PE .data virtual tail, not present in raw bytes; zero-filled on image load",
+    "producer": "anonymous worker body 0053c0f0 writes the result of 0055fb20 at 0053c0f5",
+    "clear": "anonymous worker body 0053c0f0 clears cell at 0053c15d before RET",
+    "other_indexed_accesses": [
+      "0053c104 read",
+      "0053c14f read",
+      "0053c179 read"
+    ]
+  },
+  "boundaries": [
+    "0055fb30 canonical recovered file_event_signal_0055fb30; fixture records the typed call and supplies its ignored return",
+    "The 0053c0f0 worker lifecycle, event creation/wait, callback list and cleanup remain outside this Run122 body"
+  ],
+  "cases_detail": [
+    {
+      "input_handle": "0x00000000",
+      "events": 0,
+      "state_unchanged": true,
+      "equal": true
+    },
+    {
+      "input_handle": "0x02201000",
+      "events": 1,
+      "state_unchanged": true,
+      "equal": true
+    },
+    {
+      "input_handle": "0x12345678",
+      "events": 1,
+      "state_unchanged": true,
+      "equal": true
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/122-auxiliary-wait/CMakeLists.txt": "87ef2bf70605bf5b8b699cf95943719e5895a046d5295388bd1c5d67aa6114d0",
+    "iterations/v2/001-original-recovery/runs/122-auxiliary-wait/README.md": "c0754a8c04cd169f0854d20a3eaabf8add6bff7fc12b198d77e6414a49b45648",
+    "iterations/v2/001-original-recovery/source/include/porsche/auxiliary_wait.hpp": "e36669595dee32006426c0d468224603de0afbf010513eba7ca16179733bdaa0",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/auxiliary_wait_probe.cpp": "c6da83cebdc599defd5b04589fef0e649f82e47774ca82b62b7908161244ac12",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp": "b10aaffe1bf9cdeac940bf3ec940f5eb74d40ad07df194368cd90745f96fa621",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-auxiliary-wait.py": "8e52aa33ba8fe70bac3f8764e938b19ae5877ac8b7dfc27cd34af9dfca3a5743"
+  },
+  "compiled_translation_units": [
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\auxiliary_wait.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\auxiliary_wait_probe.cpp"
+  ]
+}

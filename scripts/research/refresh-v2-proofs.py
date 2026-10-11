@@ -2,20 +2,21 @@
 import argparse
 import ast
 from concurrent.futures import ThreadPoolExecutor
-import hashlib
 import json
 from pathlib import Path
 import re
 import subprocess
 import sys
+from v2_proof_cache import ProofCache
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTRY = ROOT / 'iterations/v2/001-original-recovery/source/recovered/functions.json'
 BIN = ROOT / 'local/builds/v2/001-original-recovery/bin/Release'
+PROOF_CACHE = ProofCache()
 
 
 def digest(path):
-    return hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+    return PROOF_CACHE.digest(path)
 
 
 def main():
@@ -31,7 +32,7 @@ def main():
                ('verification_report', 'integration_verification_report') if f.get(k)}
     tasks, replacements, unsupported = {}, {}, []
     for relative in sorted(reports):
-        report = json.loads((ROOT / relative).read_text(encoding='utf8'))
+        report = PROOF_CACHE.document(ROOT / relative)
         stale = [p for p, sha in report['source_sha256'].items()
                  if not (ROOT / p).is_file() or digest(ROOT / p) != sha]
         if not stale:
@@ -46,6 +47,9 @@ def main():
                 scripts = ['scripts/research/verify-v2-thread-bootstrap.py']
             if relative.endswith('/015-joint-disk/verification.json'):
                 scripts = ['scripts/research/verify-v2-joint-disk.py']
+        composite = 'scripts/research/verify-v2-formatter-timer-integration.py'
+        if composite in scripts:
+            scripts = [composite]
         if len(scripts) != 1:
             unsupported.append({'report': relative, 'ambiguous_verifiers': scripts})
             continue
@@ -60,10 +64,22 @@ def main():
             unsupported.append({'report': relative, 'verifier': script, 'missing_fresh_output_flag': True})
             continue
         name = Path(script).stem.removeprefix('verify-v2-')
-        output = report_root / name / 'verification.json'
+        if report.get('connected_original_strings'):
+            name = 'formatter-error-integration'
+        proof_filename = 'full-verification.json' if Path(relative).name == 'full-verification.json' else 'verification.json'
+        output = report_root / name / proof_filename
         command = [sys.executable, str(ROOT / script), flag,
                    str(output.parent if flag == '--report-dir' else output)]
         executables = re.findall(r'/bin/Release/([A-Za-z0-9_]+\.exe)', source)
+        if script == composite:
+            executables = ['startup_timing_integration_probe.exe']
+            command += ['--timer-probe', str(BIN/'timer_setup_probe.exe'),
+                        '--formatter-probe', str(BIN/'formatter_original_probe.exe'),
+                        '--auxiliary-probe', str(BIN/'auxiliary_wait_probe.exe')]
+        if report.get('connected_original_strings'):
+            # Preserve the stronger connected check when refreshing Run143+.
+            executables = ['formatter_error_integration_probe.exe']
+            command += ['--connected-strings']
         if '--probe' in flags:
             if not executables:
                 # Required --probe options may have no embedded default path.
@@ -75,12 +91,19 @@ def main():
                 unsupported.append({'report': relative, 'verifier': script, 'ambiguous_probes': executables})
                 continue
             command += ['--probe', str(BIN / executables[0])]
+        if '--production-probe' in flags and report.get('uninstrumented_native_equal_instrumented'):
+            command += ['--production-probe', str(BIN/'formatter_strings_production_probe.exe')]
+        if '--wrapper-probe' in flags and report.get('wrapper_probe_sha256'):
+            command += ['--wrapper-probe', str(BIN/'context_range_wrapper_probe.exe')]
         if output == (ROOT / relative).resolve():
             raise RuntimeError(f'Fresh output equals historical report: {relative}')
-        tasks[script] = {'script': script, 'command': command, 'output': str(output)}
+        # A verifier can expose isolated and connected modes with different
+        # original-function coverage. Never collapse them to one script key.
+        tasks[tuple(command)] = {'script': script, 'command': command, 'output': str(output)}
         replacements[relative] = output.relative_to(ROOT).as_posix()
     report_root.mkdir(parents=True, exist_ok=True)
     plan = {'tasks': list(tasks.values()), 'replacements': replacements, 'unsupported': unsupported}
+    PROOF_CACHE.check_stable()
     (report_root / 'refresh-plan.json').write_text(json.dumps(plan, indent=2) + '\n', encoding='utf8')
     print(json.dumps({'stale_verifiers': len(tasks), 'unsupported': unsupported}))
     if args.plan_only:
@@ -111,6 +134,7 @@ def main():
     if any(r['exit_code'] for r in results):
         raise SystemExit('Proof refresh failed; registry was not changed')
     if args.update_registry:
+        PROOF_CACHE.check_stable()
         for function in registry['functions']:
             for key in ('verification_report', 'integration_verification_report'):
                 if function.get(key) in replacements:

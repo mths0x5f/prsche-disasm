@@ -1,0 +1,51 @@
+{
+  "comparison": "same current corpus, registry and proof pins; complete inventory without --write-verification",
+  "results": [
+    {
+      "version": "before",
+      "seconds": 9.2897,
+      "result": {
+        "input_paths": 26,
+        "unique_modules": 25,
+        "listing_modules": 25,
+        "decompile_attempted_modules": 25,
+        "instructions": 2827310,
+        "analyzed_functions": 36587,
+        "unclassified_executable_bytes": 3199385,
+        "automatic_pseudo_c_functions": 36583,
+        "supplementary_manual_functions": 37,
+        "indexed_functions": 36624,
+        "decompile_failures": 4,
+        "pseudo_c_warning_functions": 5639,
+        "recovered_functions": 343,
+        "partially_verified_functions": 6,
+        "matched_functions": 0,
+        "matched_modules": 0
+      }
+    },
+    {
+      "version": "after",
+      "seconds": 2.3805,
+      "result": {
+        "input_paths": 26,
+        "unique_modules": 25,
+        "listing_modules": 25,
+        "decompile_attempted_modules": 25,
+        "instructions": 2827310,
+        "analyzed_functions": 36587,
+        "unclassified_executable_bytes": 3199385,
+        "automatic_pseudo_c_functions": 36583,
+        "supplementary_manual_functions": 37,
+        "indexed_functions": 36624,
+        "decompile_failures": 4,
+        "pseudo_c_warning_functions": 5639,
+        "recovered_functions": 343,
+        "partially_verified_functions": 6,
+        "matched_functions": 0,
+        "matched_modules": 0
+      }
+    }
+  ],
+  "counts_equal": true,
+  "speedup": 3.9
+}

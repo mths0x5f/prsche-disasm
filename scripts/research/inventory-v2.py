@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ITERATION = ROOT / 'iterations/v2/001-original-recovery'
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from v2_manual_index import records as manual_records
+from v2_proof_cache import ProofCache
 
 
 def load(path):
@@ -27,7 +28,7 @@ def main():
     parser.add_argument('--require-decompile-attempts', action='store_true')
     parser.add_argument('--write-verification', action='store_true')
     parser.add_argument('--verification-output', type=Path,
-                        default=ITERATION/'runs/153-services-integration/corpus-verification.json',
+                        default=ITERATION/'runs/156-lowio-memory-integration/corpus-verification.json',
                         help='Current checkpoint report; historical run hashes are preserved')
     args = parser.parse_args()
     verification_output = args.verification_output if args.verification_output.is_absolute() else ROOT / args.verification_output
@@ -91,6 +92,13 @@ def main():
         manual_addresses.setdefault(record['sha256'], set()).add(record['entry_va'].lower())
     recovered = load(ITERATION/'source/recovered/functions.json') or {'functions': []}
     seen = set()
+    proof_cache = ProofCache()
+    indexed_by_sha = {
+        sha: {json.loads(line)['entry_va'].lower() for line in
+              (ROOT/entry['export_directory']/'functions.jsonl').read_text(encoding='utf8').splitlines()}
+             | manual_addresses.get(sha, set())
+        for sha, entry in binaries.items()
+    }
     for function in recovered['functions']:
         key = (function['sha256'], function['entry_va'])
         if key in seen or key[0] not in binaries:
@@ -100,35 +108,35 @@ def main():
         if not source.is_file():
             raise RuntimeError(f'Recovered source is missing: {source}')
         entry = binaries[key[0]]
-        indexed = {json.loads(line)['entry_va'].lower() for line in
-                   (ROOT/entry['export_directory']/'functions.jsonl').read_text(encoding='utf8').splitlines()}
-        indexed.update(manual_addresses.get(key[0], set()))
+        indexed = indexed_by_sha[key[0]]
         if key[1].lower() not in indexed:
             raise RuntimeError(f'Recovered function is absent from corpus: {key}')
         if function['status'] in ('native-differential-verified', 'partial-native-differential-verified'):
-            verification = load(ROOT/function['verification_report'])
-            source_sha = hashlib.sha256(source.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+            verification = proof_cache.document(ROOT/function['verification_report'])
+            source_sha = proof_cache.digest(source)
             verified_vas = verification.get('function_vas', verification.get('full_function_vas', []) + verification.get('partial_function_vas', []) or [verification.get('function_va')]) if verification else []
             if not verification or verification['sha256'] != key[0] or key[1] not in verified_vas or not verification['native_cpp_equal_original_x86'] or verification['source_sha256'].get(function['source']) != source_sha:
                 raise RuntimeError(f'Missing/stale native verification: {key}')
             for relative, expected_sha in verification['source_sha256'].items():
                 dependency = ROOT/relative
-                if not dependency.is_file() or hashlib.sha256(dependency.read_bytes().replace(b'\r\n', b'\n')).hexdigest() != expected_sha:
+                if not dependency.is_file() or proof_cache.digest(dependency) != expected_sha:
                     raise RuntimeError(f'Stale verified source dependency: {relative}')
             if function['status'] == 'native-differential-verified':
                 if key[1] in verification.get('partial_function_vas', []):
                     raise RuntimeError(f'Partial proof cannot count as full function: {key}')
                 entry['recovered_functions'] += 1
         if function.get('integration_verification_report'):
-            integration = load(ROOT/function['integration_verification_report'])
+            integration = proof_cache.document(ROOT/function['integration_verification_report'])
             if not integration or integration['sha256'] != key[0] or key[1] not in integration.get('function_vas', integration.get('entry_vas', [])) or not integration['native_cpp_equal_original_x86']:
                 raise RuntimeError(f'Missing joint verification: {key}')
             for relative, expected_sha in integration['source_sha256'].items():
                 dependency = ROOT/relative
-                if not dependency.is_file() or hashlib.sha256(dependency.read_bytes().replace(b'\r\n', b'\n')).hexdigest() != expected_sha:
+                if not dependency.is_file() or proof_cache.digest(dependency) != expected_sha:
                     raise RuntimeError(f'Stale joint source dependency: {relative}')
         if function.get('binary_matched'):
             raise RuntimeError('Binary-match evidence validation has not been implemented; do not count unchecked claims')
+    proof_cache.check_stable()
+    print(json.dumps({'proof_audit_cache': proof_cache.counts}))
     automatic_addresses = {}
     for sha, entry in binaries.items():
         export_functions = ROOT / entry['export_directory'] / 'functions.jsonl'
@@ -201,7 +209,7 @@ def main():
                   'scripts/research/export-v2-fe-tables.py','scripts/research/verify-v2-fe-stream.py',
                   'scripts/research/verify-v2-heap.py')]
         paths += [ROOT/'scripts/research/index-v2-clock-worker.py']
-        paths += [ROOT/'scripts/research/refresh-v2-proofs.py', ROOT/'scripts/research/audit-v2-global-aliases.py', ROOT/'scripts/research/audit-v2-link-frontier.py', ROOT/'scripts/research/v2_manual_index.py', ROOT/'scripts/research/verify-v2-files.py', ROOT/'scripts/research/verify-v2-file-device.py', ROOT/'research/binary-index/manual-functions.jsonl', ROOT/'research/binary-index/README.md']
+        paths += [ROOT/'scripts/research/v2_proof_cache.py', ROOT/'scripts/research/test_v2_proof_cache.py', ROOT/'scripts/research/audit-v2-proofs.py', ROOT/'scripts/research/refresh-v2-proofs.py', ROOT/'scripts/research/audit-v2-global-aliases.py', ROOT/'scripts/research/audit-v2-link-frontier.py', ROOT/'scripts/research/v2_manual_index.py', ROOT/'scripts/research/verify-v2-files.py', ROOT/'scripts/research/verify-v2-file-device.py', ROOT/'research/binary-index/manual-functions.jsonl', ROOT/'research/binary-index/README.md']
         run005 = ITERATION/'runs/005-original-files'
         if run005.exists():
             paths += [path for path in run005.rglob('*') if path.resolve() != verification_output.resolve()]
@@ -215,7 +223,7 @@ def main():
         paths += [ROOT/'scripts/research/index-v2-threads.py', ROOT/'scripts/research/verify-v2-file-threads.py']
         paths += [path for path in (ITERATION/'runs/010-file-threads').rglob('*') if path.resolve() != verification_output.resolve()]
         paths += [ROOT/'scripts/research/verify-v2-file-disk.py', ROOT/'scripts/research/verify-v2-fe-callbacks.py']
-        for run_name in ('011-file-disk','012-fe-callbacks','013-input-state','014-heap-locks','015-joint-disk','017-input-modes','018-lock-bootstrap','016-disk-open','019-input-buffer','020-thread-bootstrap','022-startup-services','023-resource-paths','024-render-startup','025-application-heap','026-render-objects','027-window-runtime','030-startup-integration','028-render-loader','029-window-create','031-application-alloc','033-application-heap-init','034-window-procedure','036-native-window','032-render-display','035-window-worker','037-application-pool','038-window-handlers','039-window-state','040-application-bootstrap','041-startup-chain','042-render-registry','043-startup-subsystems','044-window-thread-start','045-window-messages','046-startup-input','047-application-fe','048-window-position','049-render-activate','050-application-instance','051-render-window','052-exit-registry','053-crt-shutdown','054-thread-shutdown','055-native-platform','056-render-driver-calls','057-native-thread-chain','059-window-keys','060-render-event-route','061-startup-platform-integration','058-application-main','063-render-mode','064-window-callback-bindings','065-window-callback-integration','067-main-callback-integration','066-render-settings','068-application-state','069-window-event-queue','070-native-window-bindings','071-render-state-init','072-window-links','073-render-state-integration','074-application-arena','075-recovered-links','076-global-alias-audit','077-native-window-chain','078-shared-runtime-integration','079-window-channels','080-shared-diagnostic-storage','081-bss-fallback-audit','082-window-scheduler','083-window-shutdown','084-window-support','085-window-exit-cleanup','086-native-window-lifecycle','087-window-notifications','088-object-cleanup','089-mouse-input','090-native-window-integration','091-window-event-translation','092-object-update','093-game-setup','094-movie-header','095-splash-progress','096-input-snapshot','097-startup-sequence','098-startup-integration','099-startup-service','100-startup-service','101-frame-pump','102-original-game-link','103-engine-service','104-link-alias-audit','105-frame-services','106-resource-predicate','107-frame-integration','110-clock-worker-index','108-formatter-entry','109-resource-leaf','111-runtime-integration','112-clock-worker','113-resource-dispatch','115-process-exit','116-install-paths','117-install-integration','120-application-main-storage','118-timer-setup','119-formatter-original','121-formatter-timer-integration','122-auxiliary-wait','125-native-shutdown','123-event-lifecycle','126-event-integration','127-thread-wait','128-application-services','130-event-thread-integration','129-application-context','124-formatter-parser','132-formatter-cleanup','133-application-audio-device','134-formatter-integration','135-application-context-base','136-formatter-context-integration','137-formatter-runtime','138-formatter-runtime-storage','139-context-effects','140-formatter-bootstrap','141-application-services-next','142-audio-lifecycle','143-runtime-network-integration','144-crt-strings','145-network-lifecycle','147-float-helpers','148-network-services','149-context-ranges','150-context-services','151-network-cleanup','153-services-integration'):
+        for run_name in ('011-file-disk','012-fe-callbacks','013-input-state','014-heap-locks','015-joint-disk','017-input-modes','018-lock-bootstrap','016-disk-open','019-input-buffer','020-thread-bootstrap','022-startup-services','023-resource-paths','024-render-startup','025-application-heap','026-render-objects','027-window-runtime','030-startup-integration','028-render-loader','029-window-create','031-application-alloc','033-application-heap-init','034-window-procedure','036-native-window','032-render-display','035-window-worker','037-application-pool','038-window-handlers','039-window-state','040-application-bootstrap','041-startup-chain','042-render-registry','043-startup-subsystems','044-window-thread-start','045-window-messages','046-startup-input','047-application-fe','048-window-position','049-render-activate','050-application-instance','051-render-window','052-exit-registry','053-crt-shutdown','054-thread-shutdown','055-native-platform','056-render-driver-calls','057-native-thread-chain','059-window-keys','060-render-event-route','061-startup-platform-integration','058-application-main','063-render-mode','064-window-callback-bindings','065-window-callback-integration','067-main-callback-integration','066-render-settings','068-application-state','069-window-event-queue','070-native-window-bindings','071-render-state-init','072-window-links','073-render-state-integration','074-application-arena','075-recovered-links','076-global-alias-audit','077-native-window-chain','078-shared-runtime-integration','079-window-channels','080-shared-diagnostic-storage','081-bss-fallback-audit','082-window-scheduler','083-window-shutdown','084-window-support','085-window-exit-cleanup','086-native-window-lifecycle','087-window-notifications','088-object-cleanup','089-mouse-input','090-native-window-integration','091-window-event-translation','092-object-update','093-game-setup','094-movie-header','095-splash-progress','096-input-snapshot','097-startup-sequence','098-startup-integration','099-startup-service','100-startup-service','101-frame-pump','102-original-game-link','103-engine-service','104-link-alias-audit','105-frame-services','106-resource-predicate','107-frame-integration','110-clock-worker-index','108-formatter-entry','109-resource-leaf','111-runtime-integration','112-clock-worker','113-resource-dispatch','115-process-exit','116-install-paths','117-install-integration','120-application-main-storage','118-timer-setup','119-formatter-original','121-formatter-timer-integration','122-auxiliary-wait','125-native-shutdown','123-event-lifecycle','126-event-integration','127-thread-wait','128-application-services','130-event-thread-integration','129-application-context','124-formatter-parser','132-formatter-cleanup','133-application-audio-device','134-formatter-integration','135-application-context-base','136-formatter-context-integration','137-formatter-runtime','138-formatter-runtime-storage','139-context-effects','140-formatter-bootstrap','141-application-services-next','142-audio-lifecycle','143-runtime-network-integration','144-crt-strings','145-network-lifecycle','147-float-helpers','148-network-services','149-context-ranges','150-context-services','151-network-cleanup','153-services-integration','152-crt-lowio','154-context-move','155-network-session','156-lowio-memory-integration'):
             paths += [path for path in (ITERATION/'runs'/run_name).rglob('*') if path.resolve() != verification_output.resolve()]
         paths += [ROOT/'scripts/research/verify-v2-input-state.py', ROOT/'scripts/research/verify-v2-heap-locks.py', ROOT/'scripts/research/verify-v2-joint-disk.py', ROOT/'scripts/research/verify-v2-original-game-link.py']
         paths += [ROOT/'scripts/research/verify-v2-disk-open.py', ROOT/'scripts/research/verify-v2-input-buffer.py', ROOT/'scripts/research/verify-v2-thread-bootstrap.py']
@@ -228,15 +236,15 @@ def main():
         source_reports.add('iterations/v2/001-original-recovery/runs/067-main-callback-integration/window-callback-bindings/verification.json')
         source_reports.update(f['integration_verification_report'] for f in recovered['functions'] if f.get('integration_verification_report'))
         # Fresh layout, storage and platform proofs also pin modern infrastructure.
-        for path in (ITERATION/'runs/153-services-integration').rglob('*.json'):
+        for path in (ITERATION/'runs/156-lowio-memory-integration').rglob('*.json'):
             document = load(path)
             if isinstance(document, dict) and 'source_sha256' in document:
                 source_reports.add(path.relative_to(ROOT).as_posix())
         for report_path in sorted(source_reports):
             paths += [ROOT/p for p in load(ROOT/report_path)['source_sha256']]
         # Native OS fixtures have dependency pins, separately from differential proofs.
-        for name in ('native-core','native-thread','native-window','native-window-lifecycle','native-formatter-error'):
-            native = load(ITERATION/'runs/153-services-integration'/(name+'-result.json'))
+        for name in ('native-core','native-thread','native-window','native-window-lifecycle','native-formatter-error','native-formatter-lowio'):
+            native = load(ITERATION/'runs/156-lowio-memory-integration'/(name+'-result.json'))
             if not native:
                 raise RuntimeError(f'Missing current native fixture report: {name}-result.json')
             for relative, expected in native['source_sha256'].items():

@@ -123,3 +123,9 @@ list(APPEND PORSCHE_RECOVERED_SOURCES
 list(APPEND PORSCHE_RECOVERED_SOURCES
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/context_services.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_cleanup.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_lowio.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/context_move.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_session.cpp")

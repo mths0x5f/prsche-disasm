@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00564eb0",
+    "00564fa0",
+    "00565030"
+  ],
+  "full_function_vas": [
+    "00564eb0",
+    "00564fa0",
+    "00565030"
+  ],
+  "partial_function_vas": [],
+  "cases": 9,
+  "native_cpp_equal_original_x86": true,
+  "original_functions": [
+    {
+      "va": "00564eb0",
+      "body_bytes": 199,
+      "body_sha256": "22f54577dfc09dfca1bf05cbe323cb35590b93a386d758739608e67d6311d699",
+      "abi": "stdcall, five DWORD callback arguments, RET 0x14; inputs unused"
+    },
+    {
+      "va": "00564fa0",
+      "body_bytes": 131,
+      "body_sha256": "7c595a33d9399965fbe1bae03241e05b6c269c23b1c9d5818522a57444d807a9",
+      "abi": "cdecl, zero stack arguments, RET; return ignored"
+    },
+    {
+      "va": "00565030",
+      "body_bytes": 574,
+      "body_sha256": "905e1c12173e3725f34dbe8e56fc1cb0dbe18f3c0951fae361aacdfd0f133182",
+      "abi": "cdecl, one DWORD interval argument, caller cleanup; return ignored"
+    }
+  ],
+  "imports": {
+    "timeBeginPeriod": 5972796,
+    "timeGetDevCaps": 5972800,
+    "timeKillEvent": 5972804,
+    "timeSetEvent": 5972808,
+    "timeEndPeriod": 5972812
+  },
+  "kernel_imports": {
+    "GetTickCount": 5972096,
+    "SleepEx": 5972320,
+    "SetEvent": 5972372
+  },
+  "state_vas": [
+    "006a5bf8",
+    "006a5c00",
+    "006a5c04",
+    "006a5c08",
+    "006a5c10",
+    "006a5c1c",
+    "006a5c20",
+    "006a5c0c",
+    "006b7c7c",
+    "006b7c44",
+    "006b7c40",
+    "005deb48",
+    "006a5bfc",
+    "005deb74",
+    "005deb78",
+    "006b7c60",
+    "006b7c64",
+    "006b7c68",
+    "006b7c6c",
+    "006b7c70",
+    "006b7c74",
+    "006b7c78"
+  ],
+  "boundaries": [
+    "WINMM timeGetDevCaps/timeBeginPeriod/timeKillEvent/timeSetEvent/timeEndPeriod imports",
+    "KERNEL32 GetTickCount, SleepEx, SetEvent imports",
+    "0055f420 canonical recovered window_thread_start_0055f420 implementation; fixture replaces it in oracle/probe",
+    "00557380 CRT exit-registration wrapper; fixture records callback registration",
+    "0053c270 auxiliary SetEvent helper remains timer_auxiliary_wait_boundary; fixture records call with its global handle set null",
+    "005debf0 diagnostic callback and asynchronous timer/worker scheduling"
+  ],
+  "cases_detail": [
+    {
+      "case": 0,
+      "events": 12,
+      "diagnostics": 0,
+      "equal": true
+    },
+    {
+      "case": 1,
+      "events": 13,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 2,
+      "events": 2,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 3,
+      "events": 3,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 4,
+      "events": 5,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 5,
+      "events": 12,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 6,
+      "events": 19,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 7,
+      "events": 16,
+      "diagnostics": 1,
+      "equal": true
+    },
+    {
+      "case": 8,
+      "events": 19,
+      "diagnostics": 1,
+      "equal": true
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/118-timer-setup/CMakeLists.txt": "125c7cd5514422abd092666552dfe49d23a910a0e25c328760bec4fe18ddbd50",
+    "iterations/v2/001-original-recovery/runs/118-timer-setup/README.md": "9167fe51f1d469be641c1e860f86773bd3619b6f2633d07958f7e34c264a4160",
+    "iterations/v2/001-original-recovery/source/include/porsche/clock_worker.hpp": "5b483a4968a47ef0d6c1bab5b5171346f29d3150e41ff7e071584ceef40ef69b",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp": "e3535f0fdf85141719d4741e60a900d6c454b9e6140fc7ec283fa5f18a33ef76",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/object_update.hpp": "b648b612de0f910609420d770bc2f67dec229d77663ae109887b7001e180f3ff",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/timer_setup.hpp": "b17aea941674cbd59a2c8aeaf84db1285ce9219803ed2d38418aed89928d2787",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_create.hpp": "227f5127eca5c565bc7980c3c9a9a41bc0e87976e3791334c0d53c7927c5d902",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_runtime.hpp": "251834cade05b25efb0ff60fee9035da800d5d051f476fffac7a7698c6fec3b9",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_state.hpp": "77f52e368e15cf55e8aa80946bb4c37fea999a3caa172011c2cd8aa0ee9de01f",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_threads.hpp": "3a121528c478a70feaae8ba669a4d3673449c993d847670cddce79e3323ab0ad",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/file_events.cpp": "bd4c4af16c0071324bae11c5102ab0c26968fa901434a8e5421a11add855f33d",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/shared_runtime_globals.cpp": "fa56877fdc040c687823d4e67eb25fc3d8a3738205bdf20c41492135f7086314",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp": "2b040a5ca5e59b6452c6861fecf6f5f28389d8714a900483a774c100ca9fc658",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_threads.cpp": "b57d7b8ef628bc2ea4d7ae978d975b3391a36ee3ac42737888fe7904c3e75be8",
+    "iterations/v2/001-original-recovery/source/recovered/timer_setup_probe.cpp": "3aefca6b95f7a43d4ef0fe4fe8f12319844c6dc173d2effdc75099e2c95c20e2",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/strings.jsonl": "e8930a01cebc9d34e6d32e49ea5ca5e2f7787ba5f8bb4f478f4093063146bda8",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-timer-setup.py": "3cb0653d9caf241b79aae5c79574706d54fbf28100792c2a18b138c3b3d61f6a"
+  },
+  "compiled_translation_units": [
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\timer_setup.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\timer_setup_probe.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\shared_runtime_globals.cpp"
+  ]
+}

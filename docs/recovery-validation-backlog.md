@@ -7,7 +7,7 @@
 и визуальное соответствие — отдельные результаты.
 
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
-  Блокер: Run153 game-link имеет282 unresolved symbols /313 references;
+  Блокер: Run156 game-link имеет282 unresolved symbols /314 references;
   compiler errors и other linker errors —0. Возврат: после устранения
   зависимостей; сначала запуск/выход, затем кадр, ввод, меню и режимы игры.
 - [ ] Проверить закрытие через WM_CLOSE→GetMessage=0→исходный timer callback,
@@ -114,3 +114,15 @@ body без инструментации.150 context copy ещё использ�
 151 original vtable identities005b4968/70 ещё требуют canonical native relocation
 и consumers; raw literal identity в oracle не доказывает native virtual dispatch.
 152 lowio,154 context move,155 network sessions находятся в параллельной работе.
+
+Checkpoint156:152/154/155 приняты,13 full bodies/4394 newcases.12 fresh reports/
+8546 comparisons,4 composed и9 native/link checks прошли.154 exactmemorycopy
+сравнивает130440 ordered accesses, включая overlap/selfcopy/alignment/DF.
+152 Win32 bindings подтверждены IAT и real OS fixture, включая recursive lock /
+cross-thread contention; это не full CRT inherited-handle/live concurrency acceptance.
+155 teardown связывает реальные callees139/145/148/151; vtable5b4978 добавлен к
+explicit native-relocation backlog вместе с5b4968/70.157/158/159 выполняются параллельно.
+Batch SHA оптимизация не меняет критерии поведения:3 mutation/cache safety tests
+прошли, benchmark9.2897→2.3805с/counts_equal=true. Перед checkpoint запускать
+scripts/research/audit-v2-proofs.py с новым --report; исходники каждого уникального
+файла хешируются один раз, изменения во время аудита отклоняются.

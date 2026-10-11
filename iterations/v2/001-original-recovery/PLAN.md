@@ -3,34 +3,36 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —153:330 full +6 registered partial;143 запушен7a49898.
-Общая MSVC Win32 сборка:135 projects /254 unique TUs;119 comparison/alias targets,
-5 native OS и3 link fixtures. Все8 native/link checks прошли.
-18 свежих original-x86 reports /5816 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /282 unresolved symbols /313 refs /0 other diagnostics; игрового EXE нет.
-Manual index37 /36624 entries:147 дополняет3e8d/3edb по callback writer005a0f5d,
-полным RET, byte SHA и internal control flow; это не новый полный анализ корпуса.
-153 принимает147 float helpers(9),148 network services(5),149 context ranges(5),
-150 string/vector utilities(11),151 network cleanup(5).1533 новых packet cases прошли.
-147 sign:256 actual-original CPU comparisons сохраняют CW/SW/tag/TOP и80-bit stack;
-128 Unicorn flag disagreements не маскируются. Decimal parsing/packing cores unresolved.
-149 wrapper forwarding проверен отдельным private seam; actual walker reads проверены
-PAGE_GUARD/VEH native observer против original read trace, без observer в production.
-151 canonical BSS00628c60/64 подтверждены refs/writers; original vtable literals
-005b4968/70 сохраняют identity, native relocation/consumers ещё не восстановлены.
-Win32 CRT error fixture проходит real module path/truncation/stdhandles/WriteFile и
-lazy user32 symbol resolution; MessageBox и terminal fatal не вызываются.
-135 partial00525ec0 и131 audio-init остаются isolated/unregistered; не угадывать
-null-path EAX или signed audio mode clamp.Полный startup context004d3420 открыт.
-Активно параллельно:152 CRT lowio,154 context move005a1a40,155 network sessions.
-Root: checkpoint153 и последующая интеграция готовых152/154/155.
-Ближайший шаг: закрыть context_move и handle initialization, session lifecycle;
-повторять actual game-link по полному recovered graph, без fake production effects.
-[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён153.
-Полный EXE/запуск, live timer/WM_CLOSE, formatter engines, audio mode domain,
-canonical owners/vtables и visual acceptance остаются открытыми.
-Цель пользователя — компиляция и полный запуск игры; архитектурная схема и Rust
-идут после восстановления и проверки. Итерация не завершена.
+Текущий принятый пакет —156:343 full +6 registered partial;153 запушен311dd1a.
+Общая MSVC Win32 сборка:139 projects /262 unique TUs;122 comparison/alias targets,
+6 native OS и3 link fixtures. Все9 native/link checks прошли.
+12 свежих original-x86 reports /8546 comparisons плюс4 component-proven composed cases.
+Game-link:0 compile errors /282 unresolved symbols /314 refs /0 other diagnostics; игрового EXE нет.
+Manual index37 /36624 entries, новых границ156 не добавляет.
+156 принимает152 CRT lowio(7),154 context move(1),155 network session lifecycle(5).
+4394 новых packet cases прошли;154 дополнительно сравнивает130440 exactordered
+memory accesses(address,width,value,order), pointer return/ABI/DF; host memmove нет.
+152 использует canonical138 banks/limit; signed inherited count, flags, error cells
+и locking reloads сохранены. Root8 Win32 bindings проверены по IAT и native fixture:
+STARTUPINFOA layout, standards, pipe type, count, recursive lock и cross-thread contention.
+155 связывает реальные139/145/148/151 callees; BSS628c78 и initialbyte5d07d0 подтверждены.
+Original vtable identities5b4968/70/78 ещё требуют canonical native relocations.
+131 audio-init и525ec0 partial destructor остаются isolated/unregistered.
+Оптимизация по решению пользователя2026-10-11: связанные пакеты11–17 bodies,
+общий batch SHA audit перед checkpoint, каждый уникальный файл читается/хешируется
+один раз за аудит; кеш отбрасывает concurrent changes.3 cache safety tests прошли.
+Inventory before/after на одинаковом registry:9.2897→2.3805с, counts_equal=true,3.90x.
+refresh-v2-proofs теперь автоматически запускает timer/formatter composite и сохраняет
+connected strings/production/wrapper режимы. Исторические отчёты не перезаписываются.
+Активно параллельно:161 smallblock allocator,162 locale engines,163 network transport/vtables.
+Готовы к следующей общей приёмке:157 CRT runtime(17),158 text helpers(11),159 network workers(15).
+Root:156 приёмка и batch proofs; затем общий следующий пакет без ослабления fidelity.
+Ближайший шаг: закрыть heap/TLS/locks, locale consumers и network worker graph;
+повторить actual game-link, далее полный004d3420 и startup/backend chains.
+[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён156.
+Полная работоспособность игры, обе карьеры/экономика/used cars/режимы, live startup,
+visual acceptance и исходное поведение — цель; body acceptance не закрывает весь граф.
+После полного проверенного C/C++ baseline — архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001
 

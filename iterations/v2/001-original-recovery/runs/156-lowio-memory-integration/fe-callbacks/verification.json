@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "004119e0",
+    "00411a80",
+    "00411b40"
+  ],
+  "cases": 1320,
+  "native_cpp_equal_original_x86": true,
+  "native_return_equal_original_eax": true,
+  "binary_matched": false,
+  "game_launch_verified": false,
+  "boundary": "0x00532e10 mode 6 returns controlled null/non-null pointer; callee side effects unrecovered",
+  "probe_sha256": "37d6f9e4f46f1b7af3684e31757fb888bbb9bd870a8a781f122a9b5bdeefd7f9",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/CMakeLists.txt": "1964f6cb6fd3c954ebd266c9806d2ecc916683a4fb90e60615afc3b2280448c4",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_callbacks.hpp": "1430ace23d5785975584573f97bfda4d6f3dbb1f37e3010378dfba065f799a8a",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/recovered/fe_callbacks_probe.cpp": "7619cf80b791bd2b5a5b83d41b72d6f39646758a85b1b8084720efdb49cd3a86",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/fe_callbacks.cpp": "96a1842093b1c03b5fdf51035a607dc6db1969a2115890ac11936892faf5ac6e",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/fe_stream.cpp": "0621d81e19f8616b4827333d27f7b7ef55f7553201aa78cc13e890eae1f504f3",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/fe_tables.inc": "ddd1d3c10aef05a01735dd71e1751a0200f89bb37966f24b320852033adad002",
+    "iterations/v2/001-original-recovery/source/recovered/sources.cmake": "74e5b580b86b689958c8ccadfed8dccdb35986db9ed7c90a3560bc3711be2509",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-fe-callbacks.py": "f04e6197fff01d55013505e466a01eabba35ff3c28e59797981a9da7cddb7a76"
+  }
+}

@@ -1622,7 +1622,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1639,7 +1639,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1656,7 +1656,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1758,7 +1758,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1772,7 +1772,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1786,7 +1786,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1806,7 +1806,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
       "verification_boundary": "Only mode6 and valid exits accepted; unknown modes and negative/unmapped index boundaries are explicit.",
       "unrecovered_branches": [
         "mode1",
@@ -1927,7 +1927,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1947,7 +1947,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1961,7 +1961,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-buffer/verification.json",
       "verification_boundary": "37 original x86 cases with typed COM property/capabilities endpoints."
     },
     {
@@ -1979,7 +1979,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-buffer/verification.json",
       "verification_boundary": "Capabilities-failure exit only; original success branch unrecovered.",
       "unrecovered_branches": [
         "capabilities_success_0056fdf9..0056ff7e"
@@ -2055,7 +2055,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-resource-paths.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/resource-paths/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/resource-paths/verification.json",
       "verification_boundary": "023-resource-paths: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -2084,7 +2084,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-render-startup.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/render-startup/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/render-startup/verification.json",
       "verification_boundary": "024-render-startup: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -4690,7 +4690,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564eb0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4708,7 +4708,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564fa0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4726,7 +4726,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00565030",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4749,7 +4749,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ab2",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4767,7 +4767,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ae7",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4785,7 +4785,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b18",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4803,7 +4803,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b50",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4819,7 +4819,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b5d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4835,7 +4835,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b6d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4850,7 +4850,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/timer-formatter/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "0053c270",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp",
@@ -5804,6 +5804,8 @@
         "0048c580",
         "0048c870",
         "0048e790",
+        "00491fc0",
+        "00492260",
         "004935c0",
         "005322b0",
         "005322c0",
@@ -5812,8 +5814,6 @@
       ],
       "unrecovered_dependencies": [
         "0048a9a0",
-        "00491fc0",
-        "00492260",
         "0053c380"
       ],
       "unrecovered_indirect_dependencies": [],
@@ -6256,11 +6256,10 @@
       "verification": "scripts/research/verify-v2-context-services.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
       "recovered_dependencies": [
-        "004211d0"
-      ],
-      "unrecovered_dependencies": [
+        "004211d0",
         "005a1a40"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6275,11 +6274,10 @@
       "verification": "scripts/research/verify-v2-context-services.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
       "recovered_dependencies": [
-        "004211d0"
-      ],
-      "unrecovered_dependencies": [
+        "004211d0",
         "005a1a40"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6294,11 +6292,10 @@
       "verification": "scripts/research/verify-v2-context-services.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/context-services/verification.json",
       "recovered_dependencies": [
-        "004211d0"
-      ],
-      "unrecovered_dependencies": [
+        "004211d0",
         "005a1a40"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6477,6 +6474,266 @@
       ],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a953e",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [
+        "005a2e22"
+      ],
+      "unrecovered_dependencies": [
+        "005a3be5",
+        "EXTERNAL:0000002b",
+        "EXTERNAL:0000002c",
+        "EXTERNAL:0000002d",
+        "EXTERNAL:0000003b"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab4c6",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [
+        "005ab726"
+      ],
+      "unrecovered_dependencies": [
+        "005a3be5",
+        "005a4ba4",
+        "005a4c05",
+        "EXTERNAL:0000000e",
+        "EXTERNAL:00000011",
+        "EXTERNAL:00000012"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab5e9",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a669e",
+        "005a66a7",
+        "EXTERNAL:00000024"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab665",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a669e",
+        "005a66a7",
+        "EXTERNAL:00000024"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab6e4",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a669e",
+        "005a66a7"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab726",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a4ba4",
+        "005a4c05",
+        "EXTERNAL:00000011",
+        "EXTERNAL:00000012"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab785",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86; descriptor unsigned range and signed inheritance count preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-lowio.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "EXTERNAL:0000000e"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a1a40",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_move.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl x86, destination/source/byte count; pointer EAX and clear DF",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-context-move.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/context-move/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00492260",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_session.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; stop-session cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-session.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/network-session/verification.json",
+      "recovered_dependencies": [
+        "0048b310"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00491fc0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_session.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; stop-session cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-session.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/network-session/verification.json",
+      "recovered_dependencies": [
+        "004237d0",
+        "0048b250",
+        "0048b310",
+        "0048b660",
+        "0048c430",
+        "00493130",
+        "005322b0",
+        "005322c0",
+        "005322d0",
+        "00560180",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [
+        "00492770"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048b310",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_session.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; stop-session cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-session.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/network-session/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [
+        "0055bfd0"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00493130",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_session.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; stop-session cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-session.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/network-session/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048b250",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_session.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "ECX members via fastcall; stop-session cdecl",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-session.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/network-session/verification.json",
+      "recovered_dependencies": [
+        "0048aed0",
+        "005322b0",
+        "005322c0",
+        "005322d0",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
     }
   ]
 }
