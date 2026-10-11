@@ -129,3 +129,8 @@ list(APPEND PORSCHE_RECOVERED_SOURCES "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.
 list(APPEND PORSCHE_RECOVERED_SOURCES
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/context_move.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_session.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_crt_runtime.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_text.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_workers_members.cpp")

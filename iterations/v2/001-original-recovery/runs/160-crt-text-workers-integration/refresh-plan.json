@@ -1,0 +1,104 @@
+{
+  "tasks": [
+    {
+      "script": "scripts/research/verify-v2-disk-open.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-disk-open.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\disk-open",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\disk_open_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\disk-open\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-fe-callbacks.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-fe-callbacks.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\fe-callbacks",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\fe_callbacks_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\fe-callbacks\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-formatter-timer-integration.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-formatter-timer-integration.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\formatter-timer-integration",
+        "--timer-probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\timer_setup_probe.exe",
+        "--formatter-probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\formatter_original_probe.exe",
+        "--auxiliary-probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\auxiliary_wait_probe.exe",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\startup_timing_integration_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\formatter-timer-integration\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-input-buffer.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-input-buffer.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\input-buffer",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\input_buffer_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\input-buffer\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-input-state.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-input-state.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\input-state",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\input_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\input-state\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-render-startup.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-render-startup.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\render-startup",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\render_startup_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\render-startup\\verification.json"
+    },
+    {
+      "script": "scripts/research/verify-v2-resource-paths.py",
+      "command": [
+        "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "F:\\claude\\porsche disasm\\scripts\\research\\verify-v2-resource-paths.py",
+        "--report-dir",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\resource-paths",
+        "--probe",
+        "F:\\claude\\porsche disasm\\local\\builds\\v2\\001-original-recovery\\bin\\Release\\resource_paths_probe.exe"
+      ],
+      "output": "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\160-crt-text-workers-integration\\resource-paths\\verification.json"
+    }
+  ],
+  "replacements": {
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/disk-open/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/disk-open/verification.json",
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/fe-callbacks/verification.json",
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-buffer/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-buffer/verification.json",
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-state/verification.json",
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/render-startup/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/render-startup/verification.json",
+    "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/resource-paths/verification.json": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/resource-paths/verification.json"
+  },
+  "unsupported": []
+}

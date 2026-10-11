@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "cases": 48,
+  "full_function_vas": [
+    "0059d650"
+  ],
+  "native_cpp_equal_original_x86": true,
+  "binary_matched": false,
+  "game_launch_verified": false,
+  "boundary": "valid NUL-terminated GetModuleFileNameA paths containing a backslash; Win32/CRT/file_exists are typed recording endpoints",
+  "probe_sha256": "c3f9eb7505a47146c9571a620d02ba56e5dce4713d3fd11a32383ba75e861795",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/CMakeLists.txt": "5251add6c218e8c96582ba629ec0ab2c95ad5789c181790ab012861fc048b6b6",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/resource_paths.hpp": "b633fa56ba1d9134a0c7c2ab97c675800b57c6ea8f5caf44f9b702dc51bbda18",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_paths.cpp": "d98786e4178cc3fbd61b059a3b91ec86e946aeca5a07d9fbb31775a1398008b8",
+    "iterations/v2/001-original-recovery/source/recovered/resource_paths_probe.cpp": "c0850b0bda283969d5ac3893e5e20f625f48d1bc2f6b8b40fd83e525364c3b4f",
+    "iterations/v2/001-original-recovery/source/recovered/sources.cmake": "8d34d6b653c67c0bcf036dde4cffb3e0ccd8b87d3816ca69c83e6df082ed42eb",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-resource-paths.py": "1592772371c172c07e8d4e47888233b46875b8cccb1283a42a3aafa7782aa115"
+  }
+}

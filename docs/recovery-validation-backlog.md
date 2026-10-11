@@ -7,7 +7,7 @@
 и визуальное соответствие — отдельные результаты.
 
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
-  Блокер: Run156 game-link имеет282 unresolved symbols /314 references;
+  Блокер: Run160 game-link имеет279 unresolved symbols /312 references;
   compiler errors и other linker errors —0. Возврат: после устранения
   зависимостей; сначала запуск/выход, затем кадр, ввод, меню и режимы игры.
 - [ ] Проверить закрытие через WM_CLOSE→GetMessage=0→исходный timer callback,
@@ -126,3 +126,21 @@ Batch SHA оптимизация не меняет критерии поведе
 прошли, benchmark9.2897→2.3805с/counts_equal=true. Перед checkpoint запускать
 scripts/research/audit-v2-proofs.py с новым --report; исходники каждого уникального
 файла хешируются один раз, изменения во время аудита отклоняются.
+
+## Checkpoint160: CRT/text/network integration
+
+- [x] Принять157/158/159:43 full bodies/10339 packet comparisons; общий build144 projects/270 TUs,
+ 12 fresh original reports/14491 comparisons +4 component-proven composed cases,
+ 10 native/link fixtures. Источники и границы —runs/160-crt-text-workers-integration.
+- [x] Исправить canonical CRT lock-table prefix до26 DWORD: lock19 у text consumer,
+ lock25 у locale setter;104 исходных байта/SHA, initial aliases, lazy/existing/unlock19/25 проверены.
+- [x] Проверить10 новых Win32 IAT адаптеров: heap zero-fill/free, TLS/thread IDs/last error,
+ thread isolation, Interlocked wrap и concurrent increments.
+- [ ] Соединить новые CRT wrappers с настоящим smallblock allocator и original locale engines;
+ live allocator/TLS startup/init/failure/concurrency проверить после161/162. Recording seams
+ в original oracle не доказывают эти OS/game paths. Signal table005e5ec8 остаётся unresolved.
+- [ ] Заменить raw original network vtable identity словами с canonical native relocations.
+ 163 доказал slot0/RTTI/HIGHLOW и пропуски index48ad70/48b340/5a1056;164 восстанавливает targets.
+ Production native virtual dispatch ещё не принят.5e8e50 и5e8bfc/5e8c00 extent/owners открыты.
+- [ ] Вернуться к полному004d3420 и запуску игры.279 unresolved symbols — текущая
+ граница, не число всего остатка. Batch SHA/cache сокращает повторную работу, не заменяет original проверки.

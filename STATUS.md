@@ -1,11 +1,11 @@
 # Состояние проекта
 
-Текущий результат — [Run156](iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/README.md): **343 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:139 projects /262 unique TUs;122 comparison/alias targets,6 native OS и3 link fixtures.
-12 свежих original-x86 отчётов /8546 сравнений плюс4 component-proven composed cases; все9 native/link проверок прошли.
-Приняты13 новых функций: CRT lowio, точное копирование памяти и сетевые сессии.
+Текущий результат — [Run160](iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/README.md): **386 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:144 projects /270 unique TUs;126 comparison/alias targets,7 native OS и3 link fixtures.
+12 свежих original-x86 отчётов /14491 сравнений плюс4 component-proven composed cases; все10 native/link проверок прошли.
+Приняты43 новые функции: CRT heap/TLS/locks, текст/locale consumers и сетевые workers/members.
 SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с на текущем корпусе.
-Game-link:0 compile errors /282 unresolved symbols /314 references /0 other diagnostics; игрового EXE нет.
+Game-link:0 compile errors /279 unresolved symbols /312 references /0 other diagnostics; игрового EXE нет.
 Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
 Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, CRT engines и live startup открыты.

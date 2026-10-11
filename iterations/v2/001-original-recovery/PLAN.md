@@ -3,36 +3,35 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —156:343 full +6 registered partial;153 запушен311dd1a.
-Общая MSVC Win32 сборка:139 projects /262 unique TUs;122 comparison/alias targets,
-6 native OS и3 link fixtures. Все9 native/link checks прошли.
-12 свежих original-x86 reports /8546 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /282 unresolved symbols /314 refs /0 other diagnostics; игрового EXE нет.
-Manual index37 /36624 entries, новых границ156 не добавляет.
-156 принимает152 CRT lowio(7),154 context move(1),155 network session lifecycle(5).
-4394 новых packet cases прошли;154 дополнительно сравнивает130440 exactordered
-memory accesses(address,width,value,order), pointer return/ABI/DF; host memmove нет.
-152 использует canonical138 banks/limit; signed inherited count, flags, error cells
-и locking reloads сохранены. Root8 Win32 bindings проверены по IAT и native fixture:
-STARTUPINFOA layout, standards, pipe type, count, recursive lock и cross-thread contention.
-155 связывает реальные139/145/148/151 callees; BSS628c78 и initialbyte5d07d0 подтверждены.
+Текущий принятый пакет —160:386 full +6 registered partial;156 запушен6fd070a.
+Общая MSVC Win32 сборка:144 projects /270 unique TUs;126 comparison/alias targets,
+7 native OS и3 link fixtures. Все10 native/link checks прошли.
+12 свежих original-x86 reports /14491 comparisons плюс4 component-proven composed cases.
+Game-link:0 compile errors /279 unresolved symbols /312 refs /0 other diagnostics; игрового EXE нет.
+Manual index37 /36624 entries; новых границ160 не добавляет.
+160 принимает157 CRT runtime(17),158 text helpers(11),159 network workers/members(15).
+10339 новых packet cases прошли:1972 CRT production+trace,8178 text,189 network.
+В стыковке обнаружен недостаточный CRT lock-table prefix: consumer использует19,
+locale setter005a6895 —25. Канонический prefix расширен до26 DWORD по104 исходным
+байтам/SHA; initial aliases и lazy/existing19/25 проверены, общий размер таблицы не угадан.
+Root10 точных IAT bindings: HeapAlloc/Free, TLS, last error/threadID, Interlocked inc/dec.
+Native fixture проверил zero-fill/free, thread-local isolation, error, atomic wrap/concurrency.
 Original vtable identities5b4968/70/78 ещё требуют canonical native relocations.
 131 audio-init и525ec0 partial destructor остаются isolated/unregistered.
-Оптимизация по решению пользователя2026-10-11: связанные пакеты11–17 bodies,
-общий batch SHA audit перед checkpoint, каждый уникальный файл читается/хешируется
-один раз за аудит; кеш отбрасывает concurrent changes.3 cache safety tests прошли.
-Inventory before/after на одинаковом registry:9.2897→2.3805с, counts_equal=true,3.90x.
-refresh-v2-proofs теперь автоматически запускает timer/formatter composite и сохраняет
-connected strings/production/wrapper режимы. Исторические отчёты не перезаписываются.
-Активно параллельно:161 smallblock allocator,162 locale engines,163 network transport/vtables.
-Готовы к следующей общей приёмке:157 CRT runtime(17),158 text helpers(11),159 network workers(15).
-Root:156 приёмка и batch proofs; затем общий следующий пакет без ослабления fidelity.
-Ближайший шаг: закрыть heap/TLS/locks, locale consumers и network worker graph;
-повторить actual game-link, далее полный004d3420 и startup/backend chains.
-[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён156.
-Полная работоспособность игры, обе карьеры/экономика/used cars/режимы, live startup,
-visual acceptance и исходное поведение — цель; body acceptance не закрывает весь граф.
-После полного проверенного C/C++ baseline — архитектурная схема и Rust native/web.
+Оптимизации сохраняются: связанные пакеты функций, batch SHA аудит с кешем уникальных
+файлов и защитой от concurrent changes;7 safety/refresh-plan tests прошли156.
+Измеренное ускорение inventory в156:9.2897→2.3805с при одинаковых counts.
+Независимые original comparisons/refresh запускаются параллельно; общий build последовательно.
+Исторические отчёты не перезаписываются; режимы connected/production/wrapper сохранены.
+Активные владельцы: small_heap_resume —161, locale_resume —166 formatter output (162 готов), network_vtables_resume —164;
+root —160 integration/acceptance, shared index/registry/platform/docs/commit.
+162 locale(9) и163 network groups(6) готовы к следующей общей приёмке вместе с161/162;
+164 восстанавливает vtable targets и документирует пропуски index для root.
+Ближайший шаг: принять161/162/163 после общего build+original+native+game-link;
+затем canonical native vtables/полный004d3420 и startup/backend chains.
+[Validation backlog](../../../docs/recovery-validation-backlog.md) обновлён160.
+Цель — полная исходная игра, обе карьеры/экономика/used cars/режимы, live startup,
+visual acceptance. Body acceptance не закрывает весь граф; затем архитектура и Rust.
 
 ## Цель и готовность 001
 

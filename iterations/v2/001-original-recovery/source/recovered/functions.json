@@ -354,11 +354,11 @@
       "calling_convention": "cdecl, x86 32-bit",
       "recovered_dependencies": [
         "005320b0",
-        "005321f0"
+        "005321f0",
+        "005a0fbf"
       ],
       "unrecovered_dependencies": [
-        "0053c290",
-        "005a0fbf"
+        "0053c290"
       ],
       "unrecovered_indirect_dependencies": [],
       "binary_matched": false,
@@ -929,11 +929,11 @@
       "status": "native-differential-verified",
       "calling_convention": "cdecl, x86 32-bit; open bool compared using AL",
       "recovered_dependencies": [
-        "00533b90"
+        "00533b90",
+        "005a0fbf"
       ],
       "unrecovered_dependencies": [
-        "00561b80",
-        "005a0fbf"
+        "00561b80"
       ],
       "unrecovered_indirect_dependencies": [],
       "binary_matched": false,
@@ -1622,7 +1622,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1639,7 +1639,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1656,7 +1656,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1758,7 +1758,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1772,7 +1772,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1786,7 +1786,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1806,7 +1806,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-state/verification.json",
       "verification_boundary": "Only mode6 and valid exits accepted; unknown modes and negative/unmapped index boundaries are explicit.",
       "unrecovered_branches": [
         "mode1",
@@ -1927,7 +1927,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1947,7 +1947,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1961,7 +1961,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-buffer/verification.json",
       "verification_boundary": "37 original x86 cases with typed COM property/capabilities endpoints."
     },
     {
@@ -1979,7 +1979,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/input-buffer/verification.json",
       "verification_boundary": "Capabilities-failure exit only; original success branch unrecovered.",
       "unrecovered_branches": [
         "capabilities_success_0056fdf9..0056ff7e"
@@ -1995,8 +1995,7 @@
       "unrecovered_dependencies": [
         "0048fc80",
         "00536e50",
-        "00563ad0",
-        "00565030"
+        "00563ad0"
       ],
       "recovered_dependencies": [
         "004b6ff0",
@@ -2005,6 +2004,7 @@
         "00564850",
         "00564ab0",
         "00564e70",
+        "00565030",
         "0059e9d0",
         "0059edb0",
         "0059ef90"
@@ -2023,15 +2023,15 @@
       "status": "native-differential-verified",
       "calling_convention": "x86 typed C++ adapter; original ECX/stack ABI documented in source",
       "unrecovered_dependencies": [
-        "005a0fbf",
-        "005a2c24",
         "EXTERNAL:00000006",
         "EXTERNAL:0000000b",
         "EXTERNAL:0000000c"
       ],
       "recovered_dependencies": [
         "005655f0",
-        "005a246e"
+        "005a0fbf",
+        "005a246e",
+        "005a2c24"
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-startup-services.py",
@@ -2048,14 +2048,15 @@
       "calling_convention": "x86 typed C++ adapter; original ECX/stack ABI documented in source",
       "unrecovered_dependencies": [
         "00561b80",
-        "005a0fbf",
         "EXTERNAL:0000000b",
         "EXTERNAL:0000000c"
       ],
-      "recovered_dependencies": [],
+      "recovered_dependencies": [
+        "005a0fbf"
+      ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-resource-paths.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/resource-paths/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/resource-paths/verification.json",
       "verification_boundary": "023-resource-paths: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -2070,8 +2071,6 @@
         "00449b40",
         "00465df0",
         "004b70d0",
-        "005a0fbf",
-        "005a246e",
         "EXTERNAL:0000008c"
       ],
       "recovered_dependencies": [
@@ -2080,11 +2079,13 @@
         "004b7220",
         "004b7240",
         "004b7340",
-        "0059ef90"
+        "0059ef90",
+        "005a0fbf",
+        "005a246e"
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-render-startup.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/render-startup/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/render-startup/verification.json",
       "verification_boundary": "024-render-startup: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -2227,9 +2228,7 @@
         "00556910",
         "00556a90",
         "00557100",
-        "005a0fbf",
         "005a177b",
-        "005a246e",
         "EXTERNAL:0000008a",
         "EXTERNAL:0000008b",
         "EXTERNAL:0000008c",
@@ -2242,7 +2241,9 @@
         "00537600",
         "005376c0",
         "00557370",
-        "0059ef90"
+        "0059ef90",
+        "005a0fbf",
+        "005a246e"
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-render-display.py",
@@ -2314,7 +2315,6 @@
         "00565340",
         "00574eb0",
         "00594f00",
-        "005a0fbf",
         "EXTERNAL:00000007",
         "EXTERNAL:0000000a",
         "EXTERNAL:00000015",
@@ -2322,7 +2322,9 @@
         "EXTERNAL:00000042",
         "EXTERNAL:00000060"
       ],
-      "recovered_dependencies": [],
+      "recovered_dependencies": [
+        "005a0fbf"
+      ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-render-loader.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/render-loader/verification.json",
@@ -3364,10 +3366,10 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/exit_registry.cpp",
       "status": "native-differential-verified",
       "calling_convention": "Original x86 ABI adapted to typed C++ as documented in header and package README.",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a4ba4"
       ],
+      "unrecovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-exit-registry.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/061-startup-platform-integration/exit-registry/verification.json",
@@ -3381,10 +3383,10 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/exit_registry.cpp",
       "status": "native-differential-verified",
       "calling_convention": "Original x86 ABI adapted to typed C++ as documented in header and package README.",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a4c05"
       ],
+      "unrecovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-exit-registry.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/061-startup-platform-integration/exit-registry/verification.json",
@@ -3683,7 +3685,8 @@
         "005366e0",
         "0059d650",
         "0059ed40",
-        "0059ed90"
+        "0059ed90",
+        "005a246e"
       ],
       "unrecovered_dependencies": [
         "00412030",
@@ -3707,7 +3710,6 @@
         "0053c290",
         "00563d30",
         "005a177b",
-        "005a246e",
         "external:00000014",
         "external:0000008c"
       ],
@@ -4175,7 +4177,8 @@
         "004237d0",
         "00467fc0",
         "00531f90",
-        "00534550"
+        "00534550",
+        "005a0fbf"
       ],
       "unrecovered_dependencies": [
         "00403520",
@@ -4188,8 +4191,7 @@
         "00563440",
         "0059d8e0",
         "0059dc30",
-        "0059e440",
-        "005a0fbf"
+        "0059e440"
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-game-setup.py",
@@ -4255,12 +4257,13 @@
       "status": "native-differential-verified",
       "calling_convention": "Exact original caller ABI or documented explicit-object adapter; see package report.",
       "recovered_dependencies": [
+        "004b0d70",
         "00531f90",
         "005322b0",
         "005322c0",
         "00534550",
         "005366e0",
-        "004b0d70"
+        "005a0fbf"
       ],
       "unrecovered_dependencies": [
         "0048d550",
@@ -4283,8 +4286,7 @@
         "00563440",
         "0059d8e0",
         "0059dc30",
-        "005a0f98",
-        "005a0fbf"
+        "005a0f98"
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-splash-progress.py",
@@ -4690,7 +4692,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564eb0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4708,7 +4710,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564fa0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4726,7 +4728,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00565030",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4749,15 +4751,15 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ab2",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
       "calling_convention": "cdecl, signed character, descriptor pointer, emitted-count pointer",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a4259"
       ],
+      "unrecovered_dependencies": [],
       "verification_boundary": "Original helper semantics compare with x86; capacity-exhaustion cleanup remains a typed recording boundary.",
       "integration_verification_report": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/formatter-integration/verification.json"
     },
@@ -4767,7 +4769,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ae7",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4785,7 +4787,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b18",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4803,7 +4805,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b50",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4819,7 +4821,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b5d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4835,7 +4837,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b6d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4850,7 +4852,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "0053c270",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp",
@@ -5011,12 +5013,11 @@
       "verification": "scripts/research/verify-v2-application-context.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/application-context/verification.json",
       "recovered_dependencies": [
+        "00525e20",
+        "005294c0",
         "0059ef90"
       ],
-      "unrecovered_dependencies": [
-        "00525e20",
-        "005294c0"
-      ],
+      "unrecovered_dependencies": [],
       "verification_boundary": "Full0x180-byte sparse context writes/canaries and ordered controlled base/member calls. Original004d3420 remains unresolved;005e8e50 alias extent remains open."
     },
     {
@@ -5030,11 +5031,11 @@
       "verification": "scripts/research/verify-v2-application-context.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/application-context/verification.json",
       "recovered_dependencies": [
+        "005295b0",
         "0059f050"
       ],
       "unrecovered_dependencies": [
-        "00525ec0",
-        "005295b0"
+        "00525ec0"
       ],
       "verification_boundary": "Full0x180-byte sparse context writes/canaries and ordered controlled base/member calls. Original004d3420 remains unresolved;005e8e50 alias extent remains open."
     },
@@ -5869,11 +5870,11 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/153-services-integration/formatter-float-helpers/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a2248",
         "005a2eae"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6446,11 +6447,10 @@
         "005322b0",
         "005322c0",
         "005322d0",
+        "0055d9b0",
         "0059f050"
       ],
-      "unrecovered_dependencies": [
-        "0055d9b0"
-      ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6467,11 +6467,10 @@
       "recovered_dependencies": [
         "005322b0",
         "005322c0",
-        "005322d0"
-      ],
-      "unrecovered_dependencies": [
+        "005322d0",
         "0055d1b0"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6486,10 +6485,10 @@
       "verification": "scripts/research/verify-v2-formatter-lowio.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
       "recovered_dependencies": [
-        "005a2e22"
+        "005a2e22",
+        "005a3be5"
       ],
       "unrecovered_dependencies": [
-        "005a3be5",
         "EXTERNAL:0000002b",
         "EXTERNAL:0000002c",
         "EXTERNAL:0000002d",
@@ -6509,12 +6508,12 @@
       "verification": "scripts/research/verify-v2-formatter-lowio.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
       "recovered_dependencies": [
-        "005ab726"
-      ],
-      "unrecovered_dependencies": [
         "005a3be5",
         "005a4ba4",
         "005a4c05",
+        "005ab726"
+      ],
+      "unrecovered_dependencies": [
         "EXTERNAL:0000000e",
         "EXTERNAL:00000011",
         "EXTERNAL:00000012"
@@ -6532,10 +6531,11 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-lowio.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a669e",
-        "005a66a7",
+        "005a66a7"
+      ],
+      "unrecovered_dependencies": [
         "EXTERNAL:00000024"
       ],
       "unrecovered_indirect_dependencies": [],
@@ -6551,10 +6551,11 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-lowio.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a669e",
-        "005a66a7",
+        "005a66a7"
+      ],
+      "unrecovered_dependencies": [
         "EXTERNAL:00000024"
       ],
       "unrecovered_indirect_dependencies": [],
@@ -6570,11 +6571,11 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-lowio.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a669e",
         "005a66a7"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
     },
@@ -6588,10 +6589,11 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-lowio.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/formatter-lowio/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a4ba4",
-        "005a4c05",
+        "005a4c05"
+      ],
+      "unrecovered_dependencies": [
         "EXTERNAL:00000011",
         "EXTERNAL:00000012"
       ],
@@ -6663,6 +6665,7 @@
         "0048b310",
         "0048b660",
         "0048c430",
+        "00492770",
         "00493130",
         "005322b0",
         "005322c0",
@@ -6670,9 +6673,7 @@
         "00560180",
         "0059f050"
       ],
-      "unrecovered_dependencies": [
-        "00492770"
-      ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
     },
@@ -6688,11 +6689,10 @@
       "verification_report": "iterations/v2/001-original-recovery/runs/156-lowio-memory-integration/network-session/verification.json",
       "recovered_dependencies": [
         "005322b0",
-        "005322c0"
-      ],
-      "unrecovered_dependencies": [
+        "005322c0",
         "0055bfd0"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
     },
@@ -6734,6 +6734,808 @@
       "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies compared with original state, return, memory and ordered effects. Remaining typed callees are recording seams; live concurrency, unresolved vtable relocation and full game behavior remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3be5",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a3bf7"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3bf7",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a3c23",
+        "005ab4ab"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3c23",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a4ba4",
+        "005a4c05"
+      ],
+      "unrecovered_dependencies": [
+        "005aad00",
+        "EXTERNAL:0000006a"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3b9d",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a4ba4",
+        "005a4c05",
+        "005aa9aa"
+      ],
+      "unrecovered_dependencies": [
+        "005aa9d5",
+        "EXTERNAL:00000019"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab4ab",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a4b7b",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "EXTERNAL:00000012"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a4ba4",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a2e22",
+        "005a3b9d",
+        "005a3be5",
+        "005a4ba4",
+        "005a4c05"
+      ],
+      "unrecovered_dependencies": [
+        "EXTERNAL:00000011",
+        "EXTERNAL:00000012"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a4c05",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "EXTERNAL:0000000e"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a53f5",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a4b7b",
+        "005a5449",
+        "005a8ea9"
+      ],
+      "unrecovered_dependencies": [
+        "EXTERNAL:00000010",
+        "EXTERNAL:0000003c",
+        "EXTERNAL:0000003e"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a5449",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a545c",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a2e22",
+        "005a5449",
+        "005a8ea9"
+      ],
+      "unrecovered_dependencies": [
+        "EXTERNAL:00000010",
+        "EXTERNAL:0000003c",
+        "EXTERNAL:0000003d",
+        "EXTERNAL:00000042",
+        "EXTERNAL:0000005c"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a54c3",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a3b9d"
+      ],
+      "unrecovered_dependencies": [
+        "EXTERNAL:0000003c",
+        "EXTERNAL:0000003d"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a669e",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a545c"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a66a7",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a545c"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a8ea9",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [
+        "005a4ba4",
+        "005a4c05",
+        "005ab4ab",
+        "005abe90"
+      ],
+      "unrecovered_dependencies": [
+        "005aad00",
+        "EXTERNAL:0000006a"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aa9aa",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abe90",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; fixed 32-bit arguments, original RET/no stack pop",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-crt-runtime.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-crt-runtime/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2248",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a22b7",
+        "005a4ba4",
+        "005a4c05"
+      ],
+      "unrecovered_dependencies": [
+        "EXTERNAL:00000088",
+        "EXTERNAL:00000089"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a22b7",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a2eae"
+      ],
+      "unrecovered_dependencies": [
+        "005a7e05"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a262c",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a269b",
+        "005a4ba4",
+        "005a4c05"
+      ],
+      "unrecovered_dependencies": [
+        "EXTERNAL:00000088",
+        "EXTERNAL:00000089"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a269b",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a2eae"
+      ],
+      "unrecovered_dependencies": [
+        "005a7e05"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2eae",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "005a98c2"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2c24",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a2eae"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2c52",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a2eae"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2c7a",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [
+        "005a2eae"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2210",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2e70",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a2870",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-text.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/formatter-text/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055bfd0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "00531f90",
+        "005366e0",
+        "0055c060",
+        "0055f740",
+        "0055f780",
+        "0055fa10",
+        "00580020",
+        "00580050",
+        "00580080"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d1b0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "00531f90",
+        "005366e0",
+        "0055f740",
+        "0055f780",
+        "0055fa10",
+        "00580020",
+        "00580050",
+        "00580080"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d9b0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "0055f740",
+        "0055fa10",
+        "00580050",
+        "00580080"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580050",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "00580790",
+        "005809f0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580080",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "0055fb30",
+        "005806e0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580020",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "0055fc10",
+        "005806c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055c060",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "005806c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005806c0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "005322d0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005809f0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00492770",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "0048a7a0",
+        "0048b5a0",
+        "0048b660",
+        "0048c870",
+        "004937f0",
+        "004c3150",
+        "0050e140",
+        "00529050",
+        "00560180",
+        "0059f050"
+      ],
+      "unrecovered_dependencies": [
+        "0048bda0"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048b5a0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "0048b660",
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048a7a0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00529050",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0050e140",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "004937f0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_workers_members.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl workers/queues; ECX members via fastcall, original RET4/RET12 preserved",
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-workers-members.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/160-crt-text-workers-integration/network-workers-members/verification.json",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "0059eeb0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
     }
   ]
 }
