@@ -12,6 +12,9 @@ namespace porsche {
 std::int32_t __cdecl formatter_cleanup_005a4259(
     std::uint32_t character, FormatterOriginalDescriptor32* descriptor);
 
+// Canonical owner shared with the formatter-output regression probe.
+std::uint32_t __cdecl cleanup_is_character_device_005abf35(std::uint32_t file_id);
+
 // Typed unresolved file/descriptor operations called by the recovered body.
 std::int32_t __cdecl formatter_cleanup_file_write_005a9e49(
     std::uint32_t file_id, const void* bytes, std::int32_t length);

@@ -1,0 +1,2483 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "005abee8",
+    "005a2e22",
+    "005a9736",
+    "005a976f",
+    "005a0f5d",
+    "005a247f",
+    "005aa4e0",
+    "005aa4f0",
+    "005a28a0",
+    "005acfb9",
+    "005a6730"
+  ],
+  "full_function_vas": [
+    "005abee8",
+    "005a2e22",
+    "005a9736",
+    "005a976f",
+    "005a0f5d",
+    "005a247f",
+    "005aa4e0",
+    "005aa4f0",
+    "005a28a0",
+    "005acfb9",
+    "005a6730"
+  ],
+  "partial_function_vas": [],
+  "function_bodies": {
+    "005abee8": {
+      "bytes": 9,
+      "sha256": "3d7f816d3d5a94fcbcdd05f95999058c87639528370df9d80c72182b3855b68d",
+      "ranges": [
+        [
+          "005abee8",
+          "005abef0"
+        ]
+      ]
+    },
+    "005a2e22": {
+      "bytes": 34,
+      "sha256": "0d2a358c8f6701bdfb9827319e5cf8cd31cc4a09e73dbcbd41a3aaf5318c15e5",
+      "ranges": [
+        [
+          "005a2e22",
+          "005a2e43"
+        ]
+      ]
+    },
+    "005a9736": {
+      "bytes": 57,
+      "sha256": "924b469107ed5db11d0d8c795baa00117b3f25f2f9b3b4630e9764ee51b7b8ee",
+      "ranges": [
+        [
+          "005a9736",
+          "005a976e"
+        ]
+      ]
+    },
+    "005a976f": {
+      "bytes": 339,
+      "sha256": "0958d56fd5ea16230097708dc982cc80f17cdb56c6cb703f4ab22ca994e92826",
+      "ranges": [
+        [
+          "005a976f",
+          "005a98c1"
+        ]
+      ]
+    },
+    "005a0f5d": {
+      "bytes": 56,
+      "sha256": "860b9ab93fea0eef97a5574312c46328ac2f3b3a758bff9bb4647fa5c52d4d11",
+      "ranges": [
+        [
+          "005a0f5d",
+          "005a0f94"
+        ]
+      ]
+    },
+    "005a247f": {
+      "bytes": 17,
+      "sha256": "31edc6767b84a1158fd0fefb34a560e6e471692367a9dccb231a54eb79bd2b49",
+      "ranges": [
+        [
+          "005a247f",
+          "005a248f"
+        ]
+      ]
+    },
+    "005aa4e0": {
+      "bytes": 7,
+      "sha256": "31c7c51054b39a8a3d95b0c921efa1e98353c95313759c7b45fdea6d1dd12d3a",
+      "ranges": [
+        [
+          "005aa4e0",
+          "005aa4e6"
+        ]
+      ]
+    },
+    "005aa4f0": {
+      "bytes": 224,
+      "sha256": "1983be947d7c0e54d60eb69cb4a53a60bdda9a2e1f5aa53979a2328e6e0be248",
+      "ranges": [
+        [
+          "005aa4f0",
+          "005aa5cf"
+        ]
+      ]
+    },
+    "005a28a0": {
+      "bytes": 254,
+      "sha256": "0318574df8288c6fc0e543c779d4c1098344731f9acf2a7c790c2176ab7bdf4c",
+      "ranges": [
+        [
+          "005a28a0",
+          "005a299d"
+        ]
+      ]
+    },
+    "005acfb9": {
+      "bytes": 137,
+      "sha256": "9facb6da4a1b5d50214a008d5035f5f0dde54b9fcab90493d01e4100e0c58864",
+      "ranges": [
+        [
+          "005acfb9",
+          "005ad041"
+        ]
+      ]
+    },
+    "005a6730": {
+      "bytes": 123,
+      "sha256": "ee3a394138000e43710e1f46da55d9eed3240ac7510488da765689c5aea446c7",
+      "ranges": [
+        [
+          "005a6730",
+          "005a67aa"
+        ]
+      ]
+    }
+  },
+  "cases": 94,
+  "native_cpp_equal_original_x86": true,
+  "comparisons": [
+    {
+      "input": [
+        4,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "message_2_1_2"
+      ],
+      "output": {
+        "name": "message_2_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "message_2_0_2"
+      ],
+      "output": {
+        "name": "message_2_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        8,
+        -2,
+        25,
+        0,
+        "message_8_1_2"
+      ],
+      "output": {
+        "name": "message_8_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:41:8:1:52363030380d0a2d206e6f7420656e6f75676820737061636520666f7220617267756d656e74730d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        8,
+        -2,
+        25,
+        0,
+        "message_8_0_2"
+      ],
+      "output": {
+        "name": "message_8_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030380d0a2d206e6f7420656e6f75676820737061636520666f7220617267756d656e74730d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        9,
+        -2,
+        25,
+        0,
+        "message_9_1_2"
+      ],
+      "output": {
+        "name": "message_9_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:43:9:1:52363030390d0a2d206e6f7420656e6f75676820737061636520666f7220656e7669726f6e6d656e740d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        9,
+        -2,
+        25,
+        0,
+        "message_9_0_2"
+      ],
+      "output": {
+        "name": "message_9_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030390d0a2d206e6f7420656e6f75676820737061636520666f7220656e7669726f6e6d656e740d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        10,
+        -2,
+        25,
+        0,
+        "message_10_1_2"
+      ],
+      "output": {
+        "name": "message_10_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:32:10:1:0d0a61626e6f726d616c2070726f6772616d207465726d696e6174696f6e0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        10,
+        -2,
+        25,
+        0,
+        "message_10_0_2"
+      ],
+      "output": {
+        "name": "message_10_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a0d0a61626e6f726d616c2070726f6772616d207465726d696e6174696f6e0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        16,
+        -2,
+        25,
+        0,
+        "message_16_1_2"
+      ],
+      "output": {
+        "name": "message_16_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:43:16:1:52363031360d0a2d206e6f7420656e6f75676820737061636520666f722074687265616420646174610d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        16,
+        -2,
+        25,
+        0,
+        "message_16_0_2"
+      ],
+      "output": {
+        "name": "message_16_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363031360d0a2d206e6f7420656e6f75676820737061636520666f722074687265616420646174610d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        17,
+        -2,
+        25,
+        0,
+        "message_17_1_2"
+      ],
+      "output": {
+        "name": "message_17_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:44:17:1:52363031370d0a2d20756e6578706563746564206d756c7469746872656164206c6f636b206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        17,
+        -2,
+        25,
+        0,
+        "message_17_0_2"
+      ],
+      "output": {
+        "name": "message_17_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363031370d0a2d20756e6578706563746564206d756c7469746872656164206c6f636b206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        18,
+        -2,
+        25,
+        0,
+        "message_18_1_2"
+      ],
+      "output": {
+        "name": "message_18_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:32:18:1:52363031380d0a2d20756e65787065637465642068656170206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        18,
+        -2,
+        25,
+        0,
+        "message_18_0_2"
+      ],
+      "output": {
+        "name": "message_18_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363031380d0a2d20756e65787065637465642068656170206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        19,
+        -2,
+        25,
+        0,
+        "message_19_1_2"
+      ],
+      "output": {
+        "name": "message_19_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:40:19:1:52363031390d0a2d20756e61626c6520746f206f70656e20636f6e736f6c65206465766963650d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        19,
+        -2,
+        25,
+        0,
+        "message_19_0_2"
+      ],
+      "output": {
+        "name": "message_19_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363031390d0a2d20756e61626c6520746f206f70656e20636f6e736f6c65206465766963650d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        24,
+        -2,
+        25,
+        0,
+        "message_24_1_2"
+      ],
+      "output": {
+        "name": "message_24_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:52:24:1:52363032340d0a2d206e6f7420656e6f75676820737061636520666f72205f6f6e657869742f617465786974207461626c650d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        24,
+        -2,
+        25,
+        0,
+        "message_24_0_2"
+      ],
+      "output": {
+        "name": "message_24_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363032340d0a2d206e6f7420656e6f75676820737061636520666f72205f6f6e657869742f617465786974207461626c650d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        25,
+        -2,
+        25,
+        0,
+        "message_25_1_2"
+      ],
+      "output": {
+        "name": "message_25_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:37:25:1:52363032350d0a2d2070757265207669727475616c2066756e6374696f6e2063616c6c0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        25,
+        -2,
+        25,
+        0,
+        "message_25_0_2"
+      ],
+      "output": {
+        "name": "message_25_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363032350d0a2d2070757265207669727475616c2066756e6374696f6e2063616c6c0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        26,
+        -2,
+        25,
+        0,
+        "message_26_1_2"
+      ],
+      "output": {
+        "name": "message_26_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:52:26:1:52363032360d0a2d206e6f7420656e6f75676820737061636520666f7220737464696f20696e697469616c697a6174696f6e0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        26,
+        -2,
+        25,
+        0,
+        "message_26_0_2"
+      ],
+      "output": {
+        "name": "message_26_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363032360d0a2d206e6f7420656e6f75676820737061636520666f7220737464696f20696e697469616c697a6174696f6e0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        27,
+        -2,
+        25,
+        0,
+        "message_27_1_2"
+      ],
+      "output": {
+        "name": "message_27_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:52:27:1:52363032370d0a2d206e6f7420656e6f75676820737061636520666f72206c6f77696f20696e697469616c697a6174696f6e0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        27,
+        -2,
+        25,
+        0,
+        "message_27_0_2"
+      ],
+      "output": {
+        "name": "message_27_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363032370d0a2d206e6f7420656e6f75676820737061636520666f72206c6f77696f20696e697469616c697a6174696f6e0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        28,
+        -2,
+        25,
+        0,
+        "message_28_1_2"
+      ],
+      "output": {
+        "name": "message_28_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:36:28:1:52363032380d0a2d20756e61626c6520746f20696e697469616c697a6520686561700d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        28,
+        -2,
+        25,
+        0,
+        "message_28_0_2"
+      ],
+      "output": {
+        "name": "message_28_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363032380d0a2d20756e61626c6520746f20696e697469616c697a6520686561700d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        120,
+        -2,
+        25,
+        0,
+        "message_120_1_2"
+      ],
+      "output": {
+        "name": "message_120_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:14:120:1:444f4d41494e206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        120,
+        -2,
+        25,
+        0,
+        "message_120_0_2"
+      ],
+      "output": {
+        "name": "message_120_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a444f4d41494e206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        121,
+        -2,
+        25,
+        0,
+        "message_121_1_2"
+      ],
+      "output": {
+        "name": "message_121_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:12:121:1:53494e47206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        121,
+        -2,
+        25,
+        0,
+        "message_121_0_2"
+      ],
+      "output": {
+        "name": "message_121_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a53494e47206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        122,
+        -2,
+        25,
+        0,
+        "message_122_1_2"
+      ],
+      "output": {
+        "name": "message_122_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:13:122:1:544c4f5353206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        122,
+        -2,
+        25,
+        0,
+        "message_122_0_2"
+      ],
+      "output": {
+        "name": "message_122_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a544c4f5353206572726f720d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        252,
+        -2,
+        25,
+        0,
+        "message_252_1_2"
+      ],
+      "output": {
+        "name": "message_252_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        252,
+        -2,
+        25,
+        0,
+        "message_252_0_2"
+      ],
+      "output": {
+        "name": "message_252_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        2,
+        255,
+        -2,
+        25,
+        0,
+        "message_255_1_2"
+      ],
+      "output": {
+        "name": "message_255_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        0,
+        2,
+        255,
+        -2,
+        25,
+        0,
+        "message_255_0_2"
+      ],
+      "output": {
+        "name": "message_255_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        -1,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "header_-1_0"
+      ],
+      "output": {
+        "name": "header_-1_0",
+        "terminated": false,
+        "mode": -1,
+        "app": 0,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        -1,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_-1_0"
+      ],
+      "output": {
+        "name": "fatal_-1_0",
+        "terminated": true,
+        "mode": -1,
+        "app": 0,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        -1,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "header_-1_1"
+      ],
+      "output": {
+        "name": "header_-1_1",
+        "terminated": false,
+        "mode": -1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        -1,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_-1_1"
+      ],
+      "output": {
+        "name": "fatal_-1_1",
+        "terminated": true,
+        "mode": -1,
+        "app": 1,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        -1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "header_-1_2"
+      ],
+      "output": {
+        "name": "header_-1_2",
+        "terminated": false,
+        "mode": -1,
+        "app": 2,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        -1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_-1_2"
+      ],
+      "output": {
+        "name": "fatal_-1_2",
+        "terminated": true,
+        "mode": -1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        0,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "header_0_0"
+      ],
+      "output": {
+        "name": "header_0_0",
+        "terminated": false,
+        "mode": 0,
+        "app": 0,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        0,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_0_0"
+      ],
+      "output": {
+        "name": "fatal_0_0",
+        "terminated": true,
+        "mode": 0,
+        "app": 0,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        0,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "header_0_1"
+      ],
+      "output": {
+        "name": "header_0_1",
+        "terminated": false,
+        "mode": 0,
+        "app": 1,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        0,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_0_1"
+      ],
+      "output": {
+        "name": "fatal_0_1",
+        "terminated": true,
+        "mode": 0,
+        "app": 1,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "header_0_2"
+      ],
+      "output": {
+        "name": "header_0_2",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_0_2"
+      ],
+      "output": {
+        "name": "fatal_0_2",
+        "terminated": true,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        1,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "header_1_0"
+      ],
+      "output": {
+        "name": "header_1_0",
+        "terminated": false,
+        "mode": 1,
+        "app": 0,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        1,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_1_0"
+      ],
+      "output": {
+        "name": "fatal_1_0",
+        "terminated": true,
+        "mode": 1,
+        "app": 0,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        1,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "header_1_1"
+      ],
+      "output": {
+        "name": "header_1_1",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        1,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_1_1"
+      ],
+      "output": {
+        "name": "fatal_1_1",
+        "terminated": true,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "header_1_2"
+      ],
+      "output": {
+        "name": "header_1_2",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_1_2"
+      ],
+      "output": {
+        "name": "fatal_1_2",
+        "terminated": true,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        2,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "header_2_0"
+      ],
+      "output": {
+        "name": "header_2_0",
+        "terminated": false,
+        "mode": 2,
+        "app": 0,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        2,
+        0,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_2_0"
+      ],
+      "output": {
+        "name": "fatal_2_0",
+        "terminated": true,
+        "mode": 2,
+        "app": 0,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        2,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "header_2_1"
+      ],
+      "output": {
+        "name": "header_2_1",
+        "terminated": false,
+        "mode": 2,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        2,
+        1,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_2_1"
+      ],
+      "output": {
+        "name": "fatal_2_1",
+        "terminated": true,
+        "mode": 2,
+        "app": 1,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        2,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "header_2_2"
+      ],
+      "output": {
+        "name": "header_2_2",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        2,
+        2,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "fatal_2_2"
+      ],
+      "output": {
+        "name": "fatal_2_2",
+        "terminated": true,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        0,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_0_0"
+      ],
+      "output": {
+        "name": "default_0_0",
+        "terminated": true,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        0,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_0_1"
+      ],
+      "output": {
+        "name": "default_0_1",
+        "terminated": true,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        1,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_1_0"
+      ],
+      "output": {
+        "name": "default_1_0",
+        "terminated": true,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        1,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_1_1"
+      ],
+      "output": {
+        "name": "default_1_1",
+        "terminated": true,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        7,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_7_0"
+      ],
+      "output": {
+        "name": "default_7_0",
+        "terminated": true,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        7,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_7_1"
+      ],
+      "output": {
+        "name": "default_7_1",
+        "terminated": true,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        8,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_8_0"
+      ],
+      "output": {
+        "name": "default_8_0",
+        "terminated": true,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        8,
+        1,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "default_8_1"
+      ],
+      "output": {
+        "name": "default_8_1",
+        "terminated": true,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        0,
+        0,
+        "path_length_0"
+      ],
+      "output": {
+        "name": "path_length_0",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a203c70726f6772616d206e616d6520756e6b6e6f776e3e0a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        1,
+        0,
+        "path_length_1"
+      ],
+      "output": {
+        "name": "path_length_1",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a20410a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        58,
+        0,
+        "path_length_58"
+      ],
+      "output": {
+        "name": "path_length_58",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a4142434445460a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        59,
+        0,
+        "path_length_59"
+      ],
+      "output": {
+        "name": "path_length_59",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a204142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a414243444546470a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        60,
+        0,
+        "path_length_60"
+      ],
+      "output": {
+        "name": "path_length_60",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        61,
+        0,
+        "path_length_61"
+      ],
+      "output": {
+        "name": "path_length_61",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748490a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        100,
+        0,
+        "path_length_100"
+      ],
+      "output": {
+        "name": "path_length_100",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455560a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        259,
+        0,
+        "path_length_259"
+      ],
+      "output": {
+        "name": "path_length_259",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758590a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        2,
+        2,
+        2,
+        -2,
+        25,
+        1,
+        "module_failure"
+      ],
+      "output": {
+        "name": "module_failure",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a203c70726f6772616d206e616d6520756e6b6e6f776e3e0a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        1,
+        2,
+        2,
+        -1,
+        60,
+        0,
+        "hook_mode_2_-1"
+      ],
+      "output": {
+        "name": "hook_mode_2_-1",
+        "terminated": true,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "hook:-1",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220",
+          "handle:-12",
+          "write:4660:36:2:1:52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        1,
+        2,
+        2,
+        0,
+        60,
+        0,
+        "hook_mode_2_0"
+      ],
+      "output": {
+        "name": "hook_mode_2_0",
+        "terminated": true,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "hook:0",
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a72756e74696d65206572726f7220",
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        2,
+        1,
+        2,
+        2,
+        2,
+        60,
+        0,
+        "hook_mode_2_2"
+      ],
+      "output": {
+        "name": "hook_mode_2_2",
+        "terminated": true,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "hook:2",
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a72756e74696d65206572726f7220",
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a52363030320d0a2d20666c6f6174696e6720706f696e74206e6f74206c6f616465640d0a",
+          "exit:255"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        1,
+        2,
+        2,
+        -1,
+        60,
+        0,
+        "hook_mode_3_-1"
+      ],
+      "output": {
+        "name": "hook_mode_3_-1",
+        "terminated": false,
+        "mode": 1,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "hook:-1",
+          "handle:-12",
+          "write:4660:14:255:1:72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        1,
+        2,
+        2,
+        0,
+        60,
+        0,
+        "hook_mode_3_0"
+      ],
+      "output": {
+        "name": "hook_mode_3_0",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "hook:0",
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        3,
+        1,
+        2,
+        2,
+        2,
+        60,
+        0,
+        "hook_mode_3_2"
+      ],
+      "output": {
+        "name": "hook_mode_3_2",
+        "terminated": false,
+        "mode": 2,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "handle:-12",
+          "write:4660:2:252:1:0d0a",
+          "hook:2",
+          "module:1:260",
+          "dialog:73744:4d6963726f736f66742056697375616c20432b2b2052756e74696d65204c696272617279:52756e74696d65204572726f72210a0a50726f6772616d3a202e2e2e45464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344454647480a0a72756e74696d65206572726f7220"
+        ]
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        -2147483648,
+        -2,
+        25,
+        0,
+        "unknown_-2147483648"
+      ],
+      "output": {
+        "name": "unknown_-2147483648",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        -1,
+        -2,
+        25,
+        0,
+        "unknown_-1"
+      ],
+      "output": {
+        "name": "unknown_-1",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        1,
+        -2,
+        25,
+        0,
+        "unknown_1"
+      ],
+      "output": {
+        "name": "unknown_1",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        3,
+        -2,
+        25,
+        0,
+        "unknown_3"
+      ],
+      "output": {
+        "name": "unknown_3",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        253,
+        -2,
+        25,
+        0,
+        "unknown_253"
+      ],
+      "output": {
+        "name": "unknown_253",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        256,
+        -2,
+        25,
+        0,
+        "unknown_256"
+      ],
+      "output": {
+        "name": "unknown_256",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        4,
+        1,
+        1,
+        2147483647,
+        -2,
+        25,
+        0,
+        "unknown_2147483647"
+      ],
+      "output": {
+        "name": "unknown_2147483647",
+        "terminated": false,
+        "mode": 1,
+        "app": 1,
+        "writer": false,
+        "events": []
+      }
+    },
+    {
+      "input": [
+        6,
+        0,
+        2,
+        0,
+        -2,
+        25,
+        0,
+        "quick_exit_0"
+      ],
+      "output": {
+        "name": "quick_exit_0",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "shutdown:0:1:0"
+        ]
+      }
+    },
+    {
+      "input": [
+        6,
+        0,
+        2,
+        255,
+        -2,
+        25,
+        0,
+        "quick_exit_255"
+      ],
+      "output": {
+        "name": "quick_exit_255",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "shutdown:255:1:0"
+        ]
+      }
+    },
+    {
+      "input": [
+        6,
+        0,
+        2,
+        -1,
+        -2,
+        25,
+        0,
+        "quick_exit_-1"
+      ],
+      "output": {
+        "name": "quick_exit_-1",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": false,
+        "events": [
+          "shutdown:4294967295:1:0"
+        ]
+      }
+    },
+    {
+      "input": [
+        5,
+        0,
+        2,
+        2,
+        -2,
+        25,
+        0,
+        "bootstrap"
+      ],
+      "output": {
+        "name": "bootstrap",
+        "terminated": false,
+        "mode": 0,
+        "app": 2,
+        "writer": true,
+        "events": []
+      }
+    }
+  ],
+  "bootstrap_write_order": [
+    [
+      "005e578c",
+      "005a3e8d",
+      4
+    ],
+    [
+      "005e5788",
+      "005a41e3",
+      4
+    ],
+    [
+      "005e5790",
+      "005a3ef3",
+      4
+    ],
+    [
+      "005e5794",
+      "005a3e33",
+      4
+    ],
+    [
+      "005e5798",
+      "005a3edb",
+      4
+    ],
+    [
+      "005e579c",
+      "005a41e3",
+      4
+    ]
+  ],
+  "native_initial_identities": {
+    "initial_native_identities": true
+  },
+  "index_calls": [
+    {
+      "from_va": "005a2487",
+      "to_va": "005a2490",
+      "from_function": "005a247f",
+      "to_function": "005a2490",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a2490"
+    },
+    {
+      "from_va": "005a2e2b",
+      "to_va": "005a9736",
+      "from_function": "005a2e22",
+      "to_function": "005a9736",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a9736"
+    },
+    {
+      "from_va": "005a2e34",
+      "to_va": "005a976f",
+      "from_function": "005a2e22",
+      "to_function": "005a976f",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a976f"
+    },
+    {
+      "from_va": "005a9752",
+      "to_va": "005a976f",
+      "from_function": "005a9736",
+      "to_function": "005a976f",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a976f"
+    },
+    {
+      "from_va": "005a9768",
+      "to_va": "005a976f",
+      "from_function": "005a9736",
+      "to_function": "005a976f",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a976f"
+    },
+    {
+      "from_va": "005abeea",
+      "to_va": "005a2e22",
+      "from_function": "005abee8",
+      "to_function": "005a2e22",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "__amsg_exit"
+    }
+  ],
+  "disassembly_sha256": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/140-formatter-bootstrap/CMakeLists.txt": "823a3599f90f59bad5ad75b338554bc2f9b2646b333bb10677352dc0361e3761",
+    "iterations/v2/001-original-recovery/runs/140-formatter-bootstrap/README.md": "4fc77039a6ee520fe437e26eafb389ad398fadd3d620eafca140aaf8ff1d54ac",
+    "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/CMakeLists.txt": "de4ce83bacb2ce69ecff7572c4653d7d4bb960ebf377cd238332311df76e5577",
+    "iterations/v2/001-original-recovery/runs/144-crt-strings/CMakeLists.txt": "2e1d4c1fa09633de11d58ff17043855ef506392f0f566fab17dd2f28637094f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_shutdown.hpp": "7c583dee587f3347a9eee93163cf3300c4894220d4340cb69c5fbf7a41d0fc97",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime.hpp": "b13566453c2e9e56f08449efc31b74164768880894af8cceaee3239e3cdb53eb",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_strings.hpp": "00fd5e0ff8c595688e6d67d0f13758716855eeaf6237ffdbad7bd5db012c51ff",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_bootstrap_probe.cpp": "a675bb53ef17c05ef61793d09c546dfd1a781e86ceb352d0636c80e12c294efa",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_bootstrap.cpp": "f55d5596a1cee353b2b512847c7cb9805cc90e37b33f42a78e55a4c6248dea4e",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_runtime.cpp": "c346592f9d056da916ad3eb2e7e2af1d5709b8f1738259dc8750568a7cd36a42",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_runtime_storage.cpp": "6237662bd9403ee8eb1b582862d3d9c36b4b1cb042862213c47a79931c5d84db",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_strings.cpp": "eb435f4bdae721c818b0265db0e1ee0488ae4d0e4281e2a0dfbf4fad7cb60c9d",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-formatter-bootstrap.py": "3b9678b2204ebe18f65351e6b0db89b76a3e6be7b8da0d7461474675932c3a15"
+  },
+  "recovered_dependencies": [
+    "005a6730",
+    "005a2490",
+    "005aa4e0",
+    "005aa4f0",
+    "005a28a0",
+    "005acfb9"
+  ],
+  "unrecovered_dependencies": [
+    "005a41e3",
+    "005a3e8d",
+    "005a3ef3",
+    "005a3e33",
+    "005a3edb"
+  ],
+  "limits": [
+    "OS/MessageBox/shutdown effects are controlled; actual recovered string/dialog bodies execute on both sides.",
+    "Real 005a6730 executes in both versions; real shutdown005a2490 is not executed here.",
+    "Runtime float targets remain typed unresolved bodies and are never executed.",
+    "Native typed adapters share original005abee8 identity, not native pointer equality.",
+    "Message0 reaches original null text; malformed pointers/unterminated module names excluded.",
+    "Void function incidental EAX values are not promoted to return contracts.",
+    "No live CRT/game/visual acceptance."
+  ],
+  "connected_original_strings": true,
+  "shared_copy_suffix": {
+    "begin_va": "005aa551",
+    "bytes": 127,
+    "sha256": "f0483582a40cf8246c001eecd83d79bcf4c4f47baceb30bd7942d7c5fa79962e"
+  }
+}

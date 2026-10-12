@@ -1,0 +1,218 @@
+{
+  "module": "Porsche.exe",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "omitted_complete_bodies": [
+    {
+      "va": "0048ad70",
+      "last_byte_va": "0048ae2b",
+      "body_bytes": 188,
+      "body_sha256": "2572b61aae6f823fbde2aad3e676c048b68937e621d9c2837e6c84ba46a393c1",
+      "ret_pop": 12,
+      "automatic_index_coverage": "absent",
+      "supplementary_entries": [
+        {
+          "module": "Porsche.exe",
+          "path": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "0048ad70",
+          "name": "recovered_0048ad70",
+          "status": "manual-disassembly-index",
+          "ranges": [
+            [
+              "0048ad70",
+              "0048ae2b"
+            ]
+          ],
+          "file_offset": 568688,
+          "body_bytes": 188,
+          "body_sha256": "2572b61aae6f823fbde2aad3e676c048b68937e621d9c2837e6c84ba46a393c1",
+          "reason": "Run164 relocated network send-slot target; complete contiguous instruction span and terminal RET; vtable-evidence.json.",
+          "signature": "thiscall three stack DWORDs RET12"
+        }
+      ]
+    },
+    {
+      "va": "0048b340",
+      "last_byte_va": "0048b3b9",
+      "body_bytes": 122,
+      "body_sha256": "b59e9315207f09c46edf7b8938789c3d773dec55a22dba7e82e47a75b1a7e875",
+      "ret_pop": 12,
+      "automatic_index_coverage": "absent",
+      "supplementary_entries": [
+        {
+          "module": "Porsche.exe",
+          "path": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "0048b340",
+          "name": "recovered_0048b340",
+          "status": "manual-disassembly-index",
+          "ranges": [
+            [
+              "0048b340",
+              "0048b3b9"
+            ]
+          ],
+          "file_offset": 570176,
+          "body_bytes": 122,
+          "body_sha256": "b59e9315207f09c46edf7b8938789c3d773dec55a22dba7e82e47a75b1a7e875",
+          "reason": "Run164 relocated network send-slot target; complete contiguous instruction span and terminal RET; vtable-evidence.json.",
+          "signature": "thiscall three stack DWORDs RET12"
+        }
+      ]
+    },
+    {
+      "va": "005a1056",
+      "last_byte_va": "005a105e",
+      "body_bytes": 9,
+      "body_sha256": "6bc67debc4ceeef6320e2e769f8277b9d337a1eb5ccd72be2ce4aa15e3b522c8",
+      "ret_pop": 0,
+      "automatic_index_coverage": "absent",
+      "supplementary_entries": [
+        {
+          "module": "Porsche.exe",
+          "path": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "005a1056",
+          "name": "recovered_005a1056",
+          "status": "manual-disassembly-index",
+          "ranges": [
+            [
+              "005a1056",
+              "005a105e"
+            ]
+          ],
+          "file_offset": 1708118,
+          "body_bytes": 9,
+          "body_sha256": "6bc67debc4ceeef6320e2e769f8277b9d337a1eb5ccd72be2ce4aa15e3b522c8",
+          "reason": "Run164 relocated network send-slot target; complete contiguous instruction span and terminal RET; vtable-evidence.json.",
+          "signature": "noreturn purecall invokes fatal25; original unreachable RET included"
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "va": "005b4964",
+      "value": "005c5190",
+      "relocation": "HIGHLOW"
+    },
+    {
+      "va": "005b4968",
+      "value": "0048ad70",
+      "relocation": "HIGHLOW"
+    },
+    {
+      "va": "005b496c",
+      "value": "005c51d8",
+      "relocation": "HIGHLOW"
+    },
+    {
+      "va": "005b4970",
+      "value": "005a1056",
+      "relocation": "HIGHLOW"
+    },
+    {
+      "va": "005b4974",
+      "value": "005c5228",
+      "relocation": "HIGHLOW"
+    },
+    {
+      "va": "005b4978",
+      "value": "0048b340",
+      "relocation": "HIGHLOW"
+    }
+  ],
+  "assignments": [
+    {
+      "from_va": "0048aa21",
+      "to_va": "005b4970",
+      "from_function": "0048aa10",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4970",
+      "immediate_relocation_va": "0048aa23"
+    },
+    {
+      "from_va": "0048aa84",
+      "to_va": "005b4968",
+      "from_function": "0048aa10",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4968",
+      "immediate_relocation_va": "0048aa86"
+    },
+    {
+      "from_va": "0048aed8",
+      "to_va": "005b4968",
+      "from_function": "0048aed0",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4968",
+      "immediate_relocation_va": "0048aeda"
+    },
+    {
+      "from_va": "0048af63",
+      "to_va": "005b4970",
+      "from_function": "0048aed0",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4970",
+      "immediate_relocation_va": "0048af65"
+    },
+    {
+      "from_va": "0048af92",
+      "to_va": "005b4970",
+      "from_function": "0048af80",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4970",
+      "immediate_relocation_va": "0048af95"
+    },
+    {
+      "from_va": "0048b015",
+      "to_va": "005b4978",
+      "from_function": "0048af80",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4978",
+      "immediate_relocation_va": "0048b018"
+    },
+    {
+      "from_va": "0048b25a",
+      "to_va": "005b4978",
+      "from_function": "0048b250",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4978",
+      "immediate_relocation_va": "0048b25c"
+    },
+    {
+      "from_va": "0048b2fd",
+      "to_va": "005b4970",
+      "from_function": "0048b250",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "PTR_LAB_005b4970",
+      "immediate_relocation_va": "0048b2ff"
+    }
+  ],
+  "slot0_consumers": [
+    {
+      "va": "0048a3b8",
+      "instruction": "0048a3b8  ff10  CALL dword ptr [EAX]"
+    },
+    {
+      "va": "0048bb1c",
+      "instruction": "0048bb1c  ff10  CALL dword ptr [EAX]"
+    },
+    {
+      "va": "0048c946",
+      "instruction": "0048c946  ff10  CALL dword ptr [EAX]"
+    },
+    {
+      "va": "0048c96e",
+      "instruction": "0048c96e  ff16  CALL dword ptr [ESI]"
+    }
+  ],
+  "purecall_fatal_instruction": "005a1058  e8c51d0000  CALL 0x005a2e22"
+}

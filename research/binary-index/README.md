@@ -43,6 +43,13 @@ Run090: SHA-indexed shutdown callback0053bae0..0053baf9 (26bytes, полныйRE
 Источники/границы — [Run090](../../iterations/v2/001-original-recovery/runs/090-native-window-integration/README.md).
 Игрового запуска ещё нет.
 
+Run169: добавлены три полных omitted targets по исходному PE SHA/полным ranges/RET:
+0048ad70..0048ae2b(188B,RET12),0048b340..0048b3b9(122B,RET12),
+005a1056..005a105e(9B,noreturnfatal25 с исходным unreachableRET).
+Всего40 supplementary/36627 catalog entries; Porsche.exe5812indexedentries.
+Адреса/свидетельства —[Run169](../../iterations/v2/001-original-recovery/runs/169-vtable-output-integration/README.md).
+430full+6partial C++ consumers; это не доказательство запуска игры.
+
 ## Покрытие
 
 [coverage.json](coverage.json) сопоставляет пути и SHA256 с результатами анализа.

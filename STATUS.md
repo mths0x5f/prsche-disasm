@@ -1,14 +1,15 @@
 # Состояние проекта
 
-Текущий результат — [Run165](iterations/v2/001-original-recovery/runs/165-heap-locale-groups-integration/README.md): **411 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:148 projects /278 unique TUs;129 comparison/alias targets,8 native OS и3 link fixtures.
-13 свежих original-x86 отчётов /8082 сравнений плюс4 component-proven composed cases; все11 native/link проверок прошли.
-Приняты25 новых функций: original smallblock heap, locale engines и сетевые группы.
+Текущий результат — [Run169](iterations/v2/001-original-recovery/runs/169-vtable-output-integration/README.md): **430 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:151 projects /284 unique TUs;131 comparison/alias targets,9 native OS и3 link fixtures.
+28 свежих original-x86 отчётов /26409 сравнений плюс4 component-proven composed cases; все12 native/link проверок прошли.
+Приняты19 новых функций: network virtual dispatch и formatter output;005abf35 повторно проверена и сохраняет одного владельца.
+Четыре сетевых vptr stores теперь используют реальные C++ таблицы; RTTI остаётся явно незавершённой зависимостью.
 SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с в замере156.
-Game-link:0 compile errors /273 unresolved symbols /308 references /0 other diagnostics; игрового EXE нет.
-Это текущая граница зависимостей, а не весь остаток: новые тела открывают следующие callees.
+Game-link:0 compile errors /274 unresolved symbols /310 references /0 other diagnostics; игрового EXE нет.
+Подключение реальных таблиц открыло дополнительные RTTI/transport зависимости: это текущая граница, а не весь остаток.
 131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
-Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420, CRT engines и live startup открыты.
+Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420 и live startup открыты.
 Маршрут: проверенный полный C/C++ baseline → схема устройства игры → Rust native/web.
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 

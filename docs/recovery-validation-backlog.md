@@ -6,6 +6,14 @@
 со ссылкой на фактически выполненную проверку. Сборка, bounded differential oracle
 и визуальное соответствие — отдельные результаты.
 
+Checkpoint169:430full+6partial;151projects/284TUs,26409freshoriginalcomparisons,
+12native/linkchecksPASS. Game-link274symbols/310refs; noEXE. Nativevtables теперь
+подключены в четырёх recovered stores; эти identityregressions и572dispatchcases
+не доказывают originalRTTI consumers/livenetwork. Вернуться к RTTI005c5190/1d8/228,
+полным constructors и indeterminate shortpacket tail; таблицы не заменять null в игре.
+005abf35 canonicalreuse проверена166/169; двойного учёта нет. Float167/170 hardware
+checks отделять от Unicorn и будущего liveCRT; расхождения эмулятора хранить явно.
+
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
   Блокер: Run165 game-link имеет273 unresolved symbols /308 references;
   compiler errors и other linker errors —0. Возврат: после устранения

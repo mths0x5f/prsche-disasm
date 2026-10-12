@@ -1,3 +1,4 @@
+#include "network_vtable_identity_fixture.hpp"
 #include "porsche/network_session.hpp"
 #include "porsche/application_context_base.hpp"
 #include "porsche/startup_services.hpp"
@@ -140,10 +141,10 @@ int main(){using namespace porsche;
         else network_session_connection_destroy_0048b250(ptr(D),nullptr);
         std::cout<<"{\"trace\":[";
         for(std::size_t i=0;i<events.size();++i){if(i)std::cout<<',';std::cout<<'[';
-            for(std::size_t j=0;j<events[i].size();++j){if(j)std::cout<<',';std::cout<<events[i][j];}std::cout<<']';}
+            for(std::size_t j=0;j<events[i].size();++j){if(j)std::cout<<',';std::cout<<network_fixture_word(events[i][j]);}std::cout<<']';}
         std::cout<<"],\"state\":[";bool first=true;
         for(auto range:{std::pair<U,U>{B,0xc20},{K,0x20},{M,0x400},{L,0x1000},{P,0x800},{W,0x160},{C,4}})
-            for(U off=0;off<range.second;off+=4){if(!first)std::cout<<',';first=false;std::cout<<get(range.first+off);}
+            for(U off=0;off<range.second;off+=4){if(!first)std::cout<<',';first=false;std::cout<<network_fixture_word(get(range.first+off));}
         for(U value:{raw(network_lifecycle_session_00628c74),raw(network_session_lock_cell_00628c78),static_cast<U>(network_session_stopped_005d07d0)})std::cout<<','<<value;
         for(U value:network_lifecycle_callbacks_006b7c20)std::cout<<','<<value;
         std::cout<<"]}\n";

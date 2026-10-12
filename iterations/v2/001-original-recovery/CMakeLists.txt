@@ -413,6 +413,9 @@ add_subdirectory(runs/161-small-heap small-heap-161)
 add_subdirectory(runs/162-formatter-locale formatter-locale-162)
 add_subdirectory(runs/163-network-groups network-groups-163)
 add_subdirectory(runs/165-heap-locale-groups-integration heap-locale-groups-integration-165)
+add_subdirectory(runs/164-network-vtables network-vtables-164)
+add_subdirectory(runs/166-formatter-output formatter-output-166)
+add_subdirectory(runs/169-vtable-output-integration vtable-output-integration-169)
 
 # The native platform target is defined by Run055's add_subdirectory above.
 if(TARGET porsche_platform_win32)
@@ -422,7 +425,8 @@ if(TARGET porsche_platform_win32)
         "${PORSCHE_SOURCE_ROOT}/platform/formatter_error_links.cpp"
         "${PORSCHE_SOURCE_ROOT}/platform/formatter_lowio_links.cpp"
         "${PORSCHE_SOURCE_ROOT}/platform/formatter_crt_links.cpp"
-        "${PORSCHE_SOURCE_ROOT}/platform/formatter_locale_heap_links.cpp")
+        "${PORSCHE_SOURCE_ROOT}/platform/formatter_locale_heap_links.cpp"
+        "${PORSCHE_SOURCE_ROOT}/platform/formatter_output_links.cpp")
 endif()
 
 foreach(probe engine_service_427a60_probe frame_services_probe resource_predicate_probe formatter_entry_probe resource_leaf_probe clock_worker_probe resource_dispatch_probe process_exit_probe install_paths_probe install_paths_integration_probe timer_setup_probe formatter_original_probe auxiliary_wait_probe startup_timing_integration_probe)

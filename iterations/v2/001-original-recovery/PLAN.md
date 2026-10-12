@@ -3,34 +3,31 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —165:411 full +6 registered partial;160 запушенc1a67fd.
-Общая MSVC Win32 сборка:148 projects /278 unique TUs;129 comparison/alias targets,
-8 native OS и3 link fixtures. Все11 native/link checks прошли.
-13 свежих original-x86 reports /8082 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /273 unresolved symbols /308 refs /0 other diagnostics; игрового EXE нет.
-Manual index37 /36624 entries; новые границы164 будут добавлены при его приёмке169.
-165 принимает161 small heap(10),162 locale engines(9),163 network groups(6).
-3909 packet cases:2315 allocator,1421 locale(34 SEH failures),173 groups.
-161 сравнивает15207 intermediate и14936 preboundary state snapshots, полныеbytes,
-APIorder и ABI10entries; copyalias5a7ad0 доказан835B/46HIGHLOW и154orderedaccessproof.
-162 проверяет original scope table/filter/handlers, actual native protected failures,
-FS:[0] restoration,248B presets и initializedstorage. Native OS/game parity отдельно.
-Root15 IAT adapters: heapresize/size/create/destroy,VirtualAlloc/Free и9locale APIs;
-новый nativefixture проверил heap/VM lifecycle,map/convert/classify/CPInfo.9cache tests PASS.
-160 locktable fix сохранён: proven26DWORD prefix covers19/25,104B originalSHA;
-общая полная extent и runtimeinitialization не предполагаются.
-Оптимизации: связанные пакеты, paralleloriginal/refresh, batchSHA cache с mutationchecks.
-Дополнительно manualindex теперь читает/хеширует37 originalrecords из одного PE одинраз;
-local isolatedaudit0.0566→0.0186s при идентичныхrecords, без общего game/performance claim.
-131 audio-init/525ec0 остаются isolated; original networkrawvtables требуют native relocation.
-Владельцы: small_heap_resume —167 float output; network_vtables_resume —168 transport;
-locale_resume —170 parse/pack; root —shared index/registry/platform/docs/integration169.
-Готовы164 network vtable targets(11) и166 formatter output(9); принять общим169пакетом,
-добавить3пропущенных originaltargetвindex по164vtable-evidence, обновить rawassignments
-и identitycomparisons вместе; RTTI/5e8e50/5e8bfc extents остаются explicitdependencies.
-Следующий шаг:169 commonbuild/original/native/game-link, далее полный004d3420/startup.
-Validation backlog обновлён165. Цель —полная исходная игра; probes не равны live/visual
-приёмке. После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
+Текущий принятый пакет —169:430 full +6 registered partial;165 запушенf66c0f4.
+Общая MSVC Win32 сборка:151 projects /284 unique TUs;131 comparison/alias targets,
+9 native OS и3 link fixtures. Все12 native/link checks прошли.
+28 свежих original-x86 reports /26409 comparisons плюс4 component-proven composed cases.
+Game-link:0 compile errors /274 unresolved symbols /310 refs /0 other diagnostics; игрового EXE нет.
+Manual index40 /36627 entries; три полных omitted targets164 добавлены по SHA/ranges/RET.
+169 принимает164 network slots(11) и166 output(8new+005abf35regression).
+Четыре recovered vptr assignments используют address-of native owner.send;
+151/155/159 private identity probes отбрасывают rawVA и нормализуют только canonicalnativeidentity.
+Настоящие164 one-slot dispatch прошли572originalcases; private cleanup identities не исполняют slot.
+RTTI005c5190/1d8/228 и005e8e50 остаются unsized dependencies, productionnullsubstitutesнет.
+005abf35 сохраняет единственный algorithmowner formatter_cleanup.cpp: typedexport
+и166 direct regression call, без второй реализации/регистрации;1580outputcasesпрошли.
+SetFilePointer wrapper соответствует IAT005b223c; native seek checks включаютFFFFFFFF/error0 и invalidhandle/error6.
+Индекс/полныеVA/байты/данные/IAT и caller/callee evidence —164/166README и169reports.
+Оптимизации: связанные пакеты, parallel independent checks, batchSHAcache/mutationchecks,
+onePEread для manualindex. Замеры156 inventory9.29→2.38s,165manualaudit0.0566→0.0186s;
+это накладные расходы проверки, не измеренное общее ускорение восстановления.
+Владельцы: small_heap_resume —172 следующий CRT блок; locale_resume —170 parse/pack;
+network_vtables_resume —171 constructors; root —shared registry/index/platform/docs/integration.
+Готовы167floatoutput(16,4991actualnativeoriginalcases) и168transport(9,385cases).
+Следующий шаг: общий пакет готовых167/168/170, refresh affectedproofs, actual game-link;
+далее полный004d3420/startup и RTTI owners.131 audio-init/00525ec0 остаются isolated.
+Validation backlog обновлён169; полный запуск/live/visual acceptance открыты.
+После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001
 

@@ -1,3 +1,4 @@
+#include "porsche/network_vtables.hpp"
 #include "porsche/network_cleanup.hpp"
 #include "porsche/application_alloc.hpp"
 #include "porsche/application_context_base.hpp"
@@ -117,7 +118,7 @@ void __cdecl network_lifecycle_close_transport_0048c580(){
 void __fastcall network_lifecycle_connection_destroy_0048aed0(void* receiver,void*){
     auto* list=static_cast<std::uint8_t*>(receiver)+0xc;
     void* worker=pointer(load(receiver,4));
-    store(receiver,0,0x005b4968);
+    store(receiver,0,reinterpret_cast<U>(&network_vtable_owner_005b4968.send));
     network_cleanup_destroy_worker_0055d1b0(worker);
     void* head=pointer(load(list));
     void* node=pointer(load(head));
@@ -129,7 +130,7 @@ void __fastcall network_lifecycle_connection_destroy_0048aed0(void* receiver,voi
     reset_head(list);
     recycle(pointer(load(list)),0x88);
     void* lock=pointer(load(receiver,8));
-    store(receiver,0,0x005b4970);
+    store(receiver,0,reinterpret_cast<U>(&network_vtable_owner_005b4970.send));
     heap_lock_destroy_005322d0(lock);
 }
 } // namespace porsche

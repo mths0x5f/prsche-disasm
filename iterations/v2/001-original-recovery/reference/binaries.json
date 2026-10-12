@@ -14,11 +14,11 @@
     "analyzed_functions": 36587,
     "unclassified_executable_bytes": 3199385,
     "automatic_pseudo_c_functions": 36583,
-    "supplementary_manual_functions": 37,
-    "indexed_functions": 36624,
+    "supplementary_manual_functions": 40,
+    "indexed_functions": 36627,
     "decompile_failures": 4,
     "pseudo_c_warning_functions": 5639,
-    "recovered_functions": 411,
+    "recovered_functions": 430,
     "partially_verified_functions": 6,
     "matched_functions": 0,
     "matched_modules": 0
@@ -2932,7 +2932,7 @@
       "bytes": 2129965,
       "format": "PE",
       "role": "unclassified",
-      "recovered_functions": 411,
+      "recovered_functions": 430,
       "matched_functions": 0,
       "matched_binary": false,
       "machine": "0x14c",
@@ -3544,9 +3544,48 @@
               "005a3ef2"
             ]
           ]
+        },
+        {
+          "entry_va": "0048ad70",
+          "name": "recovered_0048ad70",
+          "status": "manual-disassembly-index",
+          "reason": "Run164 relocated network send-slot target; complete contiguous instruction span and terminal RET; vtable-evidence.json.",
+          "body_bytes": 188,
+          "ranges": [
+            [
+              "0048ad70",
+              "0048ae2b"
+            ]
+          ]
+        },
+        {
+          "entry_va": "0048b340",
+          "name": "recovered_0048b340",
+          "status": "manual-disassembly-index",
+          "reason": "Run164 relocated network send-slot target; complete contiguous instruction span and terminal RET; vtable-evidence.json.",
+          "body_bytes": 122,
+          "ranges": [
+            [
+              "0048b340",
+              "0048b3b9"
+            ]
+          ]
+        },
+        {
+          "entry_va": "005a1056",
+          "name": "recovered_005a1056",
+          "status": "manual-disassembly-index",
+          "reason": "Run164 relocated network send-slot target; complete contiguous instruction span and terminal RET; vtable-evidence.json.",
+          "body_bytes": 9,
+          "ranges": [
+            [
+              "005a1056",
+              "005a105e"
+            ]
+          ]
         }
       ],
-      "supplementary_function_count": 37
+      "supplementary_function_count": 40
     },
     {
       "sha256": "4c01963618be1e78375f16d8f71aebd90438b49921c97c938edef364534566cb",

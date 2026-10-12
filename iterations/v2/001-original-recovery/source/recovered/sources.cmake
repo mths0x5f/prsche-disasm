@@ -139,3 +139,7 @@ list(APPEND PORSCHE_RECOVERED_SOURCES
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_small_heap.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_locale.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_groups.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_vtables.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_output.cpp")

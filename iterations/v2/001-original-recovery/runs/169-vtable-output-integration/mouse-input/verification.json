@@ -1,0 +1,459 @@
+{
+  "schema": 1,
+  "binary": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "entry_va": "005728b0",
+  "coverage": "full 005728b0..0057298a; callees 0053a970 and 005367b0 are typed boundaries/recovered no-op",
+  "full_function_vas": [
+    "005728b0"
+  ],
+  "partial_function_vas": [],
+  "cases": 10,
+  "native_cpp_equal_original_x86": true,
+  "binary_matched": false,
+  "game_launch_verified": false,
+  "boundaries": "The critical-section enter/leave calls remain the recovered heap lock API. The 0053a970 cursor helper is a typed boundary recorded at its exact original call ABI; its USER32 subcalls are outside this consumer proof. Callback targets other than original no-op 005367b0 are a typed dynamic boundary at 005debec. No native HWND routing is claimed by this isolated consumer proof.",
+  "abi": {
+    "convention": "cdecl",
+    "arguments": [
+      "x",
+      "y",
+      "button_mask",
+      "transition"
+    ],
+    "fourth_argument_read": true,
+    "callback_gate": "transition != 0 and callback pointer != 0",
+    "callback_argument": "button_mask"
+  },
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/089-mouse-input/CMakeLists.txt": "287b2028e472227744378feb87a72157fbb778ad5b0ccfa8f1c7fdb185a5e6cb",
+    "iterations/v2/001-original-recovery/runs/089-mouse-input/README.md": "3860e2b36f2474ab2635d7b6311b1d9850c347a00bba1bfe408a46c80f55a33c",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/mouse_input.hpp": "abab04f780552e57d7a8134a3c7ad7a216f18bf58d495608b4bf9ce0e025ce52",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp": "f32055181c315a54038c6aaf2bd2ab54f4d773f50551f761aee0e9b27bad9e2d",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_driver_calls.hpp": "9a85028e0accd438834793f26e0eebd08542e479630a12dc7455477a34018c29",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_event_route.hpp": "2f09c8a417400074d1208987afda52a739019d13668680aa390432200e934b29",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp": "791c31583efb742a11a7c55545766a19b8bed23dda44480e4f4cedd436b2344d",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_objects.hpp": "fe39c468e43754b7c16be4e8aae3d383f15b73b1405df4bf9cbe867125577287",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_startup.hpp": "2ec73bd3650c89fc8fc23615c0db52b4eb03a4c1fb166d060719670d06402cc0",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_create.hpp": "227f5127eca5c565bc7980c3c9a9a41bc0e87976e3791334c0d53c7927c5d902",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_position.hpp": "bfaa8d6c380cfd0ec84ffb97721d3cf60ae970a7f25bf531ed231debd3030dc2",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_runtime.hpp": "251834cade05b25efb0ff60fee9035da800d5d051f476fffac7a7698c6fec3b9",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_state.hpp": "77f52e368e15cf55e8aa80946bb4c37fea999a3caa172011c2cd8aa0ee9de01f",
+    "iterations/v2/001-original-recovery/source/recovered/mouse_input_probe.cpp": "d2d100637f91e8c742a6067c62d79216655e45f7e972748e9f2169ea693775d8",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/mouse_input.cpp": "984c6b76227ea7d57dafbce08e612ed74eba3f4120848ccc6741fe21a3a1c715",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/README.md": "2305a85107dc9e4295aeab9b179fd43a65b5221fee1889ee743dc673760f3295",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/decompiled.c": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-mouse-input.py": "137d98caa0494a9bd1434526774727c333471f4d830e3f3fedfa67b2d1c4bd31"
+  },
+  "probe_sha256": "a82d6889c320b001a1436df434a30e756229ecc70674a796015b8143019d82e2",
+  "fixtures": [
+    {
+      "input": [
+        0,
+        8192,
+        53477424,
+        40,
+        50,
+        3,
+        1,
+        0,
+        0,
+        100,
+        100,
+        40,
+        50
+      ],
+      "output": {
+        "events": [],
+        "state": [
+          3735928559,
+          40,
+          50
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        0,
+        53477424,
+        40,
+        50,
+        3,
+        1,
+        0,
+        0,
+        100,
+        100,
+        40,
+        50
+      ],
+      "output": {
+        "events": [],
+        "state": [
+          3735928559,
+          40,
+          50
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        0,
+        40,
+        50,
+        3,
+        1,
+        0,
+        0,
+        100,
+        100,
+        1,
+        2
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ]
+        ],
+        "state": [
+          3,
+          40,
+          50
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        53477424,
+        4294967280,
+        250,
+        5,
+        1,
+        4294967286,
+        10,
+        100,
+        200,
+        40,
+        50
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            2,
+            7042976,
+            4294967286,
+            200
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ],
+          [
+            4,
+            53477424,
+            5,
+            0
+          ]
+        ],
+        "state": [
+          5,
+          4294967286,
+          200
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        53477424,
+        4294967280,
+        250,
+        7,
+        0,
+        4294967286,
+        10,
+        100,
+        200,
+        4294967286,
+        200
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            2,
+            7042976,
+            4294967286,
+            200
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ]
+        ],
+        "state": [
+          7,
+          4294967286,
+          200
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        53477424,
+        0,
+        25,
+        2,
+        1,
+        0,
+        0,
+        100,
+        100,
+        4,
+        5
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ],
+          [
+            4,
+            53477424,
+            2,
+            0
+          ]
+        ],
+        "state": [
+          2,
+          0,
+          25
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        53477424,
+        25,
+        30,
+        6,
+        0,
+        0,
+        0,
+        100,
+        100,
+        25,
+        30
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ]
+        ],
+        "state": [
+          6,
+          25,
+          30
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        5466032,
+        25,
+        30,
+        1,
+        0,
+        0,
+        0,
+        100,
+        100,
+        25,
+        30
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ]
+        ],
+        "state": [
+          1,
+          25,
+          30
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        53477424,
+        20,
+        30,
+        0,
+        0,
+        20,
+        30,
+        20,
+        30,
+        0,
+        0
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ]
+        ],
+        "state": [
+          0,
+          20,
+          30
+        ],
+        "stack_delta": 4
+      }
+    },
+    {
+      "input": [
+        1,
+        8192,
+        53477424,
+        5,
+        9,
+        2147483648,
+        1,
+        20,
+        20,
+        10,
+        10,
+        5,
+        9
+      ],
+      "output": {
+        "events": [
+          [
+            1,
+            8192,
+            0,
+            0
+          ],
+          [
+            2,
+            7042976,
+            10,
+            10
+          ],
+          [
+            3,
+            8192,
+            0,
+            0
+          ],
+          [
+            4,
+            53477424,
+            2147483648,
+            0
+          ]
+        ],
+        "state": [
+          2147483648,
+          10,
+          10
+        ],
+        "stack_delta": 4
+      }
+    }
+  ]
+}

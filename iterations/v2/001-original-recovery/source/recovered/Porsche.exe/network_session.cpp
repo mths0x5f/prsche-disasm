@@ -1,3 +1,4 @@
+#include "porsche/network_vtables.hpp"
 #include "porsche/network_session.hpp"
 #include "porsche/application_alloc.hpp"
 #include "porsche/application_context_base.hpp"
@@ -72,9 +73,9 @@ void __fastcall network_session_clear_list_00493130(void* list,void*){
 }
 
 // 0048b250..0048b30f: nested connection is reread after buffer release.
-// The two literal vtable identities remain an explicit relocation backlog.
+// Proven original HIGHLOW relocations use canonical native send-table owners.
 void __fastcall network_session_connection_destroy_0048b250(void* receiver,void*){
-    U nested=load(receiver,0xc);store(receiver,0,0x005b4978);
+    U nested=load(receiver,0xc);store(receiver,0,reinterpret_cast<U>(&network_vtable_owner_005b4978.send));
     if(nested){
         application_release_0059f050(pointer(load(receiver,0x10)));
         nested=load(receiver,0xc);store(receiver,0x10,0);
@@ -87,7 +88,7 @@ void __fastcall network_session_connection_destroy_0048b250(void* receiver,void*
     auto* list=static_cast<std::uint8_t*>(receiver)+0x18;
     network_session_clear_list_00493130(list,nullptr);
     recycle(pointer(load(list)));
-    void* lock=pointer(load(receiver,8));store(receiver,0,0x005b4970);
+    void* lock=pointer(load(receiver,8));store(receiver,0,reinterpret_cast<U>(&network_vtable_owner_005b4970.send));
     heap_lock_destroy_005322d0(lock);
 }
 

@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "005a0fbf"
+  ],
+  "full_function_vas": [
+    "005a0fbf"
+  ],
+  "partial_function_vas": [],
+  "cases": 7,
+  "native_cpp_equal_original_x86": true,
+  "original_function": {
+    "va": "005a0fbf",
+    "body_bytes": 82,
+    "body_sha256": "7aa67fdd7ac2e7712fdc5555559d060b1a825f91cd2cd4df24664cbf48273c05",
+    "callees": [
+      "005a4371",
+      "005a4259"
+    ]
+  },
+  "binary_index_evidence": {
+    "index": "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d",
+    "incoming_direct_calls": 584,
+    "functions": {
+      "005a0fbf": {
+        "body_bytes": 82,
+        "range": [
+          "005a0fbf",
+          "005a1010"
+        ]
+      },
+      "005a4371": {
+        "body_bytes": 1825,
+        "range": [
+          "005a4371",
+          "005a4a91"
+        ]
+      },
+      "005a4259": {
+        "body_bytes": 280,
+        "range": [
+          "005a4259",
+          "005a4370"
+        ]
+      }
+    },
+    "outgoing_direct_calls": [
+      {
+        "from": "005a0fe8",
+        "to": "005a4371"
+      },
+      {
+        "from": "005a1005",
+        "to": "005a4259"
+      }
+    ],
+    "index_sha256": {
+      "functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+      "calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d"
+    }
+  },
+  "abi": {
+    "entry": "int32 __cdecl(char* output,const char* format,...)",
+    "raw_adapter": "int32 __cdecl(char*,const char*,const uint32_t* raw_stack_args)",
+    "stack_arguments": [
+      "return",
+      "output",
+      "format",
+      "raw variadic DWORDs"
+    ],
+    "descriptor_offsets": {
+      "cursor": 0,
+      "signed_remaining": 4,
+      "base": 8,
+      "flags": 12
+    },
+    "cleanup": "caller cleans 12 bytes passed to 005a4371; wrapper returns with caller stack unchanged"
+  },
+  "semantics": {
+    "initial_descriptor": [
+      "output",
+      "0x7fffffff",
+      "output",
+      "0x42"
+    ],
+    "flow": [
+      "005a4371(descriptor,format,EBP+0x10 raw varargs)",
+      "DEC descriptor.remaining",
+      "JS cleanup or clear *descriptor.cursor",
+      "return core EAX"
+    ],
+    "clear_target": "current descriptor cursor after core mutation, not necessarily output[0]",
+    "cleanup_args": [
+      "0",
+      "descriptor"
+    ]
+  },
+  "boundaries": {
+    "005a4371": "unrecovered formatting core; test fixture records raw words and mutates descriptor under explicit case script",
+    "005a4259": "unrecovered cleanup/error helper; fixture records incoming descriptor and zero; effects are not claimed"
+  },
+  "cases_summary": [
+    {
+      "case": 0,
+      "core_remaining": 0,
+      "core_cursor_offset": 0,
+      "return_bits": 0,
+      "branch": "cleanup",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    },
+    {
+      "case": 1,
+      "core_remaining": 1,
+      "core_cursor_offset": 7,
+      "return_bits": 2147483647,
+      "branch": "clear-current-cursor",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    },
+    {
+      "case": 2,
+      "core_remaining": 2,
+      "core_cursor_offset": 31,
+      "return_bits": 2147483648,
+      "branch": "clear-current-cursor",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    },
+    {
+      "case": 3,
+      "core_remaining": 2147483647,
+      "core_cursor_offset": 3,
+      "return_bits": 3735928559,
+      "branch": "clear-current-cursor",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    },
+    {
+      "case": 4,
+      "core_remaining": 2147483648,
+      "core_cursor_offset": 19,
+      "return_bits": 324508639,
+      "branch": "clear-current-cursor",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    },
+    {
+      "case": 5,
+      "core_remaining": 2147483649,
+      "core_cursor_offset": 11,
+      "return_bits": 4294967295,
+      "branch": "cleanup",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    },
+    {
+      "case": 6,
+      "core_remaining": 4294967295,
+      "core_cursor_offset": 23,
+      "return_bits": 610839776,
+      "branch": "cleanup",
+      "return_state_and_order_equal": true,
+      "native_stack_delta": 0,
+      "raw_va_words_equal": true
+    }
+  ],
+  "compiled_translation_units": [
+    "iterations/v2/001-original-recovery/source/recovered/formatter_entry_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_entry.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/108-formatter-entry/CMakeLists.txt": "c6a0f542d0344f6b6798ee531183d1967d6f3f9f8459e55c512f6ce81c5b11ff",
+    "iterations/v2/001-original-recovery/runs/108-formatter-entry/README.md": "12226593baecbc7432dfbec916cc5a8f45f0ed2da5081ad296c38c9da82d7cac",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_entry_probe.cpp": "ab87e0f79110e7db49328531587227977b330d3046fb8d77ae576ccf308fe655",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_entry.cpp": "3c81a98b979195c05e8541d8a0b46bcc8c28fed9f0257ab4e8383135de4c451c",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-formatter-entry.py": "70238897b22de721bd4b737b8cdee83ce154bb551ee4b831cc4addc5fd8aa7c8"
+  },
+  "probe_sha256": "cd61a3f3427db23cac9527b3e4d636407a894e872a031506565ea601705a69e9",
+  "game_launch_verified": false
+}

@@ -1,3 +1,4 @@
+#include "network_vtable_identity_fixture.hpp"
 #include "porsche/network_workers_members.hpp"
 #include "porsche/application_context_base.hpp"
 #include "porsche/file_events.hpp"
@@ -44,7 +45,7 @@ U state(){return raw(&network_worker_state_006a3b60);}
 U normalize(U v){
     if(v>=state()&&v<state()+0x1d0)return 0x6a3b60+v-state();
     U thread=raw(&network_worker_thread_006a3d30);if(v>=thread&&v<thread+28)return 0x6a3d30+v-thread;
-    return v;
+    return network_fixture_word(v);
 }
 void event(U id,std::initializer_list<U> args={}){
     std::vector<U> row{id};for(U value:args)row.push_back(normalize(value));
@@ -149,7 +150,7 @@ int main(){using namespace porsche;
         else if(operation==13)result=raw(network_member_copy_0050e140(ptr(a[1]?OUTPUT+4:OUTPUT),nullptr,static_cast<U*>(ptr(OUTPUT+4))));
         else result=raw(network_member_insert_004937f0(ptr(S+0x174),nullptr,static_cast<U*>(ptr(a[1]?F+4:OUTPUT)),head(5),static_cast<U*>(ptr(OUTPUT+4))));
         std::cout<<"{\"result\":"<<result<<",\"trace\":[";
-        for(std::size_t i=0;i<events.size();++i){if(i)std::cout<<',';std::cout<<'[';for(std::size_t j=0;j<events[i].size();++j){if(j)std::cout<<',';std::cout<<events[i][j];}std::cout<<']';}
+        for(std::size_t i=0;i<events.size();++i){if(i)std::cout<<',';std::cout<<'[';for(std::size_t j=0;j<events[i].size();++j){if(j)std::cout<<',';std::cout<<network_fixture_word(events[i][j]);}std::cout<<']';}
         std::cout<<"],\"state\":[";bool first=true;
         for(auto range:{std::pair<U,U>{W,0x300},{MESSAGES,0x200},{S,0x600},{G,0xd00},{R,0x50},{M,0x400},{L,0x900},{OUTPUT,0x20},{F,0x100},{state(),0x1d0},{raw(&network_worker_thread_006a3d30),28}})
             for(U off=0;off<range.second;off+=4){if(!first)std::cout<<',';first=false;U v=get(range.first+off);if(range.first==R&&off==0x40)v=0x24000000;std::cout<<normalize(v);}

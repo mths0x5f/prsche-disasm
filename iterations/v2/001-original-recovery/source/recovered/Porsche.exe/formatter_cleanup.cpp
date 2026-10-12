@@ -33,6 +33,13 @@ std::uint32_t pointer_difference_bits(const char* lhs, const char* rhs) {
            static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(rhs));
 }
 
+
+void set_cleanup_error(FormatterOriginalDescriptor32* descriptor) {
+    descriptor->flags |= 0x20u;
+}
+
+} // namespace
+
 // Exact 005abf35 consumer: unsigned range test, 32 handles per bank, 36-byte
 // records, character-device flag at record +4 / bit 0x40.
 std::uint32_t cleanup_is_character_device_005abf35(std::uint32_t file_id) {
@@ -46,11 +53,6 @@ std::uint32_t cleanup_is_character_device_005abf35(std::uint32_t file_id) {
     return record[4] & 0x40u;
 }
 
-void set_cleanup_error(FormatterOriginalDescriptor32* descriptor) {
-    descriptor->flags |= 0x20u;
-}
-
-} // namespace
 
 std::int32_t __cdecl formatter_cleanup_005a4259(
     std::uint32_t character, FormatterOriginalDescriptor32* descriptor) {
