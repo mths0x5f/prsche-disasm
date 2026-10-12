@@ -1,0 +1,542 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "005a4ab2",
+    "005a4ae7",
+    "005a4b18",
+    "005a4b50",
+    "005a4b5d",
+    "005a4b6d"
+  ],
+  "full_function_vas": [
+    "005a4ab2",
+    "005a4ae7",
+    "005a4b18",
+    "005a4b50",
+    "005a4b5d",
+    "005a4b6d"
+  ],
+  "parser_va": "005a4371",
+  "parser_recovered": false,
+  "native_cpp_equal_original_x86": true,
+  "cases": 11,
+  "case_results": [
+    {
+      "case": "emit_ff",
+      "cursor": 1,
+      "remaining": 9,
+      "base": 0,
+      "flags": 66,
+      "tail": "a0a1a2a3a4a5a6a7a8a9aaabacadaeaf",
+      "bytes": "ff",
+      "count": 6,
+      "return_is_counter": true,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "emit_overflow",
+      "cursor": 0,
+      "remaining": -1,
+      "base": 0,
+      "flags": 66,
+      "tail": "808182838485868788898a8b8c8d8e8f",
+      "bytes": "",
+      "count": -1,
+      "return_is_counter": true,
+      "cleanup_calls": 1,
+      "cleanup_character": 4294967295,
+      "cleanup_descriptor_is_argument": true,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "emit_count_wrap",
+      "cursor": 1,
+      "remaining": 3,
+      "base": 0,
+      "flags": 66,
+      "tail": "303132333435363738393a3b3c3d3e3f",
+      "bytes": "57",
+      "count": -2147483648,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "repeat_3",
+      "cursor": 3,
+      "remaining": 5,
+      "base": 0,
+      "flags": 66,
+      "tail": "404142434445464748494a4b4c4d4e4f",
+      "bytes": "414141",
+      "count": 5,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "repeat_negative",
+      "cursor": 0,
+      "remaining": 8,
+      "base": 0,
+      "flags": 66,
+      "tail": "101112131415161718191a1b1c1d1e1f",
+      "bytes": "",
+      "count": 7,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "repeat_abort_minus1",
+      "cursor": 1,
+      "remaining": 7,
+      "base": 0,
+      "flags": 66,
+      "tail": "505152535455565758595a5b5c5d5e5f",
+      "bytes": "51",
+      "count": -1,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "span_binary",
+      "cursor": 4,
+      "remaining": 4,
+      "base": 0,
+      "flags": 66,
+      "tail": "707172737475767778797a7b7c7d7e7f",
+      "bytes": "4100ff7f",
+      "count": 5,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "span_length_2",
+      "cursor": 2,
+      "remaining": 6,
+      "base": 0,
+      "flags": 66,
+      "tail": "202122232425262728292a2b2c2d2e2f",
+      "bytes": "7879",
+      "count": 2,
+      "esp_delta": 0,
+      "preserved": [
+        2981278644,
+        3789743076,
+        4059231220,
+        387455258
+      ]
+    },
+    {
+      "case": "next_u32",
+      "value": 305419896,
+      "cursor_words": 1
+    },
+    {
+      "case": "next_u64",
+      "value": 9920249030899947128,
+      "cursor_words": 2
+    },
+    {
+      "case": "next_u16",
+      "value": 52719,
+      "cursor_words": 1
+    }
+  ],
+  "original_helpers": {
+    "body_bytes": {
+      "5917362": 53,
+      "5917415": 49,
+      "5917464": 56,
+      "5917520": 13,
+      "5917533": 16,
+      "5917549": 14
+    },
+    "body_sha256": {
+      "005a4ab2": "bdd9c94b0f84d222abba49b0dd9c6ff49164736dc4a0b443c3c5514c565947fe",
+      "005a4ae7": "d5748a1236092028ae8b199bac0bb65729e23f668a9cebb0ddbc9575a160e454",
+      "005a4b18": "9bfcb6c87e82e7113264f86175a304743888349564947d1146fe8ecdccf6f9ee",
+      "005a4b50": "639148f2f162bda27c1f66ab90d68794bac59a533c7cbf65580a2c6853ef771f",
+      "005a4b5d": "c0dff18e6194a628974f879b3b458f2c32143e8e460e9f471bbd1d5a2b5e299f",
+      "005a4b6d": "5f671d8a996ed9b6b5d29f932ff7a60ca5b1d02836de479b9c8f08e4575cb74a"
+    }
+  },
+  "binary_index_evidence": {
+    "index": "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d",
+    "functions_sha256": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "calls_sha256": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "disassembly_sha256": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "helper_call_sites": {
+      "005a4ab2": {
+        "incoming": [
+          {
+            "from": "005a452e",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4547",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4b01",
+            "from_function": "005a4ae7",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4b38",
+            "from_function": "005a4b18",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ],
+        "outgoing": [
+          {
+            "to": "005a4259",
+            "to_function": "005a4259",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ]
+      },
+      "005a4ae7": {
+        "incoming": [
+          {
+            "from": "005a49cb",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a49fd",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4a71",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ],
+        "outgoing": [
+          {
+            "to": "005a4ab2",
+            "to_function": "005a4ab2",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ]
+      },
+      "005a4b18": {
+        "incoming": [
+          {
+            "from": "005a49e1",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4a3b",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4a59",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ],
+        "outgoing": [
+          {
+            "to": "005a4ab2",
+            "to_function": "005a4ab2",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ]
+      },
+      "005a4b50": {
+        "incoming": [
+          {
+            "from": "005a4456",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4495",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a45af",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4673",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4698",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4830",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a4883",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a488f",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a48a4",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          },
+          {
+            "from": "005a48ac",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ],
+        "outgoing": []
+      },
+      "005a4b5d": {
+        "incoming": [
+          {
+            "from": "005a486b",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ],
+        "outgoing": []
+      },
+      "005a4b6d": {
+        "incoming": [
+          {
+            "from": "005a4638",
+            "from_function": "005a4371",
+            "type": "UNCONDITIONAL_CALL"
+          }
+        ],
+        "outgoing": []
+      }
+    },
+    "parser_outgoing_call_sites": [
+      {
+        "from": "005a4456",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4495",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a452e",
+        "to": "005a4ab2",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4547",
+        "to": "005a4ab2",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a45af",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4638",
+        "to": "005a4b6d",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4645",
+        "to": "005abf5e",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4673",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4698",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a471b",
+        "to": "005abee8",
+        "type": "COMPUTED_CALL"
+      },
+      {
+        "from": "005a473c",
+        "to": "005abee8",
+        "type": "COMPUTED_CALL"
+      },
+      {
+        "from": "005a4753",
+        "to": "005abee8",
+        "type": "COMPUTED_CALL"
+      },
+      {
+        "from": "005a4771",
+        "to": "005a6730",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4830",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a486b",
+        "to": "005a4b5d",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4883",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a488f",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a48a4",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a48ac",
+        "to": "005a4b50",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4923",
+        "to": "005a6820",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4935",
+        "to": "005a67b0",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a49cb",
+        "to": "005a4ae7",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a49e1",
+        "to": "005a4b18",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a49fd",
+        "to": "005a4ae7",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4a24",
+        "to": "005abf5e",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4a3b",
+        "to": "005a4b18",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4a59",
+        "to": "005a4b18",
+        "type": "UNCONDITIONAL_CALL"
+      },
+      {
+        "from": "005a4a71",
+        "to": "005a4ae7",
+        "type": "UNCONDITIONAL_CALL"
+      }
+    ]
+  },
+  "abi": {
+    "descriptor": "32 bytes; cursor/remaining/base/flags at +0/+4/+8/+0xc; +0x10..+0x1f opaque",
+    "emit": "cdecl(int32 character, descriptor*, int32* emitted_count); EAX returns emitted_count pointer",
+    "repeat": "cdecl(int32 character, int32 count, descriptor*, int32* emitted_count)",
+    "span": "cdecl(bytes*, int32 length, descriptor*, int32* emitted_count)",
+    "va_fetch": "cdecl(raw DWORD cursor*); 32/16 consume one DWORD, 64 consumes low then high DWORD; 64 advances pointer by eight bytes before both loads",
+    "return_registers": {
+      "005a4b6d": "AX is the only meaningful returned portion; MOV AX preserves upper EAX from the advanced cursor",
+      "005a4ae7/005a4b18": "void-like callers ignore EAX; no EAX value is claimed",
+      "005a4ab2": "EAX is the physical emitted_count pointer on both success and cleanup branches; x86 oracle compares this address in native calls"
+    }
+  },
+  "boundaries": {
+    "005a4259": "typed external boundary. The negative-capacity case proves the original call site, stack arguments and -1 result path using a recording oracle stub; cleanup body/layout effects remain unrecovered.",
+    "005a4371": "unrecovered 1,825-byte table-driven parser; classification table 005c19a8 and transition table 005c19c8; no alternate parser included",
+    "floating": "runtime callback cells initialized at 005a0f5d; callback pipeline remains open",
+    "wide_multibyte": "path through 005abf5e remains open"
+  },
+  "compiled_translation_units": [
+    "iterations/v2/001-original-recovery/source/recovered/formatter_original_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/119-formatter-original/CMakeLists.txt": "505d5f23c24993f2a34da140c8282fc0c265e5daab388ae38736487f5553f38a",
+    "iterations/v2/001-original-recovery/runs/119-formatter-original/README.md": "255b637cd85c2744ffb1cb17133aed75eba0e12b909accb56fa1cd5ad7a4b9fd",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_original_probe.cpp": "832bd6ade0ed41dc801b24dca954a067dfd65967ac01ccf023908d96a45c0cdc",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp": "614b9f628fec7e177b5038c3ce71f38df870a362bc93cb45211acc96132a71fa",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-formatter-original.py": "da79cd9981d951656722dc09feeeb206e2032578b72aa6f850fa1cc274abd323"
+  },
+  "probe_sha256": "f3e8bf2911f0a0be13fbd638af9aeadbd4964c5ed496ce07b14826c2db9ecaee",
+  "game_launch_verified": false
+}

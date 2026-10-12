@@ -416,6 +416,11 @@ add_subdirectory(runs/165-heap-locale-groups-integration heap-locale-groups-inte
 add_subdirectory(runs/164-network-vtables network-vtables-164)
 add_subdirectory(runs/166-formatter-output formatter-output-166)
 add_subdirectory(runs/169-vtable-output-integration vtable-output-integration-169)
+add_subdirectory(runs/167-formatter-float-output formatter-float-output-167)
+add_subdirectory(runs/168-network-transport network-transport-168)
+add_subdirectory(runs/170-formatter-float-parse formatter-float-parse-170)
+add_subdirectory(runs/171-network-constructors network-constructors-171)
+add_subdirectory(runs/173-float-transport-integration float-transport-integration-173)
 
 # The native platform target is defined by Run055's add_subdirectory above.
 if(TARGET porsche_platform_win32)

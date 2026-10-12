@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "0048aa10",
+    "0048af80",
+    "0048b3c0",
+    "0048b450",
+    "0055d5a0",
+    "0055d5e0",
+    "0055d6e0",
+    "0055d730",
+    "0055d750",
+    "00580590",
+    "005805b0",
+    "005805e0"
+  ],
+  "full_function_vas": [
+    "0048aa10",
+    "0048af80",
+    "0048b3c0",
+    "0048b450",
+    "0055d5a0",
+    "0055d5e0",
+    "0055d6e0",
+    "0055d730",
+    "0055d750",
+    "00580590",
+    "005805b0",
+    "005805e0"
+  ],
+  "partial_function_vas": [],
+  "cases": 2441,
+  "native_cpp_equal_original_x86": true,
+  "index_query": "Remaining raw-vptr assignments48aa21/48aa84/48af92/48b015; parent functions48aa10/48af80 and direct startup48b3c0/48b450; address consumers55d5a0/55d5e0/55d6e0 and protocol/provider callees. All12 bodies indexed.",
+  "comparison_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded.",
+  "unresolved_effects": [
+    "worker constructors55c370/55aaa0",
+    "current address55d650",
+    "connect48ac90",
+    "actual provider callbacks",
+    "RTTI graph ownership",
+    "identity5b4980 full extent",
+    "text5e8e50 full extent"
+  ],
+  "deferred": [
+    "Trace actual worker creation/provider startup and connect before claiming OS transport. Original copies are unbounded; input strings must fit original packet fields. Allocation20 failure still calls connect with null; scripted boundary observes this and does not establish actual null handling."
+  ],
+  "original_functions": [
+    {
+      "va": "0048aa10",
+      "body_bytes": 565,
+      "body_sha256": "7d7959f724d230ee02fa37c4ccfe14d862624db86212a3d624a5cd9c90990891"
+    },
+    {
+      "va": "0048af80",
+      "body_bytes": 566,
+      "body_sha256": "ff3ed20376d70639dffdeaf6022ca8c28c65e0e3f092ca6c48e10abaf3a4278e"
+    },
+    {
+      "va": "0048b3c0",
+      "body_bytes": 137,
+      "body_sha256": "ae764c435e3fb3b7296ece1ab95b11a9d9b3fd8086eeb4ef6d857baed1fa29f8"
+    },
+    {
+      "va": "0048b450",
+      "body_bytes": 149,
+      "body_sha256": "ddb97c02fecc0c6cb7c04cc7c045b81e436e9bc81482c2003fe90663beea241b"
+    },
+    {
+      "va": "0055d5a0",
+      "body_bytes": 56,
+      "body_sha256": "3533631377dbc2b7f12697e90f9f28eb946a8cb0a3f5981d8040bb24ef6db4ef"
+    },
+    {
+      "va": "0055d5e0",
+      "body_bytes": 101,
+      "body_sha256": "9f9fe96e5449dc17830e84cf74bf4e758c2b9fecaadb40c9a00958c25432387a"
+    },
+    {
+      "va": "0055d6e0",
+      "body_bytes": 68,
+      "body_sha256": "73699d8e2e1b86a5ed266131713a27648a1d011ba89735794daabc6b9cc77f04"
+    },
+    {
+      "va": "0055d730",
+      "body_bytes": 20,
+      "body_sha256": "4074a134932040168a800996dd1eaf427d80f71f733749d504a559632ca8663a"
+    },
+    {
+      "va": "0055d750",
+      "body_bytes": 17,
+      "body_sha256": "69a4a27db344f5c78729ebb5658a11faa1b250136859675598f23b4ed710536f"
+    },
+    {
+      "va": "00580590",
+      "body_bytes": 28,
+      "body_sha256": "5ff88ab9d50535507f9ba496ae38e51b5a0cc79428aaafc246288a94dd99d774"
+    },
+    {
+      "va": "005805b0",
+      "body_bytes": 42,
+      "body_sha256": "d72cec79f5c04fdf3433d85c6cf382ddf513e22d8b125c85e4ea5e87bfc300c0"
+    },
+    {
+      "va": "005805e0",
+      "body_bytes": 42,
+      "body_sha256": "1eb4876a331961fc8a813cf49c0e274359f7028de78425dd6cdec9c1514fa5ad"
+    }
+  ],
+  "compiled_source_files": [
+    "iterations/v2/001-original-recovery/source/recovered/network_constructors_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/171-network-constructors/CMakeLists.txt": "55f2251304b3587810a4e890f5963db200b185b2638a68b314e33e9a46ac2692",
+    "iterations/v2/001-original-recovery/runs/171-network-constructors/README.md": "142b78a971b1ba810fc39ce5ee0c1a0ee400bd0ab341388aeecdc3705b1a48ae",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_services_next.hpp": "61850310ac64fcf72319aeabb4d05c0ccac1b34402b6893e6b4e084e3594dd07",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp": "e3535f0fdf85141719d4741e60a900d6c454b9e6140fc7ec283fa5f18a33ef76",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_cleanup.hpp": "4a5d5260445a08f1a450f34306f3f89af57363217511f527ab8bf2242c40725c",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_constructors.hpp": "00295326aae04f7de47c2bfc6de3f5806479147900c442cc016df612940b5298",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_groups.hpp": "25f1449c6c555a3851dbc9b4e9d5b14e1fefd496c62707ec0f99e1a90833f431",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_lifecycle.hpp": "2cc6070ccb94d7d1025a1d59a59bdb91562e71cfa70f42a7d9baad47dc7c6f46",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_services.hpp": "2548d0e9fa453f0bdbefcc9411465d43619bfd98c740d6257b75134115fba75e",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_session.hpp": "0cd8c5006af8e8166f8f2835fc0ae7d1f2cdbd5cc39adf70270adaa7d5fe21dc",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_vtables.hpp": "af357b04a38d0df49031e4ef65300d53184d28b4ad4476617cc2baa8decb6ff5",
+    "iterations/v2/001-original-recovery/source/include/porsche/network_workers_members.hpp": "1c4bc63f3cc1c15bf0f260ee2f47f92553208719829485eabfa2b46e329d6d6d",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/network_constructors_probe.cpp": "8c8a4359ee96de4889770b0e9dbd09f3bf33c2b4c36effffadc16f0b641e9a55",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp": "2daa4355b61ab90b92449bdf73f475e4c08635ac6c79ef72f69450e34218c500",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/symbols.jsonl": "249e707b5b253cb5c0fd8818c54b144349d14fc73de294f34b7b72153295f4f0",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/unresolved-calls.jsonl": "18469aa6c13fb7efe205a545ae26f6ae100bf89c3debf1a68dd35e697b834606",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-network-constructors.py": "af9309636dc2ee4755db8aec607eafd1b32d3312ec0c0b723841155bd3f0cee8"
+  }
+}

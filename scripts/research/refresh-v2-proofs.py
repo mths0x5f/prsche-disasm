@@ -66,10 +66,22 @@ def main():
         name = Path(script).stem.removeprefix('verify-v2-')
         if report.get('connected_original_strings'):
             name = 'formatter-error-integration'
-        proof_filename = 'full-verification.json' if Path(relative).name == 'full-verification.json' else 'verification.json'
+        old_filename = Path(relative).name
+        proof_filename = old_filename if old_filename in ('full-verification.json', 'production-verification.json') else 'verification.json'
+        trace_off = report.get('private_stage_trace_enabled') is False
+        if trace_off and '--no-stage-trace' not in flags:
+            unsupported.append({'report': relative, 'verifier': script, 'missing_trace_off_flag': True})
+            continue
+        if proof_filename == 'production-verification.json' and '--report-name' not in flags:
+            unsupported.append({'report': relative, 'verifier': script, 'missing_production_report_name_flag': True})
+            continue
         output = report_root / name / proof_filename
         command = [sys.executable, str(ROOT / script), flag,
                    str(output.parent if flag == '--report-dir' else output)]
+        if trace_off:
+            command += ['--no-stage-trace']
+        if proof_filename == 'production-verification.json':
+            command += ['--report-name', proof_filename]
         executables = re.findall(r'/bin/Release/([A-Za-z0-9_]+\.exe)', source)
         if script == composite:
             executables = ['startup_timing_integration_probe.exe']
@@ -90,6 +102,10 @@ def main():
             if len(set(executables)) != 1:
                 unsupported.append({'report': relative, 'verifier': script, 'ambiguous_probes': executables})
                 continue
+            if trace_off:
+                # Observer-free reports must run the observer-free build.
+                # Never silently refresh them with the instrumented executable.
+                executables = [executables[0].removesuffix('_probe.exe') + '_production_probe.exe']
             command += ['--probe', str(BIN / executables[0])]
         if '--production-probe' in flags and report.get('uninstrumented_native_equal_instrumented'):
             command += ['--production-probe', str(BIN/'formatter_strings_production_probe.exe')]

@@ -128,6 +128,28 @@ class RefreshPlanTests(unittest.TestCase):
                                   [{'filename':'full-verification.json'}])
             self.assertEqual(Path(plan['tasks'][0]['output']).name,'full-verification.json')
 
+    def test_observer_free_proof_keeps_its_build_mode_and_filename(self):
+        with TemporaryDirectory() as directory:
+            plan = self.make_plan(directory,'verify-v2-formatter-float-output.py',
+                [{'private_stage_trace_enabled':True},
+                 {'private_stage_trace_enabled':False,'filename':'production-verification.json'}],
+                flags=['--no-stage-trace','--report-name'])
+            self.assertEqual(plan['unsupported'],[])
+            self.assertEqual(len(plan['tasks']),2)
+            self.assertEqual(len({task['output'] for task in plan['tasks']}),2)
+            production = next(t for t in plan['tasks'] if '--no-stage-trace' in t['command'])
+            command = production['command']
+            self.assertEqual(Path(command[command.index('--probe')+1]).name,'fixture_production_probe.exe')
+            self.assertEqual(command[command.index('--report-name')+1],'production-verification.json')
+            self.assertEqual(Path(production['output']).name,'production-verification.json')
+
+    def test_observer_free_proof_rejects_verifier_without_mode_flag(self):
+        with TemporaryDirectory() as directory:
+            plan = self.make_plan(directory,'verify-v2-formatter-float-output.py',
+                                  [{'private_stage_trace_enabled':False}])
+            self.assertEqual(plan['tasks'],[])
+            self.assertTrue(plan['unsupported'][0]['missing_trace_off_flag'])
+
     def test_uninstrumented_production_probe_is_preserved(self):
         with TemporaryDirectory() as directory:
             plan = self.make_plan(directory,'verify-v2-formatter-strings.py',

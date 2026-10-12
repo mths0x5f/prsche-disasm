@@ -1622,7 +1622,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1639,7 +1639,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1656,7 +1656,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-fe-callbacks.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/fe-callbacks/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/fe-callbacks/verification.json",
       "verification_boundary": "Input getstate mode6 is a controlled recording boundary; all 1320 callback list/mask/argument/return snapshots verified. Joint stream callback effects not yet integrated.",
       "unrecovered_indirect_dependencies": []
     },
@@ -1758,7 +1758,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1772,7 +1772,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1786,7 +1786,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-state/verification.json",
       "verification_boundary": "Controlled DirectInput vtables, real input helpers; 1026 original x86 cases."
     },
     {
@@ -1806,7 +1806,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-state.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/input-state/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-state/verification.json",
       "verification_boundary": "Only mode6 and valid exits accepted; unknown modes and negative/unmapped index boundaries are explicit.",
       "unrecovered_branches": [
         "mode1",
@@ -1927,7 +1927,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1947,7 +1947,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-disk-open.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/disk-open/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/disk-open/verification.json",
       "verification_boundary": "1672 original x86 cases; slots/flags/mappings/errorunwind; path/init/OS/lock boundaries recorded."
     },
     {
@@ -1961,7 +1961,7 @@
       "recovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-buffer/verification.json",
       "verification_boundary": "37 original x86 cases with typed COM property/capabilities endpoints."
     },
     {
@@ -1979,7 +1979,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-input-buffer.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/input-buffer/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-buffer/verification.json",
       "verification_boundary": "Capabilities-failure exit only; original success branch unrecovered.",
       "unrecovered_branches": [
         "capabilities_success_0056fdf9..0056ff7e"
@@ -2056,7 +2056,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-resource-paths.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/resource-paths/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/resource-paths/verification.json",
       "verification_boundary": "023-resource-paths: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -2085,7 +2085,7 @@
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-render-startup.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/render-startup/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/render-startup/verification.json",
       "verification_boundary": "024-render-startup: recording platform/callee boundaries; see run README; not a game launch.",
       "dependency_scope": "Indexed direct calls only; indirect/platform boundaries remain as documented in run README."
     },
@@ -4691,7 +4691,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564eb0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4709,7 +4709,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00564fa0",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4727,7 +4727,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "00565030",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
@@ -4750,7 +4750,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ab2",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4768,7 +4768,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4ae7",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4786,7 +4786,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b18",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4804,7 +4804,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b50",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4820,7 +4820,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b5d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4836,7 +4836,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "005a4b6d",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_original.cpp",
@@ -4851,7 +4851,7 @@
       "status": "native-differential-verified",
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-timer-integration.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-timer-integration/verification.json",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/verification.json",
       "dependency_scope": "Original indexed direct callees; imported OS/WinMM calls and explicit unknown boundaries are documented in Run 121.",
       "entry_va": "0053c270",
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/auxiliary_wait.cpp",
@@ -5933,12 +5933,12 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-float-helpers/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005a3f31",
         "005a4054",
         "005a4150"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -5953,11 +5953,10 @@
       "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-float-helpers/verification.json",
       "recovered_dependencies": [
-        "005abc73"
-      ],
-      "unrecovered_dependencies": [
+        "005abc73",
         "005ac716"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -5972,11 +5971,10 @@
       "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-float-helpers/verification.json",
       "recovered_dependencies": [
-        "005abc89"
-      ],
-      "unrecovered_dependencies": [
+        "005abc89",
         "005ac716"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -5990,10 +5988,10 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-float-helpers/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005abb07"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -6007,10 +6005,10 @@
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-formatter-float-helpers.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-float-helpers/verification.json",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "005abb07"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "verification_boundary": "Complete indexed bodies with original state/return/effect comparisons. Remaining typed callees are explicit recording seams; no live game or unknown-callee parity. Sign005a3edb uses actual original native x86 hardware oracle; Unicorn flag discrepancies remain documented."
     },
@@ -8195,11 +8193,11 @@
       "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_vtables.cpp",
       "status": "native-differential-verified",
       "calling_convention": "Original x86 typed declarations; complete ABI verified in linked report",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "00587000",
         "005870b0"
       ],
+      "unrecovered_dependencies": [],
       "unrecovered_indirect_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-network-vtables.py",
@@ -8368,6 +8366,981 @@
       "verification": "scripts/research/verify-v2-formatter-output.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-output/verification.json",
       "verification_boundary": "Defined EAX including pointer returns; complete65536-byte poisoned arena with banks/descriptors/input/output/error cells; ordered OS/CRT/lock/atomic boundaries, exact WriteFile buffers and wide-input arguments; mutable bank pointer reloads, locale decrement snapshots, reader/count wrap, canonical global effects; original cdecl cleanup and nonvolatile registers."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3f31",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a3f92",
+        "005abcf9",
+        "005abd70"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a4054",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a40a9",
+        "005abcf9",
+        "005abd70"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a4150",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a3f92",
+        "005a40a9",
+        "005abcf9",
+        "005abd70"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abdcc",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adaae",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adacf",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005adaae"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adb2d",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adb5b",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adf5b",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005adaae",
+        "005adb2d",
+        "005adb5b"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ae17b",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005adf5b"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adc4f",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005aa4e0",
+        "005adacf",
+        "005adb2d",
+        "005adb5b",
+        "005adf5b",
+        "005ae17b"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abcf9",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a1a40",
+        "005a6730"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3f92",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a4234",
+        "005aa4e0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a40a9",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a4234",
+        "005abe90"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a4234",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a1a40",
+        "005a6730"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abd70",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_output.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005aa4e0",
+        "005abdcc",
+        "005adc4f"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-output.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-output/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00587000",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005323e0"
+      ],
+      "unrecovered_dependencies": [
+        "005a1e90"
+      ],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005870b0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005323e0",
+        "005809f0",
+        "00587110"
+      ],
+      "unrecovered_dependencies": [
+        "005a1e90"
+      ],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00587110",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "00580b20",
+        "00587000"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580b20",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "00580b70"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580b70",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580a00",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580a50",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00586ee0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_transport.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005809f0",
+        "00580b20"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "actual context provider-table+8/+24 backends",
+        "actual route-node transform callbacks+4/+8",
+        "RTTI owners5c5190/5c51d8/5c5228"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-transport.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-transport/verification.json",
+      "verification_boundary": "Nine complete bodies plus canonical159 count5809f0 verbatim extraction. Exact initialized descriptor/packet data, concatenation/flags, returns/order/state and original ESP/nonvolatile ABI. Provider-table+8/+24 and route-node+4/+8 plus predicates are scripted private effects; recursive callback scripts execute real original/native traversal. Existing lock/copy boundaries mutate head/lock/source/next at call points. Native _alloca implements original chkstk platform seam. Unused spare descriptor tail excluded because original leaves it uninitialized."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ac716",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005a2eae",
+        "005adb88",
+        "005ae17b"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005abb07",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005ab9ac",
+        "005aba38",
+        "005aba53",
+        "005aba5f",
+        "005aba7a"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab90d",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab956",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005adaae"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005ab9ac",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005ab90d",
+        "005ab956"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aba38",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aba53",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aba5f",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aba7a",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005adb88",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005adacf",
+        "005adb2d"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-formatter-float-parse.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/verification.json",
+      "verification_boundary": "Actual original native x86 execution versus recovered C++, full poisoned arena/returns/ABI/x87 state; separate production repeat; original instruction/data pointers excluded as implementation identities.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-float-parse/production-verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048aa10",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005321f0",
+        "005322b0",
+        "005322c0",
+        "0059eeb0"
+      ],
+      "unrecovered_dependencies": [
+        "0053c290",
+        "0055c370"
+      ],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048af80",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "005321f0",
+        "005322b0",
+        "005322c0",
+        "005323e0",
+        "0055d5a0",
+        "0055d5e0",
+        "0055d6e0",
+        "0059eeb0",
+        "005a0fbf"
+      ],
+      "unrecovered_dependencies": [
+        "0053c290",
+        "0055aaa0",
+        "0055d650"
+      ],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048b3c0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "0048aa10",
+        "0059ef90"
+      ],
+      "unrecovered_dependencies": [
+        "0048ac90"
+      ],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0048b450",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "0048aa10",
+        "0059ef90"
+      ],
+      "unrecovered_dependencies": [
+        "0048ac90"
+      ],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d5a0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "0055d730",
+        "005805e0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d5e0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "0055d730",
+        "0055d750",
+        "005805b0",
+        "005a28a0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d6e0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [
+        "0055d730",
+        "00580590"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d730",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055d750",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00580590",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005805b0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005805e0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/network_constructors.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 typed declaration and complete ABI in verification report",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "worker constructors55c370/55aaa0",
+        "current address55d650",
+        "connect48ac90",
+        "actual provider callbacks",
+        "RTTI graph ownership",
+        "identity5b4980 full extent",
+        "text5e8e50 full extent"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-network-constructors.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/network-constructors/verification.json",
+      "verification_boundary": "Complete12 bodies, original ESP/nonvolatile ABI, returns except void startup EAX, entire object/list/pool backing and all initialized52/92-byte worker packets. Exact effects/order with captured manager versus reloaded lock, changed worker pointers after current/get/parse, allocation failures and retry. Private native vptr identity normalized to original words only; actual callback functions remain native. Provider and unrecovered worker/allocator/CRT/lock effects are scripted. Query constructors use initialized provider outputs; unsupported query mode remains original undefined local data and is excluded."
     }
   ]
 }

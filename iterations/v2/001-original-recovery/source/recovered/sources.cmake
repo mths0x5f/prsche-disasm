@@ -143,3 +143,11 @@ list(APPEND PORSCHE_RECOVERED_SOURCES
 list(APPEND PORSCHE_RECOVERED_SOURCES
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_vtables.cpp"
     "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_output.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_float_output.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_transport.cpp"
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/formatter_float_parse.cpp")
+
+list(APPEND PORSCHE_RECOVERED_SOURCES
+    "${PORSCHE_SOURCE_ROOT}/recovered/Porsche.exe/network_constructors.cpp")

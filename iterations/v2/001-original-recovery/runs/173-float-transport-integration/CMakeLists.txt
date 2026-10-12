@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.24)
+get_filename_component(ROOT "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
+
+# Repeat the complete original-hardware comparisons without private observers.
+# The original packet targets retain their own trace definitions.
+foreach(name formatter_float_output formatter_float_parse)
+  if(TARGET ${name}_probe)
+    get_target_property(packet_sources ${name}_probe SOURCES)
+    get_target_property(packet_directory ${name}_probe SOURCE_DIR)
+    set(production_sources "")
+    foreach(source IN LISTS packet_sources)
+      get_filename_component(absolute_source "${source}" ABSOLUTE BASE_DIR "${packet_directory}")
+      list(APPEND production_sources "${absolute_source}")
+    endforeach()
+    add_executable(${name}_production_probe ${production_sources})
+    target_include_directories(${name}_production_probe PRIVATE "${ROOT}/source/include")
+    target_compile_features(${name}_production_probe PRIVATE cxx_std_17)
+    target_compile_options(${name}_production_probe PRIVATE /W4 /permissive- /EHsc /Gy)
+    target_compile_definitions(${name}_production_probe PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
+    target_link_options(${name}_production_probe PRIVATE /OPT:REF /BASE:0x10000000 /DYNAMICBASE:NO)
+    set_target_properties(${name}_probe ${name}_production_probe PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+  endif()
+endforeach()

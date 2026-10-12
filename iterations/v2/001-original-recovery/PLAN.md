@@ -3,30 +3,40 @@
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —169:430 full +6 registered partial;165 запушенf66c0f4.
-Общая MSVC Win32 сборка:151 projects /284 unique TUs;131 comparison/alias targets,
+Текущий принятый пакет —173:476 full +6 registered partial;169 запушенc586cee.
+Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,
 9 native OS и3 link fixtures. Все12 native/link checks прошли.
-28 свежих original-x86 reports /26409 comparisons плюс4 component-proven composed cases.
-Game-link:0 compile errors /274 unresolved symbols /310 refs /0 other diagnostics; игрового EXE нет.
-Manual index40 /36627 entries; три полных omitted targets164 добавлены по SHA/ranges/RET.
-169 принимает164 network slots(11) и166 output(8new+005abf35regression).
-Четыре recovered vptr assignments используют address-of native owner.send;
-151/155/159 private identity probes отбрасывают rawVA и нормализуют только canonicalnativeidentity.
-Настоящие164 one-slot dispatch прошли572originalcases; private cleanup identities не исполняют slot.
-RTTI005c5190/1d8/228 и005e8e50 остаются unsized dependencies, productionnullsubstitutesнет.
-005abf35 сохраняет единственный algorithmowner formatter_cleanup.cpp: typedexport
-и166 direct regression call, без второй реализации/регистрации;1580outputcasesпрошли.
-SetFilePointer wrapper соответствует IAT005b223c; native seek checks включаютFFFFFFFF/error0 и invalidhandle/error6.
-Индекс/полныеVA/байты/данные/IAT и caller/callee evidence —164/166README и169reports.
-Оптимизации: связанные пакеты, parallel independent checks, batchSHAcache/mutationchecks,
-onePEread для manualindex. Замеры156 inventory9.29→2.38s,165manualaudit0.0566→0.0186s;
-это накладные расходы проверки, не измеренное общее ускорение восстановления.
-Владельцы: small_heap_resume —172 следующий CRT блок; locale_resume —170 parse/pack;
-network_vtables_resume —171 constructors; root —shared registry/index/platform/docs/integration.
-Готовы167floatoutput(16,4991actualnativeoriginalcases) и168transport(9,385cases).
-Следующий шаг: общий пакет готовых167/168/170, refresh affectedproofs, actual game-link;
-далее полный004d3420/startup и RTTI owners.131 audio-init/00525ec0 остаются isolated.
-Validation backlog обновлён169; полный запуск/live/visual acceptance открыты.
+15 свежих original-x86 reports /24560 comparisons, включая8791 production repeats,
+плюс4 component-proven composed cases. Game-link267 symbols/303refs,0compilererrors/otherdiagnostics; noEXE.
+Manual index40 /36627 entries. Приняты46new:167output16,168transport8,170parse10,171constructors12.
+00580ad0 сохраняет canonical io_find owner;168 напрямую компилирует/вызывает его какregression.
+167 обе сборки4991actualnativeoriginalcases;170 обе3800native+Unicorncases;
+полные arena/return/ABI/x87state, observer/production semanticfingerprints равны.
+37208output+16216parser intermediateevents; Unicorn1356FPU/390NaNmemory/432NaNstage
+расхождений сохранены явно; actualoriginalhardwareauthoritative, flags не маскируются.
+168385cases,1712441cases. Constructors включают intermediate/final native vptrs;
+RTTI owners/actual provider/worker effects ещё открыты. Raworiginalvtables в productionstoresнеподключены.
+11cache/refresh testsPASS; automaticrefresh сохраняет productionfilename/build/trace-offmode,
+а ambiguous/missingmode не подменяется instrumentedсборкой. SHA121proofreports/701uniquehashesPASS.
+
+Приоритет2026-10-12: цель первого запуска не должна ждать глубокой приёмки каждой
+из тысяч функций. Восстанавливать полный компилируемый граф механически из оригинальных
+инструкций/ветвлений и точных ABI; исправлять реальные compiler/link blockers.
+Непроверенные compile candidates не считать verified и не выдавать за готовую игру.
+Первый запуск candidate — отдельный local/experiments эксперимент с originalcomparison;
+никаких guessedimplementations/stubs в production, originalresourcesreadonly.
+Семантические проверки сохраняются в backlog и выполняются пакетами; полная fidelity
+обязательна для окончательной приёмки. Авторизованный C/C++ путь сохраняется.
+
+Владельцы: network_vtables_resume —174typedRTTIowners; small_heap_resume —177полный004d3420;
+locale_resume —178bulkcompileaudit; root —176integrationready172search/175stdio/174RTTI.
+172ready3new/9374cases,126092reads;175ready8new/4152cases, production_ready=false:
+нужен canonical locktable prefix48 по192originalbytes и nativeformatstringbindings.
+177CFG2575instructions/8589B, zero stackdepthmergeconflicts,134callees; virtualABIconstraints
+ещё candidate, не доказательство targetsemantics.178 классифицирует bulkcompilerошибки.
+Следующий шаг: сохранить173; интегрировать176 готовые blocks, параллельно prototype
+bulkcompilecandidate и177 completebody.131 audio-init/00525ec0 остаются isolated.
+Validation backlog обновлён173. Полный запуск/live/visualacceptance открыты.
 После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001

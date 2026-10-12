@@ -6,13 +6,19 @@
 со ссылкой на фактически выполненную проверку. Сборка, bounded differential oracle
 и визуальное соответствие — отдельные результаты.
 
-Checkpoint169:430full+6partial;151projects/284TUs,26409freshoriginalcomparisons,
-12native/linkchecksPASS. Game-link274symbols/310refs; noEXE. Nativevtables теперь
-подключены в четырёх recovered stores; эти identityregressions и572dispatchcases
-не доказывают originalRTTI consumers/livenetwork. Вернуться к RTTI005c5190/1d8/228,
-полным constructors и indeterminate shortpacket tail; таблицы не заменять null в игре.
-005abf35 canonicalreuse проверена166/169; двойного учёта нет. Float167/170 hardware
-checks отделять от Unicorn и будущего liveCRT; расхождения эмулятора хранить явно.
+Checkpoint173:476full+6partial;157projects/292TUs,24560freshoriginalcomparisons
+(8791productionrepeats),12native/linkchecksPASS. Game-link267symbols/303refs; noEXE.
+Nativevtables подключены и в constructors171; actualRTTI/provider/networkstartup ещё не доказаны.
+Float output167 и parse170 проходят actualnativeoriginal, completearena/ABI/x87state;
+Unicorn outputNaN/FPU расхождения сохранены явно, не скрыты.
+00580ad0 canonicalreuse и observer/production equivalence8791cases подтверждены173.
+
+Первый experimentalcandidate compile/run допускается до завершения всех boundedproofs;
+каждый пропущенный consumer/ABI/global/data/behaviorcheck сохранять здесь или в связанном
+packetREADME. Такой кандидат не считать faithfulacceptedgame; не подменять исходник
+заглушками/догадками.178bulkcompileaudit и177mechanicalbody имеют отдельный статус.
+Вернуться к полным fullgraph comparisons, CRT/unmaskedexceptions/invalidinput boundaries,
+RTTI/typecache lifetime и liveOS/fidelity перед итоговой приёмкой/Rust.
 
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
   Блокер: Run165 game-link имеет273 unresolved symbols /308 references;

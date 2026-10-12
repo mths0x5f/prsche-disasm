@@ -1,16 +1,16 @@
 # Need for Speed: Porsche Unleashed — восстановление оригинала
 
-Текущий результат — [Run169](iterations/v2/001-original-recovery/runs/169-vtable-output-integration/README.md): **430 проверенных C++ функций** и6 зарегистрированных частичных consumers.
-Общая MSVC Win32 сборка:151 projects /284 unique TUs;131 comparison/alias targets,9 native OS и3 link fixtures.
-28 свежих original-x86 отчётов /26409 сравнений плюс4 component-proven composed cases; все12 native/link проверок прошли.
-Приняты19 новых функций: network virtual dispatch и formatter output;005abf35 повторно проверена и сохраняет одного владельца.
-Четыре сетевых vptr stores теперь используют реальные C++ таблицы; RTTI остаётся явно незавершённой зависимостью.
-SHA-аудит выполняется батчем с кешем уникальных файлов; inventory ускорился9,3→2,4с в замере156.
-Game-link:0 compile errors /274 unresolved symbols /310 references /0 other diagnostics; игрового EXE нет.
-Подключение реальных таблиц открыло дополнительные RTTI/transport зависимости: это текущая граница, а не весь остаток.
-131 audio-init и partial00525ec0 остаются изолированными и не зарегистрированы в production.
-Отложенные проверки —docs/recovery-validation-backlog.md; полный004d3420 и live startup открыты.
-Маршрут: проверенный полный C/C++ baseline → схема устройства игры → Rust native/web.
+Текущий результат — [Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
+Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,9 native OS и3 link fixtures.
+15 свежих original-x86 отчётов /24560 сравнений, включая8791 повтор в production без observers, плюс4 composed cases; все12 native/link проверок прошли.
+Приняты46 новых функций: original float output/parse, lower network transport и network constructors.
+00580ad0 повторно проверена через canonical io_find; второй алгоритм и двойной учёт устранены.
+Game-link:0 compile errors /267 unresolved symbols /303 references /0 other diagnostics; игрового EXE нет.
+Это текущая граница зависимостей, а не полный остаток. RTTI owners и полный004d3420 ещё открыты.
+Приоритет2026-10-12: полный собираемый C/C++ граф → первый экспериментальный запуск; глубокие проверки пакетами через backlog.
+Проверенные функции и механически восстановленные compile candidates учитываются отдельно; заглушек и guessedalgorithms в игре нет.
+SHA-аудит батчем/кешем; измеренный inventory9,3→2,4с относится к156, не ко всему восстановлению.
+Маршрут: полный проверенный C/C++ baseline → схема устройства игры → Rust native/web.
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 
 **Активная разработка с 2026-10-08: [v2 — восстановление полного оригинала](iterations/v2/001-original-recovery/README.md).**
