@@ -1,9 +1,16 @@
 # v2 / 001 — план восстановления исходного кода
 
+2026-10-14: compilation-first эксперимент181 собрал707 реальных x86 COFF
+и отдельный755630-byte .lib из pinned178 syntax-pass candidates, без codegen errors.
+В поднаборе122 unresolved names/313 object refs; это не game-link173 и не игровой EXE.
+179 восстанавливает полные Ghidra declarations;180 компилирует только затронутые
+integer-helper TUs, переиспользуя неизменившиеся178 результаты с явными pins.
+177/178/181 — диагностические candidates; production baseline173/476full+6partial неизменен.
+
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
 Владелец — координатор. Приоритет: C/C++ startup → линковка → реальный запуск.
-Текущий принятый пакет —173:476 full +6 registered partial;169 запушенc586cee.
+Текущий принятый пакет —173:476 full +6 registered partial;173 запушен6952020.
 Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,
 9 native OS и3 link fixtures. Все12 native/link checks прошли.
 15 свежих original-x86 reports /24560 comparisons, включая8791 production repeats,
@@ -28,15 +35,21 @@ RTTI owners/actual provider/worker effects ещё открыты. Raworiginalvta
 Семантические проверки сохраняются в backlog и выполняются пакетами; полная fidelity
 обязательна для окончательной приёмки. Авторизованный C/C++ путь сохраняется.
 
-Владельцы: network_vtables_resume —174typedRTTIowners; small_heap_resume —177полный004d3420;
-locale_resume —178bulkcompileaudit; root —176integrationready172search/175stdio/174RTTI.
-172ready3new/9374cases,126092reads;175ready8new/4152cases, production_ready=false:
-нужен canonical locktable prefix48 по192originalbytes и nativeformatstringbindings.
-177CFG2575instructions/8589B, zero stackdepthmergeconflicts,134callees; virtualABIconstraints
-ещё candidate, не доказательство targetsemantics.178 классифицирует bulkcompilerошибки.
-Следующий шаг: сохранить173; интегрировать176 готовые blocks, параллельно prototype
-bulkcompilecandidate и177 completebody.131 audio-init/00525ec0 остаются isolated.
-Validation backlog обновлён173. Полный запуск/live/visualacceptance открыты.
+Работа2026-10-14: declarations_179_resume (gpt-6.1-sol/high) —179 read-only
+Ghidra types/inferred prototypes/global declarations; pcode_180_resume
+(gpt-6.1-sol/medium) —180 exact finite-width integer helpers и5772-body census.
+Root —181 реальные x86 COFF/archive и unresolved-symbol inventory из178 candidates.
+177 полный004d3420 компилируется;134direct+10virtual+52address seams открыты,
+DF live60/x87 live5.178 завершён:707 C++ syntax-pass/5772,1151 C syntax-pass
+(665 с implicit declaration warnings); это отдельные диагностические фазы.
+172search/174RTTI/175stdio готовы, остаются в очереди176; production baseline173
+не меняется от compilation experiments.131audio/00525ec0 isolated.
+Оптимизации: повторно использовать pinned178 baseline; новые проверки пакетами,
+SHA/JSON кешировать с проверкой мутаций; общий build/link — один владелец.
+Никакой глубокой приёмки каждой функции до первой полной сборки; конкретные
+ABI/storage/x87/callback/behavior gaps сохраняются в validation backlog.
+Следующий шаг: полный179 export →180 helpers → массовый object build и реальные
+compiler/link blockers. Полный запуск/live/visualacceptance открыты.
 После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001

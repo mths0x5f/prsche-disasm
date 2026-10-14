@@ -1,0 +1,4044 @@
+{
+  "schema": 1,
+  "kind": "compile-candidate-static-audit-not-original-differential-proof",
+  "function_va": "004d3420",
+  "emitted_original_bytes": 8589,
+  "emitted_instruction_sites": 2575,
+  "native_compile": {
+    "compiler": "MSVC",
+    "platform": "Win32",
+    "coff_machine": "014c",
+    "warnings": 0,
+    "errors": 0,
+    "object_sha256": "fda9f6b09b66b8640ed0575633d50e302175c16f24dce19742d831b4bed34a4b",
+    "object_bytes": 73550,
+    "build_log_sha256": "9aa50f81d647329853e90b7f9e07f56356d61319f8db772e0e03ddd332146123"
+  },
+  "coff_undefined_symbols": [
+    "?application_core_effect_00423610@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00423610(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004237d0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004237d0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00429840@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00429840(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004298a0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004298a0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00429bf0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00429bf0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00443760@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00443760(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00443b50@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00443b50(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00448b10@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00448b10(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00448bc0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00448bc0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0044b960@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0044b960(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0044de50@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0044de50(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0044ed10@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0044ed10(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0044fe90@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0044fe90(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0045d3a0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0045d3a0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00466e80@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00466e80(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004672f0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004672f0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00467f40@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00467f40(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00467fc0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00467fc0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00472860@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00472860(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0047fb80@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0047fb80(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0048caa0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0048caa0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0048e1a0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0048e1a0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004ae3c0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004ae3c0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004b7810@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004b7810(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004b7a50@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004b7a50(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004b7ab0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004b7ab0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004be3d0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004be3d0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004c70e0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004c70e0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d1bd0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d1bd0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d2100@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d2100(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d2cb0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d2cb0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d2de0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d2de0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d55c0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d55c0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d55e0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d55e0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d5610@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d5610(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d56c0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d56c0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d5be0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d5be0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d5df0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d5df0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6130@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6130(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6270@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6270(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d64a0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d64a0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6510@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6510(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6520@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6520(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6530@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6530(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d67b0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d67b0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d67d0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d67d0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6880@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6880(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6b10@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6b10(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d6be0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d6be0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d7c80@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d7c80(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d7e70@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d7e70(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004d8e10@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004d8e10(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004dbef0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004dbef0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004dbf60@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004dbf60(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004dda00@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004dda00(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004dde90@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004dde90(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004ddf00@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004ddf00(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004ddf30@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004ddf30(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004de040@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004de040(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004de2f0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004de2f0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004de880@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004de880(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004de9b0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004de9b0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004deda0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004deda0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004def60@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004def60(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004df3c0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004df3c0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e04f0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e04f0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e0750@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e0750(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e0760@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e0760(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e07a0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e07a0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e07b0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e07b0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e0e30@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e0e30(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e1c20@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e1c20(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e1c70@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e1c70(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e2f30@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e2f30(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e3560@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e3560(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e36b0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e36b0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e3750@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e3750(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e5d00@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e5d00(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004e7430@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004e7430(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004ed5d0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004ed5d0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004edab0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004edab0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004edb20@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004edb20(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004edd00@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004edd00(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004ee280@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004ee280(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004f3a40@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004f3a40(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004f7ad0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004f7ad0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004f7d10@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004f7d10(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004fae20@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004fae20(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_004fb750@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_004fb750(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00501270@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00501270(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00501340@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00501340(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005024e0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005024e0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00502ff0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00502ff0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00505570@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00505570(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00505800@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00505800(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00505810@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00505810(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00509490@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00509490(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005099d0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005099d0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00509a00@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00509a00(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0050c120@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0050c120(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0050c880@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0050c880(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005121b0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005121b0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00514990@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00514990(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00516950@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00516950(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00517ad0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00517ad0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0051aba0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0051aba0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0051af90@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0051af90(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0051b020@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0051b020(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0051ebd0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0051ebd0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00528cd0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00528cd0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00528ee0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00528ee0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0052a090@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0052a090(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0052a0c0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0052a0c0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00531f90@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00531f90(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00536080@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00536080(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005370c0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005370c0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00537830@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00537830(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00537850@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00537850(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00538c90@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00538c90(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00538da0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00538da0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005392d0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005392d0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00539b00@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00539b00(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00539b30@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00539b30(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00539b80@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00539b80(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00539f40@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00539f40(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00555390@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00555390(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00559a10@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00559a10(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00559a40@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00559a40(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00560030@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00560030(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_00569640@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_00569640(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0059ef90@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0059ef90(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_0059efc0@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_0059efc0(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005a0fbf@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005a0fbf(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_effect_005a134b@porsche@@YAXAAUApplicationCoreCallState@1@@Z (void __cdecl porsche::application_core_effect_005a134b(struct porsche::ApplicationCoreCallState &))",
+    "?application_core_virtual_004d3a76@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d3a76(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d3a81@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d3a81(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d3a8c@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d3a8c(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d4119@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d4119(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d52c8@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d52c8(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d5303@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d5303(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d5319@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d5319(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d532e@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d532e(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d5343@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d5343(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_virtual_004d53e4@porsche@@YAXAAUApplicationCoreCallState@1@I@Z (void __cdecl porsche::application_core_virtual_004d53e4(struct porsche::ApplicationCoreCallState &,unsigned int))",
+    "?application_core_address_005ccebc@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005ccebc(void))",
+    "?application_core_address_005cd698@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005cd698(void))",
+    "?application_core_address_005cd6a8@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005cd6a8(void))",
+    "?application_core_address_005d6e78@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d6e78(void))",
+    "?application_core_address_005d70e0@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d70e0(void))",
+    "?application_core_address_005d71e0@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d71e0(void))",
+    "?application_core_address_005d7378@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d7378(void))",
+    "?application_core_address_005d8bdc@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d8bdc(void))",
+    "?application_core_address_005d9158@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9158(void))",
+    "?application_core_address_005d9320@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9320(void))",
+    "?application_core_address_005d932c@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d932c(void))",
+    "?application_core_address_005d9338@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9338(void))",
+    "?application_core_address_005d9348@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9348(void))",
+    "?application_core_address_005d9354@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9354(void))",
+    "?application_core_address_005d9368@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9368(void))",
+    "?application_core_address_005d9378@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9378(void))",
+    "?application_core_address_005d9388@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9388(void))",
+    "?application_core_address_005d9398@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9398(void))",
+    "?application_core_address_005d93a0@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93a0(void))",
+    "?application_core_address_005d93ac@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93ac(void))",
+    "?application_core_address_005d93b8@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93b8(void))",
+    "?application_core_address_005d93c4@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93c4(void))",
+    "?application_core_address_005d93d0@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93d0(void))",
+    "?application_core_address_005d93dc@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93dc(void))",
+    "?application_core_address_005d93e4@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93e4(void))",
+    "?application_core_address_005d93ec@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93ec(void))",
+    "?application_core_address_005d93f4@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93f4(void))",
+    "?application_core_address_005d93fc@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d93fc(void))",
+    "?application_core_address_005d9408@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9408(void))",
+    "?application_core_address_005d9414@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9414(void))",
+    "?application_core_address_005d9420@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9420(void))",
+    "?application_core_address_005d942c@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d942c(void))",
+    "?application_core_address_005d9438@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9438(void))",
+    "?application_core_address_005d9444@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9444(void))",
+    "?application_core_address_005d9454@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005d9454(void))",
+    "?application_core_address_005e8e50@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_005e8e50(void))",
+    "?application_core_address_0061976c@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_0061976c(void))",
+    "?application_core_address_00619800@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00619800(void))",
+    "?application_core_address_00628130@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00628130(void))",
+    "?application_core_address_00628c70@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00628c70(void))",
+    "?application_core_address_006573e8@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_006573e8(void))",
+    "?application_core_address_00657484@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00657484(void))",
+    "?application_core_address_006577d8@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_006577d8(void))",
+    "?application_core_address_006577dc@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_006577dc(void))",
+    "?application_core_address_00657a60@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00657a60(void))",
+    "?application_core_address_00657a64@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00657a64(void))",
+    "?application_core_address_00657e34@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_00657e34(void))",
+    "?application_core_address_0065b330@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_0065b330(void))",
+    "?application_core_address_0065b334@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_0065b334(void))",
+    "?application_core_address_0065b344@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_0065b344(void))",
+    "?application_core_address_0065b910@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_0065b910(void))",
+    "?application_core_address_0065b928@porsche@@YAPAXXZ (void * __cdecl porsche::application_core_address_0065b928(void))",
+    "@__security_check_cookie@4",
+    "__aullshr",
+    "___security_cookie"
+  ],
+  "coff_symbol_report_sha256": "25358c1cc919c2d72b1a33ee99041a8662be559e71d6bb2ac5e8f66da9b62a3c",
+  "call_seam_liveness": [
+    {
+      "call_va": "004d3440",
+      "target": "0x467fc0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d345c",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3471",
+      "target": "0x4e0760",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3476",
+      "target": "0x4e07b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d347e",
+      "target": "0x59efc0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3490",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3498",
+      "target": "0x505810",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d34a7",
+      "target": "0x4d6b10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d34b4",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d34d9",
+      "target": "0x516950",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d34e7",
+      "target": "0x536080",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d34ec",
+      "target": "0x555390",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d34f7",
+      "target": "0x467f40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3503",
+      "target": "0x44ed10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3512",
+      "target": "0x59ef90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3520",
+      "target": "0x44b960",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d353a",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d354a",
+      "target": "0x448b10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d354f",
+      "target": "0x443760",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d355c",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3584",
+      "target": "0x4e36b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3589",
+      "target": "0x4dbef0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3596",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d35b4",
+      "target": "0x4e3560",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d35e2",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d360d",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d361c",
+      "target": "0x52a090",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3639",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3656",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3666",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d366e",
+      "target": "0x4e04f0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3673",
+      "target": "0x4de2f0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3678",
+      "target": "0x517ad0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d367d",
+      "target": "0x4ee280",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3682",
+      "target": "0x4d8e10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3687",
+      "target": "0x4c70e0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d368c",
+      "target": "0x50c880",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3691",
+      "target": "0x51ebd0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3696",
+      "target": "0x4b7810",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d369b",
+      "target": "0x5121b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36a0",
+      "target": "0x4e7430",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36a5",
+      "target": "0x516950",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36aa",
+      "target": "0x4e0e30",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36af",
+      "target": "0x4f3a40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36b4",
+      "target": "0x502ff0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36b9",
+      "target": "0x4fb750",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36be",
+      "target": "0x4fae20",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36c3",
+      "target": "0x516950",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36c8",
+      "target": "0x51aba0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36cd",
+      "target": "0x501340",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36d2",
+      "target": "0x4be3d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36d7",
+      "target": "0x4e5d00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36dc",
+      "target": "0x4f7ad0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36e1",
+      "target": "0x5099d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36e6",
+      "target": "0x4e2f30",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36eb",
+      "target": "0x4dde90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d36f0",
+      "target": "0x509490",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": [
+        "004d370c",
+        "004d370f",
+        "004d3712",
+        "004d3716"
+      ]
+    },
+    {
+      "call_va": "004d36fd",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": [
+        "004d370c",
+        "004d370f",
+        "004d3712",
+        "004d3716"
+      ]
+    },
+    {
+      "call_va": "004d3728",
+      "target": "0x4672f0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": [
+        "004d373a",
+        "004d373d",
+        "004d3740",
+        "004d3744"
+      ]
+    },
+    {
+      "call_va": "004d3756",
+      "target": "0x4672f0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3770",
+      "target": "0x538c90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d377d",
+      "target": "0x466e80",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d379d",
+      "target": "0x538da0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d37b6",
+      "target": "0x5392d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d37cf",
+      "target": "0x539f40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d37d6",
+      "target": "0x539b80",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d37f3",
+      "target": "0x539b30",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3806",
+      "target": "0x539f40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d380d",
+      "target": "0x539b00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": [
+        "004d3818",
+        "004d381c",
+        "004d381f",
+        "004d3823"
+      ]
+    },
+    {
+      "call_va": "004d3835",
+      "target": "0x4672f0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": [
+        "004d3847",
+        "004d384a",
+        "004d384d",
+        "004d3851"
+      ]
+    },
+    {
+      "call_va": "004d3863",
+      "target": "0x4672f0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d387d",
+      "target": "0x538c90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d388a",
+      "target": "0x466e80",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d38aa",
+      "target": "0x538da0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d38c3",
+      "target": "0x5392d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d38dc",
+      "target": "0x539f40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d38e3",
+      "target": "0x539b80",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3900",
+      "target": "0x539b30",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3913",
+      "target": "0x539f40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d391a",
+      "target": "0x539b00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3948",
+      "target": "0x559a40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d395a",
+      "target": "0x559a10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d396c",
+      "target": "0x559a40",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d397d",
+      "target": "0x559a10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d398f",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3997",
+      "target": "0x528cd0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d39a6",
+      "target": "0x4d2cb0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d39ab",
+      "target": "0x4e07b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d39b6",
+      "target": "0x59efc0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d39c4",
+      "target": "0x4d7e70",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d39fe",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a32",
+      "target": "0x4d67d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a3f",
+      "target": "0x472860",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a4d",
+      "target": "0x4d6880",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a5b",
+      "target": "0x429bf0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a64",
+      "target": "0x429840",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a76",
+      "target": "dword ptr [eax + 0x54]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a81",
+      "target": "dword ptr [eax + 0x6c]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3a8c",
+      "target": "dword ptr [edx + 0x78]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3aa4",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3ac1",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3ad5",
+      "target": "0x4e07b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3add",
+      "target": "0x59efc0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3af8",
+      "target": "0x505810",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b27",
+      "target": "0x47fb80",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b30",
+      "target": "0x4e1c20",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b35",
+      "target": "0x4def60",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b42",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b53",
+      "target": "0x4df3c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b59",
+      "target": "0x4de9b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3b76",
+      "target": "0x4de880",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffff00",
+        "ecx": "ffffff00"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3bc9",
+      "target": "0x4de9b0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3be6",
+      "target": "0x509a00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3bf2",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c21",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c2d",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c34",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c3d",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c6c",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c78",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3c7f",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3caf",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3cc5",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3ce7",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d0c",
+      "target": "0x48e1a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d15",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d44",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d50",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d57",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d60",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d8f",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3d9b",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3da2",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3dd2",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3de8",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e0a",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e44",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e5a",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e74",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e87",
+      "target": "0x4d2100",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e93",
+      "target": "0x5370c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3e9f",
+      "target": "0x5370c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3eb2",
+      "target": "0x50c120",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3ec5",
+      "target": "0x4d2100",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3ed5",
+      "target": "0x4d2100",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3eec",
+      "target": "0x4edd00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3f2f",
+      "target": "0x4de040",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3f45",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3f70",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3f7c",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3f83",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3fb3",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3fc9",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d3feb",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d401f",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4035",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4057",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4064",
+      "target": "0x4ddf00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d40b0",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d40db",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d40e7",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d40ee",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4104",
+      "target": "0x4b7ab0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d410d",
+      "target": "0x5a134b",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4119",
+      "target": "dword ptr [edx + 0x28]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4130",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d415f",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d416b",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4172",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d417b",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d41b1",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d41e4",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4217",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4246",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4252",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4259",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d425e",
+      "target": "0x48caa0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4292",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d42a8",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d42ca",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4302",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4318",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d433a",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4359",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4384",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4390",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4397",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d43a0",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d43cf",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d43db",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d43e2",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d43eb",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d441a",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4426",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d442d",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d445d",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4473",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4495",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d44af",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d44da",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d44e6",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d44ed",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d44f6",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4525",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4531",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4538",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4541",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4570",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d457c",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4583",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d45b3",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d45c9",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d45eb",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4605",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4630",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d463c",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4643",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d464c",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d467b",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4687",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d468e",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4697",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d46c6",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d46d2",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d46d9",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4709",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d471f",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4741",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d476f",
+      "target": "0x505800",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4780",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d47ab",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d47b7",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d47be",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d47c7",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d47f6",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4802",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4809",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4839",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d484f",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4871",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d488b",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d48b6",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d48c2",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d48c9",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d48d2",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4901",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d490d",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4914",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4944",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d495a",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d497c",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d49a7",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d49d2",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d49de",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d49e5",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4a15",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4a2b",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4a4d",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4a67",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4a92",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4a9e",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4aa5",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4ad5",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4aeb",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4b0d",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4b27",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4b52",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4b5e",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4b65",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4b95",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4bab",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4bcd",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4bf3",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4c1e",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4c2a",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4c31",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4c61",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4c77",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4c99",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4ca6",
+      "target": "0x51af90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4cb7",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4ce2",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4cee",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4cf5",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4cfa",
+      "target": "0x51b020",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d07",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d36",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d42",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d49",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d58",
+      "target": "0x4d2100",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d68",
+      "target": "0x4d2100",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d72",
+      "target": "0x51b020",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4d83",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4dae",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4dba",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4dc1",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4df1",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4e07",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4e29",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4e5d",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4e73",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4e95",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4eb0",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4edb",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4ee7",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4eee",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4f1e",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4f34",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4f56",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4f6f",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4f9a",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4fa6",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4fad",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4fdd",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d4ff3",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5015",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d502f",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d505a",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5066",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d506d",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [
+        "DF"
+      ],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff",
+        "ecx": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d509d",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d50b3",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d50d5",
+      "target": "0x4237d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d50ef",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d50fc",
+      "target": "0x505810",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5109",
+      "target": "0x4d55c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5117",
+      "target": "0x4298a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5123",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d512a",
+      "target": "0x4d5be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5133",
+      "target": "0x514990",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d513c",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d514b",
+      "target": "0x4d64a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d515e",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5165",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d516e",
+      "target": "0x429840",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5180",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5192",
+      "target": "0x4d64a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51a5",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51ac",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51b5",
+      "target": "0x429840",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51c4",
+      "target": "0x423610",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51d6",
+      "target": "0x4d64a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51e9",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51f0",
+      "target": "0x4d5df0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d51f9",
+      "target": "0x429840",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5202",
+      "target": "0x514990",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5209",
+      "target": "0x4d1bd0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5210",
+      "target": "0x4d6130",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d521d",
+      "target": "0x4dda00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d522b",
+      "target": "0x44fe90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5232",
+      "target": "0x45d3a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d523a",
+      "target": "0x537850",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5241",
+      "target": "0x44fe90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5248",
+      "target": "0x45d3a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5250",
+      "target": "0x537830",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d525d",
+      "target": "0x44de50",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5262",
+      "target": "0x560030",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5267",
+      "target": "0x505570",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d526e",
+      "target": "0x4d6130",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d527f",
+      "target": "0x5a0fbf",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5289",
+      "target": "0x4d1bd0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5290",
+      "target": "0x4d2de0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d529a",
+      "target": "0x4ae3c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52b3",
+      "target": "0x4b7ab0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52bc",
+      "target": "0x5a134b",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52c8",
+      "target": "dword ptr [edx + 0x28]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52d0",
+      "target": "0x4ddf00",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52d9",
+      "target": "0x4ddf30",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52de",
+      "target": "0x5024e0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52e4",
+      "target": "0x501270",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52ea",
+      "target": "0x4deda0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d52f2",
+      "target": "0x4e1c70",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5303",
+      "target": "dword ptr [eax + 0x70]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5319",
+      "target": "dword ptr [edx]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d532e",
+      "target": "dword ptr [eax]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5343",
+      "target": "dword ptr [edx]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5362",
+      "target": "0x4d67b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5372",
+      "target": "0x50c120",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5385",
+      "target": "0x569640",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5393",
+      "target": "0x4b7a50",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53a4",
+      "target": "0x4edb20",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53a9",
+      "target": "0x4e0750",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53b6",
+      "target": "0x4edb20",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53cf",
+      "target": "0x4b7ab0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53d8",
+      "target": "0x5a134b",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53e4",
+      "target": "dword ptr [edx + 0x10]",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d53f2",
+      "target": "0x5a0fbf",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5406",
+      "target": "0x4edab0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5420",
+      "target": "0x569640",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5438",
+      "target": "0x569640",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5446",
+      "target": "0x4b7a50",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5460",
+      "target": "0x569640",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d546b",
+      "target": "0x4ed5d0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5479",
+      "target": "0x4d6510",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5488",
+      "target": "0x4d6510",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5495",
+      "target": "0x4d6520",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54a3",
+      "target": "0x4d5610",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54ae",
+      "target": "0x4d6530",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54b9",
+      "target": "0x4d6510",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "ffffffff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54c4",
+      "target": "0x4d6270",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54d0",
+      "target": "0x531f90",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54e9",
+      "target": "0x4d56c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d54f9",
+      "target": "0x4d56c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5509",
+      "target": "0x4d56c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5519",
+      "target": "0x4d56c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d551e",
+      "target": "0x528ee0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5523",
+      "target": "0x52a0c0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5528",
+      "target": "0x4dbf60",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d552d",
+      "target": "0x4e3750",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5542",
+      "target": "0x4d67b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d554e",
+      "target": "0x443b50",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5553",
+      "target": "0x448bc0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5562",
+      "target": "0x4d67b0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {
+        "eax": "000000ff"
+      },
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d556e",
+      "target": "0x4d55e0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5573",
+      "target": "0x4d7c80",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d5578",
+      "target": "0x4d6be0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d558a",
+      "target": "0x4f7d10",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    },
+    {
+      "call_va": "004d558f",
+      "target": "0x4e07a0",
+      "body_flags_live_before_next_call": [],
+      "volatile_register_bits_live_before_next_call": {},
+      "native_x87_instruction_sites_before_next_call": []
+    }
+  ],
+  "nonempty_scan_counter_proof": [
+    {
+      "scan_va": "004d35d5",
+      "counter_definition_va": "004d35bf",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3600",
+      "counter_definition_va": "004d35ed",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d39dd",
+      "counter_definition_va": "004d39d8",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3a10",
+      "counter_definition_va": "004d3a09",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3c0e",
+      "counter_definition_va": "004d3c01",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3c59",
+      "counter_definition_va": "004d3c4c",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3c92",
+      "counter_definition_va": "004d3c89",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3d31",
+      "counter_definition_va": "004d3d24",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3d7c",
+      "counter_definition_va": "004d3d6f",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3db5",
+      "counter_definition_va": "004d3dac",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3e2b",
+      "counter_definition_va": "004d3e24",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3f65",
+      "counter_definition_va": "004d3f58",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d3f96",
+      "counter_definition_va": "004d3f8d",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4006",
+      "counter_definition_va": "004d3fff",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d40d0",
+      "counter_definition_va": "004d40c3",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d414c",
+      "counter_definition_va": "004d413f",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4197",
+      "counter_definition_va": "004d418a",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d41cd",
+      "counter_definition_va": "004d41c0",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4200",
+      "counter_definition_va": "004d41f3",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4233",
+      "counter_definition_va": "004d4226",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4275",
+      "counter_definition_va": "004d426c",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d42e5",
+      "counter_definition_va": "004d42dc",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4379",
+      "counter_definition_va": "004d436c",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d43bc",
+      "counter_definition_va": "004d43af",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4407",
+      "counter_definition_va": "004d43fa",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4440",
+      "counter_definition_va": "004d4437",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d44cf",
+      "counter_definition_va": "004d44c2",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4512",
+      "counter_definition_va": "004d4505",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d455d",
+      "counter_definition_va": "004d4550",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4596",
+      "counter_definition_va": "004d458d",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4625",
+      "counter_definition_va": "004d4618",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4668",
+      "counter_definition_va": "004d465b",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d46b3",
+      "counter_definition_va": "004d46a6",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d46ec",
+      "counter_definition_va": "004d46e3",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d47a0",
+      "counter_definition_va": "004d4793",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d47e3",
+      "counter_definition_va": "004d47d6",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d481c",
+      "counter_definition_va": "004d4813",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d48ab",
+      "counter_definition_va": "004d489e",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d48ee",
+      "counter_definition_va": "004d48e1",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4927",
+      "counter_definition_va": "004d491e",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d49c7",
+      "counter_definition_va": "004d49ba",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d49f8",
+      "counter_definition_va": "004d49ef",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4a87",
+      "counter_definition_va": "004d4a7a",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4ab8",
+      "counter_definition_va": "004d4aaf",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4b47",
+      "counter_definition_va": "004d4b3a",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4b78",
+      "counter_definition_va": "004d4b6f",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4c13",
+      "counter_definition_va": "004d4c06",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4c44",
+      "counter_definition_va": "004d4c3b",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4cd7",
+      "counter_definition_va": "004d4cca",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4d23",
+      "counter_definition_va": "004d4d16",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4da3",
+      "counter_definition_va": "004d4d96",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4dd4",
+      "counter_definition_va": "004d4dcb",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4e44",
+      "counter_definition_va": "004d4e3d",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4ed0",
+      "counter_definition_va": "004d4ec3",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4f01",
+      "counter_definition_va": "004d4ef8",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4f8f",
+      "counter_definition_va": "004d4f82",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d4fc0",
+      "counter_definition_va": "004d4fb7",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d504f",
+      "counter_definition_va": "004d5042",
+      "initial_counter": "ffffffff"
+    },
+    {
+      "scan_va": "004d5080",
+      "counter_definition_va": "004d5077",
+      "initial_counter": "ffffffff"
+    }
+  ],
+  "scope": "Four arithmetic condition codes and DF are explicit mutable typed state; PF/AF are not body consumers. Native x87 hardware state remains live across external effects. Static liveness stops at the next call: each unresolved callee still needs a separate input/return contract audit.",
+  "arithmetic_flags_live_call_sites": [],
+  "direction_flag_live_call_sites": [
+    "004d35b4",
+    "004d35e2",
+    "004d39b6",
+    "004d39c4",
+    "004d39fe",
+    "004d3b76",
+    "004d3bc9",
+    "004d3bf2",
+    "004d3c3d",
+    "004d3c7f",
+    "004d3d15",
+    "004d3d60",
+    "004d3da2",
+    "004d3f2f",
+    "004d3f45",
+    "004d3f83",
+    "004d40b0",
+    "004d4130",
+    "004d417b",
+    "004d41b1",
+    "004d41e4",
+    "004d4217",
+    "004d425e",
+    "004d4359",
+    "004d43a0",
+    "004d43eb",
+    "004d442d",
+    "004d44af",
+    "004d44f6",
+    "004d4541",
+    "004d4583",
+    "004d4605",
+    "004d464c",
+    "004d4697",
+    "004d46d9",
+    "004d4780",
+    "004d47c7",
+    "004d4809",
+    "004d488b",
+    "004d48d2",
+    "004d4914",
+    "004d49a7",
+    "004d49e5",
+    "004d4a67",
+    "004d4aa5",
+    "004d4b27",
+    "004d4b65",
+    "004d4bf3",
+    "004d4c31",
+    "004d4cb7",
+    "004d4d07",
+    "004d4d72",
+    "004d4d83",
+    "004d4dc1",
+    "004d4eb0",
+    "004d4eee",
+    "004d4f6f",
+    "004d4fad",
+    "004d502f",
+    "004d506d"
+  ],
+  "x87_live_call_sites": [
+    "004d36f0",
+    "004d36fd",
+    "004d3728",
+    "004d380d",
+    "004d3835"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/177-application-context-core/CMakeLists.txt": "75eabc8949e69cce4c35a6e5b752c19bbb90784f260c9bc39c62e56f1b76d733",
+    "iterations/v2/001-original-recovery/runs/177-application-context-core/compile-candidate.json": "3d80ae8d18bfbf5e4f5fdfa801f33890af5321f2cd26bc6eb0ca68bb0a3aa45c",
+    "iterations/v2/001-original-recovery/runs/177-application-context-core/README.md": "2ed1f4270703a23401cd0c3237e8456ee17845aa53f5b7cce51e84fa5fa92cd9",
+    "iterations/v2/001-original-recovery/runs/177-application-context-core/stack-evidence.json": "3ed1b5c82fd59ed4308507aebdc02c1b76f98e9ce88b7e905855144d527ced8c",
+    "iterations/v2/001-original-recovery/runs/177-application-context-core/virtual-target-evidence.json": "92e81ce2730418e4afcbf308797b2c7fd73210629b1c99d582fdf95b619764a1",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_core_candidate.hpp": "3304d3ea69cd88279b44eed1670ecc4195d9a398321c6f7d4070d65250c780f7",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_core_candidate.cpp": "49c6af8cd7f3d4dd28b89350bfce0f3f5ea4cfbbfd7a2b00f83058ccae5fea2e",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/analyze-v2-application-context-core.py": "886adee34f441ed15d4bead9d887c9a7c65178578d5c661043496407cc564341",
+    "scripts/research/audit-v2-application-context-core.py": "6351ae938d4aa39db3d8b8b0ec692aa2e64560d3a438085e04ef817f23e92e3d",
+    "scripts/research/generate-v2-application-context-core.py": "646c429336c3564857308062e50657ed9777fb3a277a854e20aea46854a0cfc2",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7"
+  },
+  "accepted_registry_changed": false,
+  "game_production_bound": false,
+  "behavioral_verification": false
+}

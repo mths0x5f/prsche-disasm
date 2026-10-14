@@ -1,5 +1,12 @@
 # Состояние проекта
 
+2026-10-14: compilation-first эксперимент181 собрал707 реальных x86 COFF
+и отдельный755630-byte .lib из pinned178 syntax-pass candidates, без codegen errors.
+В поднаборе122 unresolved names/313 object refs; это не game-link173 и не игровой EXE.
+179 восстанавливает полные Ghidra declarations;180 компилирует только затронутые
+integer-helper TUs, переиспользуя неизменившиеся178 результаты с явными pins.
+177/178/181 — диагностические candidates; production baseline173/476full+6partial неизменен.
+
 Текущий результат — [Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
 Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,9 native OS и3 link fixtures.
 15 свежих original-x86 отчётов /24560 сравнений, включая8791 повтор в production без observers, плюс4 composed cases; все12 native/link проверок прошли.
@@ -12,6 +19,13 @@ Game-link:0 compile errors /267 unresolved symbols /303 references /0 other diag
 SHA-аудит батчем/кешем; измеренный inventory9,3→2,4с относится к156, не ко всему восстановлению.
 Маршрут: полный проверенный C/C++ baseline → схема устройства игры → Rust native/web.
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
+
+2026-10-14:173 опубликован6952020.177 direct C++ body004d3420 компилируется
+с открытыми внешними seams;178 завершён707/5772 C++ syntax-pass.
+179 экспортирует полные declarations/types;180 исправляет точные integer p-code
+helpers;181 строит реальные COFF из кандидатов. Это isolated experiments,
+accepted function count и production game-link остаются173; игрового EXE нет.
+Проверки пакетами, неизменившийся178 baseline повторно не гонять.
 
 2026-10-08: активна [v2/001-original-recovery](iterations/v2/001-original-recovery/README.md).
 v1 сохранена и запушена: dc6b9d8; 012 незавершена и её интеграция остановлена.

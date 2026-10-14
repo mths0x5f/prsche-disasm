@@ -1,5 +1,12 @@
 # Текущий этап: v2/001-original-recovery
 
+2026-10-14: compilation-first эксперимент181 собрал707 реальных x86 COFF
+и отдельный755630-byte .lib из pinned178 syntax-pass candidates, без codegen errors.
+В поднаборе122 unresolved names/313 object refs; это не game-link173 и не игровой EXE.
+179 восстанавливает полные Ghidra declarations;180 компилирует только затронутые
+integer-helper TUs, переиспользуя неизменившиеся178 результаты с явными pins.
+177/178/181 — диагностические candidates; production baseline173/476full+6partial неизменен.
+
 Текущий результат — [Run173](../iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
 Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,9 native OS и3 link fixtures.
 15 свежих original-x86 отчётов /24560 сравнений, включая8791 повтор в production без observers, плюс4 composed cases; все12 native/link проверок прошли.

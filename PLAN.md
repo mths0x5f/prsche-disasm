@@ -1,5 +1,12 @@
 # План восстановления Porsche Unleashed
 
+2026-10-14: compilation-first эксперимент181 собрал707 реальных x86 COFF
+и отдельный755630-byte .lib из pinned178 syntax-pass candidates, без codegen errors.
+В поднаборе122 unresolved names/313 object refs; это не game-link173 и не игровой EXE.
+179 восстанавливает полные Ghidra declarations;180 компилирует только затронутые
+integer-helper TUs, переиспользуя неизменившиеся178 результаты с явными pins.
+177/178/181 — диагностические candidates; production baseline173/476full+6partial неизменен.
+
 Текущий результат — [Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
 Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,9 native OS и3 link fixtures.
 15 свежих original-x86 отчётов /24560 сравнений, включая8791 повтор в production без observers, плюс4 composed cases; все12 native/link проверок прошли.
@@ -14,7 +21,7 @@ SHA-аудит батчем/кешем; измеренный inventory9,3→2,4�
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 
 
-Параллельно:174 RTTI owners,177 полный004d3420 compile candidate,178 bulk compile audit. Root: checkpoint173; готовые172 search/175stdio — следующий176 пакет.
+Работа2026-10-14: declarations_179_resume(high) — полные типы/декларации Ghidra; pcode_180_resume(medium) — точные integer helpers и массовая компиляция; root —181 реальные COFF из syntax-pass candidates.177/178 диагностические пакеты готовы;172/174/175 ждут интеграции176. Checkpoint173 опубликован6952020.
 
 ## Ближайшая цель: полный игровой EXE из C/C++
 

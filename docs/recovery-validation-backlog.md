@@ -20,8 +20,20 @@ packetREADME. Такой кандидат не считать faithfulacceptedga
 Вернуться к полным fullgraph comparisons, CRT/unmaskedexceptions/invalidinput boundaries,
 RTTI/typecache lifetime и liveOS/fidelity перед итоговой приёмкой/Rust.
 
+2026-10-14 compilation-first experiments:
+- [ ]177: canonical effects/global address owners для134direct+10virtual+52address
+  seams; original/native full body comparison, DF60 и x87-live5, реальные callbacks.
+- [ ]178/180/181: syntax/COFF success не доказывает original ABI/semantics;
+  проверить inferred prototypes, скрытые регистры, overlapping storage и extended floats
+  перед продвижением кандидатов. Объектные файлы строятся без guessed dependencies.
+- [ ]179: inferred headers/HighGlobals — свидетельство Ghidra analysis;
+  конфликты типов/layout/alias/initializers сохранять и проверять по original consumers.
+  Read-only complete export не считать готовыми original source declarations.
+Проверки объединять по зависимым блокам; pinned baseline/SHA использовать повторно,
+не удалять эти обязательства ради первого запуска.
+
 - [ ] Собрать игровой EXE и выполнить исходный startup с настоящими ресурсами.
-  Блокер: Run165 game-link имеет273 unresolved symbols /308 references;
+  Блокер: Run173 game-link имеет267 unresolved symbols /303 references;
   compiler errors и other linker errors —0. Возврат: после устранения
   зависимостей; сначала запуск/выход, затем кадр, ввод, меню и режимы игры.
 - [ ] Проверить закрытие через WM_CLOSE→GetMessage=0→исходный timer callback,
