@@ -1,7 +1,7 @@
 # План восстановления Porsche Unleashed
 
-2026-10-14: compilation-first188/187:1050 разных Porsche.exe VA дали реальные
-x86 COFF:923 общего корпуса +127 thiscall leaves, пересечений0. У27 leaf bodies
+2026-10-14: compilation-first188/190:1053 разных Porsche.exe VA дали реальные
+x86 COFF:923 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
 машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;
 production baseline476full+6partial и game-link173267symbols/303refs неизменны.
 184:3312TUs reused;2460 changed covered37batchedcl +12pilot/153priorfailures,
@@ -9,7 +9,7 @@ syntax733→923, missing-global errors25306→16818,0lost/0ambiguousfallback.
 188:733objects reused/190new,3 /MP6 batches43.416с,0codegenerrors;
 384undefinednames/747refs автоматического поднабора.187:127COFF/32fail, only__fltused8refs.
 186:1258/1301 inferred RET extents match;42mismatch/1noRET, missingcallargs remainopen.
-Далее189 exactscalar-slices и190 failed-leaf declarationdelta; пакетная проверка,
+190 завершён:127leafCOFF reused/3new,29ошибок остаются. Далее189 exactscalar-slices;
 byte-identical reuse и originalABI/data evidence сохраняются. EXE пока нет.
 
 Текущий результат — [Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
@@ -26,7 +26,7 @@ SHA-аудит батчем/кешем; измеренный inventory9,3→2,4�
 Полный игровой запуск, live timer/WM_CLOSE и визуальная приёмка остаются открытыми.
 
 
-Работа2026-10-14: pcode_180_resume(medium) —189 exact scalar-slices; declarations_179_resume(high) —190 delta32failed thiscall leaves с184headers.188batch runner (gpt-6-luna/medium) готов; root интегрируетcheckpoint188/187.43af4e2 опубликован;172/174/175 ждут176.
+Работа2026-10-14: pcode_180_resume(medium) —189 exact scalar-slices.190готов:130leafCOFF,29fail; root —checkpoint190.188batch runner готов;0c0308b опубликован.172/174/175 ждут176.
 
 ## Ближайшая цель: полный игровой EXE из C/C++
 

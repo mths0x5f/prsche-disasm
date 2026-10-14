@@ -1,7 +1,7 @@
 # v2 / 001 — план восстановления исходного кода
 
-2026-10-14: compilation-first188/187:1050 разных Porsche.exe VA дали реальные
-x86 COFF:923 общего корпуса +127 thiscall leaves, пересечений0. У27 leaf bodies
+2026-10-14: compilation-first188/190:1053 разных Porsche.exe VA дали реальные
+x86 COFF:923 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
 машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;
 production baseline476full+6partial и game-link173267symbols/303refs неизменны.
 184:3312TUs reused;2460 changed covered37batchedcl +12pilot/153priorfailures,
@@ -9,7 +9,7 @@ syntax733→923, missing-global errors25306→16818,0lost/0ambiguousfallback.
 188:733objects reused/190new,3 /MP6 batches43.416с,0codegenerrors;
 384undefinednames/747refs автоматического поднабора.187:127COFF/32fail, only__fltused8refs.
 186:1258/1301 inferred RET extents match;42mismatch/1noRET, missingcallargs remainopen.
-Далее189 exactscalar-slices и190 failed-leaf declarationdelta; пакетная проверка,
+190 завершён:127leafCOFF reused/3new,29ошибок остаются. Далее189 exactscalar-slices;
 byte-identical reuse и originalABI/data evidence сохраняются. EXE пока нет.
 
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
@@ -41,8 +41,8 @@ RTTI owners/actual provider/worker effects ещё открыты. Raworiginalvta
 обязательна для окончательной приёмки. Авторизованный C/C++ путь сохраняется.
 
 Текущие владельцы2026-10-14: pcode_180_resume (gpt-6.1-sol/medium) —189
-exact scalar subpiece fields; declarations_179_resume (gpt-6.1-sol/high) —190
-32failed187leaves с подтверждёнными184declarations. Root —188/187checkpoint.
+exact scalar subpiece fields.190 (gpt-6.1-sol/high) завершён:32retried,3new,
+127reused,130leafCOFF/29failures. Root —checkpoint190;0c0308b опубликован.
 Batchbuilder188 (gpt-6-luna/medium) готов; новые nativeпакеты используют его
 с pinned source/header/compiler/options closure и fresh output directories.
 184:923syntaxpass (+190),8488missing-global diagnostics устранены;4604native
@@ -52,14 +52,15 @@ layouts checked,837conflicts/681invalidnames/2MXCSR identities остаются�
 186nativeABI /Od,/O2:165calls/403conditions each;12originalCOFF +1tracedcaller.
 ThiscallRET census1258match/42mismatch/1noRET; printedreceiver/arg loss blocksblanketrewrite.
 187safe159:127COFF/32fail,27bodybytesexactoriginal,3batches39.579с;
-noacceptedowners/calleradapters/indirectcalls.188923+187127 disjoint=1050nativeVAs.
+noacceptedowners/calleradapters/indirectcalls.188923+190130 disjoint=1053nativeVAs;190127reused+3new,29failures остаются.
 Candidates remain isolated; fullgame/noEXE, production173 baseline unchanged.
 172/174/175ready176queue;131audio/00525ec0 isolated. Deeporiginalvalidations
 batchedthroughbacklog; nofullcorpus/nativeproofrepeats aftereverylocal/doc edit.
 New generated reports/header/source outputs write explicitLF BEFORE hashing;
 raw frozenGhidra/186/187 report bytes preserved via scopedGitattributes.
-Следующий шаг:189 source/helper proof→changedTUbatch;190retry32only→nativeleafdelta;
+Следующий шаг:189 source/helper proof→changedTUbatch;
 then188builder expands objectgraph with all newfailures/symbols explicit.
+190 retry32 выполнен;29failures сохраняют конкретные diagnostics, не guessedtypes.
 Actualsharedglobalstorage/aliases/callerABI/initialization/OS/game loop are open.
 После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
