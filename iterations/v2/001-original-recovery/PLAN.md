@@ -1,11 +1,13 @@
 # v2 / 001 — план восстановления исходного кода
 
-2026-10-14: compilation-first эксперимент181 собрал707 реальных x86 COFF
-и отдельный755630-byte .lib из pinned178 syntax-pass candidates, без codegen errors.
-В поднаборе122 unresolved names/313 object refs; это не game-link173 и не игровой EXE.
-179 восстанавливает полные Ghidra declarations;180 компилирует только затронутые
-integer-helper TUs, переиспользуя неизменившиеся178 результаты с явными pins.
-177/178/181 — диагностические candidates; production baseline173/476full+6partial неизменен.
+2026-10-14: compilation-first185:733 реальных x86 COFF и отдельный816748-byte .lib,
+0 codegen errors;124 undefined names/373 refs внутри автоматического поднабора.
+Это не game-link173 и не игровой EXE; production baseline476full+6partial неизменен.
+179 завершён:5772функции/359types/5441extern declarations;837conflicts явные.
+180:5515TUs reused/257compiled,+21syntax passes;183:5716reused/56compiled,+5.
+182:707objects reused/21compiled;185:728reused/5compiled, последний delta3.601с.
+Следом184 perTU global/type declarations и186 ABI-preserving thiscall pilot,
+без повторного всего corpus/build/proof suite на каждую локальную правку.
 
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
@@ -35,21 +37,24 @@ RTTI owners/actual provider/worker effects ещё открыты. Raworiginalvta
 Семантические проверки сохраняются в backlog и выполняются пакетами; полная fidelity
 обязательна для окончательной приёмки. Авторизованный C/C++ путь сохраняется.
 
-Работа2026-10-14: declarations_179_resume (gpt-6.1-sol/high) —179 read-only
-Ghidra types/inferred prototypes/global declarations; pcode_180_resume
-(gpt-6.1-sol/medium) —180 exact finite-width integer helpers и5772-body census.
-Root —181 реальные x86 COFF/archive и unresolved-symbol inventory из178 candidates.
-177 полный004d3420 компилируется;134direct+10virtual+52address seams открыты,
-DF live60/x87 live5.178 завершён:707 C++ syntax-pass/5772,1151 C syntax-pass
-(665 с implicit declaration warnings); это отдельные диагностические фазы.
-172search/174RTTI/175stdio готовы, остаются в очереди176; production baseline173
-не меняется от compilation experiments.131audio/00525ec0 isolated.
-Оптимизации: повторно использовать pinned178 baseline; новые проверки пакетами,
-SHA/JSON кешировать с проверкой мутаций; общий build/link — один владелец.
-Никакой глубокой приёмки каждой функции до первой полной сборки; конкретные
-ABI/storage/x87/callback/behavior gaps сохраняются в validation backlog.
-Следующий шаг: полный179 export →180 helpers → массовый object build и реальные
-compiler/link blockers. Полный запуск/live/visualacceptance открыты.
+Текущие владельцы2026-10-14: pcode_180_resume (gpt-6.1-sol/medium) —184
+native perTU types/global declarations; declarations_179_resume (gpt-6.1-sol/high)
+—186 ABI-preserving thiscall class-method pilot. Root —185 objects/checkpoint.
+179 завершён5772/5772,0fail,359types/6278globalidentities,837conflicts;
+5441extern declarations. Raw type header13MSVCerrors/1431bodynamegaps явные.
+177direct C++004d3420 компилируется;134direct+10virtual+52address seams открыты.
+178707syntaxpass →180728 →183733;185все733 дают настоящиеCOFF,безcodegenerrors.
+180переиспользует5515TUs и проверяет257;183переиспользует5716 и проверяет56.
+185переиспользует728COFF, компилирует5,3.601с;124undefinednames/373refs поднабора.
+Это isolated compilation candidates, production baseline173неизменен; EXEнет.
+172search/174RTTI/175stdio ready, очередь176;131audio/00525ec0 isolated.
+Оптимизации: неизменившиеся sources/headers/compiler/options повторно не компилировать,
+SHA/JSON один раз на dependency closure; input mutation checks до/после пакета.
+Глубокая original validation пакетами по backlog; общий production build/link
+запускать после связанной интеграции, не после каждого compile experiment/doc edit.
+Следующий шаг:184pilot подтверждает native types/layout/global bindings;186pilot
+подтверждает ECX/stack/RET/return дляclass-method lowering; затем delta-census и
+расширение настоящего object graph. Полный запуск/live/visualacceptance открыты.
 После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001

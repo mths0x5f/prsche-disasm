@@ -1,0 +1,2693 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "corpus_sha256": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32",
+  "source_sha256": {
+    "scripts\\research\\experiment-v2-pcode-types-183.py": "69f784c5a219faf33bf06e9d4e957c2557f024241db2a99f49bde137015b56e9"
+  },
+  "input_sha256": {
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-compat-180\\prototypes-cpp-0000\\audit.json": "9c5b6fce003124116166e97f0b77876297966006a376c6c27ebd655afbdeb9fe",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-compat-180\\ghidra-integer-pcode.h": "bd839fd0d17c7ce3f66c0e70f8fe37d4f4a9016ad748c43790da21c3a29cb661",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-compat-180\\ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "F:\\claude\\porsche disasm\\research\\v2\\binaries\\Porsche.exe-ddd748fdbe6d\\decompiled.c": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32"
+  },
+  "native_tests": {
+    "checks": 1876,
+    "exit_code": 0,
+    "commands": [
+      [
+        "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+        "/nologo",
+        "/c",
+        "/TP",
+        "/O2",
+        "/GS-",
+        "/utf-8",
+        "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-types-183\\mixed-scalar-vectors.obj",
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-types-183\\mixed-scalar-vectors.cpp"
+      ],
+      [
+        "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+        "/nologo",
+        "/nodefaultlib",
+        "/entry:main",
+        "/subsystem:console",
+        "/machine:x86",
+        "/out:F:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-types-183\\mixed-scalar-vectors.exe",
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-pcode-types-183\\mixed-scalar-vectors.obj",
+        "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86\\libvcruntime.lib",
+        "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86\\libcmt.lib"
+      ]
+    ],
+    "source_sha256": "03ab7375e886496c5cc3e24887cc029e0359c28e72ec75b0cce333061e3fdbd7",
+    "exe_sha256": "cd81d6dd7eb121bd41be543a7b36252d1ae479c6d11bf2ebae31737225df1150"
+  },
+  "total_functions": 5772,
+  "cache_reused": 5716,
+  "recompiled": 56,
+  "rewrites": [
+    {
+      "va": "00415e80",
+      "changes": [
+        {
+          "start": 484,
+          "end": 515,
+          "old": "(int3)((uint)(iVar1 + -1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar1 + -1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e5c0",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e7a0",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e7c0",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e8b0",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e900",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e920",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e940",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e960",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e980",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0041e9a0",
+      "changes": [
+        {
+          "start": 138,
+          "end": 162,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0042a3b0",
+      "changes": [
+        {
+          "start": 88,
+          "end": 130,
+          "old": "(int3)((uint)*(int *)(param_1 + 0xc) >> 8)",
+          "new": "p180_write<undefined3>((uint)*(int *)(param_1 + 0xc) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "param_1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0042f2a0",
+      "changes": [
+        {
+          "start": 831,
+          "end": 849,
+          "old": "(int3)(uVar4 >> 8)",
+          "new": "p180_write<undefined3>(uVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar4": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004344b0",
+      "changes": [
+        {
+          "start": 381,
+          "end": 399,
+          "old": "(int3)(uVar1 >> 8)",
+          "new": "p180_write<undefined3>(uVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00436800",
+      "changes": [
+        {
+          "start": 374,
+          "end": 392,
+          "old": "(int3)(uVar1 >> 8)",
+          "new": "p180_write<undefined3>(uVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004381f0",
+      "changes": [
+        {
+          "start": 145,
+          "end": 169,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00443660",
+      "changes": [
+        {
+          "start": 100,
+          "end": 144,
+          "old": "(int3)((uint)*(int *)(param_1 + 0x2d4) >> 8)",
+          "new": "p180_write<undefined3>((uint)*(int *)(param_1 + 0x2d4) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "param_1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0044c790",
+      "changes": [
+        {
+          "start": 835,
+          "end": 859,
+          "old": "(int3)((uint)iVar2 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0044e780",
+      "changes": [
+        {
+          "start": 1209,
+          "end": 1233,
+          "old": "(int3)((uint)iVar4 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar4": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 1315,
+          "end": 1339,
+          "old": "(int3)((uint)iVar2 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004515f0",
+      "changes": [
+        {
+          "start": 2064,
+          "end": 2082,
+          "old": "(int3)(uVar2 >> 8)",
+          "new": "p180_write<undefined3>(uVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar2": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 2509,
+          "end": 2527,
+          "old": "(int3)(uVar2 >> 8)",
+          "new": "p180_write<undefined3>(uVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar2": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00452100",
+      "changes": [
+        {
+          "start": 260,
+          "end": 278,
+          "old": "(int3)(uVar1 >> 8)",
+          "new": "p180_write<undefined3>(uVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00454430",
+      "changes": [
+        {
+          "start": 2648,
+          "end": 2667,
+          "old": "(undefined3)local_8",
+          "new": "p180_write<undefined3>(local_8)",
+          "cast": "undefined3",
+          "helper": "CONCAT13",
+          "integer_variables": {
+            "local_8": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 3799,
+          "end": 3818,
+          "old": "(undefined3)local_8",
+          "new": "p180_write<undefined3>(local_8)",
+          "cast": "undefined3",
+          "helper": "CONCAT13",
+          "integer_variables": {
+            "local_8": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0045e5e0",
+      "changes": [
+        {
+          "start": 1052,
+          "end": 1076,
+          "old": "(int3)((uint)uVar4 >> 8)",
+          "new": "p180_write<undefined3>((uint)uVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar4": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00463c30",
+      "changes": [
+        {
+          "start": 3108,
+          "end": 3140,
+          "old": "(int3)((iVar11 << 0x1a) >> 0x1f)",
+          "new": "p180_write<undefined3>((iVar11 << 0x1a) >> 0x1f)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar11": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 3402,
+          "end": 3440,
+          "old": "(int3)((uint)*(int *)(iVar8 + 8) >> 8)",
+          "new": "p180_write<undefined3>((uint)*(int *)(iVar8 + 8) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar8": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004704e0",
+      "changes": [
+        {
+          "start": 3501,
+          "end": 3525,
+          "old": "(int3)((uint)uVar4 >> 8)",
+          "new": "p180_write<undefined3>((uint)uVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar4": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 3598,
+          "end": 3622,
+          "old": "(int3)((uint)uVar4 >> 8)",
+          "new": "p180_write<undefined3>((uint)uVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar4": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004709c0",
+      "changes": [
+        {
+          "start": 1570,
+          "end": 1594,
+          "old": "(int3)((uint)uVar2 >> 8)",
+          "new": "p180_write<undefined3>((uint)uVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar2": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00476380",
+      "changes": [
+        {
+          "start": 5131,
+          "end": 5155,
+          "old": "(int3)((uint)iVar9 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar9 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar9": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0047d280",
+      "changes": [
+        {
+          "start": 1300,
+          "end": 1330,
+          "old": "(int3)((uint)(iVar2 + 1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar2 + 1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0047d340",
+      "changes": [
+        {
+          "start": 1308,
+          "end": 1338,
+          "old": "(int3)((uint)(iVar2 + 1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar2 + 1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0047d3f0",
+      "changes": [
+        {
+          "start": 1308,
+          "end": 1338,
+          "old": "(int3)((uint)(iVar3 + 1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar3 + 1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar3": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0047d4a0",
+      "changes": [
+        {
+          "start": 1316,
+          "end": 1346,
+          "old": "(int3)((uint)(iVar2 + 1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar2 + 1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0047d550",
+      "changes": [
+        {
+          "start": 1445,
+          "end": 1475,
+          "old": "(int3)((uint)(iVar2 + 1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar2 + 1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00480140",
+      "changes": [
+        {
+          "start": 11743,
+          "end": 11769,
+          "old": "(int3)((uint)-iVar14 >> 8)",
+          "new": "p180_write<undefined3>((uint)-iVar14 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar14": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00484320",
+      "changes": [
+        {
+          "start": 2265,
+          "end": 2289,
+          "old": "(int3)((uint)uVar7 >> 8)",
+          "new": "p180_write<undefined3>((uint)uVar7 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar7": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00489df0",
+      "changes": [
+        {
+          "start": 1612,
+          "end": 1636,
+          "old": "(int3)((uint)iVar4 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar4": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 2182,
+          "end": 2206,
+          "old": "(int3)((uint)uVar5 >> 8)",
+          "new": "p180_write<undefined3>((uint)uVar5 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar5": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0049c350",
+      "changes": [
+        {
+          "start": 445,
+          "end": 469,
+          "old": "(int3)((uint)iVar2 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004aa050",
+      "changes": [
+        {
+          "start": 2954,
+          "end": 2973,
+          "old": "(undefined3)param_3",
+          "new": "p180_write<undefined3>(param_3)",
+          "cast": "undefined3",
+          "helper": "CONCAT13",
+          "integer_variables": {
+            "param_3": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004b7fd0",
+      "changes": [
+        {
+          "start": 483,
+          "end": 517,
+          "old": "(int3)((uint)(iVar4 + iVar1) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar4 + iVar1) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int",
+            "iVar4": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 1721,
+          "end": 1745,
+          "old": "(int3)((uint)iVar4 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar4 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar4": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004d3420",
+      "changes": [
+        {
+          "start": 914,
+          "end": 935,
+          "old": "(undefined3)uStack_80",
+          "new": "p180_write<undefined3>(uStack_80)",
+          "cast": "undefined3",
+          "helper": "CONCAT13",
+          "integer_variables": {
+            "uStack_80": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004df370",
+      "changes": [
+        {
+          "start": 613,
+          "end": 637,
+          "old": "(int3)((uint)iVar3 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar3 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar3": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "004f1d40",
+      "changes": [
+        {
+          "start": 203,
+          "end": 221,
+          "old": "(int3)(uVar1 >> 8)",
+          "new": "p180_write<undefined3>(uVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 393,
+          "end": 411,
+          "old": "(int3)(uVar1 >> 8)",
+          "new": "p180_write<undefined3>(uVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 491,
+          "end": 564,
+          "old": "(int3)(CONCAT22((short)(uVar1 >> 0x10),*(short *)(param_1 + 0x1f8)) >> 8)",
+          "new": "p180_write<undefined3>(CONCAT22((short)(uVar1 >> 0x10),*(short *)(param_1 + 0x1f8)) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "param_1": "int",
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00501610",
+      "changes": [
+        {
+          "start": 4289,
+          "end": 4322,
+          "old": "(int3)((uint)(iVar4 + 0x20) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar4 + 0x20) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar4": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "005018b0",
+      "changes": [
+        {
+          "start": 1743,
+          "end": 1776,
+          "old": "(int3)((uint)(iVar3 + 0x20) >> 8)",
+          "new": "p180_write<undefined3>((uint)(iVar3 + 0x20) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar3": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00504b00",
+      "changes": [
+        {
+          "start": 219,
+          "end": 243,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 408,
+          "end": 432,
+          "old": "(int3)((uint)iVar1 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0051b020",
+      "changes": [
+        {
+          "start": 358,
+          "end": 376,
+          "old": "(int3)(uVar1 >> 8)",
+          "new": "p180_write<undefined3>(uVar1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0051f120",
+      "changes": [
+        {
+          "start": 127,
+          "end": 172,
+          "old": "(int3)((uint)*(undefined4 *)(iVar1 + 8) >> 8)",
+          "new": "p180_write<undefined3>((uint)*(undefined4 *)(iVar1 + 8) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar1": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00526df0",
+      "changes": [
+        {
+          "start": 1136,
+          "end": 1154,
+          "old": "(int3)(uVar6 >> 8)",
+          "new": "p180_write<undefined3>(uVar6 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar6": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00539480",
+      "changes": [
+        {
+          "start": 3269,
+          "end": 3287,
+          "old": "(int3)(uVar3 >> 8)",
+          "new": "p180_write<undefined3>(uVar3 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar3": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00573ec0",
+      "changes": [
+        {
+          "start": 259,
+          "end": 293,
+          "old": "(int3)(((uint)uVar1 << 0x10) >> 8)",
+          "new": "p180_write<undefined3>(((uint)uVar1 << 0x10) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "ushort"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "00573f2a",
+      "changes": [
+        {
+          "start": 259,
+          "end": 293,
+          "old": "(int3)(((uint)uVar1 << 0x10) >> 8)",
+          "new": "p180_write<undefined3>(((uint)uVar1 << 0x10) >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar1": "ushort"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "0059ffe0",
+      "changes": [
+        {
+          "start": 2549,
+          "end": 2573,
+          "old": "(int3)((uint)iVar2 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar2 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar2": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 2606,
+          "end": 2630,
+          "old": "(int3)((uint)iVar6 >> 8)",
+          "new": "p180_write<undefined3>((uint)iVar6 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "iVar6": "int"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "005a22b7",
+      "changes": [
+        {
+          "start": 651,
+          "end": 671,
+          "old": "(int3)(param_1 >> 8)",
+          "new": "p180_write<undefined3>(param_1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "param_1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "005a269b",
+      "changes": [
+        {
+          "start": 636,
+          "end": 656,
+          "old": "(int3)(param_1 >> 8)",
+          "new": "p180_write<undefined3>(param_1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "param_1": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "005a2eae",
+      "changes": [
+        {
+          "start": 359,
+          "end": 385,
+          "old": "(int3)((uint)param_1 >> 8)",
+          "new": "p180_write<undefined3>((uint)param_1 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "param_1": "undefined4"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "005a7063",
+      "changes": [
+        {
+          "start": 1602,
+          "end": 1622,
+          "old": "(undefined3)local_10",
+          "new": "p180_write<undefined3>(local_10)",
+          "cast": "undefined3",
+          "helper": "CONCAT13",
+          "integer_variables": {
+            "local_10": "undefined8"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    },
+    {
+      "va": "005ae490",
+      "changes": [
+        {
+          "start": 948,
+          "end": 966,
+          "old": "(int3)(uVar7 >> 8)",
+          "new": "p180_write<undefined3>(uVar7 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar7": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 1740,
+          "end": 1758,
+          "old": "(int3)(uVar5 >> 8)",
+          "new": "p180_write<undefined3>(uVar5 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar5": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        },
+        {
+          "start": 1795,
+          "end": 1813,
+          "old": "(int3)(uVar7 >> 8)",
+          "new": "p180_write<undefined3>(uVar7 >> 8)",
+          "cast": "int3",
+          "helper": "CONCAT31",
+          "integer_variables": {
+            "uVar7": "uint"
+          },
+          "proof": "Whole3-byte PIECE argument: low24 bits of an explicitly integer expression; signedness cannot change copied bits."
+        }
+      ]
+    }
+  ],
+  "deduction_diagnostics": [
+    {
+      "va": "0041d8b0",
+      "line": 34,
+      "context": "  uStack_1c = CONCAT22(uStack_1c._2_2_,0x101);\n  uStack_20 = 0x10000;\n  FUN_00423c70(*(undefined1 *)((int)&uStack_24 + *(int *)(param_1 + 0x70)),0);\n  FUN_00423d60(*(undefined1 *)((int)&uStack_24 + *(int *)(param_1 + 0x70) + 2));\n  FUN_00423af0(*(undefined4 *)(param_1 + 0x5c),*(undefined4 *)(param_1 + 0x60),0);\n  (**(code **)(**(int **)(param_1 + 0x14) + 4))();",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0041e480",
+      "line": 30,
+      "context": "  return CONCAT44(DAT_0060c81c - param_4,param_1);\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00420990",
+      "line": 9,
+      "context": "  return CONCAT44((float)*(int *)(iVar1 + 0xe8) / (float)DAT_0060c81c,\n                  (float)*(int *)(iVar1 + 0xe4) / (float)DAT_0060c900);\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "004209f0",
+      "line": 9,
+      "context": "  return CONCAT44((float)*(int *)(iVar1 + 0x100) / (float)DAT_0060c81c,\n                  (float)*(int *)(iVar1 + 0xfc) / (float)DAT_0060c900);\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00420c20",
+      "line": 6,
+      "context": "  return CONCAT44((float)DAT_0060c86c / (float)DAT_0060c81c,\n                  (float)DAT_0060c868 / (float)DAT_0060c900);\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00420c50",
+      "line": 6,
+      "context": "  return CONCAT44((float)DAT_0060c87c / (float)DAT_0060c81c,\n                  (float)DAT_0060c878 / (float)DAT_0060c900);\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 100,
+      "context": "  local_7c = CONCAT13(local_7c._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca14 = local_80;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_80);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 121,
+      "context": "  local_cc = CONCAT13(local_cc._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca18 = local_d0;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_d0);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 142,
+      "context": "  local_1c = CONCAT13(local_1c._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca1c = local_20;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_20);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 163,
+      "context": "  local_bc = CONCAT13(local_bc._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca40 = local_c0;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_c0);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 184,
+      "context": "  local_5c = CONCAT13(local_5c._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca20 = local_60;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_60);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 205,
+      "context": "  local_ac = CONCAT13(local_ac._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca24 = local_b0;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_b0);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 226,
+      "context": "  local_2c = CONCAT13(local_2c._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca28 = local_30;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_30);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 247,
+      "context": "  local_9c = CONCAT13(local_9c._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca30 = local_a0;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_a0);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00424460",
+      "line": 268,
+      "context": "  local_4c = CONCAT13(local_4c._3_1_,1);\n  puVar1 = (undefined4 *)DAT_0060c9f4[1];\n  DAT_0060ca2c = local_50;\n  if (puVar1 == (undefined4 *)DAT_0060c9f4[2]) {\n    FUN_00481cf0(puVar1,&local_50);\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00442790",
+      "line": 120,
+      "context": "      local_28 = CONCAT31(local_28._1_3_,uVar5);\n      local_20 = FUN_00523ad0(s_global_005cdcfc,0);\n      cVar6 = FUN_00523b00(&DAT_005cdcf4,0);\n      FUN_00537a70(cVar6 != '\\0');\n      if (local_14 != puVar3) {\n        (local_10 + -1)[(int)puVar3] = (local_10 + -1)[(int)local_14];",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00444880",
+      "line": 34,
+      "context": "    param_5 = (char *)CONCAT31(param_5._1_3_,uVar3);\n    cVar4 = FUN_00523b00(s_flyer_005cddec,0);\n    param_4 = (float)CONCAT31(param_4._1_3_,cVar4);\n    if (((cVar2 != '\\0') || ((char)param_5 != '\\0')) || (cVar4 != '\\0')) {\n      local_4c = PTR_PTR_005dec08;\n      FUN_0053c8d0(&PTR_FUN_005dec18);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00444880",
+      "line": 36,
+      "context": "    param_4 = (float)CONCAT31(param_4._1_3_,cVar4);\n    if (((cVar2 != '\\0') || ((char)param_5 != '\\0')) || (cVar4 != '\\0')) {\n      local_4c = PTR_PTR_005dec08;\n      FUN_0053c8d0(&PTR_FUN_005dec18);\n      FUN_00534480(param_2);\n      fVar1 = param_3;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00447c50",
+      "line": 71,
+      "context": "        param_2 = (int *)CONCAT31(param_2._1_3_,uStack_29);\n        iVar5 = FUN_005a1f4a(&param_2);\n        if ((param_3 == (int *)0x0) || (param_3[iVar10] == iVar4)) {\n          local_10 = (int)*(short *)(iVar11 + 8);\n          local_20 = (int)*(short *)(iVar11 + 10);\n          local_8 = (float)local_20;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0044bd70",
+      "line": 60,
+      "context": "      param_2 = (int *)CONCAT31(param_2._1_3_,1);\n      uVar7 = FUN_0044c9a0(auStack_3c,0,iVar3,&iStack_c);\n      uVar7 = FUN_00424060(uVar7,puVar8);\n      FUN_00423e90(uVar7);\n      return uVar5;\n    }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00451710",
+      "line": 46,
+      "context": "        iVar4 = CONCAT22((short)((uint)iVar1 >> 0x10),\n                         (ushort)(param_3 < _DAT_005b26a0) << 8 |\n                         (ushort)(NAN(param_3) || NAN(_DAT_005b26a0)) << 10 |\n                         (ushort)(param_3 == _DAT_005b26a0) << 0xe);\n        if (param_3 >= _DAT_005b26a0) {\n          if (param_3 < _DAT_005b24a8) {",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 88,
+      "context": "          local_8 = (float)CONCAT13(local_8._3_1_ + cVar8,(undefined3)local_8);\n          cVar8 = __ftol();\n          local_8._0_3_ = CONCAT12(local_8._2_1_ + cVar8,(undefined2)local_8);\n          cVar8 = __ftol();\n          local_8._0_2_ = CONCAT11(local_8._1_1_ + cVar8,(char)local_8);\n          cVar8 = __ftol();",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 90,
+      "context": "          local_8._0_3_ = CONCAT12(local_8._2_1_ + cVar8,(undefined2)local_8);\n          cVar8 = __ftol();\n          local_8._0_2_ = CONCAT11(local_8._1_1_ + cVar8,(char)local_8);\n          cVar8 = __ftol();\n          local_8 = (float)CONCAT31(local_8._1_3_,(char)local_8 + cVar8);\nLAB_00454685:",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 92,
+      "context": "          local_8._0_2_ = CONCAT11(local_8._1_1_ + cVar8,(char)local_8);\n          cVar8 = __ftol();\n          local_8 = (float)CONCAT31(local_8._1_3_,(char)local_8 + cVar8);\nLAB_00454685:\n          *puVar11 = local_8;\n        }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 94,
+      "context": "          local_8 = (float)CONCAT31(local_8._1_3_,(char)local_8 + cVar8);\nLAB_00454685:\n          *puVar11 = local_8;\n        }\n        else {\n          if (('\\x02' < cVar8) && (cVar8 < '\\x05')) {",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 113,
+      "context": "            local_8 = (float)CONCAT13(local_8._3_1_ + cVar8,(undefined3)local_8);\n            cVar8 = __ftol();\n            local_8._0_3_ = CONCAT12(local_8._2_1_ + cVar8,(undefined2)local_8);\n            cVar8 = __ftol();\n            local_8._0_2_ = CONCAT11(local_8._1_1_ + cVar8,(char)local_8);\n            cVar8 = __ftol();",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 115,
+      "context": "            local_8._0_3_ = CONCAT12(local_8._2_1_ + cVar8,(undefined2)local_8);\n            cVar8 = __ftol();\n            local_8._0_2_ = CONCAT11(local_8._1_1_ + cVar8,(char)local_8);\n            cVar8 = __ftol();\n            local_8 = (float)CONCAT31(local_8._1_3_,(char)local_8 + cVar8);\n            goto LAB_00454685;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 117,
+      "context": "            local_8._0_2_ = CONCAT11(local_8._1_1_ + cVar8,(char)local_8);\n            cVar8 = __ftol();\n            local_8 = (float)CONCAT31(local_8._1_3_,(char)local_8 + cVar8);\n            goto LAB_00454685;\n          }\n          *puVar11 = *(undefined4 *)(iVar5 + 0x6c);",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00454430",
+      "line": 119,
+      "context": "            local_8 = (float)CONCAT31(local_8._1_3_,(char)local_8 + cVar8);\n            goto LAB_00454685;\n          }\n          *puVar11 = *(undefined4 *)(iVar5 + 0x6c);\n        }\n        puVar11[-5] = piVar12[1];",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00456090",
+      "line": 45,
+      "context": "    param_2 = CONCAT31(param_2._1_3_,1);\n    piVar4 = (int *)FUN_00456310(local_24,0,iVar2,&local_20);\n  }\n  else {\n    puVar7 = &param_3;\n    piVar4 = &local_2c;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 17,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  if (param_2[4] * *(float *)(param_1 + 8) + param_2[6] * *(float *)(param_1 + 0x10) < _DAT_005b23f8",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 26,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  if (param_2[8] * *(float *)(param_1 + 8) + param_2[10] * *(float *)(param_1 + 0x10) <",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 35,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  if (param_2[0xc] * *(float *)(param_1 + 8) + param_2[0xe] * *(float *)(param_1 + 0x10) <",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 44,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  fVar1 = (param_2[4] + *param_2) * _DAT_005b23f0;",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 54,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  fVar1 = (param_2[0xc] + param_2[4]) * _DAT_005b23f0;",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 64,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  fVar1 = (param_2[0xc] + param_2[8]) * _DAT_005b23f0;",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045abb0",
+      "line": 74,
+      "context": "      return CONCAT11(fVar1 < _DAT_005b23f8 |\n                      (byte)((ushort)((ushort)(NAN(fVar1) || NAN(_DAT_005b23f8)) << 10) >> 8) |\n                      (byte)((ushort)((ushort)(fVar1 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }\n  fVar1 = (param_2[8] + *param_2) * _DAT_005b23f0;",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0045b5a0",
+      "line": 200,
+      "context": "  local_11c = CONCAT13(local_11c._3_1_,0x10101);\n  puVar5 = param_1 + 0x19;\n  do {\n    pcVar1 = (char *)*local_128;\n    iVar6 = _strncmp(pcVar1,&DAT_005cefb0,4);\n    if (iVar6 == 0) {",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0045e5e0",
+      "line": 18,
+      "context": "  uVar4 = CONCAT22((short)((uint)iVar1 >> 0x10),\n                   (ushort)(_DAT_005b23f8 < fVar2) << 8 |\n                   (ushort)(NAN(_DAT_005b23f8) || NAN(fVar2)) << 10 |\n                   (ushort)(_DAT_005b23f8 == fVar2) << 0xe);\n  if (_DAT_005b23f8 < fVar2) {\n    pcVar5 = (char *)(*(int *)(param_1 + 8) + 3);",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "0046ddd0",
+      "line": 152,
+      "context": "    uVar4 = CONCAT44(param_1 + 0x1f,s_C_d__d__f__f__f__f__f__d__d__d___005cfca3 + 1);\n    uVar13 = param_2;\n    FUN_005a25c3();\n    FUN_005a25c3(param_2,s__f__f__f__f__f__f_005cfd4c,param_1 + 0x29,param_1 + 0x2a,param_1 + 0x2b,\n                 param_1 + 0x2c,param_1 + 0x2d,param_1 + 0x2e,uVar13,uVar4,uVar5,piVar6,piVar7,\n                 piVar8,piVar9,piVar10,iVar11,piVar3,iVar1,uVar12,uVar14,uVar15);",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "004704e0",
+      "line": 33,
+      "context": "     (uVar4 = CONCAT22((short)((uint)local_10 >> 0x10),\n                       (ushort)(local_10 < _DAT_005b23f8) << 8 |\n                       (ushort)(NAN(local_10) || NAN(_DAT_005b23f8)) << 10 |\n                       (ushort)(local_10 == _DAT_005b23f8) << 0xe), (local_10 == _DAT_005b23f8) != 0\n     )) {\nLAB_0047056a:",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "004704e0",
+      "line": 44,
+      "context": "    uVar4 = CONCAT22(extraout_var,\n                     (ushort)(fVar7 < fVar2) << 8 | (ushort)(NAN(fVar7) || NAN(fVar2)) << 10 |\n                     (ushort)(fVar7 == fVar2) << 0xe);\n    if (fVar7 < fVar2 == 0 && (fVar7 == fVar2) == 0) goto LAB_0047056a;\n  }\n  if (cVar6 != '\\x01') goto LAB_004706b5;",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "004704e0",
+      "line": 55,
+      "context": "     (uVar4 = CONCAT22((short)((uint)local_4 >> 0x10),\n                       (ushort)(local_4 < _DAT_005b23f8) << 8 |\n                       (ushort)(NAN(local_4) || NAN(_DAT_005b23f8)) << 10 |\n                       (ushort)(local_4 == _DAT_005b23f8) << 0xe), (local_4 == _DAT_005b23f8) != 0))\n  {\nLAB_00470664:",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "004704e0",
+      "line": 78,
+      "context": "    uVar4 = CONCAT22(extraout_var_00,\n                     (ushort)(fVar7 < fVar2) << 8 | (ushort)(NAN(fVar7) || NAN(fVar2)) << 10 |\n                     (ushort)(fVar7 == fVar2) << 0xe);\n    if (fVar7 < fVar2 == 0 && (fVar7 == fVar2) == 0) goto LAB_00470664;\n  }\n  if (cVar6 == '\\x01') {",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "004709c0",
+      "line": 23,
+      "context": "    uVar2 = CONCAT22((short)((uint)local_4 >> 0x10),\n                     (ushort)(local_4 < _DAT_005b23f8) << 8 |\n                     (ushort)(NAN(local_4) || NAN(_DAT_005b23f8)) << 10 |\n                     (ushort)(local_4 == _DAT_005b23f8) << 0xe);\n    if ((local_4 == _DAT_005b23f8) != 0) goto LAB_00470ab3;\n  }",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "004709c0",
+      "line": 42,
+      "context": "  uVar2 = CONCAT22(extraout_var,\n                   (ushort)(fVar3 < fVar1) << 8 | (ushort)(NAN(fVar3) || NAN(fVar1)) << 10 |\n                   (ushort)(fVar3 == fVar1) << 0xe);\n  if (fVar3 < fVar1 || (fVar3 == fVar1) != 0) {\n    return uVar2;\n  }",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00470ad0",
+      "line": 22,
+      "context": "      return CONCAT31((int3)(CONCAT22((short)((uint)local_4 >> 0x10),\n                                      (ushort)(local_4 < _DAT_005b23f8) << 8 |\n                                      (ushort)(NAN(local_4) || NAN(_DAT_005b23f8)) << 10 |\n                                      (ushort)(local_4 == _DAT_005b23f8) << 0xe) >> 8),1);\n    }\n  }",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00470ad0",
+      "line": 30,
+      "context": "  uVar3 = (uint3)(CONCAT22(extraout_var,\n                           (ushort)(fVar4 < fVar1) << 8 | (ushort)(NAN(fVar4) || NAN(fVar1)) << 10 |\n                           (ushort)(fVar4 == fVar1) << 0xe) >> 8);\n  uVar2 = CONCAT31(uVar3,1);\n  if ((uVar2 & 0x4100) != 0) {\n    uVar2 = (uint)uVar3 << 8;",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00476380",
+      "line": 100,
+      "context": "        local_4c = (float)CONCAT31(local_4c._1_3_,piVar8[1] != 0);\n        if (piVar8[1] != 0) {\n          iVar9 = FUN_0059f7c0(0x416e696d);\n          piVar8 = *(int **)(iVar9 + 0xc);\n          if ((*(byte *)(iVar9 + 4) & 2) != 0) {\n            piVar8 = (int *)((int)piVar8 + iVar9);",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00479140",
+      "line": 9,
+      "context": "  *param_1 = CONCAT31((uint3)((uint)*param_1 >> 8) & 0xffffc0,1);\n  uVar1 = FUN_0059eff0(DAT_00628b60 << 4);\n  param_1[1] = uVar1;\n  uVar1 = FUN_0059eff0(DAT_00628b60 * 4);\n  param_1[2] = uVar1;\n  return param_1;",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00479780",
+      "line": 19,
+      "context": "        *puVar3 = CONCAT31((uint3)((uint)*puVar3 >> 8) & 0xffffc0,1);\n        uVar2 = FUN_0059eff0(DAT_00628b60 << 4);\n        puVar3[1] = uVar2;\n        uVar2 = FUN_0059eff0(DAT_00628b60 * 4);\n        puVar3[2] = uVar2;\n        puVar3 = puVar3 + 5;",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "0047c640",
+      "line": 14,
+      "context": "                       CONCAT22(*(undefined2 *)((int)param_2 + 10),\n                                (short)CONCAT31((int3)((uint)in_stack_fffffff0 >> 8),\n                                                (char)param_2[2])));\n  iVar2 = *(int *)(param_1 + 4);\n  if (iVar2 == 0) {\n    iVar4 = 0;",
+      "observed_dependencies": [
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "0047f400",
+      "line": 24,
+      "context": "    param_2 = (byte *)CONCAT31(param_2._1_3_,1);\n  }\n  else {\n    FUN_0047c2c0(*(undefined4 *)(DAT_00628960 + 0x10),local_c,local_18);\n    local_24 = (local_18[0] + local_c[0]) * _DAT_005b23f0;\n    local_1c = (local_10 + local_4) * _DAT_005b23f0;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0047f400",
+      "line": 36,
+      "context": "    param_3 = CONCAT31(param_3._1_3_,local_29);\n    if ((char)param_2 == '\\0') {\n      return;\n    }\n  }\n  if (*(short *)(pbVar3 + 2) != 0) {",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00484320",
+      "line": 51,
+      "context": "    return CONCAT22(extraout_var_00,\n                    (ushort)(fStack_18 < (float)pfVar2) << 8 |\n                    (ushort)(NAN(fStack_18) || NAN((float)pfVar2)) << 10 |\n                    (ushort)(fStack_18 == (float)pfVar2) << 0xe);\n  }\n  uVar7 = CONCAT22(extraout_var_00,",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00484320",
+      "line": 56,
+      "context": "  uVar7 = CONCAT22(extraout_var_00,\n                   (ushort)(afStack_10[0] < (float)pfVar1) << 8 |\n                   (ushort)(NAN(afStack_10[0]) || NAN((float)pfVar1)) << 10 |\n                   (ushort)(afStack_10[0] == (float)pfVar1) << 0xe);\n  if (afStack_10[0] < (float)pfVar1) {\n    return uVar7;",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00484ae0",
+      "line": 90,
+      "context": "      fStack_b0 = (float)CONCAT31(fStack_b0._1_3_,(char)param_2[1]);\n      pfVar3 = *(float **)(uVar8 + 4);\n      if (pfVar3 == *(float **)(uVar8 + 8)) {\n        FUN_00481cf0(pfVar3,&fStack_b0);\n      }\n      else {",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00489530",
+      "line": 64,
+      "context": "      uStack_144 = (undefined1 *)CONCAT31(uStack_144._1_3_,*(undefined1 *)(puVar7 + 1));\n      uStack_144 = (undefined1 *)CONCAT22(*(undefined2 *)((int)puVar7 + 6),(undefined2)uStack_144);\n      FUN_0050e140(auStack_120);\n      FUN_00489850(ppiVar16);\n      puVar5 = PTR_PTR_005e4fe8;\n    }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00489530",
+      "line": 148,
+      "context": "    uStack_144 = (undefined1 *)CONCAT31(uStack_144._1_3_,*(undefined1 *)(puVar7 + 1));\n    uStack_144 = (undefined1 *)CONCAT22(*(undefined2 *)((int)puVar7 + 6),(undefined2)uStack_144);\n    uVar9 = FUN_00489810(auStack_120,param_2);\n    uVar10 = extraout_ECX;\n    FUN_0050e140(uVar9);\n    FUN_00489850(uVar10);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00489530",
+      "line": 159,
+      "context": "      uStack_144 = (undefined1 *)CONCAT31(uStack_144._1_3_,*(undefined1 *)(puVar7 + 1));\n      uStack_144 = (undefined1 *)CONCAT22(*(undefined2 *)((int)puVar7 + 6),(undefined2)uStack_144);\n      uStack_144 = (undefined1 *)FUN_0047c570();\n      piStack_148 = (int *)0x4896bd;\n      FUN_0047c6f0();\n      return;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00489850",
+      "line": 12,
+      "context": "  uVar3 = CONCAT22(param_3._2_2_,\n                   (short)CONCAT31((int3)((uint)in_stack_ffffffec >> 8),(undefined1)param_3));\n  uVar1 = param_2;\n  FUN_0050e140(&param_1);\n  uVar1 = FUN_004898a0(uVar2,uVar1,uVar3);\n  FUN_0047c640(uVar1);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00489df0",
+      "line": 35,
+      "context": "  iVar4 = (uint)CONCAT21(uVar6,*param_8 < _DAT_005b23f8) << 8;\n  if (*param_8 >= _DAT_005b23f8) {\n    fVar1 = *param_8;\n    iVar4 = CONCAT22(uVar6,(ushort)(fVar1 < _DAT_005b24a8) << 8 |\n                           (ushort)(NAN(fVar1) || NAN(_DAT_005b24a8)) << 10 |\n                           (ushort)(fVar1 == _DAT_005b24a8) << 0xe);",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00489df0",
+      "line": 38,
+      "context": "    iVar4 = CONCAT22(uVar6,(ushort)(fVar1 < _DAT_005b24a8) << 8 |\n                           (ushort)(NAN(fVar1) || NAN(_DAT_005b24a8)) << 10 |\n                           (ushort)(fVar1 == _DAT_005b24a8) << 0xe);\n    if (fVar1 < _DAT_005b24a8 != 0 || (fVar1 == _DAT_005b24a8) != 0) {\n      return CONCAT31((int3)((uint)iVar4 >> 8),1);\n    }",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "00489df0",
+      "line": 47,
+      "context": "  uVar5 = CONCAT22(uVar6,(ushort)(fVar8 < fVar7) << 8 | (ushort)(NAN(fVar8) || NAN(fVar7)) << 10 |\n                         (ushort)(fVar8 == fVar7) << 0xe);\n  if (fVar8 >= fVar7) {\n    fVar7 = (float10)_DAT_005b24a8;\n    uVar5 = CONCAT22(uVar6,(ushort)(fVar8 < fVar7) << 8 | (ushort)(NAN(fVar8) || NAN(fVar7)) << 10 |\n                           (ushort)(fVar8 == fVar7) << 0xe);",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00489df0",
+      "line": 51,
+      "context": "    uVar5 = CONCAT22(uVar6,(ushort)(fVar8 < fVar7) << 8 | (ushort)(NAN(fVar8) || NAN(fVar7)) << 10 |\n                           (ushort)(fVar8 == fVar7) << 0xe);\n    if (fVar8 < fVar7 || (fVar8 == fVar7) != 0) {\n      return CONCAT31((int3)((uint)uVar5 >> 8),1);\n    }\n  }",
+      "observed_dependencies": [
+        "extended_float_or_hidden_state",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "0048f060",
+      "line": 192,
+      "context": "                      param_4 = (undefined4 *)(CONCAT31(param_4._1_3_,pbVar13[-2]) & 0xffffff03);\n                    }\n                    cVar5 = FUN_00415e80(iVar9,&param_4);\n                    iVar15 = DAT_00628c70;\n                    if (((((cVar5 == '\\0') && (DAT_00628c70 != 0)) &&\n                         (*(int *)(DAT_00628c70 + 8) != 0)) &&",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "004aa050",
+      "line": 129,
+      "context": "      param_3 = CONCAT13(cVar4,(undefined3)param_3);\n      local_c = (uint)(cVar4 != '\\0');\n      uVar9 = local_8;\n    }\n    break;\n  case 2:",
+      "observed_dependencies": [
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "004b4da0",
+      "line": 59,
+      "context": "      local_3b0 = CONCAT31(local_3b0._1_3_,bVar1);\n      if ((piVar6 != (int *)0x0) && (piVar4 = *(int **)*piVar6, piVar4 != (int *)*piVar6)) {\n        do {\n          iVar10 = piVar4[2];\n          if (((uint)bVar1 & 1 << ((byte)*(undefined4 *)(iVar10 + 0x40) & 0x1f)) == 0) {\n            *(undefined4 *)(iVar10 + 0x4c) = 0xffffffff;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "004b4da0",
+      "line": 160,
+      "context": "        local_3b4 = CONCAT31(local_3b4._1_3_,*(undefined1 *)(DAT_00628c70 + 0xe5));\n      }\n      iVar9 = 0;\n      do {\n        if ((local_3b4 & 0xff & 1 << ((byte)iVar9 & 0x1f)) != 0) {\n          iVar10 = iVar10 + 1;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "004b8280",
+      "line": 125,
+      "context": "      param_4 = CONCAT31(param_4._1_3_,1);\n      piVar5 = (int *)FUN_00526610(local_28,0,iVar1,uVar6);\n      goto LAB_004b83ff;\n    }\n    FUN_00423620();\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "004b8280",
+      "line": 139,
+      "context": "    param_3 = CONCAT31(param_3._1_3_,1);\n    piVar5 = (int *)FUN_00526610(local_24,0,iVar1,uVar6);\n  }\nLAB_004b83ff:\n  uVar6 = FUN_00424060(piVar5,puVar7);\n  FUN_00423e90(uVar6);",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "004d3420",
+      "line": 45,
+      "context": "  uStack_80 = (undefined4 *)CONCAT13(1,(undefined3)uStack_80);\n  if (DAT_005d9158 == '\\0') {\n    FUN_004dda00(0);\n  }\n  else {\n    uStack_80 = (undefined4 *)(uVar7 & 0xffffff);",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "004e3d90",
+      "line": 125,
+      "context": "      param_4 = CONCAT31(param_4._1_3_,1);\n      piVar5 = (int *)FUN_004e41d0(local_28,0,iVar1,uVar6);\n      goto LAB_004e3f0f;\n    }\n    FUN_00423620();\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "004e3d90",
+      "line": 139,
+      "context": "    param_3 = CONCAT31(param_3._1_3_,1);\n    piVar5 = (int *)FUN_004e41d0(local_24,0,iVar1,uVar6);\n  }\nLAB_004e3f0f:\n  uVar6 = FUN_00424060(piVar5,puVar7);\n  FUN_00423e90(uVar6);",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005048d0",
+      "line": 14,
+      "context": "        return CONCAT22((short)((uint)iVar1 >> 0x10),\n                        *(undefined2 *)(iVar1 * 0xd40 + 0x10c + DAT_00691e58));\n      }\n      iVar1 = iVar1 + 1;\n      psVar2 = psVar2 + 0x6a0;\n    } while (iVar1 < DAT_00691e64);",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005048d0",
+      "line": 21,
+      "context": "  return CONCAT22((short)((uint)iVar1 >> 0x10),*(undefined2 *)(DAT_00691e58 + 0x10c));\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00504930",
+      "line": 14,
+      "context": "        return CONCAT22((short)((uint)iVar1 >> 0x10),\n                        *(undefined2 *)(iVar1 * 0xd40 + 0x3a0 + DAT_00691e58));\n      }\n      iVar1 = iVar1 + 1;\n      psVar2 = psVar2 + 0x6a0;\n    } while (iVar1 < DAT_00691e64);",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00504930",
+      "line": 21,
+      "context": "  return CONCAT22((short)((uint)iVar1 >> 0x10),*(undefined2 *)(DAT_00691e58 + 0x3a0));\n}\n\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0050cc30",
+      "line": 30,
+      "context": "  iStack_4 = CONCAT31(iStack_4._1_3_,cVar1);\n  FUN_0050d910(s_ID_MERGEDLISTCOLOR_005dc454,iStack_4,0);\n  FUN_0050d910(s_ID_MERGEDLISTCARSETUP_005dc43c,cVar1 == '\\0',0);\n  uVar3 = FUN_004b7ab0(s_Replay_List_005d9320,0,&FEAccessor::RTTI_Type_Descriptor,\n                       &FEPositionableAccessor::RTTI_Type_Descriptor,0);\n  piVar4 = (int *)FUN_005a134b(uVar3);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0050cc30",
+      "line": 90,
+      "context": "  iStack_4 = CONCAT31(iStack_4._1_3_,uVar2);\n  FUN_0050d880(s_ID_LAPSSELECTOR_005dc3c8,iStack_4,0);\n  return;\n}\n\n",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0052ea50",
+      "line": 125,
+      "context": "      param_4 = CONCAT31(param_4._1_3_,1);\n      piVar5 = (int *)FUN_0052ed50(local_28,0,iVar1,uVar6);\n      goto LAB_0052ebcf;\n    }\n    FUN_00423620();\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0052ea50",
+      "line": 139,
+      "context": "    param_3 = CONCAT31(param_3._1_3_,1);\n    piVar5 = (int *)FUN_0052ed50(local_24,0,iVar1,uVar6);\n  }\nLAB_0052ebcf:\n  uVar6 = FUN_00424060(piVar5,puVar7);\n  FUN_00423e90(uVar6);",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005385b0",
+      "line": 9,
+      "context": "      DAT_0069e0b0 = CONCAT22((short)(DAT_0069e0b0 >> 0x10),(ushort)(byte)DAT_0069e0b0);\n    }\n    else if ((DAT_005dea60 == 0) && ((param_1 & 0x200) != 0)) {\n      DAT_0069e0b0 = param_1 & 0x1059f | 0x100;\n    }\n    if ((DAT_0069e0b0 & 0xffff) == 1) {",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00553a70",
+      "line": 21,
+      "context": "    local_4 = (float)CONCAT22(local_4._2_2_,*(undefined2 *)(param_1 + 2));\n    *param_1 = *param_2;\n    param_1[1] = pfVar3[-2];\n    param_1[2] = pfVar3[-1];\n    *param_2 = fVar1;\n    pfVar3[-2] = fVar2;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0055ba50",
+      "line": 43,
+      "context": "          param_1 = CONCAT22(param_1._2_2_,0x1fe);\n          FUN_00560420(iVar4 + 0x68,&param_1,2);\n          FUN_0055b880(iVar3,iVar4,0);\n          return;\n        }\n        do {",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00589fe0",
+      "line": 43,
+      "context": "      local_44 = CONCAT31(CONCAT21(local_44._2_2_,param_3),(char)puVar4[5]);\n      local_48 = CONCAT22((short)param_1,*(undefined2 *)(iVar3 + 0x18));\n      local_3c = param_4;\n      local_38 = param_5;\n      local_34 = *(undefined4 *)(iVar3 + 0x10);\n      iVar5 = 0;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00589fe0",
+      "line": 43,
+      "context": "      local_44 = CONCAT31(CONCAT21(local_44._2_2_,param_3),(char)puVar4[5]);\n      local_48 = CONCAT22((short)param_1,*(undefined2 *)(iVar3 + 0x18));\n      local_3c = param_4;\n      local_38 = param_5;\n      local_34 = *(undefined4 *)(iVar3 + 0x10);\n      iVar5 = 0;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "00589fe0",
+      "line": 80,
+      "context": "      local_44 = CONCAT31(local_44._1_3_,param_3);\n      local_48 = CONCAT22((short)param_1,*(undefined2 *)(iVar3 + 0x18));\n      local_40 = param_4;\n      local_3c = param_5;\n      local_38 = *(int *)(iVar3 + 0x10);\n      puVar2 = puVar4 + 0x19;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0058ebe0",
+      "line": 42,
+      "context": "  local_40 = CONCAT31(CONCAT21(local_40._2_2_,bVar6),DAT_006b48dd);\n  uVar2 = local_40;\n  local_44 = (uint)DAT_006b48d8._2_2_;\n  local_3c = FUN_00589c00;\n  if (DAT_006b48e4 == '\\0') {\n    local_40._3_1_ = SUB41(uVar1,3);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0058ebe0",
+      "line": 42,
+      "context": "  local_40 = CONCAT31(CONCAT21(local_40._2_2_,bVar6),DAT_006b48dd);\n  uVar2 = local_40;\n  local_44 = (uint)DAT_006b48d8._2_2_;\n  local_3c = FUN_00589c00;\n  if (DAT_006b48e4 == '\\0') {\n    local_40._3_1_ = SUB41(uVar1,3);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0058f8f0",
+      "line": 34,
+      "context": "          uVar3 = (uint)(CONCAT44((int)DAT_006ad784 >> 0x1f,uVar3) /\n                        (longlong)(int)(_DAT_006b48dc & 0xff));\n        }\n        DAT_006ad784 = uVar3 & 0xfffff0;\n        if ((int)DAT_006ad784 < (int)DAT_006ad788) {\n          iVar2 = DAT_006ad7b4 - DAT_006ad788;",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005903d0",
+      "line": 16,
+      "context": "    DAT_006aeff8 = CONCAT31(DAT_006aeff8._1_3_,cVar3);\n    iVar2 = 0;\n    pcVar1 = (char *)(DAT_006b4a00 + 0x1e);\n    while( true ) {\n      if (DAT_006b49a4 <= iVar2) {\n        return cVar3;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 6,
+      "context": "  *param_3 = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 2)],\n                               (&DAT_006b50a0)[*(byte *)(param_1 + 6)]),\n                      CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 2)],\n                               (&DAT_006b50a0)[*(byte *)(param_2 + 0x102)]));\n  param_3[1] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0xe)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 8,
+      "context": "                      CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 2)],\n                               (&DAT_006b50a0)[*(byte *)(param_2 + 0x102)]));\n  param_3[1] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0xe)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 6)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x106)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 6,
+      "context": "  *param_3 = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 2)],\n                               (&DAT_006b50a0)[*(byte *)(param_1 + 6)]),\n                      CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 2)],\n                               (&DAT_006b50a0)[*(byte *)(param_2 + 0x102)]));\n  param_3[1] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0xe)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 10,
+      "context": "  param_3[1] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0xe)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 6)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x106)]));\n  param_3[2] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x16)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 12,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 6)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x106)]));\n  param_3[2] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x16)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10a)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 10,
+      "context": "  param_3[1] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0xe)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 6)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x106)]));\n  param_3[2] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x16)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 14,
+      "context": "  param_3[2] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x16)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10a)]));\n  param_3[3] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x1e)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 16,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10a)]));\n  param_3[3] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x1e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0xe)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10e)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 14,
+      "context": "  param_3[2] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x16)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 10)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10a)]));\n  param_3[3] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x1e)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 18,
+      "context": "  param_3[3] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x1e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0xe)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10e)]));\n  param_3[4] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x22)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x26)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 20,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0xe)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10e)]));\n  param_3[4] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x22)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x26)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x112)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 18,
+      "context": "  param_3[3] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x1e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0xe)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x10e)]));\n  param_3[4] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x22)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x26)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 22,
+      "context": "  param_3[4] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x22)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x26)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x112)]));\n  param_3[5] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x2a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x2e)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 24,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x112)]));\n  param_3[5] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x2a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x2e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x16)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x116)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 22,
+      "context": "  param_3[4] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x22)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x26)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x12)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x112)]));\n  param_3[5] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x2a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x2e)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 26,
+      "context": "  param_3[5] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x2a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x2e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x16)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x116)]));\n  param_3[6] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x32)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x36)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 28,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x16)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x116)]));\n  param_3[6] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x32)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x36)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11a)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 26,
+      "context": "  param_3[5] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x2a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x2e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x16)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x116)]));\n  param_3[6] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x32)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x36)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 30,
+      "context": "  param_3[6] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x32)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x36)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11a)]));\n  param_3[7] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x3a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x3e)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 32,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11a)]));\n  param_3[7] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x3a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x3e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1e)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11e)]));",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 30,
+      "context": "  param_3[6] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x32)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x36)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11a)]));\n  param_3[7] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x3a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x3e)]),",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 34,
+      "context": "  param_3[7] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x3a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x3e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1e)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11e)]));\n  return 0;\n}",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 36,
+      "context": "                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1e)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11e)]));\n  return 0;\n}\n\n",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00593409",
+      "line": 34,
+      "context": "  param_3[7] = CONCAT22(CONCAT11((&DAT_006b50a0)[*(byte *)(param_1 + 0x3a)],\n                                 (&DAT_006b50a0)[*(byte *)(param_1 + 0x3e)]),\n                        CONCAT11((&DAT_006b50a0)[*(byte *)(param_2 + 0x1e)],\n                                 (&DAT_006b50a0)[*(byte *)(param_2 + 0x11e)]));\n  return 0;\n}",
+      "observed_dependencies": [
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "00595740",
+      "line": 62,
+      "context": "                        CONCAT22(extraout_var_01,(ushort)param_1._1_1_);\n                if (0xfffb < (ushort)uVar8) {\n                  uVar8 = uVar8 + 0xfffc;\n                }\n                iVar6 = FUN_00580d40(piVar1 + 0x27,uVar8 & 0xffff);\n                puVar9 = param_3;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "00595d10",
+      "line": 55,
+      "context": "        param_5 = CONCAT31(param_5._1_3_,*(byte *)(iVar9 + 0x13));\n        cVar3 = FUN_00595930(CONCAT22((short)(*(uint *)(param_2 + 0xc) >> 0x10),\n                                      *(undefined2 *)(iVar9 + 0x10)));\n        cVar4 = FUN_00595930(*(undefined2 *)(iVar2 + 0x10));\n        param_5._0_2_ = CONCAT11(cVar4 - cVar3,(undefined1)param_5);\n        FUN_005323e0(param_1,&param_5,2);",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "0059cd70",
+      "line": 37,
+      "context": "                       ((ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a),\n                        (ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a));\n    uVar16 = PackedFloatingMUL(uVar15,_DAT_005e3b50);\n    uVar1 = uVar2 + param_9;\n    iVar3 = iVar4 + param_8 + (uint)CARRY4(uVar2,param_9);\n    DAT_005e3b5a._0_2_ = (undefined2)(uVar1 >> 0x10);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059cd70",
+      "line": 38,
+      "context": "                        (ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a));\n    uVar16 = PackedFloatingMUL(uVar15,_DAT_005e3b50);\n    uVar1 = uVar2 + param_9;\n    iVar3 = iVar4 + param_8 + (uint)CARRY4(uVar2,param_9);\n    DAT_005e3b5a._0_2_ = (undefined2)(uVar1 >> 0x10);\n    uVar15 = CONCAT44(*(undefined4 *)(param_4 + -4 + iVar3 * 4),",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059cd70",
+      "line": 51,
+      "context": "                       ((ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a),\n                        (ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a));\n    uVar10 = PackedFloatingMUL(uVar10,_DAT_005e3b50);\n    uVar17 = CONCAT44((int)uVar10,(int)uVar16);\n    uVar2 = uVar1 + param_9;\n    iVar4 = iVar3 + param_8 + (uint)CARRY4(uVar1,param_9);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059cd70",
+      "line": 52,
+      "context": "                        (ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a));\n    uVar10 = PackedFloatingMUL(uVar10,_DAT_005e3b50);\n    uVar17 = CONCAT44((int)uVar10,(int)uVar16);\n    uVar2 = uVar1 + param_9;\n    iVar4 = iVar3 + param_8 + (uint)CARRY4(uVar1,param_9);\n    _DAT_005e3b58 = (undefined2)uVar2;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059cd70",
+      "line": 93,
+      "context": "                       ((ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a),\n                        (ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a));\n    uVar11 = PackedFloatingMUL(uVar15,_DAT_005e3b50);\n    uVar15 = PackedFloatingSUB(uVar7,uVar8);\n    uVar15 = PackedFloatingMUL(uVar15,_DAT_005e3b70);\n    uVar15 = PackedFloatingSUB(uVar15,uVar6);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059cd70",
+      "line": 94,
+      "context": "                        (ulonglong)CONCAT22(DAT_005e3b5a._2_2_,(undefined2)DAT_005e3b5a));\n    uVar11 = PackedFloatingMUL(uVar15,_DAT_005e3b50);\n    uVar15 = PackedFloatingSUB(uVar7,uVar8);\n    uVar15 = PackedFloatingMUL(uVar15,_DAT_005e3b70);\n    uVar15 = PackedFloatingSUB(uVar15,uVar6);\n    uVar15 = PackedFloatingADD(uVar15,uVar9);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d040",
+      "line": 32,
+      "context": "    uVar1 = CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a);\n    uVar9 = (ulonglong)*(uint *)(param_4 + iVar6 * 4);\n    uVar3 = uVar4 + param_9;\n    iVar5 = iVar6 + param_8 + (uint)CARRY4(uVar4,param_9);\n    DAT_005e3b9a._0_2_ = (undefined2)(uVar3 >> 0x10);\n    uVar12 = (ulonglong)*(uint *)(param_4 + iVar5 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d040",
+      "line": 40,
+      "context": "                       ((ulonglong)CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a),\n                        (ulonglong)CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a));\n    uVar8 = PackedFloatingMUL(uVar8,uVar2);\n    uVar11 = PackedFloatingMUL(uVar10,uVar2);\n    uVar10 = PackedFloatingSUB((ulonglong)*(uint *)(param_4 + 4 + iVar6 * 4),uVar9);\n    uVar13 = PackedFloatingSUB((ulonglong)*(uint *)(param_4 + 4 + iVar5 * 4),uVar12);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d040",
+      "line": 41,
+      "context": "                        (ulonglong)CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a));\n    uVar8 = PackedFloatingMUL(uVar8,uVar2);\n    uVar11 = PackedFloatingMUL(uVar10,uVar2);\n    uVar10 = PackedFloatingSUB((ulonglong)*(uint *)(param_4 + 4 + iVar6 * 4),uVar9);\n    uVar13 = PackedFloatingSUB((ulonglong)*(uint *)(param_4 + 4 + iVar5 * 4),uVar12);\n    uVar8 = PackedFloatingMUL(uVar8,uVar10);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d040",
+      "line": 63,
+      "context": "                      ((ulonglong)CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a),\n                       (ulonglong)CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a));\n    uVar8 = PackedFloatingMUL(uVar8,uVar2);\n    uVar10 = PackedFloatingSUB((ulonglong)*(uint *)(param_4 + 4 + iVar6 * 4),uVar9);\n    uVar8 = PackedFloatingMUL(uVar8,uVar10);\n    uVar8 = PackedFloatingADD(uVar8,uVar9);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d040",
+      "line": 64,
+      "context": "                       (ulonglong)CONCAT22(DAT_005e3b9a._2_2_,(undefined2)DAT_005e3b9a));\n    uVar8 = PackedFloatingMUL(uVar8,uVar2);\n    uVar10 = PackedFloatingSUB((ulonglong)*(uint *)(param_4 + 4 + iVar6 * 4),uVar9);\n    uVar8 = PackedFloatingMUL(uVar8,uVar10);\n    uVar8 = PackedFloatingADD(uVar8,uVar9);\n    bVar7 = CARRY4(uVar4,param_9);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 45,
+      "context": "    iVar11 = iVar14 + param_6 + (uint)CARRY4((uint)DAT_005e3be0 * 2,param_7);\n    DAT_005e3be0._4_4_ = (uint)DAT_005e3be0 * 2 + param_7 >> 1;\n    _DAT_005e3bb4 = *(float *)(param_2 + iVar11 * 4);\n    iVar12 = iVar11 + param_6 + (uint)CARRY4(DAT_005e3be0._4_4_ * 2,param_7);\n    DAT_005e3be8._0_4_ = DAT_005e3be0._4_4_ * 2 + param_7 >> 1;\n    _DAT_005e3bb8 = *(float *)(param_2 + iVar12 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 48,
+      "context": "    iVar12 = iVar11 + param_6 + (uint)CARRY4(DAT_005e3be0._4_4_ * 2,param_7);\n    DAT_005e3be8._0_4_ = DAT_005e3be0._4_4_ * 2 + param_7 >> 1;\n    _DAT_005e3bb8 = *(float *)(param_2 + iVar12 * 4);\n    iVar13 = iVar12 + param_6 + (uint)CARRY4((uint)DAT_005e3be8 * 2,param_7);\n    DAT_005e3be8._4_4_ = (uint)DAT_005e3be8 * 2 + param_7 >> 1;\n    _DAT_005e3bbc = *(float *)(param_2 + iVar13 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 51,
+      "context": "    iVar13 = iVar12 + param_6 + (uint)CARRY4((uint)DAT_005e3be8 * 2,param_7);\n    DAT_005e3be8._4_4_ = (uint)DAT_005e3be8 * 2 + param_7 >> 1;\n    _DAT_005e3bbc = *(float *)(param_2 + iVar13 * 4);\n    iVar14 = iVar13 + param_6 + (uint)CARRY4(DAT_005e3be8._4_4_ * 2,param_7);\n    DAT_005e3bf0._0_4_ = DAT_005e3be8._4_4_ * 2 + param_7 >> 1;\n    _DAT_005e3bd0 = *(float *)(param_2 + 4 + iVar14 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 54,
+      "context": "    iVar14 = iVar13 + param_6 + (uint)CARRY4(DAT_005e3be8._4_4_ * 2,param_7);\n    DAT_005e3bf0._0_4_ = DAT_005e3be8._4_4_ * 2 + param_7 >> 1;\n    _DAT_005e3bd0 = *(float *)(param_2 + 4 + iVar14 * 4);\n    _DAT_005e3bc0 = *(float *)(param_2 + iVar14 * 4);\n    iVar14 = iVar14 + param_6 + (uint)CARRY4((uint)DAT_005e3bf0 * 2,param_7);\n    DAT_005e3bf0._4_4_ = (uint)DAT_005e3bf0 * 2 + param_7 >> 1;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 58,
+      "context": "    iVar14 = iVar14 + param_6 + (uint)CARRY4((uint)DAT_005e3bf0 * 2,param_7);\n    DAT_005e3bf0._4_4_ = (uint)DAT_005e3bf0 * 2 + param_7 >> 1;\n    _DAT_005e3bd4 = *(float *)(param_2 + 4 + iVar14 * 4);\n    _DAT_005e3bc4 = *(float *)(param_2 + iVar14 * 4);\n    iVar14 = iVar14 + param_6 + (uint)CARRY4(DAT_005e3bf0._4_4_ * 2,param_7);\n    DAT_005e3bf8._0_4_ = DAT_005e3bf0._4_4_ * 2 + param_7 >> 1;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 62,
+      "context": "    iVar14 = iVar14 + param_6 + (uint)CARRY4(DAT_005e3bf0._4_4_ * 2,param_7);\n    DAT_005e3bf8._0_4_ = DAT_005e3bf0._4_4_ * 2 + param_7 >> 1;\n    _DAT_005e3bd8 = *(float *)(param_2 + 4 + iVar14 * 4);\n    _DAT_005e3bc8 = *(float *)(param_2 + iVar14 * 4);\n    iVar14 = iVar14 + param_6 + (uint)CARRY4((uint)DAT_005e3bf8 * 2,param_7);\n    DAT_005e3bf8._4_4_ = (uint)DAT_005e3bf8 * 2 + param_7 >> 1;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 66,
+      "context": "    iVar14 = iVar14 + param_6 + (uint)CARRY4((uint)DAT_005e3bf8 * 2,param_7);\n    DAT_005e3bf8._4_4_ = (uint)DAT_005e3bf8 * 2 + param_7 >> 1;\n    _DAT_005e3bdc = *(float *)(param_2 + 4 + iVar14 * 4);\n    _DAT_005e3bcc = *(float *)(param_2 + iVar14 * 4);\n    uVar8 = DAT_005e3bf8._4_4_ * 2 + param_7;\n    iVar14 = iVar14 + param_6 + (uint)CARRY4(DAT_005e3bf8._4_4_ * 2,param_7);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d140",
+      "line": 71,
+      "context": "    iVar14 = iVar14 + param_6 + (uint)CARRY4(DAT_005e3bf8._4_4_ * 2,param_7);\n    fVar15 = (*(float *)(param_2 + 4 + iVar11 * 4) - _DAT_005e3bb4) *\n             (float)DAT_005e3be0._4_4_ * fVar2 + _DAT_005e3bb4;\n    fVar16 = (*(float *)(param_2 + 4 + iVar12 * 4) - _DAT_005e3bb8) *\n             (float)(uint)DAT_005e3be8 * fVar5 + _DAT_005e3bb8;\n    fVar17 = (*(float *)(param_2 + 4 + iVar13 * 4) - _DAT_005e3bbc) *",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d350",
+      "line": 46,
+      "context": "    iVar4 = iVar4 + param_6 + (uint)CARRY4((uint)DAT_005e3c60 * 2,param_7);\n    DAT_005e3c60._4_4_ = (uint)DAT_005e3c60 * 2 + param_7 >> 1;\n    _DAT_005e3c24 = *(float *)(param_2 + -4 + iVar4 * 4);\n    _DAT_005e3c34 = *(float *)(param_2 + iVar4 * 4);\n    _DAT_005e3c44 = *(float *)(param_2 + 4 + iVar4 * 4);\n    _DAT_005e3c54 = *(float *)(param_2 + 8 + iVar4 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d350",
+      "line": 52,
+      "context": "    iVar4 = iVar4 + param_6 + (uint)CARRY4(DAT_005e3c60._4_4_ * 2,param_7);\n    DAT_005e3c68._0_4_ = DAT_005e3c60._4_4_ * 2 + param_7 >> 1;\n    _DAT_005e3c28 = *(float *)(param_2 + -4 + iVar4 * 4);\n    _DAT_005e3c38 = *(float *)(param_2 + iVar4 * 4);\n    _DAT_005e3c48 = *(float *)(param_2 + 4 + iVar4 * 4);\n    _DAT_005e3c58 = *(float *)(param_2 + 8 + iVar4 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d350",
+      "line": 58,
+      "context": "    iVar4 = iVar4 + param_6 + (uint)CARRY4((uint)DAT_005e3c68 * 2,param_7);\n    DAT_005e3c68._4_4_ = (uint)DAT_005e3c68 * 2 + param_7 >> 1;\n    _DAT_005e3c2c = *(float *)(param_2 + -4 + iVar4 * 4);\n    _DAT_005e3c3c = *(float *)(param_2 + iVar4 * 4);\n    uVar3 = DAT_005e3c68._4_4_ * 2 + param_7;\n    _DAT_005e3c4c = *(float *)(param_2 + 4 + iVar4 * 4);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "0059d350",
+      "line": 65,
+      "context": "    iVar4 = iVar4 + param_6 + (uint)CARRY4(DAT_005e3c68._4_4_ * 2,param_7);\n    fVar17 = (float)(uint)DAT_005e3c60 * _DAT_005e3c10;\n    fVar19 = (float)DAT_005e3c60._4_4_ * fRam005e3c14;\n    fVar21 = (float)(uint)DAT_005e3c68 * fRam005e3c18;\n    fVar23 = (float)DAT_005e3c68._4_4_ * fRam005e3c1c;\n    fVar8 = fRam005e3c84 * _DAT_005e3c44 + _DAT_005e3c24;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005a0790",
+      "line": 180,
+      "context": "              in_EAX = CONCAT22(uVar15,(ushort)(fVar10 < _DAT_005b23f8) << 8 |\n                                       (ushort)(NAN(fVar10) || NAN(_DAT_005b23f8)) << 10 |\n                                       (ushort)(fVar10 == _DAT_005b23f8) << 0xe);\n              if (((fVar10 < _DAT_005b23f8 || (fVar10 == _DAT_005b23f8) != 0) &&\n                  (in_EAX = CONCAT22(uVar15,(ushort)(fVar10 < fVar12) << 8 |\n                                            (ushort)(NAN(fVar10) || NAN(fVar12)) << 10 |",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a0790",
+      "line": 187,
+      "context": "                 && (in_EAX = CONCAT22(uVar15,(ushort)(fVar11 < _DAT_005b23f8) << 8 |\n                                              (ushort)(NAN(fVar11) || NAN(_DAT_005b23f8)) << 10 |\n                                              (ushort)(fVar11 == _DAT_005b23f8) << 0xe),\n                    fVar11 < _DAT_005b23f8 || (fVar11 == _DAT_005b23f8) != 0)) {\n                bVar7 = fVar11 < fVar12;\n                in_EAX = CONCAT22(uVar15,(ushort)bVar7 << 8 |",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a0790",
+      "line": 200,
+      "context": "            in_EAX = CONCAT22(uVar15,(ushort)(fVar10 < _DAT_005b23f8) << 8 |\n                                     (ushort)(NAN(fVar10) || NAN(_DAT_005b23f8)) << 10 |\n                                     (ushort)(fVar10 == _DAT_005b23f8) << 0xe);\n            if (((fVar10 >= _DAT_005b23f8) &&\n                (in_EAX = CONCAT22(uVar15,(ushort)(fVar10 < fVar12) << 8 |\n                                          (ushort)(NAN(fVar10) || NAN(fVar12)) << 10 |",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a0790",
+      "line": 208,
+      "context": "               ((in_EAX = CONCAT22(uVar15,(ushort)(fVar11 < _DAT_005b23f8) << 8 |\n                                          (ushort)(NAN(fVar11) || NAN(_DAT_005b23f8)) << 10 |\n                                          (ushort)(fVar11 == _DAT_005b23f8) << 0xe),\n                fVar11 >= _DAT_005b23f8 &&\n                (in_EAX = CONCAT22(uVar15,(ushort)(fVar11 < fVar12) << 8 |\n                                          (ushort)(NAN(fVar11) || NAN(fVar12)) << 10 |",
+      "observed_dependencies": [
+        "undeclared_original_global",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a585e",
+      "line": 18,
+      "context": "    fVar1 = (float10)(double)CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1));\n  }\n  return fVar1;\n}\n\n",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a60a6",
+      "line": 17,
+      "context": "  if ((((((CONCAT22(param_3,param_2._2_2_) ^ 0x700) & 0x700) == 0) &&\n       ((&DAT_005e58dc)[(param_2._2_2_ & 0x7800) >> 0xb] != '\\0')) && ((param_3 & 0x7fff) != 0x7fff)\n      ) && ((((in_stack_00000024 & 0x7fff) != 0 && ((in_stack_00000024 & 0x7fff) != 0x7fff)) &&\n            (((_uStack00000020 & 0x7fffffff) == 0 && ((param_2 & 0x7fffffff) == 0)))))) {\n    if ((ushort)((param_3 & 0x7fff) + 0x3f) < (in_stack_00000024 & 0x7fff)) {\n      iVar1 = ((in_stack_00000024 & 0x7fff) - (param_3 & 0x7fff) & 0x3f | 0x20) + 1;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005a60a6",
+      "line": 24,
+      "context": "                                    CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1))));\n      fVar2 = ABS((float10)CONCAT28(in_stack_00000024,\n                                    CONCAT26(uStack00000022,\n                                             CONCAT24(uStack00000020,in_stack_0000001c))));\n      do {\n        if (fVar3 <= fVar2) {",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a60a6",
+      "line": 44,
+      "context": "                                  CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1)));\n        fVar2 = fVar2 - (float10)(unkint10)(fVar2 / fVar3) * fVar3;\n        in_stack_0000001c = SUB104(fVar2,0);\n        uStack00000020 = (undefined2)((unkuint10)fVar2 >> 0x20);\n        uStack00000022 = (undefined2)((unkuint10)fVar2 >> 0x30);\n        in_stack_00000024 = (ushort)((unkuint10)fVar2 >> 0x40);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a7063",
+      "line": 40,
+      "context": "                             (SUB87((double)fVar5,0) & 0xfffffffffffff | 0x10000000000000);\n          if (local_8 < -0x3fd) {\n            local_8 = -0x3fd - local_8;\n            do {\n              if ((((ulonglong)local_10 & 1) != 0) && (!bVar4)) {\n                bVar4 = bVar2;",
+      "observed_dependencies": [
+        "requires_specific_argument_trace"
+      ]
+    },
+    {
+      "va": "005a7063",
+      "line": 51,
+      "context": "                local_10._0_4_ = CONCAT13(local_10._3_1_,(undefined3)local_10) | 0x80000000;\n                uVar3 = (uint)local_10;\n              }\n              local_10._0_4_ = uVar3;\n              local_10 = (double)CONCAT44(local_10._4_4_ >> 1,(uint)local_10);\n              local_8 = local_8 + -1;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "nonstandard24_bit_cast"
+      ]
+    },
+    {
+      "va": "005a7063",
+      "line": 55,
+      "context": "              local_10 = (double)CONCAT44(local_10._4_4_ >> 1,(uint)local_10);\n              local_8 = local_8 + -1;\n            } while (local_8 != 0);\n          }\n          if ((double)fVar5 < _DAT_005b24c0) {\n            local_10 = -local_10;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005a738e",
+      "line": 8,
+      "context": "  local_c = (double)CONCAT26((param_2 + 0x3fe) * 0x10 | param_1._6_2_ & 0x800f,(undefined6)param_1);\n  return (float10)local_c;\n}\n\n\n",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 15,
+      "context": "  if ((double)CONCAT17(param_2._3_1_,CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1))) ==\n      _DAT_005b24c0) {\n    iVar4 = 0;\n    local_c = 0.0;\n  }\n  else if (((param_2 & 0x7ff00000) == 0) && (((param_2 & 0xfffff) != 0 || (param_1 != 0)))) {",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 15,
+      "context": "  if ((double)CONCAT17(param_2._3_1_,CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1))) ==\n      _DAT_005b24c0) {\n    iVar4 = 0;\n    local_c = 0.0;\n  }\n  else if (((param_2 & 0x7ff00000) == 0) && (((param_2 & 0xfffff) != 0 || (param_1 != 0)))) {",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 23,
+      "context": "        (double)CONCAT17(param_2._3_1_,CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1)))) {\n      bVar3 = false;\n    }\n    else {\n      bVar3 = true;\n    }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 23,
+      "context": "        (double)CONCAT17(param_2._3_1_,CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1)))) {\n      bVar3 = false;\n    }\n    else {\n      bVar3 = true;\n    }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 30,
+      "context": "      iVar2 = CONCAT13(param_2._3_1_,CONCAT12(param_2._2_1_,(ushort)param_2)) << 1;\n      param_2._0_2_ = (ushort)iVar2;\n      param_2._2_1_ = (byte)((uint)iVar2 >> 0x10);\n      param_2._3_1_ = (byte)((uint)iVar2 >> 0x18);\n      if ((param_1 & 0x80000000) != 0) {\n        param_2._0_2_ = (ushort)param_2 | 1;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 30,
+      "context": "      iVar2 = CONCAT13(param_2._3_1_,CONCAT12(param_2._2_1_,(ushort)param_2)) << 1;\n      param_2._0_2_ = (ushort)iVar2;\n      param_2._2_1_ = (byte)((uint)iVar2 >> 0x10);\n      param_2._3_1_ = (byte)((uint)iVar2 >> 0x18);\n      if ((param_1 & 0x80000000) != 0) {\n        param_2._0_2_ = (ushort)param_2 | 1;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 40,
+      "context": "    uVar1 = CONCAT11(param_2._3_1_,param_2._2_1_) & 0xffef;\n    param_2._2_1_ = (byte)uVar1;\n    param_2._3_1_ = (byte)(uVar1 >> 8);\n    if (bVar3) {\n      param_2._3_1_ = param_2._3_1_ | 0x80;\n    }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 47,
+      "context": "                                           CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1))\n                                          ),0);\n    local_c = (double)fVar5;\n  }\n  else {\n    fVar5 = (float10)FUN_005a738e(CONCAT17(param_2._3_1_,",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 46,
+      "context": "    fVar5 = (float10)FUN_005a738e(CONCAT17(param_2._3_1_,\n                                           CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1))\n                                          ),0);\n    local_c = (double)fVar5;\n  }\n  else {",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 53,
+      "context": "                                           CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1))\n                                          ),0);\n    local_c = (double)fVar5;\n    iVar4 = (short)((ushort)(param_2 >> 0x14) & 0x7ff) + -0x3fe;\n  }\n  *param_3 = iVar4;",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005a7411",
+      "line": 52,
+      "context": "    fVar5 = (float10)FUN_005a738e(CONCAT17(param_2._3_1_,\n                                           CONCAT16(param_2._2_1_,CONCAT24((ushort)param_2,param_1))\n                                          ),0);\n    local_c = (double)fVar5;\n    iVar4 = (short)((ushort)(param_2 >> 0x14) & 0x7ff) + -0x3fe;\n  }",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "extended_float_or_hidden_state"
+      ]
+    },
+    {
+      "va": "005a81a6",
+      "line": 574,
+      "context": "            lVar15 = CONCAT44(-(local_2c._4_4_ + (uint)((int)local_2c != 0)),-(int)local_2c);\n          }\n        }\n        if (uVar4 == 0x46) {\n          local_20 = 0;\n        }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005ad85d",
+      "line": 30,
+      "context": "  if ((double)CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1)) == _DAT_005b24c0) {\n    return (-(uint)((param_2 & 0x80000000) != 0) & 0xffffffe0) + 0x40;\n  }\n  return (-(uint)((param_2 & 0x80000000) != 0) & 0xffffff08) + 0x100;\n}\n",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005ae17b",
+      "line": 37,
+      "context": "          local_e = CONCAT22(local_e._2_2_,(undefined2)local_e) + -1;\n          ppuVar4 = (undefined **)&local_10;\n        }\n        FUN_005adf5b(param_1,ppuVar4);\n      }\n    }",
+      "observed_dependencies": [
+        "partial_scalar_field"
+      ]
+    },
+    {
+      "va": "005b0fce",
+      "line": 75,
+      "context": "        uVar14 = PackedFloatingMUL(uVar14,CONCAT44(DAT_006a6510._4_4_,(undefined4)DAT_006a6510));\n        uVar12 = PackedFloatingReciprocalIter2(uVar23,uVar12);\n        puVar8 = (undefined8 *)((int)puVar7 + DAT_005df360);\n        uVar23 = CONCAT44(DAT_006a6520._4_4_,(undefined4)DAT_006a6520);\n        uVar13 = PackedFloatingMUL(uVar13,(ulonglong)(uint)DAT_005e19b4);\n        *(int *)((int)puVar7 + 0xc) = (int)uVar12;",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    },
+    {
+      "va": "005b0fce",
+      "line": 78,
+      "context": "        uVar23 = CONCAT44(DAT_006a6520._4_4_,(undefined4)DAT_006a6520);\n        uVar13 = PackedFloatingMUL(uVar13,(ulonglong)(uint)DAT_005e19b4);\n        *(int *)((int)puVar7 + 0xc) = (int)uVar12;\n        uVar12 = PackedFloatingMUL(uVar14,uVar12);\n        *(int *)(puVar7 + 1) = (int)uVar13;\n        uVar23 = PackedFloatingADD(uVar12,uVar23);",
+      "observed_dependencies": [
+        "partial_scalar_field",
+        "undeclared_original_global"
+      ]
+    }
+  ],
+  "syntax_baseline": 728,
+  "syntax_after": 733,
+  "new_syntax_pass_vas": [
+    "0042a3b0",
+    "00452100",
+    "004df370",
+    "00573ec0",
+    "00573f2a"
+  ],
+  "lost_syntax_pass_vas": [],
+  "pcode_errors_before": 180,
+  "pcode_errors_after": 182,
+  "error_limited_vas": [
+    "00403e40",
+    "0040b650",
+    "004152e0",
+    "0041fed0",
+    "00424460",
+    "00425330",
+    "00425ef0",
+    "00426c90",
+    "00427c70",
+    "0042c910",
+    "00438440",
+    "0044f2f0",
+    "0045bf80",
+    "00463410",
+    "004677e0",
+    "0046f8c0",
+    "0048cdf0",
+    "0048f060",
+    "00491010",
+    "00494500",
+    "00496fd0",
+    "00497b10",
+    "00499a70",
+    "0049cb50",
+    "0049e440",
+    "0049f160",
+    "004a20d0",
+    "004a2dc0",
+    "004a4a70",
+    "004a5d20",
+    "004aa050",
+    "004ae4d0",
+    "004af970",
+    "004b6a50",
+    "004c4e30",
+    "004cd890",
+    "004d3420",
+    "004dc850",
+    "004eeda0",
+    "004f1080",
+    "004f14b0",
+    "004f1ea0",
+    "004f3e40",
+    "004f9790",
+    "004fd4f0",
+    "0050c130",
+    "0051d1d0",
+    "0051dcc0",
+    "0051e030",
+    "0052c430",
+    "005498b0",
+    "0054c030",
+    "0054e8c0",
+    "00551050",
+    "00574fa0",
+    "00576090",
+    "00576ef0",
+    "00577f50",
+    "00579570",
+    "0057a910",
+    "0057bb40",
+    "0058ebe0",
+    "0059d350"
+  ],
+  "elapsed_seconds": 22.612,
+  "limits": [
+    "Syntax-only experiment: no linked executable, generated algorithms, storage definitions, function stubs or corpus edits.",
+    "Forward prototypes are copied from decompiler output, not treated as recovered ABI facts. Primitive vocabulary is syntax scaffolding; extended floats retain opaque10/16-byte storage and arithmetic remains an explicit error.",
+    "Syntax success does not prove runtime behavior, original ABI, overlapping-data identity, initialization, imports, x87 or hidden register semantics. Error-limited functions are listed individually.",
+    "Unchanged5515 translation units reuse frozen178 diagnostics after byte-identical generated-source/scalars/exporter checks. Changed257 translation units compile with an explicit include after scalars. Header metadata is not a global forced include.",
+    "Baseline pins compiler path/version, not historical compiler binary hash. The current compiler binary is pinned here; baseline historical byte identity is not independently established.",
+    "Run183 rewrites only whole3-byte CONCAT argument casts of syntactically proven integer expressions into exact24-bit representation packing. Other int3 arithmetic, globals, partial fields, floats and ABI remain unresolved."
+  ]
+}

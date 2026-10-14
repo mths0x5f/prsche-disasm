@@ -1,11 +1,13 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-2026-10-14: compilation-first эксперимент181 собрал707 реальных x86 COFF
-и отдельный755630-byte .lib из pinned178 syntax-pass candidates, без codegen errors.
-В поднаборе122 unresolved names/313 object refs; это не game-link173 и не игровой EXE.
-179 восстанавливает полные Ghidra declarations;180 компилирует только затронутые
-integer-helper TUs, переиспользуя неизменившиеся178 результаты с явными pins.
-177/178/181 — диагностические candidates; production baseline173/476full+6partial неизменен.
+2026-10-14: compilation-first185:733 реальных x86 COFF и отдельный816748-byte .lib,
+0 codegen errors;124 undefined names/373 refs внутри автоматического поднабора.
+Это не game-link173 и не игровой EXE; production baseline476full+6partial неизменен.
+179 завершён:5772функции/359types/5441extern declarations;837conflicts явные.
+180:5515TUs reused/257compiled,+21syntax passes;183:5716reused/56compiled,+5.
+182:707objects reused/21compiled;185:728reused/5compiled, последний delta3.601с.
+Следом184 perTU global/type declarations и186 ABI-preserving thiscall pilot,
+без повторного всего corpus/build/proof suite на каждую локальную правку.
 
 Текущий результат — [Run173](runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
 Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,9 native OS и3 link fixtures.

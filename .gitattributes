@@ -10,3 +10,7 @@ research/binary-index/manual-functions.jsonl text eol=lf
 research/binary-index/static/imports.jsonl text eol=lf
 iterations/v2/** text eol=lf
 *.gz -text
+# Preserve SHA-pinned Ghidra capture bytes (including CRLF/BOM).
+iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/** -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+scripts/research/export-v2-declarations-179.ps1 text eol=lf
+scripts/research/ghidra/ExportRecoveryDeclarations179.java text eol=lf
