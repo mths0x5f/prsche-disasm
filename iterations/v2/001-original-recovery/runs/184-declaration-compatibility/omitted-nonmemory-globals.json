@@ -1,0 +1,81 @@
+{
+  "source_sha256": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+  "occurrences": [
+    {
+      "va": "005b0ecc",
+      "reason": "Unnamed register/nonmemory state is not a RAM extern; no declaration emitted.",
+      "symbol": {
+        "namespace": "Global",
+        "type": {
+          "path": "/uint",
+          "name": "uint",
+          "display": "uint",
+          "length": 4,
+          "alignment": 4,
+          "class": "ghidra.program.model.data.UnsignedIntegerDataType"
+        },
+        "bytes": 4,
+        "storage": "MXCSR:4",
+        "storage_detail": {
+          "display": "MXCSR:4",
+          "serialization": "register:00001094:4",
+          "bytes": 4,
+          "memory": false,
+          "register": true,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "register",
+              "offset": "4244",
+              "bytes": 4,
+              "address": "register:00001094"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "uint"
+      }
+    },
+    {
+      "va": "005b0fce",
+      "reason": "Unnamed register/nonmemory state is not a RAM extern; no declaration emitted.",
+      "symbol": {
+        "namespace": "Global",
+        "type": {
+          "path": "/undefined4",
+          "name": "undefined4",
+          "display": "undefined4",
+          "length": 4,
+          "alignment": 4,
+          "class": "ghidra.program.model.data.Undefined4DataType"
+        },
+        "bytes": 4,
+        "storage": "MXCSR:4",
+        "storage_detail": {
+          "display": "MXCSR:4",
+          "serialization": "register:00001094:4",
+          "bytes": 4,
+          "memory": false,
+          "register": true,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "register",
+              "offset": "4244",
+              "bytes": 4,
+              "address": "register:00001094"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "undefined4"
+      }
+    }
+  ]
+}

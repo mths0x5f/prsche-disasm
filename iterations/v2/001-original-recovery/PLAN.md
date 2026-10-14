@@ -1,13 +1,16 @@
 # v2 / 001 — план восстановления исходного кода
 
-2026-10-14: compilation-first185:733 реальных x86 COFF и отдельный816748-byte .lib,
-0 codegen errors;124 undefined names/373 refs внутри автоматического поднабора.
-Это не game-link173 и не игровой EXE; production baseline476full+6partial неизменен.
-179 завершён:5772функции/359types/5441extern declarations;837conflicts явные.
-180:5515TUs reused/257compiled,+21syntax passes;183:5716reused/56compiled,+5.
-182:707objects reused/21compiled;185:728reused/5compiled, последний delta3.601с.
-Следом184 perTU global/type declarations и186 ABI-preserving thiscall pilot,
-без повторного всего corpus/build/proof suite на каждую локальную правку.
+2026-10-14: compilation-first188/187:1050 разных Porsche.exe VA дали реальные
+x86 COFF:923 общего корпуса +127 thiscall leaves, пересечений0. У27 leaf bodies
+машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;
+production baseline476full+6partial и game-link173267symbols/303refs неизменны.
+184:3312TUs reused;2460 changed covered37batchedcl +12pilot/153priorfailures,
+syntax733→923, missing-global errors25306→16818,0lost/0ambiguousfallback.
+188:733objects reused/190new,3 /MP6 batches43.416с,0codegenerrors;
+384undefinednames/747refs автоматического поднабора.187:127COFF/32fail, only__fltused8refs.
+186:1258/1301 inferred RET extents match;42mismatch/1noRET, missingcallargs remainopen.
+Далее189 exactscalar-slices и190 failed-leaf declarationdelta; пакетная проверка,
+byte-identical reuse и originalABI/data evidence сохраняются. EXE пока нет.
 
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
 дизассемблированный/декомпилированный корпус и восстановить собираемый оригинал.
@@ -37,24 +40,27 @@ RTTI owners/actual provider/worker effects ещё открыты. Raworiginalvta
 Семантические проверки сохраняются в backlog и выполняются пакетами; полная fidelity
 обязательна для окончательной приёмки. Авторизованный C/C++ путь сохраняется.
 
-Текущие владельцы2026-10-14: pcode_180_resume (gpt-6.1-sol/medium) —184
-native perTU types/global declarations; declarations_179_resume (gpt-6.1-sol/high)
-—186 ABI-preserving thiscall class-method pilot. Root —185 objects/checkpoint.
-179 завершён5772/5772,0fail,359types/6278globalidentities,837conflicts;
-5441extern declarations. Raw type header13MSVCerrors/1431bodynamegaps явные.
-177direct C++004d3420 компилируется;134direct+10virtual+52address seams открыты.
-178707syntaxpass →180728 →183733;185все733 дают настоящиеCOFF,безcodegenerrors.
-180переиспользует5515TUs и проверяет257;183переиспользует5716 и проверяет56.
-185переиспользует728COFF, компилирует5,3.601с;124undefinednames/373refs поднабора.
-Это isolated compilation candidates, production baseline173неизменен; EXEнет.
-172search/174RTTI/175stdio ready, очередь176;131audio/00525ec0 isolated.
-Оптимизации: неизменившиеся sources/headers/compiler/options повторно не компилировать,
-SHA/JSON один раз на dependency closure; input mutation checks до/после пакета.
-Глубокая original validation пакетами по backlog; общий production build/link
-запускать после связанной интеграции, не после каждого compile experiment/doc edit.
-Следующий шаг:184pilot подтверждает native types/layout/global bindings;186pilot
-подтверждает ECX/stack/RET/return дляclass-method lowering; затем delta-census и
-расширение настоящего object graph. Полный запуск/live/visualacceptance открыты.
+Текущие владельцы2026-10-14: pcode_180_resume (gpt-6.1-sol/medium) —189
+exact scalar subpiece fields; declarations_179_resume (gpt-6.1-sol/high) —190
+32failed187leaves с подтверждёнными184declarations. Root —188/187checkpoint.
+Batchbuilder188 (gpt-6-luna/medium) готов; новые nativeпакеты используют его
+с pinned source/header/compiler/options closure и fresh output directories.
+184:923syntaxpass (+190),8488missing-global diagnostics устранены;4604native
+layouts checked,837conflicts/681invalidnames/2MXCSR identities остаютсяявными.
+3312TUs reused +2295batchchecked +153priorfailures +12pilot =5772;37clinvocations,
+0ambiguousfallback.188733COFFreused+190new,3/3batchesPASS,43.416с.
+186nativeABI /Od,/O2:165calls/403conditions each;12originalCOFF +1tracedcaller.
+ThiscallRET census1258match/42mismatch/1noRET; printedreceiver/arg loss blocksblanketrewrite.
+187safe159:127COFF/32fail,27bodybytesexactoriginal,3batches39.579с;
+noacceptedowners/calleradapters/indirectcalls.188923+187127 disjoint=1050nativeVAs.
+Candidates remain isolated; fullgame/noEXE, production173 baseline unchanged.
+172/174/175ready176queue;131audio/00525ec0 isolated. Deeporiginalvalidations
+batchedthroughbacklog; nofullcorpus/nativeproofrepeats aftereverylocal/doc edit.
+New generated reports/header/source outputs write explicitLF BEFORE hashing;
+raw frozenGhidra/186/187 report bytes preserved via scopedGitattributes.
+Следующий шаг:189 source/helper proof→changedTUbatch;190retry32only→nativeleafdelta;
+then188builder expands objectgraph with all newfailures/symbols explicit.
+Actualsharedglobalstorage/aliases/callerABI/initialization/OS/game loop are open.
 После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001

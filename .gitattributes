@@ -14,3 +14,7 @@ iterations/v2/** text eol=lf
 iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/** -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
 scripts/research/export-v2-declarations-179.ps1 text eol=lf
 scripts/research/ghidra/ExportRecoveryDeclarations179.java text eol=lf
+# Experimental proof chains pin report bytes, including Windows newlines.
+iterations/v2/001-original-recovery/runs/184-declaration-compatibility/*.json -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+iterations/v2/001-original-recovery/runs/186-thiscall-compatibility/*.json -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+iterations/v2/001-original-recovery/runs/187-thiscall-leaf-candidates/*.json -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

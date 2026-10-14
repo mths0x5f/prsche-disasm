@@ -1,13 +1,16 @@
 # Состояние проекта
 
-2026-10-14: compilation-first185:733 реальных x86 COFF и отдельный816748-byte .lib,
-0 codegen errors;124 undefined names/373 refs внутри автоматического поднабора.
-Это не game-link173 и не игровой EXE; production baseline476full+6partial неизменен.
-179 завершён:5772функции/359types/5441extern declarations;837conflicts явные.
-180:5515TUs reused/257compiled,+21syntax passes;183:5716reused/56compiled,+5.
-182:707objects reused/21compiled;185:728reused/5compiled, последний delta3.601с.
-Следом184 perTU global/type declarations и186 ABI-preserving thiscall pilot,
-без повторного всего corpus/build/proof suite на каждую локальную правку.
+2026-10-14: compilation-first188/187:1050 разных Porsche.exe VA дали реальные
+x86 COFF:923 общего корпуса +127 thiscall leaves, пересечений0. У27 leaf bodies
+машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;
+production baseline476full+6partial и game-link173267symbols/303refs неизменны.
+184:3312TUs reused;2460 changed covered37batchedcl +12pilot/153priorfailures,
+syntax733→923, missing-global errors25306→16818,0lost/0ambiguousfallback.
+188:733objects reused/190new,3 /MP6 batches43.416с,0codegenerrors;
+384undefinednames/747refs автоматического поднабора.187:127COFF/32fail, only__fltused8refs.
+186:1258/1301 inferred RET extents match;42mismatch/1noRET, missingcallargs remainopen.
+Далее189 exactscalar-slices и190 failed-leaf declarationdelta; пакетная проверка,
+byte-identical reuse и originalABI/data evidence сохраняются. EXE пока нет.
 
 Текущий результат — [Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md): **476 проверенных C++ функций** и6 зарегистрированных частичных consumers.
 Общая MSVC Win32 сборка:157 projects /292 unique TUs;137 comparison/alias targets,9 native OS и3 link fixtures.

@@ -20,11 +20,14 @@ packetREADME. Такой кандидат не считать faithfulacceptedga
 Вернуться к полным fullgraph comparisons, CRT/unmaskedexceptions/invalidinput boundaries,
 RTTI/typecache lifetime и liveOS/fidelity перед итоговой приёмкой/Rust.
 
-2026-10-14 compilation-first185:733 realCOFF/124undefinednames/373refs,
-безcodegenerrors, gameEXEнет.179fulltypes/globals ready,837conflicts явные;
-180/183 native integerhelper tests199896+1876 прошли, semanticsgame не доказаны.
-184/186 native global/type/thiscall pilots открыты; byte-identical cached TUs/COFF
-не теряют исходных обязательств по ABI/семантике.
+2026-10-14 compilation-first188/187:1050distinctnativecandidateVAs,
+923automatic+127thiscallleaf;27leafbodybytesexactoriginal. FullEXEнет.
+184globals/layout declarations4604checked;837conflicts/681invalidspellings/unnamedMXCSR
+и печатныеalias gaps не закрыты.188cache733/new190,3batchednativecallsPASS.
+186 originalRET42mismatches/1noRET и пропущенныеcallreceiver/args требуют
+originalCALL/RET consumers;1258RETmatch не разрешает blanketcallerrewrite.
+18732compilefailures открыты, next190declarationdelta;189scalar-slices pending.
+ClassmethodnativeABI proof не доказывает реальнуюclass lifetime/globalstorage/callbacks.
 
 2026-10-14 compilation-first experiments:
 - [ ]177: canonical effects/global address owners для134direct+10virtual+52address
