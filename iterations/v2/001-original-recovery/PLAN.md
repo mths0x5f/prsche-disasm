@@ -1,7 +1,7 @@
 # v2 / 001 — план восстановления исходного кода
 
-2026-10-14: compilation-first188/190:1053 разных Porsche.exe VA дали реальные
-x86 COFF:923 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
+2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные
+x86 COFF:924 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
 машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;
 production baseline476full+6partial и game-link173267symbols/303refs неизменны.
 184:3312TUs reused;2460 changed covered37batchedcl +12pilot/153priorfailures,
@@ -9,7 +9,8 @@ syntax733→923, missing-global errors25306→16818,0lost/0ambiguousfallback.
 188:733objects reused/190new,3 /MP6 batches43.416с,0codegenerrors;
 384undefinednames/747refs автоматического поднабора.187:127COFF/32fail, only__fltused8refs.
 186:1258/1301 inferred RET extents match;42mismatch/1noRET, missingcallargs remainopen.
-190 завершён:127leafCOFF reused/3new,29ошибок остаются. Далее189 exactscalar-slices;
+189 завершён:99exact rewrites/39TUs,1920nativechecks;923→924syntaxpass.
+192:923COFFreused/1new00553a70,2.732с/0codegenerrors;190130leafCOFF/29failures.
 byte-identical reuse и originalABI/data evidence сохраняются. EXE пока нет.
 
 Решение пользователя 2026-10-08: сохранить v1 как есть, получить полный
@@ -40,28 +41,31 @@ RTTI owners/actual provider/worker effects ещё открыты. Raworiginalvta
 Семантические проверки сохраняются в backlog и выполняются пакетами; полная fidelity
 обязательна для окончательной приёмки. Авторизованный C/C++ путь сохраняется.
 
-Текущие владельцы2026-10-14: pcode_180_resume (gpt-6.1-sol/medium) —189
-exact scalar subpiece fields.190 (gpt-6.1-sol/high) завершён:32retried,3new,
-127reused,130leafCOFF/29failures. Root —checkpoint190;0c0308b опубликован.
-Batchbuilder188 (gpt-6-luna/medium) готов; новые nativeпакеты используют его
-с pinned source/header/compiler/options closure и fresh output directories.
-184:923syntaxpass (+190),8488missing-global diagnostics устранены;4604native
-layouts checked,837conflicts/681invalidnames/2MXCSR identities остаютсяявными.
-3312TUs reused +2295batchchecked +153priorfailures +12pilot =5772;37clinvocations,
-0ambiguousfallback.188733COFFreused+190new,3/3batchesPASS,43.416с.
-186nativeABI /Od,/O2:165calls/403conditions each;12originalCOFF +1tracedcaller.
-ThiscallRET census1258match/42mismatch/1noRET; printedreceiver/arg loss blocksblanketrewrite.
-187safe159:127COFF/32fail,27bodybytesexactoriginal,3batches39.579с;
-noacceptedowners/calleradapters/indirectcalls.188923+190130 disjoint=1053nativeVAs;190127reused+3new,29failures остаются.
-Candidates remain isolated; fullgame/noEXE, production173 baseline unchanged.
-172/174/175ready176queue;131audio/00525ec0 isolated. Deeporiginalvalidations
-batchedthroughbacklog; nofullcorpus/nativeproofrepeats aftereverylocal/doc edit.
-New generated reports/header/source outputs write explicitLF BEFORE hashing;
-raw frozenGhidra/186/187 report bytes preserved via scopedGitattributes.
-Следующий шаг:189 source/helper proof→changedTUbatch;
-then188builder expands objectgraph with all newfailures/symbols explicit.
-190 retry32 выполнен;29failures сохраняют конкретные diagnostics, не guessedtypes.
-Actualsharedglobalstorage/aliases/callerABI/initialization/OS/game loop are open.
+Передача2026-10-14:189/190/192 завершены, активных назначений нет.
+Root — финальный checkpoint; пакеты не являются закрытием v2/001 или готовойигрой.
+192924COFF +190130leafCOFF disjoint =1054uniquePorsche.exe VAs.
+18999точныхslice-rewrites/39TUs;1920nativebytechecks,5733unchanged,
+12pilotcache+27checks однимMP6batch5.806с; syntax923→924,0lost.
+192923objects reused+1new00553a70,1batch2.732с,0codegenerrors.
+190127leafCOFF reused+3new,130leafCOFF/29failures,27byteexactoriginalbodies.
+188batchbuilder готов и повторноиспользуется; cache включаетsource/headers/compiler/flags
+и проверкуполнойdependencyclosure. Общаяphase173production476full+6partial unchanged.
+184923syntaxpass (+190),8488missing-global diagnostics устранены;4604layoutschecked,
+837conflicts/681invalidnames/2MXCSR и печатныеaliases остаютсяявными.
+186nativeABIproof /Od,/O2:165calls/403conditions each; thiscallRET1258match/42mismatch/1noRET.
+Printedcallee/callerargumentloss не исправляется blanketclassrewrite.
+Root проверил installedGhidra12.1.3 PrintC::opCall(printc.cc610–655): directcalls
+печатают всеIRinputs, skip=-1; переключениеhide_thisparam не восстановит потерянныйreceiver.
+Следующий конкретный шаг: originalCALL/RET-guided ABI correction pilot в ОТДЕЛЬНОМ
+analysis experiment для00489370→00489530 и00483290→00482f70, сравнить emittedinputs
+с оригинальными регистрами/стеком. Не менять frozenindexedproject/corpus.
+Независимый крупныйблок — printedglobalalias/accesswidth provenance поoriginalconsumers
+для1431name-gap bodies; не выбирать произвольныйtype/storage для837conflicts.
+Эти задачи ещё не назначены. После подтверждённогопилота — толькоchangedTU batches,
+затем188builder с192priorcache; не повторять всюnative/oracle/corpus suite.
+172/174/175ready176queue;131audio/00525ec0 isolated. Sharedglobalstorage/aliases,
+полныйcallerABI/initialization/OS/game loop остаются открыты. ПолногоEXE нет.
+Новыеoutputs явноLF доSHA; frozenrawGhidra/186/187reportbytes сохраняютсяexactly.
 После проверенного C/C++ baseline —архитектурная схема и Rust native/web.
 
 ## Цель и готовность 001

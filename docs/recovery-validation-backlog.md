@@ -20,13 +20,14 @@ packetREADME. Такой кандидат не считать faithfulacceptedga
 Вернуться к полным fullgraph comparisons, CRT/unmaskedexceptions/invalidinput boundaries,
 RTTI/typecache lifetime и liveOS/fidelity перед итоговой приёмкой/Rust.
 
-2026-10-14 compilation-first188/190:1053distinctnativecandidateVAs,
-923automatic+130thiscallleaf;27leafbodybytesexactoriginal. FullEXEнет.
+2026-10-14 compilation-first192/190:1054distinctnativecandidateVAs,
+924automatic+130thiscallleaf;27leafbodybytesexactoriginal. FullEXEнет.
 184globals/layout declarations4604checked;837conflicts/681invalidspellings/unnamedMXCSR
 и печатныеalias gaps не закрыты.188cache733/new190,3batchednativecallsPASS.
 186 originalRET42mismatches/1noRET и пропущенныеcallreceiver/args требуют
 originalCALL/RET consumers;1258RETmatch не разрешает blanketcallerrewrite.
-190retry32:3new/127reused,130leafCOFF;29compilefailures открыты,189scalar-slices pending.
+190retry32:3new/127reused,130leafCOFF;29compilefailures открыты,189safe-slices proof1920checks complete;519unsupported slices остаютсяявными.
+192new00553a70 compiled after189; gamebehavior/x87/aliases/callerABI stillopen.
 ClassmethodnativeABI proof не доказывает реальнуюclass lifetime/globalstorage/callbacks.
 
 2026-10-14 compilation-first experiments:
