@@ -1,5 +1,16 @@
 # Отложенные проверки восстановления v2
 
+2026-10-15:196 —1070distinct compile candidates (924+146),16 новых объектов,
+27cached body-byte matches сохранены.195 —actual1054-object diagnostic link:
+377names/564diagnostic occurrences, raw387names/763objectrefs, noEXE.
+- [ ]196:13 remaining leaf failures; printed FP aliases194, pointervalue store00536120,
+  two partial scalar expressions/uint3; conversion warnings00485100 сохранять явно.
+ 14 raw32 address stores проверены по PE MOV/HIGHLOW/ECX и179tableVA;
+ class lifetime/layout/dispatch и full algorithm fidelity этим не доказаны.
+- [ ]195: связать36 canonical owners через доказанный ABI; восстановить109 отсутствующих
+  FUN bodies,225data owners/aliases/initializers и7printed CRT contracts.
+  These are candidate union dependencies, не замена game-link173267/303 и не полный остаток.
+
 2026-10-15:193 подтвердил два raw32 storage corrections на original CALL/RET
 и high IR,373 indexed instructions совпали с PE. Это закрывает два counterexample
 для механизма восстановления потерянных call inputs, не их native/full-body acceptance.

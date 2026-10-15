@@ -1,13 +1,16 @@
 # Состояние проекта
 
-2026-10-15:193 завершён — в копии Ghidra исправлены два raw32 ABI-контракта.
-Без autoanalysis восстановлены оба потерянных ECX receiver и третий stack slot
-в00483290→00482f70;373 original instruction bytes/IR producers проверены.
-Исходный Ghidra project неизменён;1054 compile candidates/production173 без изменений.
-В работе:194 — printed alias/access width (pcode_180_resume);195 — общий native link
-frontier924+130 без компиляции (abi_analysis_193);196 —29 leaf failures (locale_resume).
-Следующий шаг: принять доказанные194/196 changed TUs, один /MP6 batch и byte-exact cache;
-свести реальные зависимости195. Не повторять full corpus/oracle suite; backlog сохраняется.
+2026-10-15:196 принят —16 новых COFF за один19-TU /MP6 batch4.373с,
+130 reused;146/159 leaf candidates,13 failures,27 original body byte matches.
+Всего1070 разных native candidate VA=924ordinary+146leaf; production173 без изменений.
+195: actual1054-object archive/diagnostic link,0compilations; raw387names/763refs,
+actualLNK1120=377names.145FUN:36 canonical owners вне union,109 missing bodies.
+225data owners/initializers и7printed CRT contracts остаются открытыми; noEXE.
+193: два callee storage corrections восстановили original CALL inputs,373instructionsPASS.
+В работе:194 aliases (pcode_180_resume);197 bounded RET mismatch leaves (abi_analysis_193);
+198 обновлённый1070-object archive/link (locale_resume). Root интеграция/документы/коммиты.
+Следующий шаг: принять194/197 evidence-backed deltas и198 actual frontier; работать
+с canonical owners и большими подтверждёнными группами, не повторять full corpus/oracles.
 
 2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные
 x86 COFF:924 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
