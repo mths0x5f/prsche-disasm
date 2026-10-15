@@ -18,6 +18,14 @@ scripts/research/experiment-v2-abi-193.ps1 text eol=lf
 scripts/research/ghidra/ExperimentAbiAnalysis193.java text eol=lf
 scripts/research/ghidra/ExportGlobalAliases194.java text eol=lf
 scripts/research/experiment-v2-abi-leaves-197.ps1 text eol=lf
+scripts/research/export-v2-float-bits-202.ps1 text eol=lf
+scripts/research/ghidra/ExportRawFloatStores202.java text eol=lf
+# Preserve historical report bytes when saving unfinished recovery packets.
+iterations/v2/001-original-recovery/runs/111-shared-runtime-integration/**/*.json -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+iterations/v2/001-original-recovery/runs/131-application-audio-init/*.json -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+iterations/v2/001-original-recovery/runs/172-formatter-search/*.json -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+iterations/v2/001-original-recovery/runs/174-network-rtti/*.json -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+iterations/v2/001-original-recovery/runs/175-formatter-stdio/*.json -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 scripts/research/ghidra/ExperimentAbiLeaves197.java text eol=lf
 # Keep raw Ghidra printer spacing in the SHA-pinned ABI snapshots.
 iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/**/*.c -text whitespace=-blank-at-eol,-blank-at-eof

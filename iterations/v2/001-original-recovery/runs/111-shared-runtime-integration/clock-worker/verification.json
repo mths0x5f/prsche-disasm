@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00565270"
+  ],
+  "full_function_vas": [
+    "00565270"
+  ],
+  "partial_function_vas": [],
+  "cases": 6,
+  "native_cpp_equal_original_x86": true,
+  "original_function": {
+    "va": "00565270",
+    "body_bytes": 207,
+    "body_sha256": "630ed67ef3c5fe03acfa69366bb9bd1df5b93799666bdf5c49bdca9fe1121b5d",
+    "abi": "cdecl, zero stack arguments, caller-clean; return EAX is zero",
+    "caller": "00565030 pushes 00565270 at 00565135 for thread bootstrap 0055f420 at 0056513a"
+  },
+  "global_vas": [
+    "006b7c20..006b7c3f",
+    "006b7c40",
+    "006b7c44",
+    "006b7c7c",
+    "006a5bfc",
+    "006a5c0c",
+    "005deb48"
+  ],
+  "semantics": {
+    "tick": "initial GetTickCount followed by one sample per enabled iteration; delta wraps unsigned 32-bit",
+    "rate_accumulator": "delta*1193 plus local accumulator wraps at 32 bits; signed JLE against 0xffff gates SAR16 carry into 006b7c44 and low-word mask",
+    "iteration_state": "006b7c7c and canonical 006b7c40 each increment once per enabled loop",
+    "callbacks": "eight nullable cdecl zero-argument slots at 006b7c20..3f; each slot is reloaded immediately before call",
+    "exit": "create and wait once before checking active flag; loop waits after callbacks; close event, clear handle and canonical 005deb48, return zero"
+  },
+  "boundaries": {
+    "005b2080": "GetTickCount import through canonical __stdcall platform_get_tick_count declaration; fixture controls sampled ticks",
+    "0055fb20": "existing event-create helper; fixture records returned handle",
+    "0055fb90": "existing event-wait helper; fixture controls asynchronous active-flag changes while blocked",
+    "0055fc10": "existing event-close helper; fixture records handle and return",
+    "callbacks": "fixture callbacks record invocation and may mutate later slots; no callback algorithm is claimed"
+  },
+  "cases_summary": [
+    {
+      "case": 0,
+      "iterations": 0,
+      "waits": 1,
+      "callbacks": 0,
+      "event_handle": 35680256,
+      "native_original_equal": true
+    },
+    {
+      "case": 1,
+      "iterations": 1,
+      "waits": 2,
+      "callbacks": 2,
+      "event_handle": 35680272,
+      "native_original_equal": true
+    },
+    {
+      "case": 2,
+      "iterations": 2,
+      "waits": 3,
+      "callbacks": 4,
+      "event_handle": 35680288,
+      "native_original_equal": true
+    },
+    {
+      "case": 3,
+      "iterations": 2,
+      "waits": 3,
+      "callbacks": 2,
+      "event_handle": 35680304,
+      "native_original_equal": true
+    },
+    {
+      "case": 4,
+      "iterations": 1,
+      "waits": 2,
+      "callbacks": 1,
+      "event_handle": 0,
+      "native_original_equal": true
+    },
+    {
+      "case": 5,
+      "iterations": 1,
+      "waits": 2,
+      "callbacks": 3,
+      "event_handle": 35680320,
+      "native_original_equal": true
+    }
+  ],
+  "compiled_translation_units": [
+    "iterations/v2/001-original-recovery/source/recovered/clock_worker_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/clock_worker.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/110-clock-worker-index/clock-worker-index.json": "be1b2e90ae805ba915bce7f1451439ad0648be07d0bfd9cb7ef4d5fe3d4dbba9",
+    "iterations/v2/001-original-recovery/runs/110-clock-worker-index/README.md": "f3f39497929ad68d0af8cc6ae21e39a854982728e348ae089b6c51fbd467c3ec",
+    "iterations/v2/001-original-recovery/runs/112-clock-worker/CMakeLists.txt": "da092bd2d02f51bd6b3dbf0af2600e51f7c4e11109062ed56c03ad8cf3ad3f1e",
+    "iterations/v2/001-original-recovery/runs/112-clock-worker/README.md": "fefaeece17c6c6797bc57bacda7ef9ef17756a520a5d98b24bf851d89f51ac3c",
+    "iterations/v2/001-original-recovery/source/include/porsche/clock_worker.hpp": "5b483a4968a47ef0d6c1bab5b5171346f29d3150e41ff7e071584ceef40ef69b",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/object_update.hpp": "b648b612de0f910609420d770bc2f67dec229d77663ae109887b7001e180f3ff",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_runtime.hpp": "251834cade05b25efb0ff60fee9035da800d5d051f476fffac7a7698c6fec3b9",
+    "iterations/v2/001-original-recovery/source/recovered/clock_worker_probe.cpp": "67c957138322c87070a274f40530b3c15662a3d0cb149cbf6b9b9a48b5ca9a87",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/clock_worker.cpp": "8ca2ad1a684e486cf67248863e5fb3b4e348486f11381d9c1d7ad2b28c66e015",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/manual-functions.jsonl": "5e3d12d10db7b9df4a85c26d50bd43b76b8e58936a31c2df081fd09b6b6304d2",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts/research/index-v2-clock-worker.py": "b7efafaa582694f07e7683351efb4e365aae29e3818fc198fdf9dfa0802c33fd",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-clock-worker.py": "fb46055f95a7b8f2f59f1ba9d1d4ab89bfdae07bda901cce5372db97b5b90069"
+  },
+  "original_evidence": {
+    "disassembly_path": "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm",
+    "disassembly_sha256": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "manual_index_path": "research/binary-index/manual-functions.jsonl",
+    "manual_index_sha256": "5e3d12d10db7b9df4a85c26d50bd43b76b8e58936a31c2df081fd09b6b6304d2",
+    "call_index_path": "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl",
+    "call_index_sha256": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "import": {
+      "iat_va": "005b2080",
+      "dll": "KERNEL32.dll",
+      "symbol": "GetTickCount",
+      "iat_rva": "0x1b2080",
+      "stdcall": true
+    }
+  },
+  "probe_sha256": "1b76c0e85f87fd4c761719a1ba8b0e0ed7dc3f2c8f21d09d1749b246df2ef0da",
+  "game_launch_verified": false
+}

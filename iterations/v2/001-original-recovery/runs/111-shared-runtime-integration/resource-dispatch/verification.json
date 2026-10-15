@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00568d50",
+    "00561be0"
+  ],
+  "full_function_vas": [
+    "00568d50",
+    "00561be0"
+  ],
+  "partial_function_vas": [],
+  "cases": 8,
+  "native_cpp_equal_original_x86": true,
+  "original_functions": [
+    {
+      "va": "00568d50",
+      "body_bytes": 247,
+      "body_sha256": "ec492e2d82cc79a0f18568d0a0f3f3abccc72dd619b56fca438e6922d3d99ba3",
+      "abi": "callback, signed device index, priority/group, context; cdecl; returns callback EAX",
+      "callers": [
+        "00561ba0",
+        "00561c60",
+        "00561ca0",
+        "00561e00",
+        "00561f20",
+        "005620c0",
+        "00562300",
+        "00562340",
+        "00562460"
+      ],
+      "callee_vas": [
+        "00568390",
+        "005322b0",
+        "005322c0",
+        "0055fb30",
+        "diagnostic_handler_005debf0"
+      ]
+    },
+    {
+      "va": "00561be0",
+      "body_bytes": 118,
+      "body_sha256": "9a0eb0f36c5a6f7a6b355d6a784922c39fc88215b1d1039b98be2a520f8dc669",
+      "abi": "priority/group and context; cdecl; returns size or zero",
+      "callee_vas": [
+        "00533b90",
+        "00533de0",
+        "00533da0",
+        "diagnostic_handler_005debf0"
+      ]
+    }
+  ],
+  "semantics": {
+    "device_range": "signed index must be in [0,31]",
+    "device_initialization": "uninitialized slot calls 00568390 before reading lock",
+    "priority_order": "under device lock, reject signed requested group greater than signed field6c; otherwise set field6c during callback, restore it, signal queued_event, then unlock",
+    "callback": "open path with mode 1 and group; on success return size(handle, group-1) after close(handle, group-1); on open failure optionally log FILE_size diagnostic and return 0"
+  },
+  "boundaries": {
+    "00568390": "existing recovered device-start service; fixture records call and initializes only state required by this dispatcher proof",
+    "005322b0/005322c0": "existing heap-lock helpers; platform lock effects are recorded typed boundaries",
+    "0055fb30": "existing event-signal helper; platform signal effect is recorded typed boundary",
+    "00533b90/00533de0/00533da0": "existing open/size/close services; fixture records arguments and configured outcomes, without claiming underlying disk or queue effects",
+    "diagnostic_handler_005debf0": "existing indirect diagnostic target; these original paths make no null check, and the fixture records format/arguments plus shared source/line fields"
+  },
+  "cases_summary": [
+    {
+      "case": 0,
+      "native_original_equal": true,
+      "return": 4660,
+      "events": 6,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 1,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 5,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 2,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 3,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 3,
+      "native_original_equal": true,
+      "return": -1,
+      "events": 6,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 4,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 1,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 5,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 1,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 6,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 7,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    },
+    {
+      "case": 7,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 2,
+      "caller_argument_bytes": 16,
+      "device_state_equal": true,
+      "callee_saved_equal": true
+    }
+  ],
+  "compiled_translation_units": [
+    "iterations/v2/001-original-recovery/source/recovered/resource_dispatch_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_dispatch.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/113-resource-dispatch/CMakeLists.txt": "d752e5dce5624268effe9022258968256a38bf19019a615c36d6e1b683c7fa8f",
+    "iterations/v2/001-original-recovery/runs/113-resource-dispatch/README.md": "144cc835963de7c946b667fe075e19d075e46e19a939fcb8941a9a4267394089",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/resource_dispatch.hpp": "c023dc9ddf1db8d9ebb47a8c890a3619ceaa89c2bb17b9116f9a6a1c2082e6d7",
+    "iterations/v2/001-original-recovery/source/include/porsche/resource_leaf.hpp": "4d98c523268b63dd52b68df38d4e07544a830fb078abb131b1cc13440b74e975",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_dispatch.cpp": "990c638451c8ae2154ae8a322881bea6865ad34f93bba45808ea612402028ec9",
+    "iterations/v2/001-original-recovery/source/recovered/resource_dispatch_probe.cpp": "a8b0087cd4ff21ee2d6046424e2899d9f743d5c03b7ebd34aca73dc9f951b121",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-resource-dispatch.py": "7f6bd67116f1338d10c4274e30b9af33f5b80cd9c3ac956f98bfc673078f1971"
+  },
+  "original_evidence": {
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": {
+      "sha256": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502"
+    },
+    "iterations/v2/001-original-recovery/source/catalog/Porsche.exe-ddd748fdbe6d/functions.jsonl": {
+      "sha256": "e53538c19a04c958c5f889eff3c00ec11d4a53d10864176120c4d5758b561e0a"
+    },
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": {
+      "sha256": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d"
+    },
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/strings.jsonl": {
+      "sha256": "844b1435491a47bd85461cad4dc640af89d8992a7d2d87811f003671cf93a2cd"
+    }
+  },
+  "probe_sha256": "8ce277eaaf430072ed691ca4a442f72895861d8b938fc6ed61fc0d8960c7fe1a",
+  "game_launch_verified": false
+}

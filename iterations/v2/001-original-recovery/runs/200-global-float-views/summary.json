@@ -1,0 +1,835 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "input_sha256": {
+    "scripts/research/experiment-v2-global-views-200.py": "b79a5e61d14a7bef3bc26ea4d55aa256b0613bbe9a714fad3f72c8d798c1df65",
+    "scripts/research/experiment-v2-thiscall-leaves-187.py": "5a07f93cceb59f47f96b1a463aeacb1c4ec3513bdb7c7b8e1f50736afe55b37b",
+    "iterations/v2/001-original-recovery/runs/194-global-aliases/summary.json": "91f1c6dd27131c1e33ffe4d6e7e3b4505b276a9670e95fddcdf4a44e06663216",
+    "local/experiments/v2-scalar-slices-189/full/audit.json": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+    "iterations/v2/001-original-recovery/runs/196-thiscall-leaf-delta/summary.json": "1a25fd36091488ab2b0a8322cb60ac03c946a06b1a319d20c8cf4afe95199361",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/experiments/v2-declaration-compat-184/full/00401060.cpp": "fde11a37d1d7b414adcc1608117f6776189f209fb0d33f4e875f2b73b8cc13b2",
+    "local/experiments/v2-declaration-compat-184/full/00401060-globals.h": "65cbb921b9d2e2e7e0d6f7ea4e61bdec9e4fad30eb3bb59b3a15f261408dc151",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-thiscall-declarations-190/sources/00405a90.cpp": "245509710691e97f354c77f60bdb323e3a3bc8614305640373877107689a9bfc",
+    "local/experiments/v2-declaration-compat-184/full/00405a90-globals.h": "cb263b8c1b0621f3c8b9f00f9fcf099822d24e4782a0472963338aed50d24732",
+    "local/experiments/v2-thiscall-declarations-190/sources/00456d70.cpp": "74a860f3df5c44fc72783ae789840fbaf0d2f8d9b176ef8315ca38733c7729a7",
+    "local/experiments/v2-declaration-compat-184/full/00456d70-globals.h": "f1d44a34a329b104331e76b5776808143d8595cf5af35056e24b59276b112ce4",
+    "local/experiments/v2-thiscall-leaf-delta-196/sources/00485100.cpp": "d59a54c0c52eece1d33dbc28f1c1a0b4840f22784a750a06e48b3999253994c7",
+    "local/experiments/v2-declaration-compat-184/full/00485100-globals.h": "d6fce5714c528c6b937d1b86a4ec22ac8dce56b9524619fd8838e2fa24ffbd04",
+    "local/experiments/v2-thiscall-leaf-delta-196/sources/00485c50.cpp": "292fed10792a6a37bf48fba99a798aac93c2c83e4b250a706f6e7e71809699cb",
+    "local/experiments/v2-declaration-compat-184/full/00485c50-globals.h": "6cd471d0041ef51c4dfdf4e664dc609dc0afc41733846577c6bf148544c3406b"
+  },
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/O2",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/FC",
+    "/MP6"
+  ],
+  "alias_cases": 7,
+  "changed_tus": 5,
+  "actual_compiler_batches": 1,
+  "batch_exit_code": 2,
+  "compile_seconds": 2.027,
+  "new_objects": 1,
+  "new_object_vas": [
+    "00485100"
+  ],
+  "unchanged_leaf_objects_reused": 146,
+  "unchanged_ordinary_audit_rows": 5771,
+  "compiler_log": "local/experiments/v2-global-float-views-200/changed-5.log",
+  "compiler_log_sha256": "99ed961b31193c04e896f8260c29683503412692bd63fb913860f87c05a1d9ae",
+  "compiler_response": "local/experiments/v2-global-float-views-200/changed-5.rsp",
+  "compiler_response_sha256": "b522d15d8ca6a86484d3f0e912279d339bcb946b8112446e267c4bf6b7e6d75f",
+  "results": [
+    {
+      "va": "00401060",
+      "kind": "ordinary189",
+      "generated_source": "local/experiments/v2-global-float-views-200/00401060.cpp",
+      "generated_source_sha256": "9149b53d7c6a92b3bcfd4ddd03b6f11069dd69c3b367963e8b989ef1afccc5b0",
+      "forced_headers": [],
+      "original_generated_source": "local/experiments/v2-declaration-compat-184/full/00401060.cpp",
+      "original_generated_source_sha256": "fde11a37d1d7b414adcc1608117f6776189f209fb0d33f4e875f2b73b8cc13b2",
+      "body_unchanged": true,
+      "alias_header": "local/experiments/v2-global-float-views-200/00401060-aliases.h",
+      "alias_header_sha256": "bcd319a29aa58ba2e8a2efeb7359857a7cc1ce1fb70ab4ce309de240b0931b1a",
+      "aliases": [
+        {
+          "alias": "_DAT_005b23f8",
+          "address": "005b23f8",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "0040120e",
+              "bytes": "d81df8235b00",
+              "capstone": "fcomp dword ptr [0x5b23f8]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x40120e, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "object": "local/experiments/v2-global-float-views-200/objects/00401060.obj",
+      "baseline_compiled": false,
+      "baseline_syntax_passed": false,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-declaration-compat-184\\full\\00401060.cpp",
+          "line": 16,
+          "column": 16,
+          "severity": "error",
+          "code": "C3865",
+          "message": "__thiscall: \u043c\u043e\u0436\u043d\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u0432 \u0441\u043e\u0431\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0445 \u0444\u0443\u043d\u043a\u0446\u0438\u044f\u0445-\u0447\u043b\u0435\u043d\u0430\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 15,
+          "column": 11,
+          "severity": "error",
+          "code": "C2660",
+          "message": "FUN_004817d0: \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 3 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 19,
+          "column": 5,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 19,
+          "column": 21,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005d102c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 20,
+          "column": 20,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 21,
+          "column": 11,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 23,
+          "column": 7,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 23,
+          "column": 23,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005d102c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 24,
+          "column": 22,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 26,
+          "column": 63,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 31,
+          "column": 11,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005e8b58: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 32,
+          "column": 15,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005e8b34: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 41,
+          "column": 22,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005e8b58: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 46,
+          "column": 46,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_00657430: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 47,
+          "column": 23,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b23fc: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 47,
+          "column": 39,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005e6674: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 48,
+          "column": 5,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 48,
+          "column": 21,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005d102c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 49,
+          "column": 20,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 50,
+          "column": 10,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_00657404: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 50,
+          "column": 35,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_00655a0c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 56,
+          "column": 11,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b23f4: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_va_00401060",
+          "line": 72,
+          "column": 10,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b23f0: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00401060.cpp)"
+        }
+      ],
+      "compiled": false,
+      "syntax_passed": false,
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-declaration-compat-184/full/00401060.cpp": "fde11a37d1d7b414adcc1608117f6776189f209fb0d33f4e875f2b73b8cc13b2",
+        "local/experiments/v2-global-float-views-200/00401060.cpp": "9149b53d7c6a92b3bcfd4ddd03b6f11069dd69c3b367963e8b989ef1afccc5b0",
+        "local/experiments/v2-declaration-compat-184/full/00401060-globals.h": "65cbb921b9d2e2e7e0d6f7ea4e61bdec9e4fad30eb3bb59b3a15f261408dc151",
+        "local/experiments/v2-global-float-views-200/00401060-aliases.h": "bcd319a29aa58ba2e8a2efeb7359857a7cc1ce1fb70ab4ce309de240b0931b1a"
+      },
+      "cache_inputs_sha256": "bbf1fc49d04ddfa4847b1beb52f5b9fbe1c38a96ad935d987259505c0408be64",
+      "headers_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-declaration-compat-184/full/00401060-globals.h": "65cbb921b9d2e2e7e0d6f7ea4e61bdec9e4fad30eb3bb59b3a15f261408dc151",
+        "local/experiments/v2-global-float-views-200/00401060-aliases.h": "bcd319a29aa58ba2e8a2efeb7359857a7cc1ce1fb70ab4ce309de240b0931b1a"
+      },
+      "error_count": 23,
+      "warning_count": 0
+    },
+    {
+      "va": "00405a90",
+      "kind": "thiscall_leaf196",
+      "generated_source": "local/experiments/v2-global-float-views-200/00405a90.cpp",
+      "generated_source_sha256": "830a09d2bad32191e63bfec417d898bcc8e067cf89be484ca4043341dddd89c7",
+      "forced_headers": [],
+      "original_generated_source": "local/experiments/v2-thiscall-declarations-190/sources/00405a90.cpp",
+      "original_generated_source_sha256": "245509710691e97f354c77f60bdb323e3a3bc8614305640373877107689a9bfc",
+      "body_unchanged": true,
+      "alias_header": "local/experiments/v2-global-float-views-200/00405a90-aliases.h",
+      "alias_header_sha256": "0a16129763827938dd22dc817357aaa7287129c22de498b7d2ac6be539b09f73",
+      "aliases": [
+        {
+          "alias": "_DAT_005b2480",
+          "address": "005b2480",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "00405aa9",
+              "bytes": "d80d80245b00",
+              "capstone": "fmul dword ptr [0x5b2480]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x405aa9, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "alias": "_DAT_005b2520",
+          "address": "005b2520",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "00405aba",
+              "bytes": "d80d20255b00",
+              "capstone": "fmul dword ptr [0x5b2520]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x405aba, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "object": "local/experiments/v2-global-float-views-200/objects/00405a90.obj",
+      "baseline_compiled": false,
+      "baseline_syntax_passed": false,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00405a90",
+          "line": 13,
+          "column": 11,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b24a8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00405a90.cpp)"
+        }
+      ],
+      "compiled": false,
+      "syntax_passed": false,
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-global-float-views-200/00405a90.cpp": "830a09d2bad32191e63bfec417d898bcc8e067cf89be484ca4043341dddd89c7",
+        "local/experiments/v2-thiscall-declarations-190/sources/00405a90.cpp": "245509710691e97f354c77f60bdb323e3a3bc8614305640373877107689a9bfc",
+        "local/experiments/v2-global-float-views-200/00405a90-aliases.h": "0a16129763827938dd22dc817357aaa7287129c22de498b7d2ac6be539b09f73",
+        "local/experiments/v2-declaration-compat-184/full/00405a90-globals.h": "cb263b8c1b0621f3c8b9f00f9fcf099822d24e4782a0472963338aed50d24732"
+      },
+      "cache_inputs_sha256": "62d76fa21c48797e514d703cb203869c87e69154a2b64f155d8c8a149eedc05b",
+      "headers_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-global-float-views-200/00405a90-aliases.h": "0a16129763827938dd22dc817357aaa7287129c22de498b7d2ac6be539b09f73",
+        "local/experiments/v2-declaration-compat-184/full/00405a90-globals.h": "cb263b8c1b0621f3c8b9f00f9fcf099822d24e4782a0472963338aed50d24732"
+      },
+      "error_count": 1,
+      "warning_count": 0
+    },
+    {
+      "va": "00456d70",
+      "kind": "thiscall_leaf196",
+      "generated_source": "local/experiments/v2-global-float-views-200/00456d70.cpp",
+      "generated_source_sha256": "24a5fe8b850b69c9bacc83fd31237c6e286f482c1f09ca88bd4c31a5ae6a74ac",
+      "forced_headers": [],
+      "original_generated_source": "local/experiments/v2-thiscall-declarations-190/sources/00456d70.cpp",
+      "original_generated_source_sha256": "74a860f3df5c44fc72783ae789840fbaf0d2f8d9b176ef8315ca38733c7729a7",
+      "body_unchanged": true,
+      "alias_header": "local/experiments/v2-global-float-views-200/00456d70-aliases.h",
+      "alias_header_sha256": "8ac8e89da222bdcb2f6b8421ee2a28c4cc2ef0a084a36fecb623525c1b695362",
+      "aliases": [
+        {
+          "alias": "_DAT_005b3e3c",
+          "address": "005b3e3c",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "00456d83",
+              "bytes": "d81d3c3e5b00",
+              "capstone": "fcomp dword ptr [0x5b3e3c]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x456d83, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "object": "local/experiments/v2-global-float-views-200/objects/00456d70.obj",
+      "baseline_compiled": false,
+      "baseline_syntax_passed": false,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 15,
+          "column": 13,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005ceae4: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 19,
+          "column": 77,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b253c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 21,
+          "column": 13,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005ceae4: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 24,
+          "column": 77,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b253c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 30,
+          "column": 11,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005ceae4: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 34,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b253c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 37,
+          "column": 11,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_005ceae4: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00456d70",
+          "line": 40,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "message": "_DAT_005b253c: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00456d70.cpp)"
+        }
+      ],
+      "compiled": false,
+      "syntax_passed": false,
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-global-float-views-200/00456d70.cpp": "24a5fe8b850b69c9bacc83fd31237c6e286f482c1f09ca88bd4c31a5ae6a74ac",
+        "local/experiments/v2-global-float-views-200/00456d70-aliases.h": "8ac8e89da222bdcb2f6b8421ee2a28c4cc2ef0a084a36fecb623525c1b695362",
+        "local/experiments/v2-declaration-compat-184/full/00456d70-globals.h": "f1d44a34a329b104331e76b5776808143d8595cf5af35056e24b59276b112ce4",
+        "local/experiments/v2-thiscall-declarations-190/sources/00456d70.cpp": "74a860f3df5c44fc72783ae789840fbaf0d2f8d9b176ef8315ca38733c7729a7"
+      },
+      "cache_inputs_sha256": "c5cfc93e6aad37814a7651c0b1547c92b914e5f43656646c953d41b89f83cb69",
+      "headers_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-global-float-views-200/00456d70-aliases.h": "8ac8e89da222bdcb2f6b8421ee2a28c4cc2ef0a084a36fecb623525c1b695362",
+        "local/experiments/v2-declaration-compat-184/full/00456d70-globals.h": "f1d44a34a329b104331e76b5776808143d8595cf5af35056e24b59276b112ce4"
+      },
+      "error_count": 8,
+      "warning_count": 0
+    },
+    {
+      "va": "00485100",
+      "kind": "thiscall_leaf196",
+      "generated_source": "local/experiments/v2-global-float-views-200/00485100.cpp",
+      "generated_source_sha256": "2d001b63fbfa31bb69c802729082bd2d40a29b84621d852747d21a31ec582a12",
+      "forced_headers": [],
+      "original_generated_source": "local/experiments/v2-thiscall-leaf-delta-196/sources/00485100.cpp",
+      "original_generated_source_sha256": "d59a54c0c52eece1d33dbc28f1c1a0b4840f22784a750a06e48b3999253994c7",
+      "body_unchanged": true,
+      "alias_header": "local/experiments/v2-global-float-views-200/00485100-aliases.h",
+      "alias_header_sha256": "5d815deed629b118db6cba94cf217703ee935dbd24b77de845a7c9822d98de6b",
+      "aliases": [
+        {
+          "alias": "_DAT_005b242c",
+          "address": "005b242c",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "004851a4",
+              "bytes": "d81d2c245b00",
+              "capstone": "fcomp dword ptr [0x5b242c]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x4851a4, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            },
+            {
+              "pc": "004851bb",
+              "bytes": "d81d2c245b00",
+              "capstone": "fcomp dword ptr [0x5b242c]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x4851bb, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "alias": "_DAT_005b24a8",
+          "address": "005b24a8",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "004851cc",
+              "bytes": "d805a8245b00",
+              "capstone": "fadd dword ptr [0x5b24a8]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x4851cc, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "object": "local/experiments/v2-global-float-views-200/objects/00485100.obj",
+      "baseline_compiled": false,
+      "baseline_syntax_passed": false,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 22,
+          "column": 25,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 23,
+          "column": 25,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 24,
+          "column": 25,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 27,
+          "column": 25,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 28,
+          "column": 25,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 29,
+          "column": 26,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 57,
+          "column": 27,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 58,
+          "column": 27,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485100",
+          "line": 61,
+          "column": 18,
+          "severity": "warning",
+          "code": "C4244",
+          "message": "=: \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \"float\" \u0432 \"undefined4\", \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u0430 \u043f\u043e\u0442\u0435\u0440\u044f \u0434\u0430\u043d\u043d\u044b\u0445 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485100.cpp)"
+        }
+      ],
+      "compiled": true,
+      "syntax_passed": true,
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-global-float-views-200/00485100.cpp": "2d001b63fbfa31bb69c802729082bd2d40a29b84621d852747d21a31ec582a12",
+        "local/experiments/v2-declaration-compat-184/full/00485100-globals.h": "d6fce5714c528c6b937d1b86a4ec22ac8dce56b9524619fd8838e2fa24ffbd04",
+        "local/experiments/v2-thiscall-leaf-delta-196/sources/00485100.cpp": "d59a54c0c52eece1d33dbc28f1c1a0b4840f22784a750a06e48b3999253994c7",
+        "local/experiments/v2-global-float-views-200/00485100-aliases.h": "5d815deed629b118db6cba94cf217703ee935dbd24b77de845a7c9822d98de6b"
+      },
+      "object_sha256": "2cc79222c8e3ac7f48c0b4d099e15631587d5230d13b64bc54aba5516cf21329",
+      "object_bytes": 1596,
+      "machine": "i386",
+      "defined_external_symbols": [
+        "?invoke@Thiscall_00485100@@QAEPAIPAMG@Z",
+        "__xmm@41f00000000000000000000000000000"
+      ],
+      "undefined_external_symbols": [
+        "__ftol3",
+        "?_DAT_005b242c@@3MA",
+        "?_DAT_005b24a8@@3MA",
+        "?PTR_LAB_005b484c@@3PAEA",
+        "__fltused"
+      ],
+      "cache_inputs_sha256": "8714b6ebd5e3f77e01f8eaa8aa4f2a0963fc9899630b4592e19bdb7fc0f02918",
+      "headers_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-declaration-compat-184/full/00485100-globals.h": "d6fce5714c528c6b937d1b86a4ec22ac8dce56b9524619fd8838e2fa24ffbd04",
+        "local/experiments/v2-global-float-views-200/00485100-aliases.h": "5d815deed629b118db6cba94cf217703ee935dbd24b77de845a7c9822d98de6b"
+      },
+      "error_count": 0,
+      "warning_count": 9
+    },
+    {
+      "va": "00485c50",
+      "kind": "thiscall_leaf196",
+      "generated_source": "local/experiments/v2-global-float-views-200/00485c50.cpp",
+      "generated_source_sha256": "b6f8e3dfc0990e493a249109802768ac9c8fbee6a4a6fe08d55def2a846eb17f",
+      "forced_headers": [],
+      "original_generated_source": "local/experiments/v2-thiscall-leaf-delta-196/sources/00485c50.cpp",
+      "original_generated_source_sha256": "292fed10792a6a37bf48fba99a798aac93c2c83e4b250a706f6e7e71809699cb",
+      "body_unchanged": true,
+      "alias_header": "local/experiments/v2-global-float-views-200/00485c50-aliases.h",
+      "alias_header_sha256": "ef716bf4a1f491b7931ddf018bf31ed88ebed491062d41c24005db0fbef2ee02",
+      "aliases": [
+        {
+          "alias": "_DAT_005b2680",
+          "address": "005b2680",
+          "width": 4,
+          "high_type": "float",
+          "original_instructions": [
+            {
+              "pc": "00485ca8",
+              "bytes": "d80d80265b00",
+              "capstone": "fmul dword ptr [0x5b2680]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x485ca8, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            },
+            {
+              "pc": "00485cba",
+              "bytes": "d80d80265b00",
+              "capstone": "fmul dword ptr [0x5b2680]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x485cba, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            },
+            {
+              "pc": "00485cdd",
+              "bytes": "d80d80265b00",
+              "capstone": "fmul dword ptr [0x5b2680]",
+              "sleigh": [
+                {
+                  "kind": "READ",
+                  "bytes": 4,
+                  "sequence": "(ram, 0x485cdd, 1, 0)",
+                  "opcode": "FLOAT2FLOAT",
+                  "input_index": 0,
+                  "pointer": "direct RAM input varnode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "object": "local/experiments/v2-global-float-views-200/objects/00485c50.obj",
+      "baseline_compiled": false,
+      "baseline_syntax_passed": false,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485c50",
+          "line": 31,
+          "column": 3,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_006b0068: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485c50.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485c50",
+          "line": 33,
+          "column": 12,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_006b0068: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485c50.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485c50",
+          "line": 35,
+          "column": 5,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_006b0068: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485c50.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485c50",
+          "line": 37,
+          "column": 14,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_006b0068: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485c50.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485c50",
+          "line": 39,
+          "column": 7,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_006b0068: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485c50.cpp)"
+        },
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\porsche_method_00485c50",
+          "line": 41,
+          "column": 16,
+          "severity": "error",
+          "code": "C2065",
+          "message": "DAT_006b0068: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-global-float-views-200\\00485c50.cpp)"
+        }
+      ],
+      "compiled": false,
+      "syntax_passed": false,
+      "dependency_sha256": {
+        "local/experiments/v2-thiscall-leaf-delta-196/sources/00485c50.cpp": "292fed10792a6a37bf48fba99a798aac93c2c83e4b250a706f6e7e71809699cb",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-declaration-compat-184/full/00485c50-globals.h": "6cd471d0041ef51c4dfdf4e664dc609dc0afc41733846577c6bf148544c3406b",
+        "local/experiments/v2-global-float-views-200/00485c50.cpp": "b6f8e3dfc0990e493a249109802768ac9c8fbee6a4a6fe08d55def2a846eb17f",
+        "local/experiments/v2-global-float-views-200/00485c50-aliases.h": "ef716bf4a1f491b7931ddf018bf31ed88ebed491062d41c24005db0fbef2ee02"
+      },
+      "cache_inputs_sha256": "f1fe61a1c6820a04086a7e4aa582348ebc4bb73af6bd54917cc9bd74584f2188",
+      "headers_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-declaration-compat-184/full/00485c50-globals.h": "6cd471d0041ef51c4dfdf4e664dc609dc0afc41733846577c6bf148544c3406b",
+        "local/experiments/v2-global-float-views-200/00485c50-aliases.h": "ef716bf4a1f491b7931ddf018bf31ed88ebed491062d41c24005db0fbef2ee02"
+      },
+      "error_count": 6,
+      "warning_count": 0
+    }
+  ],
+  "boundary": "Extern-only per-consumer views; no allocations/coalescing/formal-type replacement or body edits. Native compilation is not fidelity proof; x87/float-to-rawword warnings and shared-storage ownership remain open.",
+  "metadata_finalization": {
+    "only_exact_per_tu_dependency_closure": "no compiler rerun",
+    "driver_sha256": "a6f5255cba0e6a9d333444c538f8d4777e8a9183756ebed78b252b470bcc8a87"
+  }
+}

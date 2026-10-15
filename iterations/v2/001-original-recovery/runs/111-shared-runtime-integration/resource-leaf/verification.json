@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "00561ba0"
+  ],
+  "full_function_vas": [
+    "00561ba0"
+  ],
+  "partial_function_vas": [],
+  "cases": 3,
+  "native_cpp_equal_original_x86": true,
+  "original_function": {
+    "va": "00561ba0",
+    "body_bytes": 55,
+    "body_sha256": "33b9760c4fbe81ccd26c5bea3f9ecc951b006cfd7f8437602689661fa2e02d46",
+    "abi": "one path pointer; cdecl caller-clean; RET returns dispatcher EAX",
+    "callee_vas": [
+      "00568e90",
+      "00568d50"
+    ],
+    "callee_abis": {
+      "00568e90": "one path pointer; cdecl; returns device index",
+      "00568d50": "callback pointer, device, group, context; cdecl; returns callback EAX"
+    },
+    "call_order": [
+      "00568e90(path)",
+      "00568d50(00561be0, device, [005df770], context)"
+    ],
+    "context_layout": {
+      "size": 16,
+      "path_offset": 0,
+      "opaque_offsets": [
+        4,
+        8
+      ],
+      "initialized_flag_offset": 12,
+      "initialized_flag_value": 1
+    }
+  },
+  "reference_comparison": {
+    "va": "00561b80",
+    "body_bytes": 20,
+    "body_sha256": "6c38d1ce8539e936a15a3d0b914a4bcb912fa03129e780dbc5991568018c2812",
+    "byte_bodies_equal": false,
+    "same_effects": false,
+    "cases": [
+      {
+        "case": 0,
+        "resource_leaf_calls": [
+          "00568e90",
+          "00568d50"
+        ],
+        "file_predicate_calls": [
+          "00533f00"
+        ],
+        "same_va": false,
+        "same_event_trace": false
+      },
+      {
+        "case": 1,
+        "resource_leaf_calls": [
+          "00568e90",
+          "00568d50"
+        ],
+        "file_predicate_calls": [
+          "00533f00"
+        ],
+        "same_va": false,
+        "same_event_trace": false
+      },
+      {
+        "case": 2,
+        "resource_leaf_calls": [
+          "00568e90",
+          "00568d50"
+        ],
+        "file_predicate_calls": [
+          "00533f00"
+        ],
+        "same_va": false,
+        "same_event_trace": false
+      }
+    ],
+    "distinction": "00561ba0 routes the path then enters the FILESYS atomic callback dispatcher; 00561b80 calls 00533f00 with path and [005df770]."
+  },
+  "boundaries": {
+    "00568e90": "existing typed file-device route; fixture records input path and configured device return",
+    "00568d50": "unrecovered 247-byte FILESYS atomic dispatcher; fixture records all four arguments and returns configured raw EAX without emulating device locks or queue effects",
+    "00561be0": "unrecovered 118-byte callback passed by address; fixture verifies callback identity but does not invoke it",
+    "005df770": "global consumed as group value; no canonical production owner found in current source tree, declared external and fixture-owned"
+  },
+  "cases_summary": [
+    {
+      "case": 0,
+      "native_original_equal": true,
+      "return": 0,
+      "events": 2,
+      "caller_argument_bytes": 4,
+      "callee_saved_equal": true,
+      "context_written_fields": [
+        "+0x00 path",
+        "+0x0c = 1"
+      ],
+      "context_opaque_bytes_preserved": true
+    },
+    {
+      "case": 1,
+      "native_original_equal": true,
+      "return": -13,
+      "events": 2,
+      "caller_argument_bytes": 4,
+      "callee_saved_equal": true,
+      "context_written_fields": [
+        "+0x00 path",
+        "+0x0c = 1"
+      ],
+      "context_opaque_bytes_preserved": true
+    },
+    {
+      "case": 2,
+      "native_original_equal": true,
+      "return": 214375,
+      "events": 2,
+      "caller_argument_bytes": 4,
+      "callee_saved_equal": true,
+      "context_written_fields": [
+        "+0x00 path",
+        "+0x0c = 1"
+      ],
+      "context_opaque_bytes_preserved": true
+    }
+  ],
+  "compiled_translation_units": [
+    "iterations/v2/001-original-recovery/source/recovered/resource_leaf_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_leaf.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/109-resource-leaf/CMakeLists.txt": "6283ba50d9a269d45b8837953625ab32b68ecc10561f51a353aa54edaaafc12e",
+    "iterations/v2/001-original-recovery/runs/109-resource-leaf/README.md": "5e81ac6b0aa06d90fe38654b8b9bb65d6f597a39c914dd0d142d14c7f13bda92",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/resource_leaf.hpp": "4d98c523268b63dd52b68df38d4e07544a830fb078abb131b1cc13440b74e975",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_leaf.cpp": "2cee4c3774c9fe66601f15e8e34c00d92eb67a05523dde1d1a59c099b47634fc",
+    "iterations/v2/001-original-recovery/source/recovered/resource_leaf_probe.cpp": "87688cfafaa52e47750a7d5fad14e43202d07df3c3ade0ad6a66d5b0c71b19f5",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-resource-leaf.py": "adddbb61677e4bec1182415611356fea0ab054af1f2fec57043dcc6ac169d2f5"
+  },
+  "original_evidence": {
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": {
+      "sha256": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502"
+    },
+    "iterations/v2/001-original-recovery/source/catalog/Porsche.exe-ddd748fdbe6d/functions.jsonl": {
+      "sha256": "e53538c19a04c958c5f889eff3c00ec11d4a53d10864176120c4d5758b561e0a"
+    },
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": {
+      "sha256": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d"
+    }
+  },
+  "probe_sha256": "458b40505152f2c9cbd114b7cbda0dc11fc9ab3bcc1b3f4faa0386bc2f1f2f15",
+  "game_launch_verified": false
+}

@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "004a66b0",
+    "004ab470"
+  ],
+  "full_function_vas": [
+    "004ab470"
+  ],
+  "partial_function_vas": [
+    "004a66b0"
+  ],
+  "partial_reasons": {
+    "004a66b0": "the original has no negative-mode guard; -9 is within the pinned table window, but -10 reads before it. Caller 004e48b4 passes an opaque virtual-method result as mode without a proven range contract, so lower signed values remain outside the modeled input domain"
+  },
+  "cases": 8,
+  "native_cpp_equal_original_x86": true,
+  "original_functions": [
+    {
+      "va": "004a66b0",
+      "body_bytes": 398,
+      "body_sha256": "a9ac30a2e2c2ddb8191cf4198eaf8c3932d6f3f4f2bbc5e7238cf3ce3b297e91",
+      "abi": "cdecl, no arguments, AL boolean return tested by caller 004a6840"
+    },
+    {
+      "va": "004ab470",
+      "body_bytes": 63,
+      "body_sha256": "710d9045f93130c61a39b26ab8b598846c71b5e1ccfc7f1d694eb3bff022123b",
+      "abi": "cdecl, no arguments, caller ignores EAX"
+    }
+  ],
+  "callee_boundaries": [
+    {
+      "va": "00565950",
+      "ranges": [
+        [
+          "00565950",
+          "0056598a"
+        ]
+      ],
+      "body_bytes": 59,
+      "body_sha256": "68d2bb4ef65fa266534558e1b784676c882e6f64723796e12f7ee16f384a8461",
+      "status": "typed controlled boundary"
+    },
+    {
+      "va": "00565680",
+      "ranges": [
+        [
+          "00565680",
+          "005656c9"
+        ]
+      ],
+      "body_bytes": 74,
+      "body_sha256": "9c7763342e5c0508e1c592ec921c1f9ee6f7516d531fa14831b53324984ddd86",
+      "status": "typed controlled boundary"
+    },
+    {
+      "va": "005656d0",
+      "ranges": [
+        [
+          "005656d0",
+          "00565711"
+        ]
+      ],
+      "body_bytes": 66,
+      "body_sha256": "eab051679d99d6f808f249ea4cd685c3aa3dc9716042b90c048ba64c96559102",
+      "status": "typed controlled boundary"
+    },
+    {
+      "va": "00565720",
+      "ranges": [
+        [
+          "00565720",
+          "0056588a"
+        ]
+      ],
+      "body_bytes": 363,
+      "body_sha256": "f3f9b90ece9ffb5731c72f901e4a2782d94c920fb428872e6dcd14113f28a0c0",
+      "status": "typed controlled boundary"
+    },
+    {
+      "va": "0053c380",
+      "ranges": [
+        [
+          "0053c380",
+          "0053c3ab"
+        ]
+      ],
+      "body_bytes": 44,
+      "body_sha256": "897e4672536ce4f2b4f6405f230f336cd7842c786b96cd85efbddfe4a118b3d8",
+      "status": "typed controlled boundary"
+    },
+    {
+      "va": "00565c70",
+      "ranges": [
+        [
+          "00565c70",
+          "00565cc9"
+        ]
+      ],
+      "body_bytes": 90,
+      "body_sha256": "c56a238afd144bc4a1576587eab2dde73d4685f5e12c950f54dca9eb2b097754",
+      "status": "typed controlled boundary"
+    }
+  ],
+  "caller_edges": [
+    "004a68a2",
+    "004a6af9"
+  ],
+  "state_vas": [
+    "00657c98",
+    "00657c9c",
+    "00655d40",
+    "00655d44",
+    "00656868",
+    "00656869",
+    "005deb48"
+  ],
+  "original_mode_table": {
+    "va": "005b4ac0",
+    "bytes": 128,
+    "sha256": "1971f9131f19a90589aa38b61716f75b521469ab8ef7799874f5de89f991ef01",
+    "note": "raw source bytes retained for exact indexed stride reads; no field names inferred"
+  },
+  "boundary_contracts": [
+    "00565950 pre-initialization body is external and its return is ignored",
+    "00565680 controls the signed query result and copies all 31 dwords (124 bytes) into the local descriptor before the caller reads it",
+    "005656d0 observes the final 124-byte descriptor; its return is ignored",
+    "00565720 is the device creation boundary; original branches on signed EAX",
+    "0053c380 timing wait and 00565c70 device-control effects are controlled; returns ignored",
+    "the original has no negative-mode guard; -9 is covered by the pinned bytes, -10 is not, and the opaque caller-supplied signed mode has no proven range contract"
+  ],
+  "cases_detail": [
+    {
+      "case": 0,
+      "calls": 7,
+      "equal": true
+    },
+    {
+      "case": 1,
+      "calls": 5,
+      "equal": true
+    },
+    {
+      "case": 2,
+      "calls": 4,
+      "equal": true
+    },
+    {
+      "case": 3,
+      "calls": 2,
+      "equal": true
+    },
+    {
+      "case": 4,
+      "calls": 4,
+      "equal": true
+    },
+    {
+      "case": 5,
+      "calls": 4,
+      "equal": true
+    },
+    {
+      "case": 6,
+      "calls": 7,
+      "equal": true
+    },
+    {
+      "case": 7,
+      "calls": 7,
+      "equal": true
+    }
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/131-application-audio-init/CMakeLists.txt": "8b0a38edfe7af243397f187468ca6ac28dbb715e297536d4c4c4f5b49813aee6",
+    "iterations/v2/001-original-recovery/runs/131-application-audio-init/README.md": "5d1c806c10c3cffc5084be0c747d70b66c65f37d19c19383167642202d1360a0",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_audio_device.hpp": "94b59054950c0fb1f199f95391d8290142b5ae53f3f9a6fc8145acb8006e8472",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_audio_init.hpp": "7b9f16ee0bb491104fda21a14ad8de39b5a5e88d7c2e2a9a1fd96414c9fca0e5",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "28034cf36ad84c0b23b94bdc166b5065a6e37c119bf4bb8a10c2d32930fd26a2",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_services.hpp": "94c6ad95ed594eb1b8f6e74070871fcdd1d2997fd9e103a534c362bd58af0167",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_state.hpp": "8609be1d87e02af50f3f6ae3b0f9c55300e78b51460f187ccbb1e46ca3379315",
+    "iterations/v2/001-original-recovery/source/include/porsche/engine_service_427a60.hpp": "add655ee87cdcaa6e412f0b179c2867a48f3fad81253c182ebcc684dded4c18f",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/recovered/application_audio_init_probe.cpp": "9bd486ce1614e4a879daf7d6dfd9ec6eab7222b7cb4158819260288661825de7",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_audio_init.cpp": "5b738edba9c04d627ee9f6877e70236711ca95f3269259b3463db5c7eb4598d2",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_services.cpp": "5a45f6aa171b538529968b9268634fa762676827ecb51e765ab721930d86ba19",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_state.cpp": "a1ad65f8506af7e03fecda2bd24880074ce9c926c8aa657135508b11aaf75f76",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/defined-data.jsonl": "190a67d413a74a13fdc074e0e9cbef6157cfbb59791fbc01f07544e9324a5d0a",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-application-audio-init.py": "55325f13aed5b2203accf99d51cc2400803ff8fc92e95132195c666e7c97be90"
+  },
+  "compiled_translation_units": [
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_audio_init_probe.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_audio_init.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_state.cpp"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "function_vas": [
+    "005a1011",
+    "005a103a",
+    "005a14b3",
+    "005a14cd",
+    "005a1527",
+    "005a1620",
+    "005a1758",
+    "005a4c20"
+  ],
+  "full_function_vas": [
+    "005a1011",
+    "005a103a",
+    "005a14b3",
+    "005a14cd",
+    "005a1527",
+    "005a1620",
+    "005a1758",
+    "005a4c20"
+  ],
+  "partial_function_vas": [],
+  "cases": 3745,
+  "native_cpp_equal_original_x86": true,
+  "index_query": "164 native table RTTI predecessors5c5190/5c51d8/5c5228 and168rtti-evidence; recurse type_info vtable5c18f8/COL5c98d0, destructors5a1011/5a103a and cast helpers5a14b3/14cd/1527/1620/1758/4c20. Registry checked all8 absent.",
+  "comparison_boundary": "Eight complete bodies, exact returns/nonvolatile registers/ESP cleanup and private scripted existing lock/free/release effects. Synthetic hierarchy cases exercise repeated names, pointer identity, attributes, contained bases, virtual displacement/ambiguity, all byte alignments and NUL lengths. Real native typed graphs match original bytes after exact native pointer normalization at proven relocation fields; original functions traverse all three network graphs and actual native type_info destructor dispatch. No raw original VA callback calls.",
+  "unresolved_effects": [
+    "dynamic_cast entry5a1366 SEH/throw path",
+    "type_info demangled-name cache population",
+    "shared networking providers/workers and text5e8e50 identity5b4980 extents"
+  ],
+  "original_functions": [
+    {
+      "va": "005a1011",
+      "body_bytes": 41,
+      "ranges": [
+        [
+          "005a1011",
+          "005a1039"
+        ]
+      ],
+      "body_sha256": "c2c2899c8d6145c8d897926a6f77ae28376c88c4b74e2b4d4f415fca64e21150"
+    },
+    {
+      "va": "005a103a",
+      "body_bytes": 28,
+      "ranges": [
+        [
+          "005a103a",
+          "005a1055"
+        ]
+      ],
+      "body_sha256": "0cfba73c8097d0df08e66c8dd75d0d3e6465a8d9570a22870f86802a6a35d084"
+    },
+    {
+      "va": "005a14b3",
+      "body_bytes": 26,
+      "ranges": [
+        [
+          "005a14b3",
+          "005a14cc"
+        ]
+      ],
+      "body_sha256": "b206e75e4cc36ca3fc0f2591db372bf78ed149fb28c4d7f7ebb054cf1f30af49"
+    },
+    {
+      "va": "005a14cd",
+      "body_bytes": 90,
+      "ranges": [
+        [
+          "005a14cd",
+          "005a1526"
+        ]
+      ],
+      "body_sha256": "70fee1dd3c27742ec7dbaa2c0806234be3263ac18448c224b5106a09ef5e0daf"
+    },
+    {
+      "va": "005a1527",
+      "body_bytes": 249,
+      "ranges": [
+        [
+          "005a1527",
+          "005a161f"
+        ]
+      ],
+      "body_sha256": "1cddc24446355799e57e71bdd222d3c2e90c8916425704b5a72d504b51a838f3"
+    },
+    {
+      "va": "005a1620",
+      "body_bytes": 312,
+      "ranges": [
+        [
+          "005a1620",
+          "005a1757"
+        ]
+      ],
+      "body_sha256": "f907855741a5ec734b8c8dc0760a631b24be4869591e3bedb4cb652a24115538"
+    },
+    {
+      "va": "005a1758",
+      "body_bytes": 35,
+      "ranges": [
+        [
+          "005a1758",
+          "005a177a"
+        ]
+      ],
+      "body_sha256": "582c3d3438d65707b6aa9e6e4fe328a57347234cb5e26dc828dc57dac052bd4a"
+    },
+    {
+      "va": "005a4c20",
+      "body_bytes": 129,
+      "ranges": [
+        [
+          "005a4c20",
+          "005a4c62"
+        ],
+        [
+          "005a4c64",
+          "005a4c69"
+        ],
+        [
+          "005a4c6c",
+          "005a4ca3"
+        ]
+      ],
+      "body_sha256": "49de85a1371f43fd4a4311800e2df3fa4ec613ed168521285ff9be847cf4c646"
+    }
+  ],
+  "compiled_source_files": [
+    "iterations/v2/001-original-recovery/source/recovered/rtti_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp"
+  ],
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/174-network-rtti/CMakeLists.txt": "6d8d6ae0791933be1e844b74a4e12180fb7ecdfd40401d2a3e928c14589c9bc5",
+    "iterations/v2/001-original-recovery/runs/174-network-rtti/extract-rtti.py": "6092ad5abd6a4a7d783d51d92859256b160c53589eeb6a4ea6a3b8c5d898cf17",
+    "iterations/v2/001-original-recovery/runs/174-network-rtti/graph-inventory.json": "71a07f30db640153f2ba4a7ea96002bda4b611cf4bece138178b921be006fc0e",
+    "iterations/v2/001-original-recovery/runs/174-network-rtti/README.md": "52ea0a5b6bb897d39b15f45194aa7f1b931715df4199f83642e2b7efed451920",
+    "iterations/v2/001-original-recovery/runs/174-network-rtti/rtti-evidence.json": "45886426323497d97d9a9e090b3c0c8d6898b3b5e0309b48c65fdb4e6f1283a3",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/rtti.hpp": "77d884f9e0a6c754bd3b1094414b33d55bd9dc6826a3dcaa42547f7d3795e62a",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp": "e4d3c6bab9ecc9dc15037e9a2343891ef2b0dfbbd85f1bb320518b29983e1335",
+    "iterations/v2/001-original-recovery/source/recovered/rtti_probe.cpp": "ddd27d9b6ad5d46cecf46d8162c9543155ffb95f270569a5eaf8cf5713927c92",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/symbols.jsonl": "249e707b5b253cb5c0fd8818c54b144349d14fc73de294f34b7b72153295f4f0",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/unresolved-calls.jsonl": "18469aa6c13fb7efe205a545ae26f6ae100bf89c3debf1a68dd35e697b834606",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-network-rtti.py": "625da92b2187b57921e83a68d475e78bd3522071412fcb4d5411c6ad48d9e95c"
+  }
+}
