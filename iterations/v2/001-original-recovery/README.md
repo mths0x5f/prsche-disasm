@@ -1,5 +1,11 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
+2026-10-15: [Run193](runs/193-abi-storage-pilot/README.md) исправляет два доказанных raw32 ABI-контракта
+в копии Ghidra: восстановлены потерянные ECX/stack inputs у двух вызовов;
+373 original instructions/IR producers проверены, исходный проект неизменён.
+В работе194 aliases,195 объединённый link frontier и196 leaf compile delta;
+готовых native candidates пока1054, игрового EXE нет.
+
 2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные
 x86 COFF:924 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
 машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;

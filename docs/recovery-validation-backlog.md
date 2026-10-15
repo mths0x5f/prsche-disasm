@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+2026-10-15:193 подтвердил два raw32 storage corrections на original CALL/RET
+и high IR,373 indexed instructions совпали с PE. Это закрывает два counterexample
+для механизма восстановления потерянных call inputs, не их native/full-body acceptance.
+- [ ]193: проверить остальные42 mismatch contracts индивидуально по hardware inputs;
+  два из них исправлены в isolated Ghidra pilot, без production/native integration.
+  У00489530 inferred void/hidden registers и22 nested calls всё ещё открыты;
+  raw32/custom storage не доказывает semantic types/class/lifetime.
+
 Прямое требование пользователя 2026-10-10: возвращаться к пропущенным проверкам.
 Координатор обновляет этот список при каждом checkpoint и проверяет его
 перед архитектурной приёмкой/переносом на Rust; пункт закрывается только

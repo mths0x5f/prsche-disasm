@@ -1,0 +1,808 @@
+{
+  "entry_va": "00483290",
+  "stage": "after-callees",
+  "database": {
+    "signature": "undefined FUN_00483290()",
+    "convention": "unknown",
+    "source": "DEFAULT",
+    "custom_storage": false,
+    "stack_purge_bytes": 12,
+    "return_type": "/undefined",
+    "return_storage": {
+      "display": "<UNASSIGNED>",
+      "bytes": 0,
+      "varnodes": []
+    },
+    "parameters": []
+  },
+  "error": "",
+  "complete": true,
+  "inferred": {
+    "signature": "void __thiscall FUN_00483290(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);",
+    "convention": "__thiscall",
+    "extra_pop": 16,
+    "parameters": [
+      {
+        "name": "param_1",
+        "type": "/undefined4 *",
+        "bytes": 4,
+        "storage": {
+          "display": "ECX:4 (auto)",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "address": "register:00000004"
+            }
+          ]
+        },
+        "this": true,
+        "type_locked": false
+      },
+      {
+        "name": "param_2",
+        "type": "/undefined4",
+        "bytes": 4,
+        "storage": {
+          "display": "Stack[0x4]:4",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "stack",
+              "offset": 4,
+              "bytes": 4,
+              "address": "Stack[0x4]"
+            }
+          ]
+        },
+        "this": false,
+        "type_locked": false
+      },
+      {
+        "name": "param_3",
+        "type": "/undefined4",
+        "bytes": 4,
+        "storage": {
+          "display": "Stack[0x8]:4",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "stack",
+              "offset": 8,
+              "bytes": 4,
+              "address": "Stack[0x8]"
+            }
+          ]
+        },
+        "this": false,
+        "type_locked": false
+      },
+      {
+        "name": "param_4",
+        "type": "/undefined4",
+        "bytes": 4,
+        "storage": {
+          "display": "Stack[0xc]:4",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "stack",
+              "offset": 12,
+              "bytes": 4,
+              "address": "Stack[0xc]"
+            }
+          ]
+        },
+        "this": false,
+        "type_locked": false
+      }
+    ],
+    "return_type": "/void",
+    "return_storage": {
+      "display": "<VOID>",
+      "bytes": 0,
+      "varnodes": []
+    }
+  },
+  "pcode": [
+    {
+      "sequence": "(ram, 0x483298, 6, 0)",
+      "instruction_va": "00483298",
+      "opcode": "LOAD",
+      "output": {
+        "address": "unique:00017200",
+        "space": "unique",
+        "offset": 94720,
+        "bytes": 4,
+        "input": false,
+        "constant": false,
+        "high_name": "UNNAMED",
+        "high_type": "/undefined4",
+        "defined_at": "(ram, 0x483298, 6, 0)",
+        "defined_by": "LOAD"
+      },
+      "inputs": [
+        {
+          "address": "const:000001a1",
+          "space": "const",
+          "offset": 417,
+          "bytes": 4,
+          "input": false,
+          "constant": true
+        },
+        {
+          "address": "register:00000004",
+          "space": "register",
+          "offset": 4,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_1",
+          "high_type": "/undefined4 *",
+          "high_storage": {
+            "display": "ECX:4 (auto)",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "register",
+                "offset": 4,
+                "bytes": 4,
+                "address": "register:00000004"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sequence": "(ram, 0x4832a1, 22, 1)",
+      "instruction_va": "004832a1",
+      "opcode": "CALL",
+      "inputs": [
+        {
+          "address": "00482f70",
+          "space": "ram",
+          "offset": 4730736,
+          "bytes": 8,
+          "input": false,
+          "constant": false
+        },
+        {
+          "address": "unique:00017200",
+          "space": "unique",
+          "offset": 94720,
+          "bytes": 4,
+          "input": false,
+          "constant": false,
+          "high_name": "UNNAMED",
+          "high_type": "/undefined4",
+          "defined_at": "(ram, 0x483298, 6, 0)",
+          "defined_by": "LOAD"
+        },
+        {
+          "address": "Stack[0x4]",
+          "space": "stack",
+          "offset": 4,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_2",
+          "high_type": "/undefined4",
+          "high_storage": {
+            "display": "Stack[0x4]:4",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "stack",
+                "offset": 4,
+                "bytes": 4,
+                "address": "Stack[0x4]"
+              }
+            ]
+          }
+        },
+        {
+          "address": "Stack[0x8]",
+          "space": "stack",
+          "offset": 8,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_3",
+          "high_type": "/undefined4",
+          "high_storage": {
+            "display": "Stack[0x8]:4",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "stack",
+                "offset": 8,
+                "bytes": 4,
+                "address": "Stack[0x8]"
+              }
+            ]
+          }
+        },
+        {
+          "address": "Stack[0xc]",
+          "space": "stack",
+          "offset": 12,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_4",
+          "high_type": "/undefined4",
+          "high_storage": {
+            "display": "Stack[0xc]:4",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "stack",
+                "offset": 12,
+                "bytes": 4,
+                "address": "Stack[0xc]"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sequence": "(ram, 0x4832a6, 26, 2)",
+      "instruction_va": "004832a6",
+      "opcode": "RETURN",
+      "inputs": [
+        {
+          "address": "const:00000000",
+          "space": "const",
+          "offset": 0,
+          "bytes": 4,
+          "input": false,
+          "constant": true,
+          "high_type": "/undefined4"
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "sequence": "(ram, 0x4832a1, 22, 1)",
+      "instruction_va": "004832a1",
+      "opcode": "CALL",
+      "inputs": [
+        {
+          "address": "00482f70",
+          "space": "ram",
+          "offset": 4730736,
+          "bytes": 8,
+          "input": false,
+          "constant": false
+        },
+        {
+          "address": "unique:00017200",
+          "space": "unique",
+          "offset": 94720,
+          "bytes": 4,
+          "input": false,
+          "constant": false,
+          "high_name": "UNNAMED",
+          "high_type": "/undefined4",
+          "defined_at": "(ram, 0x483298, 6, 0)",
+          "defined_by": "LOAD",
+          "producer_inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "address": "Stack[0x4]",
+          "space": "stack",
+          "offset": 4,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_2",
+          "high_type": "/undefined4",
+          "high_storage": {
+            "display": "Stack[0x4]:4",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "stack",
+                "offset": 4,
+                "bytes": 4,
+                "address": "Stack[0x4]"
+              }
+            ]
+          }
+        },
+        {
+          "address": "Stack[0x8]",
+          "space": "stack",
+          "offset": 8,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_3",
+          "high_type": "/undefined4",
+          "high_storage": {
+            "display": "Stack[0x8]:4",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "stack",
+                "offset": 8,
+                "bytes": 4,
+                "address": "Stack[0x8]"
+              }
+            ]
+          }
+        },
+        {
+          "address": "Stack[0xc]",
+          "space": "stack",
+          "offset": 12,
+          "bytes": 4,
+          "input": true,
+          "constant": false,
+          "high_name": "param_4",
+          "high_type": "/undefined4",
+          "high_storage": {
+            "display": "Stack[0xc]:4",
+            "bytes": 4,
+            "varnodes": [
+              {
+                "space": "stack",
+                "offset": 12,
+                "bytes": 4,
+                "address": "Stack[0xc]"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangTypeToken",
+      "text": "void"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": " "
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": "__thiscall"
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangFuncNameToken",
+      "text": "FUN_00483290"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": "("
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangTypeToken",
+      "text": "undefined4"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": " "
+    },
+    {
+      "kind": "ClangOpToken",
+      "text": "*"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_1"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ","
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangTypeToken",
+      "text": "undefined4"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": " "
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_2"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ","
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangTypeToken",
+      "text": "undefined4"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": " "
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_3"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ","
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangTypeToken",
+      "text": "undefined4"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": " "
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_4"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ")"
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": "{"
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangFuncNameToken",
+      "text": "FUN_00482f70",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": "("
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangOpToken",
+      "text": "*",
+      "min_va": "00483298",
+      "max_va": "00483298",
+      "pcode_sequence": "(ram, 0x483298, 6, 0)"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_1",
+      "min_va": "00483298",
+      "max_va": "00483298",
+      "pcode_sequence": "(ram, 0x483298, 6, 0)",
+      "varnode": {
+        "address": "register:00000004",
+        "space": "register",
+        "offset": 4,
+        "bytes": 4,
+        "input": true,
+        "constant": false,
+        "high_name": "param_1",
+        "high_type": "/undefined4 *",
+        "high_storage": {
+          "display": "ECX:4 (auto)",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "address": "register:00000004"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangOpToken",
+      "text": ",",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_2",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)",
+      "varnode": {
+        "address": "Stack[0x4]",
+        "space": "stack",
+        "offset": 4,
+        "bytes": 4,
+        "input": true,
+        "constant": false,
+        "high_name": "param_2",
+        "high_type": "/undefined4",
+        "high_storage": {
+          "display": "Stack[0x4]:4",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "stack",
+              "offset": 4,
+              "bytes": 4,
+              "address": "Stack[0x4]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangOpToken",
+      "text": ",",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_3",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)",
+      "varnode": {
+        "address": "Stack[0x8]",
+        "space": "stack",
+        "offset": 8,
+        "bytes": 4,
+        "input": true,
+        "constant": false,
+        "high_name": "param_3",
+        "high_type": "/undefined4",
+        "high_storage": {
+          "display": "Stack[0x8]:4",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "stack",
+              "offset": 8,
+              "bytes": 4,
+              "address": "Stack[0x8]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangOpToken",
+      "text": ",",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangVariableToken",
+      "text": "param_4",
+      "min_va": "004832a1",
+      "max_va": "004832a1",
+      "pcode_sequence": "(ram, 0x4832a1, 22, 1)",
+      "varnode": {
+        "address": "Stack[0xc]",
+        "space": "stack",
+        "offset": 12,
+        "bytes": 4,
+        "input": true,
+        "constant": false,
+        "high_name": "param_4",
+        "high_type": "/undefined4",
+        "high_storage": {
+          "display": "Stack[0xc]:4",
+          "bytes": 4,
+          "varnodes": [
+            {
+              "space": "stack",
+              "offset": 12,
+              "bytes": 4,
+              "address": "Stack[0xc]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ")"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ";"
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangOpToken",
+      "text": "return",
+      "min_va": "004832a6",
+      "max_va": "004832a6",
+      "pcode_sequence": "(ram, 0x4832a6, 26, 2)"
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ";"
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": "}"
+    },
+    {
+      "kind": "ClangBreak",
+      "text": ""
+    },
+    {
+      "kind": "ClangSyntaxToken",
+      "text": ""
+    }
+  ]
+}

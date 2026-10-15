@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "functions_decompiled_per_stage": 4,
+  "stages": 2,
+  "modified_callee_signatures": 2,
+  "restored_call_sites": [
+    {
+      "caller_va": "00489370",
+      "callee_va": "00489530",
+      "call_pc": "00489386",
+      "before_input_count_without_target": 2,
+      "after_input_count_without_target": 3,
+      "original_equation": "ECX_call=ECX_entry; stack+4=ESI loop index; stack+8=entry stack+4",
+      "high_ir_input_producers_checked": true
+    },
+    {
+      "caller_va": "00483290",
+      "callee_va": "00482f70",
+      "call_pc": "004832a1",
+      "before_input_count_without_target": 3,
+      "after_input_count_without_target": 4,
+      "original_equation": "ECX_call=DWORD[ECX_entry]; three original entry stack slots preserved",
+      "high_ir_input_producers_checked": true
+    }
+  ],
+  "original_instruction_bytes_checked": 373,
+  "contracts": {
+    "00489530": {
+      "receiver": "ECX:4",
+      "stack_slots": [
+        4,
+        8
+      ],
+      "original_ret_sites": [
+        {
+          "va": "004896c7",
+          "bytes": "c20800",
+          "instruction": "RET 0x8"
+        },
+        {
+          "va": "004897d2",
+          "bytes": "c20800",
+          "instruction": "RET 0x8"
+        },
+        {
+          "va": "00489803",
+          "bytes": "c20800",
+          "instruction": "RET 0x8"
+        }
+      ],
+      "semantic_types_recovered": false
+    },
+    "00482f70": {
+      "receiver": "ECX:4",
+      "stack_slots": [
+        4,
+        8,
+        12
+      ],
+      "original_ret_sites": [
+        {
+          "va": "00483061",
+          "bytes": "c20c00",
+          "instruction": "RET 0xc"
+        },
+        {
+          "va": "00483068",
+          "bytes": "c20c00",
+          "instruction": "RET 0xc"
+        }
+      ],
+      "semantic_types_recovered": false
+    }
+  },
+  "original_project_unchanged": true,
+  "automatic_caller_reinference": true,
+  "autoanalysis": false,
+  "input_sha256": {
+    "scripts/research/experiment-v2-abi-193.ps1": "cc9ca9189284f021dfa7029ddd9a2465a873c6afd33381b07cd7f3e49e41bb2a",
+    "scripts/research/ghidra/ExperimentAbiAnalysis193.java": "fa5d0190f57fc2bda51de4d1f03e0e0b6fc257c291bb79e4f24723e91a7b4033",
+    "local/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/lib/Decompiler.jar": "c3b5aa4b77ad19244fcc418b17e129a98a9bc23ebd876fa02b5f419145ec3132",
+    "local/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/os/win_x86_64/decompile.exe": "5ae40d01bf03e09ee89b65d1ca465537a1b5d2626cdcfae6e6a9f98ee2d8f536",
+    "scripts/research/audit-v2-abi-193.py": "dc9b4c534386cd1a2478bdc5d734c0456bb41ed7a2eafadf0ec7b333965bd2b9",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00482f70.c": "9af26d46d8f8224ea8815b34f4a841fe5a447c8931613b4b55df3534d1e23e62",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00482f70.json": "279c70a85085a3dcd1fb73f6a65fc9623f06877d6f8cb91b875f3fe5152a706b",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00483290.c": "1cfc45474b28f9a1cc1990d864d72509c462cacd03359789c7f5991e6fd3e9a7",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00483290.json": "a272b086f8ad8374597e6a8898fb498f1b04ddfe4e842ba009636268e47c59ea",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00489370.c": "395b03a34eb0689050ea90896b72988baa25aa2efa5e6ddd05c81df0e642a7a9",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00489370.json": "b9c9d02842d4946e203a77955b3a0297bd7a7b403a4c78f43fdaff81152b57c4",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00489530.c": "85f086a9a0185321a34ad924ec25c4273440cb2ac8ec2f25f2dea81565ff5489",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/after-callees-00489530.json": "0e2d3eb94684b212e8d829daa3dbff8093f9638e12bd5b3acdc48f5bdff544a9",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00482f70.c": "aeb37f7000b079aa25ecc805dd66bd3c4c1e805dce192e4c13917dd1ab8100c0",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00482f70.json": "455018fd929016df71b4d3e6d7b6f855a180f781db1c8e607746637721540de3",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00483290.c": "281575088cc5b0c5bd061d7eaad95da7fd7d0a10e5b4e2ee32a7eac1137cece1",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00483290.json": "f5753b8e420941b9fb9930cc1c6ee72d08bf940ed8b09e5f88d65a930365d4b1",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00489370.c": "8de7300664ff9f581f324bb4f8011f57c381cdfe3799db82973c1b6bf9801533",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00489370.json": "69179c55dec55a9636e87aa8ded2919a266ea2923198c82e7bf4f12cc16d5f84",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00489530.c": "1708c0db5170947a92e2b37992cf0a807a9580effcb2796f165264b0db8fb50f",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-00489530.json": "7cef92bb8468ad4910598221ccc7d1b2476d64c006a65197b61bfafaccba4938",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/before-complete.json": "a87af6ad3cc3e979a1389359e40ee62c7b083dfc5f641ac6010a1a0627c14431",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/provenance.json": "11cfea5124e9b77bf429241a460cc8540c86f8178565d43a01161fb8689cb9c7",
+    "iterations/v2/001-original-recovery/runs/193-abi-storage-pilot/export/attempt-002/result.json": "de2780d324d14dc132c217cc3c2f9aa0864e5f9a1478da285719995fa672a99c"
+  },
+  "boundary": [
+    "Two raw32 storage contracts only, not class/type/lifetime reconstruction.",
+    "00489530 inferred void return is retained for this experiment; complete return/hidden-register ABI is not accepted.",
+    "No native compile/execution, game integration, new accepted functions or blanket correction of the42 mismatches.",
+    "00482f70 stack+c is unused locally but caller pushes it and both original RET12 consume it."
+  ]
+}

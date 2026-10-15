@@ -1,5 +1,14 @@
 # v2 / 001 — план восстановления исходного кода
 
+2026-10-15:193 завершён — в копии Ghidra исправлены два raw32 ABI-контракта.
+Без autoanalysis восстановлены оба потерянных ECX receiver и третий stack slot
+в00483290→00482f70;373 original instruction bytes/IR producers проверены.
+Исходный Ghidra project неизменён;1054 compile candidates/production173 без изменений.
+В работе:194 — printed alias/access width (pcode_180_resume);195 — общий native link
+frontier924+130 без компиляции (abi_analysis_193);196 —29 leaf failures (locale_resume).
+Следующий шаг: принять доказанные194/196 changed TUs, один /MP6 batch и byte-exact cache;
+свести реальные зависимости195. Не повторять full corpus/oracle suite; backlog сохраняется.
+
 2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные
 x86 COFF:924 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
 машинные байты совпадают с оригиналом. Это candidates, не игровой EXE/fidelity acceptance;
