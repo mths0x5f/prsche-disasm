@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "status": "prepared_not_captured",
+  "headless_launched": false,
+  "actual_export_cases": 0,
+  "pilot_cases_prepared": 12,
+  "last_tool": "exec_command sandbox_permissions=require_escalated",
+  "last_tool_outcome": "aborted by user after879.9s",
+  "launch_evidence": "No headless/console logs, empty export directory, no java/javaw process at verification.",
+  "next_step": "Root must present exact read-only headless command through main-thread approval. Do not retry or bypass approvals in subagent.",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "capture_pins": {
+    "F:\\claude\\porsche disasm\\scripts\\research\\ghidra\\ExportGlobalAliases194.java": "0acb162d31157f0c009087bd0d164180d4df9f9ec4ec8116c44e18752213bf85",
+    "F:\\claude\\porsche disasm\\local\\tools\\ghidra_12.1.3_PUBLIC\\Ghidra\\Features\\Decompiler\\src\\decompile\\cpp\\printc.cc": "1b4929923f73bd9ed41257ea4a296c69bb6b866000cfdfa350d14018cd66f807",
+    "F:\\claude\\porsche disasm\\local\\tools\\ghidra_12.1.3_PUBLIC\\Ghidra\\Features\\Decompiler\\lib\\Decompiler-src.zip": "c33a0ea114a425131c45ffc7ddd6172142c403813cc271ddece9b324fc78382b",
+    "F:\\claude\\porsche disasm\\local\\tools\\ghidra_12.1.3_PUBLIC\\Ghidra\\Features\\Decompiler\\lib\\Decompiler.jar": "c3b5aa4b77ad19244fcc418b17e129a98a9bc23ebd876fa02b5f419145ec3132",
+    "F:\\claude\\porsche disasm\\local\\tools\\ghidra_12.1.3_PUBLIC\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe": "5ae40d01bf03e09ee89b65d1ca465537a1b5d2626cdcfae6e6a9f98ee2d8f536",
+    "F:\\claude\\porsche disasm\\local\\tools\\ghidra_12.1.3_PUBLIC\\Ghidra\\Framework\\SoftwareModeling\\lib\\SoftwareModeling.jar": "220c419c4d94d65faddecf77ba899213b66382c092a3753be56f3bb08112c96f",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\179-ghidra-declarations\\export\\globals.jsonl": "9121483b5e3a18a6e3a6d78ff39ffeb63903a936816f924e7d813fb761efba99",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\179-ghidra-declarations\\export\\functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d"
+  },
+  "ready_files_sha256": {
+    "scripts\\research\\experiment-v2-global-aliases-194.py": "4c69b820bc7a61142e51fee991d29b9751d2c828029536545549beebcb7cb96a",
+    "scripts\\research\\ghidra\\ExportGlobalAliases194.java": "0acb162d31157f0c009087bd0d164180d4df9f9ec4ec8116c44e18752213bf85",
+    "local\\experiments\\v2-global-aliases-194\\cases.json": "3a408f38f4e37bbf7c1da30e455a8218ae28dd36accaeaf7aa3ce5d5f59388e0",
+    "local\\experiments\\v2-global-aliases-194\\capture-pins.json": "d1b72808e1bc00f52f24127378095bbf123d37c625d6b9a5d7551081fc8461cd"
+  },
+  "limitations": [
+    "Java/headless API compilation and actual token/access export have not executed.",
+    "Static coverage is a candidate count, not proof of native alias types or expected compile gains.",
+    "No declarations, storage allocation, alias coalescing or original/project/corpus edits."
+  ]
+}

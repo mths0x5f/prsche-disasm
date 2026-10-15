@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "command": [
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "F:\\claude\\porsche disasm\\scripts\\research\\audit-v2-native-union-198.py",
+    "--ordinary-summary",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\192-scalar-slice-objects\\summary.json",
+    "--thiscall-summary",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\196-thiscall-leaf-delta\\summary.json",
+    "--thiscall-summary",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-native-union-198\\overlap-fixture-196.json",
+    "--output",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-native-union-198\\overlap-rejection",
+    "--run",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\198-native-union\\overlap-rejection-pilot"
+  ],
+  "exit_code": 1,
+  "overlap_rejected": true,
+  "compiled_overlap_vas": 146,
+  "archive_link_commands": 0,
+  "fixture": "local/experiments/v2-native-union-198/overlap-fixture-196.json",
+  "fixture_sha256": "1a25fd36091488ab2b0a8322cb60ac03c946a06b1a319d20c8cf4afe95199361",
+  "fixture_source_sha256": "1a25fd36091488ab2b0a8322cb60ac03c946a06b1a319d20c8cf4afe95199361",
+  "log": "local/experiments/v2-native-union-198/overlap-rejection.log",
+  "log_sha256": "9ad05fa75296493cdfa91a7a03ed0406a2b2e1053a5b2a70d5c3ba481fa9d993",
+  "script_sha256": "38e2bf6ffb48bed7a51d1affc9c0d3ad81e8fdc8a4ad910699e810695681e4f6"
+}

@@ -1,0 +1,376 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected": [
+    "0043f8a0",
+    "004930f0"
+  ],
+  "corrected_functions": 2,
+  "decompilations": 4,
+  "actual_compiler_batches": 2,
+  "compiler_batches_this_pass": 1,
+  "compiled_objects": 2,
+  "real_coff_objects": 2,
+  "objects_reused": 1,
+  "first_failed_batch": {
+    "schema": 1,
+    "compiler_exit_code": 1,
+    "driver": "local/experiments/v2-abi-analysis-197/native-002/first-batch-driver.py",
+    "driver_sha256": "a7e1252c7714afad6fc6fa0cda30397b4b71c0fcf2a6d257d0ee3c161d4ace69",
+    "log": "local/experiments/v2-abi-analysis-197/native-002/first-failed-compile.log",
+    "log_sha256": "02f9521b9520dbba5c84c9a2c2b6b42326ee92d2d997e6d82f921e24b7bf5bbf",
+    "selected_vas": [
+      "0043f8a0",
+      "004930f0"
+    ],
+    "actual_MP6_batches": 1,
+    "compiled_unchanged": {
+      "va": "0043f8a0",
+      "generated_source": "local/experiments/v2-abi-analysis-197/native-002/0043f8a0.cpp",
+      "generated_source_sha256": "51deecb4c4ac7fd8ecc4b401f9e94c76f2d1bca5af419f90639e6d61519b57db",
+      "object": "local/experiments/v2-abi-analysis-197/native-002/objects/0043f8a0.obj",
+      "object_sha256": "d73746125d47597dd23d2b191fa97b39659999dc8af27ecae6a869b1f1246b1a"
+    },
+    "failed_source": "local/experiments/v2-abi-analysis-197/native-002/004930f0-first-failed.cpp",
+    "failed_source_sha256": "2ac78848768dc8a004e4be08bb376acc6cd41489deb31bb8347d81c77dab6df2",
+    "failure": "C2440 pointer32-to-raw32 store requires original-proven bit cast"
+  },
+  "compiler_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/O2",
+    "/Gy",
+    "/GS-",
+    "/GR-",
+    "/EHs-c-",
+    "/W4",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-abi-analysis-197\\native-002\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-abi-analysis-197\\native-002\\004930f0.cpp"
+  ],
+  "compiler_exit_code": 0,
+  "compiler_log": "local/experiments/v2-abi-analysis-197/native-002/compile.log",
+  "compiler_log_sha256": "317473d1909a2dfe156d5c82f46d386ad669b0d85a1d658d6adb02f9b47e2c1b",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "prepared_driver_sha256": "6a61e799a0f825da3fa282165d4967bdc4b3865598423c25b3122a996937792e",
+  "prepared_driver_artifact": "local/experiments/v2-abi-analysis-197/pre-capture-driver.py",
+  "current_driver_sha256": "c2d76f9255b9d52604b46f4b212a680a1415c8f5b5a629224a3823fc9e0829fc",
+  "exact_original_body_byte_matches": 1,
+  "original_project_unchanged": true,
+  "input_guard_before": true,
+  "input_guard_after": true,
+  "input_sha256": {
+    "scripts/research/ghidra/ExperimentAbiAnalysis193.java": "fa5d0190f57fc2bda51de4d1f03e0e0b6fc257c291bb79e4f24723e91a7b4033",
+    "scripts/research/ghidra/ExperimentAbiLeaves197.java": "9baaea142ebe5e274ae3929a0dd6d331102db3d346b522a27fa268785bd08f48",
+    "scripts/research/experiment-v2-abi-leaves-197.ps1": "f53b8e85f244f13cc26bad13a8cff246cdbe7b48c0d11a75be355764c3afa02e",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "iterations/v2/001-original-recovery/runs/186-thiscall-compatibility/summary.json": "b5aeb00dc71cef4a718de99bc48c18836abcbc51fc55bcb35b0e2d142e01a44b",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "local/experiments/v2-abi-analysis-197/pre-capture-driver.py": "6a61e799a0f825da3fa282165d4967bdc4b3865598423c25b3122a996937792e",
+    "scripts/research/experiment-v2-abi-leaves-197.py": "c2d76f9255b9d52604b46f4b212a680a1415c8f5b5a629224a3823fc9e0829fc",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/contracts-before-analysis.json": "3a3ba2584f4f09f08c7969f28b43295bde76d4a482b718b8ef35a0465cf2dd2d",
+    "local/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/lib/Decompiler.jar": "c3b5aa4b77ad19244fcc418b17e129a98a9bc23ebd876fa02b5f419145ec3132",
+    "local/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/os/win_x86_64/decompile.exe": "5ae40d01bf03e09ee89b65d1ca465537a1b5d2626cdcfae6e6a9f98ee2d8f536",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/after-storage-0043f8a0.c": "96884090de3a2288575814139b18c043120a2ffbf8aa20df6dd5c08cda8ab6f2",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/after-storage-0043f8a0.json": "4b7fd1aa79e71ea1d96392cc3cf80f1c117d06b05c9eacbd02018d63d83f5e7f",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/after-storage-004930f0.c": "792e9235d73f3471adef0ccc9d7d6d3c2c346597579be81b216f9011eb9c3bed",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/after-storage-004930f0.json": "7e99de8a7a4c64d71e0220902901b03e9211e42e918f7c00ebe5d941931345ab",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/before-0043f8a0.c": "e49cd71138d09ceb9a514520be22e17c9a77e9c15ea94369f9f9b6b2f1e0bde9",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/before-0043f8a0.json": "e46cfdcffd9242c026a3d107f189a67c7c5e5b653cdbe258f48fe5ad9d72119f",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/before-004930f0.c": "adb79c93bde9f465fa1aeedc31f55b12e1533b6c43e55c015e961ab25f28d26f",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/before-004930f0.json": "2a3b9efc48230fdf921cce8b421f94b48db86cb1056675c340af9494e765cbc8",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/before-complete.json": "dd33491676cd6c42e7b824d145b6e720680ece87b755d2651b59d971f06b123a",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/provenance.json": "7236e8a8623117f6936c319061484535785bcfa420d7feb1bf5940e7d01160de",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-002/result.json": "bfaddd4a9d12671438b7425bed74a9efa419ed2dafabec5f399e394f94b3b293",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "local/experiments/v2-abi-analysis-197/native-002/first-batch-driver.py": "a7e1252c7714afad6fc6fa0cda30397b4b71c0fcf2a6d257d0ee3c161d4ace69",
+    "local/experiments/v2-abi-analysis-197/native-002/first-failed-compile.log": "02f9521b9520dbba5c84c9a2c2b6b42326ee92d2d997e6d82f921e24b7bf5bbf",
+    "local/experiments/v2-abi-analysis-197/native-002/004930f0-first-failed.cpp": "2ac78848768dc8a004e4be08bb376acc6cd41489deb31bb8347d81c77dab6df2",
+    "local/experiments/v2-abi-analysis-197/native-002/first-batch.json": "8df2393e7f5f1db59e8d134b05a28993ac32271c462977df85ee521c82e3d7f8",
+    "local/experiments/v2-abi-analysis-197/native-002/0043f8a0.cpp": "51deecb4c4ac7fd8ecc4b401f9e94c76f2d1bca5af419f90639e6d61519b57db",
+    "local/experiments/v2-abi-analysis-197/native-002/objects/0043f8a0.obj": "d73746125d47597dd23d2b191fa97b39659999dc8af27ecae6a869b1f1246b1a",
+    "local/experiments/v2-abi-analysis-197/native-002/004930f0.cpp": "cd6f386d7144ef55b5c61bf687c69dcbd770f421d03d4935128737f2a6d3ee75",
+    "local/experiments/v2-abi-analysis-197/native-002/objects/004930f0.obj": "664ae9fbcb0b287c02ae91010bc6b04e4802f4aa18282fdc13ec1d25d6463683"
+  },
+  "results": [
+    {
+      "va": "0043f8a0",
+      "before_signature": "void __thiscall FUN_0043f8a0(int *param_1,int *param_2);",
+      "after_signature": "int * __thiscall FUN_0043f8a0(int *receiver_bits,int *stack_4_bits,undefined4 stack_8_bits);",
+      "original_body_sha256": "925341bcc8d9bbf8280d43e4a4dbd05aa0014a4ee55acc32f7bf61451b27e3e9",
+      "native_contract": {
+        "class": "Thiscall_0043f8a0",
+        "method": "invoke",
+        "explicit_this": "receiver_bits",
+        "explicit_this_type": "int *",
+        "original_signature": "int * __thiscall FUN_0043f8a0(int *receiver_bits,int *stack_4_bits,undefined4 stack_8_bits)",
+        "native_stack_bytes": 8,
+        "this_storage": "ECX:4 (auto)",
+        "return_storage": "EAX:4"
+      },
+      "generated_source": "local/experiments/v2-abi-analysis-197/native-002/0043f8a0.cpp",
+      "generated_source_sha256": "51deecb4c4ac7fd8ecc4b401f9e94c76f2d1bca5af419f90639e6d61519b57db",
+      "raw_database_prototype": "undefined4 __thiscall FUN_0043f8a0(undefined4 receiver_bits, undefined4 stack_4_bits, undefined4 stack_8_bits)",
+      "inferred_pointer_view": "/int *",
+      "original_pointer_store_lowering": null,
+      "pointer_view_boundary": "Original32-bit MOV load/store and EAX output-address prove width/storage only; signed pointee/source types are unaccepted inference",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-abi-analysis-197/native-002/objects/0043f8a0.obj",
+      "object_sha256": "d73746125d47597dd23d2b191fa97b39659999dc8af27ecae6a869b1f1246b1a",
+      "symbols": {
+        "defined": [
+          "?invoke@Thiscall_0043f8a0@@QAEPAHPAHI@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "native_text_sections": [
+        {
+          "name": ".text$mn",
+          "bytes": "568b318b460c85c075278b46048bd63b700c750c8bd089018b40043b500c74f439420c742489018b44240889305ec2080089018b400885c0740f660f1f44000089018b400885c075f78b44240889305ec20800",
+          "relocations": 0,
+          "sha256": "c5ac4f2cea431c2487540c18e306d78a8ae6b7e8e5d7a10fd2ff207c9bd333f0"
+        }
+      ],
+      "native_ret_bytes": [
+        8,
+        8
+      ],
+      "disassembly": "local/experiments/v2-abi-analysis-197/native-002/0043f8a0-disassembly.txt",
+      "disassembly_sha256": "42ea9799ae2446ec82312d1c39f4addfe327f551bae84aaf89dac72cf8c539c5",
+      "exact_original_body_byte_match": false,
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "defined_external_symbols": [
+        "?invoke@Thiscall_0043f8a0@@QAEPAHPAHI@Z"
+      ],
+      "undefined_external_symbols": [],
+      "cache_reused": true
+    },
+    {
+      "va": "004930f0",
+      "before_signature": "void __thiscall FUN_004930f0(undefined4 *param_1,undefined4 *param_2);",
+      "after_signature": "undefined4 * __thiscall FUN_004930f0(undefined4 *receiver_bits,undefined4 *stack_4_bits,undefined4 stack_8_bits);",
+      "original_body_sha256": "10be9788e7179a6a7025f9450187806a9a1875e7f9b909b01d910b3cc362d278",
+      "native_contract": {
+        "class": "Thiscall_004930f0",
+        "method": "invoke",
+        "explicit_this": "receiver_bits",
+        "explicit_this_type": "undefined4 *",
+        "original_signature": "undefined4 * __thiscall\nFUN_004930f0(undefined4 *receiver_bits,undefined4 *stack_4_bits,undefined4 stack_8_bits)",
+        "native_stack_bytes": 8,
+        "this_storage": "ECX:4 (auto)",
+        "return_storage": "EAX:4"
+      },
+      "generated_source": "local/experiments/v2-abi-analysis-197/native-002/004930f0.cpp",
+      "generated_source_sha256": "cd6f386d7144ef55b5c61bf687c69dcbd770f421d03d4935128737f2a6d3ee75",
+      "raw_database_prototype": "undefined4 __thiscall FUN_004930f0(undefined4 receiver_bits, undefined4 stack_4_bits, undefined4 stack_8_bits)",
+      "inferred_pointer_view": "/undefined4 *",
+      "original_pointer_store_lowering": {
+        "instruction": {
+          "va": "004930fa",
+          "bytes": "8910",
+          "instruction": "MOV dword ptr [EAX],EDX"
+        },
+        "pcode": {
+          "sequence": "(ram, 0x4930fa, 10, 5)",
+          "instruction_va": "004930fa",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "Stack[0x4]",
+              "space": "stack",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "stack_4_bits",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "Stack[0x4]:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "stack",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "Stack[0x4]"
+                  }
+                ]
+              }
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "puVar1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "unique:00017200:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "unique",
+                    "offset": 94720,
+                    "bytes": 4,
+                    "address": "unique:00017200"
+                  }
+                ]
+              },
+              "defined_at": "(ram, 0x4930f0, 17, 1)",
+              "defined_by": "CAST"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangOpToken",
+            "text": "*",
+            "min_va": "004930fa",
+            "max_va": "004930fa",
+            "pcode_sequence": "(ram, 0x4930fa, 10, 5)"
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "stack_4_bits",
+            "min_va": "004930fa",
+            "max_va": "004930fa",
+            "pcode_sequence": "(ram, 0x4930fa, 10, 5)",
+            "varnode": {
+              "address": "Stack[0x4]",
+              "space": "stack",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "stack_4_bits",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "Stack[0x4]:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "stack",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "Stack[0x4]"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "004930fa",
+            "max_va": "004930fa",
+            "pcode_sequence": "(ram, 0x4930fa, 10, 5)"
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "puVar1",
+            "min_va": "004930fa",
+            "max_va": "004930fa",
+            "pcode_sequence": "(ram, 0x4930fa, 10, 5)",
+            "varnode": {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "puVar1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "unique:00017200:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "unique",
+                    "offset": 94720,
+                    "bytes": 4,
+                    "address": "unique:00017200"
+                  }
+                ]
+              },
+              "defined_at": "(ram, 0x4930f0, 17, 1)",
+              "defined_by": "CAST"
+            }
+          }
+        ],
+        "original_statement": "*stack_4_bits = puVar1;",
+        "native_statement": "*stack_4_bits = reinterpret_cast<undefined4>(puVar1);",
+        "boundary": "Exact32-bit pointer representation stored by original MOV; no field/class reinterpretation"
+      },
+      "pointer_view_boundary": "Original32-bit MOV load/store and EAX output-address prove width/storage only; signed pointee/source types are unaccepted inference",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-abi-analysis-197/native-002/objects/004930f0.obj",
+      "object_sha256": "664ae9fbcb0b287c02ae91010bc6b04e4802f4aa18282fdc13ec1d25d6463683",
+      "symbols": {
+        "defined": [
+          "?invoke@Thiscall_004930f0@@QAEPAIPAII@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "native_text_sections": [
+        {
+          "name": ".text$mn",
+          "bytes": "8b118b0289018b4424048910c20800",
+          "relocations": 0,
+          "sha256": "10be9788e7179a6a7025f9450187806a9a1875e7f9b909b01d910b3cc362d278"
+        }
+      ],
+      "native_ret_bytes": [
+        8
+      ],
+      "disassembly": "local/experiments/v2-abi-analysis-197/native-002/004930f0-disassembly.txt",
+      "disassembly_sha256": "b66d2e311931ab8a41267c918dacab32dddd8492354dee4059ded9b6b170708f",
+      "exact_original_body_byte_match": true,
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "defined_external_symbols": [
+        "?invoke@Thiscall_004930f0@@QAEPAIPAII@Z"
+      ],
+      "undefined_external_symbols": [],
+      "cache_reused": false
+    }
+  ],
+  "original_call_consumer_count": 4,
+  "complete_caller_high_IR_verification": false,
+  "boundary": [
+    "Two isolated raw32 storage contracts only; semantic types/classes/lifetimes remain unknown.",
+    "Unused original stack+8 is retained and consumed by native RET8, not deleted.",
+    "Native compiler output is candidate evidence; original execution/state equivalence and full callers remain open.",
+    "No manual call repair, external branch replacement, guessed algorithms, registry/production/corpus modification."
+  ]
+}

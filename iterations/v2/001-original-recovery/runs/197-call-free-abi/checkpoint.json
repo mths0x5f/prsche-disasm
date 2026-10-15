@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "status": "unfinished-infrastructure-approval-interrupted",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected": [
+    "0043f8a0",
+    "004930f0"
+  ],
+  "original_instructions_checked": 44,
+  "original_CALL_snippets_checked": 4,
+  "before_and_after_Ghidra_capture_exists": false,
+  "corrected_functions": 0,
+  "compiled_objects": 0,
+  "candidate_count_increment": 0,
+  "attempt001_original_project_unchanged": true,
+  "attempt002_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/research/experiment-v2-abi-leaves-197.ps1 -Attempt 2",
+  "attempt002_tool_status": "aborted by user after 436.0s",
+  "approval_wait_interrupted": true,
+  "automatic_retry": false,
+  "next_step": "Obtain required infrastructure approval, run fresh Attempt002, then compile_capture197 only after both Ghidra snapshots pass",
+  "files_sha256": {
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/contracts-before-analysis.json": "3a3ba2584f4f09f08c7969f28b43295bde76d4a482b718b8ef35a0465cf2dd2d",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/README.md": "5c0ac6fa94b61fb8d5f548e663adedc57faf214b18e8561d0e62fc4acb659b3b",
+    "iterations/v2/001-original-recovery/runs/197-call-free-abi/export/attempt-001/provenance.json": "990056f718d344b98ebdf82e7ca410840cd55b4e0a95560d21f3d361767d9f7f",
+    "local/experiments/v2-abi-analysis-197/console-001.log": "dbb15f3e23a692fee254645f10e5f9064072ab99be7c28138855d807ad044859",
+    "scripts/research/experiment-v2-abi-leaves-197.py": "6a61e799a0f825da3fa282165d4967bdc4b3865598423c25b3122a996937792e",
+    "scripts/research/experiment-v2-abi-leaves-197.ps1": "f53b8e85f244f13cc26bad13a8cff246cdbe7b48c0d11a75be355764c3afa02e",
+    "scripts/research/ghidra/ExperimentAbiLeaves197.java": "9baaea142ebe5e274ae3929a0dd6d331102db3d346b522a27fa268785bd08f48"
+  },
+  "new_text_LF_before_hash": true
+}

@@ -9,7 +9,7 @@ Four functions are decompiled before and after two callee-only CUSTOM_STORAGE
 corrections in an independent copy of the analyzed project. All receiver/stack
 slots are raw undefined4; semantic types and object lifetimes remain unknown.
 No analysis is rerun, and -readOnly discards the in-memory changes afterward.
-The original project's78 files/572766909 bytes have identical before/after hashes.
+The original project's79 files/572766909 bytes have identical before/after hashes.
 
 -00489370 CALL00489386в†’00489530: original ECX=entry ECX, stack+4=ESI loop index,
  stack+8=entry stack+4. RET8 and both callee stack reads establish two slots.

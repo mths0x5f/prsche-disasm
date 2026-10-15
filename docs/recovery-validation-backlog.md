@@ -1,5 +1,21 @@
 # Отложенные проверки восстановления v2
 
+2026-10-15 final checkpoint199:1072 actualCOFF (924+148),28literal leaf-body matches.
+Actualarchive/link выполнены повторяемым198CLI без компиляции:403raw/393linked names,
+frontier полностью совпал с198.197 добавил2реальныхCOFF, не новые accepted functions.
+- [ ]197: full caller high-IR/native lowering и state/volatile-register equivalence;
+ 44PEinstructions/4CALLsnippets/rawECX+stack+EAX/RET8 проверены,004930f0 byte-exact15B.
+- [ ]194/200:7float4 per-consumer views → bounded changed-TU batch;8direct RAM links
+  не доказывают data ownership/aliasing/lifetime.3Capstone FSTP direction conflicts,
+ register/unique tokenstorage и address-only/unresolved strings сохранять отдельно.
+ Potential757_DAT/330string gap bodies — очередь исследования, не accepted coverage.
+
+2026-10-15:198 actual1070-object archive/link:403raw names/780objectrefs,
+393linked unresolved names/581diagnostic occurrences;16new data owners,145function frontier
+без изменений. Platform CRT resolved10, outputEXE/DLL отсутствует. Аудит6516pins PASS.
+- [ ]198:241data definitions/initializers/aliasing,145FUN dependencies и7printed CRT contracts.
+  Повторяемый --thiscall-summary принимает будущие disjoint ABI packets; не добавлятьstubs.
+
 2026-10-15:196 —1070distinct compile candidates (924+146),16 новых объектов,
 27cached body-byte matches сохранены.195 —actual1054-object diagnostic link:
 377names/564diagnostic occurrences, raw387names/763objectrefs, noEXE.

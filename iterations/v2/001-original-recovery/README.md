@@ -1,13 +1,25 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-2026-10-15: [Run193](runs/193-abi-storage-pilot/README.md) исправляет два доказанных raw32 ABI-контракта
-в копии Ghidra: восстановлены потерянные ECX/stack inputs у двух вызовов;
-373 original instructions/IR producers проверены, исходный проект неизменён.
-В работе194 aliases и197 ABI;195/196 завершены.
-Принят [Run196](runs/196-thiscall-leaf-delta/README.md):16 новых COFF/130 reused,
-1070 различных native candidate VA;13 leaf failures остаются явными.
-Run195: диагностический archive/link1054objects,377 unresolved names, noEXE.
-Обновлённый union1070 в работе198; новые ABI/alias deltas194/197 проверяются отдельно.
+2026-10-15 checkpoint193–199: **1072 разных native candidate VA** =924ordinary+148leaf,
+18 новых относительноa17f569; у28 leaf bodies машинные байты совпадают с оригиналом.
+196: один19-TU /MP6 batch4.373с,16new/130reused.197:2COFF, retry только изменённой
+004930f0; её15байт совпали полностью. Ghidra/raw storage и inferred types разделены.
+199: настоящий1072-member archive1212002B и diagnostic link без компиляции;
+raw403names/780objectrefs, actual393unresolved names/581diagnostics.
+145FUN:36canonical owners внеunion/109missing;241data и7printed CRT contracts открыты.
+198 reusable CLI: несколько disjoint packets, exactSHA/symbol cache, overlapVA reject.
+193:2 callee ABI corrections восстановили потерянные CALL inputs;373instructionsPASS.
+194:12aliases/21original instructions,8direct token-RAM links (7float4+raw32store);
+3FSTP direction discrepancies и unresolved storage/string cases сохранены явно.
+Whole original Ghidra project79files/572766909B неизменён; readonly экспорт/копии.
+Production173:476full+6partial, прежний game-link267symbols/303refs; игрового EXE нет.
+Все193–199 packets завершены, активных назначений/approval ожиданий не осталось.
+Следующий шаг200: bounded per-consumer extern views для7 доказанных float4 aliases,
+только changed TUs из189/184 и cachedCOFF; storage owners/initializers не угадывать.
+Затем масштабировать token-RAM exporter на подтверждённые классы _DAT/string aliases.
+Потенциальные757 _DAT gap bodies — scope исследования, не принятые исправления.
+Ghidra escalation передавать координатору сразу; full corpus/oracles не повторять,
+пропущенные проверки сохранять в docs/recovery-validation-backlog.md.
 
 2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные
 x86 COFF:924 общего корпуса +130 thiscall leaves, пересечений0. У27 leaf bodies
