@@ -1,0 +1,43 @@
+{
+  "run": 213,
+  "title": "callable-contract-inventory",
+  "mode": "read-only navigation",
+  "source_sha256": {
+    "original_pe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "original_functions_jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "audit_189": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+    "summary_201": "8039f3e387e7e0f858400cc070e8faf8ce6f8ec2e4c9094266307678d098197b",
+    "summary_207": "afe098c06833670d4a9ae9133d516192018d76c2d342f026e43d6505da1f3bd1",
+    "summary_208": "0fa8e2b6172792c141be1029b35aa808a88b6ebd8c21dd5d6d1538abf8acb21e"
+  },
+  "exclusions": {
+    "compiled_or_reserved_runs": [206, 207, 208, 210, 212],
+    "pending_runs": [211, 214],
+    "canonical_or_wip": ["00562680"]
+  },
+  "proven_slot_contract_reuse_boundary": {
+    "006bd97c": {"calling_convention": "stdcall", "arguments": ["stack+4 raw32", "stack+8 raw32"], "return_bits": "EAX32", "callee_cleanup": 8},
+    "006bd918": {"calling_convention": "stdcall", "arguments": ["stack+4 raw32", "stack+8 raw32"], "return_bits": "EAX32", "callee_cleanup": 8},
+    "006bd984": {"calling_convention": "stdcall", "arguments": ["stack+4 raw32"], "return_bits": "EAX32", "callee_cleanup": 4},
+    "limitation": "207 slot identity does not prove every caller prototype or data ownership."
+  },
+  "selected": [
+    {
+      "va": "00537b40",
+      "body_bytes": 416,
+      "source": "local/experiments/v2-declaration-compat-184/full/00537b40.cpp",
+      "source_sha256": "ed787305373b627f4fd7d20264fd4f0e63703d0cef9a02366d4579f0e35dffb1",
+      "globals": ["DAT_006bd97c", "DAT_006bd984"],
+      "diagnostics": {"C2065": 17, "C2664": 4, "C2440": 2},
+      "other_missing_globals": ["DAT_005de62c", "DAT_005de630", "DAT_005de64c", "DAT_006bd934", "DAT_006bd954", "_DAT_005de784", "_DAT_005de78c"],
+      "rank_reason": "only remaining cached 201 row after exclusions and canonical/WIP filtering"
+    }
+  ],
+  "excluded_cached_candidate": {
+    "va": "00562680",
+    "body_bytes": 368,
+    "reason": "canonical/WIP recovered source present",
+    "globals": ["DAT_006bd97c", "DAT_006bd984"]
+  },
+  "proof_status": "candidate only; no prototype, ownership, or semantic proof"
+}

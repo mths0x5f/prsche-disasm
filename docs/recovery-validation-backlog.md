@@ -1,5 +1,31 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint216:1108native functions;432unresolved names/624diagnostics:
+89missingfunctions,36canonicaloutsideunion,1compiledsymbolmismatch,299dataviews,
+7printedCRTcontracts. This is candidate frontier, not complete game remainder.
+- [x]214: actualDWORDoutput restored, modulo32SUB/ADD/*1000 andsignedIDIV;
+  42originalPEinstructions/SDKcontract,36864native asm-tail comparisons+3guardcasesPASS.
+  Metadata-only RETcount correction:3originalpaths→1nativeepilogue, no native rerun.
+- [ ]214: fulloriginalbody/providerexecution, successfulproviderinitialization,
+  divisor-zero faults, concurrency/objectlifetime andoutgoingregister equivalence.
+  Nativefixture usescontrolledcallback+verifiedinteger asm, not originalDirectSound.
+- [x]216: one newobject,1107symbol snapshots/531platformpins reused;6804pinsPASS,
+  onearchive/link,0compilations. No EXE orproduction integration.
+
+Checkpoint215:1107native candidate functions, actual archive/link426unresolved
+names/618diagnostics;90missing bodies/36canonical outside union/1compiled-VA mismatch,
+292data names/7printed CRT contracts. Production173 unchanged.
+- [x]211:127PEinstructions,2proven direct-call contracts and2native CALL+ADDESP8 sites.
+- [ ]211/215:00590290 actualdefinition0args vs caller2unusedslots: rawcdecl ABI maymatch
+  but C++symbols differ. Resolve through proven shared declaration/owner contract,
+  not blanketalias; preserve extra caller slots where hardwaretrace requires them.
+- [x]215:1094symbol snapshots reused/13new actualobjects,6780exact pins before/after;
+  no new compilation. Supplementary exact/interior ownership210/212 found0overlaps.
+- [ ]213: only remaining callback-reuse candidate00537b40; C2065/C2664/C2440 andcaller
+  dataflow still needproof. Slotidentity207 doesnotpermitwhole-corpus callablecasts.
+- [ ]214: bind private WORD_006b48da_214 to original006b48da:2 (base006b48d8+2)
+  when native data owners are restored; standaloneword allocation mustnotbreakaliases.
+
 Checkpoint207–212 (2026-10-15), пока до общего union:
 - [x]207:4actualCOFF; original renderer callbacks/SDK Release CALL/RET contracts,
   1042PEinstructions и native callsite/stack evidence проверены;0Ghidra/native runtime reruns.

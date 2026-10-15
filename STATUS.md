@@ -1,13 +1,22 @@
 # Состояние проекта
 
-Работа 2026-10-15 после206:207/208/209/210/212 завершены как isolated candidates;
-211 два direct-call contracts (locale_resume);214 sound GetCurrentPosition outvalue
-(abi_analysis_193). Root — приёмка и один общий archive/link по готовым пакетам.
-Light float_inventory_205 — независимые read-only audits210/212.
-Найден concrete getC counterexample0058f5d0: послеCALL[+0x10] оригинал читаетDWORD
-из[ESP], псевдо-C используетадресCOMобъекта.214 восстанавливает этот dataflow.
-Completed runs immutable; production173 не меняется. Функции/данные/ABI проверяются
-по исходным consumers; compiler candidates и faithful acceptance учитываются отдельно.
+Checkpoint 2026-10-15, Run216: **1108 разных native candidate VA** (+14 к206),
+959ordinary+149leaf,0overlaps. Actual archive1256244B; raw443names/827refs,
+actual432unresolved names/624diagnostics, EXE/DLL нет.
+Function names133→126:89missing bodies,36canonical outside union,1compiled-VA contract
+mismatch00590290 (existing0arg symbol vs proven2unused caller stackslots); no guessedalias.
+Data273→299;7printed CRT contracts.216 reused1107symbol snapshots/531platform pins,
+reread1new object,0compilations,6804pins before/after PASS; collector7.473s.
+214 restored actualDWORDoutput afterGetCurrentPosition, modular32arithmetic andsignedIDIV;
+42PEinstructions,36864nativeinteger-tail asm comparisons+3callbackguardcasesPASS.
+207/208/210/211/212 bounded audits PASS;213 reuse navigation queue00537b40.
+Production173 unchanged476full+6partial and267game-linknames/303refs.
+Все пакеты207–216 завершены; активных назначений/approval ожиданий нет.
+Следующий bounded шаг:00590290 proven rawcdecl symbol binding; затем00537b40 callers
+и89missing/299data owners/aliases/initializers. Private WORD006b48da:2 mustsharebase+2.
+Fullprovider/fault/register/gamefidelity remainopen; countsarenotfullgameremainder.
+
+Historical checkpoint206:
 
 Checkpoint 2026-10-15, runs202–206: **1094 разных native candidate VA**
 (945 ordinary +149 leaf), +22 к199; пересечений VA нет. Run206: настоящий archive

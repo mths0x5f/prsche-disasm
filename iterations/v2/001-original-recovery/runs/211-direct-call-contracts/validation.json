@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "summary_sha256": "a66e3d28da6f6d89470d3a20fc57e6dc19f36e74d8cb4b80265db0f4864297b0",
+  "source_script_sha256": "6ffec8a6ace3e96686670a7c2732f88b828941625d077ac8128f0e3f140c5e85",
+  "input_guards_before_after": true,
+  "original_pe_body_bytes_pass": true,
+  "original_call_rel32_and_cleanup_pass": true,
+  "ownership_exact_interior_wip_pass": true,
+  "bodies_preserved": true,
+  "only_two_prototype_edits": true,
+  "exit_and_timing_persisted_before_parse": true,
+  "objects_compiled": 2,
+  "actual_compiler_batches": 1,
+  "native_i386_coff_pass": true,
+  "nested_full_body_or_caller_fidelity": false,
+  "union_link_commands": 0,
+  "read_only_audit_sha256": "25d95de988addc4f97eb80b0f994ca8d251e778799ba36b45700ad3a40b90612",
+  "readme_sha256": "49f6045006e6a15303d91da6fd8bfff98d7de1dddab462e6392711ed3c1031c8",
+  "prepare_capture_chain_pass": true,
+  "exact_two_prototype_edits_pass": true,
+  "byte_identical_caller_bodies_pass": true,
+  "actual_two_native_coff_pass": true,
+  "actual_native_call_cleanup8_pass": true,
+  "native_call_relocations": [
+    {
+      "caller": "00565cd0",
+      "target": "?FUN_00590290@@YAIII@Z",
+      "section": 3,
+      "call_section_offset": 96,
+      "cleanup_bytes": "83c408",
+      "call_and_cleanup_hex": "e80000000083c408"
+    },
+    {
+      "caller": "00565e70",
+      "target": "?FUN_00565ea0@@YAIPAXI@Z",
+      "section": 3,
+      "call_section_offset": 45,
+      "cleanup_bytes": "83c408",
+      "call_and_cleanup_hex": "e80000000083c408"
+    }
+  ],
+  "new_text_LF_pass": true
+}

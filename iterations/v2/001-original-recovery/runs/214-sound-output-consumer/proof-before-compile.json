@@ -1,0 +1,795 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "entry_va": "0058f5d0",
+  "original_instructions": [
+    {
+      "va": "0058f5d0",
+      "bytes": "51",
+      "instruction": "PUSH ECX"
+    },
+    {
+      "va": "0058f5d1",
+      "bytes": "a160d76a00",
+      "instruction": "MOV EAX,[0x006ad760]"
+    },
+    {
+      "va": "0058f5d6",
+      "bytes": "85c0",
+      "instruction": "TEST EAX,EAX"
+    },
+    {
+      "va": "0058f5d8",
+      "bytes": "7504",
+      "instruction": "JNZ 0x0058f5de"
+    },
+    {
+      "va": "0058f5da",
+      "bytes": "33c0",
+      "instruction": "XOR EAX,EAX"
+    },
+    {
+      "va": "0058f5dc",
+      "bytes": "59",
+      "instruction": "POP ECX"
+    },
+    {
+      "va": "0058f5dd",
+      "bytes": "c3",
+      "instruction": "RET"
+    },
+    {
+      "va": "0058f5de",
+      "bytes": "a168d76a00",
+      "instruction": "MOV EAX,[0x006ad768]"
+    },
+    {
+      "va": "0058f5e3",
+      "bytes": "8d542400",
+      "instruction": "LEA EDX,[ESP]"
+    },
+    {
+      "va": "0058f5e7",
+      "bytes": "6a00",
+      "instruction": "PUSH 0x0"
+    },
+    {
+      "va": "0058f5e9",
+      "bytes": "52",
+      "instruction": "PUSH EDX"
+    },
+    {
+      "va": "0058f5ea",
+      "bytes": "8b08",
+      "instruction": "MOV ECX,dword ptr [EAX]"
+    },
+    {
+      "va": "0058f5ec",
+      "bytes": "50",
+      "instruction": "PUSH EAX"
+    },
+    {
+      "va": "0058f5ed",
+      "bytes": "ff5110",
+      "instruction": "CALL dword ptr [ECX + 0x10]"
+    },
+    {
+      "va": "0058f5f0",
+      "bytes": "85c0",
+      "instruction": "TEST EAX,EAX"
+    },
+    {
+      "va": "0058f5f2",
+      "bytes": "7404",
+      "instruction": "JZ 0x0058f5f8"
+    },
+    {
+      "va": "0058f5f4",
+      "bytes": "33c0",
+      "instruction": "XOR EAX,EAX"
+    },
+    {
+      "va": "0058f5f6",
+      "bytes": "59",
+      "instruction": "POP ECX"
+    },
+    {
+      "va": "0058f5f7",
+      "bytes": "c3",
+      "instruction": "RET"
+    },
+    {
+      "va": "0058f5f8",
+      "bytes": "8b442400",
+      "instruction": "MOV EAX,dword ptr [ESP]"
+    },
+    {
+      "va": "0058f5fc",
+      "bytes": "8a0de4486b00",
+      "instruction": "MOV CL,byte ptr [0x006b48e4]"
+    },
+    {
+      "va": "0058f602",
+      "bytes": "d1e8",
+      "instruction": "SHR EAX,0x1"
+    },
+    {
+      "va": "0058f604",
+      "bytes": "84c9",
+      "instruction": "TEST CL,CL"
+    },
+    {
+      "va": "0058f606",
+      "bytes": "7510",
+      "instruction": "JNZ 0x0058f618"
+    },
+    {
+      "va": "0058f608",
+      "bytes": "8b0ddc486b00",
+      "instruction": "MOV ECX,dword ptr [0x006b48dc]"
+    },
+    {
+      "va": "0058f60e",
+      "bytes": "33d2",
+      "instruction": "XOR EDX,EDX"
+    },
+    {
+      "va": "0058f610",
+      "bytes": "81e1ff000000",
+      "instruction": "AND ECX,0xff"
+    },
+    {
+      "va": "0058f616",
+      "bytes": "f7f1",
+      "instruction": "DIV ECX"
+    },
+    {
+      "va": "0058f618",
+      "bytes": "8b0d8cd76a00",
+      "instruction": "MOV ECX,dword ptr [0x006ad78c]"
+    },
+    {
+      "va": "0058f61e",
+      "bytes": "2bc8",
+      "instruction": "SUB ECX,EAX"
+    },
+    {
+      "va": "0058f620",
+      "bytes": "7906",
+      "instruction": "JNS 0x0058f628"
+    },
+    {
+      "va": "0058f622",
+      "bytes": "030db4d76a00",
+      "instruction": "ADD ECX,dword ptr [0x006ad7b4]"
+    },
+    {
+      "va": "0058f628",
+      "bytes": "8d0489",
+      "instruction": "LEA EAX,[ECX + ECX*0x4]"
+    },
+    {
+      "va": "0058f62b",
+      "bytes": "33c9",
+      "instruction": "XOR ECX,ECX"
+    },
+    {
+      "va": "0058f62d",
+      "bytes": "668b0dda486b00",
+      "instruction": "MOV CX,word ptr [0x006b48da]"
+    },
+    {
+      "va": "0058f634",
+      "bytes": "8d0480",
+      "instruction": "LEA EAX,[EAX + EAX*0x4]"
+    },
+    {
+      "va": "0058f637",
+      "bytes": "8d0480",
+      "instruction": "LEA EAX,[EAX + EAX*0x4]"
+    },
+    {
+      "va": "0058f63a",
+      "bytes": "c1e003",
+      "instruction": "SHL EAX,0x3"
+    },
+    {
+      "va": "0058f63d",
+      "bytes": "99",
+      "instruction": "CDQ"
+    },
+    {
+      "va": "0058f63e",
+      "bytes": "f7f9",
+      "instruction": "IDIV ECX"
+    },
+    {
+      "va": "0058f640",
+      "bytes": "59",
+      "instruction": "POP ECX"
+    },
+    {
+      "va": "0058f641",
+      "bytes": "c3",
+      "instruction": "RET"
+    }
+  ],
+  "DSBuffer_origin_window": [
+    {
+      "va": "0058f15c",
+      "bytes": "a160d76a00",
+      "instruction": "MOV EAX,[0x006ad760]"
+    },
+    {
+      "va": "0058f161",
+      "bytes": "53",
+      "instruction": "PUSH EBX"
+    },
+    {
+      "va": "0058f162",
+      "bytes": "8d54245c",
+      "instruction": "LEA EDX,[ESP + 0x5c]"
+    },
+    {
+      "va": "0058f166",
+      "bytes": "6868d76a00",
+      "instruction": "PUSH 0x6ad768"
+    },
+    {
+      "va": "0058f16b",
+      "bytes": "8b08",
+      "instruction": "MOV ECX,dword ptr [EAX]"
+    },
+    {
+      "va": "0058f16d",
+      "bytes": "52",
+      "instruction": "PUSH EDX"
+    },
+    {
+      "va": "0058f16e",
+      "bytes": "50",
+      "instruction": "PUSH EAX"
+    },
+    {
+      "va": "0058f16f",
+      "bytes": "ff510c",
+      "instruction": "CALL dword ptr [ECX + 0xc]"
+    },
+    {
+      "va": "0058f172",
+      "bytes": "85c0",
+      "instruction": "TEST EAX,EAX"
+    },
+    {
+      "va": "0058f174",
+      "bytes": "7568",
+      "instruction": "JNZ 0x0058f1de"
+    }
+  ],
+  "scope": "one original integer-only consumer; no provider implementation",
+  "ownership": {
+    "canonical_exact_or_interior": [],
+    "WIP": []
+  },
+  "source_frozen184_sha256": "0c1f5ac5e5aa406a3087dca64b8e873fd99c3b05ebd429fc407f00e55c41c26f",
+  "inferred179": {
+    "schema": 2,
+    "module": "Porsche.exe",
+    "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "export_identity_sha256": "fe1853a85cc62e08f3311b3b93cdb7c1cfdb1d96f07886d323345308101aa57e",
+    "entry_va": "0058f5d0",
+    "name": "FUN_0058f5d0",
+    "database_prototype": "undefined FUN_0058f5d0()",
+    "database_signature_source": "DEFAULT",
+    "database_calling_convention": "unknown",
+    "thunk": false,
+    "external": false,
+    "provenance": "Ghidra 12.1.3 cached analysis; decompiler inference; no signature commit",
+    "error": "",
+    "status": "decompiled",
+    "inferred_signature": "int FUN_0058f5d0(void);",
+    "prototype": "int FUN_0058f5d0(void);",
+    "inferred_calling_convention": "__stdcall",
+    "extra_pop": 4,
+    "return_type": {
+      "path": "/int",
+      "name": "int",
+      "display": "int",
+      "length": 4,
+      "alignment": 4,
+      "class": "ghidra.program.model.data.IntegerDataType"
+    },
+    "return_storage": "EAX:4",
+    "return_storage_detail": {
+      "display": "EAX:4",
+      "serialization": "register:00000000:4",
+      "bytes": 4,
+      "memory": false,
+      "register": true,
+      "stack": false,
+      "compound": false,
+      "forced_indirect": false,
+      "varnodes": [
+        {
+          "space": "register",
+          "offset": "0",
+          "bytes": 4,
+          "address": "register:00000000"
+        }
+      ]
+    },
+    "noreturn": false,
+    "this_pointer": false,
+    "varargs": false,
+    "inline": false,
+    "parameters": [],
+    "globals": [
+      {
+        "name": "DAT_006ad760",
+        "namespace": "Global",
+        "type": {
+          "path": "/int",
+          "name": "int",
+          "display": "int",
+          "length": 4,
+          "alignment": 4,
+          "class": "ghidra.program.model.data.IntegerDataType"
+        },
+        "bytes": 4,
+        "storage": "006ad760:4",
+        "storage_detail": {
+          "display": "006ad760:4",
+          "serialization": "ram:006ad760:4",
+          "bytes": 4,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7001952",
+              "bytes": 4,
+              "address": "006ad760"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "int DAT_006ad760"
+      },
+      {
+        "name": "DAT_006ad768",
+        "namespace": "Global",
+        "type": {
+          "path": "/int *",
+          "name": "int *",
+          "display": "int *",
+          "length": 4,
+          "alignment": 4,
+          "class": "ghidra.program.model.data.PointerDataType"
+        },
+        "bytes": 4,
+        "storage": "006ad768:4",
+        "storage_detail": {
+          "display": "006ad768:4",
+          "serialization": "ram:006ad768:4",
+          "bytes": 4,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7001960",
+              "bytes": 4,
+              "address": "006ad768"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "int *DAT_006ad768"
+      },
+      {
+        "name": "DAT_006b48e4",
+        "namespace": "Global",
+        "type": {
+          "path": "/char",
+          "name": "char",
+          "display": "char",
+          "length": 1,
+          "alignment": 1,
+          "class": "ghidra.program.model.data.CharDataType"
+        },
+        "bytes": 1,
+        "storage": "006b48e4:1",
+        "storage_detail": {
+          "display": "006b48e4:1",
+          "serialization": "ram:006b48e4:1",
+          "bytes": 1,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7031012",
+              "bytes": 1,
+              "address": "006b48e4"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "char DAT_006b48e4"
+      },
+      {
+        "name": "DAT_006b48dc",
+        "namespace": "Global",
+        "type": {
+          "path": "/undefined",
+          "name": "undefined",
+          "display": "undefined",
+          "length": 1,
+          "alignment": 1,
+          "class": "ghidra.program.model.data.DefaultDataType"
+        },
+        "bytes": 1,
+        "storage": "006b48dc:1",
+        "storage_detail": {
+          "display": "006b48dc:1",
+          "serialization": "ram:006b48dc:1",
+          "bytes": 1,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7031004",
+              "bytes": 1,
+              "address": "006b48dc"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "undefined DAT_006b48dc"
+      },
+      {
+        "name": "DAT_006ad78c",
+        "namespace": "Global",
+        "type": {
+          "path": "/int",
+          "name": "int",
+          "display": "int",
+          "length": 4,
+          "alignment": 4,
+          "class": "ghidra.program.model.data.IntegerDataType"
+        },
+        "bytes": 4,
+        "storage": "006ad78c:4",
+        "storage_detail": {
+          "display": "006ad78c:4",
+          "serialization": "ram:006ad78c:4",
+          "bytes": 4,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7001996",
+              "bytes": 4,
+              "address": "006ad78c"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "int DAT_006ad78c"
+      },
+      {
+        "name": "DAT_006ad7b4",
+        "namespace": "Global",
+        "type": {
+          "path": "/int",
+          "name": "int",
+          "display": "int",
+          "length": 4,
+          "alignment": 4,
+          "class": "ghidra.program.model.data.IntegerDataType"
+        },
+        "bytes": 4,
+        "storage": "006ad7b4:4",
+        "storage_detail": {
+          "display": "006ad7b4:4",
+          "serialization": "ram:006ad7b4:4",
+          "bytes": 4,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7002036",
+              "bytes": 4,
+              "address": "006ad7b4"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "int DAT_006ad7b4"
+      },
+      {
+        "name": "DAT_006b48d8",
+        "namespace": "Global",
+        "type": {
+          "path": "/undefined",
+          "name": "undefined",
+          "display": "undefined",
+          "length": 1,
+          "alignment": 1,
+          "class": "ghidra.program.model.data.DefaultDataType"
+        },
+        "bytes": 1,
+        "storage": "006b48d8:1",
+        "storage_detail": {
+          "display": "006b48d8:1",
+          "serialization": "ram:006b48d8:1",
+          "bytes": 1,
+          "memory": true,
+          "register": false,
+          "stack": false,
+          "compound": false,
+          "forced_indirect": false,
+          "varnodes": [
+            {
+              "space": "ram",
+              "offset": "7031000",
+              "bytes": 1,
+              "address": "006b48d8"
+            }
+          ]
+        },
+        "type_locked": true,
+        "name_locked": true,
+        "declaration": "undefined DAT_006b48d8"
+      }
+    ]
+  },
+  "edits": [
+    {
+      "original": "undefined1 local_4 [4];",
+      "replacement": "uint local_4;",
+      "pcs": [
+        "0058f5d0",
+        "0058f5e3",
+        "0058f5f8"
+      ],
+      "reason": "original4-byte stack output cell; no extra initialization",
+      "instructions": [
+        {
+          "va": "0058f5d0",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0058f5e3",
+          "bytes": "8d542400",
+          "instruction": "LEA EDX,[ESP]"
+        },
+        {
+          "va": "0058f5f8",
+          "bytes": "8b442400",
+          "instruction": "MOV EAX,dword ptr [ESP]"
+        }
+      ]
+    },
+    {
+      "original": "iVar1 = (**(code **)(*DAT_006ad768 + 0x10))(DAT_006ad768,local_4,0);",
+      "replacement": "iVar1 = (**(GetCurrentPosition214 *)(*piVar3 + 0x10))(piVar3,&local_4,0);",
+      "pcs": [
+        "0058f5de",
+        "0058f5e3",
+        "0058f5e7",
+        "0058f5e9",
+        "0058f5ea",
+        "0058f5ec",
+        "0058f5ed"
+      ],
+      "reason": "one object snapshot; SDKstdcall self/DWORD*/nullwrite; callee cleanup12",
+      "instructions": [
+        {
+          "va": "0058f5de",
+          "bytes": "a168d76a00",
+          "instruction": "MOV EAX,[0x006ad768]"
+        },
+        {
+          "va": "0058f5e3",
+          "bytes": "8d542400",
+          "instruction": "LEA EDX,[ESP]"
+        },
+        {
+          "va": "0058f5e7",
+          "bytes": "6a00",
+          "instruction": "PUSH 0x0"
+        },
+        {
+          "va": "0058f5e9",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0058f5ea",
+          "bytes": "8b08",
+          "instruction": "MOV ECX,dword ptr [EAX]"
+        },
+        {
+          "va": "0058f5ec",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "0058f5ed",
+          "bytes": "ff5110",
+          "instruction": "CALL dword ptr [ECX + 0x10]"
+        }
+      ]
+    },
+    {
+      "original": "uVar2 = (uint)piVar3 >> 1;",
+      "replacement": "uVar2 = local_4 >> 1;",
+      "pcs": [
+        "0058f5f8",
+        "0058f602"
+      ],
+      "reason": "read actual DWORD output then logicalSHR; never object-address arithmetic",
+      "instructions": [
+        {
+          "va": "0058f5f8",
+          "bytes": "8b442400",
+          "instruction": "MOV EAX,dword ptr [ESP]"
+        },
+        {
+          "va": "0058f602",
+          "bytes": "d1e8",
+          "instruction": "SHR EAX,0x1"
+        }
+      ]
+    },
+    {
+      "original": "  iVar1 = DAT_006ad78c - uVar2;\n  if (iVar1 < 0) {\n    iVar1 = iVar1 + DAT_006ad7b4;\n  }\n  return (iVar1 * 1000) / (int)(uint)DAT_006b48d8._2_2_;",
+      "replacement": "  uint distance_bits = static_cast<uint>(DAT_006ad78c) - uVar2;\n  if ((distance_bits & 0x80000000u) != 0) {\n    distance_bits = distance_bits + static_cast<uint>(DAT_006ad7b4);\n  }\n  uint scaled_bits = distance_bits * 1000u;\n  return signed_bits214(scaled_bits) / static_cast<int>(WORD_006b48da_214);",
+      "pcs": [
+        "0058f618",
+        "0058f61e",
+        "0058f620",
+        "0058f622",
+        "0058f628",
+        "0058f62b",
+        "0058f62d",
+        "0058f634",
+        "0058f637",
+        "0058f63a",
+        "0058f63d",
+        "0058f63e"
+      ],
+      "reason": "modulo32 SUB/optionalADD/*5*5*5*8; JNS observes signbit; bitview numerator and zeroextendedWORD denominator use signedIDIV",
+      "instructions": [
+        {
+          "va": "0058f618",
+          "bytes": "8b0d8cd76a00",
+          "instruction": "MOV ECX,dword ptr [0x006ad78c]"
+        },
+        {
+          "va": "0058f61e",
+          "bytes": "2bc8",
+          "instruction": "SUB ECX,EAX"
+        },
+        {
+          "va": "0058f620",
+          "bytes": "7906",
+          "instruction": "JNS 0x0058f628"
+        },
+        {
+          "va": "0058f622",
+          "bytes": "030db4d76a00",
+          "instruction": "ADD ECX,dword ptr [0x006ad7b4]"
+        },
+        {
+          "va": "0058f628",
+          "bytes": "8d0489",
+          "instruction": "LEA EAX,[ECX + ECX*0x4]"
+        },
+        {
+          "va": "0058f62b",
+          "bytes": "33c9",
+          "instruction": "XOR ECX,ECX"
+        },
+        {
+          "va": "0058f62d",
+          "bytes": "668b0dda486b00",
+          "instruction": "MOV CX,word ptr [0x006b48da]"
+        },
+        {
+          "va": "0058f634",
+          "bytes": "8d0480",
+          "instruction": "LEA EAX,[EAX + EAX*0x4]"
+        },
+        {
+          "va": "0058f637",
+          "bytes": "8d0480",
+          "instruction": "LEA EAX,[EAX + EAX*0x4]"
+        },
+        {
+          "va": "0058f63a",
+          "bytes": "c1e003",
+          "instruction": "SHL EAX,0x3"
+        },
+        {
+          "va": "0058f63d",
+          "bytes": "99",
+          "instruction": "CDQ"
+        },
+        {
+          "va": "0058f63e",
+          "bytes": "f7f9",
+          "instruction": "IDIV ECX"
+        }
+      ]
+    }
+  ],
+  "SDK": {
+    "dsound_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\dsound.h",
+    "dsound_sha256": "781e58e6b6eb081afd0b4097f8d5c60036d746ad49c3a54cd92555e24a80beec",
+    "basetyps_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\basetyps.h",
+    "basetyps_sha256": "48683511f47520707530d6e660d30ff9ac3c6255d976c8b004e28d17b53b5098",
+    "contract": "HRESULT32 __stdcall GetCurrentPosition(self,DWORD*play,DWORD*write),vtable+16,callee cleanup12"
+  },
+  "original_memory_views": [
+    {
+      "va": "006ad760",
+      "bytes": 4
+    },
+    {
+      "va": "006ad768",
+      "bytes": 4
+    },
+    {
+      "va": "006b48e4",
+      "bytes": 1
+    },
+    {
+      "va": "006b48dc",
+      "bytes": 4
+    },
+    {
+      "va": "006ad78c",
+      "bytes": 4
+    },
+    {
+      "va": "006ad7b4",
+      "bytes": 4
+    },
+    {
+      "va": "006b48da",
+      "bytes": 2
+    }
+  ],
+  "confirmed": "OutputDWORD dataflow, memory widths, unsignedDIV/signbit/modulo32 operations and signedIDIV; no format-field meaning assumed",
+  "deferred": "Provider success/output initialization, object lifetime/concurrency/volatile registers and divide-by-zero fault fidelity"
+}

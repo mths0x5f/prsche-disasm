@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/W3",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "selected_scope_vas": [
+    "00565cd0",
+    "00565e70"
+  ],
+  "selected": 2,
+  "objects_compiled": 2,
+  "real_coff_objects": 2,
+  "compiled_vas": [
+    "00565cd0",
+    "00565e70"
+  ],
+  "failed_vas": [],
+  "code_generation_failed": 0,
+  "actual_compiler_batches": 1,
+  "observed_compiler_batch_exit_code": 0,
+  "compile_seconds": 1.122785,
+  "warning_codes": {},
+  "evidence": "local/experiments/v2-direct-call-contracts-211/original-call-evidence.json",
+  "evidence_sha256": "b9039a13f982ff539d87b9b2077cbd7697b6c74c6f9ba178990e5e256052ddeb",
+  "ownership_preflight": {
+    "00565cd0": {
+      "canonical_exact_or_interior": [],
+      "wip_implementations": [],
+      "probe_boundaries": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/frame_services_probe.cpp",
+          "name": "frame_services_boundary_00565cd0"
+        }
+      ]
+    },
+    "00565e70": {
+      "canonical_exact_or_interior": [],
+      "wip_implementations": [],
+      "probe_boundaries": []
+    },
+    "00590290": {
+      "canonical_exact_or_interior": [],
+      "wip_implementations": [],
+      "probe_boundaries": []
+    },
+    "00565ea0": {
+      "canonical_exact_or_interior": [],
+      "wip_implementations": [],
+      "probe_boundaries": []
+    }
+  },
+  "input_sha256": {
+    "scripts/research/experiment-v2-direct-call-contracts-211.py": "6ffec8a6ace3e96686670a7c2732f88b828941625d077ac8128f0e3f140c5e85",
+    "iterations/v2/001-original-recovery/runs/208-frontier-dependencies/summary.json": "0fa8e2b6172792c141be1029b35aa808a88b6ebd8c21dd5d6d1538abf8acb21e",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/source/recovered/frame_services_probe.cpp": "bf815b211154e981213491407fad0e771f138b4ffaafd3efbd9009661c5d2488",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/frame_services.cpp": "fa1412a9fe2ddab88dc0edeac44b112cec9e0944c1670055176593be9dc22f40",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/experiments/v2-direct-call-contracts-211/original-call-evidence.json": "b9039a13f982ff539d87b9b2077cbd7697b6c74c6f9ba178990e5e256052ddeb",
+    "scripts/research/experiment-v2-declarations-184.py": "815e1179a87bd2eb4ada95e7d9bad88f20797c7521f0b55858e409b4782f4823",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/experiments/v2-frontier-dependencies-208/prepare.json": "0f7707570d9f4fbdf9c8a2436568bace9f40825d78ac916d0235713e4c8d4040",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/experiments/v2-frontier-dependencies-208/sources/00565cd0.cpp": "af6dc4fb56e5e49f16e87441dd4429898d03be145587eda17d19689f70286f84",
+    "local/experiments/v2-direct-call-contracts-211/sources/00565cd0.cpp": "aac87be2dc7df6b6f87495b72bf4e6ff93eb503bf6cf25c70f9802a54c4709ca",
+    "local/experiments/v2-declaration-compat-184/full/00565cd0-globals.h": "cdd52f0f0dbd813c49bb5e05d47d57232647b640f2f17a578c80236f19eb52f0",
+    "local/experiments/v2-frontier-dependencies-208/headers/00565cd0-globals.h": "32b3c47220618931ad4edbb687910e6fca4a6a20c60e66d366880889881203dc",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-frontier-dependencies-208/sources/00565e70.cpp": "db9eec70f91372c469bcad90aabf75df4c6bc5653fddc637c4d35098c02422b1",
+    "local/experiments/v2-direct-call-contracts-211/sources/00565e70.cpp": "43e3ae9a8e9e56087ef1c9bf4e1985112308f52dc1b482a7bc6445a9984c691e",
+    "local/experiments/v2-declaration-compat-184/full/00565e70-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+    "local/experiments/v2-frontier-dependencies-208/headers/00565e70-globals.h": "21f07c33c925152ddee8328677f5982e77a6e7d445998ae97989924943485caa"
+  },
+  "compiler_response": "local/experiments/v2-direct-call-contracts-211/logs/native.rsp",
+  "compiler_response_sha256": "eb4f3038cf29014abb7970add11735abb9d41453e30baf2f30422d3677a21bbd",
+  "compiler_log": "local/experiments/v2-direct-call-contracts-211/logs/native.log",
+  "compiler_log_sha256": "ea7264d6f32d91ae0fd23c582bbe2b26c72b2cb685e5eed7039b68bcb8977b19",
+  "native_capture": "local/experiments/v2-direct-call-contracts-211/native-capture.json",
+  "native_capture_sha256": "45aeba2085c03df32fedc694a2d0e96210a32a6abdeac70c2f74a2bbe65c71d9",
+  "subset_undefined_names": 8,
+  "subset_undefined_references": 9,
+  "subset_undefined_symbols": {
+    "?DAT_006b499c@@3DA": 2,
+    "?DAT_006b49a4@@3FA": 1,
+    "?DAT_006b4a00@@3HA": 1,
+    "?DAT_006b4a0c@@3EA": 1,
+    "?DAT_006b4a0d@@3EA": 1,
+    "?FUN_00590290@@YAIII@Z": 1,
+    "?FUN_005902a0@@YAHIHE@Z": 1,
+    "?FUN_00565ea0@@YAIPAXI@Z": 1
+  },
+  "results": [
+    {
+      "va": "00565cd0",
+      "name": "FUN_00565cd0",
+      "source_body_sha256": "70728b4680fabc54b05b321435545592de1cf1667cca3b00654e65e118ede4d8",
+      "baseline_generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00565cd0.cpp",
+      "baseline_generated_source_sha256": "af6dc4fb56e5e49f16e87441dd4429898d03be145587eda17d19689f70286f84",
+      "generated_source": "local/experiments/v2-direct-call-contracts-211/sources/00565cd0.cpp",
+      "generated_source_sha256": "aac87be2dc7df6b6f87495b72bf4e6ff93eb503bf6cf25c70f9802a54c4709ca",
+      "body_bytes_preserved": true,
+      "prototype_before": "undefined4 FUN_00590290(void);",
+      "prototype_after": "undefined4 __cdecl FUN_00590290(uint param_1,undefined4 param_2);",
+      "direct_call_contract": {
+        "caller": "00565cd0",
+        "callee": "00590290",
+        "call": {
+          "va": "00565d07",
+          "bytes": "e884a50200",
+          "instruction": "CALL 0x00590290"
+        },
+        "pushed_stack_bytes": 8,
+        "caller_cleanup": {
+          "va": "00565d0c",
+          "bytes": "83c408",
+          "instruction": "ADD ESP,0x8"
+        },
+        "stack_arguments": [
+          {
+            "entry_offset": 4,
+            "width": 4,
+            "value": "EAX: caller param_1 with original low-byte flag normalization"
+          },
+          {
+            "entry_offset": 8,
+            "width": 4,
+            "value": "ECX: caller param_2"
+          }
+        ],
+        "callee_local_inputs": [],
+        "callee_unused_stack_offsets": [
+          4,
+          8
+        ],
+        "direct_incoming_gp_inputs": [],
+        "return_contract": "EAX=0 by XOR EAX,EAX; RET0",
+        "prototype_before": "undefined4 FUN_00590290(void);",
+        "prototype_after": "undefined4 __cdecl FUN_00590290(uint param_1,undefined4 param_2);"
+      },
+      "dependency_sha256": {
+        "local/experiments/v2-direct-call-contracts-211/sources/00565cd0.cpp": "aac87be2dc7df6b6f87495b72bf4e6ff93eb503bf6cf25c70f9802a54c4709ca",
+        "local/experiments/v2-declaration-compat-184/full/00565cd0-globals.h": "cdd52f0f0dbd813c49bb5e05d47d57232647b640f2f17a578c80236f19eb52f0",
+        "local/experiments/v2-frontier-dependencies-208/headers/00565cd0-globals.h": "32b3c47220618931ad4edbb687910e6fca4a6a20c60e66d366880889881203dc",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-direct-call-contracts-211/objects/00565cd0.obj",
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_exit_code": 0,
+      "observed_compiler_batch_exit_code": 0,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "diagnostics": [],
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true,
+      "object_sha256": "5b4370054c466a59b8d114b51ce158a8efcf5f3d89ce318ec704736456283b97",
+      "symbols": {
+        "defined": [
+          "?FUN_00565cd0@@YAHII@Z"
+        ],
+        "undefined": [
+          "?DAT_006b499c@@3DA",
+          "?DAT_006b49a4@@3FA",
+          "?DAT_006b4a00@@3HA",
+          "?DAT_006b4a0c@@3EA",
+          "?DAT_006b4a0d@@3EA",
+          "?FUN_00590290@@YAIII@Z",
+          "?FUN_005902a0@@YAHIHE@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "00565e70",
+      "name": "FUN_00565e70",
+      "source_body_sha256": "d7083d9c6d88604fae7f53eb73818580fa1a6160cd7916caef06f8c75bd3c82a",
+      "baseline_generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00565e70.cpp",
+      "baseline_generated_source_sha256": "db9eec70f91372c469bcad90aabf75df4c6bc5653fddc637c4d35098c02422b1",
+      "generated_source": "local/experiments/v2-direct-call-contracts-211/sources/00565e70.cpp",
+      "generated_source_sha256": "43e3ae9a8e9e56087ef1c9bf4e1985112308f52dc1b482a7bc6445a9984c691e",
+      "body_bytes_preserved": true,
+      "prototype_before": "undefined4 FUN_00565ea0(int *param_1);",
+      "prototype_after": "undefined4 __cdecl FUN_00565ea0(void *param_1,undefined4 unused_stack_8);",
+      "direct_call_contract": {
+        "caller": "00565e70",
+        "callee": "00565ea0",
+        "call": {
+          "va": "00565e93",
+          "bytes": "e808000000",
+          "instruction": "CALL 0x00565ea0"
+        },
+        "pushed_stack_bytes": 8,
+        "caller_cleanup": {
+          "va": "00565e98",
+          "bytes": "83c408",
+          "instruction": "ADD ESP,0x8"
+        },
+        "stack_arguments": [
+          {
+            "entry_offset": 4,
+            "width": 4,
+            "value": "EAX: caller param_3 object address"
+          },
+          {
+            "entry_offset": 8,
+            "width": 4,
+            "value": "literal0"
+          }
+        ],
+        "callee_local_inputs": [
+          {
+            "entry_offset": 4,
+            "width": 4,
+            "representation": "raw object address",
+            "load": {
+              "va": "00565ea2",
+              "bytes": "8b7c240c",
+              "instruction": "MOV EDI,dword ptr [ESP + 0xc]"
+            },
+            "stack_delta_at_load": -8
+          }
+        ],
+        "callee_unused_stack_offsets": [
+          8
+        ],
+        "direct_incoming_gp_inputs": [],
+        "return_contract": "EAX raw32 returned through RET0; caller does not transform EAX",
+        "prototype_before": "undefined4 FUN_00565ea0(int *param_1);",
+        "prototype_after": "undefined4 __cdecl FUN_00565ea0(void *param_1,undefined4 unused_stack_8);",
+        "boundary": "void* is a PE-proven raw pointer32 call view only; no inferred pointee/class/lifetime semantics; nested full-body/caller fidelity remains open"
+      },
+      "dependency_sha256": {
+        "local/experiments/v2-direct-call-contracts-211/sources/00565e70.cpp": "43e3ae9a8e9e56087ef1c9bf4e1985112308f52dc1b482a7bc6445a9984c691e",
+        "local/experiments/v2-declaration-compat-184/full/00565e70-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+        "local/experiments/v2-frontier-dependencies-208/headers/00565e70-globals.h": "21f07c33c925152ddee8328677f5982e77a6e7d445998ae97989924943485caa",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-direct-call-contracts-211/objects/00565e70.obj",
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_exit_code": 0,
+      "observed_compiler_batch_exit_code": 0,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "diagnostics": [],
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true,
+      "object_sha256": "e4afc9482555cb12cf39899efef78c271a4aa999204b0d57db7cb7b9fd35cfce",
+      "symbols": {
+        "defined": [
+          "?FUN_00565e70@@YAIEIPAI@Z"
+        ],
+        "undefined": [
+          "?DAT_006b499c@@3DA",
+          "?FUN_00565ea0@@YAIPAXI@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    }
+  ],
+  "elapsed_seconds": 2.928,
+  "limits": [
+    "Two exact PE-proven direct-call declarations only; no body, callee implementation, source class, ABI bridge or storage changes.",
+    "Both caller-clean edges pass8bytes; unused callee slots remain explicit; rawvoid* proves address width, not pointee semantics.",
+    "Original nested/full-body/caller fidelity and native execution comparison remain backlog; no union/production changes."
+  ]
+}

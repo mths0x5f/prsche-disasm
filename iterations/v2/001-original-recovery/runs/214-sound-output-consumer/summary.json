@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "kind": "original-sound-output-consumer",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "objects_compiled": 1,
+  "real_coff_objects": 1,
+  "results": [
+    {
+      "va": "0058f5d0",
+      "name": "FUN_0058f5d0",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "generated_source": "local/experiments/v2-sound-output-consumer-214/0058f5d0.cpp",
+      "generated_source_sha256": "2b1e91bc9471d5cd4af4d458d439e06b28265865ca392d658c8629db7a9cade0",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-sound-output-consumer-214/0058f5d0.cpp": "2b1e91bc9471d5cd4af4d458d439e06b28265865ca392d658c8629db7a9cade0",
+        "local/experiments/v2-sound-output-consumer-214/consumer214.h": "1acce6258fc1046c08ebf21051c138fc03f3042a479ec6f870d503f0fa06c6de"
+      },
+      "forced_headers": [],
+      "frozen184_source": "local/experiments/v2-declaration-compat-184/full/0058f5d0.cpp",
+      "frozen184_source_sha256": "0c1f5ac5e5aa406a3087dca64b8e873fd99c3b05ebd429fc407f00e55c41c26f",
+      "object": "local/experiments/v2-sound-output-consumer-214/objects/0058f5d0.obj",
+      "object_sha256": "eee27afa6df02115c827289f86ce9fcffe06c2273abe8b84226f037ac46dd0cc",
+      "symbols": {
+        "defined": [
+          "?FUN_0058f5d0@@YAHXZ"
+        ],
+        "undefined": [
+          "?DAT_006ad760@@3HA",
+          "?DAT_006ad768@@3PAHA",
+          "?DAT_006ad78c@@3HA",
+          "?DAT_006ad7b4@@3HA",
+          "?DAT_006b48e4@@3DA",
+          "?WORD_006b48da_214@@3GA",
+          "?_DAT_006b48dc@@3IA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_0058f5d0@@YAHXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006ad760@@3HA",
+        "?DAT_006ad768@@3PAHA",
+        "?DAT_006ad78c@@3HA",
+        "?DAT_006ad7b4@@3HA",
+        "?DAT_006b48e4@@3DA",
+        "?WORD_006b48da_214@@3GA",
+        "?_DAT_006b48dc@@3IA"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "disassembly": "local/experiments/v2-sound-output-consumer-214/consumer-disassembly.log",
+      "disassembly_sha256": "e5b33d4941a18af09ac1332cc8b6e5240d37ffaaa5661376f9584ed657a44618",
+      "native_ret_site_count": 1,
+      "original_ret_path_count": 3
+    }
+  ],
+  "actual_compiler_batches": 1,
+  "changed_game_TUs": 1,
+  "synthetic_fixture_TUs": 1,
+  "compiler_batch_exit_code": 0,
+  "compile_seconds": 1.049560600076802,
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "compiler_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-sound-output-consumer-214\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-sound-output-consumer-214\\0058f5d0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-sound-output-consumer-214\\call-boundary-fixture.cpp"
+  ],
+  "compiler_log": "local/experiments/v2-sound-output-consumer-214/compile.log",
+  "compiler_log_sha256": "0d28cf2ec49bf938739ebf02d43eb4eabe58a8c537936df2bb2190caaf839ee4",
+  "input_sha256": {
+    "scripts/research/experiment-v2-sound-output-214.py": "192d09d9d4f207b7b58cee3f4333fc7381a4aa45f89b76e42ce6c4a10ba42dee",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "local/experiments/v2-declaration-compat-184/full/0058f5d0.cpp": "0c1f5ac5e5aa406a3087dca64b8e873fd99c3b05ebd429fc407f00e55c41c26f",
+    "local/experiments/v2-declaration-compat-184/full/0058f5d0-globals.h": "e5efd54af9203725b78de5bef05e2e3247e13267536be715c155152ac30c0004",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\dsound.h": "781e58e6b6eb081afd0b4097f8d5c60036d746ad49c3a54cd92555e24a80beec",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\basetyps.h": "48683511f47520707530d6e660d30ff9ac3c6255d976c8b004e28d17b53b5098",
+    "local/experiments/v2-sound-output-consumer-214/consumer214.h": "1acce6258fc1046c08ebf21051c138fc03f3042a479ec6f870d503f0fa06c6de",
+    "local/experiments/v2-sound-output-consumer-214/0058f5d0.cpp": "2b1e91bc9471d5cd4af4d458d439e06b28265865ca392d658c8629db7a9cade0",
+    "local/experiments/v2-sound-output-consumer-214/call-boundary-fixture.cpp": "5412873354f10436c3dfbef72838203a282febcab68d08df8ab7a19ff055637c",
+    "iterations/v2/001-original-recovery/runs/214-sound-output-consumer/proof-before-compile.json": "ca87b58d7f229192fbd03e96d3320a50811d330dd0430760e09de4ba1e857def",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-sound-output-consumer-214/objects/0058f5d0.obj": "eee27afa6df02115c827289f86ce9fcffe06c2273abe8b84226f037ac46dd0cc",
+    "local/experiments/v2-sound-output-consumer-214/objects/call-boundary-fixture.obj": "e464616dba2bba39f5134021f08c433da310baf24033727f19c08464ca79d42c",
+    "local/experiments/v2-sound-output-consumer-214/call-boundary-fixture.exe": "8461a1ef16866e85033e4be4a26928dba004eab03c1459b0ad392cbdd5646bda",
+    "local/experiments/v2-sound-output-consumer-214/compile.log": "0d28cf2ec49bf938739ebf02d43eb4eabe58a8c537936df2bb2190caaf839ee4",
+    "local/experiments/v2-sound-output-consumer-214/consumer-disassembly.log": "e5b33d4941a18af09ac1332cc8b6e5240d37ffaaa5661376f9584ed657a44618",
+    "local/experiments/v2-sound-output-consumer-214/fixture-disassembly.log": "20d6b028f96ee405764a5adec568ee7c69dc7be50450eec5fe389c1d57351014",
+    "local/experiments/v2-sound-output-consumer-214/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-sound-output-consumer-214/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-sound-output-consumer-214/compile.execution.json": "cb34e67e84c165850b723885c8d54ca62b9c6287aff51b2974bf0eadd1f238df",
+    "local/experiments/v2-sound-output-consumer-214/consumer-disassembly.execution.json": "53610314e32b6bf5ca7ceadf8d85001dec7f9a0a5dcc700d8a7995565f04b6c5",
+    "local/experiments/v2-sound-output-consumer-214/fixture-disassembly.execution.json": "8417090d5b2169b5387612ead9f79180940e9089185fc00487d88e4c949eb146",
+    "local/experiments/v2-sound-output-consumer-214/fixture-link.execution.json": "62c507b44635e0cba813f9152475f8fd00c8e34aa9454a754e5f6775798abacf",
+    "local/experiments/v2-sound-output-consumer-214/fixture-native.execution.json": "267ccd82e98f9b4fc4eaa19e1a4b8eee3e08ed5f4063bbbd6834fe7f0909dd73",
+    "local/experiments/v2-sound-output-consumer-214/captured-summary.json": "877c680ef58ffafdc9b7cd7a8eb7c57b493116a847980cca1d855c9a72052253",
+    "local/experiments/v2-sound-output-consumer-214/captured-driver.py": "192d09d9d4f207b7b58cee3f4333fc7381a4aa45f89b76e42ce6c4a10ba42dee",
+    "scripts/research/finalize-v2-sound-output-214.py": "078f62aca054ca20d1cfcc4909e524c255836891cef75fa148f523f96228307e"
+  },
+  "input_guards_before": true,
+  "input_guards_after": true,
+  "original_instruction_count": 42,
+  "origin_window_instruction_count": 10,
+  "ownership_preflight": {
+    "canonical_exact_or_interior": 0,
+    "WIP": 0
+  },
+  "fixture": {
+    "native_exit_code": 0,
+    "integer_reference_cases": 36864,
+    "error_or_null_guard_cases": 3,
+    "seconds": 0.060779099934734404,
+    "reference": "Original integer tail executed as inline assembly; actual corrected consumer called through controlled stdcall output callback",
+    "callback_cleanup_bytes": 12,
+    "callback_writes_DWORD_output": true,
+    "provider_fidelity_claimed": false,
+    "executable": "local/experiments/v2-sound-output-consumer-214/call-boundary-fixture.exe",
+    "executable_sha256": "8461a1ef16866e85033e4be4a26928dba004eab03c1459b0ad392cbdd5646bda"
+  },
+  "Ghidra_decompilations": 0,
+  "production_or_union_changes": false,
+  "limits": [
+    "Integer-only original algorithm/ABI/output-cell recovery; no semantic meaning assigned to raw format fields.",
+    "Fixture controls only the call boundary; not a fake DirectSound implementation or game/provider acceptance.",
+    "Nonzero divisors only; provider behavior/lifetime/concurrency, outgoingvolatile registers and fault behavior remain open."
+  ],
+  "metadata_finalization": {
+    "captured_summary": "local/experiments/v2-sound-output-consumer-214/captured-summary.json",
+    "captured_summary_sha256": "877c680ef58ffafdc9b7cd7a8eb7c57b493116a847980cca1d855c9a72052253",
+    "captured_driver": "local/experiments/v2-sound-output-consumer-214/captured-driver.py",
+    "captured_driver_sha256": "192d09d9d4f207b7b58cee3f4333fc7381a4aa45f89b76e42ce6c4a10ba42dee",
+    "corrected_field": "native_ret_bytes",
+    "previous_value": [
+      0,
+      0,
+      0
+    ],
+    "current_value": [
+      0
+    ],
+    "original_RET0_paths": 3,
+    "native_RET0_epilogues": 1,
+    "compiler_link_native_Ghidra_commands": 0,
+    "compiled_source_and_object_unchanged": true
+  }
+}

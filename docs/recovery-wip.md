@@ -18,3 +18,7 @@
 
 Следующий шаг: original pointer-call consumers четырёх failures203 и зависимости206;
 старые отчёты111/131/172/174/175 не считаются свежими проверками.
+
+2026-10-15 checkpoint216:207–214 candidate packets and215/216 archives completed,
+1108distinctfunctionVAs. Soundoutvalue214 fixed/fixturechecked; fullprovider and
+native storage/ABI binding remainbacklog. Original production173 remainsunchanged.
