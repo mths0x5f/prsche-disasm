@@ -1,0 +1,5496 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_instruction_count": 97,
+  "stores": 9,
+  "read_view_occurrences": 8,
+  "read_statement_lines": 6,
+  "edits": [
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[4] = param_2[1];",
+      "replacement": "param_1[4] = original_raw4_load(&param_2[1]);",
+      "pcs": [
+        "0048511f"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "0048511f",
+          "bytes": "895f04",
+          "assembly": "MOV dword ptr [EDI + 0x4],EBX",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x48511f, 0, 0)",
+              "instruction_va": "0048511f",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000001c",
+                  "space": "register",
+                  "offset": 28,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000004",
+                  "space": "const",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48511f, 1, 0)",
+              "instruction_va": "0048511f",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000000c",
+                  "space": "register",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48511f, 2, 0)",
+              "instruction_va": "0048511f",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x48511f, 39, 15)",
+          "instruction_va": "0048511f",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x48511f, 840, 12)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x48511c, 35, 11)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "0048511f",
+            "max_va": "0048511f",
+            "pcode_sequence": "(ram, 0x48511f, 840, 12)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "4",
+            "min_va": "0048511f",
+            "max_va": "0048511f",
+            "pcode_sequence": "(ram, 0x48511f, 840, 12)",
+            "varnode": {
+              "address": "const:00000004",
+              "space": "const",
+              "offset": 4,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "0048511f",
+            "max_va": "0048511f",
+            "pcode_sequence": "(ram, 0x48511f, 39, 15)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[5] = param_2[2];",
+      "replacement": "param_1[5] = original_raw4_load(&param_2[2]);",
+      "pcs": [
+        "00485125"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485125",
+          "bytes": "895f08",
+          "assembly": "MOV dword ptr [EDI + 0x8],EBX",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485125, 0, 0)",
+              "instruction_va": "00485125",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000001c",
+                  "space": "register",
+                  "offset": 28,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000008",
+                  "space": "const",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485125, 1, 0)",
+              "instruction_va": "00485125",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000000c",
+                  "space": "register",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485125, 2, 0)",
+              "instruction_va": "00485125",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x485125, 45, 21)",
+          "instruction_va": "00485125",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x485125, 842, 18)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x485122, 41, 17)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485125",
+            "max_va": "00485125",
+            "pcode_sequence": "(ram, 0x485125, 842, 18)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "5",
+            "min_va": "00485125",
+            "max_va": "00485125",
+            "pcode_sequence": "(ram, 0x485125, 842, 18)",
+            "varnode": {
+              "address": "const:00000005",
+              "space": "const",
+              "offset": 5,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "00485125",
+            "max_va": "00485125",
+            "pcode_sequence": "(ram, 0x485125, 45, 21)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[6] = param_2[3];",
+      "replacement": "param_1[6] = original_raw4_load(&param_2[3]);",
+      "pcs": [
+        "0048512b"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "0048512b",
+          "bytes": "89770c",
+          "assembly": "MOV dword ptr [EDI + 0xc],ESI",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x48512b, 0, 0)",
+              "instruction_va": "0048512b",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000001c",
+                  "space": "register",
+                  "offset": 28,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000c",
+                  "space": "const",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48512b, 1, 0)",
+              "instruction_va": "0048512b",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000018",
+                  "space": "register",
+                  "offset": 24,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48512b, 2, 0)",
+              "instruction_va": "0048512b",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x48512b, 51, 27)",
+          "instruction_va": "0048512b",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x48512b, 844, 24)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x485128, 47, 23)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "0048512b",
+            "max_va": "0048512b",
+            "pcode_sequence": "(ram, 0x48512b, 844, 24)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "6",
+            "min_va": "0048512b",
+            "max_va": "0048512b",
+            "pcode_sequence": "(ram, 0x48512b, 844, 24)",
+            "varnode": {
+              "address": "const:00000006",
+              "space": "const",
+              "offset": 6,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "0048512b",
+            "max_va": "0048512b",
+            "pcode_sequence": "(ram, 0x48512b, 51, 27)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[8] = param_2[5];",
+      "replacement": "param_1[8] = original_raw4_load(&param_2[5]);",
+      "pcs": [
+        "0048513f"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "0048513f",
+          "bytes": "896b04",
+          "assembly": "MOV dword ptr [EBX + 0x4],EBP",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x48513f, 0, 0)",
+              "instruction_va": "0048513f",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000000c",
+                  "space": "register",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000004",
+                  "space": "const",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48513f, 1, 0)",
+              "instruction_va": "0048513f",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000014",
+                  "space": "register",
+                  "offset": 20,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48513f, 2, 0)",
+              "instruction_va": "0048513f",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x48513f, 67, 40)",
+          "instruction_va": "0048513f",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x48513f, 848, 37)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x48513c, 63, 36)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "0048513f",
+            "max_va": "0048513f",
+            "pcode_sequence": "(ram, 0x48513f, 848, 37)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "8",
+            "min_va": "0048513f",
+            "max_va": "0048513f",
+            "pcode_sequence": "(ram, 0x48513f, 848, 37)",
+            "varnode": {
+              "address": "const:00000008",
+              "space": "const",
+              "offset": 8,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "0048513f",
+            "max_va": "0048513f",
+            "pcode_sequence": "(ram, 0x48513f, 67, 40)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[9] = param_2[6];",
+      "replacement": "param_1[9] = original_raw4_load(&param_2[6]);",
+      "pcs": [
+        "00485145"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485145",
+          "bytes": "896b08",
+          "assembly": "MOV dword ptr [EBX + 0x8],EBP",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485145, 0, 0)",
+              "instruction_va": "00485145",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000000c",
+                  "space": "register",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000008",
+                  "space": "const",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485145, 1, 0)",
+              "instruction_va": "00485145",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000014",
+                  "space": "register",
+                  "offset": 20,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485145, 2, 0)",
+              "instruction_va": "00485145",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x485145, 73, 46)",
+          "instruction_va": "00485145",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x485145, 850, 43)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x485142, 69, 42)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485145",
+            "max_va": "00485145",
+            "pcode_sequence": "(ram, 0x485145, 850, 43)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "9",
+            "min_va": "00485145",
+            "max_va": "00485145",
+            "pcode_sequence": "(ram, 0x485145, 850, 43)",
+            "varnode": {
+              "address": "const:00000009",
+              "space": "const",
+              "offset": 9,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "00485145",
+            "max_va": "00485145",
+            "pcode_sequence": "(ram, 0x485145, 73, 46)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[10] = param_2[7];",
+      "replacement": "param_1[10] = original_raw4_load(&param_2[7]);",
+      "pcs": [
+        "0048514b"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "0048514b",
+          "bytes": "89430c",
+          "assembly": "MOV dword ptr [EBX + 0xc],EAX",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x48514b, 0, 0)",
+              "instruction_va": "0048514b",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000000c",
+                  "space": "register",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000c",
+                  "space": "const",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48514b, 1, 0)",
+              "instruction_va": "0048514b",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000000",
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48514b, 2, 0)",
+              "instruction_va": "0048514b",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x48514b, 79, 52)",
+          "instruction_va": "0048514b",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x48514b, 852, 49)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x485148, 75, 48)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "0048514b",
+            "max_va": "0048514b",
+            "pcode_sequence": "(ram, 0x48514b, 852, 49)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "10",
+            "min_va": "0048514b",
+            "max_va": "0048514b",
+            "pcode_sequence": "(ram, 0x48514b, 852, 49)",
+            "varnode": {
+              "address": "const:0000000a",
+              "space": "const",
+              "offset": 10,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "0048514b",
+            "max_va": "0048514b",
+            "pcode_sequence": "(ram, 0x48514b, 79, 52)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[4] = param_2[5];",
+      "replacement": "param_1[4] = original_raw4_load(&param_2[5]);",
+      "pcs": [
+        "004851d7"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "004851d7",
+          "bytes": "894204",
+          "assembly": "MOV dword ptr [EDX + 0x4],EAX",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x4851d7, 0, 0)",
+              "instruction_va": "004851d7",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000008",
+                  "space": "register",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000004",
+                  "space": "const",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851d7, 1, 0)",
+              "instruction_va": "004851d7",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000000",
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851d7, 2, 0)",
+              "instruction_va": "004851d7",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x4851d7, 466, 11)",
+          "instruction_va": "004851d7",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x4851d7, 862, 8)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x4851d4, 462, 7)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "004851d7",
+            "max_va": "004851d7",
+            "pcode_sequence": "(ram, 0x4851d7, 862, 8)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "4",
+            "min_va": "004851d7",
+            "max_va": "004851d7",
+            "pcode_sequence": "(ram, 0x4851d7, 862, 8)",
+            "varnode": {
+              "address": "const:00000004",
+              "space": "const",
+              "offset": 4,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "004851d7",
+            "max_va": "004851d7",
+            "pcode_sequence": "(ram, 0x4851d7, 466, 11)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_store",
+      "original": "param_1[5] = param_2[6];",
+      "replacement": "param_1[5] = original_raw4_load(&param_2[6]);",
+      "pcs": [
+        "004851dd"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "004851dd",
+          "bytes": "894208",
+          "assembly": "MOV dword ptr [EDX + 0x8],EAX",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x4851dd, 0, 0)",
+              "instruction_va": "004851dd",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000008",
+                  "space": "register",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000008",
+                  "space": "const",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851dd, 1, 0)",
+              "instruction_va": "004851dd",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000000",
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851dd, 2, 0)",
+              "instruction_va": "004851dd",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x4851dd, 472, 17)",
+          "instruction_va": "004851dd",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x4851dd, 864, 14)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/float",
+              "defined_at": "(ram, 0x4851da, 468, 13)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "004851dd",
+            "max_va": "004851dd",
+            "pcode_sequence": "(ram, 0x4851dd, 864, 14)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "5",
+            "min_va": "004851dd",
+            "max_va": "004851dd",
+            "pcode_sequence": "(ram, 0x4851dd, 864, 14)",
+            "varnode": {
+              "address": "const:00000005",
+              "space": "const",
+              "offset": 5,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "004851dd",
+            "max_va": "004851dd",
+            "pcode_sequence": "(ram, 0x4851dd, 472, 17)"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw_MOV4_capture_before_FSTP",
+      "original": "fVar3 = param_2[7];",
+      "replacement": "undefined4 raw_004851e0 = original_raw4_load(&param_2[7]);",
+      "pcs": [
+        "004851e0"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "004851e0",
+          "bytes": "8b470c",
+          "assembly": "MOV EAX,dword ptr [EDI + 0xc]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x4851e0, 0, 0)",
+              "instruction_va": "004851e0",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:0000001c",
+                  "space": "register",
+                  "offset": 28,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000c",
+                  "space": "const",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e0, 1, 0)",
+              "instruction_va": "004851e0",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:00017200",
+                "space": "unique",
+                "offset": 94720,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e0, 2, 0)",
+              "instruction_va": "004851e0",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00000000",
+                "space": "register",
+                "offset": 0,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:00017200",
+                  "space": "unique",
+                  "offset": 94720,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "fVar3",
+            "min_va": "004851e0",
+            "max_va": "004851e0",
+            "pcode_sequence": "(ram, 0x4851e0, 474, 19)",
+            "varnode": {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "fVar3",
+              "high_type": "/float",
+              "high_storage": {
+                "display": "unique:0000a900:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "unique",
+                    "offset": 43264,
+                    "bytes": 4,
+                    "address": "unique:0000a900"
+                  }
+                ]
+              },
+              "defined_at": "(ram, 0x4851e0, 474, 19)",
+              "defined_by": "LOAD"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "004851e0",
+            "max_va": "004851e0",
+            "pcode_sequence": "(ram, 0x4851e0, 474, 19)"
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_2",
+            "min_va": "004851e0",
+            "max_va": "004851e0",
+            "pcode_sequence": "(ram, 0x4851e0, 865, 18)",
+            "varnode": {
+              "address": "Stack[0x4]",
+              "space": "stack",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_2",
+              "high_type": "/float *",
+              "high_storage": {
+                "display": "Stack[0x4]:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "stack",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "Stack[0x4]"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "7",
+            "min_va": "004851e0",
+            "max_va": "004851e0",
+            "pcode_sequence": "(ram, 0x4851e0, 865, 18)",
+            "varnode": {
+              "address": "const:00000007",
+              "space": "const",
+              "offset": 7,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          }
+        ],
+        "intervening_FSTP": {
+          "va": "004851e3",
+          "bytes": "d91e",
+          "assembly": "FSTP float ptr [ESI]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x4851e3, 0, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:000010ac",
+                "space": "register",
+                "offset": 4268,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:004851e3",
+                  "space": "const",
+                  "offset": 4739555,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 1, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "FLOAT2FLOAT",
+              "output": {
+                "address": "unique:0000a900",
+                "space": "unique",
+                "offset": 43264,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 2, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "register:00000018",
+                  "space": "register",
+                  "offset": 24,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a900",
+                  "space": "unique",
+                  "offset": 43264,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 3, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001110",
+                  "space": "register",
+                  "offset": 4368,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 4, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001110",
+                "space": "register",
+                "offset": 4368,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001120",
+                  "space": "register",
+                  "offset": 4384,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 5, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001120",
+                "space": "register",
+                "offset": 4384,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001130",
+                  "space": "register",
+                  "offset": 4400,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 6, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001130",
+                "space": "register",
+                "offset": 4400,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001140",
+                  "space": "register",
+                  "offset": 4416,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 7, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001140",
+                "space": "register",
+                "offset": 4416,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001150",
+                  "space": "register",
+                  "offset": 4432,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 8, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001150",
+                "space": "register",
+                "offset": 4432,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001160",
+                  "space": "register",
+                  "offset": 4448,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e3, 9, 0)",
+              "instruction_va": "004851e3",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001160",
+                "space": "register",
+                "offset": 4448,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001170",
+                  "space": "register",
+                  "offset": 4464,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "raw_MOV4_store_after_FSTP",
+      "original": "param_1[6] = fVar3;",
+      "replacement": "param_1[6] = raw_004851e0;",
+      "pcs": [
+        "004851e5"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "004851e5",
+          "bytes": "89420c",
+          "assembly": "MOV dword ptr [EDX + 0xc],EAX",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x4851e5, 0, 0)",
+              "instruction_va": "004851e5",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000008",
+                  "space": "register",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000c",
+                  "space": "const",
+                  "offset": 12,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e5, 1, 0)",
+              "instruction_va": "004851e5",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0000a300",
+                "space": "unique",
+                "offset": 41728,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000000",
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x4851e5, 2, 0)",
+              "instruction_va": "004851e5",
+              "opcode": "STORE",
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0000a300",
+                  "space": "unique",
+                  "offset": 41728,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_store": {
+          "sequence": "(ram, 0x4851e5, 488, 26)",
+          "instruction_va": "004851e5",
+          "opcode": "STORE",
+          "inputs": [
+            {
+              "address": "const:000001a1",
+              "space": "const",
+              "offset": 417,
+              "bytes": 4,
+              "input": false,
+              "constant": true
+            },
+            {
+              "address": "unique:00006600",
+              "space": "unique",
+              "offset": 26112,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4 *",
+              "defined_at": "(ram, 0x4851e5, 866, 23)",
+              "defined_by": "PTRADD"
+            },
+            {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "fVar3",
+              "high_type": "/float",
+              "high_storage": {
+                "display": "unique:0000a900:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "unique",
+                    "offset": 43264,
+                    "bytes": 4,
+                    "address": "unique:0000a900"
+                  }
+                ]
+              },
+              "defined_at": "(ram, 0x4851e0, 474, 19)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "004851e5",
+            "max_va": "004851e5",
+            "pcode_sequence": "(ram, 0x4851e5, 866, 23)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "6",
+            "min_va": "004851e5",
+            "max_va": "004851e5",
+            "pcode_sequence": "(ram, 0x4851e5, 866, 23)",
+            "varnode": {
+              "address": "const:00000006",
+              "space": "const",
+              "offset": 6,
+              "bytes": 4,
+              "input": false,
+              "constant": true,
+              "high_type": "/int"
+            }
+          },
+          {
+            "kind": "ClangOpToken",
+            "text": "=",
+            "min_va": "004851e5",
+            "max_va": "004851e5",
+            "pcode_sequence": "(ram, 0x4851e5, 488, 26)"
+          },
+          {
+            "kind": "ClangVariableToken",
+            "text": "fVar3",
+            "min_va": "004851e5",
+            "max_va": "004851e5",
+            "pcode_sequence": "(ram, 0x4851e5, 488, 26)",
+            "varnode": {
+              "address": "unique:00017200",
+              "space": "unique",
+              "offset": 94720,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "fVar3",
+              "high_type": "/float",
+              "high_storage": {
+                "display": "unique:0000a900:4",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "unique",
+                    "offset": 43264,
+                    "bytes": 4,
+                    "address": "unique:0000a900"
+                  }
+                ]
+              },
+              "defined_at": "(ram, 0x4851e0, 474, 19)",
+              "defined_by": "LOAD"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[9]",
+      "replacement": "original_float4_view(&param_1[9])",
+      "pcs": [
+        "00485173"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485173",
+          "bytes": "d85924",
+          "assembly": "FCOMP float ptr [ECX + 0x24]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485173, 0, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000024",
+                  "space": "const",
+                  "offset": 36,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 1, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:000010ac",
+                "space": "register",
+                "offset": 4268,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:00485173",
+                  "space": "const",
+                  "offset": 4739443,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 2, 0)",
+              "instruction_va": "00485173",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:0000a900",
+                "space": "unique",
+                "offset": 43264,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 3, 0)",
+              "instruction_va": "00485173",
+              "opcode": "FLOAT2FLOAT",
+              "output": {
+                "address": "unique:000aa600",
+                "space": "unique",
+                "offset": 697856,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0000a900",
+                  "space": "unique",
+                  "offset": 43264,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 4, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001091",
+                "space": "register",
+                "offset": 4241,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:00000000",
+                  "space": "const",
+                  "offset": 0,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 5, 0)",
+              "instruction_va": "00485173",
+              "opcode": "FLOAT_NAN",
+              "output": {
+                "address": "unique:0004e500",
+                "space": "unique",
+                "offset": 320768,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 6, 0)",
+              "instruction_va": "00485173",
+              "opcode": "FLOAT_NAN",
+              "output": {
+                "address": "unique:0004e600",
+                "space": "unique",
+                "offset": 321024,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:000aa600",
+                  "space": "unique",
+                  "offset": 697856,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 7, 0)",
+              "instruction_va": "00485173",
+              "opcode": "BOOL_OR",
+              "output": {
+                "address": "register:00001092",
+                "space": "register",
+                "offset": 4242,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004e500",
+                  "space": "unique",
+                  "offset": 320768,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004e600",
+                  "space": "unique",
+                  "offset": 321024,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 8, 0)",
+              "instruction_va": "00485173",
+              "opcode": "FLOAT_LESS",
+              "output": {
+                "address": "unique:0004e800",
+                "space": "unique",
+                "offset": 321536,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:000aa600",
+                  "space": "unique",
+                  "offset": 697856,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 9, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "register:00001090",
+                "space": "register",
+                "offset": 4240,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001092",
+                  "space": "register",
+                  "offset": 4242,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004e800",
+                  "space": "unique",
+                  "offset": 321536,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 10, 0)",
+              "instruction_va": "00485173",
+              "opcode": "FLOAT_EQUAL",
+              "output": {
+                "address": "unique:0004ea00",
+                "space": "unique",
+                "offset": 322048,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:000aa600",
+                  "space": "unique",
+                  "offset": 697856,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 11, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "register:00001093",
+                "space": "register",
+                "offset": 4243,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001092",
+                  "space": "register",
+                  "offset": 4242,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004ea00",
+                  "space": "unique",
+                  "offset": 322048,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 12, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004ec00",
+                "space": "unique",
+                "offset": 322560,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001090",
+                  "space": "register",
+                  "offset": 4240,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 13, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004ed00",
+                "space": "unique",
+                "offset": 322816,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004ec00",
+                  "space": "unique",
+                  "offset": 322560,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000008",
+                  "space": "const",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 14, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004ee00",
+                "space": "unique",
+                "offset": 323072,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001091",
+                  "space": "register",
+                  "offset": 4241,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 15, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004ef00",
+                "space": "unique",
+                "offset": 323328,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004ee00",
+                  "space": "unique",
+                  "offset": 323072,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000009",
+                  "space": "const",
+                  "offset": 9,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 16, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "unique:0004f000",
+                "space": "unique",
+                "offset": 323584,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004ed00",
+                  "space": "unique",
+                  "offset": 322816,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004ef00",
+                  "space": "unique",
+                  "offset": 323328,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 17, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004f100",
+                "space": "unique",
+                "offset": 323840,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001092",
+                  "space": "register",
+                  "offset": 4242,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 18, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004f200",
+                "space": "unique",
+                "offset": 324096,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f100",
+                  "space": "unique",
+                  "offset": 323840,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000a",
+                  "space": "const",
+                  "offset": 10,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 19, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "unique:0004f300",
+                "space": "unique",
+                "offset": 324352,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f000",
+                  "space": "unique",
+                  "offset": 323584,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004f200",
+                  "space": "unique",
+                  "offset": 324096,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 20, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004f400",
+                "space": "unique",
+                "offset": 324608,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001093",
+                  "space": "register",
+                  "offset": 4243,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 21, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004f500",
+                "space": "unique",
+                "offset": 324864,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f400",
+                  "space": "unique",
+                  "offset": 324608,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000e",
+                  "space": "const",
+                  "offset": 14,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 22, 0)",
+              "instruction_va": "00485173",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "register:000010a2",
+                "space": "register",
+                "offset": 4258,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f300",
+                  "space": "unique",
+                  "offset": 324352,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004f500",
+                  "space": "unique",
+                  "offset": 324864,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 23, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001110",
+                  "space": "register",
+                  "offset": 4368,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 24, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001110",
+                "space": "register",
+                "offset": 4368,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001120",
+                  "space": "register",
+                  "offset": 4384,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 25, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001120",
+                "space": "register",
+                "offset": 4384,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001130",
+                  "space": "register",
+                  "offset": 4400,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 26, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001130",
+                "space": "register",
+                "offset": 4400,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001140",
+                  "space": "register",
+                  "offset": 4416,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 27, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001140",
+                "space": "register",
+                "offset": 4416,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001150",
+                  "space": "register",
+                  "offset": 4432,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 28, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001150",
+                "space": "register",
+                "offset": 4432,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001160",
+                  "space": "register",
+                  "offset": 4448,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485173, 29, 0)",
+              "instruction_va": "00485173",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001160",
+                "space": "register",
+                "offset": 4448,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001170",
+                  "space": "register",
+                  "offset": 4464,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x485173, 871, 5)",
+          "instruction_va": "00485173",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:10000137",
+            "space": "unique",
+            "offset": 268435767,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "UNNAMED",
+            "high_type": "/float",
+            "defined_at": "(ram, 0x485173, 871, 5)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:0000a900",
+              "space": "unique",
+              "offset": 43264,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x485173, 226, 4)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485173",
+            "max_va": "00485173",
+            "pcode_sequence": "(ram, 0x485173, 854, 3)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[5]",
+      "replacement": "original_float4_view(&param_1[5])",
+      "pcs": [
+        "00485170"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485170",
+          "bytes": "d94114",
+          "assembly": "FLD float ptr [ECX + 0x14]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485170, 0, 0)",
+              "instruction_va": "00485170",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000014",
+                  "space": "const",
+                  "offset": 20,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 1, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:000010ac",
+                "space": "register",
+                "offset": 4268,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:00485170",
+                  "space": "const",
+                  "offset": 4739440,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 2, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0004e300",
+                "space": "unique",
+                "offset": 320256,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001170",
+                  "space": "register",
+                  "offset": 4464,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 3, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001170",
+                "space": "register",
+                "offset": 4464,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001160",
+                  "space": "register",
+                  "offset": 4448,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 4, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001160",
+                "space": "register",
+                "offset": 4448,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001150",
+                  "space": "register",
+                  "offset": 4432,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 5, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001150",
+                "space": "register",
+                "offset": 4432,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001140",
+                  "space": "register",
+                  "offset": 4416,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 6, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001140",
+                "space": "register",
+                "offset": 4416,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001130",
+                  "space": "register",
+                  "offset": 4400,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 7, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001130",
+                "space": "register",
+                "offset": 4400,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001120",
+                  "space": "register",
+                  "offset": 4384,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 8, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001120",
+                "space": "register",
+                "offset": 4384,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001110",
+                  "space": "register",
+                  "offset": 4368,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 9, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001110",
+                "space": "register",
+                "offset": 4368,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 10, 0)",
+              "instruction_va": "00485170",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004e300",
+                  "space": "unique",
+                  "offset": 320256,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 11, 0)",
+              "instruction_va": "00485170",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:0000a900",
+                "space": "unique",
+                "offset": 43264,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485170, 12, 0)",
+              "instruction_va": "00485170",
+              "opcode": "FLOAT2FLOAT",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0000a900",
+                  "space": "unique",
+                  "offset": 43264,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x485173, 872, 6)",
+          "instruction_va": "00485173",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:1000013b",
+            "space": "unique",
+            "offset": 268435771,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "UNNAMED",
+            "high_type": "/float",
+            "defined_at": "(ram, 0x485173, 872, 6)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:0000a900",
+              "space": "unique",
+              "offset": 43264,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x485170, 222, 2)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485170",
+            "max_va": "00485170",
+            "pcode_sequence": "(ram, 0x485170, 853, 1)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[9]",
+      "replacement": "original_float4_view(&param_1[9])",
+      "pcs": [
+        "00485182"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485182",
+          "bytes": "8b4124",
+          "assembly": "MOV EAX,dword ptr [ECX + 0x24]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485182, 0, 0)",
+              "instruction_va": "00485182",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000024",
+                  "space": "const",
+                  "offset": 36,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485182, 1, 0)",
+              "instruction_va": "00485182",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:00017200",
+                "space": "unique",
+                "offset": 94720,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485182, 2, 0)",
+              "instruction_va": "00485182",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00000000",
+                "space": "register",
+                "offset": 0,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:00017200",
+                  "space": "unique",
+                  "offset": 94720,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x485182, 873, 2)",
+          "instruction_va": "00485182",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:00017200",
+            "space": "unique",
+            "offset": 94720,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "fVar5",
+            "high_type": "/float",
+            "high_storage": {
+              "display": "EAX:4",
+              "bytes": 4,
+              "varnodes": [
+                {
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "address": "register:00000000"
+                }
+              ]
+            },
+            "defined_at": "(ram, 0x485182, 873, 2)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:1000013f",
+              "space": "unique",
+              "offset": 268435775,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x485182, 532, 1)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485182",
+            "max_va": "00485182",
+            "pcode_sequence": "(ram, 0x485182, 856, 0)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[5]",
+      "replacement": "original_float4_view(&param_1[5])",
+      "pcs": [
+        "0048517d"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "0048517d",
+          "bytes": "8b4114",
+          "assembly": "MOV EAX,dword ptr [ECX + 0x14]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x48517d, 0, 0)",
+              "instruction_va": "0048517d",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000014",
+                  "space": "const",
+                  "offset": 20,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48517d, 1, 0)",
+              "instruction_va": "0048517d",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:00017200",
+                "space": "unique",
+                "offset": 94720,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48517d, 2, 0)",
+              "instruction_va": "0048517d",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00000000",
+                "space": "register",
+                "offset": 0,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:00017200",
+                  "space": "unique",
+                  "offset": 94720,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x48517d, 874, 2)",
+          "instruction_va": "0048517d",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:00017200",
+            "space": "unique",
+            "offset": 94720,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "fVar5",
+            "high_type": "/float",
+            "high_storage": {
+              "display": "EAX:4",
+              "bytes": 4,
+              "varnodes": [
+                {
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "address": "register:00000000"
+                }
+              ]
+            },
+            "defined_at": "(ram, 0x48517d, 874, 2)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:10000143",
+              "space": "unique",
+              "offset": 268435779,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x48517d, 266, 1)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "0048517d",
+            "max_va": "0048517d",
+            "pcode_sequence": "(ram, 0x48517d, 855, 0)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[5]",
+      "replacement": "original_float4_view(&param_1[5])",
+      "pcs": [
+        "00485185"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485185",
+          "bytes": "d94114",
+          "assembly": "FLD float ptr [ECX + 0x14]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485185, 0, 0)",
+              "instruction_va": "00485185",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000014",
+                  "space": "const",
+                  "offset": 20,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 1, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:000010ac",
+                "space": "register",
+                "offset": 4268,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:00485185",
+                  "space": "const",
+                  "offset": 4739461,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 2, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "unique:0004e300",
+                "space": "unique",
+                "offset": 320256,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001170",
+                  "space": "register",
+                  "offset": 4464,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 3, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001170",
+                "space": "register",
+                "offset": 4464,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001160",
+                  "space": "register",
+                  "offset": 4448,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 4, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001160",
+                "space": "register",
+                "offset": 4448,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001150",
+                  "space": "register",
+                  "offset": 4432,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 5, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001150",
+                "space": "register",
+                "offset": 4432,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001140",
+                  "space": "register",
+                  "offset": 4416,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 6, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001140",
+                "space": "register",
+                "offset": 4416,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001130",
+                  "space": "register",
+                  "offset": 4400,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 7, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001130",
+                "space": "register",
+                "offset": 4400,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001120",
+                  "space": "register",
+                  "offset": 4384,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 8, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001120",
+                "space": "register",
+                "offset": 4384,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001110",
+                  "space": "register",
+                  "offset": 4368,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 9, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001110",
+                "space": "register",
+                "offset": 4368,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 10, 0)",
+              "instruction_va": "00485185",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004e300",
+                  "space": "unique",
+                  "offset": 320256,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 11, 0)",
+              "instruction_va": "00485185",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:0000a900",
+                "space": "unique",
+                "offset": 43264,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485185, 12, 0)",
+              "instruction_va": "00485185",
+              "opcode": "FLOAT2FLOAT",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0000a900",
+                  "space": "unique",
+                  "offset": 43264,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x485191, 875, 5)",
+          "instruction_va": "00485191",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:10000147",
+            "space": "unique",
+            "offset": 268435783,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "UNNAMED",
+            "high_type": "/float",
+            "defined_at": "(ram, 0x485191, 875, 5)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:0000a900",
+              "space": "unique",
+              "offset": 43264,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x485185, 280, 2)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485185",
+            "max_va": "00485185",
+            "pcode_sequence": "(ram, 0x485185, 857, 1)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[9]",
+      "replacement": "original_float4_view(&param_1[9])",
+      "pcs": [
+        "00485188"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485188",
+          "bytes": "d85924",
+          "assembly": "FCOMP float ptr [ECX + 0x24]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485188, 0, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000024",
+                  "space": "const",
+                  "offset": 36,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 1, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:000010ac",
+                "space": "register",
+                "offset": 4268,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:00485188",
+                  "space": "const",
+                  "offset": 4739464,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 2, 0)",
+              "instruction_va": "00485188",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:0000a900",
+                "space": "unique",
+                "offset": 43264,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 3, 0)",
+              "instruction_va": "00485188",
+              "opcode": "FLOAT2FLOAT",
+              "output": {
+                "address": "unique:000aa600",
+                "space": "unique",
+                "offset": 697856,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0000a900",
+                  "space": "unique",
+                  "offset": 43264,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 4, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001091",
+                "space": "register",
+                "offset": 4241,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:00000000",
+                  "space": "const",
+                  "offset": 0,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 5, 0)",
+              "instruction_va": "00485188",
+              "opcode": "FLOAT_NAN",
+              "output": {
+                "address": "unique:0004e500",
+                "space": "unique",
+                "offset": 320768,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 6, 0)",
+              "instruction_va": "00485188",
+              "opcode": "FLOAT_NAN",
+              "output": {
+                "address": "unique:0004e600",
+                "space": "unique",
+                "offset": 321024,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:000aa600",
+                  "space": "unique",
+                  "offset": 697856,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 7, 0)",
+              "instruction_va": "00485188",
+              "opcode": "BOOL_OR",
+              "output": {
+                "address": "register:00001092",
+                "space": "register",
+                "offset": 4242,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004e500",
+                  "space": "unique",
+                  "offset": 320768,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004e600",
+                  "space": "unique",
+                  "offset": 321024,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 8, 0)",
+              "instruction_va": "00485188",
+              "opcode": "FLOAT_LESS",
+              "output": {
+                "address": "unique:0004e800",
+                "space": "unique",
+                "offset": 321536,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:000aa600",
+                  "space": "unique",
+                  "offset": 697856,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 9, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "register:00001090",
+                "space": "register",
+                "offset": 4240,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001092",
+                  "space": "register",
+                  "offset": 4242,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004e800",
+                  "space": "unique",
+                  "offset": 321536,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 10, 0)",
+              "instruction_va": "00485188",
+              "opcode": "FLOAT_EQUAL",
+              "output": {
+                "address": "unique:0004ea00",
+                "space": "unique",
+                "offset": 322048,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001100",
+                  "space": "register",
+                  "offset": 4352,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:000aa600",
+                  "space": "unique",
+                  "offset": 697856,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 11, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "register:00001093",
+                "space": "register",
+                "offset": 4243,
+                "bytes": 1,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001092",
+                  "space": "register",
+                  "offset": 4242,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004ea00",
+                  "space": "unique",
+                  "offset": 322048,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 12, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004ec00",
+                "space": "unique",
+                "offset": 322560,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001090",
+                  "space": "register",
+                  "offset": 4240,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 13, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004ed00",
+                "space": "unique",
+                "offset": 322816,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004ec00",
+                  "space": "unique",
+                  "offset": 322560,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000008",
+                  "space": "const",
+                  "offset": 8,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 14, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004ee00",
+                "space": "unique",
+                "offset": 323072,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001091",
+                  "space": "register",
+                  "offset": 4241,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 15, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004ef00",
+                "space": "unique",
+                "offset": 323328,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004ee00",
+                  "space": "unique",
+                  "offset": 323072,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000009",
+                  "space": "const",
+                  "offset": 9,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 16, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "unique:0004f000",
+                "space": "unique",
+                "offset": 323584,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004ed00",
+                  "space": "unique",
+                  "offset": 322816,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004ef00",
+                  "space": "unique",
+                  "offset": 323328,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 17, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004f100",
+                "space": "unique",
+                "offset": 323840,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001092",
+                  "space": "register",
+                  "offset": 4242,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 18, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004f200",
+                "space": "unique",
+                "offset": 324096,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f100",
+                  "space": "unique",
+                  "offset": 323840,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000a",
+                  "space": "const",
+                  "offset": 10,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 19, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "unique:0004f300",
+                "space": "unique",
+                "offset": 324352,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f000",
+                  "space": "unique",
+                  "offset": 323584,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004f200",
+                  "space": "unique",
+                  "offset": 324096,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 20, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_ZEXT",
+              "output": {
+                "address": "unique:0004f400",
+                "space": "unique",
+                "offset": 324608,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001093",
+                  "space": "register",
+                  "offset": 4243,
+                  "bytes": 1,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 21, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_LEFT",
+              "output": {
+                "address": "unique:0004f500",
+                "space": "unique",
+                "offset": 324864,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f400",
+                  "space": "unique",
+                  "offset": 324608,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:0000000e",
+                  "space": "const",
+                  "offset": 14,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 22, 0)",
+              "instruction_va": "00485188",
+              "opcode": "INT_OR",
+              "output": {
+                "address": "register:000010a2",
+                "space": "register",
+                "offset": 4258,
+                "bytes": 2,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:0004f300",
+                  "space": "unique",
+                  "offset": 324352,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "unique:0004f500",
+                  "space": "unique",
+                  "offset": 324864,
+                  "bytes": 2,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 23, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001100",
+                "space": "register",
+                "offset": 4352,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001110",
+                  "space": "register",
+                  "offset": 4368,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 24, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001110",
+                "space": "register",
+                "offset": 4368,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001120",
+                  "space": "register",
+                  "offset": 4384,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 25, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001120",
+                "space": "register",
+                "offset": 4384,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001130",
+                  "space": "register",
+                  "offset": 4400,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 26, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001130",
+                "space": "register",
+                "offset": 4400,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001140",
+                  "space": "register",
+                  "offset": 4416,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 27, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001140",
+                "space": "register",
+                "offset": 4416,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001150",
+                  "space": "register",
+                  "offset": 4432,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 28, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001150",
+                "space": "register",
+                "offset": 4432,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001160",
+                  "space": "register",
+                  "offset": 4448,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485188, 29, 0)",
+              "instruction_va": "00485188",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00001160",
+                "space": "register",
+                "offset": 4448,
+                "bytes": 10,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00001170",
+                  "space": "register",
+                  "offset": 4464,
+                  "bytes": 10,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x485191, 876, 6)",
+          "instruction_va": "00485191",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:1000014b",
+            "space": "unique",
+            "offset": 268435787,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "UNNAMED",
+            "high_type": "/float",
+            "defined_at": "(ram, 0x485191, 876, 6)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:0000a900",
+              "space": "unique",
+              "offset": 43264,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x485188, 284, 4)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485188",
+            "max_va": "00485188",
+            "pcode_sequence": "(ram, 0x485188, 858, 3)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[9]",
+      "replacement": "original_float4_view(&param_1[9])",
+      "pcs": [
+        "0048519b"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "0048519b",
+          "bytes": "8b4124",
+          "assembly": "MOV EAX,dword ptr [ECX + 0x24]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x48519b, 0, 0)",
+              "instruction_va": "0048519b",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000024",
+                  "space": "const",
+                  "offset": 36,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48519b, 1, 0)",
+              "instruction_va": "0048519b",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:00017200",
+                "space": "unique",
+                "offset": 94720,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x48519b, 2, 0)",
+              "instruction_va": "0048519b",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00000000",
+                "space": "register",
+                "offset": 0,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:00017200",
+                  "space": "unique",
+                  "offset": 94720,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x48519b, 877, 2)",
+          "instruction_va": "0048519b",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:00017200",
+            "space": "unique",
+            "offset": 94720,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "fVar6",
+            "high_type": "/float",
+            "high_storage": {
+              "display": "EAX:4",
+              "bytes": 4,
+              "varnodes": [
+                {
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "address": "register:00000000"
+                }
+              ]
+            },
+            "defined_at": "(ram, 0x48519b, 877, 2)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:1000014f",
+              "space": "unique",
+              "offset": 268435791,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x48519b, 529, 1)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "0048519b",
+            "max_va": "0048519b",
+            "pcode_sequence": "(ram, 0x48519b, 860, 0)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "raw32_to_float4_view",
+      "original": "(float)param_1[5]",
+      "replacement": "original_float4_view(&param_1[5])",
+      "pcs": [
+        "00485196"
+      ],
+      "witness": {
+        "instruction": {
+          "va": "00485196",
+          "bytes": "8b4114",
+          "assembly": "MOV EAX,dword ptr [ECX + 0x14]",
+          "raw_pcode": [
+            {
+              "sequence": "(ram, 0x485196, 0, 0)",
+              "instruction_va": "00485196",
+              "opcode": "INT_ADD",
+              "output": {
+                "address": "unique:00006600",
+                "space": "unique",
+                "offset": 26112,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "register:00000004",
+                  "space": "register",
+                  "offset": 4,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                },
+                {
+                  "address": "const:00000014",
+                  "space": "const",
+                  "offset": 20,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485196, 1, 0)",
+              "instruction_va": "00485196",
+              "opcode": "LOAD",
+              "output": {
+                "address": "unique:00017200",
+                "space": "unique",
+                "offset": 94720,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "const:000001a1",
+                  "space": "const",
+                  "offset": 417,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": true
+                },
+                {
+                  "address": "unique:00006600",
+                  "space": "unique",
+                  "offset": 26112,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            },
+            {
+              "sequence": "(ram, 0x485196, 2, 0)",
+              "instruction_va": "00485196",
+              "opcode": "COPY",
+              "output": {
+                "address": "register:00000000",
+                "space": "register",
+                "offset": 0,
+                "bytes": 4,
+                "input": false,
+                "constant": false
+              },
+              "inputs": [
+                {
+                  "address": "unique:00017200",
+                  "space": "unique",
+                  "offset": 94720,
+                  "bytes": 4,
+                  "input": false,
+                  "constant": false
+                }
+              ]
+            }
+          ]
+        },
+        "high_CAST": {
+          "sequence": "(ram, 0x485196, 878, 2)",
+          "instruction_va": "00485196",
+          "opcode": "CAST",
+          "output": {
+            "address": "unique:00017200",
+            "space": "unique",
+            "offset": 94720,
+            "bytes": 4,
+            "input": false,
+            "constant": false,
+            "high_name": "fVar6",
+            "high_type": "/float",
+            "high_storage": {
+              "display": "EAX:4",
+              "bytes": 4,
+              "varnodes": [
+                {
+                  "space": "register",
+                  "offset": 0,
+                  "bytes": 4,
+                  "address": "register:00000000"
+                }
+              ]
+            },
+            "defined_at": "(ram, 0x485196, 878, 2)",
+            "defined_by": "CAST"
+          },
+          "inputs": [
+            {
+              "address": "unique:10000153",
+              "space": "unique",
+              "offset": 268435795,
+              "bytes": 4,
+              "input": false,
+              "constant": false,
+              "high_name": "UNNAMED",
+              "high_type": "/undefined4",
+              "defined_at": "(ram, 0x485196, 328, 1)",
+              "defined_by": "LOAD"
+            }
+          ]
+        },
+        "tokens": [
+          {
+            "kind": "ClangVariableToken",
+            "text": "param_1",
+            "min_va": "00485196",
+            "max_va": "00485196",
+            "pcode_sequence": "(ram, 0x485196, 859, 0)",
+            "varnode": {
+              "address": "register:00000004",
+              "space": "register",
+              "offset": 4,
+              "bytes": 4,
+              "input": true,
+              "constant": false,
+              "high_name": "param_1",
+              "high_type": "/undefined4 *",
+              "high_storage": {
+                "display": "ECX:4 (auto)",
+                "bytes": 4,
+                "varnodes": [
+                  {
+                    "space": "register",
+                    "offset": 4,
+                    "bytes": 4,
+                    "address": "register:00000004"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "original_signature": "undefined4 * __thiscall FUN_00485100(undefined4 *param_1,float *param_2,undefined2 param_3);",
+  "all_other_body_lines_preserved": true
+}

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "checks": [
+    {
+      "case": "repeated-path",
+      "exit_code": 1,
+      "rejected_before_native_tools": true,
+      "expected": "Repeated ordinary summary path"
+    },
+    {
+      "case": "overlapping-vas",
+      "exit_code": 1,
+      "rejected_before_native_tools": true,
+      "expected": "Overlapping compiled ordinary VAs across packets"
+    }
+  ],
+  "native_commands": 0
+}

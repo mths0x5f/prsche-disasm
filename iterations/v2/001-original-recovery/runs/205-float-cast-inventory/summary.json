@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "run": "205-float-cast-inventory",
+  "kind": "read-only-float-cast-inventory",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "audit": "local/experiments/v2-scalar-slices-189/full/audit.json",
+  "audit_sha256": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+  "input_pins": {
+    "original_corpus_decompiled_c_sha256": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32",
+    "run192_summary_sha256": "092ec97a2a3711969f0c5882097630f16f207715199e37497b4b2d26f735a929",
+    "run196_summary_sha256": "1a25fd36091488ab2b0a8322cb60ac03c946a06b1a319d20c8cf4afe95199361",
+    "run197_summary_sha256": "022efd152e9befb023777c86351d442c27a01ea3c50d0b97ac741518c128ca5a",
+    "run199_summary_sha256": "fa4810f007b5be2bbb6dac28fb86400d31d5e963d2dd8104bcd29cd40e87ae2b"
+  },
+  "audit_body_vas": 5772,
+  "diagnostics": {
+    "C4244": {"matches": 1041, "bodies": 246},
+    "C4305": {"matches": 74, "bodies": 32},
+    "C2440": {"matches": 6017, "bodies": 1917, "scope": "general compiler diagnostic; not FP-specific"}
+  },
+  "explicit_cast_regex": {
+    "pattern": "(?i)\\(\\s*(?:float|double)\\s*\\)",
+    "matches": 3785,
+    "bodies": 539,
+    "interpretation": "regex occurrences only; not asserted erroneous casts"
+  },
+  "intersections": {
+    "ordinary192": {"objects": 924, "warning_bodies": 20, "cast_bodies": 26, "warning_diagnostics": 190, "cast_matches": 75, "set_is_historical": true},
+    "leaf196_197": {"objects": 148, "warning_bodies": 12, "cast_bodies": 0, "warning_diagnostics": 12, "cast_matches": 0, "set_is_historical": true},
+    "missing109_frontier": {"rows": 109, "warning_bodies": 30, "cast_bodies": 12, "warning_diagnostics": 106, "cast_matches": 56}
+  },
+  "priority_queue": [
+    {"va": "0040af70", "class": "missing109", "C4244": 0, "C4305": 7, "C2440": 0, "casts": 4, "score": 74},
+    {"va": "0040bfe0", "class": "missing109", "C4244": 3, "C4305": 0, "C2440": 13, "casts": 15, "score": 71},
+    {"va": "0040b650", "class": "missing109", "C4244": 0, "C4305": 1, "C2440": 11, "casts": 17, "score": 49},
+    {"va": "00406520", "class": "missing109", "C4244": 0, "C4305": 0, "C2440": 13, "casts": 0, "score": 26},
+    {"va": "004edf00", "class": "missing109", "C4244": 1, "C4305": 0, "C2440": 4, "casts": 0, "score": 18},
+    {"va": "0049ae30", "class": "missing109", "C4244": 0, "C4305": 0, "C2440": 6, "casts": 3, "score": 15},
+    {"va": "004f3e40", "class": "missing109", "C4244": 0, "C4305": 0, "C2440": 7, "casts": 0, "score": 14},
+    {"va": "00562680", "class": "missing109", "C4244": 1, "C4305": 0, "C2440": 0, "casts": 4, "score": 14},
+    {"va": "00518880", "class": "missing109", "C4244": 1, "C4305": 0, "C2440": 1, "casts": 0, "score": 12},
+    {"va": "00532b20", "class": "missing109", "C4244": 0, "C4305": 0, "C2440": 6, "casts": 0, "score": 12}
+  ],
+  "boundary": "All counts are from historical audit189. C2440 is general, not FP-specific; regex matches are not erroneous-cast claims. Intersections use older 192/196/197 VA sets, not 202 warnings. Index navigation only; no semantic error or original consumer proof. No compiler/Ghidra/native/EXE/full-input rerun."
+}

@@ -1,5 +1,28 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint202–206 (2026-10-15):1094 distinct native candidates, actual diagnostic link
+413names/600diagnostics; production173 unchanged. Сборка кандидатов не закрывает fidelity.
+- [x]202:97original PE instructions,9raw32 stores/8float bitviews и1024native bitcases
+  (unaligned/overlap/NaN/subnormal/capture order) проверены; read-only audit PASS.
+- [ ]202: полный00485100 против original execution, x87/SSE exceptions/rounding и
+  callers/register equivalence. Physical outgoing ECX clobbered; original сохранял ECX.
+  Совпадение ECX input/EAX return/RET8 не закрывает этот риск.
+- [ ]203: original ABI/full-body validation21 compiled candidates; четыре pointer-call
+  failures00540480/005404e0/00554530/0058f1f0 требуют original consumers.
+  Observed compiler exit/timing не сохранились после metadata crash и остаются null;
+  actual COFF/source/includes/owned diagnostics проверены, batch не повторялся.
+- [ ]206:133function names (36canonical outside union/97missing),273data names
+  (owners/initializers/overlapping aliases),7printed CRT contracts; no guessed definitions.
+  Total unresolved413 относится к diagnostic candidate union, не полному остатку игры.
+- [ ]205: historical warnings/regex — только priority queue; подтвердить каждую будущую
+  representation rewrite по original RAM/CAST/instructions до изменения исходника.
+
+Команды read-only проверки текущих пакетов:
+`py -3 scripts/research/audit-v2-float-bits-202.py` и
+`py -3 iterations/v2/001-original-recovery/runs/203-consumer-declaration-pilot/audit.py`.
+Actual union command/cache evidence: `runs/206-frontier-and-float-union/README.md`.
+Ниже — исторические checkpoints; их численные границы заменены206.
+
 2026-10-15 final checkpoint199:1072 actualCOFF (924+148),28literal leaf-body matches.
 Actualarchive/link выполнены повторяемым198CLI без компиляции:403raw/393linked names,
 frontier полностью совпал с198.197 добавил2реальныхCOFF, не новые accepted functions.

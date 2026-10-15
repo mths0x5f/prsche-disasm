@@ -1,0 +1,4188 @@
+{
+  "schema": 1,
+  "kind": "bounded-consumer-extern-native-candidates",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/W3",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "input_audit": "local/experiments/v2-scalar-slices-189/full/audit.json",
+  "input_audit_sha256": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+  "triage_summary": "iterations/v2/001-original-recovery/runs/201-missing-body-triage/summary.json",
+  "triage_summary_sha256": "8039f3e387e7e0f858400cc070e8faf8ce6f8ec2e4c9094266307678d098197b",
+  "selected_scope_vas": [
+    "0040b4b0",
+    "0041e2b0",
+    "0041e540",
+    "0041e590",
+    "004204f0",
+    "004a9890",
+    "004aadb0",
+    "004e1e50",
+    "004e35e0",
+    "005032c0",
+    "00540480",
+    "005404e0",
+    "00554530",
+    "00559a10",
+    "00559a40",
+    "00559ab0",
+    "00565c70",
+    "00565dd0",
+    "00566020",
+    "005662b0",
+    "00589710",
+    "00589740",
+    "00589d20",
+    "0058f1f0",
+    "00591320"
+  ],
+  "selected": 25,
+  "objects_compiled": 21,
+  "real_coff_objects": 21,
+  "blocked_metadata": [],
+  "compiled_tus": 25,
+  "code_generation_failed": 4,
+  "actual_compiler_batches": 1,
+  "new_compilations": 25,
+  "jobs": 6,
+  "actual_compiler_batches_this_pass": 0,
+  "finalize_existing": true,
+  "owned_body_candidates": 0,
+  "ownership_preflight": {
+    "0040b4b0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "0041e2b0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "0041e540": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "0041e590": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "004204f0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "004a9890": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "004aadb0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "004e1e50": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "004e35e0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "005032c0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00540480": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "005404e0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00554530": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00559a10": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00559a40": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00559ab0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00565c70": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00565dd0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00566020": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "005662b0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00589710": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00589740": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00589d20": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "0058f1f0": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    },
+    "00591320": {
+      "canonical_owner": null,
+      "unregistered_wip_owners": [],
+      "same_getC_compile_candidate_only": true,
+      "implementation_owner_replaced": false
+    }
+  },
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/types.jsonl": "141b9c4fa30915250b7ceea96c2be97888a89311e90af8f712d0489971daf442",
+    "iterations/v2/001-original-recovery/runs/192-scalar-slice-objects/summary.json": "092ec97a2a3711969f0c5882097630f16f207715199e37497b4b2d26f735a929",
+    "iterations/v2/001-original-recovery/runs/201-missing-body-triage/summary.json": "8039f3e387e7e0f858400cc070e8faf8ce6f8ec2e4c9094266307678d098197b",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp": "e4d3c6bab9ecc9dc15037e9a2343891ef2b0dfbbd85f1bb320518b29983e1335",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0040b4b0-globals.h": "42f6ca4c2e20c899da8835f1869c2da5caf1a38020ebb6ca0c7913c37474f0c5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e2b0-globals.h": "320c0b960730decac1c5ccb6fd8e6d92e9e94352c9e87c180630d4baa2ae7c20",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e540-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e590-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004204f0-globals.h": "a720baa15d9b464b6f8bd26e70370cb9d32feb24b767dcb9828d87503069c1d7",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004a9890-globals.h": "85034dfee784320079caab5981a3bf02b727863741d3a0d91130134eec09fa1f",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004aadb0-globals.h": "2a64968c1e2bb292a23c9bd43d4f4368bcd1387cc70210a53f140675cbaaebda",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004e1e50-globals.h": "3e85b1dd5ae93a0107abaafbb9c387f83276ab1a0949532cde9fc24b1ef07ab7",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004e35e0-globals.h": "85552ab9eaa074a539fc8066b5fff94757baabfad8d19d65a5acc62c628baccd",
+    "local/experiments/v2-consumer-declarations-203/final/headers/005032c0-globals.h": "5a5f27d0df29bf9d72293d9f338653bb60e60c008732278977c436776b5aeb46",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00540480-globals.h": "70f13684231e5225d95dfd1aa9e982e094ea27b94755d2d99c4499a1023db370",
+    "local/experiments/v2-consumer-declarations-203/final/headers/005404e0-globals.h": "7c464ccf57a04eeaf934c1c9e05332484e7d755930c719634481c1cf5d8ff4fb",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00554530-globals.h": "977fbf6ad9fbd92acec86f8cc26e3dfd3bd7dcc92f20f23b55a82a8a00557467",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00559a10-globals.h": "2557794d76fc7bc7022d73067e15157545529714cd4c3867dc5f1d834b7f1204",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00559a40-globals.h": "0c1d2b507c195878d024034b1703062a360c32360475a413882e20dbf54280fc",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00559ab0-globals.h": "30244d382d1a71fed701cf9704954089ac69bfaf69b3cdf0f152e96cf6651e1c",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00565c70-globals.h": "e07924a93ace8545c61ecf30df6648a5a0fbc9990630a80e060c1db85f891d94",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00565dd0-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00566020-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/005662b0-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00589710-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00589740-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00589d20-globals.h": "520aef1523bfe0d3a8be8e10c34dc276e1bf300ad05eb3181c90c77ea877372e",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0058f1f0-globals.h": "e81206f2ce5aad11871fc4c3a3236fbfc5c301914dfe5fd7408a2f5d1c1f415f",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00591320-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-consumer-declarations-203/final/native-capture-driver.py": "d98982b62c993335d399bbf0494c507a5ac25ea5eee511d6cb523193bf52614b",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0040b4b0.cpp": "39bf4dacd5844f0c0ecd9afbe7e6f3907b0f22b5d70080a32608d439852b6b7a",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e2b0.cpp": "da2efa09dcbfd231c5931d27657c8fbb45ccd039ea4a30036fb7d106e6385d15",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e540.cpp": "8bc06fea1102c184790b81aa7b834ccafc146c6588b097b59a4883b33560e246",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e590.cpp": "fb30d3f2620a755e714314e25407266ae0dff7b1aeedb79ac77988098d43463e",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004204f0.cpp": "f09788373bdb2d641bfd101d6ea51c3d4e77354bf39638321c96aab23093cdac",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004a9890.cpp": "112e76888b473347bf93fadd623e1aaa4522e55bec265a61c5126db561966c97",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004aadb0.cpp": "97523884b106aa67219a3aeaa0ce3bc3f39305770b7fa6c3662a4a5a8342aa14",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004e1e50.cpp": "6d1b33d8b413410619d0bfe7d8922b256a23a9ff0917611fa2bb5f0db4e99988",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004e35e0.cpp": "1444011cf3191bff9280cfddf2a75bf60f4b30ecc53787c766a1235cc4fede50",
+    "local/experiments/v2-consumer-declarations-203/final/sources/005032c0.cpp": "81cf465573f4e1e497d01430ad3c824235ee0bdfddde68f8110f0e370058ef3b",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00540480.cpp": "233ff02213d916c100dbb307e2ddbba8399f35c9c7ccc8b458128d6a89303f06",
+    "local/experiments/v2-consumer-declarations-203/final/sources/005404e0.cpp": "8838b850f20f9e543f3b89c5c11224036a2148a283d58d948d51f9d5fc83ba4d",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00554530.cpp": "25db02a7efea0ffb645e8ae3c242c5f3958315730dd59f348fa4bca68b59f7cb",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00559a10.cpp": "ec4b415e31a2d3fc33803cbcee215dffa0f9203dd8447dcd82d9e58491189e3c",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00559a40.cpp": "5c4777ee5f2a20949d33060887b1f6ed310b515e3c80e7085f9d08a590b95a36",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00559ab0.cpp": "74fc75018ee8ee0f68643c6858e1230fe1ea39b0d8d00d04c3cbf73a1fb4e4e6",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00565c70.cpp": "80e22a067a976137cf7557cfadf9aafa70e558db4521a14866deb39b8c356a7f",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00565dd0.cpp": "0ba5e4f04ac5c6ffdde8dd086f9e4ac1759e4e8b26b01e5db1d568d67b85fa9a",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00566020.cpp": "89b68aedc0afd2badcc1ad4cd9b46d94dd789d2ca3327f6e3a4f40a4abca2dd4",
+    "local/experiments/v2-consumer-declarations-203/final/sources/005662b0.cpp": "cda43d5273bf9b61b9857d875650da9eeefe0c1329a16337f7b181bffdf25aa1",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00589710.cpp": "73eed1cdf38fa3a534eaeb6734c66ebe6a6348544ebd59fd46467efe677c1358",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00589740.cpp": "e4863fdc92e5278796409a089f3733943b9e6effcd91570680640cb652d2dc21",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00589d20.cpp": "aa980e7d30963352f176beae4079df6c357412a0942719a2fcb7c0b43b7fc663",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0058f1f0.cpp": "51fa2bbe645ab6c1f25d280140be30337dbb5a8460858d0533892d719a620ad4",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00591320.cpp": "8b4b6f582423eb5327ad5b0ad5bed0478d4db94d5616c5cd7b1fe14e8c6a6bc7",
+    "local/experiments/v2-declaration-compat-184/full/0040b4b0-globals.h": "6e2c7f91d255377f6df3b109b22f11830a9018c908768af4ebf770f28f7b06d4",
+    "local/experiments/v2-declaration-compat-184/full/0040b4b0.cpp": "75371170ec3bf09c2c33c970c2e381fdd62a4f4c8ccffb99b3ca0a02b07ee647",
+    "local/experiments/v2-declaration-compat-184/full/0041e2b0-globals.h": "72f695ca2ca1c02e22bcfe6c645aaac2f38741cf8b8e27fb2da9d4154655d7f6",
+    "local/experiments/v2-declaration-compat-184/full/0041e2b0.cpp": "38dd1a88e4c0e4f3cac1dbe7a62343b503d4616384f7f9a544dd8171ef046f08",
+    "local/experiments/v2-declaration-compat-184/full/0041e540-globals.h": "5f7812e42892364bba1681cf4622a6f75c66f2aaeea244be16d422ce1e05310a",
+    "local/experiments/v2-declaration-compat-184/full/0041e540.cpp": "d638f86d3900962fcf024294dfaa79132c653943c54de7e6e144d230e3a73349",
+    "local/experiments/v2-declaration-compat-184/full/004a9890-globals.h": "93c219d2df9e5b07f86003f01f0ecf7d0bd0ca90b7a93d4afddf09f7ad724bcb",
+    "local/experiments/v2-declaration-compat-184/full/004a9890.cpp": "fc78679b5a9e1d51c5f8a513fe03b3103934dd5582a2658329817b4a1fd37c05",
+    "local/experiments/v2-declaration-compat-184/full/004aadb0-globals.h": "374ddda4d78da617ac38d1afd07f22ce1e17de642a846b296b60eab54b67012c",
+    "local/experiments/v2-declaration-compat-184/full/004aadb0.cpp": "3c8deddd2273a6b688104c4e3778e10966aa82c101997f42f0fd1dd178e8d8e2",
+    "local/experiments/v2-declaration-compat-184/full/00559ab0-globals.h": "4c78032842ab6b075deb139177b2cdbbb521a397869534a9cb4ab68dbbf43205",
+    "local/experiments/v2-declaration-compat-184/full/00559ab0.cpp": "9435fe657f5a668d8bfcbdc52a3b5e507dc17153c723aa9f58d68f48c080a9dd",
+    "local/experiments/v2-declaration-compat-184/full/00565c70-globals.h": "9f1fc85bbb46f246f716d2e85b076cd78448871404562e10760ca174de84206a",
+    "local/experiments/v2-declaration-compat-184/full/00565c70.cpp": "2b9eb2ba02807ab45f88c8d9a974faecc70fbcdaac72151eaec114a5456fe1e3",
+    "local/experiments/v2-declaration-compat-184/full/00565dd0-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+    "local/experiments/v2-declaration-compat-184/full/00565dd0.cpp": "90c961a0e1536c73590b68b6aac90b868efb1f0159b9a00caeb5c85805f54424",
+    "local/experiments/v2-declaration-compat-184/full/00591320-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+    "local/experiments/v2-declaration-compat-184/full/00591320.cpp": "b76aed6d7ad1fc9b55e8d66db71a83c6ded9b7c14dac120a867e1d2bc3e2d898",
+    "local/experiments/v2-missing-body-triage-201/selected-inputs.json": "795854e97ced3a9eba5f511e14da03b8399906ef3f62d845ef08e2711b5ad765",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0041e590.cpp": "b1037d66d579bf9ac6c66921d1392738938463e2b96356611791d61e872988e5",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004204f0.cpp": "e140294f66185aaf1a3dc8ccb444e10c807dfbcbfeaf5cf3ce85805a3dc8fa38",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004e1e50.cpp": "36b314bfa409d8f1dda93f85da31436b16c0dbec1936e2b9c1e417693e576baf",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004e35e0.cpp": "088c701eabebe66f1f47b50e30ae52604bbdbc00606456e34cdc7a38fe64b2c4",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/005032c0.cpp": "1970d94207245dd6dde2e53b45363ab99b812824f0ee98d72e83583d0b0c6a63",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00540480.cpp": "97baee6ac1c6a3a234cd47e419291e24bf84eb7b0e2e272b92fac20dcaf70c1c",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/005404e0.cpp": "2d45e1130c73a6b9ed52c98ae2a80e2784450a73917da7097277815b6c03516e",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00554530.cpp": "88b76213d95cfe5343b1bf77ab016550d924f5a0e5c23c0670305c16f7bcf098",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00559a10.cpp": "8c26431748e3cf8cbeec08cf0124acdfa5017d08a0a044e6f0f7bab2bf6599d8",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00559a40.cpp": "10e0b2a0cfa5b28d7b10b0f05a8a99ca9646bb44cbd23a7100a132ccdfcdfd80",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00566020.cpp": "621a738ed74688012925ef7b90ae449ad723685a373b5f974ef6b421dcd15b2a",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/005662b0.cpp": "28295466fef90ac0b3c8b9b69661a532e492eba49f33f40dd4fe66261fcf82fd",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589710.cpp": "9a1f73a67d3d574d28063e53eeebec00f04d6bb06e3426a2b3c673f5aad9a351",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589740.cpp": "7ed20af622242964edb07901b56d7a689f4766f80bd86caa04641488099e374e",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589d20.cpp": "afac7d057e16311226dd4d265a2846942541fd24b2ee46d405dffcd53a9f3ca3",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0058f1f0.cpp": "c8351f8691d4faf96266af11c1fd14a3b30ecb5cf727a2105aadfb8a38a7d65e",
+    "local/experiments/v2-scalar-slices-189/full/audit.json": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/experiment-v2-declaration-pilot-203.py": "0434dffc91bc8f37fdb8225ddd2368e5ce432bb02090e2471265ada8193452ae",
+    "scripts/research/experiment-v2-declarations-184.py": "815e1179a87bd2eb4ada95e7d9bad88f20797c7521f0b55858e409b4782f4823"
+  },
+  "compiler_response": "local/experiments/v2-consumer-declarations-203/final/logs/changed.rsp",
+  "compiler_response_sha256": "da1c32650eb479061a6d7d35f69c3ffdc23d6511c8b4577e2502ddee39725ef4",
+  "compiler_log": "local/experiments/v2-consumer-declarations-203/final/logs/changed.log",
+  "compiler_log_sha256": "55bd7068d99a5cf1987f59b381f5c2bb21d5dc11d88986f79a8d28e7ecf9ff8c",
+  "compiler_batch_exit_code": null,
+  "capture_driver": "local/experiments/v2-consumer-declarations-203/final/native-capture-driver.py",
+  "capture_driver_sha256": "d98982b62c993335d399bbf0494c507a5ac25ea5eee511d6cb523193bf52614b",
+  "batch_exit_and_timing_sidecars_unavailable": true,
+  "error_codes": {
+    "C2064": 5,
+    "C2197": 1
+  },
+  "warning_codes": {},
+  "warning_vas": [],
+  "subset_undefined_names": 43,
+  "subset_undefined_references": 60,
+  "subset_undefined_symbols": {
+    "?DAT_005e747c@@3IA": 1,
+    "?DAT_005e7484@@3IA": 1,
+    "?DAT_0060c95c@@3IA": 1,
+    "?DAT_00657db8@@3IA": 1,
+    "?FUN_0041ebf0@@YAXXZ": 1,
+    "?DAT_005ccb34@@3HA": 1,
+    "?DAT_0060c818@@3PAHA": 2,
+    "?DAT_0060c95c@@3HA": 3,
+    "?DAT_0060c904@@3PAHA": 1,
+    "?DAT_005d1734@@3HA": 1,
+    "?DAT_00656180@@3IA": 1,
+    "?DAT_00656184@@3IA": 1,
+    "?DAT_00656864@@3HA": 2,
+    "?DAT_005d14b8@@3HA": 1,
+    "?DAT_005d1744@@3HA": 1,
+    "?DAT_00656510@@3DA": 1,
+    "?DAT_00657c94@@3HA": 1,
+    "?FUN_00561960@@YAIPAI@Z": 1,
+    "?FUN_00565e70@@YAIEIPAI@Z": 1,
+    "?DAT_00690720@@3HA": 1,
+    "?DAT_006197aa@@3DA": 1,
+    "?DAT_005db764@@3IA": 1,
+    "?DAT_005df358@@3IA": 3,
+    "?DAT_006a3b34@@3HA": 1,
+    "?DAT_006a3b58@@3IA": 1,
+    "?DAT_006a3b38@@3HA": 1,
+    "?DAT_006a3b5c@@3IA": 1,
+    "?DAT_005df360@@3HA": 1,
+    "?DAT_006b4a08@@3IA": 1,
+    "?DAT_006b4a10@@3IA": 1,
+    "?DAT_006b4a14@@3IA": 1,
+    "?FUN_00565cd0@@YAHII@Z": 1,
+    "?FUN_00590250@@YAII@Z": 1,
+    "?DAT_006b499c@@3DA": 2,
+    "?DAT_006b4a00@@3HA": 7,
+    "?FUN_005896d0@@YAXXZ": 2,
+    "?FUN_005896f0@@YAXXZ": 2,
+    "?FUN_00590340@@YAIHPAH@Z": 3,
+    "?FUN_00589f40@@YAXH@Z": 1,
+    "?FUN_00590c60@@YAIH@Z": 1,
+    "?FUN_00589df0@@YAXH@Z": 1,
+    "?FUN_00590d10@@YAIH@Z": 1,
+    "?DAT_006b49a4@@3FA": 1
+  },
+  "compile_seconds": null,
+  "elapsed_seconds": 0.392,
+  "results": [
+    {
+      "va": "0040b4b0",
+      "name": "FUN_0040b4b0",
+      "source_body_sha256": "f0c7dea2f6b91479211464bbeeb4a9feffa75f687b7ae16533cfbb73ff822c41",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/0040b4b0.cpp",
+      "generated_source_sha256": "39bf4dacd5844f0c0ecd9afbe7e6f3907b0f22b5d70080a32608d439852b6b7a",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/0040b4b0.cpp",
+      "baseline_generated_source_sha256": "75371170ec3bf09c2c33c970c2e381fdd62a4f4c8ccffb99b3ca0a02b07ee647",
+      "preserved_body_sha256": "ea6d297bca58fc56bd247fa33d7cfd7f84d4b6cacbb69b37c35d651271497af4",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/0040b4b0-globals.h",
+      "declaration_header_sha256": "42f6ca4c2e20c899da8835f1869c2da5caf1a38020ebb6ca0c7913c37474f0c5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005e747c",
+          "symbol": {
+            "name": "DAT_005e747c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "005e747c:4",
+            "storage_detail": {
+              "display": "005e747c:4",
+              "serialization": "ram:005e747c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6190204",
+                  "bytes": 4,
+                  "address": "005e747c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_005e747c"
+          },
+          "consumer_vas": [
+            "0040b4b0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0040b4b0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/0040b4b0.cpp": "39bf4dacd5844f0c0ecd9afbe7e6f3907b0f22b5d70080a32608d439852b6b7a",
+        "local/experiments/v2-declaration-compat-184/full/0040b4b0-globals.h": "6e2c7f91d255377f6df3b109b22f11830a9018c908768af4ebf770f28f7b06d4",
+        "local/experiments/v2-consumer-declarations-203/final/headers/0040b4b0-globals.h": "42f6ca4c2e20c899da8835f1869c2da5caf1a38020ebb6ca0c7913c37474f0c5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_0040b4b0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "0040b4c5",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 8
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/0040b4b0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "dad740528cbef1fc122dbe21f0d69350fa6b3863a43fba3ff55b8ed6b548717a",
+      "object_bytes": 845,
+      "symbols": {
+        "defined": [
+          "?FUN_0040b4b0@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_005e747c@@3IA",
+          "?DAT_005e7484@@3IA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "0041e2b0",
+      "name": "FUN_0041e2b0",
+      "source_body_sha256": "d0823ec7e62e9bcd6e9e7ae80e982cd576380ec9be397c7a62699b12e6fb6b22",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/0041e2b0.cpp",
+      "generated_source_sha256": "da2efa09dcbfd231c5931d27657c8fbb45ccd039ea4a30036fb7d106e6385d15",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/0041e2b0.cpp",
+      "baseline_generated_source_sha256": "38dd1a88e4c0e4f3cac1dbe7a62343b503d4616384f7f9a544dd8171ef046f08",
+      "preserved_body_sha256": "e12032e7f21f6f5b453a9162102defbcc697b06c29ecab9e0e359f39721ab5fa",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/0041e2b0-globals.h",
+      "declaration_header_sha256": "320c0b960730decac1c5ccb6fd8e6d92e9e94352c9e87c180630d4baa2ae7c20",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_0060c95c",
+          "symbol": {
+            "name": "DAT_0060c95c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "0060c95c:4",
+            "storage_detail": {
+              "display": "0060c95c:4",
+              "serialization": "ram:0060c95c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6343004",
+                  "bytes": 4,
+                  "address": "0060c95c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_0060c95c"
+          },
+          "consumer_vas": [
+            "0041e2b0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0041e2b0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/0041e2b0.cpp": "da2efa09dcbfd231c5931d27657c8fbb45ccd039ea4a30036fb7d106e6385d15",
+        "local/experiments/v2-declaration-compat-184/full/0041e2b0-globals.h": "72f695ca2ca1c02e22bcfe6c645aaac2f38741cf8b8e27fb2da9d4154655d7f6",
+        "local/experiments/v2-consumer-declarations-203/final/headers/0041e2b0-globals.h": "320c0b960730decac1c5ccb6fd8e6d92e9e94352c9e87c180630d4baa2ae7c20",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_0041e2b0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [],
+        "call_instructions": 0,
+        "instructions": 3
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/0041e2b0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "4e539868b73f4f6ea2a2176b4479c7c6f147c37a8caf99848566aa17e6b7da0c",
+      "object_bytes": 844,
+      "symbols": {
+        "defined": [
+          "?FUN_0041e2b0@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_0060c95c@@3IA",
+          "?DAT_00657db8@@3IA",
+          "?FUN_0041ebf0@@YAXXZ"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "0041e540",
+      "name": "FUN_0041e540",
+      "source_body_sha256": "7486a0e30df8ccd247178b5368e701146ebfbb59d953400fbe4c0dd75af9291a",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/0041e540.cpp",
+      "generated_source_sha256": "8bc06fea1102c184790b81aa7b834ccafc146c6588b097b59a4883b33560e246",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/0041e540.cpp",
+      "baseline_generated_source_sha256": "d638f86d3900962fcf024294dfaa79132c653943c54de7e6e144d230e3a73349",
+      "preserved_body_sha256": "29becb20f3d9e8e6e15330d2616a44b2767529b649cc2a91c6302f0345613661",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/0041e540-globals.h",
+      "declaration_header_sha256": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_0060c818",
+          "symbol": {
+            "name": "DAT_0060c818",
+            "namespace": "Global",
+            "type": {
+              "path": "/int *",
+              "name": "int *",
+              "display": "int *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c818:4",
+            "storage_detail": {
+              "display": "0060c818:4",
+              "serialization": "ram:0060c818:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342680",
+                  "bytes": 4,
+                  "address": "0060c818"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int *DAT_0060c818"
+          },
+          "consumer_vas": [
+            "0041e540"
+          ],
+          "resolved": {
+            "ctype": "int *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int",
+              "/int *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0041e540",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_0060c95c",
+          "symbol": {
+            "name": "DAT_0060c95c",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c95c:4",
+            "storage_detail": {
+              "display": "0060c95c:4",
+              "serialization": "ram:0060c95c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6343004",
+                  "bytes": 4,
+                  "address": "0060c95c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_0060c95c"
+          },
+          "consumer_vas": [
+            "0041e540"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0041e540",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/0041e540.cpp": "8bc06fea1102c184790b81aa7b834ccafc146c6588b097b59a4883b33560e246",
+        "local/experiments/v2-declaration-compat-184/full/0041e540-globals.h": "5f7812e42892364bba1681cf4622a6f75c66f2aaeea244be16d422ce1e05310a",
+        "local/experiments/v2-consumer-declarations-203/final/headers/0041e540-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_0041e540(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "0041e58e",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 22
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/0041e540.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "901cb57b0c32f60d3dbdfc63cdf3a3cff994cfb01c674b74973fc491f29e8537",
+      "object_bytes": 982,
+      "symbols": {
+        "defined": [
+          "?FUN_0041e540@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_005ccb34@@3HA",
+          "?DAT_0060c818@@3PAHA",
+          "?DAT_0060c95c@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "0041e590",
+      "name": "FUN_0041e590",
+      "source_body_sha256": "2b36d6eac600d07026e9d77aae261bf09c44b0b2c8a690889816771dea0d54cd",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/0041e590.cpp",
+      "generated_source_sha256": "fb30d3f2620a755e714314e25407266ae0dff7b1aeedb79ac77988098d43463e",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0041e590.cpp",
+      "baseline_generated_source_sha256": "b1037d66d579bf9ac6c66921d1392738938463e2b96356611791d61e872988e5",
+      "preserved_body_sha256": "bf99d07bdd9ba4e4b54b9ecd6ef26cf298b16630327b8fb5601adc67e7c81f8f",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/0041e590-globals.h",
+      "declaration_header_sha256": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_0060c818",
+          "symbol": {
+            "name": "DAT_0060c818",
+            "namespace": "Global",
+            "type": {
+              "path": "/int *",
+              "name": "int *",
+              "display": "int *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c818:4",
+            "storage_detail": {
+              "display": "0060c818:4",
+              "serialization": "ram:0060c818:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342680",
+                  "bytes": 4,
+                  "address": "0060c818"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int *DAT_0060c818"
+          },
+          "consumer_vas": [
+            "0041e590"
+          ],
+          "resolved": {
+            "ctype": "int *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int",
+              "/int *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0041e590",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_0060c95c",
+          "symbol": {
+            "name": "DAT_0060c95c",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c95c:4",
+            "storage_detail": {
+              "display": "0060c95c:4",
+              "serialization": "ram:0060c95c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6343004",
+                  "bytes": 4,
+                  "address": "0060c95c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_0060c95c"
+          },
+          "consumer_vas": [
+            "0041e590"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0041e590",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/0041e590.cpp": "fb30d3f2620a755e714314e25407266ae0dff7b1aeedb79ac77988098d43463e",
+        "local/experiments/v2-consumer-declarations-203/final/headers/0041e590-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_0041e590(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "0041e5bd",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 13
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/0041e590.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "b28f79e0aa6aa550c6ee9a333d402369ec9678f0f46369c3b6ebb9d8cdb9a8b5",
+      "object_bytes": 875,
+      "symbols": {
+        "defined": [
+          "?FUN_0041e590@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_0060c818@@3PAHA",
+          "?DAT_0060c95c@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "004204f0",
+      "name": "FUN_004204f0",
+      "source_body_sha256": "2dbb9d745bc21ed66be7739554f539f3d42d5f71574f35ca4418b4222f0a31e4",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/004204f0.cpp",
+      "generated_source_sha256": "f09788373bdb2d641bfd101d6ea51c3d4e77354bf39638321c96aab23093cdac",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004204f0.cpp",
+      "baseline_generated_source_sha256": "e140294f66185aaf1a3dc8ccb444e10c807dfbcbfeaf5cf3ce85805a3dc8fa38",
+      "preserved_body_sha256": "75c0f91adf65f547c76d4b5ea54ff08cc963a2fc6649d765795c245f213cb026",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/004204f0-globals.h",
+      "declaration_header_sha256": "a720baa15d9b464b6f8bd26e70370cb9d32feb24b767dcb9828d87503069c1d7",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_0060c904",
+          "symbol": {
+            "name": "DAT_0060c904",
+            "namespace": "Global",
+            "type": {
+              "path": "/int *",
+              "name": "int *",
+              "display": "int *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c904:4",
+            "storage_detail": {
+              "display": "0060c904:4",
+              "serialization": "ram:0060c904:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342916",
+                  "bytes": 4,
+                  "address": "0060c904"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int *DAT_0060c904"
+          },
+          "consumer_vas": [
+            "004204f0"
+          ],
+          "resolved": {
+            "ctype": "int *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int",
+              "/int *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004204f0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_0060c95c",
+          "symbol": {
+            "name": "DAT_0060c95c",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c95c:4",
+            "storage_detail": {
+              "display": "0060c95c:4",
+              "serialization": "ram:0060c95c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6343004",
+                  "bytes": 4,
+                  "address": "0060c95c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_0060c95c"
+          },
+          "consumer_vas": [
+            "004204f0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004204f0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/004204f0.cpp": "f09788373bdb2d641bfd101d6ea51c3d4e77354bf39638321c96aab23093cdac",
+        "local/experiments/v2-consumer-declarations-203/final/headers/004204f0-globals.h": "a720baa15d9b464b6f8bd26e70370cb9d32feb24b767dcb9828d87503069c1d7",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_004204f0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00420513",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00420519",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "0042051f",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 17
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/004204f0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "71759affe22b1b7df991300762f8da496f54b390285ccf72fc189f783ca0f9bb",
+      "object_bytes": 843,
+      "symbols": {
+        "defined": [
+          "?FUN_004204f0@@YAIXZ"
+        ],
+        "undefined": [
+          "?DAT_0060c904@@3PAHA",
+          "?DAT_0060c95c@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "004a9890",
+      "name": "FUN_004a9890",
+      "source_body_sha256": "ce8836e3e19a564fc42a0f3333baced24f072e1139c10ad7969ad5e3f9175175",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/004a9890.cpp",
+      "generated_source_sha256": "112e76888b473347bf93fadd623e1aaa4522e55bec265a61c5126db561966c97",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/004a9890.cpp",
+      "baseline_generated_source_sha256": "fc78679b5a9e1d51c5f8a513fe03b3103934dd5582a2658329817b4a1fd37c05",
+      "preserved_body_sha256": "bad9e8fe865b048a803e4bad9d11a4776962852d50ccc43a05e98524c575511f",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/004a9890-globals.h",
+      "declaration_header_sha256": "85034dfee784320079caab5981a3bf02b727863741d3a0d91130134eec09fa1f",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005d1734",
+          "symbol": {
+            "name": "DAT_005d1734",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "005d1734:4",
+            "storage_detail": {
+              "display": "005d1734:4",
+              "serialization": "ram:005d1734:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6100788",
+                  "bytes": 4,
+                  "address": "005d1734"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_005d1734"
+          },
+          "consumer_vas": [
+            "004a9890"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004a9890",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_00656180",
+          "symbol": {
+            "name": "DAT_00656180",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "00656180:4",
+            "storage_detail": {
+              "display": "00656180:4",
+              "serialization": "ram:00656180:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6644096",
+                  "bytes": 4,
+                  "address": "00656180"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_00656180"
+          },
+          "consumer_vas": [
+            "004a9890"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004a9890",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/004a9890.cpp": "112e76888b473347bf93fadd623e1aaa4522e55bec265a61c5126db561966c97",
+        "local/experiments/v2-declaration-compat-184/full/004a9890-globals.h": "93c219d2df9e5b07f86003f01f0ecf7d0bd0ca90b7a93d4afddf09f7ad724bcb",
+        "local/experiments/v2-consumer-declarations-203/final/headers/004a9890-globals.h": "85034dfee784320079caab5981a3bf02b727863741d3a0d91130134eec09fa1f",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_004a9890(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "004a98de",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 1,
+        "instructions": 22
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/004a9890.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "0dd98f4f42cf58d0fd550ec680b7e81e446b6d29ca6df3de52bac39e1da3df66",
+      "object_bytes": 1056,
+      "symbols": {
+        "defined": [
+          "?FUN_004a9890@@YAXH@Z"
+        ],
+        "undefined": [
+          "?DAT_005d1734@@3HA",
+          "?DAT_00656180@@3IA",
+          "?DAT_00656184@@3IA",
+          "?DAT_00656864@@3HA",
+          "?FUN_00565dd0@@YAHIHH@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "004aadb0",
+      "name": "FUN_004aadb0",
+      "source_body_sha256": "ba4da7bae9462aac0b8ef71c8c55d52acd6bd1b5cc35f03e182208ed5b832509",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/004aadb0.cpp",
+      "generated_source_sha256": "97523884b106aa67219a3aeaa0ce3bc3f39305770b7fa6c3662a4a5a8342aa14",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/004aadb0.cpp",
+      "baseline_generated_source_sha256": "3c8deddd2273a6b688104c4e3778e10966aa82c101997f42f0fd1dd178e8d8e2",
+      "preserved_body_sha256": "8f73cfe21473639689fd6c81fdd12f677f711cc09f49fb2763b78d4fe94ab288",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/004aadb0-globals.h",
+      "declaration_header_sha256": "2a64968c1e2bb292a23c9bd43d4f4368bcd1387cc70210a53f140675cbaaebda",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005d1744",
+          "symbol": {
+            "name": "DAT_005d1744",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "005d1744:4",
+            "storage_detail": {
+              "display": "005d1744:4",
+              "serialization": "ram:005d1744:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6100804",
+                  "bytes": 4,
+                  "address": "005d1744"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_005d1744"
+          },
+          "consumer_vas": [
+            "004aadb0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004aadb0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_00656510",
+          "symbol": {
+            "name": "DAT_00656510",
+            "namespace": "Global",
+            "type": {
+              "path": "/char",
+              "name": "char",
+              "display": "char",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.CharDataType"
+            },
+            "bytes": 1,
+            "storage": "00656510:1",
+            "storage_detail": {
+              "display": "00656510:1",
+              "serialization": "ram:00656510:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6645008",
+                  "bytes": 1,
+                  "address": "00656510"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char DAT_00656510"
+          },
+          "consumer_vas": [
+            "004aadb0"
+          ],
+          "resolved": {
+            "ctype": "char",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/char"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004aadb0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_00657c94",
+          "symbol": {
+            "name": "DAT_00657c94",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "00657c94:4",
+            "storage_detail": {
+              "display": "00657c94:4",
+              "serialization": "ram:00657c94:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6651028",
+                  "bytes": 4,
+                  "address": "00657c94"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_00657c94"
+          },
+          "consumer_vas": [
+            "004aadb0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004aadb0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/004aadb0.cpp": "97523884b106aa67219a3aeaa0ce3bc3f39305770b7fa6c3662a4a5a8342aa14",
+        "local/experiments/v2-declaration-compat-184/full/004aadb0-globals.h": "374ddda4d78da617ac38d1afd07f22ce1e17de642a846b296b60eab54b67012c",
+        "local/experiments/v2-consumer-declarations-203/final/headers/004aadb0-globals.h": "2a64968c1e2bb292a23c9bd43d4f4368bcd1387cc70210a53f140675cbaaebda",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_004aadb0(undefined4 param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "004aae2e",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 2,
+        "instructions": 38
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/004aadb0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "071b3ee8c76d0d3cc20fdf6ed73240d2470a765ddcebc74200d511a4480c1d5f",
+      "object_bytes": 1181,
+      "symbols": {
+        "defined": [
+          "?FUN_004aadb0@@YAXI@Z"
+        ],
+        "undefined": [
+          "?DAT_005d14b8@@3HA",
+          "?DAT_005d1744@@3HA",
+          "?DAT_00656510@@3DA",
+          "?DAT_00656864@@3HA",
+          "?DAT_00657c94@@3HA",
+          "?FUN_00561960@@YAIPAI@Z",
+          "?FUN_00565e70@@YAIEIPAI@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "004e1e50",
+      "name": "FUN_004e1e50",
+      "source_body_sha256": "3d243cf52284714934076abe7b4cc547af1678c33f103d75baf8506a1eeb944c",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/004e1e50.cpp",
+      "generated_source_sha256": "6d1b33d8b413410619d0bfe7d8922b256a23a9ff0917611fa2bb5f0db4e99988",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004e1e50.cpp",
+      "baseline_generated_source_sha256": "36b314bfa409d8f1dda93f85da31436b16c0dbec1936e2b9c1e417693e576baf",
+      "preserved_body_sha256": "0b6f928098f239495531f2e3560ac9d88aad89af4b94f1ed491588dd32ded503",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/004e1e50-globals.h",
+      "declaration_header_sha256": "3e85b1dd5ae93a0107abaafbb9c387f83276ab1a0949532cde9fc24b1ef07ab7",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_00690720",
+          "symbol": {
+            "name": "DAT_00690720",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "00690720:4",
+            "storage_detail": {
+              "display": "00690720:4",
+              "serialization": "ram:00690720:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6883104",
+                  "bytes": 4,
+                  "address": "00690720"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_00690720"
+          },
+          "consumer_vas": [
+            "004e1e50"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004e1e50",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/004e1e50.cpp": "6d1b33d8b413410619d0bfe7d8922b256a23a9ff0917611fa2bb5f0db4e99988",
+        "local/experiments/v2-consumer-declarations-203/final/headers/004e1e50-globals.h": "3e85b1dd5ae93a0107abaafbb9c387f83276ab1a0949532cde9fc24b1ef07ab7",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_004e1e50(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "004e1e63",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 6
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/004e1e50.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "50dffe2baac03989ae155fd16503caaf9bebd31248fe64e1697a0a0436c23472",
+      "object_bytes": 762,
+      "symbols": {
+        "defined": [
+          "?FUN_004e1e50@@YAXH@Z"
+        ],
+        "undefined": [
+          "?DAT_00690720@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "004e35e0",
+      "name": "FUN_004e35e0",
+      "source_body_sha256": "794a26a6277eb53ed0a48eb1a0d50616d501ca089d09d785de7daefbc56e187d",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/004e35e0.cpp",
+      "generated_source_sha256": "1444011cf3191bff9280cfddf2a75bf60f4b30ecc53787c766a1235cc4fede50",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004e35e0.cpp",
+      "baseline_generated_source_sha256": "088c701eabebe66f1f47b50e30ae52604bbdbc00606456e34cdc7a38fe64b2c4",
+      "preserved_body_sha256": "76ca189ede3fe5a06b3730dc449eb557f927571ad57ab1f5ccf456bebdffcae4",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/004e35e0-globals.h",
+      "declaration_header_sha256": "85552ab9eaa074a539fc8066b5fff94757baabfad8d19d65a5acc62c628baccd",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006197aa",
+          "symbol": {
+            "name": "DAT_006197aa",
+            "namespace": "Global",
+            "type": {
+              "path": "/char",
+              "name": "char",
+              "display": "char",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.CharDataType"
+            },
+            "bytes": 1,
+            "storage": "006197aa:1",
+            "storage_detail": {
+              "display": "006197aa:1",
+              "serialization": "ram:006197aa:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6395818",
+                  "bytes": 1,
+                  "address": "006197aa"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char DAT_006197aa"
+          },
+          "consumer_vas": [
+            "004e35e0"
+          ],
+          "resolved": {
+            "ctype": "char",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/char"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "004e35e0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/004e35e0.cpp": "1444011cf3191bff9280cfddf2a75bf60f4b30ecc53787c766a1235cc4fede50",
+        "local/experiments/v2-consumer-declarations-203/final/headers/004e35e0-globals.h": "85552ab9eaa074a539fc8066b5fff94757baabfad8d19d65a5acc62c628baccd",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "bool FUN_004e35e0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "004e35ed",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 5
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/004e35e0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "4bae23c9b2ff0c9a868d12690e62531599071c4b756603e35ff43763cfc58cec",
+      "object_bytes": 767,
+      "symbols": {
+        "defined": [
+          "?FUN_004e35e0@@YA_NXZ"
+        ],
+        "undefined": [
+          "?DAT_006197aa@@3DA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "005032c0",
+      "name": "FUN_005032c0",
+      "source_body_sha256": "7ce88304ed20e725fca5fd638cd3d81d3eab46a64f4f31e303283a7e725a345c",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/005032c0.cpp",
+      "generated_source_sha256": "81cf465573f4e1e497d01430ad3c824235ee0bdfddde68f8110f0e370058ef3b",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/005032c0.cpp",
+      "baseline_generated_source_sha256": "1970d94207245dd6dde2e53b45363ab99b812824f0ee98d72e83583d0b0c6a63",
+      "preserved_body_sha256": "2215da9382a4e029e13bd3dcc8e362e3143728a4d0deee7108359c3023d19c84",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/005032c0-globals.h",
+      "declaration_header_sha256": "5a5f27d0df29bf9d72293d9f338653bb60e60c008732278977c436776b5aeb46",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005db764",
+          "symbol": {
+            "name": "DAT_005db764",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "005db764:4",
+            "storage_detail": {
+              "display": "005db764:4",
+              "serialization": "ram:005db764:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6141796",
+                  "bytes": 4,
+                  "address": "005db764"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_005db764"
+          },
+          "consumer_vas": [
+            "005032c0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "005032c0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/005032c0.cpp": "81cf465573f4e1e497d01430ad3c824235ee0bdfddde68f8110f0e370058ef3b",
+        "local/experiments/v2-consumer-declarations-203/final/headers/005032c0-globals.h": "5a5f27d0df29bf9d72293d9f338653bb60e60c008732278977c436776b5aeb46",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_005032c0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "005032c5",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 2
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/005032c0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "426c94a23f3e808618521e9882b2b1d892ffb0024c2ee8435d9b2321281f302c",
+      "object_bytes": 737,
+      "symbols": {
+        "defined": [
+          "?FUN_005032c0@@YAIXZ"
+        ],
+        "undefined": [
+          "?DAT_005db764@@3IA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00540480",
+      "name": "FUN_00540480",
+      "source_body_sha256": "e5726fcda5c4794c24eba1bb39caa4b188841c28e29d5baea6b3e7d51eab6f6c",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00540480.cpp",
+      "generated_source_sha256": "233ff02213d916c100dbb307e2ddbba8399f35c9c7ccc8b458128d6a89303f06",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00540480.cpp",
+      "baseline_generated_source_sha256": "97baee6ac1c6a3a234cd47e419291e24bf84eb7b0e2e272b92fac20dcaf70c1c",
+      "preserved_body_sha256": "91df9da29ebab183cdf202af29cb6c1addd85b2a54f96c954760b2935d78d429",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00540480-globals.h",
+      "declaration_header_sha256": "70f13684231e5225d95dfd1aa9e982e094ea27b94755d2d99c4499a1023db370",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006bd97c",
+          "symbol": {
+            "name": "DAT_006bd97c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined *",
+              "name": "undefined *",
+              "display": "undefined *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "006bd97c:4",
+            "storage_detail": {
+              "display": "006bd97c:4",
+              "serialization": "ram:006bd97c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7068028",
+                  "bytes": 4,
+                  "address": "006bd97c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined *DAT_006bd97c"
+          },
+          "consumer_vas": [
+            "00540480"
+          ],
+          "resolved": {
+            "ctype": "undefined *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined",
+              "/undefined *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00540480",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00540480.cpp": "233ff02213d916c100dbb307e2ddbba8399f35c9c7ccc8b458128d6a89303f06",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00540480-globals.h": "70f13684231e5225d95dfd1aa9e982e094ea27b94755d2d99c4499a1023db370",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_00540480(undefined4 param_1,undefined4 param_2);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00540490",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 1,
+        "instructions": 6
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00540480.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_outcome_evidence": "Owned compiler errors and no COFF",
+      "diagnostics": [
+        {
+          "source": "porsche_va_00540480",
+          "line": 6,
+          "column": 4,
+          "severity": "error",
+          "code": "C2064",
+          "category": "other_C2064",
+          "message": "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0444\u0440\u0430\u0433\u043c\u0435\u043d\u0442\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0430\u044f 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-declarations-203\\final\\sources\\00540480.cpp)"
+        }
+      ],
+      "compiler_batch_exit_code": null,
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "005404e0",
+      "name": "FUN_005404e0",
+      "source_body_sha256": "bd2085074cce01dc17ee39cfe2945756150f6c49dba2cdbce2da685bb28f3010",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/005404e0.cpp",
+      "generated_source_sha256": "8838b850f20f9e543f3b89c5c11224036a2148a283d58d948d51f9d5fc83ba4d",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/005404e0.cpp",
+      "baseline_generated_source_sha256": "2d45e1130c73a6b9ed52c98ae2a80e2784450a73917da7097277815b6c03516e",
+      "preserved_body_sha256": "6130447d7186635a2308ffdc0ee4354206b5e1c3d4ac8ea47c79d9b1becccd70",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/005404e0-globals.h",
+      "declaration_header_sha256": "7c464ccf57a04eeaf934c1c9e05332484e7d755930c719634481c1cf5d8ff4fb",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006bd918",
+          "symbol": {
+            "name": "DAT_006bd918",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined *",
+              "name": "undefined *",
+              "display": "undefined *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "006bd918:4",
+            "storage_detail": {
+              "display": "006bd918:4",
+              "serialization": "ram:006bd918:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7067928",
+                  "bytes": 4,
+                  "address": "006bd918"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined *DAT_006bd918"
+          },
+          "consumer_vas": [
+            "005404e0"
+          ],
+          "resolved": {
+            "ctype": "undefined *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined",
+              "/undefined *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "005404e0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/005404e0.cpp": "8838b850f20f9e543f3b89c5c11224036a2148a283d58d948d51f9d5fc83ba4d",
+        "local/experiments/v2-consumer-declarations-203/final/headers/005404e0-globals.h": "7c464ccf57a04eeaf934c1c9e05332484e7d755930c719634481c1cf5d8ff4fb",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_005404e0(undefined4 param_1,undefined4 param_2);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "005404f0",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 1,
+        "instructions": 6
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/005404e0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_outcome_evidence": "Owned compiler errors and no COFF",
+      "diagnostics": [
+        {
+          "source": "porsche_va_005404e0",
+          "line": 6,
+          "column": 4,
+          "severity": "error",
+          "code": "C2064",
+          "category": "other_C2064",
+          "message": "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0444\u0440\u0430\u0433\u043c\u0435\u043d\u0442\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0430\u044f 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-declarations-203\\final\\sources\\005404e0.cpp)"
+        }
+      ],
+      "compiler_batch_exit_code": null,
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00554530",
+      "name": "FUN_00554530",
+      "source_body_sha256": "53fcefc576650f96cc5fc944b64b38ae8f04f301cfcdac3001bafabb65967a2e",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00554530.cpp",
+      "generated_source_sha256": "25db02a7efea0ffb645e8ae3c242c5f3958315730dd59f348fa4bca68b59f7cb",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00554530.cpp",
+      "baseline_generated_source_sha256": "88b76213d95cfe5343b1bf77ab016550d924f5a0e5c23c0670305c16f7bcf098",
+      "preserved_body_sha256": "391bfed46e6c2be0d0fa19159fe034336960d14249d264db5e19a380b6dc82e7",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00554530-globals.h",
+      "declaration_header_sha256": "977fbf6ad9fbd92acec86f8cc26e3dfd3bd7dcc92f20f23b55a82a8a00557467",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006bd97c",
+          "symbol": {
+            "name": "DAT_006bd97c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined *",
+              "name": "undefined *",
+              "display": "undefined *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "006bd97c:4",
+            "storage_detail": {
+              "display": "006bd97c:4",
+              "serialization": "ram:006bd97c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7068028",
+                  "bytes": 4,
+                  "address": "006bd97c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined *DAT_006bd97c"
+          },
+          "consumer_vas": [
+            "00554530"
+          ],
+          "resolved": {
+            "ctype": "undefined *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined",
+              "/undefined *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00554530",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006bd984",
+          "symbol": {
+            "name": "DAT_006bd984",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined *",
+              "name": "undefined *",
+              "display": "undefined *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "006bd984:4",
+            "storage_detail": {
+              "display": "006bd984:4",
+              "serialization": "ram:006bd984:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7068036",
+                  "bytes": 4,
+                  "address": "006bd984"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined *DAT_006bd984"
+          },
+          "consumer_vas": [
+            "00554530"
+          ],
+          "resolved": {
+            "ctype": "undefined *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined",
+              "/undefined *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00554530",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00554530.cpp": "25db02a7efea0ffb645e8ae3c242c5f3958315730dd59f348fa4bca68b59f7cb",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00554530-globals.h": "977fbf6ad9fbd92acec86f8cc26e3dfd3bd7dcc92f20f23b55a82a8a00557467",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_00554530(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00554555",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 3,
+        "instructions": 16
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00554530.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_outcome_evidence": "Owned compiler errors and no COFF",
+      "diagnostics": [
+        {
+          "source": "porsche_va_00554530",
+          "line": 9,
+          "column": 12,
+          "severity": "error",
+          "code": "C2064",
+          "category": "other_C2064",
+          "message": "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0444\u0440\u0430\u0433\u043c\u0435\u043d\u0442\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0430\u044f 1 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-declarations-203\\final\\sources\\00554530.cpp)"
+        },
+        {
+          "source": "porsche_va_00554530",
+          "line": 10,
+          "column": 12,
+          "severity": "error",
+          "code": "C2064",
+          "category": "other_C2064",
+          "message": "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0444\u0440\u0430\u0433\u043c\u0435\u043d\u0442\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0430\u044f 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-declarations-203\\final\\sources\\00554530.cpp)"
+        },
+        {
+          "source": "porsche_va_00554530",
+          "line": 11,
+          "column": 4,
+          "severity": "error",
+          "code": "C2064",
+          "category": "other_C2064",
+          "message": "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0444\u0440\u0430\u0433\u043c\u0435\u043d\u0442\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0430\u044f 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-declarations-203\\final\\sources\\00554530.cpp)"
+        }
+      ],
+      "compiler_batch_exit_code": null,
+      "owned_error_count": 3,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00559a10",
+      "name": "FUN_00559a10",
+      "source_body_sha256": "a80445e38df60340b6a65a9c12117d951d6bacf111271515d39481de0227ef37",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00559a10.cpp",
+      "generated_source_sha256": "ec4b415e31a2d3fc33803cbcee215dffa0f9203dd8447dcd82d9e58491189e3c",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00559a10.cpp",
+      "baseline_generated_source_sha256": "8c26431748e3cf8cbeec08cf0124acdfa5017d08a0a044e6f0f7bab2bf6599d8",
+      "preserved_body_sha256": "e9da8983305c2d77a6ba99ba69f0148f2ddb0713e24df319407b51da3349a019",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00559a10-globals.h",
+      "declaration_header_sha256": "2557794d76fc7bc7022d73067e15157545529714cd4c3867dc5f1d834b7f1204",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005df358",
+          "symbol": {
+            "name": "DAT_005df358",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "005df358:4",
+            "storage_detail": {
+              "display": "005df358:4",
+              "serialization": "ram:005df358:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6157144",
+                  "bytes": 4,
+                  "address": "005df358"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_005df358"
+          },
+          "consumer_vas": [
+            "00559a10"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559a10",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006a3b34",
+          "symbol": {
+            "name": "DAT_006a3b34",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006a3b34:4",
+            "storage_detail": {
+              "display": "006a3b34:4",
+              "serialization": "ram:006a3b34:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6961972",
+                  "bytes": 4,
+                  "address": "006a3b34"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006a3b34"
+          },
+          "consumer_vas": [
+            "00559a10"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559a10",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006a3b58",
+          "symbol": {
+            "name": "DAT_006a3b58",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006a3b58:4",
+            "storage_detail": {
+              "display": "006a3b58:4",
+              "serialization": "ram:006a3b58:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6962008",
+                  "bytes": 4,
+                  "address": "006a3b58"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006a3b58"
+          },
+          "consumer_vas": [
+            "00559a10"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559a10",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00559a10.cpp": "ec4b415e31a2d3fc33803cbcee215dffa0f9203dd8447dcd82d9e58491189e3c",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00559a10-globals.h": "2557794d76fc7bc7022d73067e15157545529714cd4c3867dc5f1d834b7f1204",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_00559a10(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00559a2d",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00559a38",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 9
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00559a10.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "227455a6bd55d84c6a2822c5a67af63f2c625b5fd321352164e1d0f7470b4061",
+      "object_bytes": 891,
+      "symbols": {
+        "defined": [
+          "?FUN_00559a10@@YAIH@Z"
+        ],
+        "undefined": [
+          "?DAT_005df358@@3IA",
+          "?DAT_006a3b34@@3HA",
+          "?DAT_006a3b58@@3IA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00559a40",
+      "name": "FUN_00559a40",
+      "source_body_sha256": "da5a0c41a080d8614a919d6338e10b9378f34b6f57b88bbc326aed94df1e19c0",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00559a40.cpp",
+      "generated_source_sha256": "5c4777ee5f2a20949d33060887b1f6ed310b515e3c80e7085f9d08a590b95a36",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00559a40.cpp",
+      "baseline_generated_source_sha256": "10e0b2a0cfa5b28d7b10b0f05a8a99ca9646bb44cbd23a7100a132ccdfcdfd80",
+      "preserved_body_sha256": "709ef8db22e05d59a474b1681283024e9f9f07580b9319f579f364a3911f086d",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00559a40-globals.h",
+      "declaration_header_sha256": "0c1d2b507c195878d024034b1703062a360c32360475a413882e20dbf54280fc",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005df358",
+          "symbol": {
+            "name": "DAT_005df358",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "005df358:4",
+            "storage_detail": {
+              "display": "005df358:4",
+              "serialization": "ram:005df358:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6157144",
+                  "bytes": 4,
+                  "address": "005df358"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_005df358"
+          },
+          "consumer_vas": [
+            "00559a40"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559a40",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006a3b38",
+          "symbol": {
+            "name": "DAT_006a3b38",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006a3b38:4",
+            "storage_detail": {
+              "display": "006a3b38:4",
+              "serialization": "ram:006a3b38:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6961976",
+                  "bytes": 4,
+                  "address": "006a3b38"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006a3b38"
+          },
+          "consumer_vas": [
+            "00559a40"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559a40",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006a3b5c",
+          "symbol": {
+            "name": "DAT_006a3b5c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006a3b5c:4",
+            "storage_detail": {
+              "display": "006a3b5c:4",
+              "serialization": "ram:006a3b5c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6962012",
+                  "bytes": 4,
+                  "address": "006a3b5c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006a3b5c"
+          },
+          "consumer_vas": [
+            "00559a40"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559a40",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00559a40.cpp": "5c4777ee5f2a20949d33060887b1f6ed310b515e3c80e7085f9d08a590b95a36",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00559a40-globals.h": "0c1d2b507c195878d024034b1703062a360c32360475a413882e20dbf54280fc",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_00559a40(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00559a5d",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00559a68",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 9
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00559a40.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "8afbaa762ad8b5e708655750a7d30e6c709e2910287cdbc7655153c05ad2831b",
+      "object_bytes": 891,
+      "symbols": {
+        "defined": [
+          "?FUN_00559a40@@YAIH@Z"
+        ],
+        "undefined": [
+          "?DAT_005df358@@3IA",
+          "?DAT_006a3b38@@3HA",
+          "?DAT_006a3b5c@@3IA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00559ab0",
+      "name": "FUN_00559ab0",
+      "source_body_sha256": "db946685aec90bd687af94edb6e040a02a46c717d6fff1dcfd7bde775b9bcd0a",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00559ab0.cpp",
+      "generated_source_sha256": "74fc75018ee8ee0f68643c6858e1230fe1ea39b0d8d00d04c3cbf73a1fb4e4e6",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00559ab0.cpp",
+      "baseline_generated_source_sha256": "9435fe657f5a668d8bfcbdc52a3b5e507dc17153c723aa9f58d68f48c080a9dd",
+      "preserved_body_sha256": "5bfc307ab630d1a7c71239817edf02750058fab561ac3f5dae2311380343afb3",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00559ab0-globals.h",
+      "declaration_header_sha256": "30244d382d1a71fed701cf9704954089ac69bfaf69b3cdf0f152e96cf6651e1c",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_005df358",
+          "symbol": {
+            "name": "DAT_005df358",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "005df358:4",
+            "storage_detail": {
+              "display": "005df358:4",
+              "serialization": "ram:005df358:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6157144",
+                  "bytes": 4,
+                  "address": "005df358"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_005df358"
+          },
+          "consumer_vas": [
+            "00559ab0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00559ab0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00559ab0.cpp": "74fc75018ee8ee0f68643c6858e1230fe1ea39b0d8d00d04c3cbf73a1fb4e4e6",
+        "local/experiments/v2-declaration-compat-184/full/00559ab0-globals.h": "4c78032842ab6b075deb139177b2cdbbb521a397869534a9cb4ab68dbbf43205",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00559ab0-globals.h": "30244d382d1a71fed701cf9704954089ac69bfaf69b3cdf0f152e96cf6651e1c",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_00559ab0(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00559acd",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 7
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00559ab0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "c966cf0554e23a4977737a3243c85bc132d9100cff5d0b0be14694cf9e52391b",
+      "object_bytes": 829,
+      "symbols": {
+        "defined": [
+          "?FUN_00559ab0@@YAIH@Z"
+        ],
+        "undefined": [
+          "?DAT_005df358@@3IA",
+          "?DAT_005df360@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00565c70",
+      "name": "FUN_00565c70",
+      "source_body_sha256": "5da6f7330440bf61f54581b6eca2595ada7ef24a6ef3e3671e85d2d8431b4425",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00565c70.cpp",
+      "generated_source_sha256": "80e22a067a976137cf7557cfadf9aafa70e558db4521a14866deb39b8c356a7f",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00565c70.cpp",
+      "baseline_generated_source_sha256": "2b9eb2ba02807ab45f88c8d9a974faecc70fbcdaac72151eaec114a5456fe1e3",
+      "preserved_body_sha256": "12e568ba3a985b98a6fa0eb9deff4787b27b64ffa6f1e3504db7b4ff7c494489",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00565c70-globals.h",
+      "declaration_header_sha256": "e07924a93ace8545c61ecf30df6648a5a0fbc9990630a80e060c1db85f891d94",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a08",
+          "symbol": {
+            "name": "DAT_006b4a08",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a08:4",
+            "storage_detail": {
+              "display": "006b4a08:4",
+              "serialization": "ram:006b4a08:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031304",
+                  "bytes": 4,
+                  "address": "006b4a08"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4a08"
+          },
+          "consumer_vas": [
+            "00565c70"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00565c70",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006b4a10",
+          "symbol": {
+            "name": "DAT_006b4a10",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a10:4",
+            "storage_detail": {
+              "display": "006b4a10:4",
+              "serialization": "ram:006b4a10:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031312",
+                  "bytes": 4,
+                  "address": "006b4a10"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4a10"
+          },
+          "consumer_vas": [
+            "00565c70"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00565c70",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00565c70.cpp": "80e22a067a976137cf7557cfadf9aafa70e558db4521a14866deb39b8c356a7f",
+        "local/experiments/v2-declaration-compat-184/full/00565c70-globals.h": "9f1fc85bbb46f246f716d2e85b076cd78448871404562e10760ca174de84206a",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00565c70-globals.h": "e07924a93ace8545c61ecf30df6648a5a0fbc9990630a80e060c1db85f891d94",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "void FUN_00565c70(uint param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00565cb9",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00565cc9",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 3,
+        "instructions": 36
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00565c70.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "342d8d0ee083b6b0728a85b9771e7cdf337b518cea3f837dec00acb5454df565",
+      "object_bytes": 1077,
+      "symbols": {
+        "defined": [
+          "?FUN_00565c70@@YAXIIHII@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a08@@3IA",
+          "?DAT_006b4a10@@3IA",
+          "?DAT_006b4a14@@3IA",
+          "?FUN_00565cd0@@YAHII@Z",
+          "?FUN_00590250@@YAII@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00565dd0",
+      "name": "FUN_00565dd0",
+      "source_body_sha256": "e9faeccde5c6d69da22925d1aa31eb1b6ae9a956634021dfe9eeb986bad710d3",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00565dd0.cpp",
+      "generated_source_sha256": "0ba5e4f04ac5c6ffdde8dd086f9e4ac1759e4e8b26b01e5db1d568d67b85fa9a",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00565dd0.cpp",
+      "baseline_generated_source_sha256": "90c961a0e1536c73590b68b6aac90b868efb1f0159b9a00caeb5c85805f54424",
+      "preserved_body_sha256": "b629d5626d58f112a79947c0a1f96b38fc8d4c688aa7f4576e62f70ee6160a6f",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00565dd0-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00565dd0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00565dd0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00565dd0.cpp": "0ba5e4f04ac5c6ffdde8dd086f9e4ac1759e4e8b26b01e5db1d568d67b85fa9a",
+        "local/experiments/v2-declaration-compat-184/full/00565dd0-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00565dd0-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "int FUN_00565dd0(undefined4 param_1,int param_2,int param_3);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00565de0",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00565e6e",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 5,
+        "instructions": 59
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00565dd0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "1a42440e94a6c1cdd8241235f80df759ea01c265bc3cd1fad2bb999df4fbd4a8",
+      "object_bytes": 1171,
+      "symbols": {
+        "defined": [
+          "?FUN_00565dd0@@YAHIHH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b499c@@3DA",
+          "?DAT_006b4a00@@3HA",
+          "?FUN_005896d0@@YAXXZ",
+          "?FUN_005896f0@@YAXXZ",
+          "?FUN_00589d20@@YAII@Z",
+          "?FUN_00590340@@YAIHPAH@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00566020",
+      "name": "FUN_00566020",
+      "source_body_sha256": "2b53aafc396b07c86f5ebbd8e36399f6d042aff5c0229b58d12b312c06645978",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00566020.cpp",
+      "generated_source_sha256": "89b68aedc0afd2badcc1ad4cd9b46d94dd789d2ca3327f6e3a4f40a4abca2dd4",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00566020.cpp",
+      "baseline_generated_source_sha256": "621a738ed74688012925ef7b90ae449ad723685a373b5f974ef6b421dcd15b2a",
+      "preserved_body_sha256": "9de177c71fc66a6da61948d850bd551608864ef90e3d6a6e4c56569eeae0b685",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00566020-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00566020"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00566020",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00566020.cpp": "89b68aedc0afd2badcc1ad4cd9b46d94dd789d2ca3327f6e3a4f40a4abca2dd4",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00566020-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "int FUN_00566020(int param_1,int param_2);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "005660ad",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "005660b2",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 5,
+        "instructions": 52
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00566020.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "a48a7f862ea301a3f6d7f55e556634d73e53b41a410f70bf6fd29b4fff527aa4",
+      "object_bytes": 1121,
+      "symbols": {
+        "defined": [
+          "?FUN_00566020@@YAHHH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a00@@3HA",
+          "?FUN_00589d20@@YAII@Z",
+          "?FUN_00589f40@@YAXH@Z",
+          "?FUN_00590340@@YAIHPAH@Z",
+          "?FUN_00590c60@@YAIH@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "005662b0",
+      "name": "FUN_005662b0",
+      "source_body_sha256": "a5fad09f0d200a120eea1fcc38214f965294e879b3ee1d505bfde206d99c7882",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/005662b0.cpp",
+      "generated_source_sha256": "cda43d5273bf9b61b9857d875650da9eeefe0c1329a16337f7b181bffdf25aa1",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/005662b0.cpp",
+      "baseline_generated_source_sha256": "28295466fef90ac0b3c8b9b69661a532e492eba49f33f40dd4fe66261fcf82fd",
+      "preserved_body_sha256": "4790f1bbc087562937db6e4d9798842b1c7b46fddd728cde66e6d71ea584dbe1",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/005662b0-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "005662b0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "005662b0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/005662b0.cpp": "cda43d5273bf9b61b9857d875650da9eeefe0c1329a16337f7b181bffdf25aa1",
+        "local/experiments/v2-consumer-declarations-203/final/headers/005662b0-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "int FUN_005662b0(int param_1,int param_2);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00566337",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "0056633c",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 5,
+        "instructions": 50
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/005662b0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "00c7b620361371fd64e280b9599deb5474d32da3f08f8b9e4d03ef8276124f29",
+      "object_bytes": 1117,
+      "symbols": {
+        "defined": [
+          "?FUN_005662b0@@YAHHH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a00@@3HA",
+          "?FUN_00589d20@@YAII@Z",
+          "?FUN_00589df0@@YAXH@Z",
+          "?FUN_00590340@@YAIHPAH@Z",
+          "?FUN_00590d10@@YAIH@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00589710",
+      "name": "FUN_00589710",
+      "source_body_sha256": "9f1ef8535baf4fde593330bf048129c330cc13d193f00aea323e08bf9e4485be",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00589710.cpp",
+      "generated_source_sha256": "73eed1cdf38fa3a534eaeb6734c66ebe6a6348544ebd59fd46467efe677c1358",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589710.cpp",
+      "baseline_generated_source_sha256": "9a1f73a67d3d574d28063e53eeebec00f04d6bb06e3426a2b3c673f5aad9a351",
+      "preserved_body_sha256": "e48703e74150f688f7c2f0b30c77f769560e59965e439d824245ca89b18d7649",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00589710-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00589710"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00589710",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00589710.cpp": "73eed1cdf38fa3a534eaeb6734c66ebe6a6348544ebd59fd46467efe677c1358",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00589710-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "int FUN_00589710(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00589735",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 11
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00589710.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "7337f9badeaa5ed63f221933fcb08ad1a7ad5d1046535e5c4151d9ac641fb294",
+      "object_bytes": 774,
+      "symbols": {
+        "defined": [
+          "?FUN_00589710@@YAHH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a00@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00589740",
+      "name": "FUN_00589740",
+      "source_body_sha256": "730de5bad498de351158f62d091b20bee06f670593b13f4067192a631dd371e7",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00589740.cpp",
+      "generated_source_sha256": "e4863fdc92e5278796409a089f3733943b9e6effcd91570680640cb652d2dc21",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589740.cpp",
+      "baseline_generated_source_sha256": "7ed20af622242964edb07901b56d7a689f4766f80bd86caa04641488099e374e",
+      "preserved_body_sha256": "922902d467dbddc1ca10e93bb4e786b9609bd8965205fab8f3157ff771aebd5a",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00589740-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00589740"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00589740",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00589740.cpp": "e4863fdc92e5278796409a089f3733943b9e6effcd91570680640cb652d2dc21",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00589740-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "int FUN_00589740(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "0058978f",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 27
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00589740.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "9e5fc9529e1206a0afad9e3a3751e255ee1d330ee9123a0669382c6827ddd4f6",
+      "object_bytes": 844,
+      "symbols": {
+        "defined": [
+          "?FUN_00589740@@YAHH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a00@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "00589d20",
+      "name": "FUN_00589d20",
+      "source_body_sha256": "4e553042b56e34637255777295909873cbf9adbf6af88d4bb3548309860a082c",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00589d20.cpp",
+      "generated_source_sha256": "aa980e7d30963352f176beae4079df6c357412a0942719a2fcb7c0b43b7fc663",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589d20.cpp",
+      "baseline_generated_source_sha256": "afac7d057e16311226dd4d265a2846942541fd24b2ee46d405dffcd53a9f3ca3",
+      "preserved_body_sha256": "c8761fb114e423dec7a930257e314ea2c7bce15f7f19c0684861eb48ab6bf4f2",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00589d20-globals.h",
+      "declaration_header_sha256": "520aef1523bfe0d3a8be8e10c34dc276e1bf300ad05eb3181c90c77ea877372e",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b49a4",
+          "symbol": {
+            "name": "DAT_006b49a4",
+            "namespace": "Global",
+            "type": {
+              "path": "/short",
+              "name": "short",
+              "display": "short",
+              "length": 2,
+              "alignment": 2,
+              "class": "ghidra.program.model.data.ShortDataType"
+            },
+            "bytes": 2,
+            "storage": "006b49a4:2",
+            "storage_detail": {
+              "display": "006b49a4:2",
+              "serialization": "ram:006b49a4:2",
+              "bytes": 2,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031204",
+                  "bytes": 2,
+                  "address": "006b49a4"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "short DAT_006b49a4"
+          },
+          "consumer_vas": [
+            "00589d20"
+          ],
+          "resolved": {
+            "ctype": "short",
+            "bytes": 2,
+            "alignment": 2,
+            "typedefs": [],
+            "type_paths": [
+              "/short"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00589d20",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        },
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00589d20"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00589d20",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00589d20.cpp": "aa980e7d30963352f176beae4079df6c357412a0942719a2fcb7c0b43b7fc663",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00589d20-globals.h": "520aef1523bfe0d3a8be8e10c34dc276e1bf300ad05eb3181c90c77ea877372e",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "uint FUN_00589d20(uint param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00589d2d",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00589d45",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00589d6e",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 0,
+        "instructions": 28
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00589d20.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "2216d26436bc72c7146452388daeefbe2fb2f3f027504bc5f7dd45a513603fb8",
+      "object_bytes": 872,
+      "symbols": {
+        "defined": [
+          "?FUN_00589d20@@YAII@Z"
+        ],
+        "undefined": [
+          "?DAT_006b49a4@@3FA",
+          "?DAT_006b4a00@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    },
+    {
+      "va": "0058f1f0",
+      "name": "FUN_0058f1f0",
+      "source_body_sha256": "f0f475467a816c31dc2dff002529dcaa128523950c0fb8b7e80ecbee5b7e0e37",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/0058f1f0.cpp",
+      "generated_source_sha256": "51fa2bbe645ab6c1f25d280140be30337dbb5a8460858d0533892d719a620ad4",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0058f1f0.cpp",
+      "baseline_generated_source_sha256": "c8351f8691d4faf96266af11c1fd14a3b30ecb5cf727a2105aadfb8a38a7d65e",
+      "preserved_body_sha256": "d63f9697ff1512a0c245a0ff8b8802e5ce121f727f766c202be4ff1e0f9e1f22",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/0058f1f0-globals.h",
+      "declaration_header_sha256": "e81206f2ce5aad11871fc4c3a3236fbfc5c301914dfe5fd7408a2f5d1c1f415f",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006ad760",
+          "symbol": {
+            "name": "DAT_006ad760",
+            "namespace": "Global",
+            "type": {
+              "path": "/int *",
+              "name": "int *",
+              "display": "int *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "006ad760:4",
+            "storage_detail": {
+              "display": "006ad760:4",
+              "serialization": "ram:006ad760:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7001952",
+                  "bytes": 4,
+                  "address": "006ad760"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int *DAT_006ad760"
+          },
+          "consumer_vas": [
+            "0058f1f0"
+          ],
+          "resolved": {
+            "ctype": "int *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int",
+              "/int *"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "0058f1f0",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/0058f1f0.cpp": "51fa2bbe645ab6c1f25d280140be30337dbb5a8460858d0533892d719a620ad4",
+        "local/experiments/v2-consumer-declarations-203/final/headers/0058f1f0-globals.h": "e81206f2ce5aad11871fc4c3a3236fbfc5c301914dfe5fd7408a2f5d1c1f415f",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "undefined4 FUN_0058f1f0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "0058f215",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 3,
+        "instructions": 11
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/0058f1f0.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_outcome_evidence": "Owned compiler errors and no COFF",
+      "diagnostics": [
+        {
+          "source": "porsche_va_0058f1f0",
+          "line": 8,
+          "column": 7,
+          "severity": "error",
+          "code": "C2197",
+          "category": "prototype_or_call_type_conflict",
+          "message": "code (__cdecl *): \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u043c\u043d\u043e\u0433\u043e \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0434\u043b\u044f \u0432\u044b\u0437\u043e\u0432\u0430 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-declarations-203\\final\\sources\\0058f1f0.cpp)"
+        }
+      ],
+      "compiler_batch_exit_code": null,
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00591320",
+      "name": "FUN_00591320",
+      "source_body_sha256": "f395a23e1045ec197a46e5d276553f16ee604605740b0f1fc096c9d2ff7a54af",
+      "generated_source": "local/experiments/v2-consumer-declarations-203/final/sources/00591320.cpp",
+      "generated_source_sha256": "8b4b6f582423eb5327ad5b0ad5bed0478d4db94d5616c5cd7b1fe14e8c6a6bc7",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00591320.cpp",
+      "baseline_generated_source_sha256": "b76aed6d7ad1fc9b55e8d66db71a83c6ded9b7c14dac120a867e1d2bc3e2d898",
+      "preserved_body_sha256": "b3b60e023405e8b4925e027782d5e080268be459b9549fc54e7dad6c9afe1e42",
+      "body_bytes_preserved": true,
+      "declaration_header": "local/experiments/v2-consumer-declarations-203/final/headers/00591320-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00591320"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "consumer_va": "00591320",
+          "conflict_resolution": "This exact179 consumer view only; no cross-consumer storage coalescing"
+        }
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-consumer-declarations-203/final/sources/00591320.cpp": "8b4b6f582423eb5327ad5b0ad5bed0478d4db94d5616c5cd7b1fe14e8c6a6bc7",
+        "local/experiments/v2-declaration-compat-184/full/00591320-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+        "local/experiments/v2-consumer-declarations-203/final/headers/00591320-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "original_inferred_signature": "int FUN_00591320(undefined4 param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "original_ret_evidence": {
+        "local_ret_sites": [
+          {
+            "va": "00591330",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00591354",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          },
+          {
+            "va": "00591372",
+            "bytes": "c3",
+            "instruction": "RET",
+            "stack_pop": 0
+          }
+        ],
+        "call_instructions": 4,
+        "instructions": 27
+      },
+      "abi_acceptance": "Unproved:179 model is navigation only; no original CALL/RET consumer or hardware ABI acceptance",
+      "ownership": {
+        "canonical_owner": null,
+        "unregistered_wip_owners": [],
+        "same_getC_compile_candidate_only": true,
+        "implementation_owner_replaced": false
+      },
+      "object": "local/experiments/v2-consumer-declarations-203/final/objects/00591320.obj",
+      "compiler_exit_code": null,
+      "observed_compiler_exit_code": null,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_outcome_evidence": "Fresh valid i386 COFF and zero owned errors",
+      "diagnostics": [],
+      "compiler_batch_exit_code": null,
+      "object_sha256": "ebe79689808ce30a0aa3d354b0704c31da85130b2fc6e9225cd720bcf327a0c1",
+      "object_bytes": 1016,
+      "symbols": {
+        "defined": [
+          "?FUN_00591320@@YAHI@Z"
+        ],
+        "undefined": [
+          "?DAT_006b499c@@3DA",
+          "?DAT_006b4a00@@3HA",
+          "?FUN_005896d0@@YAXXZ",
+          "?FUN_005896f0@@YAXXZ",
+          "?FUN_00589d20@@YAII@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true
+    }
+  ],
+  "limits": [
+    "Compile candidates only; bodies byte-preserved, no casts, aliases, storage definitions or implementation duplicates.",
+    "Only exact179 per-consumer extern views added through184 resolver; unknown metadata blocked.",
+    "179 stdcall model is not hardware ABI acceptance. CALL/RET, original behavior, object lifetimes/storage remain open.",
+    "No compiler syntax prepass, Ghidra, original execution, archive or union link. New warnings remain explicit."
+  ]
+}

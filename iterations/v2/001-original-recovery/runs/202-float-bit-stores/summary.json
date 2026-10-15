@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/O2",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/FC",
+    "/MP6"
+  ],
+  "actual_compiler_batches": 1,
+  "changed_game_TUs": 1,
+  "synthetic_fixture_TUs": 1,
+  "real_coff_objects": 1,
+  "results": [
+    {
+      "va": "00485100",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "generated_source": "local/experiments/v2-float-bits-202/native/00485100.cpp",
+      "generated_source_sha256": "cad43f6aa2b23944b5e4e32fde6b17205727e1b5aae5f992954338cb2356fc34",
+      "object": "local/experiments/v2-float-bits-202/native/objects/00485100.obj",
+      "object_sha256": "e283a92d5b287cae87255284f4b8e62995f1a35cdbc79f90d40eb2adbfcc1f79",
+      "defined_external_symbols": [
+        "?invoke@Thiscall_00485100@@QAEPAIPAMG@Z"
+      ],
+      "undefined_external_symbols": [
+        "?PTR_LAB_005b484c@@3PAEA",
+        "?_DAT_005b242c@@3MA",
+        "?_DAT_005b24a8@@3MA",
+        "__fltused"
+      ],
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-declaration-compat-184/full/00485100-globals.h": "d6fce5714c528c6b937d1b86a4ec22ac8dce56b9524619fd8838e2fa24ffbd04",
+        "local/experiments/v2-float-bits-202/native/00485100.cpp": "cad43f6aa2b23944b5e4e32fde6b17205727e1b5aae5f992954338cb2356fc34",
+        "local/experiments/v2-float-bits-202/native/original-raw4-202.h": "00f06058617997ec38824582c23c5597f2500a4c6c8194f5ef66df2c2468aa23",
+        "local/experiments/v2-global-float-views-200/00485100-aliases.h": "5d815deed629b118db6cba94cf217703ee935dbd24b77de845a7c9822d98de6b"
+      },
+      "forced_headers": [],
+      "original_source": "local/experiments/v2-thiscall-leaf-delta-196/sources/00485100.cpp",
+      "original_source_sha256": "d59a54c0c52eece1d33dbc28f1c1a0b4840f22784a750a06e48b3999253994c7",
+      "original_header": "local/experiments/v2-global-float-views-200/00485100-aliases.h",
+      "original_header_sha256": "5d815deed629b118db6cba94cf217703ee935dbd24b77de845a7c9822d98de6b",
+      "native_ret_bytes": [
+        8
+      ],
+      "native_text_sections": [
+        {
+          "name": ".text$mn",
+          "bytes": "83ec388b54243c5355568bf157c70600000000f30f1002f30f11460c0fb642048844244c0fb642058844244d0fb642068844244e0fb642078844244f8b44244c8946108a42088844244c0fb642098844244d0fb6420a8844244e0fb6420b8844244f8b44244c8bc8894614c1e918894c24288bc8c1e808894424200fb6420c884424100fb6420d884424110fb6420e884424120fb6420f884424138b442410894618f30f106210f30f11661c0fb64214884424100fb64215884424110fb64216884424120fb64217884424138b4424108946200fb64219884424110fb6421a884424120fb6421bc1e91088442413894c24248a4a18884c24108b5c24108bc3c1e8188bfb894424348beb8bc3c1ef18c1e810894424308bc3c1ed10895e24c1e808894424440f28cc8bc3884c241cc1e808f30f5dc88944242c0f28d48bc3f30f5fd0c1e818894424408bc3c1e8108944243c8bc3c1e808894424380fb6421c884424140fb6421d884424150fb6421e884424160fb6421f884424178b4424148946288b442438884424158b44243c884424168b44244088442417884c24148b4c24148bc1c1e8088844241d8bc1c1e918c1e810884c241f8b4c24208844241e8a44244c884c24158b4c242488442414884c24168b4c242888442418884c24178b4c24148bc1c1e808884424198bc1c1e810c1e9188844241a884c241bf30f104424180f2f44241c723a8b4c24388ac3884c241d8b4c243c8844241c884c241e8b4c244088442418884c241f8b4c241c8bc1c1e808884424198bc1c1e8108844241aeb4a8b4c24208a44244c884c241d8b4c24248844241c884c241e8b4c242888442418884c241f8b4c241c8bc1c1e808884424198bc1c1e8108844241a8b4424448944242c896c2430897c24348a44244cc1e918884c241b8b4c24208844241cf30f105c2418884c241d8b4c242488442414884c241e8b4c2428884c241f8b4c241c8bc1c1e808884424158bc1c1e810884424168b44242c8844241d8b4424308844241e8b442434c1e9188844241f884c2417885c241c8b4c241c8bc1c1e808884424198bc1c1e810c1e918885c24188844241a884c241bf30f104424180f2f44241472458b44242c8844244d8b4424308844244e8b4424348844244f885c244c8b4c244c8bc1c1e8088844241d8bc1c1e810c1e918885c241c8844241e884c241ff30f1044241ceb478b4c24208a44244c884c244d8b4c24248844244c884c244e8b4c242888442428884c244f8b4c244c8bc1c1e808884424298bc1c1e810c1e9188844242a884c242bf30f10442428f30f5cd1f30f100d000000000f2fd1770df30f5cc30f2fc10f86880000008b4210f30f58250000000089460c0fb642148844244c0fb642158844244d0fb642168844244e0fb642178844244f8b44244c8946100fb642188844244c0fb642198844244d0fb6421a8844244e0fb6421b8844244f8b44244c8946140fb6421c8844244c0fb6421d8844244d0fb6421e8844244e0fb6421f8844244f8b44244cf30f11661c894618668b4424505f668946088bc6c64604025e5d5b83c438c20800",
+          "relocations": 3,
+          "sha256": "1c9da1d3add85d436e6aa6db341094a4b1d5d04a5898eaaea3591380f2c92959"
+        },
+        {
+          "name": ".text$mn",
+          "bytes": "518b4c24080fb641018a11884424090fb641028844240a0fb641038844240b885424088b4c24088bc1c1e808884424018bc1c1e810c1e91888142488442402884c2403d9042459c3",
+          "relocations": 0,
+          "sha256": "cfecf2ebb97cffd08967a0ccaa8cc61792329f9d1b1d0609d1894328940f6628"
+        },
+        {
+          "name": ".text$mn",
+          "bytes": "8b4c24040fb601884424040fb64101884424050fb64102884424060fb64103884424078b442404c3",
+          "relocations": 0,
+          "sha256": "ab513e6c2280e0eb9169c7c4fa3dda0503e5272a5cf57ec938eb05ea5ebbf4c1"
+        }
+      ]
+    }
+  ],
+  "metadata_finalize_existing": true,
+  "compiler_commands_this_pass": 0,
+  "native_execution_commands_this_pass": 0,
+  "capture_metadata": {
+    "schema": 1,
+    "capture_driver": "local/experiments/v2-float-bits-202/native/captured-driver.py",
+    "capture_driver_sha256": "e5e8ca8d13807d5bc2484050919f6f50581dbbdcf39d0c6f64bb07f471c3ef10",
+    "stage_reached": "final report construction after compile/link/native/disassembly and after-input-guard assertions",
+    "metadata_error": "ValueError external kernel32.Lib path not relative to workspace",
+    "actual_compiler_batches": 1,
+    "native_fixture_exit_code_asserted": 0,
+    "execution_log_exit_codes": {
+      "compile.log": 0,
+      "corrected-disassembly.txt": 0,
+      "baseline-disassembly.txt": 0,
+      "fixture-link.log": 0,
+      "fixture-native.log": 0,
+      "fixture-disassembly.txt": 0
+    },
+    "files_sha256": {
+      "local/experiments/v2-float-bits-202/native/00485100.cpp": "cad43f6aa2b23944b5e4e32fde6b17205727e1b5aae5f992954338cb2356fc34",
+      "local/experiments/v2-float-bits-202/native/baseline-disassembly.txt": "57c64461d03703f624dfd0b143aebfac1c800c0a18d7f1b0b0b9302017b85a8c",
+      "local/experiments/v2-float-bits-202/native/bitcopy-fixture.cpp": "b964d1d5a3f24eebcd1a0a89358918d09637ac86bea64ca04902b5028a0ec052",
+      "local/experiments/v2-float-bits-202/native/bitcopy-fixture.exe": "b3409d32b74165ae29e7fcb726b260a082529197ca9dfa2fb16b04d3246711bd",
+      "local/experiments/v2-float-bits-202/native/captured-driver.py": "e5e8ca8d13807d5bc2484050919f6f50581dbbdcf39d0c6f64bb07f471c3ef10",
+      "local/experiments/v2-float-bits-202/native/compile.log": "6c919d7472bcc2629fb8ef4904d152233c1ffd7bacabe2420ced3f018b5644e7",
+      "local/experiments/v2-float-bits-202/native/corrected-disassembly.txt": "fdbd769a55ebcf11fcceb7a5590a64bc426384dedb86421ea3aadf1b0f7c9263",
+      "local/experiments/v2-float-bits-202/native/fixture-disassembly.txt": "27fa85c63a6db2e2081513c28b77c4c082f566f4fd46cace649ea59ed9782b5a",
+      "local/experiments/v2-float-bits-202/native/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local/experiments/v2-float-bits-202/native/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local/experiments/v2-float-bits-202/native/original-raw4-202.h": "00f06058617997ec38824582c23c5597f2500a4c6c8194f5ef66df2c2468aa23",
+      "local/experiments/v2-float-bits-202/native/objects/00485100.obj": "e283a92d5b287cae87255284f4b8e62995f1a35cdbc79f90d40eb2adbfcc1f79",
+      "local/experiments/v2-float-bits-202/native/objects/bitcopy-fixture.obj": "1538c2d086453e272286909a076d88d1ac8facbda83b1ad5ecdd9f5232b4f68b"
+    }
+  },
+  "numeric_float_to_uint_calls_before": 9,
+  "numeric_float_to_uint_calls_after": 0,
+  "numeric_uint_to_float_sequences_before": 2,
+  "numeric_uint_to_float_sequences_after": 0,
+  "original_instructions_checked": 97,
+  "raw_MOV_store_repairs": 9,
+  "raw_read_view_occurrences": 8,
+  "all_other_body_lines_preserved": true,
+  "fixture": {
+    "exit_code": 0,
+    "representation_cases": 1024,
+    "final_count_check": 1,
+    "patterns": 16,
+    "alignments": 4,
+    "overlap_deltas": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "includes_signed_zero": true,
+    "includes_NaN_payloads": true,
+    "capture_before_overwrite_alias": true,
+    "executable": "local/experiments/v2-float-bits-202/native/bitcopy-fixture.exe",
+    "sha256": "b3409d32b74165ae29e7fcb726b260a082529197ca9dfa2fb16b04d3246711bd"
+  },
+  "compiler_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/O2",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/FC",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-float-bits-202\\native\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-float-bits-202\\native\\00485100.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-float-bits-202\\native\\bitcopy-fixture.cpp"
+  ],
+  "compiler_exit_code": 0,
+  "compiler_log": "local/experiments/v2-float-bits-202/native/compile.log",
+  "compiler_log_sha256": "6c919d7472bcc2629fb8ef4904d152233c1ffd7bacabe2420ced3f018b5644e7",
+  "input_sha256": {
+    "local/experiments/v2-float-bits-202/native/capture-incomplete.json": "62946a3eb657dd0e0f45dfc861579954b88e7efca52de7cb48c242acef9081cc",
+    "local/experiments/v2-float-bits-202/native/captured-driver.py": "e5e8ca8d13807d5bc2484050919f6f50581dbbdcf39d0c6f64bb07f471c3ef10",
+    "iterations/v2/001-original-recovery/runs/200-global-float-views/summary.json": "97e3a459a373795592120f05c86fad4d4b856ec532e18b5219f5a38d621637fc",
+    "local/experiments/v2-thiscall-leaf-delta-196/sources/00485100.cpp": "d59a54c0c52eece1d33dbc28f1c1a0b4840f22784a750a06e48b3999253994c7",
+    "local/experiments/v2-global-float-views-200/00485100-aliases.h": "5d815deed629b118db6cba94cf217703ee935dbd24b77de845a7c9822d98de6b",
+    "local/experiments/v2-global-float-views-200/objects/00485100.obj": "2cc79222c8e3ac7f48c0b4d099e15631587d5230d13b64bc54aba5516cf21329",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-global-float-views-200/00485100.cpp": "2d001b63fbfa31bb69c802729082bd2d40a29b84621d852747d21a31ec582a12",
+    "local/experiments/v2-declaration-compat-184/full/00485100-globals.h": "d6fce5714c528c6b937d1b86a4ec22ac8dce56b9524619fd8838e2fa24ffbd04",
+    "scripts/research/experiment-v2-float-bits-202.py": "d664a45904326b2f608784fbeb98f902d27da4ea118361ec3e77809de9c95328",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/export-v2-float-bits-202.ps1": "59f7b12e1c41bb05437eafd0eb37ed9e631df4193b8094bf031c16e7bbb891f6",
+    "scripts/research/ghidra/ExportRawFloatStores202.java": "1588dca764559f4d484a8a299880b85700cbb66ae830d9ffd1f010cfc4aaf7b4",
+    "local/experiments/v2-float-bits-202/capture-provenance.json": "e80c32f789e123213babfa88a9e877de6ad9e8ba2fbec9c4f7446c1c161a171a",
+    "local/experiments/v2-float-bits-202/export/original-00485100.c": "75cfaa830ece338e7fdca33977ba972fdacadf9ebc8bb3ec873d62b67e282b0e",
+    "local/experiments/v2-float-bits-202/export/original-00485100.json": "8851d8f61b6ffe190704e7ee9ebefed8f637eec86d3e69e5afc7d7fa73307c2b",
+    "local/experiments/v2-float-bits-202/export/original-instructions.json": "e59939b779ca5a39903125f157960b54f713fea1ca434b0c6233f75a11beda31",
+    "local/experiments/v2-float-bits-202/export/result.json": "67a6de100bf0280b50993bdf96f3921f2f5f089738c651cd482ec01aa73a4140",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "local/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/lib/Decompiler.jar": "c3b5aa4b77ad19244fcc418b17e129a98a9bc23ebd876fa02b5f419145ec3132",
+    "local/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/os/win_x86_64/decompile.exe": "5ae40d01bf03e09ee89b65d1ca465537a1b5d2626cdcfae6e6a9f98ee2d8f536",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/experiments/v2-float-bits-202/native/original-raw4-202.h": "00f06058617997ec38824582c23c5597f2500a4c6c8194f5ef66df2c2468aa23",
+    "local/experiments/v2-float-bits-202/native/00485100.cpp": "cad43f6aa2b23944b5e4e32fde6b17205727e1b5aae5f992954338cb2356fc34",
+    "local/experiments/v2-float-bits-202/native/bitcopy-fixture.cpp": "b964d1d5a3f24eebcd1a0a89358918d09637ac86bea64ca04902b5028a0ec052",
+    "iterations/v2/001-original-recovery/runs/202-float-bit-stores/proof-before-compile.json": "eb297deae30fa49502962763a5b999ee300920f180ecc713599d0c4963499e36",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-float-bits-202/native/objects/00485100.obj": "e283a92d5b287cae87255284f4b8e62995f1a35cdbc79f90d40eb2adbfcc1f79",
+    "local/experiments/v2-float-bits-202/native/objects/bitcopy-fixture.obj": "1538c2d086453e272286909a076d88d1ac8facbda83b1ad5ecdd9f5232b4f68b",
+    "local/experiments/v2-float-bits-202/native/bitcopy-fixture.exe": "b3409d32b74165ae29e7fcb726b260a082529197ca9dfa2fb16b04d3246711bd",
+    "local/experiments/v2-float-bits-202/native/compile.log": "6c919d7472bcc2629fb8ef4904d152233c1ffd7bacabe2420ced3f018b5644e7",
+    "local/experiments/v2-float-bits-202/native/corrected-disassembly.txt": "fdbd769a55ebcf11fcceb7a5590a64bc426384dedb86421ea3aadf1b0f7c9263",
+    "local/experiments/v2-float-bits-202/native/baseline-disassembly.txt": "57c64461d03703f624dfd0b143aebfac1c800c0a18d7f1b0b0b9302017b85a8c",
+    "local/experiments/v2-float-bits-202/native/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-float-bits-202/native/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-float-bits-202/native/fixture-disassembly.txt": "27fa85c63a6db2e2081513c28b77c4c082f566f4fd46cace649ea59ed9782b5a"
+  },
+  "input_guards_before": true,
+  "input_guards_after": true,
+  "original_project_unchanged": true,
+  "supersedes_unsafe_run200_object": true,
+  "original_200_object_unchanged": true,
+  "boundary": [
+    "Known representation-conversion defects repaired only; no branch/arithmetic rewrite.",
+    "Bitcopy fixture verifies representations/overlap, not original complete function behavior.",
+    "Original x87 versus native SSE arithmetic, exceptions, NaN branch behavior and full-body fidelity remain open.",
+    "No production/registry/game/union change; unsafe200 object remains excluded."
+  ]
+}

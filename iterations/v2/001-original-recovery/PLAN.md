@@ -1,8 +1,26 @@
 # v2 / 001 — план восстановления исходного кода
 
-Сохранены WIP200–202 и прежние untracked111/131/172/174/175: см.
-`docs/recovery-wip.md`. Проверенный общий архив остаётся1072; дополнительный
-COFF200 исключён до исправления FP/raw32 conversion gaps202.
+Checkpoint 2026-10-15, runs202–206: **1094 разных native candidate VA**
+(945 ordinary +149 leaf), +22 к199; пересечений VA нет. Run206: настоящий archive
+1238938B; raw423names/800refs, actual413unresolved names/600diagnostics, EXE/DLL нет.
+21 прежняя функция закрыта, 9 новых function dependencies выявлены: frontier145→133
+(36 canonical owners вне union +97 missing); data241→273, 7printed CRT contracts открыты.
+202:00485100 — original9raw32 stores/8bitviews,97PEinstructions и1024nativebitcases PASS;
+полное тело/x87/caller register equivalence остаются в backlog. Небезопасный200COFF исключён.
+203:21/25 fresh COFF из одного /MP6 batch,0warnings;4 pointer-call failures открыты.
+Observed compiler exit/timing потеряны при сбое metadata и остаются null; COFF/source/
+include closures и diagnostics проверены отдельно, native batch не повторён.
+204: repeatable ordinary+leaf packets, exact pins/cache и overlap guards;206 переиспользовал
+1072 symbol snapshots и531 platform pins, прочитал22новых объекта,0компиляций.
+205: historical warning/regex inventory — навигация, не semantic acceptance.
+Production173 без изменений:476full+6partial, game-link267symbols/303refs.
+Пакеты завершены, активных назначений нет. Root README приведён к текущему v2 состоянию.
+Следующий шаг: четыре203pointer-call consumers (00540480/005404e0/00554530/0058f1f0)
+по original CALL/HighIR; затем97missing functions и273data owners/initializers без stubs.
+Команда объединения и ограничения: runs/206-frontier-and-float-union/README.md активной итерации.
+Пропущенные проверки: docs/recovery-validation-backlog.md. Full corpus/oracles не повторялись.
+
+Исторический checkpoint (заменён результатом206):
 
 2026-10-15 checkpoint193–199: **1072 разных native candidate VA** =924ordinary+148leaf,
 18 новых относительноa17f569; у28 leaf bodies машинные байты совпадают с оригиналом.
@@ -18,7 +36,7 @@ raw403names/780objectrefs, actual393unresolved names/581diagnostics.
 Whole original Ghidra project79files/572766909B неизменён; readonly экспорт/копии.
 Production173:476full+6partial, прежний game-link267symbols/303refs; игрового EXE нет.
 Все193–199 packets завершены, активных назначений/approval ожиданий не осталось.
-Следующий шаг200: bounded per-consumer extern views для7 доказанных float4 aliases,
+На checkpoint199 планировался200: bounded per-consumer extern views для7 доказанных float4 aliases,
 только changed TUs из189/184 и cachedCOFF; storage owners/initializers не угадывать.
 Затем масштабировать token-RAM exporter на подтверждённые классы _DAT/string aliases.
 Потенциальные757 _DAT gap bodies — scope исследования, не принятые исправления.
