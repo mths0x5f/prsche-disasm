@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "run": "209-printed-alias-selection",
+  "kind": "read-only-C2065-printed-alias-selection",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "input_pins": {
+    "run201_summary": "8039f3e387e7e0f858400cc070e8faf8ce6f8ec2e4c9094266307678d098197b",
+    "run206_summary": "58f0f7950cc3bb21a0b4020cad87803d04cbcafd308f20b8611271aff640dfcb",
+    "audit189": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+    "globals179": "9121483b5e3a18a6e3a6d78ff39ffeb63903a936816f924e7d813fb761efba99",
+    "run203_summary": "0a18b63602331a75245da1557dcb74dd4f79ac3bdec5853a2ef54558c276c50d",
+    "run202_summary": "0cb09649dd29d9467f28959c4723473711ab4ea5fb98e854ef2f6557e12de0c2"
+  },
+  "selection_rule": "Run206 function rows classified no_compiled_union_body_or_canonical_owner, Run201 error_codes exactly C2065, excluding VAs already provided by Run203 or Run202.",
+  "excluded_already_provided": {
+    "run203": ["00540480", "005404e0", "00554530", "0058f1f0"],
+    "run202": []
+  },
+  "selected": [
+    {
+      "rank": 1,
+      "va": "004012b0",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004012b0.cpp",
+      "source_sha256": "5be06e5a5e7818e23920ebe2109d83b0e204fcfe5f24d98461414aec71f27502",
+      "signature": "void FUN_004012b0(int param_1);",
+      "missing_names": ["DAT_005e6688", "DAT_005e668c", "DAT_005e6690", "DAT_005e6694", "DAT_005e6698", "DAT_005e66a4", "DAT_005e66a8", "_DAT_005e66ac"],
+      "diagnostics": {"C2065": 8},
+      "formal_storage_179": ["DAT_005e6688 float4 ram:005e6688:4", "DAT_005e668c float4 ram:005e668c:4", "DAT_005e6690 float4 ram:005e6690:4", "DAT_005e6694 int4/undefined4 conflict ram:005e6694:4", "DAT_005e6698 int4/uint4 conflict ram:005e6698:4", "DAT_005e66a4 int4/undefined4 conflict ram:005e66a4:4", "DAT_005e66a8 int4/undefined4 conflict ram:005e66a8:4", "_DAT_005e66ac no 179 row"],
+      "owner": null
+    },
+    {
+      "rank": 2,
+      "va": "0056daf0",
+      "source": "local/experiments/v2-declaration-compat-184/full/0056daf0.cpp",
+      "source_sha256": "5ef170e2056cc01f9c4cf53a52292d1f94a0697164d24c037cbc3fe0ea381127",
+      "signature": "void FUN_0056daf0(float param_1,float param_2,float param_3,float param_4,float param_5);",
+      "missing_names": ["DAT_006a6404", "DAT_006bd9a8", "_DAT_005b23f8", "_DAT_005b24a8", "_DAT_005dfa14", "_DAT_005dfa18"],
+      "diagnostics": {"C2065": 6},
+      "formal_storage_179": ["DAT_006a6404 float4 ram:006a6404:4", "DAT_006bd9a8 FARPROC/undefined* conflict ram:006bd9a8:4", "_DAT_005b24a8 unresolved alias, observed .rdata 16B 0000803f08265c0056105a00c0644000", "DAT_006bd9a8/_DAT_005b23f8/_DAT_005dfa14/_DAT_005dfa18 no usable 179 row"],
+      "owner": null
+    },
+    {
+      "rank": 3,
+      "va": "0040af70",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0040af70.cpp",
+      "source_sha256": "9128a3ea4f17c6405f3385aeb82ecd07ead8c302c5a5e1f020675b118c54c6b9",
+      "signature": "void FUN_0040af70(float param_1);",
+      "missing_names": ["DAT_00657430", "_DAT_005b23f8", "_DAT_005b2410", "_DAT_005b2430", "_DAT_005b24a8", "_DAT_005b2554", "_DAT_005b2648", "_DAT_005b264c", "_DAT_005b2650", "_DAT_005b2654", "_DAT_005b2658", "_DAT_005b2660", "_DAT_005cc358"],
+      "diagnostics": {"C2065": 13},
+      "formal_storage_179": ["DAT_00657430 int4/uint4/undefined4 conflict ram:00657430:4", "_DAT_005b24a8 unresolved alias, observed .rdata 16B 0000803f08265c0056105a00c0644000", "remaining _DAT names no usable 179 row"],
+      "owner": null
+    },
+    {
+      "rank": 4,
+      "va": "00537ed0",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00537ed0.cpp",
+      "source_sha256": "0bfdab74c352bd31aa37f08cf20009d74216014fe10cd0486d7a1399e940337f",
+      "signature": "uint FUN_00537ed0(uint param_1);",
+      "missing_names": ["DAT_005de62c"],
+      "diagnostics": {"C2065": 1},
+      "formal_storage_179": ["DAT_005de62c undefined1/uint4 conflict ram:005de62c:1/4"],
+      "owner": null
+    },
+    {
+      "rank": 5,
+      "va": "0058f5d0",
+      "source": "local/experiments/v2-declaration-compat-184/full/0058f5d0.cpp",
+      "source_sha256": "0c1f5ac5e5aa406a3087dca64b8e873fd99c3b05ebd429fc407f00e55c41c26f",
+      "signature": "int FUN_0058f5d0(void);",
+      "missing_names": ["DAT_006ad760", "DAT_006ad768", "DAT_006ad78c", "DAT_006b48d8", "DAT_006b48e4", "_DAT_006b48dc"],
+      "diagnostics": {"C2065": 6},
+      "formal_storage_179": ["DAT_006ad760 int*/int/undefined4 conflict ram:006ad760:4", "DAT_006ad768 int*/undefined4 conflict ram:006ad768:4", "DAT_006ad78c int/uint/undefined4 conflict ram:006ad78c:4", "DAT_006b48d8 uint/undefined1 conflict ram:006b48d8:4", "DAT_006b48e4 char/undefined1 conflict ram:006b48e4:1", "_DAT_006b48dc no 179 row"],
+      "owner": null
+    },
+    {
+      "rank": 6,
+      "va": "00598630",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00598630.cpp",
+      "source_sha256": "ca7a3bac9173bb18c93e9ec49f1c94d9aebaae9f797c4f6a7a1c68325f95157c",
+      "signature": "void FUN_00598630(int param_1);",
+      "missing_names": ["DAT_006b16a4", "DAT_006b17d0"],
+      "diagnostics": {"C2065": 2},
+      "formal_storage_179": ["DAT_006b16a4 undefined1/uint4 conflict ram:006b16a4:1/4", "DAT_006b17d0 int/pointer conflict ram:006b17d0:4"],
+      "owner": null
+    },
+    {
+      "rank": 7,
+      "va": "004032d0",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004032d0.cpp",
+      "source_sha256": "bffed4ad692adaf3ff87103ea8ce96ab5f48c56fa1a0f517920a375050054cf2",
+      "signature": "void FUN_004032d0(void);",
+      "missing_names": ["DAT_005e671c"],
+      "diagnostics": {"C2065": 1},
+      "formal_storage_179": ["DAT_005e671c undefined4* ram:005e671c:4"],
+      "owner": null
+    }
+  ],
+  "boundary": "Navigation only. C2065-only is a cached diagnostic surface, not semantic proof; conflicting 179 types/storage remain unresolved. No allocation, lowering, compiler, native, or Ghidra action."
+}

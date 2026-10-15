@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "objects_compiled": 2,
+  "actual_compiler_batches": 1,
+  "warnings": 0,
+  "compiler_exit_code": 0,
+  "seconds": 1.073,
+  "batch_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/W3",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-views-210\\objects\\",
+    "@F:\\claude\\porsche disasm\\local\\experiments\\v2-consumer-views-210\\compile.rsp"
+  ],
+  "compiler_log": "local/experiments/v2-consumer-views-210/compile.log",
+  "compiler_log_sha256": "74f00785344209990aded256608f849ff96b2e426f583e9a8d1277cbc4237209",
+  "results": [
+    {
+      "va": "004012b0",
+      "generated_source": "local/experiments/v2-consumer-views-210/004012b0.cpp",
+      "generated_source_sha256": "1108391da54bba728f9bf23efacb05f4cbd7b32c094e6178235287def70d9e05",
+      "original_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004012b0.cpp",
+      "original_source_sha256": "5be06e5a5e7818e23920ebe2109d83b0e204fcfe5f24d98461414aec71f27502",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-consumer-views-210/004012b0-globals.h": "9f57c0a1586de42116d473968f8940a7dd69c6939d702cb9ac0299ac9f8bf320",
+        "local/experiments/v2-consumer-views-210/004012b0.cpp": "1108391da54bba728f9bf23efacb05f4cbd7b32c094e6178235287def70d9e05"
+      },
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "object": "local/experiments/v2-consumer-views-210/objects/004012b0.obj",
+      "object_sha256": "9425cc24c049d67b954ef5186580ac9f28b11b06b2018e16d4fc6d4571569b16",
+      "symbols": {
+        "defined": [
+          "?FUN_004012b0@@YAXH@Z"
+        ],
+        "undefined": [
+          "?DAT_005e6688@@3MA",
+          "?DAT_005e668c@@3MA",
+          "?DAT_005e6690@@3MA",
+          "?DAT_005e6694@@3HA",
+          "?DAT_005e6698@@3IA",
+          "?DAT_005e66a4@@3HA",
+          "?DAT_005e66a8@@3HA",
+          "?FUN_00402a40@@YAXH@Z",
+          "?FUN_00402be0@@YAXH@Z",
+          "?_DAT_005e66ac@@3HA",
+          "__fltused"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "004032d0",
+      "generated_source": "local/experiments/v2-consumer-views-210/004032d0.cpp",
+      "generated_source_sha256": "4b74c8b35b6a3d7b998ee9511d0d47caf9916fcdbba5b821b7b4e5c95a4fedbd",
+      "original_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004032d0.cpp",
+      "original_source_sha256": "bffed4ad692adaf3ff87103ea8ce96ab5f48c56fa1a0f517920a375050054cf2",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-consumer-views-210/004032d0-globals.h": "f1668927899904a8618288c3e56a54a752a410bb82fcacd292051be79bc7c81c",
+        "local/experiments/v2-consumer-views-210/004032d0.cpp": "4b74c8b35b6a3d7b998ee9511d0d47caf9916fcdbba5b821b7b4e5c95a4fedbd"
+      },
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "object": "local/experiments/v2-consumer-views-210/objects/004032d0.obj",
+      "object_sha256": "18f21b634cd9da30c902ae833a8f264f1f8c80740a743dafd6f2dcc22dec4d59",
+      "symbols": {
+        "defined": [
+          "?FUN_004032d0@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_005e671c@@3PAIA"
+        ],
+        "common": [],
+        "weak": []
+      }
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-consumer-views-210.py": "5d384b0d7bfe23237c30e60ac5b4c442e8ad1bf61ac76c27b5ec7262116b5dfc",
+    "local/experiments/v2-missing-body-triage-201/selected-inputs.json": "795854e97ced3a9eba5f511e14da03b8399906ef3f62d845ef08e2711b5ad765",
+    "iterations/v2/001-original-recovery/runs/209-printed-alias-selection/summary.json": "f8a3953ac25e6a171b0055af7334bd1033dae85924d5b07b54ea6d5244415e6a",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp": "e4d3c6bab9ecc9dc15037e9a2343891ef2b0dfbbd85f1bb320518b29983e1335",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/types.jsonl": "141b9c4fa30915250b7ceea96c2be97888a89311e90af8f712d0489971daf442",
+    "scripts/research/experiment-v2-declarations-184.py": "815e1179a87bd2eb4ada95e7d9bad88f20797c7521f0b55858e409b4782f4823",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/audit-v2-native-union-204.py": "6957af6fee88f128a4b6f5a99116be265dbed71e42e4d26fdc4917b2c717f777",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004012b0.cpp": "5be06e5a5e7818e23920ebe2109d83b0e204fcfe5f24d98461414aec71f27502",
+    "local/experiments/v2-consumer-views-210/004012b0-globals.h": "9f57c0a1586de42116d473968f8940a7dd69c6939d702cb9ac0299ac9f8bf320",
+    "local/experiments/v2-consumer-views-210/004012b0.cpp": "1108391da54bba728f9bf23efacb05f4cbd7b32c094e6178235287def70d9e05",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004032d0.cpp": "bffed4ad692adaf3ff87103ea8ce96ab5f48c56fa1a0f517920a375050054cf2",
+    "local/experiments/v2-consumer-views-210/004032d0-globals.h": "f1668927899904a8618288c3e56a54a752a410bb82fcacd292051be79bc7c81c",
+    "local/experiments/v2-consumer-views-210/004032d0.cpp": "4b74c8b35b6a3d7b998ee9511d0d47caf9916fcdbba5b821b7b4e5c95a4fedbd",
+    "iterations/v2/001-original-recovery/runs/210-consumer-views/proof-before-compile.json": "24a99808e20aa751ac2bb984738703e1a0f40136a9ed4d971043b9e9f970f919",
+    "iterations/v2/001-original-recovery/runs/192-scalar-slice-objects/summary.json": "092ec97a2a3711969f0c5882097630f16f207715199e37497b4b2d26f735a929",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/experiments/v2-consumer-views-210/compile.rsp": "5f502195513c5129d15ecccd7013ef514a01abd17b7bccfb2a15fd477010668b"
+  },
+  "original_instructions_verified": 61,
+  "limits": [
+    "No native original differential execution or full body acceptance",
+    "004012b0 x87 intermediate rounding and overflow remain open",
+    "004032d0 receiver/stack contract proven at caller only; actual callee behavior open",
+    "No global allocation, game target, production registry or existing packet edits"
+  ]
+}

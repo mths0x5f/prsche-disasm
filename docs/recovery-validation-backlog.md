@@ -1,5 +1,23 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint207–212 (2026-10-15), пока до общего union:
+- [x]207:4actualCOFF; original renderer callbacks/SDK Release CALL/RET contracts,
+  1042PEinstructions и native callsite/stack evidence проверены;0Ghidra/native runtime reruns.
+- [ ]207: renderer providers/slots initialization/ownership, full runtime/volatile
+  register equivalence; typed externs не создаютdata owners.
+- [ ]208:3compiled candidates из9;6failures сохранены.211 отдельно проверяет два
+  direct-call contracts; остальныеcallable/type/string failures не скрывать.
+- [x]210:2COFF;004012b0 signedFILD32alias/7exactexterns и004032d0 ECXself+stack1
+  vcall contract,61PEinstructions.212:2COFF/5byte-slice occurrences/57PEinstructions.
+- [ ]210:004012b0 x87 retained unrounded intermediates/rounding/controlword,
+  integeroverflow, full callees;004032d0 actualcallee/global lifetime/ABI execution.
+- [ ]212: uint4 extent views не canonical allocations/alias coalescing;
+  original execution/global lifetimes/00598630 signedindexoverflow remainopen.
+  C4146 from unchanged unsignednegation retained; do not silently change signedness.
+- [ ]214:0058f5d0 concrete lost-output counterexample:0058f5edCALL[vtable+10],
+  0058f5f8MOV EAX,[ESP], SHR1; getC mistakenly usesCOMobjectaddress. Restore proven
+  DWORD outvalue and SDKcallback before considering compilation a usable algorithm.
+
 Checkpoint202–206 (2026-10-15):1094 distinct native candidates, actual diagnostic link
 413names/600diagnostics; production173 unchanged. Сборка кандидатов не закрывает fidelity.
 - [x]202:97original PE instructions,9raw32 stores/8float bitviews и1024native bitcases

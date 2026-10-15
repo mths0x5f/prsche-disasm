@@ -1,0 +1,349 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "instructions": {
+    "004012b0": [
+      {
+        "pc": "004012b0",
+        "bytes": "db05a4665e00",
+        "assembly": "FILD dword ptr [0x005e66a4]"
+      },
+      {
+        "pc": "004012b6",
+        "bytes": "56",
+        "assembly": "PUSH ESI"
+      },
+      {
+        "pc": "004012b7",
+        "bytes": "8b742408",
+        "assembly": "MOV ESI,dword ptr [ESP + 0x8]"
+      },
+      {
+        "pc": "004012bb",
+        "bytes": "33d2",
+        "assembly": "XOR EDX,EDX"
+      },
+      {
+        "pc": "004012bd",
+        "bytes": "d91d88665e00",
+        "assembly": "FSTP float ptr [0x005e6688]"
+      },
+      {
+        "pc": "004012c3",
+        "bytes": "db05a8665e00",
+        "assembly": "FILD dword ptr [0x005e66a8]"
+      },
+      {
+        "pc": "004012c9",
+        "bytes": "d9158c665e00",
+        "assembly": "FST float ptr [0x005e668c]"
+      },
+      {
+        "pc": "004012cf",
+        "bytes": "db05ac665e00",
+        "assembly": "FILD dword ptr [0x005e66ac]"
+      },
+      {
+        "pc": "004012d5",
+        "bytes": "d91d90665e00",
+        "assembly": "FSTP float ptr [0x005e6690]"
+      },
+      {
+        "pc": "004012db",
+        "bytes": "d90588665e00",
+        "assembly": "FLD float ptr [0x005e6688]"
+      },
+      {
+        "pc": "004012e1",
+        "bytes": "8b8e20100000",
+        "assembly": "MOV ECX,dword ptr [ESI + 0x1020]"
+      },
+      {
+        "pc": "004012e7",
+        "bytes": "c70598665e0001000000",
+        "assembly": "MOV dword ptr [0x005e6698],0x1"
+      },
+      {
+        "pc": "004012f1",
+        "bytes": "d8d9",
+        "assembly": "FCOMP"
+      },
+      {
+        "pc": "004012f3",
+        "bytes": "890d94665e00",
+        "assembly": "MOV dword ptr [0x005e6694],ECX"
+      },
+      {
+        "pc": "004012f9",
+        "bytes": "dfe0",
+        "assembly": "FNSTSW AX"
+      },
+      {
+        "pc": "004012fb",
+        "bytes": "f6c441",
+        "assembly": "TEST AH,0x41"
+      },
+      {
+        "pc": "004012fe",
+        "bytes": "751b",
+        "assembly": "JNZ 0x0040131b"
+      },
+      {
+        "pc": "00401300",
+        "bytes": "8b8e20100000",
+        "assembly": "MOV ECX,dword ptr [ESI + 0x1020]"
+      },
+      {
+        "pc": "00401306",
+        "bytes": "891598665e00",
+        "assembly": "MOV dword ptr [0x005e6698],EDX"
+      },
+      {
+        "pc": "0040130c",
+        "bytes": "ddd8",
+        "assembly": "FSTP ST0"
+      },
+      {
+        "pc": "0040130e",
+        "bytes": "d90588665e00",
+        "assembly": "FLD float ptr [0x005e6688]"
+      },
+      {
+        "pc": "00401314",
+        "bytes": "49",
+        "assembly": "DEC ECX"
+      },
+      {
+        "pc": "00401315",
+        "bytes": "890d94665e00",
+        "assembly": "MOV dword ptr [0x005e6694],ECX"
+      },
+      {
+        "pc": "0040131b",
+        "bytes": "d90590665e00",
+        "assembly": "FLD float ptr [0x005e6690]"
+      },
+      {
+        "pc": "00401321",
+        "bytes": "d8d9",
+        "assembly": "FCOMP"
+      },
+      {
+        "pc": "00401323",
+        "bytes": "dfe0",
+        "assembly": "FNSTSW AX"
+      },
+      {
+        "pc": "00401325",
+        "bytes": "f6c441",
+        "assembly": "TEST AH,0x41"
+      },
+      {
+        "pc": "00401328",
+        "bytes": "ddd8",
+        "assembly": "FSTP ST0"
+      },
+      {
+        "pc": "0040132a",
+        "bytes": "7517",
+        "assembly": "JNZ 0x00401343"
+      },
+      {
+        "pc": "0040132c",
+        "bytes": "8b8e20100000",
+        "assembly": "MOV ECX,dword ptr [ESI + 0x1020]"
+      },
+      {
+        "pc": "00401332",
+        "bytes": "c70598665e0002000000",
+        "assembly": "MOV dword ptr [0x005e6698],0x2"
+      },
+      {
+        "pc": "0040133c",
+        "bytes": "41",
+        "assembly": "INC ECX"
+      },
+      {
+        "pc": "0040133d",
+        "bytes": "890d94665e00",
+        "assembly": "MOV dword ptr [0x005e6694],ECX"
+      },
+      {
+        "pc": "00401343",
+        "bytes": "3bca",
+        "assembly": "CMP ECX,EDX"
+      },
+      {
+        "pc": "00401345",
+        "bytes": "7d17",
+        "assembly": "JGE 0x0040135e"
+      },
+      {
+        "pc": "00401347",
+        "bytes": "56",
+        "assembly": "PUSH ESI"
+      },
+      {
+        "pc": "00401348",
+        "bytes": "891594665e00",
+        "assembly": "MOV dword ptr [0x005e6694],EDX"
+      },
+      {
+        "pc": "0040134e",
+        "bytes": "e8ed160000",
+        "assembly": "CALL 0x00402a40"
+      },
+      {
+        "pc": "00401353",
+        "bytes": "56",
+        "assembly": "PUSH ESI"
+      },
+      {
+        "pc": "00401354",
+        "bytes": "e887180000",
+        "assembly": "CALL 0x00402be0"
+      },
+      {
+        "pc": "00401359",
+        "bytes": "83c408",
+        "assembly": "ADD ESP,0x8"
+      },
+      {
+        "pc": "0040135c",
+        "bytes": "5e",
+        "assembly": "POP ESI"
+      },
+      {
+        "pc": "0040135d",
+        "bytes": "c3",
+        "assembly": "RET"
+      },
+      {
+        "pc": "0040135e",
+        "bytes": "83f90e",
+        "assembly": "CMP ECX,0xe"
+      },
+      {
+        "pc": "00401361",
+        "bytes": "7c0a",
+        "assembly": "JL 0x0040136d"
+      },
+      {
+        "pc": "00401363",
+        "bytes": "c70594665e000d000000",
+        "assembly": "MOV dword ptr [0x005e6694],0xd"
+      },
+      {
+        "pc": "0040136d",
+        "bytes": "56",
+        "assembly": "PUSH ESI"
+      },
+      {
+        "pc": "0040136e",
+        "bytes": "e8cd160000",
+        "assembly": "CALL 0x00402a40"
+      },
+      {
+        "pc": "00401373",
+        "bytes": "56",
+        "assembly": "PUSH ESI"
+      },
+      {
+        "pc": "00401374",
+        "bytes": "e867180000",
+        "assembly": "CALL 0x00402be0"
+      },
+      {
+        "pc": "00401379",
+        "bytes": "83c408",
+        "assembly": "ADD ESP,0x8"
+      },
+      {
+        "pc": "0040137c",
+        "bytes": "5e",
+        "assembly": "POP ESI"
+      },
+      {
+        "pc": "0040137d",
+        "bytes": "c3",
+        "assembly": "RET"
+      }
+    ],
+    "004032d0": [
+      {
+        "pc": "004032d0",
+        "bytes": "8b0d1c675e00",
+        "assembly": "MOV ECX,dword ptr [0x005e671c]"
+      },
+      {
+        "pc": "004032d6",
+        "bytes": "85c9",
+        "assembly": "TEST ECX,ECX"
+      },
+      {
+        "pc": "004032d8",
+        "bytes": "7410",
+        "assembly": "JZ 0x004032ea"
+      },
+      {
+        "pc": "004032da",
+        "bytes": "8b01",
+        "assembly": "MOV EAX,dword ptr [ECX]"
+      },
+      {
+        "pc": "004032dc",
+        "bytes": "6a01",
+        "assembly": "PUSH 0x1"
+      },
+      {
+        "pc": "004032de",
+        "bytes": "ff10",
+        "assembly": "CALL dword ptr [EAX]"
+      },
+      {
+        "pc": "004032e0",
+        "bytes": "c7051c675e0000000000",
+        "assembly": "MOV dword ptr [0x005e671c],0x0"
+      },
+      {
+        "pc": "004032ea",
+        "bytes": "c3",
+        "assembly": "RET"
+      }
+    ]
+  },
+  "edits": [
+    {
+      "va": "004012b0",
+      "extern": "_DAT_005e66ac",
+      "storage": "005e66ac:4",
+      "signed": true,
+      "proof_pcs": [
+        "004012cf"
+      ],
+      "contract": "FILD m32int, not raw float or unsigned conversion; no body edit"
+    },
+    {
+      "va": "004032d0",
+      "before": "    (**(code **)*DAT_005e671c)(1);",
+      "after": "    uint *original_vtable = reinterpret_cast<uint *>(*DAT_005e671c);\n    reinterpret_cast<void (__thiscall *)(void *, uint)>(original_vtable[0])(DAT_005e671c, 1);",
+      "proof_pcs": [
+        "004032d0",
+        "004032da",
+        "004032dc",
+        "004032de",
+        "004032e0",
+        "004032ea"
+      ],
+      "contract": "original caller supplies ECX=self and stack uint32=1; callee cleans4; return ignored"
+    }
+  ],
+  "canonical_owners": 0,
+  "wip_owners": 0,
+  "ownership_wip_sources": [
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp"
+  ],
+  "boundary": "Caller/width evidence only; full x87/ABI/body/data acceptance remains open"
+}

@@ -1,0 +1,2695 @@
+{
+  "schema": 1,
+  "kind": "bounded-frontier-dependency-candidates",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/W3",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "input_audit": "local/experiments/v2-scalar-slices-189/full/audit.json",
+  "input_audit_sha256": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+  "frontier_summary": "iterations/v2/001-original-recovery/runs/206-frontier-and-float-union/summary.json",
+  "frontier_summary_sha256": "58f0f7950cc3bb21a0b4020cad87803d04cbcafd308f20b8611271aff640dfcb",
+  "selected_scope_vas": [
+    "0041ebf0",
+    "00565cd0",
+    "00565e70",
+    "00589df0",
+    "00589f40",
+    "00590250",
+    "00590340",
+    "00590c60",
+    "00590d10"
+  ],
+  "selected": 9,
+  "full_audit_read_count": 1,
+  "actual_compiler_batches": 1,
+  "observed_compiler_batch_exit_code": 2,
+  "compile_seconds": 2.858542,
+  "objects_compiled": 3,
+  "real_coff_objects": 3,
+  "code_generation_failed": 6,
+  "compiled_vas": [
+    "00589df0",
+    "00589f40",
+    "00590340"
+  ],
+  "failed_vas": [
+    "0041ebf0",
+    "00565cd0",
+    "00565e70",
+    "00590250",
+    "00590c60",
+    "00590d10"
+  ],
+  "error_codes": {
+    "C2061": 1,
+    "C2065": 24,
+    "C2664": 18,
+    "C2440": 3,
+    "C2660": 4,
+    "C2365": 1,
+    "C2064": 1,
+    "C2197": 2
+  },
+  "warning_codes": {},
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/types.jsonl": "141b9c4fa30915250b7ceea96c2be97888a89311e90af8f712d0489971daf442",
+    "iterations/v2/001-original-recovery/runs/192-scalar-slice-objects/summary.json": "092ec97a2a3711969f0c5882097630f16f207715199e37497b4b2d26f735a929",
+    "iterations/v2/001-original-recovery/runs/206-frontier-and-float-union/summary.json": "58f0f7950cc3bb21a0b4020cad87803d04cbcafd308f20b8611271aff640dfcb",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/frame_services.cpp": "fa1412a9fe2ddab88dc0edeac44b112cec9e0944c1670055176593be9dc22f40",
+    "iterations/v2/001-original-recovery/source/recovered/frame_services_probe.cpp": "bf815b211154e981213491407fad0e771f138b4ffaafd3efbd9009661c5d2488",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-declaration-compat-184/full/0041ebf0-globals.h": "4238fd8eb7130efe372053ce550be0db1b89ba85e366f015331cd3a830b5d248",
+    "local/experiments/v2-declaration-compat-184/full/0041ebf0.cpp": "3a9cbddfe16792065e92a9475147d9a3f9e873c07bd99ed86d8c420a34a2775a",
+    "local/experiments/v2-declaration-compat-184/full/00565cd0-globals.h": "cdd52f0f0dbd813c49bb5e05d47d57232647b640f2f17a578c80236f19eb52f0",
+    "local/experiments/v2-declaration-compat-184/full/00565cd0.cpp": "80360ba5490bf5058d76271bd16f92586fc5d21f414fc3430dbe4c1a49cb1db2",
+    "local/experiments/v2-declaration-compat-184/full/00565e70-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+    "local/experiments/v2-declaration-compat-184/full/00565e70.cpp": "a31dda33f7797a0af06b8a6a3c5854a7a63f3b4530e9c1b230d12985ef8c9085",
+    "local/experiments/v2-declaration-compat-184/full/00590250-globals.h": "c9de4a0844856e1657f3dfc0fb269793b58fbf4b1494de3d33675d0cd6482a19",
+    "local/experiments/v2-declaration-compat-184/full/00590250.cpp": "6b09ca98048fe88969a4ff56bf01f1d78a87a83469c0fffc95ffd15c01d30c72",
+    "local/experiments/v2-frontier-dependencies-208/headers/0041ebf0-globals.h": "6c34f3d022d0ca9f1e183e3708a1ba8952c7ea7a97fc8aa80b83a64503f77f10",
+    "local/experiments/v2-frontier-dependencies-208/headers/00565cd0-globals.h": "32b3c47220618931ad4edbb687910e6fca4a6a20c60e66d366880889881203dc",
+    "local/experiments/v2-frontier-dependencies-208/headers/00565e70-globals.h": "21f07c33c925152ddee8328677f5982e77a6e7d445998ae97989924943485caa",
+    "local/experiments/v2-frontier-dependencies-208/headers/00589df0-globals.h": "bdd47051c9f7087cee0aa024d4b847c4569ea72b32d7bd3f77e5a97d0cec3514",
+    "local/experiments/v2-frontier-dependencies-208/headers/00589f40-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+    "local/experiments/v2-frontier-dependencies-208/headers/00590250-globals.h": "390b49f5513c816b2c6cafe86f0564284c05a6d3fc1d17e79634e79a5dbfdb1d",
+    "local/experiments/v2-frontier-dependencies-208/headers/00590340-globals.h": "91a7f6f21f0c5cfe4427f8e218822b1058d0d2408781b5d80a4397e3a5236d18",
+    "local/experiments/v2-frontier-dependencies-208/headers/00590c60-globals.h": "bf6a31bef81d4fb87064dd3c77ccb531d882529105ce8a6074cd4d6f031d0152",
+    "local/experiments/v2-frontier-dependencies-208/headers/00590d10-globals.h": "bf6a31bef81d4fb87064dd3c77ccb531d882529105ce8a6074cd4d6f031d0152",
+    "local/experiments/v2-frontier-dependencies-208/input-extraction.json": "745f3ca84a08c75228ab11d188192774728553380acd2637695e55c65cf522dd",
+    "local/experiments/v2-frontier-dependencies-208/sources/0041ebf0.cpp": "614243f37f0ad739af5f0a1f39a7d7fa79577a477b85173f19e77047d896f2cc",
+    "local/experiments/v2-frontier-dependencies-208/sources/00565cd0.cpp": "af6dc4fb56e5e49f16e87441dd4429898d03be145587eda17d19689f70286f84",
+    "local/experiments/v2-frontier-dependencies-208/sources/00565e70.cpp": "db9eec70f91372c469bcad90aabf75df4c6bc5653fddc637c4d35098c02422b1",
+    "local/experiments/v2-frontier-dependencies-208/sources/00589df0.cpp": "725ee83cbdb6bb7bbef8025dd72643d7c9aba12eb843b1234aa2ec3ee1536456",
+    "local/experiments/v2-frontier-dependencies-208/sources/00589f40.cpp": "f2b6e4c912f758a85c891a7f91844dfdb22869f7f2f1a864b5918b63407bebfb",
+    "local/experiments/v2-frontier-dependencies-208/sources/00590250.cpp": "07968e588f8eb1fad7fb26ce5f0da6dc130e3aa1424a41d51cd8dcf7ec882a32",
+    "local/experiments/v2-frontier-dependencies-208/sources/00590340.cpp": "5f6d164774aff5db535c69f469fa9456d019a53ae037f424e0e5bb662008e8ae",
+    "local/experiments/v2-frontier-dependencies-208/sources/00590c60.cpp": "8749525e6cce8f9230aa1b870dd6e5ef2e563fe225ea83002b29459b58c0341c",
+    "local/experiments/v2-frontier-dependencies-208/sources/00590d10.cpp": "5446b7c8df99cf94bbd589d515d871e2d0b38b240fe641b8ceff9e8a676b2fa6",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589df0.cpp": "68b63ee2011e067a32b1e0ec165495c0b1d4eba6a98ebd55970788bf64482171",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589f40.cpp": "5332c9f3be8234ba20fda5a10163bb842c15081688c97d8cd9a744ce0049f8a6",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590340.cpp": "a0c367c377e151762bc2d561bdee9d6a822bc7d183eb0d8b9e73981dc3269edd",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590c60.cpp": "e05312bc0fce8a7b2a9ba7bf8f0d609c8fad6a78c55de819a0d4ef189cbcd81e",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590d10.cpp": "2454f62b2f59e3bb834a93e49a2046fd87c4aa5f2254c8ec0e9cb1e36fd8d698",
+    "local/experiments/v2-scalar-slices-189/full/audit.json": "1206eb99f84a2999a948e17b0945b7c5fb5ff5a872b4293d8984ee1eadb2f1db",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/experiment-v2-declarations-184.py": "815e1179a87bd2eb4ada95e7d9bad88f20797c7521f0b55858e409b4782f4823",
+    "scripts/research/experiment-v2-frontier-dependencies-208.py": "ccced34a28d46422d4f4ee7392be7d5506c44996faac2b3309e42be1cb98a3f3"
+  },
+  "ownership_preflight": {
+    "0041ebf0": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00565cd0": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/frame_services_probe.cpp",
+          "name": "frame_services_boundary_00565cd0"
+        }
+      ]
+    },
+    "00565e70": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00589df0": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00589f40": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00590250": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00590340": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00590c60": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    },
+    "00590d10": {
+      "canonical_overlaps": [],
+      "wip_implementation_definitions": [],
+      "probe_boundaries": []
+    }
+  },
+  "native_capture": "local/experiments/v2-frontier-dependencies-208/native-capture.json",
+  "native_capture_sha256": "0e11ada1a2e109e3d1b7647af725ef1031d67ac492cb3832caa59a5ab7eef722",
+  "compiler_response": "local/experiments/v2-frontier-dependencies-208/logs/native.rsp",
+  "compiler_response_sha256": "15c344164157c8806c1e7351803ab6b34faaa38d8b507d30b97ef62924e468aa",
+  "compiler_log": "local/experiments/v2-frontier-dependencies-208/logs/native.log",
+  "compiler_log_sha256": "33fb543cdc14c35752d03bcd123b917466bd512fc394748f95049608f2624176",
+  "subset_undefined_names": 6,
+  "subset_undefined_references": 8,
+  "subset_undefined_symbols": {
+    "?DAT_006b499d@@3DA": 1,
+    "?DAT_006b4a00@@3HA": 3,
+    "__allmul": 1,
+    "__allshr": 1,
+    "?FUN_00589e80@@YAHI@Z": 1,
+    "?DAT_006b49a4@@3FA": 1
+  },
+  "elapsed_seconds": 5.681,
+  "results": [
+    {
+      "va": "0041ebf0",
+      "name": "FUN_0041ebf0",
+      "source_body_sha256": "7b18b6fee20bd1191a2d9f72bce5890a28c77bfd9713ea34547d2c2b7dda9411",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/0041ebf0.cpp",
+      "generated_source_sha256": "614243f37f0ad739af5f0a1f39a7d7fa79577a477b85173f19e77047d896f2cc",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/0041ebf0.cpp",
+      "baseline_generated_source_sha256": "3a9cbddfe16792065e92a9475147d9a3f9e873c07bd99ed86d8c420a34a2775a",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "a557f98f8b0ead4ecc7521fe33e2838e0bda9bd2abd9cd8ab93a509b2ce094de",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/0041ebf0.cpp": "614243f37f0ad739af5f0a1f39a7d7fa79577a477b85173f19e77047d896f2cc",
+        "local/experiments/v2-declaration-compat-184/full/0041ebf0-globals.h": "4238fd8eb7130efe372053ce550be0db1b89ba85e366f015331cd3a830b5d248",
+        "local/experiments/v2-frontier-dependencies-208/headers/0041ebf0-globals.h": "6c34f3d022d0ca9f1e183e3708a1ba8952c7ea7a97fc8aa80b83a64503f77f10",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/0041ebf0-globals.h",
+      "declaration_header_sha256": "6c34f3d022d0ca9f1e183e3708a1ba8952c7ea7a97fc8aa80b83a64503f77f10",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_0065b360",
+          "symbol": {
+            "name": "DAT_0065b360",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "0065b360:4",
+            "storage_detail": {
+              "display": "0065b360:4",
+              "serialization": "ram:0065b360:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6665056",
+                  "bytes": 4,
+                  "address": "0065b360"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_0065b360"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_0060c958",
+          "symbol": {
+            "name": "DAT_0060c958",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "0060c958:4",
+            "storage_detail": {
+              "display": "0060c958:4",
+              "serialization": "ram:0060c958:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6343000",
+                  "bytes": 4,
+                  "address": "0060c958"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_0060c958"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_0060c900",
+          "symbol": {
+            "name": "DAT_0060c900",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "0060c900:4",
+            "storage_detail": {
+              "display": "0060c900:4",
+              "serialization": "ram:0060c900:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342912",
+                  "bytes": 4,
+                  "address": "0060c900"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_0060c900"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_0060c81c",
+          "symbol": {
+            "name": "DAT_0060c81c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "0060c81c:4",
+            "storage_detail": {
+              "display": "0060c81c:4",
+              "serialization": "ram:0060c81c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342684",
+                  "bytes": 4,
+                  "address": "0060c81c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_0060c81c"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_005cc588",
+          "symbol": {
+            "name": "DAT_005cc588",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "005cc588:1",
+            "storage_detail": {
+              "display": "005cc588:1",
+              "serialization": "ram:005cc588:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6079880",
+                  "bytes": 1,
+                  "address": "005cc588"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined DAT_005cc588"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::PTR_s_Config_1_005ccb38",
+          "symbol": {
+            "name": "PTR_s_Config_1_005ccb38",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined *",
+              "name": "undefined *",
+              "display": "undefined *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.database.data.PointerDB"
+            },
+            "bytes": 4,
+            "storage": "005ccb38:4",
+            "storage_detail": {
+              "display": "005ccb38:4",
+              "serialization": "ram:005ccb38:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6081336",
+                  "bytes": 4,
+                  "address": "005ccb38"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined *PTR_s_Config_1_005ccb38"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined",
+              "/undefined *"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::s_HudConfigs_005ccbc0",
+          "symbol": {
+            "name": "s_HudConfigs_005ccbc0",
+            "namespace": "Global",
+            "type": {
+              "path": "/string",
+              "name": "string",
+              "display": "string",
+              "length": -1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.StringDataType"
+            },
+            "bytes": 11,
+            "storage": "005ccbc0:11",
+            "storage_detail": {
+              "display": "005ccbc0:11",
+              "serialization": "ram:005ccbc0:11",
+              "bytes": 11,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6081472",
+                  "bytes": 11,
+                  "address": "005ccbc0"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char s_HudConfigs_005ccbc0[11]"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "char[11]",
+            "bytes": 11,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/string"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_0060c890",
+          "symbol": {
+            "name": "DAT_0060c890",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "0060c890:1",
+            "storage_detail": {
+              "display": "0060c890:1",
+              "serialization": "ram:0060c890:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342800",
+                  "bytes": 1,
+                  "address": "0060c890"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined DAT_0060c890"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_0060c8b0",
+          "symbol": {
+            "name": "DAT_0060c8b0",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "0060c8b0:1",
+            "storage_detail": {
+              "display": "0060c8b0:1",
+              "serialization": "ram:0060c8b0:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342832",
+                  "bytes": 1,
+                  "address": "0060c8b0"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined DAT_0060c8b0"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_0060c908",
+          "symbol": {
+            "name": "DAT_0060c908",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "0060c908:1",
+            "storage_detail": {
+              "display": "0060c908:1",
+              "serialization": "ram:0060c908:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "6342920",
+                  "bytes": 1,
+                  "address": "0060c908"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined DAT_0060c908"
+          },
+          "consumer_vas": [
+            "0041ebf0"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "0041ebf0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "void FUN_0041ebf0(void);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/0041ebf0.obj",
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp",
+          "line": 10,
+          "column": 38,
+          "severity": "error",
+          "code": "C2061",
+          "category": "missing_type_or_declaration_syntax",
+          "message": "\u0441\u0438\u043d\u0442\u0430\u043a\u0441\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430: \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \"DWORD\""
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 17,
+          "column": 30,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 17,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_1_hud_005ccba0: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 18,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 20,
+          "column": 59,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud1XX_hud_005ccb88: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 22,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dd00(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 25,
+          "column": 16,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"void FUN_0059ecb0(undefined4,undefined4,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 3 \u0438\u0437 \"char [11]\" \u0432 \"undefined4\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 25,
+          "column": 28,
+          "severity": "error",
+          "code": "C2440",
+          "category": "incompatible_type_or_field",
+          "message": "=: \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \"void\" \u0432 \"int\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 26,
+          "column": 32,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 26,
+          "column": 77,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_1_hud_005ccba0: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 27,
+          "column": 13,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 29,
+          "column": 61,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud1XX_hud_005ccb88: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 31,
+          "column": 13,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059db50(char *,undefined4,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 41,
+          "column": 7,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_005a0fbf(undefined1 *,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined4 *\" \u0432 \"undefined1 *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 44,
+          "column": 30,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 44,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_2_hud_005ccbb8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 45,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 47,
+          "column": 59,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud2XX_hud_005ccba8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 49,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dd00(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 53,
+          "column": 15,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"void FUN_0059ecb0(undefined4,undefined4,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined4 *\" \u0432 \"undefined4\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 53,
+          "column": 27,
+          "severity": "error",
+          "code": "C2440",
+          "category": "incompatible_type_or_field",
+          "message": "=: \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \"void\" \u0432 \"int\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 54,
+          "column": 32,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 54,
+          "column": 77,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_2_hud_005ccbb8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 55,
+          "column": 13,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 57,
+          "column": 61,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud2XX_hud_005ccba8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 59,
+          "column": 13,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059db50(char *,undefined4,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 73,
+          "column": 3,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"void FUN_0041eff0(int,undefined4 *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined4 *\" \u0432 \"int\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 74,
+          "column": 30,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 74,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_1_hud_005ccba0: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 75,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 77,
+          "column": 59,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud1XX_hud_005ccb88: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 79,
+          "column": 3,
+          "severity": "error",
+          "code": "C2660",
+          "category": "prototype_or_call_type_conflict",
+          "message": "FUN_0059e1b0: \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 80,
+          "column": 30,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 80,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_1_hud_005ccba0: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 81,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 83,
+          "column": 59,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud1XX_hud_005ccb88: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 85,
+          "column": 3,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"void FUN_0059e130(undefined4,undefined4,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"undefined4\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 86,
+          "column": 30,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 86,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_2_hud_005ccbb8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 87,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 89,
+          "column": 59,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud2XX_hud_005ccba8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 91,
+          "column": 3,
+          "severity": "error",
+          "code": "C2660",
+          "category": "prototype_or_call_type_conflict",
+          "message": "FUN_0059e1b0: \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 92,
+          "column": 30,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s__s_s_s_005ccb98: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 92,
+          "column": 75,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_2_hud_005ccbb8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 93,
+          "column": 11,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"undefined4 FUN_0059dc30(char *)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"char *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 95,
+          "column": 59,
+          "severity": "error",
+          "code": "C2065",
+          "category": "missing_declaration_other",
+          "message": "s_XXhud2XX_hud_005ccba8: \u043d\u0435\u043e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        },
+        {
+          "source": "porsche_va_0041ebf0",
+          "line": 97,
+          "column": 3,
+          "severity": "error",
+          "code": "C2664",
+          "category": "prototype_or_call_type_conflict",
+          "message": "\"void FUN_0059e130(undefined4,undefined4,undefined4)\": \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 1 \u0438\u0437 \"undefined *\" \u0432 \"undefined4\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\0041ebf0.cpp)"
+        }
+      ],
+      "owned_error_count": 47,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00565cd0",
+      "name": "FUN_00565cd0",
+      "source_body_sha256": "70728b4680fabc54b05b321435545592de1cf1667cca3b00654e65e118ede4d8",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00565cd0.cpp",
+      "generated_source_sha256": "af6dc4fb56e5e49f16e87441dd4429898d03be145587eda17d19689f70286f84",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00565cd0.cpp",
+      "baseline_generated_source_sha256": "80360ba5490bf5058d76271bd16f92586fc5d21f414fc3430dbe4c1a49cb1db2",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "00d892795921ec55bfae15e24c0998f23b91f3884001b968879ef72500d6e59b",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00565cd0.cpp": "af6dc4fb56e5e49f16e87441dd4429898d03be145587eda17d19689f70286f84",
+        "local/experiments/v2-declaration-compat-184/full/00565cd0-globals.h": "cdd52f0f0dbd813c49bb5e05d47d57232647b640f2f17a578c80236f19eb52f0",
+        "local/experiments/v2-frontier-dependencies-208/headers/00565cd0-globals.h": "32b3c47220618931ad4edbb687910e6fca4a6a20c60e66d366880889881203dc",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00565cd0-globals.h",
+      "declaration_header_sha256": "32b3c47220618931ad4edbb687910e6fca4a6a20c60e66d366880889881203dc",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b499c",
+          "symbol": {
+            "name": "DAT_006b499c",
+            "namespace": "Global",
+            "type": {
+              "path": "/char",
+              "name": "char",
+              "display": "char",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.CharDataType"
+            },
+            "bytes": 1,
+            "storage": "006b499c:1",
+            "storage_detail": {
+              "display": "006b499c:1",
+              "serialization": "ram:006b499c:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031196",
+                  "bytes": 1,
+                  "address": "006b499c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char DAT_006b499c"
+          },
+          "consumer_vas": [
+            "00565cd0"
+          ],
+          "resolved": {
+            "ctype": "char",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/char"
+            ]
+          },
+          "consumer_va": "00565cd0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b49a4",
+          "symbol": {
+            "name": "DAT_006b49a4",
+            "namespace": "Global",
+            "type": {
+              "path": "/short",
+              "name": "short",
+              "display": "short",
+              "length": 2,
+              "alignment": 2,
+              "class": "ghidra.program.model.data.ShortDataType"
+            },
+            "bytes": 2,
+            "storage": "006b49a4:2",
+            "storage_detail": {
+              "display": "006b49a4:2",
+              "serialization": "ram:006b49a4:2",
+              "bytes": 2,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031204",
+                  "bytes": 2,
+                  "address": "006b49a4"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "short DAT_006b49a4"
+          },
+          "consumer_vas": [
+            "00565cd0"
+          ],
+          "resolved": {
+            "ctype": "short",
+            "bytes": 2,
+            "alignment": 2,
+            "typedefs": [],
+            "type_paths": [
+              "/short"
+            ]
+          },
+          "consumer_va": "00565cd0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00565cd0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00565cd0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4a0c",
+          "symbol": {
+            "name": "DAT_006b4a0c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "006b4a0c:1",
+            "storage_detail": {
+              "display": "006b4a0c:1",
+              "serialization": "ram:006b4a0c:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031308",
+                  "bytes": 1,
+                  "address": "006b4a0c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined DAT_006b4a0c"
+          },
+          "consumer_vas": [
+            "00565cd0"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "00565cd0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4a0d",
+          "symbol": {
+            "name": "DAT_006b4a0d",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "006b4a0d:1",
+            "storage_detail": {
+              "display": "006b4a0d:1",
+              "serialization": "ram:006b4a0d:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031309",
+                  "bytes": 1,
+                  "address": "006b4a0d"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined DAT_006b4a0d"
+          },
+          "consumer_vas": [
+            "00565cd0"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "00565cd0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": [
+          {
+            "source": "iterations/v2/001-original-recovery/source/recovered/frame_services_probe.cpp",
+            "name": "frame_services_boundary_00565cd0"
+          }
+        ]
+      },
+      "inferred_signature": "int FUN_00565cd0(uint param_1,undefined4 param_2);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00565cd0.obj",
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [
+        {
+          "source": "porsche_va_00565cd0",
+          "line": 20,
+          "column": 11,
+          "severity": "error",
+          "code": "C2660",
+          "category": "prototype_or_call_type_conflict",
+          "message": "FUN_00590290: \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00565cd0.cpp)"
+        }
+      ],
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00565e70",
+      "name": "FUN_00565e70",
+      "source_body_sha256": "d7083d9c6d88604fae7f53eb73818580fa1a6160cd7916caef06f8c75bd3c82a",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00565e70.cpp",
+      "generated_source_sha256": "db9eec70f91372c469bcad90aabf75df4c6bc5653fddc637c4d35098c02422b1",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00565e70.cpp",
+      "baseline_generated_source_sha256": "a31dda33f7797a0af06b8a6a3c5854a7a63f3b4530e9c1b230d12985ef8c9085",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "94a74b6198433e9d91e476e93ff644232df4e8a24197e4e7690a17a2e6b7b333",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00565e70.cpp": "db9eec70f91372c469bcad90aabf75df4c6bc5653fddc637c4d35098c02422b1",
+        "local/experiments/v2-declaration-compat-184/full/00565e70-globals.h": "ef86e5abf4627c474ea70c7ae93801cc576e913c2650ec7ae298c8dc6db0d303",
+        "local/experiments/v2-frontier-dependencies-208/headers/00565e70-globals.h": "21f07c33c925152ddee8328677f5982e77a6e7d445998ae97989924943485caa",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00565e70-globals.h",
+      "declaration_header_sha256": "21f07c33c925152ddee8328677f5982e77a6e7d445998ae97989924943485caa",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b499c",
+          "symbol": {
+            "name": "DAT_006b499c",
+            "namespace": "Global",
+            "type": {
+              "path": "/char",
+              "name": "char",
+              "display": "char",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.CharDataType"
+            },
+            "bytes": 1,
+            "storage": "006b499c:1",
+            "storage_detail": {
+              "display": "006b499c:1",
+              "serialization": "ram:006b499c:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031196",
+                  "bytes": 1,
+                  "address": "006b499c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char DAT_006b499c"
+          },
+          "consumer_vas": [
+            "00565e70"
+          ],
+          "resolved": {
+            "ctype": "char",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/char"
+            ]
+          },
+          "consumer_va": "00565e70",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "undefined4 FUN_00565e70(undefined1 param_1,undefined4 param_2,undefined4 *param_3);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00565e70.obj",
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [
+        {
+          "source": "porsche_va_00565e70",
+          "line": 13,
+          "column": 11,
+          "severity": "error",
+          "code": "C2660",
+          "category": "prototype_or_call_type_conflict",
+          "message": "FUN_00565ea0: \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00565e70.cpp)"
+        }
+      ],
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00589df0",
+      "name": "FUN_00589df0",
+      "source_body_sha256": "87a5159f09ba5e02abd244cec5a1f035bafb391a700ee42b4e3c95255eae7016",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00589df0.cpp",
+      "generated_source_sha256": "725ee83cbdb6bb7bbef8025dd72643d7c9aba12eb843b1234aa2ec3ee1536456",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589df0.cpp",
+      "baseline_generated_source_sha256": "68b63ee2011e067a32b1e0ec165495c0b1d4eba6a98ebd55970788bf64482171",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "b2ed36fe587aac72bcb912f76b956635d5715f5fd20c4b9c0ef736f4c7e6b1a0",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00589df0.cpp": "725ee83cbdb6bb7bbef8025dd72643d7c9aba12eb843b1234aa2ec3ee1536456",
+        "local/experiments/v2-frontier-dependencies-208/headers/00589df0-globals.h": "bdd47051c9f7087cee0aa024d4b847c4569ea72b32d7bd3f77e5a97d0cec3514",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00589df0-globals.h",
+      "declaration_header_sha256": "bdd47051c9f7087cee0aa024d4b847c4569ea72b32d7bd3f77e5a97d0cec3514",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00589df0"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00589df0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b499d",
+          "symbol": {
+            "name": "DAT_006b499d",
+            "namespace": "Global",
+            "type": {
+              "path": "/char",
+              "name": "char",
+              "display": "char",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.CharDataType"
+            },
+            "bytes": 1,
+            "storage": "006b499d:1",
+            "storage_detail": {
+              "display": "006b499d:1",
+              "serialization": "ram:006b499d:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031197",
+                  "bytes": 1,
+                  "address": "006b499d"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char DAT_006b499d"
+          },
+          "consumer_vas": [
+            "00589df0"
+          ],
+          "resolved": {
+            "ctype": "char",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/char"
+            ]
+          },
+          "consumer_va": "00589df0",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "void FUN_00589df0(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00589df0.obj",
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [],
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true,
+      "object_sha256": "90a12361bce6868c4d6d9bee2e8d61934903d243dd2095af1f3765aafdb0092e",
+      "object_bytes": 1111,
+      "symbols": {
+        "defined": [
+          "?FUN_00589df0@@YAXH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b499d@@3DA",
+          "?DAT_006b4a00@@3HA",
+          "__allmul",
+          "__allshr"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "00589f40",
+      "name": "FUN_00589f40",
+      "source_body_sha256": "96e545cb99936d5f512722d015e53f2e2dd3bd4d760b941f9628fcb0634b88b3",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00589f40.cpp",
+      "generated_source_sha256": "f2b6e4c912f758a85c891a7f91844dfdb22869f7f2f1a864b5918b63407bebfb",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00589f40.cpp",
+      "baseline_generated_source_sha256": "5332c9f3be8234ba20fda5a10163bb842c15081688c97d8cd9a744ce0049f8a6",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "8401f009a27d9a6c3f287de54a9d431a29f9c7c8f8c0cb54bace819ae89e9df7",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00589f40.cpp": "f2b6e4c912f758a85c891a7f91844dfdb22869f7f2f1a864b5918b63407bebfb",
+        "local/experiments/v2-frontier-dependencies-208/headers/00589f40-globals.h": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00589f40-globals.h",
+      "declaration_header_sha256": "ce7efd9625b54b7f8a3081285375715ffeee9f1d0827d5af90571a4d5d322ae5",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00589f40"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00589f40",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "void FUN_00589f40(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00589f40.obj",
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [],
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true,
+      "object_sha256": "6a8d5535f622f20fa35875166e8d8894b13473fe2f1353819a54074bc49765bc",
+      "object_bytes": 1000,
+      "symbols": {
+        "defined": [
+          "?FUN_00589f40@@YAXH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a00@@3HA",
+          "?FUN_00589e80@@YAHI@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "00590250",
+      "name": "FUN_00590250",
+      "source_body_sha256": "1e0bf27f05d721703aafecff0ec7d7884dcd837d581420b97cdc3dceb4a80f28",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00590250.cpp",
+      "generated_source_sha256": "07968e588f8eb1fad7fb26ce5f0da6dc130e3aa1424a41d51cd8dcf7ec882a32",
+      "baseline_generated_source": "local/experiments/v2-declaration-compat-184/full/00590250.cpp",
+      "baseline_generated_source_sha256": "6b09ca98048fe88969a4ff56bf01f1d78a87a83469c0fffc95ffd15c01d30c72",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "8603052b8644cc4f6ca7c3015e83059560c41bbfe8aa59d0052b34ec80f10f6e",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00590250.cpp": "07968e588f8eb1fad7fb26ce5f0da6dc130e3aa1424a41d51cd8dcf7ec882a32",
+        "local/experiments/v2-declaration-compat-184/full/00590250-globals.h": "c9de4a0844856e1657f3dfc0fb269793b58fbf4b1494de3d33675d0cd6482a19",
+        "local/experiments/v2-frontier-dependencies-208/headers/00590250-globals.h": "390b49f5513c816b2c6cafe86f0564284c05a6d3fc1d17e79634e79a5dbfdb1d",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00590250-globals.h",
+      "declaration_header_sha256": "390b49f5513c816b2c6cafe86f0564284c05a6d3fc1d17e79634e79a5dbfdb1d",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b499c",
+          "symbol": {
+            "name": "DAT_006b499c",
+            "namespace": "Global",
+            "type": {
+              "path": "/char",
+              "name": "char",
+              "display": "char",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.CharDataType"
+            },
+            "bytes": 1,
+            "storage": "006b499c:1",
+            "storage_detail": {
+              "display": "006b499c:1",
+              "serialization": "ram:006b499c:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031196",
+                  "bytes": 1,
+                  "address": "006b499c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "char DAT_006b499c"
+          },
+          "consumer_vas": [
+            "00590250"
+          ],
+          "resolved": {
+            "ctype": "char",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/char"
+            ]
+          },
+          "consumer_va": "00590250",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4898",
+          "symbol": {
+            "name": "DAT_006b4898",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined *",
+              "name": "undefined *",
+              "display": "undefined *",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.PointerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4898:4",
+            "storage_detail": {
+              "display": "006b4898:4",
+              "serialization": "ram:006b4898:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7030936",
+                  "bytes": 4,
+                  "address": "006b4898"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined *DAT_006b4898"
+          },
+          "consumer_vas": [
+            "00590250"
+          ],
+          "resolved": {
+            "ctype": "undefined *",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined",
+              "/undefined *"
+            ]
+          },
+          "consumer_va": "00590250",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4886",
+          "symbol": {
+            "name": "DAT_006b4886",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined1",
+              "name": "undefined1",
+              "display": "undefined1",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.Undefined1DataType"
+            },
+            "bytes": 1,
+            "storage": "006b4886:1",
+            "storage_detail": {
+              "display": "006b4886:1",
+              "serialization": "ram:006b4886:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7030918",
+                  "bytes": 1,
+                  "address": "006b4886"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined1 DAT_006b4886"
+          },
+          "consumer_vas": [
+            "00590250"
+          ],
+          "resolved": {
+            "ctype": "undefined1",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined1"
+            ]
+          },
+          "consumer_va": "00590250",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4a08",
+          "symbol": {
+            "name": "DAT_006b4a08",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a08:4",
+            "storage_detail": {
+              "display": "006b4a08:4",
+              "serialization": "ram:006b4a08:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031304",
+                  "bytes": 4,
+                  "address": "006b4a08"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4a08"
+          },
+          "consumer_vas": [
+            "00590250"
+          ],
+          "resolved": {
+            "ctype": "undefined4",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined4"
+            ]
+          },
+          "consumer_va": "00590250",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::FUN_005901b0",
+          "symbol": {
+            "name": "FUN_005901b0",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined",
+              "name": "undefined",
+              "display": "undefined",
+              "length": 1,
+              "alignment": 1,
+              "class": "ghidra.program.model.data.DefaultDataType"
+            },
+            "bytes": 1,
+            "storage": "005901b0:1",
+            "storage_detail": {
+              "display": "005901b0:1",
+              "serialization": "ram:005901b0:1",
+              "bytes": 1,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "5833136",
+                  "bytes": 1,
+                  "address": "005901b0"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined FUN_005901b0"
+          },
+          "consumer_vas": [
+            "00590250"
+          ],
+          "resolved": {
+            "ctype": "undefined",
+            "bytes": 1,
+            "alignment": 1,
+            "typedefs": [],
+            "type_paths": [
+              "/undefined"
+            ]
+          },
+          "consumer_va": "00590250",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "undefined4 FUN_00590250(uint param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00590250.obj",
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [
+        {
+          "source": "F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00590250.cpp",
+          "line": 5,
+          "column": 6,
+          "severity": "error",
+          "code": "C2365",
+          "category": "other_C2365",
+          "message": "FUN_005901b0: \u043f\u0435\u0440\u0435\u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435; \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u043c \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435\u043c \u0431\u044b\u043b\u043e \"\u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u0430\u044f \u0434\u0430\u043d\u043d\u044b\u0445\""
+        },
+        {
+          "source": "porsche_va_00590250",
+          "line": 10,
+          "column": 18,
+          "severity": "error",
+          "code": "C2440",
+          "category": "incompatible_type_or_field",
+          "message": "=: \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u044c \"undefined\" \u0432 \"undefined *\" (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00590250.cpp)"
+        },
+        {
+          "source": "porsche_va_00590250",
+          "line": 12,
+          "column": 5,
+          "severity": "error",
+          "code": "C2064",
+          "category": "other_C2064",
+          "message": "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0432\u044b\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0444\u0440\u0430\u0433\u043c\u0435\u043d\u0442\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f, \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0430\u044f 2 \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00590250.cpp)"
+        }
+      ],
+      "owned_error_count": 3,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00590340",
+      "name": "FUN_00590340",
+      "source_body_sha256": "85182698fc7ac1c23567485710df508d6a6c77ed9ccb7d9a704b2a0892fae39f",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00590340.cpp",
+      "generated_source_sha256": "5f6d164774aff5db535c69f469fa9456d019a53ae037f424e0e5bb662008e8ae",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590340.cpp",
+      "baseline_generated_source_sha256": "a0c367c377e151762bc2d561bdee9d6a822bc7d183eb0d8b9e73981dc3269edd",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "36613748f642cb84b03d51dfdca4bca82fa07a1cae68ebc0437685429f1d54eb",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00590340.cpp": "5f6d164774aff5db535c69f469fa9456d019a53ae037f424e0e5bb662008e8ae",
+        "local/experiments/v2-frontier-dependencies-208/headers/00590340-globals.h": "91a7f6f21f0c5cfe4427f8e218822b1058d0d2408781b5d80a4397e3a5236d18",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00590340-globals.h",
+      "declaration_header_sha256": "91a7f6f21f0c5cfe4427f8e218822b1058d0d2408781b5d80a4397e3a5236d18",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00590340"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00590340",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b49a4",
+          "symbol": {
+            "name": "DAT_006b49a4",
+            "namespace": "Global",
+            "type": {
+              "path": "/short",
+              "name": "short",
+              "display": "short",
+              "length": 2,
+              "alignment": 2,
+              "class": "ghidra.program.model.data.ShortDataType"
+            },
+            "bytes": 2,
+            "storage": "006b49a4:2",
+            "storage_detail": {
+              "display": "006b49a4:2",
+              "serialization": "ram:006b49a4:2",
+              "bytes": 2,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031204",
+                  "bytes": 2,
+                  "address": "006b49a4"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "short DAT_006b49a4"
+          },
+          "consumer_vas": [
+            "00590340"
+          ],
+          "resolved": {
+            "ctype": "short",
+            "bytes": 2,
+            "alignment": 2,
+            "typedefs": [],
+            "type_paths": [
+              "/short"
+            ]
+          },
+          "consumer_va": "00590340",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "undefined4 FUN_00590340(int param_1,int *param_2);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00590340.obj",
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [],
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": true,
+      "object_only_status_certified": true,
+      "object_sha256": "34a7ca93315af9c8ea4ed124719c56284fa54ca6b977780aabd37228536e1794",
+      "object_bytes": 962,
+      "symbols": {
+        "defined": [
+          "?FUN_00590340@@YAIHPAH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b49a4@@3FA",
+          "?DAT_006b4a00@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "00590c60",
+      "name": "FUN_00590c60",
+      "source_body_sha256": "6dea3ca744724e6babb861c78dab91af3977a8ba5de41b6b2bfb1b222347e9ab",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00590c60.cpp",
+      "generated_source_sha256": "8749525e6cce8f9230aa1b870dd6e5ef2e563fe225ea83002b29459b58c0341c",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590c60.cpp",
+      "baseline_generated_source_sha256": "e05312bc0fce8a7b2a9ba7bf8f0d609c8fad6a78c55de819a0d4ef189cbcd81e",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "880331a56c2f59a535a734e5398a414b1ce3a474eba888c0a95af4d72c7181d0",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00590c60.cpp": "8749525e6cce8f9230aa1b870dd6e5ef2e563fe225ea83002b29459b58c0341c",
+        "local/experiments/v2-frontier-dependencies-208/headers/00590c60-globals.h": "bf6a31bef81d4fb87064dd3c77ccb531d882529105ce8a6074cd4d6f031d0152",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00590c60-globals.h",
+      "declaration_header_sha256": "bf6a31bef81d4fb87064dd3c77ccb531d882529105ce8a6074cd4d6f031d0152",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b489c",
+          "symbol": {
+            "name": "DAT_006b489c",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b489c:4",
+            "storage_detail": {
+              "display": "006b489c:4",
+              "serialization": "ram:006b489c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7030940",
+                  "bytes": 4,
+                  "address": "006b489c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b489c"
+          },
+          "consumer_vas": [
+            "00590c60"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00590c60",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00590c60"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00590c60",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "undefined4 FUN_00590c60(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00590c60.obj",
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [
+        {
+          "source": "porsche_va_00590c60",
+          "line": 14,
+          "column": 5,
+          "severity": "error",
+          "code": "C2197",
+          "category": "prototype_or_call_type_conflict",
+          "message": "code (__cdecl *): \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u043c\u043d\u043e\u0433\u043e \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0434\u043b\u044f \u0432\u044b\u0437\u043e\u0432\u0430 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00590c60.cpp)"
+        }
+      ],
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    },
+    {
+      "va": "00590d10",
+      "name": "FUN_00590d10",
+      "source_body_sha256": "47f62e7e5bc1bfb6518940c2bc680967f7aa9c207ebb0ac274a16ad712608a7f",
+      "generated_source": "local/experiments/v2-frontier-dependencies-208/sources/00590d10.cpp",
+      "generated_source_sha256": "5446b7c8df99cf94bbd589d515d871e2d0b38b240fe641b8ceff9e8a676b2fa6",
+      "baseline_generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590d10.cpp",
+      "baseline_generated_source_sha256": "2454f62b2f59e3bb834a93e49a2046fd87c4aa5f2254c8ec0e9cb1e36fd8d698",
+      "body_bytes_preserved": true,
+      "body_after_marker_sha256": "3e057fb0e4f1408c126cadc25b9d27c25b8c598bd8d84b36dfc4aea5c221dc48",
+      "forced_headers": [],
+      "dependency_sha256": {
+        "local/experiments/v2-frontier-dependencies-208/sources/00590d10.cpp": "5446b7c8df99cf94bbd589d515d871e2d0b38b240fe641b8ceff9e8a676b2fa6",
+        "local/experiments/v2-frontier-dependencies-208/headers/00590d10-globals.h": "bf6a31bef81d4fb87064dd3c77ccb531d882529105ce8a6074cd4d6f031d0152",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "declaration_header": "local/experiments/v2-frontier-dependencies-208/headers/00590d10-globals.h",
+      "declaration_header_sha256": "bf6a31bef81d4fb87064dd3c77ccb531d882529105ce8a6074cd4d6f031d0152",
+      "declaration_records": [
+        {
+          "identity": "Global::DAT_006b489c",
+          "symbol": {
+            "name": "DAT_006b489c",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b489c:4",
+            "storage_detail": {
+              "display": "006b489c:4",
+              "serialization": "ram:006b489c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7030940",
+                  "bytes": 4,
+                  "address": "006b489c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b489c"
+          },
+          "consumer_vas": [
+            "00590d10"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00590d10",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        },
+        {
+          "identity": "Global::DAT_006b4a00",
+          "symbol": {
+            "name": "DAT_006b4a00",
+            "namespace": "Global",
+            "type": {
+              "path": "/int",
+              "name": "int",
+              "display": "int",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.IntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4a00:4",
+            "storage_detail": {
+              "display": "006b4a00:4",
+              "serialization": "ram:006b4a00:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7031296",
+                  "bytes": 4,
+                  "address": "006b4a00"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "int DAT_006b4a00"
+          },
+          "consumer_vas": [
+            "00590d10"
+          ],
+          "resolved": {
+            "ctype": "int",
+            "bytes": 4,
+            "alignment": 4,
+            "typedefs": [],
+            "type_paths": [
+              "/int"
+            ]
+          },
+          "consumer_va": "00590d10",
+          "consumer_metadata_source": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl",
+          "shared_storage_acceptance": false
+        }
+      ],
+      "unsupported_metadata": [],
+      "ownership": {
+        "canonical_overlaps": [],
+        "wip_implementation_definitions": [],
+        "probe_boundaries": []
+      },
+      "inferred_signature": "undefined4 FUN_00590d10(int param_1);",
+      "inferred_model_calling_convention": "__stdcall",
+      "abi_acceptance": false,
+      "object": "local/experiments/v2-frontier-dependencies-208/objects/00590d10.obj",
+      "compiled": false,
+      "code_generation_succeeded": false,
+      "compiler_exit_code": null,
+      "observed_compiler_batch_exit_code": 2,
+      "compiler_batch_exit_code": 2,
+      "diagnostics": [
+        {
+          "source": "porsche_va_00590d10",
+          "line": 9,
+          "column": 5,
+          "severity": "error",
+          "code": "C2197",
+          "category": "prototype_or_call_type_conflict",
+          "message": "code (__cdecl *): \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u043c\u043d\u043e\u0433\u043e \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0434\u043b\u044f \u0432\u044b\u0437\u043e\u0432\u0430 (\u043a\u043e\u043c\u043f\u0438\u043b\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b F:\\claude\\porsche disasm\\local\\experiments\\v2-frontier-dependencies-208\\sources\\00590d10.cpp)"
+        }
+      ],
+      "owned_error_count": 1,
+      "owned_warning_count": 0,
+      "actual_i386_coff_validated": false,
+      "object_only_status_certified": false
+    }
+  ],
+  "limits": [
+    "Only nine newly exposed function dependencies; body bytes preserved, exact179 per-consumer externs through184 resolver.",
+    "Unsupported declarations and original compiler errors remain explicit; no signature/type/cast/alias/storage guesses.",
+    "Compiler/model CC is not original hardware ABI acceptance. No Ghidra/native oracle/union/production changes."
+  ]
+}

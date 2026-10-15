@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "objects_compiled": 2,
+  "actual_compiler_batches": 1,
+  "actual_compiler_batches_this_pass": 0,
+  "compiler_exit_code": 0,
+  "seconds": 1.437,
+  "warnings": 1,
+  "warning_codes": [
+    "C4146"
+  ],
+  "results": [
+    {
+      "va": "00537ed0",
+      "generated_source": "local/experiments/v2-byte-consumers-212/00537ed0.cpp",
+      "generated_source_sha256": "87ad029439b07eb0741e91a9c9a9b7f134fa189019c12db347e2a84219f55247",
+      "original_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00537ed0.cpp",
+      "original_source_sha256": "0bfdab74c352bd31aa37f08cf20009d74216014fe10cd0486d7a1399e940337f",
+      "dependency_sha256": {
+        "local/experiments/v2-byte-consumers-212/00537ed0.cpp": "87ad029439b07eb0741e91a9c9a9b7f134fa189019c12db347e2a84219f55247",
+        "local/experiments/v2-byte-consumers-212/00537ed0-globals.h": "938e9363a3c5937f29e86fbbc40892794dc3e18637741431296b649a5e46cee7",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "object": "local/experiments/v2-byte-consumers-212/objects/00537ed0.obj",
+      "object_sha256": "2a12a8cb02464528b435885878d9d98282700600b5ccc8ec6b0cb3100dc093a4",
+      "symbols": {
+        "defined": [
+          "?FUN_00537ed0@@YAII@Z"
+        ],
+        "undefined": [
+          "?DAT_005de62c@@3IA",
+          "?FUN_00572f30@@YAHI@Z",
+          "?FUN_00572f5b@@YAHI@Z",
+          "?FUN_00572f90@@YAII@Z",
+          "?FUN_00573000@@YAII@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "00598630",
+      "generated_source": "local/experiments/v2-byte-consumers-212/00598630.cpp",
+      "generated_source_sha256": "21470be3f81a4477ae1488f69cb697a5db7782f8947b211f4d54b857d2917aa5",
+      "original_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00598630.cpp",
+      "original_source_sha256": "ca7a3bac9173bb18c93e9ec49f1c94d9aebaae9f797c4f6a7a1c68325f95157c",
+      "dependency_sha256": {
+        "local/experiments/v2-byte-consumers-212/00598630.cpp": "21470be3f81a4477ae1488f69cb697a5db7782f8947b211f4d54b857d2917aa5",
+        "local/experiments/v2-byte-consumers-212/00598630-globals.h": "752736e037c4bc62581e6b5c4d2a81ffbd2389614fbe40c132097ac97c5a1bed",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "object": "local/experiments/v2-byte-consumers-212/objects/00598630.obj",
+      "object_sha256": "897e8e717692ef73a9b2565ca863cd1066e7e26a72f7479d89ab2e4fd91c586e",
+      "symbols": {
+        "defined": [
+          "?FUN_00598630@@YAXH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b16a4@@3IA",
+          "?DAT_006b17d0@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      }
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-byte-consumers-212.py": "2ff8609187fda30d69d0f42dd3230c7cf9dead1911061ff402f332e6ce1481d2",
+    "local/experiments/v2-byte-consumers-212/native-capture-driver.py": "49189aa136ddd21baebeb663a66d89b9b447515126557cde6ae7e4211c6392ba",
+    "scripts/research/experiment-v2-consumer-views-210.py": "5d384b0d7bfe23237c30e60ac5b4c442e8ad1bf61ac76c27b5ec7262116b5dfc",
+    "local/experiments/v2-missing-body-triage-201/selected-inputs.json": "795854e97ced3a9eba5f511e14da03b8399906ef3f62d845ef08e2711b5ad765",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp": "e4d3c6bab9ecc9dc15037e9a2343891ef2b0dfbbd85f1bb320518b29983e1335",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/globals.jsonl": "9121483b5e3a18a6e3a6d78ff39ffeb63903a936816f924e7d813fb761efba99",
+    "scripts/research/experiment-v2-declarations-184.py": "815e1179a87bd2eb4ada95e7d9bad88f20797c7521f0b55858e409b4782f4823",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/audit-v2-native-union-204.py": "6957af6fee88f128a4b6f5a99116be265dbed71e42e4d26fdc4917b2c717f777",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-byte-consumers-212/00537ed0-globals.h": "938e9363a3c5937f29e86fbbc40892794dc3e18637741431296b649a5e46cee7",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00537ed0.cpp": "0bfdab74c352bd31aa37f08cf20009d74216014fe10cd0486d7a1399e940337f",
+    "local/experiments/v2-byte-consumers-212/00537ed0.cpp": "87ad029439b07eb0741e91a9c9a9b7f134fa189019c12db347e2a84219f55247",
+    "local/experiments/v2-byte-consumers-212/00598630-globals.h": "752736e037c4bc62581e6b5c4d2a81ffbd2389614fbe40c132097ac97c5a1bed",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00598630.cpp": "ca7a3bac9173bb18c93e9ec49f1c94d9aebaae9f797c4f6a7a1c68325f95157c",
+    "local/experiments/v2-byte-consumers-212/00598630.cpp": "21470be3f81a4477ae1488f69cb697a5db7782f8947b211f4d54b857d2917aa5",
+    "iterations/v2/001-original-recovery/runs/212-byte-consumers/proof-before-compile.json": "6fa42dd3ffd125a8a328f6ef8ed018d38e753c51e9da4a9d947d4a1f24a6f50d",
+    "iterations/v2/001-original-recovery/runs/192-scalar-slice-objects/summary.json": "092ec97a2a3711969f0c5882097630f16f207715199e37497b4b2d26f735a929",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/experiments/v2-byte-consumers-212/compile.rsp": "7721f0ee37527cfc2dcb710574fd3cd2f46b910bd9fa4182405293b28be948e8",
+    "local/experiments/v2-byte-consumers-212/batch-exit.json": "29912b2d40328e393cbec6069a7dc2290f536d0c20b9f55dfe2365fdc3b9e95b",
+    "local/experiments/v2-byte-consumers-212/compile.log": "f43acda4c3109dfec21ea34c85d47cd7d41c33ee56d834226ee5ce2467baff6b"
+  },
+  "original_instructions_verified": 57,
+  "limits": [
+    "Private raw representation declarations only; no canonical data owner",
+    "Full original native execution/caller ABI/global lifetimes remain open",
+    "00598630 signed index arithmetic overflow remains open; unchanged body",
+    "No production changes, stubs or storage allocation",
+    "First driver stopped on C4146 after successful batch; metadata finalization does not recompile"
+  ]
+}

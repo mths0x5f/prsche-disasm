@@ -1,0 +1,359 @@
+{
+  "schema": 1,
+  "kind": "bounded-original-callable-contracts",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected_scope_vas": [
+    "00540480",
+    "005404e0",
+    "00554530",
+    "0058f1f0"
+  ],
+  "objects_compiled": 4,
+  "real_coff_objects": 4,
+  "actual_compiler_batches": 1,
+  "new_compilations": 4,
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/W3",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "compiler_batch_exit_code": 0,
+  "compile_seconds": 1.7150645999936387,
+  "compiler_response": "local/experiments/v2-pointer-call-consumers-207/logs/changed-4.rsp",
+  "compiler_response_sha256": "3dbccdfd4360b80212d34637992bf0b393ab3d7a321a828c38595c9b2e270f60",
+  "compiler_log": "local/experiments/v2-pointer-call-consumers-207/logs/changed-4.log",
+  "compiler_log_sha256": "5cd04f99954e9e47218d44d3c29d48c41d8c550b45baff79613b55062334640a",
+  "execution_sidecar": "local/experiments/v2-pointer-call-consumers-207/logs/execution.json",
+  "execution_sidecar_sha256": "586e15f2ea54537d4adf49d4abdde69cd209398d8d9bc51f0501d554391fe2ce",
+  "input_sha256": {
+    "scripts/research/experiment-v2-pointer-calls-207.py": "b152f8dea697989317184aa0ccd31520ed389b7135fc319ae68def3635e44070",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "iterations/v2/001-original-recovery/runs/203-consumer-declaration-pilot/summary.json": "0a18b63602331a75245da1557dcb74dd4f79ac3bdec5853a2ef54558c276c50d",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/game/Drivers/opengl1/opengl1z.dll": "510fc1d2af0016cb1de25bac702d79bc430945bbbd3b041f694e40330ca639ff",
+    "research/v2/binaries/opengl1z.dll-510fc1d2af00/functions.jsonl": "4e1c20c1bc53c770d732230aa0096182ce92bda292b7804128807a3a880b50d4",
+    "research/v2/binaries/opengl1z.dll-510fc1d2af00/disassembly.asm": "9be430b1355a9a809f6abb6d8bdd520878aadd29259e4c52ecb30eeddff6ddc4",
+    "local/game/Drivers/opengl3/opengl3z.dll": "5a57e6c244ea40ea90d69cf13bd3b79144ebca0a980f1d7cb87af48197581f6f",
+    "research/v2/binaries/opengl3z.dll-5a57e6c244ea/functions.jsonl": "abb0fb4db6c5bbb59c8d97f1822cda0d327508095a8d7c4e270775c679d1e2f8",
+    "research/v2/binaries/opengl3z.dll-5a57e6c244ea/disassembly.asm": "7c3ceff08bb54df01a87651001f6543a1108b2f6a7a640fcacdf3ce662bb4221",
+    "local/game/Drivers/glide3x/voodoo2z.dll": "1eefad7315ab3fc6546bfc8625dd9c9492764867898b73f6c6346c5f11d684a3",
+    "research/v2/binaries/voodoo2z.dll-1eefad7315ab/functions.jsonl": "b05e47639f8940870c5343459ca8433b3dcb358ffe256dd2774d93fc3e6bfabc",
+    "research/v2/binaries/voodoo2z.dll-1eefad7315ab/disassembly.asm": "be06b700d6d7a96e3f385477cebc3b8f9d2e5eb14a8695c1f828937621b0e233",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\dsound.h": "781e58e6b6eb081afd0b4097f8d5c60036d746ad49c3a54cd92555e24a80beec",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\Unknwnbase.h": "7fc28ae112c678a18567387fdbb43c615af6253429c9c1a8037cd0861f7568b6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\basetyps.h": "48683511f47520707530d6e660d30ff9ac3c6255d976c8b004e28d17b53b5098",
+    "iterations/v2/001-original-recovery/runs/207-pointer-call-consumers/proof-before-compile.json": "1b876b22cd5e45cb1ad228493827cd0da350aeac3c25eb4b49dcb3c287f609f6",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00540480.cpp": "233ff02213d916c100dbb307e2ddbba8399f35c9c7ccc8b458128d6a89303f06",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00540480-globals.h": "70f13684231e5225d95dfd1aa9e982e094ea27b94755d2d99c4499a1023db370",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-pointer-call-consumers-207/sources/00540480.cpp": "cbaf7e7d0cf9713ec6e8a1538a7f3d8923c7a22ba7e11fab15fc7afe161667f2",
+    "local/experiments/v2-pointer-call-consumers-207/headers/00540480-callables.h": "c0476562d406df2dbb32e1f364f3ce1c69066a259fb6f7d9e5b9483bea1e441e",
+    "local/experiments/v2-consumer-declarations-203/final/sources/005404e0.cpp": "8838b850f20f9e543f3b89c5c11224036a2148a283d58d948d51f9d5fc83ba4d",
+    "local/experiments/v2-consumer-declarations-203/final/headers/005404e0-globals.h": "7c464ccf57a04eeaf934c1c9e05332484e7d755930c719634481c1cf5d8ff4fb",
+    "local/experiments/v2-pointer-call-consumers-207/sources/005404e0.cpp": "a43882402f421960ae5f125cf8d873d9ebb14cfaab4174b7134441e3ccaefb30",
+    "local/experiments/v2-pointer-call-consumers-207/headers/005404e0-callables.h": "4ca9b908797c5b4d073db8632990f5ff953ef4eac73ff2285c35f465bd837752",
+    "local/experiments/v2-consumer-declarations-203/final/sources/00554530.cpp": "25db02a7efea0ffb645e8ae3c242c5f3958315730dd59f348fa4bca68b59f7cb",
+    "local/experiments/v2-consumer-declarations-203/final/headers/00554530-globals.h": "977fbf6ad9fbd92acec86f8cc26e3dfd3bd7dcc92f20f23b55a82a8a00557467",
+    "local/experiments/v2-pointer-call-consumers-207/sources/00554530.cpp": "08760ecabc09f55a0873ab7d3ec6fe8dc95a7138ecf60ec2194d8ab581627083",
+    "local/experiments/v2-pointer-call-consumers-207/headers/00554530-callables.h": "630c4962e679ce2f40ca088f5e6ce506bb6c662dab6743c6a2971db6f0655b3a",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0058f1f0.cpp": "51fa2bbe645ab6c1f25d280140be30337dbb5a8460858d0533892d719a620ad4",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0058f1f0-globals.h": "e81206f2ce5aad11871fc4c3a3236fbfc5c301914dfe5fd7408a2f5d1c1f415f",
+    "local/experiments/v2-pointer-call-consumers-207/sources/0058f1f0.cpp": "e542172f3931880296f952c9c5c5624944a64923c0655611897a7873bcfaa2a6",
+    "local/experiments/v2-pointer-call-consumers-207/headers/0058f1f0-callables.h": "7d979d4d61288720e7d010602b13229d66145e93eb616c766baee6aeffe91758",
+    "local/experiments/v2-pointer-call-consumers-207/objects/00540480.obj": "b71dc98153a94ca915f5ad92e78b24c2656447bc4f8407f93e0c335ef8f3c608",
+    "local/experiments/v2-pointer-call-consumers-207/logs/00540480-disassembly.txt": "9e540c1279e4aac669b4a0ce0991892fd6641029943d5a94eeea487c1c13cab2",
+    "local/experiments/v2-pointer-call-consumers-207/objects/005404e0.obj": "523400ea41ea4f0c77b0df012fe105ccb348b2faa3c694bfddb037de6a6080d3",
+    "local/experiments/v2-pointer-call-consumers-207/logs/005404e0-disassembly.txt": "00d78eb72144f8d284bf7899f6b444c9e549bbfad12b978829513ba2431d3f33",
+    "local/experiments/v2-pointer-call-consumers-207/objects/00554530.obj": "06c9d4aea91f0bb8ccaa189ba8bccf39efcb5ccb564b073b4c682a3d9a617625",
+    "local/experiments/v2-pointer-call-consumers-207/logs/00554530-disassembly.txt": "846aafafb0da6bcc64fca4b336924b4fcc549ce1972454d0cb14b4ac2123f6df",
+    "local/experiments/v2-pointer-call-consumers-207/objects/0058f1f0.obj": "4387203ed8ada5ae706ff67453e4b02be89e112f8915b4b1dd07ef0b4b15e619",
+    "local/experiments/v2-pointer-call-consumers-207/logs/0058f1f0-disassembly.txt": "c3c29bbd3212e3c0fc41a96faa1f2e00e728c70879b6a9af9f91108447d64559",
+    "local/experiments/v2-pointer-call-consumers-207/logs/changed-4.rsp": "3dbccdfd4360b80212d34637992bf0b393ab3d7a321a828c38595c9b2e270f60",
+    "local/experiments/v2-pointer-call-consumers-207/logs/changed-4.log": "5cd04f99954e9e47218d44d3c29d48c41d8c550b45baff79613b55062334640a",
+    "local/experiments/v2-pointer-call-consumers-207/logs/execution.json": "586e15f2ea54537d4adf49d4abdde69cd209398d8d9bc51f0501d554391fe2ce"
+  },
+  "results": [
+    {
+      "va": "00540480",
+      "name": "FUN_00540480",
+      "generated_source": "local/experiments/v2-pointer-call-consumers-207/sources/00540480.cpp",
+      "generated_source_sha256": "cbaf7e7d0cf9713ec6e8a1538a7f3d8923c7a22ba7e11fab15fc7afe161667f2",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-pointer-call-consumers-207/headers/00540480-callables.h": "c0476562d406df2dbb32e1f364f3ce1c69066a259fb6f7d9e5b9483bea1e441e",
+        "local/experiments/v2-pointer-call-consumers-207/sources/00540480.cpp": "cbaf7e7d0cf9713ec6e8a1538a7f3d8923c7a22ba7e11fab15fc7afe161667f2"
+      },
+      "forced_headers": [],
+      "frozen203_source": "local/experiments/v2-consumer-declarations-203/final/sources/00540480.cpp",
+      "frozen203_source_sha256": "233ff02213d916c100dbb307e2ddbba8399f35c9c7ccc8b458128d6a89303f06",
+      "frozen203_body_sha256": "91df9da29ebab183cdf202af29cb6c1addd85b2a54f96c954760b2935d78d429",
+      "body_unchanged": true,
+      "body_edit": null,
+      "native_decl_header": "local/experiments/v2-pointer-call-consumers-207/headers/00540480-callables.h",
+      "native_decl_header_sha256": "c0476562d406df2dbb32e1f364f3ce1c69066a259fb6f7d9e5b9483bea1e441e",
+      "original_ret_sites": [
+        {
+          "va": "00540490",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ],
+      "compiler_exit_code": 0,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "object": "local/experiments/v2-pointer-call-consumers-207/objects/00540480.obj",
+      "object_sha256": "b71dc98153a94ca915f5ad92e78b24c2656447bc4f8407f93e0c335ef8f3c608",
+      "symbols": {
+        "defined": [
+          "?FUN_00540480@@YAXII@Z"
+        ],
+        "undefined": [
+          "?DAT_006bd97c@@3P6GIII@ZA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_00540480@@YAXII@Z"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006bd97c@@3P6GIII@ZA"
+      ],
+      "disassembly": "local/experiments/v2-pointer-call-consumers-207/logs/00540480-disassembly.txt",
+      "disassembly_sha256": "9e540c1279e4aac669b4a0ce0991892fd6641029943d5a94eeea487c1c13cab2",
+      "native_ret_bytes": [
+        0
+      ]
+    },
+    {
+      "va": "005404e0",
+      "name": "FUN_005404e0",
+      "generated_source": "local/experiments/v2-pointer-call-consumers-207/sources/005404e0.cpp",
+      "generated_source_sha256": "a43882402f421960ae5f125cf8d873d9ebb14cfaab4174b7134441e3ccaefb30",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-pointer-call-consumers-207/headers/005404e0-callables.h": "4ca9b908797c5b4d073db8632990f5ff953ef4eac73ff2285c35f465bd837752",
+        "local/experiments/v2-pointer-call-consumers-207/sources/005404e0.cpp": "a43882402f421960ae5f125cf8d873d9ebb14cfaab4174b7134441e3ccaefb30"
+      },
+      "forced_headers": [],
+      "frozen203_source": "local/experiments/v2-consumer-declarations-203/final/sources/005404e0.cpp",
+      "frozen203_source_sha256": "8838b850f20f9e543f3b89c5c11224036a2148a283d58d948d51f9d5fc83ba4d",
+      "frozen203_body_sha256": "6130447d7186635a2308ffdc0ee4354206b5e1c3d4ac8ea47c79d9b1becccd70",
+      "body_unchanged": true,
+      "body_edit": null,
+      "native_decl_header": "local/experiments/v2-pointer-call-consumers-207/headers/005404e0-callables.h",
+      "native_decl_header_sha256": "4ca9b908797c5b4d073db8632990f5ff953ef4eac73ff2285c35f465bd837752",
+      "original_ret_sites": [
+        {
+          "va": "005404f0",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ],
+      "compiler_exit_code": 0,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "object": "local/experiments/v2-pointer-call-consumers-207/objects/005404e0.obj",
+      "object_sha256": "523400ea41ea4f0c77b0df012fe105ccb348b2faa3c694bfddb037de6a6080d3",
+      "symbols": {
+        "defined": [
+          "?FUN_005404e0@@YAXII@Z"
+        ],
+        "undefined": [
+          "?DAT_006bd918@@3P6GIII@ZA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_005404e0@@YAXII@Z"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006bd918@@3P6GIII@ZA"
+      ],
+      "disassembly": "local/experiments/v2-pointer-call-consumers-207/logs/005404e0-disassembly.txt",
+      "disassembly_sha256": "00d78eb72144f8d284bf7899f6b444c9e549bbfad12b978829513ba2431d3f33",
+      "native_ret_bytes": [
+        0
+      ]
+    },
+    {
+      "va": "00554530",
+      "name": "FUN_00554530",
+      "generated_source": "local/experiments/v2-pointer-call-consumers-207/sources/00554530.cpp",
+      "generated_source_sha256": "08760ecabc09f55a0873ab7d3ec6fe8dc95a7138ecf60ec2194d8ab581627083",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-pointer-call-consumers-207/headers/00554530-callables.h": "630c4962e679ce2f40ca088f5e6ce506bb6c662dab6743c6a2971db6f0655b3a",
+        "local/experiments/v2-pointer-call-consumers-207/sources/00554530.cpp": "08760ecabc09f55a0873ab7d3ec6fe8dc95a7138ecf60ec2194d8ab581627083"
+      },
+      "forced_headers": [],
+      "frozen203_source": "local/experiments/v2-consumer-declarations-203/final/sources/00554530.cpp",
+      "frozen203_source_sha256": "25db02a7efea0ffb645e8ae3c242c5f3958315730dd59f348fa4bca68b59f7cb",
+      "frozen203_body_sha256": "391bfed46e6c2be0d0fa19159fe034336960d14249d264db5e19a380b6dc82e7",
+      "body_unchanged": true,
+      "body_edit": null,
+      "native_decl_header": "local/experiments/v2-pointer-call-consumers-207/headers/00554530-callables.h",
+      "native_decl_header_sha256": "630c4962e679ce2f40ca088f5e6ce506bb6c662dab6743c6a2971db6f0655b3a",
+      "original_ret_sites": [
+        {
+          "va": "00554555",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ],
+      "compiler_exit_code": 0,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "object": "local/experiments/v2-pointer-call-consumers-207/objects/00554530.obj",
+      "object_sha256": "06c9d4aea91f0bb8ccaa189ba8bccf39efcb5ccb564b073b4c682a3d9a617625",
+      "symbols": {
+        "defined": [
+          "?FUN_00554530@@YAIXZ"
+        ],
+        "undefined": [
+          "?DAT_006bd97c@@3P6GIII@ZA",
+          "?DAT_006bd984@@3P6GII@ZA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_00554530@@YAIXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006bd97c@@3P6GIII@ZA",
+        "?DAT_006bd984@@3P6GII@ZA"
+      ],
+      "disassembly": "local/experiments/v2-pointer-call-consumers-207/logs/00554530-disassembly.txt",
+      "disassembly_sha256": "846aafafb0da6bcc64fca4b336924b4fcc549ce1972454d0cb14b4ac2123f6df",
+      "native_ret_bytes": [
+        0
+      ]
+    },
+    {
+      "va": "0058f1f0",
+      "name": "FUN_0058f1f0",
+      "generated_source": "local/experiments/v2-pointer-call-consumers-207/sources/0058f1f0.cpp",
+      "generated_source_sha256": "e542172f3931880296f952c9c5c5624944a64923c0655611897a7873bcfaa2a6",
+      "dependency_sha256": {
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+        "local/experiments/v2-pointer-call-consumers-207/headers/0058f1f0-callables.h": "7d979d4d61288720e7d010602b13229d66145e93eb616c766baee6aeffe91758",
+        "local/experiments/v2-pointer-call-consumers-207/sources/0058f1f0.cpp": "e542172f3931880296f952c9c5c5624944a64923c0655611897a7873bcfaa2a6"
+      },
+      "forced_headers": [],
+      "frozen203_source": "local/experiments/v2-consumer-declarations-203/final/sources/0058f1f0.cpp",
+      "frozen203_source_sha256": "51fa2bbe645ab6c1f25d280140be30337dbb5a8460858d0533892d719a620ad4",
+      "frozen203_body_sha256": "d63f9697ff1512a0c245a0ff8b8802e5ce121f727f766c202be4ff1e0f9e1f22",
+      "body_unchanged": false,
+      "body_edit": {
+        "original": "(**(code **)(*DAT_006ad760 + 8))(DAT_006ad760);",
+        "replacement": "(**(OriginalRelease207 *)(*DAT_006ad760 + 8))(DAT_006ad760);",
+        "call_va": "0058f201",
+        "original_bytes": "ff5108",
+        "proof": "OriginalRelease207 raw32stdcall contract from physical caller and SDKthirdslot"
+      },
+      "native_decl_header": "local/experiments/v2-pointer-call-consumers-207/headers/0058f1f0-callables.h",
+      "native_decl_header_sha256": "7d979d4d61288720e7d010602b13229d66145e93eb616c766baee6aeffe91758",
+      "original_ret_sites": [
+        {
+          "va": "0058f215",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ],
+      "compiler_exit_code": 0,
+      "compiled": true,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "object": "local/experiments/v2-pointer-call-consumers-207/objects/0058f1f0.obj",
+      "object_sha256": "4387203ed8ada5ae706ff67453e4b02be89e112f8915b4b1dd07ef0b4b15e619",
+      "symbols": {
+        "defined": [
+          "?FUN_0058f1f0@@YAIXZ"
+        ],
+        "undefined": [
+          "?DAT_006ad760@@3PAHA",
+          "?FUN_0058eba0@@YAXXZ",
+          "?FUN_005983b0@@YAXXZ"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_0058f1f0@@YAIXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006ad760@@3PAHA",
+        "?FUN_0058eba0@@YAXXZ",
+        "?FUN_005983b0@@YAXXZ"
+      ],
+      "disassembly": "local/experiments/v2-pointer-call-consumers-207/logs/0058f1f0-disassembly.txt",
+      "disassembly_sha256": "c3c29bbd3212e3c0fc41a96faa1f2e00e728c70879b6a9af9f91108447d64559",
+      "native_ret_bytes": [
+        0
+      ]
+    }
+  ],
+  "subset_undefined_names": 6,
+  "subset_undefined_references": 7,
+  "subset_undefined_symbols": {
+    "?DAT_006ad760@@3PAHA": [
+      "0058f1f0"
+    ],
+    "?DAT_006bd918@@3P6GIII@ZA": [
+      "005404e0"
+    ],
+    "?DAT_006bd97c@@3P6GIII@ZA": [
+      "00540480",
+      "00554530"
+    ],
+    "?DAT_006bd984@@3P6GII@ZA": [
+      "00554530"
+    ],
+    "?FUN_0058eba0@@YAXXZ": [
+      "0058f1f0"
+    ],
+    "?FUN_005983b0@@YAXXZ": [
+      "0058f1f0"
+    ]
+  },
+  "input_guards_before": true,
+  "input_guards_after": true,
+  "Ghidra_decompilations": 0,
+  "native_execution": false,
+  "production_or_union_changes": false,
+  "limits": [
+    "Raw callable stack/EAX contracts only; opaque state/value semantics remain unaccepted.",
+    "203 bodies retained except the exactSDK/original-proofed Release callable type; no guessed arity or convention.",
+    "Provider behavior, complete source ABI/volatile-register state, object lifetime, indirect-call initialization and original runtime fidelity remain open."
+  ]
+}
