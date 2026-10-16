@@ -9,6 +9,12 @@ FirstThunk + ordinal_index*4, независимо от положения Origi
 Индексы — обычный текст под Git, доступный `rg` и всем исполнителям.
 Правило закреплено в [AGENTS.md](../../AGENTS.md).
 
+Run221 (2026-10-16): HIGHLOW scan for readonly scalar005b24a8 finds709 operand
+sites; only683 occur in the indexed instruction spans. The26 coverage gaps are
+recorded in [readonly-scalar-relocation-gaps.json](readonly-scalar-relocation-gaps.json).
+Overlapping x86 decodes remain candidates; no function entry, instruction boundary,
+address-taking absence or whole-program data ownership is inferred from them.
+
 С 2026-10-08 полный корпус восстановления v2 (включая отдельный NE анализ)
 находится в [research/v2/binaries](../v2/binaries), адресный каталог —
 [source/catalog](../../iterations/v2/001-original-recovery/source/catalog/modules.json).

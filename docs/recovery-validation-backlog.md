@@ -1,5 +1,22 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint222 (2026-10-16):1109functionVAs+2supportobjects,445linkedunresolvednames.
+- [x]217/222: exact00590290cdecl binding resolvedactualwholearchive;1088cases/18497ABIchecks.
+- [x]218: original renderer state dataflow repaired;119consumerinstructions/416B,
+  1341totalPEinstructions,28controllednativeboundarytraces. GameC4146/fixtureC4244retained.
+- [ ]218: fulloriginalprovider/lifetime/register/fault fidelity; FUN00571630 rawdata-pointer
+  int/code* contract must be preserved when its actual owner is bound; no genericcast.
+- [x]221/222: two originalreadonlyfloat4cells, exactbits+nativeREAD!WRITEpermissions,
+  738indexedreads actualPE/Capstonechecked; existingformalbytealiasesmustsharecells later.
+- [ ]219/221:26additionalHIGHLOWsites target1.0f outsideindexedspans. Resolveinstruction
+  boundaries/controlflow before inferring absenceofaddress-taking/arrayrelationships.
+  Candidate decodes are in research/binary-index/readonly-scalar-relocation-gaps.json.
+- [ ]221: whole original.rdata relationships/indirectuses/sharedalias ownership beforeproduction.
+- [x]220: duplicate/tampered support packets rejectedbeforeanynativecommands; functions/support
+  countedseparately,actualCOFFdirectives verified, provenaliases separatedfromCRTresolution.
+- [ ]225/226: eligiblewritablescalar views005e25d0/005e25d4 stillrequireboundednative
+  zero initialization/writepermissions/sharedlayout fixture; not wholeprogramownership.
+
 Checkpoint216:1108native functions;432unresolved names/624diagnostics:
 89missingfunctions,36canonicaloutsideunion,1compiledsymbolmismatch,299dataviews,
 7printedCRTcontracts. This is candidate frontier, not complete game remainder.

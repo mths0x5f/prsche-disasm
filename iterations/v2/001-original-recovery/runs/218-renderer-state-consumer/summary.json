@@ -1,0 +1,221 @@
+{
+  "schema": 1,
+  "kind": "original-renderer-state-consumer",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "objects_compiled": 1,
+  "real_coff_objects": 1,
+  "results": [
+    {
+      "va": "00537b40",
+      "name": "FUN_00537b40",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 1,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "code": "C4146",
+          "classification": "Original unsignedNEG modulo32 index0/255; intentional defined C++ behavior."
+        }
+      ],
+      "generated_source": "local/experiments/v2-renderer-state-consumer-218/00537b40.cpp",
+      "generated_source_sha256": "76ca9f3a784cd6c03538129df1bf9859db38f3481f811d29fece4376e00722f0",
+      "dependency_sha256": {
+        "local/experiments/v2-renderer-state-consumer-218/00537b40.cpp": "76ca9f3a784cd6c03538129df1bf9859db38f3481f811d29fece4376e00722f0",
+        "local/experiments/v2-renderer-state-consumer-218/consumer218.h": "0c5478ae91a8f4a7119d8fe77c4bb2b3572ea4a1252bd081ae9fb7698970f1fe",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "frozen184_source": "local/experiments/v2-declaration-compat-184/full/00537b40.cpp",
+      "frozen184_source_sha256": "ed787305373b627f4fd7d20264fd4f0e63703d0cef9a02366d4579f0e35dffb1",
+      "object": "local/experiments/v2-renderer-state-consumer-218/objects/00537b40.obj",
+      "object_sha256": "3291be63cccc31ff2813819b427442c4f0c8593acb987a008a487250a4a932db",
+      "symbols": {
+        "defined": [
+          "?FUN_00537b40@@YAXHII@Z"
+        ],
+        "undefined": [
+          "?DAT_005de62d@@3EA",
+          "?DAT_005de630@@3DA",
+          "?DAT_005de64c@@3HA",
+          "?DAT_006a6450@@3HA",
+          "?DAT_006b4b20@@3PAIA",
+          "?DAT_006bd934@@3P6GHXZA",
+          "?DAT_006bd954@@3P6GII@ZA",
+          "?DAT_006bd97c@@3P6GIII@ZA",
+          "?DAT_006bd984@@3P6GII@ZA",
+          "?DAT_006bda08@@3IA",
+          "?FUN_005349e0@@YAPAIIPAI@Z",
+          "?FUN_00537f90@@YAEPAI@Z",
+          "?FUN_00571630@@YAXHHHPAI@Z",
+          "?FUN_00572a90@@YAPAHIIII@Z",
+          "?FUN_00572b40@@YAIHHHHHH@Z",
+          "?FUN_00572ee0@@YAHPAH@Z",
+          "?LAB_00537ce0@@3EA",
+          "?PTR_LAB_005de770@@3PAEA",
+          "?_DAT_005de784@@3PAEA",
+          "?_DAT_005de78c@@3IA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_00537b40@@YAXHII@Z"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_005de62d@@3EA",
+        "?DAT_005de630@@3DA",
+        "?DAT_005de64c@@3HA",
+        "?DAT_006a6450@@3HA",
+        "?DAT_006b4b20@@3PAIA",
+        "?DAT_006bd934@@3P6GHXZA",
+        "?DAT_006bd954@@3P6GII@ZA",
+        "?DAT_006bd97c@@3P6GIII@ZA",
+        "?DAT_006bd984@@3P6GII@ZA",
+        "?DAT_006bda08@@3IA",
+        "?FUN_005349e0@@YAPAIIPAI@Z",
+        "?FUN_00537f90@@YAEPAI@Z",
+        "?FUN_00571630@@YAXHHHPAI@Z",
+        "?FUN_00572a90@@YAPAHIIII@Z",
+        "?FUN_00572b40@@YAIHHHHHH@Z",
+        "?FUN_00572ee0@@YAHPAH@Z",
+        "?LAB_00537ce0@@3EA",
+        "?PTR_LAB_005de770@@3PAEA",
+        "?_DAT_005de784@@3PAEA",
+        "?_DAT_005de78c@@3IA"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "original_ret_bytes": [
+        0,
+        0
+      ],
+      "disassembly": "local/experiments/v2-renderer-state-consumer-218/consumer-disassembly.log",
+      "disassembly_sha256": "4b016b6c0fd89fc04da5b46ac36cc6c991a1571fbbedd5a6486f0f60975abeae"
+    }
+  ],
+  "actual_compiler_batches": 1,
+  "changed_game_TUs": 1,
+  "synthetic_fixture_TUs": 1,
+  "compiler_batch_exit_code": 0,
+  "compile_seconds": 1.7984458999708295,
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "compiler_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-renderer-state-consumer-218\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-renderer-state-consumer-218\\00537b40.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-renderer-state-consumer-218\\call-boundary-fixture.cpp"
+  ],
+  "compiler_log": "local/experiments/v2-renderer-state-consumer-218/compile.log",
+  "compiler_log_sha256": "0f3a4374000068d46d3739e5290177fa05657f19b0faf0cd4c50ce60cfa22dd9",
+  "input_sha256": {
+    "scripts/research/experiment-v2-renderer-state-218.py": "3ece606f90d829d45edd8a8e5545ab5856da9e43455580c89519dd1b51185352",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "local/experiments/v2-renderer-state-consumer-218/captured-compile-driver.py": "e193300083ccd339f8449168e12db87f6e766b6e6c955cd3038d6916c6f12734",
+    "local/experiments/v2-declaration-compat-184/full/00537b40.cpp": "ed787305373b627f4fd7d20264fd4f0e63703d0cef9a02366d4579f0e35dffb1",
+    "local/experiments/v2-declaration-compat-184/full/00537b40-globals.h": "e0ea99f246d44d72e5245bd0c600f9342005b9f3ef92e905c4671fb818c2c592",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "iterations/v2/001-original-recovery/runs/207-pointer-call-consumers/summary.json": "afe098c06833670d4a9ae9133d516192018d76c2d342f026e43d6505da1f3bd1",
+    "iterations/v2/001-original-recovery/runs/207-pointer-call-consumers/proof-before-compile.json": "1b876b22cd5e45cb1ad228493827cd0da350aeac3c25eb4b49dcb3c287f609f6",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/game/Drivers/opengl1/opengl1z.dll": "510fc1d2af0016cb1de25bac702d79bc430945bbbd3b041f694e40330ca639ff",
+    "research/v2/binaries/opengl1z.dll-510fc1d2af00/functions.jsonl": "4e1c20c1bc53c770d732230aa0096182ce92bda292b7804128807a3a880b50d4",
+    "research/v2/binaries/opengl1z.dll-510fc1d2af00/disassembly.asm": "9be430b1355a9a809f6abb6d8bdd520878aadd29259e4c52ecb30eeddff6ddc4",
+    "local/game/Drivers/opengl3/opengl3z.dll": "5a57e6c244ea40ea90d69cf13bd3b79144ebca0a980f1d7cb87af48197581f6f",
+    "research/v2/binaries/opengl3z.dll-5a57e6c244ea/functions.jsonl": "abb0fb4db6c5bbb59c8d97f1822cda0d327508095a8d7c4e270775c679d1e2f8",
+    "research/v2/binaries/opengl3z.dll-5a57e6c244ea/disassembly.asm": "7c3ceff08bb54df01a87651001f6543a1108b2f6a7a640fcacdf3ce662bb4221",
+    "local/game/Drivers/glide3x/voodoo2z.dll": "1eefad7315ab3fc6546bfc8625dd9c9492764867898b73f6c6346c5f11d684a3",
+    "research/v2/binaries/voodoo2z.dll-1eefad7315ab/functions.jsonl": "b05e47639f8940870c5343459ca8433b3dcb358ffe256dd2774d93fc3e6bfabc",
+    "research/v2/binaries/voodoo2z.dll-1eefad7315ab/disassembly.asm": "be06b700d6d7a96e3f385477cebc3b8f9d2e5eb14a8695c1f828937621b0e233",
+    "local/experiments/v2-renderer-state-consumer-218/consumer218.h": "0c5478ae91a8f4a7119d8fe77c4bb2b3572ea4a1252bd081ae9fb7698970f1fe",
+    "local/experiments/v2-renderer-state-consumer-218/00537b40.cpp": "76ca9f3a784cd6c03538129df1bf9859db38f3481f811d29fece4376e00722f0",
+    "local/experiments/v2-renderer-state-consumer-218/call-boundary-fixture.cpp": "2effc74247843fcc7d9165a50fee2c8292cb54c60f85f121555df06e7f73030c",
+    "iterations/v2/001-original-recovery/runs/218-renderer-state-consumer/proof-before-compile.json": "d07c703f9fa7912eb3b6a80beddca6d9eafe33840ba4af2e0558e61b4f5d351b",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-renderer-state-consumer-218/objects/00537b40.obj": "3291be63cccc31ff2813819b427442c4f0c8593acb987a008a487250a4a932db",
+    "local/experiments/v2-renderer-state-consumer-218/objects/call-boundary-fixture.obj": "0dd5ec7034b91c0463457b029833f94daefed7b61c5c3e71b303c6183b969700",
+    "local/experiments/v2-renderer-state-consumer-218/call-boundary-fixture.exe": "028de338303bf6ccf272cbc4ffe0a1295febef3cd6954a4ccfc706b64b5fb021",
+    "local/experiments/v2-renderer-state-consumer-218/compile.log": "0f3a4374000068d46d3739e5290177fa05657f19b0faf0cd4c50ce60cfa22dd9",
+    "local/experiments/v2-renderer-state-consumer-218/consumer-disassembly.log": "4b016b6c0fd89fc04da5b46ac36cc6c991a1571fbbedd5a6486f0f60975abeae",
+    "local/experiments/v2-renderer-state-consumer-218/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-renderer-state-consumer-218/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-renderer-state-consumer-218/compile.execution.json": "abfe5bf8019e5fe22344aaa2b535f739b9a844dcf21827f37d4d5f6efaf154de",
+    "local/experiments/v2-renderer-state-consumer-218/consumer-disassembly.execution.json": "577bbd77382a41d19d2454d33964b70230e3b401b2b068b94fad7a75d38d46d3",
+    "local/experiments/v2-renderer-state-consumer-218/fixture-link.execution.json": "76d2b3e4c4bac8200b90b3571a131aed639724f4b655d401b13c40f0934724c7",
+    "local/experiments/v2-renderer-state-consumer-218/fixture-native.execution.json": "2fc1c47265cc24d433ced9965f93053cb5d1f6d51912a8f7ac5d6aa26498d1e8"
+  },
+  "input_guards_before": true,
+  "input_guards_after": true,
+  "original_instruction_count": 119,
+  "original_bytes": 416,
+  "ownership_preflight": {
+    "canonical_exact_or_interior": 0,
+    "WIP": 0
+  },
+  "compile_warnings": {
+    "game": [
+      "C4146 original modulo32 unsignedNEG"
+    ],
+    "fixture": [
+      "C4244 controlled char0x80 narrow; lowbyte fixture input"
+    ]
+  },
+  "captured_compile_driver": "local/experiments/v2-renderer-state-consumer-218/captured-compile-driver.py",
+  "resumed_existing_successful_compile": true,
+  "recompilations": 0,
+  "Ghidra_decompilations": 0,
+  "production_or_union_changes": false,
+  "fixture": {
+    "native_exit_code": 0,
+    "cases": 28,
+    "seconds": 0.03160120011307299,
+    "executable": "local/experiments/v2-renderer-state-consumer-218/call-boundary-fixture.exe",
+    "executable_sha256": "028de338303bf6ccf272cbc4ffe0a1295febef3cd6954a4ccfc706b64b5fb021",
+    "scope": "Actual corrected consumer; controlled call-boundary trace witnesses only, not provider/game implementations.16 fast12 fallback traces; both indices, savedtable !=10, rawhighbit arguments, signedWORD fields, bufferend, about6/7, flags and restore paths.",
+    "full_original_or_provider_fidelity_claimed": false
+  },
+  "limits": [
+    "FUN_00571630 native declaration int replaces erroneous code*: same proven original stack32 payload but native mangled-symbol binding required; no bridge supplied.",
+    "Extern view/global overlaps require canonical data owners/aliases; no allocation supplied.",
+    "Full callees/provider behavior, lifetime/concurrency, original volatile-register/fault and whole-game fidelity remain open."
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "schema": 1,
+  "kind": "proven-link-contract",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "new_function_count": 0,
+  "support_objects": [
+    {
+      "id": "cdecl-binding-00590290",
+      "generated_source": "local/experiments/v2-proven-cdecl-binding-217/final/sources/cdecl_binding_00590290.cpp",
+      "generated_source_sha256": "12371d5b23aefb70b4d9fee7bed35ff51d03c3b889ca52817fb012a86e408a27",
+      "object": "local/experiments/v2-proven-cdecl-binding-217/final/objects/cdecl_binding_00590290.obj",
+      "object_sha256": "4eb856f7b3a0e8e27ab348e63debd30e766bf83bd67fd82414d99e14958a3f30",
+      "dependency_sha256": {
+        "local/experiments/v2-proven-cdecl-binding-217/final/sources/cdecl_binding_00590290.cpp": "12371d5b23aefb70b4d9fee7bed35ff51d03c3b889ca52817fb012a86e408a27"
+      },
+      "symbols": {
+        "defined": [],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "compiler_flags": [
+        "/nologo",
+        "/c",
+        "/Od",
+        "/Oy-",
+        "/Gy",
+        "/GS-",
+        "/GR-",
+        "/EHs-c-",
+        "/TP",
+        "/W4",
+        "/utf-8",
+        "/diagnostics:column",
+        "/MP6",
+        "/Zl"
+      ],
+      "directive": "/alternatename:?FUN_00590290@@YAIII@Z=?FUN_00590290@@YAIXZ",
+      "function_count": 0
+    }
+  ],
+  "aliases": [
+    {
+      "from": "?FUN_00590290@@YAIII@Z",
+      "to": "?FUN_00590290@@YAIXZ",
+      "va": "00590290",
+      "support_object_id": "cdecl-binding-00590290",
+      "directive": "/alternatename:?FUN_00590290@@YAIII@Z=?FUN_00590290@@YAIXZ",
+      "proof": {
+        "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+        "original_body_hex": "33c0c3",
+        "cached_body_hex": "558bec33c05dc3",
+        "cached_object": "local/experiments/v2-build-corpus-181/00590290.obj",
+        "cached_object_sha256": "8cd9ca4b82a4c807b6fa658fd8295be23e8f94a216aceb3f3fc9c559b994ce04",
+        "caller": "00565cd0",
+        "callsite": "00565d07",
+        "caller_passed_bytes": 8,
+        "caller_cleanup_bytes": 8,
+        "callee_ret_pop_bytes": 0,
+        "unused_stack_offsets": [
+          4,
+          8
+        ],
+        "cached_inputs": [],
+        "original_call_evidence": "local/experiments/v2-direct-call-contracts-211/original-call-evidence.json",
+        "original_call_evidence_sha256": "b9039a13f982ff539d87b9b2077cbd7697b6c74c6f9ba178990e5e256052ddeb",
+        "native_fixture_cases": 1088,
+        "native_checks": 18497,
+        "typed_calls": 1088,
+        "cached_raw_calls": 1088,
+        "original_asm_reference_calls": 1088,
+        "native_exit": 0,
+        "boundary": "One exact raw32 cdecl edge only; no generic alias, implementation owner replacement, or full caller fidelity claim"
+      }
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-proven-cdecl-binding-217.py": "67b703a20a8cc5260eaf3905a5d0838b07ea8219ef7d07bcd333dba1304aaaa3",
+    "iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json": "8351abe2a3511d18ea1ef805e7aed8c3de9b8d1e721b5907fa9fa8bf689fdb2f",
+    "local/experiments/v2-build-corpus-181/00590290.obj": "8cd9ca4b82a4c807b6fa658fd8295be23e8f94a216aceb3f3fc9c559b994ce04",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590290.cpp": "b511497d7afeb9dcd59c62f381c659dd7e2c80eb0230202ed8f9b65289365699",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "iterations/v2/001-original-recovery/runs/211-direct-call-contracts/summary.json": "a66e3d28da6f6d89470d3a20fc57e6dc19f36e74d8cb4b80265db0f4864297b0",
+    "local/experiments/v2-direct-call-contracts-211/original-call-evidence.json": "b9039a13f982ff539d87b9b2077cbd7697b6c74c6f9ba178990e5e256052ddeb",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-proven-cdecl-binding-217/final/sources/cdecl_binding_00590290.cpp": "12371d5b23aefb70b4d9fee7bed35ff51d03c3b889ca52817fb012a86e408a27",
+    "local/experiments/v2-proven-cdecl-binding-217/final/sources/native_fixture.cpp": "1bb173d08137185832725a21a62d01432d180561efe4fbe806e3189da61a7585"
+  },
+  "ownership": {
+    "canonical_exact_or_interior": [],
+    "wip_implementations": [],
+    "cached_candidate_reused_without_replacement": true
+  },
+  "cached_target": {
+    "va": "00590290",
+    "cohort": "ordinary",
+    "object": "local/experiments/v2-build-corpus-181/00590290.obj",
+    "object_sha256": "8cd9ca4b82a4c807b6fa658fd8295be23e8f94a216aceb3f3fc9c559b994ce04",
+    "generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590290.cpp",
+    "generated_source_sha256": "b511497d7afeb9dcd59c62f381c659dd7e2c80eb0230202ed8f9b65289365699",
+    "include_closure": [
+      "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h",
+      "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590290.cpp"
+    ],
+    "symbols": {
+      "defined": [
+        "?FUN_00590290@@YAIXZ"
+      ],
+      "undefined": [],
+      "common": [],
+      "weak": []
+    }
+  },
+  "cached_body_sections": [
+    {
+      "name": ".drectve",
+      "bytes": "2020202f44454641554c544c49423a224c4942434d5422202f44454641554c544c49423a224f4c444e414d45532220",
+      "relocations": 0
+    },
+    {
+      "name": ".debug$S",
+      "bytes": "04000000f1000000900000005200011100000000463a5c636c617564655c706f72736368652064697361736d5c6c6f63616c5c6578706572696d656e74735c76322d6275696c642d636f727075732d3138315c30303539303239302e6f626a003a003c1101220000070013002c009d89000013002c009d8900004d6963726f736f667420285229204f7074696d697a696e6720436f6d70696c657200",
+      "relocations": 0
+    },
+    {
+      "name": ".text$mn",
+      "bytes": "558bec33c05dc3",
+      "relocations": 0
+    },
+    {
+      "name": ".chks64",
+      "bytes": "23076615271abf1ad8087da619359329adf5734cb19952ef0000000000000000",
+      "relocations": 0
+    }
+  ],
+  "actual_support_directive": "   /alternatename:?FUN_00590290@@YAIII@Z=?FUN_00590290@@YAIXZ ",
+  "compiler_response": "local/experiments/v2-proven-cdecl-binding-217/final/logs/native.rsp",
+  "compiler_response_sha256": "15fff51f3062a5b68e1ba8944831b44a7dad35820082c5ec16fe58fb824c5653",
+  "native_commands": {
+    "compile": {
+      "command": [
+        "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+        "@F:\\claude\\porsche disasm\\local\\experiments\\v2-proven-cdecl-binding-217\\final\\logs\\native.rsp"
+      ],
+      "observed_exit_code": 0,
+      "seconds": 1.229856,
+      "log": "local/experiments/v2-proven-cdecl-binding-217/final/logs/compile.log",
+      "log_sha256": "6c009d5d65373b0fe3dc1daf52592918b0f6dc17d4bb051e9055a447f558fa69"
+    },
+    "link": {
+      "command": [
+        "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+        "/nologo",
+        "/MACHINE:X86",
+        "/SUBSYSTEM:CONSOLE",
+        "/ENTRY:entry",
+        "/NODEFAULTLIB",
+        "/INCREMENTAL:NO",
+        "/OPT:NOREF",
+        "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-proven-cdecl-binding-217\\final\\native_fixture.exe",
+        "/MAP:F:\\claude\\porsche disasm\\local\\experiments\\v2-proven-cdecl-binding-217\\final\\native_fixture.map",
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-proven-cdecl-binding-217\\final\\objects\\native_fixture.obj",
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-proven-cdecl-binding-217\\final\\objects\\cdecl_binding_00590290.obj",
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-build-corpus-181\\00590290.obj",
+        "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib"
+      ],
+      "observed_exit_code": 0,
+      "seconds": 0.50184,
+      "log": "local/experiments/v2-proven-cdecl-binding-217/final/logs/link.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native": {
+      "command": [
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-proven-cdecl-binding-217\\final\\native_fixture.exe"
+      ],
+      "observed_exit_code": 0,
+      "seconds": 0.053541,
+      "log": "local/experiments/v2-proven-cdecl-binding-217/final/logs/native.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "fixture": {
+    "source": "local/experiments/v2-proven-cdecl-binding-217/final/sources/native_fixture.cpp",
+    "source_sha256": "1bb173d08137185832725a21a62d01432d180561efe4fbe806e3189da61a7585",
+    "object": "local/experiments/v2-proven-cdecl-binding-217/final/objects/native_fixture.obj",
+    "object_sha256": "663b22a4b3a21ff29eaaa0b12157092ee91156d97cb0ba8c3bc3ac934b42f7d2",
+    "symbols": {
+      "defined": [
+        "?cases@@3IC",
+        "?checks@@3IC",
+        "?clean_sp@@3IC",
+        "?failures@@3IC",
+        "?one_case@@YAXPAX0II@Z",
+        "?original_reference@@YAXXZ",
+        "?raw_calls@@3IC",
+        "?raw_edge@@YAIPAXII@Z",
+        "?require@@YAX_N@Z",
+        "?save_bp@@3IC",
+        "?save_bx@@3IC",
+        "?save_di@@3IC",
+        "?save_si@@3IC",
+        "?save_sp@@3IC",
+        "?seen_bp@@3IC",
+        "?seen_bx@@3IC",
+        "?seen_di@@3IC",
+        "?seen_eax@@3IC",
+        "?seen_si@@3IC",
+        "?seen_sp@@3IC",
+        "?typed_calls@@3IC",
+        "?typed_edge@@YAIII@Z",
+        "_entry"
+      ],
+      "undefined": [
+        "?FUN_00590290@@YAIII@Z",
+        "?FUN_00590290@@YAIXZ",
+        "__imp__ExitProcess@4"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "exe": "local/experiments/v2-proven-cdecl-binding-217/final/native_fixture.exe",
+    "exe_sha256": "c3a8e550926a96e357d15a649cd4a83a688228be1bd74d944163f050d0308f6e",
+    "map": "local/experiments/v2-proven-cdecl-binding-217/final/native_fixture.map",
+    "map_sha256": "f9b82eeb7f8bd5bc6c7650d977dada353114a5d83e1a2728b053c5335a39fe9d",
+    "cases": 1088,
+    "checks": 18497
+  },
+  "elapsed_seconds": 1.991,
+  "limits": [
+    "Single weak-link directive, no game body or added function.",
+    "Native private fixture uses actual cached COFF plus original assembly only as a test reference. No production/wholeunion link.",
+    "Full caller algorithm/flags/provider/nativegame fidelity remains backlog. Alias cannot be generalized to other addresses/signatures."
+  ]
+}

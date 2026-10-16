@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "summary_sha256": "b99cdfdb324c308e0f2a4843ec554521f4bf5f21967499e813c774d7b9501762",
+  "audit_script_sha256": "cf0afdf64960ddd4253394d37c37c511b3a78ea9c94eeeb04327817f5640298f",
+  "input_pins_checked": 43,
+  "original_PE_instructions_verified": 1341,
+  "consumer_instructions": 119,
+  "consumer_bytes": 416,
+  "real_i386_game_COFF": 1,
+  "compiler_batches": 1,
+  "recompilations": 0,
+  "native_RET0_count": 1,
+  "original_RET0_paths": 2,
+  "native_fixture_cases": 28,
+  "warnings": {
+    "game": "C4146 original modulo32 NEG",
+    "fixture": "C4244 deliberate char0x80"
+  },
+  "remaining": [
+    "FUN_00571630 int-vs-code* native symbol binding; original data-pointer payload proven.",
+    "Overlapping scalar/indexed data owner aliases; extern views are not allocations.",
+    "Full original/provider/lifetime/concurrency/fault/register fidelity not claimed."
+  ]
+}

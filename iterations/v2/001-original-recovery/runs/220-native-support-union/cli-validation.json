@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "mode": "negative CLI validation before library/link execution",
+  "baseline": "iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json",
+  "valid_support_packet": "iterations/v2/001-original-recovery/runs/217-proven-cdecl-binding/summary.json",
+  "cases": [
+    {
+      "id": "repeated-support-summary",
+      "command": "py -3 scripts/research/audit-v2-native-union-220.py --baseline-union-summary iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json --support-summary iterations/v2/001-original-recovery/runs/217-proven-cdecl-binding/summary.json --support-summary iterations/v2/001-original-recovery/runs/217-proven-cdecl-binding/summary.json --output local/experiments/v2-support-cli-220/case-repeated-output --run iterations/v2/001-original-recovery/runs/220-native-support-union/case-repeated-run",
+      "exit_code": 1,
+      "expected_exception": "AssertionError: Repeated support summary path",
+      "output_files": 0,
+      "run_files": 0,
+      "library_link_execution": 0,
+      "native_commands": 0
+    },
+    {
+      "id": "tampered-directive",
+      "support_summary": "local/experiments/v2-support-cli-220/tampered-20261016a/summary.json",
+      "support_summary_sha256": "701304aff46012b35c83b4fde59e8f8afb00072c366c2487532337097e08058c",
+      "command": "py -3 scripts/research/audit-v2-native-union-220.py --baseline-union-summary iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json --support-summary local/experiments/v2-support-cli-220/tampered-20261016a/summary.json --output local/experiments/v2-support-cli-220/case-tampered-20261016a-output --run iterations/v2/001-original-recovery/runs/220-native-support-union/case-tampered-20261016a-run",
+      "exit_code": 1,
+      "expected_exception": "AssertionError: COFF directives do not match proven packet aliases",
+      "output_files": 0,
+      "run_files": 0,
+      "library_link_execution": 0,
+      "native_commands": 0
+    },
+    {
+      "id": "duplicate-support-id",
+      "command": "py -3 scripts/research/audit-v2-native-union-220.py --baseline-union-summary iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json --support-summary local/experiments/v2-support-cli-220/duplicate-20261016a/a/summary.json --support-summary local/experiments/v2-support-cli-220/duplicate-20261016a/b/summary.json --output local/experiments/v2-support-cli-220/duplicate-20261016a/output --run iterations/v2/001-original-recovery/runs/220-native-support-union/case-duplicate-id-20261016a-run",
+      "exit_code": 1,
+      "expected_exception": "AssertionError: Duplicate or self-referencing alias",
+      "output_files": 0,
+      "run_files": 0,
+      "library_link_execution": 0,
+      "native_commands": 0
+    }
+  ],
+  "logs": [],
+  "assertions": {
+    "no_lib_or_dll_created": true,
+    "no_execution_json_created": true,
+    "support_objects_not_counted_as_functions": true,
+    "actual_coff_directive_check_reached_for_tampered_case": true,
+    "original_readonly_data_kind_remains_explicit": true
+  }
+}

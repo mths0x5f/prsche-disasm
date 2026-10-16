@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "run": 225,
+  "kind": "writable-scalar-selection",
+  "mode": "read-only navigation",
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json": "8351abe2a3511d18ea1ef805e7aed8c3de9b8d1e721b5907fa9fa8bf689fdb2f",
+    "iterations/v2/001-original-recovery/runs/216-sound-consumer-union/validation.json": "5bbe6b1292e98f4ad53481f4ee4c2021c29be863d50eb0efa5ec06f7a34cd7dd"
+  },
+  "selection_rules": [".data", "writable", "initialized zero int/uint4", "VA 4-byte aligned", "all exact refs indexed MEM4", "no in-cell HIGHLOW", "no partial/address-taken/pointer/array/gap", "no canonical/WIP/native overlapping view"],
+  "original_pe_section": {"name": ".data", "flags": "0xc0000040", "readable": true, "writable": true, "executable": false, "raw_offset": "0x1c0000"},
+  "eligible": [
+    {
+      "va": "005e25d0",
+      "symbol": "?DAT_005e25d0@@3HA",
+      "type": "int32",
+      "bytes_hex": "00000000",
+      "alignment": 4,
+      "highlow_in_cell": 0,
+      "exact_indexed_refs": 12,
+      "reads": 4,
+      "writes": 8,
+      "ref_instructions": [
+        "0059261e MOV dword ptr [0x005e25d0],EBX",
+        "005926ac MOV ECX,dword ptr [0x005e25d0]",
+        "005926d9 MOV dword ptr [0x005e25d0],ECX",
+        "005926fd MOV dword ptr [0x005e25d0],EBX",
+        "0059278b MOV ECX,dword ptr [0x005e25d0]",
+        "005927ab MOV dword ptr [0x005e25d0],ECX",
+        "005927d9 MOV dword ptr [0x005e25d0],ECX",
+        "0059288b MOV ECX,dword ptr [0x005e25d0]",
+        "0059289b MOV dword ptr [0x005e25d0],ECX",
+        "0059292c MOV dword ptr [0x005e25d0],ECX",
+        "005929b1 MOV ECX,dword ptr [0x005e25d0]",
+        "005929bb MOV dword ptr [0x005e25d0],ECX"
+      ],
+      "overlap_views": [],
+      "canonical_or_wip_definitions": []
+    },
+    {
+      "va": "005e25d4",
+      "symbol": "?DAT_005e25d4@@3IA",
+      "type": "uint32",
+      "bytes_hex": "00000000",
+      "alignment": 4,
+      "highlow_in_cell": 0,
+      "exact_indexed_refs": 3,
+      "reads": 1,
+      "writes": 2,
+      "ref_instructions": [
+        "00592946 MOV dword ptr [0x005e25d4],EDI",
+        "00592952 MOV ESI,dword ptr [0x005e25d4]",
+        "00592965 MOV dword ptr [0x005e25d4],EDI"
+      ],
+      "overlap_views": [],
+      "canonical_or_wip_definitions": []
+    }
+  ],
+  "rejected_same_filter_counts": {
+    "candidates_before_reference_proof": 22,
+    "eligible": 2,
+    "no_indexed_direct_reference": 7,
+    "immediate_overlap_or_unproven_decode": 13
+  },
+  "boundary": "Original indexed instruction evidence only; all formal aliases, relative relationships, and storage ownership remain deferred."
+}

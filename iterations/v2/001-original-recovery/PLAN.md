@@ -1,5 +1,21 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint2026-10-16 Run222:1109distinct functionVAs +2supportobjects =1111archive
+members/1260938B. Actuallink445names/639diagnostics, noEXE/DLL.
+Four dependencies closed (00537b40,00590290binding,2readonlyscalarcells);17newdependencies
+exposed by218. Linkedfrontier93missingFUN/36canonicaloutside/309data/7printedCRT.
+1108symbol snapshots reused,3new objects read,6840pinsPASS,0compilations inunion.
+217 exactcdecl binding fixture1088cases/18497checks PASS;218 actualconsumer28traces,
+3decompiledataflowlosses fixed,1341PEinstructions PASS.221 readonlydata bits/nativePASS.
+26unindexedHIGHLOWoperand sites recorded in research/binary-index/readonly-scalar-relocation-gaps.json;
+no instructionboundary/wholeprogramownership inferred. Production173 unchanged476full+6partial.
+Active:223callee00565ea0 (abi_analysis_193);224canonicalowner census (locale_resume);
+225writablescalar selection completed,2eligiblecells; root226boundedwritabledata+integration.
+Next: accept223/226, reuse222archiveinputs; review224 beforecanonicallinking.
+Deferredprovider/dataalias/lifetime/fault/register checks remainbacklog, no guessedbehaviors.
+
+Historical checkpoint216:
+
 Checkpoint 2026-10-15, Run216: **1108 разных native candidate VA** (+14 к206),
 959ordinary+149leaf,0overlaps. Actual archive1256244B; raw443names/827refs,
 actual432unresolved names/624diagnostics, EXE/DLL нет.
