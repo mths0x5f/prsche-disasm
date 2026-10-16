@@ -1,0 +1,53 @@
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\include\porsche\application_audio_lifecycle.hpp:7:extern std::uint32_t application_audio_auxiliary_006568e4;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_bootstrap_probe.cpp:33:    std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_bootstrap_probe.cpp:113:        for(unsigned i=0;i<16;++i){if(i)std::cout<<',';std::cout<<ptr(porsche::heaps_006b4f20[i]);}
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_audio_lifecycle_probe.cpp:58: record(10,a,b,c,d,e);if(mutation&1)application_audio_auxiliary_006568e4=0x76543210;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_audio_lifecycle_probe.cpp:84:  application_audio_auxiliary_006568e4=v[9];application_audio_active_005d1734=0x55555555;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_audio_lifecycle_probe.cpp:120:   <<application_audio_auxiliary_006568e4<<','<<application_audio_active_005d1734<<','
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:23:OriginalHeap* heaps_006b4f20[16]{};
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:35:    if(index<16)heaps_006b4f20[index]=reinterpret_cast<OriginalHeap*>(0x03600400+index*0x40);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:55:        std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:61:            porsche::heaps_006b4f20[3+i]=reinterpret_cast<porsche::OriginalHeap*>(0x03600400+(3+i)*0x40);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:70:                 <<",\"heap0\":"<<ptr(porsche::heaps_006b4f20[0])
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:71:                 <<",\"heap1\":"<<ptr(porsche::heaps_006b4f20[1])
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\application_heap_init_probe.cpp:72:                 <<",\"heap_at\":"<<ptr(porsche::heaps_006b4f20[index])
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\include\porsche\formatter_cleanup.hpp:35:extern const std::uint8_t* formatter_cleanup_handle_table_006c01e0[];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_cleanup_probe.cpp:14:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[2]={handle_bank,nullptr};
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_lowio_probe.cpp:37:    for (unsigned i = 0; i < 64; ++i) formatter_cleanup_handle_table_006c01e0[i] = nullptr;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_lowio_probe.cpp:47:        formatter_cleanup_handle_table_006c01e0[i] = pool[i];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_lowio_probe.cpp:60:        const auto* p = formatter_cleanup_handle_table_006c01e0[i];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_lowio_probe.cpp:69:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[64]{};
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_lowio_probe.cpp:87:    if (id == 17 && mutation == 4) formatter_cleanup_handle_table_006c01e0[0] = pool[1];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_lowio_probe.cpp:118:    if (mutation == 4) formatter_cleanup_handle_table_006c01e0[0] = pool[1];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\include\porsche\heap.hpp:22:extern OriginalHeap* heaps_006b4f20[16];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_output_probe.cpp:18:void swap_bank() {porsche::formatter_cleanup_handle_table_006c01e0[(p[kID]&63u)>>5]=reinterpret_cast<const std::uint8_t*>(B+0x3000);}
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_output_probe.cpp:39:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[64]{};
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_output_probe.cpp:52:    return get(reinterpret_cast<U>(formatter_cleanup_handle_table_006c01e0[id>>5])+(id&31u)*36u);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_output_probe.cpp:85:        for(auto& bank:formatter_cleanup_handle_table_006c01e0)bank=nullptr;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_output_probe.cpp:86:        formatter_cleanup_handle_table_006c01e0[0]=reinterpret_cast<const std::uint8_t*>(B+0x1000);formatter_cleanup_handle_table_006c01e0[1]=reinterpret_cast<const std::uint8_t*>(B+0x2000);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_output_probe.cpp:104:            formatter_text_decrement_005b2254==decrement_b?1:0,reinterpret_cast<U>(formatter_cleanup_handle_table_006c01e0[0]),reinterpret_cast<U>(formatter_cleanup_handle_table_006c01e0[1]),hex(reinterpret_cast<void*>(B),0x10000).c_str());
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\formatter_runtime_storage_probe.cpp:40:    bytes("handle_table", formatter_cleanup_handle_table_006c01e0, 64 * 4);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\heap_probe.cpp:65:        std::fill(std::begin(heaps_006b4f20),std::end(heaps_006b4f20),nullptr); allocation_failure_0069cb00=nullptr;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\application_audio_lifecycle.cpp:8:std::uint32_t application_audio_auxiliary_006568e4 = 0;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\application_audio_lifecycle.cpp:38:    if(application_audio_auxiliary_006568e4) {
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\application_audio_lifecycle.cpp:39:        release(application_audio_auxiliary_006568e4);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\application_audio_lifecycle.cpp:40:        application_audio_auxiliary_006568e4=0;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\application_heap_init.cpp:19:    heaps_006b4f20[1]=heaps_006b4f20[0];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\application_heap_init.cpp:26:    while(index<16 && heaps_006b4f20[index])++index;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_cleanup.cpp:51:        : formatter_cleanup_handle_table_006c01e0[bank];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_cleanup.cpp:123:                          : formatter_cleanup_handle_table_006c01e0[bank]);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_lowio.cpp:14:    return const_cast<std::uint8_t*>(formatter_cleanup_handle_table_006c01e0[index]);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_lowio.cpp:51:    formatter_cleanup_handle_table_006c01e0[0] = first;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_lowio.cpp:70:                formatter_cleanup_handle_table_006c01e0[index] = allocation;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_lowio.cpp:126:            formatter_cleanup_handle_table_006c01e0[index] = allocation;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_output.cpp:11:    return const_cast<std::uint8_t*>(formatter_cleanup_handle_table_006c01e0[index])+(id&31u)*36u;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_output.cpp:60:    auto* const bank_cell=formatter_cleanup_handle_table_006c01e0+index;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_runtime_storage.cpp:33:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[64]{};
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\formatter_runtime_storage.cpp:46:static_assert(sizeof(formatter_cleanup_handle_table_006c01e0) == 64 * sizeof(void*));
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:7:OriginalHeap* heaps_006b4f20[16];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:43:    const auto* heap=heaps_006b4f20[flags&15];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:72:    auto* heap=heaps_006b4f20[flags&15];
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:131:    auto* heap=heaps_006b4f20[b->flags&15]; auto* lock=heap->lock;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:149:    return static_cast<std::int32_t>(heaps_006b4f20[flags&15]->suffix);
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:181:    auto* heap=heaps_006b4f20[b->flags&15]; auto* lock=heap->lock;
+F:\claude\porsche disasm\iterations\v2\001-original-recovery\source\recovered\Porsche.exe\heap.cpp:217:    auto* heap=at<OriginalHeap>(address(memory)+16); heaps_006b4f20[index&15]=heap;

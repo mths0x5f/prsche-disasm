@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "kind": "original-writable-data",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "functions_added": 0,
+  "data_symbols": 6,
+  "physical_data_cells": 6,
+  "deferred": {
+    "0065b928": "existing application_core_address_0065b928 WIP address view and two writes; bind canonical owner first",
+    "006c0508": [
+      "005a9de1",
+      "005a9e0a",
+      "005a9e1c",
+      "005a9e29"
+    ]
+  },
+  "actual_compiler_batches": 1,
+  "actual_compiled_TUs": 2,
+  "compiled": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/Zl",
+      "/W4",
+      "/utf-8",
+      "/MP6",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-250\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\250-writable-scalar-batch\\original_scalars.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\250-writable-scalar-batch\\scalar_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 1.578917,
+    "log": "local/experiments/v2-writable-scalars-250/compile.log",
+    "log_sha256": "f0f9196fc3a85aded697f5604e03c5a5dee98bca5bf8cdb477eac553227d118a"
+  },
+  "fixture_link": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-250\\scalar_fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-250\\objects\\original_scalars.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-250\\objects\\scalar_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.368059,
+    "log": "local/experiments/v2-writable-scalars-250/fixture-link.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-250\\scalar_fixture.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.026918,
+    "log": "local/experiments/v2-writable-scalars-250/fixture-native.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "fixture_executable": "local/experiments/v2-writable-scalars-250/scalar_fixture.exe",
+  "fixture_executable_sha256": "d2d1cbc0e1c14148a9eeec37002c4e265f8a39e6928bec5133ae126164d18041",
+  "support_objects": [
+    {
+      "id": "writable-virtual-zero-cells-250",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "generated_source": "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/original_scalars.cpp",
+      "generated_source_sha256": "46180997ede007a969748bbc9129e4e46e857c216578486cf33b42be6bb5fb74",
+      "object": "local/experiments/v2-writable-scalars-250/objects/original_scalars.obj",
+      "object_sha256": "59b801c2fa4eac97d8f1692419682ace6201fc13bffe42e55b97fd9461c4ba79",
+      "dependency_sha256": {
+        "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/original_scalars.cpp": "46180997ede007a969748bbc9129e4e46e857c216578486cf33b42be6bb5fb74"
+      },
+      "symbols": {
+        "defined": [
+          "?DAT_00656864@@3HA",
+          "?DAT_00656ac0@@3HA",
+          "?DAT_00690848@@3HA",
+          "?DAT_00699c84@@3HA",
+          "?DAT_00699fe0@@3IA",
+          "?DAT_006a6450@@3HA"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "storage_sections": [
+        {
+          "name": ".ogw$zb",
+          "bytes": "000000000000000000000000000000000000000000000000",
+          "flags": "c0300040",
+          "relocations": 0,
+          "cells": [
+            {
+              "va": "00690848",
+              "symbol": "?DAT_00690848@@3HA",
+              "native_offset": 0,
+              "initial_bytes": "00000000"
+            },
+            {
+              "va": "00656864",
+              "symbol": "?DAT_00656864@@3HA",
+              "native_offset": 4,
+              "initial_bytes": "00000000"
+            },
+            {
+              "va": "00656ac0",
+              "symbol": "?DAT_00656ac0@@3HA",
+              "native_offset": 8,
+              "initial_bytes": "00000000"
+            },
+            {
+              "va": "006a6450",
+              "symbol": "?DAT_006a6450@@3HA",
+              "native_offset": 12,
+              "initial_bytes": "00000000"
+            },
+            {
+              "va": "00699c84",
+              "symbol": "?DAT_00699c84@@3HA",
+              "native_offset": 16,
+              "initial_bytes": "00000000"
+            },
+            {
+              "va": "00699fe0",
+              "symbol": "?DAT_00699fe0@@3IA",
+              "native_offset": 20,
+              "initial_bytes": "00000000"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-writable-scalars-250.py": "cd0add94e85c2fa259f6fc592c5e3fb7d940d2674aac43fb0bc1dd2630d98210",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "scripts/research/experiment-v2-writable-scalars-226.py": "762645962bccaa8cf86c59c4aec18167b95ac0731e4ac4548ab20531925a721c",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/audit.py": "e034688dfb35ccd8b1fe743a2a0bed661180c8dfcf7c9025a3c8f9f2996437bd",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/lib/capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "iterations/v2/001-original-recovery/runs/248-next-scalar-selection/summary.json": "fd7b867f68f4d64760532dad42fe49c927c6221639b1d0ff7691d634d16b1fde",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/245-automated-frontier-queue/summary.json": "5f6f6fd1e2081eeaf9c31d658636fb26029a7413479b817989eb1de6fcf7cc10",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/preflight.json": "e189e3992e8343b6c1b02f6f3ae1c8037f5e3a451dfcb342de022bcb5f4855fc",
+    "iterations/v2/001-original-recovery/runs/243-canonical-reuse-union/summary.json": "7533c820bc5d22b5d2267260c659becbc554124af3d63d0cdf9fc0c6bee7ecec",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004e5d00.obj": "6acd8ac09268d2b98d0f467c79a1a5673bcb3ac7205fc6cdb7873fef47a749df",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-declaration-compat-184/full/004e5d00-globals.h": "339711dd286a678b8fc35568cabb6d5fc6c6dbf162129e506b0ee17c7a6ee556",
+    "local/experiments/v2-declaration-compat-184/full/004e5d00.cpp": "7911b298971cce2f48886a6e2d75f4403cbf28515a4cdb25b42e9733d6d0269d",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004e5d20.obj": "9c4c1b1e765ec1f34ff56370feeb02e93e2f04310e63cb7e9f0bac32b25c5af7",
+    "local/experiments/v2-declaration-compat-184/full/004e5d20-globals.h": "339711dd286a678b8fc35568cabb6d5fc6c6dbf162129e506b0ee17c7a6ee556",
+    "local/experiments/v2-declaration-compat-184/full/004e5d20.cpp": "de0ef29e459af1ea14e02b369e555b5bccc11ca9f4f96de94687761a17a81158",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004e5d40.obj": "4ebdd06dd8ae2fba59c0709808a495bbb55bae237eb958f5ee5cee5009bdffa5",
+    "local/experiments/v2-declaration-compat-184/full/004e5d40-globals.h": "339711dd286a678b8fc35568cabb6d5fc6c6dbf162129e506b0ee17c7a6ee556",
+    "local/experiments/v2-declaration-compat-184/full/004e5d40.cpp": "2616ddc29a575ceedbd749d76da53627ff9b656093146adc39b1a58ad6ca8c22",
+    "local/experiments/v2-consumer-declarations-203/final/objects/004a9890.obj": "0dd98f4f42cf58d0fd550ec680b7e81e446b6d29ca6df3de52bac39e1da3df66",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004a9890-globals.h": "85034dfee784320079caab5981a3bf02b727863741d3a0d91130134eec09fa1f",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004a9890.cpp": "112e76888b473347bf93fadd623e1aaa4522e55bec265a61c5126db561966c97",
+    "local/experiments/v2-declaration-compat-184/full/004a9890-globals.h": "93c219d2df9e5b07f86003f01f0ecf7d0bd0ca90b7a93d4afddf09f7ad724bcb",
+    "local/experiments/v2-consumer-declarations-203/final/objects/004aadb0.obj": "071b3ee8c76d0d3cc20fdf6ed73240d2470a765ddcebc74200d511a4480c1d5f",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004aadb0-globals.h": "2a64968c1e2bb292a23c9bd43d4f4368bcd1387cc70210a53f140675cbaaebda",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004aadb0.cpp": "97523884b106aa67219a3aeaa0ce3bc3f39305770b7fa6c3662a4a5a8342aa14",
+    "local/experiments/v2-declaration-compat-184/full/004aadb0-globals.h": "374ddda4d78da617ac38d1afd07f22ce1e17de642a846b296b60eab54b67012c",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004af760.obj": "e50b2edbf3137ce3f9f6e1ce7bffc08d1f468efad1580a2e40db4e3a57801d01",
+    "local/experiments/v2-declaration-compat-184/full/004af760-globals.h": "d85923456a37c83ef580c0e97dbf24cfcac0afdd73a96fc579724aad2528ff50",
+    "local/experiments/v2-declaration-compat-184/full/004af760.cpp": "96d25cb5ebebdf65478e8da8971231925bb0c9050e9d3b3ff897ae899f31e4f6",
+    "local/experiments/v2-renderer-state-consumer-218/objects/00537b40.obj": "3291be63cccc31ff2813819b427442c4f0c8593acb987a008a487250a4a932db",
+    "local/experiments/v2-renderer-state-consumer-218/00537b40.cpp": "76ca9f3a784cd6c03538129df1bf9859db38f3481f811d29fece4376e00722f0",
+    "local/experiments/v2-renderer-state-consumer-218/consumer218.h": "0c5478ae91a8f4a7119d8fe77c4bb2b3572ea4a1252bd081ae9fb7698970f1fe",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00507480.obj": "2ed56d98f1c40f4361e4cfe7e75805675f47c1873131db7e6863f5dda8eaf81e",
+    "local/experiments/v2-declaration-compat-184/full/00507480-globals.h": "4b5cc22e4c96cdfd543c31e08c2e71861747a04ec55e4cda04a61d78e4883240",
+    "local/experiments/v2-declaration-compat-184/full/00507480.cpp": "2cfcf87b9479e2cd61a4537647bf72565f8d570c0189f99a9ef7cd40977282a3",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/0050e6a0.obj": "e6941b4601987918275704b7c3716a6053d544a77ca3aa43c256af7265ac9cf7",
+    "local/experiments/v2-declaration-compat-184/full/0050e6a0-globals.h": "b5fbf972beec792c3cbf46253e686d8342404f358d94eda6148a9d2549e2c129",
+    "local/experiments/v2-declaration-compat-184/full/0050e6a0.cpp": "edb2370461f8d7d7890fef3c895f1ac3a0862aa28b4f113fb1db51682301d982",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/0050e6b0.obj": "00f15851c002084483705712c219d2acfbcfd6acb304116c215f37792b678b9c",
+    "local/experiments/v2-declaration-compat-184/full/0050e6b0-globals.h": "b5fbf972beec792c3cbf46253e686d8342404f358d94eda6148a9d2549e2c129",
+    "local/experiments/v2-declaration-compat-184/full/0050e6b0.cpp": "65ad3425dc0e47a5017c2166d4f81946bc22128b66efe2d54c6643cc72b985b4",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "C:/Users/steew/.vscode/extensions/openai.chatgpt-26.1007.21434-win32-x64/bin/windows-x86_64/rg.exe": "9d694d44b868b28dbe7e06cb83879021a4411622d0337c757ff35f3b57dac2a5",
+    "iterations/v2/001-original-recovery/runs/202-float-bit-stores/summary.json": "0cb09649dd29d9467f28959c4723473711ab4ea5fb98e854ef2f6557e12de0c2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/original_scalars.cpp": "46180997ede007a969748bbc9129e4e46e857c216578486cf33b42be6bb5fb74",
+    "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/scalar_fixture.cpp": "049de131fc0388525db904e46d82d761e97c4c39b70e637308bebced3407aeb4",
+    "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/preflight.json": "434a81eebc1ee5c664d7d40624ad92b751ea112087ddfb655b5e2b4e713bb379"
+  },
+  "preflight": "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/preflight.json",
+  "preflight_sha256": "434a81eebc1ee5c664d7d40624ad92b751ea112087ddfb655b5e2b4e713bb379",
+  "original_memory_instructions_verified": 151,
+  "original_relative_layout_claim": false,
+  "finalized_existing_compile": false,
+  "limits": [
+    "Six current native scalar views only; no original data meaning or algorithm",
+    "006c0508 deferred: four HIGHLOW targets absent from indexed direct MEM4; trace exact instructions first",
+    "0065b928 deferred: existing WIP address provider needs canonical binding review",
+    "Direct HIGHLOW/MEM4 coverage does not prove computed aliases, whole layout or lifetime",
+    "No game function or production integration"
+  ]
+}

@@ -1,23 +1,23 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Checkpoint2026-10-16 Run243:1117distinct functionVAs +8supportobjects =1125archive
-members/1276042B. Actual link442names/632diagnostics, noEXE/DLL.
-Linkedfrontier89missingFUN/36canonicaloutside/306data/11other contracts
-(7earlier printedCRT+4canonical lock providers). Eight dependencies closed/eight exposed.
-1115symbol snapshots reused,10newobjects read,7230pinsPASS,0collectorcompilations.
-234:4newCOFFs,2048original/nativeSDKpairs+2048controlledthiscallcapturesPASS.
-240:2existingcanonical C++definitions mechanically reused+2exactcdecl bindings;
-2268cases/identity/ESP/nonvolatilePASS. Oneactualserialcompile(/showIncludes disablesMP),
-D9030+2fixtureC4731 retained; fullCRTlocktable26/48 composition remainsopen.
-242:onephysicalDWORD withsigned/unsignedalias,125exactoriginalrefs/nativecrosswritesPASS.
-239found6WIPowners in233missingfrontier; don't reimplement existing code.
-Production173 unchanged476full+6partial; game-link267names/303refs.
-245automatedqueue completed:actual442linknames/632diagnostics ->440researchtasks;
-17resolvedrawfrontierrows excluded.159boundedpins+6parser/owner guardsPASS,0nativecommands.
-No activeagent assignments atcheckpoint. Next: use245queue forcanonicalreuse/ABI review
-and isolatedinstruction-to-C++pilot per docs/recovery-automation.md. Runtime miss parser
-acceptsidentity-pinnedknown/unknownVAs; actualgame miss collection awaitsEXE.
-Details/command: runs/243-canonical-reuse-union/README.md; deferredchecks inbacklog.
+Checkpoint2026-10-16 Run249:1120distinct functionVAs+13supportobjects=1133archive
+members/1286822B. Actual link418names/602diagnostics, noEXE/DLL (-24names vs243).
+Linkedfrontier87missingFUN/35canonicaloutside/283data/13othercontracts.
+26dependencies closed,2newcanonicalTLS/FILEstate contracts exposed.
+1125symbolsnapshots reused,8newCOFFs read,7292pinsPASS;0unioncompiles/onearchive-link10.974s.
+247:3canonical C++bodies mechanically reused+3exactbindings,4056nativecases,
+103originaloraclebytes/52CALLs/293pinsPASS; fullprovidercompositionstillopen.
+250/254:23writableoriginalDWORDs,219MEM4/HIGHLOWrefs andnativebits/crosswritesPASS.
+248navigationoverclaims corrected251;9screenedcells explicitlydeferred, no guessedallocation.
+246isolated x86-to-C++pilot:3existingbodies/76B/28instructions,375808register/CFZFSFOF/
+relativeESP/memory comparisonsPASS;one4TU MP6batch,0newacceptedfunctions/noproductionchange.
+252coveragecensus:0/85remainingbodies supportedwhole;80needCALL,3tailJMPcases selected.
+256automaticqueue refreshed:418linknames ->416tasks,20resolvedrawrows excluded.
+Production173 unchanged476full+6partial/game-link267names303refs.
+Active:253tailJMP/MissingEntryVMpilot(locale_resume); rootdocs/commit.
+Next:accept253boundedcutpointaudit; selectCALL/stack backend test or connectedcanonical
+providerfrom256queue. FullCPU/memoryloader/imports/gameexecution remainunimplemented.
+Detailscommands:runs/249-canonical-and-storage-union and246/256 READMEs; backlog remainsopen.
 
 Historical checkpoints:
 

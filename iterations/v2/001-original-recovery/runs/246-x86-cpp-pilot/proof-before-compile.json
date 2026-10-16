@@ -1,0 +1,295 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "existing_owners": {
+    "00590290": {
+      "va": "00590290",
+      "cohort": "ordinary",
+      "object": "local/experiments/v2-build-corpus-181/00590290.obj",
+      "object_sha256": "8cd9ca4b82a4c807b6fa658fd8295be23e8f94a216aceb3f3fc9c559b994ce04",
+      "generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590290.cpp",
+      "generated_source_sha256": "b511497d7afeb9dcd59c62f381c659dd7e2c80eb0230202ed8f9b65289365699",
+      "include_closure": [
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h",
+        "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590290.cpp"
+      ],
+      "include_directories": [],
+      "symbols": {
+        "defined": [
+          "?FUN_00590290@@YAIXZ"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    },
+    "00590070": {
+      "va": "00590070",
+      "cohort": "ordinary",
+      "object": "local/experiments/v2-nested-call-recovery-229/objects/00590070.obj",
+      "object_sha256": "3df8713300f49f0116aadc6c841158beeb181e15feac3b6d5331c5ae502c7713",
+      "generated_source": "local/experiments/v2-nested-call-recovery-229/00590070.cpp",
+      "generated_source_sha256": "8d57750ced0276955db16298075bdcb8ff933a0b681b48ae6d7de891c21461ba",
+      "include_closure": [
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h",
+        "local/experiments/v2-nested-call-recovery-229/00590070.cpp",
+        "local/experiments/v2-nested-call-recovery-229/consumer229.h"
+      ],
+      "include_directories": [],
+      "symbols": {
+        "defined": [
+          "?FUN_00590070@@YAIH@Z"
+        ],
+        "undefined": [
+          "?DAT_006b48d8@@3IA",
+          "?DAT_006b4a04@@3HA"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "004930f0": {
+      "va": "004930f0",
+      "cohort": "thiscall",
+      "object": "local/experiments/v2-abi-analysis-197/native-002/objects/004930f0.obj",
+      "object_sha256": "664ae9fbcb0b287c02ae91010bc6b04e4802f4aa18282fdc13ec1d25d6463683",
+      "generated_source": "local/experiments/v2-abi-analysis-197/native-002/004930f0.cpp",
+      "generated_source_sha256": "cd6f386d7144ef55b5c61bf687c69dcbd770f421d03d4935128737f2a6d3ee75",
+      "include_closure": [
+        "local/experiments/v2-abi-analysis-197/native-002/004930f0.cpp",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h"
+      ],
+      "include_directories": [],
+      "symbols": {
+        "defined": [
+          "?invoke@Thiscall_004930f0@@QAEPAIPAII@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    }
+  },
+  "original_hex": {
+    "00590290": "33c0c3",
+    "004930f0": "8b118b0289018b4424048910c20800",
+    "00590070": "8b44240485c07c2c8b0dd8486b0081e1ffff00003bc17d1c8d1440a1044a6b008b0c908d049085c9740a8a4008f6d81bc024eec3b8f8ffffffc3"
+  },
+  "instruction_lowering": {
+    "00590290": [
+      {
+        "va": "00590290",
+        "bytes": "33c0",
+        "mnemonic": "xor",
+        "operands": "eax, eax",
+        "cpp": "s.r[0]=logical246(s,(s.r[0])^(s.r[0]),32u);"
+      },
+      {
+        "va": "00590292",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read246(s.r[4],4u);s.r[4]+=4u;return;"
+      }
+    ],
+    "004930f0": [
+      {
+        "va": "004930f0",
+        "bytes": "8b11",
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [ecx]",
+        "cpp": "s.r[2]=read246((0x00000000u+s.r[1]*1u),4u);"
+      },
+      {
+        "va": "004930f2",
+        "bytes": "8b02",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [edx]",
+        "cpp": "s.r[0]=read246((0x00000000u+s.r[2]*1u),4u);"
+      },
+      {
+        "va": "004930f4",
+        "bytes": "8901",
+        "mnemonic": "mov",
+        "operands": "dword ptr [ecx], eax",
+        "cpp": "write246((0x00000000u+s.r[1]*1u),4u,s.r[0]);"
+      },
+      {
+        "va": "004930f6",
+        "bytes": "8b442404",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esp + 4]",
+        "cpp": "s.r[0]=read246((0x00000004u+s.r[4]*1u),4u);"
+      },
+      {
+        "va": "004930fa",
+        "bytes": "8910",
+        "mnemonic": "mov",
+        "operands": "dword ptr [eax], edx",
+        "cpp": "write246((0x00000000u+s.r[0]*1u),4u,s.r[2]);"
+      },
+      {
+        "va": "004930fc",
+        "bytes": "c20800",
+        "mnemonic": "ret",
+        "operands": "8",
+        "cpp": "s.pc=read246(s.r[4],4u);s.r[4]+=12u;return;"
+      }
+    ],
+    "00590070": [
+      {
+        "va": "00590070",
+        "bytes": "8b442404",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esp + 4]",
+        "cpp": "s.r[0]=read246((0x00000004u+s.r[4]*1u),4u);"
+      },
+      {
+        "va": "00590074",
+        "bytes": "85c0",
+        "mnemonic": "test",
+        "operands": "eax, eax",
+        "cpp": "logical246(s,(s.r[0])&(s.r[0]),32u);"
+      },
+      {
+        "va": "00590076",
+        "bytes": "7c2c",
+        "mnemonic": "jl",
+        "operands": "0x5900a4",
+        "cpp": "if(((s.flags>>7)^(s.flags>>11))&1u)goto L_005900a4;"
+      },
+      {
+        "va": "00590078",
+        "bytes": "8b0dd8486b00",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [0x6b48d8]",
+        "cpp": "s.r[1]=read246((0x006b48d8u),4u);"
+      },
+      {
+        "va": "0059007e",
+        "bytes": "81e1ffff0000",
+        "mnemonic": "and",
+        "operands": "ecx, 0xffff",
+        "cpp": "s.r[1]=logical246(s,(s.r[1])&(0x0000ffffu),32u);"
+      },
+      {
+        "va": "00590084",
+        "bytes": "3bc1",
+        "mnemonic": "cmp",
+        "operands": "eax, ecx",
+        "cpp": "subtract246(s,s.r[0],s.r[1],0u,32u);"
+      },
+      {
+        "va": "00590086",
+        "bytes": "7d1c",
+        "mnemonic": "jge",
+        "operands": "0x5900a4",
+        "cpp": "if(!(((s.flags>>7)^(s.flags>>11))&1u))goto L_005900a4;"
+      },
+      {
+        "va": "00590088",
+        "bytes": "8d1440",
+        "mnemonic": "lea",
+        "operands": "edx, [eax + eax*2]",
+        "cpp": "s.r[2]=(0x00000000u+s.r[0]*1u+s.r[0]*2u);"
+      },
+      {
+        "va": "0059008b",
+        "bytes": "a1044a6b00",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [0x6b4a04]",
+        "cpp": "s.r[0]=read246((0x006b4a04u),4u);"
+      },
+      {
+        "va": "00590090",
+        "bytes": "8b0c90",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [eax + edx*4]",
+        "cpp": "s.r[1]=read246((0x00000000u+s.r[0]*1u+s.r[2]*4u),4u);"
+      },
+      {
+        "va": "00590093",
+        "bytes": "8d0490",
+        "mnemonic": "lea",
+        "operands": "eax, [eax + edx*4]",
+        "cpp": "s.r[0]=(0x00000000u+s.r[0]*1u+s.r[2]*4u);"
+      },
+      {
+        "va": "00590096",
+        "bytes": "85c9",
+        "mnemonic": "test",
+        "operands": "ecx, ecx",
+        "cpp": "logical246(s,(s.r[1])&(s.r[1]),32u);"
+      },
+      {
+        "va": "00590098",
+        "bytes": "740a",
+        "mnemonic": "je",
+        "operands": "0x5900a4",
+        "cpp": "if(s.flags&0x40u)goto L_005900a4;"
+      },
+      {
+        "va": "0059009a",
+        "bytes": "8a4008",
+        "mnemonic": "mov",
+        "operands": "al, byte ptr [eax + 8]",
+        "cpp": "s.r[0]=(s.r[0]&0xffffff00u)|((read246((0x00000008u+s.r[0]*1u),1u))&0xffu);"
+      },
+      {
+        "va": "0059009d",
+        "bytes": "f6d8",
+        "mnemonic": "neg",
+        "operands": "al",
+        "cpp": "s.r[0]=(s.r[0]&0xffffff00u)|((subtract246(s,0u,(s.r[0]&0xffu),0u,8u))&0xffu);"
+      },
+      {
+        "va": "0059009f",
+        "bytes": "1bc0",
+        "mnemonic": "sbb",
+        "operands": "eax, eax",
+        "cpp": "s.r[0]=subtract246(s,s.r[0],s.r[0],(s.flags&1u),32u);"
+      },
+      {
+        "va": "005900a1",
+        "bytes": "24ee",
+        "mnemonic": "and",
+        "operands": "al, 0xee",
+        "cpp": "s.r[0]=(s.r[0]&0xffffff00u)|((logical246(s,((s.r[0]&0xffu))&(0x000000eeu),8u))&0xffu);"
+      },
+      {
+        "va": "005900a3",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read246(s.r[4],4u);s.r[4]+=4u;return;"
+      },
+      {
+        "va": "005900a4",
+        "bytes": "b8f8ffffff",
+        "mnemonic": "mov",
+        "operands": "eax, 0xfffffff8",
+        "cpp": "s.r[0]=0xfffffff8u;"
+      },
+      {
+        "va": "005900a9",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read246(s.r[4],4u);s.r[4]+=4u;return;"
+      }
+    ]
+  },
+  "index_query": "00590290,004930f0,00590070 -> exact PE bodies, existing197/217/229 owners; experimental regression only",
+  "rejected_inputs": [
+    "unsupported INT3",
+    "truncated instruction",
+    "branch into missing instruction boundary"
+  ],
+  "mode": "Ahead-of-time per-instruction C++ statements/direct gotos; no runtime instruction decoder or original-game machine-code fallback.",
+  "state_scope": "EAX/ECX/EDX/EBX/EBP/ESI/EDI, relative ESP/RET0/RET8, defined CF/ZF/SF/OF, 64-byte memory arena effects, controlled raw32 globals.",
+  "limits": [
+    "Call-free subset only; unsupported instructions/operands/branches reject before any native compilation.",
+    "No PF/AF/undefined flags, x87/SSE, CALL/import/callback/exception/concurrency or full guest memory loader.",
+    "Original x86 executes only in the comparison fixture. Existing restored owners/production/union unchanged; zero new accepted functions.",
+    "A pilot pass is not full CPU equivalence, game launch or evidence of a complete x86 translator."
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "kind": "isolated-static-x86-to-cpp-pilot",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "experimental_vas": [
+    "00590290",
+    "004930f0",
+    "00590070"
+  ],
+  "new_accepted_functions": 0,
+  "production_or_union_changed": false,
+  "translated_original_bytes": 76,
+  "translated_original_instructions": 28,
+  "existing_owner_regressions": 3,
+  "actual_compiler_batches": 1,
+  "game_algorithm_reimplementations": 0,
+  "compile_seconds": 1.685778500046581,
+  "compiler_exit_code": 0,
+  "native_fixture_exit_code": 0,
+  "native_seconds": 1.1854758999543265,
+  "state_comparisons": 375808,
+  "oracle": [
+    {
+      "va": "00590290",
+      "bytes": 3,
+      "relocations": [],
+      "normalized_exact": true
+    },
+    {
+      "va": "004930f0",
+      "bytes": 15,
+      "relocations": [],
+      "normalized_exact": true
+    },
+    {
+      "va": "00590070",
+      "bytes": 58,
+      "relocations": [
+        {
+          "offset": 10,
+          "symbol": "?count246@@3IA",
+          "type": 6
+        },
+        {
+          "offset": 28,
+          "symbol": "?table246@@3IA",
+          "type": 6
+        }
+      ],
+      "normalized_exact": true
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-x86-cpp-246.py": "6620f56894983dd42779b17110a799edb0d1bf3836de41267dc780fb81023ca9",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/audit-v2-nested-calls-229.py": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "research/binary-index/README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/243-canonical-reuse-union/summary.json": "7533c820bc5d22b5d2267260c659becbc554124af3d63d0cdf9fc0c6bee7ecec",
+    "local/experiments/v2-build-corpus-181/00590290.obj": "8cd9ca4b82a4c807b6fa658fd8295be23e8f94a216aceb3f3fc9c559b994ce04",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590290.cpp": "b511497d7afeb9dcd59c62f381c659dd7e2c80eb0230202ed8f9b65289365699",
+    "local/experiments/v2-nested-call-recovery-229/objects/00590070.obj": "3df8713300f49f0116aadc6c841158beeb181e15feac3b6d5331c5ae502c7713",
+    "local/experiments/v2-nested-call-recovery-229/00590070.cpp": "8d57750ced0276955db16298075bdcb8ff933a0b681b48ae6d7de891c21461ba",
+    "local/experiments/v2-abi-analysis-197/native-002/objects/004930f0.obj": "664ae9fbcb0b287c02ae91010bc6b04e4802f4aa18282fdc13ec1d25d6463683",
+    "local/experiments/v2-abi-analysis-197/native-002/004930f0.cpp": "cd6f386d7144ef55b5c61bf687c69dcbd770f421d03d4935128737f2a6d3ee75",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/experiments/v2-x86-cpp-pilot-246/machine246.h": "357edf599bd5fce6ceb41e14431b914413ba9fba37e940f56e0540f13af67449",
+    "local/experiments/v2-x86-cpp-pilot-246/00590290.cpp": "383140180af336e4e60ea486a10d169bc0a3449692daa572156eee9249df64b6",
+    "local/experiments/v2-x86-cpp-pilot-246/004930f0.cpp": "5ac893a5cfeed9d14ddf621fe41ec8263919779d8292ce1fb5bee24360fcbe0e",
+    "local/experiments/v2-x86-cpp-pilot-246/00590070.cpp": "c24eedf9997974c322963678454dd0aedde2cf34a5b6fed4776d751c3ce30407",
+    "local/experiments/v2-x86-cpp-pilot-246/state-fixture.cpp": "1a7c41306175bd7d2186844cfcbc04cd7f452f5aed936bef54964d404a0be34e",
+    "iterations/v2/001-original-recovery/runs/246-x86-cpp-pilot/proof-before-compile.json": "349a94f4edf9f13ccd784d8d7037614430dc9ed1731c5a83f3ed2ccabfd5c741",
+    "local/experiments/v2-x86-cpp-pilot-246/captured-compile-driver.py": "8bf73cc6ca95a2a94836cb572611570dea9f530a4bcd7fb663e8753fbc2f364b",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86\\libucrt.lib": "bb7ca922d003d269f7408dd56655ea46c0bfc2a7b66b79ff248094d8143b72dd",
+    "local/experiments/v2-x86-cpp-pilot-246/objects/004930f0.obj": "cffaee2ab19c25f43888b1fb2669fa1208fbc1e96eea26cd8c25c116dec7c35b",
+    "local/experiments/v2-x86-cpp-pilot-246/objects/00590070.obj": "ef602f5cf290299c36699529e0bde5777800e135148ec74872c0247ddc25a1c3",
+    "local/experiments/v2-x86-cpp-pilot-246/objects/00590290.obj": "39c2181a658c353b088e2c0db9e7c4aa826ce4c91aa87933eaf05080472b1f52",
+    "local/experiments/v2-x86-cpp-pilot-246/objects/state-fixture.obj": "2dac5e74afb731c1e7ade5b5e104c460f0a40464885aa8f0c766790bae2d6d73",
+    "local/experiments/v2-x86-cpp-pilot-246/state-fixture.exe": "59b6ddf325e719acbff25a7a0c7f721c84a8b13b2050837acc4b3f0f57f5580f",
+    "local/experiments/v2-x86-cpp-pilot-246/compile.log": "e1f3e40d063b3c00fcf0f01b73bce34042b6cbec17d31e7e1f45dc7fb7027b02",
+    "local/experiments/v2-x86-cpp-pilot-246/first-fixture-link.log": "519292ae0fa70575255c78906cd7a3c4458e731451b9856f288d76e43ade391e",
+    "local/experiments/v2-x86-cpp-pilot-246/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-cpp-pilot-246/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-cpp-pilot-246/compile.execution.json": "fa893c8a655a403ba5af3bd82ec50d2701fafbd25ff8d8c9649d7e55469e7ac0",
+    "local/experiments/v2-x86-cpp-pilot-246/first-fixture-link.execution.json": "4388f10015ffeaa58ee651b8f602353db82b891490e83749dd9345f23324b714",
+    "local/experiments/v2-x86-cpp-pilot-246/fixture-link.execution.json": "c45d13b7349d473b498b88afd4bcdc4904117e97500190308833795c6d8411f9",
+    "local/experiments/v2-x86-cpp-pilot-246/fixture-native.execution.json": "d31b6c55a6d08adb78f95da566ad3217e97ce446b101a4567332991f7babf8bf"
+  },
+  "before_after_guards": true,
+  "unsupported_inputs_rejected": [
+    "unsupported INT3",
+    "truncated instruction",
+    "branch into missing instruction boundary"
+  ],
+  "limits": [
+    "Call-free subset only; unsupported instructions/operands/branches reject before any native compilation.",
+    "No PF/AF/undefined flags, x87/SSE, CALL/import/callback/exception/concurrency or full guest memory loader.",
+    "Original x86 executes only in the comparison fixture. Existing restored owners/production/union unchanged; zero new accepted functions.",
+    "A pilot pass is not full CPU equivalence, game launch or evidence of a complete x86 translator."
+  ],
+  "command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpp-pilot-246\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpp-pilot-246\\00590290.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpp-pilot-246\\004930f0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpp-pilot-246\\00590070.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpp-pilot-246\\state-fixture.cpp"
+  ],
+  "resumed_existing_compile": true
+}

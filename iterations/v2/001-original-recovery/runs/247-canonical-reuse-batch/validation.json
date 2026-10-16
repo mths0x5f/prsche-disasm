@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "passed": true,
+  "summary_sha256": "ad670f0520fe8a9d8974ba3836af578ca1d9e89b5876bac9118b7e330e6a336d",
+  "bindings_summary_sha256": "f465f353ed6e18ccbd656e36064dfcea6996961d98e51372ac5f9c72c3dc34f7",
+  "audit_script_sha256": "580bfd30780081689d377b1e94cbbecbc89b5156313a300d7f61096c396fc4e3",
+  "input_pins_checked": 293,
+  "exact_canonical_fragments": true,
+  "ordinary_COFF_objects": [
+    {
+      "va": "005a669e",
+      "symbols": {
+        "defined": [
+          "?formatter_lowio_errno_005a669e@porsche@@YAPAHXZ"
+        ],
+        "undefined": [
+          "?formatter_crt_thread_005a545c@porsche@@YAPAXXZ"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "object_sha256": "e74a093cb1b67095c2decd6df69494361c44c11dd8d53c34e60f8c0ac59c198b",
+      "observed_header_count": 28
+    },
+    {
+      "va": "005a36ea",
+      "symbols": {
+        "defined": [
+          "?formatter_stdio_lock_pointer_005a36ea@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z"
+        ],
+        "undefined": [
+          "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+          "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+          "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+          "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z",
+          "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "object_sha256": "443a67998767dd6bd2d47cecb5477e1e3be06104b53144e0028f582e10f371cb",
+      "observed_header_count": 28
+    },
+    {
+      "va": "005a373c",
+      "symbols": {
+        "defined": [
+          "?formatter_stdio_unlock_pointer_005a373c@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z"
+        ],
+        "undefined": [
+          "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+          "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+          "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+          "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z",
+          "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "object_sha256": "2e586f60b103dbe9b3c0714e42abd4278649eb2784cf83b38ad9a00c814a40fa",
+      "observed_header_count": 28
+    }
+  ],
+  "actual_COFF_directives": [
+    "/alternatename:?FUN_005a669e@@YAHXZ=?formatter_lowio_errno_005a669e@porsche@@YAPAHXZ",
+    "/alternatename:?FUN_005a36ea@@YAXI@Z=?formatter_stdio_lock_pointer_005a36ea@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z",
+    "/alternatename:?FUN_005a373c@@YAXI@Z=?formatter_stdio_unlock_pointer_005a373c@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z"
+  ],
+  "actual_normalized_original_oracles": [
+    {
+      "va": "005a36ea",
+      "bytes": 47,
+      "normalized_bytes": "8b442404b9000000003bc172173d6002000077102bc1c1f80583c01c50e80000000059c383c02050ff1500000000c3",
+      "relocations": [
+        {
+          "offset": 5,
+          "target": "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+          "type": 6
+        },
+        {
+          "offset": 14,
+          "target": "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+          "type": 6
+        },
+        {
+          "offset": 30,
+          "target": "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+          "type": 20
+        },
+        {
+          "offset": 42,
+          "target": "?enter_slot247@@3P6GXPAX@ZA",
+          "type": 6
+        }
+      ],
+      "FILE_last_start_addend": 608
+    },
+    {
+      "va": "005a373c",
+      "bytes": 47,
+      "normalized_bytes": "8b442404b9000000003bc172173d6002000077102bc1c1f80583c01c50e80000000059c383c02050ff1500000000c3",
+      "relocations": [
+        {
+          "offset": 5,
+          "target": "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+          "type": 6
+        },
+        {
+          "offset": 14,
+          "target": "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+          "type": 6
+        },
+        {
+          "offset": 30,
+          "target": "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+          "type": 20
+        },
+        {
+          "offset": 42,
+          "target": "?leave_slot247@@3P6GXPAX@ZA",
+          "type": 6
+        }
+      ],
+      "FILE_last_start_addend": 608
+    },
+    {
+      "va": "005a669e",
+      "bytes": 9,
+      "normalized_bytes": "e80000000083c008c3",
+      "relocations": [
+        {
+          "offset": 1,
+          "target": "?formatter_crt_thread_005a545c@porsche@@YAPAXXZ",
+          "type": 20
+        }
+      ]
+    }
+  ],
+  "original_selected_bytes": 103,
+  "indexed_incoming_calls_PE_matched": 52,
+  "source_dependencies_version": "1.2",
+  "actual_headers_per_game_TU": 28,
+  "one_MP6_batch_without_showIncludes": true,
+  "compiler_exit": 0,
+  "compile_seconds": 2.0356700000120327,
+  "fixture_warnings": [
+    "C4731",
+    "C4731"
+  ],
+  "game_driver_warnings": 0,
+  "native_cases": 4056,
+  "native_fixture_exit": 0,
+  "alias_address_identity": true,
+  "EAX_pointer_return": true,
+  "ESP_nonvolatile": true,
+  "TLS_arena_unchanged": true,
+  "deferred_unlock": "Canonical[26] vs required48 prefix; not compiled or bound",
+  "production_ready": false,
+  "audit_compiler_commands": 0,
+  "audit_native_commands": 0,
+  "audit_linker_commands": 0
+}

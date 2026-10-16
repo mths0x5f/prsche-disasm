@@ -1,5 +1,23 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint249/256:1120candidatefunctionVAs/13support;418linkednames remain. NoEXE.
+- [x]246:static76B/28instruction-to-C++pilot,375808native state comparisons (CF/ZF/SF/OF,
+  GPregs/relativeESP/RET8/64Bmemory),exactPE+3COFForacles/46pins independentPASS.
+- [ ]246:fullCPU/PF/AF/undefinedflags/x87/SSE/CALL/import/callback/guestmemoryloader;
+  pilotusesexistingowners andadds0acceptedfunctions. Unknowninstructions failbeforecompile.
+- [x]247:3canonicalbodies+3bindings,103originaloraclebytes/52CALLs/4056cases/293pinsPASS.
+- [ ]247:sharedFILE/TLS/provider composition;5a4c05 originalIDs28..47 not covered by
+  canonical26slotprefix. No silentbounds workaround or duplicateowner.
+- [x]250/254:23writablezeroDWORDs,219directMEM4/fullHIGHLOW refs;independentaudits/nativePASS.
+- [ ]250/254:computedaliases/wholelayout/lifetime;9screenedcells deferred duecoverage/WIP.
+- [x]251:248cachedselection was not fullPE/WIPproof;006c0508fourunindexedrefs and
+  0065b928existingWIPaddressprovider recorded. Never treatcandidatepoolasallocationapproval.
+- [x]252:all85missingbody spans decoded/8516instructions;0wholebodiessupportedby246.
+  CALL+stack and3externaltailJMP cases guidefuturebackendwork, not acceptance.
+- [x]255/249:exactsourcecompilerreceipts/COFF bundled forfrozencollector withoutnativecommands.
+- [x]256:validatedactual249diagnostics refreshedautomatic416task queue;no gameexecution.
+- [ ]253:tailtransferstate/missingentrypilot inprogress;actualcallees/gameEXE notimplemented.
+
 Checkpoint245:automaticfrontierqueue builtfromvalidated243archive andactualdiagnosticlog.
 - [x]245:442exactunresolvednames/632diagnostics ->440tasks;17resolvedrows excluded.
   Accepted/partial/WIP/probe/interior/ABI/data/provider states keptdistinct;159pinsPASS.

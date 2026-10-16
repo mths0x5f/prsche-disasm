@@ -1,0 +1,38 @@
+﻿{
+  "schema": 1,
+  "run": 251,
+  "kind": "scalar-selection-corrections",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/248-next-scalar-selection/summary.json": "fd7b867f68f4d64760532dad42fe49c927c6221639b1d0ff7691d634d16b1fde",
+    "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/summary.json": "ffd2b4c200cd7837ff0e91099d699fc3226c9fcca3ad7a29f1a8155445484d78",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_core_candidate.hpp": "3304d3ea69cd88279b44eed1670ecc4195d9a398321c6f7d4070d65250c780f7"
+  },
+  "deferred": [
+    {
+      "va": "006c0508",
+      "reason": "full PE relocation scan found four HIGHLOW sites absent from the scoped cached reference set",
+      "unindexed_highlow_sites": [
+        {"site":"005a9de1","instruction_pc":"005a9de0","bytes":"a108056c008bf7c1e6028b","target":"006c0508"},
+        {"site":"005a9e0a","instruction_pc":"005a9e09","bytes":"a108056c008b040683c020","target":"006c0508"},
+        {"site":"005a9e1c","instruction_pc":"005a9e1b","bytes":"a108056c00ff3406e8759d","target":"006c0508"},
+        {"site":"005a9e29","instruction_pc":"005a9e28","bytes":"a108056c00598324060047","target":"006c0508"}
+      ],
+      "boundary":"Run248 cached disassembly refs were incomplete for this VA; no owner/allocation inference."
+    },
+    {
+      "va": "0065b928",
+      "reason": "existing WIP provider declaration",
+      "owner_path":"iterations/v2/001-original-recovery/source/include/porsche/application_context_core_candidate.hpp",
+      "owner_line":213,
+      "owner_declaration":"void* __cdecl application_core_address_0065b928();",
+      "boundary":"Existing address-view contract has unknown extent; do not treat scalar queue row as new storage owner."
+    }
+  ],
+  "remaining_run248_rows": 6,
+  "method_correction":"Future scalar selection must pin full PE HIGHLOW coverage and current WIP/source-provider manifests before ranking; cached indexed references are navigation only.",
+  "boundary":"Correction appendix only; no allocation permission, implementation, compiler, native, Ghidra, or source edits."
+}

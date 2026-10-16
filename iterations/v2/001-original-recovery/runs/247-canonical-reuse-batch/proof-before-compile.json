@@ -1,0 +1,924 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected_vas": [
+    "005a669e",
+    "005a36ea",
+    "005a373c"
+  ],
+  "mechanically_copied_slices": {
+    "005a669e": {
+      "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "parts": [
+        {
+          "kind": "canonical_bytes",
+          "offset": 0,
+          "length": 93,
+          "sha256": "687444b6d9f8a36bc1dffdca18d2b762a37053dd6efcfac760465874c07f9f6d",
+          "label": "original_include_prefix",
+          "text": "#include \"porsche/formatter_crt_runtime.hpp\"\n#include <cstring>\n#include <initializer_list>\n\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace porsche {\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 6850,
+          "length": 163,
+          "sha256": "ad1377a843fe55c22bc646845345c79ddb2f1a203884d1e5953e59376d09f5e3",
+          "label": "exact_formatter_lowio_errno_005a669e",
+          "text": "std::int32_t* __cdecl formatter_lowio_errno_005a669e() {\n return reinterpret_cast<std::int32_t*>(static_cast<std::uint8_t*>(formatter_crt_thread_005a545c())+8);\n}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        }
+      ]
+    },
+    "005a36ea": {
+      "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp",
+      "parts": [
+        {
+          "kind": "canonical_bytes",
+          "offset": 0,
+          "length": 98,
+          "sha256": "1384a991c43257727d089c59fcd605a869b5533f00d38ee3edc4b88b8c026e3d",
+          "label": "original_include_prefix",
+          "text": "#include \"porsche/formatter_stdio.hpp\"\n#include \"porsche/formatter_entry.hpp\"\n#include <cstdarg>\n\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace porsche {\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace {\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 175,
+          "length": 110,
+          "sha256": "0423305f425980cf3f29fd4cf38c88c92610918d603f08dc1cfd5fa922e65789",
+          "label": "usingU_and_address",
+          "text": "using U=std::uint32_t;\nU address(const void* p) {return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 576,
+          "length": 533,
+          "sha256": "841e14f0c976f23e3b69732e6c6f9b1974e152205da0ddf9997917c4fed7d19c",
+          "label": "exact_lock_pointer",
+          "text": "void lock_pointer(FormatterOriginalDescriptor32* d,bool unlock) {\n    const U p=address(d),first=address(formatter_iob_entries_005e54e8),last=first+19u*32u;\n    if(p>=first && p<=last) {\n        const U id=((p-first)>>5)+28;\n        if(unlock)exit_registry_unlock_api_005a4c05(id);else exit_registry_lock_api_005a4ba4(id);\n    } else {\n        auto* critical=reinterpret_cast<void*>(static_cast<std::uintptr_t>(p+32));\n        if(unlock)formatter_lowio_critical_leave(critical);else formatter_lowio_critical_enter(critical);\n    }\n}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 1111,
+          "length": 110,
+          "sha256": "d19559462280d41772ab627838043caf651c44d120a05df3b4be60e9cab18d95",
+          "label": "exact_formatter_stdio_lock_pointer_005a36ea",
+          "text": "void __cdecl formatter_stdio_lock_pointer_005a36ea(FormatterOriginalDescriptor32* d) {lock_pointer(d,false);}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        }
+      ]
+    },
+    "005a373c": {
+      "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp",
+      "parts": [
+        {
+          "kind": "canonical_bytes",
+          "offset": 0,
+          "length": 98,
+          "sha256": "1384a991c43257727d089c59fcd605a869b5533f00d38ee3edc4b88b8c026e3d",
+          "label": "original_include_prefix",
+          "text": "#include \"porsche/formatter_stdio.hpp\"\n#include \"porsche/formatter_entry.hpp\"\n#include <cstdarg>\n\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace porsche {\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace {\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 175,
+          "length": 110,
+          "sha256": "0423305f425980cf3f29fd4cf38c88c92610918d603f08dc1cfd5fa922e65789",
+          "label": "usingU_and_address",
+          "text": "using U=std::uint32_t;\nU address(const void* p) {return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 576,
+          "length": 533,
+          "sha256": "841e14f0c976f23e3b69732e6c6f9b1974e152205da0ddf9997917c4fed7d19c",
+          "label": "exact_lock_pointer",
+          "text": "void lock_pointer(FormatterOriginalDescriptor32* d,bool unlock) {\n    const U p=address(d),first=address(formatter_iob_entries_005e54e8),last=first+19u*32u;\n    if(p>=first && p<=last) {\n        const U id=((p-first)>>5)+28;\n        if(unlock)exit_registry_unlock_api_005a4c05(id);else exit_registry_lock_api_005a4ba4(id);\n    } else {\n        auto* critical=reinterpret_cast<void*>(static_cast<std::uintptr_t>(p+32));\n        if(unlock)formatter_lowio_critical_leave(critical);else formatter_lowio_critical_enter(critical);\n    }\n}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        },
+        {
+          "kind": "canonical_bytes",
+          "offset": 1221,
+          "length": 111,
+          "sha256": "f90c0252db45466ca8c49b37a6963f259a1d558770b1157948f18bd06d5aea65",
+          "label": "exact_formatter_stdio_unlock_pointer_005a373c",
+          "text": "void __cdecl formatter_stdio_unlock_pointer_005a373c(FormatterOriginalDescriptor32* d) {lock_pointer(d,true);}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        }
+      ]
+    }
+  },
+  "canonical_source_pins": {
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_locale.hpp": "01efc1a27c0e03f67a04d822080e4999e2210b65b5bd9e3b52ecc9de30863e4a",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_output.hpp": "68b58fd329f1a1870191052d3bcd027d7d559873dbe3aa652fd1d85ee0e04436",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp": "19ae922b1efccdbfb03632b771784654cf2e4280bce1166ee2fab228073841f7",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_stdio_probe.cpp": "339c799d898171411ec8667585065d6ea7ba4e2f04aea3d7e57d325415504dfa",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_runtime_storage.cpp": "6237662bd9403ee8eb1b582862d3d9c36b4b1cb042862213c47a79931c5d84db",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_crt_runtime_probe.cpp": "71fcf572848b00555773404da126aacf357308fd9bf9f6a3f91228bd40e70cfe"
+  },
+  "superseded157_headers_using_accepted175": {
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": {
+      "report157_sha256": "227b438efe0501acdf1bc0cd4909eb88e08c368a1d16e41d431c4d56a7b66e84",
+      "accepted175_sha256": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12"
+    }
+  },
+  "original_instructions": {
+    "005a669e": [
+      {
+        "va": "005a669e",
+        "bytes": "e8b9edffff",
+        "instruction": "CALL 0x005a545c"
+      },
+      {
+        "va": "005a66a3",
+        "bytes": "83c008",
+        "instruction": "ADD EAX,0x8"
+      },
+      {
+        "va": "005a66a6",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ],
+    "005a36ea": [
+      {
+        "va": "005a36ea",
+        "bytes": "8b442404",
+        "instruction": "MOV EAX,dword ptr [ESP + 0x4]"
+      },
+      {
+        "va": "005a36ee",
+        "bytes": "b9e8545e00",
+        "instruction": "MOV ECX,0x5e54e8"
+      },
+      {
+        "va": "005a36f3",
+        "bytes": "3bc1",
+        "instruction": "CMP EAX,ECX"
+      },
+      {
+        "va": "005a36f5",
+        "bytes": "7217",
+        "instruction": "JC 0x005a370e"
+      },
+      {
+        "va": "005a36f7",
+        "bytes": "3d48575e00",
+        "instruction": "CMP EAX,0x5e5748"
+      },
+      {
+        "va": "005a36fc",
+        "bytes": "7710",
+        "instruction": "JA 0x005a370e"
+      },
+      {
+        "va": "005a36fe",
+        "bytes": "2bc1",
+        "instruction": "SUB EAX,ECX"
+      },
+      {
+        "va": "005a3700",
+        "bytes": "c1f805",
+        "instruction": "SAR EAX,0x5"
+      },
+      {
+        "va": "005a3703",
+        "bytes": "83c01c",
+        "instruction": "ADD EAX,0x1c"
+      },
+      {
+        "va": "005a3706",
+        "bytes": "50",
+        "instruction": "PUSH EAX"
+      },
+      {
+        "va": "005a3707",
+        "bytes": "e898140000",
+        "instruction": "CALL 0x005a4ba4"
+      },
+      {
+        "va": "005a370c",
+        "bytes": "59",
+        "instruction": "POP ECX"
+      },
+      {
+        "va": "005a370d",
+        "bytes": "c3",
+        "instruction": "RET"
+      },
+      {
+        "va": "005a370e",
+        "bytes": "83c020",
+        "instruction": "ADD EAX,0x20"
+      },
+      {
+        "va": "005a3711",
+        "bytes": "50",
+        "instruction": "PUSH EAX"
+      },
+      {
+        "va": "005a3712",
+        "bytes": "ff1578205b00",
+        "instruction": "CALL dword ptr [0x005b2078]"
+      },
+      {
+        "va": "005a3718",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ],
+    "005a373c": [
+      {
+        "va": "005a373c",
+        "bytes": "8b442404",
+        "instruction": "MOV EAX,dword ptr [ESP + 0x4]"
+      },
+      {
+        "va": "005a3740",
+        "bytes": "b9e8545e00",
+        "instruction": "MOV ECX,0x5e54e8"
+      },
+      {
+        "va": "005a3745",
+        "bytes": "3bc1",
+        "instruction": "CMP EAX,ECX"
+      },
+      {
+        "va": "005a3747",
+        "bytes": "7217",
+        "instruction": "JC 0x005a3760"
+      },
+      {
+        "va": "005a3749",
+        "bytes": "3d48575e00",
+        "instruction": "CMP EAX,0x5e5748"
+      },
+      {
+        "va": "005a374e",
+        "bytes": "7710",
+        "instruction": "JA 0x005a3760"
+      },
+      {
+        "va": "005a3750",
+        "bytes": "2bc1",
+        "instruction": "SUB EAX,ECX"
+      },
+      {
+        "va": "005a3752",
+        "bytes": "c1f805",
+        "instruction": "SAR EAX,0x5"
+      },
+      {
+        "va": "005a3755",
+        "bytes": "83c01c",
+        "instruction": "ADD EAX,0x1c"
+      },
+      {
+        "va": "005a3758",
+        "bytes": "50",
+        "instruction": "PUSH EAX"
+      },
+      {
+        "va": "005a3759",
+        "bytes": "e8a7140000",
+        "instruction": "CALL 0x005a4c05"
+      },
+      {
+        "va": "005a375e",
+        "bytes": "59",
+        "instruction": "POP ECX"
+      },
+      {
+        "va": "005a375f",
+        "bytes": "c3",
+        "instruction": "RET"
+      },
+      {
+        "va": "005a3760",
+        "bytes": "83c020",
+        "instruction": "ADD EAX,0x20"
+      },
+      {
+        "va": "005a3763",
+        "bytes": "50",
+        "instruction": "PUSH EAX"
+      },
+      {
+        "va": "005a3764",
+        "bytes": "ff156c205b00",
+        "instruction": "CALL dword ptr [0x005b206c]"
+      },
+      {
+        "va": "005a376a",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ],
+    "005a4c05": [
+      {
+        "va": "005a4c05",
+        "bytes": "55",
+        "instruction": "PUSH EBP"
+      },
+      {
+        "va": "005a4c06",
+        "bytes": "8bec",
+        "instruction": "MOV EBP,ESP"
+      },
+      {
+        "va": "005a4c08",
+        "bytes": "8b4508",
+        "instruction": "MOV EAX,dword ptr [EBP + 0x8]"
+      },
+      {
+        "va": "005a4c0b",
+        "bytes": "ff3485a8575e00",
+        "instruction": "PUSH dword ptr [EAX*0x4 + 0x5e57a8]"
+      },
+      {
+        "va": "005a4c12",
+        "bytes": "ff156c205b00",
+        "instruction": "CALL dword ptr [0x005b206c]"
+      },
+      {
+        "va": "005a4c18",
+        "bytes": "5d",
+        "instruction": "POP EBP"
+      },
+      {
+        "va": "005a4c19",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ]
+  },
+  "indexed_incoming_calls": [
+    {
+      "from_va": "005a198c",
+      "to_va": "005a669e",
+      "from_function": "005a1902",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a203a",
+      "to_va": "005a36ea",
+      "from_function": "005a2024",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a2048",
+      "to_va": "005a373c",
+      "from_function": "005a2024",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a20a8",
+      "to_va": "005a36ea",
+      "from_function": "005a20a1",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a20c3",
+      "to_va": "005a373c",
+      "from_function": "005a20a1",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a257a",
+      "to_va": "005a36ea",
+      "from_function": "005a2561",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a25b6",
+      "to_va": "005a373c",
+      "from_function": "005a2561",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a25ca",
+      "to_va": "005a36ea",
+      "from_function": "005a25c3",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a25e3",
+      "to_va": "005a373c",
+      "from_function": "005a25c3",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a25f8",
+      "to_va": "005a36ea",
+      "from_function": "005a25f0",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a261e",
+      "to_va": "005a373c",
+      "from_function": "005a25f0",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a335b",
+      "to_va": "005a669e",
+      "from_function": "005a31a9",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a33b5",
+      "to_va": "005a36ea",
+      "from_function": "005a33ae",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a33c3",
+      "to_va": "005a373c",
+      "from_function": "005a33ae",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a3453",
+      "to_va": "005a669e",
+      "from_function": "005a33d0",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a3538",
+      "to_va": "005a36ea",
+      "from_function": "005a3531",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a3550",
+      "to_va": "005a373c",
+      "from_function": "005a3531",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a35d9",
+      "to_va": "005a669e",
+      "from_function": "005a355d",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a360e",
+      "to_va": "005a373c",
+      "from_function": "005a35ea",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a3795",
+      "to_va": "005a36ea",
+      "from_function": "005a378e",
+      "to_function": "005a36ea",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a36ea"
+    },
+    {
+      "from_va": "005a37b0",
+      "to_va": "005a373c",
+      "from_function": "005a378e",
+      "to_function": "005a373c",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a373c"
+    },
+    {
+      "from_va": "005a3ca7",
+      "to_va": "005a669e",
+      "from_function": "005a3c71",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a3cb1",
+      "to_va": "005a669e",
+      "from_function": "005a3c71",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a3cc0",
+      "to_va": "005a669e",
+      "from_function": "005a3c71",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a6657",
+      "to_va": "005a669e",
+      "from_function": "005a662b",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a6664",
+      "to_va": "005a669e",
+      "from_function": "005a662b",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a6684",
+      "to_va": "005a669e",
+      "from_function": "005a662b",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a6691",
+      "to_va": "005a669e",
+      "from_function": "005a662b",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a6cf9",
+      "to_va": "005a669e",
+      "from_function": "005a6cc4",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a7312",
+      "to_va": "005a669e",
+      "from_function": "005a7302",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a731e",
+      "to_va": "005a669e",
+      "from_function": "005a7302",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a75ad",
+      "to_va": "005a669e",
+      "from_function": "005a7568",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a78d3",
+      "to_va": "005a669e",
+      "from_function": "005a7886",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a797c",
+      "to_va": "005a669e",
+      "from_function": "005a78eb",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a9b05",
+      "to_va": "005a669e",
+      "from_function": "005a9ab8",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a9b2f",
+      "to_va": "005a669e",
+      "from_function": "005a9b1d",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a9e96",
+      "to_va": "005a669e",
+      "from_function": "005a9e49",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005a9fae",
+      "to_va": "005a669e",
+      "from_function": "005a9eae",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005aa01d",
+      "to_va": "005a669e",
+      "from_function": "005a9eae",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ab64c",
+      "to_va": "005a669e",
+      "from_function": "005ab5e9",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ab6cb",
+      "to_va": "005a669e",
+      "from_function": "005ab665",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ab70f",
+      "to_va": "005a669e",
+      "from_function": "005ab6e4",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ac010",
+      "to_va": "005a669e",
+      "from_function": "005abfb7",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005acc52",
+      "to_va": "005a669e",
+      "from_function": "005acbea",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005acc6b",
+      "to_va": "005a669e",
+      "from_function": "005acbea",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005acda9",
+      "to_va": "005a669e",
+      "from_function": "005acd17",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ad3ee",
+      "to_va": "005a669e",
+      "from_function": "005ad2ea",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ad470",
+      "to_va": "005a669e",
+      "from_function": "005ad2ea",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ad740",
+      "to_va": "005a669e",
+      "from_function": "005ad68c",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ae636",
+      "to_va": "005a669e",
+      "from_function": "005ae591",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005ae681",
+      "to_va": "005a669e",
+      "from_function": "005ae591",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    },
+    {
+      "from_va": "005aea61",
+      "to_va": "005a669e",
+      "from_function": "005aea10",
+      "to_function": "005a669e",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_005a669e"
+    }
+  ],
+  "actual_native_consumers": [
+    {
+      "va": "005a669e",
+      "caller": "005a33d0",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a33d0.obj",
+      "object_sha256": "815e20d2e93e4ab61c6d26d1dcf7e56212875f9eae99435006558c25a4358f2e",
+      "required_native_symbol": "?FUN_005a669e@@YAHXZ"
+    },
+    {
+      "va": "005a669e",
+      "caller": "005a662b",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a662b.obj",
+      "object_sha256": "6607fdf60b44e47d89749d520441512dc1f8e6bf4793675c2f68216c8c58369e",
+      "required_native_symbol": "?FUN_005a669e@@YAHXZ"
+    },
+    {
+      "va": "005a669e",
+      "caller": "005a7302",
+      "object": "local/experiments/v2-build-corpus-181/005a7302.obj",
+      "object_sha256": "72e4d231cc85e74056845be81294ef825578a66a19e97c4c0ab05cbe0d2e8929",
+      "required_native_symbol": "?FUN_005a669e@@YAHXZ"
+    },
+    {
+      "va": "005a669e",
+      "caller": "005aea10",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005aea10.obj",
+      "object_sha256": "b09011f4354201c30ffc4c6e585ea68f1a0750ddcfc1c99c84c39729cc93053c",
+      "required_native_symbol": "?FUN_005a669e@@YAHXZ"
+    },
+    {
+      "va": "005a36ea",
+      "caller": "005a3531",
+      "object": "local/experiments/v2-build-corpus-181/005a3531.obj",
+      "object_sha256": "7dc67ad7fc8edafe9cedd8d3fe5041f2c9db4963aefc456cc6ad0fcdfda523c3",
+      "required_native_symbol": "?FUN_005a36ea@@YAXI@Z"
+    },
+    {
+      "va": "005a373c",
+      "caller": "005a3531",
+      "object": "local/experiments/v2-build-corpus-181/005a3531.obj",
+      "object_sha256": "7dc67ad7fc8edafe9cedd8d3fe5041f2c9db4963aefc456cc6ad0fcdfda523c3",
+      "required_native_symbol": "?FUN_005a373c@@YAXI@Z"
+    }
+  ],
+  "deferred": {
+    "va": "005a4c05",
+    "reason": "Canonical array[26] cannot silently supply demanded IDs28..47; no storage expansion or source-level out-of-bounds workaround",
+    "published_prefix": 26,
+    "required_stdio_prefix": 48
+  },
+  "fixture_scope": "Controlled FILE20 address+CRT/critical/TLS providers only; pointer slots are raw32, errno return is EAX pointerbits; no real-provider composition"
+}

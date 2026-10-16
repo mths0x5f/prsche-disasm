@@ -1,0 +1,1984 @@
+{
+  "schema": 1,
+  "kind": "bounded-writable-scalar-screening",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "queue_pool": 48,
+  "screened": 24,
+  "rank_policy": "actual Run243 referring-object fanout descending, VA ascending",
+  "ranked_vas": [
+    "0060c9ec",
+    "0061bc4c",
+    "0069c9f0",
+    "0069c9f4",
+    "0069c9f8",
+    "0069c9fc",
+    "0069e0ac",
+    "006a57cc",
+    "006a6420",
+    "006b4f20",
+    "006c01e0",
+    "005e7530",
+    "0060c7ec",
+    "0060c7f0",
+    "0060c974",
+    "00628f88",
+    "00656184",
+    "006568e4",
+    "00657db8",
+    "00657de4",
+    "0065b940",
+    "006907e4",
+    "00690ad4",
+    "00699d58"
+  ],
+  "safe_vas": [
+    "0060c9ec",
+    "0061bc4c",
+    "0069c9f0",
+    "0069c9f4",
+    "0069c9f8",
+    "0069c9fc",
+    "0069e0ac",
+    "006a6420",
+    "005e7530",
+    "0060c7ec",
+    "0060c7f0",
+    "0060c974",
+    "00628f88",
+    "0065b940",
+    "006907e4",
+    "00690ad4",
+    "00699d58"
+  ],
+  "deferred_vas": [
+    "006a57cc",
+    "006b4f20",
+    "006c01e0",
+    "00656184",
+    "006568e4",
+    "00657db8",
+    "00657de4"
+  ],
+  "rows": [
+    {
+      "va": "0060c9ec",
+      "fanout": 2,
+      "symbol": "?DAT_0060c9ec@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "004252b6",
+        "00427ae5",
+        "00427af1"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "004252b4",
+          "bytes": "c705ecc96000ffffffff",
+          "instruction": "MOV dword ptr [0x0060c9ec],0xffffffff",
+          "access": 2,
+          "HIGHLOW_site": "004252b6"
+        },
+        {
+          "pc": "00427ae4",
+          "bytes": "a3ecc96000",
+          "instruction": "MOV [0x0060c9ec],EAX",
+          "access": 2,
+          "HIGHLOW_site": "00427ae5"
+        },
+        {
+          "pc": "00427af0",
+          "bytes": "a1ecc96000",
+          "instruction": "MOV EAX,[0x0060c9ec]",
+          "access": 1,
+          "HIGHLOW_site": "00427af1"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00427ae0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00427ae0.obj",
+          "object_sha256": "cd459b95380da9ae9efea13395df77b1f9f0472614950185e78de41a95b3b565",
+          "undefined": "?DAT_0060c9ec@@3IA"
+        },
+        {
+          "caller": "00427af0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00427af0.obj",
+          "object_sha256": "6c34bed89ce1ce30b36fde1e66566d753f666ef5bc190bb8b1bbc645f69762f3",
+          "undefined": "?DAT_0060c9ec@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0061bc4c",
+      "fanout": 2,
+      "symbol": "?DAT_0061bc4c@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0044fe13",
+        "0044fe1f",
+        "0044fe3e",
+        "0044fe4f",
+        "0044fea3"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0044fe11",
+          "bytes": "8b154cbc6100",
+          "instruction": "MOV EDX,dword ptr [0x0061bc4c]",
+          "access": 1,
+          "HIGHLOW_site": "0044fe13"
+        },
+        {
+          "pc": "0044fe1d",
+          "bytes": "89354cbc6100",
+          "instruction": "MOV dword ptr [0x0061bc4c],ESI",
+          "access": 2,
+          "HIGHLOW_site": "0044fe1f"
+        },
+        {
+          "pc": "0044fe3c",
+          "bytes": "8b0d4cbc6100",
+          "instruction": "MOV ECX,dword ptr [0x0061bc4c]",
+          "access": 1,
+          "HIGHLOW_site": "0044fe3e"
+        },
+        {
+          "pc": "0044fe4d",
+          "bytes": "890d4cbc6100",
+          "instruction": "MOV dword ptr [0x0061bc4c],ECX",
+          "access": 2,
+          "HIGHLOW_site": "0044fe4f"
+        },
+        {
+          "pc": "0044fea1",
+          "bytes": "8b354cbc6100",
+          "instruction": "MOV ESI,dword ptr [0x0061bc4c]",
+          "access": 1,
+          "HIGHLOW_site": "0044fea3"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "0044fe30",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0044fe30.obj",
+          "object_sha256": "8754c64bff578997322339dad6c92e96f42fc84e31e96f5c9bba772588bd59d2",
+          "undefined": "?DAT_0061bc4c@@3HA"
+        },
+        {
+          "caller": "0044fea0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0044fea0.obj",
+          "object_sha256": "118c40e0054cabce02b6028b8c671ce46e54ed41046bd2a8fd3d8b831b865955",
+          "undefined": "?DAT_0061bc4c@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0069c9f0",
+      "fanout": 2,
+      "symbol": "?DAT_0069c9f0@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0052086d",
+        "005208af"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0052086c",
+          "bytes": "a3f0c96900",
+          "instruction": "MOV [0x0069c9f0],EAX",
+          "access": 2,
+          "HIGHLOW_site": "0052086d"
+        },
+        {
+          "pc": "005208ae",
+          "bytes": "a1f0c96900",
+          "instruction": "MOV EAX,[0x0069c9f0]",
+          "access": 1,
+          "HIGHLOW_site": "005208af"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00520860",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520860.obj",
+          "object_sha256": "b0b32b0eb450da44b510175e5fa3bbce8054ce4fcd87716a9df896bfda1c1bb2",
+          "undefined": "?DAT_0069c9f0@@3IA"
+        },
+        {
+          "caller": "00520890",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520890.obj",
+          "object_sha256": "ed128fd5b2e3e4a727cf9c1afdfb0918c6bb2661e84e2e4f2c48c236bc4e5f7f",
+          "undefined": "?DAT_0069c9f0@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0069c9f4",
+      "fanout": 2,
+      "symbol": "?DAT_0069c9f4@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00520877",
+        "005208bb"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00520875",
+          "bytes": "890df4c96900",
+          "instruction": "MOV dword ptr [0x0069c9f4],ECX",
+          "access": 2,
+          "HIGHLOW_site": "00520877"
+        },
+        {
+          "pc": "005208b9",
+          "bytes": "8b0df4c96900",
+          "instruction": "MOV ECX,dword ptr [0x0069c9f4]",
+          "access": 1,
+          "HIGHLOW_site": "005208bb"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00520860",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520860.obj",
+          "object_sha256": "b0b32b0eb450da44b510175e5fa3bbce8054ce4fcd87716a9df896bfda1c1bb2",
+          "undefined": "?DAT_0069c9f4@@3IA"
+        },
+        {
+          "caller": "00520890",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520890.obj",
+          "object_sha256": "ed128fd5b2e3e4a727cf9c1afdfb0918c6bb2661e84e2e4f2c48c236bc4e5f7f",
+          "undefined": "?DAT_0069c9f4@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0069c9f8",
+      "fanout": 2,
+      "symbol": "?DAT_0069c9f8@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0052087d",
+        "005208c3"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0052087b",
+          "bytes": "8915f8c96900",
+          "instruction": "MOV dword ptr [0x0069c9f8],EDX",
+          "access": 2,
+          "HIGHLOW_site": "0052087d"
+        },
+        {
+          "pc": "005208c2",
+          "bytes": "a1f8c96900",
+          "instruction": "MOV EAX,[0x0069c9f8]",
+          "access": 1,
+          "HIGHLOW_site": "005208c3"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00520860",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520860.obj",
+          "object_sha256": "b0b32b0eb450da44b510175e5fa3bbce8054ce4fcd87716a9df896bfda1c1bb2",
+          "undefined": "?DAT_0069c9f8@@3IA"
+        },
+        {
+          "caller": "00520890",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520890.obj",
+          "object_sha256": "ed128fd5b2e3e4a727cf9c1afdfb0918c6bb2661e84e2e4f2c48c236bc4e5f7f",
+          "undefined": "?DAT_0069c9f8@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0069c9fc",
+      "fanout": 2,
+      "symbol": "?DAT_0069c9fc@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00520882",
+        "005208cc"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00520881",
+          "bytes": "a3fcc96900",
+          "instruction": "MOV [0x0069c9fc],EAX",
+          "access": 2,
+          "HIGHLOW_site": "00520882"
+        },
+        {
+          "pc": "005208ca",
+          "bytes": "8b0dfcc96900",
+          "instruction": "MOV ECX,dword ptr [0x0069c9fc]",
+          "access": 1,
+          "HIGHLOW_site": "005208cc"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00520860",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520860.obj",
+          "object_sha256": "b0b32b0eb450da44b510175e5fa3bbce8054ce4fcd87716a9df896bfda1c1bb2",
+          "undefined": "?DAT_0069c9fc@@3IA"
+        },
+        {
+          "caller": "00520890",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520890.obj",
+          "object_sha256": "ed128fd5b2e3e4a727cf9c1afdfb0918c6bb2661e84e2e4f2c48c236bc4e5f7f",
+          "undefined": "?DAT_0069c9fc@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0069e0ac",
+      "fanout": 2,
+      "symbol": "?DAT_0069e0ac@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "005701b5",
+        "00572f99"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "005701b3",
+          "bytes": "8b3dace06900",
+          "instruction": "MOV EDI,dword ptr [0x0069e0ac]",
+          "access": 1,
+          "HIGHLOW_site": "005701b5"
+        },
+        {
+          "pc": "00572f97",
+          "bytes": "8b0dace06900",
+          "instruction": "MOV ECX,dword ptr [0x0069e0ac]",
+          "access": 1,
+          "HIGHLOW_site": "00572f99"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "005701b0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005701b0.obj",
+          "object_sha256": "22df3820ffa52a46dc927c323be498b7d3b8154bce3fc83b384895059944f62f",
+          "undefined": "?DAT_0069e0ac@@3HA"
+        },
+        {
+          "caller": "00572f90",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/00572f90.obj",
+          "object_sha256": "a2744c37477e62e3906b1e1bf6ee2f4ef1dcf04cc5ed3a3d4f61c590cedeec0f",
+          "undefined": "?DAT_0069e0ac@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "006a57cc",
+      "fanout": 2,
+      "symbol": "?DAT_006a57cc@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0055eba1",
+        "0055ebad",
+        "0055ec31",
+        "0055ec3b",
+        "0055ec51",
+        "0055ece4",
+        "0055ef21",
+        "0055ef41",
+        "0055ef91",
+        "0055f131",
+        "0055f151",
+        "0055f191"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0055eba0",
+          "bytes": "a1cc576a00",
+          "instruction": "MOV EAX,[0x006a57cc]",
+          "access": 1,
+          "HIGHLOW_site": "0055eba1"
+        },
+        {
+          "pc": "0055ebab",
+          "bytes": "c705cc576a0001000000",
+          "instruction": "MOV dword ptr [0x006a57cc],0x1",
+          "access": 2,
+          "HIGHLOW_site": "0055ebad"
+        },
+        {
+          "pc": "0055ec30",
+          "bytes": "a1cc576a00",
+          "instruction": "MOV EAX,[0x006a57cc]",
+          "access": 1,
+          "HIGHLOW_site": "0055ec31"
+        },
+        {
+          "pc": "0055ec39",
+          "bytes": "c705cc576a0000000000",
+          "instruction": "MOV dword ptr [0x006a57cc],0x0",
+          "access": 2,
+          "HIGHLOW_site": "0055ec3b"
+        },
+        {
+          "pc": "0055ec50",
+          "bytes": "a1cc576a00",
+          "instruction": "MOV EAX,[0x006a57cc]",
+          "access": 1,
+          "HIGHLOW_site": "0055ec51"
+        },
+        {
+          "pc": "0055ece3",
+          "bytes": "a1cc576a00",
+          "instruction": "MOV EAX,[0x006a57cc]",
+          "access": 1,
+          "HIGHLOW_site": "0055ece4"
+        },
+        {
+          "pc": "0055ef90",
+          "bytes": "a1cc576a00",
+          "instruction": "MOV EAX,[0x006a57cc]",
+          "access": 1,
+          "HIGHLOW_site": "0055ef91"
+        },
+        {
+          "pc": "0055f150",
+          "bytes": "a1cc576a00",
+          "instruction": "MOV EAX,[0x006a57cc]",
+          "access": 1,
+          "HIGHLOW_site": "0055f151"
+        }
+      ],
+      "uncovered_HIGHLOW": [
+        "0055ef21",
+        "0055ef41",
+        "0055f131",
+        "0055f191"
+      ],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "0055eba0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/0055eba0.obj",
+          "object_sha256": "516ae86f5206cc4743d837cda4861502a42fb1ea2e1c4f7c438502ca6cb9aeaa",
+          "undefined": "?DAT_006a57cc@@3HA"
+        },
+        {
+          "caller": "0055ec30",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/0055ec30.obj",
+          "object_sha256": "7f3c8ce9060cf50e2bd788a1a1862ba455fb9c7d4b4e25bbcfa70a64d8cda1e1",
+          "undefined": "?DAT_006a57cc@@3HA"
+        }
+      ],
+      "reasons": [
+        "HIGHLOW_index_coverage_gap"
+      ],
+      "safe": false
+    },
+    {
+      "va": "006a6420",
+      "fanout": 2,
+      "symbol": "?DAT_006a6420@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "005705b5",
+        "005707a1",
+        "0057082b"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "005705b3",
+          "bytes": "8b3520646a00",
+          "instruction": "MOV ESI,dword ptr [0x006a6420]",
+          "access": 1,
+          "HIGHLOW_site": "005705b5"
+        },
+        {
+          "pc": "0057079f",
+          "bytes": "8b0d20646a00",
+          "instruction": "MOV ECX,dword ptr [0x006a6420]",
+          "access": 1,
+          "HIGHLOW_site": "005707a1"
+        },
+        {
+          "pc": "00570829",
+          "bytes": "8b1d20646a00",
+          "instruction": "MOV EBX,dword ptr [0x006a6420]",
+          "access": 1,
+          "HIGHLOW_site": "0057082b"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00570780",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/00570780.obj",
+          "object_sha256": "2322181198369948468769e51bb74450e4705cac235749361d50f7689ef9ebe9",
+          "undefined": "?DAT_006a6420@@3IA"
+        },
+        {
+          "caller": "00570820",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/00570820.obj",
+          "object_sha256": "0b99e52316ea0cc0143e7a0b557e3ae8af820de8f1810a7b10f8e327d10ae4f3",
+          "undefined": "?DAT_006a6420@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "006b4f20",
+      "fanout": 2,
+      "symbol": "?DAT_006b4f20@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00531c71",
+        "00531cbb",
+        "00531faa",
+        "0053cbf2",
+        "0055662a",
+        "0056965c",
+        "005697d5",
+        "005698fc",
+        "005699fe",
+        "00569a05",
+        "00569a4b",
+        "00569a9e",
+        "00569add",
+        "00569b1e",
+        "0056a222",
+        "00571fc2",
+        "005aef30",
+        "005aefac"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "005aefaa",
+          "bytes": "8b0d204f6b00",
+          "instruction": "MOV ECX,dword ptr [0x006b4f20]",
+          "access": 1,
+          "HIGHLOW_site": "005aefac"
+        }
+      ],
+      "uncovered_HIGHLOW": [
+        "00531c71",
+        "00531cbb",
+        "00531faa",
+        "0053cbf2",
+        "0055662a",
+        "0056965c",
+        "005697d5",
+        "005698fc",
+        "005699fe",
+        "00569a05",
+        "00569a4b",
+        "00569a9e",
+        "00569add",
+        "00569b1e",
+        "0056a222",
+        "00571fc2",
+        "005aef30"
+      ],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_bootstrap_probe.cpp:33:    std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_bootstrap_probe.cpp:113:        for(unsigned i=0;i<16;++i){if(i)std::cout<<',';std::cout<<ptr(porsche::heaps_006b4f20[i]);}",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:23:OriginalHeap* heaps_006b4f20[16]{};",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:35:    if(index<16)heaps_006b4f20[index]=reinterpret_cast<OriginalHeap*>(0x03600400+index*0x40);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:55:        std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:61:            porsche::heaps_006b4f20[3+i]=reinterpret_cast<porsche::OriginalHeap*>(0x03600400+(3+i)*0x40);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:70:                 <<\",\\\"heap0\\\":\"<<ptr(porsche::heaps_006b4f20[0])",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:71:                 <<\",\\\"heap1\\\":\"<<ptr(porsche::heaps_006b4f20[1])",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_heap_init_probe.cpp:72:                 <<\",\\\"heap_at\\\":\"<<ptr(porsche::heaps_006b4f20[index])",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include\\porsche\\heap.hpp:22:extern OriginalHeap* heaps_006b4f20[16];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\heap_probe.cpp:65:        std::fill(std::begin(heaps_006b4f20),std::end(heaps_006b4f20),nullptr); allocation_failure_0069cb00=nullptr;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_heap_init.cpp:19:    heaps_006b4f20[1]=heaps_006b4f20[0];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_heap_init.cpp:26:    while(index<16 && heaps_006b4f20[index])++index;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:7:OriginalHeap* heaps_006b4f20[16];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:43:    const auto* heap=heaps_006b4f20[flags&15];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:72:    auto* heap=heaps_006b4f20[flags&15];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:131:    auto* heap=heaps_006b4f20[b->flags&15]; auto* lock=heap->lock;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:149:    return static_cast<std::int32_t>(heaps_006b4f20[flags&15]->suffix);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:181:    auto* heap=heaps_006b4f20[b->flags&15]; auto* lock=heap->lock;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\heap.cpp:217:    auto* heap=at<OriginalHeap>(address(memory)+16); heaps_006b4f20[index&15]=heap;"
+      ],
+      "native_consumers": [
+        {
+          "caller": "00531c60",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00531c60.obj",
+          "object_sha256": "78ddbe015dfe6d9fe084166b6334c881bfc0cf00c8cafdf35df2b0e0116f1747",
+          "undefined": "?DAT_006b4f20@@3IA"
+        },
+        {
+          "caller": "00556620",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00556620.obj",
+          "object_sha256": "fc6c72fcc80fbb5604c618c0d291b462e7ee5c236ca8b656776dff4557869e66",
+          "undefined": "?DAT_006b4f20@@3IA"
+        }
+      ],
+      "reasons": [
+        "HIGHLOW_index_coverage_gap",
+        "source_or_WIP_address_occurrence"
+      ],
+      "safe": false
+    },
+    {
+      "va": "006c01e0",
+      "fanout": 2,
+      "symbol": "?DAT_006c01e0@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "005a342f",
+        "005a349c",
+        "005a36b2",
+        "005a430d",
+        "005a7582",
+        "005a7627",
+        "005a7822",
+        "005a78a0",
+        "005a7918",
+        "005a791f",
+        "005a9562",
+        "005a958a",
+        "005a965e",
+        "005a9682",
+        "005a9ad2",
+        "005a9b7b",
+        "005a9e63",
+        "005a9ed7",
+        "005ab4e2",
+        "005ab5a4",
+        "005ab5ff",
+        "005ab67b",
+        "005ab6fe",
+        "005ab738",
+        "005ab73f",
+        "005ab797",
+        "005abf52",
+        "005acc01",
+        "005ad4f9",
+        "005aea28"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "005a9560",
+          "bytes": "8935e0016c00",
+          "instruction": "MOV dword ptr [0x006c01e0],ESI",
+          "access": 2,
+          "HIGHLOW_site": "005a9562"
+        },
+        {
+          "pc": "005a9589",
+          "bytes": "a1e0016c00",
+          "instruction": "MOV EAX,[0x006c01e0]",
+          "access": 1,
+          "HIGHLOW_site": "005a958a"
+        },
+        {
+          "pc": "005a9680",
+          "bytes": "8b0de0016c00",
+          "instruction": "MOV ECX,dword ptr [0x006c01e0]",
+          "access": 1,
+          "HIGHLOW_site": "005a9682"
+        }
+      ],
+      "uncovered_HIGHLOW": [
+        "005a342f",
+        "005a349c",
+        "005a36b2",
+        "005a430d",
+        "005a7582",
+        "005a7627",
+        "005a7822",
+        "005a78a0",
+        "005a7918",
+        "005a791f",
+        "005a965e",
+        "005a9ad2",
+        "005a9b7b",
+        "005a9e63",
+        "005a9ed7",
+        "005ab4e2",
+        "005ab5a4",
+        "005ab5ff",
+        "005ab67b",
+        "005ab6fe",
+        "005ab738",
+        "005ab73f",
+        "005ab797",
+        "005abf52",
+        "005acc01",
+        "005ad4f9",
+        "005aea28"
+      ],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include\\porsche\\formatter_cleanup.hpp:35:extern const std::uint8_t* formatter_cleanup_handle_table_006c01e0[];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_cleanup_probe.cpp:14:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[2]={handle_bank,nullptr};",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_lowio_probe.cpp:37:    for (unsigned i = 0; i < 64; ++i) formatter_cleanup_handle_table_006c01e0[i] = nullptr;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_lowio_probe.cpp:47:        formatter_cleanup_handle_table_006c01e0[i] = pool[i];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_lowio_probe.cpp:60:        const auto* p = formatter_cleanup_handle_table_006c01e0[i];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_lowio_probe.cpp:69:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[64]{};",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_lowio_probe.cpp:87:    if (id == 17 && mutation == 4) formatter_cleanup_handle_table_006c01e0[0] = pool[1];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_lowio_probe.cpp:118:    if (mutation == 4) formatter_cleanup_handle_table_006c01e0[0] = pool[1];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_output_probe.cpp:18:void swap_bank() {porsche::formatter_cleanup_handle_table_006c01e0[(p[kID]&63u)>>5]=reinterpret_cast<const std::uint8_t*>(B+0x3000);}",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_output_probe.cpp:39:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[64]{};",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_output_probe.cpp:52:    return get(reinterpret_cast<U>(formatter_cleanup_handle_table_006c01e0[id>>5])+(id&31u)*36u);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_output_probe.cpp:85:        for(auto& bank:formatter_cleanup_handle_table_006c01e0)bank=nullptr;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_output_probe.cpp:86:        formatter_cleanup_handle_table_006c01e0[0]=reinterpret_cast<const std::uint8_t*>(B+0x1000);formatter_cleanup_handle_table_006c01e0[1]=reinterpret_cast<const std::uint8_t*>(B+0x2000);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_output_probe.cpp:104:            formatter_text_decrement_005b2254==decrement_b?1:0,reinterpret_cast<U>(formatter_cleanup_handle_table_006c01e0[0]),reinterpret_cast<U>(formatter_cleanup_handle_table_006c01e0[1]),hex(reinterpret_cast<void*>(B),0x10000).c_str());",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\formatter_runtime_storage_probe.cpp:40:    bytes(\"handle_table\", formatter_cleanup_handle_table_006c01e0, 64 * 4);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_cleanup.cpp:51:        : formatter_cleanup_handle_table_006c01e0[bank];",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_cleanup.cpp:123:                          : formatter_cleanup_handle_table_006c01e0[bank]);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_lowio.cpp:14:    return const_cast<std::uint8_t*>(formatter_cleanup_handle_table_006c01e0[index]);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_lowio.cpp:51:    formatter_cleanup_handle_table_006c01e0[0] = first;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_lowio.cpp:70:                formatter_cleanup_handle_table_006c01e0[index] = allocation;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_lowio.cpp:126:            formatter_cleanup_handle_table_006c01e0[index] = allocation;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_output.cpp:11:    return const_cast<std::uint8_t*>(formatter_cleanup_handle_table_006c01e0[index])+(id&31u)*36u;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_output.cpp:60:    auto* const bank_cell=formatter_cleanup_handle_table_006c01e0+index;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_runtime_storage.cpp:33:const std::uint8_t* formatter_cleanup_handle_table_006c01e0[64]{};",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\formatter_runtime_storage.cpp:46:static_assert(sizeof(formatter_cleanup_handle_table_006c01e0) == 64 * sizeof(void*));"
+      ],
+      "native_consumers": [
+        {
+          "caller": "005a33d0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a33d0.obj",
+          "object_sha256": "815e20d2e93e4ab61c6d26d1dcf7e56212875f9eae99435006558c25a4358f2e",
+          "undefined": "?DAT_006c01e0@@3IA"
+        },
+        {
+          "caller": "005aea10",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005aea10.obj",
+          "object_sha256": "b09011f4354201c30ffc4c6e585ea68f1a0750ddcfc1c99c84c39729cc93053c",
+          "undefined": "?DAT_006c01e0@@3IA"
+        }
+      ],
+      "reasons": [
+        "HIGHLOW_index_coverage_gap",
+        "source_or_WIP_address_occurrence"
+      ],
+      "safe": false
+    },
+    {
+      "va": "005e7530",
+      "fanout": 1,
+      "symbol": "?DAT_005e7530@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00406b00",
+        "00406b13"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00406aff",
+          "bytes": "a130755e00",
+          "instruction": "MOV EAX,[0x005e7530]",
+          "access": 1,
+          "HIGHLOW_site": "00406b00"
+        },
+        {
+          "pc": "00406b11",
+          "bytes": "c70530755e0000000000",
+          "instruction": "MOV dword ptr [0x005e7530],0x0",
+          "access": 2,
+          "HIGHLOW_site": "00406b13"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00406af0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00406af0.obj",
+          "object_sha256": "c5894e76a3d2b0a5bbe26491e6d0325f12316c4dd6a9183f720c9c439b1e0440",
+          "undefined": "?DAT_005e7530@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0060c7ec",
+      "fanout": 1,
+      "symbol": "?DAT_0060c7ec@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00419e23",
+        "00419e4f",
+        "0041a431",
+        "0041a4af",
+        "0041a4c7"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00419e21",
+          "bytes": "8b0decc76000",
+          "instruction": "MOV ECX,dword ptr [0x0060c7ec]",
+          "access": 1,
+          "HIGHLOW_site": "00419e23"
+        },
+        {
+          "pc": "00419e4d",
+          "bytes": "890decc76000",
+          "instruction": "MOV dword ptr [0x0060c7ec],ECX",
+          "access": 2,
+          "HIGHLOW_site": "00419e4f"
+        },
+        {
+          "pc": "0041a42f",
+          "bytes": "8b0decc76000",
+          "instruction": "MOV ECX,dword ptr [0x0060c7ec]",
+          "access": 1,
+          "HIGHLOW_site": "0041a431"
+        },
+        {
+          "pc": "0041a4ae",
+          "bytes": "a1ecc76000",
+          "instruction": "MOV EAX,[0x0060c7ec]",
+          "access": 1,
+          "HIGHLOW_site": "0041a4af"
+        },
+        {
+          "pc": "0041a4c5",
+          "bytes": "893decc76000",
+          "instruction": "MOV dword ptr [0x0060c7ec],EDI",
+          "access": 2,
+          "HIGHLOW_site": "0041a4c7"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00419e10",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00419e10.obj",
+          "object_sha256": "0bb1ae031a3146f9398e11c3997af9537b763e990b5714725f16065a03c013b9",
+          "undefined": "?DAT_0060c7ec@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0060c7f0",
+      "fanout": 1,
+      "symbol": "?DAT_0060c7f0@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00419e91",
+        "00419f06",
+        "00419f35",
+        "00419f3c",
+        "00419f44",
+        "0041a4bc",
+        "0041a4de",
+        "0041a4f0",
+        "0041a4fd"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00419e90",
+          "bytes": "a1f0c76000",
+          "instruction": "MOV EAX,[0x0060c7f0]",
+          "access": 1,
+          "HIGHLOW_site": "00419e91"
+        },
+        {
+          "pc": "00419f04",
+          "bytes": "8b0df0c76000",
+          "instruction": "MOV ECX,dword ptr [0x0060c7f0]",
+          "access": 1,
+          "HIGHLOW_site": "00419f06"
+        },
+        {
+          "pc": "00419f33",
+          "bytes": "890df0c76000",
+          "instruction": "MOV dword ptr [0x0060c7f0],ECX",
+          "access": 2,
+          "HIGHLOW_site": "00419f35"
+        },
+        {
+          "pc": "00419f3b",
+          "bytes": "a1f0c76000",
+          "instruction": "MOV EAX,[0x0060c7f0]",
+          "access": 1,
+          "HIGHLOW_site": "00419f3c"
+        },
+        {
+          "pc": "00419f43",
+          "bytes": "a3f0c76000",
+          "instruction": "MOV [0x0060c7f0],EAX",
+          "access": 2,
+          "HIGHLOW_site": "00419f44"
+        },
+        {
+          "pc": "0041a4bb",
+          "bytes": "a1f0c76000",
+          "instruction": "MOV EAX,[0x0060c7f0]",
+          "access": 1,
+          "HIGHLOW_site": "0041a4bc"
+        },
+        {
+          "pc": "0041a4dd",
+          "bytes": "a1f0c76000",
+          "instruction": "MOV EAX,[0x0060c7f0]",
+          "access": 1,
+          "HIGHLOW_site": "0041a4de"
+        },
+        {
+          "pc": "0041a4ee",
+          "bytes": "c705f0c7600000000000",
+          "instruction": "MOV dword ptr [0x0060c7f0],0x0",
+          "access": 2,
+          "HIGHLOW_site": "0041a4f0"
+        },
+        {
+          "pc": "0041a4fb",
+          "bytes": "893df0c76000",
+          "instruction": "MOV dword ptr [0x0060c7f0],EDI",
+          "access": 2,
+          "HIGHLOW_site": "0041a4fd"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00419e90",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00419e90.obj",
+          "object_sha256": "a4775b235c39707b340d9b395c2d38c7551a5c24cd2e9fd6c7122b1db134d209",
+          "undefined": "?DAT_0060c7f0@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "0060c974",
+      "fanout": 1,
+      "symbol": "?DAT_0060c974@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0041e161",
+        "0041e1ec",
+        "0041e1f7",
+        "0041e2d7",
+        "0041e2ec"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0041e160",
+          "bytes": "a174c96000",
+          "instruction": "MOV EAX,[0x0060c974]",
+          "access": 1,
+          "HIGHLOW_site": "0041e161"
+        },
+        {
+          "pc": "0041e1eb",
+          "bytes": "a374c96000",
+          "instruction": "MOV [0x0060c974],EAX",
+          "access": 2,
+          "HIGHLOW_site": "0041e1ec"
+        },
+        {
+          "pc": "0041e1f5",
+          "bytes": "8b0d74c96000",
+          "instruction": "MOV ECX,dword ptr [0x0060c974]",
+          "access": 1,
+          "HIGHLOW_site": "0041e1f7"
+        },
+        {
+          "pc": "0041e2d6",
+          "bytes": "a174c96000",
+          "instruction": "MOV EAX,[0x0060c974]",
+          "access": 1,
+          "HIGHLOW_site": "0041e2d7"
+        },
+        {
+          "pc": "0041e2ea",
+          "bytes": "892d74c96000",
+          "instruction": "MOV dword ptr [0x0060c974],EBP",
+          "access": 2,
+          "HIGHLOW_site": "0041e2ec"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "0041e160",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0041e160.obj",
+          "object_sha256": "6196ae16643121e0b18dc1f9ac57c8928a09cea9eda7e27d159c6cf853113cd1",
+          "undefined": "?DAT_0060c974@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "00628f88",
+      "fanout": 1,
+      "symbol": "?DAT_00628f88@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0049c3e0",
+        "0049c3fd",
+        "0049c41f",
+        "0049c461"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0049c3df",
+          "bytes": "a3888f6200",
+          "instruction": "MOV [0x00628f88],EAX",
+          "access": 2,
+          "HIGHLOW_site": "0049c3e0"
+        },
+        {
+          "pc": "0049c3fb",
+          "bytes": "8b0d888f6200",
+          "instruction": "MOV ECX,dword ptr [0x00628f88]",
+          "access": 1,
+          "HIGHLOW_site": "0049c3fd"
+        },
+        {
+          "pc": "0049c41d",
+          "bytes": "8b15888f6200",
+          "instruction": "MOV EDX,dword ptr [0x00628f88]",
+          "access": 1,
+          "HIGHLOW_site": "0049c41f"
+        },
+        {
+          "pc": "0049c460",
+          "bytes": "a1888f6200",
+          "instruction": "MOV EAX,[0x00628f88]",
+          "access": 1,
+          "HIGHLOW_site": "0049c461"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "0049c460",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0049c460.obj",
+          "object_sha256": "996b18f2cee73d12acbae01cf4b73836c438de40f9e9b541f231c88561a7bb70",
+          "undefined": "?DAT_00628f88@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "00656184",
+      "fanout": 1,
+      "symbol": "?DAT_00656184@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "004a8725",
+        "004a9539",
+        "004a9587",
+        "004a9657",
+        "004a9807",
+        "004a98d0",
+        "004a9d20",
+        "004a9d49",
+        "004a9d7e",
+        "004a9d89",
+        "004a9dc0",
+        "004a9df3",
+        "004a9e0e",
+        "004aa87a",
+        "004aa9fc",
+        "004aaa45",
+        "004aaa9d",
+        "004aad62"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "004aa879",
+          "bytes": "a384616500",
+          "instruction": "MOV [0x00656184],EAX",
+          "access": 2,
+          "HIGHLOW_site": "004aa87a"
+        }
+      ],
+      "uncovered_HIGHLOW": [
+        "004a8725",
+        "004a9539",
+        "004a9587",
+        "004a9657",
+        "004a9807",
+        "004a98d0",
+        "004a9d20",
+        "004a9d49",
+        "004a9d7e",
+        "004a9d89",
+        "004a9dc0",
+        "004a9df3",
+        "004a9e0e",
+        "004aa9fc",
+        "004aaa45",
+        "004aaa9d",
+        "004aad62"
+      ],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "004a9890",
+          "object": "local/experiments/v2-consumer-declarations-203/final/objects/004a9890.obj",
+          "object_sha256": "0dd98f4f42cf58d0fd550ec680b7e81e446b6d29ca6df3de52bac39e1da3df66",
+          "undefined": "?DAT_00656184@@3IA"
+        }
+      ],
+      "reasons": [
+        "HIGHLOW_index_coverage_gap"
+      ],
+      "safe": false
+    },
+    {
+      "va": "006568e4",
+      "fanout": 1,
+      "symbol": "?DAT_006568e4@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "004ab4c0",
+        "004ab4d6"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "004ab4bf",
+          "bytes": "a1e4686500",
+          "instruction": "MOV EAX,[0x006568e4]",
+          "access": 1,
+          "HIGHLOW_site": "004ab4c0"
+        },
+        {
+          "pc": "004ab4d4",
+          "bytes": "c705e468650000000000",
+          "instruction": "MOV dword ptr [0x006568e4],0x0",
+          "access": 2,
+          "HIGHLOW_site": "004ab4d6"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include\\porsche\\application_audio_lifecycle.hpp:7:extern std::uint32_t application_audio_auxiliary_006568e4;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_audio_lifecycle_probe.cpp:58: record(10,a,b,c,d,e);if(mutation&1)application_audio_auxiliary_006568e4=0x76543210;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_audio_lifecycle_probe.cpp:84:  application_audio_auxiliary_006568e4=v[9];application_audio_active_005d1734=0x55555555;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\application_audio_lifecycle_probe.cpp:120:   <<application_audio_auxiliary_006568e4<<','<<application_audio_active_005d1734<<','",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_audio_lifecycle.cpp:8:std::uint32_t application_audio_auxiliary_006568e4 = 0;",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_audio_lifecycle.cpp:38:    if(application_audio_auxiliary_006568e4) {",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_audio_lifecycle.cpp:39:        release(application_audio_auxiliary_006568e4);",
+        "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_audio_lifecycle.cpp:40:        application_audio_auxiliary_006568e4=0;"
+      ],
+      "native_consumers": [
+        {
+          "caller": "004ab4b0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004ab4b0.obj",
+          "object_sha256": "f02c73dce6d7d3d301dd2656d2e0ea1b55965d95caa0555736af2fe74f7d013c",
+          "undefined": "?DAT_006568e4@@3HA"
+        }
+      ],
+      "reasons": [
+        "source_or_WIP_address_occurrence"
+      ],
+      "safe": false
+    },
+    {
+      "va": "00657db8",
+      "fanout": 1,
+      "symbol": "?DAT_00657db8@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "0041e2b1",
+        "0042447a",
+        "004b14e2"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "0041e2b0",
+          "bytes": "a1b87d6500",
+          "instruction": "MOV EAX,[0x00657db8]",
+          "access": 1,
+          "HIGHLOW_site": "0041e2b1"
+        },
+        {
+          "pc": "00424478",
+          "bytes": "8b15b87d6500",
+          "instruction": "MOV EDX,dword ptr [0x00657db8]",
+          "access": 1,
+          "HIGHLOW_site": "0042447a"
+        }
+      ],
+      "uncovered_HIGHLOW": [
+        "004b14e2"
+      ],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "0041e2b0",
+          "object": "local/experiments/v2-consumer-declarations-203/final/objects/0041e2b0.obj",
+          "object_sha256": "4e539868b73f4f6ea2a2176b4479c7c6f147c37a8caf99848566aa17e6b7da0c",
+          "undefined": "?DAT_00657db8@@3IA"
+        }
+      ],
+      "reasons": [
+        "HIGHLOW_index_coverage_gap"
+      ],
+      "safe": false
+    },
+    {
+      "va": "00657de4",
+      "fanout": 1,
+      "symbol": "?DAT_00657de4@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00425299",
+        "004267a1",
+        "004b162c"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00425298",
+          "bytes": "a1e47d6500",
+          "instruction": "MOV EAX,[0x00657de4]",
+          "access": 1,
+          "HIGHLOW_site": "00425299"
+        },
+        {
+          "pc": "004267a0",
+          "bytes": "a1e47d6500",
+          "instruction": "MOV EAX,[0x00657de4]",
+          "access": 1,
+          "HIGHLOW_site": "004267a1"
+        }
+      ],
+      "uncovered_HIGHLOW": [
+        "004b162c"
+      ],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "004267a0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004267a0.obj",
+          "object_sha256": "bfc3ed0426fd6f03d1b6b02bbb8d2220c36f25ed49890938ba624f8d6a59ac77",
+          "undefined": "?DAT_00657de4@@3HA"
+        }
+      ],
+      "reasons": [
+        "HIGHLOW_index_coverage_gap"
+      ],
+      "safe": false
+    },
+    {
+      "va": "0065b940",
+      "fanout": 1,
+      "symbol": "?DAT_0065b940@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "004d8772",
+        "004d8782",
+        "004d879d"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "004d8771",
+          "bytes": "a140b96500",
+          "instruction": "MOV EAX,[0x0065b940]",
+          "access": 1,
+          "HIGHLOW_site": "004d8772"
+        },
+        {
+          "pc": "004d8781",
+          "bytes": "a340b96500",
+          "instruction": "MOV [0x0065b940],EAX",
+          "access": 2,
+          "HIGHLOW_site": "004d8782"
+        },
+        {
+          "pc": "004d879b",
+          "bytes": "230540b96500",
+          "instruction": "AND EAX,dword ptr [0x0065b940]",
+          "access": 1,
+          "HIGHLOW_site": "004d879d"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "004d8790",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004d8790.obj",
+          "object_sha256": "f007123f5bac160d3a73349ddd3e78d8ae1a71d5a9162949b5641099177c4976",
+          "undefined": "?DAT_0065b940@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "006907e4",
+      "fanout": 1,
+      "symbol": "?DAT_006907e4@@3IA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "004e3541",
+        "004e3596"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "004e3540",
+          "bytes": "a1e4076900",
+          "instruction": "MOV EAX,[0x006907e4]",
+          "access": 1,
+          "HIGHLOW_site": "004e3541"
+        },
+        {
+          "pc": "004e3594",
+          "bytes": "890de4076900",
+          "instruction": "MOV dword ptr [0x006907e4],ECX",
+          "access": 2,
+          "HIGHLOW_site": "004e3596"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "004e3540",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004e3540.obj",
+          "object_sha256": "98477b24df0548054471ea882bfdc4943eef3fbeee6e86c25bc6370cd059a093",
+          "undefined": "?DAT_006907e4@@3IA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "00690ad4",
+      "fanout": 1,
+      "symbol": "?DAT_00690ad4@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "004edd07",
+        "004edd1f",
+        "004ede2d",
+        "004edeb2",
+        "004edf0b",
+        "004edfa2",
+        "004ee087",
+        "004ee0e4",
+        "004ee108",
+        "004ee175"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "004edd05",
+          "bytes": "833dd40a690004",
+          "instruction": "CMP dword ptr [0x00690ad4],0x4",
+          "access": 1,
+          "HIGHLOW_site": "004edd07"
+        },
+        {
+          "pc": "004edd1d",
+          "bytes": "833dd40a690004",
+          "instruction": "CMP dword ptr [0x00690ad4],0x4",
+          "access": 1,
+          "HIGHLOW_site": "004edd1f"
+        },
+        {
+          "pc": "004ede2c",
+          "bytes": "a3d40a6900",
+          "instruction": "MOV [0x00690ad4],EAX",
+          "access": 2,
+          "HIGHLOW_site": "004ede2d"
+        },
+        {
+          "pc": "004edeb0",
+          "bytes": "833dd40a690003",
+          "instruction": "CMP dword ptr [0x00690ad4],0x3",
+          "access": 1,
+          "HIGHLOW_site": "004edeb2"
+        },
+        {
+          "pc": "004edf0a",
+          "bytes": "a1d40a6900",
+          "instruction": "MOV EAX,[0x00690ad4]",
+          "access": 1,
+          "HIGHLOW_site": "004edf0b"
+        },
+        {
+          "pc": "004edfa1",
+          "bytes": "a1d40a6900",
+          "instruction": "MOV EAX,[0x00690ad4]",
+          "access": 1,
+          "HIGHLOW_site": "004edfa2"
+        },
+        {
+          "pc": "004ee086",
+          "bytes": "a1d40a6900",
+          "instruction": "MOV EAX,[0x00690ad4]",
+          "access": 1,
+          "HIGHLOW_site": "004ee087"
+        },
+        {
+          "pc": "004ee0e3",
+          "bytes": "a1d40a6900",
+          "instruction": "MOV EAX,[0x00690ad4]",
+          "access": 1,
+          "HIGHLOW_site": "004ee0e4"
+        },
+        {
+          "pc": "004ee107",
+          "bytes": "a1d40a6900",
+          "instruction": "MOV EAX,[0x00690ad4]",
+          "access": 1,
+          "HIGHLOW_site": "004ee108"
+        },
+        {
+          "pc": "004ee174",
+          "bytes": "a1d40a6900",
+          "instruction": "MOV EAX,[0x00690ad4]",
+          "access": 1,
+          "HIGHLOW_site": "004ee175"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "004edd00",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004edd00.obj",
+          "object_sha256": "d2fae8cde2362a5041197314bfc124d3d9cd9b21a98653259d1fa4eb6f742cc3",
+          "undefined": "?DAT_00690ad4@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    },
+    {
+      "va": "00699d58",
+      "fanout": 1,
+      "symbol": "?DAT_00699d58@@3HA",
+      "section": {
+        "name": ".data",
+        "va": 6074368,
+        "size": 1008952,
+        "rawsize": 114688,
+        "raw": 1880064,
+        "flags": 3221225536
+      },
+      "initial_bits": "00000000",
+      "complete_HIGHLOW_sites": [
+        "00508b21",
+        "00508b34",
+        "00508b71",
+        "00508b87",
+        "00508c66",
+        "00508c71",
+        "00508cb1"
+      ],
+      "direct_MEM4": [
+        {
+          "pc": "00508b20",
+          "bytes": "a1589d6900",
+          "instruction": "MOV EAX,[0x00699d58]",
+          "access": 1,
+          "HIGHLOW_site": "00508b21"
+        },
+        {
+          "pc": "00508b32",
+          "bytes": "c705589d690000000000",
+          "instruction": "MOV dword ptr [0x00699d58],0x0",
+          "access": 2,
+          "HIGHLOW_site": "00508b34"
+        },
+        {
+          "pc": "00508b70",
+          "bytes": "a1589d6900",
+          "instruction": "MOV EAX,[0x00699d58]",
+          "access": 1,
+          "HIGHLOW_site": "00508b71"
+        },
+        {
+          "pc": "00508b85",
+          "bytes": "c705589d690000000000",
+          "instruction": "MOV dword ptr [0x00699d58],0x0",
+          "access": 2,
+          "HIGHLOW_site": "00508b87"
+        },
+        {
+          "pc": "00508c65",
+          "bytes": "a3589d6900",
+          "instruction": "MOV [0x00699d58],EAX",
+          "access": 2,
+          "HIGHLOW_site": "00508c66"
+        },
+        {
+          "pc": "00508c70",
+          "bytes": "a1589d6900",
+          "instruction": "MOV EAX,[0x00699d58]",
+          "access": 1,
+          "HIGHLOW_site": "00508c71"
+        },
+        {
+          "pc": "00508cb0",
+          "bytes": "a1589d6900",
+          "instruction": "MOV EAX,[0x00699d58]",
+          "access": 1,
+          "HIGHLOW_site": "00508cb1"
+        }
+      ],
+      "uncovered_HIGHLOW": [],
+      "in_cell_HIGHLOW": [],
+      "interior_targets": [],
+      "index_anomalies": [],
+      "overlap_views": [],
+      "owner_hits": [],
+      "native_consumers": [
+        {
+          "caller": "00508cb0",
+          "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00508cb0.obj",
+          "object_sha256": "2be7f46d593cc986444b817795951eaae2b3731161aeeceeddf4301a5113a555",
+          "undefined": "?DAT_00699d58@@3HA"
+        }
+      ],
+      "reasons": [],
+      "safe": true
+    }
+  ],
+  "owner_scan": {
+    "command": [
+      "C:\\Users\\steew\\.vscode\\extensions\\openai.chatgpt-26.1007.21434-win32-x64\\bin\\windows-x86_64\\rg.exe",
+      "-n",
+      "-i",
+      "0060c9ec|0061bc4c|0069c9f0|0069c9f4|0069c9f8|0069c9fc|0069e0ac|006a57cc|006a6420|006b4f20|006c01e0|005e7530|0060c7ec|0060c7f0|0060c974|00628f88|00656184|006568e4|00657db8|00657de4|0065b940|006907e4|00690ad4|00699d58",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source"
+    ],
+    "exit_code": 0,
+    "log": "iterations/v2/001-original-recovery/runs/254-writable-scalar-batch/owner-scan.log",
+    "log_sha256": "d05d8b76d1784a8433fbd78add0934a706981742f50f8a31a63d17c425aa27d1"
+  },
+  "input_sha256": {
+    "scripts/research/screen-v2-writable-scalars-254.py": "92efc457204d812b2c1ec20cd9e35d09878cea384fb7a3cbd74bfc2b146d8322",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/lib/capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "iterations/v2/001-original-recovery/runs/248-next-scalar-selection/summary.json": "fd7b867f68f4d64760532dad42fe49c927c6221639b1d0ff7691d634d16b1fde",
+    "iterations/v2/001-original-recovery/runs/243-canonical-reuse-union/summary.json": "7533c820bc5d22b5d2267260c659becbc554124af3d63d0cdf9fc0c6bee7ecec",
+    "iterations/v2/001-original-recovery/runs/251-scalar-selection-corrections/summary.json": "a55309e2e20800146b753808d729eff29cbe6107f65b00a52d68208326d748d8",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/245-automated-frontier-queue/summary.json": "5f6f6fd1e2081eeaf9c31d658636fb26029a7413479b817989eb1de6fcf7cc10",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/preflight.json": "e189e3992e8343b6c1b02f6f3ae1c8037f5e3a451dfcb342de022bcb5f4855fc",
+    "iterations/v2/001-original-recovery/runs/221-readonly-scalar-storage/summary.json": "6f8c7f41439211cbaeb24d70c0bdb58ed9ff833340c7a94b5a3526f18e3a2ce1",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/summary.json": "90cf717f4ebc851cf35815678592648fd557f2e95ab4ffd8d956680c0498db34",
+    "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/summary.json": "5855fed9524f168d753add854eb52b8db3b7c44620a1046a9ad561140d3820c6",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/summary.json": "166f549abc4748c4f048064959f0d13bc93a0f48a55f6d4090c6b50b41d2d5f8",
+    "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/summary.json": "ffd2b4c200cd7837ff0e91099d699fc3226c9fcca3ad7a29f1a8155445484d78",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "C:/Users/steew/.vscode/extensions/openai.chatgpt-26.1007.21434-win32-x64/bin/windows-x86_64/rg.exe": "9d694d44b868b28dbe7e06cb83879021a4411622d0337c757ff35f3b57dac2a5",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00427ae0.obj": "cd459b95380da9ae9efea13395df77b1f9f0472614950185e78de41a95b3b565",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-declaration-compat-184/full/00427ae0-globals.h": "53e17630704e726b15ab7fb12b6be2039a96a8146d3e752b0df47e1470ba7385",
+    "local/experiments/v2-declaration-compat-184/full/00427ae0.cpp": "f64f4a548d26201fba5460db4dcaec3fbe98c1754cfa8d85ccb41a4d8164c770",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00427af0.obj": "6c34bed89ce1ce30b36fde1e66566d753f666ef5bc190bb8b1bbc645f69762f3",
+    "local/experiments/v2-declaration-compat-184/full/00427af0-globals.h": "53e17630704e726b15ab7fb12b6be2039a96a8146d3e752b0df47e1470ba7385",
+    "local/experiments/v2-declaration-compat-184/full/00427af0.cpp": "86f124afbac448319e3d693ef14158eae67bb2064285d07a29c206e1c1d9ca41",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0044fe30.obj": "8754c64bff578997322339dad6c92e96f42fc84e31e96f5c9bba772588bd59d2",
+    "local/experiments/v2-declaration-compat-184/full/0044fe30-globals.h": "1bf49c8c868e81ef64a9a3be18e7a91f5a83825629849e483d5d2ede84bfe353",
+    "local/experiments/v2-declaration-compat-184/full/0044fe30.cpp": "a9a29e935f1881ea1f9dbdd206cae55537068337f4125d87485ba4de811d434e",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0044fea0.obj": "118c40e0054cabce02b6028b8c671ce46e54ed41046bd2a8fd3d8b831b865955",
+    "local/experiments/v2-declaration-compat-184/full/0044fea0-globals.h": "1bf49c8c868e81ef64a9a3be18e7a91f5a83825629849e483d5d2ede84bfe353",
+    "local/experiments/v2-declaration-compat-184/full/0044fea0.cpp": "c14f566da1c9f826db24624136813079d185393a45fc0fcaa2b385cdb8b6b045",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520860.obj": "b0b32b0eb450da44b510175e5fa3bbce8054ce4fcd87716a9df896bfda1c1bb2",
+    "local/experiments/v2-declaration-compat-184/full/00520860-globals.h": "4cf2afef9c2026e27a5834cf4a4d04dedccfb93d673a3906b9f903fe0dabfafc",
+    "local/experiments/v2-declaration-compat-184/full/00520860.cpp": "73f5976eb582f3340350ab5c3bb07448d3a930a2bc436a94a3e46f49181f6315",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00520890.obj": "ed128fd5b2e3e4a727cf9c1afdfb0918c6bb2661e84e2e4f2c48c236bc4e5f7f",
+    "local/experiments/v2-declaration-compat-184/full/00520890-globals.h": "4cf2afef9c2026e27a5834cf4a4d04dedccfb93d673a3906b9f903fe0dabfafc",
+    "local/experiments/v2-declaration-compat-184/full/00520890.cpp": "72452e47a825949cb34472a3fb6c4ead2de4d510a93d437bf4ac814a7b3c3573",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005701b0.obj": "22df3820ffa52a46dc927c323be498b7d3b8154bce3fc83b384895059944f62f",
+    "local/experiments/v2-declaration-compat-184/full/005701b0-globals.h": "40af0dca7d216cb701273659fe547e5d031182799bb3899cc7da1585a3a39a23",
+    "local/experiments/v2-declaration-compat-184/full/005701b0.cpp": "6cf68a06c8a24a3a346d73d2a653fa7c8f6e55170a07041ab2b6420d0a017ada",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/00572f90.obj": "a2744c37477e62e3906b1e1bf6ee2f4ef1dcf04cc5ed3a3d4f61c590cedeec0f",
+    "local/experiments/v2-declaration-compat-184/full/00572f90-globals.h": "9d0d5c1c5f567355b8ebba6d70d4b4bfb9d37b1888a4a8ad4a7f701caabc4472",
+    "local/experiments/v2-declaration-compat-184/full/00572f90.cpp": "351f0afa13788f9bd3fa45d8f853aafffb32bcad6b88ca65202b6bcb8e5673da",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/0055eba0.obj": "516ae86f5206cc4743d837cda4861502a42fb1ea2e1c4f7c438502ca6cb9aeaa",
+    "local/experiments/v2-declaration-compat-184/full/0055eba0-globals.h": "357b98ee1b80081bc3978d9bb6ddf993c9547cf030c5ec0d460b28cc18437983",
+    "local/experiments/v2-declaration-compat-184/full/0055eba0.cpp": "8bb698d05054bbd927cc48c0683009da32b8a28eb980aac9249ca101b63a294d",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/0055ec30.obj": "7f3c8ce9060cf50e2bd788a1a1862ba455fb9c7d4b4e25bbcfa70a64d8cda1e1",
+    "local/experiments/v2-declaration-compat-184/full/0055ec30-globals.h": "bb82ce410d21c4bb3538d9c82d9039f62ca8cef37cd050997210fd264bd7c095",
+    "local/experiments/v2-declaration-compat-184/full/0055ec30.cpp": "36e89daf110d042e47dabcf9e8e938976a851f7dac77784ded92a2633e08b18f",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/00570780.obj": "2322181198369948468769e51bb74450e4705cac235749361d50f7689ef9ebe9",
+    "local/experiments/v2-declaration-compat-184/full/00570780-globals.h": "f108c25f3f8d16eb666176c6b7df1e8b0a5421f6953ecb3cd4be9b63f5b9dc96",
+    "local/experiments/v2-declaration-compat-184/full/00570780.cpp": "585177293f2913dc3a7a9318de50771d6d84079986a88a1a8cbbf78d372dcbf0",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/00570820.obj": "0b99e52316ea0cc0143e7a0b557e3ae8af820de8f1810a7b10f8e327d10ae4f3",
+    "local/experiments/v2-declaration-compat-184/full/00570820-globals.h": "f108c25f3f8d16eb666176c6b7df1e8b0a5421f6953ecb3cd4be9b63f5b9dc96",
+    "local/experiments/v2-declaration-compat-184/full/00570820.cpp": "abe7a3597a08878caf981d97686b49ffd5604e8b6234f4a50f0f3017df66a20e",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00531c60.obj": "78ddbe015dfe6d9fe084166b6334c881bfc0cf00c8cafdf35df2b0e0116f1747",
+    "local/experiments/v2-declaration-compat-184/full/00531c60-globals.h": "cc1448a4f7777672c03609e14644872d27fcacbe50f04de5bdb0ba51920333df",
+    "local/experiments/v2-declaration-compat-184/full/00531c60.cpp": "2a8225563a88890452f53293f8b21d47c1ad77ee48633f1a4ba9e395bb166a67",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00556620.obj": "fc6c72fcc80fbb5604c618c0d291b462e7ee5c236ca8b656776dff4557869e66",
+    "local/experiments/v2-declaration-compat-184/full/00556620-globals.h": "cc1448a4f7777672c03609e14644872d27fcacbe50f04de5bdb0ba51920333df",
+    "local/experiments/v2-declaration-compat-184/full/00556620.cpp": "e696c529a10f287d292feb8ce7472373f1a8be0470844e580456bd98f1c0f501",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a33d0.obj": "815e20d2e93e4ab61c6d26d1dcf7e56212875f9eae99435006558c25a4358f2e",
+    "local/experiments/v2-declaration-compat-184/full/005a33d0-globals.h": "04e5a0ac9b12952819b3300a1b294d82035f29611608fec32b33d1fd779757bc",
+    "local/experiments/v2-declaration-compat-184/full/005a33d0.cpp": "5ec4b8c0e13114886d3b71f27af8c712494597c40dc753ed63389ff23c891257",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005aea10.obj": "b09011f4354201c30ffc4c6e585ea68f1a0750ddcfc1c99c84c39729cc93053c",
+    "local/experiments/v2-declaration-compat-184/full/005aea10-globals.h": "04e5a0ac9b12952819b3300a1b294d82035f29611608fec32b33d1fd779757bc",
+    "local/experiments/v2-declaration-compat-184/full/005aea10.cpp": "e3ba45c2eddda06e4737325befd6c02cbd27c37cc097a729b563844c93954ede",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00406af0.obj": "c5894e76a3d2b0a5bbe26491e6d0325f12316c4dd6a9183f720c9c439b1e0440",
+    "local/experiments/v2-declaration-compat-184/full/00406af0-globals.h": "f23d24764cce1b7fa425e4157bb3ad210f8a18ed4d4c4b9e8b9b3f380754c266",
+    "local/experiments/v2-declaration-compat-184/full/00406af0.cpp": "f3d482901318662293dd9666f469e0f5bff50530e6b64bc16a9598f460a4291d",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00419e10.obj": "0bb1ae031a3146f9398e11c3997af9537b763e990b5714725f16065a03c013b9",
+    "local/experiments/v2-declaration-compat-184/full/00419e10-globals.h": "cf6d97175aa1b546a374a089f6aeade90ed8bd7599b15f83154540199ec69375",
+    "local/experiments/v2-declaration-compat-184/full/00419e10.cpp": "057b6becf1b684738c4ef61e863f93d9ae9c711d5cfa8a26cb791b034fb175b6",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00419e90.obj": "a4775b235c39707b340d9b395c2d38c7551a5c24cd2e9fd6c7122b1db134d209",
+    "local/experiments/v2-declaration-compat-184/full/00419e90-globals.h": "ac108d724df0b52221082eef25ff4508253add048d89935d561ecca23c9638b6",
+    "local/experiments/v2-declaration-compat-184/full/00419e90.cpp": "1a2543dea138311c8f35effab03c36a0dc90b6938d383855cb64b3eaaf7108b9",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0041e160.obj": "6196ae16643121e0b18dc1f9ac57c8928a09cea9eda7e27d159c6cf853113cd1",
+    "local/experiments/v2-declaration-compat-184/full/0041e160-globals.h": "49a936cbddfa52ccfd33417b90e6c91452cefbabd6198c7c04649f8388fe6884",
+    "local/experiments/v2-declaration-compat-184/full/0041e160.cpp": "075a2367fd0874a9b5d63d889004395dfe73de639c40c32d96f05d63be0cb505",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0049c460.obj": "996b18f2cee73d12acbae01cf4b73836c438de40f9e9b541f231c88561a7bb70",
+    "local/experiments/v2-declaration-compat-184/full/0049c460-globals.h": "11e40e4c251e507b59755aa08ca4ae9aa5c4e5bf46a6c322de56e08f1d0b0116",
+    "local/experiments/v2-declaration-compat-184/full/0049c460.cpp": "79c9db99ea95ba4eaf98fc79a1390b7c0028b91061ba088366d50d50f08f91d3",
+    "local/experiments/v2-consumer-declarations-203/final/objects/004a9890.obj": "0dd98f4f42cf58d0fd550ec680b7e81e446b6d29ca6df3de52bac39e1da3df66",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004a9890-globals.h": "85034dfee784320079caab5981a3bf02b727863741d3a0d91130134eec09fa1f",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004a9890.cpp": "112e76888b473347bf93fadd623e1aaa4522e55bec265a61c5126db561966c97",
+    "local/experiments/v2-declaration-compat-184/full/004a9890-globals.h": "93c219d2df9e5b07f86003f01f0ecf7d0bd0ca90b7a93d4afddf09f7ad724bcb",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004ab4b0.obj": "f02c73dce6d7d3d301dd2656d2e0ea1b55965d95caa0555736af2fe74f7d013c",
+    "local/experiments/v2-declaration-compat-184/full/004ab4b0-globals.h": "f56deaf8dc1dea4da7caf74e6e12a12ab08e40ca6c9286f076d3ed85171b822f",
+    "local/experiments/v2-declaration-compat-184/full/004ab4b0.cpp": "d5775069d726f85b677464ff7407ae25629933f78651da49761a68471e6ca886",
+    "local/experiments/v2-consumer-declarations-203/final/objects/0041e2b0.obj": "4e539868b73f4f6ea2a2176b4479c7c6f147c37a8caf99848566aa17e6b7da0c",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e2b0-globals.h": "320c0b960730decac1c5ccb6fd8e6d92e9e94352c9e87c180630d4baa2ae7c20",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e2b0.cpp": "da2efa09dcbfd231c5931d27657c8fbb45ccd039ea4a30036fb7d106e6385d15",
+    "local/experiments/v2-declaration-compat-184/full/0041e2b0-globals.h": "72f695ca2ca1c02e22bcfe6c645aaac2f38741cf8b8e27fb2da9d4154655d7f6",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004267a0.obj": "bfc3ed0426fd6f03d1b6b02bbb8d2220c36f25ed49890938ba624f8d6a59ac77",
+    "local/experiments/v2-declaration-compat-184/full/004267a0-globals.h": "9294e6b98b9ac174fbb9c6a56b391c5b6c0f61baf2768570ec4617021ab66388",
+    "local/experiments/v2-declaration-compat-184/full/004267a0.cpp": "f05e063880be0990d620b838569edc029320e8b805f31b1a3ed87ab01b319cc3",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004d8790.obj": "f007123f5bac160d3a73349ddd3e78d8ae1a71d5a9162949b5641099177c4976",
+    "local/experiments/v2-declaration-compat-184/full/004d8790-globals.h": "ba7d2065b1df6aeaa8631adf36a6ae3f4561ad1c3f1942d04c910c3326d3e0cb",
+    "local/experiments/v2-declaration-compat-184/full/004d8790.cpp": "b8b7c5de6f75a57def5a8a6ea339833c5a5e0b11c74461907e3c7e9eb87f828b",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004e3540.obj": "98477b24df0548054471ea882bfdc4943eef3fbeee6e86c25bc6370cd059a093",
+    "local/experiments/v2-declaration-compat-184/full/004e3540-globals.h": "bfd65be10f143a310a5105fe0555b3f9234b40633a43dfcac5d3f673993e6b4a",
+    "local/experiments/v2-declaration-compat-184/full/004e3540.cpp": "9964b21888ba2feb68a76901a4e9d9d5282c0c5783f02889c8e53f9ec689a228",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004edd00.obj": "d2fae8cde2362a5041197314bfc124d3d9cd9b21a98653259d1fa4eb6f742cc3",
+    "local/experiments/v2-declaration-compat-184/full/004edd00-globals.h": "04119df824ae1b756a42cea8c003057fb48058bba04b767418319f8c6fd757b5",
+    "local/experiments/v2-declaration-compat-184/full/004edd00.cpp": "3248a50291f09acd2451e371df4f121f3e0434be8e34450058ae872c7b4511f0",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00508cb0.obj": "2be7f46d593cc986444b817795951eaae2b3731161aeeceeddf4301a5113a555",
+    "local/experiments/v2-declaration-compat-184/full/00508cb0-globals.h": "af3281917def8e8153f78418003345f181bb6ab293ac8f3f9c0a01aee8339dc8",
+    "local/experiments/v2-declaration-compat-184/full/00508cb0.cpp": "a06f6f9e6a72b7197a96a2391bbedbcfb0f9cbf07304df2050e60988b8bc56dd"
+  },
+  "before_after_guards": true,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "limits": [
+    "Current direct MEM4 and native views only; computed aliases/whole layout/lifetime unknown",
+    "Run248 is navigation, not proof"
+  ]
+}

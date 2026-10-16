@@ -1,0 +1,9 @@
+# Run 246: independent acceptance audit of an isolated x86-to-C++ pilot
+
+`scripts/research/audit-v2-x86-cpp-246.py` is read-only. It verified all 46 frozen input SHA pins, exact bytes in original `Porsche.exe` (SHA256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`), and deterministic regeneration of the three translated C++ sources from their 76 PE bytes/28 decoded instructions. The index query was `00590290`, `004930f0`, `00590070`; proof and existing owner rows remain in `proof-before-compile.json`. The current owners were checked by source/object SHA and were not replaced.
+
+Actual fixture COFF symbols and naked-oracle bodies match all three PE functions byte-for-byte after normalizing the two exact `IMAGE_REL_I386_DIR32` entries at offsets 10 (`?count246@@3IA`) and 28 (`?table246@@3IA`) in `00590070`. The compile receipt records one `/MP6` batch of four TUs in 1.6857785 s with exit 0 and no compiler warning/error diagnostics. The first link failed for `memcpy` and its receipt/log remain saved; the same four objects linked successfully with the pinned CRT libraries, without recompiling. The native fixture then exited 0 in 1.1854759 s for 375,808 generated state cases. Input pins still match after execution.
+
+The fixture compares the named GPRs, relative ESP including RET8, defined CF/ZF/SF/OF, and a 64-byte memory arena; the audit also confirms rejection of INT3, truncated decoding, and a branch into a missing instruction boundary. This is a call-free static translation pilot with zero newly accepted functions and no production/union change. It does not establish PF/AF, undefined flags, x87/SSE, calls, full memory loading, whole CPU equivalence or game launch.
+
+Read-only command: `py -3 scripts/research/audit-v2-x86-cpp-246.py`. Result and hashes: `validation.json`.
