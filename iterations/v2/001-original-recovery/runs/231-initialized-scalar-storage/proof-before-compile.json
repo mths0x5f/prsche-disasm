@@ -1,0 +1,195 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected_cells": {
+    "005ccb34": {
+      "va": "005ccb34",
+      "symbol": "?DAT_005ccb34@@3HA",
+      "native_expected_mangle": "?DAT_005ccb34@@3HA",
+      "type": "int32",
+      "pe_bytes": "80000000",
+      "reads": 2,
+      "writes": 0,
+      "highlow_refs": 2,
+      "in_cell_relocations": 0,
+      "ref_instructions": [
+        "0041e582 8b0d34cb5c00 MOV ECX,dword ptr [0x005ccb34]",
+        "00420f8d 8b1534cb5c00 MOV EDX,dword ptr [0x005ccb34]"
+      ],
+      "overlap_views": [],
+      "owner_definitions": []
+    },
+    "005d0608": {
+      "va": "005d0608",
+      "symbol": "?DAT_005d0608@@3HA",
+      "native_expected_mangle": "?DAT_005d0608@@3HA",
+      "type": "int32",
+      "pe_bytes": "01000000",
+      "reads": 2,
+      "writes": 1,
+      "highlow_refs": 3,
+      "in_cell_relocations": 0,
+      "ref_instructions": [
+        "00489186 8b1508065d00 MOV EDX,dword ptr [0x005d0608]",
+        "0048918f 8b0d08065d00 MOV ECX,dword ptr [0x005d0608]",
+        "00489196 890d08065d00 MOV dword ptr [0x005d0608],ECX"
+      ],
+      "overlap_views": [],
+      "owner_definitions": []
+    },
+    "005e5f4c": {
+      "va": "005e5f4c",
+      "symbol": "?DAT_005e5f4c@@3HA",
+      "native_expected_mangle": "?DAT_005e5f4c@@3HA",
+      "type": "int32",
+      "pe_bytes": "0a000000",
+      "reads": 2,
+      "writes": 0,
+      "highlow_refs": 2,
+      "in_cell_relocations": 0,
+      "ref_instructions": [
+        "005a9078 8b0d4c5f5e00 MOV ECX,dword ptr [0x005e5f4c]",
+        "005ada75 8b0d4c5f5e00 MOV ECX,dword ptr [0x005e5f4c]"
+      ],
+      "overlap_views": [],
+      "owner_definitions": []
+    }
+  },
+  "original_memory_instructions": {
+    "005ccb34": [
+      {
+        "pc": "0041e582",
+        "bytes": "8b0d34cb5c00",
+        "assembly": "MOV ECX,dword ptr [0x005ccb34]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "00420f8d",
+        "bytes": "8b1534cb5c00",
+        "assembly": "MOV EDX,dword ptr [0x005ccb34]",
+        "width": 4,
+        "read": true,
+        "write": false
+      }
+    ],
+    "005d0608": [
+      {
+        "pc": "00489186",
+        "bytes": "8b1508065d00",
+        "assembly": "MOV EDX,dword ptr [0x005d0608]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "0048918f",
+        "bytes": "8b0d08065d00",
+        "assembly": "MOV ECX,dword ptr [0x005d0608]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "00489196",
+        "bytes": "890d08065d00",
+        "assembly": "MOV dword ptr [0x005d0608],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      }
+    ],
+    "005e5f4c": [
+      {
+        "pc": "005a9078",
+        "bytes": "8b0d4c5f5e00",
+        "assembly": "MOV ECX,dword ptr [0x005e5f4c]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "005ada75",
+        "bytes": "8b0d4c5f5e00",
+        "assembly": "MOV ECX,dword ptr [0x005e5f4c]",
+        "width": 4,
+        "read": true,
+        "write": false
+      }
+    ]
+  },
+  "complete_HIGHLOW_sites": {
+    "005ccb34": [
+      "0041e584",
+      "00420f8f"
+    ],
+    "005d0608": [
+      "00489188",
+      "00489191",
+      "00489198"
+    ],
+    "005e5f4c": [
+      "005a907a",
+      "005ada77"
+    ]
+  },
+  "in_cell_relocations": 0,
+  "interior_target_relocations": 0,
+  "native_consumer_symbols": {
+    "005ccb34": [
+      {
+        "va": "0041e540",
+        "object": "local/experiments/v2-consumer-declarations-203/final/objects/0041e540.obj",
+        "object_sha256": "901cb57b0c32f60d3dbdfc63cdf3a3cff994cfb01c674b74973fc491f29e8537",
+        "actual_undefined_symbol": "?DAT_005ccb34@@3HA"
+      }
+    ],
+    "005d0608": [
+      {
+        "va": "00489160",
+        "object": "local/experiments/v2-thiscall-declarations-190/objects/00489160.obj",
+        "object_sha256": "78736825a1c6e8de0cd349f1326354d578f58b94f7f0427743cd071e39be0dde",
+        "actual_undefined_symbol": "?DAT_005d0608@@3HA"
+      }
+    ],
+    "005e5f4c": [
+      {
+        "va": "005a9074",
+        "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a9074.obj",
+        "object_sha256": "306ad3acf226306ecafa01bff0f1f2090c3970e00345d6da6e6f1af24124e2e5",
+        "actual_undefined_symbol": "?DAT_005e5f4c@@3HA"
+      },
+      {
+        "va": "005ada71",
+        "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005ada71.obj",
+        "object_sha256": "95fbb79ccceb3822d8017b674532fcaa58236cd04f79c20937abbf998734850c",
+        "actual_undefined_symbol": "?DAT_005e5f4c@@3HA"
+      }
+    ]
+  },
+  "original_initial_bytes": {
+    "005ccb34": "80000000",
+    "005d0608": "01000000",
+    "005e5f4c": "0a000000"
+  },
+  "original_writable": true,
+  "source_owner_scan": {
+    "command": [
+      "C:\\Users\\steew\\.vscode\\extensions\\openai.chatgpt-26.1007.21434-win32-x64\\bin\\windows-x86_64\\rg.exe",
+      "-n",
+      "-i",
+      "005ccb34|005d0608|005e5f4c",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include"
+    ],
+    "exit_code": 1,
+    "seconds": 0.030636,
+    "log": "local/experiments/v2-initialized-scalars-231/source-owner-scan.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "original_relative_layout_claim": false,
+  "current_native_overlap_views": 0,
+  "limits": [
+    "Current direct views only; computed pointers/aliases/whole-data layout/lifetime deferred"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "kind": "original-writable-data",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "functions_added": 0,
+  "data_symbols": 3,
+  "actual_compiler_batches": 1,
+  "compiled": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/Zl",
+      "/W4",
+      "/utf-8",
+      "/MP6",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-initialized-scalars-231\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\231-initialized-scalar-storage\\original_scalars.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\231-initialized-scalar-storage\\scalar_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 1.023017,
+    "log": "local/experiments/v2-initialized-scalars-231/compile.log",
+    "log_sha256": "156c2caaa4929a23f1f309cba494f854901f1df53bda5022b7771dcf84274ddc"
+  },
+  "fixture_link": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-initialized-scalars-231\\scalar_fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-initialized-scalars-231\\objects\\original_scalars.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-initialized-scalars-231\\objects\\scalar_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.356082,
+    "log": "local/experiments/v2-initialized-scalars-231/fixture-link.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-initialized-scalars-231\\scalar_fixture.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.027843,
+    "log": "local/experiments/v2-initialized-scalars-231/fixture-native.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_objects": [
+    {
+      "id": "initialized-scalar-cells-231",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "generated_source": "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/original_scalars.cpp",
+      "generated_source_sha256": "a13469fd6ab0d6fcf67482e5c8cb1eaf60a0c7d39b9292dbc61d527a37d7ddf7",
+      "object": "local/experiments/v2-initialized-scalars-231/objects/original_scalars.obj",
+      "object_sha256": "bd9bed80575b35cea0079176abc8c9b4c99b7bdd59126231c1c0b098c97440f7",
+      "dependency_sha256": {
+        "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/original_scalars.cpp": "a13469fd6ab0d6fcf67482e5c8cb1eaf60a0c7d39b9292dbc61d527a37d7ddf7"
+      },
+      "symbols": {
+        "defined": [
+          "?DAT_005ccb34@@3HA",
+          "?DAT_005d0608@@3HA",
+          "?DAT_005e5f4c@@3HA"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "storage_sections": [
+        {
+          "name": ".ogw$ns",
+          "bytes": "80000000010000000a000000",
+          "flags": "c0300040",
+          "relocations": 0,
+          "cells": [
+            {
+              "va": "005ccb34",
+              "symbol": "?DAT_005ccb34@@3HA",
+              "native_offset": 0,
+              "initial_bytes": "80000000"
+            },
+            {
+              "va": "005d0608",
+              "symbol": "?DAT_005d0608@@3HA",
+              "native_offset": 4,
+              "initial_bytes": "01000000"
+            },
+            {
+              "va": "005e5f4c",
+              "symbol": "?DAT_005e5f4c@@3HA",
+              "native_offset": 8,
+              "initial_bytes": "0a000000"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-initialized-scalars-231.py": "7251d6c803d4cca6d4bc07e39649e3a100ccb786c394dd75f883149c5b623fe8",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/audit.py": "e034688dfb35ccd8b1fe743a2a0bed661180c8dfcf7c9025a3c8f9f2996437bd",
+    "scripts/research/experiment-v2-writable-scalars-226.py": "762645962bccaa8cf86c59c4aec18167b95ac0731e4ac4548ab20531925a721c",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/lib/capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "iterations/v2/001-original-recovery/runs/230-initialized-scalar-selection/summary.json": "a294370bbbf26ac26a591fd022cd62f7bc37b6186d89c3167d65d080040cc37e",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/228-writable-and-callee-union/summary.json": "39246a27c5bb67a4cec7466247f65e015a41444cd46ebfdecdbf00dece190f14",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/summary.json": "90cf717f4ebc851cf35815678592648fd557f2e95ab4ffd8d956680c0498db34",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/experiments/v2-consumer-declarations-203/final/objects/0041e540.obj": "901cb57b0c32f60d3dbdfc63cdf3a3cff994cfb01c674b74973fc491f29e8537",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e540-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e540.cpp": "8bc06fea1102c184790b81aa7b834ccafc146c6588b097b59a4883b33560e246",
+    "local/experiments/v2-declaration-compat-184/full/0041e540-globals.h": "5f7812e42892364bba1681cf4622a6f75c66f2aaeea244be16d422ce1e05310a",
+    "local/experiments/v2-thiscall-declarations-190/objects/00489160.obj": "78736825a1c6e8de0cd349f1326354d578f58b94f7f0427743cd071e39be0dde",
+    "local/experiments/v2-declaration-compat-184/full/00489160-globals.h": "ac995bdb4af03218ddc0cabf219c9864cc5fe8d02a9d4c964bd95710a92f90dc",
+    "local/experiments/v2-thiscall-declarations-190/sources/00489160.cpp": "695c0a6702695904004ce08113ca4e5c084e0a7852cab2983e039e8ecd4c81a0",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a9074.obj": "306ad3acf226306ecafa01bff0f1f2090c3970e00345d6da6e6f1af24124e2e5",
+    "local/experiments/v2-declaration-compat-184/full/005a9074-globals.h": "1c586ede33ddd1e2126e9d2a68e2ff95c97ca9b15f8a1718d716e0171e1a15f3",
+    "local/experiments/v2-declaration-compat-184/full/005a9074.cpp": "470794c1aa19f46e4c0e5b4eb2590fbc45cc693d0ce12962d1c15f6a209c2339",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005ada71.obj": "95fbb79ccceb3822d8017b674532fcaa58236cd04f79c20937abbf998734850c",
+    "local/experiments/v2-declaration-compat-184/full/005ada71-globals.h": "1c586ede33ddd1e2126e9d2a68e2ff95c97ca9b15f8a1718d716e0171e1a15f3",
+    "local/experiments/v2-declaration-compat-184/full/005ada71.cpp": "e86ca9bc626aa5ba29cd1af7570b6a8fb240d4ca1551a9a33f21cbf02747e802",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "C:/Users/steew/.vscode/extensions/openai.chatgpt-26.1007.21434-win32-x64/bin/windows-x86_64/rg.exe": "9d694d44b868b28dbe7e06cb83879021a4411622d0337c757ff35f3b57dac2a5",
+    "iterations/v2/001-original-recovery/runs/202-float-bit-stores/summary.json": "0cb09649dd29d9467f28959c4723473711ab4ea5fb98e854ef2f6557e12de0c2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/original_scalars.cpp": "a13469fd6ab0d6fcf67482e5c8cb1eaf60a0c7d39b9292dbc61d527a37d7ddf7",
+    "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/scalar_fixture.cpp": "0b36e26f32420536712fed0bd076b364adfcbe1eb263c133980a44aae7b34ff5",
+    "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/proof-before-compile.json": "f18cd2653b3d4a562be9781eddde0230384168ca5285a0f9077b41137d4f66f7"
+  },
+  "original_memory_instructions_verified": 7,
+  "original_relative_layout_claim": false,
+  "native_fixture_patterns": 6,
+  "native_fixture_checks": "Initial bits; distinct cells; six raw patterns per cell including high-bit values; cross-cell independence; restore128/1/10",
+  "limits": [
+    "Three initialized int32 current native views only; zero new game functions",
+    "Native COFF offsets do not claim original separation between nonadjacent cells",
+    "Computed-pointer/alias/whole-data-layout/lifetime/production integration deferred"
+  ]
+}

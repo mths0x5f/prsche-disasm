@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "kind": "original-writable-data",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "functions_added": 0,
+  "data_symbols": 2,
+  "actual_compiler_batches": 1,
+  "compiled": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/Zl",
+      "/W4",
+      "/utf-8",
+      "/MP6",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-226\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\226-writable-scalar-storage\\original_scalars.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\226-writable-scalar-storage\\scalar_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 1.042032,
+    "log": "local/experiments/v2-writable-scalars-226/compile.log",
+    "log_sha256": "fdab6d2f3683668364a62c701842f94fd49a40818589d60f40ef90f1f675facd"
+  },
+  "fixture_link": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-226\\scalar_fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-226\\objects\\original_scalars.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-226\\objects\\scalar_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.377632,
+    "log": "local/experiments/v2-writable-scalars-226/fixture-link.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-writable-scalars-226\\scalar_fixture.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.027234,
+    "log": "local/experiments/v2-writable-scalars-226/fixture-native.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_objects": [
+    {
+      "id": "writable-scalar-cells-226",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "generated_source": "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/original_scalars.cpp",
+      "generated_source_sha256": "3eb24beea8e82172a44599589e20978637e90d6755435ecbf480be3fcbd5b74a",
+      "object": "local/experiments/v2-writable-scalars-226/objects/original_scalars.obj",
+      "object_sha256": "e9f3b322c3c976ac2fc4d333df3fbfc52c4369651d0e62d559516a3218996cda",
+      "dependency_sha256": {
+        "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/original_scalars.cpp": "3eb24beea8e82172a44599589e20978637e90d6755435ecbf480be3fcbd5b74a"
+      },
+      "symbols": {
+        "defined": [
+          "?DAT_005e25d0@@3HA",
+          "?DAT_005e25d4@@3IA"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "storage_sections": [
+        {
+          "name": ".ogw$sc",
+          "bytes": "0000000000000000",
+          "flags": "c0300040",
+          "relocations": 0
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-writable-scalars-226.py": "762645962bccaa8cf86c59c4aec18167b95ac0731e4ac4548ab20531925a721c",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "iterations/v2/001-original-recovery/runs/225-writable-scalar-selection/summary.json": "b5e699600dcdb5adab3b26a3ef50d65b9c1eeacfc492e181a454e325f1a86be3",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/216-sound-consumer-union/summary.json": "8351abe2a3511d18ea1ef805e7aed8c3de9b8d1e721b5907fa9fa8bf689fdb2f",
+    "iterations/v2/001-original-recovery/runs/216-sound-consumer-union/validation.json": "5bbe6b1292e98f4ad53481f4ee4c2021c29be863d50eb0efa5ec06f7a34cd7dd",
+    "iterations/v2/001-original-recovery/runs/222-native-support-union/summary.json": "b414d7e552133510b7372988bfa5f1b15e091749e356c60bcbdba70e91e9e836",
+    "iterations/v2/001-original-recovery/runs/202-float-bit-stores/summary.json": "0cb09649dd29d9467f28959c4723473711ab4ea5fb98e854ef2f6557e12de0c2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/original_scalars.cpp": "3eb24beea8e82172a44599589e20978637e90d6755435ecbf480be3fcbd5b74a",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/scalar_fixture.cpp": "824961bf43ec1e19f211f01bbe08d28af3cad1fd5b7b94384d9c1464c78efed8",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/proof-before-compile.json": "d3cfeb5fb0abe6739d586df8aaa827351790054a56c257556742b96ffe8e8c9d"
+  },
+  "original_memory_instructions_verified": 15,
+  "limits": [
+    "Two current native scalar views only; no new algorithm or game function",
+    "Signed/unsigned cells preserve original zero bits and four-byte separation",
+    "Whole original.data layout/computed references/aliases/lifetime/production integration deferred"
+  ]
+}

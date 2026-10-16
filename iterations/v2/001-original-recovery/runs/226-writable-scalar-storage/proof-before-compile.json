@@ -1,0 +1,158 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_memory_instructions": {
+    "005e25d0": [
+      {
+        "pc": "0059261e",
+        "bytes": "891dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],EBX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "005926ac",
+        "bytes": "8b0dd0255e00",
+        "assembly": "MOV ECX,dword ptr [0x005e25d0]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "005926d9",
+        "bytes": "890dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "005926fd",
+        "bytes": "891dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],EBX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "0059278b",
+        "bytes": "8b0dd0255e00",
+        "assembly": "MOV ECX,dword ptr [0x005e25d0]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "005927ab",
+        "bytes": "890dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "005927d9",
+        "bytes": "890dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "0059288b",
+        "bytes": "8b0dd0255e00",
+        "assembly": "MOV ECX,dword ptr [0x005e25d0]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "0059289b",
+        "bytes": "890dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "0059292c",
+        "bytes": "890dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "005929b1",
+        "bytes": "8b0dd0255e00",
+        "assembly": "MOV ECX,dword ptr [0x005e25d0]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "005929bb",
+        "bytes": "890dd0255e00",
+        "assembly": "MOV dword ptr [0x005e25d0],ECX",
+        "width": 4,
+        "read": false,
+        "write": true
+      }
+    ],
+    "005e25d4": [
+      {
+        "pc": "00592946",
+        "bytes": "893dd4255e00",
+        "assembly": "MOV dword ptr [0x005e25d4],EDI",
+        "width": 4,
+        "read": false,
+        "write": true
+      },
+      {
+        "pc": "00592952",
+        "bytes": "8b35d4255e00",
+        "assembly": "MOV ESI,dword ptr [0x005e25d4]",
+        "width": 4,
+        "read": true,
+        "write": false
+      },
+      {
+        "pc": "00592965",
+        "bytes": "893dd4255e00",
+        "assembly": "MOV dword ptr [0x005e25d4],EDI",
+        "width": 4,
+        "read": false,
+        "write": true
+      }
+    ]
+  },
+  "complete_HIGHLOW_sites": {
+    "005e25d0": [
+      "00592620",
+      "005926ae",
+      "005926db",
+      "005926ff",
+      "0059278d",
+      "005927ad",
+      "005927db",
+      "0059288d",
+      "0059289d",
+      "0059292e",
+      "005929b3",
+      "005929bd"
+    ],
+    "005e25d4": [
+      "00592948",
+      "00592954",
+      "00592967"
+    ]
+  },
+  "in_cell_relocations": 0,
+  "initial_bytes": "0000000000000000",
+  "relative_separation": 4,
+  "writable": true,
+  "limits": [
+    "No whole-program computed-pointer/section-layout/alias/lifetime acceptance",
+    "Only current native views are supplied"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "summary_sha256": "5855fed9524f168d753add854eb52b8db3b7c44620a1046a9ad561140d3820c6",
+  "audit_sha256": "6c763186f6dd6c19cb003751049c66cb5479e2f024d871e6096a939593ba574a",
+  "guarded_inputs": 37,
+  "actual_cells": {
+    "005ccb34": "80000000",
+    "005d0608": "01000000",
+    "005e5f4c": "0a000000"
+  },
+  "actual_original_ref_counts": {
+    "005ccb34": {
+      "reads": 2,
+      "writes": 0
+    },
+    "005d0608": {
+      "reads": 2,
+      "writes": 1
+    },
+    "005e5f4c": {
+      "reads": 2,
+      "writes": 0
+    }
+  },
+  "complete_HIGHLOW_sites": {
+    "005ccb34": [
+      "0041e584",
+      "00420f8f"
+    ],
+    "005d0608": [
+      "00489188",
+      "00489191",
+      "00489198"
+    ],
+    "005e5f4c": [
+      "005a907a",
+      "005ada77"
+    ]
+  },
+  "data_object_sha256": "bd9bed80575b35cea0079176abc8c9b4c99b7bdd59126231c1c0b098c97440f7",
+  "fixture_sha256": "f53e11479ba3ee5a6e3b9f3aef5432bcb08689cf0405d72046b1c2859a47abcf",
+  "compiler_link_native_receipts": {
+    "compile": {
+      "exit_code": 0,
+      "seconds": 1.023017
+    },
+    "fixture-link": {
+      "exit_code": 0,
+      "seconds": 0.356082
+    },
+    "fixture-native": {
+      "exit_code": 0,
+      "seconds": 0.027843
+    }
+  },
+  "new_functions": 0,
+  "original_relative_layout_claim": false
+}

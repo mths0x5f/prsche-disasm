@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "summary_sha256": "b11dc25105ecc77633687e9c43fdad3ba4e82d3f5c803086eff122509aeccd02",
+  "audit_script_sha256": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+  "input_pins_checked": 37,
+  "original_PE_instructions_verified": 576,
+  "compiled": [
+    "00590070"
+  ],
+  "uncompiled": [
+    "005907b0"
+  ],
+  "consumer_instructions": 20,
+  "consumer_bytes": 58,
+  "queued_instructions": 208,
+  "queued_bytes": 708,
+  "oracle_bytes": 58,
+  "oracle_normalized_exact_original_bytes": true,
+  "oracle_relocations_proved": 2,
+  "real_i386_COFF": 1,
+  "compiler_batches": 1,
+  "compiler_warnings": 0,
+  "native_RET0_count": 1,
+  "original_RET0_paths": 2,
+  "native_original_comparisons": 368640,
+  "exact223_symbol_binding": true,
+  "queue": "5907b0: recover actual006b49e0 targets/input contracts, contiguous parserout>=a4 and fourDWORD callbackpacket; no guessed callback cast supplied.",
+  "remaining": [
+    "005907b0 implementation",
+    "006b48d8 and006b4a04 canonical owners/initializers",
+    "Fault/register/concurrency/game fidelity"
+  ]
+}

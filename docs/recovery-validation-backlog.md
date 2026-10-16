@@ -1,5 +1,19 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint233 (2026-10-16):1111functionVAs+4supportobjects,442linkedunresolvednames.
+- [x]223/229: exact native/original x86 comparisons229376+368640; direct callee signedBYTE,
+  retained stack arguments, index/count/status behavior restored. Independent audits PASS.
+- [ ]229:005907b0 callback targets006b49e0/input contracts; original parser output >=164B
+  contiguous and callback packet4DWORD. Do not adopt getC overlapping locals/guessed casts.
+- [x]226/231:5original writable scalar cells, exact zero/128/1/10 bits, native permissions,
+  write/read/restore;226 adjacent pair retains4-byte separation. All direct HIGHLOW sites checked.
+- [ ]226/231: computed aliases/whole original.data layout/ownership/lifetime before production.
+- [x]227/228/233: actual support COFF closures, separate function/support counts and archive/link.
+- [ ]224:canonical005a2248 cached probe has formatter_text_read_trace instrumentation; excluded.
+  Build uninstrumented canonical owner only after exact ABI/shared locale globals coalescing.
+- [ ]232:trace actual006b49e0 callback initialization;0058ff50 only proves006b49c8/49a1,
+  not the006b49e0/49a2 table. Static index refs are navigation, not semantic proof.
+
 Checkpoint222 (2026-10-16):1109functionVAs+2supportobjects,445linkedunresolvednames.
 - [x]217/222: exact00590290cdecl binding resolvedactualwholearchive;1088cases/18497ABIchecks.
 - [x]218: original renderer state dataflow repaired;119consumerinstructions/416B,
@@ -14,8 +28,8 @@ Checkpoint222 (2026-10-16):1109functionVAs+2supportobjects,445linkedunresolvedna
 - [ ]221: whole original.rdata relationships/indirectuses/sharedalias ownership beforeproduction.
 - [x]220: duplicate/tampered support packets rejectedbeforeanynativecommands; functions/support
   countedseparately,actualCOFFdirectives verified, provenaliases separatedfromCRTresolution.
-- [ ]225/226: eligiblewritablescalar views005e25d0/005e25d4 stillrequireboundednative
-  zero initialization/writepermissions/sharedlayout fixture; not wholeprogramownership.
+- [x]225/226: bounded zero initialization/writepermissions/adjacent layout fixture PASS;
+  wholeprogramownership remains deferred above.
 
 Checkpoint216:1108native functions;432unresolved names/624diagnostics:
 89missingfunctions,36canonicaloutsideunion,1compiledsymbolmismatch,299dataviews,

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "run": 230,
+  "kind": "initialized-scalar-selection",
+  "mode": "read-only navigation",
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/228-writable-and-callee-union/summary.json": "39246a27c5bb67a4cec7466247f65e015a41444cd46ebfdecdbf00dece190f14",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/summary.json": "90cf717f4ebc851cf35815678592648fd557f2e95ab4ffd8d956680c0498db34"
+  },
+  "scope": {"frontier_entries": 457, "filtered_data_candidates": 54, "excluded_addresses": ["005b242c", "005b24a8", "005e25d0", "005e25d4"]},
+  "rules": [".data writable", "aligned primitive int/uint4", "zero or nonzero initialized bytes", "all exact HIGHLOW refs indexed MEM4 read/write", "no in-cell reloc", "no pointer/array/address-taking/partial/gap", "no canonical/WIP/native data owner"],
+  "eligible": [
+    {"va": "005ccb34", "symbol": "?DAT_005ccb34@@3HA", "native_expected_mangle": "?DAT_005ccb34@@3HA", "type": "int32", "pe_bytes": "80000000", "reads": 2, "writes": 0, "highlow_refs": 2, "in_cell_relocations": 0, "ref_instructions": ["0041e582 8b0d34cb5c00 MOV ECX,dword ptr [0x005ccb34]", "00420f8d 8b1534cb5c00 MOV EDX,dword ptr [0x005ccb34]"], "overlap_views": [], "owner_definitions": []},
+    {"va": "005d0608", "symbol": "?DAT_005d0608@@3HA", "native_expected_mangle": "?DAT_005d0608@@3HA", "type": "int32", "pe_bytes": "01000000", "reads": 2, "writes": 1, "highlow_refs": 3, "in_cell_relocations": 0, "ref_instructions": ["00489186 8b1508065d00 MOV EDX,dword ptr [0x005d0608]", "0048918f 8b0d08065d00 MOV ECX,dword ptr [0x005d0608]", "00489196 890d08065d00 MOV dword ptr [0x005d0608],ECX"], "overlap_views": [], "owner_definitions": []},
+    {"va": "005e5f4c", "symbol": "?DAT_005e5f4c@@3HA", "native_expected_mangle": "?DAT_005e5f4c@@3HA", "type": "int32", "pe_bytes": "0a000000", "reads": 2, "writes": 0, "highlow_refs": 2, "in_cell_relocations": 0, "ref_instructions": ["005a9078 8b0d4c5f5e00 MOV ECX,dword ptr [0x005e5f4c]", "005ada75 8b0d4c5f5e00 MOV ECX,dword ptr [0x005e5f4c]"], "overlap_views": [], "owner_definitions": []}
+  ],
+  "rejected_reason_counts": {"no_indexed_direct_reference": 12, "immediate_overlap_or_unproven_gap": 34, "adjacent_view_or_array_relationship": 5},
+  "rejected_adjacent_view_examples": ["005e25e0", "005e3490", "005dea70", "005dea74", "005de78c"],
+  "boundary": "Exact original PE/instruction navigation only; no storage owner or production declaration inferred."
+}

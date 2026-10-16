@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "kind": "original-direct-callee-recovery",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "objects_compiled": 1,
+  "real_coff_objects": 1,
+  "results": [
+    {
+      "va": "00565ea0",
+      "name": "FUN_00565ea0",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "generated_source": "local/experiments/v2-direct-callee-recovery-223/00565ea0.cpp",
+      "generated_source_sha256": "5980976875514bb92ee5c388b3f30bd8f701601faec1f492eb5116b09b87c723",
+      "dependency_sha256": {
+        "local/experiments/v2-direct-callee-recovery-223/00565ea0.cpp": "5980976875514bb92ee5c388b3f30bd8f701601faec1f492eb5116b09b87c723",
+        "local/experiments/v2-direct-callee-recovery-223/consumer223.h": "e1dd0a1861e884fdb8dd7528ff87698fbec041269929b0b2025b72c9b5bceff7",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-direct-callee-recovery-223/objects/00565ea0.obj",
+      "object_sha256": "c333468f0db48baf9c1e1740d21e8d0a2d3e2bad86885ac0cf5872f5ce64933e",
+      "symbols": {
+        "defined": [
+          "?FUN_00565ea0@@YAIPAXI@Z"
+        ],
+        "undefined": [
+          "?DAT_006b4a04@@3HA",
+          "?FUN_00590070@@YAIH@Z",
+          "?FUN_00590170@@YAHHH@Z",
+          "?FUN_005907b0@@YAHHHH@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_00565ea0@@YAIPAXI@Z"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006b4a04@@3HA",
+        "?FUN_00590070@@YAIH@Z",
+        "?FUN_00590170@@YAHHH@Z",
+        "?FUN_005907b0@@YAHHHH@Z"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "original_ret_bytes": [
+        0,
+        0
+      ],
+      "disassembly": "local/experiments/v2-direct-callee-recovery-223/consumer-disassembly.log",
+      "disassembly_sha256": "4788438c7fa6a276509390c10ae4a8391458657053fe0b90197f63ed80cbe703"
+    }
+  ],
+  "actual_compiler_batches": 1,
+  "changed_game_TUs": 1,
+  "synthetic_fixture_TUs": 1,
+  "compiler_batch_exit_code": 0,
+  "compile_seconds": 1.4978608000092208,
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "compiler_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-direct-callee-recovery-223\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-direct-callee-recovery-223\\00565ea0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-direct-callee-recovery-223\\original-comparison-fixture.cpp"
+  ],
+  "compiler_log": "local/experiments/v2-direct-callee-recovery-223/compile.log",
+  "compiler_log_sha256": "69a80345b4e99e1fb33a3438aef0a8b7736dfeb1434bb1881cb2d26290f2f53d",
+  "input_sha256": {
+    "scripts/research/experiment-v2-direct-callee-223.py": "1fee41e89823f4af26efe273c9807059753fcfa0e00e5cd0eae6d81e6781b54b",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "iterations/v2/001-original-recovery/runs/211-direct-call-contracts/summary.json": "a66e3d28da6f6d89470d3a20fc57e6dc19f36e74d8cb4b80265db0f4864297b0",
+    "iterations/v2/001-original-recovery/runs/211-direct-call-contracts/validation.json": "f92f7fe3ed520251fd5da976bdfe995fce180b81cc55b5667f6d914d11cee474",
+    "local/experiments/v2-direct-call-contracts-211/original-call-evidence.json": "b9039a13f982ff539d87b9b2077cbd7697b6c74c6f9ba178990e5e256052ddeb",
+    "iterations/v2/001-original-recovery/runs/222-native-support-union/summary.json": "b414d7e552133510b7372988bfa5f1b15e091749e356c60bcbdba70e91e9e836",
+    "local/experiments/v2-build-corpus-181/00590170.obj": "afa7200453d501964db65c963b817121f782006ae979b2629e7cf0a8e68d6294",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00590170.cpp": "72e9fa193bbbc462db4a8781985e98734dd963c5324247ddbd82f27a20585c23",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00565ea0.cpp": "7e0139d57c5e7967c3d8dbae9b0ac6b36236d533b6e08fe76e5565ccd10bbfa6",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/experiments/v2-direct-callee-recovery-223/consumer223.h": "e1dd0a1861e884fdb8dd7528ff87698fbec041269929b0b2025b72c9b5bceff7",
+    "local/experiments/v2-direct-callee-recovery-223/00565ea0.cpp": "5980976875514bb92ee5c388b3f30bd8f701601faec1f492eb5116b09b87c723",
+    "local/experiments/v2-direct-callee-recovery-223/original-comparison-fixture.cpp": "6b2fd7e509a9ce238b0ed14eae61c7aa89d434a4947bf222b7c5c170030a12c7",
+    "iterations/v2/001-original-recovery/runs/223-direct-callee-recovery/proof-before-compile.json": "96fd261a42bc51835a3ff587df505d6c164570de50771395f262a86120279c6b",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-direct-callee-recovery-223/objects/00565ea0.obj": "c333468f0db48baf9c1e1740d21e8d0a2d3e2bad86885ac0cf5872f5ce64933e",
+    "local/experiments/v2-direct-callee-recovery-223/objects/original-comparison-fixture.obj": "c3ef0ee1878cac5d4bc93e26e8983eb665da72075e459c810171dd8a657daeea",
+    "local/experiments/v2-direct-callee-recovery-223/original-comparison-fixture.exe": "06a8bdd708892df7593f18ba0e2daa230302fbf30361713bdbac3b5b4ac769e1",
+    "local/experiments/v2-direct-callee-recovery-223/compile.log": "69a80345b4e99e1fb33a3438aef0a8b7736dfeb1434bb1881cb2d26290f2f53d",
+    "local/experiments/v2-direct-callee-recovery-223/consumer-disassembly.log": "4788438c7fa6a276509390c10ae4a8391458657053fe0b90197f63ed80cbe703",
+    "local/experiments/v2-direct-callee-recovery-223/fixture-disassembly.log": "6801a1a12fd0a40a5615c1c89b027175e64b1d926fadb35e4350605761da58c4",
+    "local/experiments/v2-direct-callee-recovery-223/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-direct-callee-recovery-223/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-direct-callee-recovery-223/compile.execution.json": "a001bedfb3a241944ae13ace34028fd4cf8cddf0e136f5a4309dda25a44bdb84",
+    "local/experiments/v2-direct-callee-recovery-223/consumer-disassembly.execution.json": "a5a91a59f8a853e4b50d918aea4c760a4ad19058f3b755402f4c405287f5fb59",
+    "local/experiments/v2-direct-callee-recovery-223/fixture-disassembly.execution.json": "bfd484114bc0343631965b60b9639442705660e61bea803458ca178f0b389dbc",
+    "local/experiments/v2-direct-callee-recovery-223/fixture-link.execution.json": "698589581d70f5a737adf10f2066f49a7a472b863d29e8e3ddbfda07403e955f",
+    "local/experiments/v2-direct-callee-recovery-223/fixture-native.execution.json": "d9a99a0ceacbfef8256663fc03a8f1b22fcb454cb77b33b685ac97a1b2bc5668"
+  },
+  "input_guards_before": true,
+  "input_guards_after": true,
+  "original_instruction_count": 38,
+  "original_bytes": 93,
+  "ownership_preflight": {
+    "canonical_exact_or_interior": 0,
+    "WIP": 0,
+    "already_compiled": 0
+  },
+  "Ghidra_decompilations": 0,
+  "production_or_union_changes": false,
+  "fixture": {
+    "native_exit_code": 0,
+    "comparisons": 229376,
+    "seconds": 0.43139879999216646,
+    "executable": "local/experiments/v2-direct-callee-recovery-223/original-comparison-fixture.exe",
+    "executable_sha256": "06a8bdd708892df7593f18ba0e2daa230302fbf30361713bdbac3b5b4ac769e1",
+    "scope": "Actual candidate vs original instruction sequence, controlled direct boundaries: all256 signedbyte inputs,7 signed index patterns,4 unsignedWORD limits,4 guard bitpatterns,2 table-reload paths,4 unaligned inputs; rawEAX and complete call traces match.",
+    "full_provider_fidelity_claimed": false
+  },
+  "direct_dependencies": [
+    "00590070",
+    "00590170",
+    "005907b0"
+  ],
+  "already_compiled_dependency": [
+    "00590170"
+  ],
+  "remaining_implementation_dependencies": [
+    "00590070",
+    "005907b0"
+  ],
+  "limits": [
+    "Original nested provider bodies are not reconstructed here; alreadycompiled590170 symbol retained exactly.",
+    "Opaque pointee layout/ownership/lifetime unknown; only BYTE+4, DWORD+0 and recordWORD+6 consumers proven.",
+    "Raw-load representation helpers preserve bytes/unaligned inputs; volatile-register/concurrency/atomicity/fault/game acceptance remains deferred."
+  ]
+}

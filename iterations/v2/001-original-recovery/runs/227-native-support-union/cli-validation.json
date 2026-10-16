@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "mode": "negative CLI validation before library/link execution",
+  "driver": "scripts/research/audit-v2-native-union-227.py",
+  "baseline": "iterations/v2/001-original-recovery/runs/222-native-support-union/summary.json",
+  "support_summary": "local/experiments/v2-support-cli-227/unknown-kind-20261016a/summary.json",
+  "support_summary_sha256": "60efa3302771d6dd9687f7b8c0cd25e5d63cff2194031de473dca323cb58c46a",
+  "output": "local/experiments/v2-support-cli-227/case-unknown-kind-20261016a-output",
+  "run": "iterations/v2/001-original-recovery/runs/227-native-support-union/case-unknown-kind-20261016a-run",
+  "exit_code": 1,
+  "expected_exception": "AssertionError: support kind is not one of proven-link-contract/original-readonly-data/original-writable-data",
+  "output_files": 0,
+  "run_files": 0,
+  "library_link_execution": 0,
+  "native_commands": 0,
+  "logs": [],
+  "assertions": {"unknown_kind_rejected": true, "no_lib_or_dll_created": true, "no_execution_json_created": true}
+}

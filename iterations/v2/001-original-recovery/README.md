@@ -1,18 +1,20 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Checkpoint2026-10-16 Run222:1109distinct functionVAs +2supportobjects =1111archive
-members/1260938B. Actuallink445names/639diagnostics, noEXE/DLL.
-Four dependencies closed (00537b40,00590290binding,2readonlyscalarcells);17newdependencies
-exposed by218. Linkedfrontier93missingFUN/36canonicaloutside/309data/7printedCRT.
-1108symbol snapshots reused,3new objects read,6840pinsPASS,0compilations inunion.
-217 exactcdecl binding fixture1088cases/18497checks PASS;218 actualconsumer28traces,
-3decompiledataflowlosses fixed,1341PEinstructions PASS.221 readonlydata bits/nativePASS.
-26unindexedHIGHLOWoperand sites recorded in research/binary-index/readonly-scalar-relocation-gaps.json;
-no instructionboundary/wholeprogramownership inferred. Production173 unchanged476full+6partial.
-Active:223callee00565ea0 (abi_analysis_193);224canonicalowner census (locale_resume);
-225writablescalar selection completed,2eligiblecells; root226boundedwritabledata+integration.
-Next: accept223/226, reuse222archiveinputs; review224 beforecanonicallinking.
-Deferredprovider/dataalias/lifetime/fault/register checks remainbacklog, no guessedbehaviors.
+Checkpoint2026-10-16 Run233:1111distinct functionVAs +4supportobjects =1115archive
+members/1265970B. Actual link442names/633diagnostics, noEXE/DLL.
+Linkedfrontier93missingFUN/36canonicaloutside/306data/7printedCRT.
+1113symbol snapshots reused,2new objects read,6906pinsPASS,0compilations inunion.
+223/229 restore00565ea0/00590070 and pass598016native/original x86comparisons.
+226/231 provide five exact writable scalar cells (zero/128/1/10), nativebits/permissionsPASS;
+adjacent005e25d0/005e25d4 retain4-byte separation. No whole-data layout claim.
+224 canonicalowner census found instrumented005a2248probeobject: exclude from game.
+232 callback refs are navigation;0058ff50 base006b49c8 is not proven006b49e0 writer.
+Production173 unchanged476full+6partial; game-link267names/303refs.
+Active:234small missing bodies(abi_analysis_193),235callback initialization refs(float_inventory_205),
+236canonical lowercase/state contract(locale_resume); root233integration/docs/commit.
+Next: accept bounded234, link using cached233 inputs; callback targets/state coalescing
+must be proved before implementation. Deferred checks remain recovery-validation-backlog.md.
+Details and exact command: runs/233-initialized-and-nested-union/README.md.
 
 Historical checkpoints:
 
