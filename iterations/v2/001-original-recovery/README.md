@@ -14,9 +14,12 @@ relativeESP/memory comparisonsPASS;one4TU MP6batch,0newacceptedfunctions/noprodu
 252coveragecensus:0/85remainingbodies supportedwhole;80needCALL,3tailJMPcases selected.
 256automaticqueue refreshed:418linknames ->416tasks,20resolvedrawrows excluded.
 Production173 unchanged476full+6partial/game-link267names303refs.
-Active:253tailJMP/MissingEntryVMpilot(locale_resume); rootdocs/commit.
-Next:accept253boundedcutpointaudit; selectCALL/stack backend test or connectedcanonical
-providerfrom256queue. FullCPU/memoryloader/imports/gameexecution remainunimplemented.
+253tailJMP/MissingEntryVMpilot completed:30originalB/6instructions,18432nativecutpoint
+comparisonsPASS/49pins/8guards;actualthree-targetJSON retainsisolatedVMpilotprovenance.
+No acceptedfunctions/calleeimplementations/nativeFUNbindings ormainqueuefeed.
+No activeagent assignments atcheckpoint. Next: originalCALL/stack/RETbackend test with
+explicitreturnPC/unknown-target handling, or connectedcanonicalproviderfrom256queue.
+FullCPU/memoryloader/imports/gameexecution remainunimplemented.
 Detailscommands:runs/249-canonical-and-storage-union and246/256 READMEs; backlog remainsopen.
 
 Historical checkpoints:

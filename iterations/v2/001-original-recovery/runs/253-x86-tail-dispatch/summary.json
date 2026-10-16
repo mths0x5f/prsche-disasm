@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "kind": "isolated-x86-tail-dispatch-pilot",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "experimental_vas": [
+    "00468100",
+    "004d8230",
+    "004d8240"
+  ],
+  "translated_original_bytes": 30,
+  "translated_original_instructions": 6,
+  "new_accepted_functions": 0,
+  "production_or_union_changed": false,
+  "native_game_execution_commands": 0,
+  "planner_cli_executions": 0,
+  "actual_compiler_batches": 1,
+  "compiler_exit_code": 0,
+  "compile_seconds": 1.7115481999935582,
+  "compile_warnings": [],
+  "native_fixture_exit_code": 0,
+  "native_seconds": 0.6593246000120416,
+  "state_comparisons": 18432,
+  "missing_entry_vas": [
+    "00536050",
+    "004c7e10",
+    "004c7df0"
+  ],
+  "missing_entry_events": 18432,
+  "runtime_misses": "local/experiments/v2-x86-tail-dispatch-253/runtime-misses.json",
+  "runtime_misses_provenance": "isolatedVMpilot",
+  "oracle": [
+    {
+      "va": "00468100",
+      "bytes": 8,
+      "relocations": [
+        {
+          "offset": 4,
+          "symbol": "?capture253@@YAXXZ",
+          "type": 20
+        }
+      ],
+      "normalized_only_jmp_rel32": true
+    },
+    {
+      "va": "004d8230",
+      "bytes": 11,
+      "relocations": [
+        {
+          "offset": 7,
+          "symbol": "?capture253@@YAXXZ",
+          "type": 20
+        }
+      ],
+      "normalized_only_jmp_rel32": true
+    },
+    {
+      "va": "004d8240",
+      "bytes": 11,
+      "relocations": [
+        {
+          "offset": 7,
+          "symbol": "?capture253@@YAXXZ",
+          "type": 20
+        }
+      ],
+      "normalized_only_jmp_rel32": true
+    }
+  ],
+  "guard_tests": [
+    "unsupported INT3",
+    "truncated instruction",
+    "indirect JMP",
+    "JMP into instruction",
+    "CALL",
+    "x87",
+    "internal direct JMP boundary accepted",
+    "external direct JMP explicit dispatcher accepted"
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-x86-tail-dispatch-253.py": "d000c9b647d7682b9f0b2af67832af216c5d10f04c75f4608d11dbf28d5f4cca",
+    "scripts/research/experiment-v2-x86-cpp-246.py": "6620f56894983dd42779b17110a799edb0d1bf3836de41267dc780fb81023ca9",
+    "scripts/research/audit-v2-x86-cpp-246.py": "1906657f61d3a274e1bfc430d8c92866aff838866a82f8188fa835a2b3837aff",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/audit-v2-nested-calls-229.py": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+    "research/binary-index/README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/246-x86-cpp-pilot/summary.json": "f571a61ce88a20d1d0a5147e4d95c1b7e1bcb7459df547a5316955b127fd38a4",
+    "iterations/v2/001-original-recovery/runs/246-x86-cpp-pilot/validation.json": "3a43dd44811563cb70e9ec7ef8029d6f55147f8bbbd46a50e12d20fbf8663e52",
+    "iterations/v2/001-original-recovery/runs/252-x86-cpp-coverage/summary.json": "85d8ba4c567bcb0cbaa04f9df5666e41578660851628b56224489599df753d9a",
+    "iterations/v2/001-original-recovery/runs/252-x86-cpp-coverage/validation.json": "4f433a0bb1de5796ebc999ea5af6b293a726ef93fe2a274a4364557bd0ea7589",
+    "scripts/research/plan-v2-link-frontier-245.py": "13779d22b598111052fcb7889a94db351b1cf01ca26c3c3974713fdf728711f1",
+    "iterations/v2/001-original-recovery/runs/245-automated-frontier-queue/summary.json": "5f6f6fd1e2081eeaf9c31d658636fb26029a7413479b817989eb1de6fcf7cc10",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/experiments/v2-x86-tail-dispatch-253/derived-backend253.py": "043e34fffcfdd7b7b0eb84019705e6d5424c1235d126b873e0f31b840806f73e",
+    "local/experiments/v2-x86-tail-dispatch-253/machine253.h": "094bf24bd88753def4153a4aa1c27b518396edd860f9e0b913ca2bc6275b7c14",
+    "local/experiments/v2-x86-tail-dispatch-253/dispatch253.cpp": "72c559f1916a32a998b1e390e5172ccc0255b35d2674d1c38967ff78a1a79fc0",
+    "local/experiments/v2-x86-tail-dispatch-253/state-fixture.cpp": "0ea64591ccf1182861f495ef175092a6a3133194007a3c5dad7c9c21f8e28a13",
+    "local/experiments/v2-x86-tail-dispatch-253/00468100.cpp": "965b0511d8aeb8e530fcac1ba4b0b7d7f994e28f9c5c483e7fafdc92087b5ced",
+    "local/experiments/v2-x86-tail-dispatch-253/004d8230.cpp": "5513956c1f7c82f0280f1ca1f044def03b911322673baa4e04134b2086cb796e",
+    "local/experiments/v2-x86-tail-dispatch-253/004d8240.cpp": "275007fceb64bb0aad6517c3b589f77c125837b90fa7c95d959e02d34e706c03",
+    "iterations/v2/001-original-recovery/runs/253-x86-tail-dispatch/proof-before-compile.json": "82fef601462b8338797dd7359dd34d55122503c924682ed6d419b747369e528b",
+    "local/experiments/v2-x86-tail-dispatch-253/captured-compile-driver.py": "d000c9b647d7682b9f0b2af67832af216c5d10f04c75f4608d11dbf28d5f4cca",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86\\libucrt.lib": "bb7ca922d003d269f7408dd56655ea46c0bfc2a7b66b79ff248094d8143b72dd",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-x86-tail-dispatch-253/runtime-misses.json": "651ad1ca1957654fcfd6850eafee45ee1eb4d56700a6e1a70726bb8416e38fa2",
+    "iterations/v2/001-original-recovery/runs/253-x86-tail-dispatch/runtime-parser-identity.json": "1962b296a16d514641b04fc183959210b20a7dcf80d2b9ee8745c5c795a52868",
+    "local/experiments/v2-x86-tail-dispatch-253/objects/00468100.obj": "33b8e87971bc4c30cc9784529f72d9ba1d44c1608700f35dfb287596e4504d7a",
+    "local/experiments/v2-x86-tail-dispatch-253/objects/004d8230.obj": "9040067f49f30925912938c661b1d559695b7b3afe34a034f61c97b2d1fb01d7",
+    "local/experiments/v2-x86-tail-dispatch-253/objects/004d8240.obj": "0dbbcc98f46820d7017381a9f76a07ae58819a5539c6a19f9bf3b38a11606772",
+    "local/experiments/v2-x86-tail-dispatch-253/objects/dispatch253.obj": "795bd4285aa570fa91c944dc22caab9558f2d4370aa8124822ac0965b419a297",
+    "local/experiments/v2-x86-tail-dispatch-253/objects/state-fixture.obj": "9d2eabebaf70dd2add57e4a52030e7b1d5221b5d92ac48ca90a15334bbc58d52",
+    "local/experiments/v2-x86-tail-dispatch-253/state-fixture.exe": "5b5778395c5acc5291d12911214aefd3751ed72d6d32ea38b7b5d57bda0c0e61",
+    "local/experiments/v2-x86-tail-dispatch-253/compile.log": "585127b0f7882ba9ac511d564270722423582293fbe3812bf38f11ffccb2280b",
+    "local/experiments/v2-x86-tail-dispatch-253/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-tail-dispatch-253/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-tail-dispatch-253/compile.execution.json": "332ebaab91919a5afec05745b0f2e5b4acba1d54b3b9d04a98c7a55adeb0862d",
+    "local/experiments/v2-x86-tail-dispatch-253/fixture-link.execution.json": "4a02ab68675bd18fb6bac246519ab0014e89cd4b442ad9647bfff8d147e1d5d9",
+    "local/experiments/v2-x86-tail-dispatch-253/fixture-native.execution.json": "df8e672555115c041fbaa5814180c66d56fc3ca5eea334da0cac64be692d3b0e"
+  },
+  "before_after_guards": true,
+  "command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-x86-tail-dispatch-253\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-tail-dispatch-253\\00468100.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-tail-dispatch-253\\004d8230.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-tail-dispatch-253\\004d8240.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-tail-dispatch-253\\dispatch253.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-tail-dispatch-253\\state-fixture.cpp"
+  ],
+  "resumed_existing_compile": false,
+  "limits": [
+    "Isolated native32 VM fixture; no game EXE execution, full memory loader, CALL, x87 or complete translator.",
+    "Only terminal JMP REL32 is rebound to the capture hook; MOV prefix is exact original PE bytes.",
+    "Capture hook private globals/stack writes are fixture transport after the cutpoint, not original effects.",
+    "MissingEntry targets are isolated VM dispatch misses, not missing native bodies in the main queue.",
+    "No restored typed ABI binding: original lost receiver contracts remain deferred."
+  ]
+}

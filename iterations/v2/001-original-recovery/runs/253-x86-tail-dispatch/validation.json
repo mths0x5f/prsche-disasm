@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "kind": "read-only-independent-audit",
+  "summary_sha256": "98fbd360dddaf0c93a8da9c4ccc18e3f5df7aeb892dc6ce71006f86f03160208",
+  "audit_source_sha256": "5664f73dd72e99e3682b2c557089bdc1c900cef0df1ba3bc0d414297f162241d",
+  "input_pins": 49,
+  "original_bytes": 30,
+  "instructions": 6,
+  "oracle_normalization": "Only terminal JMP REL32 to the controlled capture hook",
+  "native_comparisons": 18432,
+  "compiler_batches": 1,
+  "compiled_tus": 5,
+  "compiler_warnings": 0,
+  "generated_coff_symbols": {
+    "00468100": {
+      "defined": [
+        "?translated_00468100@@YAXAAUMachine253@@@Z"
+      ],
+      "undefined": [
+        "?dispatch253@@YAXAAUMachine253@@I@Z",
+        "_memcpy"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "004d8230": {
+      "defined": [
+        "?translated_004d8230@@YAXAAUMachine253@@@Z"
+      ],
+      "undefined": [
+        "?dispatch253@@YAXAAUMachine253@@I@Z",
+        "_memcpy"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "004d8240": {
+      "defined": [
+        "?translated_004d8240@@YAXAAUMachine253@@@Z"
+      ],
+      "undefined": [
+        "?dispatch253@@YAXAAUMachine253@@I@Z",
+        "_memcpy"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "dispatcher": {
+      "defined": [
+        "?dispatch253@@YAXAAUMachine253@@I@Z"
+      ],
+      "undefined": [
+        "?note_missing253@@YAXI@Z",
+        "?translated_00468100@@YAXAAUMachine253@@@Z",
+        "?translated_004d8230@@YAXAAUMachine253@@@Z",
+        "?translated_004d8240@@YAXAAUMachine253@@@Z"
+      ],
+      "common": [],
+      "weak": []
+    }
+  },
+  "missing_entry_vas": [
+    "00536050",
+    "004c7e10",
+    "004c7df0"
+  ],
+  "runtime_provenance": "isolatedVMpilot",
+  "planner_queue_feed": false,
+  "native_game_execution": false,
+  "new_accepted_functions": 0,
+  "guard_tests": 8
+}

@@ -1,0 +1,128 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "contracts": {
+    "00468100": {
+      "bytes": 8,
+      "displacement": 116,
+      "target": "00536050"
+    },
+    "004d8230": {
+      "bytes": 11,
+      "displacement": 612,
+      "target": "004c7e10"
+    },
+    "004d8240": {
+      "bytes": 11,
+      "displacement": 612,
+      "target": "004c7df0"
+    }
+  },
+  "original_hex": {
+    "00468100": "8b4974e948df0c00",
+    "004d8230": "8b8964020000e9d5fbfeff",
+    "004d8240": "8b8964020000e9a5fbfeff"
+  },
+  "instruction_lowering": {
+    "00468100": [
+      {
+        "va": "00468100",
+        "bytes": "8b4974",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [ecx + 0x74]",
+        "cpp": "s.r[1]=read253((0x00000074u+s.r[1]*1u),4u);"
+      },
+      {
+        "va": "00468103",
+        "bytes": "e948df0c00",
+        "mnemonic": "jmp",
+        "operands": "0x536050",
+        "cpp": "dispatch253(s,0x00536050u);return;"
+      }
+    ],
+    "004d8230": [
+      {
+        "va": "004d8230",
+        "bytes": "8b8964020000",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [ecx + 0x264]",
+        "cpp": "s.r[1]=read253((0x00000264u+s.r[1]*1u),4u);"
+      },
+      {
+        "va": "004d8236",
+        "bytes": "e9d5fbfeff",
+        "mnemonic": "jmp",
+        "operands": "0x4c7e10",
+        "cpp": "dispatch253(s,0x004c7e10u);return;"
+      }
+    ],
+    "004d8240": [
+      {
+        "va": "004d8240",
+        "bytes": "8b8964020000",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [ecx + 0x264]",
+        "cpp": "s.r[1]=read253((0x00000264u+s.r[1]*1u),4u);"
+      },
+      {
+        "va": "004d8246",
+        "bytes": "e9a5fbfeff",
+        "mnemonic": "jmp",
+        "operands": "0x4c7df0",
+        "cpp": "dispatch253(s,0x004c7df0u);return;"
+      }
+    ]
+  },
+  "backend_patches": [
+    [
+      "        elif m=='ret'",
+      "        elif m=='jmp' and len(ops)==1 and ops[0].type==X86_OP_IMM:\n            target=ops[0].imm&0xffffffff\n            if entry<=target<entry+len(raw):\n                if target not in starts:raise ValueError('JMP target is not an instruction boundary')\n                code=f'goto L_{target:08x};'\n            else:code=f'dispatch246(s,0x{target:08x}u);return;'\n        elif m=='ret'"
+    ],
+    [
+      "['jl','jge','je','jz']}",
+      "['jl','jge','je','jz','jmp'] and x.operands[0].type==X86_OP_IMM}"
+    ],
+    [
+      "instructions[-1].mnemonic!='ret'",
+      "instructions[-1].mnemonic not in ['ret','jmp']"
+    ],
+    [
+      "s.r[4]+={4+pop}u;return;",
+      "s.r[4]+={4+pop}u;s.stop=Stop246::Returned;return;"
+    ]
+  ],
+  "backend_derived": "local/experiments/v2-x86-tail-dispatch-253/derived-backend253.py",
+  "guard_tests": [
+    "unsupported INT3",
+    "truncated instruction",
+    "indirect JMP",
+    "JMP into instruction",
+    "CALL",
+    "x87",
+    "internal direct JMP boundary accepted",
+    "external direct JMP explicit dispatcher accepted"
+  ],
+  "accepted_exact_owners": {
+    "00468100": [],
+    "004d8230": [],
+    "004d8240": []
+  },
+  "wip_exact_definitions": {
+    "00468100": [],
+    "004d8230": [],
+    "004d8240": []
+  },
+  "accepted_interior_owners": {
+    "00468100": [],
+    "004d8230": [],
+    "004d8240": []
+  },
+  "body_scope": "Three MOV ECX,[ECX+disp32/disp8];direct JMP wrappers only. No original callee implementation.",
+  "state_scope": "All8 GPRs including unchanged raw ESP; CF/ZF/SF/OF, unchanged VM flags,768-byte controlled arena,0..7 unaligned receivers and high-bit DWORD values.",
+  "limits": [
+    "Isolated native32 VM fixture; no game EXE execution, full memory loader, CALL, x87 or complete translator.",
+    "Only terminal JMP REL32 is rebound to the capture hook; MOV prefix is exact original PE bytes.",
+    "Capture hook private globals/stack writes are fixture transport after the cutpoint, not original effects.",
+    "MissingEntry targets are isolated VM dispatch misses, not missing native bodies in the main queue.",
+    "No restored typed ABI binding: original lost receiver contracts remain deferred."
+  ]
+}

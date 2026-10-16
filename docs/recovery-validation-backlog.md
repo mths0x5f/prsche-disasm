@@ -16,7 +16,10 @@ Checkpoint249/256:1120candidatefunctionVAs/13support;418linkednames remain. NoEX
   CALL+stack and3externaltailJMP cases guidefuturebackendwork, not acceptance.
 - [x]255/249:exactsourcecompilerreceipts/COFF bundled forfrozencollector withoutnativecommands.
 - [x]256:validatedactual249diagnostics refreshedautomatic416task queue;no gameexecution.
-- [ ]253:tailtransferstate/missingentrypilot inprogress;actualcallees/gameEXE notimplemented.
+- [x]253:30exactPE/oraclebytes/6instructions;18432nativecutpointcomparisons/49pins/8guardsPASS.
+  ExplicitMissingEntry+threeoriginaltargetPCs, JSONretainsisolatedVMpilotprovenance;no gamequeuefeed.
+- [ ]253:actualcallees/nativeFUNreceiverABI/indirecttransfers/CALL/guestloader/gameEXE.
+  Pilotstopsbeforetarget; it doesnotprovefunctioncompletion oractualgame miss capture.
 
 Checkpoint245:automaticfrontierqueue builtfromvalidated243archive andactualdiagnosticlog.
 - [x]245:442exactunresolvednames/632diagnostics ->440tasks;17resolvedrows excluded.
