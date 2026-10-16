@@ -56,6 +56,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-v2.ps1
 - [План проекта](PLAN.md) и [план активной итерации](iterations/v2/001-original-recovery/PLAN.md).
 - [Индекс бинарников](research/binary-index/README.md) — первая точка поиска оригинального кода.
 - [Отложенные проверки](docs/recovery-validation-backlog.md) — обязательная очередь до итоговой приёмки.
+- [Автоматизация восстановления](docs/recovery-automation.md) — сборка, обратная связь и очередь зависимостей.
 - [Сохранённая незавершённая работа](docs/recovery-wip.md).
 - [Документация](docs/README.md) и [правила исполнителей](docs/agents.md).
 

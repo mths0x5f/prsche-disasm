@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint245:automaticfrontierqueue builtfromvalidated243archive andactualdiagnosticlog.
+- [x]245:442exactunresolvednames/632diagnostics ->440tasks;17resolvedrows excluded.
+  Accepted/partial/WIP/probe/interior/ABI/data/provider states keptdistinct;159pinsPASS.
+- [x]245:6meaningful guards inclduplicateowners, unmappedrefs, sourcecomments/strings,
+  runtimeidentity/unknownentries/dedup; runtimeinputparser only, no actualgame miss capture.
+- [ ]Automaticcompilation/recoveryloop and instruction-to-C++pilot remainplanned,
+  not completedbyqueuegeneration. Fullgame launch/fulloriginalfidelity stillopen.
+
 Checkpoint243:1117functionVAs+8support,442linkedunresolvednames; actualgameEXE absent.
 - [x]234:4originalwrappers,2048SDKoriginal/nativepairs+2048thiscallcaptures,445PEinstructions.
 - [ ]234:lostECX/nativevoid(void) contracts00468100/004d8230/004d8240/00538d80 requirecaller

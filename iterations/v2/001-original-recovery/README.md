@@ -12,9 +12,11 @@ D9030+2fixtureC4731 retained; fullCRTlocktable26/48 composition remainsopen.
 242:onephysicalDWORD withsigned/unsignedalias,125exactoriginalrefs/nativecrosswritesPASS.
 239found6WIPowners in233missingfrontier; don't reimplement existing code.
 Production173 unchanged476full+6partial; game-link267names/303refs.
-Active:245automated build/link feedback queue(locale_resume); rootdocs/commit.
-Next: use245queue to choose boundedrecovery/reusebatch; evaluate isolatedinstruction-to-C++
-pilot per docs/recovery-automation.md. Runtime miss collection awaitsactualgameEXE.
+245automatedqueue completed:actual442linknames/632diagnostics ->440researchtasks;
+17resolvedrawfrontierrows excluded.159boundedpins+6parser/owner guardsPASS,0nativecommands.
+No activeagent assignments atcheckpoint. Next: use245queue forcanonicalreuse/ABI review
+and isolatedinstruction-to-C++pilot per docs/recovery-automation.md. Runtime miss parser
+acceptsidentity-pinnedknown/unknownVAs; actualgame miss collection awaitsEXE.
 Details/command: runs/243-canonical-reuse-union/README.md; deferredchecks inbacklog.
 
 Historical checkpoints:
