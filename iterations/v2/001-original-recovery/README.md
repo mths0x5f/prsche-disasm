@@ -1,5 +1,10 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
+Текущий checkpoint — [Run261](runs/261-canonical-reuse-union/README.md):1122candidate
+function VAs+15supportobjects,417linknames remain, EXE/DLL отсутствует.
+[Run258](runs/258-x86-call-chain/README.md):3original CALLцепочки/36 864native comparisons PASS.
+Активные задачи и точные ограничения — [PLAN.md](PLAN.md).
+
 Checkpoint2026-10-16 Run249:1120distinct functionVAs+13supportobjects=1133archive
 members/1286822B. Actual link418names/602diagnostics, noEXE/DLL (-24names vs243).
 Linkedfrontier87missingFUN/35canonicaloutside/283data/13othercontracts.

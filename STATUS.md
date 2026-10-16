@@ -1,5 +1,28 @@
 # Состояние проекта
 
+Checkpoint 2026-10-17, Run261: **1122 candidate function VAs + 15 support objects**,
+1137 archive members / 1 290 344 bytes. Actual link: **417 names / 579 diagnostics**;
+EXE/DLL нет. Два старых имени закрыты, выявлен canonical free_00531f90.
+1133 symbol snapshots reused, 4 new COFFs read, 7461 pins PASS, 0 compiles;
+one archive/link, 8.811s. Verified production Run173:476full+6partial, без изменений.
+
+Run257/258: статический x86→C++ перевод CALL/RET/стека проверен на 3 оригинальных
+цепочках:6тел/104байта/34инструкции,36 864native comparisons и4negative checks PASS.
+Run260:257 синтаксически переводит25из85тел прежней очереди (у246:0).
+Это отдельный backend-эксперимент; новых принятых игровых функций он не добавляет.
+Run259:2канонических тела/2bindings прошли независимый audit, вошли в261.
+005925d0 остаётся deferred: actual consumer делает MOVSX AL вместо original zero-extension.
+
+Текущая работа: locale_resume — Run262, native CPU corners (synthetic arithmetic,
+subregister/stack/indirect transfers); scalar_storage_250 — Run263 preflight,
+повторное подключение canonical heap free_00531f90. Координатор — приёмка и коммит.
+Следующий конкретный шаг: завершить262; подтвердить scope263 по original consumers,
+затем собрать только новый connected packet. Full CPU/loader/imports/game launch открыты.
+Проверки: runs/258 README, audit-v2-canonical-reuse-259.py,
+census-v2-x86-cpp-260.py --validate-existing; union command — runs/261/command.json.
+
+Предыдущий checkpoint:
+
 Checkpoint2026-10-16 Run249:1120distinct functionVAs+13supportobjects=1133archive
 members/1286822B. Actual link418names/602diagnostics, noEXE/DLL (-24names vs243).
 Linkedfrontier87missingFUN/35canonicaloutside/283data/13othercontracts.

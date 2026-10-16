@@ -1,5 +1,26 @@
 # Отложенные проверки восстановления v2
 
+Run257 (2026-10-17):
+- [x] Static CALL/RET/stack lowering; 4 guard groups, 19 rejection cases PASS.
+- [x] Run258:6originalbodies/104B/34instructions,36864native comparisons and4negative
+  checks PASS;59pins and6actual COFForacles independentlychecked,3CALLREL32 only.
+  FullCPU/game acceptance remainsopen; allclaims limitedtoselectedoriginalchains.
+- [ ] Native coverage outside selected chains: byte/word arithmetic, SBB carry/overflow,
+  PUSH ESP/POP ESP/POP [ESP], indirect CALL/JMP and fault/recursion behavior.
+  Lowering guards alone do not prove these instruction semantics.
+
+Checkpoint261:
+- [x]259:2canonicalbodies/2exactbindings PE/source/COFF/native audit PASS.
+  Fixture-only repairs preserved game/binding objects; one overwritten stale-native
+  receipt explicitly recorded as a limitation. Five include roots now match observed order.
+- [ ]259:005925d0 actual char-return consumer sign-extends AL, unlike originalDWORD.
+  Recover caller return contract before alias; FILE/TLS/heap provider composition open.
+- [x]260:257syntax coverage25/85,60rejected; not native/game acceptance.
+- [x]261:1122candidatefunctionVAs+15support,417linknames/579diags,7461pins PASS;
+  1133symbolsnapshots reused/4newCOFFs,0compiles. Actual EXE/DLL absent.
+- [ ]261:newcanonical free_00531f90 dependency; original heap table/lifetime/locks
+  must compose with real consumers. Controlled providers alone do not establish this.
+
 Checkpoint249/256:1120candidatefunctionVAs/13support;418linkednames remain. NoEXE.
 - [x]246:static76B/28instruction-to-C++pilot,375808native state comparisons (CF/ZF/SF/OF,
   GPregs/relativeESP/RET8/64Bmemory),exactPE+3COFForacles/46pins independentPASS.

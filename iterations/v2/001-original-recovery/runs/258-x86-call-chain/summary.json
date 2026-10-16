@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "kind": "isolated-x86-call-chain-pilot",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "chains": [
+    [
+      "00515ca0",
+      "004bc610"
+    ],
+    [
+      "00466e60",
+      "00466e80"
+    ],
+    [
+      "004cecc0",
+      "004e0dc0"
+    ]
+  ],
+  "experimental_vas": [
+    "00515ca0",
+    "004bc610",
+    "00466e60",
+    "00466e80",
+    "004cecc0",
+    "004e0dc0"
+  ],
+  "translated_original_bytes": 104,
+  "translated_original_instructions": 34,
+  "new_accepted_functions": 0,
+  "production_or_union_changed": false,
+  "native_game_execution_commands": 0,
+  "actual_compiler_batches": 1,
+  "compiler_exit_code": 0,
+  "compile_seconds": 2.2426681000506505,
+  "compiler_warnings": 0,
+  "native_fixture_exit_code": 0,
+  "native_seconds": 2.063936599995941,
+  "state_comparisons": 36864,
+  "negative_tests": [
+    "MissingEntry dispatcher",
+    "MissingEntry CALL preservesstop",
+    "BadReturn after actual generatedcalleeRET",
+    "BudgetExhausted"
+  ],
+  "fixture_result": "local/experiments/v2-x86-call-chain-258/fixture-result.json",
+  "missing_entry_provenance": "isolatedVMpilot",
+  "planner_queue_feed": false,
+  "oracle": [
+    {
+      "va": "00515ca0",
+      "bytes": 18,
+      "relocations": [
+        {
+          "offset": 4,
+          "symbol": "?original_004bc610_258@@YAXXZ",
+          "type": 20
+        }
+      ],
+      "normalized_only_call_rel32": true
+    },
+    {
+      "va": "004bc610",
+      "bytes": 5,
+      "relocations": [],
+      "normalized_only_call_rel32": true
+    },
+    {
+      "va": "00466e60",
+      "bytes": 29,
+      "relocations": [
+        {
+          "offset": 22,
+          "symbol": "?original_00466e80_258@@YAXXZ",
+          "type": 20
+        }
+      ],
+      "normalized_only_call_rel32": true
+    },
+    {
+      "va": "00466e80",
+      "bytes": 9,
+      "relocations": [],
+      "normalized_only_call_rel32": true
+    },
+    {
+      "va": "004cecc0",
+      "bytes": 20,
+      "relocations": [
+        {
+          "offset": 15,
+          "symbol": "?original_004e0dc0_258@@YAXXZ",
+          "type": 20
+        }
+      ],
+      "normalized_only_call_rel32": true
+    },
+    {
+      "va": "004e0dc0",
+      "bytes": 23,
+      "relocations": [],
+      "normalized_only_call_rel32": true
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-x86-call-chain-258.py": "4a868094d6a9b77ca87d75087455bea1a505085ec421a83d12eaaaf2fa0999a8",
+    "scripts/research/select-v2-x86-call-chain-258.py": "333792e083a69e0b9d26638a7ec34e7db400a2a86400bf3c76381b256c8e66f5",
+    "iterations/v2/001-original-recovery/runs/258-x86-call-chain/selection.json": "52189b0e533d09518236d87a57220aeaf0a81229c39cfd5a037f9aa945d4c594",
+    "scripts/research/x86-cpp-backend-257.py": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+    "scripts/research/audit-v2-x86-tail-dispatch-253.py": "5664f73dd72e99e3682b2c557089bdc1c900cef0df1ba3bc0d414297f162241d",
+    "scripts/research/plan-v2-link-frontier-245.py": "13779d22b598111052fcb7889a94db351b1cf01ca26c3c3974713fdf728711f1",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/audit-v2-nested-calls-229.py": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+    "research/binary-index/README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_core_candidate.cpp": "49c6af8cd7f3d4dd28b89350bfce0f3f5ea4cfbbfd7a2b00f83058ccae5fea2e",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_display.cpp": "f84cdf6f5c9331c94bf0700a24542724b1cb0b28453dbed1d30d7bc09b4209dd",
+    "iterations/v2/001-original-recovery/runs/249-canonical-and-storage-union/summary.json": "a6d4054605a429db6809631997968ce596a660f0e9d8465cc9879b4f4b9ae9ee",
+    "local/experiments/v2-build-corpus-181/004bc610.obj": "1d5c948507f8bb881cbf15488ae18db3dde74e9e4fba33d29951d13fee5f4d13",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004bc610.cpp": "c953bd1edd227fc446de77268e9e20a5d71329b6d786d3fc86c8ad68200bb418",
+    "local/experiments/v2-thiscall-leaves-187/objects/00466e80.obj": "d56fd52cde17b3f1f3dba251009db987c693f55bee4628c74159e92001c62d56",
+    "local/experiments/v2-thiscall-leaves-187/sources/00466e80.cpp": "8a3fae58230d39e484f9990d2a31baab9134d816a60c70eb2e237dcfa740c79e",
+    "local/experiments/v2-thiscall-leaves-187/objects/004e0dc0.obj": "85e5ab3f78956aee5a85343fc5ebcb5d1b32fd55c138e6db6256ae7d88dd892b",
+    "local/experiments/v2-thiscall-leaves-187/sources/004e0dc0.cpp": "ded7d4fc677d17623d6e6b312881169a9a0576df29244518745505891dc8a3a7",
+    "local/experiments/v2-x86-call-chain-258/machine257.h": "fb702ea51459de0bcbae0647b11a6854a78bdb54a69d9689413e178503834e67",
+    "local/experiments/v2-x86-call-chain-258/dispatch258.cpp": "cb7904a1ea9504d17ae85f726f426bf8c2457a0bc1b064ed4f767d8c93641623",
+    "local/experiments/v2-x86-call-chain-258/state-fixture.cpp": "41c3a5e41db4755d357d2afa117733908699b1ac0d382f8fc8609fda070f2552",
+    "local/experiments/v2-x86-call-chain-258/00515ca0.cpp": "e5f70f049c57d8fc84a8734130a91e224c932b82ab994cb6f400e1068d7224d7",
+    "local/experiments/v2-x86-call-chain-258/004bc610.cpp": "7963109944850419ddeea92e1590aac2b0dd390ba5def0a622ecddfbf79c831c",
+    "local/experiments/v2-x86-call-chain-258/00466e60.cpp": "cfe9a8879e4943e4f4bef66352d241384de51561f974904d98dd82c3563b87c2",
+    "local/experiments/v2-x86-call-chain-258/00466e80.cpp": "1a66a52d0cb2b2daf6d57570124c9ff09d4652fb17c5ef1cb156075584e49096",
+    "local/experiments/v2-x86-call-chain-258/004cecc0.cpp": "567b9c607f5446d7eda4010adb6643222753c064a9ceff1a8cfc72093beee190",
+    "local/experiments/v2-x86-call-chain-258/004e0dc0.cpp": "eb77994d0255ecc0e3bf8d7dd8c77ee642a5784015fa133b2fad7a5b7b039d01",
+    "iterations/v2/001-original-recovery/runs/258-x86-call-chain/proof-before-compile.json": "6f3ed8a08e7e4d854e9b49fda4e5d7dd02968b12644b81ff7c3e572c16c05b43",
+    "local/experiments/v2-x86-call-chain-258/captured-compile-driver.py": "4a868094d6a9b77ca87d75087455bea1a505085ec421a83d12eaaaf2fa0999a8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86\\libucrt.lib": "bb7ca922d003d269f7408dd56655ea46c0bfc2a7b66b79ff248094d8143b72dd",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-x86-call-chain-258/fixture-result.json": "5aeca8a0c35797cdc81ca4c8cc24140a775f835102cdb147c366ca8d63f29732",
+    "local/experiments/v2-x86-call-chain-258/objects/00466e60.obj": "851121a29462356b9bd3de1834538ff453053678895de852746c20091fc691e0",
+    "local/experiments/v2-x86-call-chain-258/objects/00466e80.obj": "fa7c1c696da7a6160498c3c6239eab5c7ab5c08ed0b28535d03b341e02a4494d",
+    "local/experiments/v2-x86-call-chain-258/objects/004bc610.obj": "25a1c399ed97b76705372f9128112b4e173c716ecfa979e937e0a9503da54388",
+    "local/experiments/v2-x86-call-chain-258/objects/004cecc0.obj": "5ef65e59fc70c3e58f9c0e5ac557227b649e96d3dc85c690044efcaf2274398a",
+    "local/experiments/v2-x86-call-chain-258/objects/004e0dc0.obj": "63e014a9f3c8075e9e4a75a00d29f9f4c2187905794c2e6de8b2964713f290c4",
+    "local/experiments/v2-x86-call-chain-258/objects/00515ca0.obj": "606b966e6cbda483d1ae38981e14d27f128c21a938e6d7fa98a900dcb43e5a7c",
+    "local/experiments/v2-x86-call-chain-258/objects/dispatch258.obj": "04fc1a2faf80ca02d25382ba5f8af1b334107d158f68e1e05edbf70e86a67db9",
+    "local/experiments/v2-x86-call-chain-258/objects/state-fixture.obj": "a25bb04d9af646010035bdf4f555e5687f244563ad1bee106078f74a32fe2336",
+    "local/experiments/v2-x86-call-chain-258/state-fixture.exe": "da8bfd5c22e03bb0925b2e135c66b82b60c2c0bdd230f395cdd0602a42d7a87d",
+    "local/experiments/v2-x86-call-chain-258/compile.log": "08858247b6af287d5a7aab50f4a24b1d494eeb42192747670732c10ad5841949",
+    "local/experiments/v2-x86-call-chain-258/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-call-chain-258/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-call-chain-258/compile.execution.json": "1e0200cfd002e866766bf6ee68c57bc83f2e58d5fd5d5ac532a47e134bf620e3",
+    "local/experiments/v2-x86-call-chain-258/fixture-link.execution.json": "af54b42875a8d5a2237f5df8cf792e06c4ea45843f7f36c257d0d1480e53c761",
+    "local/experiments/v2-x86-call-chain-258/fixture-native.execution.json": "d1b44423ddc955deeaafec5f8e917c08c2da02263589b8bbb38224a7f6d2f9ac"
+  },
+  "before_after_guards": true,
+  "command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\00515ca0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\004bc610.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\00466e60.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\00466e80.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\004cecc0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\004e0dc0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\dispatch258.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-call-chain-258\\state-fixture.cpp"
+  ],
+  "resumed_existing_compile": false,
+  "existing_compiled_regression_vas": [
+    "00466e80",
+    "004bc610",
+    "004e0dc0"
+  ],
+  "limits": [
+    "Isolated VM backend/native32 fixture only; no game EXE,full CPU or guest memory loader.",
+    "No native FUN alias or typed receiver ABI repair; zero newacceptedfunctions and no union packet.",
+    "Only3direct CALLREL32 relocations normalized; original branch/RET/argument bytes exact.",
+    "BadReturn uses explicit test-only postcallee returnedPC fault injection; not an original behavior claim.",
+    "Native hook restores hostESP beforePUSHFD; gueststack bytes untouched after originalRET.",
+    "Flags proof covers definedCF/ZF/SF/OF for actual valid fixture operands,not all possible arithmetic inputs."
+  ]
+}

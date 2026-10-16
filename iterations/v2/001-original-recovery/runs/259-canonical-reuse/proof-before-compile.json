@@ -1,0 +1,320 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected_vas": [
+    "0059f050",
+    "005a66a7"
+  ],
+  "original_instructions": {
+    "0059f050": [
+      {
+        "va": "0059f050",
+        "bytes": "8b442404",
+        "instruction": "MOV EAX,dword ptr [ESP + 0x4]"
+      },
+      {
+        "va": "0059f054",
+        "bytes": "85c0",
+        "instruction": "TEST EAX,EAX"
+      },
+      {
+        "va": "0059f056",
+        "bytes": "740a",
+        "instruction": "JZ 0x0059f062"
+      },
+      {
+        "va": "0059f058",
+        "bytes": "50",
+        "instruction": "PUSH EAX"
+      },
+      {
+        "va": "0059f059",
+        "bytes": "a1e84f5e00",
+        "instruction": "MOV EAX,[0x005e4fe8]"
+      },
+      {
+        "va": "0059f05e",
+        "bytes": "ff5008",
+        "instruction": "CALL dword ptr [EAX + 0x8]"
+      },
+      {
+        "va": "0059f061",
+        "bytes": "59",
+        "instruction": "POP ECX"
+      },
+      {
+        "va": "0059f062",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ],
+    "005a66a7": [
+      {
+        "va": "005a66a7",
+        "bytes": "e8b0edffff",
+        "instruction": "CALL 0x005a545c"
+      },
+      {
+        "va": "005a66ac",
+        "bytes": "83c00c",
+        "instruction": "ADD EAX,0xc"
+      },
+      {
+        "va": "005a66af",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ]
+  },
+  "canonical_fragments": {
+    "0059f050": {
+      "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_alloc.cpp",
+      "parts": [
+        {
+          "kind": "canonical_slice",
+          "offset": 0,
+          "length": 115,
+          "sha256": "49d3deff885cdd53dd08b1285baee916b055f86b0516085302ed9ca5c02c0f35",
+          "text": "#include \"porsche/application_alloc.hpp\"\n#include \"porsche/application_heap.hpp\"\n#include \"porsche/fe_stream.hpp\"\n\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace porsche {\n"
+        },
+        {
+          "kind": "canonical_slice",
+          "offset": 1458,
+          "length": 114,
+          "sha256": "8e07320a3b3fe82c90920449a8b048e3ad3f11154a637405e7c9705c903e4e07",
+          "text": "std::uint32_t __cdecl application_release_0059f050(void* address){\n    return address?free_00531f90(address):0;\n}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        }
+      ]
+    },
+    "005a66a7": {
+      "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "parts": [
+        {
+          "kind": "canonical_slice",
+          "offset": 0,
+          "length": 93,
+          "sha256": "687444b6d9f8a36bc1dffdca18d2b762a37053dd6efcfac760465874c07f9f6d",
+          "text": "#include \"porsche/formatter_crt_runtime.hpp\"\n#include <cstring>\n#include <initializer_list>\n\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "namespace porsche {\n"
+        },
+        {
+          "kind": "canonical_slice",
+          "offset": 7013,
+          "length": 169,
+          "sha256": "6bef437d32bca475ef3e0d2950fb71d8426712ef4243781812ae794bdd06e0e1",
+          "text": "std::uint32_t* __cdecl formatter_lowio_doserrno_005a66a7() {\n return reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(formatter_crt_thread_005a545c())+12);\n}\n"
+        },
+        {
+          "kind": "wrapper",
+          "text": "}\n"
+        }
+      ]
+    }
+  },
+  "actual_native_consumers": [
+    {
+      "va": "0059f050",
+      "caller": "00406af0",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00406af0.obj",
+      "sha256": "c5894e76a3d2b0a5bbe26491e6d0325f12316c4dd6a9183f720c9c439b1e0440",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "0040aaa0",
+      "object": "local/experiments/v2-build-corpus-181/0040aaa0.obj",
+      "sha256": "19e3c80c512022b99f06c07502afb760e0b0399c83419b965c0dfa1b515fe74a",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "0043e0c0",
+      "object": "local/experiments/v2-build-corpus-181/0043e0c0.obj",
+      "sha256": "eef521fee1406befd3f23e98e205b94c4c5e63ca04691ea14ab1f39a62d63479",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00447880",
+      "object": "local/experiments/v2-build-corpus-181/00447880.obj",
+      "sha256": "42bf06d995222ac214685e89176259ada631a7a908deb586f973267120dcf86f",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00447c10",
+      "object": "local/experiments/v2-build-corpus-181/00447c10.obj",
+      "sha256": "2814ed6bf46813ca66d082f4e8d5483edd7b08036b10ee02e348f5431f0292e5",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "0044fe30",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0044fe30.obj",
+      "sha256": "8754c64bff578997322339dad6c92e96f42fc84e31e96f5c9bba772588bd59d2",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "0045df20",
+      "object": "local/experiments/v2-build-corpus-181/0045df20.obj",
+      "sha256": "1f23aa108f96869863cfe5337c9373660e0f0aa919213f518775e5c5cc720430",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00460170",
+      "object": "local/experiments/v2-build-corpus-181/00460170.obj",
+      "sha256": "7d0580bb99c98d0d16d8cf9b7e4b0d37c3c7eba1812c9d20181e92fab16275dc",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00460eb0",
+      "object": "local/experiments/v2-build-corpus-181/00460eb0.obj",
+      "sha256": "1459d9707105ffe3993b7c25e59c91032f3746a5cb47de7f768492f5439de770",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00466e90",
+      "object": "local/experiments/v2-build-corpus-181/00466e90.obj",
+      "sha256": "5bcca0f96370553611f83dfb56bca73425b52bf1d2c78f30e0a93ab77ca449df",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00478e50",
+      "object": "local/experiments/v2-build-corpus-181/00478e50.obj",
+      "sha256": "55dfd563ce416a7815c4010996cc2af1bc78ae3680d5dc07aa30bd670dd40ba4",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00479db0",
+      "object": "local/experiments/v2-build-corpus-181/00479db0.obj",
+      "sha256": "6274a442bcef720369e556882453d6ec82d792c4ef07647b3abfcf0ba2d98442",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "0047ab70",
+      "object": "local/experiments/v2-build-corpus-181/0047ab70.obj",
+      "sha256": "d9e9ad5d720074d8fb8766cfba9f6ccb663070fd71393c847ed0b6bef92adf38",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "0047b260",
+      "object": "local/experiments/v2-build-corpus-181/0047b260.obj",
+      "sha256": "150ba1843f1bb28470229b03af269d045cb0282c63f1341513f75436a317cddc",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00483580",
+      "object": "local/experiments/v2-build-corpus-181/00483580.obj",
+      "sha256": "5e6fd7a68b54d2b97ca41d9ee83234e35fb9c0d27965703d07ea0d3a26296af7",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "004c5380",
+      "object": "local/experiments/v2-build-corpus-181/004c5380.obj",
+      "sha256": "ab73ffda6fce91c92b0598bdb8a4bd83753b8483bcc82bcb75adb204f7bd6073",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "004c90a0",
+      "object": "local/experiments/v2-build-corpus-181/004c90a0.obj",
+      "sha256": "97286656a3292e7a9f748d5258c399e738fbb0ce7df80de1bc58c938154420b7",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "004c9650",
+      "object": "local/experiments/v2-build-corpus-181/004c9650.obj",
+      "sha256": "fd0f7524b8ce610ec8b61a5febce2c3c4ab87e78598db2d0bfe3d9b553d735d1",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "004d01c0",
+      "object": "local/experiments/v2-build-corpus-181/004d01c0.obj",
+      "sha256": "3532e929739d104c3fcac6db5bc12e68017c2d02e1b7adc102d4867f73e6d275",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "005162f0",
+      "object": "local/experiments/v2-build-corpus-181/005162f0.obj",
+      "sha256": "0828883e4ae82e5af4438311fc450584251a3a50f056afd3cc789b20e31c821f",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "005174a0",
+      "object": "local/experiments/v2-build-corpus-181/005174a0.obj",
+      "sha256": "f97e07670a3f068ba46624bb9c5662a49591d99f4cd4beacf6c3dc8ca1727988",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "005224a0",
+      "object": "local/experiments/v2-build-corpus-181/005224a0.obj",
+      "sha256": "48955ecebc36077037d9efb77c33a3994df2c09159947aded7282e0a65fdf895",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "005225c0",
+      "object": "local/experiments/v2-build-corpus-181/005225c0.obj",
+      "sha256": "25740c73774a8656cfda442b6a76772c478deb71dee1e8dbd5404f88c17b5b46",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "0059f050",
+      "caller": "00539eb0",
+      "object": "local/experiments/v2-build-corpus-181/00539eb0.obj",
+      "sha256": "7d91d765203b7b2803307b69675eecb2cea054f0746106df3e2b01008d7dad80",
+      "undefined": "?FUN_0059f050@@YAXH@Z"
+    },
+    {
+      "va": "005a66a7",
+      "caller": "005a662b",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0002-batch/005a662b.obj",
+      "sha256": "6607fdf60b44e47d89749d520441512dc1f8e6bf4793675c2f68216c8c58369e",
+      "undefined": "?FUN_005a66a7@@YAHXZ"
+    }
+  ],
+  "deferred_005925d0": {
+    "original_va": "005925d0",
+    "original_bytes": 57,
+    "original_zero_extends_device_byte": true,
+    "native_symbol": "?FUN_005925d0@@YADI@Z",
+    "actual_consumer_object": "local/experiments/v2-build-corpus-181/00568ae0.obj",
+    "actual_consumer_sha256": "f815c693e40b84a3a074ecec3287cd7cec48e85baf08bdf7c6f91375034e0f29",
+    "actual_consumer_instruction": "movsx ecx,al after call",
+    "reason": "Signed char promotion in native consumer diverges for 0x80..0xff; no alias or substitute"
+  },
+  "ABI": {
+    "release": "raw void(int) caller ignores return; canonical uint32(void*) preserves full EAX/RET0 and delegates accepted free_00531f90",
+    "doserrno": "raw int(void) caller casts full EAX to pointer; canonical uint32*(void) preserves pointer bits/RET0 and calls accepted CRT thread provider"
+  },
+  "limits": [
+    "Exact canonical fragments only; controlled fixture providers are not real game providers",
+    "No production/union change or new accepted algorithm"
+  ]
+}

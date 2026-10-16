@@ -1,0 +1,579 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selection_scope": "Indexed single-span original bodies<=96B; CALL-free callees<=64B; exact PE; no absolute or segment memory; finite supported operand subset",
+  "indexed_bodies_scanned": 2949,
+  "operand_supported_small_bodies": 923,
+  "closed_candidates": 13,
+  "candidates": [
+    {
+      "caller": "00536460",
+      "callees": [
+        "00555630"
+      ],
+      "call_sites": 1,
+      "total_bytes": 12,
+      "existing_accepted": [],
+      "bodies": {
+        "00536460": {
+          "bytes": 11,
+          "hex": "8b410850e8c7f1010059c3",
+          "instructions": [
+            "00536460 mov eax, dword ptr [ecx + 8]",
+            "00536463 push eax",
+            "00536464 call 0x555630",
+            "00536469 pop ecx",
+            "0053646a ret "
+          ]
+        },
+        "00555630": {
+          "bytes": 1,
+          "hex": "c3",
+          "instructions": [
+            "00555630 ret "
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00515ca0",
+      "callees": [
+        "004bc610"
+      ],
+      "call_sites": 1,
+      "total_bytes": 23,
+      "existing_accepted": [],
+      "bodies": {
+        "00515ca0": {
+          "bytes": 18,
+          "hex": "568bf1e86869faff32c088462c88462d5ec3",
+          "instructions": [
+            "00515ca0 push esi",
+            "00515ca1 mov esi, ecx",
+            "00515ca3 call 0x4bc610",
+            "00515ca8 xor al, al",
+            "00515caa mov byte ptr [esi + 0x2c], al",
+            "00515cad mov byte ptr [esi + 0x2d], al",
+            "00515cb0 pop esi",
+            "00515cb1 ret "
+          ]
+        },
+        "004bc610": {
+          "bytes": 5,
+          "hex": "c6411d01c3",
+          "instructions": [
+            "004bc610 mov byte ptr [ecx + 0x1d], 1",
+            "004bc614 ret "
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00466e60",
+      "callees": [
+        "00466e80"
+      ],
+      "call_sites": 1,
+      "total_bytes": 38,
+      "existing_accepted": [],
+      "bodies": {
+        "00466e60": {
+          "bytes": 29,
+          "hex": "8b442404518bd489412889028b490c81c1b8000000e806000000c20400",
+          "instructions": [
+            "00466e60 mov eax, dword ptr [esp + 4]",
+            "00466e64 push ecx",
+            "00466e65 mov edx, esp",
+            "00466e67 mov dword ptr [ecx + 0x28], eax",
+            "00466e6a mov dword ptr [edx], eax",
+            "00466e6c mov ecx, dword ptr [ecx + 0xc]",
+            "00466e6f add ecx, 0xb8",
+            "00466e75 call 0x466e80",
+            "00466e7a ret 4"
+          ]
+        },
+        "00466e80": {
+          "bytes": 9,
+          "hex": "8b4424048901c20400",
+          "instructions": [
+            "00466e80 mov eax, dword ptr [esp + 4]",
+            "00466e84 mov dword ptr [ecx], eax",
+            "00466e86 ret 4"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "004cecc0",
+      "callees": [
+        "004e0dc0"
+      ],
+      "call_sites": 1,
+      "total_bytes": 43,
+      "existing_accepted": [],
+      "bodies": {
+        "004cecc0": {
+          "bytes": 20,
+          "hex": "8b894c01000085c974096a006a00e8ed200100c3",
+          "instructions": [
+            "004cecc0 mov ecx, dword ptr [ecx + 0x14c]",
+            "004cecc6 test ecx, ecx",
+            "004cecc8 je 0x4cecd3",
+            "004cecca push 0",
+            "004ceccc push 0",
+            "004cecce call 0x4e0dc0",
+            "004cecd3 ret "
+          ]
+        },
+        "004e0dc0": {
+          "bytes": 23,
+          "hex": "8b4424048b54240889813001000089912c010000c20800",
+          "instructions": [
+            "004e0dc0 mov eax, dword ptr [esp + 4]",
+            "004e0dc4 mov edx, dword ptr [esp + 8]",
+            "004e0dc8 mov dword ptr [ecx + 0x130], eax",
+            "004e0dce mov dword ptr [ecx + 0x12c], edx",
+            "004e0dd4 ret 8"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00474b90",
+      "callees": [
+        "00474ac0"
+      ],
+      "call_sites": 1,
+      "total_bytes": 48,
+      "existing_accepted": [],
+      "bodies": {
+        "00474b90": {
+          "bytes": 30,
+          "hex": "56578b7c240c8bf157e822ffffff897e08c70674465b008bc65f5ec20400",
+          "instructions": [
+            "00474b90 push esi",
+            "00474b91 push edi",
+            "00474b92 mov edi, dword ptr [esp + 0xc]",
+            "00474b96 mov esi, ecx",
+            "00474b98 push edi",
+            "00474b99 call 0x474ac0",
+            "00474b9e mov dword ptr [esi + 8], edi",
+            "00474ba1 mov dword ptr [esi], 0x5b4674",
+            "00474ba7 mov eax, esi",
+            "00474ba9 pop edi",
+            "00474baa pop esi",
+            "00474bab ret 4"
+          ]
+        },
+        "00474ac0": {
+          "bytes": 18,
+          "hex": "8bc18b4c2404894804c7005c465b00c20400",
+          "instructions": [
+            "00474ac0 mov eax, ecx",
+            "00474ac2 mov ecx, dword ptr [esp + 4]",
+            "00474ac6 mov dword ptr [eax + 4], ecx",
+            "00474ac9 mov dword ptr [eax], 0x5b465c",
+            "00474acf ret 4"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "004b9520",
+      "callees": [
+        "004bc460"
+      ],
+      "call_sites": 1,
+      "total_bytes": 54,
+      "existing_accepted": [],
+      "bodies": {
+        "004b9520": {
+          "bytes": 33,
+          "hex": "568b742408578bf956e8322f00008b068b4f2c5f89088b0683c00489065ec20400",
+          "instructions": [
+            "004b9520 push esi",
+            "004b9521 mov esi, dword ptr [esp + 8]",
+            "004b9525 push edi",
+            "004b9526 mov edi, ecx",
+            "004b9528 push esi",
+            "004b9529 call 0x4bc460",
+            "004b952e mov eax, dword ptr [esi]",
+            "004b9530 mov ecx, dword ptr [edi + 0x2c]",
+            "004b9533 pop edi",
+            "004b9534 mov dword ptr [eax], ecx",
+            "004b9536 mov eax, dword ptr [esi]",
+            "004b9538 add eax, 4",
+            "004b953b mov dword ptr [esi], eax",
+            "004b953d pop esi",
+            "004b953e ret 4"
+          ]
+        },
+        "004bc460": {
+          "bytes": 21,
+          "hex": "8b4424048b49188b10890a8b0883c1048908c20400",
+          "instructions": [
+            "004bc460 mov eax, dword ptr [esp + 4]",
+            "004bc464 mov ecx, dword ptr [ecx + 0x18]",
+            "004bc467 mov edx, dword ptr [eax]",
+            "004bc469 mov dword ptr [edx], ecx",
+            "004bc46b mov ecx, dword ptr [eax]",
+            "004bc46d add ecx, 4",
+            "004bc470 mov dword ptr [eax], ecx",
+            "004bc472 ret 4"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00449fe0",
+      "callees": [
+        "0053f320"
+      ],
+      "call_sites": 1,
+      "total_bytes": 60,
+      "existing_accepted": [],
+      "bodies": {
+        "00449fe0": {
+          "bytes": 27,
+          "hex": "8b44240456508bf16a05e831530f00c706f03b5b008bc65ec20400",
+          "instructions": [
+            "00449fe0 mov eax, dword ptr [esp + 4]",
+            "00449fe4 push esi",
+            "00449fe5 push eax",
+            "00449fe6 mov esi, ecx",
+            "00449fe8 push 5",
+            "00449fea call 0x53f320",
+            "00449fef mov dword ptr [esi], 0x5b3bf0",
+            "00449ff5 mov eax, esi",
+            "00449ff7 pop esi",
+            "00449ff8 ret 4"
+          ]
+        },
+        "0053f320": {
+          "bytes": 33,
+          "hex": "8b5424088bc18b4c240489480c33c9c7003cbc5b00895010894824894828c20800",
+          "instructions": [
+            "0053f320 mov edx, dword ptr [esp + 8]",
+            "0053f324 mov eax, ecx",
+            "0053f326 mov ecx, dword ptr [esp + 4]",
+            "0053f32a mov dword ptr [eax + 0xc], ecx",
+            "0053f32d xor ecx, ecx",
+            "0053f32f mov dword ptr [eax], 0x5bbc3c",
+            "0053f335 mov dword ptr [eax + 0x10], edx",
+            "0053f338 mov dword ptr [eax + 0x24], ecx",
+            "0053f33b mov dword ptr [eax + 0x28], ecx",
+            "0053f33e ret 8"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "0044a130",
+      "callees": [
+        "0053f320"
+      ],
+      "call_sites": 1,
+      "total_bytes": 60,
+      "existing_accepted": [],
+      "bodies": {
+        "0044a130": {
+          "bytes": 27,
+          "hex": "8b44240456508bf16affe8e1510f00c7066c3c5b008bc65ec20400",
+          "instructions": [
+            "0044a130 mov eax, dword ptr [esp + 4]",
+            "0044a134 push esi",
+            "0044a135 push eax",
+            "0044a136 mov esi, ecx",
+            "0044a138 push -1",
+            "0044a13a call 0x53f320",
+            "0044a13f mov dword ptr [esi], 0x5b3c6c",
+            "0044a145 mov eax, esi",
+            "0044a147 pop esi",
+            "0044a148 ret 4"
+          ]
+        },
+        "0053f320": {
+          "bytes": 33,
+          "hex": "8b5424088bc18b4c240489480c33c9c7003cbc5b00895010894824894828c20800",
+          "instructions": [
+            "0053f320 mov edx, dword ptr [esp + 8]",
+            "0053f324 mov eax, ecx",
+            "0053f326 mov ecx, dword ptr [esp + 4]",
+            "0053f32a mov dword ptr [eax + 0xc], ecx",
+            "0053f32d xor ecx, ecx",
+            "0053f32f mov dword ptr [eax], 0x5bbc3c",
+            "0053f335 mov dword ptr [eax + 0x10], edx",
+            "0053f338 mov dword ptr [eax + 0x24], ecx",
+            "0053f33b mov dword ptr [eax + 0x28], ecx",
+            "0053f33e ret 8"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00453c60",
+      "callees": [
+        "0053f320"
+      ],
+      "call_sites": 1,
+      "total_bytes": 60,
+      "existing_accepted": [],
+      "bodies": {
+        "00453c60": {
+          "bytes": 27,
+          "hex": "8b44240456508bf16a03e8b1b60e00c706ac3d5b008bc65ec20400",
+          "instructions": [
+            "00453c60 mov eax, dword ptr [esp + 4]",
+            "00453c64 push esi",
+            "00453c65 push eax",
+            "00453c66 mov esi, ecx",
+            "00453c68 push 3",
+            "00453c6a call 0x53f320",
+            "00453c6f mov dword ptr [esi], 0x5b3dac",
+            "00453c75 mov eax, esi",
+            "00453c77 pop esi",
+            "00453c78 ret 4"
+          ]
+        },
+        "0053f320": {
+          "bytes": 33,
+          "hex": "8b5424088bc18b4c240489480c33c9c7003cbc5b00895010894824894828c20800",
+          "instructions": [
+            "0053f320 mov edx, dword ptr [esp + 8]",
+            "0053f324 mov eax, ecx",
+            "0053f326 mov ecx, dword ptr [esp + 4]",
+            "0053f32a mov dword ptr [eax + 0xc], ecx",
+            "0053f32d xor ecx, ecx",
+            "0053f32f mov dword ptr [eax], 0x5bbc3c",
+            "0053f335 mov dword ptr [eax + 0x10], edx",
+            "0053f338 mov dword ptr [eax + 0x24], ecx",
+            "0053f33b mov dword ptr [eax + 0x28], ecx",
+            "0053f33e ret 8"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00574ab0",
+      "callees": [
+        "0053f320"
+      ],
+      "call_sites": 1,
+      "total_bytes": 60,
+      "existing_accepted": [],
+      "bodies": {
+        "00574ab0": {
+          "bytes": 27,
+          "hex": "8b44240456508bf16a02e861a8fcffc70698085c008bc65ec20400",
+          "instructions": [
+            "00574ab0 mov eax, dword ptr [esp + 4]",
+            "00574ab4 push esi",
+            "00574ab5 push eax",
+            "00574ab6 mov esi, ecx",
+            "00574ab8 push 2",
+            "00574aba call 0x53f320",
+            "00574abf mov dword ptr [esi], 0x5c0898",
+            "00574ac5 mov eax, esi",
+            "00574ac7 pop esi",
+            "00574ac8 ret 4"
+          ]
+        },
+        "0053f320": {
+          "bytes": 33,
+          "hex": "8b5424088bc18b4c240489480c33c9c7003cbc5b00895010894824894828c20800",
+          "instructions": [
+            "0053f320 mov edx, dword ptr [esp + 8]",
+            "0053f324 mov eax, ecx",
+            "0053f326 mov ecx, dword ptr [esp + 4]",
+            "0053f32a mov dword ptr [eax + 0xc], ecx",
+            "0053f32d xor ecx, ecx",
+            "0053f32f mov dword ptr [eax], 0x5bbc3c",
+            "0053f335 mov dword ptr [eax + 0x10], edx",
+            "0053f338 mov dword ptr [eax + 0x24], ecx",
+            "0053f33b mov dword ptr [eax + 0x28], ecx",
+            "0053f33e ret 8"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "0044a100",
+      "callees": [
+        "0053f320"
+      ],
+      "call_sites": 1,
+      "total_bytes": 65,
+      "existing_accepted": [],
+      "bodies": {
+        "0044a100": {
+          "bytes": 32,
+          "hex": "8b442408568bf1508b4c240c518bcee80c520f00c706443c5b008bc65ec20800",
+          "instructions": [
+            "0044a100 mov eax, dword ptr [esp + 8]",
+            "0044a104 push esi",
+            "0044a105 mov esi, ecx",
+            "0044a107 push eax",
+            "0044a108 mov ecx, dword ptr [esp + 0xc]",
+            "0044a10c push ecx",
+            "0044a10d mov ecx, esi",
+            "0044a10f call 0x53f320",
+            "0044a114 mov dword ptr [esi], 0x5b3c44",
+            "0044a11a mov eax, esi",
+            "0044a11c pop esi",
+            "0044a11d ret 8"
+          ]
+        },
+        "0053f320": {
+          "bytes": 33,
+          "hex": "8b5424088bc18b4c240489480c33c9c7003cbc5b00895010894824894828c20800",
+          "instructions": [
+            "0053f320 mov edx, dword ptr [esp + 8]",
+            "0053f324 mov eax, ecx",
+            "0053f326 mov ecx, dword ptr [esp + 4]",
+            "0053f32a mov dword ptr [eax + 0xc], ecx",
+            "0053f32d xor ecx, ecx",
+            "0053f32f mov dword ptr [eax], 0x5bbc3c",
+            "0053f335 mov dword ptr [eax + 0x10], edx",
+            "0053f338 mov dword ptr [eax + 0x24], ecx",
+            "0053f33b mov dword ptr [eax + 0x28], ecx",
+            "0053f33e ret 8"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "0042c860",
+      "callees": [
+        "00436740"
+      ],
+      "call_sites": 1,
+      "total_bytes": 81,
+      "existing_accepted": [],
+      "bodies": {
+        "0042c860": {
+          "bytes": 42,
+          "hex": "8b4424108b542408568bf18b4c2410508b44240c5152508bcee8c29e0000c706d82e5b008bc65ec21000",
+          "instructions": [
+            "0042c860 mov eax, dword ptr [esp + 0x10]",
+            "0042c864 mov edx, dword ptr [esp + 8]",
+            "0042c868 push esi",
+            "0042c869 mov esi, ecx",
+            "0042c86b mov ecx, dword ptr [esp + 0x10]",
+            "0042c86f push eax",
+            "0042c870 mov eax, dword ptr [esp + 0xc]",
+            "0042c874 push ecx",
+            "0042c875 push edx",
+            "0042c876 push eax",
+            "0042c877 mov ecx, esi",
+            "0042c879 call 0x436740",
+            "0042c87e mov dword ptr [esi], 0x5b2ed8",
+            "0042c884 mov eax, esi",
+            "0042c886 pop esi",
+            "0042c887 ret 0x10"
+          ]
+        },
+        "00436740": {
+          "bytes": 39,
+          "hex": "8b5424088bc18b4c24048948048b4c240c8950088b54241089480c895010c700bc345b00c21000",
+          "instructions": [
+            "00436740 mov edx, dword ptr [esp + 8]",
+            "00436744 mov eax, ecx",
+            "00436746 mov ecx, dword ptr [esp + 4]",
+            "0043674a mov dword ptr [eax + 4], ecx",
+            "0043674d mov ecx, dword ptr [esp + 0xc]",
+            "00436751 mov dword ptr [eax + 8], edx",
+            "00436754 mov edx, dword ptr [esp + 0x10]",
+            "00436758 mov dword ptr [eax + 0xc], ecx",
+            "0043675b mov dword ptr [eax + 0x10], edx",
+            "0043675e mov dword ptr [eax], 0x5b34bc",
+            "00436764 ret 0x10"
+          ]
+        }
+      }
+    },
+    {
+      "caller": "00529c20",
+      "callees": [
+        "005299d0",
+        "00529c50"
+      ],
+      "call_sites": 3,
+      "total_bytes": 121,
+      "existing_accepted": [
+        "00529c20",
+        "005299d0",
+        "00529c50"
+      ],
+      "bodies": {
+        "00529c20": {
+          "bytes": 44,
+          "hex": "8b4424148d5424145083ec108bcc52e89cfdffff83ec108d4424288bcc50e88dfdffffe80800000083c424c3",
+          "instructions": [
+            "00529c20 mov eax, dword ptr [esp + 0x14]",
+            "00529c24 lea edx, [esp + 0x14]",
+            "00529c28 push eax",
+            "00529c29 sub esp, 0x10",
+            "00529c2c mov ecx, esp",
+            "00529c2e push edx",
+            "00529c2f call 0x5299d0",
+            "00529c34 sub esp, 0x10",
+            "00529c37 lea eax, [esp + 0x28]",
+            "00529c3b mov ecx, esp",
+            "00529c3d push eax",
+            "00529c3e call 0x5299d0",
+            "00529c43 call 0x529c50",
+            "00529c48 add esp, 0x24",
+            "00529c4b ret "
+          ]
+        },
+        "005299d0": {
+          "bytes": 31,
+          "hex": "8bc18b4c24048b1189108b51048950048b51088950088b490c89480cc20400",
+          "instructions": [
+            "005299d0 mov eax, ecx",
+            "005299d2 mov ecx, dword ptr [esp + 4]",
+            "005299d6 mov edx, dword ptr [ecx]",
+            "005299d8 mov dword ptr [eax], edx",
+            "005299da mov edx, dword ptr [ecx + 4]",
+            "005299dd mov dword ptr [eax + 4], edx",
+            "005299e0 mov edx, dword ptr [ecx + 8]",
+            "005299e3 mov dword ptr [eax + 8], edx",
+            "005299e6 mov ecx, dword ptr [ecx + 0xc]",
+            "005299e9 mov dword ptr [eax + 0xc], ecx",
+            "005299ec ret 4"
+          ]
+        },
+        "00529c50": {
+          "bytes": 46,
+          "hex": "8b442404568b7424183bc6741f8b5424108b4c241483c0043bc2750c8b410483c1048d90000200003bc675e95ec3",
+          "instructions": [
+            "00529c50 mov eax, dword ptr [esp + 4]",
+            "00529c54 push esi",
+            "00529c55 mov esi, dword ptr [esp + 0x18]",
+            "00529c59 cmp eax, esi",
+            "00529c5b je 0x529c7c",
+            "00529c5d mov edx, dword ptr [esp + 0x10]",
+            "00529c61 mov ecx, dword ptr [esp + 0x14]",
+            "00529c65 add eax, 4",
+            "00529c68 cmp eax, edx",
+            "00529c6a jne 0x529c78",
+            "00529c6c mov eax, dword ptr [ecx + 4]",
+            "00529c6f add ecx, 4",
+            "00529c72 lea edx, [eax + 0x200]",
+            "00529c78 cmp eax, esi",
+            "00529c7a jne 0x529c65",
+            "00529c7c pop esi",
+            "00529c7d ret "
+          ]
+        }
+      }
+    }
+  ],
+  "input_sha256": {
+    "research\\v2\\binaries\\Porsche.exe-ddd748fdbe6d\\functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "scripts\\research\\select-v2-x86-call-chain-258.py": "333792e083a69e0b9d26638a7ec34e7db400a2a86400bf3c76381b256c8e66f5",
+    "research\\binary-index\\README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "iterations\\v2\\001-original-recovery\\source\\recovered\\functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740"
+  },
+  "native_execution_commands": 0,
+  "new_accepted_functions": 0
+}

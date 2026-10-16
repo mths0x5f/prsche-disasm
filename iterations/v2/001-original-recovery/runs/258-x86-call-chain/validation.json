@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "kind": "read-only-independent-audit",
+  "summary_sha256": "4f2c08c04ef4007937c5edbb4d84e41e6b6b1935865a766cabc25c5bafdc8ca5",
+  "audit_source_sha256": "a427d7f0b9478ca59d1ec348de28a1625bc22f02aaceb27a3af1169a0db876a6",
+  "input_pins": 59,
+  "original_bytes": 104,
+  "instructions": 34,
+  "original_oracles": 6,
+  "normalized_call_rel32": 3,
+  "native_comparisons": 36864,
+  "compiler_batches": 1,
+  "compiled_tus": 8,
+  "compiler_warnings": 0,
+  "backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "exact_guest_return_slot_mappings": [
+    {
+      "caller": "00515ca0",
+      "callee": "004bc610",
+      "original_return_pc": "00515ca8",
+      "native_oracle_offset": 8,
+      "guest_call_slot_delta": -8,
+      "caller_cleanup": 0
+    },
+    {
+      "caller": "00466e60",
+      "callee": "00466e80",
+      "original_return_pc": "00466e7a",
+      "native_oracle_offset": 26,
+      "guest_call_slot_delta": -8,
+      "caller_cleanup": 4
+    },
+    {
+      "caller": "004cecc0",
+      "callee": "004e0dc0",
+      "original_return_pc": "004cecd3",
+      "native_oracle_offset": 19,
+      "guest_call_slot_delta": -12,
+      "caller_cleanup": 0
+    }
+  ],
+  "generated_coff_symbols": {
+    "00515ca0": {
+      "defined": [
+        "?translated_00515ca0@@YAXAAUMachine257@@@Z"
+      ],
+      "undefined": [
+        "?dispatch257@@YAXAAUMachine257@@I@Z",
+        "?read257@@YAIII@Z",
+        "?write257@@YAXIII@Z"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "004bc610": {
+      "defined": [
+        "?translated_004bc610@@YAXAAUMachine257@@@Z"
+      ],
+      "undefined": [
+        "?read257@@YAIII@Z",
+        "?write257@@YAXIII@Z"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "00466e60": {
+      "defined": [
+        "?translated_00466e60@@YAXAAUMachine257@@@Z"
+      ],
+      "undefined": [
+        "?dispatch257@@YAXAAUMachine257@@I@Z",
+        "?read257@@YAIII@Z",
+        "?write257@@YAXIII@Z",
+        "__aullshr"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "00466e80": {
+      "defined": [
+        "?translated_00466e80@@YAXAAUMachine257@@@Z"
+      ],
+      "undefined": [
+        "?read257@@YAIII@Z",
+        "?write257@@YAXIII@Z"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "004cecc0": {
+      "defined": [
+        "?translated_004cecc0@@YAXAAUMachine257@@@Z"
+      ],
+      "undefined": [
+        "?dispatch257@@YAXAAUMachine257@@I@Z",
+        "?read257@@YAIII@Z",
+        "?write257@@YAXIII@Z"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "004e0dc0": {
+      "defined": [
+        "?translated_004e0dc0@@YAXAAUMachine257@@@Z"
+      ],
+      "undefined": [
+        "?read257@@YAIII@Z",
+        "?write257@@YAXIII@Z"
+      ],
+      "common": [],
+      "weak": []
+    }
+  },
+  "negative_tests": [
+    "MissingEntry dispatcher",
+    "MissingEntry CALL preservesstop",
+    "BadReturn after actual generatedcalleeRET",
+    "BudgetExhausted"
+  ],
+  "unsupported_rejections": 4,
+  "fixture_provenance": "isolatedVMpilot",
+  "native_game_execution": false,
+  "new_accepted_functions": 0,
+  "planner_queue_feed": false,
+  "limits": "Only selected6original bodies have native proof; other257instructions/widths and gameexecution remain unvalidated here."
+}

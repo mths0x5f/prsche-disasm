@@ -1,0 +1,419 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "chains": [
+    [
+      "00515ca0",
+      "004bc610"
+    ],
+    [
+      "00466e60",
+      "00466e80"
+    ],
+    [
+      "004cecc0",
+      "004e0dc0"
+    ]
+  ],
+  "original_hex": {
+    "00515ca0": "568bf1e86869faff32c088462c88462d5ec3",
+    "004bc610": "c6411d01c3",
+    "00466e60": "8b442404518bd489412889028b490c81c1b8000000e806000000c20400",
+    "00466e80": "8b4424048901c20400",
+    "004cecc0": "8b894c01000085c974096a006a00e8ed200100c3",
+    "004e0dc0": "8b4424048b54240889813001000089912c010000c20800"
+  },
+  "instruction_lowering": {
+    "00515ca0": [
+      {
+        "va": "00515ca0",
+        "bytes": "56",
+        "mnemonic": "push",
+        "operands": "esi",
+        "cpp": "U value=s.r[6];s.r[4]-=4u;write257(s.r[4],4u,value);"
+      },
+      {
+        "va": "00515ca1",
+        "bytes": "8bf1",
+        "mnemonic": "mov",
+        "operands": "esi, ecx",
+        "cpp": "U value=s.r[1];s.r[6]=value;"
+      },
+      {
+        "va": "00515ca3",
+        "bytes": "e86869faff",
+        "mnemonic": "call",
+        "operands": "0x4bc610",
+        "cpp": "U target=0x004bc610u;if(!call257(s,target,0x00515ca8u))return;"
+      },
+      {
+        "va": "00515ca8",
+        "bytes": "32c0",
+        "mnemonic": "xor",
+        "operands": "al, al",
+        "cpp": "U a=((s.r[0]>>0)&0xffu);U b=((s.r[0]>>0)&0xffu);U value=logical257(s,a^b,8u);s.r[0]=(s.r[0]&0xffffff00u)|(((value)&0xffu)<<0);"
+      },
+      {
+        "va": "00515caa",
+        "bytes": "88462c",
+        "mnemonic": "mov",
+        "operands": "byte ptr [esi + 0x2c], al",
+        "cpp": "U value=((s.r[0]>>0)&0xffu);write257((0x0000002cu+s.r[6]*1u),1u,value);"
+      },
+      {
+        "va": "00515cad",
+        "bytes": "88462d",
+        "mnemonic": "mov",
+        "operands": "byte ptr [esi + 0x2d], al",
+        "cpp": "U value=((s.r[0]>>0)&0xffu);write257((0x0000002du+s.r[6]*1u),1u,value);"
+      },
+      {
+        "va": "00515cb0",
+        "bytes": "5e",
+        "mnemonic": "pop",
+        "operands": "esi",
+        "cpp": "U value=read257(s.r[4],4u);s.r[4]+=4u;s.r[6]=value;"
+      },
+      {
+        "va": "00515cb1",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "004bc610": [
+      {
+        "va": "004bc610",
+        "bytes": "c6411d01",
+        "mnemonic": "mov",
+        "operands": "byte ptr [ecx + 0x1d], 1",
+        "cpp": "U value=0x00000001u;write257((0x0000001du+s.r[1]*1u),1u,value);"
+      },
+      {
+        "va": "004bc614",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "00466e60": [
+      {
+        "va": "00466e60",
+        "bytes": "8b442404",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esp + 4]",
+        "cpp": "U value=read257((0x00000004u+s.r[4]*1u),4u);s.r[0]=value;"
+      },
+      {
+        "va": "00466e64",
+        "bytes": "51",
+        "mnemonic": "push",
+        "operands": "ecx",
+        "cpp": "U value=s.r[1];s.r[4]-=4u;write257(s.r[4],4u,value);"
+      },
+      {
+        "va": "00466e65",
+        "bytes": "8bd4",
+        "mnemonic": "mov",
+        "operands": "edx, esp",
+        "cpp": "U value=s.r[4];s.r[2]=value;"
+      },
+      {
+        "va": "00466e67",
+        "bytes": "894128",
+        "mnemonic": "mov",
+        "operands": "dword ptr [ecx + 0x28], eax",
+        "cpp": "U value=s.r[0];write257((0x00000028u+s.r[1]*1u),4u,value);"
+      },
+      {
+        "va": "00466e6a",
+        "bytes": "8902",
+        "mnemonic": "mov",
+        "operands": "dword ptr [edx], eax",
+        "cpp": "U value=s.r[0];write257((0x00000000u+s.r[2]*1u),4u,value);"
+      },
+      {
+        "va": "00466e6c",
+        "bytes": "8b490c",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [ecx + 0xc]",
+        "cpp": "U value=read257((0x0000000cu+s.r[1]*1u),4u);s.r[1]=value;"
+      },
+      {
+        "va": "00466e6f",
+        "bytes": "81c1b8000000",
+        "mnemonic": "add",
+        "operands": "ecx, 0xb8",
+        "cpp": "U a=s.r[1];U b=0x000000b8u;U value=add257(s,a,b,32u);s.r[1]=value;"
+      },
+      {
+        "va": "00466e75",
+        "bytes": "e806000000",
+        "mnemonic": "call",
+        "operands": "0x466e80",
+        "cpp": "U target=0x00466e80u;if(!call257(s,target,0x00466e7au))return;"
+      },
+      {
+        "va": "00466e7a",
+        "bytes": "c20400",
+        "mnemonic": "ret",
+        "operands": "4",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=8u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "00466e80": [
+      {
+        "va": "00466e80",
+        "bytes": "8b442404",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esp + 4]",
+        "cpp": "U value=read257((0x00000004u+s.r[4]*1u),4u);s.r[0]=value;"
+      },
+      {
+        "va": "00466e84",
+        "bytes": "8901",
+        "mnemonic": "mov",
+        "operands": "dword ptr [ecx], eax",
+        "cpp": "U value=s.r[0];write257((0x00000000u+s.r[1]*1u),4u,value);"
+      },
+      {
+        "va": "00466e86",
+        "bytes": "c20400",
+        "mnemonic": "ret",
+        "operands": "4",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=8u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "004cecc0": [
+      {
+        "va": "004cecc0",
+        "bytes": "8b894c010000",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [ecx + 0x14c]",
+        "cpp": "U value=read257((0x0000014cu+s.r[1]*1u),4u);s.r[1]=value;"
+      },
+      {
+        "va": "004cecc6",
+        "bytes": "85c9",
+        "mnemonic": "test",
+        "operands": "ecx, ecx",
+        "cpp": "U a=s.r[1];U b=s.r[1];U value=logical257(s,a&b,32u);(void)value;"
+      },
+      {
+        "va": "004cecc8",
+        "bytes": "7409",
+        "mnemonic": "je",
+        "operands": "0x4cecd3",
+        "cpp": "if((s.flags&0x40u))goto L_004cecd3;"
+      },
+      {
+        "va": "004cecca",
+        "bytes": "6a00",
+        "mnemonic": "push",
+        "operands": "0",
+        "cpp": "U value=0x00000000u;s.r[4]-=4u;write257(s.r[4],4u,value);"
+      },
+      {
+        "va": "004ceccc",
+        "bytes": "6a00",
+        "mnemonic": "push",
+        "operands": "0",
+        "cpp": "U value=0x00000000u;s.r[4]-=4u;write257(s.r[4],4u,value);"
+      },
+      {
+        "va": "004cecce",
+        "bytes": "e8ed200100",
+        "mnemonic": "call",
+        "operands": "0x4e0dc0",
+        "cpp": "U target=0x004e0dc0u;if(!call257(s,target,0x004cecd3u))return;"
+      },
+      {
+        "va": "004cecd3",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "004e0dc0": [
+      {
+        "va": "004e0dc0",
+        "bytes": "8b442404",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esp + 4]",
+        "cpp": "U value=read257((0x00000004u+s.r[4]*1u),4u);s.r[0]=value;"
+      },
+      {
+        "va": "004e0dc4",
+        "bytes": "8b542408",
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [esp + 8]",
+        "cpp": "U value=read257((0x00000008u+s.r[4]*1u),4u);s.r[2]=value;"
+      },
+      {
+        "va": "004e0dc8",
+        "bytes": "898130010000",
+        "mnemonic": "mov",
+        "operands": "dword ptr [ecx + 0x130], eax",
+        "cpp": "U value=s.r[0];write257((0x00000130u+s.r[1]*1u),4u,value);"
+      },
+      {
+        "va": "004e0dce",
+        "bytes": "89912c010000",
+        "mnemonic": "mov",
+        "operands": "dword ptr [ecx + 0x12c], edx",
+        "cpp": "U value=s.r[2];write257((0x0000012cu+s.r[1]*1u),4u,value);"
+      },
+      {
+        "va": "004e0dd4",
+        "bytes": "c20800",
+        "mnemonic": "ret",
+        "operands": "8",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=12u;s.stop=Stop257::Returned;return;"
+      }
+    ]
+  },
+  "accepted_exact_owners": {
+    "00515ca0": [],
+    "004bc610": [],
+    "00466e60": [],
+    "00466e80": [],
+    "004cecc0": [],
+    "004e0dc0": []
+  },
+  "wip_exact_definitions": {
+    "00515ca0": [],
+    "004bc610": [],
+    "00466e60": [],
+    "00466e80": [],
+    "004cecc0": [],
+    "004e0dc0": []
+  },
+  "accepted_interior_owners": {
+    "00515ca0": [],
+    "004bc610": [],
+    "00466e60": [],
+    "00466e80": [],
+    "004cecc0": [],
+    "004e0dc0": []
+  },
+  "source_references": {
+    "00515ca0": [],
+    "004bc610": [],
+    "00466e60": [],
+    "00466e80": [
+      "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_core_candidate.cpp",
+      "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_display.cpp"
+    ],
+    "004cecc0": [],
+    "004e0dc0": []
+  },
+  "existing_compiled_regressions": {
+    "004bc610": {
+      "va": "004bc610",
+      "cohort": "ordinary",
+      "object": "local/experiments/v2-build-corpus-181/004bc610.obj",
+      "object_sha256": "1d5c948507f8bb881cbf15488ae18db3dde74e9e4fba33d29951d13fee5f4d13",
+      "generated_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004bc610.cpp",
+      "generated_source_sha256": "c953bd1edd227fc446de77268e9e20a5d71329b6d786d3fc86c8ad68200bb418",
+      "include_closure": [
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h",
+        "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004bc610.cpp"
+      ],
+      "include_directories": [],
+      "symbols": {
+        "defined": [
+          "?FUN_004bc610@@YIXH@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    },
+    "00466e80": {
+      "va": "00466e80",
+      "cohort": "thiscall",
+      "object": "local/experiments/v2-thiscall-leaves-187/objects/00466e80.obj",
+      "object_sha256": "d56fd52cde17b3f1f3dba251009db987c693f55bee4628c74159e92001c62d56",
+      "generated_source": "local/experiments/v2-thiscall-leaves-187/sources/00466e80.cpp",
+      "generated_source_sha256": "8a3fae58230d39e484f9990d2a31baab9134d816a60c70eb2e237dcfa740c79e",
+      "include_closure": [
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h",
+        "local/experiments/v2-thiscall-leaves-187/sources/00466e80.cpp"
+      ],
+      "include_directories": [],
+      "symbols": {
+        "defined": [
+          "?invoke@Thiscall_00466e80@@QAEXI@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    },
+    "004e0dc0": {
+      "va": "004e0dc0",
+      "cohort": "thiscall",
+      "object": "local/experiments/v2-thiscall-leaves-187/objects/004e0dc0.obj",
+      "object_sha256": "85e5ab3f78956aee5a85343fc5ebcb5d1b32fd55c138e6db6256ae7d88dd892b",
+      "generated_source": "local/experiments/v2-thiscall-leaves-187/sources/004e0dc0.cpp",
+      "generated_source_sha256": "ded7d4fc677d17623d6e6b312881169a9a0576df29244518745505891dc8a3a7",
+      "include_closure": [
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h",
+        "local/experiments/v2-thiscall-leaves-187/sources/004e0dc0.cpp"
+      ],
+      "include_directories": [],
+      "symbols": {
+        "defined": [
+          "?invoke@Thiscall_004e0dc0@@QAEXII@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    }
+  },
+  "unsupported_rejected": [
+    "DIV",
+    "truncated CALL",
+    "x87",
+    "INT3"
+  ],
+  "state_scope": "All8GPRs,CF/ZF/SF/OF,1024object bytes and256gueststack bytes; top/native CALL returnPC mappings are exact per-slot only.",
+  "return_pc_mapping": [
+    {
+      "caller": "00515ca0",
+      "callee": "004bc610",
+      "original_return_pc": "00515ca8",
+      "native_oracle_offset": 8,
+      "guest_call_slot_delta": -8,
+      "caller_cleanup": 0
+    },
+    {
+      "caller": "00466e60",
+      "callee": "00466e80",
+      "original_return_pc": "00466e7a",
+      "native_oracle_offset": 26,
+      "guest_call_slot_delta": -8,
+      "caller_cleanup": 4
+    },
+    {
+      "caller": "004cecc0",
+      "callee": "004e0dc0",
+      "original_return_pc": "004cecd3",
+      "native_oracle_offset": 19,
+      "guest_call_slot_delta": -12,
+      "caller_cleanup": 0
+    }
+  ],
+  "limits": [
+    "Isolated VM backend/native32 fixture only; no game EXE,full CPU or guest memory loader.",
+    "No native FUN alias or typed receiver ABI repair; zero newacceptedfunctions and no union packet.",
+    "Only3direct CALLREL32 relocations normalized; original branch/RET/argument bytes exact.",
+    "BadReturn uses explicit test-only postcallee returnedPC fault injection; not an original behavior claim.",
+    "Native hook restores hostESP beforePUSHFD; gueststack bytes untouched after originalRET.",
+    "Flags proof covers definedCF/ZF/SF/OF for actual valid fixture operands,not all possible arithmetic inputs."
+  ]
+}
