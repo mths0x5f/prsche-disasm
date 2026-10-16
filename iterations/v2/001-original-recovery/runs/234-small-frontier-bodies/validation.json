@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "summary_sha256": "78c3161bab0a6d065bc8b1a07c16fa2c1d65a12690b0be49cdea3c5aa912860d",
+  "audit_script_sha256": "78a2172dd96b2d774949429340d2e59f4c9dfe5940f466fec3dbef8c04e7cc25",
+  "input_pins_checked": 58,
+  "original_PE_instructions_verified": 445,
+  "compiled": [
+    "0058e2f0",
+    "0058e300",
+    "0050cbf0",
+    "0050d310"
+  ],
+  "deferred": [
+    "00468100",
+    "004d8230",
+    "004d8240",
+    "00538d80"
+  ],
+  "real_i386_COFF": 4,
+  "compiler_batches": 1,
+  "compiler_warnings": 0,
+  "compiled_original_instructions": 16,
+  "compiled_original_bytes": 59,
+  "original_oracle_bytes": 24,
+  "original_oracle_relocations_proved": 4,
+  "original_oracle_normalized_exact_bytes": true,
+  "native_wrapper_RET0_counts": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "thiscall_original_and_controlled_cleanup": [
+    4,
+    12
+  ],
+  "critical_section_original_native_pairs": 2048,
+  "controlled_thiscall_boundary_calls": 2048,
+  "new_distinct_callee_dependencies": [
+    "?FUN_004d23f0@OriginalECX234@@QAEXI@Z",
+    "?FUN_004d2100@OriginalECX234@@QAEXPAXII@Z"
+  ],
+  "remaining": [
+    "Four originalECX/nativevoid(void) receiver-contract mismatches preserved, not bound.",
+    "New thiscallcallee implementations and three global data owners/initializers.",
+    "Provider/register/fault/concurrency/game fidelity."
+  ]
+}

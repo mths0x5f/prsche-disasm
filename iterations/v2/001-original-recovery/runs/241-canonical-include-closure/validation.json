@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "command": [
+    "py",
+    "-3",
+    "scripts\\research\\test_v2_union_includes_241.py"
+  ],
+  "observed_exit_code": 0,
+  "native_compilations": 0,
+  "native_link_commands": 0,
+  "checks": [
+    "quoted current-directory precedence",
+    "ordered include-root fallback",
+    "absolute includes",
+    "missing include rejection",
+    "exact recorded /I order",
+    "observed command mismatch rejection",
+    "receipt absent rejection",
+    "failed compilation rejection",
+    "legacy no-root compatibility"
+  ],
+  "input_sha256": {
+    "scripts/research/audit-v2-native-union-241.py": "e2c7b3e8581d034494501ec2cf647669e80f3ad290c1d97db17b9726e53e399d",
+    "scripts/research/test_v2_union_includes_241.py": "51f414320f6b7511ecb1356b727e7f65e94f4f0ecd1095673894c2b7e974de4b"
+  }
+}

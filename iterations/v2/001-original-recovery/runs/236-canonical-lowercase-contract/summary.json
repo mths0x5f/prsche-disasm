@@ -1,0 +1,3881 @@
+{
+  "schema": 1,
+  "kind": "canonical-lowercase-contract",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "baseline": "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json",
+  "baseline_sha256": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+  "canonical_owner": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "entry_va": "005a2248",
+    "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+    "status": "native-differential-verified",
+    "calling_convention": "cdecl, x86 32-bit",
+    "binary_matched": false,
+    "verification": "scripts/research/verify-v2-formatter-text.py",
+    "verification_report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-text/verification.json",
+    "recovered_dependencies": [
+      "005a22b7",
+      "005a4ba4",
+      "005a4c05"
+    ],
+    "unrecovered_dependencies": [
+      "EXTERNAL:00000088",
+      "EXTERNAL:00000089"
+    ],
+    "unrecovered_indirect_dependencies": [],
+    "verification_boundary": "Complete indexed bodies compared with original x86 state, returns, ABI and ordered effects. CRT packet repeats production and private instrumented builds; text records reads. Unrecovered engines, data, native vtable relocations and live game behavior remain explicit."
+  },
+  "original_entry": {
+    "va": "005a2248",
+    "bytes": 111,
+    "instructions": [
+      {
+        "va": "005a2248",
+        "bytes": "53",
+        "instruction": "PUSH EBX"
+      },
+      {
+        "va": "005a2249",
+        "bytes": "33db",
+        "instruction": "XOR EBX,EBX"
+      },
+      {
+        "va": "005a224b",
+        "bytes": "391d80fd6a00",
+        "instruction": "CMP dword ptr [0x006afd80],EBX"
+      },
+      {
+        "va": "005a2251",
+        "bytes": "7513",
+        "instruction": "JNZ 0x005a2266"
+      },
+      {
+        "va": "005a2253",
+        "bytes": "8b442408",
+        "instruction": "MOV EAX,dword ptr [ESP + 0x8]"
+      },
+      {
+        "va": "005a2257",
+        "bytes": "83f841",
+        "instruction": "CMP EAX,0x41"
+      },
+      {
+        "va": "005a225a",
+        "bytes": "7c59",
+        "instruction": "JL 0x005a22b5"
+      },
+      {
+        "va": "005a225c",
+        "bytes": "83f85a",
+        "instruction": "CMP EAX,0x5a"
+      },
+      {
+        "va": "005a225f",
+        "bytes": "7f54",
+        "instruction": "JG 0x005a22b5"
+      },
+      {
+        "va": "005a2261",
+        "bytes": "83c020",
+        "instruction": "ADD EAX,0x20"
+      },
+      {
+        "va": "005a2264",
+        "bytes": "5b",
+        "instruction": "POP EBX"
+      },
+      {
+        "va": "005a2265",
+        "bytes": "c3",
+        "instruction": "RET"
+      },
+      {
+        "va": "005a2266",
+        "bytes": "56",
+        "instruction": "PUSH ESI"
+      },
+      {
+        "va": "005a2267",
+        "bytes": "bee8026c00",
+        "instruction": "MOV ESI,0x6c02e8"
+      },
+      {
+        "va": "005a226c",
+        "bytes": "57",
+        "instruction": "PUSH EDI"
+      },
+      {
+        "va": "005a226d",
+        "bytes": "56",
+        "instruction": "PUSH ESI"
+      },
+      {
+        "va": "005a226e",
+        "bytes": "ff1558225b00",
+        "instruction": "CALL dword ptr [0x005b2258]"
+      },
+      {
+        "va": "005a2274",
+        "bytes": "391de4026c00",
+        "instruction": "CMP dword ptr [0x006c02e4],EBX"
+      },
+      {
+        "va": "005a227a",
+        "bytes": "8b3d54225b00",
+        "instruction": "MOV EDI,dword ptr [0x005b2254]"
+      },
+      {
+        "va": "005a2280",
+        "bytes": "740e",
+        "instruction": "JZ 0x005a2290"
+      },
+      {
+        "va": "005a2282",
+        "bytes": "56",
+        "instruction": "PUSH ESI"
+      },
+      {
+        "va": "005a2283",
+        "bytes": "ffd7",
+        "instruction": "CALL EDI"
+      },
+      {
+        "va": "005a2285",
+        "bytes": "6a13",
+        "instruction": "PUSH 0x13"
+      },
+      {
+        "va": "005a2287",
+        "bytes": "e818290000",
+        "instruction": "CALL 0x005a4ba4"
+      },
+      {
+        "va": "005a228c",
+        "bytes": "59",
+        "instruction": "POP ECX"
+      },
+      {
+        "va": "005a228d",
+        "bytes": "6a01",
+        "instruction": "PUSH 0x1"
+      },
+      {
+        "va": "005a228f",
+        "bytes": "5b",
+        "instruction": "POP EBX"
+      },
+      {
+        "va": "005a2290",
+        "bytes": "ff742410",
+        "instruction": "PUSH dword ptr [ESP + 0x10]"
+      },
+      {
+        "va": "005a2294",
+        "bytes": "e81e000000",
+        "instruction": "CALL 0x005a22b7"
+      },
+      {
+        "va": "005a2299",
+        "bytes": "85db",
+        "instruction": "TEST EBX,EBX"
+      },
+      {
+        "va": "005a229b",
+        "bytes": "59",
+        "instruction": "POP ECX"
+      },
+      {
+        "va": "005a229c",
+        "bytes": "89442410",
+        "instruction": "MOV dword ptr [ESP + 0x10],EAX"
+      },
+      {
+        "va": "005a22a0",
+        "bytes": "740a",
+        "instruction": "JZ 0x005a22ac"
+      },
+      {
+        "va": "005a22a2",
+        "bytes": "6a13",
+        "instruction": "PUSH 0x13"
+      },
+      {
+        "va": "005a22a4",
+        "bytes": "e85c290000",
+        "instruction": "CALL 0x005a4c05"
+      },
+      {
+        "va": "005a22a9",
+        "bytes": "59",
+        "instruction": "POP ECX"
+      },
+      {
+        "va": "005a22aa",
+        "bytes": "eb03",
+        "instruction": "JMP 0x005a22af"
+      },
+      {
+        "va": "005a22ac",
+        "bytes": "56",
+        "instruction": "PUSH ESI"
+      },
+      {
+        "va": "005a22ad",
+        "bytes": "ffd7",
+        "instruction": "CALL EDI"
+      },
+      {
+        "va": "005a22af",
+        "bytes": "8b442410",
+        "instruction": "MOV EAX,dword ptr [ESP + 0x10]"
+      },
+      {
+        "va": "005a22b3",
+        "bytes": "5f",
+        "instruction": "POP EDI"
+      },
+      {
+        "va": "005a22b4",
+        "bytes": "5e",
+        "instruction": "POP ESI"
+      },
+      {
+        "va": "005a22b5",
+        "bytes": "5b",
+        "instruction": "POP EBX"
+      },
+      {
+        "va": "005a22b6",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ],
+    "abi": "cdecl one signed int32 stack slot, EAX int32 result, RET0; EBX/ESI/EDI preserved by indexed body"
+  },
+  "incoming_original_call_sites": [
+    {
+      "callsite": "0045fc46",
+      "window": [
+        {
+          "va": "0045fc3d",
+          "bytes": "7324",
+          "instruction": "JNC 0x0045fc63"
+        },
+        {
+          "va": "0045fc3f",
+          "bytes": "8b465c",
+          "instruction": "MOV EAX,dword ptr [ESI + 0x5c]"
+        },
+        {
+          "va": "0045fc42",
+          "bytes": "0fbe08",
+          "instruction": "MOVSX ECX,byte ptr [EAX]"
+        },
+        {
+          "va": "0045fc45",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0045fc46",
+          "bytes": "e8fd251400",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0045fc4b",
+          "bytes": "8b565c",
+          "instruction": "MOV EDX,dword ptr [ESI + 0x5c]"
+        },
+        {
+          "va": "0045fc4e",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0045fc51",
+          "bytes": "8802",
+          "instruction": "MOV byte ptr [EDX],AL"
+        },
+        {
+          "va": "0045fc53",
+          "bytes": "8b565c",
+          "instruction": "MOV EDX,dword ptr [ESI + 0x5c]"
+        },
+        {
+          "va": "0045fc56",
+          "bytes": "8b4e58",
+          "instruction": "MOV ECX,dword ptr [ESI + 0x58]"
+        },
+        {
+          "va": "0045fc59",
+          "bytes": "42",
+          "instruction": "INC EDX"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d1e7",
+      "window": [
+        {
+          "va": "0047d1e0",
+          "bytes": "8a06",
+          "instruction": "MOV AL,byte ptr [ESI]"
+        },
+        {
+          "va": "0047d1e2",
+          "bytes": "46",
+          "instruction": "INC ESI"
+        },
+        {
+          "va": "0047d1e3",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047d1e6",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047d1e7",
+          "bytes": "e85c501200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d1ec",
+          "bytes": "0fbe17",
+          "instruction": "MOVSX EDX,byte ptr [EDI]"
+        },
+        {
+          "va": "0047d1ef",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d1f2",
+          "bytes": "47",
+          "instruction": "INC EDI"
+        },
+        {
+          "va": "0047d1f3",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047d1f5",
+          "bytes": "750d",
+          "instruction": "JNZ 0x0047d204"
+        },
+        {
+          "va": "0047d1f7",
+          "bytes": "8bc3",
+          "instruction": "MOV EAX,EBX"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d238",
+      "window": [
+        {
+          "va": "0047d231",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d233",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d234",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047d237",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047d238",
+          "bytes": "e80b501200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d23d",
+          "bytes": "0fbe5500",
+          "instruction": "MOVSX EDX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d241",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d244",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d245",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047d247",
+          "bytes": "7524",
+          "instruction": "JNZ 0x0047d26d"
+        },
+        {
+          "va": "0047d249",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d2ad",
+      "window": [
+        {
+          "va": "0047d2a6",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d2a8",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d2a9",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047d2ac",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047d2ad",
+          "bytes": "e8964f1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d2b2",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d2b6",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d2b9",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d2ba",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047d2bc",
+          "bytes": "756b",
+          "instruction": "JNZ 0x0047d329"
+        },
+        {
+          "va": "0047d2be",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d36d",
+      "window": [
+        {
+          "va": "0047d366",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d368",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d369",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047d36c",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047d36d",
+          "bytes": "e8d64e1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d372",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d376",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d379",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d37a",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047d37c",
+          "bytes": "7566",
+          "instruction": "JNZ 0x0047d3e4"
+        },
+        {
+          "va": "0047d37e",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d41d",
+      "window": [
+        {
+          "va": "0047d416",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d418",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d419",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047d41c",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047d41d",
+          "bytes": "e8264e1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d422",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d426",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d429",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d42a",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047d42c",
+          "bytes": "7567",
+          "instruction": "JNZ 0x0047d495"
+        },
+        {
+          "va": "0047d42e",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d4cd",
+      "window": [
+        {
+          "va": "0047d4c6",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d4c8",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d4c9",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047d4cc",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047d4cd",
+          "bytes": "e8764d1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d4d2",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d4d6",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d4d9",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d4da",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047d4dc",
+          "bytes": "7566",
+          "instruction": "JNZ 0x0047d544"
+        },
+        {
+          "va": "0047d4de",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d57d",
+      "window": [
+        {
+          "va": "0047d576",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d578",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d579",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047d57c",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047d57d",
+          "bytes": "e8c64c1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d582",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d586",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d589",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d58a",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047d58c",
+          "bytes": "7572",
+          "instruction": "JNZ 0x0047d600"
+        },
+        {
+          "va": "0047d58e",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d6e6",
+      "window": [
+        {
+          "va": "0047d6df",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d6e1",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d6e2",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047d6e5",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047d6e6",
+          "bytes": "e85d4b1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d6eb",
+          "bytes": "0fbe5500",
+          "instruction": "MOVSX EDX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d6ef",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d6f2",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d6f3",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047d6f5",
+          "bytes": "7527",
+          "instruction": "JNZ 0x0047d71e"
+        },
+        {
+          "va": "0047d6f7",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d78d",
+      "window": [
+        {
+          "va": "0047d785",
+          "bytes": "8a4500",
+          "instruction": "MOV AL,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d788",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d789",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047d78c",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047d78d",
+          "bytes": "e8b64a1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d792",
+          "bytes": "0fbe0b",
+          "instruction": "MOVSX ECX,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d795",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d798",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d799",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047d79b",
+          "bytes": "756c",
+          "instruction": "JNZ 0x0047d809"
+        },
+        {
+          "va": "0047d79d",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d845",
+      "window": [
+        {
+          "va": "0047d83d",
+          "bytes": "8a4500",
+          "instruction": "MOV AL,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d840",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d841",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047d844",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047d845",
+          "bytes": "e8fe491200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d84a",
+          "bytes": "0fbe13",
+          "instruction": "MOVSX EDX,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d84d",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d850",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d851",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047d853",
+          "bytes": "0f85b7000000",
+          "instruction": "JNZ 0x0047d910"
+        },
+        {
+          "va": "0047d859",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047d9ae",
+      "window": [
+        {
+          "va": "0047d9a7",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047d9a9",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047d9aa",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047d9ad",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047d9ae",
+          "bytes": "e895481200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047d9b3",
+          "bytes": "0fbe5500",
+          "instruction": "MOVSX EDX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047d9b7",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047d9ba",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047d9bb",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047d9bd",
+          "bytes": "7522",
+          "instruction": "JNZ 0x0047d9e1"
+        },
+        {
+          "va": "0047d9bf",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047ddea",
+      "window": [
+        {
+          "va": "0047dde3",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047dde5",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047dde6",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047dde9",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047ddea",
+          "bytes": "e859441200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047ddef",
+          "bytes": "0fbe5500",
+          "instruction": "MOVSX EDX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047ddf3",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047ddf6",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047ddf7",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047ddf9",
+          "bytes": "0f8581000000",
+          "instruction": "JNZ 0x0047de80"
+        },
+        {
+          "va": "0047ddff",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e086",
+      "window": [
+        {
+          "va": "0047e07f",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e081",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e082",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047e085",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047e086",
+          "bytes": "e8bd411200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e08b",
+          "bytes": "0fbe5500",
+          "instruction": "MOVSX EDX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e08f",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e092",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e093",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047e095",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e0ae"
+        },
+        {
+          "va": "0047e097",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e0d3",
+      "window": [
+        {
+          "va": "0047e0cc",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e0ce",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e0cf",
+          "bytes": "0fbec0",
+          "instruction": "MOVSX EAX,AL"
+        },
+        {
+          "va": "0047e0d2",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "0047e0d3",
+          "bytes": "e870411200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e0d8",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e0dc",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e0df",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e0e0",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e0e2",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e0fb"
+        },
+        {
+          "va": "0047e0e4",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e11e",
+      "window": [
+        {
+          "va": "0047e117",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e119",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e11a",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e11d",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e11e",
+          "bytes": "e825411200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e123",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e127",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e12a",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e12b",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e12d",
+          "bytes": "0f8549060000",
+          "instruction": "JNZ 0x0047e77c"
+        },
+        {
+          "va": "0047e133",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e1df",
+      "window": [
+        {
+          "va": "0047e1d7",
+          "bytes": "8a4500",
+          "instruction": "MOV AL,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e1da",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e1db",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e1de",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e1df",
+          "bytes": "e864401200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e1e4",
+          "bytes": "0fbe0b",
+          "instruction": "MOVSX ECX,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e1e7",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e1ea",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e1eb",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e1ed",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e206"
+        },
+        {
+          "va": "0047e1ef",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e229",
+      "window": [
+        {
+          "va": "0047e222",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e224",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e225",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e228",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e229",
+          "bytes": "e81a401200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e22e",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e232",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e235",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e236",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e238",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e251"
+        },
+        {
+          "va": "0047e23a",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e274",
+      "window": [
+        {
+          "va": "0047e26d",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e26f",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e270",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e273",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e274",
+          "bytes": "e8cf3f1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e279",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e27d",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e280",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e281",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e283",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e29c"
+        },
+        {
+          "va": "0047e285",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e2bf",
+      "window": [
+        {
+          "va": "0047e2b8",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e2ba",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e2bb",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e2be",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e2bf",
+          "bytes": "e8843f1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e2c4",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e2c8",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e2cb",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e2cc",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e2ce",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e2e7"
+        },
+        {
+          "va": "0047e2d0",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e30a",
+      "window": [
+        {
+          "va": "0047e303",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e305",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e306",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e309",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e30a",
+          "bytes": "e8393f1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e30f",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e313",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e316",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e317",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e319",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e332"
+        },
+        {
+          "va": "0047e31b",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e355",
+      "window": [
+        {
+          "va": "0047e34e",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e350",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e351",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e354",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e355",
+          "bytes": "e8ee3e1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e35a",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e35e",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e361",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e362",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e364",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e37d"
+        },
+        {
+          "va": "0047e366",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e3a0",
+      "window": [
+        {
+          "va": "0047e399",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e39b",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e39c",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e39f",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e3a0",
+          "bytes": "e8a33e1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e3a5",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e3a9",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e3ac",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e3ad",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e3af",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e3c8"
+        },
+        {
+          "va": "0047e3b1",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e3eb",
+      "window": [
+        {
+          "va": "0047e3e4",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e3e6",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e3e7",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e3ea",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e3eb",
+          "bytes": "e8583e1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e3f0",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e3f4",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e3f7",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e3f8",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e3fa",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e413"
+        },
+        {
+          "va": "0047e3fc",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e436",
+      "window": [
+        {
+          "va": "0047e42f",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e431",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e432",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e435",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e436",
+          "bytes": "e80d3e1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e43b",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e43f",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e442",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e443",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e445",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e45e"
+        },
+        {
+          "va": "0047e447",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e481",
+      "window": [
+        {
+          "va": "0047e47a",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e47c",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e47d",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e480",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e481",
+          "bytes": "e8c23d1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e486",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e48a",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e48d",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e48e",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e490",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e4a9"
+        },
+        {
+          "va": "0047e492",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e4cc",
+      "window": [
+        {
+          "va": "0047e4c5",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e4c7",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e4c8",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e4cb",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e4cc",
+          "bytes": "e8773d1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e4d1",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e4d5",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e4d8",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e4d9",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e4db",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e4f4"
+        },
+        {
+          "va": "0047e4dd",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e517",
+      "window": [
+        {
+          "va": "0047e510",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e512",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e513",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e516",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e517",
+          "bytes": "e82c3d1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e51c",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e520",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e523",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e524",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e526",
+          "bytes": "7517",
+          "instruction": "JNZ 0x0047e53f"
+        },
+        {
+          "va": "0047e528",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e562",
+      "window": [
+        {
+          "va": "0047e55b",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e55d",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e55e",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047e561",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047e562",
+          "bytes": "e8e13c1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e567",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e56b",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e56e",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e56f",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047e571",
+          "bytes": "0f8505020000",
+          "instruction": "JNZ 0x0047e77c"
+        },
+        {
+          "va": "0047e577",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047e7f6",
+      "window": [
+        {
+          "va": "0047e7ef",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047e7f1",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047e7f2",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047e7f5",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047e7f6",
+          "bytes": "e84d3a1200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047e7fb",
+          "bytes": "0fbe5500",
+          "instruction": "MOVSX EDX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047e7ff",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047e802",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047e803",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047e805",
+          "bytes": "7520",
+          "instruction": "JNZ 0x0047e827"
+        },
+        {
+          "va": "0047e807",
+          "bytes": "8bc6",
+          "instruction": "MOV EAX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047eafd",
+      "window": [
+        {
+          "va": "0047eaf6",
+          "bytes": "8a03",
+          "instruction": "MOV AL,byte ptr [EBX]"
+        },
+        {
+          "va": "0047eaf8",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047eaf9",
+          "bytes": "0fbec0",
+          "instruction": "MOVSX EAX,AL"
+        },
+        {
+          "va": "0047eafc",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "0047eafd",
+          "bytes": "e846371200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047eb02",
+          "bytes": "0fbe4d00",
+          "instruction": "MOVSX ECX,byte ptr [EBP]"
+        },
+        {
+          "va": "0047eb06",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047eb09",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047eb0a",
+          "bytes": "3bc8",
+          "instruction": "CMP ECX,EAX"
+        },
+        {
+          "va": "0047eb0c",
+          "bytes": "7518",
+          "instruction": "JNZ 0x0047eb26"
+        },
+        {
+          "va": "0047eb0e",
+          "bytes": "8bd6",
+          "instruction": "MOV EDX,ESI"
+        }
+      ]
+    },
+    {
+      "callsite": "0047ec22",
+      "window": [
+        {
+          "va": "0047ec1a",
+          "bytes": "3c3a",
+          "instruction": "CMP AL,0x3a"
+        },
+        {
+          "va": "0047ec1c",
+          "bytes": "7510",
+          "instruction": "JNZ 0x0047ec2e"
+        },
+        {
+          "va": "0047ec1e",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047ec21",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047ec22",
+          "bytes": "e821361200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047ec27",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047ec2a",
+          "bytes": "88042b",
+          "instruction": "MOV byte ptr [EBX + EBP*0x1],AL"
+        },
+        {
+          "va": "0047ec2d",
+          "bytes": "43",
+          "instruction": "INC EBX"
+        },
+        {
+          "va": "0047ec2e",
+          "bytes": "8a07",
+          "instruction": "MOV AL,byte ptr [EDI]"
+        },
+        {
+          "va": "0047ec30",
+          "bytes": "3c2f",
+          "instruction": "CMP AL,0x2f"
+        },
+        {
+          "va": "0047ec32",
+          "bytes": "7512",
+          "instruction": "JNZ 0x0047ec46"
+        }
+      ]
+    },
+    {
+      "callsite": "0047ecd5",
+      "window": [
+        {
+          "va": "0047eccd",
+          "bytes": "8a4500",
+          "instruction": "MOV AL,byte ptr [EBP]"
+        },
+        {
+          "va": "0047ecd0",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047ecd1",
+          "bytes": "0fbed0",
+          "instruction": "MOVSX EDX,AL"
+        },
+        {
+          "va": "0047ecd4",
+          "bytes": "52",
+          "instruction": "PUSH EDX"
+        },
+        {
+          "va": "0047ecd5",
+          "bytes": "e86e351200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047ecda",
+          "bytes": "8b4c2428",
+          "instruction": "MOV ECX,dword ptr [ESP + 0x28]"
+        },
+        {
+          "va": "0047ecde",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047ece1",
+          "bytes": "0fbe11",
+          "instruction": "MOVSX EDX,byte ptr [ECX]"
+        },
+        {
+          "va": "0047ece4",
+          "bytes": "41",
+          "instruction": "INC ECX"
+        },
+        {
+          "va": "0047ece5",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047ece7",
+          "bytes": "894c2424",
+          "instruction": "MOV dword ptr [ESP + 0x24],ECX"
+        }
+      ]
+    },
+    {
+      "callsite": "0047ed29",
+      "window": [
+        {
+          "va": "0047ed21",
+          "bytes": "8a4500",
+          "instruction": "MOV AL,byte ptr [EBP]"
+        },
+        {
+          "va": "0047ed24",
+          "bytes": "45",
+          "instruction": "INC EBP"
+        },
+        {
+          "va": "0047ed25",
+          "bytes": "0fbec8",
+          "instruction": "MOVSX ECX,AL"
+        },
+        {
+          "va": "0047ed28",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "0047ed29",
+          "bytes": "e81a351200",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0047ed2e",
+          "bytes": "8b4c2428",
+          "instruction": "MOV ECX,dword ptr [ESP + 0x28]"
+        },
+        {
+          "va": "0047ed32",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0047ed35",
+          "bytes": "0fbe11",
+          "instruction": "MOVSX EDX,byte ptr [ECX]"
+        },
+        {
+          "va": "0047ed38",
+          "bytes": "41",
+          "instruction": "INC ECX"
+        },
+        {
+          "va": "0047ed39",
+          "bytes": "3bd0",
+          "instruction": "CMP EDX,EAX"
+        },
+        {
+          "va": "0047ed3b",
+          "bytes": "894c2424",
+          "instruction": "MOV dword ptr [ESP + 0x24],ECX"
+        }
+      ]
+    },
+    {
+      "callsite": "004a60f5",
+      "window": [
+        {
+          "va": "004a60ed",
+          "bytes": "3c7e",
+          "instruction": "CMP AL,0x7e"
+        },
+        {
+          "va": "004a60ef",
+          "bytes": "7455",
+          "instruction": "JZ 0x004a6146"
+        },
+        {
+          "va": "004a60f1",
+          "bytes": "0fbe06",
+          "instruction": "MOVSX EAX,byte ptr [ESI]"
+        },
+        {
+          "va": "004a60f4",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "004a60f5",
+          "bytes": "e84ec10f00",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "004a60fa",
+          "bytes": "0fbe0f",
+          "instruction": "MOVSX ECX,byte ptr [EDI]"
+        },
+        {
+          "va": "004a60fd",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "004a60fe",
+          "bytes": "8bd8",
+          "instruction": "MOV EBX,EAX"
+        },
+        {
+          "va": "004a6100",
+          "bytes": "e843c10f00",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "004a6105",
+          "bytes": "83c408",
+          "instruction": "ADD ESP,0x8"
+        },
+        {
+          "va": "004a6108",
+          "bytes": "3bc3",
+          "instruction": "CMP EAX,EBX"
+        }
+      ]
+    },
+    {
+      "callsite": "004a6100",
+      "window": [
+        {
+          "va": "004a60f5",
+          "bytes": "e84ec10f00",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "004a60fa",
+          "bytes": "0fbe0f",
+          "instruction": "MOVSX ECX,byte ptr [EDI]"
+        },
+        {
+          "va": "004a60fd",
+          "bytes": "51",
+          "instruction": "PUSH ECX"
+        },
+        {
+          "va": "004a60fe",
+          "bytes": "8bd8",
+          "instruction": "MOV EBX,EAX"
+        },
+        {
+          "va": "004a6100",
+          "bytes": "e843c10f00",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "004a6105",
+          "bytes": "83c408",
+          "instruction": "ADD ESP,0x8"
+        },
+        {
+          "va": "004a6108",
+          "bytes": "3bc3",
+          "instruction": "CMP EAX,EBX"
+        },
+        {
+          "va": "004a610a",
+          "bytes": "754e",
+          "instruction": "JNZ 0x004a615a"
+        },
+        {
+          "va": "004a610c",
+          "bytes": "803f00",
+          "instruction": "CMP byte ptr [EDI],0x0"
+        },
+        {
+          "va": "004a610f",
+          "bytes": "742c",
+          "instruction": "JZ 0x004a613d"
+        },
+        {
+          "va": "004a6111",
+          "bytes": "47",
+          "instruction": "INC EDI"
+        }
+      ]
+    },
+    {
+      "callsite": "00524292",
+      "window": [
+        {
+          "va": "0052428b",
+          "bytes": "5e",
+          "instruction": "POP ESI"
+        },
+        {
+          "va": "0052428c",
+          "bytes": "c3",
+          "instruction": "RET"
+        },
+        {
+          "va": "0052428d",
+          "bytes": "0fbe4601",
+          "instruction": "MOVSX EAX,byte ptr [ESI + 0x1]"
+        },
+        {
+          "va": "00524291",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "00524292",
+          "bytes": "e8b1df0700",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "00524297",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "0052429a",
+          "bytes": "83f878",
+          "instruction": "CMP EAX,0x78"
+        },
+        {
+          "va": "0052429d",
+          "bytes": "7404",
+          "instruction": "JZ 0x005242a3"
+        },
+        {
+          "va": "0052429f",
+          "bytes": "32c0",
+          "instruction": "XOR AL,AL"
+        },
+        {
+          "va": "005242a1",
+          "bytes": "5e",
+          "instruction": "POP ESI"
+        },
+        {
+          "va": "005242a2",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "callsite": "0053051a",
+      "window": [
+        {
+          "va": "00530510",
+          "bytes": "8b00",
+          "instruction": "MOV EAX,dword ptr [EAX]"
+        },
+        {
+          "va": "00530512",
+          "bytes": "a900ffffff",
+          "instruction": "TEST EAX,0xffffff00"
+        },
+        {
+          "va": "00530517",
+          "bytes": "752e",
+          "instruction": "JNZ 0x00530547"
+        },
+        {
+          "va": "00530519",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "0053051a",
+          "bytes": "e8291d0700",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "0053051f",
+          "bytes": "8b8e18020000",
+          "instruction": "MOV ECX,dword ptr [ESI + 0x218]"
+        },
+        {
+          "va": "00530525",
+          "bytes": "83c404",
+          "instruction": "ADD ESP,0x4"
+        },
+        {
+          "va": "00530528",
+          "bytes": "8901",
+          "instruction": "MOV dword ptr [ECX],EAX"
+        },
+        {
+          "va": "0053052a",
+          "bytes": "e936030000",
+          "instruction": "JMP 0x00530865"
+        },
+        {
+          "va": "0053052f",
+          "bytes": "8b9618020000",
+          "instruction": "MOV EDX,dword ptr [ESI + 0x218]"
+        },
+        {
+          "va": "00530535",
+          "bytes": "8b02",
+          "instruction": "MOV EAX,dword ptr [EDX]"
+        }
+      ]
+    },
+    {
+      "callsite": "005a3e3c",
+      "window": [
+        {
+          "va": "005a3e33",
+          "bytes": "56",
+          "instruction": "PUSH ESI"
+        },
+        {
+          "va": "005a3e34",
+          "bytes": "8b742408",
+          "instruction": "MOV ESI,dword ptr [ESP + 0x8]"
+        },
+        {
+          "va": "005a3e38",
+          "bytes": "0fbe06",
+          "instruction": "MOVSX EAX,byte ptr [ESI]"
+        },
+        {
+          "va": "005a3e3b",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "005a3e3c",
+          "bytes": "e807e4ffff",
+          "instruction": "CALL 0x005a2248"
+        },
+        {
+          "va": "005a3e41",
+          "bytes": "83f865",
+          "instruction": "CMP EAX,0x65"
+        },
+        {
+          "va": "005a3e44",
+          "bytes": "59",
+          "instruction": "POP ECX"
+        },
+        {
+          "va": "005a3e45",
+          "bytes": "742c",
+          "instruction": "JZ 0x005a3e73"
+        },
+        {
+          "va": "005a3e47",
+          "bytes": "46",
+          "instruction": "INC ESI"
+        },
+        {
+          "va": "005a3e48",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a3e4f",
+          "bytes": "7e0f",
+          "instruction": "JLE 0x005a3e60"
+        }
+      ]
+    }
+  ],
+  "current_native_consumers": [
+    {
+      "va": "0047d1c0",
+      "object": "local/experiments/v2-build-corpus-181/0047d1c0.obj",
+      "object_sha256": "65f27d35951fd9fc6a0b1af24fb554850b8501f05855bbed8e7515e4d8f127f2",
+      "actual_undefined_symbol": "?FUN_005a2248@@YAHH@Z"
+    },
+    {
+      "va": "0047d210",
+      "object": "local/experiments/v2-build-corpus-181/0047d210.obj",
+      "object_sha256": "4a9a27ef2edc3fd82655ee722af7dc5da608b28fd52c4617419949e51b4f1c4c",
+      "actual_undefined_symbol": "?FUN_005a2248@@YAHH@Z"
+    }
+  ],
+  "missing_symbol": "?FUN_005a2248@@YAHH@Z",
+  "canonical_target_symbol": "?formatter_float_lower_005a2248@porsche@@YAHH@Z",
+  "cached_owner": {
+    "object": "local/builds/v2/001-original-recovery/formatter-text-158/formatter_text_probe.dir/Release/formatter_text.obj",
+    "object_sha256": "40f4a60bfdf1647e05c27257cf52978ce207f123d522245d49c08b1c97d2f659",
+    "symbols": {
+      "defined": [
+        "?formatter_float_classify_005a2eae@porsche@@YAHHH@Z",
+        "?formatter_float_lower_005a2248@porsche@@YAHH@Z",
+        "?formatter_text_alpha_005a2c24@porsche@@YAHH@Z",
+        "?formatter_text_compare_n_005a2210@porsche@@YAHPBD0I@Z",
+        "?formatter_text_decrement_005b2254@porsche@@3P6GHPAH@ZA",
+        "?formatter_text_digit_005a2c52@porsche@@YAHH@Z",
+        "?formatter_text_find_last_005a2870@porsche@@YAPBDPBDH@Z",
+        "?formatter_text_increment_005b2258@porsche@@3P6GHPAH@ZA",
+        "?formatter_text_locale_006afd80@porsche@@3IA",
+        "?formatter_text_locale_readers_006c02e8@porsche@@3HA",
+        "?formatter_text_locale_writer_006c02e4@porsche@@3IA",
+        "?formatter_text_lower_inner_005a22b7@porsche@@YAHH@Z",
+        "?formatter_text_reject_span_005a2e70@porsche@@YAIPBD0@Z",
+        "?formatter_text_space_005a2c7a@porsche@@YAHH@Z",
+        "?formatter_text_upper_005a262c@porsche@@YAHH@Z",
+        "?formatter_text_upper_inner_005a269b@porsche@@YAHH@Z"
+      ],
+      "undefined": [
+        "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+        "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+        "?formatter_ctype_table_005e52d0@porsche@@3PBEB",
+        "?formatter_float_character_width_005e54dc@porsche@@3HA",
+        "?formatter_text_map_005a7e05@porsche@@YAHIIPBDHPADHIH@Z",
+        "?formatter_text_platform_decrement@porsche@@YGHPAH@Z",
+        "?formatter_text_platform_increment@porsche@@YGHPAH@Z",
+        "?formatter_text_read_trace@@YAXPBXII@Z",
+        "?formatter_text_type_005a98c2@porsche@@YAHIPBDHPAGIIH@Z"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "instrumented": true,
+    "usable": false
+  },
+  "project_header_closure": [
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp"
+  ],
+  "state_contracts": [
+    {
+      "va": "006afd80",
+      "canonical_name": "porsche::formatter_text_locale_006afd80",
+      "type": "uint32",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "original_memory": {
+        "section": ".data",
+        "flags": "c0000040",
+        "file_backed": false,
+        "bits": null,
+        "virtual_zero_fill": true
+      },
+      "original_indexed_references": [
+        {
+          "va": "005a224b",
+          "bytes": "391d80fd6a00",
+          "instruction": "CMP dword ptr [0x006afd80],EBX"
+        },
+        {
+          "va": "005a22bb",
+          "bytes": "833d80fd6a0000",
+          "instruction": "CMP dword ptr [0x006afd80],0x0"
+        },
+        {
+          "va": "005a2354",
+          "bytes": "ff3580fd6a00",
+          "instruction": "PUSH dword ptr [0x006afd80]"
+        },
+        {
+          "va": "005a262f",
+          "bytes": "391d80fd6a00",
+          "instruction": "CMP dword ptr [0x006afd80],EBX"
+        },
+        {
+          "va": "005a269f",
+          "bytes": "833d80fd6a0000",
+          "instruction": "CMP dword ptr [0x006afd80],0x0"
+        },
+        {
+          "va": "005a273a",
+          "bytes": "ff3580fd6a00",
+          "instruction": "PUSH dword ptr [0x006afd80]"
+        },
+        {
+          "va": "005a993d",
+          "bytes": "a180fd6a00",
+          "instruction": "MOV EAX,[0x006afd80]"
+        },
+        {
+          "va": "005abfc3",
+          "bytes": "833d80fd6a0000",
+          "instruction": "CMP dword ptr [0x006afd80],0x0"
+        },
+        {
+          "va": "005acd40",
+          "bytes": "391d80fd6a00",
+          "instruction": "CMP dword ptr [0x006afd80],EBX"
+        },
+        {
+          "va": "005ae35a",
+          "bytes": "a180fd6a00",
+          "instruction": "MOV EAX,[0x006afd80]"
+        },
+        {
+          "va": "005ae913",
+          "bytes": "393580fd6a00",
+          "instruction": "CMP dword ptr [0x006afd80],ESI"
+        },
+        {
+          "va": "005aea83",
+          "bytes": "833d80fd6a0000",
+          "instruction": "CMP dword ptr [0x006afd80],0x0"
+        },
+        {
+          "va": "005aeaca",
+          "bytes": "ff3580fd6a00",
+          "instruction": "PUSH dword ptr [0x006afd80]"
+        },
+        {
+          "va": "005af448",
+          "bytes": "393580fd6a00",
+          "instruction": "CMP dword ptr [0x006afd80],ESI"
+        },
+        {
+          "va": "005af4ad",
+          "bytes": "a180fd6a00",
+          "instruction": "MOV EAX,[0x006afd80]"
+        },
+        {
+          "va": "005af52d",
+          "bytes": "ff3580fd6a00",
+          "instruction": "PUSH dword ptr [0x006afd80]"
+        },
+        {
+          "va": "005af57c",
+          "bytes": "393580fd6a00",
+          "instruction": "CMP dword ptr [0x006afd80],ESI"
+        },
+        {
+          "va": "005af5e1",
+          "bytes": "a180fd6a00",
+          "instruction": "MOV EAX,[0x006afd80]"
+        },
+        {
+          "va": "005af661",
+          "bytes": "ff3580fd6a00",
+          "instruction": "PUSH dword ptr [0x006afd80]"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 8,
+          "text": "std::uint32_t formatter_text_locale_006afd80 = 0;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 37,
+          "text": "if (!formatter_text_locale_006afd80) return ascii_case(c, upper);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 53,
+          "text": "const int n = formatter_text_map_005a7e05(formatter_text_locale_006afd80,"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 60,
+          "text": "if (!formatter_text_locale_006afd80) return ascii_case(c, upper);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_locale.cpp",
+          "line": 90,
+          "text": "if(mode==2)return formatter_locale_type_a(locale?locale:formatter_text_locale_006afd80,type,input,count,output);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 122,
+          "text": "if(!formatter_text_locale_006afd80) {"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp",
+          "line": 80,
+          "text": "if(!formatter_text_locale_006afd80) {"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_text_locale_006afd80@porsche@@3IA"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": null,
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    },
+    {
+      "va": "006c02e4",
+      "canonical_name": "porsche::formatter_text_locale_writer_006c02e4",
+      "type": "uint32",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "original_memory": {
+        "section": ".data",
+        "flags": "c0000040",
+        "file_backed": false,
+        "bits": null,
+        "virtual_zero_fill": true
+      },
+      "original_indexed_references": [
+        {
+          "va": "005a2274",
+          "bytes": "391de4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],EBX"
+        },
+        {
+          "va": "005a2658",
+          "bytes": "391de4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],EBX"
+        },
+        {
+          "va": "005abf78",
+          "bytes": "391de4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],EBX"
+        },
+        {
+          "va": "005accd4",
+          "bytes": "391de4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],EBX"
+        },
+        {
+          "va": "005ad6b5",
+          "bytes": "391de4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],EBX"
+        },
+        {
+          "va": "005ae41a",
+          "bytes": "833de4026c0000",
+          "instruction": "CMP dword ptr [0x006c02e4],0x0"
+        },
+        {
+          "va": "005ae508",
+          "bytes": "833de4026c0000",
+          "instruction": "CMP dword ptr [0x006c02e4],0x0"
+        },
+        {
+          "va": "005ae979",
+          "bytes": "3935e4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],ESI"
+        },
+        {
+          "va": "005af48a",
+          "bytes": "3935e4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],ESI"
+        },
+        {
+          "va": "005af5be",
+          "bytes": "3935e4026c00",
+          "instruction": "CMP dword ptr [0x006c02e4],ESI"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 9,
+          "text": "std::uint32_t formatter_text_locale_writer_006c02e4 = 0;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 62,
+          "text": "const bool writer = formatter_text_locale_writer_006c02e4 != 0;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 113,
+          "text": "const bool writer=formatter_text_locale_writer_006c02e4!=0;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp",
+          "line": 92,
+          "text": "const bool writer=static_cast<std::int32_t>(formatter_text_locale_writer_006c02e4)>0;"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_text_locale_writer_006c02e4@porsche@@3IA"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": null,
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    },
+    {
+      "va": "006c02e8",
+      "canonical_name": "porsche::formatter_text_locale_readers_006c02e8",
+      "type": "int32",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "original_memory": {
+        "section": ".data",
+        "flags": "c0000040",
+        "file_backed": false,
+        "bits": null,
+        "virtual_zero_fill": true
+      },
+      "original_indexed_references": [
+        {
+          "va": "005ae413",
+          "bytes": "f0ff05e8026c00",
+          "instruction": "INC.LOCK dword ptr [0x006c02e8]"
+        },
+        {
+          "va": "005ae427",
+          "bytes": "f0ff0de8026c00",
+          "instruction": "DEC.LOCK dword ptr [0x006c02e8]"
+        },
+        {
+          "va": "005ae476",
+          "bytes": "f0ff0de8026c00",
+          "instruction": "DEC.LOCK dword ptr [0x006c02e8]"
+        },
+        {
+          "va": "005ae501",
+          "bytes": "f0ff05e8026c00",
+          "instruction": "INC.LOCK dword ptr [0x006c02e8]"
+        },
+        {
+          "va": "005ae515",
+          "bytes": "f0ff0de8026c00",
+          "instruction": "DEC.LOCK dword ptr [0x006c02e8]"
+        },
+        {
+          "va": "005ae573",
+          "bytes": "f0ff0de8026c00",
+          "instruction": "DEC.LOCK dword ptr [0x006c02e8]"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 10,
+          "text": "std::int32_t formatter_text_locale_readers_006c02e8 = 0;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 61,
+          "text": "formatter_text_increment_005b2258(&formatter_text_locale_readers_006c02e8);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 65,
+          "text": "decrement(&formatter_text_locale_readers_006c02e8);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 71,
+          "text": "else decrement(&formatter_text_locale_readers_006c02e8);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 111,
+          "text": "formatter_text_increment_005b2258(&formatter_text_locale_readers_006c02e8);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 114,
+          "text": "if(writer) {decrement(&formatter_text_locale_readers_006c02e8);exit_registry_lock_api_005a4ba4(19);}"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 117,
+          "text": "else decrement(&formatter_text_locale_readers_006c02e8);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp",
+          "line": 90,
+          "text": "auto* readers=reinterpret_cast<volatile long*>(&formatter_text_locale_readers_006c02e8);"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_text_locale_readers_006c02e8@porsche@@3HA"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": null,
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    },
+    {
+      "va": "005b2258",
+      "canonical_name": "porsche::formatter_text_increment_005b2258",
+      "type": "stdcall int32(int32*) pointer",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "original_memory": {
+        "section": ".rdata",
+        "flags": "40000040",
+        "file_backed": true,
+        "bits": "f4a81c00",
+        "virtual_zero_fill": false
+      },
+      "original_indexed_references": [
+        {
+          "va": "005a226e",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005a2652",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005abf6a",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005accc6",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005ad6af",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005ae973",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005af484",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        },
+        {
+          "va": "005af5b8",
+          "bytes": "ff1558225b00",
+          "instruction": "CALL dword ptr [0x005b2258]"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 11,
+          "text": "FormatterTextAtomic formatter_text_increment_005b2258 = formatter_text_platform_increment;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 61,
+          "text": "formatter_text_increment_005b2258(&formatter_text_locale_readers_006c02e8);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 111,
+          "text": "formatter_text_increment_005b2258(&formatter_text_locale_readers_006c02e8);"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_text_increment_005b2258@porsche@@3P6GHPAH@ZA"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": {
+        "dll": "KERNEL32.dll",
+        "symbol": "InterlockedIncrement",
+        "iat_va": "005b2258",
+        "unbound_file_bits": "f4a81c00"
+      },
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    },
+    {
+      "va": "005b2254",
+      "canonical_name": "porsche::formatter_text_decrement_005b2254",
+      "type": "stdcall int32(int32*) pointer",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "original_memory": {
+        "section": ".rdata",
+        "flags": "40000040",
+        "file_backed": true,
+        "bits": "dca81c00",
+        "virtual_zero_fill": false
+      },
+      "original_indexed_references": [
+        {
+          "va": "005a227a",
+          "bytes": "8b3d54225b00",
+          "instruction": "MOV EDI,dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005a265e",
+          "bytes": "8b3d54225b00",
+          "instruction": "MOV EDI,dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005abf70",
+          "bytes": "8b3d54225b00",
+          "instruction": "MOV EDI,dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005acccc",
+          "bytes": "8b3d54225b00",
+          "instruction": "MOV EDI,dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005ad6bb",
+          "bytes": "8b3d54225b00",
+          "instruction": "MOV EDI,dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005ae982",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005ae9e5",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005af493",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005af4c6",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005af55e",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005af5c7",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005af5fa",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        },
+        {
+          "va": "005af692",
+          "bytes": "ff1554225b00",
+          "instruction": "CALL dword ptr [0x005b2254]"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 12,
+          "text": "FormatterTextAtomic formatter_text_decrement_005b2254 = formatter_text_platform_decrement;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 63,
+          "text": "const auto decrement = formatter_text_decrement_005b2254;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 112,
+          "text": "const auto decrement=formatter_text_decrement_005b2254;"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_text_decrement_005b2254@porsche@@3P6GHPAH@ZA"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": {
+        "dll": "KERNEL32.dll",
+        "symbol": "InterlockedDecrement",
+        "iat_va": "005b2254",
+        "unbound_file_bits": "dca81c00"
+      },
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    },
+    {
+      "va": "005e52d0",
+      "canonical_name": "porsche::formatter_ctype_table_005e52d0",
+      "type": "mutable pointer to const uint8",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_parser.cpp",
+      "original_memory": {
+        "section": ".data",
+        "flags": "c0000040",
+        "file_backed": true,
+        "bits": "da525e00",
+        "virtual_zero_fill": false
+      },
+      "original_indexed_references": [
+        {
+          "va": "0053014b",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005301a4",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005301fa",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "00530251",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005302ab",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "00530307",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "00530361",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005303b8",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "0053040f",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "00530469",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005304c6",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "00530ce9",
+          "bytes": "8b15d0525e00",
+          "instruction": "MOV EDX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a192a",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a1ee2",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a1f20",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a21dd",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a2306",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a2318",
+          "bytes": "8b15d0525e00",
+          "instruction": "MOV EDX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a26e6",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a26f9",
+          "bytes": "8b15d0525e00",
+          "instruction": "MOV EDX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a2c42",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a2c6d",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a2c95",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a2ec0",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a2ecf",
+          "bytes": "8b35d0525e00",
+          "instruction": "MOV ESI,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a31d9",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a3296",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a32c1",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a3e63",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a4510",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a81ed",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a828a",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a846a",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a84d8",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a857f",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a881b",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a891f",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a896b",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a8a30",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a8a6d",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005a8b32",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005a8be9",
+          "bytes": "a1d0525e00",
+          "instruction": "MOV EAX,[0x005e52d0]"
+        },
+        {
+          "va": "005ac86c",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005ac8dd",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005ac93e",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005aca27",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005aca71",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        },
+        {
+          "va": "005acd5b",
+          "bytes": "8b0dd0525e00",
+          "instruction": "MOV ECX,dword ptr [0x005e52d0]"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 30,
+          "text": "formatter_ctype_table_005e52d0) + static_cast<std::uint32_t>(c) * 2u);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_parser.cpp",
+          "line": 104,
+          "text": "if ((formatter_ctype_table_005e52d0[static_cast<unsigned>(c)*2u+1u] & 0x80u) != 0) {"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_parser.cpp",
+          "line": 243,
+          "text": "const std::uint8_t* formatter_ctype_table_005e52d0 = kInitialCtypeTable;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+          "line": 25,
+          "text": "digit = formatter_ctype_table_005e52d0[static_cast<std::ptrdiff_t>(value) * 2] & 4;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+          "line": 25,
+          "text": "return *reinterpret_cast<const volatile std::uint8_t*>(formatter_ctype_table_005e52d0+c*2u)&4;"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_ctype_table_005e52d0@porsche@@3PBEB"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": null,
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    },
+    {
+      "va": "005e54dc",
+      "canonical_name": "porsche::formatter_float_character_width_005e54dc",
+      "type": "int32",
+      "provider": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+      "original_memory": {
+        "section": ".data",
+        "flags": "c0000040",
+        "file_backed": true,
+        "bits": "01000000",
+        "virtual_zero_fill": false
+      },
+      "original_indexed_references": [
+        {
+          "va": "00530128",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530185",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "005301da",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530231",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530288",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "005302e4",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530341",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530398",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "005303ef",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530446",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "005304a3",
+          "bytes": "392ddc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EBP"
+        },
+        {
+          "va": "00530cc7",
+          "bytes": "a1dc545e00",
+          "instruction": "MOV EAX,[0x005e54dc]"
+        },
+        {
+          "va": "005a190f",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a1ec7",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a1f0b",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a21c2",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a22f3",
+          "bytes": "3935dc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],ESI"
+        },
+        {
+          "va": "005a26d1",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a2c24",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a2c52",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a2c7a",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a31c1",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a327e",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a32ad",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a3e48",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a81d5",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a8272",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a8455",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a84c3",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a856a",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a883b",
+          "bytes": "ff35dc545e00",
+          "instruction": "PUSH dword ptr [0x005e54dc]"
+        },
+        {
+          "va": "005a8907",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a8956",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a8a1b",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a8a55",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005a8bcb",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005abfe8",
+          "bytes": "ff35dc545e00",
+          "instruction": "PUSH dword ptr [0x005e54dc]"
+        },
+        {
+          "va": "005ac853",
+          "bytes": "3915dc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EDX"
+        },
+        {
+          "va": "005ac8c4",
+          "bytes": "3915dc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EDX"
+        },
+        {
+          "va": "005ac922",
+          "bytes": "3915dc545e00",
+          "instruction": "CMP dword ptr [0x005e54dc],EDX"
+        },
+        {
+          "va": "005aca0f",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005aca59",
+          "bytes": "833ddc545e0001",
+          "instruction": "CMP dword ptr [0x005e54dc],0x1"
+        },
+        {
+          "va": "005acd6b",
+          "bytes": "a1dc545e00",
+          "instruction": "MOV EAX,[0x005e54dc]"
+        },
+        {
+          "va": "005acd98",
+          "bytes": "a1dc545e00",
+          "instruction": "MOV EAX,[0x005e54dc]"
+        }
+      ],
+      "canonical_source_usages": [
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 40,
+          "text": "const auto kind = formatter_float_character_width_005e54dc > 1"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+          "line": 75,
+          "text": "if (formatter_float_character_width_005e54dc > 1)"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+          "line": 6,
+          "text": "std::int32_t formatter_float_character_width_005e54dc = 1;"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp",
+          "line": 22,
+          "text": "if (formatter_float_character_width_005e54dc > 1)"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp",
+          "line": 128,
+          "text": "output,formatter_float_character_width_005e54dc,nullptr,&used);"
+        },
+        {
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp",
+          "line": 24,
+          "text": "if(formatter_float_character_width_005e54dc>1)return formatter_float_classify_005a2eae(c,4);"
+        }
+      ],
+      "actual_cached_owner_symbol_mentions": [
+        "?formatter_float_character_width_005e54dc@porsche@@3HA"
+      ],
+      "current233_symbol_mentions": [],
+      "iat_import": null,
+      "coalescing_requirement": "One mutable original-address identity shared across canonical and any future raw/native consumers; no aliases emitted",
+      "current_binding_status": "No233 native symbol mentions this address; no existing raw-to-canonical storage binding"
+    }
+  ],
+  "exact_PE_IAT_imports": {
+    "005b2254": {
+      "dll": "KERNEL32.dll",
+      "symbol": "InterlockedDecrement",
+      "iat_va": "005b2254",
+      "unbound_file_bits": "dca81c00"
+    },
+    "005b2258": {
+      "dll": "KERNEL32.dll",
+      "symbol": "InterlockedIncrement",
+      "iat_va": "005b2258",
+      "unbound_file_bits": "f4a81c00"
+    }
+  },
+  "ctype_initializer_contract": {
+    "pointer_cell": "005e52d0",
+    "original_table_va": "005e52da",
+    "original_EOF_prefix_va": "005e52d8",
+    "original_EOF_prefix_bits": "0000",
+    "canonical_bytes": 512,
+    "canonical512_bytes_match": true,
+    "canonical_EOF_predecessor_storage_proven": false
+  },
+  "whole_TU_existing_VA_implementations": [
+    {
+      "va": "005a2210",
+      "existing_object": "local/experiments/v2-build-corpus-181/005a2210.obj",
+      "actual_defined_symbols": [
+        "?_strncmp@@YAHPAD0I@Z"
+      ]
+    },
+    {
+      "va": "005a2e70",
+      "existing_object": "local/experiments/v2-build-corpus-181/005a2e70.obj",
+      "actual_defined_symbols": [
+        "?FUN_005a2e70@@YAHPAE0@Z"
+      ]
+    },
+    {
+      "va": "005a2870",
+      "existing_object": "local/experiments/v2-build-corpus-181/005a2870.obj",
+      "actual_defined_symbols": [
+        "?_strrchr@@YAPADPADH@Z"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "id": "instrumented-cache",
+      "evidence": "Actual cached COFF has undefined formatter_text_read_trace; do not link it as production owner"
+    },
+    {
+      "id": "ctype-EOF-prefix",
+      "evidence": "Original pointer005e52d0\u2192005e52da with valid0000 WORD at005e52d8; canonical512-byte table starts at index0 and has no explicit preceding EOF word. Private158 replaces pointer with a514-byte arena; initial production predecessor storage is not thereby established"
+    },
+    {
+      "id": "canonical-provider-closure",
+      "evidence": "Eight nontrace native dependencies require accepted CRT lock19, ctype/width, locale map/type and atomic platform providers;233 contains no corresponding original-address state symbols. No namespace/storage coalescing contract is installed"
+    },
+    {
+      "id": "whole-TU-ownership",
+      "evidence": "Whole canonicalTU includes005a2210/005a2e70/005a2870 already ordinary-compiled under different names. Canonical/native VA ownership policy is needed before linking wholeTU"
+    }
+  ],
+  "decision": "Do not compile/bind in236: shared initial ctype/state/provider and whole-TU ownership closure not established",
+  "next_trace": [
+    "First prove/fix canonical initial EOF table storage with original514-byte layout and canonical pointer identity; separate authorized packet",
+    "Select one canonical storage/provider composition for seven state identities, stdcall IAT slots and CRT lock19; inspect current raw consumers before any alias",
+    "Review three whole-TU existing VA implementations and object-selection policy, then permit an uninstrumented compile plus original/native state-mutation fixture"
+  ],
+  "compiler_commands": 0,
+  "native_execution_commands": 0,
+  "link_commands": 0,
+  "ghidra_commands": 0,
+  "input_sha256": {
+    "scripts/research/audit-v2-canonical-lowercase-236.py": "54bd0ac4cbddf3f12f2519c6521c212c2160317c3245425b5ed97ed4fca3de42",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp": "9c74b82610047ec959b7187c44d6934b1cd752d86dbe94116887f6fbc6017330",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_parser.cpp": "d2961d63fc38ee380c17a248baa1fcade827bf100b929179bd5dcbc2c267b180",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_helpers.cpp": "a21d3b5f5a2c5c55f83ab6662cddbf7887faf936a8a2a1cd20b4400bd6862ac1",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_locale.cpp": "720620468bf072fabf1fa4c7f0b0dd3d1edbd699cff816c26d9e80020669b95e",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_output.cpp": "7d60e90e25c5b1da0b986e1eb608041eb14428a8f9b99b4f3c2a8bd3ed5f1bdf",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_float_parse.cpp": "a8f7528f844d19bce0083ba3f18d06a17bf31e38d82452c65b45357d29d1ce6d",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+    "iterations/v2/001-original-recovery/source/platform/formatter_crt_links.cpp": "ccd611d613a4dd653404b5893049ac9a32f7149b1c5244db326075fec3a85287",
+    "iterations/v2/001-original-recovery/runs/158-formatter-text/README.md": "79437b7f4fd68cfffd9818e6dfd7d9a9981077ad18c48fcf6e60a6edeb35c861",
+    "iterations/v2/001-original-recovery/runs/158-formatter-text/verification.json": "69c7e2da44a14c8832acbfb0c4cf58492c386374a565517da97166ed1fb3b23b",
+    "iterations/v2/001-original-recovery/runs/162-formatter-locale/README.md": "9ec12aa930c7be3cef1ef8a696a55cb0b15f4e013fe938d071bc93326821db79",
+    "iterations/v2/001-original-recovery/runs/166-formatter-output/README.md": "8c994c53847a58b5ac3cd65c6d8ac9e65a157103d7530e05233a4ad6541f5da9",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "iterations/v2/001-original-recovery/runs/224-canonical-owner-bindings/summary.json": "01756a666e87aa6901275938331a1c854e028223bd283b51aca59d02ff0a92c0",
+    "local/builds/v2/001-original-recovery/formatter-text-158/formatter_text_probe.dir/Release/formatter_text.obj": "40f4a60bfdf1647e05c27257cf52978ce207f123d522245d49c08b1c97d2f659",
+    "local/experiments/v2-build-corpus-181/0047d1c0.obj": "65f27d35951fd9fc6a0b1af24fb554850b8501f05855bbed8e7515e4d8f127f2",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0047d1c0.cpp": "0f7242cbde5f2667ccfa383f210136dd24649e7c875b4828771ef5a8dcdc3a33",
+    "local/experiments/v2-build-corpus-181/0047d210.obj": "4a9a27ef2edc3fd82655ee722af7dc5da608b28fd52c4617419949e51b4f1c4c",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0047d210.cpp": "afa8dbbe41eb47ea5f7c5bec7157e75d5ad560fbf3d376b369ecba162502a3a2",
+    "local/experiments/v2-build-corpus-181/005a2210.obj": "35d823074e71742265bd5c47637fc4bd6309de7c82d68f7300e139850accdf9c",
+    "local/experiments/v2-build-corpus-181/005a2e70.obj": "98664a3891387d7424a4547317fc63bde4e81458e701a4bc9f0ed95b21e567d4",
+    "local/experiments/v2-build-corpus-181/005a2870.obj": "fb450d22118c3752643a8025ea48deb382d6ebbf5260743b59958e1cdebce119"
+  },
+  "limits": [
+    "Read-only feasibility; no source/header/registry edits, aliases, new storage, union changes or new behavior",
+    "No whole-program computed-pointer/alias/loader/lifetime proof inferred from address navigation"
+  ]
+}

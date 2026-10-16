@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "passed": true,
+  "summary_sha256": "e55111c22a4f6ce2d2b23fb868635c71c7c7a3e1ae4dcbe45ad5fec0f759d27c",
+  "bindings_summary_sha256": "637d4cf3fcffb54bc90d0c8481ab3355f158c6378f3be1b8e8e544c9a348c595",
+  "audit_script_sha256": "5f0c39999454153f6df3b883986744ed92e49f8c8496594aa0ea28a478d2f56d",
+  "input_pins_checked": 279,
+  "canonical175_pins_checked": 18,
+  "exact_canonical_fragments": true,
+  "original_entry_bytes": 70,
+  "original_and_caller_bytes_PE_matched": 619,
+  "indexed_callers": 8,
+  "ordinary_COFF_objects": [
+    {
+      "va": "005a3719",
+      "object": "local/experiments/v2-canonical-lock-reuse-240/objects/005a3719.obj",
+      "object_sha256": "80873143a57c7fa2dc1144df6081218fe5670466acde8b8197d15d2287f153d5",
+      "actual_symbols": {
+        "defined": [
+          "?formatter_stdio_lock_index_005a3719@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z"
+        ],
+        "undefined": [
+          "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+          "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    {
+      "va": "005a376b",
+      "object": "local/experiments/v2-canonical-lock-reuse-240/objects/005a376b.obj",
+      "object_sha256": "5594347f44b1f9839db47c666d6414148c0b6b2c3c22e08fed577da05560eca2",
+      "actual_symbols": {
+        "defined": [
+          "?formatter_stdio_unlock_index_005a376b@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z"
+        ],
+        "undefined": [
+          "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+          "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    }
+  ],
+  "directive_only_COFF_objects": [
+    {
+      "va": "005a3719",
+      "directive": "/alternatename:?FUN_005a3719@@YAXHH@Z=?formatter_stdio_lock_index_005a3719@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "object_sha256": "773984d9150372617d97b62f0ddfcc001fe93d25029b7fe1121ef5f7fdf1b22d"
+    },
+    {
+      "va": "005a376b",
+      "directive": "/alternatename:?FUN_005a376b@@YAXHH@Z=?formatter_stdio_unlock_index_005a376b@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "object_sha256": "8407591ce8ef2310aa2faa8c0f1ec7636e523d50ce4e8af320124f515b63d75b"
+    }
+  ],
+  "actual_fixture_original_oracles": [
+    {
+      "va": "005a3719",
+      "bytes": 35,
+      "normalized_bytes": "8b44240483f8147d0b83c01c50e80000000059c38b44240883c02050ff1500000000c3",
+      "relocations": [
+        {
+          "offset": 14,
+          "target": "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+          "type": 20
+        },
+        {
+          "offset": 30,
+          "target": "?enter_slot240@@3P6GXPAX@ZA",
+          "type": 6
+        }
+      ]
+    },
+    {
+      "va": "005a376b",
+      "bytes": 35,
+      "normalized_bytes": "8b44240483f8147d0b83c01c50e80000000059c38b44240883c02050ff1500000000c3",
+      "relocations": [
+        {
+          "offset": 14,
+          "target": "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+          "type": 20
+        },
+        {
+          "offset": 30,
+          "target": "?leave_slot240@@3P6GXPAX@ZA",
+          "type": 6
+        }
+      ]
+    }
+  ],
+  "actual_header_closure": 28,
+  "actual_PE_imports": {
+    "005b206c": {
+      "dll": "KERNEL32.dll",
+      "symbol": "LeaveCriticalSection"
+    },
+    "005b2078": {
+      "dll": "KERNEL32.dll",
+      "symbol": "EnterCriticalSection"
+    }
+  },
+  "actual_fixture_COFF_nonvolatile_marker_sequence": true,
+  "actual_compiler_batches": 1,
+  "actual_parallel_compilation": false,
+  "compiler_exit_code": 0,
+  "compiler_seconds": 2.0717989000258967,
+  "warnings": {
+    "game": 0,
+    "fixture": [
+      "C4731",
+      "C4731"
+    ],
+    "driver": [
+      "D9030"
+    ]
+  },
+  "native_fixture_cases": 2268,
+  "alias_address_identity": true,
+  "ESP_and_nonvolatile_fixture_checks": true,
+  "native_fixture_exit": 0,
+  "fixture_sha256": "5ab2710116fd739880cddd8afb276fe3b3e8e2b1cc5e253a4c0e43b2ff380b17",
+  "published_lock_prefix": 26,
+  "required_stdio_prefix": 48,
+  "production_ready": false,
+  "compiler_commands_this_audit": 0,
+  "native_commands_this_audit": 0,
+  "linker_commands_this_audit": 0,
+  "Ghidra_commands_this_audit": 0
+}

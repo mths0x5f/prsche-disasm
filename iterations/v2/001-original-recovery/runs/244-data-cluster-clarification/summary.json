@@ -1,0 +1,245 @@
+{
+  "schema": 1,
+  "run": 238,
+  "kind": "data-owner-cluster-inventory",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "scope": {
+    "source": "runs/233-initialized-and-nested-union/summary.json",
+    "frontier_data_names": 305,
+    "unique_original_vas": 302,
+    "singleton_vas": 299,
+    "multi_mangle_clusters": 3,
+    "top_limit": 5,
+    "linked_data_count": 306,
+    "parsed_addressed_names": 305,
+    "excluded_unaddressed_name": "?WORD_006b48da_214@@3GA",
+    "cross_va_adjacent_groups": 31,
+    "cross_va_boundary": "contiguous inferred intervals are batching candidates only; adjacency is not alias/overlap proof"
+  },
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/decompiled.c": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572"
+  },
+  "excluded_owner_vas": [
+    "005b242c",
+    "005b24a8",
+    "005e25d0",
+    "005e25d4",
+    "005ccb34",
+    "005d0608",
+    "005e5f4c"
+  ],
+  "clusters": [
+    {
+      "rank": 1,
+      "va": "006b4b20",
+      "span_bytes": 1,
+      "symbols": [
+        "?DAT_006b4b20@@3EA",
+        "?DAT_006b4b20@@3PAIA"
+      ],
+      "view_declarations": [
+        "undefined1 DAT_006b4b20"
+      ],
+      "consumer_vas": [
+        "00537b40",
+        "00537e30",
+        "0053cbc0",
+        "00562eb0",
+        "00571f90",
+        "00572f90"
+      ],
+      "boundary": "mangled pointer/int view versus one-byte indexed view; trace consumers before any owner decision"
+    },
+    {
+      "rank": 2,
+      "va": "0060c95c",
+      "span_bytes": 4,
+      "symbols": [
+        "?DAT_0060c95c@@3HA",
+        "?DAT_0060c95c@@3IA"
+      ],
+      "view_declarations": [
+        "int DAT_0060c95c",
+        "undefined4 DAT_0060c95c"
+      ],
+      "consumer_vas": [
+        "0041e2b0",
+        "0041e540",
+        "0041e590",
+        "004204f0"
+      ],
+      "boundary": "same 4-byte span; signed/unsigned mangles only, still requires exact read/write trace"
+    },
+    {
+      "rank": 3,
+      "va": "006ad760",
+      "span_bytes": 4,
+      "symbols": [
+        "?DAT_006ad760@@3HA",
+        "?DAT_006ad760@@3PAHA"
+      ],
+      "view_declarations": [
+        "int *DAT_006ad760",
+        "int DAT_006ad760",
+        "undefined4 DAT_006ad760"
+      ],
+      "consumer_vas": [
+        "0058f1f0",
+        "0058f5d0"
+      ],
+      "boundary": "pointer/integer conflicting views; exact consumers are the next trace"
+    }
+  ],
+  "next_trace": "Use indexed consumers above to classify concrete read/write/address-taking instructions; no guessed type, layout, owner, or code lowering.",
+  "boundary": "Navigation only; cross-VA records are contiguous inferred/native-view batches, not proven overlaps, aliases, storage owners, or allocations.",
+  "cross_va_clusters": [
+    {
+      "rank": 1,
+      "range": "006b4b10-006b4b22",
+      "kind": "contiguous_inferred_views",
+      "members": [
+        "?DAT_006b4b10@@3HA",
+        "?DAT_006b4b14@@3HA",
+        "?DAT_006b4b18@@3HA",
+        "?DAT_006b4b1c@@3HA",
+        "?DAT_006b4b20@@3EA",
+        "?DAT_006b4b20@@3PAIA",
+        "?DAT_006b4b21@@3EA"
+      ],
+      "view_widths": [
+        4,
+        4,
+        4,
+        4,
+        1,
+        1,
+        1
+      ],
+      "native_mangle_views": "mixed int/byte/pointer-like",
+      "consumer_vas": [
+        "00537b40",
+        "00537e30",
+        "0053cbc0",
+        "00562eb0",
+        "00570c40",
+        "00571f90",
+        "00572f90",
+        "0057d9f0"
+      ]
+    },
+    {
+      "rank": 2,
+      "range": "005e347c-005e3494",
+      "kind": "contiguous_inferred_views",
+      "members": [
+        "?DAT_005e347c@@3HA",
+        "?DAT_005e3480@@3IA",
+        "?DAT_005e3484@@3IA",
+        "?DAT_005e3488@@3IA",
+        "?DAT_005e348c@@3IA",
+        "?DAT_005e3490@@3IA"
+      ],
+      "view_widths": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "native_mangle_views": "six 4-byte int-like slots",
+      "consumer_vas": [
+        "00598ff0"
+      ]
+    },
+    {
+      "rank": 3,
+      "range": "005dea64-005dea78",
+      "kind": "contiguous_inferred_views",
+      "members": [
+        "?DAT_005dea64@@3HA",
+        "?DAT_005dea68@@3HA",
+        "?DAT_005dea6c@@3HA",
+        "?DAT_005dea70@@3IA",
+        "?DAT_005dea74@@3IA"
+      ],
+      "view_widths": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "native_mangle_views": "five 4-byte int-like slots",
+      "consumer_vas": [
+        "00538180",
+        "00538230",
+        "00538250",
+        "00538270"
+      ]
+    },
+    {
+      "rank": 4,
+      "range": "005e6688-005e669c",
+      "kind": "contiguous_inferred_views",
+      "members": [
+        "?DAT_005e6688@@3MA",
+        "?DAT_005e668c@@3MA",
+        "?DAT_005e6690@@3MA",
+        "?DAT_005e6694@@3HA",
+        "?DAT_005e6698@@3IA"
+      ],
+      "view_widths": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "native_mangle_views": "float/int-like 4-byte slots",
+      "consumer_vas": [
+        "004012b0"
+      ]
+    },
+    {
+      "rank": 5,
+      "range": "0060ab78-0060ab89",
+      "kind": "contiguous_inferred_views",
+      "members": [
+        "?DAT_0060ab78@@3IA",
+        "?DAT_0060ab7c@@3IA",
+        "?DAT_0060ab80@@3IA",
+        "?DAT_0060ab84@@3IA",
+        "?DAT_0060ab88@@3EA"
+      ],
+      "view_widths": [
+        4,
+        4,
+        4,
+        4,
+        1
+      ],
+      "native_mangle_views": "four 4-byte plus one byte slot",
+      "consumer_vas": [
+        "00419e10"
+      ]
+    }
+  ],
+  "explicit_adjacent_example": {
+    "range": "006b48d8-006b48dd",
+    "members": [
+      "?DAT_006b48d8@@3IA",
+      "?_DAT_006b48dc@@3IA"
+    ],
+    "view_widths": [
+      4,
+      1
+    ],
+    "note": "adjacent inferred spans; 006b48d8/006b48dc are not asserted as one alias or owner"
+  }
+}

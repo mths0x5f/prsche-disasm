@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "functions_added": 0,
+  "actual_compiler_batches": 1,
+  "compiled": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/Zl",
+      "/W4",
+      "/utf-8",
+      "/MP6",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\242-shared-scalar-views\\original_cell.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\242-shared-scalar-views\\data_alias.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\242-shared-scalar-views\\signed_view_fixture.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\242-shared-scalar-views\\unsigned_view_fixture.cpp",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\242-shared-scalar-views\\scalar_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 1.636858,
+    "log": "local/experiments/v2-shared-scalar-views-242/compile.log",
+    "log_sha256": "e5fc6cf44b73eff0d24840f4b2bdf1f241efb8a591e0f431a711bcdb0d38d564"
+  },
+  "fixture_link": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\scalar_fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\objects\\original_cell.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\objects\\data_alias.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\objects\\signed_view_fixture.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\objects\\unsigned_view_fixture.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\objects\\scalar_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.351363,
+    "log": "local/experiments/v2-shared-scalar-views-242/fixture-link.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-shared-scalar-views-242\\scalar_fixture.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02614,
+    "log": "local/experiments/v2-shared-scalar-views-242/fixture-native.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "fixture_executable": "local/experiments/v2-shared-scalar-views-242/scalar_fixture.exe",
+  "fixture_executable_sha256": "2ef30f052ead449e4834a4ea951320bc752c32ee763dd9db634d9e087957098a",
+  "fixture_object_sha256": {
+    "local/experiments/v2-shared-scalar-views-242/objects/original_cell.obj": "d174e99731b35ee6b4ce1d70f0e2ff74d7056093bd094ac57ba40c53815370d6",
+    "local/experiments/v2-shared-scalar-views-242/objects/data_alias.obj": "4a3422287313630048512c8d7f74d1ee5bb50e35ba265d80652018c039656207",
+    "local/experiments/v2-shared-scalar-views-242/objects/signed_view_fixture.obj": "8b7dedbab4b845ad285effbd54ae75a2f8606dd2a6915e8330a81e032897dca1",
+    "local/experiments/v2-shared-scalar-views-242/objects/unsigned_view_fixture.obj": "29dd6f444c9a1bae14e49890ed77b7a46b69eb46a13b1fc5438fc7aad5ae0fc8",
+    "local/experiments/v2-shared-scalar-views-242/objects/scalar_fixture.obj": "9df3e93bdcf09d27e4b5aaf6b4a82fa49f23c2dcacd97b6eea5efa4bf790493d"
+  },
+  "finalized_existing_compile": true,
+  "compile_provenance": "Original durable execution receipt and captured driver/inputs retained; no compiler rerun after metadata attribution correction",
+  "input_sha256": {
+    "scripts/research/experiment-v2-shared-scalar-views-242.py": "b3d842365af0ba648e2318bcbfe9ad7c945560c3fd4c16ebca91a702ada52a63",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/preflight.json": "e189e3992e8343b6c1b02f6f3ae1c8037f5e3a451dfcb342de022bcb5f4855fc",
+    "scripts/research/audit-v2-shared-scalar-views-242.py": "86334969801887ee79206969a79a8ab454a8029ab6510fec2eaa2444fa50d039",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:/Users/steew/AppData/Local/Programs/Python/Python312/Lib/site-packages/capstone/lib/capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "iterations/v2/001-original-recovery/runs/238-data-owner-clusters/summary.json": "d21441b2549b5d2628ab41a3526bea5b9bb42bb2353613c67f5997dd8c5f0d7d",
+    "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/experiments/v2-consumer-declarations-203/final/objects/0041e540.obj": "901cb57b0c32f60d3dbdfc63cdf3a3cff994cfb01c674b74973fc491f29e8537",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e540-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e540.cpp": "8bc06fea1102c184790b81aa7b834ccafc146c6588b097b59a4883b33560e246",
+    "local/experiments/v2-declaration-compat-184/full/0041e540-globals.h": "5f7812e42892364bba1681cf4622a6f75c66f2aaeea244be16d422ce1e05310a",
+    "local/experiments/v2-consumer-declarations-203/final/objects/0041e590.obj": "b28f79e0aa6aa550c6ee9a333d402369ec9678f0f46369c3b6ebb9d8cdb9a8b5",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e590-globals.h": "e853b98885efd33c9abd4ed7b3b72c2adfc8916a0cf40fdcbb49a240a8e30b53",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e590.cpp": "fb30d3f2620a755e714314e25407266ae0dff7b1aeedb79ac77988098d43463e",
+    "local/experiments/v2-consumer-declarations-203/final/objects/004204f0.obj": "71759affe22b1b7df991300762f8da496f54b390285ccf72fc189f783ca0f9bb",
+    "local/experiments/v2-consumer-declarations-203/final/headers/004204f0-globals.h": "a720baa15d9b464b6f8bd26e70370cb9d32feb24b767dcb9828d87503069c1d7",
+    "local/experiments/v2-consumer-declarations-203/final/sources/004204f0.cpp": "f09788373bdb2d641bfd101d6ea51c3d4e77354bf39638321c96aab23093cdac",
+    "local/experiments/v2-consumer-declarations-203/final/objects/0041e2b0.obj": "4e539868b73f4f6ea2a2176b4479c7c6f147c37a8caf99848566aa17e6b7da0c",
+    "local/experiments/v2-consumer-declarations-203/final/headers/0041e2b0-globals.h": "320c0b960730decac1c5ccb6fd8e6d92e9e94352c9e87c180630d4baa2ae7c20",
+    "local/experiments/v2-consumer-declarations-203/final/sources/0041e2b0.cpp": "da2efa09dcbfd231c5931d27657c8fbb45ccd039ea4a30036fb7d106e6385d15",
+    "local/experiments/v2-declaration-compat-184/full/0041e2b0-globals.h": "72f695ca2ca1c02e22bcfe6c645aaac2f38741cf8b8e27fb2da9d4154655d7f6",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "C:/Users/steew/.vscode/extensions/openai.chatgpt-26.1007.21434-win32-x64/bin/windows-x86_64/rg.exe": "9d694d44b868b28dbe7e06cb83879021a4411622d0337c757ff35f3b57dac2a5",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/audit.py": "e034688dfb35ccd8b1fe743a2a0bed661180c8dfcf7c9025a3c8f9f2996437bd",
+    "iterations/v2/001-original-recovery/runs/202-float-bit-stores/summary.json": "0cb09649dd29d9467f28959c4723473711ab4ea5fb98e854ef2f6557e12de0c2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c1xx.dll": "4383c4845a3f00d45a6abe847f003a7eeb522110eab536418d058db98b05e48d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/c2.dll": "d0b540a4f0d87c6d35de9756e9c6fd58335e09416b227f8be4ed7c91d41b4b33",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/original_cell.cpp": "ecf38cb15e6eb4933d8b8f203742415fc05e64f3d333c60ebef131c3cfd7b325",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/data_alias.cpp": "1674d34d38ffb8ae621a17b100e0be333b0f3ff60713fdc6753089a7e1e2d0de",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/signed_view_fixture.cpp": "59220a4c74954e4cdf54059e50c94e0a475d37f9478f36aa848173d105cb6ae0",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/unsigned_view_fixture.cpp": "9635d71dcaf8c8585e5bf4e84a25ce73a2a90d6fea7217cdeb1915277ed49a17",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/scalar_fixture.cpp": "ba07eb59cb70d78dbe73974924b2d658f023939b28a14a71e90627f8e8c15572",
+    "local/experiments/v2-shared-scalar-views-242/prepare.json": "f2182c9f523e0a1767248dfb947ec24e3d21b349f4ef349530233ac7987b7ea4",
+    "local/experiments/v2-shared-scalar-views-242/captured-compile-driver.py": "ad1b95fc901c9a7131adfa2a21e08196f38eb845836390bf2c61fd89586bdb60",
+    "local/experiments/v2-shared-scalar-views-242/compile.execution.json": "0d2411a7ac5852c700ae8d0bc818c65414cbf9bd14f9b4296892c23278d9bb37",
+    "local/experiments/v2-shared-scalar-views-242/compile.log": "e5fc6cf44b73eff0d24840f4b2bdf1f241efb8a591e0f431a711bcdb0d38d564",
+    "local/experiments/v2-shared-scalar-views-242/postcompile-attribution-failure.log": "d3a5556828f0a34d9c26fd2aa9f9a370a2d986454f8d7d2e73293f68196e7830"
+  },
+  "preflight": "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/preflight.json",
+  "preflight_sha256": "e189e3992e8343b6c1b02f6f3ae1c8037f5e3a451dfcb342de022bcb5f4855fc",
+  "limits": [
+    "One physical original DWORD with current signed/unsigned views; no inferred data meaning or algorithm",
+    "Original direct HIGHLOW/index coverage does not prove whole-program computed aliases/layout/lifetime",
+    "No game function, production or union change"
+  ],
+  "kind": "proven-link-contract",
+  "physical_data_cells_added": 0,
+  "support_objects": [
+    {
+      "id": "signed-unsigned-cell-binding-0060c95c-242",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "generated_source": "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/data_alias.cpp",
+      "generated_source_sha256": "1674d34d38ffb8ae621a17b100e0be333b0f3ff60713fdc6753089a7e1e2d0de",
+      "object": "local/experiments/v2-shared-scalar-views-242/objects/data_alias.obj",
+      "object_sha256": "4a3422287313630048512c8d7f74d1ee5bb50e35ba265d80652018c039656207",
+      "dependency_sha256": {
+        "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/data_alias.cpp": "1674d34d38ffb8ae621a17b100e0be333b0f3ff60713fdc6753089a7e1e2d0de"
+      },
+      "symbols": {
+        "defined": [],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      },
+      "drectve": "/alternatename:?DAT_0060c95c@@3IA=?DAT_0060c95c@@3HA"
+    }
+  ],
+  "aliases": [
+    {
+      "to": "?DAT_0060c95c@@3HA",
+      "va": "0060c95c",
+      "support_object_id": "signed-unsigned-cell-binding-0060c95c-242",
+      "directive": "/alternatename:?DAT_0060c95c@@3IA=?DAT_0060c95c@@3HA",
+      "proof": {
+        "original_span": "0060c95c:4",
+        "original_MEM4_references": 125,
+        "original_HIGHLOW_targets_complete": true,
+        "initial_bits": "00000000",
+        "type_views": [
+          "int32",
+          "uint32"
+        ],
+        "native_separate_TU_views": true,
+        "native_address_identity": true,
+        "native_highbit_crosswrites_and_restore": true
+      },
+      "from": "?DAT_0060c95c@@3IA"
+    }
+  ]
+}

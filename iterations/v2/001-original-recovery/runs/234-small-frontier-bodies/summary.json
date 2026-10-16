@@ -1,0 +1,391 @@
+{
+  "schema": 1,
+  "kind": "original-small-frontier-bodies",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "selected_scope_vas": [
+    "00468100",
+    "004d8230",
+    "004d8240",
+    "0058e2f0",
+    "0058e300",
+    "0050cbf0",
+    "00538d80",
+    "0050d310"
+  ],
+  "compiled_vas": [
+    "0058e2f0",
+    "0058e300",
+    "0050cbf0",
+    "0050d310"
+  ],
+  "uncompiled_vas": [
+    "00468100",
+    "004d8230",
+    "004d8240",
+    "00538d80"
+  ],
+  "objects_compiled": 4,
+  "real_coff_objects": 4,
+  "results": [
+    {
+      "va": "0058e2f0",
+      "name": "FUN_0058e2f0",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "generated_source": "local/experiments/v2-small-frontier-bodies-234/0058e2f0.cpp",
+      "generated_source_sha256": "1b078bf54aef5dc0f4b40db0d14f5cbb5a851cd5de090ead1d6ad77c989ae478",
+      "dependency_sha256": {
+        "local/experiments/v2-small-frontier-bodies-234/0058e2f0.cpp": "1b078bf54aef5dc0f4b40db0d14f5cbb5a851cd5de090ead1d6ad77c989ae478",
+        "local/experiments/v2-small-frontier-bodies-234/consumer234.h": "3e2326f282e962d9cdd43f5b44c749c5b5936a0735b0d516a7aab60591ce8447",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-small-frontier-bodies-234/objects/0058e2f0.obj",
+      "object_sha256": "a397f3feab2f8c9424f381d133b2f69e87ec317846c998fe7123f0ec4274685d",
+      "symbols": {
+        "defined": [
+          "?FUN_0058e2f0@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_006b1800@@3PAEA",
+          "__imp__EnterCriticalSection@4"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_0058e2f0@@YAXXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006b1800@@3PAEA",
+        "__imp__EnterCriticalSection@4"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "original_ret_bytes": [
+        0
+      ],
+      "disassembly": "local/experiments/v2-small-frontier-bodies-234/0058e2f0-disassembly.log",
+      "disassembly_sha256": "7464979ec591a0d4da0c1e9fed6a19454a8593b26a619691154ece5dea3a86bf"
+    },
+    {
+      "va": "0058e300",
+      "name": "FUN_0058e300",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "generated_source": "local/experiments/v2-small-frontier-bodies-234/0058e300.cpp",
+      "generated_source_sha256": "48e17d74efb1d10b833866e662e08b665e6d99e8f9f7a2d864977daeb19ab9a6",
+      "dependency_sha256": {
+        "local/experiments/v2-small-frontier-bodies-234/0058e300.cpp": "48e17d74efb1d10b833866e662e08b665e6d99e8f9f7a2d864977daeb19ab9a6",
+        "local/experiments/v2-small-frontier-bodies-234/consumer234.h": "3e2326f282e962d9cdd43f5b44c749c5b5936a0735b0d516a7aab60591ce8447",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-small-frontier-bodies-234/objects/0058e300.obj",
+      "object_sha256": "c558edce63b01ba3fadd2dc09b17339cc596cecea2f1c9996837d450f5512474",
+      "symbols": {
+        "defined": [
+          "?FUN_0058e300@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_006b1800@@3PAEA",
+          "__imp__LeaveCriticalSection@4"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_0058e300@@YAXXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_006b1800@@3PAEA",
+        "__imp__LeaveCriticalSection@4"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "original_ret_bytes": [
+        0
+      ],
+      "disassembly": "local/experiments/v2-small-frontier-bodies-234/0058e300-disassembly.log",
+      "disassembly_sha256": "d49c43be283a86651dbe5b195a9958e06e4db8ec53c9b2c5d531c5d6aa9305c1"
+    },
+    {
+      "va": "0050cbf0",
+      "name": "FUN_0050cbf0",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "generated_source": "local/experiments/v2-small-frontier-bodies-234/0050cbf0.cpp",
+      "generated_source_sha256": "2f3f25a0424a8fb7e684547cbd81871e927628e77883a36b2e4cf3ce9f62b316",
+      "dependency_sha256": {
+        "local/experiments/v2-small-frontier-bodies-234/0050cbf0.cpp": "2f3f25a0424a8fb7e684547cbd81871e927628e77883a36b2e4cf3ce9f62b316",
+        "local/experiments/v2-small-frontier-bodies-234/consumer234.h": "3e2326f282e962d9cdd43f5b44c749c5b5936a0735b0d516a7aab60591ce8447",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-small-frontier-bodies-234/objects/0050cbf0.obj",
+      "object_sha256": "f344b04d2782d89e728d80a00c7efd6e4af785a52b2c982b4964eb4dace4a577",
+      "symbols": {
+        "defined": [
+          "?FUN_0050cbf0@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_0065b928@@3HA",
+          "?FUN_004d23f0@OriginalECX234@@QAEXI@Z"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_0050cbf0@@YAXXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_0065b928@@3HA",
+        "?FUN_004d23f0@OriginalECX234@@QAEXI@Z"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "original_ret_bytes": [
+        0
+      ],
+      "disassembly": "local/experiments/v2-small-frontier-bodies-234/0050cbf0-disassembly.log",
+      "disassembly_sha256": "ad1c65668f0a1b1fd90cd77e4621b20df3d1a7a62928da1e9916bca166360b69"
+    },
+    {
+      "va": "0050d310",
+      "name": "FUN_0050d310",
+      "compiled": true,
+      "compiler_exit_code": 0,
+      "code_generation_succeeded": true,
+      "actual_i386_coff_validated": true,
+      "owned_error_count": 0,
+      "owned_warning_count": 0,
+      "generated_source": "local/experiments/v2-small-frontier-bodies-234/0050d310.cpp",
+      "generated_source_sha256": "71ad7829303e1058e0f56dec75437157cb60b650bf29b6a488d8cc8f129cf1c4",
+      "dependency_sha256": {
+        "local/experiments/v2-small-frontier-bodies-234/0050d310.cpp": "71ad7829303e1058e0f56dec75437157cb60b650bf29b6a488d8cc8f129cf1c4",
+        "local/experiments/v2-small-frontier-bodies-234/consumer234.h": "3e2326f282e962d9cdd43f5b44c749c5b5936a0735b0d516a7aab60591ce8447",
+        "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642"
+      },
+      "forced_headers": [],
+      "object": "local/experiments/v2-small-frontier-bodies-234/objects/0050d310.obj",
+      "object_sha256": "f7014ad00966ea6011471bea4c3803bd4270ccaf825d5853b26fdc200d9a671c",
+      "symbols": {
+        "defined": [
+          "?FUN_0050d310@@YAXXZ"
+        ],
+        "undefined": [
+          "?DAT_0065b928@@3HA",
+          "?FUN_004d2100@OriginalECX234@@QAEXPAXII@Z",
+          "?s_options_005cc804@@3PADA"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "defined_external_symbols": [
+        "?FUN_0050d310@@YAXXZ"
+      ],
+      "undefined_external_symbols": [
+        "?DAT_0065b928@@3HA",
+        "?FUN_004d2100@OriginalECX234@@QAEXPAXII@Z",
+        "?s_options_005cc804@@3PADA"
+      ],
+      "native_ret_bytes": [
+        0
+      ],
+      "original_ret_bytes": [
+        0
+      ],
+      "disassembly": "local/experiments/v2-small-frontier-bodies-234/0050d310-disassembly.log",
+      "disassembly_sha256": "3a00befb0cd9502e55b40009254bc1e67723ae5c8718029c4ae6897eb1f9a3cc"
+    }
+  ],
+  "actual_compiler_batches": 1,
+  "changed_game_TUs": 4,
+  "synthetic_fixture_TUs": 1,
+  "compiler_batch_exit_code": 0,
+  "compile_seconds": 1.661853300058283,
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "compiler_flags": [
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6"
+  ],
+  "compiler_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/diagnostics:column",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-small-frontier-bodies-234\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-small-frontier-bodies-234\\0058e2f0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-small-frontier-bodies-234\\0058e300.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-small-frontier-bodies-234\\0050cbf0.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-small-frontier-bodies-234\\0050d310.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-small-frontier-bodies-234\\call-boundary-fixture.cpp"
+  ],
+  "compiler_log": "local/experiments/v2-small-frontier-bodies-234/compile.log",
+  "compiler_log_sha256": "6db82c26dbeff05a18185b95278547e65109e9f3b89258f2631f24e326b0dff9",
+  "input_sha256": {
+    "scripts/research/experiment-v2-small-frontier-234.py": "4a93549c6573a0f4a6e4c376dd09c6629fd59fd24a5a0b11cce8ef127af98e3d",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00468100.cpp": "9c403624ea65f5200a6e452d5de546d4f8ad487380f0c4e5ab2d5774c26b950c",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004d8230.cpp": "25b2bf33dfd563c15c0808c27ae80ab2227a5c8bc0c178cd25fe9c2b4cbda2c6",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004d8240.cpp": "4610880e1ce7438db0bd31fae8b0fa5382d5702a3eb07149a18ed2bf26d41410",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0058e2f0.cpp": "0c19b0dca336617facfb936eeb4cc08e897fd43f3fa72659c2397cc3ed46ca7a",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0058e300.cpp": "a24e6f51045a73f8ba49566a8f8367268849b2cc6ad49f75e30138d2dba74f1a",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0050cbf0.cpp": "b7bdd6ecb02329df7a29d608c0336b03896752ebbf01e6d0c9ce07f8ab69b970",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00538d80.cpp": "5ddd6c5ecde3cd30daaabfe9b5b16e02be53089b0e4d9c6ed3b6eee31c3309ba",
+    "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0050d310.cpp": "af6e6d2c63d878af70cbfcdc6062cbbd1d8d165670d80eb47c04dfc220ce9848",
+    "local/experiments/v2-compile-corpus-178/ghidra-scalars-syntax-only.h": "61d4bdd18b18aaa90f69583d7231bff7ac1948a1390381a477250f9a2b3a9642",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/functions.jsonl": "56032e427c0e33bfe9d8ee60019b8eb5f07c9d1d60cb2eac41a7b2d6f08f426d",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\winnt.h": "8693f0ad4ada355c912d40ca41ce929b480e92291bda2f9227acf56736bffbff",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\synchapi.h": "d962588974e5e100205f683160b351dee70ea100aa736e14d878b7a74577a9c5",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\minwindef.h": "a9cf08be8407a196104124d5ade2308e204e47d3252bcd2ad20d0f2137843d62",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\basetsd.h": "d35b73f885d7ef7dfd27fce3762c190c1c952a21e10a3945bcb3d1860c673b12",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/runs/234-small-frontier-bodies/lost-receiver-queue.json": "5d8b1542df9e53483ccafc9da5041274eaa152f22cda220905ca0a4a900a99ed",
+    "local/experiments/v2-small-frontier-bodies-234/consumer234.h": "3e2326f282e962d9cdd43f5b44c749c5b5936a0735b0d516a7aab60591ce8447",
+    "local/experiments/v2-small-frontier-bodies-234/0058e2f0.cpp": "1b078bf54aef5dc0f4b40db0d14f5cbb5a851cd5de090ead1d6ad77c989ae478",
+    "local/experiments/v2-small-frontier-bodies-234/0058e300.cpp": "48e17d74efb1d10b833866e662e08b665e6d99e8f9f7a2d864977daeb19ab9a6",
+    "local/experiments/v2-small-frontier-bodies-234/0050cbf0.cpp": "2f3f25a0424a8fb7e684547cbd81871e927628e77883a36b2e4cf3ce9f62b316",
+    "local/experiments/v2-small-frontier-bodies-234/0050d310.cpp": "71ad7829303e1058e0f56dec75437157cb60b650bf29b6a488d8cc8f129cf1c4",
+    "local/experiments/v2-small-frontier-bodies-234/call-boundary-fixture.cpp": "db95be41ddf2c4830d5bfe405d6091b4fc3c1aeef0b6462be6b3bfa10a29a289",
+    "iterations/v2/001-original-recovery/runs/234-small-frontier-bodies/proof-before-compile.json": "99a77718cca020b432c3a7a1e88c6c83eb5570e3d2dd126ec9725364bd461885",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-small-frontier-bodies-234/objects/0058e2f0.obj": "a397f3feab2f8c9424f381d133b2f69e87ec317846c998fe7123f0ec4274685d",
+    "local/experiments/v2-small-frontier-bodies-234/objects/0058e300.obj": "c558edce63b01ba3fadd2dc09b17339cc596cecea2f1c9996837d450f5512474",
+    "local/experiments/v2-small-frontier-bodies-234/objects/0050cbf0.obj": "f344b04d2782d89e728d80a00c7efd6e4af785a52b2c982b4964eb4dace4a577",
+    "local/experiments/v2-small-frontier-bodies-234/objects/0050d310.obj": "f7014ad00966ea6011471bea4c3803bd4270ccaf825d5853b26fdc200d9a671c",
+    "local/experiments/v2-small-frontier-bodies-234/objects/call-boundary-fixture.obj": "12df7c010af08e040601b8eee58e5f3bc0f2a44957380365a7aeb0ff40d2399e",
+    "local/experiments/v2-small-frontier-bodies-234/call-boundary-fixture.exe": "105d322d82b97426fc5e9dfd8f516bee2dbbd8669710af61c005652b387e5e2b",
+    "local/experiments/v2-small-frontier-bodies-234/0050cbf0-disassembly.log": "ad1c65668f0a1b1fd90cd77e4621b20df3d1a7a62928da1e9916bca166360b69",
+    "local/experiments/v2-small-frontier-bodies-234/0050d310-disassembly.log": "3a00befb0cd9502e55b40009254bc1e67723ae5c8718029c4ae6897eb1f9a3cc",
+    "local/experiments/v2-small-frontier-bodies-234/0058e2f0-disassembly.log": "7464979ec591a0d4da0c1e9fed6a19454a8593b26a619691154ece5dea3a86bf",
+    "local/experiments/v2-small-frontier-bodies-234/0058e300-disassembly.log": "d49c43be283a86651dbe5b195a9958e06e4db8ec53c9b2c5d531c5d6aa9305c1",
+    "local/experiments/v2-small-frontier-bodies-234/compile.log": "6db82c26dbeff05a18185b95278547e65109e9f3b89258f2631f24e326b0dff9",
+    "local/experiments/v2-small-frontier-bodies-234/fixture-disassembly.log": "0aea544877249aec14acb5c308149d309c464ab30eb98bdd40bfc89f3e9c24f3",
+    "local/experiments/v2-small-frontier-bodies-234/fixture-link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-small-frontier-bodies-234/fixture-native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-small-frontier-bodies-234/0050cbf0-disassembly.execution.json": "9e2a21ffd4f4f066b4ac4c06a76880a4de3e348e328b692f7278fe6ca84fb7ac",
+    "local/experiments/v2-small-frontier-bodies-234/0050d310-disassembly.execution.json": "5e6200ab7e22eeeadfe46f86d523ef25792c307eb6710d3d30c143d0cf729ac4",
+    "local/experiments/v2-small-frontier-bodies-234/0058e2f0-disassembly.execution.json": "77454ad46741b53296141ea55ec8d8e6b729abce7f0706c82f80890021a4a568",
+    "local/experiments/v2-small-frontier-bodies-234/0058e300-disassembly.execution.json": "02e96271b27193337fe2236a047eb4e9772178e7d40fbb321ef2010a14be4ea4",
+    "local/experiments/v2-small-frontier-bodies-234/compile.execution.json": "f226fdcc205003ce2985a9e96e9f286862d5a6ff980cdae54cdbf8061541eda9",
+    "local/experiments/v2-small-frontier-bodies-234/fixture-disassembly.execution.json": "e116784fedaec37020bf262c3887498334d627055650a3d88ede1dfce9e0b566",
+    "local/experiments/v2-small-frontier-bodies-234/fixture-link.execution.json": "1ffdc46cfbd18c3cf383ba19d75040d55ec124a114a4a916cece37e48348f12d",
+    "local/experiments/v2-small-frontier-bodies-234/fixture-native.execution.json": "a98dae37c6d04d3d272996561fb882ece2835fd0ab72a894d9e6175c03a6bd0e"
+  },
+  "input_guards_before": true,
+  "input_guards_after": true,
+  "ownership_preflight": {
+    "00468100": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "004d8230": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "004d8240": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "0058e2f0": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "0058e300": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "0050cbf0": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "00538d80": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    },
+    "0050d310": {
+      "canonical_exact_or_interior": [],
+      "WIP": [],
+      "already_compiled": false
+    }
+  },
+  "original_instruction_count": 16,
+  "original_bytes": 59,
+  "Ghidra_decompilations": 0,
+  "production_or_union_changes": false,
+  "fixture": {
+    "native_exit_code": 0,
+    "critical_section_original_native_pairs": 2048,
+    "controlled_thiscall_boundary_calls": 2048,
+    "seconds": 0.030602999962866306,
+    "executable": "local/experiments/v2-small-frontier-bodies-234/call-boundary-fixture.exe",
+    "executable_sha256": "105d322d82b97426fc5e9dfd8f516bee2dbbd8669710af61c005652b387e5e2b",
+    "scope": "Actual4bodies: recursion effect deltas match original12B wrappers through native SDK provider; methodseams capture ECX and rawstack0/options,0,1; no gamecallee replacement.",
+    "full_game_fidelity_claimed": false
+  },
+  "new_explicit_thiscall_dependencies": [
+    "?FUN_004d23f0@OriginalECX234@@QAEXI@Z",
+    "?FUN_004d2100@OriginalECX234@@QAEXPAXII@Z"
+  ],
+  "uncompiled_proof_queue": "iterations/v2/001-original-recovery/runs/234-small-frontier-bodies/lost-receiver-queue.json",
+  "limits": [
+    "Four lostreceiver wrappers deferred; their native void(void) frontier contracts are not accepted.",
+    "004d23f0/004d2100 native implementations and their new explicit thiscall symbols remain missing.",
+    "DAT6b1800 raw24B minimum span/65b928 and options canonical owners/initializers remain open; no allocation in game object.",
+    "Fixtures prove SDK call effects and controlled method boundaries only; full callees/providers/concurrency/fault/register/game fidelity deferred."
+  ]
+}

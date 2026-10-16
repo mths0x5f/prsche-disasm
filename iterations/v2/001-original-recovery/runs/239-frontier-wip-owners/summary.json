@@ -1,0 +1,33 @@
+﻿{
+  "schema": 1,
+  "run": 239,
+  "kind": "frontier-wip-owner-inventory",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "scope": {"source_run": "233-initialized-and-nested-union", "missing_frontier_functions": 93, "exact_wip_definition_hits": 6, "reference_or_probe_only_hits": 3, "no_source_owner_hit": 84, "run224_exact_or_interior_intersection": 0},
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+    "iterations/v2/001-original-recovery/runs/224-canonical-owner-bindings/summary.json": "01756a666e87aa6901275938331a1c854e028223bd283b51aca59d02ff0a92c0",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_state.cpp": "a1ad65f8506af7e03fecda2bd24880074ce9c926c8aa657135508b11aaf75f76",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c"
+  },
+  "wip_definition_owners": [
+    {"va":"0053c290","range":"0053c290-0053c2dc","owner":"iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_state.cpp","native_mangle":"?FUN_0053c290@@YAXIII@Z","referring_objects":["0044fea0","00532ff0","00592d00"],"reuse_group":"application_state"},
+    {"va":"005a177b","range":"005a177b-005a17bb","owner":"iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp","native_mangle":"?FUN_005a177b@@YAII@Z","referring_objects":["00586cb0"],"reuse_group":"formatter_stdio"},
+    {"va":"005a36ea","range":"005a36ea-005a3718","owner":"iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp","native_mangle":"?FUN_005a36ea@@YAXI@Z","referring_objects":["005a3531"],"reuse_group":"formatter_stdio"},
+    {"va":"005a3719","range":"005a3719-005a373b","owner":"iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp","native_mangle":"?FUN_005a3719@@YAXHH@Z","referring_objects":["005a7706"],"reuse_group":"formatter_stdio; run240-ready"},
+    {"va":"005a373c","range":"005a373c-005a376a","owner":"iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp","native_mangle":"?FUN_005a373c@@YAXI@Z","referring_objects":["005a3531"],"reuse_group":"formatter_stdio"},
+    {"va":"005a376b","range":"005a376b-005a378d","owner":"iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp","native_mangle":"?FUN_005a376b@@YAXHH@Z","referring_objects":["005a7706"],"reuse_group":"formatter_stdio; run240-ready"}
+  ],
+  "reference_or_probe_only": [
+    {"va":"004deda0","native_mangle":"?FUN_004deda0@@YAIPAEH@Z","evidence":"candidate call/header declaration; no WIP definition"},
+    {"va":"00562680","native_mangle":"?FUN_00562680@@YAXIIGGI@Z","evidence":"Porsche.exe call sites and probe declaration; no WIP definition"},
+    {"va":"00592490","native_mangle":"?FUN_00592490@@YAII@Z","evidence":"Porsche.exe call site and probe declarations; no WIP definition"}
+  ],
+  "reuse_options": [
+    {"group":"formatter_stdio","vas":["005a177b","005a36ea","005a3719","005a373c","005a376b"],"next":"review existing TU and Run240 exact canonical reuse before any new owner work"},
+    {"group":"application_state","vas":["0053c290"],"next":"review existing TU against original body and callers"}
+  ],
+  "remaining_boundary":"84 missing functions have no source owner hit in current WIP tree; exact/interior catalog ranges were used for the six matches. Navigation only; no algorithm/prototype/ownership claim."
+}

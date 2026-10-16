@@ -1,0 +1,116 @@
+[
+  {
+    "va": "00468100",
+    "original_instructions": [
+      {
+        "va": "00468100",
+        "bytes": "8b4974",
+        "instruction": "MOV ECX,dword ptr [ECX + 0x74]"
+      },
+      {
+        "va": "00468103",
+        "bytes": "e948df0c00",
+        "instruction": "JMP 0x00536050"
+      }
+    ],
+    "frozen_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00468100.cpp",
+    "frozen_source_sha256": "9c403624ea65f5200a6e452d5de546d4f8ad487380f0c4e5ab2d5774c26b950c",
+    "actual_contract": "IncomingECX data pointer; original receiver is consumed before any definition.",
+    "mismatched_frontier_symbol": "?FUN_00468100@@YAXXZ",
+    "reason": "Frozen getC void(void) has lost receiver; preserving that name would hide wrongABI.",
+    "next_step": "Recover original caller ECX producer/storage and bound native entry carrier+caller contracts together. Tail wrappers additionally preserve complete target RET chain; no alias supplied."
+  },
+  {
+    "va": "004d8230",
+    "original_instructions": [
+      {
+        "va": "004d8230",
+        "bytes": "8b8964020000",
+        "instruction": "MOV ECX,dword ptr [ECX + 0x264]"
+      },
+      {
+        "va": "004d8236",
+        "bytes": "e9d5fbfeff",
+        "instruction": "JMP 0x004c7e10"
+      }
+    ],
+    "frozen_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004d8230.cpp",
+    "frozen_source_sha256": "25b2bf33dfd563c15c0808c27ae80ab2227a5c8bc0c178cd25fe9c2b4cbda2c6",
+    "actual_contract": "IncomingECX data pointer; original receiver is consumed before any definition.",
+    "mismatched_frontier_symbol": "?FUN_004d8230@@YAXXZ",
+    "reason": "Frozen getC void(void) has lost receiver; preserving that name would hide wrongABI.",
+    "next_step": "Recover original caller ECX producer/storage and bound native entry carrier+caller contracts together. Tail wrappers additionally preserve complete target RET chain; no alias supplied."
+  },
+  {
+    "va": "004d8240",
+    "original_instructions": [
+      {
+        "va": "004d8240",
+        "bytes": "8b8964020000",
+        "instruction": "MOV ECX,dword ptr [ECX + 0x264]"
+      },
+      {
+        "va": "004d8246",
+        "bytes": "e9a5fbfeff",
+        "instruction": "JMP 0x004c7df0"
+      }
+    ],
+    "frozen_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/004d8240.cpp",
+    "frozen_source_sha256": "4610880e1ce7438db0bd31fae8b0fa5382d5702a3eb07149a18ed2bf26d41410",
+    "actual_contract": "IncomingECX data pointer; original receiver is consumed before any definition.",
+    "mismatched_frontier_symbol": "?FUN_004d8240@@YAXXZ",
+    "reason": "Frozen getC void(void) has lost receiver; preserving that name would hide wrongABI.",
+    "next_step": "Recover original caller ECX producer/storage and bound native entry carrier+caller contracts together. Tail wrappers additionally preserve complete target RET chain; no alias supplied."
+  },
+  {
+    "va": "00538d80",
+    "original_instructions": [
+      {
+        "va": "00538d80",
+        "bytes": "56",
+        "instruction": "PUSH ESI"
+      },
+      {
+        "va": "00538d81",
+        "bytes": "8bf1",
+        "instruction": "MOV ESI,ECX"
+      },
+      {
+        "va": "00538d83",
+        "bytes": "8d4e5c",
+        "instruction": "LEA ECX,[ESI + 0x5c]"
+      },
+      {
+        "va": "00538d86",
+        "bytes": "e825110000",
+        "instruction": "CALL 0x00539eb0"
+      },
+      {
+        "va": "00538d8b",
+        "bytes": "8bce",
+        "instruction": "MOV ECX,ESI"
+      },
+      {
+        "va": "00538d8d",
+        "bytes": "e81e110000",
+        "instruction": "CALL 0x00539eb0"
+      },
+      {
+        "va": "00538d92",
+        "bytes": "5e",
+        "instruction": "POP ESI"
+      },
+      {
+        "va": "00538d93",
+        "bytes": "c3",
+        "instruction": "RET"
+      }
+    ],
+    "frozen_source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00538d80.cpp",
+    "frozen_source_sha256": "5ddd6c5ecde3cd30daaabfe9b5b16e02be53089b0e4d9c6ed3b6eee31c3309ba",
+    "actual_contract": "IncomingECX data pointer; original receiver is consumed before any definition.",
+    "mismatched_frontier_symbol": "?FUN_00538d80@@YAXXZ",
+    "reason": "Frozen getC void(void) has lost receiver; preserving that name would hide wrongABI.",
+    "next_step": "Recover original caller ECX producer/storage and bound native entry carrier+caller contracts together. Tail wrappers additionally preserve complete target RET chain; no alias supplied."
+  }
+]

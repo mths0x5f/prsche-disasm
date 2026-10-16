@@ -1,5 +1,20 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint243:1117functionVAs+8support,442linkedunresolvednames; actualgameEXE absent.
+- [x]234:4originalwrappers,2048SDKoriginal/nativepairs+2048thiscallcaptures,445PEinstructions.
+- [ ]234:lostECX/nativevoid(void) contracts00468100/004d8230/004d8240/00538d80 requirecaller
+  receiver propagation; no genericaliases. New4d23f0/4d2100 callee implementations open.
+- [x]240:exactcanonical C++fragments+2cdeclbindings,70originaloraclebytes/8callers,
+  2268cases/targetidentity/ESP/nonvolatile;279pins/28headers independentauditPASS.
+- [ ]240:realCRTlocktable prefix26vsoriginal48 andprovider/globalcomposition;
+  fullfault/concurrency/register/game fidelity. Controlledfixture is not production.
+- [x]241/243:canonical include roots verified against actualsuccessful compilerreceipt;
+  allquotedsourceclosurepinned. Serial240batch reportedaccurately, notclaimedMP6.
+- [x]242/243:exactsame4-byte signed/unsigned storage;125MEM4/HIGHLOWrefs andnative
+  addressidentity/highbitcrosswrites/restorePASS. No genericalias/wholedataownership claim.
+- [ ]Automation:realnativegame miss traces and broad instruction-to-C++ pilot remainopen;
+  see docs/recovery-automation.md. Staticlink queue does not replace nativeexecution.
+
 Checkpoint233 (2026-10-16):1111functionVAs+4supportobjects,442linkedunresolvednames.
 - [x]223/229: exact native/original x86 comparisons229376+368640; direct callee signedBYTE,
   retained stack arguments, index/count/status behavior restored. Independent audits PASS.

@@ -1,20 +1,21 @@
 # План восстановления Porsche Unleashed
 
-Checkpoint2026-10-16 Run233:1111distinct functionVAs +4supportobjects =1115archive
-members/1265970B. Actual link442names/633diagnostics, noEXE/DLL.
-Linkedfrontier93missingFUN/36canonicaloutside/306data/7printedCRT.
-1113symbol snapshots reused,2new objects read,6906pinsPASS,0compilations inunion.
-223/229 restore00565ea0/00590070 and pass598016native/original x86comparisons.
-226/231 provide five exact writable scalar cells (zero/128/1/10), nativebits/permissionsPASS;
-adjacent005e25d0/005e25d4 retain4-byte separation. No whole-data layout claim.
-224 canonicalowner census found instrumented005a2248probeobject: exclude from game.
-232 callback refs are navigation;0058ff50 base006b49c8 is not proven006b49e0 writer.
+Checkpoint2026-10-16 Run243:1117distinct functionVAs +8supportobjects =1125archive
+members/1276042B. Actual link442names/632diagnostics, noEXE/DLL.
+Linkedfrontier89missingFUN/36canonicaloutside/306data/11other contracts
+(7earlier printedCRT+4canonical lock providers). Eight dependencies closed/eight exposed.
+1115symbol snapshots reused,10newobjects read,7230pinsPASS,0collectorcompilations.
+234:4newCOFFs,2048original/nativeSDKpairs+2048controlledthiscallcapturesPASS.
+240:2existingcanonical C++definitions mechanically reused+2exactcdecl bindings;
+2268cases/identity/ESP/nonvolatilePASS. Oneactualserialcompile(/showIncludes disablesMP),
+D9030+2fixtureC4731 retained; fullCRTlocktable26/48 composition remainsopen.
+242:onephysicalDWORD withsigned/unsignedalias,125exactoriginalrefs/nativecrosswritesPASS.
+239found6WIPowners in233missingfrontier; don't reimplement existing code.
 Production173 unchanged476full+6partial; game-link267names/303refs.
-Active:234small missing bodies(abi_analysis_193),235callback initialization refs(float_inventory_205),
-236canonical lowercase/state contract(locale_resume); root233integration/docs/commit.
-Next: accept bounded234, link using cached233 inputs; callback targets/state coalescing
-must be proved before implementation. Deferred checks remain recovery-validation-backlog.md.
-Details and exact command: runs/233-initialized-and-nested-union/README.md.
+Active:245automated build/link feedback queue(locale_resume); rootdocs/commit.
+Next: use245queue to choose boundedrecovery/reusebatch; evaluate isolatedinstruction-to-C++
+pilot per docs/recovery-automation.md. Runtime miss collection awaitsactualgameEXE.
+Details/command: runs/243-canonical-reuse-union/README.md; deferredchecks inbacklog.
 
 Historical checkpoint216:
 

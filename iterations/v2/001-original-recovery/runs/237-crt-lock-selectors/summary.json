@@ -1,0 +1,528 @@
+{
+  "schema": 1,
+  "kind": "canonical-WIP-selector-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "baseline": "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json",
+  "baseline_sha256": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+  "selected_vas": [
+    "005a3719",
+    "005a376b"
+  ],
+  "rows": [
+    {
+      "va": "005a3719",
+      "original_bytes": 35,
+      "original_instructions": [
+        {
+          "va": "005a3719",
+          "bytes": "8b442404",
+          "instruction": "MOV EAX,dword ptr [ESP + 0x4]"
+        },
+        {
+          "va": "005a371d",
+          "bytes": "83f814",
+          "instruction": "CMP EAX,0x14"
+        },
+        {
+          "va": "005a3720",
+          "bytes": "7d0b",
+          "instruction": "JGE 0x005a372d"
+        },
+        {
+          "va": "005a3722",
+          "bytes": "83c01c",
+          "instruction": "ADD EAX,0x1c"
+        },
+        {
+          "va": "005a3725",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "005a3726",
+          "bytes": "e879140000",
+          "instruction": "CALL 0x005a4ba4"
+        },
+        {
+          "va": "005a372b",
+          "bytes": "59",
+          "instruction": "POP ECX"
+        },
+        {
+          "va": "005a372c",
+          "bytes": "c3",
+          "instruction": "RET"
+        },
+        {
+          "va": "005a372d",
+          "bytes": "8b442408",
+          "instruction": "MOV EAX,dword ptr [ESP + 0x8]"
+        },
+        {
+          "va": "005a3731",
+          "bytes": "83c020",
+          "instruction": "ADD EAX,0x20"
+        },
+        {
+          "va": "005a3734",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "005a3735",
+          "bytes": "ff1578205b00",
+          "instruction": "CALL dword ptr [0x005b2078]"
+        },
+        {
+          "va": "005a373b",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ],
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp",
+      "definition_line": 27,
+      "exact_existing_definition": "void __cdecl formatter_stdio_lock_index_005a3719(std::int32_t index,FormatterOriginalDescriptor32* d) {\n    if(index<20)exit_registry_lock_api_005a4ba4(static_cast<U>(index)+28);\n    else formatter_lowio_critical_enter(reinterpret_cast<void*>(static_cast<std::uintptr_t>(address(d)+32)));\n}",
+      "header": "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp",
+      "registry_accepted_owner": false,
+      "WIP_canonical_owner": true,
+      "raw_missing_symbol": "?FUN_005a3719@@YAXHH@Z",
+      "referring_object_vas": [
+        "005a7706"
+      ],
+      "actual_canonical_symbol": "?formatter_stdio_lock_index_005a3719@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "cached_COMDAT": {
+        "section_index": 8,
+        "section": {
+          "name": ".text$mn",
+          "raw": 1528,
+          "size": 39,
+          "reloc_count": 2,
+          "chars": 1615859744
+        },
+        "bytes": "558bec8b450883f8147d0e83c01c50e80000000083c4045dc38b450c83c02050e8000000005dc3",
+        "relocations": [
+          {
+            "offset": 16,
+            "target": "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+            "type": 20
+          },
+          {
+            "offset": 33,
+            "target": "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z",
+            "type": 20
+          }
+        ]
+      },
+      "binding_contract": "Candidate only: both cdecl two DWORD slots/void return; slot1 signed index, slot2 pointer bits; no descriptor dereference in selector. Require240 native original/typed-raw fixture before binding",
+      "original_dispatch": "signed index<20 -> modulo32 index+28 passed to CRT lock; otherwise raw second slot+32 passed to stdcall critical-section API"
+    },
+    {
+      "va": "005a376b",
+      "original_bytes": 35,
+      "original_instructions": [
+        {
+          "va": "005a376b",
+          "bytes": "8b442404",
+          "instruction": "MOV EAX,dword ptr [ESP + 0x4]"
+        },
+        {
+          "va": "005a376f",
+          "bytes": "83f814",
+          "instruction": "CMP EAX,0x14"
+        },
+        {
+          "va": "005a3772",
+          "bytes": "7d0b",
+          "instruction": "JGE 0x005a377f"
+        },
+        {
+          "va": "005a3774",
+          "bytes": "83c01c",
+          "instruction": "ADD EAX,0x1c"
+        },
+        {
+          "va": "005a3777",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "005a3778",
+          "bytes": "e888140000",
+          "instruction": "CALL 0x005a4c05"
+        },
+        {
+          "va": "005a377d",
+          "bytes": "59",
+          "instruction": "POP ECX"
+        },
+        {
+          "va": "005a377e",
+          "bytes": "c3",
+          "instruction": "RET"
+        },
+        {
+          "va": "005a377f",
+          "bytes": "8b442408",
+          "instruction": "MOV EAX,dword ptr [ESP + 0x8]"
+        },
+        {
+          "va": "005a3783",
+          "bytes": "83c020",
+          "instruction": "ADD EAX,0x20"
+        },
+        {
+          "va": "005a3786",
+          "bytes": "50",
+          "instruction": "PUSH EAX"
+        },
+        {
+          "va": "005a3787",
+          "bytes": "ff156c205b00",
+          "instruction": "CALL dword ptr [0x005b206c]"
+        },
+        {
+          "va": "005a378d",
+          "bytes": "c3",
+          "instruction": "RET"
+        }
+      ],
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp",
+      "definition_line": 31,
+      "exact_existing_definition": "void __cdecl formatter_stdio_unlock_index_005a376b(std::int32_t index,FormatterOriginalDescriptor32* d) {\n    if(index<20)exit_registry_unlock_api_005a4c05(static_cast<U>(index)+28);\n    else formatter_lowio_critical_leave(reinterpret_cast<void*>(static_cast<std::uintptr_t>(address(d)+32)));\n}",
+      "header": "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp",
+      "registry_accepted_owner": false,
+      "WIP_canonical_owner": true,
+      "raw_missing_symbol": "?FUN_005a376b@@YAXHH@Z",
+      "referring_object_vas": [
+        "005a7706"
+      ],
+      "actual_canonical_symbol": "?formatter_stdio_unlock_index_005a376b@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "cached_COMDAT": {
+        "section_index": 12,
+        "section": {
+          "name": ".text$mn",
+          "raw": 2777,
+          "size": 39,
+          "reloc_count": 2,
+          "chars": 1615859744
+        },
+        "bytes": "558bec8b450883f8147d0e83c01c50e80000000083c4045dc38b450c83c02050e8000000005dc3",
+        "relocations": [
+          {
+            "offset": 16,
+            "target": "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+            "type": 20
+          },
+          {
+            "offset": 33,
+            "target": "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z",
+            "type": 20
+          }
+        ]
+      },
+      "binding_contract": "Candidate only: both cdecl two DWORD slots/void return; slot1 signed index, slot2 pointer bits; no descriptor dereference in selector. Require240 native original/typed-raw fixture before binding",
+      "original_dispatch": "signed index<20 -> modulo32 index+28 passed to CRT lock; otherwise raw second slot+32 passed to stdcall critical-section API"
+    }
+  ],
+  "source_pins_matching175": {
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_locale.hpp": "01efc1a27c0e03f67a04d822080e4999e2210b65b5bd9e3b52ecc9de30863e4a",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_output.hpp": "68b58fd329f1a1870191052d3bcd027d7d559873dbe3aa652fd1d85ee0e04436",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp": "19ae922b1efccdbfb03632b771784654cf2e4280bce1166ee2fab228073841f7",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_stdio_probe.cpp": "339c799d898171411ec8667585065d6ea7ba4e2f04aea3d7e57d325415504dfa",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_runtime_storage.cpp": "6237662bd9403ee8eb1b582862d3d9c36b4b1cb042862213c47a79931c5d84db",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c"
+  },
+  "source_pins_matched": 18,
+  "cached_owner_object": "local/builds/v2/formatter-stdio-175/formatter_stdio_probe.dir/Release/formatter_stdio.obj",
+  "cached_owner_sha256": "837e17652f2975e3a8ec3c2f2de8348c02dc53a7724140db7f5fd50790cadb07",
+  "actual_cached_owner_symbols": {
+    "defined": [
+      "?formatter_stdio_buffers_006afd60@porsche@@3PAPAXA",
+      "?formatter_stdio_finish_buffer_005a53cb@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_flush_005a76a1@porsche@@YAHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_lock_index_005a3719@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_lock_pointer_005a36ea@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_printf_005a177b@porsche@@YAHPBDZZ",
+      "?formatter_stdio_temporary_buffer_005a533e@porsche@@YAHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_unlock_index_005a376b@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_unlock_pointer_005a373c@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z"
+    ],
+    "undefined": [
+      "?cleanup_is_character_device_005abf35@porsche@@YAII@Z",
+      "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+      "?exit_registry_malloc_005a3be5@porsche@@YAPAXI@Z",
+      "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+      "?formatter_cleanup_file_write_005a9e49@porsche@@YAHIPBXH@Z",
+      "?formatter_core_005a4371@porsche@@YAHPAUFormatterOriginalDescriptor32@1@PBDPBI@Z",
+      "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+      "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z",
+      "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z",
+      "?formatter_output_allocations_006afcf8@porsche@@3IA"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "cached_owner_uninstrumented": true,
+  "whole_TU": {
+    "function_definitions": 8,
+    "data_definitions": [
+      "porsche::formatter_stdio_buffers_006afd60[2]"
+    ],
+    "actual_existing_VA_overlap": {
+      "va": "005a76a1",
+      "object": "local/experiments/v2-build-corpus-181/005a76a1.obj",
+      "symbols": {
+        "defined": [
+          "?FUN_005a76a1@@YAIPAH@Z"
+        ],
+        "undefined": [
+          "?FUN_005a9e49@@YAIIII@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "external_provider_symbols": [
+      "?cleanup_is_character_device_005abf35@porsche@@YAII@Z",
+      "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+      "?exit_registry_malloc_005a3be5@porsche@@YAPAXI@Z",
+      "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+      "?formatter_cleanup_file_write_005a9e49@porsche@@YAHIPBXH@Z",
+      "?formatter_core_005a4371@porsche@@YAHPAUFormatterOriginalDescriptor32@1@PBDPBI@Z",
+      "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+      "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z",
+      "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z",
+      "?formatter_output_allocations_006afcf8@porsche@@3IA"
+    ],
+    "scope": "WholeTU is not selected; no duplicate recovered algorithms or wholeTU native ownership implied"
+  },
+  "real_provider_boundary": {
+    "published_lock_prefix": 26,
+    "required_stdio_prefix": 48,
+    "required_static_ids": [
+      28,
+      47
+    ],
+    "original_prefix_proof": {
+      "va": "005e57a8",
+      "bytes": 192,
+      "sha256": "f329778dd868a73b6b8aa67b3d21d51f765151510b3956242d06d8c1543a83c9",
+      "initial_values": [
+        "00000000",
+        "006afd00",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "006afd30",
+        "00000000",
+        "00000000",
+        "00000000",
+        "006afd48",
+        "00000000",
+        "00000000",
+        "00000000",
+        "006afd18",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000"
+      ],
+      "required_ids": [
+        28,
+        47
+      ],
+      "reason": "20 FILE entries and inclusive pointer bounds, then index+28; prefix only, no total extent claim",
+      "highlow_sites": [
+        "005e57ac",
+        "005e57cc",
+        "005e57dc",
+        "005e57ec"
+      ],
+      "initialization": "005a4b7b initializes17/13/9/1;005a4ba4 lazily allocates selected null cells under17; no selector bound in genericlock",
+      "index_references": [
+        {
+          "from_va": "005a4b82",
+          "to_va": "005e57ec",
+          "from_function": "005a4b7b",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "PTR_DAT_005e57ec"
+        },
+        {
+          "from_va": "005a4b8a",
+          "to_va": "005e57dc",
+          "from_function": "005a4b7b",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "PTR_DAT_005e57dc"
+        },
+        {
+          "from_va": "005a4b92",
+          "to_va": "005e57cc",
+          "from_function": "005a4b7b",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "PTR_DAT_005e57cc"
+        },
+        {
+          "from_va": "005a4b9a",
+          "to_va": "005e57ac",
+          "from_function": "005a4b7b",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "PTR_DAT_005e57ac"
+        },
+        {
+          "from_va": "005a4bab",
+          "to_va": "005e57a8",
+          "from_function": "005a4ba4",
+          "type": "DATA",
+          "source": "ANALYSIS",
+          "target_symbol": "DAT_005e57a8"
+        },
+        {
+          "from_va": "005a4bb3",
+          "to_va": "005e57a8",
+          "from_function": "005a4ba4",
+          "type": "DATA",
+          "source": "ANALYSIS",
+          "target_symbol": "DAT_005e57a8"
+        },
+        {
+          "from_va": "005a4bda",
+          "to_va": "005e57a8",
+          "from_function": "005a4ba4",
+          "type": "DATA",
+          "source": "ANALYSIS",
+          "target_symbol": "DAT_005e57a8"
+        },
+        {
+          "from_va": "005a4be7",
+          "to_va": "005e57a8",
+          "from_function": "005a4ba4",
+          "type": "DATA",
+          "source": "ANALYSIS",
+          "target_symbol": "DAT_005e57a8"
+        },
+        {
+          "from_va": "005a4bfa",
+          "to_va": "005e57a8",
+          "from_function": "005a4ba4",
+          "type": "DATA",
+          "source": "ANALYSIS",
+          "target_symbol": "DAT_005e57a8"
+        },
+        {
+          "from_va": "005a4c0b",
+          "to_va": "005e57a8",
+          "from_function": "005a4c05",
+          "type": "DATA",
+          "source": "ANALYSIS",
+          "target_symbol": "DAT_005e57a8"
+        }
+      ],
+      "canonical_aliases": {
+        "formatter_crt_locks_005e57a8": [
+          "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp"
+        ]
+      },
+      "published_owner_prefix": 26,
+      "production_ready": false
+    },
+    "current_header": "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp",
+    "current_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+    "production_ready": false,
+    "reason": "Selector boundary proof does not expand canonical157 lock owner;48-entry extent is a proven prefix only"
+  },
+  "handoff240": {
+    "owner": "Strong agent240",
+    "approach": "Mechanically extract exact existing canonical selector fragments and proven ABI binding pilot; two ordinary rows plus support; do not link wholeTU",
+    "pending": [
+      "Exact fragment/helper provenance and include closure",
+      "Typed int/pointer vs rawint/int native ABI fixture",
+      "Explicit provider boundaries; no real lock-table composition until prefix owner reviewed"
+    ]
+  },
+  "generated_CXX": 0,
+  "compiler_commands": 0,
+  "linker_commands": 0,
+  "native_execution_commands": 0,
+  "original_relative_layout_claim": false,
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/237-crt-lock-selectors/preflight.py": "06ae69c5ea64430ada5840eb4f18596d528e34af1c91f6fbf13fcacd72f8183c",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/audit.py": "e034688dfb35ccd8b1fe743a2a0bed661180c8dfcf7c9025a3c8f9f2996437bd",
+    "iterations/v2/001-original-recovery/runs/175-formatter-stdio/verification.json": "0e329f007cf06b0efb101d851ddcd9b4c3be578a2e88baf4cac24a8923a01128",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_locale.hpp": "01efc1a27c0e03f67a04d822080e4999e2210b65b5bd9e3b52ecc9de30863e4a",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_output.hpp": "68b58fd329f1a1870191052d3bcd027d7d559873dbe3aa652fd1d85ee0e04436",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp": "19ae922b1efccdbfb03632b771784654cf2e4280bce1166ee2fab228073841f7",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_stdio_probe.cpp": "339c799d898171411ec8667585065d6ea7ba4e2f04aea3d7e57d325415504dfa",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_runtime_storage.cpp": "6237662bd9403ee8eb1b582862d3d9c36b4b1cb042862213c47a79931c5d84db",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c",
+    "local/builds/v2/formatter-stdio-175/formatter_stdio_probe.dir/Release/formatter_stdio.obj": "837e17652f2975e3a8ec3c2f2de8348c02dc53a7724140db7f5fd50790cadb07",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/233-initialized-and-nested-union/summary.json": "4ccdee49b09c90971301fa844f9723df7d17c2ae815cfc22f701ba978ce34572",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "local/experiments/v2-build-corpus-181/005a76a1.obj": "c9bc9f50d27d9b6877eed93486ff8077c0df02f0ea505ee3358d42d26cebb01f"
+  },
+  "limits": [
+    "237 is an abandoned uncompiled algorithm-recovery preflight, replaced by canonical-fragment reuse in240",
+    "No generated source, alias object, allocation, canonical/source/registry edit, union or production change"
+  ]
+}
