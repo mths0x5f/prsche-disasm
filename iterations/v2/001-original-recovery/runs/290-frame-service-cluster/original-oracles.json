@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "cases": [
+    {
+      "name": "empty",
+      "count": 0,
+      "actions": [],
+      "tail": false,
+      "switch": false,
+      "events": [],
+      "esp_delta": 4,
+      "original_entry": "00471b60"
+    },
+    {
+      "name": "empty_tail",
+      "count": 0,
+      "actions": [],
+      "tail": true,
+      "switch": false,
+      "events": [
+        [
+          "tail",
+          0
+        ]
+      ],
+      "esp_delta": 4,
+      "original_entry": "00471b60"
+    },
+    {
+      "name": "single_null_action",
+      "count": 1,
+      "actions": [
+        false
+      ],
+      "tail": false,
+      "switch": false,
+      "events": [
+        [
+          "resolve",
+          0
+        ],
+        [
+          "advance",
+          0
+        ]
+      ],
+      "esp_delta": 4,
+      "original_entry": "00471b60"
+    },
+    {
+      "name": "single_action_tail",
+      "count": 1,
+      "actions": [
+        true
+      ],
+      "tail": true,
+      "switch": false,
+      "events": [
+        [
+          "resolve",
+          0
+        ],
+        [
+          "action",
+          0
+        ],
+        [
+          "advance",
+          0
+        ],
+        [
+          "tail",
+          0
+        ]
+      ],
+      "esp_delta": 4,
+      "original_entry": "00471b60"
+    },
+    {
+      "name": "two_mixed",
+      "count": 2,
+      "actions": [
+        true,
+        false
+      ],
+      "tail": true,
+      "switch": false,
+      "events": [
+        [
+          "resolve",
+          0
+        ],
+        [
+          "action",
+          0
+        ],
+        [
+          "advance",
+          0
+        ],
+        [
+          "resolve",
+          1
+        ],
+        [
+          "advance",
+          1
+        ],
+        [
+          "tail",
+          0
+        ]
+      ],
+      "esp_delta": 4,
+      "original_entry": "00471b60"
+    },
+    {
+      "name": "sentinel_reloaded",
+      "count": 1,
+      "actions": [
+        true
+      ],
+      "tail": false,
+      "switch": true,
+      "events": [
+        [
+          "resolve",
+          0
+        ],
+        [
+          "action",
+          0
+        ],
+        [
+          "advance",
+          0
+        ]
+      ],
+      "esp_delta": 4,
+      "original_entry": "00471b60"
+    }
+  ]
+}

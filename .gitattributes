@@ -41,3 +41,7 @@ iterations/v2/001-original-recovery/runs/248-next-scalar-selection/summary.json 
 iterations/v2/001-original-recovery/runs/251-scalar-selection-corrections/summary.json -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
 # Keep SHA-pinned raw disassembly operand spacing unchanged.
 iterations/v2/001-original-recovery/runs/270-heap-consumer-index/candidate-listing.asm -text whitespace=-blank-at-eol
+# Preserve bytes already pinned by the game-entry proof packets.
+iterations/v2/001-original-recovery/runs/288-game-startup-bindings/preflight.json -text whitespace=cr-at-eol
+iterations/v2/001-original-recovery/runs/288-game-startup-bindings/validation.json -text whitespace=cr-at-eol
+iterations/v2/001-original-recovery/runs/290-frame-service-cluster/original-oracles.json -text whitespace=cr-at-eol

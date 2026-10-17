@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "kind": "game-logging-bridge-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "game_sources": [
+    "iterations/v2/001-original-recovery/runs/287-game-logging-bridge/application-log-bridge.cpp"
+  ],
+  "cached_game_objects": [
+    "local/builds/v2/formatter-stdio-175/formatter_stdio_probe.dir/Release/formatter_stdio.obj"
+  ],
+  "fixture_sources": [
+    "iterations/v2/001-original-recovery/runs/287-game-logging-bridge/fixture.cpp"
+  ],
+  "expected_objects": [
+    "local/experiments/v2-game-logging-287/objects/application-log-bridge.obj",
+    "local/experiments/v2-game-logging-287/objects/fixture.obj"
+  ],
+  "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp",
+  "canonical_coff_symbols": {
+    "defined": [
+      "?formatter_stdio_buffers_006afd60@porsche@@3PAPAXA",
+      "?formatter_stdio_finish_buffer_005a53cb@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_flush_005a76a1@porsche@@YAHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_lock_index_005a3719@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_lock_pointer_005a36ea@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_printf_005a177b@porsche@@YAHPBDZZ",
+      "?formatter_stdio_temporary_buffer_005a533e@porsche@@YAHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_unlock_index_005a376b@porsche@@YAXHPAUFormatterOriginalDescriptor32@1@@Z",
+      "?formatter_stdio_unlock_pointer_005a373c@porsche@@YAXPAUFormatterOriginalDescriptor32@1@@Z"
+    ],
+    "undefined": [
+      "?cleanup_is_character_device_005abf35@porsche@@YAII@Z",
+      "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+      "?exit_registry_malloc_005a3be5@porsche@@YAPAXI@Z",
+      "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+      "?formatter_cleanup_file_write_005a9e49@porsche@@YAHIPBXH@Z",
+      "?formatter_core_005a4371@porsche@@YAHPAUFormatterOriginalDescriptor32@1@PBDPBI@Z",
+      "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A",
+      "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z",
+      "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z",
+      "?formatter_output_allocations_006afcf8@porsche@@3IA"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "library_definition_overlaps": {
+    "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib": [],
+    "local/builds/v2/original-game-link-098/common/recovered-links/Release/porsche_recovered_links.lib": [],
+    "local/builds/v2/original-game-link-098/common/Release/porsche_window_links.lib": [],
+    "local/builds/v2/original-game-link-098/common/native-window-bindings/Release/win32_window_bindings.lib": [],
+    "local/builds/v2/original-game-link-098/common/native-thread/platform/Release/porsche_platform_win32.lib": []
+  },
+  "existing_library_providers": {
+    "?cleanup_is_character_device_005abf35@porsche@@YAII@Z": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?exit_registry_malloc_005a3be5@porsche@@YAPAXI@Z": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?formatter_cleanup_file_write_005a9e49@porsche@@YAHIPBXH@Z": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?formatter_core_005a4371@porsche@@YAHPAUFormatterOriginalDescriptor32@1@PBDPBI@Z": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?formatter_iob_entries_005e54e8@porsche@@3PAUFormatterOriginalDescriptor32@1@A": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ],
+    "?formatter_lowio_critical_enter@porsche@@YGXPAX@Z": [
+      "local/builds/v2/original-game-link-098/common/native-thread/platform/Release/porsche_platform_win32.lib"
+    ],
+    "?formatter_lowio_critical_leave@porsche@@YGXPAX@Z": [
+      "local/builds/v2/original-game-link-098/common/native-thread/platform/Release/porsche_platform_win32.lib"
+    ],
+    "?formatter_output_allocations_006afcf8@porsche@@3IA": [
+      "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib"
+    ]
+  },
+  "source175_pins_matched": 26,
+  "original_body_hex": "5356be08555e0057566a01e88e1f000056e8ad3b00008bf88d44242050ff74242056e8cf2b000056578bd8e8203c0000566a01e8b81f000083c4288bc35f5e5bc3",
+  "original_call_edge_hex": "68846e5d00e863ac0e0083c410",
+  "original_literal_hex": "496e697469616c697a696e672072656e646572696e670a00",
+  "planned_cases": 224,
+  "planned_case_groups": {
+    "direct_printf": 192,
+    "format_only_bridge": 32
+  },
+  "compile_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/O2",
+    "/Oi",
+    "/Gy",
+    "/MD",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/MP6",
+    "/sourceDependencies",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-game-logging-287\\dependencies",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-game-logging-287\\objects\\",
+    "/IF:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+    "/IF:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+    "/IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
+    "/IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared",
+    "/IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\287-game-logging-bridge\\application-log-bridge.cpp",
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\287-game-logging-bridge\\fixture.cpp"
+  ],
+  "link_command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+    "/nologo",
+    "/MACHINE:X86",
+    "/SUBSYSTEM:CONSOLE",
+    "/INCREMENTAL:NO",
+    "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-game-logging-287\\fixture.exe",
+    "/LIBPATH:F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86",
+    "/LIBPATH:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86",
+    "/LIBPATH:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-game-logging-287\\objects\\application-log-bridge.obj",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-game-logging-287\\objects\\fixture.obj",
+    "F:\\claude\\porsche disasm\\local\\builds\\v2\\formatter-stdio-175\\formatter_stdio_probe.dir\\Release\\formatter_stdio.obj",
+    "kernel32.lib"
+  ],
+  "include_directories": [
+    "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um"
+  ],
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/175-formatter-stdio/verification.json": "0e329f007cf06b0efb101d851ddcd9b4c3be578a2e88baf4cac24a8923a01128",
+    "iterations/v2/001-original-recovery/runs/175-formatter-stdio/CMakeLists.txt": "ff986084b1e85129779a3311414ef60d8815f69539a558cbe5b6dcfc810fec01",
+    "iterations/v2/001-original-recovery/runs/175-formatter-stdio/README.md": "5d0a9180eeef01323521390758e3ae351530ce412bb332f8f261224eeee8de79",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_locale.hpp": "01efc1a27c0e03f67a04d822080e4999e2210b65b5bd9e3b52ecc9de30863e4a",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_output.hpp": "68b58fd329f1a1870191052d3bcd027d7d559873dbe3aa652fd1d85ee0e04436",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp": "19ae922b1efccdbfb03632b771784654cf2e4280bce1166ee2fab228073841f7",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_stdio_probe.cpp": "339c799d898171411ec8667585065d6ea7ba4e2f04aea3d7e57d325415504dfa",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_runtime_storage.cpp": "6237662bd9403ee8eb1b582862d3d9c36b4b1cb042862213c47a79931c5d84db",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp": "3b84985919f64b8c105841b599368f3aa6b9914635de729884244fe9ce02320c",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-formatter-stdio.py": "9e28595907dd8603686039d71077d77ca74f0086f4176bcfe1b0351cc13715ab",
+    "local/builds/v2/formatter-stdio-175/formatter_stdio_probe.dir/Release/formatter_stdio.obj": "837e17652f2975e3a8ec3c2f2de8348c02dc53a7724140db7f5fd50790cadb07",
+    "local/experiments/v2-game-entry-frontier-283/entry-link-proposal.json": "d01c2b0e472e3c310c6386d67b297fd0fbf367c941b863faeaed30eb63fe211c",
+    "local/builds/v2/original-game-link-098/common/Release/porsche_original.lib": "384b176d2d47f5932f352bc78a1d201e0ca292a4609589afd262e6fcaa8c90ac",
+    "local/builds/v2/original-game-link-098/common/recovered-links/Release/porsche_recovered_links.lib": "2b91cea4c4cb7f7adac228dcf742c6b2bebb585a5baafe5041bfc51a3f0f92e4",
+    "local/builds/v2/original-game-link-098/common/Release/porsche_window_links.lib": "89bbf32b4ce8657943cc4a902ad2c2a0e88a3096d3861e142925f8a02cfb83f8",
+    "local/builds/v2/original-game-link-098/common/native-window-bindings/Release/win32_window_bindings.lib": "9a7f6ee95e19a7ea19ae88a1194a8f1f74efffdf62d1d22de470f89e3a9ba424",
+    "local/builds/v2/original-game-link-098/common/native-thread/platform/Release/porsche_platform_win32.lib": "9faf623f9d649314bf8b320739532d581cab4ad72a74add385fcdd8e31daab03",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/287-game-logging-bridge/application-log-bridge.cpp": "2d85e87f9b5c6b86e78ac1523a7f4547b9b5a9a020bf7866cdc92119c8004145",
+    "iterations/v2/001-original-recovery/runs/287-game-logging-bridge/fixture.cpp": "a9b4135509047c6d9a93cf07d59c7eebd65cdd203dca5266375236c15a83d9ea",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_main.hpp": "e6d177a4e6a340affc66f4570c8271ce1c3d8069d6dfb5d37fe8f1f40be34c0f",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup.hpp": "9ab14c148623bf71355cce6a782b8e213c4d4e8fffbe7bc7389fee166ec874c9",
+    "scripts/research/experiment-v2-game-logging-287.py": "124ea50346ace341de37c9433ccc3a425f82bb9f51d4fd921ce1402a70c1012f",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/audit-v2-nested-calls-229.py": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+    "scripts/research/audit-v2-x86-call-chain-258.py": "a427d7f0b9478ca59d1ec348de28a1625bc22f02aaceb27a3af1169a0db876a6",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
+  },
+  "limits": [
+    "Real lock table prefix26 vs required48 remains runtime HOLD; controlled lock provider tests only edge29.",
+    "Canonical application_main literal currently lacks the original newline; bridge forwards bytes unchanged.",
+    "No whole output-provider composition, game execution or original CRT initialization acceptance."
+  ]
+}

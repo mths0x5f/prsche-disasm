@@ -1,5 +1,16 @@
 # Отложенные проверки восстановления v2
 
+Новые наблюдения startup287–290 (2026-10-17):
+- [ ] Original005d6e84 содержит "Initializing rendering\n\0", а текущий
+  application_main.cpp передаёт строку без newline. Исправить именно caller
+  по исходному ресурсу и пересобрать его объект; bridge не должен скрывать баг.
+- [ ] Canonical formatter_crt_locks_005e57a8 пока26-entry prefix; stdio требует
+  IDs28..47.175 доказывает192B/48-entry prefix и4HIGHLOWcells. До realstartup
+  расширить единственного canonicalowner и проверить реальную композицию locks.
+- [ ] 290: original00471b60→00487e20/98B,4typedcallee boundaries и00628960;
+  nativepacket отдельно от полного provider/global closure. Не подменять их stub.
+
+
 Checkpoint276–284, приоритет первого игрового EXE:
 - [x] 276: exact canonical00568200/005682a0 + два доказанных raw binding,
   4 original cutpoints/8 native calls PASS; отдельный пакет, не текущая union.
