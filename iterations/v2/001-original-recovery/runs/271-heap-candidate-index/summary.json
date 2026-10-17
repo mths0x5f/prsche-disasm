@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "kind": "navigation-only-heap-candidate-index",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "index": "research/binary-index/supplemental/heap-consumers-271.jsonl",
+  "index_sha256": "1ff0c6cfb1c8766df0bafbc8bb10187c1daf531e14f040448d10b058c969f97f",
+  "supplemental_readme_sha256": "91d8af87897dd857c5a359a2b916b91b5d802b68c7b47dc748bdd83b8515b423",
+  "candidate_spans": 4,
+  "original_bytes": 510,
+  "instructions": 167,
+  "candidate_entry_vas": [
+    "005697d0",
+    "00569a40",
+    "00569b10",
+    "0056a1f0"
+  ],
+  "entry_status": "unproved",
+  "recovery_status": "navigation-only",
+  "authoritative_functions_added": 0,
+  "accepted_functions_added": 0,
+  "heap_storage_approved": false,
+  "run267_hold": true,
+  "old_index_modified": false,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/270-heap-consumer-index/preflight.json": "c53bf19e7713a27a8457b7dc6914e0f49298eaaf23daee0526ff3e3fbf3394f9",
+    "scripts/research/preflight-v2-heap-consumer-index-270.py": "ad80d01d1a1efb5504b00a3770f2a4dd98f40b09fd9fc30e3c29430db065c274",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/binary-index/README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/267-heap-table-evidence/summary.json": "e22a2d09dfecbb639aec8df4e1ca6ecc6edbe946c33c1858043a795c2b331586",
+    "iterations/v2/001-original-recovery/runs/267-heap-table-evidence/gap-windows.json": "be36461e564ecabf6a07fd491d1f96a85f25d46c02ecea59d3f7019ba078bfdf",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "scripts/research/audit-v2-x86-call-chain-258.py": "a427d7f0b9478ca59d1ec348de28a1625bc22f02aaceb27a3af1169a0db876a6",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "scripts/research/index-v2-heap-candidates-271.py": "6791eb6466e2908f10f92a13406c9c6ffc0a100915afd39bb550cc1d8a4b1913",
+    "iterations/v2/001-original-recovery/runs/270-heap-consumer-index/candidate-listing.asm": "2607c6f7b0ccd80dbfc3ab063fe64ab3e583d050cd2377776d77a3ddd3726bae"
+  },
+  "before_after_guards": true,
+  "rejected_tamper_tests": [
+    "body byte tamper",
+    "body hash tamper",
+    "original SHA mismatch",
+    "authoritative entry key",
+    "status promotion",
+    "storage approval promotion",
+    "instruction tamper"
+  ],
+  "next_trace": [
+    "rawincoming0056a1c1",
+    "rawincoming0056a483",
+    "0053c290filldispatchconsumer"
+  ]
+}

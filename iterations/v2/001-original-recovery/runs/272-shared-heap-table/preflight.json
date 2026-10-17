@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "kind": "shared-heap-table-storage-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "storage_va": "006b4f20",
+  "storage_bytes": 64,
+  "one_past_va": "006b4f60",
+  "initial_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "writable_virtual_tail": true,
+  "highlow_sites": 30,
+  "indexed_sites": 26,
+  "supplemental_decoded_sites": 4,
+  "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+  "canonical_source_sha256": "3a84557a6443a13712ea7aef0747a1cdf5da0d55f24b8b166271cb361fe607ca",
+  "canonical_declaration": "OriginalHeap* heaps_006b4f20[16];",
+  "canonical_header": "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp",
+  "canonical_header_sha256": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+  "raw_symbol": "?DAT_006b4f20@@3IA",
+  "canonical_symbol": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+  "raw_consumers": [
+    {
+      "va": "00531c60",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00531c60.obj",
+      "object_sha256": "78ddbe015dfe6d9fe084166b6334c881bfc0cf00c8cafdf35df2b0e0116f1747",
+      "defined": "?FUN_00531c60@@YAHPADI@Z",
+      "views": [
+        {
+          "relocation": {
+            "offset": 28,
+            "symbol": "?DAT_006b4f20@@3IA",
+            "type": 6
+          },
+          "instruction_offset": 25,
+          "hex": "8b0c8500000000",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax*4]",
+          "preceding_mask_hex": "83e00f",
+          "effective_slots": "0..15"
+        },
+        {
+          "relocation": {
+            "offset": 109,
+            "symbol": "?DAT_006b4f20@@3IA",
+            "type": 6
+          },
+          "instruction_offset": 106,
+          "hex": "8b0c8500000000",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax*4]",
+          "preceding_mask_hex": "83e00f",
+          "effective_slots": "0..15"
+        }
+      ]
+    },
+    {
+      "va": "00556620",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00556620.obj",
+      "object_sha256": "fc6c72fcc80fbb5604c618c0d291b462e7ee5c236ca8b656776dff4557869e66",
+      "defined": "?FUN_00556620@@YAII@Z",
+      "views": [
+        {
+          "relocation": {
+            "offset": 12,
+            "symbol": "?DAT_006b4f20@@3IA",
+            "type": 6
+          },
+          "instruction_offset": 9,
+          "hex": "8b0c8500000000",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax*4]",
+          "preceding_mask_hex": "83e00f",
+          "effective_slots": "0..15"
+        }
+      ]
+    }
+  ],
+  "entry_liveness_unproved": [
+    "005697d0",
+    "00569a40",
+    "00569b10",
+    "0056a1f0"
+  ],
+  "storage_independent_of_entry_liveness": true,
+  "storage_approved": true,
+  "alias_approved": true,
+  "limits": [
+    "No candidate function entry promoted",
+    "No neighboring 006b4f60 cell",
+    "No original relative layout or computed alias claim",
+    "No startup initializer call semantics"
+  ]
+}

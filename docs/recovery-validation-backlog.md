@@ -1,5 +1,32 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint269/271/273:
+- [x]266:all10raw00531f90 caller COFFs/fullDWORD cdecl RET0 audited; exactbinding,
+  canonicalidentity/EAX/ESP/512Barena native checks PASS;gameCOFFs reused unchanged.
+- [x]268:2existingWin32stdlibadapters/64real recursive-lock cycles/256calls,
+  204pins/8guards PASS. Newcollector rejects executable data/alias support;
+  exactplatformcode is support, not additional gamefunctions.
+- [x]269:1125candidateVAs+17support/1142members,416linknames/569diags,
+  7594pins/1140cachedsymbols/2newCOFFs;0compiles, noEXE/DLL.
+- [x]267/270/271:full56746HIGHLOWscan/30refs,4omitted candidate spans510B/167ins;
+  separate navigationindex/15pins/7guards, oldindices unchanged.
+- [ ]Fourcandidate entry/liveness/ABI and original53c290fill behavior;
+  supplemental candidate records do not accept these functions.
+- [x]272/274:one64Bphysical owner +rawbasebinding,all16slotzero/identity/crosswrites/
+  bitcopy native checks PASS;all3actualraw DIR32sites boundedAND0f/MEM4.
+  Exactfootprint/currentconsumers are separate from candidatefunction liveness.
+- [ ]272:rawunsignedint/pointerarray is x86COFF viewcontract, not portableC++
+  alias/type guarantee. Realbootstrap/initialization/fault/concurrency remainopen.
+- [ ]006b4f20 is also preceding006b4b20..006b4f1f exclusiveend; fullrelative layout
+  andfutureadjacentconsumer composition remainHOLD. Futureowner migration/coalescing
+  must preserveonephysicaltable, not defineanothercopy. Realbootstrap/init remainsopen.
+- [x]273:actual416names→414tasks/23resolvedrows excluded,159pins/6guards.
+  Unsafe595d0signextension and5a4c05lockprefix holds retained.
+- [x]274/275:1125candidateVAs+19support/1144members,414linknames/566diags,
+  7626pins/1142cachedsymbols/2newCOFFs/0compiles;412currentresearchtasks.
+- [ ]Nextfiles.cpp00568200/005682a0 nativeconsumer ABI +sharedfourcallers' original
+  fullEAX handle_device contract; do not silence595d0hold througha guessedalias.
+
 Run257 (2026-10-17):
 - [x] Static CALL/RET/stack lowering; 4 guard groups, 19 rejection cases PASS.
 - [x] Run258:6originalbodies/104B/34instructions,36864native comparisons and4negative
@@ -31,8 +58,9 @@ Checkpoint261:
 - [x]260:257syntax coverage25/85,60rejected; not native/game acceptance.
 - [x]261:1122candidatefunctionVAs+15support,417linknames/579diags,7461pins PASS;
   1133symbolsnapshots reused/4newCOFFs,0compiles. Actual EXE/DLL absent.
-- [ ]261:newcanonical free_00531f90 dependency; original heap table/lifetime/locks
-  must compose with real consumers. Controlled providers alone do not establish this.
+- [x]261:canonicalfree connected263/264,rawbinding266/269,realWin32lockproviders268/269,
+  boundedsharedtable272/274. Earlier controlledfixtureproviders are not gameproviders.
+- [ ]Fulloriginalheapinit/lifetime/adjacency/concurrency andportabletypedviews remainopen.
 
 Checkpoint249/256:1120candidatefunctionVAs/13support;418linkednames remain. NoEXE.
 - [x]246:static76B/28instruction-to-C++pilot,375808native state comparisons (CF/ZF/SF/OF,
@@ -60,8 +88,9 @@ Checkpoint245:automaticfrontierqueue builtfromvalidated243archive andactualdiagn
   Accepted/partial/WIP/probe/interior/ABI/data/provider states keptdistinct;159pinsPASS.
 - [x]245:6meaningful guards inclduplicateowners, unmappedrefs, sourcecomments/strings,
   runtimeidentity/unknownentries/dedup; runtimeinputparser only, no actualgame miss capture.
-- [ ]Automaticcompilation/recoveryloop and instruction-to-C++pilot remainplanned,
-  not completedbyqueuegeneration. Fullgame launch/fulloriginalfidelity stillopen.
+- [ ]Automaticcompilation/recoveryloop is not completedbyqueuegeneration.
+  Instructionpilot246/257/258 is complete onlywithin its documentedfinite scope;
+  fullCPU/game launch/fulloriginalfidelity remainopen.
 
 Checkpoint243:1117functionVAs+8support,442linkedunresolvednames; actualgameEXE absent.
 - [x]234:4originalwrappers,2048SDKoriginal/nativepairs+2048thiscallcaptures,445PEinstructions.

@@ -1,0 +1,737 @@
+{
+  "schema": 1,
+  "kind": "heap-free-raw-ABI-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "raw_symbol": "?FUN_00531f90@@YAIH@Z",
+  "canonical_symbol": "?free_00531f90@porsche@@YAIPAX@Z",
+  "consumer_count": 10,
+  "consumers": [
+    {
+      "va": "00406af0",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/00406af0.obj",
+      "object_sha256": "c5894e76a3d2b0a5bbe26491e6d0325f12316c4dd6a9183f720c9c439b1e0440",
+      "source": "local/experiments/v2-declaration-compat-184/full/00406af0.cpp",
+      "source_sha256": "f3d482901318662293dd9666f469e0f5bff50530e6b64bc16a9598f460a4291d",
+      "defined": "?FUN_00406af0@@YAXXZ",
+      "raw_relocations": [
+        {
+          "offset": 69,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 68,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0x49"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 59,
+          "hex": "7419",
+          "mnemonic": "je",
+          "operands": "0x56"
+        },
+        {
+          "offset": 61,
+          "hex": "8b0d00000000",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0]"
+        },
+        {
+          "offset": 67,
+          "hex": "51",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "offset": 68,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0x49"
+        },
+        {
+          "offset": 73,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 76,
+          "hex": "c7050000000000000000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0], 0"
+        },
+        {
+          "offset": 86,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 87,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "0040aed0",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/0040aed0.obj",
+      "object_sha256": "ed49fb0fd4fb7cf50b3d55faf5af9c491e486d66cbc1b64dc2ed69484bc5cc10",
+      "source": "local/experiments/v2-declaration-compat-184/full/0040aed0.cpp",
+      "source_sha256": "be80cce2fbcd2d7ba39b00a46c7508676c71328ea6a358c01b407dcfb2a167c0",
+      "defined": "?FUN_0040aed0@@YAXXZ",
+      "raw_relocations": [
+        {
+          "offset": 19,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 18,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0x17"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 10,
+          "hex": "7418",
+          "mnemonic": "je",
+          "operands": "0x24"
+        },
+        {
+          "offset": 12,
+          "hex": "a100000000",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0]"
+        },
+        {
+          "offset": 17,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 18,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0x17"
+        },
+        {
+          "offset": 23,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 26,
+          "hex": "c7050000000000000000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0], 0"
+        },
+        {
+          "offset": 36,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 37,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "00414c20",
+      "object": "local/experiments/v2-build-corpus-181/00414c20.obj",
+      "object_sha256": "b96f10eb7dbe8ae5450878b62d4e7d4548be12d02ba8f81111a36ee2c483cc4e",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00414c20.cpp",
+      "source_sha256": "cdaf8bcf7f73759f3b2394055af32fe8b2429983006bdc00b970c789612724cb",
+      "defined": "?FUN_00414c20@@YAXI@Z",
+      "raw_relocations": [
+        {
+          "offset": 8,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 7,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0xc"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 1,
+          "hex": "8bec",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "hex": "8b4508",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 6,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 7,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0xc"
+        },
+        {
+          "offset": 12,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 15,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 16,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "00460170",
+      "object": "local/experiments/v2-build-corpus-181/00460170.obj",
+      "object_sha256": "7d0580bb99c98d0d16d8cf9b7e4b0d37c3c7eba1812c9d20181e92fab16275dc",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00460170.cpp",
+      "source_sha256": "ecfb1d12bbb6d52ed6c8520252d9245416472a1c8473ed50e7fed66423e4f476",
+      "defined": "?FUN_00460170@@YIXPAH@Z",
+      "raw_relocations": [
+        {
+          "offset": 97,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 96,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0x65"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 89,
+          "hex": "8b55f4",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "offset": 92,
+          "hex": "8b040a",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + ecx]"
+        },
+        {
+          "offset": 95,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 96,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0x65"
+        },
+        {
+          "offset": 101,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 104,
+          "hex": "8be5",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 106,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 107,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "004ab4b0",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004ab4b0.obj",
+      "object_sha256": "f02c73dce6d7d3d301dd2656d2e0ea1b55965d95caa0555736af2fe74f7d013c",
+      "source": "local/experiments/v2-declaration-compat-184/full/004ab4b0.cpp",
+      "source_sha256": "d5775069d726f85b677464ff7407ae25629933f78651da49761a68471e6ca886",
+      "defined": "?FUN_004ab4b0@@YAXXZ",
+      "raw_relocations": [
+        {
+          "offset": 37,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 36,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0x29"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 28,
+          "hex": "7418",
+          "mnemonic": "je",
+          "operands": "0x36"
+        },
+        {
+          "offset": 30,
+          "hex": "a100000000",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0]"
+        },
+        {
+          "offset": 35,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 36,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0x29"
+        },
+        {
+          "offset": 41,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 44,
+          "hex": "c7050000000000000000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0], 0"
+        },
+        {
+          "offset": 54,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 55,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "004af760",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0000-batch/004af760.obj",
+      "object_sha256": "e50b2edbf3137ce3f9f6e1ce7bffc08d1f468efad1580a2e40db4e3a57801d01",
+      "source": "local/experiments/v2-declaration-compat-184/full/004af760.cpp",
+      "source_sha256": "96d25cb5ebebdf65478e8da8971231925bb0c9050e9d3b3ff897ae899f31e4f6",
+      "defined": "?FUN_004af760@@YAXXZ",
+      "raw_relocations": [
+        {
+          "offset": 127,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 126,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0x83"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 120,
+          "hex": "7cb1",
+          "mnemonic": "jl",
+          "operands": "0x2b"
+        },
+        {
+          "offset": 122,
+          "hex": "8b4df4",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "offset": 125,
+          "hex": "51",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "offset": 126,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0x83"
+        },
+        {
+          "offset": 131,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 134,
+          "hex": "c7050000000000000000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0], 0"
+        },
+        {
+          "offset": 144,
+          "hex": "8be5",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 146,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        }
+      ]
+    },
+    {
+      "va": "0053d380",
+      "object": "local/experiments/v2-build-corpus-181/0053d380.obj",
+      "object_sha256": "64cedbf97d4763c5dec9c33b31a6e558da9d7938f260f8c8ddc6edea2e8d4744",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0053d380.cpp",
+      "source_sha256": "97af3ed15d610ef0cb96b69de215c6b631796c4c2ca5c5f9f2a080435f1afaa7",
+      "defined": "?FUN_0053d380@@YAXI@Z",
+      "raw_relocations": [
+        {
+          "offset": 8,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 7,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0xc"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 1,
+          "hex": "8bec",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "hex": "8b4508",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 6,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 7,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0xc"
+        },
+        {
+          "offset": 12,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 15,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 16,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "0056dae0",
+      "object": "local/experiments/v2-build-corpus-181/0056dae0.obj",
+      "object_sha256": "22cca02a78016dc429c74333245f42e071d7221798feed54d433a33f252926bf",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/0056dae0.cpp",
+      "source_sha256": "77fc90fcacef1e9e6e1621e89d0a3f85166950c21ec3c2b03e9f009c3f7b473e",
+      "defined": "?FUN_0056dae0@@YAXI@Z",
+      "raw_relocations": [
+        {
+          "offset": 8,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 7,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0xc"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 1,
+          "hex": "8bec",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "hex": "8b4508",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 6,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 7,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0xc"
+        },
+        {
+          "offset": 12,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 15,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 16,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "00572630",
+      "object": "local/experiments/v2-build-corpus-181/00572630.obj",
+      "object_sha256": "7ba6a8d7998caeab278d611ac74e5e5eee75620ed8ea1c9c221956165832e054",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00572630.cpp",
+      "source_sha256": "cf2f1be6a8b53e695a748e601523e2031bcf9cab71b96adbf93d9ec22e8d621b",
+      "defined": "?FUN_00572630@@YAXI@Z",
+      "raw_relocations": [
+        {
+          "offset": 8,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 7,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0xc"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 1,
+          "hex": "8bec",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "hex": "8b4508",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 6,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 7,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0xc"
+        },
+        {
+          "offset": 12,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 15,
+          "hex": "5d",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 16,
+          "hex": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "va": "00586e40",
+      "object": "local/experiments/v2-build-corpus-181/00586e40.obj",
+      "object_sha256": "218ed8356882b31eef7eccff523eeb074ec91a3866acf67d2f7415473b86dc46",
+      "source": "local/experiments/v2-pcode-compat-180/prototypes-cpp-0000/00586e40.cpp",
+      "source_sha256": "c45e864646f7f8fb6c4d03fd8a4e9268ceba375ce2b525f7a2ad7e2dab544b95",
+      "defined": "?FUN_00586e40@@YAXH@Z",
+      "raw_relocations": [
+        {
+          "offset": 36,
+          "symbol": "?FUN_00531f90@@YAIH@Z",
+          "type": 20
+        }
+      ],
+      "call_instruction": {
+        "offset": 35,
+        "hex": "e800000000",
+        "mnemonic": "call",
+        "operands": "0x28"
+      },
+      "one_dword_push_before": true,
+      "caller_pops_four_bytes": true,
+      "full_EAX_not_narrowed": true,
+      "neighborhood": [
+        {
+          "offset": 28,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 31,
+          "hex": "8b45fc",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "offset": 34,
+          "hex": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 35,
+          "hex": "e800000000",
+          "mnemonic": "call",
+          "operands": "0x28"
+        },
+        {
+          "offset": 40,
+          "hex": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 43,
+          "hex": "8b4d08",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 46,
+          "hex": "c7413400000000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x34], 0"
+        },
+        {
+          "offset": 53,
+          "hex": "8be5",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        }
+      ]
+    }
+  ],
+  "canonical_object": "local/experiments/v2-canonical-heap-release-263/objects/00531f90.obj",
+  "canonical_object_sha256": "f3c7cdf6a1a52753ebc1608c1e7dea0e1a573d9245e071f30f3b537edf1b3a5e",
+  "canonical_header": "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp",
+  "canonical_header_sha256": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+  "original_body_va": "00531f90",
+  "original_body_bytes": 278,
+  "original_RET_pop_bytes": 0,
+  "original_full_EAX_on_return": 1,
+  "canonical_signature": "uint32_t __cdecl (void*)",
+  "raw_signature": "undefined4 __cdecl (int)",
+  "alias_approved": true
+}

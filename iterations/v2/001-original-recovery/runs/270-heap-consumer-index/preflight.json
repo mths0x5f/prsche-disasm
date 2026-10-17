@@ -1,0 +1,298 @@
+{
+  "kind": "heap-consumer-boundary-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "rows": [
+    {
+      "candidate_entry": "005697d0",
+      "candidate_end": "005697e6",
+      "bytes": 23,
+      "body_sha256": "da247d83241ed508b3d16dad0dc62902470f177f08da683dd0c40b56df401665",
+      "source_instruction_sha256": "6385a745f92ae715aba79552ba7af7285a9b11567283e78b8e44ef6f7511c60a",
+      "hex": "6a406a0068204f6b00e8b22afdff83c40cb801000000c3",
+      "instructions": 7,
+      "calls": [
+        {
+          "pc": "005697d9",
+          "target": "0053c290",
+          "indexed_callee_owners": [
+            "0053c290"
+          ]
+        }
+      ],
+      "branches": [],
+      "preceding32_hex": "740950e8088bfcff83c4048b44240c83c408c390909090909090909090909090",
+      "preceding_padding_bytes": 13,
+      "preceding_raw_byte": "c3",
+      "preceding_raw_pc": "005697c2",
+      "following16_hex": "90909090909090909081ec080100008b",
+      "trailing_padding_bytes": 9,
+      "nearest_prior_indexed_range": {
+        "start": "00569640",
+        "end": "005697c2",
+        "entry": "00569640"
+      },
+      "nearest_next_indexed_range": {
+        "start": "005697f0",
+        "end": "005699eb",
+        "entry": "005697f0"
+      },
+      "incoming_indexed_edges": [],
+      "incoming_raw_E8_E9_candidates": [],
+      "incoming_HIGHLOW": [],
+      "closed_internal_instruction_graph": true,
+      "authoritative_external_entry_proof": false,
+      "disposition": "hold_no_authoritative_entry_reference"
+    },
+    {
+      "candidate_entry": "00569a40",
+      "candidate_end": "00569a6a",
+      "bytes": 43,
+      "body_sha256": "715c46c12592f4eb57c04f89175102b5f7a5e180b3f116dcd90faeba401fdc29",
+      "source_instruction_sha256": "d184e68f0be0930fa754263625270d0eba3d09bc33dc4209792d8769e9c9804e",
+      "hex": "8b4424045683e00f8b0c85204f6b008b710885f674138d561052e83185fcff8b760883c40485f675ed5ec3",
+      "instructions": 16,
+      "calls": [
+        {
+          "pc": "00569a5a",
+          "target": "00531f90",
+          "indexed_callee_owners": [
+            "00531f90"
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "pc": "00569a54",
+          "target": "00569a69",
+          "internal_boundary": true
+        },
+        {
+          "pc": "00569a67",
+          "target": "00569a56",
+          "internal_boundary": true
+        }
+      ],
+      "preceding32_hex": "0056e86928fdff83c40cc70700000000b8010000005f5ec39090909090909090",
+      "preceding_padding_bytes": 8,
+      "preceding_raw_byte": "c3",
+      "preceding_raw_pc": "00569a37",
+      "following16_hex": "9090909090b803000000b92c4f6b0083",
+      "trailing_padding_bytes": 5,
+      "nearest_prior_indexed_range": {
+        "start": "005699f0",
+        "end": "00569a37",
+        "entry": "005699f0"
+      },
+      "nearest_next_indexed_range": {
+        "start": "00569a70",
+        "end": "00569a8b",
+        "entry": "00569a70"
+      },
+      "incoming_indexed_edges": [],
+      "incoming_raw_E8_E9_candidates": [],
+      "incoming_HIGHLOW": [],
+      "closed_internal_instruction_graph": true,
+      "authoritative_external_entry_proof": false,
+      "disposition": "hold_no_authoritative_entry_reference"
+    },
+    {
+      "candidate_entry": "00569b10",
+      "candidate_end": "00569b3b",
+      "bytes": 44,
+      "body_sha256": "907b538a5114f4e324d55122302bd5726d0458a514ebaefcc7c810ad9d5fd010",
+      "source_instruction_sha256": "6ffdfff8186167fa95f1eb125d7c0b522d4285083941ae9c2e7451a2b111dfb8",
+      "hex": "8b0d60eb5d0033c083e10f8b148d204f6b008b4a206681395342740f8b51048b491003c2668139534275f1c3",
+      "instructions": 13,
+      "calls": [],
+      "branches": [
+        {
+          "pc": "00569b2a",
+          "target": "00569b3b",
+          "internal_boundary": true
+        },
+        {
+          "pc": "00569b39",
+          "target": "00569b2c",
+          "internal_boundary": true
+        }
+      ],
+      "preceding32_hex": "668138534274068bf08bd1ebe985f674058b46045ec333c05ec3909090909090",
+      "preceding_padding_bytes": 6,
+      "preceding_raw_byte": "c3",
+      "preceding_raw_pc": "00569b09",
+      "following16_hex": "909090908b4c24148b4424100faf4c24",
+      "trailing_padding_bytes": 4,
+      "nearest_prior_indexed_range": {
+        "start": "00569a90",
+        "end": "00569aca",
+        "entry": "00569a90"
+      },
+      "nearest_next_indexed_range": {
+        "start": "0056a490",
+        "end": "0056a4b8",
+        "entry": "0056a490"
+      },
+      "incoming_indexed_edges": [],
+      "incoming_raw_E8_E9_candidates": [],
+      "incoming_HIGHLOW": [],
+      "closed_internal_instruction_graph": true,
+      "authoritative_external_entry_proof": false,
+      "disposition": "hold_no_authoritative_entry_reference"
+    },
+    {
+      "candidate_entry": "0056a1f0",
+      "candidate_end": "0056a37f",
+      "bytes": 400,
+      "body_sha256": "9b126c31177cd9aac1ad493bbe4c78d69e2036bafc62a46fcd6ba3d02a0e9e2d",
+      "source_instruction_sha256": "be7dd0e391c65a22e8cd4205a7ad90b47812b19c1a8cd08361e0c6f263abf63d",
+      "hex": "81ec20030000b8204b6b008d4c2421535556578b3083c0048bd683c103c1ea108851fc8bd6c1ea088851fd8a50fc8851fe3d204f6b007cdb33f68d6c243189742410896c241833c033c98a45ff8a4d00894424248b84243403000033d2894c241c8a550133c989542420894c24148d580333d28a138bfa85ff75078bc6e9c9000000b9ff00000033c08a43ff2bcf8bf18be80faf74242433c033d28a43fd8a53fe89442428b8818080808954242cf7ee03d6c1fa078bc2c1e81f03d08d042abdff0000003dff0000007f028be88bf1b8818080800faf74241cf7ee03d6beff000000c1fa078bc2c1e81f03d08b44242c03d081faff0000007f028bf20faf4c2420b881808080f7e903d18b442428c1fa078bcac1e91f03d103d081faff0000007e05baff000000c1e7080bfdc1e7080bfec1e7080bfa57e8a4dbfcff8b7424148b4c24188b6c241c83c4048bbc24380300008bd1c1e2080bd64183c30483f91088043a894c24140f8c04ffffff4683c50381fe0001000089742410896c24180f8cc1feffff5f5e5d5b81c420030000c3",
+      "instructions": 131,
+      "calls": [
+        {
+          "pc": "0056a327",
+          "target": "00537ed0",
+          "indexed_callee_owners": [
+            "00537ed0"
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "pc": "0056a226",
+          "target": "0056a203",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a269",
+          "target": "0056a272",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a26d",
+          "target": "0056a33b",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a2b9",
+          "target": "0056a2bd",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a2e8",
+          "target": "0056a2ec",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a310",
+          "target": "0056a317",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a357",
+          "target": "0056a261",
+          "internal_boundary": true
+        },
+        {
+          "pc": "0056a36f",
+          "target": "0056a236",
+          "internal_boundary": true
+        }
+      ],
+      "preceding32_hex": "c07416833d9cf06a0004750d8b15b4f06a0052e89801000059c3909090909090",
+      "preceding_padding_bytes": 6,
+      "preceding_raw_byte": "c3",
+      "preceding_raw_pc": "0056a1e9",
+      "following16_hex": "83ec108b4c2414a114f16a0053555657",
+      "trailing_padding_bytes": 0,
+      "nearest_prior_indexed_range": {
+        "start": "00569a90",
+        "end": "00569aca",
+        "entry": "00569a90"
+      },
+      "nearest_next_indexed_range": {
+        "start": "0056a490",
+        "end": "0056a4b8",
+        "entry": "0056a490"
+      },
+      "incoming_indexed_edges": [],
+      "incoming_raw_E8_E9_candidates": [
+        {
+          "pc": "0056a1c1",
+          "bytes": "e82a000000",
+          "mnemonic": "call",
+          "catalog_owners": [],
+          "instruction_boundary_proven": false,
+          "navigation_only": true
+        },
+        {
+          "pc": "0056a483",
+          "bytes": "e868fdffff",
+          "mnemonic": "call",
+          "catalog_owners": [],
+          "instruction_boundary_proven": false,
+          "navigation_only": true
+        }
+      ],
+      "incoming_HIGHLOW": [],
+      "closed_internal_instruction_graph": true,
+      "authoritative_external_entry_proof": false,
+      "disposition": "hold_no_authoritative_entry_reference"
+    }
+  ],
+  "indexed_twins": [
+    {
+      "indexed_entry": "0053cbc0",
+      "bytes": 400,
+      "instructions": 131,
+      "different_instructions": [
+        {
+          "relative_pc": 311,
+          "indexed": "e8d4b1ffff",
+          "candidate": "e8a4dbfcff",
+          "indexed_instruction": "call 0x537ed0",
+          "candidate_instruction": "call 0x537ed0"
+        }
+      ]
+    },
+    {
+      "indexed_entry": "00571f90",
+      "bytes": 400,
+      "instructions": 131,
+      "different_instructions": [
+        {
+          "relative_pc": 311,
+          "indexed": "e8045efcff",
+          "candidate": "e8a4dbfcff",
+          "indexed_instruction": "call 0x537ed0",
+          "candidate_instruction": "call 0x537ed0"
+        }
+      ]
+    }
+  ],
+  "focused_listing_sha256": "2607c6f7b0ccd80dbfc3ab063fe64ab3e583d050cd2377776d77a3ddd3726bae",
+  "input_sha256": {
+    "scripts/research/preflight-v2-heap-consumer-index-270.py": "ad80d01d1a1efb5504b00a3770f2a4dd98f40b09fd9fc30e3c29430db065c274",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "research/binary-index/README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/runs/267-heap-table-evidence/summary.json": "e22a2d09dfecbb639aec8df4e1ca6ecc6edbe946c33c1858043a795c2b331586",
+    "iterations/v2/001-original-recovery/runs/267-heap-table-evidence/gap-windows.json": "be36461e564ecabf6a07fd491d1f96a85f25d46c02ecea59d3f7019ba078bfdf",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "scripts/research/audit-v2-x86-call-chain-258.py": "a427d7f0b9478ca59d1ec348de28a1625bc22f02aaceb27a3af1169a0db876a6",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
+  },
+  "before_after_guards": true,
+  "old_index_modified": false,
+  "supplemental_index_created": false,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "disposition": "coordinator_review_required_no_index_edit",
+  "limits": [
+    "Contiguous decode,RET,padding and closed CFG are structural evidence, not alone an authoritative external functionentry.",
+    "RawE8/E9 matches outsideindexedboundaries are navigation candidates only.",
+    "No storage/implementation/ABI/functionacceptance is added."
+  ]
+}

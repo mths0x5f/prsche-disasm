@@ -1,30 +1,33 @@
 # Состояние проекта
 
-Checkpoint 2026-10-17, Run264: **1125 candidate function VAs + 15 support objects**,
-1140 archive members /1 295 200bytes. Actual link: **419 names /581diagnostics**,
-EXE/DLL нет. Canonical free закрыт; открыты реальные heap table и2Win32providers
-(+2names vs261:1closed/3added). Raw00531f90 ABI-name ещё нужен10consumers.
-1137symbolsnapshots reused/3newCOFFs,7493pins PASS,0compiles/onearchive-link9.579s.
-Verified production Run173:476full+6partial, без изменений.
+Checkpoint 2026-10-17, Run274: **1125 candidate function VAs +19supportobjects**,
+1144archive members/1 299 024bytes. Actual link **414names/566diagnostics**, EXE/DLL нет.
+Связаны canonicalheapfree+rawbinding+realWin32locks+одинshared64Btable owner.
+1125gamecandidateVAs не включают2modernplatformadapters (support). Verified production
+Run173:476full+6partial без изменений.7626pins PASS/1142cachedsymbols/2newCOFFs,
+0compiles/onearchive-link8.827s. Source/archive/actualdiagnostics —runs/274.
 
-257/258:static x86→C++ CALL/RET/stack —3originalцепочки/6тел/104байта/34инструкции,
-36 864native comparisons и4negative checks PASS;59pins independentlychecked.
-262:15 744synthetic CPU comparisons PASS (byte/word/32 arithmetic, subregisters,
-PUSH/POP ESP,POP[ESP],indirectCALL/JMP);19COFForacles/70B/28pins,1batch/0warnings.
-260:25/85тел прежней очереди синтаксически переводятся; не semantic acceptance.
-263:3existingcanonical heap/free/lock тела/302PEbytes,4original-Unicorn free cutpoints,
-2048arena bytes +null/lock order/COFF/sourceDependencies independentlyPASS; вошли в264.
-265:419actual linknames→417research tasks,22resolvedrows excluded,159pins/6guards PASS.
-259:005925d0 deferred из-за actual MOVSX AL;265README сохраняет этот hold.
+266:10actualrawfreeCOFF callers/fullDWORD cdecl RET0,EAX1/nativeidentity PASS.
+268:2existingWin32adapters,64real recursive-lock cycles/256calls,204pins/8guards PASS.
+267/270/271:56746HIGHLOW/30refs +4candidate spans510B/167instructions recovered;
+newnavigationindex15pins/7guards PASS,entry/liveness unproved, oldindices untouched.
+272:STORAGE-only64B/exactcanonicaldeclaration +rawindexed16slotview shareonebase;
+3actualrawDIR32sites boundedAND0f/MEM4,zero/crosswrites/bitcopy/nativeaudit PASS.
+Datafootprint proof independent ofunprovedcandidatefunctionliveness; those functions
+не реализованы/приняты. Preceding006b4b20..006b4f1f endpointer/relativelayout remainsHOLD.
+275:414actualnames→412research tasks,24resolvedrows excluded;159pins/6guards PASS.
+258 originalCALLchains36864native cases;262syntheticCPU15744cases PASS;
+260syntax25/85,notsemanticacceptance.595d0MOVSX/5a4c05layout holds сохраняются.
 
-Пакеты257–265 завершены, активных назначений нет. Следующий connected packet:
-1) prove raw00531f90 uint32(int)↔canonical uint32(void*) ABI for10actualconsumers;
-2) подключить существующие Win32critical-section providers из win32_core.cpp;
-3) trace006b4f20 heap table layout/aliases/initialization до storage implementation.
-Backend дальше расширять по260: MOVSX/OR/условия, затем shifts/x87 с native proof.
-Полные CPU/loader/imports/faults/concurrency/game launch и validation backlog открыты.
-Проверки: audit-v2-x86-call-chain-258.py, audit-v2-x86-cpu-primitives-262.py,
-audit-v2-heap-release-263.py; actualunion command — runs/264/command.json.
+Пакеты257–275 завершены, активных назначений нет. Следующий bounded connectedpacket:
+accepted files.cpp operation_queue00568200 +operation_allocate005682a0 (275ranks2/3),
+originalconsumer ABI preflight beforeexactfragmentreuse. Four sharedcallers568ae0/b10/b50/b90
+также используют unsafechar handle_device595d0; recoverfullEAXconsumer contract ratherthan
+aliasbyguess. Batchnativefixtures/providers onecompile/link, keepFILE/device/queue state explicit.
+Parallel backendnext: MOVSX/OR/conditions по260; толькоnativeproved instruction semantics.
+FullCPU/loader/imports/bootstrap/faults/concurrency/game launch иbacklog открыты.
+Commands: audit-v2-native-platform-268.py,index-v2-heap-candidates-271.py --validate,
+audit-v2-shared-heap-table-272.py; actualunion —runs/274/command.json (collector268).
 
 Предыдущий checkpoint:
 

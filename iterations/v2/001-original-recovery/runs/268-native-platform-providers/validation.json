@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "summary_sha256": "3fe524bc88e5ceb0a4b94e8fc17c86511fb87de7656aa1bdd7dcd710c1fd6057",
+  "audit_source_sha256": "ee31cd05e762cce7a239b4b1337f9da23cc9d00d3a8034d2050ea2465e84c912",
+  "passed": true,
+  "input_pins": 204,
+  "provider_bodies": [
+    {
+      "symbol": "?platform_enter_critical_section@porsche@@YGXPAX@Z",
+      "code_bytes": 18,
+      "ret_pop": 4,
+      "relocations": [
+        {
+          "offset": 9,
+          "symbol": "__imp__EnterCriticalSection@4",
+          "type": 6
+        }
+      ]
+    },
+    {
+      "symbol": "?platform_leave_critical_section@porsche@@YGXPAX@Z",
+      "code_bytes": 18,
+      "ret_pop": 4,
+      "relocations": [
+        {
+          "offset": 9,
+          "symbol": "__imp__LeaveCriticalSection@4",
+          "type": 6
+        }
+      ]
+    }
+  ],
+  "exact_canonical_fragments": true,
+  "observed_include_order": true,
+  "native_exit": 0,
+  "recursive_cycles": 64,
+  "provider_calls": 256,
+  "negative_guards": [
+    "code in writable-data",
+    "code in proven-binding",
+    "recovered function disguised as platform",
+    "game DLL disguised as platform",
+    "invented source literal",
+    "canonical fragment drift",
+    "undeclared definition",
+    "undeclared dependency"
+  ],
+  "new_game_functions": 0,
+  "limits": "Valid Win32 recursive lock operations only; not contention/fault/game behavior."
+}

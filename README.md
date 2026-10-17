@@ -16,9 +16,9 @@
 
 На 2026-10-17:
 
-- [Compile candidates, Run264](iterations/v2/001-original-recovery/runs/264-heap-release-union/README.md):
+- [Compile candidates, Run274](iterations/v2/001-original-recovery/runs/274-shared-heap-union/README.md):
   1125 разных адресов функций скомпилированы в x86 COFF и объединены в библиотеку.
-  Диагностическая линковка оставляет 419 неразрешённых имён; EXE/DLL не получен.
+  Диагностическая линковка оставляет 414 неразрешённых имён; EXE/DLL не получен.
   Успешная компиляция этих кандидатов ещё не подтверждает точность поведения.
 - [Проверенная интеграция, Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md):
   476 полностью восстановленных функций и 6 частичных consumers;
@@ -50,7 +50,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-v2.ps1
 Результаты: `local/builds/v2/001-original-recovery/`.
 Это сборка восстановленных модулей и проверочных программ; она пока не создаёт
 полностью рабочую игру. Экспериментальный корпус кандидатов собирается отдельно;
-команда последнего объединения приведена в [Run264](iterations/v2/001-original-recovery/runs/264-heap-release-union/README.md).
+команда последнего объединения приведена в [Run274](iterations/v2/001-original-recovery/runs/274-shared-heap-union/README.md).
 
 Оригинальные бинарники и ресурсы располагаются в `local/game/` и используются
 только для чтения. Локальные эксперименты и сборки хранятся вне Git.
@@ -59,6 +59,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-v2.ps1
 
 - [План проекта](PLAN.md) и [план активной итерации](iterations/v2/001-original-recovery/PLAN.md).
 - [Индекс бинарников](research/binary-index/README.md) — первая точка поиска оригинального кода.
+- [Дополнительные диапазоны](research/binary-index/supplemental/README.md) — навигация по пропускам, с явным статусом доказательств.
 - [Отложенные проверки](docs/recovery-validation-backlog.md) — обязательная очередь до итоговой приёмки.
 - [Автоматизация восстановления](docs/recovery-automation.md) — сборка, обратная связь и очередь зависимостей.
 - [Сохранённая незавершённая работа](docs/recovery-wip.md).

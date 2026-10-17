@@ -1,0 +1,2721 @@
+{
+  "schema": 1,
+  "kind": "read-only-canonical-heap-table-evidence",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "target_va": "006b4f20",
+  "one_past": "006b4f60",
+  "claimed_storage_bytes": 64,
+  "initial_bits": {
+    "va": "006b4f20",
+    "bytes": 64,
+    "hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "source": "PE loader zero-filled virtual tail, not file bytes",
+    "section": {
+      "name": ".data",
+      "va": 6074368,
+      "size": 1008952,
+      "rawsize": 114688,
+      "raw": 1880064,
+      "flags": 3221225536
+    }
+  },
+  "full_PE_HIGHLOW_count": 56746,
+  "table_or_endpoint_HIGHLOW": [
+    {
+      "site": "00531c71",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00531cbb",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00531faa",
+      "target": "006b4f20"
+    },
+    {
+      "site": "0053cbf2",
+      "target": "006b4f20"
+    },
+    {
+      "site": "0055662a",
+      "target": "006b4f20"
+    },
+    {
+      "site": "0056965c",
+      "target": "006b4f20"
+    },
+    {
+      "site": "005697d5",
+      "target": "006b4f20"
+    },
+    {
+      "site": "005698fc",
+      "target": "006b4f20"
+    },
+    {
+      "site": "005699fe",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00569a05",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00569a4b",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00569a76",
+      "target": "006b4f2c"
+    },
+    {
+      "site": "00569a85",
+      "target": "006b4f60"
+    },
+    {
+      "site": "00569a9e",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00569add",
+      "target": "006b4f20"
+    },
+    {
+      "site": "00569b1e",
+      "target": "006b4f20"
+    },
+    {
+      "site": "0056a222",
+      "target": "006b4f20"
+    },
+    {
+      "site": "0056ca7a",
+      "target": "006b4f60"
+    },
+    {
+      "site": "0056ccfe",
+      "target": "006b4f60"
+    },
+    {
+      "site": "0056d04c",
+      "target": "006b4f60"
+    },
+    {
+      "site": "0056d05e",
+      "target": "006b4f60"
+    },
+    {
+      "site": "0056d07d",
+      "target": "006b4f60"
+    },
+    {
+      "site": "0056d08d",
+      "target": "006b4f60"
+    },
+    {
+      "site": "0056d0a1",
+      "target": "006b4f60"
+    },
+    {
+      "site": "00571fc2",
+      "target": "006b4f20"
+    },
+    {
+      "site": "0059326c",
+      "target": "006b4f60"
+    },
+    {
+      "site": "005933f8",
+      "target": "006b4f60"
+    },
+    {
+      "site": "005aef30",
+      "target": "006b4f20"
+    },
+    {
+      "site": "005aefac",
+      "target": "006b4f20"
+    },
+    {
+      "site": "005aefb5",
+      "target": "006b4f24"
+    }
+  ],
+  "in_cell_HIGHLOW": [],
+  "indexed_operand_references": [
+    {
+      "pc": "00531c6e",
+      "bytes": "8b1485204f6b00",
+      "instruction": "MOV EDX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 386025,
+      "catalog_owners": [
+        "00531c60"
+      ],
+      "accepted_owners": [
+        "00531c60"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00531c71",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00531cb8",
+      "bytes": "8b2c85204f6b00",
+      "instruction": "MOV EBP,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 386050,
+      "catalog_owners": [
+        "00531ca0"
+      ],
+      "accepted_owners": [
+        "00531ca0"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00531cbb",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00531fa7",
+      "bytes": "8b1c85204f6b00",
+      "instruction": "MOV EBX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 386325,
+      "catalog_owners": [
+        "00531f90"
+      ],
+      "accepted_owners": [
+        "00531f90"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00531faa",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "0053cbf1",
+      "bytes": "3d204f6b00",
+      "instruction": "CMP EAX,0x6b4f20",
+      "line": 399820,
+      "catalog_owners": [
+        "0053cbc0"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "immediate",
+          "width": 4,
+          "value": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0053cbf2",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00556627",
+      "bytes": "8b0c85204f6b00",
+      "instruction": "MOV ECX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 431288,
+      "catalog_owners": [
+        "00556620"
+      ],
+      "accepted_owners": [
+        "00556620"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0055662a",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00569659",
+      "bytes": "8b048d204f6b00",
+      "instruction": "MOV EAX,dword ptr [ECX*0x4 + 0x6b4f20]",
+      "line": 450577,
+      "catalog_owners": [
+        "00569640"
+      ],
+      "accepted_owners": [
+        "00569640"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "ecx",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056965c",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "005698f9",
+      "bytes": "891c85204f6b00",
+      "instruction": "MOV dword ptr [EAX*0x4 + 0x6b4f20],EBX",
+      "line": 450795,
+      "catalog_owners": [
+        "005697f0"
+      ],
+      "accepted_owners": [
+        "005697f0"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 2,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "005698fc",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "005699fb",
+      "bytes": "8b348d204f6b00",
+      "instruction": "MOV ESI,dword ptr [ECX*0x4 + 0x6b4f20]",
+      "line": 450878,
+      "catalog_owners": [
+        "005699f0"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "ecx",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "005699fe",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00569a02",
+      "bytes": "8d3c8d204f6b00",
+      "instruction": "LEA EDI,[ECX*0x4 + 0x6b4f20]",
+      "line": 450879,
+      "catalog_owners": [
+        "005699f0"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "ecx",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00569a05",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00569a75",
+      "bytes": "b92c4f6b00",
+      "instruction": "MOV ECX,0x6b4f2c",
+      "line": 450901,
+      "catalog_owners": [
+        "00569a70"
+      ],
+      "accepted_owners": [
+        "00569a70"
+      ],
+      "operands": [
+        {
+          "kind": "immediate",
+          "width": 4,
+          "value": "006b4f2c"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00569a76",
+          "target": "006b4f2c"
+        }
+      ]
+    },
+    {
+      "pc": "00569a83",
+      "bytes": "81f9604f6b00",
+      "instruction": "CMP ECX,0x6b4f60",
+      "line": 450906,
+      "catalog_owners": [
+        "00569a70"
+      ],
+      "accepted_owners": [
+        "00569a70"
+      ],
+      "operands": [
+        {
+          "kind": "immediate",
+          "width": 4,
+          "value": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00569a85",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "00569a9b",
+      "bytes": "8b0485204f6b00",
+      "instruction": "MOV EAX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 450915,
+      "catalog_owners": [
+        "00569a90"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00569a9e",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "00569ada",
+      "bytes": "8b0485204f6b00",
+      "instruction": "MOV EAX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 450939,
+      "catalog_owners": [],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00569add",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "0056ca78",
+      "bytes": "890d604f6b00",
+      "instruction": "MOV dword ptr [0x006b4f60],ECX",
+      "line": 454149,
+      "catalog_owners": [
+        "0056ca50"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 2,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056ca7a",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "0056ccfd",
+      "bytes": "a1604f6b00",
+      "instruction": "MOV EAX,[0x006b4f60]",
+      "line": 454344,
+      "catalog_owners": [
+        "0056cce0"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056ccfe",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "0056d04a",
+      "bytes": "8b35604f6b00",
+      "instruction": "MOV ESI,dword ptr [0x006b4f60]",
+      "line": 454606,
+      "catalog_owners": [
+        "0056d040"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056d04c",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "0056d05c",
+      "bytes": "8935604f6b00",
+      "instruction": "MOV dword ptr [0x006b4f60],ESI",
+      "line": 454611,
+      "catalog_owners": [
+        "0056d040"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 2,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056d05e",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "0056d07b",
+      "bytes": "8b0d604f6b00",
+      "instruction": "MOV ECX,dword ptr [0x006b4f60]",
+      "line": 454620,
+      "catalog_owners": [
+        "0056d040"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056d07d",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "0056d08b",
+      "bytes": "890d604f6b00",
+      "instruction": "MOV dword ptr [0x006b4f60],ECX",
+      "line": 454624,
+      "catalog_owners": [
+        "0056d040"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 2,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056d08d",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "0056d0a0",
+      "bytes": "a1604f6b00",
+      "instruction": "MOV EAX,[0x006b4f60]",
+      "line": 454630,
+      "catalog_owners": [
+        "0056d0a0"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0056d0a1",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "00571fc1",
+      "bytes": "3d204f6b00",
+      "instruction": "CMP EAX,0x6b4f20",
+      "line": 458600,
+      "catalog_owners": [
+        "00571f90"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "immediate",
+          "width": 4,
+          "value": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "00571fc2",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "0059326a",
+      "bytes": "8b3d604f6b00",
+      "instruction": "MOV EDI,dword ptr [0x006b4f60]",
+      "line": 494861,
+      "catalog_owners": [
+        "00593260"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "0059326c",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "005933f6",
+      "bytes": "893d604f6b00",
+      "instruction": "MOV dword ptr [0x006b4f60],EDI",
+      "line": 494990,
+      "catalog_owners": [
+        "00593260"
+      ],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 2,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f60"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "005933f8",
+          "target": "006b4f60"
+        }
+      ]
+    },
+    {
+      "pc": "005aef2d",
+      "bytes": "8b0485204f6b00",
+      "instruction": "MOV EAX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "line": 533705,
+      "catalog_owners": [],
+      "accepted_owners": [],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": "eax",
+          "scale": 4,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "005aef30",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "005aefaa",
+      "bytes": "8b0d204f6b00",
+      "instruction": "MOV ECX,dword ptr [0x006b4f20]",
+      "line": 533754,
+      "catalog_owners": [
+        "005aef80"
+      ],
+      "accepted_owners": [
+        "005aef80"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 1,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f20"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "005aefac",
+          "target": "006b4f20"
+        }
+      ]
+    },
+    {
+      "pc": "005aefb3",
+      "bytes": "890d244f6b00",
+      "instruction": "MOV dword ptr [0x006b4f24],ECX",
+      "line": 533756,
+      "catalog_owners": [
+        "005aef80"
+      ],
+      "accepted_owners": [
+        "005aef80"
+      ],
+      "operands": [
+        {
+          "kind": "memory",
+          "width": 4,
+          "access": 2,
+          "base": null,
+          "index": null,
+          "scale": 1,
+          "displacement": "006b4f24"
+        }
+      ],
+      "HIGHLOW": [
+        {
+          "site": "005aefb5",
+          "target": "006b4f24"
+        }
+      ]
+    }
+  ],
+  "unindexed_operand_gaps": [
+    {
+      "site": "005697d5",
+      "target": "006b4f20",
+      "overlapping_decode_candidates": [
+        {
+          "pc": "005697d4",
+          "bytes": "68204f6b00",
+          "instruction": "push 0x6b4f20",
+          "catalog_owners": [],
+          "navigation_only": true
+        }
+      ]
+    },
+    {
+      "site": "00569a4b",
+      "target": "006b4f20",
+      "overlapping_decode_candidates": [
+        {
+          "pc": "00569a48",
+          "bytes": "8b0c85204f6b00",
+          "instruction": "mov ecx, dword ptr [eax*4 + 0x6b4f20]",
+          "catalog_owners": [],
+          "navigation_only": true
+        }
+      ]
+    },
+    {
+      "site": "00569b1e",
+      "target": "006b4f20",
+      "overlapping_decode_candidates": [
+        {
+          "pc": "00569b1b",
+          "bytes": "8b148d204f6b00",
+          "instruction": "mov edx, dword ptr [ecx*4 + 0x6b4f20]",
+          "catalog_owners": [],
+          "navigation_only": true
+        }
+      ]
+    },
+    {
+      "site": "0056a222",
+      "target": "006b4f20",
+      "overlapping_decode_candidates": [
+        {
+          "pc": "0056a221",
+          "bytes": "3d204f6b00",
+          "instruction": "cmp eax, 0x6b4f20",
+          "catalog_owners": [],
+          "navigation_only": true
+        }
+      ]
+    }
+  ],
+  "instruction_listing_coverage_complete": false,
+  "function_catalog_coverage_gaps": [
+    "00569ada",
+    "005aef2d"
+  ],
+  "windows": [
+    {
+      "name": "slot_scan_00569a70",
+      "start": "00569a70",
+      "bytes": 28,
+      "hex": "b803000000b92c4f6b00833900740c83c1044081f9604f6b007cefc3",
+      "instructions": [
+        {
+          "pc": "00569a70",
+          "bytes": "b803000000",
+          "instruction": "mov eax, 3"
+        },
+        {
+          "pc": "00569a75",
+          "bytes": "b92c4f6b00",
+          "instruction": "mov ecx, 0x6b4f2c"
+        },
+        {
+          "pc": "00569a7a",
+          "bytes": "833900",
+          "instruction": "cmp dword ptr [ecx], 0"
+        },
+        {
+          "pc": "00569a7d",
+          "bytes": "740c",
+          "instruction": "je 0x569a8b"
+        },
+        {
+          "pc": "00569a7f",
+          "bytes": "83c104",
+          "instruction": "add ecx, 4"
+        },
+        {
+          "pc": "00569a82",
+          "bytes": "40",
+          "instruction": "inc eax"
+        },
+        {
+          "pc": "00569a83",
+          "bytes": "81f9604f6b00",
+          "instruction": "cmp ecx, 0x6b4f60"
+        },
+        {
+          "pc": "00569a89",
+          "bytes": "7cef",
+          "instruction": "jl 0x569a7a"
+        },
+        {
+          "pc": "00569a8b",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ]
+    },
+    {
+      "name": "heap_init_store_005698ea",
+      "start": "005698ea",
+      "bytes": 27,
+      "hex": "8b8424440100006a4083e00f6a0053891c85204f6b00e88b29fdff",
+      "instructions": [
+        {
+          "pc": "005698ea",
+          "bytes": "8b842444010000",
+          "instruction": "mov eax, dword ptr [esp + 0x144]"
+        },
+        {
+          "pc": "005698f1",
+          "bytes": "6a40",
+          "instruction": "push 0x40"
+        },
+        {
+          "pc": "005698f3",
+          "bytes": "83e00f",
+          "instruction": "and eax, 0xf"
+        },
+        {
+          "pc": "005698f6",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005698f8",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "pc": "005698f9",
+          "bytes": "891c85204f6b00",
+          "instruction": "mov dword ptr [eax*4 + 0x6b4f20], ebx"
+        },
+        {
+          "pc": "00569900",
+          "bytes": "e88b29fdff",
+          "instruction": "call 0x53c290"
+        }
+      ]
+    },
+    {
+      "name": "heap_init_arena_pointer_00569842",
+      "start": "00569842",
+      "bytes": 29,
+      "hex": "8bd68d0c0648f7d08d6c397f2bd723e88b84242801000083ed108d5e10",
+      "instructions": [
+        {
+          "pc": "00569842",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "00569844",
+          "bytes": "8d0c06",
+          "instruction": "lea ecx, [esi + eax]"
+        },
+        {
+          "pc": "00569847",
+          "bytes": "48",
+          "instruction": "dec eax"
+        },
+        {
+          "pc": "00569848",
+          "bytes": "f7d0",
+          "instruction": "not eax"
+        },
+        {
+          "pc": "0056984a",
+          "bytes": "8d6c397f",
+          "instruction": "lea ebp, [ecx + edi + 0x7f]"
+        },
+        {
+          "pc": "0056984e",
+          "bytes": "2bd7",
+          "instruction": "sub edx, edi"
+        },
+        {
+          "pc": "00569850",
+          "bytes": "23e8",
+          "instruction": "and ebp, eax"
+        },
+        {
+          "pc": "00569852",
+          "bytes": "8b842428010000",
+          "instruction": "mov eax, dword ptr [esp + 0x128]"
+        },
+        {
+          "pc": "00569859",
+          "bytes": "83ed10",
+          "instruction": "sub ebp, 0x10"
+        },
+        {
+          "pc": "0056985c",
+          "bytes": "8d5e10",
+          "instruction": "lea ebx, [esi + 0x10]"
+        }
+      ]
+    },
+    {
+      "name": "slot_clear_005699f0",
+      "start": "005699f0",
+      "bytes": 72,
+      "hex": "8b4c24045683e10f5733c08b348d204f6b008d3c8d204f6b0085f674288b463885c0740950e8b688fcff83c4046a406a0056e86928fdff83c40cc70700000000b8010000005f5ec3",
+      "instructions": [
+        {
+          "pc": "005699f0",
+          "bytes": "8b4c2404",
+          "instruction": "mov ecx, dword ptr [esp + 4]"
+        },
+        {
+          "pc": "005699f4",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "005699f5",
+          "bytes": "83e10f",
+          "instruction": "and ecx, 0xf"
+        },
+        {
+          "pc": "005699f8",
+          "bytes": "57",
+          "instruction": "push edi"
+        },
+        {
+          "pc": "005699f9",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax"
+        },
+        {
+          "pc": "005699fb",
+          "bytes": "8b348d204f6b00",
+          "instruction": "mov esi, dword ptr [ecx*4 + 0x6b4f20]"
+        },
+        {
+          "pc": "00569a02",
+          "bytes": "8d3c8d204f6b00",
+          "instruction": "lea edi, [ecx*4 + 0x6b4f20]"
+        },
+        {
+          "pc": "00569a09",
+          "bytes": "85f6",
+          "instruction": "test esi, esi"
+        },
+        {
+          "pc": "00569a0b",
+          "bytes": "7428",
+          "instruction": "je 0x569a35"
+        },
+        {
+          "pc": "00569a0d",
+          "bytes": "8b4638",
+          "instruction": "mov eax, dword ptr [esi + 0x38]"
+        },
+        {
+          "pc": "00569a10",
+          "bytes": "85c0",
+          "instruction": "test eax, eax"
+        },
+        {
+          "pc": "00569a12",
+          "bytes": "7409",
+          "instruction": "je 0x569a1d"
+        },
+        {
+          "pc": "00569a14",
+          "bytes": "50",
+          "instruction": "push eax"
+        },
+        {
+          "pc": "00569a15",
+          "bytes": "e8b688fcff",
+          "instruction": "call 0x5322d0"
+        },
+        {
+          "pc": "00569a1a",
+          "bytes": "83c404",
+          "instruction": "add esp, 4"
+        },
+        {
+          "pc": "00569a1d",
+          "bytes": "6a40",
+          "instruction": "push 0x40"
+        },
+        {
+          "pc": "00569a1f",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "00569a21",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "00569a22",
+          "bytes": "e86928fdff",
+          "instruction": "call 0x53c290"
+        },
+        {
+          "pc": "00569a27",
+          "bytes": "83c40c",
+          "instruction": "add esp, 0xc"
+        },
+        {
+          "pc": "00569a2a",
+          "bytes": "c70700000000",
+          "instruction": "mov dword ptr [edi], 0"
+        },
+        {
+          "pc": "00569a30",
+          "bytes": "b801000000",
+          "instruction": "mov eax, 1"
+        },
+        {
+          "pc": "00569a35",
+          "bytes": "5f",
+          "instruction": "pop edi"
+        },
+        {
+          "pc": "00569a36",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "pc": "00569a37",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ]
+    },
+    {
+      "name": "primary_heap_alias_005aef80",
+      "start": "005aef80",
+      "bytes": 75,
+      "hex": "8b442408568b7424086870ef5a006a016a006a006a006a006a406a085056680c255c006a00e846a8fbff8b0d204f6b0083c430890d244f6b008b0d98eb5d0085c97506893598eb5d005ec3",
+      "instructions": [
+        {
+          "pc": "005aef80",
+          "bytes": "8b442408",
+          "instruction": "mov eax, dword ptr [esp + 8]"
+        },
+        {
+          "pc": "005aef84",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "005aef85",
+          "bytes": "8b742408",
+          "instruction": "mov esi, dword ptr [esp + 8]"
+        },
+        {
+          "pc": "005aef89",
+          "bytes": "6870ef5a00",
+          "instruction": "push 0x5aef70"
+        },
+        {
+          "pc": "005aef8e",
+          "bytes": "6a01",
+          "instruction": "push 1"
+        },
+        {
+          "pc": "005aef90",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005aef92",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005aef94",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005aef96",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005aef98",
+          "bytes": "6a40",
+          "instruction": "push 0x40"
+        },
+        {
+          "pc": "005aef9a",
+          "bytes": "6a08",
+          "instruction": "push 8"
+        },
+        {
+          "pc": "005aef9c",
+          "bytes": "50",
+          "instruction": "push eax"
+        },
+        {
+          "pc": "005aef9d",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "005aef9e",
+          "bytes": "680c255c00",
+          "instruction": "push 0x5c250c"
+        },
+        {
+          "pc": "005aefa3",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005aefa5",
+          "bytes": "e846a8fbff",
+          "instruction": "call 0x5697f0"
+        },
+        {
+          "pc": "005aefaa",
+          "bytes": "8b0d204f6b00",
+          "instruction": "mov ecx, dword ptr [0x6b4f20]"
+        },
+        {
+          "pc": "005aefb0",
+          "bytes": "83c430",
+          "instruction": "add esp, 0x30"
+        },
+        {
+          "pc": "005aefb3",
+          "bytes": "890d244f6b00",
+          "instruction": "mov dword ptr [0x6b4f24], ecx"
+        },
+        {
+          "pc": "005aefb9",
+          "bytes": "8b0d98eb5d00",
+          "instruction": "mov ecx, dword ptr [0x5deb98]"
+        },
+        {
+          "pc": "005aefbf",
+          "bytes": "85c9",
+          "instruction": "test ecx, ecx"
+        },
+        {
+          "pc": "005aefc1",
+          "bytes": "7506",
+          "instruction": "jne 0x5aefc9"
+        },
+        {
+          "pc": "005aefc3",
+          "bytes": "893598eb5d00",
+          "instruction": "mov dword ptr [0x5deb98], esi"
+        },
+        {
+          "pc": "005aefc9",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "pc": "005aefca",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ]
+    },
+    {
+      "name": "preceding_object_end_0053cbc0",
+      "start": "0053cbc0",
+      "bytes": 56,
+      "hex": "81ec20030000b8204b6b008d4c2421535556578b3083c0048bd683c103c1ea108851fc8bd6c1ea088851fd8a50fc8851fe3d204f6b007cdb",
+      "instructions": [
+        {
+          "pc": "0053cbc0",
+          "bytes": "81ec20030000",
+          "instruction": "sub esp, 0x320"
+        },
+        {
+          "pc": "0053cbc6",
+          "bytes": "b8204b6b00",
+          "instruction": "mov eax, 0x6b4b20"
+        },
+        {
+          "pc": "0053cbcb",
+          "bytes": "8d4c2421",
+          "instruction": "lea ecx, [esp + 0x21]"
+        },
+        {
+          "pc": "0053cbcf",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "pc": "0053cbd0",
+          "bytes": "55",
+          "instruction": "push ebp"
+        },
+        {
+          "pc": "0053cbd1",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "0053cbd2",
+          "bytes": "57",
+          "instruction": "push edi"
+        },
+        {
+          "pc": "0053cbd3",
+          "bytes": "8b30",
+          "instruction": "mov esi, dword ptr [eax]"
+        },
+        {
+          "pc": "0053cbd5",
+          "bytes": "83c004",
+          "instruction": "add eax, 4"
+        },
+        {
+          "pc": "0053cbd8",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "0053cbda",
+          "bytes": "83c103",
+          "instruction": "add ecx, 3"
+        },
+        {
+          "pc": "0053cbdd",
+          "bytes": "c1ea10",
+          "instruction": "shr edx, 0x10"
+        },
+        {
+          "pc": "0053cbe0",
+          "bytes": "8851fc",
+          "instruction": "mov byte ptr [ecx - 4], dl"
+        },
+        {
+          "pc": "0053cbe3",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "0053cbe5",
+          "bytes": "c1ea08",
+          "instruction": "shr edx, 8"
+        },
+        {
+          "pc": "0053cbe8",
+          "bytes": "8851fd",
+          "instruction": "mov byte ptr [ecx - 3], dl"
+        },
+        {
+          "pc": "0053cbeb",
+          "bytes": "8a50fc",
+          "instruction": "mov dl, byte ptr [eax - 4]"
+        },
+        {
+          "pc": "0053cbee",
+          "bytes": "8851fe",
+          "instruction": "mov byte ptr [ecx - 2], dl"
+        },
+        {
+          "pc": "0053cbf1",
+          "bytes": "3d204f6b00",
+          "instruction": "cmp eax, 0x6b4f20"
+        },
+        {
+          "pc": "0053cbf6",
+          "bytes": "7cdb",
+          "instruction": "jl 0x53cbd3"
+        }
+      ]
+    },
+    {
+      "name": "preceding_object_end_00571f90",
+      "start": "00571f90",
+      "bytes": 56,
+      "hex": "81ec20030000b8204b6b008d4c2421535556578b3083c0048bd683c103c1ea108851fc8bd6c1ea088851fd8a50fc8851fe3d204f6b007cdb",
+      "instructions": [
+        {
+          "pc": "00571f90",
+          "bytes": "81ec20030000",
+          "instruction": "sub esp, 0x320"
+        },
+        {
+          "pc": "00571f96",
+          "bytes": "b8204b6b00",
+          "instruction": "mov eax, 0x6b4b20"
+        },
+        {
+          "pc": "00571f9b",
+          "bytes": "8d4c2421",
+          "instruction": "lea ecx, [esp + 0x21]"
+        },
+        {
+          "pc": "00571f9f",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "pc": "00571fa0",
+          "bytes": "55",
+          "instruction": "push ebp"
+        },
+        {
+          "pc": "00571fa1",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "00571fa2",
+          "bytes": "57",
+          "instruction": "push edi"
+        },
+        {
+          "pc": "00571fa3",
+          "bytes": "8b30",
+          "instruction": "mov esi, dword ptr [eax]"
+        },
+        {
+          "pc": "00571fa5",
+          "bytes": "83c004",
+          "instruction": "add eax, 4"
+        },
+        {
+          "pc": "00571fa8",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "00571faa",
+          "bytes": "83c103",
+          "instruction": "add ecx, 3"
+        },
+        {
+          "pc": "00571fad",
+          "bytes": "c1ea10",
+          "instruction": "shr edx, 0x10"
+        },
+        {
+          "pc": "00571fb0",
+          "bytes": "8851fc",
+          "instruction": "mov byte ptr [ecx - 4], dl"
+        },
+        {
+          "pc": "00571fb3",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "00571fb5",
+          "bytes": "c1ea08",
+          "instruction": "shr edx, 8"
+        },
+        {
+          "pc": "00571fb8",
+          "bytes": "8851fd",
+          "instruction": "mov byte ptr [ecx - 3], dl"
+        },
+        {
+          "pc": "00571fbb",
+          "bytes": "8a50fc",
+          "instruction": "mov dl, byte ptr [eax - 4]"
+        },
+        {
+          "pc": "00571fbe",
+          "bytes": "8851fe",
+          "instruction": "mov byte ptr [ecx - 2], dl"
+        },
+        {
+          "pc": "00571fc1",
+          "bytes": "3d204f6b00",
+          "instruction": "cmp eax, 0x6b4f20"
+        },
+        {
+          "pc": "00571fc6",
+          "bytes": "7cdb",
+          "instruction": "jl 0x571fa3"
+        }
+      ]
+    }
+  ],
+  "canonical_source_definitions": [
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/application_heap_init_probe.cpp",
+      "line": 23,
+      "private_fixture": true
+    },
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "line": 7,
+      "private_fixture": false
+    }
+  ],
+  "source_references": [
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/application_bootstrap_probe.cpp",
+      "hits": [
+        {
+          "line": 33,
+          "line_text": "std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));"
+        },
+        {
+          "line": 113,
+          "line_text": "for(unsigned i=0;i<16;++i){if(i)std::cout<<',';std::cout<<ptr(porsche::heaps_006b4f20[i]);}"
+        }
+      ]
+    },
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/application_heap_init_probe.cpp",
+      "hits": [
+        {
+          "line": 23,
+          "line_text": "OriginalHeap* heaps_006b4f20[16]{};"
+        },
+        {
+          "line": 35,
+          "line_text": "if(index<16)heaps_006b4f20[index]=reinterpret_cast<OriginalHeap*>(0x03600400+index*0x40);"
+        },
+        {
+          "line": 55,
+          "line_text": "std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));"
+        },
+        {
+          "line": 61,
+          "line_text": "porsche::heaps_006b4f20[3+i]=reinterpret_cast<porsche::OriginalHeap*>(0x03600400+(3+i)*0x40);"
+        },
+        {
+          "line": 70,
+          "line_text": "<<\",\\\"heap0\\\":\"<<ptr(porsche::heaps_006b4f20[0])"
+        },
+        {
+          "line": 71,
+          "line_text": "<<\",\\\"heap1\\\":\"<<ptr(porsche::heaps_006b4f20[1])"
+        },
+        {
+          "line": 72,
+          "line_text": "<<\",\\\"heap_at\\\":\"<<ptr(porsche::heaps_006b4f20[index])"
+        }
+      ]
+    },
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/heap_probe.cpp",
+      "hits": [
+        {
+          "line": 65,
+          "line_text": "std::fill(std::begin(heaps_006b4f20),std::end(heaps_006b4f20),nullptr); allocation_failure_0069cb00=nullptr;"
+        }
+      ]
+    },
+    {
+      "source": "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp",
+      "hits": [
+        {
+          "line": 22,
+          "line_text": "extern OriginalHeap* heaps_006b4f20[16];"
+        }
+      ]
+    },
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp",
+      "hits": [
+        {
+          "line": 19,
+          "line_text": "heaps_006b4f20[1]=heaps_006b4f20[0];"
+        },
+        {
+          "line": 26,
+          "line_text": "while(index<16 && heaps_006b4f20[index])++index;"
+        }
+      ]
+    },
+    {
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "hits": [
+        {
+          "line": 7,
+          "line_text": "OriginalHeap* heaps_006b4f20[16];"
+        },
+        {
+          "line": 43,
+          "line_text": "const auto* heap=heaps_006b4f20[flags&15];"
+        },
+        {
+          "line": 72,
+          "line_text": "auto* heap=heaps_006b4f20[flags&15];"
+        },
+        {
+          "line": 131,
+          "line_text": "auto* heap=heaps_006b4f20[b->flags&15]; auto* lock=heap->lock;"
+        },
+        {
+          "line": 149,
+          "line_text": "return static_cast<std::int32_t>(heaps_006b4f20[flags&15]->suffix);"
+        },
+        {
+          "line": 181,
+          "line_text": "auto* heap=heaps_006b4f20[b->flags&15]; auto* lock=heap->lock;"
+        },
+        {
+          "line": 217,
+          "line_text": "auto* heap=at<OriginalHeap>(address(memory)+16); heaps_006b4f20[index&15]=heap;"
+        }
+      ]
+    }
+  ],
+  "cached_native_owners": [
+    {
+      "object": "local/builds/v2/001-original-recovery/porsche_original.dir/Release/heap.obj",
+      "sha256": "ebeba962dcfe53edd81ce86cf84f0cf0f6a40e2adb917fac09fccd6220e0ba7a",
+      "symbols": {
+        "defined": [
+          "??_C@_06OMJPIADK@?$CFs?5LOW@",
+          "??_C@_07DCINNJFD@?$CFs?5HIGH@",
+          "?allocate_00531ca0@porsche@@YAPAXPBDHI@Z",
+          "?allocation_failure_0069cb00@porsche@@3P6AHPBDHI@ZA",
+          "?copy_flag_005deb10@porsche@@3IA",
+          "?copy_flag_005deb18@porsche@@3IA",
+          "?copy_flag_005deb30@porsche@@3IA",
+          "?free_00531f90@porsche@@YAIPAX@Z",
+          "?heap_block_005320b0@porsche@@YAHPAUHeapBlock@1@PBDHHG00@Z",
+          "?heap_copy_005b0000@porsche@@YA_KPAXPBXI@Z",
+          "?heap_copy_dispatch_005323e0@porsche@@YAXPAXPBXI@Z",
+          "?heap_extra_00531c60@porsche@@YAHPBDI@Z",
+          "?heap_init_005697f0@porsche@@YAHIPBDPAXHIIHHIHH1@Z",
+          "?heap_name_00556650@porsche@@YAPBDPAX@Z",
+          "?heap_suffix_00556620@porsche@@YAHI@Z",
+          "?heap_word_0056e2c0@porsche@@YAPAXPAXIH@Z",
+          "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+          "?resize_00569640@porsche@@YAPAXPAXH@Z",
+          "___isa_available_default",
+          "__xmm@000000000c080400000000000c080400",
+          "__xmm@00000001000000010000000100000001",
+          "__xmm@00000003000000020000000100000000"
+        ],
+        "undefined": [
+          "?copy_flag_005deb1c@porsche@@3AAIA",
+          "?heap_copy_005b0100@porsche@@YAXPAXPBXI@Z",
+          "?heap_copy_005b02c0@porsche@@YAXPAXPBXI@Z",
+          "?heap_copy_005b0480@porsche@@YAXPAXPBXI@Z",
+          "?heap_enter_005322b0@porsche@@YAXPAX@Z",
+          "?heap_fill_0053c290@porsche@@YAXPAXII@Z",
+          "?heap_format_005a0fbf@porsche@@YAXPADPBD1@Z",
+          "?heap_leave_005322c0@porsche@@YAXPAX@Z",
+          "?heap_lock_create_005321f0@porsche@@YAPAXXZ",
+          "@__security_check_cookie@4",
+          "___isa_available",
+          "___security_cookie",
+          "_memcpy"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "table_storage": {
+        "defined": true,
+        "symbol": {
+          "name": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+          "value": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2,
+          "aux": 0
+        },
+        "section": {
+          "name": ".bss",
+          "bytes": 76,
+          "raw_offset": 0,
+          "relocations": 0,
+          "flags": "c0400080",
+          "writable": true,
+          "executable": false
+        },
+        "extent_to_next_external": 64,
+        "same_section_external_symbols": [
+          {
+            "name": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+            "value": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          },
+          {
+            "name": "?allocation_failure_0069cb00@porsche@@3P6AHPBDHI@ZA",
+            "value": 64,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          },
+          {
+            "name": "?copy_flag_005deb18@porsche@@3IA",
+            "value": 68,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          },
+          {
+            "name": "?copy_flag_005deb30@porsche@@3IA",
+            "value": 72,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          }
+        ],
+        "first64": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "object": "local/builds/v2/001-original-recovery/porsche_original.dir/Release/application_heap_init.obj",
+      "sha256": "250e9dc6c24902f499cf81e3d1d14d7b077ccfc235730b526857928db8f9ac7c",
+      "symbols": {
+        "defined": [
+          "??_C@_03ILDADBHF@RAM@",
+          "?application_default_arena_005deb98@porsche@@3PAXA",
+          "?application_heap_callback_005aef70@porsche@@YAHXZ",
+          "?application_heap_commit@porsche@@YAXPAXI@Z",
+          "?application_object_heap_name_005e8e50@porsche@@3PADA",
+          "?application_object_start@porsche@@YAHIPBDIII@Z",
+          "?application_other_arenas_006af3b8@porsche@@3PAPAXA"
+        ],
+        "undefined": [
+          "?application_page_alloc_0059ed40@porsche@@YAPAXPAI@Z",
+          "?application_queue_indices@porsche@@3PAPAXA",
+          "?heap_init_005697f0@porsche@@YAHIPBDPAXHIIHHIHH1@Z",
+          "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A"
+        ],
+        "common": [],
+        "weak": []
+      },
+      "table_storage": {
+        "defined": false
+      }
+    },
+    {
+      "object": "local/builds/v2/001-original-recovery/application_heap_init_probe.dir/Release/application_heap_init_probe.obj",
+      "sha256": "6960228847a85546c8cc66edf2123c99775971397d82ba21f6ac7ae3bf8b18ab",
+      "private_fixture": true,
+      "symbols": {
+        "defined": [
+          "??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z",
+          "??$?0AAV?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@AAV?$allocator@D@1@@Z",
+          "??$?0ABV?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@D@1@@Z",
+          "??$?0PAD$0A@@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PAD0ABV?$allocator@D@1@@Z",
+          "??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@D@1@@Z",
+          "??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z",
+          "??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z",
+          "??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@$$QAV10@0@Z",
+          "??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@$$QAV10@ABV10@@Z",
+          "??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@$$QAV10@QBD@Z",
+          "??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QBDABV10@@Z",
+          "??$_Adl_verify_range@PADPAD@std@@YAXABQAD0@Z",
+          "??$_Allocate@$07U_Default_allocate_traits@std@@@std@@YAPAXI@Z",
+          "??$_Allocate_at_least_helper@V?$allocator@D@std@@@std@@YAPADAAV?$allocator@D@0@AAI@Z",
+          "??$_Allocate_for_capacity@$0A@@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAPADAAV?$allocator@D@1@AAI@Z",
+          "??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z",
+          "??$_Allocators_equal@V?$allocator@D@std@@@std@@YA_NABV?$allocator@D@0@0@Z",
+          "??$_Construct@$00PAD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXQADI@Z",
+          "??$_Construct@$00PBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXQBDI@Z",
+          "??$_Construct_in_place@PADAAPAD@std@@YAXAAPAD0@Z",
+          "??$_Construct_in_place@PADABQAD@std@@YAXAAPADABQAD@Z",
+          "??$_Convert_size@II@std@@YAII@Z",
+          "??$_Deallocate@$07@std@@YAXPAXI@Z",
+          "??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z",
+          "??$_Get_size_of_n@$00@std@@YAII@Z",
+          "??$_Get_unwrapped@AAPAD@std@@YA?A_TAAPAD@Z",
+          "??$_Insert_string@DU?$char_traits@D@std@@I@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@QBDI@Z",
+          "??$_Integral_to_string@DI@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@I@Z",
+          "??$_Max_limit@H@std@@YAHXZ",
+          "??$_Reallocate_grow_by@V<lambda_1>@?1??append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV34@QBDI@Z@PBDI@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAV01@IV<lambda_1>@?1??append@01@QAEAAV01@QBDI@Z@PBDI@Z",
+          "??$_Reallocate_grow_by@V<lambda_1>@?1??push_back@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXD@Z@D@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAV01@IV<lambda_1>@?1??push_back@01@QAEXD@Z@D@Z",
+          "??$_UIntegral_to_buff@DI@std@@YAPADPADI@Z",
+          "??$_Unfancy@D@std@@YAPADPAD@Z",
+          "??$addressof@PAD@std@@YAPAPADAAPAD@Z",
+          "??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPAV?$_String_val@U?$_Simple_types@D@std@@@0@AAV10@@Z",
+          "??$addressof@V?$basic_ostream@DU?$char_traits@D@std@@@std@@@std@@YAPAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z",
+          "??$end@D$0BF@@std@@YAPADAAY0BF@D@Z",
+          "??$forward@AAPAD@std@@YAAAPADAAPAD@Z",
+          "??$forward@AAV?$allocator@D@std@@@std@@YAAAV?$allocator@D@0@AAV10@@Z",
+          "??$forward@ABQAD@std@@YAABQADABQAD@Z",
+          "??$forward@ABV?$allocator@D@std@@@std@@YAABV?$allocator@D@0@ABV10@@Z",
+          "??$forward@V?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z",
+          "??$max@I@std@@YAABIABI0@Z",
+          "??$min@I@std@@YAABIABI0@Z",
+          "??$move@AAV?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z",
+          "??$move@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YA$$QAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AAV10@@Z",
+          "??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ",
+          "??0?$allocator@D@std@@QAE@XZ",
+          "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@$$QAV01@@Z",
+          "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z",
+          "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@U_String_constructor_concat_tag@1@AAV01@1@Z",
+          "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@U_String_constructor_concat_tag@1@ABV01@QBDI2I@Z",
+          "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
+          "??0_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ",
+          "??0_Fake_proxy_ptr_impl@std@@QAE@ABU_Fake_allocator@1@ABU_Container_base0@1@@Z",
+          "??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z",
+          "??0bad_alloc@std@@AAE@QBD@Z",
+          "??0bad_alloc@std@@QAE@ABV01@@Z",
+          "??0bad_array_new_length@std@@QAE@ABV01@@Z",
+          "??0bad_array_new_length@std@@QAE@XZ",
+          "??0exception@std@@QAE@ABV01@@Z",
+          "??0exception@std@@QAE@QBDH@Z",
+          "??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z",
+          "??1?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@XZ",
+          "??1?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ",
+          "??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
+          "??1_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ",
+          "??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ",
+          "??1bad_alloc@std@@UAE@XZ",
+          "??1bad_array_new_length@std@@UAE@XZ",
+          "??1exception@std@@UAE@XZ",
+          "??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ",
+          "??2@YAPAXIPAX@Z",
+          "??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ",
+          "??R<lambda_1>@?1??append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV23@QBDI@Z@QBE@QAD0I0I@Z",
+          "??R<lambda_1>@?1??push_back@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXD@Z@QBE@QADQBDID@Z",
+          "??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z",
+          "??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z",
+          "??_7bad_alloc@std@@6B@",
+          "??_7bad_array_new_length@std@@6B@",
+          "??_7exception@std@@6B@",
+          "??_C@_01IHBHIGKO@?0@",
+          "??_C@_01LBDDMOBJ@?$FN@",
+          "??_C@_02CEGNPMN@?$CC?0@",
+          "??_C@_03EBBKOEBF@?$FN?$HN?6@",
+          "??_C@_03ECGFLOPC@?$CC?0?$CC@",
+          "??_C@_05KNPMOECN@alloc@",
+          "??_C@_08NACKBDIC@?0?$CCpage?$CC?3@",
+          "??_C@_09FDBOOJLN@?0?$CCheap1?$CC?3@",
+          "??_C@_09IGMOAEJL@heap_init@",
+          "??_C@_09OLKCIONI@?0?$CCheap0?$CC?3@",
+          "??_C@_0BA@JFNIOLAK@string?5too?5long@",
+          "??_C@_0BC@EOODALEL@Unknown?5exception@",
+          "??_C@_0BF@KINCDENJ@bad?5array?5new?5length@",
+          "??_C@_0L@EBMOBKOH@?$HL?$CCreturn?$CC?3@",
+          "??_C@_0L@NNCDGNGJ@?0?$CCcalls?$CC?3?$FL@",
+          "??_C@_0L@PLLMIILC@objectHeap@",
+          "??_C@_0M@EPEMGKHB@?0?$CCdefault?$CC?3@",
+          "??_C@_0M@MALLPGHN@?0?$CCheap_at?$CC?3@",
+          "??_C@_0N@BDEALMJJ@?0?$CCarena_at?$CC?3@",
+          "??_C@_0P@PKGFELOC@?0?$CCqueue_slot?$CC?3@",
+          "??_Gbad_alloc@std@@UAEPAXI@Z",
+          "??_Gbad_array_new_length@std@@UAEPAXI@Z",
+          "??_Gexception@std@@UAEPAXI@Z",
+          "??_R0?AVbad_alloc@std@@@8",
+          "??_R0?AVbad_array_new_length@std@@@8",
+          "??_R0?AVexception@std@@@8",
+          "??_R1A@?0A@EA@bad_alloc@std@@8",
+          "??_R1A@?0A@EA@bad_array_new_length@std@@8",
+          "??_R1A@?0A@EA@exception@std@@8",
+          "??_R2bad_alloc@std@@8",
+          "??_R2bad_array_new_length@std@@8",
+          "??_R2exception@std@@8",
+          "??_R3bad_alloc@std@@8",
+          "??_R3bad_array_new_length@std@@8",
+          "??_R3exception@std@@8",
+          "??_R4bad_alloc@std@@6B@",
+          "??_R4bad_array_new_length@std@@6B@",
+          "??_R4exception@std@@6B@",
+          "?_Activate_SSO_buffer@?$_String_val@U?$_Simple_types@D@std@@@std@@QAEXXZ",
+          "?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z",
+          "?_Alloc_proxy@_Container_base0@std@@QAEXABU_Fake_allocator@2@@Z",
+          "?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z",
+          "?_Calculate_growth@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABEII@Z",
+          "?_Calculate_growth@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAIIII@Z",
+          "?_Construct_empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXXZ",
+          "?_Deallocate_for_capacity@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAXAAV?$allocator@D@2@QADI@Z",
+          "?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXI@Z",
+          "?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ",
+          "?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QBEABV?$allocator@D@2@XZ",
+          "?_Getal@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAV?$allocator@D@2@XZ",
+          "?_Getal@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABEABV?$allocator@D@2@XZ",
+          "?_Large_mode_engaged@?$_String_val@U?$_Simple_types@D@std@@@std@@QBE_NXZ",
+          "?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QAEPADXZ",
+          "?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ",
+          "?_Orphan_all@_Container_base0@std@@QAEXXZ",
+          "?_Release@_Fake_proxy_ptr_impl@std@@QAEXXZ",
+          "?_Swap_proxy_and_iterators@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXAAV12@@Z",
+          "?_Swap_proxy_and_iterators@_Container_base0@std@@QAEXAAU12@@Z",
+          "?_Switch_to_buf@_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QAEXXZ",
+          "?_Take_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXAAV12@@Z",
+          "?_Throw_bad_array_new_length@std@@YAXXZ",
+          "?_Tidy_deallocate@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXXZ",
+          "?_Xlen_string@std@@YAXXZ",
+          "?allocate@?$allocator@D@std@@QAEPADI@Z",
+          "?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@@Z",
+          "?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@QBD@Z",
+          "?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@QBDI@Z",
+          "?application_diagnostic_line_005deb78@porsche@@3AAIA",
+          "?application_diagnostic_source_005deb74@porsche@@3AAIA",
+          "?application_fill@porsche@@YAXPAXII@Z",
+          "?application_heap_finish@porsche@@YAXIII@Z",
+          "?application_heap_kind@porsche@@YAXII@Z",
+          "?application_lock_create@porsche@@YAPAXXZ",
+          "?application_lock_enter@porsche@@YAXPAX@Z",
+          "?application_lock_leave@porsche@@YAXPAX@Z",
+          "?application_memory_diagnostic@porsche@@YAXI@Z",
+          "?application_os_start@porsche@@YAXI@Z",
+          "?application_printf_start@porsche@@YAXIPBD@Z",
+          "?application_queue_allocate@porsche@@YAPAXIIPAX@Z",
+          "?application_queue_kind@porsche@@YAXII@Z",
+          "?application_secondary_start@porsche@@YAXXZ",
+          "?application_system_page_size@porsche@@YAIXZ",
+          "?application_virtual_alloc@porsche@@YAPAXPAXIII@Z",
+          "?application_virtual_free@porsche@@YAIPAXII@Z",
+          "?assign@?$_Narrow_char_traits@DH@std@@SAXAADABD@Z",
+          "?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ",
+          "?class_error_file_005deb74@porsche@@3AAIA",
+          "?class_error_line_005deb78@porsche@@3AAIA",
+          "?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ",
+          "?copy@?$_Char_traits@DH@std@@SAPADQADQBDI@Z",
+          "?copy_flag_005deb1c@porsche@@3AAIA",
+          "?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ",
+          "?deallocate@?$allocator@D@std@@QAEXQADI@Z",
+          "?diagnostic_file_005deb74@porsche@@YAPBDXZ",
+          "?diagnostic_file_005deb74_set@porsche@@YAXPBD@Z",
+          "?diagnostic_line_005deb78@porsche@@3AAIA",
+          "?empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBE_NXZ",
+          "?eof@?$_Narrow_char_traits@DH@std@@SAHXZ",
+          "?eq_int_type@?$_Narrow_char_traits@DH@std@@SA_NHH@Z",
+          "?heap_init_005697f0@porsche@@YAHIPBDPAXHIIHHIHH1@Z",
+          "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+          "?length@?$_Narrow_char_traits@DH@std@@SAIQBD@Z",
+          "?max_size@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z",
+          "?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ",
+          "?move@?$_Char_traits@DH@std@@SAPADQADQBDI@Z",
+          "?push_back@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXD@Z",
+          "?render_display_clock_005deb1c@porsche@@3AAIA",
+          "?render_error_file_005deb74@porsche@@3AAIA",
+          "?render_error_line_005deb78@porsche@@3AAIA",
+          "?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z",
+          "?shared_runtime_word_005deb1c@porsche@@3IA",
+          "?shared_runtime_word_005deb74@porsche@@3IA",
+          "?shared_runtime_word_005deb78@porsche@@3IA",
+          "?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ",
+          "?to_string@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@I@Z",
+          "?what@exception@std@@UBEPBDXZ",
+          "__Avx2WmemEnabledWeakValue",
+          "__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12",
+          "__CT??_R0?AVbad_array_new_length@std@@@8??0bad_array_new_length@std@@QAE@ABV01@@Z12",
+          "__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12",
+          "__CTA3?AVbad_array_new_length@std@@",
+          "__TI3?AVbad_array_new_length@std@@",
+          "_main"
+        ],
+        "undefined": [
+          "??2@YAPAXI@Z",
+          "??3@YAXPAXI@Z",
+          "??_7type_info@@6B@",
+          "?_Xlength_error@std@@YAXPBD@Z",
+          "?application_default_arena_005deb98@porsche@@3PAXA",
+          "?application_heap_commit@porsche@@YAXPAXI@Z",
+          "?application_object_start@porsche@@YAHIPBDIII@Z",
+          "?application_other_arenas_006af3b8@porsche@@3PAPAXA",
+          "?application_page_size_006af3f8@porsche@@3IA",
+          "?application_queue_indices@porsche@@3PAPAXA",
+          "?uncaught_exception@std@@YA_NXZ",
+          "@__security_check_cookie@4",
+          "__CxxThrowException@8",
+          "___CxxFrameHandler3",
+          "___security_cookie",
+          "___std_exception_copy",
+          "___std_exception_destroy",
+          "___std_terminate",
+          "__imp_??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAI@Z",
+          "__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@I@Z",
+          "__imp_??Bios_base@std@@QBE_NXZ",
+          "__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ",
+          "__imp_?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A",
+          "__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A",
+          "__imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDXZ",
+          "__imp_?flags@ios_base@std@@QBEHXZ",
+          "__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ",
+          "__imp_?good@ios_base@std@@QBE_NXZ",
+          "__imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ",
+          "__imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z",
+          "__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z",
+          "__imp_?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAE_JPBD_J@Z",
+          "__imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ",
+          "__imp_?width@ios_base@std@@QAE_J_J@Z",
+          "__imp_?width@ios_base@std@@QBE_JXZ",
+          "__imp___invoke_watson",
+          "_atexit",
+          "_memcpy",
+          "_memmove",
+          "_memset"
+        ],
+        "common": [],
+        "weak": [
+          "??_Ebad_alloc@std@@UAEPAXI@Z",
+          "??_Ebad_array_new_length@std@@UAEPAXI@Z",
+          "??_Eexception@std@@UAEPAXI@Z"
+        ]
+      },
+      "table_storage": {
+        "defined": true,
+        "symbol": {
+          "name": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+          "value": 16,
+          "section": 3,
+          "type": 0,
+          "storage": 2,
+          "aux": 0
+        },
+        "section": {
+          "name": ".bss",
+          "bytes": 88,
+          "raw_offset": 0,
+          "relocations": 0,
+          "flags": "c0400080",
+          "writable": true,
+          "executable": false
+        },
+        "extent_to_next_external": 72,
+        "same_section_external_symbols": [
+          {
+            "name": "?shared_runtime_word_005deb1c@porsche@@3IA",
+            "value": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          },
+          {
+            "name": "?shared_runtime_word_005deb74@porsche@@3IA",
+            "value": 4,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          },
+          {
+            "name": "?shared_runtime_word_005deb78@porsche@@3IA",
+            "value": 8,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          },
+          {
+            "name": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+            "value": 16,
+            "section": 3,
+            "type": 0,
+            "storage": 2,
+            "aux": 0
+          }
+        ],
+        "first64": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "accepted_canonical_heap_entries": [
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00531c60",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00531ca0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "00531c60",
+        "005320b0",
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "0069cb00 allocation-failure callback"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00531f90",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005320b0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "0056e2c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005323e0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "005b0000"
+      ],
+      "unrecovered_dependencies": [
+        "005b0100",
+        "005b02c0",
+        "005b0480"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00556620",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00556650",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "00556620"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00569640",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "00531c60",
+        "005320b0",
+        "005322b0",
+        "005322c0",
+        "005323e0",
+        "00556650"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005697f0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [
+        "005320b0",
+        "005321f0",
+        "005a0fbf"
+      ],
+      "unrecovered_dependencies": [
+        "0053c290"
+      ],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0056e2c0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005b0000",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aef80",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 ABI adapted as documented in source; explicit typed callee boundaries.",
+      "unrecovered_dependencies": [],
+      "recovered_dependencies": [
+        "005697f0"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-application-heap-init.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-heap-init/verification.json",
+      "verification_boundary": "Primary heap commit and optional object heap start; page allocation is exercised through the Run025 consumer; 005679f0 pool initialization remains a separate dependency.",
+      "dependency_scope": "Indexed direct call targets only; remaining indirect/platform calls documented separately.",
+      "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0059ebc0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 ABI adapted as documented in source; explicit typed callee boundaries.",
+      "unrecovered_dependencies": [],
+      "recovered_dependencies": [
+        "005697f0",
+        "00569a70",
+        "0059ed40"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-application-heap-init.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-heap-init/verification.json",
+      "verification_boundary": "Primary heap commit and optional object heap start; page allocation is exercised through the Run025 consumer; 005679f0 pool initialization remains a separate dependency.",
+      "dependency_scope": "Indexed direct call targets only; remaining indirect/platform calls documented separately."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00569a70",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "Original x86 ABI adapted as documented in source; explicit typed callee boundaries.",
+      "unrecovered_dependencies": [],
+      "recovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-application-heap-init.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-heap-init/verification.json",
+      "verification_boundary": "Primary heap commit and optional object heap start; page allocation is exercised through the Run025 consumer; 005679f0 pool initialization remains a separate dependency.",
+      "dependency_scope": "Indexed direct call targets only; remaining indirect/platform calls documented separately."
+    }
+  ],
+  "current_frontier": [
+    {
+      "symbol": "?DAT_006b4f20@@3IA",
+      "va": "006b4f20",
+      "category": "data",
+      "referring_object_vas": [
+        "00531c60",
+        "00556620"
+      ]
+    },
+    {
+      "symbol": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+      "va": null,
+      "category": "other",
+      "referring_object_vas": [
+        "00531f90"
+      ]
+    }
+  ],
+  "actual_current_native_consumers": [
+    {
+      "consumer": "00531c60",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00531c60.obj",
+      "sha256": "78ddbe015dfe6d9fe084166b6334c881bfc0cf00c8cafdf35df2b0e0116f1747",
+      "undefined": "?DAT_006b4f20@@3IA",
+      "defined": [
+        "?FUN_00531c60@@YAHPADI@Z"
+      ]
+    },
+    {
+      "consumer": "00556620",
+      "object": "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00556620.obj",
+      "sha256": "fc6c72fcc80fbb5604c618c0d291b462e7ee5c236ca8b656776dff4557869e66",
+      "undefined": "?DAT_006b4f20@@3IA",
+      "defined": [
+        "?FUN_00556620@@YAII@Z"
+      ]
+    },
+    {
+      "consumer": "00531f90",
+      "object": "local/experiments/v2-canonical-heap-release-263/objects/00531f90.obj",
+      "sha256": "f3c7cdf6a1a52753ebc1608c1e7dea0e1a573d9245e071f30f3b537edf1b3a5e",
+      "undefined": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+      "defined": [
+        "?free_00531f90@porsche@@YAIPAX@Z"
+      ]
+    }
+  ],
+  "ghidra_storage_metadata": [
+    {
+      "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "identity": "Global::DAT_006b4f20",
+      "conflict": false,
+      "variants": [
+        {
+          "symbol": {
+            "name": "DAT_006b4f20",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4f20:4",
+            "storage_detail": {
+              "display": "006b4f20:4",
+              "serialization": "ram:006b4f20:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7032608",
+                  "bytes": 4,
+                  "address": "006b4f20"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4f20"
+          },
+          "consumer_vas": [
+            "00531c60",
+            "00531ca0",
+            "00531f90",
+            "00556620",
+            "00569640",
+            "005697f0",
+            "005699f0",
+            "00569a90",
+            "005aef80"
+          ]
+        }
+      ]
+    },
+    {
+      "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "identity": "Global::DAT_006b4f24",
+      "conflict": false,
+      "variants": [
+        {
+          "symbol": {
+            "name": "DAT_006b4f24",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4f24:4",
+            "storage_detail": {
+              "display": "006b4f24:4",
+              "serialization": "ram:006b4f24:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7032612",
+                  "bytes": 4,
+                  "address": "006b4f24"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4f24"
+          },
+          "consumer_vas": [
+            "005aef80"
+          ]
+        }
+      ]
+    },
+    {
+      "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "identity": "Global::DAT_006b4f2c",
+      "conflict": false,
+      "variants": [
+        {
+          "symbol": {
+            "name": "DAT_006b4f2c",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4f2c:4",
+            "storage_detail": {
+              "display": "006b4f2c:4",
+              "serialization": "ram:006b4f2c:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7032620",
+                  "bytes": 4,
+                  "address": "006b4f2c"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4f2c"
+          },
+          "consumer_vas": [
+            "00569a70"
+          ]
+        }
+      ]
+    },
+    {
+      "module_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "identity": "Global::DAT_006b4f60",
+      "conflict": true,
+      "variants": [
+        {
+          "symbol": {
+            "name": "DAT_006b4f60",
+            "namespace": "Global",
+            "type": {
+              "path": "/uint",
+              "name": "uint",
+              "display": "uint",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.UnsignedIntegerDataType"
+            },
+            "bytes": 4,
+            "storage": "006b4f60:4",
+            "storage_detail": {
+              "display": "006b4f60:4",
+              "serialization": "ram:006b4f60:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7032672",
+                  "bytes": 4,
+                  "address": "006b4f60"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "uint DAT_006b4f60"
+          },
+          "consumer_vas": [
+            "0056cce0",
+            "0056d040",
+            "0056d0a0",
+            "00593260"
+          ]
+        },
+        {
+          "symbol": {
+            "name": "DAT_006b4f60",
+            "namespace": "Global",
+            "type": {
+              "path": "/undefined4",
+              "name": "undefined4",
+              "display": "undefined4",
+              "length": 4,
+              "alignment": 4,
+              "class": "ghidra.program.model.data.Undefined4DataType"
+            },
+            "bytes": 4,
+            "storage": "006b4f60:4",
+            "storage_detail": {
+              "display": "006b4f60:4",
+              "serialization": "ram:006b4f60:4",
+              "bytes": 4,
+              "memory": true,
+              "register": false,
+              "stack": false,
+              "compound": false,
+              "forced_indirect": false,
+              "varnodes": [
+                {
+                  "space": "ram",
+                  "offset": "7032672",
+                  "bytes": 4,
+                  "address": "006b4f60"
+                }
+              ]
+            },
+            "type_locked": true,
+            "name_locked": true,
+            "declaration": "undefined4 DAT_006b4f60"
+          },
+          "consumer_vas": [
+            "0056ca50"
+          ]
+        }
+      ]
+    }
+  ],
+  "existing_support_storage_overlap": [],
+  "compiler_commands": 0,
+  "native_execution_commands": 0,
+  "new_accepted_functions": 0,
+  "production_or_union_changed": false,
+  "input_sha256": {
+    "scripts/research/audit-v2-heap-table-evidence-267.py": "8aff2f59e3c4ee3befb104ae48edf8b80e9c339e89f5d07806c8be26f2156cb2",
+    "scripts/research/experiment-v2-readonly-scalars-221.py": "b3440725e42389e8587b07adbed9387e8359e72d102b4404a02bc28de9aa87cd",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "scripts/research/plan-v2-link-frontier-245.py": "13779d22b598111052fcb7889a94db351b1cf01ca26c3c3974713fdf728711f1",
+    "scripts/research/experiment-v2-writable-scalars-250.py": "cd0add94e85c2fa259f6fc592c5e3fb7d940d2674aac43fb0bc1dd2630d98210",
+    "scripts/research/screen-v2-writable-scalars-254.py": "92efc457204d812b2c1ec20cd9e35d09878cea384fb7a3cbd74bfc2b146d8322",
+    "research/binary-index/README.md": "e382cb64fa9d627f6371e3cc44578d48710e9747efa1ea52b7bfb71c42e0eb7a",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/recovered/application_bootstrap_probe.cpp": "20f877514a6ae75cd96162c744c80c87ffd27092703e95892b566d8dd3175bed",
+    "iterations/v2/001-original-recovery/source/recovered/application_heap_init_probe.cpp": "4821d7a53f6031d81e7c8f5635d2a05f2a2127a4848e9e29c76c28d0ec3a40ff",
+    "iterations/v2/001-original-recovery/source/recovered/heap_probe.cpp": "010c7465ee9a5543646dbaae81600573750d9c6a04fd7443b8e252baa9a33317",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp": "8deea392280ea118486a9174b2053a7190e29de26b34a6f95f7c5a085cd0b8a7",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp": "3a84557a6443a13712ea7aef0747a1cdf5da0d55f24b8b166271cb361fe607ca",
+    "local/builds/v2/001-original-recovery/porsche_original.dir/Release/heap.obj": "ebeba962dcfe53edd81ce86cf84f0cf0f6a40e2adb917fac09fccd6220e0ba7a",
+    "local/builds/v2/001-original-recovery/porsche_original.dir/Release/application_heap_init.obj": "250e9dc6c24902f499cf81e3d1d14d7b077ccfc235730b526857928db8f9ac7c",
+    "local/builds/v2/001-original-recovery/application_heap_init_probe.dir/Release/application_heap_init_probe.obj": "6960228847a85546c8cc66edf2123c99775971397d82ba21f6ac7ae3bf8b18ab",
+    "iterations/v2/001-original-recovery/runs/264-heap-release-union/summary.json": "ecdc78a459273c85a5a3068842eacc3c26f773e9755c39df09f25a75ae5673f1",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00531c60.obj": "78ddbe015dfe6d9fe084166b6334c881bfc0cf00c8cafdf35df2b0e0116f1747",
+    "local/experiments/v2-build-corpus-188/full/cohort-000-batch-0001-batch/00556620.obj": "fc6c72fcc80fbb5604c618c0d291b462e7ee5c236ca8b656776dff4557869e66",
+    "local/experiments/v2-canonical-heap-release-263/objects/00531f90.obj": "f3c7cdf6a1a52753ebc1608c1e7dea0e1a573d9245e071f30f3b537edf1b3a5e",
+    "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/globals.jsonl": "9121483b5e3a18a6e3a6d78ff39ffeb63903a936816f924e7d813fb761efba99",
+    "iterations/v2/001-original-recovery/runs/259-canonical-reuse/bindings/summary.json": "b2bee80d01260bc40288b3c8b420d8950090283006e0c066d8fe203a768cdbde",
+    "iterations/v2/001-original-recovery/runs/217-proven-cdecl-binding/summary.json": "c8c65688a5def72b0261605f91da2807fa89ef889176875484249aef2fedc126",
+    "iterations/v2/001-original-recovery/runs/221-readonly-scalar-storage/summary.json": "6f8c7f41439211cbaeb24d70c0bdb58ed9ff833340c7a94b5a3526f18e3a2ce1",
+    "iterations/v2/001-original-recovery/runs/226-writable-scalar-storage/summary.json": "90cf717f4ebc851cf35815678592648fd557f2e95ab4ffd8d956680c0498db34",
+    "iterations/v2/001-original-recovery/runs/231-initialized-scalar-storage/summary.json": "5855fed9524f168d753add854eb52b8db3b7c44620a1046a9ad561140d3820c6",
+    "iterations/v2/001-original-recovery/runs/240-canonical-lock-reuse/bindings/summary.json": "637d4cf3fcffb54bc90d0c8481ab3355f158c6378f3be1b8e8e544c9a348c595",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/summary.json": "166f549abc4748c4f048064959f0d13bc93a0f48a55f6d4090c6b50b41d2d5f8",
+    "iterations/v2/001-original-recovery/runs/242-shared-scalar-views/binding-summary.json": "5ef705abaa966a0f5e2318409d3b652db761837fc37b7c17247b0cb81c25b8aa",
+    "iterations/v2/001-original-recovery/runs/247-canonical-reuse-batch/bindings/summary.json": "f465f353ed6e18ccbd656e36064dfcea6996961d98e51372ac5f9c72c3dc34f7",
+    "iterations/v2/001-original-recovery/runs/255-storage-support-bundle/summary.json": "6cb28203f5bd25deda2ebc3f7ed72b577915c1c8099abfe2cac9cca12f6c97e6",
+    "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json": "17ccbaaabd54943fef9f65bc206f8cf53a5b8c2170382064a213c99a870fa52d",
+    "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-heap-init/verification.json": "1cef7ea8075363ebbe2de3529a3fb73ad5d51a51d61f1104ba3b9cee80293f0c"
+  },
+  "before_after_guards": true,
+  "disposition": "defer_for_unindexed_operand_gaps",
+  "limits": [
+    "64-byte table identity is proved by original pointer scan and canonical source/native owner, not byflags&15 alone.",
+    "PE virtualtail zeros prove loaderinitialbits, not a claim of filebackedzero bytes.",
+    "CachedwholeheapTU is inventory only; includes accepted algorithm definitions and cannot be added wholesale to union.",
+    "CurrentrawDAT_006b4f20 and canonicalarray shareoriginalbase; no alias/dataallocation implemented here.",
+    "No claim of original relative layout with adjacentglobals or absence of arbitrary runtimecomputed pointers."
+  ]
+}

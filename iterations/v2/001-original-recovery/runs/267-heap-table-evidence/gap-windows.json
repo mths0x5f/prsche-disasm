@@ -1,0 +1,389 @@
+{
+  "kind": "raw-unindexed-heap-table-gap-windows",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "windows": [
+    {
+      "candidate_window_start": "005697d0",
+      "bytes": 23,
+      "hex": "6a406a0068204f6b00e8b22afdff83c40cb801000000c3",
+      "HIGHLOW_site": "005697d5",
+      "instructions": [
+        {
+          "pc": "005697d0",
+          "bytes": "6a40",
+          "instruction": "push 0x40"
+        },
+        {
+          "pc": "005697d2",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "pc": "005697d4",
+          "bytes": "68204f6b00",
+          "instruction": "push 0x6b4f20"
+        },
+        {
+          "pc": "005697d9",
+          "bytes": "e8b22afdff",
+          "instruction": "call 0x53c290"
+        },
+        {
+          "pc": "005697de",
+          "bytes": "83c40c",
+          "instruction": "add esp, 0xc"
+        },
+        {
+          "pc": "005697e1",
+          "bytes": "b801000000",
+          "instruction": "mov eax, 1"
+        },
+        {
+          "pc": "005697e6",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ],
+      "indexed_CALL_entry_refs": [],
+      "preceding_indexed_range": {
+        "start": "00569640",
+        "end": "005697c2",
+        "entry": "00569640"
+      },
+      "following_indexed_range": {
+        "start": "005697f0",
+        "end": "005699eb",
+        "entry": "005697f0"
+      },
+      "accepted_as_function": false,
+      "navigation_only": true
+    },
+    {
+      "candidate_window_start": "00569a40",
+      "bytes": 43,
+      "hex": "8b4424045683e00f8b0c85204f6b008b710885f674138d561052e83185fcff8b760883c40485f675ed5ec3",
+      "HIGHLOW_site": "00569a4b",
+      "instructions": [
+        {
+          "pc": "00569a40",
+          "bytes": "8b442404",
+          "instruction": "mov eax, dword ptr [esp + 4]"
+        },
+        {
+          "pc": "00569a44",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "00569a45",
+          "bytes": "83e00f",
+          "instruction": "and eax, 0xf"
+        },
+        {
+          "pc": "00569a48",
+          "bytes": "8b0c85204f6b00",
+          "instruction": "mov ecx, dword ptr [eax*4 + 0x6b4f20]"
+        },
+        {
+          "pc": "00569a4f",
+          "bytes": "8b7108",
+          "instruction": "mov esi, dword ptr [ecx + 8]"
+        },
+        {
+          "pc": "00569a52",
+          "bytes": "85f6",
+          "instruction": "test esi, esi"
+        },
+        {
+          "pc": "00569a54",
+          "bytes": "7413",
+          "instruction": "je 0x569a69"
+        },
+        {
+          "pc": "00569a56",
+          "bytes": "8d5610",
+          "instruction": "lea edx, [esi + 0x10]"
+        },
+        {
+          "pc": "00569a59",
+          "bytes": "52",
+          "instruction": "push edx"
+        },
+        {
+          "pc": "00569a5a",
+          "bytes": "e83185fcff",
+          "instruction": "call 0x531f90"
+        },
+        {
+          "pc": "00569a5f",
+          "bytes": "8b7608",
+          "instruction": "mov esi, dword ptr [esi + 8]"
+        },
+        {
+          "pc": "00569a62",
+          "bytes": "83c404",
+          "instruction": "add esp, 4"
+        },
+        {
+          "pc": "00569a65",
+          "bytes": "85f6",
+          "instruction": "test esi, esi"
+        },
+        {
+          "pc": "00569a67",
+          "bytes": "75ed",
+          "instruction": "jne 0x569a56"
+        },
+        {
+          "pc": "00569a69",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "pc": "00569a6a",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ],
+      "indexed_CALL_entry_refs": [],
+      "preceding_indexed_range": {
+        "start": "005699f0",
+        "end": "00569a37",
+        "entry": "005699f0"
+      },
+      "following_indexed_range": {
+        "start": "00569a70",
+        "end": "00569a8b",
+        "entry": "00569a70"
+      },
+      "accepted_as_function": false,
+      "navigation_only": true
+    },
+    {
+      "candidate_window_start": "00569b10",
+      "bytes": 44,
+      "hex": "8b0d60eb5d0033c083e10f8b148d204f6b008b4a206681395342740f8b51048b491003c2668139534275f1c3",
+      "HIGHLOW_site": "00569b1e",
+      "instructions": [
+        {
+          "pc": "00569b10",
+          "bytes": "8b0d60eb5d00",
+          "instruction": "mov ecx, dword ptr [0x5deb60]"
+        },
+        {
+          "pc": "00569b16",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax"
+        },
+        {
+          "pc": "00569b18",
+          "bytes": "83e10f",
+          "instruction": "and ecx, 0xf"
+        },
+        {
+          "pc": "00569b1b",
+          "bytes": "8b148d204f6b00",
+          "instruction": "mov edx, dword ptr [ecx*4 + 0x6b4f20]"
+        },
+        {
+          "pc": "00569b22",
+          "bytes": "8b4a20",
+          "instruction": "mov ecx, dword ptr [edx + 0x20]"
+        },
+        {
+          "pc": "00569b25",
+          "bytes": "6681395342",
+          "instruction": "cmp word ptr [ecx], 0x4253"
+        },
+        {
+          "pc": "00569b2a",
+          "bytes": "740f",
+          "instruction": "je 0x569b3b"
+        },
+        {
+          "pc": "00569b2c",
+          "bytes": "8b5104",
+          "instruction": "mov edx, dword ptr [ecx + 4]"
+        },
+        {
+          "pc": "00569b2f",
+          "bytes": "8b4910",
+          "instruction": "mov ecx, dword ptr [ecx + 0x10]"
+        },
+        {
+          "pc": "00569b32",
+          "bytes": "03c2",
+          "instruction": "add eax, edx"
+        },
+        {
+          "pc": "00569b34",
+          "bytes": "6681395342",
+          "instruction": "cmp word ptr [ecx], 0x4253"
+        },
+        {
+          "pc": "00569b39",
+          "bytes": "75f1",
+          "instruction": "jne 0x569b2c"
+        },
+        {
+          "pc": "00569b3b",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ],
+      "indexed_CALL_entry_refs": [],
+      "preceding_indexed_range": {
+        "start": "00569a90",
+        "end": "00569aca",
+        "entry": "00569a90"
+      },
+      "following_indexed_range": {
+        "start": "0056a490",
+        "end": "0056a4b8",
+        "entry": "0056a490"
+      },
+      "accepted_as_function": false,
+      "navigation_only": true
+    },
+    {
+      "candidate_window_start": "0056a1f0",
+      "bytes": 56,
+      "hex": "81ec20030000b8204b6b008d4c2421535556578b3083c0048bd683c103c1ea108851fc8bd6c1ea088851fd8a50fc8851fe3d204f6b007cdb",
+      "HIGHLOW_site": "0056a222",
+      "instructions": [
+        {
+          "pc": "0056a1f0",
+          "bytes": "81ec20030000",
+          "instruction": "sub esp, 0x320"
+        },
+        {
+          "pc": "0056a1f6",
+          "bytes": "b8204b6b00",
+          "instruction": "mov eax, 0x6b4b20"
+        },
+        {
+          "pc": "0056a1fb",
+          "bytes": "8d4c2421",
+          "instruction": "lea ecx, [esp + 0x21]"
+        },
+        {
+          "pc": "0056a1ff",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "pc": "0056a200",
+          "bytes": "55",
+          "instruction": "push ebp"
+        },
+        {
+          "pc": "0056a201",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "pc": "0056a202",
+          "bytes": "57",
+          "instruction": "push edi"
+        },
+        {
+          "pc": "0056a203",
+          "bytes": "8b30",
+          "instruction": "mov esi, dword ptr [eax]"
+        },
+        {
+          "pc": "0056a205",
+          "bytes": "83c004",
+          "instruction": "add eax, 4"
+        },
+        {
+          "pc": "0056a208",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "0056a20a",
+          "bytes": "83c103",
+          "instruction": "add ecx, 3"
+        },
+        {
+          "pc": "0056a20d",
+          "bytes": "c1ea10",
+          "instruction": "shr edx, 0x10"
+        },
+        {
+          "pc": "0056a210",
+          "bytes": "8851fc",
+          "instruction": "mov byte ptr [ecx - 4], dl"
+        },
+        {
+          "pc": "0056a213",
+          "bytes": "8bd6",
+          "instruction": "mov edx, esi"
+        },
+        {
+          "pc": "0056a215",
+          "bytes": "c1ea08",
+          "instruction": "shr edx, 8"
+        },
+        {
+          "pc": "0056a218",
+          "bytes": "8851fd",
+          "instruction": "mov byte ptr [ecx - 3], dl"
+        },
+        {
+          "pc": "0056a21b",
+          "bytes": "8a50fc",
+          "instruction": "mov dl, byte ptr [eax - 4]"
+        },
+        {
+          "pc": "0056a21e",
+          "bytes": "8851fe",
+          "instruction": "mov byte ptr [ecx - 2], dl"
+        },
+        {
+          "pc": "0056a221",
+          "bytes": "3d204f6b00",
+          "instruction": "cmp eax, 0x6b4f20"
+        },
+        {
+          "pc": "0056a226",
+          "bytes": "7cdb",
+          "instruction": "jl 0x56a203"
+        }
+      ],
+      "indexed_CALL_entry_refs": [],
+      "preceding_indexed_range": {
+        "start": "00569a90",
+        "end": "00569aca",
+        "entry": "00569a90"
+      },
+      "following_indexed_range": {
+        "start": "0056a490",
+        "end": "0056a4b8",
+        "entry": "0056a490"
+      },
+      "accepted_as_function": false,
+      "navigation_only": true
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/trace-v2-heap-gap-windows-267.py": "dcbbad68754bf91154b9c9442637b7de8f51f73e45c8b05cdb4394f4afbde8c3",
+    "iterations/v2/001-original-recovery/runs/267-heap-table-evidence/summary.json": "e22a2d09dfecbb639aec8df4e1ca6ecc6edbe946c33c1858043a795c2b331586",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "scripts/research/audit-v2-x86-call-chain-258.py": "a427d7f0b9478ca59d1ec348de28a1625bc22f02aaceb27a3af1169a0db876a6",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/binary-index/manual-functions.jsonl": "147f3ac883ef7b22f67b452cd2148624b558d775c19625d23c126d0a6bbebb80"
+  },
+  "before_after_guards": true,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "new_index_functions": 0,
+  "interpretation": [
+    "The first candidate window passes(tablebase,0,64)to0053c290 and returns1, as rawinstruction evidence only.",
+    "0053c290 is a multi-path fill dispatch boundary; no complete fillerbehavior or reachability is proved here.",
+    "No indexed directCALL to the four candidatewindow starts was found; this is not wholeprogram absence proof.",
+    "Candidatewindow alignment and overlapping decode do not establish an executable function entry. HOLD retained."
+  ]
+}

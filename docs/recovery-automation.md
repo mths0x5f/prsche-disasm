@@ -39,12 +39,30 @@ snapshots и прочитал только3новых COFF;0compiles/onearchive-
 имён не обязано уменьшаться после каждого пакета. Порядок работ должен учитывать
 связанный provider/ABI/data пакет, а не только число добавленных функций.
 
+Обновление274/275:1125candidate VAs+19supportobjects,414actual linknames→412tasks.
+Win32providercode считается support. Raw/canonicalheap-table views имеют один64B
+owner для трёх доказанных maskedMEM4sites; это не восстанавливает preceding-region
+layout, startup илиentry/liveness навигационных candidatefunctions.1142symbolsnapshots
+reused/2newCOFFs/0compiles;actualarchive/link8,827с. Ближайший sourcepacket —
+files.cpp00568200/005682a0 иsharedcallers' ABI, с сохранением595d0MOVSX hold.
+
 ### Контракт готового пакета
 
 Collector241 ожидает `original_sha256`, `compiler_sha256`, `input_sha256` и
 `validation.json`, который фиксирует SHA конкретного summary. Для данных нужны
 `kind: original-writable-data` или `original-readonly-data` и `support_objects`;
 точные bindings публикуются отдельным `proven-link-contract` пакетом.
+
+Collector268 также принимает `native-platform-provider`: точные existingplatform
+fragments,actualcode/importsymbols иobservedcompilerclosure. Такой code считается
+support,не recoveredgamefunction. Data/binding support не может иметь executable
+COFF sections; namespaceddata допускается с той же проверкой. Run268 проверил два
+Win32critical-section adapters, Run269 закрыл их actuallinknames иrawfreebinding.
+
+Старые manual/corpus/index файлы могут быть SHA-pinned завершёнными пакетами.
+Новый navigation material сохраняется отдельно в `research/binary-index/supplemental`.
+Run271 использует `candidate_entry_va`, `entry_status: unproved`, без `entry_va`:
+это препятствует автоматическому принятию candidate как доказанной функции.
 
 Actual compiler/link/native receipts и логи сохраняются до разбора результата;
 файлы receipts тоже включаются в closure. Команду и exit нельзя восстанавливать
