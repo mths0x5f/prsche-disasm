@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "kind": "read-only-original-entry-audit",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/102-original-game-link/host-entry.cpp": "201344bd49be1631020ba8971e45a2784010f96d455a96082d63e100b7b436fe",
+    "iterations/v2/001-original-recovery/runs/173-float-transport-integration/original-game-link/link-report.json": "84dd0d3b7d2cae9e5b73d62fa1ed6f39d99d45eca9a9bd8ad27fa2837cac9acf",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_main.cpp": "92f2fc350ad5b103a951cb0ed7e72028e97db411b5776a2186c6ea249d468a61",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/startup.cpp": "b8b4d7c78cf53510a0101e26a31446439777f0ad99433eb95959104cc3fee990",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8"
+  },
+  "original_pe_entry": "005a2d1a",
+  "original_crt_chain": [
+    "005a2d1a",
+    "005a96fa",
+    "005a53f5",
+    "005a953e",
+    "005a940c",
+    "005a91bf",
+    "005a9106",
+    "005a2441",
+    "005a2547",
+    "004b6710",
+    "004b6a50"
+  ],
+  "original_crt_initial_iat": {
+    "va": "005b2174",
+    "symbol": "GetVersion"
+  },
+  "optional_initializer_pointer": {
+    "storage_va": "005e51b4",
+    "initial_target": "005a0f45"
+  },
+  "constructor_tables": [
+    {
+      "start": "005cb000",
+      "end_exclusive": "005cb780",
+      "slots": 480,
+      "first_nonzero": {
+        "slot": "005cb004",
+        "target": "004035e0"
+      }
+    },
+    {
+      "start": "005cb784",
+      "end_exclusive": "005cb798",
+      "slots": 5,
+      "first_nonzero": {
+        "slot": "005cb788",
+        "target": "005a2412"
+      }
+    }
+  ],
+  "first_game_state_write": {
+    "function": "004035e0",
+    "global_va": "005e6724",
+    "initial_hex": "00000000",
+    "written_hex": "00008000",
+    "next_function": "00403600",
+    "next_global_va": "005e6720",
+    "next_original_operation": "1.0f / float(0x00800000)"
+  },
+  "registry_owners": {
+    "005a2d1a": [],
+    "005a96fa": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_small_heap.cpp",
+        "status": "native-differential-verified"
+      }
+    ],
+    "005aa96c": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_small_heap.cpp",
+        "status": "native-differential-verified"
+      }
+    ],
+    "005a53f5": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+        "status": "native-differential-verified"
+      }
+    ],
+    "005a953e": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_lowio.cpp",
+        "status": "native-differential-verified"
+      }
+    ],
+    "005a940c": [],
+    "005a91bf": [],
+    "005a9106": [],
+    "005a2441": [],
+    "005a2547": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/exit_shutdown.cpp",
+        "status": "native-differential-verified"
+      }
+    ],
+    "005a0f45": [],
+    "004035e0": [],
+    "00403600": [],
+    "004b6710": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/startup.cpp",
+        "status": "native-differential-verified"
+      }
+    ],
+    "004b6a50": [
+      {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_main.cpp",
+        "status": "native-differential-verified"
+      }
+    ]
+  },
+  "host_entry": {
+    "source": "iterations/v2/001-original-recovery/runs/102-original-game-link/host-entry.cpp",
+    "target": "004b6710",
+    "original_crt_entry_called": false
+  },
+  "old_link": {
+    "report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/original-game-link/link-report.json",
+    "status": "link_failed_unresolved_frontier",
+    "game_executable_executed": false,
+    "first_direct_app_main_unresolved_symbol": "?application_main_log@porsche@@YAXPBD@Z",
+    "direct_app_main_unresolved_names": 20
+  },
+  "limits": [
+    "The MSVC host has its own runtime; equivalence of original CRT state and constructor order is unproved",
+    "No current native game link or original executable execution in this audit",
+    "First constructor global semantics and consumers need tracing before adding providers"
+  ]
+}

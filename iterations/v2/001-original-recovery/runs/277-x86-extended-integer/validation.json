@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "kind": "artifact-only-independent-native-audit",
+  "summary_sha256": "39e8defeae3bae089b9f36b655c4bc71be4e5f0bb0860148060291df3ac0f9a4",
+  "audit_source_sha256": "ebfb60d963997dfa5f2e67b8c0ec30ee11e4be73f629f6752fd64cf492cbe2cc",
+  "backend_sha256": "7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b",
+  "baseline_backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "header_sha256": "8ffb1e675eaaab700612fcac316d30a98f75a21aacaca076830c6f6649aa717a",
+  "input_pins": 31,
+  "synthetic_entries": 26,
+  "synthetic_bytes": 164,
+  "synthetic_instructions": 70,
+  "exact_oracle_relocations": 0,
+  "native_comparisons": 30976,
+  "compiler_batches": 1,
+  "compiled_tus": 2,
+  "compiler_warnings": 0,
+  "generated_coff_symbols": {
+    "defined": [
+      "?dispatch257@@YAXAAUMachine257@@I@Z",
+      "?translated_11001000@@YAXAAUMachine257@@@Z",
+      "?translated_11001100@@YAXAAUMachine257@@@Z",
+      "?translated_11001200@@YAXAAUMachine257@@@Z",
+      "?translated_11001300@@YAXAAUMachine257@@@Z",
+      "?translated_11001400@@YAXAAUMachine257@@@Z",
+      "?translated_11001500@@YAXAAUMachine257@@@Z",
+      "?translated_11001600@@YAXAAUMachine257@@@Z",
+      "?translated_11001700@@YAXAAUMachine257@@@Z",
+      "?translated_11001800@@YAXAAUMachine257@@@Z",
+      "?translated_11001900@@YAXAAUMachine257@@@Z",
+      "?translated_11001a00@@YAXAAUMachine257@@@Z",
+      "?translated_11001b00@@YAXAAUMachine257@@@Z",
+      "?translated_11001c00@@YAXAAUMachine257@@@Z",
+      "?translated_11001d00@@YAXAAUMachine257@@@Z",
+      "?translated_11001e00@@YAXAAUMachine257@@@Z",
+      "?translated_11001f00@@YAXAAUMachine257@@@Z",
+      "?translated_11002000@@YAXAAUMachine257@@@Z",
+      "?translated_11002100@@YAXAAUMachine257@@@Z",
+      "?translated_11002200@@YAXAAUMachine257@@@Z",
+      "?translated_11002300@@YAXAAUMachine257@@@Z",
+      "?translated_11002400@@YAXAAUMachine257@@@Z",
+      "?translated_11002500@@YAXAAUMachine257@@@Z",
+      "?translated_11002600@@YAXAAUMachine257@@@Z",
+      "?translated_11002700@@YAXAAUMachine257@@@Z",
+      "?translated_11002800@@YAXAAUMachine257@@@Z",
+      "?translated_11002900@@YAXAAUMachine257@@@Z"
+    ],
+    "undefined": [
+      "?read257@@YAIII@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "original_game_functions": 0,
+  "new_accepted_functions": 0,
+  "limits": [
+    "SyntheticCPUfixtures only; no gameentry/ABI/provider/acceptance orfullISA claim.",
+    "DefinedCF/ZF/SF/OF only; PF/AF/undefinedflags/faults/segments/x87/shifts/SETcc unproved orunsupported.",
+    "Selectedregister/memory widthcombinations and finiteedgevalues; validnative32stack/sourcearenas only."
+  ]
+}

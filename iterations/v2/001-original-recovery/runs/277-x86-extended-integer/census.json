@@ -1,0 +1,2277 @@
+{
+  "schema": 1,
+  "kind": "same85-body-syntax-census",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "backend_sha256": "7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b",
+  "baseline_backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "source_bodies": 85,
+  "baseline_supported": 25,
+  "syntax_supported": 29,
+  "syntax_rejected": 56,
+  "newly_whole_syntax_supported_vas": [
+    "005a7673",
+    "00536df0",
+    "004ede20",
+    "005349e0"
+  ],
+  "supported_delta": 4,
+  "baseline_syntax_regressions": 0,
+  "remaining_first_rejection_families": {
+    "inc": 8,
+    "fld": 9,
+    "fild": 3,
+    "sete": 4,
+    "Unsupported": 2,
+    "shr": 2,
+    "sar": 7,
+    "shl": 10,
+    "wait": 1,
+    "fstp": 1,
+    "setl": 1,
+    "fadd": 1,
+    "setne": 2,
+    "cdq": 2,
+    "fcomp": 1,
+    "imul": 1,
+    "mul": 1
+  },
+  "rows": [
+    {
+      "va": "00518880",
+      "body_bytes": 125,
+      "body_sha256": "ca992385ea1ba71625d9d681fbf6742470c04e24f6bb7ec48fc48ca68c657ebe",
+      "decoded_instructions": 48,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005188b2: inc esi",
+      "baseline_first_rejection": "Unsupported opcode 00518880: movsx ecx, word ptr [esp + 8]",
+      "direct_calls": [
+        "005a0f98"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005ba4a0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d98d0",
+      "body_bytes": 533,
+      "body_sha256": "7e74da99bc0e87dad1b29620e6fbae255eeda779f6edce857b523ab55ace3cc0",
+      "decoded_instructions": 154,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004d98da: fld dword ptr [0x65b954]",
+      "baseline_first_rejection": "Unsupported opcode 004d98da: fld dword ptr [0x65b954]",
+      "direct_calls": [
+        "005323e0",
+        "005323e0",
+        "005323e0",
+        "004d9450",
+        "004d9450",
+        "004dad30",
+        "004dad30",
+        "004314c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "0065b954",
+        "0065b958",
+        "0065b970"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d9af0",
+      "body_bytes": 53,
+      "body_sha256": "d2990400b733a98f6f72b55600e8203a87c3ea6f221bc518bd6b2522f556f855",
+      "decoded_instructions": 21,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004d9b04: fild dword ptr [eax + 0x18]",
+      "baseline_first_rejection": "Unsupported opcode 004d9b04: fild dword ptr [eax + 0x18]",
+      "direct_calls": [
+        "004d9b30"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00502420",
+      "body_bytes": 191,
+      "body_sha256": "34b58e070d6e6104a0c69c8de5df503e358914ae94312c469cd5aece486dd259",
+      "decoded_instructions": 63,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005024d6: sete al",
+      "baseline_first_rejection": "Unsupported opcode 00502457: jle 0x50248e",
+      "direct_calls": [
+        "004b7ab0",
+        "005a134b",
+        "004b7ab0",
+        "005a134b",
+        "004b7ab0",
+        "005a134b",
+        "004f4df0",
+        "004f0220"
+      ],
+      "indirect_call": true,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00567550",
+      "body_bytes": 267,
+      "body_sha256": "b9eeaa6a11b9823aee36d503f54fdf85d06b29c71c5f18d423f6f98b4a64e76c",
+      "decoded_instructions": 106,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00567631: inc cl",
+      "baseline_first_rejection": "Unsupported opcode 005675e7: or eax, 0xffffffff",
+      "direct_calls": [
+        "00566d60",
+        "0056b690",
+        "0056c040",
+        "005896d0",
+        "005896f0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006b499c"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d77a0",
+      "body_bytes": 345,
+      "body_sha256": "08e71f2d5e0ca3f676c850ca4a8041147eda057c9eafd8f36e8111b1c6da4f8a",
+      "decoded_instructions": 126,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported instruction prefix",
+      "baseline_first_rejection": "Unsupported opcode 004d77c4: or ecx, 0xffffffff",
+      "direct_calls": [
+        "005a0fbf",
+        "005af574",
+        "004298a0",
+        "004e4100",
+        "004237d0",
+        "004b0fa0",
+        "00536080",
+        "0059f050",
+        "0059f050",
+        "004237d0",
+        "004237d0",
+        "0059f050",
+        "004d7cb0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "00628130",
+        "0065b938",
+        "0065b93c"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0055a930",
+      "body_bytes": 368,
+      "body_sha256": "baef956eaafc478f8174c7536e03fc9a411b6f63b254487bb6b5450a460acf98",
+      "decoded_instructions": 111,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0055aa18: shr eax, 0xf",
+      "baseline_first_rejection": "Unsupported opcode 0055aa18: shr eax, 0xf",
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "005df358",
+        "005df35c",
+        "005df360",
+        "006a3b0c",
+        "006a3b18",
+        "006a3b1c",
+        "006a3b20",
+        "006a3b24",
+        "006a3b28",
+        "006a3b34",
+        "006a3b38",
+        "006a3b3c",
+        "006a3b40",
+        "006a3b44",
+        "006a3b48",
+        "006a3b4c",
+        "006a3b50",
+        "006a3b54"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d96b0",
+      "body_bytes": 530,
+      "body_sha256": "09b8ed65bbb867228c658dadc3370dc66c86a0336e2c1e3558b98766a9fc2fa4",
+      "decoded_instructions": 155,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004d96ba: fld dword ptr [0x65b954]",
+      "baseline_first_rejection": "Unsupported opcode 004d96ba: fld dword ptr [0x65b954]",
+      "direct_calls": [
+        "005323e0",
+        "005323e0",
+        "005323e0",
+        "004d9450",
+        "004d9450",
+        "004dad30",
+        "004dad30",
+        "004314c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "0065b954",
+        "0065b958",
+        "0065b970"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00468100",
+      "body_bytes": 8,
+      "body_sha256": "c7eb9fa091e6c7322d0fb94ea902913506561139a707ee74638bd57af08357e4",
+      "decoded_instructions": 2,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": [
+        "00536050"
+      ]
+    },
+    {
+      "va": "004d8230",
+      "body_bytes": 11,
+      "body_sha256": "498da57de7507988158a2c73ae7e5bd989289beccfbfd3fed16b01711befa79f",
+      "decoded_instructions": 2,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": [
+        "004c7e10"
+      ]
+    },
+    {
+      "va": "004d8240",
+      "body_bytes": 11,
+      "body_sha256": "4249972ae6e3d632c2e4e5f46badfce45cd338e2e9d7f17a914fea4d7e686de9",
+      "decoded_instructions": 2,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": [
+        "004c7df0"
+      ]
+    },
+    {
+      "va": "00538d80",
+      "body_bytes": 20,
+      "body_sha256": "de8e86aee4df948a1e0ec4a82c737c9af8cecce23845d4c9d6367bc0af4d06e9",
+      "decoded_instructions": 8,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00539eb0",
+        "00539eb0"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00532b20",
+      "body_bytes": 37,
+      "body_sha256": "41995978f9ba56c2ba1825360f8ed8a2c3df8d802a0c05775dabeba0a5dffb17",
+      "decoded_instructions": 17,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00532b24: fld dword ptr [eax + 4]",
+      "baseline_first_rejection": "Unsupported opcode 00532b24: fld dword ptr [eax + 4]",
+      "direct_calls": [],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0058e4d0",
+      "body_bytes": 38,
+      "body_sha256": "ece01aaae02b34ecfec82367d0306b627fe57d35c7c64f61f4bc99423b9e3f85",
+      "decoded_instructions": 13,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "005b220c",
+        "006b4880",
+        "006b4881"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00585d00",
+      "body_bytes": 40,
+      "body_sha256": "1b82aeb2ae38e1de73c4357cc6f52c9d9068f2786deb64c57d04097d332ca7b4",
+      "decoded_instructions": 16,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00585d1d: sar ecx, 8",
+      "baseline_first_rejection": "Unsupported opcode 00585d1d: sar ecx, 8",
+      "direct_calls": [
+        "005b1ac0"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00586960",
+      "body_bytes": 40,
+      "body_sha256": "6c7d24b057cb39af3b431913dda62189b3d6306e255f7d68882afc359dbe2ef2",
+      "decoded_instructions": 16,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0058697d: sar ecx, 8",
+      "baseline_first_rejection": "Unsupported opcode 0058697d: sar ecx, 8",
+      "direct_calls": [
+        "005b1ac0"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005a7673",
+      "body_bytes": 46,
+      "body_sha256": "3f7f72c0551dc4fa81d472079fa29a8897e9fc1a05cca45b9beb6608af6c7c98",
+      "decoded_instructions": 22,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": "Unsupported opcode 005a7683: or eax, 0xffffffff",
+      "direct_calls": [
+        "005a76a1",
+        "005acbea"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00536df0",
+      "body_bytes": 49,
+      "body_sha256": "74241e497401e5f0ea4f9bea2f6dd6778f0c32cda27f11e65d7a475d76dc4453",
+      "decoded_instructions": 19,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": "Unsupported opcode 00536e1d: or eax, 0xffffffff",
+      "direct_calls": [
+        "005a2f23"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005a35ea",
+      "body_bytes": 49,
+      "body_sha256": "4840f2775e83d84a91f8dbaa184941560a951c4b352097562857080f433e719e",
+      "decoded_instructions": 21,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "005a9d00",
+        "005a9b90",
+        "005a373c"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00533f00",
+      "body_bytes": 52,
+      "body_sha256": "aef1dd8cf8d1da9b8dc07ad127c846b1a4b6ea91bf42a4c002d6ae12a4366dc0",
+      "decoded_instructions": 25,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00568260",
+        "00567f70",
+        "00567df0"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0058eba0",
+      "body_bytes": 53,
+      "body_sha256": "02abe5db108a4fafcefd79a648bb28d049423099a5a2471065fcd393e5e4ca7b",
+      "decoded_instructions": 19,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "006ad779",
+        "006aefdc",
+        "006aefe0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00592490",
+      "body_bytes": 53,
+      "body_sha256": "ac8133bd22a567e377e78cd5a317205829aa3fc0a648e7b6ce214fa3a955e6d0",
+      "decoded_instructions": 19,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005924ac: shl eax, 5",
+      "baseline_first_rejection": "Unsupported opcode 0059249c: not eax",
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "005b21a4",
+        "006af080",
+        "006af084"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005ab7a7",
+      "body_bytes": 53,
+      "body_sha256": "2a0b18660fd0afee522ea1b3514e12d3c8c86309534c43ad0f32821e23cd0174",
+      "decoded_instructions": 25,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005ab7ac: wait ",
+      "baseline_first_rejection": "Unsupported opcode 005ab7ac: wait ",
+      "direct_calls": [
+        "005ab7f2",
+        "005ab884"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0055ef90",
+      "body_bytes": 54,
+      "body_sha256": "9378c6cfbad9dce323ed58e4c09b039e1cfefd87733067deea5a729af5f107dc",
+      "decoded_instructions": 18,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "0055eba0",
+        "0055efd0",
+        "005a3050",
+        "0055f060"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006a57cc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00590250",
+      "body_bytes": 56,
+      "body_sha256": "941bc12ee93b6a85c61f21c7cd88e887c9180c36015ff5c6480b1ef64bbbbfda",
+      "decoded_instructions": 16,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00590272: shl eax, 4",
+      "baseline_first_rejection": "Unsupported opcode 00590272: shl eax, 4",
+      "direct_calls": [
+        "005901b0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006b4898",
+        "006b499c"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0059c130",
+      "body_bytes": 60,
+      "body_sha256": "df3e0ff442604b190cdd1af9e8f634d2f052125ff36a133106e94341e606b3e2",
+      "decoded_instructions": 29,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0059c156: inc edi",
+      "baseline_first_rejection": "Unsupported opcode 0059c156: inc edi",
+      "direct_calls": [
+        "00589d20"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00590d10",
+      "body_bytes": 62,
+      "body_sha256": "c1f7496256814cbfc7e853b578fdf63897783d1891b7fb94e687a0efd47b6bdf",
+      "decoded_instructions": 18,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00590d1c: shl ecx, 5",
+      "baseline_first_rejection": "Unsupported opcode 00590d1c: shl ecx, 5",
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "006b489c",
+        "006b4a00"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0056e4a0",
+      "body_bytes": 66,
+      "body_sha256": "821074104ab5e91dd703f8c213eadc1b629b3e75e5a9c55c0ceb46299d439d08",
+      "decoded_instructions": 21,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "0056e3e0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005deb74",
+        "005deb78",
+        "005debf0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00562340",
+      "body_bytes": 71,
+      "body_sha256": "725b6f3abb80ace8814220902dff0229cfe3d0c48e245642651bd3cc298bb4fa",
+      "decoded_instructions": 20,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00568e90",
+        "00568d50"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005df770"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0055ecd0",
+      "body_bytes": 72,
+      "body_sha256": "d25b570413714b84c4826264136d56e5cf6a0bb8f8be843a5af9386bb91aada8",
+      "decoded_instructions": 24,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "0055eba0",
+        "0055ed20",
+        "005a3050",
+        "0055ed50"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006a57cc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0056c740",
+      "body_bytes": 75,
+      "body_sha256": "0b96ae47dbc2360f5b73083e334281c59ab1b8e54c6f5dd5825148941d53c55e",
+      "decoded_instructions": 23,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "0056b380"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005deb74",
+        "005deb78",
+        "005debf0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0056c790",
+      "body_bytes": 75,
+      "body_sha256": "60b1ff77ed98986b83c57ab5be03d5ee3c3ba7980b9ba65008e0e89f1658c088",
+      "decoded_instructions": 23,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "0056b380"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005deb74",
+        "005deb78",
+        "005debf0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00572ee0",
+      "body_bytes": 80,
+      "body_sha256": "4c60fd066e1f5c4b725ce79602c69f4176d6ddd190401716350b04df1c22b238",
+      "decoded_instructions": 33,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00531f90",
+        "00531f90"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "006bd94c"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0055f9b0",
+      "body_bytes": 81,
+      "body_sha256": "7dab5f35052ed8f17f625bddce07f76526b40a225a138cabce426c8c0c872405",
+      "decoded_instructions": 29,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "005322b0",
+        "005322c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006a57e4",
+        "006a57e8",
+        "006a57ec"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00401000",
+      "body_bytes": 84,
+      "body_sha256": "a61b24495040973a33263bca91b96e1517aa711160f00f07eae1341434277d63",
+      "decoded_instructions": 19,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00401031: fstp dword ptr [0x5e669c]",
+      "baseline_first_rejection": "Unsupported opcode 00401031: fstp dword ptr [0x5e669c]",
+      "direct_calls": [
+        "0040edc0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005e6658",
+        "005e665c",
+        "005e6660",
+        "005e6664",
+        "005e6668",
+        "005e666c",
+        "005e6694",
+        "005e669c",
+        "005e66a4",
+        "005e66a8",
+        "005e66ac"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00590c60",
+      "body_bytes": 86,
+      "body_sha256": "0b00406578fe510adbbf23fd90fe5d53e588081a77a082973d394719bc88ae25",
+      "decoded_instructions": 27,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00590c6d: shl ecx, 5",
+      "baseline_first_rejection": "Unsupported opcode 00590c6d: shl ecx, 5",
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "006b489c",
+        "006b4a00"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005846b0",
+      "body_bytes": 98,
+      "body_sha256": "09762b6960aec3d3381095472420c837e7b9224e58abf17302cc666705b4ca58",
+      "decoded_instructions": 32,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "005321f0",
+        "005322b0",
+        "00583a70",
+        "005322c0",
+        "005322c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006ad044"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d81c0",
+      "body_bytes": 100,
+      "body_sha256": "81ec8bf1d49078de570ea1a305d78cc545f0310172536f75c0e6e3da6165a55f",
+      "decoded_instructions": 33,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "004d6320",
+        "004c7df0",
+        "004c7e10",
+        "004d63a0",
+        "004c7df0",
+        "004c7e10"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "0065b928"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00592a50",
+      "body_bytes": 101,
+      "body_sha256": "ae25046bda0f46a47aca893a9ae995a4bf74d554ab7aecfa735f329af2c36dc2",
+      "decoded_instructions": 28,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "005321f0",
+        "005322b0",
+        "005a299e",
+        "00592b60",
+        "005322c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005e25dc",
+        "006af140"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0052cab0",
+      "body_bytes": 110,
+      "body_sha256": "887fa615f0bb414c480ad2f9a0d75ba5febcf74cb3c139fdba814029325c5e10",
+      "decoded_instructions": 36,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00531f90",
+        "00531f90",
+        "0052c290",
+        "0059f050"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "0069caf4"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00599830",
+      "body_bytes": 120,
+      "body_sha256": "2924899a735bbcf8389c0be6ed4ba3e99d7cc54aff6c3fdce6fc082e60622211",
+      "decoded_instructions": 44,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00599843: shl esi, 4",
+      "baseline_first_rejection": "Unsupported opcode 00599843: shl esi, 4",
+      "direct_calls": [
+        "0058aae0",
+        "0059c080",
+        "00596cd0",
+        "0059bdf0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006b17d0",
+        "006b48e5",
+        "006b49a3"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0056b4c0",
+      "body_bytes": 122,
+      "body_sha256": "86044d5348eaf645668d1c9a4b183f979e37a8548c6b89e90f6ddf3052da1058",
+      "decoded_instructions": 44,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0056b51c: setl dl",
+      "baseline_first_rejection": "Unsupported opcode 0056b51c: setl dl",
+      "direct_calls": [
+        "0056b380",
+        "0056b540"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005deb74",
+        "005deb78",
+        "005debf0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005291a0",
+      "body_bytes": 124,
+      "body_sha256": "629da2485bef923ded32a51846e7b4786812f5c2bc80baf37d8bc242b760b952",
+      "decoded_instructions": 47,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "004237d0",
+        "005322b0",
+        "005322c0",
+        "0059f050"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005e4fe8",
+        "0069cae4"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0049ae30",
+      "body_bytes": 139,
+      "body_sha256": "7572a06e3c40bd2a0346ba4f66f25a23651ef981d1326e3103091647aab1dd4f",
+      "decoded_instructions": 44,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0049ae6b: fadd dword ptr [edi + 0x330]",
+      "baseline_first_rejection": "Unsupported opcode 0049ae57: jle 0x49aeb5",
+      "direct_calls": [
+        "00532a00",
+        "00532910",
+        "00532910",
+        "00532910"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005a355d",
+      "body_bytes": 141,
+      "body_sha256": "db4f319ff0ba0977a9023718d335028dc38e764d04cbe6ddea7e466230228218",
+      "decoded_instructions": 55,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005a35d1: setne cl",
+      "baseline_first_rejection": "Unsupported opcode 005a35d1: setne cl",
+      "direct_calls": [
+        "005a33d0",
+        "005a76a1",
+        "005a9ab8",
+        "005a669e"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0052dc40",
+      "body_bytes": 148,
+      "body_sha256": "dd74f85d9af6b7dd7fab9b30f981a43c7ba78cf4f07a9db4045f972a2f5d1ae0",
+      "decoded_instructions": 57,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0052dcb1: shr eax, 3",
+      "baseline_first_rejection": "Unsupported opcode 0052dc91: jbe 0x52dca6",
+      "direct_calls": [
+        "0052e5c0",
+        "0052df40",
+        "0059ecd0",
+        "005322b0",
+        "005322c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005e4fe8",
+        "0069caf8",
+        "0069cafc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0052db60",
+      "body_bytes": 151,
+      "body_sha256": "37e084226616f130fb96fb371ed9fa963c420e307d1ddac6b60f128a6aace750",
+      "decoded_instructions": 59,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "0052ddd0",
+        "0052de50",
+        "00423f30",
+        "004237d0",
+        "0059f050",
+        "0052df10",
+        "0059f050"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "0069caf8",
+        "0069cafc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005902a0",
+      "body_bytes": 157,
+      "body_sha256": "d9c5cf7a14b041080a02afa2d9a157e1c7995f449693217867c8a97caada2b53",
+      "decoded_instructions": 57,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00590300: shl edx, 4",
+      "baseline_first_rejection": "Unsupported opcode 00590300: shl edx, 4",
+      "direct_calls": [
+        "005896d0",
+        "00589d20",
+        "00590340",
+        "00589d70",
+        "00598eb0",
+        "00590340",
+        "005896f0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006b499c",
+        "006b4a00"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005983b0",
+      "body_bytes": 163,
+      "body_sha256": "22dec8495b076b8b327c106791737377f0b85ebde2ff8513a8e7115592605373",
+      "decoded_instructions": 51,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00598436: inc edi",
+      "baseline_first_rejection": "Unsupported opcode 00598418: jbe 0x598443",
+      "direct_calls": [
+        "0058ac30",
+        "0058ac30",
+        "0058ac30",
+        "0058ac30",
+        "00598020"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "006b16a5",
+        "006b177c",
+        "006b17d0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004ae9d0",
+      "body_bytes": 171,
+      "body_sha256": "ce35f9290808b4434a203fa30bbc8a111a983877cfe2ca389f8a7306bb2a9e89",
+      "decoded_instructions": 59,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004aea0d: inc edi",
+      "baseline_first_rejection": "Unsupported opcode 004ae9d7: or ebp, 0xffffffff",
+      "direct_calls": [
+        "004a9890",
+        "0046d9b0",
+        "005a134b",
+        "004ac170"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "00656ac0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00572a90",
+      "body_bytes": 172,
+      "body_sha256": "425c864fb621f942b9ee870eac385639a13b2333fd2c39723c51bcb2ae98c837",
+      "decoded_instructions": 81,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00556880",
+        "00537f90",
+        "00531f70",
+        "0053c290",
+        "00574c70"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "006bd968"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004ede20",
+      "body_bytes": 175,
+      "body_sha256": "6c644acae8624cef5fdf9ae8ff9892e580c6edf045ba3a41aa2b45f6a3e9151c",
+      "decoded_instructions": 54,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": "Unsupported opcode 004ede31: ja 0x4edeb0",
+      "direct_calls": [
+        "004b7ab0",
+        "005a134b",
+        "004f4df0",
+        "004b7ab0",
+        "005a134b",
+        "004f5a20",
+        "004edcd0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "006573e8",
+        "00690ad4",
+        "00690ad8",
+        "00690adc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00452590",
+      "body_bytes": 198,
+      "body_sha256": "ffb8506fd5bffd55a85e4e51cccae68b67e402986ee2daf4d9cf3269a60b9c7f",
+      "decoded_instructions": 52,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "005a0fbf",
+        "0059dd00",
+        "00531ca0",
+        "0059d9b0",
+        "0059dd00",
+        "005563b0",
+        "00531f90",
+        "0053c640",
+        "0044d320"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "00613e04",
+        "0061bcc8",
+        "0061c164",
+        "0061e180",
+        "0061e1cc",
+        "0061e1d4",
+        "00628a28",
+        "0065b30c"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005556b0",
+      "body_bytes": 205,
+      "body_sha256": "e95433928eb266d7cd54f4f0b0b6325dc36bd6a4d4ec4782c680a4679f714030",
+      "decoded_instructions": 79,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005556cc: cdq ",
+      "baseline_first_rejection": "Unsupported opcode 005556cc: cdq ",
+      "direct_calls": [
+        "005350e0",
+        "00555780",
+        "005323e0",
+        "005323e0"
+      ],
+      "indirect_call": false,
+      "global_operands": [],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004edd40",
+      "body_bytes": 214,
+      "body_sha256": "b3338fb5d1b55dcdb6c9b3d6552f6408a8941d4dafd1bd8fba810fab8ba75559",
+      "decoded_instructions": 69,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004edd48: fld dword ptr [0x5b23f8]",
+      "baseline_first_rejection": "Unsupported opcode 004edd48: fld dword ptr [0x5b23f8]",
+      "direct_calls": [
+        "004f0480",
+        "004f0400"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f8",
+        "005b49b4",
+        "00690ad8",
+        "00690adc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004f7db0",
+      "body_bytes": 216,
+      "body_sha256": "b793ebb530382e6d652729f1b09b98db950f5d4bd3b0a6456a61e74c00e91b2a",
+      "decoded_instructions": 79,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004f7e2a: sar eax, 2",
+      "baseline_first_rejection": "Unsupported opcode 004f7e2a: sar eax, 2",
+      "direct_calls": [
+        "005a17eb",
+        "00538110",
+        "004f7e90",
+        "004ee450",
+        "0059f050",
+        "004f8e50",
+        "004f80c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "00691b58",
+        "00691b88"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00475c80",
+      "body_bytes": 226,
+      "body_sha256": "3698da04e3d3280646d8fe37d5978a3f8116bb91f72aed292bd168c4ecc4bf7c",
+      "decoded_instructions": 73,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00475d14: shl edx, 5",
+      "baseline_first_rejection": "Unsupported opcode 00475d14: shl edx, 5",
+      "direct_calls": [
+        "005a0fbf",
+        "0059d9b0",
+        "005a177b",
+        "005a177b",
+        "00475a60",
+        "00531f90",
+        "005a177b",
+        "00531f90"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "00628a18",
+        "00628a22",
+        "00628a28",
+        "00628b28",
+        "00628b2c",
+        "00657a24",
+        "00657a30",
+        "0065b2b8"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0049fd30",
+      "body_bytes": 236,
+      "body_sha256": "947cf9f1af071ea8e9d2117b63f390286fb2e26d319769355e00d6acbf21db2e",
+      "decoded_instructions": 59,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0049fd35: fld dword ptr [esi + 0x3a0]",
+      "baseline_first_rejection": "Unsupported opcode 0049fd35: fld dword ptr [esi + 0x3a0]",
+      "direct_calls": [
+        "00532360",
+        "0049f160"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f0",
+        "005b23f4",
+        "005b24e0",
+        "005b25f4"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0049af70",
+      "body_bytes": 284,
+      "body_sha256": "c9e56959e925f74f615d909d55758785f7c46b978032728bcd88dc66e75cb0bd",
+      "decoded_instructions": 84,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0049b010: shl edi, 4",
+      "baseline_first_rejection": "Unsupported opcode 0049afff: movsx eax, word ptr [edi]",
+      "direct_calls": [
+        "00417190",
+        "00474440",
+        "00474060",
+        "00499520",
+        "00532910",
+        "005a2a10",
+        "00532910"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f8",
+        "005b4a10",
+        "005b4a14",
+        "00628bc0",
+        "006573f8"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004e39f0",
+      "body_bytes": 292,
+      "body_sha256": "a2d442484039afc777e904158d3961cd3a2e4a011028ed959700d8c20632c207",
+      "decoded_instructions": 102,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004e3a6a: inc eax",
+      "baseline_first_rejection": "Unsupported opcode 004e3a6a: inc eax",
+      "direct_calls": [
+        "00423840",
+        "00429df0",
+        "00403520",
+        "00472830",
+        "004e3bf0",
+        "0059ecd0",
+        "005322b0",
+        "005322c0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005e4fe8",
+        "006907f8"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0045dbd0",
+      "body_bytes": 298,
+      "body_sha256": "bbdcbbb4f152eedea4c669fc60b2ce824017b95c91359c0598bb1facb308ea25",
+      "decoded_instructions": 86,
+      "baseline_classification": "syntax_supported",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": null,
+      "direct_calls": [
+        "00531f90",
+        "005a0fbf",
+        "0059d9b0",
+        "005a0fbf",
+        "0059d8e0",
+        "00460cd0",
+        "0045db10",
+        "0059f050",
+        "0059ef90",
+        "00460a50",
+        "0059ef90",
+        "0045d800"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "00627e48",
+        "00627e4c",
+        "00627e50",
+        "0065b2b8"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0047f040",
+      "body_bytes": 330,
+      "body_sha256": "c1f7ab319e41aa32821399bfe54e78223014ee3cf73eba993b7776e6837c415b",
+      "decoded_instructions": 112,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0047f0a3: sar edx, 2",
+      "baseline_first_rejection": "Unsupported opcode 0047f0a3: sar edx, 2",
+      "direct_calls": [
+        "0059ef90",
+        "0059ef90",
+        "004211d0",
+        "0059ecd0",
+        "005322b0",
+        "005322c0"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005e4fe8",
+        "00628960",
+        "00628bac"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005354c0",
+      "body_bytes": 345,
+      "body_sha256": "fef35e66496da2ca64bfb2309904a2059d22bd390fdc9fa7e27d626fd04ed9e3",
+      "decoded_instructions": 110,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00535567: cdq ",
+      "baseline_first_rejection": "Unsupported opcode 005354fc: jg 0x535611",
+      "direct_calls": [
+        "005323e0",
+        "00571630"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005de630",
+        "005de64c",
+        "005deac8",
+        "005deacc",
+        "005dead0",
+        "006bd92c",
+        "006bd964"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00562680",
+      "body_bytes": 368,
+      "body_sha256": "7d41dc10d7b12f8d7fd3d7baeeffca13f4a68f46836c1d7d605841235e7cd683",
+      "decoded_instructions": 117,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005626cf: fild dword ptr [esp + 0x30]",
+      "baseline_first_rejection": "Unsupported opcode 005626cf: fild dword ptr [esp + 0x30]",
+      "direct_calls": [
+        "00574b70",
+        "0056daf0",
+        "00571630",
+        "00573070"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005de62c",
+        "005de630",
+        "005de64c",
+        "005deb18",
+        "005deb1c",
+        "005decd8",
+        "006a5bb8",
+        "006bd954",
+        "006bd97c",
+        "006bd984"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d23f0",
+      "body_bytes": 374,
+      "body_sha256": "c1cee07ee9a80d6e551d415d8c29a3316064dd4dec946312efbf7846996fed01",
+      "decoded_instructions": 124,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004d2434: sete cl",
+      "baseline_first_rejection": "Unsupported opcode 004d2434: sete cl",
+      "direct_calls": [
+        "004edcd0",
+        "004edcd0",
+        "004edc00",
+        "0048d550",
+        "00429b20",
+        "004aadb0",
+        "004d5fb0",
+        "004d1bd0",
+        "004d1e70"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "00628c70"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00406520",
+      "body_bytes": 385,
+      "body_sha256": "7a28fcbef134376531dd67255bbe57236325a012805a8d99c01753a412ed1038",
+      "decoded_instructions": 124,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004065e8: inc esi",
+      "baseline_first_rejection": "Unsupported opcode 0040653a: jle 0x406696",
+      "direct_calls": [
+        "0040b490",
+        "0059ef90",
+        "004056b0",
+        "0059ef90",
+        "00405910",
+        "0059ef90",
+        "00406490",
+        "0059ef90",
+        "00403e00",
+        "0059ef90",
+        "0040b530",
+        "0040b510"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005e67a0",
+        "005e8b58"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00402a40",
+      "body_bytes": 415,
+      "body_sha256": "e83c69bd123598748126cd5d402e89f956475b66e5a9dc7f2fd11d214903e7de",
+      "decoded_instructions": 131,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00402a5a: fld dword ptr [esi + 0x107c]",
+      "baseline_first_rejection": "Unsupported opcode 00402a5a: fld dword ptr [esi + 0x107c]",
+      "direct_calls": [
+        "00402790",
+        "0040e6e0",
+        "0040e6e0",
+        "0040e6e0",
+        "00402e30",
+        "00402920"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f0",
+        "005b23f8",
+        "005b2470",
+        "005e6694",
+        "005e6698",
+        "00628bc0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005349e0",
+      "body_bytes": 431,
+      "body_sha256": "6e11990c88a461ac6ad8f26f0c54e8acc1be5cd0c2c512c7722f1245c2f2225e",
+      "decoded_instructions": 156,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_supported",
+      "first_rejection": null,
+      "baseline_first_rejection": "Unsupported opcode 00534a22: movsx esi, word ptr [eax + 4]",
+      "direct_calls": [
+        "00537fb0",
+        "00571160",
+        "00570820",
+        "00570610",
+        "00570780",
+        "00570610",
+        "00570920",
+        "00570610",
+        "00570ff0",
+        "00570610",
+        "00570260",
+        "00570820",
+        "00570610",
+        "00570610"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005deb74",
+        "005deb78",
+        "005debf0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004deda0",
+      "body_bytes": 447,
+      "body_sha256": "82d27f45ea04901c28bd485963843e9cd63dd03801806af43ebaf947dde81f64",
+      "decoded_instructions": 171,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported instruction prefix",
+      "baseline_first_rejection": "Unsupported opcode 004dee80: or ecx, 0xffffffff",
+      "direct_calls": [
+        "005a177b",
+        "005a0fbf",
+        "005a0fbf",
+        "005a0fbf",
+        "004e0780",
+        "0059ecb0",
+        "005a0fbf",
+        "005a177b",
+        "005a0fbf",
+        "004b80e0",
+        "0059ecd0",
+        "0059e130",
+        "005a177b",
+        "0059ecd0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "0065b360",
+        "0065b638"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00401060",
+      "body_bytes": 577,
+      "body_sha256": "ed31be13fb42cea4839e7aa0aa1acb10354aadd517cf3e53681e01355ba045a2",
+      "decoded_instructions": 165,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00401078: shl eax, 1",
+      "baseline_first_rejection": "Unsupported opcode 00401074: movsx edx, word ptr [esi + 8]",
+      "direct_calls": [
+        "004817d0",
+        "004013d0",
+        "00401580",
+        "00402f00",
+        "00407c20",
+        "004a6de0",
+        "00401a00",
+        "00401f20",
+        "00402200",
+        "004024f0",
+        "004026b0",
+        "00401760",
+        "00401b70",
+        "00401c60"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f0",
+        "005b23f4",
+        "005b23f8",
+        "005b23fc",
+        "005d1028",
+        "005d102c",
+        "005e6674",
+        "005e8b58",
+        "00628bc0",
+        "00655a0c",
+        "00657404",
+        "00657430"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00402be0",
+      "body_bytes": 582,
+      "body_sha256": "dc9cc09921f3fdcf9697d6f47b241e24b828e004d4901035248bb1527ef8f6fa",
+      "decoded_instructions": 159,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00402c1d: fcomp dword ptr [0x5b23f8]",
+      "baseline_first_rejection": "Unsupported opcode 00402c10: ja 0x402d00",
+      "direct_calls": [
+        "0040e860",
+        "0040e860",
+        "0040e860",
+        "0040ef30",
+        "0040ef30",
+        "0040ef30"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f8",
+        "005b241c",
+        "005b244c",
+        "005b2474",
+        "005b2478",
+        "005b247c",
+        "005b2480",
+        "005e665c",
+        "005e6670",
+        "005e6674",
+        "005e6678",
+        "005e6694"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0053e5c0",
+      "body_bytes": 643,
+      "body_sha256": "37c8f194ff3b5513310333668852ae822b101393a27b376cef56c0377f323996",
+      "decoded_instructions": 184,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0053e76c: fild qword ptr [esp]",
+      "baseline_first_rejection": "Unsupported opcode 0053e5ca: ja 0x53e81c",
+      "direct_calls": [
+        "0053e890",
+        "0053e890",
+        "0053e890",
+        "0053e890",
+        "0053e890",
+        "0053e890",
+        "0053e890"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005b253c",
+        "005deb74",
+        "005deb78",
+        "005debf0"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005ac182",
+      "body_bytes": 647,
+      "body_sha256": "e785c718ac2bfa07980c4afca54ac95bbde8435295be9a2a87e20a0a0e7f8c5d",
+      "decoded_instructions": 207,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005ac1ea: imul eax, eax, 0x3c",
+      "baseline_first_rejection": "Unsupported opcode 005ac198: or dword ptr [0x5e6208], 0xffffffff",
+      "direct_calls": [
+        "005a4ba4",
+        "005a3071",
+        "005a4c05",
+        "005a4c20",
+        "005a3b9d",
+        "005a6730",
+        "005a3be5",
+        "005aa4e0",
+        "005a4c05",
+        "005a28a0",
+        "005a1ebf",
+        "005a1ebf",
+        "005a1ebf",
+        "005a28a0",
+        "005a4c05"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005b2110",
+        "005b2248",
+        "005e6160",
+        "005e6164",
+        "005e6168",
+        "005e61ec",
+        "005e61f0",
+        "005e61f8",
+        "005e6208",
+        "006afd90",
+        "006afed8",
+        "006afee0",
+        "006aff26",
+        "006aff34",
+        "006aff7a",
+        "006aff88",
+        "006aff8c"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0056daf0",
+      "body_bytes": 656,
+      "body_sha256": "150a9cc22877628cf3ab4ab97048d0aab3ef27fb6e449f7d5bdbfde83137834e",
+      "decoded_instructions": 159,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0056daf6: fld dword ptr [esp + 0x9c]",
+      "baseline_first_rejection": "Unsupported opcode 0056daf6: fld dword ptr [esp + 0x9c]",
+      "direct_calls": [],
+      "indirect_call": true,
+      "global_operands": [
+        "005b23f8",
+        "005b24a8",
+        "005dfa08",
+        "005dfa0c",
+        "005dfa10",
+        "005dfa14",
+        "005dfa18",
+        "006a6404",
+        "006a6408",
+        "006a640c",
+        "006a6410",
+        "006a6414",
+        "006bd9a8"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0058f8f0",
+      "body_bytes": 708,
+      "body_sha256": "d3ab5c297824ed6de5a695712f3f1c7d6c87748ba246205d76f860b1c1c267e2",
+      "decoded_instructions": 232,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0058f95f: sar eax, 1",
+      "baseline_first_rejection": "Unsupported opcode 0058f926: jg 0x58fb9e",
+      "direct_calls": [
+        "0058fcd0",
+        "0058fbc0",
+        "0058f6c0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "006ad760",
+        "006ad768",
+        "006ad778",
+        "006ad77c",
+        "006ad780",
+        "006ad784",
+        "006ad788",
+        "006ad78c",
+        "006ad790",
+        "006ad7b4",
+        "006aeff4",
+        "006b4884",
+        "006b48dc",
+        "006b48e4"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "005907b0",
+      "body_bytes": 708,
+      "body_sha256": "92dcd7484c6f2eb05cafd9ace0b68a3060d118776fa27ec8d051caeb3b23f739",
+      "decoded_instructions": 208,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00590901: inc edx",
+      "baseline_first_rejection": "Unsupported opcode 00590804: movsx edi, byte ptr [ecx + 5]",
+      "direct_calls": [
+        "005896d0",
+        "005903d0",
+        "00599100",
+        "005990c0",
+        "00590420",
+        "005896f0",
+        "00565d60",
+        "00589d20",
+        "005896f0",
+        "00589d20",
+        "005896f0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "006b49a2",
+        "006b4a00"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004d2100",
+      "body_bytes": 745,
+      "body_sha256": "09a770f8abd73bbb9f6cf122be578a3eedcffa1a392d8e1f17485a4a9eef0e87",
+      "decoded_instructions": 251,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004d213b: sete cl",
+      "baseline_first_rejection": "Unsupported opcode 004d213b: sete cl",
+      "direct_calls": [
+        "004edcd0",
+        "004edcd0",
+        "004edc00",
+        "0048d550",
+        "004e0d40",
+        "004e07b0",
+        "0059efc0",
+        "00423610",
+        "00505810",
+        "0042bcb0",
+        "0047fb80",
+        "004298a0",
+        "004d5df0",
+        "004298a0",
+        "004d5df0",
+        "004298a0",
+        "004d5df0",
+        "004237d0",
+        "004d1e70",
+        "004aadb0",
+        "004d1bd0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "00628c70"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004edf00",
+      "body_bytes": 800,
+      "body_sha256": "decdb839a0232781383324e89021ae74b0b053c627d8bffe3f90557b97fd6563",
+      "decoded_instructions": 246,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004ee000: sete al",
+      "baseline_first_rejection": "Unsupported opcode 004edf61: movsx eax, word ptr [eax]",
+      "direct_calls": [
+        "00503a50",
+        "00503310",
+        "00503ad0",
+        "005057d0",
+        "004fc0b0",
+        "004fafc0",
+        "004fb100",
+        "005032d0",
+        "00504450",
+        "00503310",
+        "00504370",
+        "00503960",
+        "00505740",
+        "005012e0",
+        "005057a0",
+        "005012e0",
+        "005056d0",
+        "00505710",
+        "00505770",
+        "005012e0",
+        "00503a50",
+        "00503310",
+        "00503ad0",
+        "004de060",
+        "0051b060",
+        "005a0f98",
+        "0051aef0",
+        "004b7ab0",
+        "005a134b",
+        "00502270",
+        "00504a40"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005e77a4",
+        "005e77c8",
+        "005e8ae8",
+        "00657494",
+        "00657e20",
+        "00657e21",
+        "00657e2c",
+        "00657e34",
+        "00690ad4",
+        "00690ad8",
+        "00690adc"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00571630",
+      "body_bytes": 853,
+      "body_sha256": "8b6e6039bd809999b4b1d8f890df5cfc970362487e322b27db20aed37458c516",
+      "decoded_instructions": 278,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 005716b8: setne bl",
+      "baseline_first_rejection": "Unsupported opcode 005716b8: setne bl",
+      "direct_calls": [
+        "00537f90",
+        "00534b90",
+        "00534d40",
+        "00537f90",
+        "005712f0",
+        "00574080",
+        "00531f90"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005de62c",
+        "005de62d",
+        "005de62e",
+        "005de634",
+        "005de638",
+        "005de63c",
+        "005de640",
+        "005de644",
+        "005de64c",
+        "005deb74",
+        "005deb78",
+        "005debf0",
+        "006a6424",
+        "006a6428"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "00572b40",
+      "body_bytes": 921,
+      "body_sha256": "53aa03149b0c768632dd1bdda922290e2bb74e9aff10cfff3d801721718031fd",
+      "decoded_instructions": 242,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 00572b82: sar eax, 3",
+      "baseline_first_rejection": "Unsupported opcode 00572b59: movsx eax, word ptr [edi + 6]",
+      "direct_calls": [
+        "00537f90",
+        "005712f0",
+        "00534b90",
+        "005712f0"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "005dfb7c",
+        "006bd940",
+        "006bd954",
+        "006bd9a8"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0040af70",
+      "body_bytes": 945,
+      "body_sha256": "abffe84f095108c28f03569353ee0f2b938ccdfc06219833a34ea479a65fd9ad",
+      "decoded_instructions": 234,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0040af9a: fld dword ptr [ecx + 0x1024]",
+      "baseline_first_rejection": "Unsupported opcode 0040af9a: fld dword ptr [ecx + 0x1024]",
+      "direct_calls": [],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f8",
+        "005b2410",
+        "005b2430",
+        "005b24a8",
+        "005b2554",
+        "005b2648",
+        "005b264c",
+        "005b2650",
+        "005b2654",
+        "005b2658",
+        "005b2660",
+        "005cc358",
+        "00657430"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0041ebf0",
+      "body_bytes": 1015,
+      "body_sha256": "7ae79e93db219972082448bd0d7b8180016e5dfc14eee0204a2ce30f2e9cf7b1",
+      "decoded_instructions": 272,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0041ec56: mul ecx",
+      "baseline_first_rejection": "Unsupported opcode 0041ec56: mul ecx",
+      "direct_calls": [
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059dd00",
+        "0059ecb0",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059db50",
+        "005a0fbf",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059dd00",
+        "0059ecb0",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059db50",
+        "0041eff0",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059e1b0",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059e130",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059e1b0",
+        "005a0fbf",
+        "0059dc30",
+        "005a0fbf",
+        "0059e130"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "0060c81c",
+        "0060c900",
+        "0060c958",
+        "0065b360"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "004f3e40",
+      "body_bytes": 1301,
+      "body_sha256": "15c4f7be35a3cd4d100f3c65704576c15ced7060c9d232afb6e1e83adcccf712",
+      "decoded_instructions": 417,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 004f3f07: sar esi, 2",
+      "baseline_first_rejection": "Unsupported opcode 004f3f07: sar esi, 2",
+      "direct_calls": [
+        "004b7ab0",
+        "005a134b",
+        "004b7ab0",
+        "005a134b",
+        "004fbc10",
+        "004b7ab0",
+        "005a134b",
+        "0046dae0",
+        "0046dae0",
+        "0046dae0",
+        "0046dae0",
+        "0046dae0",
+        "0046dae0",
+        "005032c0",
+        "0042bcb0",
+        "0047fb80",
+        "005a0fbf",
+        "0059dc30",
+        "0047fb80",
+        "0047fb80",
+        "005a0fbf",
+        "0059dc30",
+        "0047fb80",
+        "0047fb80",
+        "00525ae0",
+        "004f0f50",
+        "004f0f50",
+        "004f0f50",
+        "004f0f50",
+        "004f0f50",
+        "004f0f50",
+        "00501ad0",
+        "004b7ab0",
+        "005a134b",
+        "004b7ab0",
+        "005a134b"
+      ],
+      "indirect_call": true,
+      "global_operands": [
+        "0065b300",
+        "006919e8",
+        "006919ec",
+        "006919f0",
+        "006919f4",
+        "006919f8",
+        "006919fc",
+        "00691a00",
+        "00691a04"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0040b650",
+      "body_bytes": 2441,
+      "body_sha256": "c718ced5fe6624ff2ac862bd6d813494b914e0346c62ff00ac908b7538170590",
+      "decoded_instructions": 661,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0040b672: shl eax, 4",
+      "baseline_first_rejection": "Unsupported opcode 0040b665: movsx edx, word ptr [esi + 8]",
+      "direct_calls": [
+        "004816f0",
+        "004817d0",
+        "00532910",
+        "00532910",
+        "005a1060",
+        "00532910",
+        "005a1060",
+        "00493960",
+        "00473330"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f0",
+        "005b23f8",
+        "005b241c",
+        "005b2470",
+        "005b24a8",
+        "005b24e8",
+        "005b253c",
+        "005b25f0",
+        "005b25f8",
+        "005b25fc",
+        "005b2618",
+        "005b261c",
+        "005b2674",
+        "005b2678",
+        "005b267c",
+        "005b2680",
+        "005b2688",
+        "005b2690",
+        "005b2694",
+        "005d1028",
+        "005d102c",
+        "005e6e34",
+        "005e8b34",
+        "00606ac4",
+        "00606ae0",
+        "00628bc0",
+        "00655a0c",
+        "006573e8",
+        "006573f4",
+        "00657430"
+      ],
+      "external_jmp_targets": []
+    },
+    {
+      "va": "0040bfe0",
+      "body_bytes": 2622,
+      "body_sha256": "d2b827f80f2c5def7bf3b5260fa88b194ad593b14dfea8136392dda2bd959be6",
+      "decoded_instructions": 782,
+      "baseline_classification": "syntax_rejected",
+      "classification": "syntax_rejected",
+      "first_rejection": "Unsupported opcode 0040c011: fld dword ptr [eax + ecx*4 + 0x60]",
+      "baseline_first_rejection": "Unsupported opcode 0040c005: movsx ecx, bl",
+      "direct_calls": [
+        "005a0f98",
+        "005a0f98",
+        "005a0f98",
+        "004817d0",
+        "00403450",
+        "00532360",
+        "00532330",
+        "00532330",
+        "005328d0",
+        "00532910",
+        "00403450",
+        "00532330",
+        "00532910",
+        "00532970",
+        "00532300",
+        "00532300",
+        "00532970",
+        "00532330",
+        "00532b20",
+        "005328d0",
+        "00532970",
+        "00532300",
+        "004817d0",
+        "00532880",
+        "00532970",
+        "00532300",
+        "00532330",
+        "005328d0",
+        "00532910",
+        "00532910",
+        "00532910"
+      ],
+      "indirect_call": false,
+      "global_operands": [
+        "005b23f8",
+        "005b2400",
+        "005b2404",
+        "005b241c",
+        "005b242c",
+        "005b2460",
+        "005b2470",
+        "005b24a8",
+        "005b2580",
+        "005b25e4",
+        "005b2600",
+        "005b2608",
+        "005b2624",
+        "005b263c",
+        "005b2698",
+        "005b269c",
+        "005b26a0",
+        "005b26a4",
+        "005b26a8",
+        "005b26ac",
+        "005b26b0",
+        "005d1028",
+        "005d102c",
+        "005e671c",
+        "005e6e34",
+        "005e8b58",
+        "00606ac0",
+        "00606ac4",
+        "00628bc0",
+        "00655a0c",
+        "00657430"
+      ],
+      "external_jmp_targets": []
+    }
+  ],
+  "next_closed_call_chain_navigation": [],
+  "input_sha256": {
+    "scripts/research/census-v2-x86-extended-integer-277.py": "165088811ab18886c3586cc0e03054834129e5d6eb6ea7bf7374cb88ecd46573",
+    "scripts/research/x86-cpp-backend-257.py": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+    "scripts/research/x86-cpp-backend-277.py": "7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b",
+    "scripts/research/census-v2-x86-cpp-260.py": "722a8a4ef1d2b401b17ff5530b69f55d999c1cf42c011e6e9f9fce33ec86fe0b",
+    "iterations/v2/001-original-recovery/runs/252-x86-cpp-coverage/summary.json": "85d8ba4c567bcb0cbaa04f9df5666e41578660851628b56224489599df753d9a",
+    "iterations/v2/001-original-recovery/runs/260-x86-backend-coverage/summary.json": "150978540073acc3c40c17c7e798dd3f27e7987aa67ace106d798c2a22be4194",
+    "iterations/v2/001-original-recovery/runs/277-x86-extended-integer/summary.json": "39e8defeae3bae089b9f36b655c4bc71be4e5f0bb0860148060291df3ac0f9a4",
+    "iterations/v2/001-original-recovery/runs/277-x86-extended-integer/validation.json": "ccbc2292ce9d0188f62b8e97f1ecd742bb42f7044c3001557fb84b4fa67ebea8",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3"
+  },
+  "before_after_guards": true,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "accepted_functions_added": 0,
+  "limits": [
+    "Same frozen252/26085bodies, not the latest whole-game/nativefrontier estimate.",
+    "Whole-body syntax support is not originalsemantic/ABI/provider/data/nativeacceptance.",
+    "Native277proof covers syntheticintegerlemmas; originalper-bodyalgorithms were not manually written or executed here.",
+    "Closedchainnavigation requires everydirectcallee inside85bodyset and rejectsindirectCALL/absolute globals; externalJMP exits remain explicit."
+  ]
+}

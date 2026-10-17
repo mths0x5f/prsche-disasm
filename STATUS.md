@@ -1,5 +1,30 @@
 # Состояние проекта
 
+Checkpoint 2026-10-17: приоритет — игровой EXE и реальная цепочка запуска.
+- 285: два normal-entry links без WHOLEARCHIVE и без компиляции,267 имён/
+  303 references в обоих. Добавление actual1125-candidate archive274 не изменило
+  достижимый frontier; no EXE.18 input pins/22 searched libraries audit PASS.
+  Это свежая линковка cached173 graph, не полная пересборка текущих исходников.
+- Следующий пакет: original CALL targets и ABI для20 unresolved app_main services,
+  начиная с application_main_log, затем startup/rendering. Сначала существующий
+  canonical/WIP owner, затем доказанная связь, без заглушек и guessed aliases.
+- 284: host обходит original pre-WinMain initializer chain.286 уточнил: у первых
+  двух конструкторов нет найденных прямых downstream consumers; это открытая
+  проверка эквивалентности, а не доказанный игровой блокер. Не расширять CRT
+  восстановление ради этих двух isolated writes без доказанной необходимости.
+- 276 завершён:2canonical file-operation тела/2ABI-binding,8 native calls против
+  4 original cutpoints PASS. Отдельный пакет, в union274 ещё не подключён.
+- 277 завершён:30 976 native comparisons PASS, MOVSX/MOVZX/OR/NOT/Jcc;
+  syntax-only25→29/85,0новых принятых игровых функций.
+- 279: physical FILE globals footprint;9raw gaps ещё открыты.
+- 278/280: прототип caller ABI repair/collector не завершён; только сохранённая
+  работа, не применён/не validated.281/282 отложены до начала реализации.
+Активных назначений после финализации283/286 нет. Точный следующий шаг —
+связать доказанный logging owner с реальным entry target и повторить только
+затронутую компиляцию/линковку.267 имён — frontier, не оставшееся число функций.
+
+Предыдущий candidate-archive checkpoint:
+
 Checkpoint 2026-10-17, Run274: **1125 candidate function VAs +19supportobjects**,
 1144archive members/1 299 024bytes. Actual link **414names/566diagnostics**, EXE/DLL нет.
 Связаны canonicalheapfree+rawbinding+realWin32locks+одинshared64Btable owner.
@@ -19,15 +44,10 @@ Datafootprint proof independent ofunprovedcandidatefunctionliveness; those funct
 258 originalCALLchains36864native cases;262syntheticCPU15744cases PASS;
 260syntax25/85,notsemanticacceptance.595d0MOVSX/5a4c05layout holds сохраняются.
 
-Пакеты257–275 завершены, активных назначений нет. Следующий bounded connectedpacket:
-accepted files.cpp operation_queue00568200 +operation_allocate005682a0 (275ranks2/3),
-originalconsumer ABI preflight beforeexactfragmentreuse. Four sharedcallers568ae0/b10/b50/b90
-также используют unsafechar handle_device595d0; recoverfullEAXconsumer contract ratherthan
-aliasbyguess. Batchnativefixtures/providers onecompile/link, keepFILE/device/queue state explicit.
-Parallel backendnext: MOVSX/OR/conditions по260; толькоnativeproved instruction semantics.
-FullCPU/loader/imports/bootstrap/faults/concurrency/game launch иbacklog открыты.
-Commands: audit-v2-native-platform-268.py,index-v2-heap-candidates-271.py --validate,
-audit-v2-shared-heap-table-272.py; actualunion —runs/274/command.json (collector268).
+Исторический план после275: files.cpp/native backend packets завершены в276/277;
+595d0 caller-return hold остаётся открытым. Ближайший приоритет изменён по285:
+связь существующего корпуса с реальным entry graph, см. текущий checkpoint выше.
+Команда прежней wholearchive union — runs/274/command.json (collector268).
 
 Предыдущий checkpoint:
 

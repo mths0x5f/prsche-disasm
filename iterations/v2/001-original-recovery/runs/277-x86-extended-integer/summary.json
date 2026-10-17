@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "kind": "synthetic-x86-extended-integer",
+  "backend_sha256": "7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b",
+  "header_sha256": "8ffb1e675eaaab700612fcac316d30a98f75a21aacaca076830c6f6649aa717a",
+  "baseline_backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "unchanged257_header_helpers": true,
+  "synthetic_entries": 26,
+  "synthetic_bytes": 164,
+  "synthetic_instructions": 70,
+  "original_game_functions": 0,
+  "new_accepted_functions": 0,
+  "production_or_union_changed": false,
+  "native_game_execution_commands": 0,
+  "actual_compiler_batches": 1,
+  "compiled_tus": 2,
+  "compiler_exit_code": 0,
+  "compile_seconds": 1.0451073000440374,
+  "compiler_warnings": 0,
+  "native_fixture_exit_code": 0,
+  "native_seconds": 0.4736104999901727,
+  "state_comparisons": 30976,
+  "case_groups": {
+    "provenance": "syntheticCPUfixture",
+    "native_game_execution": false,
+    "cases": 30976,
+    "failures": 0,
+    "extensions": 16384,
+    "logic": 13824,
+    "conditions": 768
+  },
+  "oracles": [
+    {
+      "id": 0,
+      "name": "movsx-eax-ah",
+      "bytes": "0fbec4c3",
+      "relocations": []
+    },
+    {
+      "id": 1,
+      "name": "movzx-eax-ah",
+      "bytes": "0fb6c4c3",
+      "relocations": []
+    },
+    {
+      "id": 2,
+      "name": "movsx-eax-dx",
+      "bytes": "0fbfc2c3",
+      "relocations": []
+    },
+    {
+      "id": 3,
+      "name": "movzx-eax-dx",
+      "bytes": "0fb7c2c3",
+      "relocations": []
+    },
+    {
+      "id": 4,
+      "name": "movsx-ax-cl",
+      "bytes": "660fbec1c3",
+      "relocations": []
+    },
+    {
+      "id": 5,
+      "name": "movzx-ax-cl",
+      "bytes": "660fb6c1c3",
+      "relocations": []
+    },
+    {
+      "id": 6,
+      "name": "movsx-ecx-memory8",
+      "bytes": "0fbe0ac3",
+      "relocations": []
+    },
+    {
+      "id": 7,
+      "name": "movzx-ecx-memory8",
+      "bytes": "0fb60ac3",
+      "relocations": []
+    },
+    {
+      "id": 8,
+      "name": "movsx-cx-memory8",
+      "bytes": "660fbe0ac3",
+      "relocations": []
+    },
+    {
+      "id": 9,
+      "name": "movzx-cx-memory8",
+      "bytes": "660fb60ac3",
+      "relocations": []
+    },
+    {
+      "id": 10,
+      "name": "movsx-ecx-memory16",
+      "bytes": "0fbf0ac3",
+      "relocations": []
+    },
+    {
+      "id": 11,
+      "name": "movzx-ecx-memory16",
+      "bytes": "0fb70ac3",
+      "relocations": []
+    },
+    {
+      "id": 12,
+      "name": "movsx-eax-al",
+      "bytes": "0fbec0c3",
+      "relocations": []
+    },
+    {
+      "id": 13,
+      "name": "movzx-eax-al",
+      "bytes": "0fb6c0c3",
+      "relocations": []
+    },
+    {
+      "id": 14,
+      "name": "or-ah-cl",
+      "bytes": "0ae1c3",
+      "relocations": []
+    },
+    {
+      "id": 15,
+      "name": "or-ax-cx",
+      "bytes": "660bc1c3",
+      "relocations": []
+    },
+    {
+      "id": 16,
+      "name": "or-eax-ecx",
+      "bytes": "0bc1c3",
+      "relocations": []
+    },
+    {
+      "id": 17,
+      "name": "not-ah",
+      "bytes": "f6d4c3",
+      "relocations": []
+    },
+    {
+      "id": 18,
+      "name": "not-ax",
+      "bytes": "66f7d0c3",
+      "relocations": []
+    },
+    {
+      "id": 19,
+      "name": "not-eax",
+      "bytes": "f7d0c3",
+      "relocations": []
+    },
+    {
+      "id": 20,
+      "name": "jg",
+      "bytes": "7f06b8df9b5713c3b821436587c3",
+      "relocations": []
+    },
+    {
+      "id": 21,
+      "name": "jle",
+      "bytes": "7e06b8df9b5713c3b821436587c3",
+      "relocations": []
+    },
+    {
+      "id": 22,
+      "name": "ja",
+      "bytes": "7706b8df9b5713c3b821436587c3",
+      "relocations": []
+    },
+    {
+      "id": 23,
+      "name": "jbe",
+      "bytes": "7606b8df9b5713c3b821436587c3",
+      "relocations": []
+    },
+    {
+      "id": 24,
+      "name": "jb",
+      "bytes": "7206b8df9b5713c3b821436587c3",
+      "relocations": []
+    },
+    {
+      "id": 25,
+      "name": "jae",
+      "bytes": "7306b8df9b5713c3b821436587c3",
+      "relocations": []
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-x86-extended-integer-277.py": "e886633e150f3d838b1efee434ad3a9e284faa3f84d8cf552309245441137a2e",
+    "scripts/research/x86-cpp-backend-277.py": "7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b",
+    "scripts/research/experiment-v2-x86-cpu-primitives-262.py": "9cc74e634a7c288ebffc92d22c7e52153f70c9921950df78366f2a6913b7b295",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/audit-v2-nested-calls-229.py": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "scripts/research/x86-cpp-backend-257.py": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/experiments/v2-x86-extended-integer-277/machine257.h": "8ffb1e675eaaab700612fcac316d30a98f75a21aacaca076830c6f6649aa717a",
+    "local/experiments/v2-x86-extended-integer-277/derived-backend277.py": "fb283afc56c065aaf634f4b328c2c6dfb21d9e554f42639ac2d5e6cfa4520e8b",
+    "local/experiments/v2-x86-extended-integer-277/extended277.cpp": "963d58479416393de1917ef70b1dce7a8717bdf0a425b6965d7dcd6cf1fd4b8d",
+    "local/experiments/v2-x86-extended-integer-277/state-fixture.cpp": "71a85b6a1ac3cd7ac1ad72ebb54ec506d24e792c4e475f10dc25912ad58ee39d",
+    "iterations/v2/001-original-recovery/runs/277-x86-extended-integer/proof-before-compile.json": "8905371c48270653586a7d747d3f270a75720a893e570c465be90514567b40b1",
+    "local/experiments/v2-x86-extended-integer-277/captured-compile-driver.py": "e886633e150f3d838b1efee434ad3a9e284faa3f84d8cf552309245441137a2e",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86\\libucrt.lib": "bb7ca922d003d269f7408dd56655ea46c0bfc2a7b66b79ff248094d8143b72dd",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-x86-extended-integer-277/fixture-result.json": "696ec10bda9ee97b3ab3e8a6d6277469fd5a1a1bd322df20f3f9205c99a8d56e",
+    "local/experiments/v2-x86-extended-integer-277/objects/extended277.obj": "fbe603d1010024162070b240a433e3db86c7f0cdf088c6e7e020cd6c8ac8dcc9",
+    "local/experiments/v2-x86-extended-integer-277/objects/state-fixture.obj": "64e0e82b326e07799c043c72b3c101fc1dffcfa229f64d3203bf2792bb7b37b3",
+    "local/experiments/v2-x86-extended-integer-277/state-fixture.exe": "7a438f79ff93b042515076c49421d0b13fd0e0c643aea0f570b2c0c94d8a09ee",
+    "local/experiments/v2-x86-extended-integer-277/compile-001.log": "e9d53c5548b10872075aca3348cede86779f44914dffbc0289337769393422a9",
+    "local/experiments/v2-x86-extended-integer-277/link-001.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-extended-integer-277/native-001.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-extended-integer-277/compile-001.execution.json": "c7c8e0bcec6eb9d21c1f096b7d82ca7ecf59c0f2c0b1433043aadc08f688a205",
+    "local/experiments/v2-x86-extended-integer-277/link-001.execution.json": "bee8a807554732cab7a51eb99f9f145921a4a26dca2536e8b0db9992fbf35896",
+    "local/experiments/v2-x86-extended-integer-277/native-001.execution.json": "d834212b01139bf33c5aa9025ab75abbd0bd7d0255118fd8994893fb393acb9e"
+  },
+  "before_after_guards": true,
+  "command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-x86-extended-integer-277\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-extended-integer-277\\extended277.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-extended-integer-277\\state-fixture.cpp"
+  ],
+  "resumed_existing_compile": false,
+  "unique_execution_receipts": [
+    "compile-001",
+    "link-001",
+    "native-001"
+  ],
+  "limits": [
+    "SyntheticCPUfixtures only; no gameentry/ABI/provider/acceptance orfullISA claim.",
+    "DefinedCF/ZF/SF/OF only; PF/AF/undefinedflags/faults/segments/x87/shifts/SETcc unproved orunsupported.",
+    "Selectedregister/memory widthcombinations and finiteedgevalues; validnative32stack/sourcearenas only."
+  ]
+}

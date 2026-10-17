@@ -1,5 +1,28 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint276–284, приоритет первого игрового EXE:
+- [x] 276: exact canonical00568200/005682a0 + два доказанных raw binding,
+  4 original cutpoints/8 native calls PASS; отдельный пакет, не текущая union.
+- [x] 277: 26 synthetic fragments/30 976 native comparisons PASS;
+  syntax-only25→29/85; 0 новых принятых игровых функций.
+- [ ] 278/280: char→DWORD repair четырёх callers/новый collector ещё не собраны
+  и не проверены. Нельзя объявлять595d0hold закрытым.
+- [ ] 279: 006af080/006af084 physical storage, 9 unindexed raw sites;
+  footprint inventory не разрешает произвольный layout/инициализацию.
+- [ ] 284: восстановить нужные эффекты original pre-WinMain constructors/state
+  (005a2d1a→005a2441/005a2547, первые004035e0/00403600→005e6724/005e6720).
+  Современный host CRT не доказывает их эквивалентность. No native startup yet.
+- [x] 285: два actual normal-entry links без WHOLEARCHIVE,267names/303refs;
+  candidate274 archive searched, frontier не изменён;18pins/22libs audit PASS.
+- [x] 286: первые два constructor тела39B,3direct uses; нет найденного downstream
+  direct read output. Значение0x7e800000 вычислено, не native oracle.
+- [ ] Подключить доказанные service owners к actual entry target;20прямых app_main
+  boundaries ещё unresolved. Не выдавать рост candidate archive за game integration.
+- [ ] Original constructor equivalence: indirect consumers/computed aliases остаются
+  открытыми; isolated writes не доказывают first-game blocker. Первый экран,
+  ресурсы/рендеринг/ввод и реальный gameplay требуют отдельных проверок.
+
+
 Checkpoint269/271/273:
 - [x]266:all10raw00531f90 caller COFFs/fullDWORD cdecl RET0 audited; exactbinding,
   canonicalidentity/EAX/ESP/512Barena native checks PASS;gameCOFFs reused unchanged.

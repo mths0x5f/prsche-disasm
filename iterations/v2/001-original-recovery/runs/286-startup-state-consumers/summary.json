@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "kind": "read-only-constructor-consumer-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/runs/274-shared-heap-union/summary.json": "f072346146bf867fba52188d4362447e8656f28a6bec4a18a481082af193cbff",
+    "iterations/v2/001-original-recovery/runs/284-original-entry-audit/summary.json": "89c1c5604dadcdb53e2c07672e21b7d4211c1fab598c7d763b85e45a66491f09",
+    "iterations/v2/001-original-recovery/runs/284-original-entry-audit/validation.json": "2b2c5015a94446cd182d1ed803d8411b5ba79b6d7e327964f809f81b752ccffb"
+  },
+  "bodies": [
+    {
+      "entry": "004035e0",
+      "bytes": 20,
+      "sha256": "1c76e0d38461c0fd9087b71a74e3fdebcc4bcd7c8d991792432d36050deff642",
+      "instructions": [
+        {
+          "pc": "004035e0",
+          "bytes": "51",
+          "mnemonic": "push",
+          "operands": "ecx",
+          "absolute_memory_operands": []
+        },
+        {
+          "pc": "004035e1",
+          "bytes": "c744240000008000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esp], 0x800000",
+          "absolute_memory_operands": []
+        },
+        {
+          "pc": "004035e9",
+          "bytes": "8b442400",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esp]",
+          "absolute_memory_operands": []
+        },
+        {
+          "pc": "004035ed",
+          "bytes": "a324675e00",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x5e6724], eax",
+          "absolute_memory_operands": [
+            {
+              "target": "005e6724",
+              "size": 4,
+              "access": "write"
+            }
+          ]
+        },
+        {
+          "pc": "004035f2",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx",
+          "absolute_memory_operands": []
+        },
+        {
+          "pc": "004035f3",
+          "bytes": "c3",
+          "mnemonic": "ret",
+          "operands": "",
+          "absolute_memory_operands": []
+        }
+      ]
+    },
+    {
+      "entry": "00403600",
+      "bytes": 19,
+      "sha256": "102842324d40c7c309f081e101e73c239da6fac3a760ff2b895e266e95a6d465",
+      "instructions": [
+        {
+          "pc": "00403600",
+          "bytes": "d905a8245b00",
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x5b24a8]",
+          "absolute_memory_operands": [
+            {
+              "target": "005b24a8",
+              "size": 4,
+              "access": "read"
+            }
+          ]
+        },
+        {
+          "pc": "00403606",
+          "bytes": "d83524675e00",
+          "mnemonic": "fdiv",
+          "operands": "dword ptr [0x5e6724]",
+          "absolute_memory_operands": [
+            {
+              "target": "005e6724",
+              "size": 4,
+              "access": "read"
+            }
+          ]
+        },
+        {
+          "pc": "0040360c",
+          "bytes": "d91d20675e00",
+          "mnemonic": "fstp",
+          "operands": "dword ptr [0x5e6720]",
+          "absolute_memory_operands": [
+            {
+              "target": "005e6720",
+              "size": 4,
+              "access": "write"
+            }
+          ]
+        },
+        {
+          "pc": "00403612",
+          "bytes": "c3",
+          "mnemonic": "ret",
+          "operands": "",
+          "absolute_memory_operands": []
+        }
+      ]
+    }
+  ],
+  "constructor_order": [
+    "005cb004 -> 004035e0",
+    "005cb008 -> 00403600"
+  ],
+  "table_prefix_hex": "00000000e035400000364000",
+  "storage": [
+    {
+      "va": "005e6724",
+      "width": 4,
+      "section": ".data",
+      "initial_hex": "00000000",
+      "raw_occurrences": [
+        {
+          "file_offset": "000035ee",
+          "mapped": [
+            {
+              "section": ".text",
+              "va": "004035ee"
+            }
+          ]
+        },
+        {
+          "file_offset": "00003608",
+          "mapped": [
+            {
+              "section": ".text",
+              "va": "00403608"
+            }
+          ]
+        }
+      ],
+      "interior_literal_occurrences": 0
+    },
+    {
+      "va": "005e6720",
+      "width": 4,
+      "section": ".data",
+      "initial_hex": "00000000",
+      "raw_occurrences": [
+        {
+          "file_offset": "0000360e",
+          "mapped": [
+            {
+              "section": ".text",
+              "va": "0040360e"
+            }
+          ]
+        }
+      ],
+      "interior_literal_occurrences": 0
+    }
+  ],
+  "direct_memory_uses": [
+    {
+      "pc": "004035ed",
+      "instruction": "mov dword ptr [0x5e6724], eax",
+      "bytes": "a324675e00",
+      "cell": "005e6724",
+      "access": "write",
+      "width": 4
+    },
+    {
+      "pc": "00403606",
+      "instruction": "fdiv dword ptr [0x5e6724]",
+      "bytes": "d83524675e00",
+      "cell": "005e6724",
+      "access": "read",
+      "width": 4
+    },
+    {
+      "pc": "0040360c",
+      "instruction": "fstp dword ptr [0x5e6720]",
+      "bytes": "d91d20675e00",
+      "cell": "005e6720",
+      "access": "write",
+      "width": 4
+    }
+  ],
+  "formula": {
+    "numerator_source": "005b24a8",
+    "numerator_bits": "3f800000",
+    "denominator_written_to": "005e6724",
+    "denominator_bits": "00800000",
+    "instruction": "x87 FLD 1.0; FDIV FLT_MIN; FSTP float32",
+    "derived_result_bits": "7e800000",
+    "result_destination": "005e6720",
+    "derived_not_original_execution": true
+  },
+  "ownership": {
+    "registry_body_owners": 0,
+    "indexed_body_ranges": 0,
+    "source_file_count": 263,
+    "source_tree_sha256": "2a02db2d3df4764f1e5be24e1af936d821a0e40b412e5ad58c72ebc5f396ee0c",
+    "source_literal_matches": 0,
+    "current_274_exact_symbol_definitions": 0
+  },
+  "decision": "bounded isolated proof candidate; no game integration justified from direct consumers alone",
+  "minimal_packet_if_requested": [
+    "two distinct original 4-byte cells, no 8-byte merged layout claim",
+    "two exact 20B/19B constructor bodies in the recorded table order",
+    "x87/native fixture must compare float output bits and relevant FP state under original control word",
+    "trace any computed or indirect alias before claiming game-visible use"
+  ],
+  "limits": [
+    "No direct later read of 005e6720 found; indirect/computed reads not excluded",
+    "No claim that these two constructors replace the original constructor table or CRT",
+    "No compiler, native executable or original runtime oracle in Run286"
+  ]
+}

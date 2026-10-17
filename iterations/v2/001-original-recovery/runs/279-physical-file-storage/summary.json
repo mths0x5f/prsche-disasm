@@ -1,0 +1,704 @@
+{
+  "schema": 1,
+  "run": 279,
+  "kind": "physical-file-storage-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/decompiled.c": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/defined-data.jsonl": "190a67d413a74a13fdc074e0e9cbef6157cfbb59791fbc01f07544e9324a5d0a",
+    "iterations/v2/001-original-recovery/runs/224-canonical-owner-bindings/summary.json": "01756a666e87aa6901275938331a1c854e028223bd283b51aca59d02ff0a92c0",
+    "iterations/v2/001-original-recovery/runs/250-writable-scalar-batch/preflight.json": "434a81eebc1ee5c664d7d40624ad92b751ea112087ddfb655b5e2b4e713bb379",
+    "iterations/v2/001-original-recovery/runs/254-writable-scalar-batch/summary.json": "a998d5aa2a6fb52940823580a97fb7959e418f276750d395f1713eafee2af025",
+    "iterations/v2/001-original-recovery/runs/274-shared-heap-union/summary.json": "f072346146bf867fba52188d4362447e8656f28a6bec4a18a481082af193cbff",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp": "0874f9e6470e977c4907992bbae00192144df0467047b0436859ce73a99ee69c",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24"
+  },
+  "cells": {
+    "006af080": {
+      "address": "006af080",
+      "width": 4,
+      "section": ".data",
+      "section_characteristics": "c0000040",
+      "section_delta": "e4080",
+      "raw_initial_bytes": null,
+      "virtual_initial_zero": true,
+      "HIGHLOW_inside_cell": [],
+      "raw_little_endian_occurrences": 18,
+      "indexed_MEM4_refs": [
+        {
+          "pc": "00591874",
+          "function_va": "00591820",
+          "bytes": "893580f06a00",
+          "instruction": "mov dword ptr [0x6af080], esi",
+          "operand_size": 4,
+          "access": "write",
+          "HIGHLOW_sites": [
+            "00591876"
+          ]
+        },
+        {
+          "pc": "005918d9",
+          "function_va": "005918c0",
+          "bytes": "a180f06a00",
+          "instruction": "mov eax, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005918da"
+          ]
+        },
+        {
+          "pc": "00591903",
+          "function_va": "005918c0",
+          "bytes": "a180f06a00",
+          "instruction": "mov eax, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591904"
+          ]
+        },
+        {
+          "pc": "005919d7",
+          "function_va": "005919a0",
+          "bytes": "3b3d80f06a00",
+          "instruction": "cmp edi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005919d9"
+          ]
+        },
+        {
+          "pc": "00591c6f",
+          "function_va": "00591c50",
+          "bytes": "8b0d80f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591c71"
+          ]
+        },
+        {
+          "pc": "00591d06",
+          "function_va": "00591ce0",
+          "bytes": "3b0580f06a00",
+          "instruction": "cmp eax, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591d08"
+          ]
+        },
+        {
+          "pc": "00591e17",
+          "function_va": "00591df0",
+          "bytes": "3b3580f06a00",
+          "instruction": "cmp esi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591e19"
+          ]
+        },
+        {
+          "pc": "00591fc7",
+          "function_va": "00591fa0",
+          "bytes": "3b3580f06a00",
+          "instruction": "cmp esi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591fc9"
+          ]
+        },
+        {
+          "pc": "0059215c",
+          "function_va": "00592140",
+          "bytes": "3b3580f06a00",
+          "instruction": "cmp esi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "0059215e"
+          ]
+        },
+        {
+          "pc": "005922ac",
+          "function_va": "00592290",
+          "bytes": "3b3580f06a00",
+          "instruction": "cmp esi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005922ae"
+          ]
+        },
+        {
+          "pc": "0059240f",
+          "function_va": "00592400",
+          "bytes": "3b3580f06a00",
+          "instruction": "cmp esi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592411"
+          ]
+        },
+        {
+          "pc": "005924a4",
+          "function_va": "00592490",
+          "bytes": "3b0580f06a00",
+          "instruction": "cmp eax, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005924a6"
+          ]
+        },
+        {
+          "pc": "005924ec",
+          "function_va": "005924d0",
+          "bytes": "3b3580f06a00",
+          "instruction": "cmp esi, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005924ee"
+          ]
+        },
+        {
+          "pc": "005925a4",
+          "function_va": "00592590",
+          "bytes": "3b0580f06a00",
+          "instruction": "cmp eax, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005925a6"
+          ]
+        },
+        {
+          "pc": "005925e4",
+          "function_va": "005925d0",
+          "bytes": "3b0580f06a00",
+          "instruction": "cmp eax, dword ptr [0x6af080]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005925e6"
+          ]
+        }
+      ],
+      "indexed_ref_count": 15,
+      "unindexed_raw_occurrences": 3,
+      "unindexed_raw_file_offsets": [
+        "00192227",
+        "00192376",
+        "001923c6"
+      ],
+      "interior_address_literal_occurrences": {
+        "+1": 0,
+        "+2": 0,
+        "+3": 0
+      }
+    },
+    "006af084": {
+      "address": "006af084",
+      "width": 4,
+      "section": ".data",
+      "section_characteristics": "c0000040",
+      "section_delta": "e4084",
+      "raw_initial_bytes": null,
+      "virtual_initial_zero": true,
+      "HIGHLOW_inside_cell": [],
+      "raw_little_endian_occurrences": 47,
+      "indexed_MEM4_refs": [
+        {
+          "pc": "00591834",
+          "function_va": "00591820",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591835"
+          ]
+        },
+        {
+          "pc": "0059187c",
+          "function_va": "00591820",
+          "bytes": "a384f06a00",
+          "instruction": "mov dword ptr [0x6af084], eax",
+          "operand_size": 4,
+          "access": "write",
+          "HIGHLOW_sites": [
+            "0059187d"
+          ]
+        },
+        {
+          "pc": "005918c0",
+          "function_va": "005918c0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005918c1"
+          ]
+        },
+        {
+          "pc": "005918ea",
+          "function_va": "005918c0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005918ec"
+          ]
+        },
+        {
+          "pc": "00591911",
+          "function_va": "005918c0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591912"
+          ]
+        },
+        {
+          "pc": "0059191f",
+          "function_va": "005918c0",
+          "bytes": "c70584f06a0000000000",
+          "instruction": "mov dword ptr [0x6af084], 0",
+          "operand_size": 4,
+          "access": "write",
+          "HIGHLOW_sites": [
+            "00591921"
+          ]
+        },
+        {
+          "pc": "00591a62",
+          "function_va": "005919a0",
+          "bytes": "8b1584f06a00",
+          "instruction": "mov edx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591a64"
+          ]
+        },
+        {
+          "pc": "00591a79",
+          "function_va": "005919a0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591a7b"
+          ]
+        },
+        {
+          "pc": "00591ac3",
+          "function_va": "005919a0",
+          "bytes": "8b1584f06a00",
+          "instruction": "mov edx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591ac5"
+          ]
+        },
+        {
+          "pc": "00591b20",
+          "function_va": "005919a0",
+          "bytes": "8b1d84f06a00",
+          "instruction": "mov ebx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591b22"
+          ]
+        },
+        {
+          "pc": "00591bb2",
+          "function_va": "005919a0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591bb4"
+          ]
+        },
+        {
+          "pc": "00591c50",
+          "function_va": "00591c50",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591c51"
+          ]
+        },
+        {
+          "pc": "00591c7e",
+          "function_va": "00591c50",
+          "bytes": "8b1584f06a00",
+          "instruction": "mov edx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591c80"
+          ]
+        },
+        {
+          "pc": "00591cbc",
+          "function_va": "00591c50",
+          "bytes": "8b1584f06a00",
+          "instruction": "mov edx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591cbe"
+          ]
+        },
+        {
+          "pc": "00591ce0",
+          "function_va": "00591ce0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591ce2"
+          ]
+        },
+        {
+          "pc": "00591d44",
+          "function_va": "00591ce0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591d46"
+          ]
+        },
+        {
+          "pc": "00591df3",
+          "function_va": "00591df0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591df4"
+          ]
+        },
+        {
+          "pc": "00591e54",
+          "function_va": "00591df0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591e55"
+          ]
+        },
+        {
+          "pc": "00591eec",
+          "function_va": "00591df0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591eed"
+          ]
+        },
+        {
+          "pc": "00591f45",
+          "function_va": "00591df0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591f46"
+          ]
+        },
+        {
+          "pc": "00591f56",
+          "function_va": "00591df0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591f57"
+          ]
+        },
+        {
+          "pc": "00591fa3",
+          "function_va": "00591fa0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00591fa4"
+          ]
+        },
+        {
+          "pc": "00592004",
+          "function_va": "00591fa0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592005"
+          ]
+        },
+        {
+          "pc": "00592099",
+          "function_va": "00591fa0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "0059209a"
+          ]
+        },
+        {
+          "pc": "005920f0",
+          "function_va": "00591fa0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005920f1"
+          ]
+        },
+        {
+          "pc": "00592140",
+          "function_va": "00592140",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592141"
+          ]
+        },
+        {
+          "pc": "00592196",
+          "function_va": "00592140",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592197"
+          ]
+        },
+        {
+          "pc": "005921d9",
+          "function_va": "00592140",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005921db"
+          ]
+        },
+        {
+          "pc": "00592290",
+          "function_va": "00592290",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592291"
+          ]
+        },
+        {
+          "pc": "005922e7",
+          "function_va": "00592290",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005922e8"
+          ]
+        },
+        {
+          "pc": "00592304",
+          "function_va": "00592290",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592306"
+          ]
+        },
+        {
+          "pc": "00592311",
+          "function_va": "00592290",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592312"
+          ]
+        },
+        {
+          "pc": "0059232f",
+          "function_va": "00592290",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592331"
+          ]
+        },
+        {
+          "pc": "00592431",
+          "function_va": "00592400",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592433"
+          ]
+        },
+        {
+          "pc": "00592490",
+          "function_va": "00592490",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592492"
+          ]
+        },
+        {
+          "pc": "005924d0",
+          "function_va": "005924d0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005924d1"
+          ]
+        },
+        {
+          "pc": "00592523",
+          "function_va": "005924d0",
+          "bytes": "a184f06a00",
+          "instruction": "mov eax, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592524"
+          ]
+        },
+        {
+          "pc": "0059253b",
+          "function_va": "005924d0",
+          "bytes": "8b1584f06a00",
+          "instruction": "mov edx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "0059253d"
+          ]
+        },
+        {
+          "pc": "00592557",
+          "function_va": "005924d0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592559"
+          ]
+        },
+        {
+          "pc": "00592590",
+          "function_va": "00592590",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "00592592"
+          ]
+        },
+        {
+          "pc": "005925d0",
+          "function_va": "005925d0",
+          "bytes": "8b0d84f06a00",
+          "instruction": "mov ecx, dword ptr [0x6af084]",
+          "operand_size": 4,
+          "access": "read",
+          "HIGHLOW_sites": [
+            "005925d2"
+          ]
+        }
+      ],
+      "indexed_ref_count": 41,
+      "unindexed_raw_occurrences": 6,
+      "unindexed_raw_file_offsets": [
+        "00191812",
+        "00192212",
+        "00192241",
+        "00192262",
+        "00192362",
+        "001923b2"
+      ],
+      "interior_address_literal_occurrences": {
+        "+1": 0,
+        "+2": 0,
+        "+3": 0
+      }
+    }
+  },
+  "source_owner": {
+    "wip_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp",
+    "declaration": "iterations/v2/001-original-recovery/source/include/porsche/files.hpp",
+    "native_mangles": [
+      "?physical_count_006af080@porsche@@3HA",
+      "?physical_files_006af084@porsche@@3PAUPhysicalFile@1@A"
+    ]
+  },
+  "accepted_canonical_evidence": "Run224 object inventory contains both mangles; this preflight does not grant allocation or acceptance.",
+  "current_274_symbol_note": "Run274 coordinator evidence reports no defined symbols containing either address; not rescanned here.",
+  "limits": [
+    "raw byte occurrences outside catalog instruction spans are unindexed gaps",
+    "physical_files is a pointer to 32-byte PhysicalFile records; adjacent 8-byte cells are not one scalar",
+    "no storage ownership/allocation or behavioral acceptance claim"
+  ]
+}
