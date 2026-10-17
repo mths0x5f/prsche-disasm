@@ -5,9 +5,22 @@ Run257 (2026-10-17):
 - [x] Run258:6originalbodies/104B/34instructions,36864native comparisons and4negative
   checks PASS;59pins and6actual COFForacles independentlychecked,3CALLREL32 only.
   FullCPU/game acceptance remainsopen; allclaims limitedtoselectedoriginalchains.
-- [ ] Native coverage outside selected chains: byte/word arithmetic, SBB carry/overflow,
-  PUSH ESP/POP ESP/POP [ESP], indirect CALL/JMP and fault/recursion behavior.
-  Lowering guards alone do not prove these instruction semantics.
+- [x]262:bounded synthetic byte/word/32 ADD/SUB/SBB/NEG, highbyte/word views,
+  PUSH ESP/POP ESP/POP[ESP],indirectCALL[ESP]/JMP[ESP+4]:15744native cases PASS,
+  19exactCOFForacles/70B/40instructions/28pins,19840explicit code-PC slot mappings.
+- [ ]262:remaining ISA/operands/flags, guest memory faults/recursion/import/callback
+  behavior and realgame execution; finite synthetic fixtures do not prove all of these.
+
+Checkpoint264/265:
+- [x]263:3existingcanonicalfree/lock bodies/302PEbytes,1compilerbatch/0warnings;
+  4original-Unicorn free cutpoints/2048arena bytes/native lock/null checks PASS.
+  Prior078551heap+31lock cases cited, not rerun; source/COFF/closure audit PASS.
+- [x]264:1125candidatefunctionVAs+15support/1140members,419linknames/581diags;
+  7493pins before/after PASS,1137symbolsnapshots reused/3newCOFFs,0compiles.
+- [ ]264:raw00531f90 ten-consumer ABI binding, existing Win32providers,
+  original006b4f20 table/initialization, concurrency/fault/fullgame composition.
+- [x]265:actual419names→417tasks,22resolvedrows excluded;159pins/6guards.
+  Genericqueue ranking does not revoke259unsafe005925d0 or005a4c05layout holds.
 
 Checkpoint261:
 - [x]259:2canonicalbodies/2exactbindings PE/source/COFF/native audit PASS.

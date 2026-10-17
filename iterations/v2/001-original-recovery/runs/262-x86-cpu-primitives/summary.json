@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "kind": "synthetic-x86-cpu-primitives",
+  "backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "synthetic_entries": [
+    "10001000",
+    "10001100",
+    "10001200",
+    "10001300",
+    "10001400",
+    "10001500",
+    "10001600",
+    "10001700",
+    "10001800",
+    "10001900",
+    "10001a00",
+    "10001b00",
+    "10001c00",
+    "10001d00",
+    "10001e00",
+    "10001f00",
+    "10002000",
+    "10002100",
+    "10002200"
+  ],
+  "original_game_functions": 0,
+  "new_accepted_functions": 0,
+  "production_or_union_changed": false,
+  "native_game_execution_commands": 0,
+  "synthetic_bytes": 70,
+  "synthetic_instructions": 40,
+  "actual_compiler_batches": 1,
+  "compiled_tus": 2,
+  "compiler_exit_code": 0,
+  "compile_seconds": 1.2773309999611229,
+  "compiler_warnings": 0,
+  "native_fixture_exit_code": 0,
+  "native_seconds": 0.4405999999726191,
+  "state_comparisons": 15744,
+  "case_groups": {
+    "provenance": "syntheticCPUfixture",
+    "native_game_execution": false,
+    "cases": 15744,
+    "failures": 0,
+    "arithmetic_cases": 9600,
+    "view_cases": 1024,
+    "stack_alias_cases": 3072,
+    "indirect_cases": 2048,
+    "normalized_exact_slots": 19840
+  },
+  "oracles": [
+    {
+      "name": "add-ah-cl",
+      "id": 0,
+      "bytes": "02e1c3",
+      "relocations": []
+    },
+    {
+      "name": "sub-ah-cl",
+      "id": 1,
+      "bytes": "2ae1c3",
+      "relocations": []
+    },
+    {
+      "name": "sbb-ah-cl",
+      "id": 2,
+      "bytes": "1ae1c3",
+      "relocations": []
+    },
+    {
+      "name": "add-ax-cx",
+      "id": 3,
+      "bytes": "6603c1c3",
+      "relocations": []
+    },
+    {
+      "name": "sub-ax-cx",
+      "id": 4,
+      "bytes": "662bc1c3",
+      "relocations": []
+    },
+    {
+      "name": "sbb-ax-cx",
+      "id": 5,
+      "bytes": "661bc1c3",
+      "relocations": []
+    },
+    {
+      "name": "add-eax-ecx",
+      "id": 6,
+      "bytes": "03c1c3",
+      "relocations": []
+    },
+    {
+      "name": "sub-eax-ecx",
+      "id": 7,
+      "bytes": "2bc1c3",
+      "relocations": []
+    },
+    {
+      "name": "sbb-eax-ecx",
+      "id": 8,
+      "bytes": "1bc1c3",
+      "relocations": []
+    },
+    {
+      "name": "neg-ah",
+      "id": 9,
+      "bytes": "f6dcc3",
+      "relocations": []
+    },
+    {
+      "name": "neg-ax",
+      "id": 10,
+      "bytes": "66f7d8c3",
+      "relocations": []
+    },
+    {
+      "name": "neg-eax",
+      "id": 11,
+      "bytes": "f7d8c3",
+      "relocations": []
+    },
+    {
+      "name": "high8-word-views",
+      "id": 12,
+      "bytes": "8ae1668bd0c3",
+      "relocations": []
+    },
+    {
+      "name": "push-esp",
+      "id": 13,
+      "bytes": "5458c3",
+      "relocations": []
+    },
+    {
+      "name": "pop-esp",
+      "id": 14,
+      "bytes": "5cc3",
+      "relocations": []
+    },
+    {
+      "name": "pop-memory-esp",
+      "id": 15,
+      "bytes": "8f0424c3",
+      "relocations": []
+    },
+    {
+      "name": "indirect-call-esp",
+      "id": 16,
+      "bytes": "ff14248d642404c3",
+      "relocations": []
+    },
+    {
+      "name": "indirect-tail-jmp",
+      "id": 17,
+      "bytes": "ff642404",
+      "relocations": []
+    },
+    {
+      "name": "indirect-leaf-neg-eax",
+      "id": 18,
+      "bytes": "f7d8c3",
+      "relocations": []
+    }
+  ],
+  "input_sha256": {
+    "scripts/research/experiment-v2-x86-cpu-primitives-262.py": "9cc74e634a7c288ebffc92d22c7e52153f70c9921950df78366f2a6913b7b295",
+    "scripts/research/experiment-v2-thiscall-186.py": "70406471ef4bb53ba7a5c6d0d3fd2410ea87434bc86d10a3ab4cd89c00613d13",
+    "scripts/research/audit-v2-nested-calls-229.py": "05cf1a7fbf6b399e734510474389542cf9842a68ee736dfefa5ae7d5e6b4a86d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+    "scripts/research/x86-cpp-backend-257.py": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\__init__.py": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f",
+    "C:\\Users\\steew\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\capstone\\lib\\capstone.dll": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+    "local/experiments/v2-x86-cpu-primitives-262/machine257.h": "b1dd45da1c53681cdc83e7ba7fbd5220c0a4b444d4c9effe64686d71d099a73c",
+    "local/experiments/v2-x86-cpu-primitives-262/primitives262.cpp": "96b2150187e310a3231302079793a56aecd218a44fc9a56680bd167677aeb196",
+    "local/experiments/v2-x86-cpu-primitives-262/state-fixture.cpp": "1dbf52c56a94a0757d3f1fc72e89295362afa5767d419228d61f57382e6097b8",
+    "iterations/v2/001-original-recovery/runs/262-x86-cpu-primitives/proof-before-compile.json": "3c5e892d5c23ad9d914c9ad87e5d2565642d25e932f71c28bb61a7edc58f0b56",
+    "local/experiments/v2-x86-cpu-primitives-262/captured-compile-driver.py": "9cc74e634a7c288ebffc92d22c7e52153f70c9921950df78366f2a6913b7b295",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86\\libucrt.lib": "bb7ca922d003d269f7408dd56655ea46c0bfc2a7b66b79ff248094d8143b72dd",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "local/experiments/v2-x86-cpu-primitives-262/fixture-result.json": "79f946670f56ade6773db84d2a8569a15fc87b6d5f2b0e81f066e4328f82c73e",
+    "local/experiments/v2-x86-cpu-primitives-262/objects/primitives262.obj": "8094e0c2ff1a5878fc06f5de554906bc579c329ef55be090f812d9b4158ac6ef",
+    "local/experiments/v2-x86-cpu-primitives-262/objects/state-fixture.obj": "c9b01c6d7971793c2892a9c5ea4efe0ad487771ebc0ed689cc98aefb0312070a",
+    "local/experiments/v2-x86-cpu-primitives-262/state-fixture.exe": "8229f3921d5900f92777a547f2a42e509be09ce31c27f44daf2c06023ce5d41a",
+    "local/experiments/v2-x86-cpu-primitives-262/compile-001.log": "8714d0bfd8d9d41e29b2900e784e1d0f9e09c40ab57b71a84a429f42c19274cf",
+    "local/experiments/v2-x86-cpu-primitives-262/link-001.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-cpu-primitives-262/native-001.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-x86-cpu-primitives-262/compile-001.execution.json": "73f0b61e06263fee0010a3733ebfe6e8c057de096645c8b98c16629b939a2084",
+    "local/experiments/v2-x86-cpu-primitives-262/link-001.execution.json": "ea6683d65622c4762152c8a159ef502362cc7936b1e02baf4600b7080a6e295c",
+    "local/experiments/v2-x86-cpu-primitives-262/native-001.execution.json": "1a28da1258daf8dc230bf0a7b223d92b9b6510ebf2bf611790de555b8c7e4115"
+  },
+  "before_after_guards": true,
+  "command": [
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+    "/nologo",
+    "/c",
+    "/std:c++17",
+    "/Od",
+    "/Oi",
+    "/Gy",
+    "/TP",
+    "/GS-",
+    "/GR-",
+    "/W4",
+    "/utf-8",
+    "/MP6",
+    "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpu-primitives-262\\objects\\",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpu-primitives-262\\primitives262.cpp",
+    "F:\\claude\\porsche disasm\\local\\experiments\\v2-x86-cpu-primitives-262\\state-fixture.cpp"
+  ],
+  "resumed_existing_compile": false,
+  "unique_execution_receipts": [
+    "compile-001",
+    "link-001",
+    "native-001"
+  ],
+  "limits": [
+    "Synthetic CPU infrastructure only; no original game body/ABI/provider claim or union packet.",
+    "Defined CF/ZF/SF/OF only; no PF/AF/undefined flags, faults,segments,concurrency or full ISA.",
+    "Valid native32 stack arena only; no guest memory loader or invalid-memory behavior.",
+    "Arithmetic AH/AX/EAX and CL/CX/ECX plus MOV AH,CL/MOV DX,AX are the tested views, not all register combinations.",
+    "Only memory indirect CALL[ESP] and tailJMP[ESP+4] into the real synthetic NEG EAX/RET leaf are tested."
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "kind": "synthetic-CPU-primitives-preflight",
+  "backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "fragments": [
+    {
+      "id": 0,
+      "name": "add-ah-cl",
+      "synthetic_entry": "10001000",
+      "hex": "02e1c3",
+      "asm": "add ah,cl\n ret",
+      "kind": "binary",
+      "bits": 8
+    },
+    {
+      "id": 1,
+      "name": "sub-ah-cl",
+      "synthetic_entry": "10001100",
+      "hex": "2ae1c3",
+      "asm": "sub ah,cl\n ret",
+      "kind": "binary",
+      "bits": 8
+    },
+    {
+      "id": 2,
+      "name": "sbb-ah-cl",
+      "synthetic_entry": "10001200",
+      "hex": "1ae1c3",
+      "asm": "sbb ah,cl\n ret",
+      "kind": "binary",
+      "bits": 8
+    },
+    {
+      "id": 3,
+      "name": "add-ax-cx",
+      "synthetic_entry": "10001300",
+      "hex": "6603c1c3",
+      "asm": "add ax,cx\n ret",
+      "kind": "binary",
+      "bits": 16
+    },
+    {
+      "id": 4,
+      "name": "sub-ax-cx",
+      "synthetic_entry": "10001400",
+      "hex": "662bc1c3",
+      "asm": "sub ax,cx\n ret",
+      "kind": "binary",
+      "bits": 16
+    },
+    {
+      "id": 5,
+      "name": "sbb-ax-cx",
+      "synthetic_entry": "10001500",
+      "hex": "661bc1c3",
+      "asm": "sbb ax,cx\n ret",
+      "kind": "binary",
+      "bits": 16
+    },
+    {
+      "id": 6,
+      "name": "add-eax-ecx",
+      "synthetic_entry": "10001600",
+      "hex": "03c1c3",
+      "asm": "add eax,ecx\n ret",
+      "kind": "binary",
+      "bits": 32
+    },
+    {
+      "id": 7,
+      "name": "sub-eax-ecx",
+      "synthetic_entry": "10001700",
+      "hex": "2bc1c3",
+      "asm": "sub eax,ecx\n ret",
+      "kind": "binary",
+      "bits": 32
+    },
+    {
+      "id": 8,
+      "name": "sbb-eax-ecx",
+      "synthetic_entry": "10001800",
+      "hex": "1bc1c3",
+      "asm": "sbb eax,ecx\n ret",
+      "kind": "binary",
+      "bits": 32
+    },
+    {
+      "id": 9,
+      "name": "neg-ah",
+      "synthetic_entry": "10001900",
+      "hex": "f6dcc3",
+      "asm": "neg ah\n ret",
+      "kind": "unary",
+      "bits": 8
+    },
+    {
+      "id": 10,
+      "name": "neg-ax",
+      "synthetic_entry": "10001a00",
+      "hex": "66f7d8c3",
+      "asm": "neg ax\n ret",
+      "kind": "unary",
+      "bits": 16
+    },
+    {
+      "id": 11,
+      "name": "neg-eax",
+      "synthetic_entry": "10001b00",
+      "hex": "f7d8c3",
+      "asm": "neg eax\n ret",
+      "kind": "unary",
+      "bits": 32
+    },
+    {
+      "id": 12,
+      "name": "high8-word-views",
+      "synthetic_entry": "10001c00",
+      "hex": "8ae1668bd0c3",
+      "asm": "mov ah,cl\n mov dx,ax\n ret",
+      "kind": "views",
+      "bits": 0
+    },
+    {
+      "id": 13,
+      "name": "push-esp",
+      "synthetic_entry": "10001d00",
+      "hex": "5458c3",
+      "asm": "push esp\n pop eax\n ret",
+      "kind": "stack",
+      "bits": 0
+    },
+    {
+      "id": 14,
+      "name": "pop-esp",
+      "synthetic_entry": "10001e00",
+      "hex": "5cc3",
+      "asm": "pop esp\n ret",
+      "kind": "stack",
+      "bits": 0
+    },
+    {
+      "id": 15,
+      "name": "pop-memory-esp",
+      "synthetic_entry": "10001f00",
+      "hex": "8f0424c3",
+      "asm": "pop dword ptr[esp]\n ret",
+      "kind": "stack",
+      "bits": 0
+    },
+    {
+      "id": 16,
+      "name": "indirect-call-esp",
+      "synthetic_entry": "10002000",
+      "hex": "ff14248d642404c3",
+      "asm": "call dword ptr[esp]\n lea esp,[esp+4]\n ret",
+      "kind": "indirect",
+      "bits": 0
+    },
+    {
+      "id": 17,
+      "name": "indirect-tail-jmp",
+      "synthetic_entry": "10002100",
+      "hex": "ff642404",
+      "asm": "jmp dword ptr[esp+4]",
+      "kind": "indirect",
+      "bits": 0
+    },
+    {
+      "id": 18,
+      "name": "indirect-leaf-neg-eax",
+      "synthetic_entry": "10002200",
+      "hex": "f7d8c3",
+      "asm": "neg eax\n ret",
+      "kind": "callee",
+      "bits": 32
+    }
+  ],
+  "instruction_lowering": {
+    "add-ah-cl": [
+      {
+        "va": "10001000",
+        "bytes": "02e1",
+        "mnemonic": "add",
+        "operands": "ah, cl",
+        "cpp": "U a=((s.r[0]>>8)&0xffu);U b=((s.r[1]>>0)&0xffu);U value=add257(s,a,b,8u);s.r[0]=(s.r[0]&0xffff00ffu)|(((value)&0xffu)<<8);"
+      },
+      {
+        "va": "10001002",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "sub-ah-cl": [
+      {
+        "va": "10001100",
+        "bytes": "2ae1",
+        "mnemonic": "sub",
+        "operands": "ah, cl",
+        "cpp": "U a=((s.r[0]>>8)&0xffu);U b=((s.r[1]>>0)&0xffu);U value=subtract257(s,a,b,0u,8u);s.r[0]=(s.r[0]&0xffff00ffu)|(((value)&0xffu)<<8);"
+      },
+      {
+        "va": "10001102",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "sbb-ah-cl": [
+      {
+        "va": "10001200",
+        "bytes": "1ae1",
+        "mnemonic": "sbb",
+        "operands": "ah, cl",
+        "cpp": "U a=((s.r[0]>>8)&0xffu);U b=((s.r[1]>>0)&0xffu);U value=subtract257(s,a,b,(s.flags&1u),8u);s.r[0]=(s.r[0]&0xffff00ffu)|(((value)&0xffu)<<8);"
+      },
+      {
+        "va": "10001202",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "add-ax-cx": [
+      {
+        "va": "10001300",
+        "bytes": "6603c1",
+        "mnemonic": "add",
+        "operands": "ax, cx",
+        "cpp": "U a=((s.r[0]>>0)&0xffffu);U b=((s.r[1]>>0)&0xffffu);U value=add257(s,a,b,16u);s.r[0]=(s.r[0]&0xffff0000u)|(((value)&0xffffu)<<0);"
+      },
+      {
+        "va": "10001303",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "sub-ax-cx": [
+      {
+        "va": "10001400",
+        "bytes": "662bc1",
+        "mnemonic": "sub",
+        "operands": "ax, cx",
+        "cpp": "U a=((s.r[0]>>0)&0xffffu);U b=((s.r[1]>>0)&0xffffu);U value=subtract257(s,a,b,0u,16u);s.r[0]=(s.r[0]&0xffff0000u)|(((value)&0xffffu)<<0);"
+      },
+      {
+        "va": "10001403",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "sbb-ax-cx": [
+      {
+        "va": "10001500",
+        "bytes": "661bc1",
+        "mnemonic": "sbb",
+        "operands": "ax, cx",
+        "cpp": "U a=((s.r[0]>>0)&0xffffu);U b=((s.r[1]>>0)&0xffffu);U value=subtract257(s,a,b,(s.flags&1u),16u);s.r[0]=(s.r[0]&0xffff0000u)|(((value)&0xffffu)<<0);"
+      },
+      {
+        "va": "10001503",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "add-eax-ecx": [
+      {
+        "va": "10001600",
+        "bytes": "03c1",
+        "mnemonic": "add",
+        "operands": "eax, ecx",
+        "cpp": "U a=s.r[0];U b=s.r[1];U value=add257(s,a,b,32u);s.r[0]=value;"
+      },
+      {
+        "va": "10001602",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "sub-eax-ecx": [
+      {
+        "va": "10001700",
+        "bytes": "2bc1",
+        "mnemonic": "sub",
+        "operands": "eax, ecx",
+        "cpp": "U a=s.r[0];U b=s.r[1];U value=subtract257(s,a,b,0u,32u);s.r[0]=value;"
+      },
+      {
+        "va": "10001702",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "sbb-eax-ecx": [
+      {
+        "va": "10001800",
+        "bytes": "1bc1",
+        "mnemonic": "sbb",
+        "operands": "eax, ecx",
+        "cpp": "U a=s.r[0];U b=s.r[1];U value=subtract257(s,a,b,(s.flags&1u),32u);s.r[0]=value;"
+      },
+      {
+        "va": "10001802",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "neg-ah": [
+      {
+        "va": "10001900",
+        "bytes": "f6dc",
+        "mnemonic": "neg",
+        "operands": "ah",
+        "cpp": "U a=((s.r[0]>>8)&0xffu);U value=subtract257(s,0u,a,0u,8u);s.r[0]=(s.r[0]&0xffff00ffu)|(((value)&0xffu)<<8);"
+      },
+      {
+        "va": "10001902",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "neg-ax": [
+      {
+        "va": "10001a00",
+        "bytes": "66f7d8",
+        "mnemonic": "neg",
+        "operands": "ax",
+        "cpp": "U a=((s.r[0]>>0)&0xffffu);U value=subtract257(s,0u,a,0u,16u);s.r[0]=(s.r[0]&0xffff0000u)|(((value)&0xffffu)<<0);"
+      },
+      {
+        "va": "10001a03",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "neg-eax": [
+      {
+        "va": "10001b00",
+        "bytes": "f7d8",
+        "mnemonic": "neg",
+        "operands": "eax",
+        "cpp": "U a=s.r[0];U value=subtract257(s,0u,a,0u,32u);s.r[0]=value;"
+      },
+      {
+        "va": "10001b02",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "high8-word-views": [
+      {
+        "va": "10001c00",
+        "bytes": "8ae1",
+        "mnemonic": "mov",
+        "operands": "ah, cl",
+        "cpp": "U value=((s.r[1]>>0)&0xffu);s.r[0]=(s.r[0]&0xffff00ffu)|(((value)&0xffu)<<8);"
+      },
+      {
+        "va": "10001c02",
+        "bytes": "668bd0",
+        "mnemonic": "mov",
+        "operands": "dx, ax",
+        "cpp": "U value=((s.r[0]>>0)&0xffffu);s.r[2]=(s.r[2]&0xffff0000u)|(((value)&0xffffu)<<0);"
+      },
+      {
+        "va": "10001c05",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "push-esp": [
+      {
+        "va": "10001d00",
+        "bytes": "54",
+        "mnemonic": "push",
+        "operands": "esp",
+        "cpp": "U value=s.r[4];s.r[4]-=4u;write257(s.r[4],4u,value);"
+      },
+      {
+        "va": "10001d01",
+        "bytes": "58",
+        "mnemonic": "pop",
+        "operands": "eax",
+        "cpp": "U value=read257(s.r[4],4u);s.r[4]+=4u;s.r[0]=value;"
+      },
+      {
+        "va": "10001d02",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "pop-esp": [
+      {
+        "va": "10001e00",
+        "bytes": "5c",
+        "mnemonic": "pop",
+        "operands": "esp",
+        "cpp": "U value=read257(s.r[4],4u);s.r[4]+=4u;s.r[4]=value;"
+      },
+      {
+        "va": "10001e01",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "pop-memory-esp": [
+      {
+        "va": "10001f00",
+        "bytes": "8f0424",
+        "mnemonic": "pop",
+        "operands": "dword ptr [esp]",
+        "cpp": "U value=read257(s.r[4],4u);s.r[4]+=4u;write257((0x00000000u+s.r[4]*1u),4u,value);"
+      },
+      {
+        "va": "10001f03",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "indirect-call-esp": [
+      {
+        "va": "10002000",
+        "bytes": "ff1424",
+        "mnemonic": "call",
+        "operands": "dword ptr [esp]",
+        "cpp": "U target=read257((0x00000000u+s.r[4]*1u),4u);if(!call257(s,target,0x10002003u))return;"
+      },
+      {
+        "va": "10002003",
+        "bytes": "8d642404",
+        "mnemonic": "lea",
+        "operands": "esp, [esp + 4]",
+        "cpp": "U value=(0x00000004u+s.r[4]*1u);s.r[4]=value;"
+      },
+      {
+        "va": "10002007",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ],
+    "indirect-tail-jmp": [
+      {
+        "va": "10002100",
+        "bytes": "ff642404",
+        "mnemonic": "jmp",
+        "operands": "dword ptr [esp + 4]",
+        "cpp": "U target=read257((0x00000004u+s.r[4]*1u),4u);dispatch257(s,target);return;"
+      }
+    ],
+    "indirect-leaf-neg-eax": [
+      {
+        "va": "10002200",
+        "bytes": "f7d8",
+        "mnemonic": "neg",
+        "operands": "eax",
+        "cpp": "U a=s.r[0];U value=subtract257(s,0u,a,0u,32u);s.r[0]=value;"
+      },
+      {
+        "va": "10002202",
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "cpp": "s.pc=read257(s.r[4],4u);s.r[4]+=4u;s.stop=Stop257::Returned;return;"
+      }
+    ]
+  },
+  "entries_are_original_game_functions": false,
+  "new_accepted_functions": 0,
+  "planned_compiler_batches": 1,
+  "planned_tus": 2,
+  "planned_cases": 15744,
+  "case_groups": {
+    "arithmetic": 9600,
+    "views": 1024,
+    "stack_aliasing": 3072,
+    "indirect": 2048
+  },
+  "exact_slot_mapping": "Only declared synthetic native code pointers/return slots are mapped to their synthetic guest PCs; every native value checked first.",
+  "limits": [
+    "Synthetic CPU infrastructure only; no original game body/ABI/provider claim or union packet.",
+    "Defined CF/ZF/SF/OF only; no PF/AF/undefined flags, faults,segments,concurrency or full ISA.",
+    "Valid native32 stack arena only; no guest memory loader or invalid-memory behavior.",
+    "Arithmetic AH/AX/EAX and CL/CX/ECX plus MOV AH,CL/MOV DX,AX are the tested views, not all register combinations.",
+    "Only memory indirect CALL[ESP] and tailJMP[ESP+4] into the real synthetic NEG EAX/RET leaf are tested."
+  ]
+}

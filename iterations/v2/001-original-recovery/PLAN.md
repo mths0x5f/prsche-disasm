@@ -1,25 +1,30 @@
 # v2 / 001 — план восстановления исходного кода
 
-Checkpoint 2026-10-17, Run261: **1122 candidate function VAs + 15 support objects**,
-1137 archive members / 1 290 344 bytes. Actual link: **417 names / 579 diagnostics**;
-EXE/DLL нет. Два старых имени закрыты, выявлен canonical free_00531f90.
-1133 symbol snapshots reused, 4 new COFFs read, 7461 pins PASS, 0 compiles;
-one archive/link, 8.811s. Verified production Run173:476full+6partial, без изменений.
+Checkpoint 2026-10-17, Run264: **1125 candidate function VAs + 15 support objects**,
+1140 archive members /1 295 200bytes. Actual link: **419 names /581diagnostics**,
+EXE/DLL нет. Canonical free закрыт; открыты реальные heap table и2Win32providers
+(+2names vs261:1closed/3added). Raw00531f90 ABI-name ещё нужен10consumers.
+1137symbolsnapshots reused/3newCOFFs,7493pins PASS,0compiles/onearchive-link9.579s.
+Verified production Run173:476full+6partial, без изменений.
 
-Run257/258: статический x86→C++ перевод CALL/RET/стека проверен на 3 оригинальных
-цепочках:6тел/104байта/34инструкции,36 864native comparisons и4negative checks PASS.
-Run260:257 синтаксически переводит25из85тел прежней очереди (у246:0).
-Это отдельный backend-эксперимент; новых принятых игровых функций он не добавляет.
-Run259:2канонических тела/2bindings прошли независимый audit, вошли в261.
-005925d0 остаётся deferred: actual consumer делает MOVSX AL вместо original zero-extension.
+257/258:static x86→C++ CALL/RET/stack —3originalцепочки/6тел/104байта/34инструкции,
+36 864native comparisons и4negative checks PASS;59pins independentlychecked.
+262:15 744synthetic CPU comparisons PASS (byte/word/32 arithmetic, subregisters,
+PUSH/POP ESP,POP[ESP],indirectCALL/JMP);19COFForacles/70B/28pins,1batch/0warnings.
+260:25/85тел прежней очереди синтаксически переводятся; не semantic acceptance.
+263:3existingcanonical heap/free/lock тела/302PEbytes,4original-Unicorn free cutpoints,
+2048arena bytes +null/lock order/COFF/sourceDependencies independentlyPASS; вошли в264.
+265:419actual linknames→417research tasks,22resolvedrows excluded,159pins/6guards PASS.
+259:005925d0 deferred из-за actual MOVSX AL;265README сохраняет этот hold.
 
-Текущая работа: locale_resume — Run262, native CPU corners (synthetic arithmetic,
-subregister/stack/indirect transfers); scalar_storage_250 — Run263 preflight,
-повторное подключение canonical heap free_00531f90. Координатор — приёмка и коммит.
-Следующий конкретный шаг: завершить262; подтвердить scope263 по original consumers,
-затем собрать только новый connected packet. Full CPU/loader/imports/game launch открыты.
-Проверки: runs/258 README, audit-v2-canonical-reuse-259.py,
-census-v2-x86-cpp-260.py --validate-existing; union command — runs/261/command.json.
+Пакеты257–265 завершены, активных назначений нет. Следующий connected packet:
+1) prove raw00531f90 uint32(int)↔canonical uint32(void*) ABI for10actualconsumers;
+2) подключить существующие Win32critical-section providers из win32_core.cpp;
+3) trace006b4f20 heap table layout/aliases/initialization до storage implementation.
+Backend дальше расширять по260: MOVSX/OR/условия, затем shifts/x87 с native proof.
+Полные CPU/loader/imports/faults/concurrency/game launch и validation backlog открыты.
+Проверки: audit-v2-x86-call-chain-258.py, audit-v2-x86-cpu-primitives-262.py,
+audit-v2-heap-release-263.py; actualunion command — runs/264/command.json.
 
 Предыдущий checkpoint:
 

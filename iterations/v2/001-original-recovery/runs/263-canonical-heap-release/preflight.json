@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "kind": "precompile-heap-release-connected-preflight",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_va": "00531f90",
+  "original_bytes": 278,
+  "original_bytes_sha256": "ccb470c739aff69c5f173b617af298064eeb9ed15b6e8705e5247596205387ba",
+  "indexed_instructions": 95,
+  "registry_owner": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "entry_va": "00531f90",
+    "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+    "status": "native-differential-verified",
+    "calling_convention": "cdecl, x86 32-bit",
+    "recovered_dependencies": [
+      "005322b0",
+      "005322c0"
+    ],
+    "unrecovered_dependencies": [],
+    "unrecovered_indirect_dependencies": [],
+    "binary_matched": false,
+    "verification": "scripts/research/verify-v2-heap.py",
+    "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+    "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+    "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+  },
+  "union_exact_owner": false,
+  "union_interior_overlap": false,
+  "actual_consumer": {
+    "va": "0059f050",
+    "object": "local/experiments/v2-canonical-reuse-259/objects/0059f050.obj",
+    "object_sha256": "e49122a428429001add3b8778a69f5db0ce7ab483db57632973d75181f03e36a",
+    "undefined": "?free_00531f90@porsche@@YAIPAX@Z"
+  },
+  "canonical_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+  "canonical_source_sha256": "3a84557a6443a13712ea7aef0747a1cdf5da0d55f24b8b166271cb361fe607ca",
+  "header": "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp",
+  "header_sha256": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+  "prior_differential": {
+    "path": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+    "sha256": "17ccbaaabd54943fef9f65bc206f8cf53a5b8c2170382064a213c99a870fa52d",
+    "cases": 551,
+    "limits": [
+      "whole heap native differential; binary_matched false",
+      "controlled lock endpoints",
+      "no game launch"
+    ]
+  },
+  "lock_wrappers": [
+    {
+      "va": "005322b0",
+      "bytes": 12,
+      "owner": {
+        "module": "Porsche.exe",
+        "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+        "entry_va": "005322b0",
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap_locks.cpp",
+        "status": "native-differential-verified",
+        "calling_convention": "cdecl, x86 32-bit",
+        "unrecovered_dependencies": [
+          "EXTERNAL:00000011"
+        ],
+        "recovered_dependencies": [],
+        "binary_matched": false,
+        "verification": "scripts/research/verify-v2-heap-locks.py",
+        "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap-locks/verification.json",
+        "verification_boundary": "31 original x86 cases; allocator/threadinit/fill and Win32 critical section endpoints recorded. Real lock contention not verified."
+      },
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap_locks.cpp",
+      "source_sha256": "280a5903bb07b57e48c1ebc9f501b6683fa5b88624f9315446075662c3bf54ec",
+      "original_iat_va": "005b2078",
+      "sdk": "KERNEL32.dll!EnterCriticalSection",
+      "union_collision": false
+    },
+    {
+      "va": "005322c0",
+      "bytes": 12,
+      "owner": {
+        "module": "Porsche.exe",
+        "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+        "entry_va": "005322c0",
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap_locks.cpp",
+        "status": "native-differential-verified",
+        "calling_convention": "cdecl, x86 32-bit",
+        "unrecovered_dependencies": [
+          "EXTERNAL:0000000e"
+        ],
+        "recovered_dependencies": [],
+        "binary_matched": false,
+        "verification": "scripts/research/verify-v2-heap-locks.py",
+        "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap-locks/verification.json",
+        "verification_boundary": "31 original x86 cases; allocator/threadinit/fill and Win32 critical section endpoints recorded. Real lock contention not verified."
+      },
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap_locks.cpp",
+      "source_sha256": "280a5903bb07b57e48c1ebc9f501b6683fa5b88624f9315446075662c3bf54ec",
+      "original_iat_va": "005b206c",
+      "sdk": "KERNEL32.dll!LeaveCriticalSection",
+      "union_collision": false
+    }
+  ],
+  "lock_prior_differential": {
+    "path": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap-locks/verification.json",
+    "sha256": "3898a1016e445e76b8d4bebf6920100726657295f8ef920848fbb690abd4c89e",
+    "cases": 31
+  },
+  "original_contracts": {
+    "return_value": 1,
+    "ret_pop_bytes": 0,
+    "heap_table_va": "006b4f20",
+    "lock_enter_va": "005322b0",
+    "lock_leave_va": "005322c0"
+  },
+  "proposed_fragment": [
+    "heap.cpp include prefix",
+    "exact static address/at/links/unlink/insert helpers",
+    "exact free_00531f90 definition",
+    "two exact heap_locks.cpp wrappers"
+  ],
+  "predicted_new_undefined": [
+    "heaps_006b4f20 table",
+    "platform_enter_critical_section",
+    "platform_leave_critical_section"
+  ],
+  "compilation_performed": false,
+  "native_performed": false
+}

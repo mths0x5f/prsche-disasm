@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "kind": "read-only-independent-synthetic-CPU-audit",
+  "summary_sha256": "86fc462814fb8d271d5b054d119d87bd3196855c912640d8c9febce862e97dab",
+  "audit_source_sha256": "70576494aecc776b96f582766381fe32a9bdb4b922f48f9e128dcb404c616b48",
+  "backend_sha256": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+  "input_pins": 28,
+  "synthetic_entries": 19,
+  "synthetic_bytes": 70,
+  "synthetic_instructions": 40,
+  "exact_oracle_relocations": 0,
+  "native_comparisons": 15744,
+  "normalized_exact_slots": 19840,
+  "compiled_tus": 2,
+  "compiler_batches": 1,
+  "compiler_warnings": 0,
+  "receipts_immutable_unique": true,
+  "generated_coff_symbols": {
+    "defined": [
+      "?dispatch257@@YAXAAUMachine257@@I@Z",
+      "?translated_10001000@@YAXAAUMachine257@@@Z",
+      "?translated_10001100@@YAXAAUMachine257@@@Z",
+      "?translated_10001200@@YAXAAUMachine257@@@Z",
+      "?translated_10001300@@YAXAAUMachine257@@@Z",
+      "?translated_10001400@@YAXAAUMachine257@@@Z",
+      "?translated_10001500@@YAXAAUMachine257@@@Z",
+      "?translated_10001600@@YAXAAUMachine257@@@Z",
+      "?translated_10001700@@YAXAAUMachine257@@@Z",
+      "?translated_10001800@@YAXAAUMachine257@@@Z",
+      "?translated_10001900@@YAXAAUMachine257@@@Z",
+      "?translated_10001a00@@YAXAAUMachine257@@@Z",
+      "?translated_10001b00@@YAXAAUMachine257@@@Z",
+      "?translated_10001c00@@YAXAAUMachine257@@@Z",
+      "?translated_10001d00@@YAXAAUMachine257@@@Z",
+      "?translated_10001e00@@YAXAAUMachine257@@@Z",
+      "?translated_10001f00@@YAXAAUMachine257@@@Z",
+      "?translated_10002000@@YAXAAUMachine257@@@Z",
+      "?translated_10002100@@YAXAAUMachine257@@@Z",
+      "?translated_10002200@@YAXAAUMachine257@@@Z"
+    ],
+    "undefined": [
+      "?read257@@YAIII@Z",
+      "?write257@@YAXIII@Z",
+      "__aullshr"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "original_game_functions": 0,
+  "new_accepted_functions": 0,
+  "native_game_execution": false,
+  "limits": [
+    "Synthetic CPU infrastructure only; no original game body/ABI/provider claim or union packet.",
+    "Defined CF/ZF/SF/OF only; no PF/AF/undefined flags, faults,segments,concurrency or full ISA.",
+    "Valid native32 stack arena only; no guest memory loader or invalid-memory behavior.",
+    "Arithmetic AH/AX/EAX and CL/CX/ECX plus MOV AH,CL/MOV DX,AX are the tested views, not all register combinations.",
+    "Only memory indirect CALL[ESP] and tailJMP[ESP+4] into the real synthetic NEG EAX/RET leaf are tested."
+  ]
+}
