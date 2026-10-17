@@ -1,13 +1,53 @@
 # Validações Pendentes da Restauração v2
 
+Checkpoint269/271/273:
+- [x] 266: todos os 10 COFFs chamadores brutos de 00531f90 / RET0 cdecl DWORD completo auditados; vínculo exato,
+  verificações nativas de identidade canônica / EAX / ESP / arena de 512 B PASS; COFFs do jogo reutilizados inalterados.
+- [x] 268: 2 adaptadores stdlib Win32 existentes / 64 ciclos reais de trava recursiva / 256 chamadas,
+  204 pins / 8 guardas PASS. Novo coletor rejeita suporte a dados executáveis / aliases;
+  código exato de plataforma é suporte, não funções adicionais do jogo.
+- [x] 269: 1125 VAs de função candidatas + 17 de suporte / 1142 membros, 416 nomes no link / 569 diagnósticos,
+  7594 pins / 1140 símbolos em cache / 2 novos COFFs; 0 compilações, sem EXE/DLL.
+- [x] 267/270/271: varredura HIGHLOW completa de 56 746 / 30 referências, 4 intervalos de candidatos omitidos 510 B / 167 instruções;
+  índice de navegação separado / 15 pins / 7 guardas, índices antigos inalterados.
+- [ ] Entrada/vivacidade/ABI de quatro candidatos e comportamento de preenchimento original 53c290;
+  registros suplementares de candidatos não aceitam essas funções.
+- [x] 272/274: um proprietário físico de 64 B + vínculo de base bruto, todas as 16 verificações nativas de
+  zero em slots / identidade / gravações cruzadas / cópia de bits PASS; todos os 3 locais DIR32 brutos reais delimitados AND 0f / MEM4.
+  Footprint exato / consumidores atuais são separados da vivacidade de funções candidatas.
+- [ ] 272: array de ponteiros / unsigned int bruto é contrato de visão COFF x86, não garantia de tipo / alias C++ portátil.
+  Bootstrap / inicialização / falha / concorrência reais permanecem em aberto.
+- [ ] 006b4f20 também é o final exclusivo do 006b4b20..006b4f1f precedente; layout relativo completo
+  e composição com futuros consumidores adjacentes permanecem em ESPERA (HOLD). Migração / unificação futura de proprietário
+  deve preservar uma única tabela física, não definir outra cópia. Bootstrap / inicialização reais permanecem em aberto.
+- [x] 273: 416 nomes reais -> 414 tarefas / 23 linhas resolvidas excluídas, 159 pins / 6 guardas.
+  Retenções de extensão de sinal insegura de 595d0 e prefixo de trava de 5a4c05 mantidas.
+- [x] 274/275: 1125 VAs de função candidatas + 19 de suporte / 1144 membros, 414 nomes no link / 566 diagnósticos,
+  7626 pins / 1142 símbolos em cache / 2 novos COFFs / 0 compilações; 412 tarefas de pesquisa atuais.
+- [ ] Próxima ABI de consumidor nativo em files.cpp 00568200 / 005682a0 + contrato original de handle_device em EAX completo
+  dos quatro chamadores compartilhados; não silenciar retenção de 595d0 por meio de um alias adivinhado.
+
 Run257 (17/10/2026):
 - [x] Abaixamento (lowering) estático de CALL/RET/stack; 4 grupos de proteção, 19 casos de rejeição PASS.
 - [x] Run258: 6 corpos originais / 104 B / 34 instruções, 36 864 comparações nativas e 4 verificações
   negativas PASS; 59 pins e 6 oráculos COFF reais verificados independentemente, apenas 3 CALL REL32.
   Homologação completa de CPU/jogo permanece aberta; todas as afirmações são limitadas às cadeias originais selecionadas.
-- [ ] Cobertura nativa fora das cadeias selecionadas: aritmética de byte/word, carry/overflow de SBB,
-  PUSH ESP/POP ESP/POP [ESP], CALL/JMP indireto e comportamento de falha/recursão.
-  Guardas de abaixamento por si sós não comprovam a semântica dessas instruções.
+- [x] 262: ADD/SUB/SBB/NEG sintéticos delimitados de byte/word/32, visões de byte alto/word,
+  PUSH ESP / POP ESP / POP [ESP], CALL [ESP] / JMP [ESP+4] indiretos: 15 744 casos nativos PASS,
+  19 oráculos COFF exatos / 70 B / 40 instruções / 28 pins, 19 840 mapeamentos explícitos de slot código-PC.
+- [ ] 262: ISA / operandos / flags restantes, comportamento de falhas de memória guest / recursão / importação / callback
+  e execução real do jogo; fixtures sintéticas finitas não comprovam tudo isso.
+
+Checkpoint264/265:
+- [x] 263: 3 corpos canônicos existentes de free/trava / 302 bytes PE, 1 lote de compilador / 0 avisos;
+  4 pontos de corte de free original-Unicorn / 2048 bytes de arena / verificações nativas de trava/nulo PASS.
+  Casos anteriores de 078551 heap + 31 travas citados, não reexecutados; auditoria de código-fonte / COFF / fechamento PASS.
+- [x] 264: 1125 VAs de função candidatas + 15 de suporte / 1140 membros, 419 nomes no link / 581 diagnósticos;
+  7493 pins antes/depois PASS, 1137 snapshots de símbolos reutilizados / 3 novos COFFs, 0 compilações.
+- [ ] 264: Vínculo ABI bruto de 00531f90 com dez consumidores, provedores Win32 existentes,
+  tabela / inicialização original de 006b4f20, concorrência / falha / composição completa do jogo.
+- [x] 265: 419 nomes reais -> 417 tarefas, 22 linhas resolvidas excluídas; 159 pins / 6 guardas.
+  A classificação genérica da fila não revoga as retenções de layout inseguro de 005925d0 ou 005a4c05 da 259.
 
 Checkpoint261:
 - [x] 259: 2 corpos canônicos / 2 vínculos exatos de PE/fonte/COFF/auditoria nativa PASS.
@@ -18,8 +58,9 @@ Checkpoint261:
 - [x] 260: Cobertura de sintaxe 257 de 25/85, 60 rejeitadas; não é homologação nativa/do jogo.
 - [x] 261: 1122 VAs de função candidatas + 15 de suporte, 417 nomes no link / 579 diagnósticos, 7461 pins PASS;
   1133 snapshots de símbolos reutilizados / 4 novos COFFs, 0 compilações. EXE/DLL real ausente.
-- [ ] 261: Nova dependência canônica free_00531f90; tabela/tempo de vida/travas de heap originais
-  devem se compor com consumidores reais. Provedores controlados por si sós não estabelecem isso.
+- [x] 261: free canônico conectado em 263/264, vínculo bruto em 266/269, provedores reais de travas Win32 em 268/269,
+  tabela compartilhada delimitada em 272/274. Provedores anteriores de fixtures controladas não são provedores do jogo.
+- [ ] Inicialização completa do heap original / tempo de vida / adjacência / concorrência e visões tipadas portáteis permanecem em aberto.
 
 Checkpoint249/256: 1120 VAs de função candidatas / 13 de suporte; 418 nomes vinculados permanecem. Sem EXE.
 - [x] 246: Piloto de tradução estática de 76 B / 28 instruções para C++, 375 808 comparações de estado nativo (CF/ZF/SF/OF,
@@ -47,8 +88,9 @@ Checkpoint245: Fila automática de fronteira construída a partir do arquivo val
   Estados aceito/parcial/WIP/probe/interior/ABI/dados/provedor mantidos distintos; 159 pins PASS.
 - [x] 245: 6 guardas significativos incluindo proprietários duplicados, referências não mapeadas, comentários/strings de fonte,
   identidade em tempo de execução/entradas desconhecidas/deduplicação; apenas parser de entrada em tempo de execução, sem captura real de falha do jogo.
-- [ ] O loop de compilação/restauração automática e o piloto de instrução para C++ permanecem planejados,
-  não concluídos pela geração da fila. Inicialização completa do jogo/fidelidade original completa ainda em aberto.
+- [ ] O loop de compilação/restauração automática não é concluído pela geração da fila.
+  O piloto de instrução 246/257/258 é completo apenas dentro do seu escopo finito documentado;
+  lançamento de CPU completo/jogo/fidelidade original completa ainda permanecem em aberto.
 
 Checkpoint243: 1117 VAs de função + 8 de suporte, 442 nomes não resolvidos vinculados; EXE real do jogo ausente.
 - [x] 234: 4 wrappers originais, 2048 pares SDK original/nativo + 2048 capturas thiscall, 445 instruções PE.

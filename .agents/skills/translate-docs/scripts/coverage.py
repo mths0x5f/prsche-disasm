@@ -54,7 +54,7 @@ def main():
     if up_to_date:
         print("[OK] Arquivos com tradução em dia:")
         for s, t in up_to_date:
-            print(f"  ✓ {s} -> {t}")
+            print(f"  [OK] {s} -> {t}")
         print()
         
     if outdated:
@@ -66,7 +66,7 @@ def main():
     if missing:
         print("[PENDENTE] Arquivos sem tradução pt-BR:")
         for m in missing[:30]:  # Limita para não inundar o terminal
-            print(f"  ✗ {m}")
+            print(f"  [FALTA] {m}")
         if len(missing) > 30:
             print(f"  ... e mais {len(missing) - 30} arquivos.")
         print()

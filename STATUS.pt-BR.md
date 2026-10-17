@@ -1,25 +1,33 @@
 # Estado do Projeto
 
-Ponto de controle (checkpoint) 2026-10-17, Run261: **1122 candidate function VAs + 15 support objects**,
-1137 membros de arquivo / 1 290 344 bytes. Link real: **417 names / 579 diagnostics**;
-sem EXE/DLL. Dois nomes antigos fechados, revelado free_00531f90 canônico.
-1133 snapshots de símbolos reutilizados, 4 novos COFFs lidos, 7461 pins PASS, 0 compilações;
-um archive/link, 8.811s. Produção verificada Run173: 476 full + 6 partial, sem alterações.
+Ponto de controle (checkpoint) 2026-10-17, Run274: **1125 candidate function VAs + 19 support objects**,
+1144 membros de arquivo / 1 299 024 bytes. Link real **414 names / 566 diagnostics**, sem EXE/DLL.
+Vinculados heap free canônico + binding bruto + travas Win32 reais + um proprietário de tabela compartilhada de 64 B.
+1125 game candidate VAs não incluem 2 adaptadores de plataforma modernos (support). Produção verificada
+Run173: 476 full + 6 partial sem alterações. 7626 pins PASS / 1142 símbolos em cache / 2 novos COFFs,
+0 compilações / um archive-link 8.827s. Código-fonte / arquivo / diagnósticos reais — runs/274.
 
-Run257/258: conversão estática x86→C++ de CALL/RET/pilha verificada em 3 cadeias originais:
-6 corpos / 104 bytes / 34 instruções, 36 864 comparações nativas e 4 verificações negativas PASS.
-Run260: 257 traduz sintaticamente 25 de 85 corpos da fila anterior (em 246: 0).
-Este é um experimento de backend isolado; não adiciona novas funções de jogo aceitas.
-Run259: 2 corpos canônicos / 2 bindings passaram por auditoria independente, integrados no 261.
-005925d0 permanece diferido (deferred): o consumidor real realiza MOVSX AL em vez da extensão de zero original.
+266: 10 chamadores COFF reais de free bruto / RET0 cdecl DWORD completo, EAX 1 / identidade nativa PASS.
+268: 2 adaptadores Win32 existentes, 64 ciclos reais de trava recursiva / 256 chamadas, 204 pins / 8 guardas PASS.
+267/270/271: 56 746 HIGHLOW / 30 refs + 4 intervalos de candidatos 510 B / 167 instruções recuperados;
+novo índice de navegação 15 pins / 7 guardas PASS, entrada/vivacidade não comprovadas, índices antigos intocados.
+272: apenas ARMAZENAMENTO (STORAGE-only) 64 B / declaração canônica exata + visão indexada de 16 slots bruta compartilham uma base;
+3 locais DIR32 brutos reais delimitados AND 0f / MEM4, zero / gravações cruzadas / cópia de bits / auditoria nativa PASS.
+Comprovação de pegada de dados independente de vivacidade de função candidata não comprovada; essas funções
+não estão implementadas/aceitas. Precedente 006b4b20..006b4f1f ponteiro final / layout relativo permanece em ESPERA (HOLD).
+275: 414 nomes reais -> 412 tarefas de pesquisa, 24 linhas resolvidas excluídas; 159 pins / 6 guardas PASS.
+Cadeias CALL originais 258: 36 864 casos nativos; CPU sintética 262: 15 744 casos PASS;
+260 sintaxe 25/85, não é aceitação semântica. Retenções de 595d0 MOVSX / layout 5a4c05 continuam.
 
-Trabalho atual: locale_resume — Run262, cantos de CPU nativa (aritmética sintética,
-transferências de subregistradores / pilha / indiretas); scalar_storage_250 — Run263 preflight,
-reconexão do heap free_00531f90 canônico. Coordenador — aceitação e commit.
-Próximo passo concreto: concluir o 262; confirmar o escopo do 263 pelos consumidores originais,
-depois compilar apenas o novo pacote conectado. CPU completa / carregador / importações / inicialização do jogo abertos.
-Verificações: runs/258 README, audit-v2-canonical-reuse-259.py,
-census-v2-x86-cpp-260.py --validate-existing; comando de união — runs/261/command.json.
+Pacotes 257–275 concluídos, sem atribuições ativas. Próximo pacote conectado delimitado:
+files.cpp aceito operation_queue 00568200 + operation_allocate 005682a0 (ranks 2/3 em 275),
+pré-validação da ABI do consumidor original antes da reutilização de fragmento exato. Quatro chamadores compartilhados 568ae0/b10/b50/b90
+também usam o handle_device inseguro de char 595d0; recuperar contrato de consumidor em EAX completo em vez de
+alias por adivinhação. Agrupar fixtures/provedores nativos em lote em um compile/link, manter estado explícito de FILE/dispositivo/fila.
+Próximo no backend em paralelo: MOVSX/OR/condições conforme 260; apenas semântica de instrução comprovada nativamente.
+CPU completa / carregador / importações / bootstrap / falhas / concorrência / lançamento do jogo e backlog abertos.
+Comandos: audit-v2-native-platform-268.py, index-v2-heap-candidates-271.py --validate,
+audit-v2-shared-heap-table-272.py; união real — runs/274/command.json (coletor 268).
 
 Ponto de controle anterior:
 
