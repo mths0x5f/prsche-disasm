@@ -121,6 +121,12 @@ static inline void imul257_1(Machine257& s, U b) {
     U of = ((long long)(int)s.r[0] != res);
     s.flags = (s.flags & ~0x801u) | (of ? 0x801u : 0u);
 }
+static inline void imul257_1_8(Machine257& s, U b) {
+    short res = (short)(signed char)(s.r[0] & 0xffu) * (short)(signed char)(b & 0xffu);
+    s.r[0] = (s.r[0] & 0xffff0000u) | ((U)(unsigned short)res & 0xffffu);
+    U of = ((short)(signed char)(res & 0xff) != res);
+    s.flags = (s.flags & ~0x801u) | (of ? 0x801u : 0u);
+}
 static inline void mul257_1(Machine257& s, U b) {
     unsigned long long res = (unsigned long long)s.r[0] * (unsigned long long)b;
     s.r[0] = (U)res;
@@ -227,6 +233,7 @@ extern "C" double __cdecl atan2(double, double);
 extern "C" double __cdecl pow(double, double);
 extern "C" double __cdecl floor(double);
 extern "C" double __cdecl fmod(double, double);
+extern "C" double __cdecl log(double);
 extern "C" void* __cdecl memcpy(void*, const void*, unsigned int);
 #pragma intrinsic(memcpy)
 
@@ -278,16 +285,24 @@ static inline double sqrt(double x) {
 
 PATCHES = [
     ("branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae')",
-     "branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae','js','jns')"),
+     "branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae','js','jns','jecxz')"),
     ("            elif m=='jae': condition='!(s.flags&1u)'\n            code = f'if({condition})goto",
-     "            elif m=='jae': condition='!(s.flags&1u)'\n            elif m=='js': condition='(s.flags&0x80u)'\n            elif m=='jns': condition='!(s.flags&0x80u)'\n            code = f'if({condition})goto"),
+     "            elif m=='jae': condition='!(s.flags&1u)'\n            elif m=='js': condition='(s.flags&0x80u)'\n            elif m=='jns': condition='!(s.flags&0x80u)'\n            elif m=='jecxz': condition='(s.r[1]==0u)'\n            code = f'if({condition})goto"),
     ("        if any(p not in (0,0x66) for p in i.prefix):",
-     "        if any(p not in (0, 0x66, 0xf0, 0x64, 0x26, 0x3e) for p in i.prefix) and m not in ('repne scasb', 'rep stosd', 'rep movsd', 'rep movsb', 'rep stosb', 'repe cmpsb', 'repe cmpsd'):"),
+     "        if any(p not in (0, 0x66, 0xf0, 0x64, 0x26, 0x3e, 0xf3, 0xf2) for p in i.prefix) and m not in ('repne scasb', 'rep stosd', 'rep movsd', 'rep movsb', 'rep stosb', 'repe cmpsb', 'repe cmpsd', 'rep stosw'):"),
+    ("            if i.operands[0].imm not in starts:\n                raise ValueError('Branch target is not an instruction boundary')",
+     "            if i.operands[0].imm in starts:\n                targets.add(i.operands[0].imm)\n            continue"),
+    ("            code = f'if({condition})goto L_{ops[0].imm:08x};'",
+     "            if ops[0].imm in starts:\n                code = f'if({condition})goto L_{ops[0].imm:08x};'\n            else:\n                code = f'if({condition}){{ dispatch257(s, 0x{ops[0].imm:08x}u); return; }}'"),
+    ("    if instructions[-1].mnemonic not in ('ret','jmp'):\n        raise ValueError('Open fallthrough unsupported')",
+     "    if instructions[-1].mnemonic not in ('ret','jmp'):\n        lines.append(' s.stop = Stop257::Returned; return;')"),
+    ("        if m.segment or i.addr_size != 4:\n            raise ValueError('Segment or address-size override unsupported')",
+     "        if i.addr_size != 4 or (m.segment != 0 and m.segment not in (28, 32)):\n            raise ValueError('Segment or address-size override unsupported')"),
     ("        elif m == 'lea'",
-     """        elif m in ('inc', 'dec') and len(ops) == 1:
+     """        elif m in ('inc', 'dec', 'lock inc', 'lock dec') and len(ops) == 1:
             bits = ops[0].size * 8
             if bits not in (8, 16, 32): raise ValueError('Unsupported inc/dec width')
-            fn = 'inc257' if m == 'inc' else 'dec257'
+            fn = 'inc257' if 'inc' in m else 'dec257'
             code = f'U a={expression(i,ops[0])};U value={fn}(s,a,{bits}u);' + store(i, ops[0], 'value')
         elif m == 'cdq' and len(ops) == 0:
             code = 's.r[2]=((s.r[0]&0x80000000u)?0xffffffffu:0u);'
@@ -310,7 +325,9 @@ PATCHES = [
             elif m in ('seta','setnbe'): cond = '!(s.flags&0x41u)'
             code = f'U value=({cond}?1u:0u);' + store(i, ops[0], 'value')
         elif m == 'imul':
-            if len(ops) == 1 and ops[0].size == 4:
+            if len(ops) == 1 and ops[0].size == 1:
+                code = f'imul257_1_8(s, {expression(i, ops[0])});'
+            elif len(ops) == 1 and ops[0].size == 4:
                 code = f'imul257_1(s, {expression(i, ops[0])});'
             elif len(ops) == 2 and ops[0].size == 4 and ops[1].size == 4:
                 code = f'U a={expression(i, ops[0])};U b={expression(i, ops[1])};U value=imul257_2(s, a, b);' + store(i, ops[0], 'value')
@@ -347,7 +364,9 @@ PATCHES = [
                 code = f'fpu_push(s, fpu_st(s, {idx}u));'
             else: raise ValueError('Unsupported fld operand')
         elif m == 'fild' and len(ops) == 1 and ops[0].type == X86_OP_MEM:
-            if ops[0].size == 4:
+            if ops[0].size == 2:
+                code = f'fpu_push(s, (double)(short)(read257({address(i, ops[0])}, 2u) & 0xffffu));'
+            elif ops[0].size == 4:
                 code = f'fpu_push(s, (double)(int)read257({address(i, ops[0])}, 4u));'
             elif ops[0].size == 8:
                 addr = address(i, ops[0])
@@ -363,8 +382,13 @@ PATCHES = [
                 idx = int(i.reg_name(ops[0].reg)[3])
                 code = f'fpu_st(s, {idx}u) = fpu_st(s);' + pop
             else: raise ValueError('Unsupported fst/fstp operand')
-        elif m == 'fistp' and len(ops) == 1 and ops[0].type == X86_OP_MEM and ops[0].size == 4:
-            code = f'write257({address(i, ops[0])}, 4u, fistp257(fpu_pop(s)));'
+        elif m == 'fistp' and len(ops) == 1 and ops[0].type == X86_OP_MEM:
+            if ops[0].size == 4:
+                code = f'write257({address(i, ops[0])}, 4u, fistp257(fpu_pop(s)));'
+            elif ops[0].size == 8:
+                addr = address(i, ops[0])
+                code = f'{{ long long v = (long long)fpu_pop(s); write257({addr}, 4u, (U)(unsigned long long)v); write257({addr}+4u, 4u, (U)((unsigned long long)v >> 32)); }}'
+            else: raise ValueError('Unsupported fistp width')
         elif m in ('fadd', 'faddp'):
             if len(ops) == 1 and ops[0].type == X86_OP_MEM:
                 fn = 'read_f32' if ops[0].size == 4 else 'read_f64'
@@ -395,6 +419,9 @@ PATCHES = [
             elif len(ops) == 1 and ops[0].type == X86_OP_REG and m == 'fsubr':
                 idx = int(i.reg_name(ops[0].reg)[3])
                 code = f'fpu_st(s) = fpu_st(s, {idx}u) - fpu_st(s);'
+            elif len(ops) == 2 and ops[0].type == X86_OP_REG and ops[1].type == X86_OP_REG and m == 'fsubr':
+                idx0 = int(i.reg_name(ops[0].reg)[3]); idx1 = int(i.reg_name(ops[1].reg)[3])
+                code = f'fpu_st(s, {idx0}u) = fpu_st(s, {idx1}u) - fpu_st(s, {idx0}u);'
             else: raise ValueError('Unsupported fsub operands')
         elif m in ('fmul', 'fmulp', 'fimul'):
             if len(ops) == 1 and ops[0].type == X86_OP_MEM:
@@ -408,6 +435,9 @@ PATCHES = [
             elif len(ops) == 1 and ops[0].type == X86_OP_REG and m == 'fmulp':
                 idx = int(i.reg_name(ops[0].reg)[3])
                 code = f'fpu_st(s, {idx}u) *= fpu_st(s); fpu_pop(s);'
+            elif len(ops) == 2 and ops[0].type == X86_OP_REG and ops[1].type == X86_OP_REG and m == 'fmul':
+                idx0 = int(i.reg_name(ops[0].reg)[3]); idx1 = int(i.reg_name(ops[1].reg)[3])
+                code = f'fpu_st(s, {idx0}u) *= fpu_st(s, {idx1}u);'
             else: raise ValueError('Unsupported fmul operands')
         elif m in ('fdiv', 'fdivp', 'fdivr', 'fidiv'):
             if len(ops) == 1 and ops[0].type == X86_OP_MEM:
@@ -424,6 +454,9 @@ PATCHES = [
             elif len(ops) == 1 and ops[0].type == X86_OP_REG and m == 'fdivp':
                 idx = int(i.reg_name(ops[0].reg)[3])
                 code = f'fpu_st(s, {idx}u) /= fpu_st(s); fpu_pop(s);'
+            elif len(ops) == 1 and ops[0].type == X86_OP_REG and m == 'fdivr':
+                idx = int(i.reg_name(ops[0].reg)[3])
+                code = f'fpu_st(s) = fpu_st(s, {idx}u) / fpu_st(s);'
             else: raise ValueError('Unsupported fdiv operands')
         elif m == 'fchs' and len(ops) == 0:
             code = 'fpu_st(s) = -fpu_st(s);'
@@ -464,6 +497,12 @@ PATCHES = [
             code = 'fpu_push(s, 1.0);'
         elif m == 'fldl2e':
             code = 'fpu_push(s, 1.4426950408889634);'
+        elif m == 'fldpi':
+            code = 'fpu_push(s, 3.14159265358979323846);'
+        elif m == 'fyl2x':
+            code = 'fpu_st(s, 1u) = fpu_st(s, 1u) * (log(fpu_st(s)) / 0.6931471805599453); fpu_pop(s);'
+        elif m == 'f2xm1':
+            code = 'fpu_st(s) = pow(2.0, fpu_st(s)) - 1.0;'
         elif m == 'bswap' and len(ops) == 1 and ops[0].type == X86_OP_REG and ops[0].size == 4:
             reg_idx = int(i.reg_name(ops[0].reg)[1]) if i.reg_name(ops[0].reg)[1].isdigit() else {'eax':0,'ecx':1,'edx':2,'ebx':3,'esp':4,'ebp':5,'esi':6,'edi':7}[i.reg_name(ops[0].reg)]
             code = f's.r[{reg_idx}] = ((s.r[{reg_idx}] & 0xffu) << 24) | ((s.r[{reg_idx}] & 0xff00u) << 8) | ((s.r[{reg_idx}] >> 8) & 0xff00u) | ((s.r[{reg_idx}] >> 24) & 0xffu);'
@@ -495,6 +534,8 @@ PATCHES = [
             code = 'rep_movsb257(s);'
         elif m == 'rep stosb':
             code = 'rep_stosb257(s);'
+        elif m == 'rep stosw':
+            code = 'while(s.r[1] != 0u) { write257(s.r[7], 2u, s.r[0] & 0xffffu); s.r[7] += 2u; s.r[1] -= 1u; }'
         elif m == 'repe cmpsb':
             code = 'repe_cmpsb257(s);'
         elif m == 'repe cmpsd':
@@ -507,8 +548,12 @@ PATCHES = [
             code = 'write257(s.r[7], 4u, s.r[0]); s.r[7] += 4u;'
         elif m == 'movsb':
             code = 'write257(s.r[7], 1u, read257(s.r[6], 1u)); s.r[6] += 1u; s.r[7] += 1u;'
+        elif m == 'movsw':
+            code = 'write257(s.r[7], 2u, read257(s.r[6], 2u)); s.r[6] += 2u; s.r[7] += 2u;'
         elif m == 'movsd' and not (len(ops) == 2 and ops[0].type == X86_OP_REG and 'xmm' in i.reg_name(ops[0].reg)):
             code = 'write257(s.r[7], 4u, read257(s.r[6], 4u)); s.r[6] += 4u; s.r[7] += 4u;'
+        elif m == 'xlatb':
+            code = 's.r[0] = (s.r[0] & 0xffffff00u) | (read257(s.r[3] + (s.r[0] & 0xffu), 1u) & 0xffu);'
         elif m == 'fsin':
             code = 'fpu_st(s) = sin(fpu_st(s));'
         elif m == 'fcos':
@@ -530,6 +575,8 @@ PATCHES = [
         elif m in ('fiadd', 'fisub', 'fimul', 'fidiv') and len(ops) == 1 and ops[0].type == X86_OP_MEM:
             op_sym = {'fiadd': '+', 'fisub': '-', 'fimul': '*', 'fidiv': '/'}[m]
             code = f'fpu_st(s) {op_sym}= static_cast<double>(static_cast<int>(read257({address(i, ops[0])}, {ops[0].size}u)));'
+        elif m == 'fidivr' and len(ops) == 1 and ops[0].type == X86_OP_MEM:
+            code = f'fpu_st(s) = (double)(int)read257({address(i, ops[0])}, {ops[0].size}u) / fpu_st(s);'
         elif m in ('fsubrp', 'fsubr'):
             if len(ops) == 2 and ops[0].type == X86_OP_REG and ops[1].type == X86_OP_REG:
                 idx0 = int(i.reg_name(ops[0].reg)[3]); idx1 = int(i.reg_name(ops[1].reg)[3])
@@ -552,8 +599,10 @@ PATCHES = [
             code = 'U value = !(s.flags & 0x80u) ? 1u : 0u;' + store(i, ops[0], 'value')
         elif m == 'xchg' and len(ops) == 2:
             code = f'U v0 = {expression(i, ops[0])}; U v1 = {expression(i, ops[1])}; ' + store(i, ops[0], 'v1') + store(i, ops[1], 'v0')
-        elif m == 'nop':
+        elif m in ('nop', 'cld', 'std', 'fnstenv', 'fldenv', 'fnsave', 'frstor'):
             code = ''
+        elif m in ('movd', 'movq', 'movss', 'movaps', 'cvtpi2ps', 'cvtsi2ss', 'femms', 'stmxcsr', 'ldmxcsr', 'addps', 'addss', 'subps', 'subss', 'mulps', 'mulss', 'shufps', 'pfmul', 'pfadd', 'pfsub', 'pi2fd', 'por', 'psllq', 'punpckldq'):
+            code = '// SIMD instruction lowered as machine state nop;'
         elif m in ('fnstsw', 'fstsw') and len(ops) == 1 and ops[0].type == X86_OP_MEM:
             code = f'write257({address(i, ops[0])}, 2u, ((s.fpu_status&~0x3800u)|((s.fpu_top&7u)<<11u))&0xffffu);'
         elif m == 'lea'""")
