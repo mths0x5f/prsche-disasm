@@ -1,5 +1,17 @@
 # Сохранённая незавершённая работа
 
+2026-10-17: незавершённый278/280 сохранён отдельно от проверенных пакетов.
+- `scripts/research/audit-v2-native-union-280.py`, `native-replacements-280.py`,
+  `native-platform-contract-280.py`: scaffold identity-pinned caller replacements
+  и одного cdecl SetLastError bridge. Только syntax check; не выполнялись,
+  replacement/native receipts отсутствуют, game/archive не изменены.
+- Four raw callers568ae0/b10/b50/b90 всё ещё имеют char handle_device595d0
+  declaration. Исправление, fixture282 и physical gap281 не были начаты.
+- До использования280 нужны bounded negative guards, реальные replacement
+  metadata/COFF и ABI native comparison. Действующий collector —268.
+- Приоритет сдвинут к normal-entry285; этот прототип не закрывает595d0hold.
+
+
 2026-10-15: untracked исходники, probes, verifiers и отчёты сохранены по просьбе
 пользователя. Это сохранение работы, не production-интеграция.
 
