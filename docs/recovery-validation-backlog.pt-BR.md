@@ -1,5 +1,28 @@
 # Validações Pendentes da Restauração v2
 
+Checkpoint 276–284, prioridade do primeiro EXE jogável:
+- [x] 276: 00568200/005682a0 canônicos exatos + dois vínculos brutos comprovados,
+  4 pontos de corte originais / 8 chamadas nativas PASS; pacote separado, não a união atual.
+- [x] 277: 26 fragmentos sintéticos / 30 976 comparações nativas PASS;
+  apenas sintaxe 25->29/85; 0 novas funções de jogo aceitas.
+- [ ] 278/280: reparo char->DWORD dos quatro chamadores / novo coletor ainda não foram compilados
+  nem verificados. Não é permitido declarar a retenção de 595d0 como fechada.
+- [ ] 279: armazenamento físico 006af080/006af084, 9 locais brutos não indexados;
+  o inventário de pegada não autoriza layout/inicialização arbitrários.
+- [ ] 284: restaurar os efeitos necessários dos construtores/estado pre-WinMain originais
+  (005a2d1a->005a2441/005a2547, primeiros 004035e0/00403600->005e6724/005e6720).
+  O CRT do host moderno não comprova a equivalência deles. Sem inicialização nativa ainda.
+- [x] 285: duas vinculações reais normal-entry sem WHOLEARCHIVE, 267 nomes / 303 referências;
+  arquivo de candidatos 274 pesquisado, fronteira inalterada; auditoria de 18 pins / 22 bibliotecas PASS.
+- [x] 286: os dois primeiros corpos de construtores com 39 B, 3 usos diretos; nenhuma saída
+  de leitura direta downstream encontrada. Valor 0x7e800000 computado, não é oráculo nativo.
+- [ ] Conectar proprietários de serviços comprovados ao alvo de entrada real; 20 limites
+  diretos de app_main ainda não resolvidos. Não tratar o crescimento do arquivo de candidatos como integração do jogo.
+- [ ] Equivalência do construtor original: consumidores indiretos / aliases computados permanecem
+  em aberto; gravações isoladas não comprovam bloqueador do primeiro jogo. Primeira tela,
+  recursos / renderização / entrada e jogabilidade real exigem verificações separadas.
+
+
 Checkpoint269/271/273:
 - [x] 266: todos os 10 COFFs chamadores brutos de 00531f90 / RET0 cdecl DWORD completo auditados; vínculo exato,
   verificações nativas de identidade canônica / EAX / ESP / arena de 512 B PASS; COFFs do jogo reutilizados inalterados.

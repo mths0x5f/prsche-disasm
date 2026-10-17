@@ -1,5 +1,17 @@
 # Trabalho em Andamento Salvo
 
+17/10/2026: 278/280 não concluído salvo separadamente dos pacotes verificados.
+- `scripts/research/audit-v2-native-union-280.py`, `native-replacements-280.py`,
+  `native-platform-contract-280.py`: scaffold de substituições de chamadores fixadas por identidade
+  e uma ponte cdecl SetLastError. Apenas verificação de sintaxe; não foram executados,
+  recibos de substituição/nativos ausentes, jogo/arquivo inalterados.
+- Quatro chamadores brutos 568ae0/b10/b50/b90 ainda possuem a declaração de
+  char handle_device 595d0. A correção, a fixture 282 e a lacuna física 281 não foram iniciadas.
+- Antes de utilizar o 280, são necessárias proteções negativas delimitadas,
+  metadados/COFF reais de substituição e comparação nativa de ABI. O coletor ativo é o 268.
+- A prioridade mudou para normal-entry 285; este protótipo não fecha a retenção de 595d0.
+
+
 15/10/2026: fontes não rastreadas, probes, verificadores e relatórios foram salvos a pedido
 do usuário. Esta é uma preservação de trabalho, não uma integração de produção.
 

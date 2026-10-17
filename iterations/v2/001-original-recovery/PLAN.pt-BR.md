@@ -1,25 +1,53 @@
 # v2 / 001 — plano de recuperação do código-fonte
 
-Ponto de controle (checkpoint) 2026-10-17, Run261: **1122 candidate function VAs + 15 support objects**,
-1137 membros de arquivo / 1 290 344 bytes. Link real: **417 names / 579 diagnostics**;
-sem EXE/DLL. Dois nomes antigos fechados, revelado free_00531f90 canônico.
-1133 snapshots de símbolos reutilizados, 4 novos COFFs lidos, 7461 pins PASS, 0 compilações;
-um archive/link, 8.811s. Produção verificada Run173: 476 full + 6 partial, sem alterações.
+Checkpoint 17/10/2026: prioridade — EXE do jogo e cadeia de execução real.
+- 285: dois links normal-entry sem WHOLEARCHIVE e sem compilação, 267 nomes /
+  303 referências em ambos. A adição do arquivo real de 1125 candidatos 274 não alterou
+  a fronteira alcançável; sem EXE. Auditoria de 18 pins de entrada / 22 bibliotecas pesquisadas PASS.
+  Esta é uma nova linkedição do grafo em cache da 173, não uma recompilação completa dos fontes atuais.
+- Próximo pacote: alvos de CALL originais e ABI para 20 serviços de app_main não resolvidos,
+  começando por application_main_log, depois startup/renderização. Primeiro o proprietário
+  canônico/WIP existente, depois a conexão comprovada, sem stubs e sem aliases adivinhados.
+- 284: o host contorna a cadeia de inicializadores pre-WinMain original. A 286 detalhou: os primeiros
+  dois construtores não possuem consumidores downstream diretos encontrados; esta é uma verificação
+  aberta de equivalência, e não um bloqueador comprovado do jogo. Não expandir a restauração
+  do CRT por conta dessas duas gravações isoladas sem necessidade comprovada.
+- 276 concluído: 2 corpos canônicos de operação de arquivo / 2 vínculos de ABI, 8 chamadas nativas contra
+  4 pontos de corte originais PASS. Pacote separado, ainda não conectado na união 274.
+- 277 concluído: 30 976 comparações nativas PASS, MOVSX/MOVZX/OR/NOT/Jcc;
+  apenas sintaxe 25->29/85, 0 novas funções de jogo aceitas.
+- 279: pegada dos globais físicos de FILE; 9 lacunas brutas ainda em aberto.
+- 278/280: protótipo de reparo de ABI do chamador / coletor não concluído; apenas trabalho
+  salvo, não aplicado / não validado. 281/282 adiados até o início da implementação.
+Nenhuma atribuição ativa após a finalização de 283/286. O próximo passo exato é
+conectar o proprietário comprovado de logging com o alvo de entrada real e repetir apenas
+a compilação/linkedição afetada. 267 nomes é a fronteira, não a contagem de funções restantes.
 
-Run257/258: conversão estática x86→C++ de CALL/RET/pilha verificada em 3 cadeias originais:
-6 corpos / 104 bytes / 34 instruções, 36 864 comparações nativas e 4 verificações negativas PASS.
-Run260: 257 traduz sintaticamente 25 de 85 corpos da fila anterior (em 246: 0).
-Este é um experimento de backend isolado; não adiciona novas funções de jogo aceitas.
-Run259: 2 corpos canônicos / 2 bindings passaram por auditoria independente, integrados no 261.
-005925d0 permanece diferido (deferred): o consumidor real realiza MOVSX AL em vez da extensão de zero original.
+Ponto de controle anterior de arquivo de candidatos:
 
-Trabalho atual: locale_resume — Run262, cantos de CPU nativa (aritmética sintética,
-transferências de subregistradores / pilha / indiretas); scalar_storage_250 — Run263 preflight,
-reconexão do heap free_00531f90 canônico. Coordenador — aceitação e commit.
-Próximo passo concreto: concluir o 262; confirmar o escopo do 263 pelos consumidores originais,
-depois compilar apenas o novo pacote conectado. CPU completa / carregador / importações / inicialização do jogo abertos.
-Verificações: runs/258 README, audit-v2-canonical-reuse-259.py,
-census-v2-x86-cpp-260.py --validate-existing; comando de união — runs/261/command.json.
+Ponto de controle (checkpoint) 2026-10-17, Run274: **1125 candidate function VAs + 19 support objects**,
+1144 membros de arquivo / 1 299 024 bytes. Link real **414 names / 566 diagnostics**, sem EXE/DLL.
+Vinculados heap free canônico + binding bruto + travas Win32 reais + um proprietário de tabela compartilhada de 64 B.
+1125 game candidate VAs não incluem 2 adaptadores de plataforma modernos (support). Produção verificada
+Run173: 476 full + 6 partial sem alterações. 7626 pins PASS / 1142 símbolos em cache / 2 novos COFFs,
+0 compilações / um archive-link 8.827s. Código-fonte / arquivo / diagnósticos reais — runs/274.
+
+266: 10 chamadores COFF reais de free bruto / RET0 cdecl DWORD completo, EAX 1 / identidade nativa PASS.
+268: 2 adaptadores Win32 existentes, 64 ciclos reais de trava recursiva / 256 chamadas, 204 pins / 8 guardas PASS.
+267/270/271: 56 746 HIGHLOW / 30 refs + 4 intervalos de candidatos 510 B / 167 instruções recuperados;
+novo índice de navegação 15 pins / 7 guardas PASS, entrada/vivacidade não comprovadas, índices antigos intocados.
+272: apenas ARMAZENAMENTO (STORAGE-only) 64 B / declaração canônica exata + visão indexada de 16 slots bruta compartilham uma base;
+3 locais DIR32 brutos reais delimitados AND 0f / MEM4, zero / gravações cruzadas / cópia de bits / auditoria nativa PASS.
+Comprovação de pegada de dados independente de vivacidade de função candidata não comprovada; essas funções
+não estão implementadas/aceitas. Precedente 006b4b20..006b4f1f ponteiro final / layout relativo permanece em ESPERA (HOLD).
+275: 414 nomes reais -> 412 tarefas de pesquisa, 24 linhas resolvidas excluídas; 159 pins / 6 guardas PASS.
+Cadeias CALL originais 258: 36 864 casos nativos; CPU sintética 262: 15 744 casos PASS;
+260 sintaxe 25/85, não é aceitação semântica. Retenções de 595d0 MOVSX / layout 5a4c05 continuam.
+
+Plano histórico após a 275: pacotes de files.cpp / backend nativo concluídos na 276/277;
+a retenção de retorno de chamador de 595d0 permanece aberta. A prioridade imediata mudou conforme a 285:
+conectar o conjunto existente com o grafo de entrada real, veja o ponto de controle atual acima.
+Comando da união anterior de todo o arquivo — runs/274/command.json (coletor 268).
 
 Ponto de controle anterior:
 

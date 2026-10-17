@@ -16,21 +16,25 @@ Ativa [v2 / 001 — restauração do código-fonte](iterations/v2/001-original-r
 
 Em 17/10/2026:
 
-- [Candidatos de compilação, Run261](iterations/v2/001-original-recovery/runs/261-canonical-reuse-union/README.md):
-  1122 endereços de funções distintos compilados em COFF x86 e combinados em uma biblioteca.
-  A linkedição diagnóstica deixa 417 nomes não resolvidos; EXE/DLL não obtido.
+- [Candidatos de compilação, Run274](iterations/v2/001-original-recovery/runs/274-shared-heap-union/README.md):
+  1125 endereços de funções distintos compilados em COFF x86 e combinados em uma biblioteca.
+  A linkedição forçada de todo o arquivo deixa 414 nomes não resolvidos; EXE/DLL não obtido.
   A compilação bem-sucedida desses candidatos ainda não confirma a precisão do comportamento.
 - [Integração verificada, Run173](iterations/v2/001-original-recovery/runs/173-float-transport-integration/README.md):
   476 funções totalmente restauradas e 6 consumidores (consumers) parciais;
   24 560 comparações com o original e 12 verificações nativas/link passaram.
-  Este é um conjunto verificado separado, e não mais 482 funções além dos 1120 candidatos.
+  Este é um conjunto verificado separado, e não mais 482 funções além dos 1125 candidatos.
 
 [Tradução estática x86→C++, Run258](iterations/v2/001-original-recovery/runs/258-x86-call-chain/README.md):
 três cadeias originais de CALL/RET, 36 864 comparações de registradores, flags, memória e pilha
 passaram. Esta é uma verificação do backend experimental, não a execução do jogo completo.
 
-Trabalho imediato — fechar dependências de funções e dados globais,
-restaurar convenções de chamadas e compilar o primeiro EXE jogável.
+[Verificação do EXE do jogo, Run285](iterations/v2/001-original-recovery/runs/285-normal-entry-replay/README.md):
+a linkedição recente do grafo de entrada em cache deixa 267 nomes / 303 referências. A adição
+do arquivo de candidatos 274 não alterou essa fronteira. O trabalho imediato consiste em conectar
+os proprietários comprovados com as chamadas reais de startup/renderização e compilar o EXE do jogo.
+Os efeitos omitidos de pre-WinMain também permanecem na fila de verificação; os dois primeiros
+construtores ainda não foram comprovados como bloqueador do jogo. O prazo de execução ainda não foi definido.
 Limite exato e resultados: [STATUS.pt-BR.md](STATUS.pt-BR.md).
 
 ## Compilação dos alvos C++ atuais

@@ -1,5 +1,30 @@
 # Estado do Projeto
 
+Checkpoint 17/10/2026: prioridade — EXE do jogo e cadeia de execução real.
+- 285: dois links normal-entry sem WHOLEARCHIVE e sem compilação, 267 nomes /
+  303 referências em ambos. A adição do arquivo real de 1125 candidatos 274 não alterou
+  a fronteira alcançável; sem EXE. Auditoria de 18 pins de entrada / 22 bibliotecas pesquisadas PASS.
+  Esta é uma nova linkedição do grafo em cache da 173, não uma recompilação completa dos fontes atuais.
+- Próximo pacote: alvos de CALL originais e ABI para 20 serviços de app_main não resolvidos,
+  começando por application_main_log, depois startup/renderização. Primeiro o proprietário
+  canônico/WIP existente, depois a conexão comprovada, sem stubs e sem aliases adivinhados.
+- 284: o host contorna a cadeia de inicializadores pre-WinMain original. A 286 detalhou: os primeiros
+  dois construtores não possuem consumidores downstream diretos encontrados; esta é uma verificação
+  aberta de equivalência, e não um bloqueador comprovado do jogo. Não expandir a restauração
+  do CRT por conta dessas duas gravações isoladas sem necessidade comprovada.
+- 276 concluído: 2 corpos canônicos de operação de arquivo / 2 vínculos de ABI, 8 chamadas nativas contra
+  4 pontos de corte originais PASS. Pacote separado, ainda não conectado na união 274.
+- 277 concluído: 30 976 comparações nativas PASS, MOVSX/MOVZX/OR/NOT/Jcc;
+  apenas sintaxe 25->29/85, 0 novas funções de jogo aceitas.
+- 279: pegada dos globais físicos de FILE; 9 lacunas brutas ainda em aberto.
+- 278/280: protótipo de reparo de ABI do chamador / coletor não concluído; apenas trabalho
+  salvo, não aplicado / não validado. 281/282 adiados até o início da implementação.
+Nenhuma atribuição ativa após a finalização de 283/286. O próximo passo exato é
+conectar o proprietário comprovado de logging com o alvo de entrada real e repetir apenas
+a compilação/linkedição afetada. 267 nomes é a fronteira, não a contagem de funções restantes.
+
+Ponto de controle anterior de arquivo de candidatos:
+
 Ponto de controle (checkpoint) 2026-10-17, Run274: **1125 candidate function VAs + 19 support objects**,
 1144 membros de arquivo / 1 299 024 bytes. Link real **414 names / 566 diagnostics**, sem EXE/DLL.
 Vinculados heap free canônico + binding bruto + travas Win32 reais + um proprietário de tabela compartilhada de 64 B.
@@ -19,15 +44,10 @@ não estão implementadas/aceitas. Precedente 006b4b20..006b4f1f ponteiro final 
 Cadeias CALL originais 258: 36 864 casos nativos; CPU sintética 262: 15 744 casos PASS;
 260 sintaxe 25/85, não é aceitação semântica. Retenções de 595d0 MOVSX / layout 5a4c05 continuam.
 
-Pacotes 257–275 concluídos, sem atribuições ativas. Próximo pacote conectado delimitado:
-files.cpp aceito operation_queue 00568200 + operation_allocate 005682a0 (ranks 2/3 em 275),
-pré-validação da ABI do consumidor original antes da reutilização de fragmento exato. Quatro chamadores compartilhados 568ae0/b10/b50/b90
-também usam o handle_device inseguro de char 595d0; recuperar contrato de consumidor em EAX completo em vez de
-alias por adivinhação. Agrupar fixtures/provedores nativos em lote em um compile/link, manter estado explícito de FILE/dispositivo/fila.
-Próximo no backend em paralelo: MOVSX/OR/condições conforme 260; apenas semântica de instrução comprovada nativamente.
-CPU completa / carregador / importações / bootstrap / falhas / concorrência / lançamento do jogo e backlog abertos.
-Comandos: audit-v2-native-platform-268.py, index-v2-heap-candidates-271.py --validate,
-audit-v2-shared-heap-table-272.py; união real — runs/274/command.json (coletor 268).
+Plano histórico após a 275: pacotes de files.cpp / backend nativo concluídos na 276/277;
+a retenção de retorno de chamador de 595d0 permanece aberta. A prioridade imediata mudou conforme a 285:
+conectar o conjunto existente com o grafo de entrada real, veja o ponto de controle atual acima.
+Comando da união anterior de todo o arquivo — runs/274/command.json (coletor 268).
 
 Ponto de controle anterior:
 
