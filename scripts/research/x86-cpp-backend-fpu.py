@@ -167,7 +167,66 @@ static inline void leave257(Machine257& s) {
     s.r[5] = read257(s.r[4], 4u);
     s.r[4] += 4u;
 }
-
+static inline U adc257(Machine257& s, U a, U b, U bits) {
+    U carry = s.flags & 1u;
+    U mask = mask257(bits); a &= mask; b &= mask;
+    U64 sum = (U64)a + (U64)b + carry;
+    U v = (U)sum & mask;
+    flags257(s, v, bits, (sum >> bits) != 0, ((~(a ^ b) & (a ^ v)) >> (bits - 1)) & 1u);
+    return v;
+}
+static inline void div257_1(Machine257& s, U b) {
+    if (b != 0u) {
+        unsigned long long dividend = ((unsigned long long)s.r[2] << 32) | (unsigned long long)s.r[0];
+        s.r[0] = (U)(dividend / b);
+        s.r[2] = (U)(dividend % b);
+    }
+}
+static inline void rep_movsb257(Machine257& s) {
+    while (s.r[1] != 0u) {
+        U val = read257(s.r[6], 1u);
+        write257(s.r[7], 1u, val);
+        s.r[6] += 1u;
+        s.r[7] += 1u;
+        s.r[1] -= 1u;
+    }
+}
+static inline void rep_stosb257(Machine257& s) {
+    while (s.r[1] != 0u) {
+        write257(s.r[7], 1u, s.r[0] & 0xffu);
+        s.r[7] += 1u;
+        s.r[1] -= 1u;
+    }
+}
+static inline void repe_cmpsb257(Machine257& s) {
+    while (s.r[1] != 0u) {
+        U b1 = read257(s.r[6], 1u);
+        U b2 = read257(s.r[7], 1u);
+        s.r[6] += 1u;
+        s.r[7] += 1u;
+        s.r[1] -= 1u;
+        subtract257(s, b1, b2, 0u, 8u);
+        if (b1 != b2) break;
+    }
+}
+static inline void repe_cmpsd257(Machine257& s) {
+    while (s.r[1] != 0u) {
+        U d1 = read257(s.r[6], 4u);
+        U d2 = read257(s.r[7], 4u);
+        s.r[6] += 4u;
+        s.r[7] += 4u;
+        s.r[1] -= 1u;
+        subtract257(s, d1, d2, 0u, 32u);
+        if (d1 != d2) break;
+    }
+}
+extern "C" double __cdecl sin(double);
+extern "C" double __cdecl cos(double);
+extern "C" double __cdecl tan(double);
+extern "C" double __cdecl atan2(double, double);
+extern "C" double __cdecl pow(double, double);
+extern "C" double __cdecl floor(double);
+extern "C" double __cdecl fmod(double, double);
 extern "C" void* __cdecl memcpy(void*, const void*, unsigned int);
 #pragma intrinsic(memcpy)
 
@@ -218,8 +277,12 @@ static inline double sqrt(double x) {
 '''
 
 PATCHES = [
+    ("branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae')",
+     "branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae','js','jns')"),
+    ("            elif m=='jae': condition='!(s.flags&1u)'\n            code = f'if({condition})goto",
+     "            elif m=='jae': condition='!(s.flags&1u)'\n            elif m=='js': condition='(s.flags&0x80u)'\n            elif m=='jns': condition='!(s.flags&0x80u)'\n            code = f'if({condition})goto"),
     ("        if any(p not in (0,0x66) for p in i.prefix):",
-     "        if any(p not in (0,0x66) for p in i.prefix) and m not in ('repne scasb', 'rep stosd', 'rep movsd'):"),
+     "        if any(p not in (0, 0x66, 0xf0, 0x64, 0x26, 0x3e) for p in i.prefix) and m not in ('repne scasb', 'rep stosd', 'rep movsd', 'rep movsb', 'rep stosb', 'repe cmpsb', 'repe cmpsd'):"),
     ("        elif m == 'lea'",
      """        elif m in ('inc', 'dec') and len(ops) == 1:
             bits = ops[0].size * 8
@@ -383,6 +446,116 @@ PATCHES = [
                 pop = ' fpu_pop(s);' if m == 'fcomp' else ''
                 code = f'fpu_comp(s, fpu_st(s), fpu_st(s, {idx}u));' + pop
             else: raise ValueError('Unsupported fcomp operands')
+        elif m == 'adc' and len(ops) == 2:
+            code = f'U value=adc257(s,{expression(i,ops[0])},{expression(i,ops[1])},{ops[0].size*8}u);' + store(i, ops[0], 'value')
+        elif m == 'div' and len(ops) == 1:
+            code = f'div257_1(s, {expression(i, ops[0])});'
+        elif m == 'fabs' and len(ops) == 0:
+            code = 'fpu_st(s) = (fpu_st(s) < 0.0) ? -fpu_st(s) : fpu_st(s);'
+        elif m == 'sahf' and len(ops) == 0:
+            code = 's.flags = (s.flags & ~0xd5u) | ((s.r[0] >> 8) & 0xd5u);'
+        elif m == 'lahf':
+            code = 's.r[0] = (s.r[0] & 0xffff00ffu) | ((s.flags & 0xd5u) << 8u);'
+        elif m == 'int3':
+            code = 's.stop = Stop257::BudgetExhausted; return;'
+        elif m == 'fldz':
+            code = 'fpu_push(s, 0.0);'
+        elif m == 'fld1':
+            code = 'fpu_push(s, 1.0);'
+        elif m == 'fldl2e':
+            code = 'fpu_push(s, 1.4426950408889634);'
+        elif m == 'bswap' and len(ops) == 1 and ops[0].type == X86_OP_REG and ops[0].size == 4:
+            reg_idx = int(i.reg_name(ops[0].reg)[1]) if i.reg_name(ops[0].reg)[1].isdigit() else {'eax':0,'ecx':1,'edx':2,'ebx':3,'esp':4,'ebp':5,'esi':6,'edi':7}[i.reg_name(ops[0].reg)]
+            code = f's.r[{reg_idx}] = ((s.r[{reg_idx}] & 0xffu) << 24) | ((s.r[{reg_idx}] & 0xff00u) << 8) | ((s.r[{reg_idx}] >> 8) & 0xff00u) | ((s.r[{reg_idx}] >> 24) & 0xffu);'
+        elif m == 'pushal' or m == 'pusha':
+            code = 'write257(s.r[4] - 4u, 4u, s.r[0]); write257(s.r[4] - 8u, 4u, s.r[1]); write257(s.r[4] - 12u, 4u, s.r[2]); write257(s.r[4] - 16u, 4u, s.r[3]); write257(s.r[4] - 20u, 4u, s.r[4]); write257(s.r[4] - 24u, 4u, s.r[5]); write257(s.r[4] - 28u, 4u, s.r[6]); write257(s.r[4] - 32u, 4u, s.r[7]); s.r[4] -= 32u;'
+        elif m == 'popal' or m == 'popa':
+            code = 's.r[7] = read257(s.r[4], 4u); s.r[6] = read257(s.r[4] + 4u, 4u); s.r[5] = read257(s.r[4] + 8u, 4u); s.r[3] = read257(s.r[4] + 16u, 4u); s.r[2] = read257(s.r[4] + 20u, 4u); s.r[1] = read257(s.r[4] + 24u, 4u); s.r[0] = read257(s.r[4] + 28u, 4u); s.r[4] += 32u;'
+        elif m == 'pushfd':
+            code = 'write257(s.r[4] - 4u, 4u, s.flags); s.r[4] -= 4u;'
+        elif m == 'popfd':
+            code = 's.flags = read257(s.r[4], 4u); s.r[4] += 4u;'
+        elif m == 'rdtsc':
+            code = 's.r[0] = 1000u; s.r[2] = 0u;'
+        elif m == 'cpuid':
+            code = 's.r[0] = 1u; s.r[1] = 0x756e6547u; s.r[2] = 0x6c65746eu; s.r[3] = 0x49656e69u;'
+        elif m == 'fxam':
+            code = 's.fpu_status &= ~0x4700u; if (fpu_st(s) < 0.0) s.fpu_status |= 0x0200u;'
+        elif m == 'fscale':
+            code = 'fpu_st(s) = fpu_st(s) * pow(2.0, floor(fpu_st(s, 1u)));'
+        elif m == 'fprem':
+            code = 'fpu_st(s) = fmod(fpu_st(s), fpu_st(s, 1u));'
+        elif m == 'bts' and len(ops) == 2:
+            code = f'U bit = 1u << ({expression(i, ops[1])} & 31u); U val = {expression(i, ops[0])}; s.flags = (s.flags & ~1u) | ((val & bit) ? 1u : 0u); val |= bit; ' + store(i, ops[0], 'val')
+        elif m == 'bt' and len(ops) == 2:
+            code = f'U bit = 1u << ({expression(i, ops[1])} & 31u); s.flags = (s.flags & ~1u) | (({expression(i, ops[0])} & bit) ? 1u : 0u);'
+        elif m in ('fnclex', 'fclex'):
+            code = 's.fpu_status &= ~0x7fu;'
+        elif m == 'rep movsb':
+            code = 'rep_movsb257(s);'
+        elif m == 'rep stosb':
+            code = 'rep_stosb257(s);'
+        elif m == 'repe cmpsb':
+            code = 'repe_cmpsb257(s);'
+        elif m == 'repe cmpsd':
+            code = 'repe_cmpsd257(s);'
+        elif m == 'stosb':
+            code = 'write257(s.r[7], 1u, s.r[0] & 0xffu); s.r[7] += 1u;'
+        elif m == 'stosw':
+            code = 'write257(s.r[7], 2u, s.r[0] & 0xffffu); s.r[7] += 2u;'
+        elif m == 'stosd':
+            code = 'write257(s.r[7], 4u, s.r[0]); s.r[7] += 4u;'
+        elif m == 'movsb':
+            code = 'write257(s.r[7], 1u, read257(s.r[6], 1u)); s.r[6] += 1u; s.r[7] += 1u;'
+        elif m == 'movsd' and not (len(ops) == 2 and ops[0].type == X86_OP_REG and 'xmm' in i.reg_name(ops[0].reg)):
+            code = 'write257(s.r[7], 4u, read257(s.r[6], 4u)); s.r[6] += 4u; s.r[7] += 4u;'
+        elif m == 'fsin':
+            code = 'fpu_st(s) = sin(fpu_st(s));'
+        elif m == 'fcos':
+            code = 'fpu_st(s) = cos(fpu_st(s));'
+        elif m == 'fptan':
+            code = 'fpu_st(s) = tan(fpu_st(s)); fpu_push(s, 1.0);'
+        elif m == 'fpatan':
+            code = 'fpu_st(s, 1u) = atan2(fpu_st(s, 1u), fpu_st(s)); fpu_pop(s);'
+        elif m == 'frndint':
+            code = 'fpu_st(s) = round(fpu_st(s));'
+        elif m == 'emms':
+            code = 's.fpu_top = 0; s.fpu_status = 0;'
+        elif m == 'fdivrp':
+            if len(ops) == 2 and ops[0].type == X86_OP_REG and ops[1].type == X86_OP_REG:
+                idx0 = int(i.reg_name(ops[0].reg)[3]); idx1 = int(i.reg_name(ops[1].reg)[3])
+                code = f'fpu_st(s, {idx0}u) = fpu_st(s, {idx0}u) / fpu_st(s, {idx1}u); fpu_pop(s);'
+            else:
+                code = 'fpu_st(s, 1u) = fpu_st(s) / fpu_st(s, 1u); fpu_pop(s);'
+        elif m in ('fiadd', 'fisub', 'fimul', 'fidiv') and len(ops) == 1 and ops[0].type == X86_OP_MEM:
+            op_sym = {'fiadd': '+', 'fisub': '-', 'fimul': '*', 'fidiv': '/'}[m]
+            code = f'fpu_st(s) {op_sym}= static_cast<double>(static_cast<int>(read257({address(i, ops[0])}, {ops[0].size}u)));'
+        elif m in ('fsubrp', 'fsubr'):
+            if len(ops) == 2 and ops[0].type == X86_OP_REG and ops[1].type == X86_OP_REG:
+                idx0 = int(i.reg_name(ops[0].reg)[3]); idx1 = int(i.reg_name(ops[1].reg)[3])
+                pop = ' fpu_pop(s);' if m == 'fsubrp' else ''
+                code = f'fpu_st(s, {idx0}u) = fpu_st(s, {idx1}u) - fpu_st(s, {idx0}u);' + pop
+            else:
+                code = 'fpu_st(s, 1u) = fpu_st(s) - fpu_st(s, 1u); fpu_pop(s);'
+        elif m == 'shld' and len(ops) == 3:
+            code = f'U count = {expression(i, ops[2])} & 31u; U r0 = {expression(i, ops[0])}; U r1 = {expression(i, ops[1])}; U val = count ? ((r0 << count) | (r1 >> (32u - count))) : r0; ' + store(i, ops[0], 'val')
+        elif m == 'shrd' and len(ops) == 3:
+            code = f'U count = {expression(i, ops[2])} & 31u; U r0 = {expression(i, ops[0])}; U r1 = {expression(i, ops[1])}; U val = count ? ((r0 >> count) | (r1 << (32u - count))) : r0; ' + store(i, ops[0], 'val')
+        elif m in ('rol', 'ror') and len(ops) == 2:
+            sh_left = (m == 'rol')
+            code = f'U count = {expression(i, ops[1])} & 31u; U bits = {ops[0].size * 8}u; U mask = mask257(bits); U v = {expression(i, ops[0])} & mask; if (count) {{ count %= bits; v = ({"(v << count) | (v >> (bits - count))" if sh_left else "(v >> count) | (v << (bits - count))"}) & mask; }} ' + store(i, ops[0], 'v')
+        elif m == 'rcr' and len(ops) == 2:
+            code = f'U count = {expression(i, ops[1])} & 31u; U val = {expression(i, ops[0])}; while (count--) {{ U cf = s.flags & 1u; s.flags = (s.flags & ~1u) | (val & 1u); val = (val >> 1) | (cf << 31u); }} ' + store(i, ops[0], 'val')
+        elif m == 'sets' and len(ops) == 1:
+            code = 'U value = (s.flags & 0x80u) ? 1u : 0u;' + store(i, ops[0], 'value')
+        elif m == 'setns' and len(ops) == 1:
+            code = 'U value = !(s.flags & 0x80u) ? 1u : 0u;' + store(i, ops[0], 'value')
+        elif m == 'xchg' and len(ops) == 2:
+            code = f'U v0 = {expression(i, ops[0])}; U v1 = {expression(i, ops[1])}; ' + store(i, ops[0], 'v1') + store(i, ops[1], 'v0')
+        elif m == 'nop':
+            code = ''
+        elif m in ('fnstsw', 'fstsw') and len(ops) == 1 and ops[0].type == X86_OP_MEM:
+            code = f'write257({address(i, ops[0])}, 2u, ((s.fpu_status&~0x3800u)|((s.fpu_top&7u)<<11u))&0xffffu);'
         elif m == 'lea'""")
 ]
 
