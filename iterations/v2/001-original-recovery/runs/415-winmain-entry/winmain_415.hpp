@@ -1,10 +1,10 @@
-// Run 310 — WinMain and companion pre-WinMain initializers
+// Run 415 — WinMain and companion pre-WinMain initializers
 // Original Porsche.exe:
 //   004b66d0..004b66e4 (20 bytes)  winmain_set_heap_size_004b66d0
 //   004b66f0..004b6703 (19 bytes)  winmain_compute_scale_004b66f0
 //   004b6710..004b67a5 (149 bytes) winmain_004b6710
-#ifndef PORSCHE_WINMAIN_310_HPP
-#define PORSCHE_WINMAIN_310_HPP
+#ifndef PORSCHE_WINMAIN_415_HPP
+#define PORSCHE_WINMAIN_415_HPP
 
 #include <cstdint>
 
@@ -23,4 +23,4 @@ extern "C" {
 
 } // namespace porsche
 
-#endif // PORSCHE_WINMAIN_310_HPP
+#endif // PORSCHE_WINMAIN_415_HPP

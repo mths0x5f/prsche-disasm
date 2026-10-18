@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "run": "310-winmain-entry",
+  "run": "415-winmain-entry",
   "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
   "original_vas": [
     "004b66d0",
@@ -15,14 +15,14 @@
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
-    "iterations/v2/001-original-recovery/runs/310-winmain-entry"
+    "iterations/v2/001-original-recovery/runs/415-winmain-entry"
   ],
-  "source": "iterations/v2/001-original-recovery/runs/310-winmain-entry/winmain_310.cpp",
-  "source_sha256": "6600d2a1503be452d9e0a8c1cbf73204a1e0883a5e0ed1ab5b1f91ae4357a24b",
-  "header": "iterations/v2/001-original-recovery/runs/310-winmain-entry/winmain_310.hpp",
-  "header_sha256": "1f6cb0b242a148e4c5c55372cd4169d8b78fd943f84ed6f6629e90ebdeda9c86",
-  "fixture": "local/experiments/v2-app-main-310/fixture_310.cpp",
-  "fixture_sha256": "7e3449ba2e7977445e0c97032fee025700023f75a297423b0ef9c35ffb699fa0",
+  "source": "iterations/v2/001-original-recovery/runs/415-winmain-entry/winmain_415.cpp",
+  "source_sha256": "732f0be207f6d136ca020990e1fbbae8ac3b98b72975bf254271d8d55ab34817",
+  "header": "iterations/v2/001-original-recovery/runs/415-winmain-entry/winmain_415.hpp",
+  "header_sha256": "d5469789b1b60d99f5fbba54460baebb9e4a47dc91a2318a0d32ab89a464d035",
+  "fixture": "local/experiments/v2-app-main-415/fixture_415.cpp",
+  "fixture_sha256": "fa890b51b442ca492fa306d9a8e6ca672439da57336b0a09f98018c14d8b1ed0",
   "symbols": {
     "defined": [
       "_winmain_004b6710@16",
@@ -66,7 +66,7 @@
       "/MP6",
       "/Zl",
       "/sourceDependencies",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\dependencies",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\dependencies",
       "/I",
       "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
       "/I",
@@ -76,15 +76,15 @@
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
       "/I",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\310-winmain-entry",
-      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\objects\\",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\310-winmain-entry\\winmain_310.cpp",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\fixture_310.cpp"
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\415-winmain-entry",
+      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\objects\\",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\415-winmain-entry\\winmain_415.cpp",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\fixture_415.cpp"
     ],
     "exit_code": 0,
-    "seconds": 5.322542,
-    "log": "local/experiments/v2-app-main-310/compile-004.log",
-    "log_sha256": "93ccfea6c9a90e82bf255e4e21cc5f067fca110766ecca3ca5e16c65f0830b6b"
+    "seconds": 1.390484,
+    "log": "local/experiments/v2-app-main-415/compile-004.log",
+    "log_sha256": "4d187c15aace271e63a40283a332982ba2113a5645784b00b9983a818f4b344f"
   },
   "link": {
     "command": [
@@ -97,16 +97,16 @@
       "/INCREMENTAL:NO",
       "/SECTION:.data,ERW",
       "/SECTION:.bss,ERW",
-      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\native-fixture.map",
-      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\native-fixture.exe",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\objects\\winmain_310.obj",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\objects\\fixture_310.obj",
+      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\native-fixture.map",
+      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\native-fixture.exe",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\objects\\winmain_415.obj",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\objects\\fixture_415.obj",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
     ],
     "exit_code": 0,
-    "seconds": 0.305153,
-    "log": "local/experiments/v2-app-main-310/fixture-link-004.log",
+    "seconds": 0.145126,
+    "log": "local/experiments/v2-app-main-415/fixture-link-004.log",
     "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "native_fixture": {
@@ -115,11 +115,11 @@
     "cases_passed": 12,
     "execution": {
       "command": [
-        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-310\\native-fixture.exe"
+        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-415\\native-fixture.exe"
       ],
       "exit_code": 0,
-      "seconds": 0.449601,
-      "log": "local/experiments/v2-app-main-310/fixture-native-004.log",
+      "seconds": 0.154789,
+      "log": "local/experiments/v2-app-main-415/fixture-native-004.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   }

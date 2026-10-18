@@ -1,16 +1,16 @@
-"""Generate complete Run 310 files: HPP, CPP, and physical x86 native fixture for WinMain cluster."""
+"""Generate complete Run 415 files: HPP, CPP, and physical x86 native fixture for WinMain cluster."""
 import re
 import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 EXE = ROOT / 'local/game/Porsche.exe'
-RUN_DIR = ROOT / 'iterations/v2/001-original-recovery/runs/310-winmain-entry'
-EXP_DIR = ROOT / 'local/experiments/v2-app-main-310'
+RUN_DIR = ROOT / 'iterations/v2/001-original-recovery/runs/415-winmain-entry'
+EXP_DIR = ROOT / 'local/experiments/v2-app-main-415'
 
-HPP_PATH = RUN_DIR / 'winmain_310.hpp'
-CPP_PATH = RUN_DIR / 'winmain_310.cpp'
-FIXTURE_PATH = EXP_DIR / 'fixture_310.cpp'
+HPP_PATH = RUN_DIR / 'winmain_415.hpp'
+CPP_PATH = RUN_DIR / 'winmain_415.cpp'
+FIXTURE_PATH = EXP_DIR / 'fixture_415.cpp'
 
 
 def get_pe_section_data():
@@ -36,13 +36,13 @@ def get_pe_section_data():
 
 
 def generate_hpp():
-    content = """// Run 310 — WinMain and companion pre-WinMain initializers
+    content = """// Run 415 — WinMain and companion pre-WinMain initializers
 // Original Porsche.exe:
 //   004b66d0..004b66e4 (20 bytes)  winmain_set_heap_size_004b66d0
 //   004b66f0..004b6703 (19 bytes)  winmain_compute_scale_004b66f0
 //   004b6710..004b67a5 (149 bytes) winmain_004b6710
-#ifndef PORSCHE_WINMAIN_310_HPP
-#define PORSCHE_WINMAIN_310_HPP
+#ifndef PORSCHE_WINMAIN_415_HPP
+#define PORSCHE_WINMAIN_415_HPP
 
 #include <cstdint>
 
@@ -61,15 +61,15 @@ extern "C" {
 
 } // namespace porsche
 
-#endif // PORSCHE_WINMAIN_310_HPP
+#endif // PORSCHE_WINMAIN_415_HPP
 """
     HPP_PATH.parent.mkdir(parents=True, exist_ok=True)
     HPP_PATH.write_text(content.replace('\r\n', '\n'), encoding='utf8', newline='\n')
 
 
 def generate_cpp():
-    content = """// Run 310 — WinMain and pre-WinMain initializers implementation
-#include "winmain_310.hpp"
+    content = """// Run 415 — WinMain and pre-WinMain initializers implementation
+#include "winmain_415.hpp"
 
 namespace porsche {
 
@@ -161,10 +161,10 @@ def generate_fixture():
     code_66f0 = raw[va_to_raw(0x004b66f0) : va_to_raw(0x004b66f0) + 19]
     code_6710 = raw[va_to_raw(0x004b6710) : va_to_raw(0x004b6710) + 149]
 
-    fixture_content = f"""// Controlled native x86 differential fixture for Run 310 (WinMain cluster)
+    fixture_content = f"""// Controlled native x86 differential fixture for Run 415 (WinMain cluster)
 #include <windows.h>
 #include <cstdint>
-#include "winmain_310.hpp"
+#include "winmain_415.hpp"
 
 // Intrinsic replacements for MSVC /NODEFAULTLIB mode
 extern "C" {{
@@ -454,7 +454,7 @@ def main():
     generate_hpp()
     generate_cpp()
     generate_fixture()
-    print('Generated HPP, CPP and FIXTURE for Run 310 successfully.')
+    print('Generated HPP, CPP and FIXTURE for Run 415 successfully.')
 
 
 if __name__ == '__main__':

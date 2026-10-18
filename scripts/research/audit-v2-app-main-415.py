@@ -6,8 +6,8 @@ import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/310-winmain-entry'
-OUT = ROOT / 'local/experiments/v2-app-main-310'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/415-winmain-entry'
+OUT = ROOT / 'local/experiments/v2-app-main-415'
 
 
 def sha(p):
@@ -51,8 +51,8 @@ def main():
     assert len(b1) == 20 and len(b2) == 19 and len(b3) == 149
     assert len(b1) + len(b2) + len(b3) == 188
 
-    cof = module('coff310audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
-    obj = OUT / 'objects/winmain_310.obj'
+    cof = module('coff415audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    obj = OUT / 'objects/winmain_415.obj'
     symbols = cof.coff_symbols(obj)
 
     expected_defined = [

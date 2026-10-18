@@ -9,8 +9,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/310-winmain-entry'
-OUT = ROOT / 'local/experiments/v2-app-main-310'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/415-winmain-entry'
+OUT = ROOT / 'local/experiments/v2-app-main-415'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 
@@ -61,7 +61,7 @@ def main(finalize: bool, attempt: int):
     (OUT / 'dependencies').mkdir(exist_ok=True)
 
     # First generate fixture and source files
-    gen = module('gen310', ROOT / 'scripts/research/gen_run_310.py')
+    gen = module('gen415', ROOT / 'scripts/research/gen_run_415.py')
     gen.main()
 
     suffix = f'{attempt:03d}'
@@ -107,9 +107,9 @@ def main(finalize: bool, attempt: int):
     compiler = pin(resolve_compiler())
     roots = resolve_roots(compiler)
 
-    source = pin(RUN / 'winmain_310.cpp')
-    header = pin(RUN / 'winmain_310.hpp')
-    fixture = pin(OUT / 'fixture_310.cpp')
+    source = pin(RUN / 'winmain_415.cpp')
+    header = pin(RUN / 'winmain_415.hpp')
+    fixture = pin(OUT / 'fixture_415.cpp')
 
     prepare = dict(
         command=[str(compiler)],
@@ -125,8 +125,8 @@ def main(finalize: bool, attempt: int):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'winmain_310.obj'
-    fixture_obj = OUT / 'objects' / 'fixture_310.obj'
+    obj = OUT / 'objects' / 'winmain_415.obj'
+    fixture_obj = OUT / 'objects' / 'fixture_415.obj'
     includes = []
     for r in roots:
         includes.extend(['/I', str(r)])
@@ -195,12 +195,12 @@ def main(finalize: bool, attempt: int):
     executed = run([str(exe)], native_name)
     assert executed['exit_code'] == 0, executed
 
-    coff = module('coff310', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff415', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='310-winmain-entry',
+        run='415-winmain-entry',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=['004b66d0', '004b66f0', '004b6710'],
         original_selected_bytes=188,
@@ -227,7 +227,7 @@ def main(finalize: bool, attempt: int):
 
     validation = dict(
         status='PASS',
-        run='310-winmain-entry',
+        run='415-winmain-entry',
         functions=3,
         pe_bytes=188,
         cases_passed=12,
