@@ -1,4 +1,4 @@
-# Run 300 — app_main timer, display resolution, SIMD/MMX vector, and stream packet cluster
+# Run 405 — app_main timer, display resolution, SIMD/MMX vector, and stream packet cluster
 
 ## English
 
@@ -11,9 +11,9 @@ This run recovers four authentic functions (420 PE body bytes) directly invoked 
 4. `005366e0` (132 bytes): Periodic game timer subsystem dispatcher. Compares `g_timer_last_tick_0069de24` with `g_current_time_006b7c40`, loops through the 16-entry timer table `g_timer_table_0069dd20` (16 bytes per entry: callback, period, next_fire_time, is_running), dispatches pending callbacks with elapsed time, advances `next_fire_time`, and returns bitwise OR of callback return values.
 
 ### Physical x86 Verification
-- Captured machine code bytes are tested in `local/experiments/v2-app-main-300/native-fixture.exe` against the original byte sequence in an executable memory slab.
+- Captured machine code bytes are tested in `local/experiments/v2-app-main-405/native-fixture.exe` against the original byte sequence in an executable memory slab.
 - All 10 differential test cases pass bit-exact matching.
-- Validated with `scripts/research/audit-v2-app-main-300.py`.
+- Validated with `scripts/research/audit-v2-app-main-405.py`.
 
 ---
 
@@ -28,6 +28,6 @@ This run recovers four authentic functions (420 PE body bytes) directly invoked 
 4. `005366e0` (132 байт): Диспетчер подсистемы периодических игровых таймеров. Сверяет `g_timer_last_tick_0069de24` с `g_current_time_006b7c40`, обходит таблицу из 16 таймеров `g_timer_table_0069dd20` (по 16 байт на элемент: callback, period, next_fire_time, is_running), вызывает сработавшие коллбэки с передачей прошедшего времени, сдвигает `next_fire_time` на период и возвращает побитовое ИЛИ результатов коллбэков.
 
 ### Проверка на реальном процессоре x86
-- Байт-в-байт сверка оригинальных инструкций в исполняемом слэбе памяти `local/experiments/v2-app-main-300/native-fixture.exe`.
+- Байт-в-байт сверка оригинальных инструкций в исполняемом слэбе памяти `local/experiments/v2-app-main-405/native-fixture.exe`.
 - Все 10 дифференциальных тестов пройдены успешно без расхождений.
-- Проверено независимым скриптом аудита `scripts/research/audit-v2-app-main-300.py`.
+- Проверено независимым скриптом аудита `scripts/research/audit-v2-app-main-405.py`.
