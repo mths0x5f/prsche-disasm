@@ -102,7 +102,7 @@ struct FrameActionContext_310 {
     std::uint32_t opaque_08;
     FrameNodeElement_310* elements; // +0x0c
 
-    // External original callee 00476710 (136 bytes, not recovered in Run 310):
+    // External original callee 00476710 (136 bytes, not recovered in Run 311):
     // __thiscall on this same context, element index pushed on the stack.
     void CALL_THISCALL prepare_00476710(std::uint32_t index);
 };

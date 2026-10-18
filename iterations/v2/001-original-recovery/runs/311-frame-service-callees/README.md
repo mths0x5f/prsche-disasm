@@ -1,10 +1,10 @@
-# Run 310 — frame service callees and the 00628960 storage cell
+# Run 311 — frame service callees and the 00628960 storage cell
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 This run closes the external frontier that Run 290 left open. `frame_service_290.hpp`
 declared the three callees of the recovered service cycle `00487e20` and the storage
-cell `00628960` as unrecovered; Run 310 recovers the three bodies and supplies the
+cell `00628960` as unrecovered; Run 311 recovers the three bodies and supplies the
 storage cell, so the Run 290 consumer links against real definitions:
 
 - `00423840..00423882` (67 bytes): `FrameIterator_290::advance_00423840` — in-order
@@ -53,7 +53,7 @@ owners, and `00628960` is a single 32-bit pointer cell:
 - `00471c40` (teardown): `00471c6d` stores `0` after destructing the object through
   `00487590` and freeing it through `0059f050`.
 
-Run 310 supplies the storage that Run 290 declared `extern`. **Neither owner is
+Run 311 supplies the storage that Run 290 declared `extern`. **Neither owner is
 recovered in this run** — both pull in further unrecovered callees — so the cell is
 storage plus proven ownership, not a recovered initialisation sequence.
 
@@ -75,8 +75,8 @@ timer; a zero count with a populated element; the destruct-and-carry branch; the
 vtable `0x1c` branch; and a non-zero object flag taking neither branch.
 
 ```
-python scripts/research/experiment-v2-frame-service-310.py --finalize --attempt 1
-python scripts/research/audit-v2-frame-service-310.py
+python scripts/research/experiment-v2-frame-service-311.py --finalize --attempt 1
+python scripts/research/audit-v2-frame-service-311.py
 ```
 
 The experiment compiles with MSVC `/Od /Oi /Gy /GS- /GR- /EHsc /TP /W4 /Zl`
@@ -107,13 +107,13 @@ dwords instead of six) each failed only the cases that should catch them.
 
 ---
 
-# Запуск 310 — вызываемые функции frame service и ячейка хранения 00628960
+# Запуск 311 — вызываемые функции frame service и ячейка хранения 00628960
 
 Оригинал `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 Запуск закрывает внешнюю границу, оставленную Run 290. В `frame_service_290.hpp`
 три вызываемые функции цикла `00487e20` и ячейка `00628960` были объявлены
-невосстановленными; Run 310 восстанавливает три тела и предоставляет ячейку
+невосстановленными; Run 311 восстанавливает три тела и предоставляет ячейку
 хранения, поэтому потребитель Run 290 линкуется с реальными определениями:
 
 - `00423840..00423882` (67 байт): `FrameIterator_290::advance_00423840` — следующий

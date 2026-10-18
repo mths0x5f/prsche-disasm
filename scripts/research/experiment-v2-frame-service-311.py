@@ -1,4 +1,4 @@
-"""Compile the PE-derived Run 310 frame-service callees and run the native x86 fixture."""
+"""Compile the PE-derived Run 311 frame-service callees and run the native x86 fixture."""
 import argparse
 import hashlib
 import importlib.util
@@ -10,9 +10,9 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/310-frame-service-callees'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/311-frame-service-callees'
 RUN290 = ROOT / 'iterations/v2/001-original-recovery/runs/290-frame-service-cluster'
-OUT = ROOT / 'local/experiments/v2-frame-service-310'
+OUT = ROOT / 'local/experiments/v2-frame-service-311'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 TARGETS = [
@@ -107,7 +107,7 @@ def main(finalize: bool, attempt: int):
     (OUT / 'objects').mkdir(exist_ok=True)
     (OUT / 'dependencies').mkdir(exist_ok=True)
 
-    gen = module('gen310', ROOT / 'scripts/research/gen_run_310.py')
+    gen = module('gen311', ROOT / 'scripts/research/gen_run_311.py')
     gen.main()
 
     suffix = f'{attempt:03d}'
@@ -167,8 +167,8 @@ def main(finalize: bool, attempt: int):
     roots = resolve_roots(compiler)
     sdk_lib = resolve_sdk_lib(roots[1].parent)
 
-    source = pin(RUN / 'frame_service_callees_310.cpp')
-    header = pin(RUN / 'frame_service_callees_310.hpp')
+    source = pin(RUN / 'frame_service_callees_311.cpp')
+    header = pin(RUN / 'frame_service_callees_311.hpp')
     header290 = pin(RUN290 / 'frame_service_290.hpp')
     fixture = pin(OUT / 'frame_service_fixture.cpp')
 
@@ -184,7 +184,7 @@ def main(finalize: bool, attempt: int):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'frame_service_callees_310.obj'
+    obj = OUT / 'objects' / 'frame_service_callees_311.obj'
     fixture_obj = OUT / 'objects' / 'frame_service_fixture.obj'
     includes = []
     for r in roots:
@@ -233,12 +233,12 @@ def main(finalize: bool, attempt: int):
     passed = native_log.count(' OK')
     assert passed == CASES, native_log
 
-    coff = module('coff310', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff311', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='310-frame-service-callees',
+        run='311-frame-service-callees',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=[v for v, _, _ in TARGETS],
         original_selected_bytes=sum(b for _, _, b in TARGETS),
@@ -277,7 +277,7 @@ def main(finalize: bool, attempt: int):
 
     validation = dict(
         status='PASS',
-        run='310-frame-service-callees',
+        run='311-frame-service-callees',
         functions=len(TARGETS),
         pe_bytes=sum(b for _, _, b in TARGETS),
         cases_passed=passed,

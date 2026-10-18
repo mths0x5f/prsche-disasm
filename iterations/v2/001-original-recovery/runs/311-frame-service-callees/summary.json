@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "run": "310-frame-service-callees",
+  "run": "311-frame-service-callees",
   "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
   "original_vas": [
     "00423840",
@@ -58,17 +58,17 @@
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
-    "iterations/v2/001-original-recovery/runs/310-frame-service-callees",
+    "iterations/v2/001-original-recovery/runs/311-frame-service-callees",
     "iterations/v2/001-original-recovery/runs/290-frame-service-cluster"
   ],
-  "source": "iterations/v2/001-original-recovery/runs/310-frame-service-callees/frame_service_callees_310.cpp",
-  "source_sha256": "2ea7e06e0639de1c666098a536884df8a748f9372b2bf8b6ced15bc0407a8d85",
-  "header": "iterations/v2/001-original-recovery/runs/310-frame-service-callees/frame_service_callees_310.hpp",
-  "header_sha256": "865ca3e68f7d28e802949c8884d5ef815addb62b634ec83a7896db5c060d7448",
+  "source": "iterations/v2/001-original-recovery/runs/311-frame-service-callees/frame_service_callees_311.cpp",
+  "source_sha256": "4b89f7a3e233cbc0c3d522173339bce367a792f64819f3721a40c9f5d75a3c43",
+  "header": "iterations/v2/001-original-recovery/runs/311-frame-service-callees/frame_service_callees_311.hpp",
+  "header_sha256": "9495e36b63ed1c5a9160ac11877bb85fdd48fdb12d11f22c4a810adf2d3e28eb",
   "consumer_header": "iterations/v2/001-original-recovery/runs/290-frame-service-cluster/frame_service_290.hpp",
   "consumer_header_sha256": "78ad66e4302586731fc7fbda65a7ec6729556b5bf67567cf073bf74b13147ec6",
-  "fixture": "local/experiments/v2-frame-service-310/frame_service_fixture.cpp",
-  "fixture_sha256": "7fb50dd659f6c0746134d88454648b3cbb623f956c3b73a4590849b193507dad",
+  "fixture": "local/experiments/v2-frame-service-311/frame_service_fixture.cpp",
+  "fixture_sha256": "700473f29738cc6fab452bbcf71c7c0ae0b3b682baa4899749f8e050ffce5e9f",
   "symbols": {
     "defined": [
       "?advance_00423840@FrameIterator_290@porsche@@QAEXXZ",
@@ -110,7 +110,7 @@
       "/MP2",
       "/Zl",
       "/sourceDependencies",
-      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\dependencies",
+      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\dependencies",
       "/I",
       "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
       "/I",
@@ -120,17 +120,17 @@
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
       "/I",
-      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\iterations\\v2\\001-original-recovery\\runs\\310-frame-service-callees",
+      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\iterations\\v2\\001-original-recovery\\runs\\311-frame-service-callees",
       "/I",
       "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\iterations\\v2\\001-original-recovery\\runs\\290-frame-service-cluster",
-      "/FoD:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\objects\\",
-      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\iterations\\v2\\001-original-recovery\\runs\\310-frame-service-callees\\frame_service_callees_310.cpp",
-      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\frame_service_fixture.cpp"
+      "/FoD:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\objects\\",
+      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\iterations\\v2\\001-original-recovery\\runs\\311-frame-service-callees\\frame_service_callees_311.cpp",
+      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\frame_service_fixture.cpp"
     ],
     "exit_code": 0,
-    "seconds": 3.602012,
-    "log": "local/experiments/v2-frame-service-310/compile-001.log",
-    "log_sha256": "90b8bad380f3b2191157390b17b0dae800fec4500a1da8d4795ea290fc469a56"
+    "seconds": 2.894233,
+    "log": "local/experiments/v2-frame-service-311/compile-001.log",
+    "log_sha256": "40429421c1c8daf6f2ab2667012c017d3fd27826975824cdb0d3465446bf5858"
   },
   "link": {
     "command": [
@@ -143,16 +143,16 @@
       "/INCREMENTAL:NO",
       "/SECTION:.data,ERW",
       "/SECTION:.bss,ERW",
-      "/MAP:D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\native-fixture.map",
-      "/OUT:D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\native-fixture.exe",
-      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\objects\\frame_service_callees_310.obj",
-      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\objects\\frame_service_fixture.obj",
+      "/MAP:D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\native-fixture.map",
+      "/OUT:D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\native-fixture.exe",
+      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\objects\\frame_service_callees_311.obj",
+      "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\objects\\frame_service_fixture.obj",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
     ],
     "exit_code": 0,
-    "seconds": 0.262629,
-    "log": "local/experiments/v2-frame-service-310/fixture-link-001.log",
+    "seconds": 0.305038,
+    "log": "local/experiments/v2-frame-service-311/fixture-link-001.log",
     "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "native_fixture": {
@@ -161,11 +161,11 @@
     "cases_passed": 12,
     "execution": {
       "command": [
-        "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-310\\native-fixture.exe"
+        "D:\\projetos\\prsche-disasm\\local\\worktrees\\frame-service-callees\\local\\experiments\\v2-frame-service-311\\native-fixture.exe"
       ],
       "exit_code": 0,
-      "seconds": 0.217517,
-      "log": "local/experiments/v2-frame-service-310/fixture-native-001.log",
+      "seconds": 0.194869,
+      "log": "local/experiments/v2-frame-service-311/fixture-native-001.log",
       "log_sha256": "0565bc1a731c084898e761e06f7b3e7bdaf0e5ae44495fa9dc8a50fb0f74626c"
     }
   }

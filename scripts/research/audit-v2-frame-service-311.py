@@ -1,4 +1,4 @@
-"""Independent verification audit for Run 310.
+"""Independent verification audit for Run 311.
 
 Re-derives every claim from the retail image and the build receipts instead of
 trusting summary.json: body ranges and SHA-256 values, the two read-only
@@ -10,8 +10,8 @@ import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/310-frame-service-callees'
-EXP = ROOT / 'local/experiments/v2-frame-service-310'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/311-frame-service-callees'
+EXP = ROOT / 'local/experiments/v2-frame-service-311'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 TARGETS = {
@@ -80,7 +80,7 @@ def main():
         value = struct.unpack('<f', read_va(image, base, secs, va, 4))[0]
         assert value == expected, f'{name}: scalar {value} != {expected}'
 
-    # 3. The storage cell has exactly the three writers Run 310 claims. Every
+    # 3. The storage cell has exactly the three writers Run 311 claims. Every
     #    4-byte operand occurrence of 00628960 in .text is collected, then the
     #    ones that are the destination of a MOV-to-absolute store are checked.
     needle = struct.pack('<I', STORAGE_CELL)
@@ -127,7 +127,7 @@ def main():
     assert native_log.count(' OK') == CASES, 'native log case count mismatch'
     assert 'FAILED' not in native_log, 'native log reports failures'
 
-    print('Run 310 verified: PE 305B across 00423840 (67B), 00482e50 (69B), '
+    print('Run 311 verified: PE 305B across 00423840 (67B), 00482e50 (69B), '
           '00476170 (169B); scalars 005b47d8=8000.0f and 005b2764=10000.0f; '
           '00628960 writers 00471bae/00471bb5 (init 00471b70) and 00471c6d '
           '(teardown 00471c40); 4 COFF symbols '
