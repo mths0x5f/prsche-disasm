@@ -686,5 +686,5 @@ extern "C" void entry() {{
 
 out_dir = ROOT / "local/experiments/v2-app-main-410"
 out_dir.mkdir(parents=True, exist_ok=True)
-(out_dir / "app_main_fixture.cpp").write_text(FIXTURE_CPP, encoding="utf-8")
+(out_dir / "app_main_fixture.cpp").write_bytes((FIXTURE_CPP).replace("\r\n", "\n").encode("utf-8"))
 print(f"Generated {out_dir / 'app_main_fixture.cpp'}")

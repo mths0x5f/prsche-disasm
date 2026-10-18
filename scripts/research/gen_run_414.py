@@ -133,7 +133,7 @@ struct RenderDriverSync_414 {
 #endif // PORSCHE_APP_MAIN_RENDER_DRIVER_SYNC_414_HPP
 """
     RUN_DIR.mkdir(parents=True, exist_ok=True)
-    HPP_PATH.write_text(content, encoding='utf8')
+    HPP_PATH.write_bytes((content).replace("\r\n", "\n").encode("utf-8"))
     print(f"Wrote {HPP_PATH}")
 
 
@@ -309,7 +309,7 @@ std::uint32_t CALL_THISCALL RenderDriverSync_414::execute_004d3420(const char* s
     body = re.sub(r'if \(param_2 != \(undefined4 \*\)0x0\) \{[\s\S]*?hook_00569640\(param_2,\(int\)uStack_80 - \(int\)param_2\);\s*\}\s*\}\s*\}', lambda m: save_block_new, body)
 
     full_cpp = header + func_sig + body + "\n} // namespace porsche\n"
-    CPP_PATH.write_text(full_cpp, encoding='utf8')
+    CPP_PATH.write_bytes((full_cpp).replace("\r\n", "\n").encode("utf-8"))
     print(f"Wrote {CPP_PATH}")
     return strs
 
@@ -848,7 +848,7 @@ extern "C" void entry() {
     ExitProcess((passed == 10) ? 0 : 2);
 }
 """
-    FIXTURE_PATH.write_text(code, encoding='utf8')
+    FIXTURE_PATH.write_bytes((code).replace("\r\n", "\n").encode("utf-8"))
     print(f"Wrote {FIXTURE_PATH}")
 
 

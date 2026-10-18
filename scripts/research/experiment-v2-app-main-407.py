@@ -98,7 +98,7 @@ def main(finalize, attempt):
         p = Path(p)
         if p.suffix == '.json':
             content = json.dumps(data, indent=2) + '\n'
-            p.write_text(content, encoding='utf8')
+            p.write_bytes((content).replace("\r\n", "\n").encode("utf-8"))
         else:
             p.write_bytes(data)
 

@@ -23,15 +23,15 @@
   "source": "iterations/v2/001-original-recovery/runs/403-app-main-helpers/app_main_helpers_403.cpp",
   "source_sha256": "9a4081daf752a87c7e2484c6c393cb6d1b314078d02681c93a009014c35e5671",
   "object": "local/experiments/v2-app-main-403/objects/app_main_helpers_403.obj",
-  "object_sha256": "9263881b3df0c2da27291f7d7ddf285cf13175cd3f552dfe8630d96e71a0d917",
+  "object_sha256": "14ce1cac3eb95f2a4674011e29a18894818f4d751aced6ec3b5a0b87a94d5752",
   "fixture": "local/experiments/v2-app-main-403/app_main_fixture.cpp",
   "fixture_sha256": "e6bfc23073606a5059888eeab940e3833ebfa43ca294d93b18923cac2b67dafe",
   "fixture_executable": "local/experiments/v2-app-main-403/native-fixture.exe",
-  "fixture_executable_sha256": "cdcd8c365115d52c11988040b2d255f8e847882865d3baa9e9b10b3507a32f7a",
+  "fixture_executable_sha256": "b994b20e10fc8b19587bb8139d814fa0b014a2c4d5b333308d9d6c26c20fe918",
   "input_sha256": {
     "iterations/v2/001-original-recovery/runs/276-file-operation-reuse/summary.json": "3f82c55cb8c228939e01e0fd53d000544bd252ad8976438463abd8a6692111da",
     "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
-    "scripts/research/experiment-v2-app-main-403.py": "f9fb53a7044f75663baa9ddc88f239f196e6fdb1ce07621b853c04237c5fcee9",
+    "scripts/research/experiment-v2-app-main-403.py": "e1a72db894f2791d29e474bfc8b41c8a4cad8f7cc1d11c3ceb48410476fcb8e2",
     "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
     "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
     "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
@@ -41,8 +41,8 @@
     "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe": "58702ed8002b28348dbbd1099e9d2c2b2b092681cda024a5eaee371cc28aa881",
     "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/link.exe": "78c1de5188da927239a017b4690491be838917478a0ee91401dfcc0291a9aa48",
     "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
-    "local/experiments/v2-app-main-403/prepare-002.json": "2bc74297a5091bffca06c73070209a00cf9cd1dd5910b9cc2ae71037654f99d4",
-    "local/experiments/v2-app-main-403/compile-002.execution.json": "ae5d13129255ff09def88d38d4cbf1388b171e297ea090a119aff64c668a6b48",
+    "local/experiments/v2-app-main-403/prepare-001.json": "676ed9d00927b61170bc382d1ee61b708872c07293b0fb955ca830a056513b8b",
+    "local/experiments/v2-app-main-403/compile-001.execution.json": "5f42a8a78181bff3c1d57dc30fd73471ccc5c7495b27d2bf241444ebc00ca2e7",
     "local/experiments/v2-app-main-403/dependencies/app_main_helpers_403.cpp.json": "d84dcbcc5f2d07dffc72ba71b75cb919785e786233a23fd709cad1087953f061",
     "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include/cstdint": "ce03526f2948c653a2ca8f68b9a8a8f0e13648243ab24068cdd473a52d4774c5",
     "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include/yvals_core.h": "10b59d42bde2105e76cf16735e34dd0f1d45a943cb1b789c4a0406c67c2bd684",
@@ -57,17 +57,17 @@
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt/corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc",
     "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include/xtr1common": "cdffecba4f44c22fe4f809c6e4f6eeee628a7331a1b2e4ffd5dba32afcda2dcd",
     "local/experiments/v2-app-main-403/dependencies/app_main_fixture.cpp.json": "6d27974cf85010cdeefe88a9d32c770f2dcba67ff2440d00ba9f00321fb58e6d",
-    "local/experiments/v2-app-main-403/objects/app_main_helpers_403.obj": "9263881b3df0c2da27291f7d7ddf285cf13175cd3f552dfe8630d96e71a0d917",
-    "local/experiments/v2-app-main-403/objects/app_main_fixture.obj": "ff243ab1b29fd22561df0b4ab166c3a107f47667036a30355f24329391f79e44",
-    "local/experiments/v2-app-main-403/fixture-link-002.execution.json": "960e4989071b2275afff8b7f684f744172ceb99d26fcd9374cebeca7178e686f",
-    "local/experiments/v2-app-main-403/native-fixture.exe": "cdcd8c365115d52c11988040b2d255f8e847882865d3baa9e9b10b3507a32f7a",
-    "local/experiments/v2-app-main-403/native-fixture.map": "b1f0a994171c90bccff4a3351d60ad49eff14cf547bb46ab8724d56fceb2bd55",
-    "local/experiments/v2-app-main-403/fixture-native-002.execution.json": "ee650c16ee60bd54788bd28e603bddff661c18ab85a845f1442879c87dc2c6ce"
+    "local/experiments/v2-app-main-403/objects/app_main_helpers_403.obj": "14ce1cac3eb95f2a4674011e29a18894818f4d751aced6ec3b5a0b87a94d5752",
+    "local/experiments/v2-app-main-403/objects/app_main_fixture.obj": "09bd3f67e8fd3dfc4bafdec720324b1c90551343b607924de13adb6a413f1311",
+    "local/experiments/v2-app-main-403/fixture-link-001.execution.json": "231902b9ec477e4ed3f7118212966764975311bffe8ab25181b32933a5089074",
+    "local/experiments/v2-app-main-403/native-fixture.exe": "b994b20e10fc8b19587bb8139d814fa0b014a2c4d5b333308d9d6c26c20fe918",
+    "local/experiments/v2-app-main-403/native-fixture.map": "ace5b1f251941571424050525495caf5a4c61fa35ab203aa0d687dcfebcef737",
+    "local/experiments/v2-app-main-403/fixture-native-001.execution.json": "e62f664d66b1e6a65758dca866b494455fd167a74321be3dfa82e8385279ceb1"
   },
   "receipts": {
-    "prepare": "local/experiments/v2-app-main-403/prepare-002.json",
-    "compile": "local/experiments/v2-app-main-403/compile-002.execution.json",
-    "link": "local/experiments/v2-app-main-403/fixture-link-002.execution.json",
-    "execute": "local/experiments/v2-app-main-403/fixture-native-002.execution.json"
+    "prepare": "local/experiments/v2-app-main-403/prepare-001.json",
+    "compile": "local/experiments/v2-app-main-403/compile-001.execution.json",
+    "link": "local/experiments/v2-app-main-403/fixture-link-001.execution.json",
+    "execute": "local/experiments/v2-app-main-403/fixture-native-001.execution.json"
   }
 }
