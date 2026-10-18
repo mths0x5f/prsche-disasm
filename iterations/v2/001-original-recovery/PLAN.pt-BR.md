@@ -1,5 +1,24 @@
 # v2 / 001 — plano de recuperação do código-fonte
 
+Checkpoint 18/10/2026: logging original e iteração de objetos de frame conectados à entrada do jogo.
+- 287: bridge + 175 stdio inalterados, 224 casos nativos PASS; 83 pins de entrada independentemente
+  re-hasheados. 8 corpos stdio antigos foram reutilizados, 4152 casos antigos não foram reexecutados.
+- 288: 20 serviços não resolvidos diretos de app_main -> 20 alvos CALL originais exatos;
+  não há proprietários aceitos prontos. Primeiro cluster conectado implementado na 290.
+- 290: 00471b60 + 00487e20 / 98 bytes PE, 2 COFFs de jogo, 6 casos originais/nativos PASS.
+  Quatro chamados (callees) e o global 00628960 permanecem como fronteiras explícitas; fixture fora do jogo.
+- 289: arquivo/linkedição de normal-entry real com 4 objetos de jogo, 267 -> 270 nomes / 303 -> 306 referências;
+  removidas 2 arestas de app_main, expostos 5 contratos internos; chamadas diretas de app_main de 20 -> 18.
+  Auditoria de 22 pins / 12 definições únicas PASS. Sem EXE / execução de jogo. CMake configurado,
+  compilação completa dos fontes a partir do zero não foi executada; para linkedição foi reutilizado o grafo em cache da 173.
+- resolver_291: finalizar 004898f0 / getter de 25B com retorno de ponteiro; antigo candidato da 187 com retorno void
+  não é alias e não é +1 VA distinta. O novo grafo do jogo utiliza apenas o proprietário tipado correto.
+- lock_prefix_292: preflight do único proprietário canônico de 005e57a8 com 26 -> 48 slots;
+  não alterar o código compartilhado antes de aprovação. Trata-se da retenção de execução real do lock 29 de stdout.
+Próximo passo do coordenador: salvar as 287–290 prontas, depois conectar a 291 e
+corrigir o prefixo 292 confirmado. O newline do chamador original 005d6e84 também está no backlog.
+Há dois agentes ativos; os antigos de locale/escalares estão inativos após o limite.
+
 Checkpoint 17/10/2026: prioridade — EXE do jogo e cadeia de execução real.
 - 285: dois links normal-entry sem WHOLEARCHIVE e sem compilação, 267 nomes /
   303 referências em ambos. A adição do arquivo real de 1125 candidatos 274 não alterou

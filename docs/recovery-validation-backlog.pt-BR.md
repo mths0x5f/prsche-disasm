@@ -1,5 +1,16 @@
 # Validações Pendentes da Restauração v2
 
+Novas observações de inicialização 287–290 (17/10/2026):
+- [ ] O original 005d6e84 contém "Initializing rendering\n\0", enquanto o atual
+  application_main.cpp passa a string sem newline. Corrigir exatamente o chamador
+  conforme o recurso de origem e recompilar seu objeto; o bridge não deve mascarar o bug.
+- [ ] O formatter_crt_locks_005e57a8 canônico atualmente é um prefixo de 26 entradas; stdio exige
+  os IDs 28..47. O 175 comprova prefixo de 192B / 48 entradas e 4 células HIGHLOW. Antes da inicialização real,
+  expandir o único proprietário canônico e verificar a composição real dos locks.
+- [ ] 290: 00471b60 -> 00487e20 original com 98B, 4 fronteiras de chamados tipados e 00628960;
+  pacote nativo separado do fechamento completo de provedores/globais. Não substituí-los por stub.
+
+
 Checkpoint 276–284, prioridade do primeiro EXE jogável:
 - [x] 276: 00568200/005682a0 canônicos exatos + dois vínculos brutos comprovados,
   4 pontos de corte originais / 8 chamadas nativas PASS; pacote separado, não a união atual.

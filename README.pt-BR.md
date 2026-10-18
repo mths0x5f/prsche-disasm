@@ -29,12 +29,13 @@ Em 17/10/2026:
 três cadeias originais de CALL/RET, 36 864 comparações de registradores, flags, memória e pilha
 passaram. Esta é uma verificação do backend experimental, não a execução do jogo completo.
 
-[Verificação do EXE do jogo, Run285](iterations/v2/001-original-recovery/runs/285-normal-entry-replay/README.md):
-a linkedição recente do grafo de entrada em cache deixa 267 nomes / 303 referências. A adição
-do arquivo de candidatos 274 não alterou essa fronteira. O trabalho imediato consiste em conectar
-os proprietários comprovados com as chamadas reais de startup/renderização e compilar o EXE do jogo.
-Os efeitos omitidos de pre-WinMain também permanecem na fila de verificação; os dois primeiros
-construtores ainda não foram comprovados como bloqueador do jogo. O prazo de execução ainda não foi definido.
+[Conexão ao EXE do jogo, Run289](iterations/v2/001-original-recovery/runs/289-game-startup-link/README.md):
+o logging original e a iteração de objetos de frame agora integram o grafo do jogo.
+Duas chamadas diretas pendentes de `app_main` foram conectadas; cinco dependências
+internas tornaram-se visíveis. A linkedição do grafo de entrada em cache deixa 270 nomes / 306 referências, o EXE
+ainda não foi obtido. A compilação CMake completa e a execução real permanecem como etapas separadas.
+Em seguida, são restaurados o getter com retorno de ponteiro e a tabela de bloqueios stdio exigida.
+O prazo do jogo completo ainda não foi definido.
 Limite exato e resultados: [STATUS.pt-BR.md](STATUS.pt-BR.md).
 
 ## Compilação dos alvos C++ atuais
