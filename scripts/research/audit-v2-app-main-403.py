@@ -1,10 +1,10 @@
-"""Independent acceptance audit for Run 298 app_main helpers (4 functions, 509 PE bytes)."""
+"""Independent acceptance audit for Run 403 app_main helpers (4 functions, 509 PE bytes)."""
 import hashlib, importlib.util, json, re, struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/298-app-main-helpers'
-OUT = ROOT / 'local/experiments/v2-app-main-298'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/403-app-main-helpers'
+OUT = ROOT / 'local/experiments/v2-app-main-403'
 
 def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -60,8 +60,8 @@ def main():
 
     assert total_bytes == 509
 
-    coff = module('coff298_audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
-    obj = OUT / 'objects' / 'app_main_helpers_298.obj'
+    coff = module('coff403_audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    obj = OUT / 'objects' / 'app_main_helpers_403.obj'
     symbols = coff.coff_symbols(obj)
     assert not symbols['common'] and not symbols['weak']
     assert any('application_main_function_0048da60' in s for s in symbols['defined'])
@@ -76,7 +76,7 @@ def main():
     assert validation['game_object_count'] == 1
     assert set(validation['actual_coff_defined_symbols']) == set(symbols['defined'])
 
-    print(f'Run 298 verified: PE 509B across 4 functions, physical x86 slab verified, 8 differential cases passed, receipts verified')
+    print(f'Run 403 verified: PE 509B across 4 functions, physical x86 slab verified, 8 differential cases passed, receipts verified')
 
 if __name__ == '__main__':
     main()
