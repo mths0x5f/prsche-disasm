@@ -1,12 +1,13 @@
-# Run 311 — funções chamadas pelo frame service e a célula 00628960
+# Run 311 — funções chamadas pelo frame service
 
 `Porsche.exe` original, SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 Este run fecha a fronteira externa que o Run 290 deixou aberta. O
 `frame_service_290.hpp` declarava como não recuperadas as três funções chamadas pelo
 ciclo `00487e20` e também a célula de armazenamento `00628960`. O Run 311 recupera os
-três corpos (305 bytes de código PE) e fornece a célula, de modo que o consumidor do
-Run 290 passa a linkar contra definições reais.
+três corpos (305 bytes de código PE), de modo que o consumidor do Run 290 passa a
+linkar contra definições reais para eles. A célula de armazenamento permanece em
+HOLD — veja abaixo.
 
 Numerado como 311 porque o slot 310 já está ocupado no `main` pelo `310-winmain-entry`.
 O PR upstream desta branch foi aberto com o número 310.
@@ -44,9 +45,16 @@ célula, em dois proprietários:
 - `00471c40` (encerramento): `00471c6d` grava `0` depois de destruir via `00487590`
   e liberar via `0059f050`.
 
-**Nenhum dos dois proprietários foi recuperado aqui** — ambos puxam outras funções
-ainda não recuperadas. O run contribui com o armazenamento e com a propriedade
-provada, não com uma sequência de inicialização recuperada.
+**Nenhum dos dois proprietários foi recuperado aqui, e a célula deliberadamente não é
+definida.** Este run contribui apenas com a prova de propriedade.
+
+Uma definição isolada inicializada com zero não seria fiel. A cópia de string em
+`00471b72..00471b97` é um `REP MOVSD` sem limite para `00628940`, que fica apenas 32
+bytes antes da célula, portanto no original uma string de origem com 32 bytes ou mais
+alcança o armazenamento da célula. Objetos C++ separados perdem essa adjacência. A
+célula permanece, então, uma fronteira de linkedição não resolvida até que o layout
+original compartilhado que cobre `00628940`, a célula e `00628964` seja recuperado
+em conjunto.
 
 ## Validação
 
@@ -61,17 +69,23 @@ python scripts/research/experiment-v2-frame-service-311.py --finalize --attempt 
 python scripts/research/audit-v2-frame-service-311.py
 ```
 
-Compilado com MSVC `/Od /Oi /Gy /GS- /GR- /EHsc /TP /W4 /Zl` sem avisos, linkado com
-`/NODEFAULTLIB /ENTRY:entry /MACHINE:X86`.
+O experimento compila com MSVC `/Od /Oi /Gy /GS- /GR- /EHsc /TP /W4 /Zl` (sem
+avisos), linkedita com `/NODEFAULTLIB /ENTRY:entry /MACHINE:X86` e reporta 12/12
+casos. A auditoria re-deriva as faixas dos corpos, o `RET` terminal, os valores
+SHA-256 dos corpos, os dois escalares e as três escritas na célula de armazenamento a
+partir da imagem de varejo em vez de a partir do `summary.json`, e verifica os
+símbolos COFF e os recibos de build.
 
-A capacidade de discriminação da fixture foi conferida por controle negativo: quatro
+A recuperação define exatamente os três símbolos de função que eram a fronteira do
+Run 290: `advance_00423840`, `invoke_00482e50` e `invoke_00476170`. Ela deixa
+indefinidos o `00476710`, os dois escalares somente-leitura e o
+`frame_service_root_00628960`; a fixture fornece os dois primeiros, e uma build do
+alvo do jogo ainda precisa fornecê-los.
+
+A validação da fixture foi, ela mesma, conferida por controle negativo: quatro
 mutações separadas dos fontes recuperados (remover a guarda final de `00423840`, usar
 `<` em vez de "não maior" em `00482e50`, remover a limpeza de `element+0x08` e copiar
 cinco dwords em vez de seis) falharam somente nos casos que deveriam detectá-las.
-
-A auditoria independente re-deriva as faixas dos corpos, o `RET` terminal, os SHA-256,
-os dois escalares e as três escritas na célula a partir da imagem de varejo, em vez de
-confiar no `summary.json`.
 
 ## Limites
 

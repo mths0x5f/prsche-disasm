@@ -11,27 +11,34 @@
 
 namespace porsche {
 
-// Storage cell 00628960, declared extern by Run 290. The original is a single
-// 32-bit pointer cell in writable data. A HIGHLOW operand scan of .text finds
-// exactly three stores into it, in two owners: the initialiser 00471b70
-// (00471bae writes the constructed object, 00471bb5 writes 0 when the
-// allocation fails) and the teardown 00471c40 (00471c6d writes 0 after
-// destructing and freeing the object). Neither owner is recovered in this run.
-std::uint32_t frame_service_root_00628960 = 0;
+// Storage cell 00628960 is deliberately NOT defined here. A HIGHLOW operand
+// scan of .text finds exactly three stores into it, in two owners: the
+// initialiser 00471b70 (00471bae writes the constructed object, 00471bb5
+// writes 0 when the allocation fails) and the teardown 00471c40 (00471c6d
+// writes 0 after destructing and freeing the object). That is ownership
+// evidence only.
+//
+// A standalone zero-initialised definition would NOT be faithful: the string
+// copy at 00471b72..00471b97 is an unbounded REP MOVSD into 00628940, which
+// sits just 32 bytes before this cell, so in the original a source string of
+// 32 bytes or more reaches the cell's storage. Separate C++ objects lose that
+// adjacency. The cell therefore stays an unresolved link boundary until the
+// shared original layout covering 00628940, the cell and 00628964 is
+// recovered together.
 
 // ---------------------------------------------------------------------------
 // 00423840 (67 bytes): in-order tree successor.
 // __thiscall; ECX points at the iterator's single node-pointer slot.
 // ---------------------------------------------------------------------------
 void CALL_THISCALL FrameIterator_290::advance_00423840() {
-    TreeNode_310** const slot = reinterpret_cast<TreeNode_310**>(this);
-    TreeNode_310* const node = *slot;          // 00423840: mov edx,[ecx]
-    TreeNode_310* const right = node->right;   // 00423842: mov eax,[edx+0xc]
+    TreeNode_311** const slot = reinterpret_cast<TreeNode_311**>(this);
+    TreeNode_311* const node = *slot;          // 00423840: mov edx,[ecx]
+    TreeNode_311* const right = node->right;   // 00423842: mov eax,[edx+0xc]
 
     if (right != nullptr) {                    // 00423845/47
         *slot = right;                         // 00423849: mov [ecx],eax
         if (right->left != nullptr) {          // 0042384b/4e/50
-            TreeNode_310* next;
+            TreeNode_311* next;
             do {
                 next = (*slot)->left;          // 00423852/54: reloads [ecx]
                 *slot = next;                  // 00423857
@@ -40,7 +47,7 @@ void CALL_THISCALL FrameIterator_290::advance_00423840() {
         return;                                // 00423860 / 00423882
     }
 
-    TreeNode_310* parent = node->parent;       // 00423861: mov eax,[edx+4]
+    TreeNode_311* parent = node->parent;       // 00423861: mov eax,[edx+4]
     if (node == parent->right) {               // 00423865/68
         do {
             *slot = parent;                    // 0042386a
@@ -57,7 +64,7 @@ void CALL_THISCALL FrameIterator_290::advance_00423840() {
 // is not above the 8000.0f limit.
 // ---------------------------------------------------------------------------
 void CALL_THISCALL FrameTail_290::invoke_00482e50() {
-    FrameTailContext_310* const self = reinterpret_cast<FrameTailContext_310*>(this);
+    FrameTailContext_311* const self = reinterpret_cast<FrameTailContext_311*>(this);
 
     if (self->count == 0) {            // 00482e50/56/58 (unsigned jbe)
         return;
@@ -68,8 +75,8 @@ void CALL_THISCALL FrameTail_290::invoke_00482e50() {
     do {
         // 00482e5d reloads the base pointer inside the loop.
         std::uint8_t* const base = reinterpret_cast<std::uint8_t*>(self->items);
-        FrameTailItem_310* const item =
-            reinterpret_cast<FrameTailItem_310*>(base + offset);
+        FrameTailItem_311* const item =
+            reinterpret_cast<FrameTailItem_311*>(base + offset);
 
         if (item->active != 0) {       // 00482e63/67/69
             // 00482e6b: fld [edx+4]; fcomp [0x5b47d8]; fnstsw ax;
@@ -91,8 +98,8 @@ void CALL_THISCALL FrameTail_290::invoke_00482e50() {
 // 00476170 (169 bytes): per-element lifecycle transition and dispatch.
 // ---------------------------------------------------------------------------
 void CALL_THISCALL FrameAction_290::invoke_00476170() {
-    FrameActionContext_310* const self =
-        reinterpret_cast<FrameActionContext_310*>(this);
+    FrameActionContext_311* const self =
+        reinterpret_cast<FrameActionContext_311*>(this);
 
     if (self->owner->count == 0) {     // 00476177/7e/81/83 (unsigned jbe)
         return;
@@ -103,16 +110,16 @@ void CALL_THISCALL FrameAction_290::invoke_00476170() {
     do {
         // 0047618d reloads the element base inside the loop.
         std::uint8_t* base = reinterpret_cast<std::uint8_t*>(self->elements);
-        FrameNodeElement_310* element =
-            reinterpret_cast<FrameNodeElement_310*>(base + offset);
+        FrameNodeElement_311* element =
+            reinterpret_cast<FrameNodeElement_311*>(base + offset);
 
         if (element->object != nullptr) {          // 00476190/94/96
             self->prepare_00476710(index);         // 00476198/99/9b
 
             // 004761a0 reloads the base after the call.
             base = reinterpret_cast<std::uint8_t*>(self->elements);
-            element = reinterpret_cast<FrameNodeElement_310*>(base + offset);
-            FrameNodeObject_310* const object = element->object;
+            element = reinterpret_cast<FrameNodeElement_311*>(base + offset);
+            FrameNodeObject_311* const object = element->object;
 
             // 004761aa loads the flag byte before the null check at 004761b8:
             // the original dereferences the reloaded pointer unconditionally.
@@ -124,13 +131,13 @@ void CALL_THISCALL FrameAction_290::invoke_00476170() {
                 }
                 // 004761c2 reloads the base again before the store.
                 base = reinterpret_cast<std::uint8_t*>(self->elements);
-                element = reinterpret_cast<FrameNodeElement_310*>(base + offset);
+                element = reinterpret_cast<FrameNodeElement_311*>(base + offset);
                 element->object = nullptr;               // 004761c5
 
                 // 004761cd..df: rep movsd of 6 dwords from element+0x1c into
                 // *(element+0x34). The first dword is the slot just cleared.
                 base = reinterpret_cast<std::uint8_t*>(self->elements);
-                element = reinterpret_cast<FrameNodeElement_310*>(base + offset);
+                element = reinterpret_cast<FrameNodeElement_311*>(base + offset);
                 std::uint32_t* const dst = element->carry_target;
                 const std::uint32_t* const src =
                     reinterpret_cast<const std::uint32_t*>(
@@ -145,7 +152,7 @@ void CALL_THISCALL FrameAction_290::invoke_00476170() {
 
         // 004761f4..fc: base reloaded, index advanced, element+8 cleared.
         base = reinterpret_cast<std::uint8_t*>(self->elements);
-        element = reinterpret_cast<FrameNodeElement_310*>(base + offset);
+        element = reinterpret_cast<FrameNodeElement_311*>(base + offset);
         ++index;
         element->field_08 = 0;
 
