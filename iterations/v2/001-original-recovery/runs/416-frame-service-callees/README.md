@@ -1,10 +1,10 @@
-# Run 311 — frame service callees
+# Run 416 — frame service callees
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 This run closes the external frontier that Run 290 left open. `frame_service_290.hpp`
 declared the three callees of the recovered service cycle `00487e20` and the storage
-cell `00628960` as unrecovered. Run 311 recovers the three bodies, so the Run 290
+cell `00628960` as unrecovered. Run 416 recovers the three bodies, so the Run 290
 consumer links against real definitions for them. The storage cell stays on hold —
 see below:
 
@@ -82,8 +82,8 @@ timer; a zero count with a populated element; the destruct-and-carry branch; the
 vtable `0x1c` branch; and a non-zero object flag taking neither branch.
 
 ```
-python scripts/research/experiment-v2-frame-service-311.py --finalize --attempt 1
-python scripts/research/audit-v2-frame-service-311.py
+python scripts/research/experiment-v2-frame-service-416.py --finalize --attempt 1
+python scripts/research/audit-v2-frame-service-416.py
 ```
 
 The experiment compiles with MSVC `/Od /Oi /Gy /GS- /GR- /EHsc /TP /W4 /Zl`
@@ -114,13 +114,13 @@ dwords instead of six) each failed only the cases that should catch them.
 
 ---
 
-# Запуск 311 — вызываемые функции frame service
+# Запуск 416 — вызываемые функции frame service
 
 Оригинал `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 Запуск закрывает внешнюю границу, оставленную Run 290. В `frame_service_290.hpp`
 три вызываемые функции цикла `00487e20` и ячейка `00628960` были объявлены
-невосстановленными. Run 311 восстанавливает три тела, поэтому потребитель Run 290
+невосстановленными. Run 416 восстанавливает три тела, поэтому потребитель Run 290
 линкуется с реальными определениями для них. Ячейка хранения остаётся на HOLD:
 
 - `00423840..00423882` (67 байт): `FrameIterator_290::advance_00423840` — следующий
