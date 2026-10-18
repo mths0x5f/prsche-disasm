@@ -9,8 +9,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/305-app-main-subsystem-final-pt1'
-OUT = ROOT / 'local/experiments/v2-app-main-305'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/410-app-main-subsystem-final-pt1'
+OUT = ROOT / 'local/experiments/v2-app-main-410'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 
@@ -103,8 +103,8 @@ def main(finalize: bool, attempt: int):
     compiler = pin(resolve_compiler())
     roots = resolve_roots(compiler)
 
-    source = pin(RUN / 'app_main_subsystem_final_pt1_305.cpp')
-    header = pin(RUN / 'app_main_subsystem_final_pt1_305.hpp')
+    source = pin(RUN / 'app_main_subsystem_final_pt1_410.cpp')
+    header = pin(RUN / 'app_main_subsystem_final_pt1_410.hpp')
     fixture = pin(OUT / 'app_main_fixture.cpp')
 
     prepare = dict(
@@ -123,7 +123,7 @@ def main(finalize: bool, attempt: int):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'app_main_subsystem_final_pt1_305.obj'
+    obj = OUT / 'objects' / 'app_main_subsystem_final_pt1_410.obj'
     fixture_obj = OUT / 'objects' / 'app_main_fixture.obj'
     includes = []
     for r in roots:
@@ -193,12 +193,12 @@ def main(finalize: bool, attempt: int):
     executed = run([str(exe)], native_name)
     assert executed['exit_code'] == 0, executed
 
-    coff = module('coff305', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff410', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='305-app-main-subsystem-final-pt1',
+        run='410-app-main-subsystem-final-pt1',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=['0056a680', '005a0f98', '00412030', '00414eb0', '004dd600'],
         original_selected_bytes=1376,
@@ -222,7 +222,7 @@ def main(finalize: bool, attempt: int):
     )
 
     validation = dict(
-        run='305-app-main-subsystem-final-pt1',
+        run='410-app-main-subsystem-final-pt1',
         status='PASS',
         exit_code=executed['exit_code'],
         cases_passed=10,

@@ -1,4 +1,4 @@
-"""Generate complete Run 305 fixture and experiment files."""
+"""Generate complete Run 410 fixture and experiment files."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -21,7 +21,7 @@ b_412030 = get_bytes_c(0x00412030, 91)
 b_414eb0 = get_bytes_c(0x00414eb0, 196)
 b_4dd600 = get_bytes_c(0x004dd600, 1012)
 
-FIXTURE_CPP = f"""#include "app_main_subsystem_final_pt1_305.hpp"
+FIXTURE_CPP = f"""#include "app_main_subsystem_final_pt1_410.hpp"
 #include <windows.h>
 #include <cstdint>
 #include <cstddef>
@@ -684,7 +684,7 @@ extern "C" void entry() {{
 }}
 """
 
-out_dir = ROOT / "local/experiments/v2-app-main-305"
+out_dir = ROOT / "local/experiments/v2-app-main-410"
 out_dir.mkdir(parents=True, exist_ok=True)
-(out_dir / "app_main_fixture.cpp").write_text(FIXTURE_CPP, encoding="utf-8")
+(out_dir / "app_main_fixture.cpp").write_bytes((FIXTURE_CPP).replace("\r\n", "\n").encode("utf-8"))
 print(f"Generated {out_dir / 'app_main_fixture.cpp'}")

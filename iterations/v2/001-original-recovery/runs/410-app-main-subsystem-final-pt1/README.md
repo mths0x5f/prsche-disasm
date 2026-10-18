@@ -1,9 +1,9 @@
-# Run 305: Recovery of app_main subsystem dependencies (part 1)
+# Run 410: Recovery of app_main subsystem dependencies (part 1)
 
 ## English Summary
 
 ### Overview
-Run 305 completes the recovery and exact differential verification of 5 core subsystem dependency functions called directly within `app_main_004b6a50` from original retail binary `Porsche.exe` (`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`):
+Run 410 completes the recovery and exact differential verification of 5 core subsystem dependency functions called directly within `app_main_004b6a50` from original retail binary `Porsche.exe` (`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`):
 1. `0056a680` (38 bytes): `render_counters_init_0056a680` — Render frame counter reset.
 2. `005a0f98` (39 bytes): `ftol_005a0f98` — Fast float-to-integer truncation (`__ftol`).
 3. `00412030` (91 bytes): `audio_parameters_sync_00412030` — Audio parameters quad-value sync.
