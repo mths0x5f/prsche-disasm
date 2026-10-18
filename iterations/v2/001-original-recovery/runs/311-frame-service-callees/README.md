@@ -1,11 +1,12 @@
-# Run 311 — frame service callees and the 00628960 storage cell
+# Run 311 — frame service callees
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 This run closes the external frontier that Run 290 left open. `frame_service_290.hpp`
 declared the three callees of the recovered service cycle `00487e20` and the storage
-cell `00628960` as unrecovered; Run 311 recovers the three bodies and supplies the
-storage cell, so the Run 290 consumer links against real definitions:
+cell `00628960` as unrecovered. Run 311 recovers the three bodies, so the Run 290
+consumer links against real definitions for them. The storage cell stays on hold —
+see below:
 
 - `00423840..00423882` (67 bytes): `FrameIterator_290::advance_00423840` — in-order
   tree successor. `ECX` points at the iterator's single node-pointer slot; the node
@@ -53,9 +54,15 @@ owners, and `00628960` is a single 32-bit pointer cell:
 - `00471c40` (teardown): `00471c6d` stores `0` after destructing the object through
   `00487590` and freeing it through `0059f050`.
 
-Run 311 supplies the storage that Run 290 declared `extern`. **Neither owner is
-recovered in this run** — both pull in further unrecovered callees — so the cell is
-storage plus proven ownership, not a recovered initialisation sequence.
+**Neither owner is recovered in this run, and the cell is deliberately not defined.**
+This run contributes ownership evidence only.
+
+A standalone zero-initialised definition would not be faithful. The string copy at
+`00471b72..00471b97` is an unbounded `REP MOVSD` into `00628940`, which sits just 32
+bytes before the cell, so in the original a source string of 32 bytes or more reaches
+the cell's storage. Separate C++ objects lose that adjacency. The cell therefore stays
+an unresolved link boundary until the shared original layout covering `00628940`, the
+cell and `00628964` is recovered together.
 
 ## Validation
 
@@ -85,10 +92,10 @@ The experiment compiles with MSVC `/Od /Oi /Gy /GS- /GR- /EHsc /TP /W4 /Zl`
 values, both scalars and the three storage-cell writers from the retail image rather
 than from `summary.json`, and checks the COFF symbols and build receipts.
 
-The recovery object defines exactly the four symbols that were Run 290's frontier:
-`advance_00423840`, `invoke_00482e50`, `invoke_00476170` and
-`frame_service_root_00628960`. It leaves `00476710` and the two read-only scalars
-undefined; the fixture supplies them, and a game-target build still has to.
+The recovery object defines exactly the three function symbols that were Run 290's
+frontier: `advance_00423840`, `invoke_00482e50` and `invoke_00476170`. It leaves
+`00476710`, the two read-only scalars and `frame_service_root_00628960` undefined; the
+fixture supplies the first two, and a game-target build still has to.
 
 Fixture validation was itself checked by negative control: four separate mutations of
 the recovered sources (dropping the final guard of `00423840`, using `<` instead of
@@ -107,14 +114,14 @@ dwords instead of six) each failed only the cases that should catch them.
 
 ---
 
-# Запуск 311 — вызываемые функции frame service и ячейка хранения 00628960
+# Запуск 311 — вызываемые функции frame service
 
 Оригинал `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 Запуск закрывает внешнюю границу, оставленную Run 290. В `frame_service_290.hpp`
 три вызываемые функции цикла `00487e20` и ячейка `00628960` были объявлены
-невосстановленными; Run 311 восстанавливает три тела и предоставляет ячейку
-хранения, поэтому потребитель Run 290 линкуется с реальными определениями:
+невосстановленными. Run 311 восстанавливает три тела, поэтому потребитель Run 290
+линкуется с реальными определениями для них. Ячейка хранения остаётся на HOLD:
 
 - `00423840..00423882` (67 байт): `FrameIterator_290::advance_00423840` — следующий
   узел дерева в порядке обхода. `ECX` указывает на единственный слот указателя узла;
@@ -141,8 +148,13 @@ dwords instead of six) each failed only the cases that should catch them.
 `00628960` у двух владельцев: инициализатор `00471b70` (`00471bae` — объект после
 `operator new(0x3c)`, `00471bb5` — `0` при неудаче выделения) и завершение
 `00471c40` (`00471c6d` — `0` после деструктора и освобождения). **Ни один из
-владельцев в этом запуске не восстановлен**: предоставляется только хранение и
-доказанное владение.
+владельцев в этом запуске не восстановлен, и ячейка сознательно НЕ определена**:
+предоставляется только доказательство владения. Отдельное определение с нулевой
+инициализацией не было бы достоверным — копия строки в `00471b72..00471b97` это
+`REP MOVSD` без границы в `00628940`, всего за 32 байта до ячейки, поэтому в
+оригинале строка от 32 байт достигает её хранения. Ячейка остаётся нерешённой
+границей линковки до восстановления общей исходной раскладки `00628940`, ячейки и
+`00628964` вместе.
 
 Поведение подтверждено 12 дифференциальными тестами на физическом x86-слебе памяти
 оригинального бинарника: байты состояния и трасса вызовов совпадают для оригинальных

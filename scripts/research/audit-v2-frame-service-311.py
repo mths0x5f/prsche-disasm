@@ -26,7 +26,6 @@ EXPECTED_DEFINED = {
     '?advance_00423840@FrameIterator_290@porsche@@QAEXXZ',
     '?invoke_00482e50@FrameTail_290@porsche@@QAEXXZ',
     '?invoke_00476170@FrameAction_290@porsche@@QAEXXZ',
-    '?frame_service_root_00628960@porsche@@3IA',
 }
 CASES = 12
 
@@ -130,7 +129,7 @@ def main():
     print('Run 311 verified: PE 305B across 00423840 (67B), 00482e50 (69B), '
           '00476170 (169B); scalars 005b47d8=8000.0f and 005b2764=10000.0f; '
           '00628960 writers 00471bae/00471bb5 (init 00471b70) and 00471c6d '
-          '(teardown 00471c40); 4 COFF symbols '
+          '(teardown 00471c40); 3 COFF symbols '
           'close the Run 290 frontier; 12/12 differential cases on the '
           'physical x86 slab; receipts verified')
 

@@ -92,14 +92,14 @@ static bool traces_equal(const CallTrace& a, const CallTrace& b) {
 // ---------------------------------------------------------------------------
 // External original callee 00476710, recorded rather than recovered here.
 // ---------------------------------------------------------------------------
-void CALL_THISCALL FrameActionContext_310::prepare_00476710(std::uint32_t index) {
+void CALL_THISCALL FrameActionContext_311::prepare_00476710(std::uint32_t index) {
     record_call(0x476710, reinterpret_cast<U>(this), index);
 }
 
 // Lifecycle hooks reached through the node vtable. They are declared as
 // non-static members so MSVC emits real __thiscall entry points, which is the
 // convention both the original bytes and the recovered C++ call through.
-struct HookObject_310 {
+struct HookObject_311 {
     void CALL_THISCALL destroy_impl(std::int32_t flag) {
         record_call(0xde577000u, reinterpret_cast<U>(this), static_cast<U>(flag));
     }
@@ -167,20 +167,20 @@ bool init_slab() {
 
     // 00476170 relative CALL 00476710 at body offset 0x2b.
     patch_rel_call(s_slab + kOff476170 + 0x2b,
-                   code_addr(&FrameActionContext_310::prepare_00476710));
+                   code_addr(&FrameActionContext_311::prepare_00476710));
     return true;
 }
 
-static void call_orig_advance(TreeNode_310** slot) {
-    using Fn = void(CALL_THISCALL*)(TreeNode_310**);
+static void call_orig_advance(TreeNode_311** slot) {
+    using Fn = void(CALL_THISCALL*)(TreeNode_311**);
     reinterpret_cast<Fn>(s_slab + kOff423840)(slot);
 }
-static void call_orig_tail(FrameTailContext_310* ctx) {
-    using Fn = void(CALL_THISCALL*)(FrameTailContext_310*);
+static void call_orig_tail(FrameTailContext_311* ctx) {
+    using Fn = void(CALL_THISCALL*)(FrameTailContext_311*);
     reinterpret_cast<Fn>(s_slab + kOff482e50)(ctx);
 }
-static void call_orig_action(FrameActionContext_310* ctx) {
-    using Fn = void(CALL_THISCALL*)(FrameActionContext_310*);
+static void call_orig_action(FrameActionContext_311* ctx) {
+    using Fn = void(CALL_THISCALL*)(FrameActionContext_311*);
     reinterpret_cast<Fn>(s_slab + kOff476170)(ctx);
 }
 
@@ -189,19 +189,19 @@ static void call_orig_action(FrameActionContext_310* ctx) {
 // of the post-state is meaningful even though the scenes hold pointers.
 // ---------------------------------------------------------------------------
 struct TreeScene {
-    TreeNode_310 nodes[8];
-    TreeNode_310* slot;
+    TreeNode_311 nodes[8];
+    TreeNode_311* slot;
 };
 struct TailScene {
-    FrameTailContext_310 ctx;
-    FrameTailItem_310 items[4];
+    FrameTailContext_311 ctx;
+    FrameTailItem_311 items[4];
 };
 struct ActionScene {
-    FrameActionContext_310 ctx;
-    FrameNodeOwner_310 owner;
-    FrameNodeElement_310 elements[4];
-    FrameNodeObject_310 objects[4];
-    FrameNodeVtable_310 vtable;
+    FrameActionContext_311 ctx;
+    FrameNodeOwner_311 owner;
+    FrameNodeElement_311 elements[4];
+    FrameNodeObject_311 objects[4];
+    FrameNodeVtable_311 vtable;
     U carry[4][6];
 };
 
@@ -213,7 +213,7 @@ static std::uint8_t s_snap_cpp[2048];
 
 static void build_tree(int c) {
     memset(&g_tree, 0, sizeof(g_tree));
-    TreeNode_310* n = g_tree.nodes;
+    TreeNode_311* n = g_tree.nodes;
     for (int i = 0; i < 8; ++i) n[i].opaque_00 = 0xa0u + static_cast<U>(i);
 
     switch (c) {
@@ -304,10 +304,10 @@ static void build_action(int c) {
     memset(&g_act, 0, sizeof(g_act));
     g_act.ctx.owner = &g_act.owner;
     g_act.ctx.elements = g_act.elements;
-    g_act.vtable.destroy = reinterpret_cast<void (CALL_THISCALL*)(FrameNodeObject_310*, std::int32_t)>(
-        code_addr(&HookObject_310::destroy_impl));
-    g_act.vtable.tick = reinterpret_cast<void (CALL_THISCALL*)(FrameNodeObject_310*)>(
-        code_addr(&HookObject_310::tick_impl));
+    g_act.vtable.destroy = reinterpret_cast<void (CALL_THISCALL*)(FrameNodeObject_311*, std::int32_t)>(
+        code_addr(&HookObject_311::destroy_impl));
+    g_act.vtable.tick = reinterpret_cast<void (CALL_THISCALL*)(FrameNodeObject_311*)>(
+        code_addr(&HookObject_311::tick_impl));
     for (int i = 0; i < 4; ++i) {
         g_act.objects[i].vtable = &g_act.vtable;
         g_act.elements[i].field_08 = 0xc0u + static_cast<U>(i);
