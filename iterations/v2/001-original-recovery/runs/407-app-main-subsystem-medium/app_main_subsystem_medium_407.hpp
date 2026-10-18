@@ -1,5 +1,5 @@
-#ifndef APP_MAIN_SUBSYSTEM_MEDIUM_302_HPP
-#define APP_MAIN_SUBSYSTEM_MEDIUM_302_HPP
+#ifndef APP_MAIN_SUBSYSTEM_MEDIUM_407_HPP
+#define APP_MAIN_SUBSYSTEM_MEDIUM_407_HPP
 
 #include <cstddef>
 #include <cstdint>
@@ -186,4 +186,4 @@ extern "C" {
     void CALL_CDECL exit_005a246e(int code);
 }
 
-#endif // APP_MAIN_SUBSYSTEM_MEDIUM_302_HPP
+#endif // APP_MAIN_SUBSYSTEM_MEDIUM_407_HPP

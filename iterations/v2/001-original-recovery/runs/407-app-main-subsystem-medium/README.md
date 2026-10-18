@@ -1,4 +1,4 @@
-# Run 302 — App Main Medium Subsystem Functions (872 bytes)
+# Run 407 — App Main Medium Subsystem Functions (872 bytes)
 
 Source: `Porsche.exe` SHA256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
@@ -21,7 +21,7 @@ This run recovers 4 medium subsystem functions (total 872 bytes) directly called
 
 ---
 
-# Запуск 302 — Средние функции подсистем app_main (872 байта)
+# Запуск 407 — Средние функции подсистем app_main (872 байта)
 
 Источник: `Porsche.exe` SHA256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
@@ -39,6 +39,6 @@ This run recovers 4 medium subsystem functions (total 872 bytes) directly called
 ## Команды проверки
 
 ```powershell
-python scripts/research/experiment-v2-app-main-302.py --finalize-existing
-python scripts/research/audit-v2-app-main-302.py
+python scripts/research/experiment-v2-app-main-407.py --finalize-existing
+python scripts/research/audit-v2-app-main-407.py
 ```

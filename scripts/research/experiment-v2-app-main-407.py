@@ -1,10 +1,10 @@
-"""Physical x86 CPU differential test for Run 302 (app_main subsystem medium cluster: 4 functions, 872 PE bytes)."""
+"""Physical x86 CPU differential test for Run 407 (app_main subsystem medium cluster: 4 functions, 872 PE bytes)."""
 import argparse, hashlib, importlib.util, json, os, re, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/302-app-main-subsystem-medium'
-OUT = ROOT / 'local/experiments/v2-app-main-302'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/407-app-main-subsystem-medium'
+OUT = ROOT / 'local/experiments/v2-app-main-407'
 
 def sha(p):
     for _ in range(20):
@@ -98,7 +98,7 @@ def main(finalize, attempt):
         p = Path(p)
         if p.suffix == '.json':
             content = json.dumps(data, indent=2) + '\n'
-            p.write_text(content, encoding='utf8')
+            p.write_bytes((content).replace("\r\n", "\n").encode("utf-8"))
         else:
             p.write_bytes(data)
 
@@ -109,8 +109,8 @@ def main(finalize, attempt):
     compiler, compiler_sha = resolve_compiler(baseline)
     roots = resolve_roots(baseline, compiler)
 
-    source = pin(RUN / 'app_main_subsystem_medium_302.cpp')
-    header = pin(RUN / 'app_main_subsystem_medium_302.hpp')
+    source = pin(RUN / 'app_main_subsystem_medium_407.cpp')
+    header = pin(RUN / 'app_main_subsystem_medium_407.hpp')
     fixture = pin(OUT / 'app_main_fixture.cpp')
 
     prepare = dict(
@@ -128,7 +128,7 @@ def main(finalize, attempt):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'app_main_subsystem_medium_302.obj'
+    obj = OUT / 'objects' / 'app_main_subsystem_medium_407.obj'
     fixture_obj = OUT / 'objects' / 'app_main_fixture.obj'
     includes = []
     for r in roots:
@@ -197,12 +197,12 @@ def main(finalize, attempt):
     executed = run([str(exe)], native_name)
     assert executed['exit_code'] == 0, executed
 
-    coff = module('coff302', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff407', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='302-app-main-subsystem-medium',
+        run='407-app-main-subsystem-medium',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=['0059d8e0', '004a6e30', '0048dad0', '004a5c30'],
         original_selected_bytes=872,
