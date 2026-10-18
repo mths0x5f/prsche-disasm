@@ -1,5 +1,14 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint294:
+- [x] Sharedsource/input manifest reader,legacy+delta modes;9testsPASS.
+- [x] Twoactual293reports→one380-pinbase,distinctreceipts,49.55%lesspinpayload;
+  independentread-onlyauditPASS;zeroadditionalcompile/native,oldJSONunchanged.
+- [ ] Перевод следующихproducers+theirvalidators наnewreader. Неотправлять
+  reference-only report вlegacycollector,которыйтребуетinlineinput_sha256.
+- [ ] Toolchain/COFF/ownership schemasнепереносились;total167MBhistoryнеуменьшалась.
+
+
 Checkpoint291–293,2026-10-18:
 - [x] Original24B005d6e84newline восстановлен вcanonicalcaller и свежемCOFF293.
 - [x] 291:004898f0correctpointer-return/25B,512nativecases/aliascanaries/ABI PASS;

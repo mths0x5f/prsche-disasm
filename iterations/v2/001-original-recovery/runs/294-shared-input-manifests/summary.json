@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "kind": "shared-input-manifest-pilot",
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/293-game-startup-followup/build-001.json": "9c8d09d7799edb44ac019bff0cdb2681f924203234ad9c9fda02c74700809954",
+    "local/experiments/v2-game-startup-followup-293/build-001.receipt.json": "7ece0dc56adeffba3bd3f74a7d73f085bc2ac5655678f8ebcf1b4a9c3ab4a03f",
+    "iterations/v2/001-original-recovery/runs/293-game-startup-followup/build-002.json": "c9ced05f716309387b6d6ef783c45e3a0b7204d983ae66017c35071361fa39c5",
+    "local/experiments/v2-game-startup-followup-293/build-002.receipt.json": "01357da004882e3041cd5643aa982f776fc9c88f11cfb0e9cfba384c86b18d35",
+    "iterations/v2/001-original-recovery/runs/294-shared-input-manifests/build-001.json": "768ff0ac1a686e7b665fcae915efcfd6a5664a29b7ad2688d6318864e0cb993e",
+    "iterations/v2/001-original-recovery/runs/294-shared-input-manifests/build-002.json": "9715d9a0239acfb8df353bef11ed2be1bd15269dc6d1c50366c60e078be71ebc",
+    "research/v2/proof-manifests/sha256/e7d5c3dcaf6f2355fb1e2ddc405b866ab3a8df01a2c09739143d8d693ec51732.json": "e7d5c3dcaf6f2355fb1e2ddc405b866ab3a8df01a2c09739143d8d693ec51732",
+    "scripts/research/pilot-v2-shared-manifests-294.py": "6c1ae5d690fd60199a13eced33ecc6ba55a5cc54e627fd35b723a387e391af84",
+    "scripts/research/v2_shared_manifests.py": "1ac2e3e7d15dfb00968e2d90e776ee04a13098c8a1e033ef0b554c957e31ad1e",
+    "scripts/research/test_v2_shared_manifests.py": "37eefadfcd51c5d9ab9c599d8c5d78d5c761028e9e26337371dcf634f902f43e",
+    "scripts/research/v2_proof_cache.py": "5d8b1b0d1405747d265636276bc39c6db7eeb1394a4dcab00e81f3db8b41bf6f"
+  },
+  "shared_manifest": {
+    "path": "research/v2/proof-manifests/sha256/e7d5c3dcaf6f2355fb1e2ddc405b866ab3a8df01a2c09739143d8d693ec51732.json",
+    "sha256": "e7d5c3dcaf6f2355fb1e2ddc405b866ab3a8df01a2c09739143d8d693ec51732"
+  },
+  "source_pins": 380,
+  "captured_builds": 2,
+  "legacy_and_reference_pin_sets_identical": true,
+  "execution_receipts_distinct": true,
+  "legacy_reports_modified": false,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "reader_counts": {
+    "unique_files": 381,
+    "unique_sha256": 380,
+    "unique_json": 0,
+    "manifest_documents": 1,
+    "raw_sha256": 1
+  },
+  "inline_pin_payload_bytes": 118624,
+  "shared_pin_payload_bytes": 59847,
+  "pin_payload_bytes_saved": 58777,
+  "pin_payload_saving_percent": 49.55,
+  "metadata_finalization": {
+    "path": "local/experiments/v2-shared-input-manifests-294/pre-finalization-summary.json",
+    "sha256": "71fb40edc2fda18d620a9bacb4941b26a45ce231c0111505d3b94d0de2a7d47b",
+    "reason": "Finalize helper validation and test coverage; captured proof artifacts unchanged"
+  },
+  "limits": [
+    "Only repeated input/source closures are shared here, not ownership or COFF schemas",
+    "Frozen legacy reports remain in Git; this pilot adds files rather than shrinking existing history"
+  ]
+}

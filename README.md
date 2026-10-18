@@ -65,6 +65,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-v2.ps1
 - [Индекс бинарников](research/binary-index/README.md) — первая точка поиска оригинального кода.
 - [Дополнительные диапазоны](research/binary-index/supplemental/README.md) — навигация по пропускам, с явным статусом доказательств.
 - [Отложенные проверки](docs/recovery-validation-backlog.md) — обязательная очередь до итоговой приёмки.
+- [Общие манифесты входов](research/v2/proof-manifests/README.md) — повторяющиеся SHA хранятся один раз, результаты прогонов отдельно.
 - [Автоматизация восстановления](docs/recovery-automation.md) — сборка, обратная связь и очередь зависимостей.
 - [Сохранённая незавершённая работа](docs/recovery-wip.md).
 - [Документация](docs/README.md) и [правила исполнителей](docs/agents.md).

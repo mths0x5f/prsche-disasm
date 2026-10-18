@@ -7,7 +7,12 @@ checkpoint ниже относятся к другой wholearchive диагно
 
 ## Общие данные и отдельные результаты прогонов
 
-Предложение для следующей версии формата, пока не реализовано:
+Run294 реализует общий input/source reader и pilot. Toolchain/symbol/owner
+форматы пока не переносились. Результат:380повторныхpins двухотчётов хранятся
+одинраз;pinpayload118624→59847B(-49.55%),9tests/independentauditPASS.
+FrozenlegacyJSONнеизменены. [Контракт manifest](../research/v2/proof-manifests/README.md).
+
+Принципы и оставшиеся расширения:
 - Общие неизменяемые манифесты для source/input closure, original module facts,
   toolchain и COFF-symbol snapshots; идентификатор включает SHA содержимого.
 - Новый run хранит ссылку+SHA базового манифеста, свою дельту, результаты и receipts.
@@ -19,9 +24,9 @@ checkpoint ниже относятся к другой wholearchive диагно
   явно сохранять режим и проверять ссылки. Нельзя молча менять байты ради dedup.
 - Переиспользовать existing ProofCache/symbol caches. Они сокращают чтения;
   shared manifests дополнительно сокращают дублирование хранения.
-- Frozen legacy reports не мигрировать массово. Сначала reader с поддержкой старого
-  inline и нового reference форматов, затем один новый pilot packet и проверки
-  missing/corrupt/changed manifest. Только после этого переключать новые producers.
+- Frozen legacy reports не мигрировать массово. Reader/pilot294 и проверки
+  missing/corrupt/changed manifest готовы. Новые source/input producers теперь
+  могут использовать helper; legacy-only validators менять явно при их переносе.
 
 Наблюдение:651 top-level JSON в runs,167213224bytes; это не оценка объёма полностью
 устранимых повторов. Повторные фактические выполнения остаются отдельными receipts,

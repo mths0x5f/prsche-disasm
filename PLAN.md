@@ -1,5 +1,20 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-18, Run294: общий формат повторяющихся input/source pins готов.
+- v2_shared_manifests.py:immutable content-addressedbase,delta/removals,
+  legacyreader,explicitraw/crlf-to-lf modes,existingProofCache;9tests PASS.
+- Дваcaptured293buildreports используютодин380-pin manifest;
+ 118624→59847B pinpayload (-49.55%). Receiptsраздельные;legacyJSONнеизменены.
+  Sharedbase читается/разбираетсяодинраз;380sourcehashes вычисляютсяодинраз.
+- Независимый294audit PASS;новыхcompiler/nativecommands нет. Это экономия
+  повторногоpayload вновыхотчётах, неуменьшениевсегоGitrepo/истории.
+- Новыеproducers использоватьсобщимreader; старыеcollectors непереключены
+  автоматически. Toolchain/COFF/ownership схемы отдельны, нецентрализованы294.
+Главнаяцельтаже:compile/runoriginalgame. Следующий connectedpacket по293:
+00628960storage/init и00423840/00482e50/00476170. Активныхагентовнет.
+
+Предыдущая игровая сборка:
+
 Checkpoint 2026-10-18, Run293: свежий source game-target build.
 - Все151 C++TUs в8actualprojects скомпилированы;380source/dependency pins до/после
   совпали. Линковка269names/305refs,0compilererrors/0otherlinkerrors;noEXE.
@@ -20,9 +35,8 @@ Kong: пользователь предложил пилот, но APIkey/localL
 Ближайшийconnectedpacket: trace00628960storage/init иcallee00423840(67B),
 00482e50(69B),00476170(169B) поиндексу/actualconsumers до реализации.
 
-Оптимизация формата (предложение, не внедрено): общие immutable manifests
-для повторных inputs/toolchain/symbols, run-specific delta+receipts; legacyJSON
-сохранить. Сначала backward-compatible reader/pilot, затем новыеproducers.
+Оптимизация формата294: sharedinput/source manifests+reader+pilot внедрены;
+legacyJSON сохранены. Toolchain/symbols/ownership остаются отдельнымследующимшагом.
 Подробности — docs/recovery-automation.md.
 
 Предыдущая интеграция:
