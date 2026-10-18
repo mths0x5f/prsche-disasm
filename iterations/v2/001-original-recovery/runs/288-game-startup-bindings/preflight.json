@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "kind": "bounded_game_startup_binding_preflight",
+  "input_sha256": {
+    "local\\game\\Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research\\v2\\binaries\\Porsche.exe-ddd748fdbe6d\\disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research\\v2\\binaries\\Porsche.exe-ddd748fdbe6d\\functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "iterations\\v2\\001-original-recovery\\runs\\285-normal-entry-replay\\cached-001.json": "d57e7ec59bc87e98b34b5f92bf5cabd0649d1ce9fc1a8104156d41701706ba10",
+    "iterations\\v2\\001-original-recovery\\source\\recovered\\functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\application_main.cpp": "92f2fc350ad5b103a951cb0ed7e72028e97db411b5776a2186c6ea249d468a61",
+    "iterations\\v2\\001-original-recovery\\source\\include\\porsche\\application_main.hpp": "e6d177a4e6a340affc66f4570c8271ce1c3d8069d6dfb5d37fe8f1f40be34c0f",
+    "iterations\\v2\\001-original-recovery\\runs\\274-shared-heap-union\\summary.json": "f072346146bf867fba52188d4362447e8656f28a6bec4a18a481082af193cbff",
+    "local\\experiments\\v2-native-union-274\\objects.rsp": "aa556a6b86e14c444a60c35da08d320276a9b22b2d233ba68daff63d9adc71f9",
+    "local\\experiments\\v2-native-union-274\\porsche_native_union_candidates.lib": "6f1969657832218baba120c1adc8009395f30403ac91ce73c4252de362e6eaa8",
+    "local\\experiments\\v2-declaration-compat-184\\full\\0059eb20.cpp": "b26365aa4c1884674b261ab3e9637e9b8a414891764312b13288fe34538b3b9f"
+  },
+  "original_app_main_range": [
+    "004b6a50",
+    "004b6fe5"
+  ],
+  "actual_link_attempt": "285 cached-001; no new link or compile",
+  "unresolved_direct_services": [
+    {
+      "name": "application_main_front_end_display",
+      "unresolved_actual_coff_symbol": "?application_main_front_end_display@porsche@@YAXPAI@Z",
+      "original_target_va": "004b4da0",
+      "original_call_pc": [
+        "004b6cc4"
+      ],
+      "original_index_body_bytes": 1078,
+      "canonical_declaration": "void __cdecl application_main_front_end_display(std::uint32_t* stream);",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00412030",
+      "unresolved_actual_coff_symbol": "?application_main_function_00412030@porsche@@YAXXZ",
+      "original_target_va": "00412030",
+      "original_call_pc": [
+        "004b6f07"
+      ],
+      "original_index_body_bytes": 91,
+      "canonical_declaration": "void __cdecl application_main_function_00412030();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00413ea0",
+      "unresolved_actual_coff_symbol": "?application_main_function_00413ea0@porsche@@YAXXZ",
+      "original_target_va": "00413ea0",
+      "original_call_pc": [
+        "004b6dbe"
+      ],
+      "original_index_body_bytes": 296,
+      "canonical_declaration": "void __cdecl application_main_function_00413ea0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00414eb0",
+      "unresolved_actual_coff_symbol": "?application_main_function_00414eb0@porsche@@YAXXZ",
+      "original_target_va": "00414eb0",
+      "original_call_pc": [
+        "004b6db4"
+      ],
+      "original_index_body_bytes": 196,
+      "canonical_declaration": "void __cdecl application_main_function_00414eb0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_004152e0",
+      "unresolved_actual_coff_symbol": "?application_main_function_004152e0@porsche@@YAXXZ",
+      "original_target_va": "004152e0",
+      "original_call_pc": [
+        "004b6ec8"
+      ],
+      "original_index_body_bytes": 2674,
+      "canonical_declaration": "void __cdecl application_main_function_004152e0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00425780",
+      "unresolved_actual_coff_symbol": "?application_main_function_00425780@porsche@@YAXXZ",
+      "original_target_va": "00425780",
+      "original_call_pc": [
+        "004b6e00"
+      ],
+      "original_index_body_bytes": 135,
+      "canonical_declaration": "void __cdecl application_main_function_00425780();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_004640b0",
+      "unresolved_actual_coff_symbol": "?application_main_function_004640b0@porsche@@YAXXZ",
+      "original_target_va": "004640b0",
+      "original_call_pc": [
+        "004b6db9"
+      ],
+      "original_index_body_bytes": 564,
+      "canonical_declaration": "void __cdecl application_main_function_004640b0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00467740",
+      "unresolved_actual_coff_symbol": "?application_main_function_00467740@porsche@@YAXXZ",
+      "original_target_va": "00467740",
+      "original_call_pc": [
+        "004b6fcf"
+      ],
+      "original_index_body_bytes": 141,
+      "canonical_declaration": "void __cdecl application_main_function_00467740();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00471b60",
+      "unresolved_actual_coff_symbol": "?application_main_function_00471b60@porsche@@YAXXZ",
+      "original_target_va": "00471b60",
+      "original_call_pc": [
+        "004b6daf"
+      ],
+      "original_index_body_bytes": 11,
+      "canonical_declaration": "void __cdecl application_main_function_00471b60();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_thunk_target_00487e20_unowned"
+    },
+    {
+      "name": "application_main_function_0048cdf0",
+      "unresolved_actual_coff_symbol": "?application_main_function_0048cdf0@porsche@@YAXXZ",
+      "original_target_va": "0048cdf0",
+      "original_call_pc": [
+        "004b6ddf",
+        "004b6dfb"
+      ],
+      "original_index_body_bytes": 1364,
+      "canonical_declaration": "void __cdecl application_main_function_0048cdf0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_004a54b0",
+      "unresolved_actual_coff_symbol": "?application_main_function_004a54b0@porsche@@YAXXZ",
+      "original_target_va": "004a54b0",
+      "original_call_pc": [
+        "004b6fca"
+      ],
+      "original_index_body_bytes": 44,
+      "canonical_declaration": "void __cdecl application_main_function_004a54b0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_partial_callees_0048ff30_unowned_and_global_00628c70"
+    },
+    {
+      "name": "application_main_function_004a54e0",
+      "unresolved_actual_coff_symbol": "?application_main_function_004a54e0@porsche@@YAXXZ",
+      "original_target_va": "004a54e0",
+      "original_call_pc": [
+        "004b6fd4"
+      ],
+      "original_index_body_bytes": 5,
+      "canonical_declaration": "void __cdecl application_main_function_004a54e0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_thunk_target_0059eb20_unowned"
+    },
+    {
+      "name": "application_main_function_004a88a0",
+      "unresolved_actual_coff_symbol": "?application_main_function_004a88a0@porsche@@YAXXZ",
+      "original_target_va": "004a88a0",
+      "original_call_pc": [
+        "004b6daa"
+      ],
+      "original_index_body_bytes": 471,
+      "canonical_declaration": "void __cdecl application_main_function_004a88a0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_004acb80",
+      "unresolved_actual_coff_symbol": "?application_main_function_004acb80@porsche@@YAXXZ",
+      "original_target_va": "004acb80",
+      "original_call_pc": [
+        "004b6da5"
+      ],
+      "original_index_body_bytes": 141,
+      "canonical_declaration": "void __cdecl application_main_function_004acb80();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_004b68f0",
+      "unresolved_actual_coff_symbol": "?application_main_function_004b68f0@porsche@@YAXXZ",
+      "original_target_va": "004b68f0",
+      "original_call_pc": [
+        "004b6f2f"
+      ],
+      "original_index_body_bytes": 337,
+      "canonical_declaration": "void __cdecl application_main_function_004b68f0();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_function_00563d30",
+      "unresolved_actual_coff_symbol": "?application_main_function_00563d30@porsche@@YAXXZ",
+      "original_target_va": "00563d30",
+      "original_call_pc": [
+        "004b6fc5"
+      ],
+      "original_index_body_bytes": 222,
+      "canonical_declaration": "void __cdecl application_main_function_00563d30();",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_game_setup",
+      "unresolved_actual_coff_symbol": "?application_main_game_setup@porsche@@YIHPAUApplicationSetupContext@1@PAXPBDPAII@Z",
+      "original_target_va": "004d3420",
+      "original_call_pc": [
+        "004b6c5b"
+      ],
+      "original_index_body_bytes": 8589,
+      "canonical_declaration": "std::int32_t __fastcall application_main_game_setup( ApplicationSetupContext* context,void* unused_edx,const char* name, std::uint32_t* stream,std::uint32_t zero);",
+      "accepted_exact_owner": null,
+      "disposition": "hold_WIP_candidate_only_effect_contracts_open"
+    },
+    {
+      "name": "application_main_log",
+      "unresolved_actual_coff_symbol": "?application_main_log@porsche@@YAXPBD@Z",
+      "original_target_va": "005a177b",
+      "original_call_pc": [
+        "004b6b13"
+      ],
+      "original_index_body_bytes": 65,
+      "canonical_declaration": "void __cdecl application_main_log(const char* text);",
+      "accepted_exact_owner": null,
+      "disposition": "owned_by_parallel_locale_run287_outside_this_packet"
+    },
+    {
+      "name": "application_main_network_poll",
+      "unresolved_actual_coff_symbol": "?application_main_network_poll@porsche@@YAXII@Z",
+      "original_target_va": "0048dcb0",
+      "original_call_pc": [
+        "004b6b76"
+      ],
+      "original_index_body_bytes": 1250,
+      "canonical_declaration": "void __cdecl application_main_network_poll(std::uint32_t a,std::uint32_t b);",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    },
+    {
+      "name": "application_main_network_wait",
+      "unresolved_actual_coff_symbol": "?application_main_network_wait@porsche@@YAXIIPAE@Z",
+      "original_target_va": "0048e1a0",
+      "original_call_pc": [
+        "004b6bc0"
+      ],
+      "original_index_body_bytes": 1357,
+      "canonical_declaration": "void __cdecl application_main_network_wait(std::uint32_t a,std::uint32_t b,std::uint8_t* state);",
+      "accepted_exact_owner": null,
+      "disposition": "hold_no_accepted_original_body"
+    }
+  ],
+  "ready_bridge_count": 0,
+  "next_bounded_clusters": [
+    {
+      "wrapper": "00471b60",
+      "wrapper_body_bytes": 11,
+      "required_body": "00487e20",
+      "required_body_bytes": 87,
+      "entry_abi": "no stack args; wrapper loads ECX from [00628960] and tail-jumps; callee RET 0",
+      "original_direct_callees": [
+        "004898f0",
+        "00476170",
+        "00423840",
+        "00482e50"
+      ],
+      "hold": "object at 00628960, +14/+1c fields and callee effects; no accepted/274 COFF owner"
+    },
+    {
+      "wrapper": "004a54e0",
+      "wrapper_body_bytes": 5,
+      "required_body": "0059eb20",
+      "required_body_bytes": 159,
+      "entry_abi": "no stack args; direct tail JMP; callee RET 0",
+      "original_direct_callees": [
+        "005678f0",
+        "0055ec30",
+        "0059ee30",
+        "005699f0"
+      ],
+      "hold": "global 006af3f4 guard, 006af3fc/indexed array, 005e4fec, 005b2148 IAT; raw 184 pseudocode exists only, no accepted/274 COFF owner"
+    },
+    {
+      "wrapper": "004a54b0",
+      "wrapper_body_bytes": 44,
+      "required_body": "0048ff30",
+      "required_body_bytes": 522,
+      "entry_abi": "no stack args; wrapper calls 0048ff30 with ECX=[00628c70]; wrapper RET 0",
+      "original_direct_callees": [
+        "004b7070",
+        "0048ff30",
+        "0059f050"
+      ],
+      "hold": "004b7070/0059f050 accepted; 0048ff30 unowned/uncompiled, 00628c70 shared state and 0048ff30 bulk destruction effects"
+    }
+  ],
+  "limits": [
+    "No original target body among the 20 has accepted exact ownership.",
+    "WIP candidate, probe stubs, and call-site declarations are not game providers.",
+    "No runtime fixture or game startup behavior is claimed."
+  ]
+}

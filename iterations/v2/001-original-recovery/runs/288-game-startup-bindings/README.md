@@ -1,0 +1,7 @@
+# Run 288 — bounded normal-entry binding preflight
+
+`py -3 scripts/research/audit-v2-game-startup-bindings-288.py` checks the 20 unresolved `app_main_004b6a50` service names in the actual Run285 cached link against original direct CALL instructions in `Porsche.exe`, the accepted function registry, and the actual Run274 COFF archive/response list. Input SHA-256 pins and the PE-verified CALL count are in `validation.json`; each actual COFF mangle, original target and CALL PC, declaration, body size, and disposition are in `preflight.json`.
+
+There are zero ready thin bridges among these 20 names: none of their original target bodies has an accepted exact owner. The `005a177b` log/printf path belongs to the separate locale Run287. Existing probe stubs and the `004d3420` setup candidate are not production game providers. No compiler, linker, native fixture, game execution, or new source body was run or claimed here.
+
+The smallest next original-algorithm cluster is `00471b60` (11-byte ECX-loading tail wrapper) and its `00487e20` (87-byte) target. Its object at `00628960`, `+14/+1c` fields, and four direct callees must be proven before a game bridge. The other short candidates are `004a54e0` → `0059eb20` (5+159 bytes, globals/IAT and four callees) and `004a54b0` → `0048ff30` (44+522 bytes, network object and broad destruction effects). No required target is in the actual Run274 archive; `0059eb20.cpp` in the Run184 raw corpus is syntax research, not an accepted implementation.
