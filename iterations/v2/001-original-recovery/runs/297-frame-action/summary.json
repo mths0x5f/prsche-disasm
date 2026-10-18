@@ -1,0 +1,56 @@
+{
+  "schema": 2,
+  "kind": "original-frame-action",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "va": "00476170",
+  "original_body_hex": "51558be95733ff8b4504897c24088b481885c90f868c000000535633db8b4d0c8b440b1c85c0745c578bcde8700500008b550c8b4c131c8d34138a410484c075368b562c85d2752f85c974068b016a01ff108b4d0cc7440b1c000000008b550cb9060000008b7c13348d04138d701cf3a58b7c2410eb0d85c9740984c075058b01ff501c8b4d0c47897c2410c7440b08000000008b550483c3383b7a180f827affffff5e5b5f5d59c3",
+  "original_body_bytes": 169,
+  "original_relocated_call": {
+    "offset": 43,
+    "operand": 44,
+    "next": 48,
+    "target": "00476710"
+  },
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-frame-action-297/objects/00476170.obj",
+      "sha256": "4efe91a3a07d7358e495e4a9d86d463e6c29e0963cba64ff94e308937c24ebd5"
+    }
+  ],
+  "game_source": "iterations/v2/001-original-recovery/runs/297-frame-action/00476170.cpp",
+  "symbols": {
+    "defined": [
+      "?invoke_00476170@FrameAction_290@porsche@@QAEXXZ"
+    ],
+    "undefined": [
+      "?update_00476710@FrameActionBoundary_297@porsche@@QAEXI@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "native_cases": 480,
+  "native_exit": 0,
+  "compiler_batches": 1,
+  "selected_attempt": "002",
+  "tool_sha256": {
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\string.h": "39767b2e1963b8ef679b62d5e27cb2d0ca1de6a6173b75389b79c9d575da92fc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memory.h": "18ca520416579183bc369c0a8e555914db5c7577075b9359173fc6bc45595560",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memcpy_s.h": "359f3ce9e84bc00c983f01d9c3375d0ca9e0ef6a42e797d16e119c62b2ef333b",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\errno.h": "c64e8df96f057fdebc0474bd765cee3ae17de34a2b1fc9d197597321f2d1e447",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstring.h": "c485f918d43f0f846d77a36eaee9e111f57bf2eec32db7d9719ff924771744c6",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stddef.h": "3f1f7eeefad270928749c89a2a2094ccc3f38829b1d8c197f6ce7483ead2284c"
+  },
+  "limits": [
+    "00476710 algorithm remains explicit external boundary; fixture controlled provider is not linked into game",
+    "Virtual destructor and update implementations remain caller-supplied boundaries",
+    "Finite valid-memory states; not whole game or arbitrary fault/DF behavior acceptance"
+  ],
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/4ada8afe4665f1b29ee1cbc5aae8cef528b31da3bf0d2f26166413d638ecf8b1.json",
+    "sha256": "4ada8afe4665f1b29ee1cbc5aae8cef528b31da3bf0d2f26166413d638ecf8b1"
+  }
+}

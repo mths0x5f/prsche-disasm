@@ -1,0 +1,38 @@
+{
+  "schema": 2,
+  "kind": "frame-root-storage-trace",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "cell_va": "00628960",
+  "direct_footprint_bytes": 4,
+  "initial_hex": "00000000",
+  "direct_consumer_count": 27,
+  "direct_HIGHLOW_count": 27,
+  "interior_HIGHLOW_count": 0,
+  "storage_definition_added": false,
+  "storage_standalone_approved": false,
+  "native_commands": 0,
+  "compiler_commands": 0,
+  "original_copy_cutpoint_cases": 5,
+  "init_chain": [
+    "00471b70:0059ef90(size=0x3c)",
+    "00471ba9:004874a0(this=allocation)",
+    "00471bae:00628960=EAX; failure00471bb5 stores0"
+  ],
+  "cleanup_chain": [
+    "00471c4b reads root",
+    "00471c5a calls00487590",
+    "00471c60 frees via0059f050",
+    "00471c6d clears root"
+  ],
+  "hold": "Unbounded REP copy from mutable00657444 to00628940 can cross root32bytes later; no <=31 source-length invariant proven",
+  "next_target": "Trace00657444 writers/005d2ac8 registration consumer; prove <=31 invariant or recover one shared original-layout storage owner covering00628940/root00628960/00628964",
+  "limits": [
+    "Cutpoints use controlled strings and prove possible memory effects, not real-game occurrence",
+    "HIGHLOW and raw byte patterns are navigation, not whole-program alias exclusion",
+    "No pointee allocation, initializer algorithm, or game behavior implemented"
+  ],
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/97241ae701c5ac78f41200d87ff5d62f55f7596bbe93e6f64f9207b23e2ccac0.json",
+    "sha256": "97241ae701c5ac78f41200d87ff5d62f55f7596bbe93e6f64f9207b23e2ccac0"
+  }
+}

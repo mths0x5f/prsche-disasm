@@ -1,5 +1,17 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint295–301:
+- [x] Четыре frame-алгоритма: 441 original bytes, 1139 native comparisons; exact
+  callbacks/reloads/forward-copy, float threshold/NaN path в пределах fixtures.
+- [x] Две read-only float-ячейки: exact8B,35 original MEM4 reads, no extra providers.
+- [x] Реальный game graph:156 TUs compiled,389 source pins,266names/302refs; batch
+  audit PASS, failed sandbox attempt сохранён. NoEXE/no game execution.
+- [ ] Root00628960/shared layout/init.296/301 показывают original TRACK_NAME path
+  без31-character invariant; отдельная фиктивная переменная не является решением.
+- [ ] Реальные virtual callees, null/invalid-memory faults, полное x87 status/control
+  поведение и full-game integration не покрыты конечными native fixtures.
+- [ ] REA pilot302: readiness/real x86 query/time сравнить, пока tool не принят.
+
 Checkpoint294:
 - [x] Sharedsource/input manifest reader,legacy+delta modes;9testsPASS.
 - [x] Twoactual293reports→one380-pinbase,distinctreceipts,49.55%lesspinpayload;

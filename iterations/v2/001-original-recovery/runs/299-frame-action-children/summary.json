@@ -1,0 +1,42 @@
+{
+  "schema": 2,
+  "kind": "original-frame-action",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "va": "00476710",
+  "original_body_hex": "8b4424045355568d14c50000000033db2bd08b410c33ed8d34d08b44d0143bc3765d5733ff8b4e348d04398b0c398a51043ad3752839581075233bcb74068b116a01ff128b4634891c3803c789580489580889580c895810895814eb0d3bcb74093ad375058b01ff501c8b46144583c7183be872b0895e145f5e5d5bc20400895e145e5d5bc20400",
+  "original_body_bytes": 136,
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-frame-action-children-299/objects/00476710.obj",
+      "sha256": "0d10cce2e5ac2a4021c9d0b9448242b6718be8412777036e5362a66105230513"
+    }
+  ],
+  "game_source": "iterations/v2/001-original-recovery/runs/299-frame-action-children/00476710.cpp",
+  "symbols": {
+    "defined": [
+      "?update_00476710@FrameActionBoundary_297@porsche@@QAEXI@Z"
+    ],
+    "undefined": [],
+    "common": [],
+    "weak": []
+  },
+  "native_cases": 648,
+  "native_exit": 0,
+  "compiler_batches": 1,
+  "selected_attempt": "001",
+  "tool_sha256": {
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stddef.h": "3f1f7eeefad270928749c89a2a2094ccc3f38829b1d8c197f6ce7483ead2284c",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc"
+  },
+  "limits": [
+    "Virtual destructor and update implementations remain caller-supplied boundaries",
+    "Finite valid-memory states; not whole game or arbitrary fault/DF behavior acceptance"
+  ],
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/ff59c32d7db702ad70f54a79fca93e8f56075a24a208619553f6b2ba06f251ac.json",
+    "sha256": "ff59c32d7db702ad70f54a79fca93e8f56075a24a208619553f6b2ba06f251ac"
+  }
+}
