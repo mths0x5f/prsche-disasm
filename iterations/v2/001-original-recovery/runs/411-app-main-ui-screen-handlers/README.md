@@ -1,4 +1,4 @@
-# Run 306 — app_main UI screen render & present handlers
+# Run 411 — app_main UI screen render & present handlers
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`:
 This run recovers the 3 heavy UI screen render and refresh handlers invoked directly by `app_main_004b6a50`:
@@ -8,14 +8,14 @@ This run recovers the 3 heavy UI screen render and refresh handlers invoked dire
 
 Total recovered PE body bytes: 3,971 bytes across 3 functions.
 
-Game sources are `app_main_ui_screen_handlers_306.cpp` and `app_main_ui_screen_handlers_306.hpp` in this directory. Actual object paths, SHA-256 values, defined/undefined i386 COFF symbols, ordered MSVC include roots, and `/sourceDependencies` files are captured in `summary.json` and validated in `validation.json`. The controlled test fixture and native differential test runner are under `local/experiments/v2-app-main-306`.
+Game sources are `app_main_ui_screen_handlers_411.cpp` and `app_main_ui_screen_handlers_411.hpp` in this directory. Actual object paths, SHA-256 values, defined/undefined i386 COFF symbols, ordered MSVC include roots, and `/sourceDependencies` files are captured in `summary.json` and validated in `validation.json`. The controlled test fixture and native differential test runner are under `local/experiments/v2-app-main-411`.
 
-`python scripts/research/experiment-v2-app-main-306.py --finalize --attempt 1` compiles with MSVC `/Od /GS- /GR- /EHsc /TP /W4`, links against the native controlled fixture, and verifies identical bit-exact behavior against the original PE bytes on a physical x86 memory slab across 10 controlled differential test cases.
-`python scripts/research/audit-v2-app-main-306.py` independently verifies all 3,971 body bytes, receipt logs, and COFF symbols.
+`python scripts/research/experiment-v2-app-main-411.py --finalize --attempt 1` compiles with MSVC `/Od /GS- /GR- /EHsc /TP /W4`, links against the native controlled fixture, and verifies identical bit-exact behavior against the original PE bytes on a physical x86 memory slab across 10 controlled differential test cases.
+`python scripts/research/audit-v2-app-main-411.py` independently verifies all 3,971 body bytes, receipt logs, and COFF symbols.
 
 ---
 
-# Запуск 306 — обработчики отрисовки и отображения экранов интерфейса app_main
+# Запуск 411 — обработчики отрисовки и отображения экранов интерфейса app_main
 
 Оригинал `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`:
 Восстановлены 3 функции подсистемы отрисовки и обновления интерфейса, вызываемые напрямую из `app_main_004b6a50`:
