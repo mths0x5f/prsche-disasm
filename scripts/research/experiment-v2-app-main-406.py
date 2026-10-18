@@ -1,10 +1,10 @@
-"""Physical x86 CPU differential test for Run 301 (app_main subsystem small cluster: 4 functions, 635 PE bytes)."""
+"""Physical x86 CPU differential test for Run 406 (app_main subsystem small cluster: 4 functions, 635 PE bytes)."""
 import argparse, hashlib, importlib.util, json, os, re, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/301-app-main-subsystem-small'
-OUT = ROOT / 'local/experiments/v2-app-main-301'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/406-app-main-subsystem-small'
+OUT = ROOT / 'local/experiments/v2-app-main-406'
 
 def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -93,7 +93,7 @@ def main(finalize, attempt):
         p = Path(p)
         if p.suffix == '.json':
             content = json.dumps(data, indent=2) + '\n'
-            p.write_text(content, encoding='utf8')
+            p.write_bytes((content).replace("\r\n", "\n").encode("utf-8"))
         else:
             p.write_bytes(data)
 
@@ -104,8 +104,8 @@ def main(finalize, attempt):
     compiler, compiler_sha = resolve_compiler(baseline)
     roots = resolve_roots(baseline, compiler)
 
-    source = pin(RUN / 'app_main_subsystem_small_301.cpp')
-    header = pin(RUN / 'app_main_subsystem_small_301.hpp')
+    source = pin(RUN / 'app_main_subsystem_small_406.cpp')
+    header = pin(RUN / 'app_main_subsystem_small_406.hpp')
     fixture = pin(OUT / 'app_main_fixture.cpp')
 
     prepare = dict(
@@ -123,7 +123,7 @@ def main(finalize, attempt):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'app_main_subsystem_small_301.obj'
+    obj = OUT / 'objects' / 'app_main_subsystem_small_406.obj'
     fixture_obj = OUT / 'objects' / 'app_main_fixture.obj'
     includes = []
     for r in roots:
@@ -190,12 +190,12 @@ def main(finalize, attempt):
     executed = run([str(exe)], native_name)
     assert executed['exit_code'] == 0, executed
 
-    coff = module('coff301', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff406', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='301-app-main-subsystem-small',
+        run='406-app-main-subsystem-small',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=['0048e6f0', '004a6960', '004a5410', '004d1a90'],
         original_selected_bytes=635,

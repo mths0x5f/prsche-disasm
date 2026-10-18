@@ -1,4 +1,4 @@
-# Run 301 — app_main input device update, audio heap logging, subsystem startup, and sound context cluster
+# Run 406 — app_main input device update, audio heap logging, subsystem startup, and sound context cluster
 
 ## English
 
@@ -11,9 +11,9 @@ This run recovers four authentic functions (635 PE body bytes) invoked directly 
 4. `004d1a90` (172 bytes): SoundContext object constructor and default sound driver setup (`SoundContext_004d1a90::init_004d1a90`). Invokes base initializer `00525e20`, zeroes 12 internal fields (`0xd4`, `0xe0`, `0xe4`, `0xe8`, `0xf8`, `0xfc`, `0x100`, `0x104`, `0x108`, `0x170`, `0x174`, `0x17c`), assigns vtable `005b683c`, allocates and constructs sub-device `005294c0` (44 bytes), copies default driver string `"Primary DirectSound Driver"` (`005e8e50`) to `device_name_10c`, and returns `this`.
 
 ### Physical x86 Verification
-- Captured machine code bytes are tested in `local/experiments/v2-app-main-301/native-fixture.exe` against the original byte sequence in an executable memory slab.
+- Captured machine code bytes are tested in `local/experiments/v2-app-main-406/native-fixture.exe` against the original byte sequence in an executable memory slab.
 - All 10 differential test cases pass bit-exact matching.
-- Validated with `scripts/research/audit-v2-app-main-301.py`.
+- Validated with `scripts/research/audit-v2-app-main-406.py`.
 
 ---
 
@@ -28,6 +28,6 @@ This run recovers four authentic functions (635 PE body bytes) invoked directly 
 4. `004d1a90` (172 байт): Конструктор объекта звукового контекста SoundContext и настройка драйвера (`SoundContext_004d1a90::init_004d1a90`). Вызывает базовый инициализатор `00525e20`, обнуляет 12 полей (`0xd4`, `0xe0`, `0xe4`, `0xe8`, `0xf8`, `0xfc`, `0x100`, `0x104`, `0x108`, `0x170`, `0x174`, `0x17c`), устанавливает vtable `005b683c`, выделяет и конструирует подустройство `005294c0` (44 байта), копирует имя устройства по умолчанию `"Primary DirectSound Driver"` (`005e8e50`) в `device_name_10c` и возвращает `this`.
 
 ### Проверка на реальном процессоре x86
-- Байт-в-байт сверка оригинальных инструкций в исполняемом слэбе памяти `local/experiments/v2-app-main-301/native-fixture.exe`.
+- Байт-в-байт сверка оригинальных инструкций в исполняемом слэбе памяти `local/experiments/v2-app-main-406/native-fixture.exe`.
 - Все 10 дифференциальных тестов пройдены успешно без расхождений.
-- Проверено независимым скриптом аудита `scripts/research/audit-v2-app-main-301.py`.
+- Проверено независимым скриптом аудита `scripts/research/audit-v2-app-main-406.py`.
