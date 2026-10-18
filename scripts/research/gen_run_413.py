@@ -1,9 +1,9 @@
-"""Generate complete Run 308 fixture and experiment files."""
+"""Generate complete Run 413 fixture and experiment files."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 
-FIXTURE_CPP = r"""#include "app_main_render_screen_driver_308.hpp"
+FIXTURE_CPP = r"""#include "app_main_render_screen_driver_413.hpp"
 #include <windows.h>
 #include <cstdint>
 #include <cstddef>
@@ -853,10 +853,10 @@ extern "C" void entry() {
 """
 
 def main():
-    exp_dir = ROOT / "local/experiments/v2-app-main-308"
+    exp_dir = ROOT / "local/experiments/v2-app-main-413"
     exp_dir.mkdir(parents=True, exist_ok=True)
     fix_path = exp_dir / "app_main_fixture.cpp"
-    fix_path.write_text(FIXTURE_CPP, encoding="utf-8")
+    fix_path.write_bytes((FIXTURE_CPP).replace("\r\n", "\n").encode("utf-8"))
     print(f"Generated {fix_path}")
 
 if __name__ == "__main__":

@@ -6,8 +6,8 @@ import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/308-app-main-render-screen-driver'
-OUT = ROOT / 'local/experiments/v2-app-main-308'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/413-app-main-render-screen-driver'
+OUT = ROOT / 'local/experiments/v2-app-main-413'
 
 
 def sha(p):
@@ -47,8 +47,8 @@ def main():
     pe_bytes = pe_read(original, 0x004a4a70, 2424)
     assert len(pe_bytes) == 2424
 
-    cof = module('coff308audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
-    obj = OUT / 'objects/app_main_render_screen_driver_308.obj'
+    cof = module('coff413audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    obj = OUT / 'objects/app_main_render_screen_driver_413.obj'
     symbols = cof.coff_symbols(obj)
     assert '?render_screen_driver_004a4a70@porsche@@YAXH@Z' in symbols['defined']
 
