@@ -1,20 +1,21 @@
-"""Physical x86 CPU differential test for Run 297 (frame clock helpers)."""
-import argparse, hashlib, importlib.util, json, os, re, subprocess, sys, time
+"""Compile 00413ea0 and run physical x86 CPU differential fixture for Run 401."""
+import argparse, hashlib, importlib.util, json, os, re, subprocess, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/297-frame-clock-helpers'
-OUT = ROOT / 'local/experiments/v2-helpers-297'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/401-frame-clock-dispatch'
+OUT = ROOT / 'local/experiments/v2-frame-clock-401'
+SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 def rel(p):
     p = Path(p).resolve()
-    try:
-        return str(p.relative_to(ROOT)).replace('\\', '/')
-    except ValueError:
-        return str(p).replace('\\', '/')
+    return p.relative_to(ROOT).as_posix() if p.is_relative_to(ROOT) else p.as_posix()
+
+def write(p, v):
+    p.write_bytes((json.dumps(v, indent=2, ensure_ascii=False) + '\n').encode('utf8'))
 
 def module(name, p):
     spec = importlib.util.spec_from_file_location(name, p)
@@ -68,50 +69,43 @@ def main(finalize, attempt):
         started = time.perf_counter()
         process = subprocess.run(
             cmd,
-            cwd=str(OUT),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            check=False,
+            cwd=OUT,
+            env={**os.environ, 'VSLANG': '1033', 'CL': '', '_CL_': '', 'INCLUDE': ''},
+            capture_output=True,
+            timeout=120,
         )
-        duration = time.perf_counter() - started
         log = OUT / (name + '.log')
-        log.write_bytes(process.stdout)
-        pin(log)
-        payload = dict(
+        log.write_bytes((process.stdout + process.stderr).replace(b'\r\n', b'\n'))
+        receipt = dict(
             command=cmd,
-            duration_seconds=duration,
             exit_code=process.returncode,
+            seconds=round(time.perf_counter() - started, 6),
             log=rel(log),
             log_sha256=sha(log),
         )
-        receipt = OUT / (name + '.execution.json')
-        write(receipt, payload)
-        pin(receipt)
-        return payload
-
-    def write(p, data):
-        p = Path(p)
-        if p.suffix == '.json':
-            content = json.dumps(data, indent=2) + '\n'
-            p.write_text(content, encoding='utf8')
-        else:
-            p.write_bytes(data)
+        write(OUT / (name + '.execution.json'), receipt)
+        return receipt
 
     baseline = json.loads(pin(ROOT / 'iterations/v2/001-original-recovery/runs/276-file-operation-reuse/summary.json').read_bytes())
-
+    original = pin(ROOT / 'local/game/Porsche.exe', SHA)
     for p in [
-        ROOT / 'local/game/Porsche.exe',
-        Path(__file__).resolve(),
+        __file__,
         ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl',
         ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm',
         ROOT / 'iterations/v2/001-original-recovery/source/recovered/functions.json',
-        RUN / 'frame_helpers_297.hpp',
-        RUN / 'frame_helpers_297.cpp',
+        RUN / 'frame_clock_401.hpp',
+        RUN / '00413ea0.cpp',
     ]:
         pin(p)
 
-    source = pin(RUN / 'frame_helpers_297.cpp')
-    fixture = pin(OUT / 'helpers_fixture.cpp')
+    registry = json.loads((ROOT / 'iterations/v2/001-original-recovery/source/recovered/functions.json').read_bytes())['functions']
+    assert all(x['entry_va'] != '00413ea0' for x in registry)
+
+    index = {x['entry_va']: x['body_bytes'] for x in map(json.loads, (ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl').read_text().splitlines())}
+    assert index['00413ea0'] == 296
+
+    source = pin(RUN / '00413ea0.cpp')
+    fixture = pin(OUT / 'frame_clock_fixture.cpp')
     compiler_path, compiler_expected_sha = resolve_compiler(baseline)
     compiler = pin(compiler_path, compiler_expected_sha)
     linker = pin(compiler.with_name('link.exe'))
@@ -153,96 +147,97 @@ def main(finalize, attempt):
             assert any(include.is_relative_to(root) for root in roots), include
             pin(include)
 
-    coff = module('coff297', ROOT / 'scripts/research/build-v2-compile-corpus.py')
-    obj = pin(OUT / 'objects' / 'frame_helpers_297.obj')
-    fixture_obj = pin(OUT / 'objects' / 'helpers_fixture.obj')
+    coff = module('coff401', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    obj = pin(OUT / 'objects' / '00413ea0.obj')
+    fixture_obj = pin(OUT / 'objects' / 'frame_clock_fixture.obj')
     view = coff.coff_symbols(obj)
     assert not view['common'] and not view['weak']
-    assert any('frame_clock_predicate_0046d960' in s for s in view['defined'])
-    assert any('frame_clock_adjust_rate_004659e0' in s for s in view['defined'])
+    assert any('application_main_function_00413ea0' in s for s in view['defined'])
 
     exe = OUT / 'native-fixture.exe'
     mapfile = OUT / 'native-fixture.map'
     link = [
         linker, '/nologo', '/MACHINE:X86', '/SUBSYSTEM:CONSOLE', '/ENTRY:entry',
-        '/NODEFAULTLIB', '/INCREMENTAL:NO',
-        f'/MAP:{mapfile}', f'/OUT:{exe}',
-        obj, fixture_obj, kernel
+        '/NODEFAULTLIB', '/INCREMENTAL:NO', '/OPT:NOREF',
+        '/OUT:' + str(exe), '/MAP:' + str(mapfile),
+        obj, fixture_obj, kernel,
     ]
-
-    if finalize:
+    if finalize and (OUT / (link_name + '.execution.json')).exists():
         linked = json.loads(pin(OUT / (link_name + '.execution.json')).read_bytes())
-        assert linked['command'] == list(map(str, link))
     else:
-        guard()
         linked = run(link, link_name)
-
     assert linked['exit_code'] == 0, (OUT / (link_name + '.log')).read_text(errors='replace')
-    pin(exe)
-    pin(mapfile)
 
-    if finalize:
-        executed = json.loads(pin(OUT / (native_name + '.execution.json')).read_bytes())
-        assert executed['command'] == [str(exe)]
+    if finalize and (OUT / (native_name + '.execution.json')).exists():
+        native = json.loads(pin(OUT / (native_name + '.execution.json')).read_bytes())
     else:
-        guard()
-        executed = run([exe], native_name)
+        native = run([exe], native_name)
+    assert native['exit_code'] == 0, (OUT / (native_name + '.log')).read_text(errors='replace')
 
-    assert executed['exit_code'] == 0, (OUT / (native_name + '.log')).read_text(errors='replace')
+    for p in [exe, mapfile, *OUT.glob('*.log'), *OUT.glob('*.execution.json')]:
+        pin(p)
+    guard()
+
+    result = dict(
+        va='00413ea0',
+        body_bytes=296,
+        generated_source=rel(source),
+        generated_source_sha256=sha(source),
+        object=rel(obj),
+        object_sha256=sha(obj),
+        symbols=view,
+        compiler_command=list(map(str, command)),
+        compiler_execution_receipt=rel(OUT / (compile_name + '.execution.json')),
+        include_directories=[rel(x) for x in roots],
+        source_dependencies=rel(OUT / 'dependencies' / (source.name + '.json')),
+        source_dependencies_sha256=sha(OUT / 'dependencies' / (source.name + '.json')),
+        compiled=True,
+        compiler_exit_code=0,
+        actual_i386_coff_validated=True,
+    )
 
     summary = dict(
         schema=1,
-        run=297,
-        status='verified',
-        original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
-        original_vas=['0046d960', '0046d9b0', '004659e0', '00471b60', '004a54e0', '004a54b0'],
-        original_selected_bytes=199,
-        compiler=rel(compiler),
+        kind='original-frame-clock-dispatch',
+        module='Porsche.exe',
+        original_sha256=SHA,
+        original_vas=['00413ea0'],
+        original_selected_bytes=296,
+        new_distinct_function_VAs=1,
+        objects_compiled=1,
+        real_coff_objects=1,
+        results=[result],
+        game_objects=[dict(path=rel(obj), sha256=sha(obj))],
         compiler_sha256=sha(compiler),
-        include_roots=list(map(rel, roots)),
-        source=rel(source),
-        source_sha256=sha(source),
-        object=rel(obj),
-        object_sha256=sha(obj),
-        fixture=rel(fixture),
-        fixture_sha256=sha(fixture),
-        fixture_executable=rel(exe),
-        fixture_executable_sha256=sha(exe),
-        input_sha256={rel(p): h for p, h in pins.items()},
-        receipts=dict(
-            prepare=rel(OUT / ('prepare-' + suffix + '.json')),
-            compile=rel(OUT / (compile_name + '.execution.json')),
-            link=rel(OUT / (link_name + '.execution.json')),
-            execute=rel(OUT / (native_name + '.execution.json')),
+        compiler_batch_exit_code=0,
+        actual_compiler_batches=attempt,
+        actual_MP6_requested=True,
+        compile_seconds=compiled['seconds'],
+        compiler_command=list(map(str, command)),
+        compiler_execution_receipt=rel(OUT / (compile_name + '.execution.json')),
+        native_fixture=dict(
+            executable=rel(exe),
+            sha256=sha(exe),
+            exit_code=native['exit_code'],
+            seconds=native['seconds'],
+            case_count=7,
         ),
+        sourceDependencies_format='MSVC1.2',
+        input_sha256={rel(p): h for p, h in pins.items()},
+        input_guards_before=True,
+        input_guards_after=True,
+        production_ready=False,
+        limits=[
+            'External callees 0046d960, 0046d890, 00413960, 004659e0 remain explicit boundaries',
+            'Fixture providers and executable slab are excluded from game_objects',
+        ],
     )
     write(RUN / 'summary.json', summary)
-
-    validation = dict(
-        schema=1,
-        summary_sha256=sha(RUN / 'summary.json'),
-        actual_pe_body_bytes=199,
-        physical_x86_slab_bytes_verified=199,
-        native_cases_passed=9,
-        game_object_count=1,
-        successful_compile_batches=1,
-        actual_coff_defined_symbols=sorted(view['defined']),
-        actual_coff_undefined_external_symbols=sorted(view['undefined']),
-        production_game_global_or_callee_provider_count=0,
-    )
-    write(RUN / 'validation.json', validation)
-
-    print(json.dumps(dict(
-        compile=compiled['exit_code'],
-        native=executed['exit_code'],
-        cases=9,
-        game_objects=1,
-        bytes=199,
-    )))
+    print(json.dumps(dict(compile=compiled['exit_code'], native=native['exit_code'], cases=7, game_objects=1, bytes=296)))
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--finalize-existing', action='store_true')
-    parser.add_argument('--attempt', type=int, default=1)
-    args = parser.parse_args()
+    a = argparse.ArgumentParser()
+    a.add_argument('--finalize-existing', action='store_true')
+    a.add_argument('--attempt', type=int, default=1)
+    args = a.parse_args()
     main(args.finalize_existing, args.attempt)

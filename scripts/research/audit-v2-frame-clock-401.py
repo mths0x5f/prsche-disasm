@@ -1,10 +1,10 @@
-"""Independent acceptance audit for 00413ea0 frame-clock game object (Run 296)."""
+"""Independent acceptance audit for 00413ea0 frame-clock game object (Run 401)."""
 import hashlib, importlib.util, json, re, struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/296-frame-clock-dispatch'
-OUT = ROOT / 'local/experiments/v2-frame-clock-296'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/401-frame-clock-dispatch'
+OUT = ROOT / 'local/experiments/v2-frame-clock-401'
 
 def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -60,7 +60,7 @@ def main():
         if x['entry_va'] in reg_vas
     )
 
-    cof = module('coff296audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    cof = module('coff401audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     row = summary['results'][0]
     p = ROOT / row['object']
     assert sha(p) == row['object_sha256']
@@ -91,7 +91,7 @@ def main():
         production_game_global_or_callee_provider_count=0,
     )
     (RUN / 'validation.json').write_bytes((json.dumps(validation, indent=2) + '\n').encode('utf8'))
-    print('Run 296 verified: PE 296B, 1 body, physical x86 slab verified, 7 differential cases passed, receipts verified')
+    print('Run 401 verified: PE 296B, 1 body, physical x86 slab verified, 7 differential cases passed, receipts verified')
 
 if __name__ == '__main__':
     main()
