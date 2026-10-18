@@ -1,0 +1,172 @@
+{
+  "schema": 1,
+  "run": "311-frame-service-callees",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_vas": [
+    "00423840",
+    "00482e50",
+    "00476170"
+  ],
+  "original_selected_bytes": 305,
+  "original_bodies": [
+    {
+      "va": "00423840",
+      "bytes": 67,
+      "body_sha256": "8b75f5520e19b4380d2165f85398dfb9d39e71290de039430625dd5d7f6ef911"
+    },
+    {
+      "va": "00482e50",
+      "bytes": 69,
+      "body_sha256": "ebc3fb1a31138079e8fc8ff47b5a7e6309bd69c607b7e14b27fb4bf763d1446b"
+    },
+    {
+      "va": "00476170",
+      "bytes": 169,
+      "body_sha256": "0a4456508d1f9ad2a42da22096714106580b57fa5b16aa299fe2644f515b5d3e"
+    }
+  ],
+  "original_scalars": [
+    {
+      "va": "005b47d8",
+      "raw": "0000fa45",
+      "float_value": 8000.0
+    },
+    {
+      "va": "005b2764",
+      "raw": "00401c46",
+      "float_value": 10000.0
+    }
+  ],
+  "storage_cell": {
+    "va": "00628960",
+    "bytes": 4,
+    "writers": [
+      "00471bae",
+      "00471bb5",
+      "00471c6d"
+    ],
+    "owners": [
+      "00471b70",
+      "00471c40"
+    ],
+    "note": "pointer cell written only by the initialiser 00471b70 (two stores) and the teardown 00471c40 (one store); neither owner is recovered in this run"
+  },
+  "compiler": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx86/x86/cl.exe",
+  "compiler_sha256": "aa25483dec4821a189e494689ff8b619d99224328e290dafd790a96527b568b3",
+  "include_roots": [
+    "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+    "iterations/v2/001-original-recovery/runs/311-frame-service-callees",
+    "iterations/v2/001-original-recovery/runs/290-frame-service-cluster"
+  ],
+  "source": "iterations/v2/001-original-recovery/runs/311-frame-service-callees/frame_service_callees_311.cpp",
+  "source_sha256": "4b89f7a3e233cbc0c3d522173339bce367a792f64819f3721a40c9f5d75a3c43",
+  "header": "iterations/v2/001-original-recovery/runs/311-frame-service-callees/frame_service_callees_311.hpp",
+  "header_sha256": "9495e36b63ed1c5a9160ac11877bb85fdd48fdb12d11f22c4a810adf2d3e28eb",
+  "consumer_header": "iterations/v2/001-original-recovery/runs/290-frame-service-cluster/frame_service_290.hpp",
+  "consumer_header_sha256": "78ad66e4302586731fc7fbda65a7ec6729556b5bf67567cf073bf74b13147ec6",
+  "fixture": "local/experiments/v2-frame-service-311/frame_service_fixture.cpp",
+  "fixture_sha256": "700473f29738cc6fab452bbcf71c7c0ae0b3b682baa4899749f8e050ffce5e9f",
+  "symbols": {
+    "defined": [
+      "?advance_00423840@FrameIterator_290@porsche@@QAEXXZ",
+      "?frame_service_root_00628960@porsche@@3IA",
+      "?invoke_00476170@FrameAction_290@porsche@@QAEXXZ",
+      "?invoke_00482e50@FrameTail_290@porsche@@QAEXXZ"
+    ],
+    "undefined": [
+      "?prepare_00476710@FrameActionContext_310@porsche@@QAEXI@Z",
+      "__fltused",
+      "_g_frame_tail_delta_005b2764",
+      "_g_frame_tail_limit_005b47d8"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "functions": [
+    "?advance_00423840@FrameIterator_290@porsche@@QAEXXZ",
+    "?frame_service_root_00628960@porsche@@3IA",
+    "?invoke_00476170@FrameAction_290@porsche@@QAEXXZ",
+    "?invoke_00482e50@FrameTail_290@porsche@@QAEXXZ"
+  ],
+  "compile": {
+    "command": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Oi",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/EHsc",
+      "/TP",
+      "/W4",
+      "/utf-8",
+      "/diagnostics:column",
+      "/MP2",
+      "/Zl",
+      "/sourceDependencies",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\dependencies",
+      "/I",
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
+      "/I",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\311-frame-service-callees",
+      "/I",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\290-frame-service-cluster",
+      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\objects\\",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\311-frame-service-callees\\frame_service_callees_311.cpp",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\frame_service_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 3.95431,
+    "log": "local/experiments/v2-frame-service-311/compile-001.log",
+    "log_sha256": "40429421c1c8daf6f2ab2667012c017d3fd27826975824cdb0d3465446bf5858"
+  },
+  "link": {
+    "command": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/INCREMENTAL:NO",
+      "/SECTION:.data,ERW",
+      "/SECTION:.bss,ERW",
+      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\native-fixture.map",
+      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\native-fixture.exe",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\objects\\frame_service_callees_311.obj",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\objects\\frame_service_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.317773,
+    "log": "local/experiments/v2-frame-service-311/fixture-link-001.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "exit_code": 0,
+    "cases": 12,
+    "cases_passed": 12,
+    "execution": {
+      "command": [
+        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-frame-service-311\\native-fixture.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 0.395231,
+      "log": "local/experiments/v2-frame-service-311/fixture-native-001.log",
+      "log_sha256": "0565bc1a731c084898e761e06f7b3e7bdaf0e5ae44495fa9dc8a50fb0f74626c"
+    }
+  }
+}
