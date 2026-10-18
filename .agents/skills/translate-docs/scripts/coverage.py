@@ -6,6 +6,14 @@ coverage.py - Verifica o status e a cobertura das traduções para pt-BR dos arq
 import os
 import sys
 
+# No Windows o stdout do console cai em cp1252 e os simbolos do relatorio
+# (⚠, ✓) derrubam o script com UnicodeEncodeError. Forca UTF-8 na saida.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding='utf-8')
+    except (AttributeError, OSError):
+        pass
+
 EXCLUDE_DIRS = {'.git', 'local', '.cursor', '__pycache__', '.pytest_cache', 'target'}
 
 def scan_markdown_files(root_dir='.'):

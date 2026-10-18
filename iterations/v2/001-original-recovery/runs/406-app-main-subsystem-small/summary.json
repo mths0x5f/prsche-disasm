@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "run": "406-app-main-subsystem-small",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_vas": [
+    "0048e6f0",
+    "004a6960",
+    "004a5410",
+    "004d1a90"
+  ],
+  "original_selected_bytes": 635,
+  "compiler": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe",
+  "compiler_sha256": "58702ed8002b28348dbbd1099e9d2c2b2b092681cda024a5eaee371cc28aa881",
+  "include_roots": [
+    "iterations/v2/001-original-recovery/source/include",
+    "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+    "iterations/v2/001-original-recovery/runs/406-app-main-subsystem-small"
+  ],
+  "source": "iterations/v2/001-original-recovery/runs/406-app-main-subsystem-small/app_main_subsystem_small_406.cpp",
+  "source_sha256": "9eb9eaafc25791b6f07367a0dc383fd634f580e896a0c28c4ed42d02a8fd9b6f",
+  "object": "local/experiments/v2-app-main-406/objects/app_main_subsystem_small_406.obj",
+  "object_sha256": "c066c5b546354dc85aea6669b94fde34a67d0fe77a0a7dd3244db2edfe9799d3",
+  "fixture": "local/experiments/v2-app-main-406/app_main_fixture.cpp",
+  "fixture_sha256": "273aeac5feabb290db10780d3037c7c8447aec0e1e9bb697716bb7f62d73ccc5",
+  "fixture_executable": "local/experiments/v2-app-main-406/native-fixture.exe",
+  "fixture_executable_sha256": "df344191fb2f31342c79d1d5b0499621557dc55f580c2c3d21f9b70b5e9b1619",
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/runs/276-file-operation-reuse/summary.json": "3f82c55cb8c228939e01e0fd53d000544bd252ad8976438463abd8a6692111da",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "scripts/research/experiment-v2-app-main-406.py": "933ef64e853bb4b3eb2e5c92590c8eed05c2dbcf097d9b1dd6c637c3ead41e21",
+    "iterations/v2/001-original-recovery/runs/406-app-main-subsystem-small/app_main_subsystem_small_406.cpp": "9eb9eaafc25791b6f07367a0dc383fd634f580e896a0c28c4ed42d02a8fd9b6f",
+    "iterations/v2/001-original-recovery/runs/406-app-main-subsystem-small/app_main_subsystem_small_406.hpp": "37aaebe343a5dd80edfda6c8f145303c1bc4eb52084bc4ef95c52534e8089205",
+    "local/experiments/v2-app-main-406/app_main_fixture.cpp": "273aeac5feabb290db10780d3037c7c8447aec0e1e9bb697716bb7f62d73ccc5",
+    "local/experiments/v2-app-main-406/prepare-001.json": "16e0bb2880ec84db2ff2c8c2de8cf4dced33484a8337cc348e823cebf2848dac",
+    "local/experiments/v2-app-main-406/compile-001.log": "04cb001b33b598eda31fa8dbcb01f5ad93c93ce0b2522c132287ecc83c01c410",
+    "local/experiments/v2-app-main-406/compile-001.execution.json": "d7140ad1a505539f56938e502a9a6e0b24a9cb30de480256aa7e50c4aedd0da1",
+    "local/experiments/v2-app-main-406/objects/app_main_subsystem_small_406.obj": "c066c5b546354dc85aea6669b94fde34a67d0fe77a0a7dd3244db2edfe9799d3",
+    "local/experiments/v2-app-main-406/objects/app_main_fixture.obj": "60a13452186430cb5279b926dec41442785c27576bf6ed46f9e01d9e0cfcfcc1",
+    "local/experiments/v2-app-main-406/fixture-link-001.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-app-main-406/fixture-link-001.execution.json": "05c67176b7d6640ec988597f0eaf5d876405c0b647d3caab7a26f1e1c0453a86",
+    "local/experiments/v2-app-main-406/native-fixture.exe": "df344191fb2f31342c79d1d5b0499621557dc55f580c2c3d21f9b70b5e9b1619",
+    "local/experiments/v2-app-main-406/native-fixture.map": "8afedb850286611a2d9793e44b9396cbcfd76aa4750ae2c44ab8c1873467d0de",
+    "local/experiments/v2-app-main-406/fixture-native-001.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-app-main-406/fixture-native-001.execution.json": "5d8e6d8bbb3dfc6eb1d8ac6924bcfb48958db693edbff2c2be319e4734a76e0e"
+  },
+  "receipts": {
+    "prepare": "local/experiments/v2-app-main-406/prepare-001.json",
+    "compile": "local/experiments/v2-app-main-406/compile-001.execution.json",
+    "link": "local/experiments/v2-app-main-406/fixture-link-001.execution.json",
+    "execute": "local/experiments/v2-app-main-406/fixture-native-001.execution.json"
+  }
+}

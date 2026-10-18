@@ -1,0 +1,16 @@
+# Run 406 — Atualização de dispositivo de entrada, log de heap de áudio, inicialização de subsistemas e contexto de som
+
+## Português (Brasil)
+
+Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`:
+Este run recupera quatro funções autênticas (635 bytes de corpo PE), invocadas diretamente por `app_main_004b6a50` ou por seus subsistemas de entrada, log de memória, inicialização e áudio:
+
+1. `0048e6f0` (153 bytes): Atualização de dispositivo de entrada e comutação de modo do roteador de eventos (`InputDevice_0048e6f0::update_mode_0048e6f0`). Avalia o modo `mode_28`: se 0, atualiza o dispositivo (`sub_0048e9c0`) e posta o evento 0 (`post_input_event_0048e1a0`); se 2, atualiza o dispositivo e posta o evento 2; caso contrário, se `flag_c6` estiver ativo, libera o subobjeto `sub_object_14` (`004935c0`, `0059f050`) e despacha comando de entrada `0xba` com limites `0x80000000` via `handle_0c->dispatch_input_cmd_0048c870`; caso contrário, invoca `sub_0048e9c0`.
+2. `004a6960` (153 bytes): Sincronização de apresentação e registrador de consumo de heap de áudio (`application_main_function_004a6960`). Executa atraso `time_delay_005659f0(-1)`, descarrega e destrói o buffer de fluxo `00656518`, sincroniza o contexto de renderização (`004ae310`) e, havendo sinalizadores de renderização ativos (`005d1734`/`005d1738`), avança o ciclo de renderização (`004ab4b0`), obtém o delta de uso do heap de áudio (`00565890`), destrói o fluxo `00655d44` e registra a contagem de bytes formatada via divisão recíproca e `log_printf("audio heap used %d bytes\n", edx)`.
+3. `004a5410` (157 bytes): Despachante de inicialização de memória, temporizadores e gerenciador de entrada de subsistemas (`application_main_function_004a5410`). Configura a tabela de ganchos do heap `005debf0`, inicializa o heap com limites de 24MB e 4MB (`0059e9d0`), reserva o heap de blocos pequenos (`0059edb0`), aloca buffer do sistema (`00565030`), instancia condicionalmente `InputManager` caso `g_subsystem_mgr_00628c70` seja nulo, executa a sequência de serviços de inicialização `0055fcf0`, `00564e70`, `00564ab0`, `00564850(2)`, inicializa temporizadores `00536e50`/`005367b0(0, 1000, 1)` e configura canal de janela `00563ad0(30, 8192, 0)`.
+4. `004d1a90` (172 bytes): Construtor do objeto de contexto de som SoundContext e configuração do driver de som padrão (`SoundContext_004d1a90::init_004d1a90`). Invoca o inicializador base `00525e20`, zera 12 campos de estado interno (`0xd4`, `0xe0`, `0xe4`, `0xe8`, `0xf8`, `0xfc`, `0x100`, `0x104`, `0x108`, `0x170`, `0x174`, `0x17c`), instala vtable `005b683c`, aloca e constrói o subdispositivo `005294c0` (44 bytes), copia a cadeia do identificador padrão do driver `"Primary DirectSound Driver"` (`005e8e50`) para `device_name_10c` e retorna `this`.
+
+### Verificação Física em CPU x86
+- Os bytes de código de máquina capturados foram testados em `local/experiments/v2-app-main-406/native-fixture.exe` contra a sequência original de bytes em slab de memória executável.
+- Todos os 10 casos de teste diferenciais passaram com correspondência exata bit a bit.
+- Validado pelo script de auditoria independente `scripts/research/audit-v2-app-main-406.py`.
