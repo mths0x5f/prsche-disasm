@@ -1,15 +1,21 @@
 # Отложенные проверки восстановления v2
 
-Новые наблюдения startup287–290 (2026-10-17):
-- [ ] Original005d6e84 содержит "Initializing rendering\n\0", а текущий
-  application_main.cpp передаёт строку без newline. Исправить именно caller
-  по исходному ресурсу и пересобрать его объект; bridge не должен скрывать баг.
-- [ ] Canonical formatter_crt_locks_005e57a8 пока26-entry prefix; stdio требует
-  IDs28..47.175 доказывает192B/48-entry prefix и4HIGHLOWcells. До realstartup
-  расширить единственного canonicalowner и проверить реальную композицию locks.
-- [ ] 290: original00471b60→00487e20/98B,4typedcallee boundaries и00628960;
-  nativepacket отдельно от полного provider/global closure. Не подменять их stub.
-
+Checkpoint291–293,2026-10-18:
+- [x] Original24B005d6e84newline восстановлен вcanonicalcaller и свежемCOFF293.
+- [x] 291:004898f0correctpointer-return/25B,512nativecases/aliascanaries/ABI PASS;
+  этоtypedreplacement old187candidate, не новыйdistinctVA. Rawunion replacement
+  ещёнеприменялся; raw187не входит вgame293.
+- [x] 292:единственныйcanonical005e57a8owner26→48slots,192PEB/4HIGHLOW;
+  all48initialcells+112native/originalcases PASS, insufficientstoragehold закрыт.
+- [ ] 292:fulltableextent, realOSlocking/concurrency, originalCRT/bootstrap init.
+  Старые frozen source-pin reports относятся к26-slot parent; текущие2patches
+  подтверждены292. Их исторические summaries не переписывать.
+- [x] 293:fresh151C++TUs/8projects/380pins,0compileerrors,269names/305refs;
+  noEXE/gameexecution. Независимыйaudit PASS;3platformC4005macro warnings.
+- [ ] 290/291:00628960storage/init и триcallee00423840/00476170/00482e50;
+  resolver004898f0 закрыт291. Fixtures не заменяют realproviders.
+- [ ] Kongpilot: APIkey/localmodel отсутствуют, inference не запускался.
+  Никакой semanticacceptance/tooladoption поодномуREADME/confidence.
 
 Checkpoint276–284, приоритет первого игрового EXE:
 - [x] 276: exact canonical00568200/005682a0 + два доказанных raw binding,
@@ -55,7 +61,7 @@ Checkpoint269/271/273:
   andfutureadjacentconsumer composition remainHOLD. Futureowner migration/coalescing
   must preserveonephysicaltable, not defineanothercopy. Realbootstrap/init remainsopen.
 - [x]273:actual416names→414tasks/23resolvedrows excluded,159pins/6guards.
-  Unsafe595d0signextension and5a4c05lockprefix holds retained.
+  Unsafe595d0signextension remains; lockprefix storage исправлен292, init/concurrency open.
 - [x]274/275:1125candidateVAs+19support/1144members,414linknames/566diags,
   7626pins/1142cachedsymbols/2newCOFFs/0compiles;412currentresearchtasks.
 - [ ]Nextfiles.cpp00568200/005682a0 nativeconsumer ABI +sharedfourcallers' original
@@ -81,7 +87,7 @@ Checkpoint264/265:
 - [ ]264:raw00531f90 ten-consumer ABI binding, existing Win32providers,
   original006b4f20 table/initialization, concurrency/fault/fullgame composition.
 - [x]265:actual419names→417tasks,22resolvedrows excluded;159pins/6guards.
-  Genericqueue ranking does not revoke259unsafe005925d0 or005a4c05layout holds.
+  Genericqueue ranking does not revoke259unsafe005925d0.005a4c05storage fixed292; init/concurrency open.
 
 Checkpoint261:
 - [x]259:2canonicalbodies/2exactbindings PE/source/COFF/native audit PASS.
@@ -103,7 +109,7 @@ Checkpoint249/256:1120candidatefunctionVAs/13support;418linkednames remain. NoEX
   pilotusesexistingowners andadds0acceptedfunctions. Unknowninstructions failbeforecompile.
 - [x]247:3canonicalbodies+3bindings,103originaloraclebytes/52CALLs/4056cases/293pinsPASS.
 - [ ]247:sharedFILE/TLS/provider composition;5a4c05 originalIDs28..47 not covered by
-  canonical26slotprefix. No silentbounds workaround or duplicateowner.
+  canonical26slotprefix. Storage расширен292; OS/bootstrap composition remainsopen.
 - [x]250/254:23writablezeroDWORDs,219directMEM4/fullHIGHLOW refs;independentaudits/nativePASS.
 - [ ]250/254:computedaliases/wholelayout/lifetime;9screenedcells deferred duecoverage/WIP.
 - [x]251:248cachedselection was not fullPE/WIPproof;006c0508fourunindexedrefs and

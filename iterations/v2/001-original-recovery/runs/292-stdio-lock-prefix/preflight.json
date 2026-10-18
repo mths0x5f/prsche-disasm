@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_prefix_va": "005e57a8",
+  "prefix_bytes": 192,
+  "prefix_entries": 48,
+  "total_table_extent_proven": false,
+  "original_prefix_hex": "0000000000fd6a000000000000000000000000000000000000000000000000000000000030fd6a0000000000000000000000000048fd6a0000000000000000000000000018fd6a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "nonzero_indices": [
+    1,
+    9,
+    13,
+    17
+  ],
+  "only_canonical_alias": [
+    "formatter_crt_locks_005e57a8"
+  ],
+  "source_uses": [
+    "iterations/v2/001-original-recovery/source/recovered/formatter_crt_runtime_probe.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp"
+  ],
+  "no_size_or_range_consumers": true,
+  "patches": [
+    {
+      "path": "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp",
+      "before_sha256": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+      "after_sha256": "bac5720fbfd1436528dd99129bb2162811d9e703a652f2d2106954426a9680b1",
+      "old": "formatter_crt_locks_005e57a8[26]",
+      "new": "formatter_crt_locks_005e57a8[48]"
+    },
+    {
+      "path": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "before_sha256": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+      "after_sha256": "9498b1888141647da1649bd8e39cf5dd0dca00021b7556324da3d932d2b2e6be",
+      "old": "formatter_crt_locks_005e57a8[26]",
+      "new": "formatter_crt_locks_005e57a8[48]"
+    }
+  ],
+  "parent_commit": "86dd669a33ad1eafc660c9c0ba165a79f975ceb9",
+  "runtime_scope": "Storage prefix only; original locks/malloc algorithms unchanged; CRT/bootstrap and concurrency remain separate"
+}

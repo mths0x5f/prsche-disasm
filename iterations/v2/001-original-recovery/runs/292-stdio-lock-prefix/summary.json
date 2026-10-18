@@ -1,0 +1,1996 @@
+{
+  "schema": 1,
+  "kind": "canonical-stdio-lock-prefix-expansion",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "prefix_va": "005e57a8",
+  "prefix_entries": 48,
+  "prefix_bytes": 192,
+  "total_table_extent_proven": false,
+  "source_patches": [
+    {
+      "path": "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp",
+      "before_sha256": "3262d39db4a9c18c018fab131da4352669fc4816a3e786170187a9a2f2e633ba",
+      "after_sha256": "bac5720fbfd1436528dd99129bb2162811d9e703a652f2d2106954426a9680b1",
+      "old": "formatter_crt_locks_005e57a8[26]",
+      "new": "formatter_crt_locks_005e57a8[48]"
+    },
+    {
+      "path": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp",
+      "before_sha256": "625acb0dfae903ec82bba8e8a3cc07e282a6340862ac3d2d39fe51cbf89587ec",
+      "after_sha256": "9498b1888141647da1649bd8e39cf5dd0dca00021b7556324da3d932d2b2e6be",
+      "old": "formatter_crt_locks_005e57a8[26]",
+      "new": "formatter_crt_locks_005e57a8[48]"
+    }
+  ],
+  "initial_all48_cells_native_equal_original": true,
+  "native_cpp_equal_original": true,
+  "native_cases": 112,
+  "case_results": [
+    {
+      "input": [
+        "l",
+        28,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "3d31525850ca017dc7b8eaad32d6954c97817caad875bd7e604d21e2dac854cc"
+    },
+    {
+      "input": [
+        "l",
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "6fb67d91b9984f4c20c5f71c34a88c5c5c050f970bf5399897faf51d13171f09"
+    },
+    {
+      "input": [
+        "l",
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "eb6aec6286f31c7b8f7e3bb89e5e2113d5a0a639e21df1e96b48d10be6998baf"
+    },
+    {
+      "input": [
+        "l",
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "6fb67d91b9984f4c20c5f71c34a88c5c5c050f970bf5399897faf51d13171f09"
+    },
+    {
+      "input": [
+        "u",
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "a7e959ded73ad6a5933285c651a9ceba4900a86ebc07f76d78f195d3226333df"
+    },
+    {
+      "input": [
+        "l",
+        29,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "f010033059de869e09dc15b97322c99afab4fc5dacfb77bcdf91220074d36c92"
+    },
+    {
+      "input": [
+        "l",
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "70f1f45544a0fb806efd3d0f28ff55fa3df36c47678d7d399b5aff6d8c71afc5"
+    },
+    {
+      "input": [
+        "l",
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "707088b664e819aeaddf04690e59fccaad43f0ade16905b1415b3f7e6fd07f73"
+    },
+    {
+      "input": [
+        "l",
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "70f1f45544a0fb806efd3d0f28ff55fa3df36c47678d7d399b5aff6d8c71afc5"
+    },
+    {
+      "input": [
+        "u",
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "6bde144d899a4915fb5623e6741b9a06549cd6f2a9ae7773a3ae3b42a38e8e84"
+    },
+    {
+      "input": [
+        "l",
+        30,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "0b4a0974b9ae9623fb655e97ada87d468aac10dbf91a9e1f81a97859af664d8a"
+    },
+    {
+      "input": [
+        "l",
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "7358ae77b31739851a9dbfb01f729df4571eedb4afaaef65d76ee70cf915dfcc"
+    },
+    {
+      "input": [
+        "l",
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "0724766311111c9946a21d694eaa6de85e1b3c84787d5af2d7189f7d60e5f68d"
+    },
+    {
+      "input": [
+        "l",
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "7358ae77b31739851a9dbfb01f729df4571eedb4afaaef65d76ee70cf915dfcc"
+    },
+    {
+      "input": [
+        "u",
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "20294cfc5edeb2515090ec97689104d7ff7500ab3af69e4109c72228634913fd"
+    },
+    {
+      "input": [
+        "l",
+        31,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "5772465547be154f57d8e15099dd4d3ddda69d0186111f520472c2088df94e62"
+    },
+    {
+      "input": [
+        "l",
+        31,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "00e8e7148db7296e8882922b91e02ba98f66c2cd2ddde5d7f1314d95dc2ac457"
+    },
+    {
+      "input": [
+        "l",
+        31,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "575b0d90feed77bf7de0d75c3e7e23f7b8783aaee693b75745c315bd34c79b21"
+    },
+    {
+      "input": [
+        "l",
+        31,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "00e8e7148db7296e8882922b91e02ba98f66c2cd2ddde5d7f1314d95dc2ac457"
+    },
+    {
+      "input": [
+        "u",
+        31,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "7516d20b244d8e733d75e78bd2f0f4a7152da702d021ead54f4e16d7a4ac3744"
+    },
+    {
+      "input": [
+        "l",
+        32,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "a7202f20de164be725a79c82fe2070dec1ee0479e636d4ab21489829e599393f"
+    },
+    {
+      "input": [
+        "l",
+        32,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "0c05578955a75b647c37f8079ac5bbbeea2cec7bf04e3f6cb3d3b3977c95aefb"
+    },
+    {
+      "input": [
+        "l",
+        32,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "e9ba2fb6129242356516843f66982e2329dce73bf6edc178cff38bd6d374adb4"
+    },
+    {
+      "input": [
+        "l",
+        32,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "0c05578955a75b647c37f8079ac5bbbeea2cec7bf04e3f6cb3d3b3977c95aefb"
+    },
+    {
+      "input": [
+        "u",
+        32,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "8caf15ae55a0a72829acf1148ce69e0189fbee1191065b4bc657c5dae5b7e9aa"
+    },
+    {
+      "input": [
+        "l",
+        33,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "338edf871b7b7c535d2a9026f8d24cbfc8dcccb082382282e04eec35c5355274"
+    },
+    {
+      "input": [
+        "l",
+        33,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "44a9a61696df9414a3ec2b1fb0de27b40bc39c082565450b457cbc965830f8d4"
+    },
+    {
+      "input": [
+        "l",
+        33,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "e94c9294f74b6f1f30ca38b54f05228a2d1c16ee3dad7309486422ee99668be2"
+    },
+    {
+      "input": [
+        "l",
+        33,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "44a9a61696df9414a3ec2b1fb0de27b40bc39c082565450b457cbc965830f8d4"
+    },
+    {
+      "input": [
+        "u",
+        33,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "27b93cd2e305a0f5dcefe5d3551cc8a57e0b6763c48491912b5f357c7414e13e"
+    },
+    {
+      "input": [
+        "l",
+        34,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "3cec9b886923020170c60da7bb369e2859a9c91c10b57fa63755f5b320ae2551"
+    },
+    {
+      "input": [
+        "l",
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "40ebc02135b95f6c285042d980d836fe091d3f8599e521f3dfb24def04597443"
+    },
+    {
+      "input": [
+        "l",
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "2732f29200fb4f664675c36adfa4d6c8bcff0b0688740d81dc6e2111150e8121"
+    },
+    {
+      "input": [
+        "l",
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "40ebc02135b95f6c285042d980d836fe091d3f8599e521f3dfb24def04597443"
+    },
+    {
+      "input": [
+        "u",
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "68d8eb7c4fc4329cebbfdd15b0be9bbd97dbe01ccf7d3e75d6470b9aaa0fd26c"
+    },
+    {
+      "input": [
+        "l",
+        35,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "77ee05f892452046ff6f5be05cfade76fab7a7a289242e79b4bc82ac91c351cb"
+    },
+    {
+      "input": [
+        "l",
+        35,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "77b36fd6836b689a313130f16649562420e4206ad52f84dcd88dc118bcc2c954"
+    },
+    {
+      "input": [
+        "l",
+        35,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "b168a9c5dfdecc15b52c0219a3be35e2b52bd70e3c979ca7dd0670a37f40d351"
+    },
+    {
+      "input": [
+        "l",
+        35,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "77b36fd6836b689a313130f16649562420e4206ad52f84dcd88dc118bcc2c954"
+    },
+    {
+      "input": [
+        "u",
+        35,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "093e779e1b05505d2c77022126757f80eeb8d29f27b1081500fd8a32bb1fe672"
+    },
+    {
+      "input": [
+        "l",
+        36,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "53c1513addb43f140181494dc2a84b7b821f572d6603347b0dece6f8f02531b4"
+    },
+    {
+      "input": [
+        "l",
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "0a5c1558c2bc523a639eac82ccdca966f4408e34bc5bad2514bcecc23902dd53"
+    },
+    {
+      "input": [
+        "l",
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "02c51abe48a2688ac30bad3f5bdbaefc4058c96fc3f9cab69f321cb8e05456a6"
+    },
+    {
+      "input": [
+        "l",
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "0a5c1558c2bc523a639eac82ccdca966f4408e34bc5bad2514bcecc23902dd53"
+    },
+    {
+      "input": [
+        "u",
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "fb1319feb8ccb9a55f054076750f05ada4f2bab91afd0426399746468dbd79e6"
+    },
+    {
+      "input": [
+        "l",
+        37,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "32518353b4354264009d18141459676c03ba8cb7d23538ff28e56d0cfb492bf5"
+    },
+    {
+      "input": [
+        "l",
+        37,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "be50e44c6113a5c188425d10d862e79afac88f41cfaba995becf6b099e5388ab"
+    },
+    {
+      "input": [
+        "l",
+        37,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "fd35404cb996ddffbf0593a2ef4f02f89d39e2ef26204cf8d02ecd11b51193c3"
+    },
+    {
+      "input": [
+        "l",
+        37,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "be50e44c6113a5c188425d10d862e79afac88f41cfaba995becf6b099e5388ab"
+    },
+    {
+      "input": [
+        "u",
+        37,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "b03200916a4d9f152a204ab4d832a1df84983076136ecf2c8229a5971e94102c"
+    },
+    {
+      "input": [
+        "l",
+        38,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "83a27fdde82227d83da642a98ea56e6038f771d3704d08060141a4119b4d45f9"
+    },
+    {
+      "input": [
+        "l",
+        38,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "2de26faab825a944756505a4e91512294aa722ecc3726bc8420f3cde4516b2a9"
+    },
+    {
+      "input": [
+        "l",
+        38,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "d74b66daeadb0fbcbdb5c7cfbde252d8d9207017983857cb1a1485b0b5f93f84"
+    },
+    {
+      "input": [
+        "l",
+        38,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "2de26faab825a944756505a4e91512294aa722ecc3726bc8420f3cde4516b2a9"
+    },
+    {
+      "input": [
+        "u",
+        38,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "3df5af641aabf7a3b3cea2a82b5f61de59f67c88d02784fd726c428428f46f39"
+    },
+    {
+      "input": [
+        "l",
+        39,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "fca0f2db82ca51e43853242eaa7dac2e7570bd9bf9e6882ce2149afebe15876c"
+    },
+    {
+      "input": [
+        "l",
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "e06f28f4017e5c8f6128283b846e02c940525ef97602549baa464f48097cd0db"
+    },
+    {
+      "input": [
+        "l",
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "735b1008fb3b082f9a8c2d2b3f1ffd3f674733099eedbdf4caa37ab017559a5e"
+    },
+    {
+      "input": [
+        "l",
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "e06f28f4017e5c8f6128283b846e02c940525ef97602549baa464f48097cd0db"
+    },
+    {
+      "input": [
+        "u",
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "49afa61d4ddea5fa4913213e953be366c7b7fa658ca869a45656e44b789cd3b6"
+    },
+    {
+      "input": [
+        "l",
+        40,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "4f00eac2191d460c23b902910f873f21ac455c0c1d468eeab3fe8419752ab65d"
+    },
+    {
+      "input": [
+        "l",
+        40,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "977808c04a54e79cf64c827467c0c306cabd46e964ba28da7371fa1629900872"
+    },
+    {
+      "input": [
+        "l",
+        40,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "09bac9ae8a122e6954b6089e5c0caf73be85e97ed5b74c0213b9eab66563fa56"
+    },
+    {
+      "input": [
+        "l",
+        40,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "977808c04a54e79cf64c827467c0c306cabd46e964ba28da7371fa1629900872"
+    },
+    {
+      "input": [
+        "u",
+        40,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "c68746e53ad73c65a624884007c7e5b0c847f34dbb0fe8a76e068a215e5d230d"
+    },
+    {
+      "input": [
+        "l",
+        41,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "06561ead71a5dc60e029bc547ea4ba24dbcb1b6fcb0acbd124355c80793a6ea2"
+    },
+    {
+      "input": [
+        "l",
+        41,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "79c7ed3ff685cb496afa33000bafe708ea540c9d31f203dd25bb6c66fd2466ad"
+    },
+    {
+      "input": [
+        "l",
+        41,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "5349010f9c51bdc5be1ae65ea74deb55314628d37c36c12d9d794d8c8607c086"
+    },
+    {
+      "input": [
+        "l",
+        41,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "79c7ed3ff685cb496afa33000bafe708ea540c9d31f203dd25bb6c66fd2466ad"
+    },
+    {
+      "input": [
+        "u",
+        41,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "9791466b1cd55990399702d306fbbffeba1b1e15570faba248f44559c5137bab"
+    },
+    {
+      "input": [
+        "l",
+        42,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "d1873ba32cfe9e89f44e3cf213691e618156483ad68ce0d8bd84359cdc233fe7"
+    },
+    {
+      "input": [
+        "l",
+        42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "e4c1590594560697334bae95f4bcbeaa61b0df7d7aedbb9f96664cf762f55b1e"
+    },
+    {
+      "input": [
+        "l",
+        42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "205fe4ef0e4bec3467a6c119502706311ed5ad34dceb681b8a7ffef4ca073db5"
+    },
+    {
+      "input": [
+        "l",
+        42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "e4c1590594560697334bae95f4bcbeaa61b0df7d7aedbb9f96664cf762f55b1e"
+    },
+    {
+      "input": [
+        "u",
+        42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "a5a6f0c2ee6f2939f18f7ed54a4775f328039f67862f3c61477442589b070ac8"
+    },
+    {
+      "input": [
+        "l",
+        43,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "efc295b9c3e2775d7dceba31d4990e82059f261b09c4eeeb3d1730fe3fabea73"
+    },
+    {
+      "input": [
+        "l",
+        43,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "fbe922b9ef1947624ee66638f8827d16a3ca1aa6f9de2719bf17a8fd89860cb8"
+    },
+    {
+      "input": [
+        "l",
+        43,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "379d44c1ce6d57037606df6c68e21eff2b7a7f5409f0e0f5eb6822380dc168d8"
+    },
+    {
+      "input": [
+        "l",
+        43,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "fbe922b9ef1947624ee66638f8827d16a3ca1aa6f9de2719bf17a8fd89860cb8"
+    },
+    {
+      "input": [
+        "u",
+        43,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "eecad8c28a8ebb01a81221f98e9172153d65bc83c0221a7bcc662401d55bd40d"
+    },
+    {
+      "input": [
+        "l",
+        44,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "6c4a45c04003059c9962e978cb89c61d246ab9166d1e0c9a98d3476e08ff1908"
+    },
+    {
+      "input": [
+        "l",
+        44,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "5de55f662a17b8bc5438e37ef676276009e8ead6851e9815b2158fdcea89f367"
+    },
+    {
+      "input": [
+        "l",
+        44,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "acb45c0048eb6fe72c9d0135df8b70698605054cacd3ee1fb7d602482dc583b0"
+    },
+    {
+      "input": [
+        "l",
+        44,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "5de55f662a17b8bc5438e37ef676276009e8ead6851e9815b2158fdcea89f367"
+    },
+    {
+      "input": [
+        "u",
+        44,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "550247fa270ec06a95cf9b2a5c40a96d0fc7a97dd5242d333f3ac50171a36a49"
+    },
+    {
+      "input": [
+        "l",
+        45,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "497d4e88f7357da2a7e6d62f6263007918932150e13cbfa22f0f0d80f460dbaf"
+    },
+    {
+      "input": [
+        "l",
+        45,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "7d56b97189bfff5d2ed45671218e6847c8199bc9a7718fcac2417e9c066a1196"
+    },
+    {
+      "input": [
+        "l",
+        45,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "1179ba41456d66146d7182e72134555ff1c6888f5c6fbdeea0c3a087ca522556"
+    },
+    {
+      "input": [
+        "l",
+        45,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "7d56b97189bfff5d2ed45671218e6847c8199bc9a7718fcac2417e9c066a1196"
+    },
+    {
+      "input": [
+        "u",
+        45,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "fd0c094f17cf4b26bd446c1bc4516771d594fec7668720d7c86d9f421bc1b9d8"
+    },
+    {
+      "input": [
+        "l",
+        46,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "1570b9905342b45ab08bc9d0f51322c2820834790b489debbaada379a42e6611"
+    },
+    {
+      "input": [
+        "l",
+        46,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "0b099517fddc772a76566fad0370def769875d13037db1d52f2108b98815ee5c"
+    },
+    {
+      "input": [
+        "l",
+        46,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "2b83a41e3dc892ae1c29bb3b3dbeb4ccf109589e7589a50d9555997de6525046"
+    },
+    {
+      "input": [
+        "l",
+        46,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "0b099517fddc772a76566fad0370def769875d13037db1d52f2108b98815ee5c"
+    },
+    {
+      "input": [
+        "u",
+        46,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "a553e93cd5e0c9360292bacba551da9d9c9edcfb3a7a2898e1725bb9c5671221"
+    },
+    {
+      "input": [
+        "l",
+        47,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "dadc021530b099e60a731d4b9d729969c8e24dd3f7ede22f9245126ae00f953c"
+    },
+    {
+      "input": [
+        "l",
+        47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "999609038b253a46150b8152a336432bad223d26a0727faeb888a50283294967"
+    },
+    {
+      "input": [
+        "l",
+        47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "state_sha256": "9f0aab636655648e7f3bd0eb02d93bb36189f39effde22318d0d7bd31fee955c"
+    },
+    {
+      "input": [
+        "l",
+        47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "state_sha256": "999609038b253a46150b8152a336432bad223d26a0727faeb888a50283294967"
+    },
+    {
+      "input": [
+        "u",
+        47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "ab7a08df73cd53c18a2103c04742d9e897a20cffaaeaba5d3408237a5918ebfd"
+    },
+    {
+      "input": [
+        "l",
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "2fd44b30e483c3f97df3a0e440b68a656fd5e699cfd179ed7675b873c7d9fc24"
+    },
+    {
+      "input": [
+        "u",
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "e16cc724dafc8c8e689c9e43fed0648968fa4f3ff44c728d530595ca28b0fcd9"
+    },
+    {
+      "input": [
+        "l",
+        9,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "35ee3c1bc633452bbe8120090132e659812011f403687d02a868ff8ab2f58dd2"
+    },
+    {
+      "input": [
+        "u",
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "5f83c8952ff9e0f5fd0ec285855fac33c8b1ae1289a77281518f824987262673"
+    },
+    {
+      "input": [
+        "l",
+        13,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "3aa4d0bb6d726f6e53cdd7f08032f09c0e7495b5fd0ac326e29c76b5346ad4a7"
+    },
+    {
+      "input": [
+        "u",
+        13,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "6b8e533919746bc779a7b2e0d01900925a41bfced7b568b644b654d4e7fd5ef1"
+    },
+    {
+      "input": [
+        "l",
+        17,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "5e859aa22b02893d8cabffa29c4bf0cecf987887b71e4dc4c245559a204d3259"
+    },
+    {
+      "input": [
+        "u",
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "6196368d463b735e9c631835e053eb6da0feb02ab2b47d3dc1c9d91a20e0bee0"
+    },
+    {
+      "input": [
+        "l",
+        25,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "0c01d8403c86a724c8d04c44c0be57b9db7f8e708ada28bdc575d5a143436e31"
+    },
+    {
+      "input": [
+        "u",
+        25,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "ad66e3d5c930f6ebde7314e809be88f5a69f153fa30b64a44ada0b93e30304dd"
+    },
+    {
+      "input": [
+        "i",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "8e20beaf2427a1490b46f8ed4eba31a374c4ac4d72eb6e636d342c686f07fc37"
+    },
+    {
+      "input": [
+        "l",
+        29,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state_sha256": "0f977adc257871be728a6b57733fcacb1b4513877b9dbc2b2b416ea13292bceb"
+    }
+  ],
+  "compiler_batches": 1,
+  "compiled_tus": 2,
+  "derived_fixture_changes": {
+    "native_i_less_than26_to48": 3,
+    "oracle_range26_to48": 3
+  },
+  "input_sha256": {
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_crt_runtime.cpp": "9498b1888141647da1649bd8e39cf5dd0dca00021b7556324da3d932d2b2e6be",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "bac5720fbfd1436528dd99129bb2162811d9e703a652f2d2106954426a9680b1",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_crt_runtime_probe.cpp": "71fcf572848b00555773404da126aacf357308fd9bf9f6a3f91228bd40e70cfe",
+    "scripts/research/verify-v2-formatter-crt-runtime.py": "5744d8673dd1ed2cb3024066ccec174eafe9bf4416fc2385acbeb555182959e6",
+    "local/experiments/v2-stdio-lock-prefix-292/probe-prefix.cpp": "7993f8c3178d3e5affc5ea843a3573eec8dff93231a79784c22863d562da3588",
+    "local/experiments/v2-stdio-lock-prefix-292/oracle-prefix.py": "e90a4aed3d30da19fd49b38c64f8d4c61c074fb6f3210b82999deaa93df9ab3f",
+    "iterations/v2/001-original-recovery/runs/292-stdio-lock-prefix/preflight.json": "f120207ddbd933794cbfb6cf31bb6655052e29d7f0dc354e434aeca38baf24dd",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/experiments/v2-stdio-lock-prefix-292/producer-used.py": "01d635c7d7040fc53089ae3cc8719bf53de91c547355b40c8f4a5bdb0ef78389",
+    "local/experiments/v2-stdio-lock-prefix-292/dependencies/formatter_crt_runtime.cpp.json": "ba3478b76d5a28ec1209b23a6c9b3ee8014f00307df1ced605baa5a955b4e0e9",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cstdint": "7e608450751cd44f43942b20e1c1c455d42872e78e7119361316850644f1fb75",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/yvals_core.h": "5070449e37a1735adf49204a12c7a7d5efa145d6aa607720aef5adbd2c57ef83",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime.h": "a2fe9117dc2640e243f91fa94e1d05fc35083218c2a67a446db9e34cece779b5",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/sal.h": "cda06459ca38681800ce5e98703c66534c74a803aa652bd4bc2b3407dd45ed46",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/concurrencysal.h": "1ea9a2e32a6ff298ad7904610cc71028caa9b172399a579ca90a120d1b1aec12",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vadefs.h": "200b49c2efd26bc7a92e9dfa3b847cc612b237dff5c7291d9f901d39b4a5e52e",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xkeycheck.h": "fdb1dc9ca22f9309bfb7e87b3f9e2b340ced7945344af2450be4beac589a3df9",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/stdint.h": "29fb6d4ba5e311e06877609c20a1bc49c6cdfb730f56dd0f9c53a6241c40ab5c",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cstddef": "8388948efa6dc3b3b20866fa1c3057ea53b8dfd028f22abe1d7dce23ef1d9ecc",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\stddef.h": "3f1f7eeefad270928749c89a2a2094ccc3f38829b1d8c197f6ce7483ead2284c",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xtr1common": "f9afdc2123d09c564f42552e160e7a558b87c8f0f63939e98bfcadb7dbf913ba",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cstring": "6f16cc44e5505c1d46e0869b8a7cbabf0be1646203261ab6e885165faceb98a6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\string.h": "39767b2e1963b8ef679b62d5e27cb2d0ca1de6a6173b75389b79c9d575da92fc",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_memory.h": "18ca520416579183bc369c0a8e555914db5c7577075b9359173fc6bc45595560",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_memcpy_s.h": "359f3ce9e84bc00c983f01d9c3375d0ca9e0ef6a42e797d16e119c62b2ef333b",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\errno.h": "c64e8df96f057fdebc0474bd765cee3ae17de34a2b1fc9d197597321f2d1e447",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_string.h": "b05204f6814d1d7b7ca729b41d4192d0e47722f162c0b1d322f994bf9650af63",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wstring.h": "c485f918d43f0f846d77a36eaee9e111f57bf2eec32db7d9719ff924771744c6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/initializer_list": "6ff91697d3fc1734976f2290dca64db6ff910a7d7add242029f692c745ac4558",
+    "local/experiments/v2-stdio-lock-prefix-292/dependencies/probe-prefix.cpp.json": "24847f8efce9c1ab668dde17b272f2106046b296de2daf1b0af3a9e5f189c6af",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cstdio": "d13434f976c70f1ea3f930ad63121bfd8cfb5c736cfc48a91f06a7608b1fbaa0",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\stdio.h": "06cbab3a501306fdd9176a00a83e5bb92ea4d7863cfd666355743527cf99edc6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h": "a10bbf4667b3aada380a6b80df853f9fbddc3cc691ca57389b3b6759f119e515",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_stdio_config.h": "a7e100624320a8e0123890c5008bcb2281c1273ca7ce5bb1d297f987fdbe79a0",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cstdlib": "0a7edd2c3ba954e98aa26894f28c3eb7fb9b0ba748261ec6e568563ed17b2fc4",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\math.h": "fb747990091c8c6e4ed8b4cfb40ed14eadd37547153607459e9ddef71c64edff",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_math.h": "ca2f0f25b2e07b3613984efd1135dd9f1d0786fabaa56da2ba3c83b1a23eb918",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\stdlib.h": "1576fdb40eb225dff53489db2fd52e41c7bb24f1e621e4a95c2c7f4a7216949c",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_malloc.h": "44bd1bb518e730ba0be045f44a4735869e08f7d54ab85c298270770812fcff80",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_search.h": "fe06c4dd27c3df5ca6bed52a433b8848f32e14ed0f3712d00f7e602416471c1b",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wstdlib.h": "98b62ac5fb4291961c19ecf5c1b2e641b437f9042054f1a56ebdfd0deb71eca1",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/limits.h": "2ed583abdb8a052b919d4652b10839e28a6fadbe63674108dcc65f719c9ff51c",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/iostream": "c305808f31581b9404f56773dbeaa882256b6af366b63071cdcc061e7e556c1f",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/istream": "55f487a42ace45ef5262b5b895605f3ec305209eac02efb32f11969f29731029",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_ostream.hpp": "e2016938b271458a2ed0e04ffbf5dd38ca219755f8ec6c7b0447d46ae112cea5",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/ios": "f0114492124ab2dc5eff7fda5dfacc836ab0a84efbde4d6207c93a23efdd7373",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xlocnum": "f02525562ce44675849016b2182a3e41105e329c790ece37a6d5f109f2599e11",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cfloat": "615e244a422277b8362e591881df1bd701d7e0ad0467d1787cb04a89565b333c",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\float.h": "0fbf87532c053b666940a65360f2488f5b6bb2e601632e32a0f1a8a078d8fdcd",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/climits": "dd0a6215a16748afdb3c6ad3f877e32ffab31326645b14dda13fdc76c2683da4",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cmath": "3f10507b4bca07cd07b7b4ae1403377634a37e91459305094e9f8cba34dd8ca5",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/yvals.h": "a186476441eaa158056be01da9a1473217e14a7cc33365cbd0b6c9115833e0dc",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\crtdbg.h": "d9ebd063f0243dd122ec33901661d1ae175359adbb019f0d815fb902e6f617e4",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_new_debug.h": "c3f552f0f27600ad991ad4b8b39d2204b65b4afcf0123504f03e781546f0f010",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_new.h": "8ee45e7db7f08475d1ddf33d493fd7cb5cd10b54b4756b39156c8548281b3e63",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/crtdefs.h": "82bdcc78bdab153e2a41a72a3860201b33aab6e46d207194caf09326f47b298f",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/use_ansi.h": "f3133ce73105aa38ea2fa0ee1495c8620b2d7dc0ab00dd980d9325ac38c7d443",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/intrin0.h": "bdbbcc2c993b2b90ea601cb033701c9ed6b66f65a39e031d65207464d7095e2c",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/intrin0.inl.h": "be7631000a4e89dda44873b0c5e6336c8d3a2f4fdf594365b16f8aaaf7177aeb",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/iterator": "c26eadf25004e352bbb57d189820392aefaf08a82b15027f18b32725ba106db2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/iosfwd": "5bb1f37c08ab118972567c468f8f9e024046b7bd1f884571828a19006b3b4076",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cwchar": "6395a6c56a62c4b02e58f4f5bf6904f7baabd7b90d0de281148ee3c115e7291a",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\wchar.h": "802dc6f33d128ac94cb0e8a978c65382c7c18e85dc2eb7d340b038d79ad10ea5",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wconio.h": "6cfdcfd9e1ec60014c4e7e87913275ce3cacda008dbc397a17306976266aa5b6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wctype.h": "b622b24cbda842a1736987f38c9deb5076e51af018630842a127bebd9104076e",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wdirect.h": "b8477593983d23ed4ef93c3efcabb8239375b518ba589a65338db29bb0dc2237",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wio.h": "e6a08ad4c75ef96fd5fafcff334048c4cc610f990f39c15e07c03af14d607197",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_share.h": "08e7a7eb0b0c7ebdd7e5fa9f9a65f626f5a725b688502ac178ca67334328b898",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wprocess.h": "e75c5cdf244070ddcebac8920dd4cc96c33d0e21fdfbc82446c0374950e98487",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_wtime.h": "4e487fddafbc724cf4e6df45feb920bc46dae80f54ffe5d983bf742a1fd9a12f",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\sys\\stat.h": "2b720dd0426cf0a74eefdb684ac559c8b4f84b1d7d345e3582ce0dfeb01b9aa7",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\sys\\types.h": "dfb9ebc7d527c30d71f1056ddd85e33fb931df573b41424bb1db9a48457bebd7",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/intrin.h": "b1cfcc48e6e64200641d677886f63473e3d4135209bcc3438d5a73a298293e0d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/setjmp.h": "529dce71c496d77b104b85876c65d8d6e61d7aed2d9e4b64c1011491fd566f10",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/immintrin.h": "fb8a3706c9013407f918ed92585be0eab7034ef124ec4c88f9ff4b00915d1cfa",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/wmmintrin.h": "ccee1d63e178b3dcff1625817c2a0722fbb2966956d3cbe5531feecb6afd5a9b",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/nmmintrin.h": "69ecf104338622b7f1e44b0d99469adb95c46dd9e5858f5dc8279c3ef3b99421",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/smmintrin.h": "2f773512dac1c4515c13cb9173a2c852d8c884b0cedc5814cff3956b742a1071",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/tmmintrin.h": "e5981ed52590bbcd7cad7d84e7ab3b47b81837136138854de0ee807332f95dab",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/pmmintrin.h": "2fb7131f91e5e300a7d9f2f148b6fe79a9775d06c3f1be26908e138ac6f9fbc5",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/emmintrin.h": "0088e279e28e47717d37096a52a328c6068ef41a33b8f8804e463e1e2984017e",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xmmintrin.h": "1f2376321c0f53c06cca13a354a519e2870b7cb1e6e0f223c242390b9114dd48",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/mmintrin.h": "d2dce9191fbdd235a94fc1af6bd163119dbcdfeadfb50f777b2d75b12ca1f028",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\malloc.h": "8acfe0c7a33a4d5ae2253f7167f92b0e728dea86f83289cee9d583c45b175b6e",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/zmmintrin.h": "ee8d0c6ce34ae423958ec2abc61d31e2a18a00d99761fcec8f4775c8775fdcc2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/ammintrin.h": "267f97d9d269e39204b31efcdc2a7a32fd63b2e15dc21a80fb18d739d3d03b12",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/mm3dnow.h": "da11304a505d7a70dacacba6dfa22be8d4dbcf44736682899ca8551eb03de4d1",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xutility": "d5959e0964ea09991888e5b45eecfd8c71c094034261489fbb450c2f2f450ef5",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_iter_core.hpp": "4fe1273bd571601435c7032dabf6e57b88f84b1740bc65768e00ccdc60b1c9ad",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/utility": "403bcf5919d0e0371f25a929752f0a05aae7b0667129d65cfe3a8dff858e97d6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/type_traits": "357e102b4e6ab85a864980a01bba28440791311df288b8987b580e577c928d5c",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/streambuf": "b8bec573d0d281db12a779a161e0485d9b801fc8d7f040752909aa15cebb8478",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xiosbase": "6fa886b895d0ee805985b9ef57d96d7e372431acc87184cfc02b7d65ea0a82fc",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\share.h": "f706b5df86d1bdf22cfe8d86dc798b255ce1bd2719d5d25f8f491595075a2bc2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/system_error": "2749bc4705adc1b6cfc7e488f2fa9f3db4231990a33a5f5ec63c6568fdcba753",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_system_error_abi.hpp": "c5c46618a13ba9a8087f0db8d2d2ecdeadad7694c8bef71a2e39b72b683d14d3",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cerrno": "4c8b39febc5b11b08e7a1253dc363bd8c8acdbe0159855b1c15d21b604f71e74",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/stdexcept": "e677daf8465dd4b870f420df9010ee3a17cd80fb6f6f5655f2ad3dc6d8009ae1",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/exception": "f656e780c4b7de2d580f34e2c96d9992f8f0d154d068235ba5bee709ae0334a2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_exception.h": "0dd3dcc67b655fbfc96708f131c9e7f86416d2db95fd33b1e7acc8489f2c32d4",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/eh.h": "f9809ac3f6929a584a971f14823be5a737e763a8d8f93bd50af2c3575c286c52",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\corecrt_terminate.h": "c8dc9a2497bcae0a9084eb1120f25660a575c7957997301c4f017fc44c908f54",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xstring": "9407c290a1d0c6bebc42cf131bd04f09a9892f61b713eecb12827c0f6bbc3045",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_sanitizer_annotate_container.hpp": "50d83b50fd98df02f58c3c643b5bc26313968a9edd75a485f7af4a24cfcef8e1",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_string_view.hpp": "957ae97e03169f46d8d9b77c9dc5ab3f66c619be5a228d062499b60b8d336c47",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xmemory": "76359d0893ef63b0baa617e3f2d8729c50a24d349b41af51ad8e00ad7be82d70",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/limits": "5cda311b1b514cdea1fdda5c1b53865a85c9288ef50d59b7b8f09802bf9bc60b",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/new": "101647348d130ff13563e2e8b07af3390a6dcfc0bea675207375eb493b213009",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xatomic.h": "769a41b38adbc4760a70feb5678a843e1df91ae33b64c60da2c993d8ad768d9c",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xpolymorphic_allocator.h": "df09c8ef5650c7e4980da1254f4d422fc0385e9852bb009e70449190a29db0f9",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/tuple": "feb355a9d1552af6e7b8cbdb3a6a2540604ae14ee5ed8f3dd6649bba46b3cd1d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xcall_once.h": "6d0dd9d0c84f4a4baf7969e257b9013ba73b8b2e4061abab626c2621f326c03d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xerrc.h": "41bf5400ac3bc3e6f1d738089a77b3112d988bff89b31ef15bf532922d52b04d",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/atomic": "76a3e00e57e342f26eb5db7a0e38002b0f5db850ac2fe33d026733bf8217b4b4",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xthreads.h": "76a4a9ce19140621d2d3c32738bf396177ebe72b893c5f50dea331c9cff15e3b",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_threads_core.hpp": "e29bc7049cc854234dbc1b332e1f7118aa0cc3b495fe538dfda9e7fbd0374529",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xtimec.h": "d6a25d6dfaf39141a7bfb86b296eb54c0b76aa29fc54a7c2a52c7bc17014d958",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/ctime": "6d807f129b2ac76e16769464ab789b9a7980ecdd39041c02bf2974e2301aa485",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\time.h": "b775fe03a3288dfcd68a72caad43e8198283164eae94b665fdd3375a3baea44c",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xlocale": "cbaf5f6a4b5609dac0ce91facab9812b0f0400ce0ea13689b8e3eecbf8431ee1",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/memory": "ebe9836c7d6460e9a414bcbf8e7a57d67a4760ab5f217c1ff1a06cee95af57bb",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/typeinfo": "9fe7fd18aaf6ea9714837a862d40d3bbaebdf57321a60f0951a0fafd157e25d2",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_typeinfo.h": "d6a1a675ad9592ba87ec95dc130e0ad690040c6dbb4faa974945c778190cccf8",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xfacet": "71d7bd76e31f7aee31c2d22386e00bf508936cea4e510ed3a7cde20dc3ab8312",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/xlocinfo": "3577fc29730c92dc4878003f0877695f6c7a8ad782d61be534c765a65661f741",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_xlocinfo_types.hpp": "1ee04bf81213a765a6b6c894275303d46d372c0555c8f4b17a1c97124dbdf860",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/cctype": "d764f74333f84776e778d936af9c78d9a9a21a0668dc1833fdd4a98e26a00f18",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\ctype.h": "6a10e9f0505b896d356d986d671c939b7fb0602012e463314ff7bfd0182a861f",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/clocale": "95cb0b228d1448969c55add911b4abe6d0108422c05ba27a71dd3ec7d4f61e38",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\locale.h": "877aa49e1f22814dd5634e785d305210d3c7ac0a1274e8552ce4f687a91ac4cb",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/ostream": "f3b25a4f7905c3a19309673cc773c7d7b6ec56c72111a33eeac0d2d840dad479",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/string": "dafa5ec4d069f7e85001d6a03fdcac5bde1d18eb7412240aa5cc7e10c7cddf05",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/vector": "351604d91a2ceac79f9bd9448c0553cccc22711e22955b5938eaf41de98334a6",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_bit_utils.hpp": "fd07ec800d789d222ba2b98c8ddcc3354930bd83e5ebd3ebc2491f35d047b331",
+    "local/experiments/v2-stdio-lock-prefix-292/objects/formatter_crt_runtime.obj": "ad3f78f5f26403b542e683698d0991b32793c1e534fbc4e6f622d470c8e9f201",
+    "local/experiments/v2-stdio-lock-prefix-292/objects/probe-prefix.obj": "be935c4484edb96515b7c3e77d270c60b1e4f186659ef1ab8b5840c742241ea3",
+    "local/experiments/v2-stdio-lock-prefix-292/prefix-probe.exe": "0a20fa2720b4924f68c3af5714378dd28016c16039fefb4e299b47ea1f2fbcd5",
+    "local/experiments/v2-stdio-lock-prefix-292/compile-001.log": "26201de3f9fe363ea1734687b94f31d3a0cdbefa6508caaeff2c8556c9470ddb",
+    "local/experiments/v2-stdio-lock-prefix-292/link-001.log": "e3ea455fa9ab916b83fff385a0c5ee6a0bd6bd47d5b1a0174ffc72c64460c319",
+    "local/experiments/v2-stdio-lock-prefix-292/link-002.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-stdio-lock-prefix-292/native-001.log": "4c094e43ccb4e99ad76e3bdf0ffc7a6763f4ca15a63626989c838cc5265afaae",
+    "local/experiments/v2-stdio-lock-prefix-292/compile-001.receipt.json": "ebccbac7ac56f40a4e4c1e32e06c21fc4d2dbaee7f6a648baa3ae378a6cf5bbf",
+    "local/experiments/v2-stdio-lock-prefix-292/link-001.receipt.json": "ddb0c85b5ce62f005901ee5e33b1c277879e577102aeead14deea0a79f98be3f",
+    "local/experiments/v2-stdio-lock-prefix-292/link-002.receipt.json": "bcabcab921710455481b81cc9aaddd01470903b4ca6efc36ac366a40fe99ceed",
+    "local/experiments/v2-stdio-lock-prefix-292/native-001.receipt.json": "8633e176e6463648f653e9ac6590b9fb59d5f0c1635dace329056e8a4e81d81d",
+    "local/experiments/v2-stdio-lock-prefix-292/cases.txt": "f4355afd21a3c6cc028a15d02fb44bf1e84cb2af5230df82f3600f78238d45d0"
+  },
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-stdio-lock-prefix-292/objects/formatter_crt_runtime.obj",
+      "sha256": "ad3f78f5f26403b542e683698d0991b32793c1e534fbc4e6f622d470c8e9f201"
+    }
+  ],
+  "limitations": [
+    "Real OS locking/concurrency and full original CRT startup remain unproved",
+    "Frozen earlier source-pin reports describe their historical26-entry owner; current48-entry owner is proved here"
+  ]
+}

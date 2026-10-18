@@ -1,5 +1,34 @@
 # Автоматизация восстановления
 
+Checkpoint293 (2026-10-18): свежий game-target graph151C++TUs/8projects прошёл
+компиляцию, link269names/305refs.380sourcepins unchanged; getter512cases и
+48-slot lockprefix112cases PASS. NoEXE/gameexecution. Старые candidate-archive
+checkpoint ниже относятся к другой wholearchive диагностике.
+
+## Общие данные и отдельные результаты прогонов
+
+Предложение для следующей версии формата, пока не реализовано:
+- Общие неизменяемые манифесты для source/input closure, original module facts,
+  toolchain и COFF-symbol snapshots; идентификатор включает SHA содержимого.
+- Новый run хранит ссылку+SHA базового манифеста, свою дельту, результаты и receipts.
+  Возврат к старому run не должен подставлять изменившийся общий latest.json.
+- Реестр текущих canonical owners остаётся общим; факт приёмки конкретной версии
+  ссылается на её module/VA/source/object identities. Replacement187→291 явно
+  заменяет прежнюю запись, не создаёт второго логического владельца.
+- Raw SHA и CRLF→LF normalized source SHA — разные режимы; новый resolver обязан
+  явно сохранять режим и проверять ссылки. Нельзя молча менять байты ради dedup.
+- Переиспользовать existing ProofCache/symbol caches. Они сокращают чтения;
+  shared manifests дополнительно сокращают дублирование хранения.
+- Frozen legacy reports не мигрировать массово. Сначала reader с поддержкой старого
+  inline и нового reference форматов, затем один новый pilot packet и проверки
+  missing/corrupt/changed manifest. Только после этого переключать новые producers.
+
+Наблюдение:651 top-level JSON в runs,167213224bytes; это не оценка объёма полностью
+устранимых повторов. Повторные фактические выполнения остаются отдельными receipts,
+даже если результат совпал. Полные stdout можно хранить как отдельный артефакт
+с SHA, а в summary — краткий итог и ссылку.
+
+
 Цель — сокращать ручную работу между восстановлением исходников и первым запуском
 игры, сохраняя проверку по оригинальному бинарнику.
 

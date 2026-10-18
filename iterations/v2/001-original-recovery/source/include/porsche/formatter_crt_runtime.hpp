@@ -3,7 +3,7 @@
 
 namespace porsche {
 // Proven prefix through lock25; no claim about unobserved adjacent data extent.
-extern void* formatter_crt_locks_005e57a8[26];
+extern void* formatter_crt_locks_005e57a8[48];
 extern std::uint8_t formatter_crt_lock1_006afd00[24];
 extern std::uint8_t formatter_crt_lock17_006afd18[24];
 extern std::uint8_t formatter_crt_lock9_006afd30[24];

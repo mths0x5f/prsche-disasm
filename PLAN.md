@@ -1,23 +1,31 @@
 # План восстановления Porsche Unleashed
 
-Checkpoint 2026-10-18: original logging/frame traversal подключены к game entry.
-- 287: bridge +unchanged175stdio,224nativecases PASS;83inputpins independently
-  rehashed.8oldstdio bodies переиспользованы,4152oldcases повторно не запускались.
-- 288:20directapp_main unresolvedservices→20exactoriginalCALLtargets;
-  готовыхacceptedowners нет. Первый connectedcluster реализован в290.
-- 290:00471b60+00487e20/98PEbytes,2gameCOFFs,6original/nativecases PASS.
-  Четыреcallees иglobal00628960 остаются явными границами;fixture не вgame.
-- 289:actualnormal-entryarchive/link4gameobjects,267→270names/303→306refs;
-  removed2app_mainedges,exposed5internalcontracts;directapp_main20→18.
-  22pins/12uniquedefinitions audit PASS. NoEXE/gameexecution. CMakeconfigured,
-  полныйfreshsourcebuild не выполнялся;длялинковкипереиспользованcached173graph.
-- resolver_291:finish004898f0/25Bpointer-return getter; old187void-returncandidate
-  неaliasи не+1distinctVA. Newgame graph использует толькоcorrecttypedowner.
-- lock_prefix_292:preflight единственногоcanonical005e57a8owner26→48slots;
-  доapproval не менятьsharedsource. Это реальныйstdoutlock29 runtimehold.
-Ближайшийшаг координатора: сохранитьготовые287–290, затемподключить291 и
-исправитьподтверждённыйprefix292. Originalcallernewline005d6e84 тоже вbacklog.
-Активныхагентовдвое;старыеlocale/scalarпослелимитанеактивны.
+Checkpoint 2026-10-18, Run293: свежий source game-target build.
+- Все151 C++TUs в8actualprojects скомпилированы;380source/dependency pins до/после
+  совпали. Линковка269names/305refs,0compilererrors/0otherlinkerrors;noEXE.
+  Это полный текущий targetgraph, не cached173 libs и не ALL_BUILD/probe sweep.
+- 291:correctpointer-return004898f0/25B,512nativecases PASS. Old187void-return
+  candidate неalias/не+1distinctVA, исключён из новогоgamegraph.
+- 292:единственныйcanonical005e57a8owner26→48cells/192Bprefix;4HIGHLOWsites,
+  all48initialcells и112native/originalcases PASS. Storagehold закрыт;
+  realOSconcurrency иoriginalCRTinitialization остаются открытыми.
+- Original005d6e84newline восстановлен вcanonicalapp_main и найден в новомCOFF.
+- Independent293audit PASS;oneMP6batch291,oneMP6batch292,gamebuild/MP6.
+  Failed292library-path link и293sandboxbuildcheck сохранены; compileнеповторяли
+  радиmetadata. ТриC4005 warnings только в неизменённыхplatformsources.
+Kong: пользователь предложил пилот, но APIkey/localLLMendpoint не настроены.
+ИИ-прогон не выполнялся; инструмент не принят и не отвергнут по качеству.
+Продолжаем текущийoriginal-evidence process. Агентыне стартовали (pending_init),
+задания прерваны;291/292 завершилкоординатор. Активныхназначенийнет.
+Ближайшийconnectedpacket: trace00628960storage/init иcallee00423840(67B),
+00482e50(69B),00476170(169B) поиндексу/actualconsumers до реализации.
+
+Оптимизация формата (предложение, не внедрено): общие immutable manifests
+для повторных inputs/toolchain/symbols, run-specific delta+receipts; legacyJSON
+сохранить. Сначала backward-compatible reader/pilot, затем новыеproducers.
+Подробности — docs/recovery-automation.md.
+
+Предыдущая интеграция:
 
 Checkpoint 2026-10-17: приоритет — игровой EXE и реальная цепочка запуска.
 - 285: два normal-entry links без WHOLEARCHIVE и без компиляции,267 имён/
