@@ -1,4 +1,4 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 
 namespace porsche {
 void __cdecl application_main_function_00563d30() {
@@ -13,7 +13,7 @@ void __cdecl application_main_function_00563d30() {
     for (;;) {
         bool any_pending = false;
         if (count > 0) {
-            const StreamSlot_295* table = stream_slots_006a5bc0;
+            const StreamSlot_400* table = stream_slots_006a5bc0;
             for (std::int32_t i = 0; i < count; ++i) {
                 if (table[i].operation_18 != 0u) {
                     any_pending = true;

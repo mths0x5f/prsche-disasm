@@ -3,8 +3,8 @@ import argparse, hashlib, importlib.util, json, os, re, subprocess, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/295-frame-loop-clusters'
-OUT = ROOT / 'local/experiments/v2-frame-loop-clusters-295'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/400-frame-loop-clusters'
+OUT = ROOT / 'local/experiments/v2-frame-loop-clusters-400'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 SPANS = [
@@ -119,8 +119,8 @@ def main(finalize, attempt):
         ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm',
         ROOT / 'iterations/v2/001-original-recovery/source/recovered/functions.json',
         ROOT / 'iterations/v2/001-original-recovery/runs/274-shared-heap-union/summary.json',
-        RUN / 'frame_loop_clusters_295.hpp',
-        RUN / 'bridge-sources-295.cmake',
+        RUN / 'frame_loop_clusters_400.hpp',
+        RUN / 'bridge-sources-400.cmake',
     ]:
         pin(p)
 
@@ -180,7 +180,7 @@ def main(finalize, attempt):
             assert any(include.is_relative_to(root) for root in roots), include
             pin(include)
 
-    coff = module('coff295', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff400', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     objects = [pin(OUT / 'objects' / (src.stem + '.obj')) for src in [*sources, fixture]]
     views = [coff.coff_symbols(obj) for obj in objects]
     assert all(not v['common'] and not v['weak'] for v in views[:len(SPANS)])

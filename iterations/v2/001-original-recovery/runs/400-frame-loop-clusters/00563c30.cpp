@@ -1,7 +1,7 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 
 namespace porsche {
-void __cdecl stream_queue_push_00563c30(StreamQueue_295* queue, StreamSlot_295* slot) {
+void __cdecl stream_queue_push_00563c30(StreamQueue_400* queue, StreamSlot_400* slot) {
     heap_enter_005322b0(stream_queue_lock_006a5be8);
     if (queue->head == nullptr) {
         queue->head = slot;

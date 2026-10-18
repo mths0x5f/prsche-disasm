@@ -1,11 +1,11 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 #include <cstring>
 
 namespace porsche {
 void __cdecl render_teardown_registry_0047f190() {
     auto* root = static_cast<std::uint8_t*>(render_registry_root_00628bac);
     if (root != nullptr) {
-        RenderVector12_295* vec = nullptr;
+        RenderVector12_400* vec = nullptr;
         std::memcpy(&vec, root + 0xa4, sizeof(vec));
         if (vec != nullptr) {
             const std::uint32_t end = vec->end;

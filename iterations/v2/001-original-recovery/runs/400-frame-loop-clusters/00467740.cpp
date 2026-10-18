@@ -1,4 +1,4 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 #include <cstring>
 
 namespace porsche {
@@ -21,7 +21,7 @@ void __cdecl application_main_function_00467740() {
             sub_7c->destroy_00538d80();
             application_release_0059f050(sub_7c);
         }
-        auto* sub_70 = read_ptr<VirtualDeleteSlot0_295*>(display, 0x70);
+        auto* sub_70 = read_ptr<VirtualDeleteSlot0_400*>(display, 0x70);
         if (sub_70 != nullptr) {
             sub_70->delete_slot0(1u);
         }
@@ -36,7 +36,7 @@ void __cdecl application_main_function_00467740() {
     }
     render_display_00628130 = nullptr;
     render_teardown_registry_0047f190();
-    auto* core = reinterpret_cast<VirtualDeleteSlot1_295*>(render_core_0065b39c);
+    auto* core = reinterpret_cast<VirtualDeleteSlot1_400*>(render_core_0065b39c);
     if (core != nullptr) {
         core->delete_slot1(1u);
     }

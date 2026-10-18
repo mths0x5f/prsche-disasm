@@ -1,8 +1,8 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 
 namespace porsche {
 std::uint32_t __cdecl stream_completion_pump_00563bd0(std::uint32_t, std::uint32_t) {
-    StreamSlot_295* slot = stream_queue_pop_00563c70(&stream_completed_queue_006a5bc8);
+    StreamSlot_400* slot = stream_queue_pop_00563c70(&stream_completed_queue_006a5bc8);
     if (slot == nullptr) {
         return 0u;
     }

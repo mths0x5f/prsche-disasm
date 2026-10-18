@@ -1,7 +1,7 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 
 namespace porsche {
-void __cdecl stream_slot_finalize_00563cc0(StreamSlot_295* slot) {
+void __cdecl stream_slot_finalize_00563cc0(StreamSlot_400* slot) {
     heap_enter_005322b0(stream_queue_lock_006a5be8);
     const std::uint32_t state = slot->state_0c;
     if (state == 1u) {

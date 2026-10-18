@@ -1,8 +1,8 @@
-#include "frame_loop_clusters_295.hpp"
+#include "frame_loop_clusters_400.hpp"
 
 namespace porsche {
 void __cdecl stream_slot_cancel_00564700(std::uint32_t handle) {
-    StreamSlot_295* slot = stream_slot_resolve_00564750(handle);
+    StreamSlot_400* slot = stream_slot_resolve_00564750(handle);
     if (slot != nullptr && slot->state_0c == 0u) {
         const std::uint32_t op = slot->operation_18;
         slot->state_0c = 1u;
