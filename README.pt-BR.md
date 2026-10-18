@@ -1,5 +1,11 @@
 # Need for Speed: Porsche Unleashed — restauração do original
 
+[Build nova do jogo, Run298](iterations/v2/001-original-recovery/runs/298-frame-game-integration/README.md):
+todos os 156 fontes C++ do grafo dela compilaram; a linkedição deixa 266 nomes / 302 referências.
+Foram conectados outros quatro algoritmos originais de percurso/processamento de objetos e duas
+constantes; 1139 comparações nativas com o original passaram. O EXE ainda não foi obtido. O layout
+compartilhado e a inicialização do objeto raiz continuam abertos. Não há prazo definido para o jogo completo.
+
 O objetivo do projeto é restaurar o jogo a partir dos binários originais em C/C++, compilar
 uma versão funcional para Windows/x86, em seguida descrever a estrutura do código e portá-lo para Rust
 para plataformas modernas nativas e web. O escopo inclui ambas as carreiras, física,

@@ -1,5 +1,19 @@
 # v2 / 001 — plano de recuperação do código-fonte
 
+Checkpoint 18/10/2026, Run298: quatro funções de frame originais conectadas à build do jogo.
+- 295/297/299: 441 bytes de original, 1139 comparações nativas finitas PASS; 300: duas
+  células float somente-leitura / 8 bytes, 35 leituras originais, COFF e auditoria PASS.
+- Todas as 156 TUs C++ do game graph real compilaram. Linkedição: 266 nomes / 302 referências
+  em vez de 269/305 no 293; três contratos fechados, nenhum unresolved novo. Ainda não há EXE.
+- 389 source pins inalterados; reader/manifests comuns aplicados aos novos relatórios.
+  A tentativa 001 em sandbox foi preservada; build002 e a auditoria em lote independente PASS
+  nas verificações declaradas. Compilação bem-sucedida não significa linkedição bem-sucedida
+  nem execução do jogo.
+- 296/301: o consumidor de TRACK_NAME admite strings longas; a cópia original cruza a raiz
+  00628960. Armazenamento isolado em HOLD, exige layout/init original compartilhado.
+Trabalho atual: piloto REA CLI 302 — frame_helpers_295; heap shutdown 303 — resolver_291;
+coordenador — homologação e integração. Próxima build somente após provedores prontos.
+
 Checkpoint 18/10/2026: logging original e iteração de objetos de frame conectados à entrada do jogo.
 - 287: bridge + 175 stdio inalterados, 224 casos nativos PASS; 83 pins de entrada independentemente
   re-hasheados. 8 corpos stdio antigos foram reutilizados, 4152 casos antigos não foram reexecutados.

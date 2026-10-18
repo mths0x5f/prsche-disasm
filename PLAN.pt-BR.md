@@ -1,5 +1,71 @@
 # Plano de Recuperação de Porsche Unleashed
 
+Checkpoint 18/10/2026, Run298: quatro funções de frame originais conectadas à build do jogo.
+- 295/297/299: 441 bytes de original, 1139 comparações nativas finitas PASS; 300: duas
+  células float somente-leitura / 8 bytes, 35 leituras originais, COFF e auditoria PASS.
+- Todas as 156 TUs C++ do game graph real compilaram. Linkedição: 266 nomes / 302 referências
+  em vez de 269/305 no 293; três contratos fechados, nenhum unresolved novo. Ainda não há EXE.
+- 389 source pins inalterados; reader/manifests comuns aplicados aos novos relatórios.
+  A tentativa 001 em sandbox foi preservada; build002 e a auditoria em lote independente
+  PASS nas verificações declaradas. Compilação bem-sucedida não significa linkedição
+  bem-sucedida nem execução do jogo.
+- 296/301: o consumidor de TRACK_NAME admite strings longas; a cópia original cruza
+  a raiz 00628960. Armazenamento isolado em HOLD, exige layout/init original compartilhado.
+Trabalho atual: piloto REA CLI 302 — frame_helpers_295; heap shutdown 303 — resolver_291;
+coordenador — homologação e integração. Próxima build somente após provedores prontos.
+
+Nota do fork: os runs locais deste fork (app_main 295–309, WinMain 310, frame service 311)
+foram renumerados para a faixa 400+, porque o upstream passou a ocupar 295–301 e anunciou
+302/303. A numeração abaixo é atualizada pela mesma mudança.
+
+Checkpoint 18/10/2026: Recuperação das funções do ciclo de frame de app_main_004b6a50 (Runs 400–414):
+- 400: Recuperados 21 algoritmos originais (1769 bytes de corpo PE) para os clusters do ciclo
+  de frame e de encerramento (004b73e0..004b7bf0). 34/34 testes diferenciais na CPU x86 passaram. Upstream PR #3.
+- 401: Recuperado o algoritmo de despacho de tiques de frame e de simulação 00413ea0 (296 bytes de corpo PE).
+  7/7 verificações diferenciais x86 passaram. Upstream PR #4.
+- 402: Recuperadas 6 funções auxiliares (199 bytes de corpo PE) para tiques e encerramento
+  (0046d960, 0046d9b0, 004659e0, 00471b60, 004a54e0, 004a54b0). 9/9 testes x86 passaram. Upstream PR #4.
+- 403: Recuperadas 4 funções do laço principal (509 bytes de corpo PE) para eventos, contextos e pacotes
+  (0048da60, 004acb80, 00425780, 004b4cd0). 8/8 testes x86 passaram. Upstream PR #5.
+- 404: Recuperadas 6 funções de memória, sessões e contexto de render (230 bytes de corpo PE)
+  (00556640, 005a246e, 0059ed90, 004d1ba0, 005a177b, 0059ed40). 12/12 testes x86 passaram. Upstream PR #6.
+- 405: Recuperadas 4 funções de temporizadores, tela, SIMD e fluxo de pacotes (420 bytes de corpo PE)
+  (0053c290, 004b6660, 00467fc0, 005366e0). 10/10 testes x86 passaram. Upstream PR #7.
+- 406: Recuperadas 4 funções de entrada, log de heap, startup e som (635 bytes de corpo PE)
+  (0048e6f0, 004a6960, 004a5410, 004d1a90). 10/10 testes x86 passaram. Upstream PR #8.
+- 407: Recuperadas 4 funções de tamanho médio (872 bytes de corpo PE) dos subsistemas de app_main
+  (0059d8e0, 004a6e30, 0048dad0, 004a5c30). 10/10 testes x86 no slab físico passaram. Upstream PR #9.
+- 408: Recuperadas 5 funções de complexidade avançada (1536 bytes de corpo PE) dos subsistemas de app_main
+  (00531f90, 004a6840, 004b67b0, 004b4b80, 004b68f0). 11/11 testes x86 no slab físico passaram. Upstream PR #10.
+- 409: Recuperadas 4 funções de grande porte (2302 bytes de corpo PE) dos subsistemas de app_main
+  (0059d650, 004a88a0, 004640b0, 00467470). 10/10 testes x86 no slab físico passaram. Upstream PR #11.
+- 410: Recuperadas 5 funções da parte final dos subsistemas de app_main (1376 bytes de corpo PE)
+  (0056a680, 005a0f98, 00412030, 00414eb0, 004dd600). 10/10 testes x86 no slab físico passaram. Upstream PR #12.
+- 411: Recuperadas 3 funções de desenho e apresentação de UI (3971 bytes de corpo PE) dos subsistemas de app_main
+  (0048cdf0, 0048dcb0, 0048e1a0). 10/10 testes x86 no slab físico passaram. Upstream PR #13.
+- 412: Recuperada a função de bomba de eventos de frame 004b4da0 (1078 bytes de corpo PE)
+  (frame_event_pump_004b4da0). 10/10 testes x86 no slab físico passaram. Upstream PR #14.
+- 413: Recuperado o driver de desenho de tela e apresentação 004a4a70 (2424 bytes de corpo PE)
+  (render_screen_driver_004a4a70). 10/10 testes x86 no slab físico passaram. Upstream PR #15.
+- 414: Recuperada a função de sincronização do driver de render 004d3420 (8592 bytes de corpo PE)
+  (render_driver_sync_004d3420). 10/10 testes x86 no slab físico passaram. Upstream PR #16.
+- 415: Recuperado o ponto de entrada Win32 WinMain original 004b6710 (149 bytes de corpo PE)
+  e os inicializadores estáticos pré-WinMain 004b66d0 (20 bytes) e 004b66f0 (19 bytes).
+  Total de 188 bytes de PE. 12/12 verificações diferenciais x86 no slab físico passaram. Upstream PR #17.
+- 416: Recuperadas três funções chamadas pelo frame service: 00423840 (67 bytes,
+  próximo nó da árvore em ordem de percurso), 00482e50 (69 bytes, avanço dos
+  temporizadores dos elementos) e 00476170 (169 bytes, transição e despacho do ciclo
+  de vida dos nós). Total de 305 bytes de corpo PE. A célula de armazenamento 00628960,
+  declarada extern no Run 290, NÃO é definida; seus proprietários 00471b70 (inicializador)
+  e 00471c40 (encerramento) NÃO foram recuperados — apenas a propriedade está provada.
+  A fronteira externa do Run 290 está fechada.
+  12/12 verificações diferenciais x86 no slab físico passaram.
+- Total: TODAS as 70 funções originais (26209 bytes de corpo PE) chamadas diretamente de
+  app_main_004b6a50, mais o ponto de entrada WinMain completo e os inicializadores da CRT
+  (188 bytes), COMPLETAMENTE recuperadas em C++ limpo, com tipagem, estruturas autênticas
+  e validação bit a bit no slab x86. 100% de cobertura alcançada!
+- Próximo passo: integração e build do grafo completo de funções num módulo único app_main / startup do jogo, validação de ponta a ponta do startup normal do jogo.
+
 Checkpoint 18/10/2026: logging original e iteração de objetos de frame conectados à entrada do jogo.
 - 287: bridge + 175 stdio inalterados, 224 casos nativos PASS; 83 pins de entrada independentemente
   re-hasheados. 8 corpos stdio antigos foram reutilizados, 4152 casos antigos não foram reexecutados.

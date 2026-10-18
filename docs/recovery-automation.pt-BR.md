@@ -1,5 +1,17 @@
 # Automação da Restauração
 
+Checkpoint 298: 156 TUs reais do jogo compilados, 389 source pins compartilhados; linkedição com
+266 nomes / 302 referências. 1139 comparações finitas de frame e a prova exata de 8 B de dados PASS.
+Sem EXE. Os runs 295–301 usam o ManifestReader comum; a auditoria em lote reusa as leituras entre pacotes.
+
+O piloto REA 302 foi acordado com o usuário. Trata-se de acesso MCP/CLI a analisadores, não de fontes
+compiláveis prontos. Verificamos uma cadeia nativa x86 sem API de LLM separada e sem alterar
+MCP/skills globais. A [documentação](https://github.com/morluto/rea)
+e a [fronteira no Windows](https://github.com/morluto/rea/blob/main/docs/windows-ghidra-p0.md)
+distinguem o main atual, com PE x86, do npm <=5.0.0, com admissão apenas x64 no Windows.
+São necessários a consulta real ao provedor, versão/commit, tempo, imutabilidade do original e
+comparação com o índice; antes disso, nenhum ganho de velocidade é declarado.
+
 O projeto restaura o código original de *Need for Speed: Porsche Unleashed* (2000).
 A base metodológica é a mesma descrita pelo autor no repositório
 [prsche-disasm](https://github.com/xfynx/prsche-disasm): descompilação estrita

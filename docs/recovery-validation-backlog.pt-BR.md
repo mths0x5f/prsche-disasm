@@ -1,5 +1,17 @@
 # Validações Pendentes da Restauração v2
 
+Checkpoint 295–301:
+- [x] Quatro algoritmos de frame: 441 bytes de original, 1139 comparações nativas; callbacks,
+  releituras e cópia para frente exatos, limiar float e caminho de NaN dentro dos limites das fixtures.
+- [x] Duas células float somente-leitura: 8 B exatos, 35 leituras MEM4 originais, sem provedores extras.
+- [x] Grafo real do jogo: 156 TUs compilados, 389 source pins, 266 nomes / 302 referências; auditoria
+  em lote PASS, tentativa falha em sandbox preservada. Sem EXE / sem execução do jogo.
+- [ ] Raiz 00628960 / layout compartilhado / init. Os runs 296/301 mostram o caminho original de
+  TRACK_NAME sem invariante de 31 caracteres; uma variável fictícia separada não é solução.
+- [ ] Callees virtuais reais, faltas por ponteiro nulo/memória inválida, comportamento completo de
+  status/controle do x87 e integração do jogo completo não são cobertos por fixtures nativas finitas.
+- [ ] Piloto REA 302: comparar prontidão / consulta x86 real / tempo; por ora a ferramenta não foi aceita.
+
 Novas observações de inicialização 287–290 (17/10/2026):
 - [ ] O original 005d6e84 contém "Initializing rendering\n\0", enquanto o atual
   application_main.cpp passa a string sem newline. Corrigir exatamente o chamador
