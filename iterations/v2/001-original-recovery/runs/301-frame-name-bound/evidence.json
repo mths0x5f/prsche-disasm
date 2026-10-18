@@ -1,0 +1,1575 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "instructions": [
+    {
+      "va": "004155d1",
+      "hex": "8b06",
+      "text": "MOV EAX,dword ptr [ESI]",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155d3",
+      "hex": "8bfe",
+      "text": "MOV EDI,ESI",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155d5",
+      "hex": "3bc3",
+      "text": "CMP EAX,EBX",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155d7",
+      "hex": "7416",
+      "text": "JZ 0x004155ef",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155d9",
+      "hex": "57",
+      "text": "PUSH EDI",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155da",
+      "hex": "e8a1f50900",
+      "text": "CALL 0x004b4b80",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155df",
+      "hex": "57",
+      "text": "PUSH EDI",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155e0",
+      "hex": "e8ebf60900",
+      "text": "CALL 0x004b4cd0",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155e5",
+      "hex": "8d3c87",
+      "text": "LEA EDI,[EDI + EAX*0x4]",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155e8",
+      "hex": "83c408",
+      "text": "ADD ESP,0x8",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155eb",
+      "hex": "391f",
+      "text": "CMP dword ptr [EDI],EBX",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "004155ed",
+      "hex": "75ea",
+      "text": "JNZ 0x004155d9",
+      "indexed_owner": "004152e0"
+    },
+    {
+      "va": "00439e53",
+      "hex": "0fbf4020",
+      "text": "MOVSX EAX,word ptr [EAX + 0x20]",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e57",
+      "hex": "50",
+      "text": "PUSH EAX",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e58",
+      "hex": "e8d3200c00",
+      "text": "CALL 0x004fbf30",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e5d",
+      "hex": "83c404",
+      "text": "ADD ESP,0x4",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e60",
+      "hex": "85c0",
+      "text": "TEST EAX,EAX",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e62",
+      "hex": "7411",
+      "text": "JZ 0x00439e75",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e64",
+      "hex": "83c008",
+      "text": "ADD EAX,0x8",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e67",
+      "hex": "50",
+      "text": "PUSH EAX",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e68",
+      "hex": "6844746500",
+      "text": "PUSH 0x657444",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e6d",
+      "hex": "e84d711600",
+      "text": "CALL 0x005a0fbf",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00439e72",
+      "hex": "83c408",
+      "text": "ADD ESP,0x8",
+      "indexed_owner": "00439bd0"
+    },
+    {
+      "va": "00471b70",
+      "hex": "56",
+      "text": "PUSH ESI",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b71",
+      "hex": "57",
+      "text": "PUSH EDI",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b72",
+      "hex": "bf44746500",
+      "text": "MOV EDI,0x657444",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b77",
+      "hex": "83c9ff",
+      "text": "OR ECX,0xffffffff",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b7a",
+      "hex": "33c0",
+      "text": "XOR EAX,EAX",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b7c",
+      "hex": "6a3c",
+      "text": "PUSH 0x3c",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b7e",
+      "hex": "f2ae",
+      "text": "SCASB.REPNE ES:EDI",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b80",
+      "hex": "f7d1",
+      "text": "NOT ECX",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b82",
+      "hex": "2bf9",
+      "text": "SUB EDI,ECX",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b84",
+      "hex": "8bc1",
+      "text": "MOV EAX,ECX",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b86",
+      "hex": "8bf7",
+      "text": "MOV ESI,EDI",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b88",
+      "hex": "bf40896200",
+      "text": "MOV EDI,0x628940",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b8d",
+      "hex": "c1e902",
+      "text": "SHR ECX,0x2",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b90",
+      "hex": "f3a5",
+      "text": "MOVSD.REP ES:EDI,ESI",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b92",
+      "hex": "8bc8",
+      "text": "MOV ECX,EAX",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b94",
+      "hex": "83e103",
+      "text": "AND ECX,0x3",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "00471b97",
+      "hex": "f3a4",
+      "text": "MOVSB.REP ES:EDI,ESI",
+      "indexed_owner": "00471b70"
+    },
+    {
+      "va": "0048f998",
+      "hex": "8b542434",
+      "text": "MOV EDX,dword ptr [ESP + 0x34]",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f99c",
+      "hex": "8d7304",
+      "text": "LEA ESI,[EBX + 0x4]",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f99f",
+      "hex": "8b4204",
+      "text": "MOV EAX,dword ptr [EDX + 0x4]",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9a2",
+      "hex": "99",
+      "text": "CDQ",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9a3",
+      "hex": "83e203",
+      "text": "AND EDX,0x3",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9a6",
+      "hex": "03c2",
+      "text": "ADD EAX,EDX",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9a8",
+      "hex": "c1f802",
+      "text": "SAR EAX,0x2",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9ab",
+      "hex": "8d7c86fc",
+      "text": "LEA EDI,[ESI + EAX*0x4 + -0x4]",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9af",
+      "hex": "3bf7",
+      "text": "CMP ESI,EDI",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9b1",
+      "hex": "0f831a020000",
+      "text": "JNC 0x0048fbd1",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9b7",
+      "hex": "56",
+      "text": "PUSH ESI",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9b8",
+      "hex": "e8c3510200",
+      "text": "CALL 0x004b4b80",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9bd",
+      "hex": "56",
+      "text": "PUSH ESI",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9be",
+      "hex": "e80d530200",
+      "text": "CALL 0x004b4cd0",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9c3",
+      "hex": "8d3486",
+      "text": "LEA ESI,[ESI + EAX*0x4]",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9c6",
+      "hex": "83c408",
+      "text": "ADD ESP,0x8",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9c9",
+      "hex": "3bf7",
+      "text": "CMP ESI,EDI",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "0048f9cb",
+      "hex": "72ea",
+      "text": "JC 0x0048f9b7",
+      "indexed_owner": "0048f060"
+    },
+    {
+      "va": "004b29a1",
+      "hex": "c705c42a5d000f010000",
+      "text": "MOV dword ptr [0x005d2ac4],0x10f",
+      "indexed_owner": "004b0fa0"
+    },
+    {
+      "va": "004b29ab",
+      "hex": "c705c82a5d0044746500",
+      "text": "MOV dword ptr [0x005d2ac8],0x657444",
+      "indexed_owner": "004b0fa0"
+    },
+    {
+      "va": "004b29b5",
+      "hex": "c705cc2a5d0074525d00",
+      "text": "MOV dword ptr [0x005d2acc],0x5d5274",
+      "indexed_owner": "004b0fa0"
+    },
+    {
+      "va": "004b29bf",
+      "hex": "c705d02a5d0010010000",
+      "text": "MOV dword ptr [0x005d2ad0],0x110",
+      "indexed_owner": "004b0fa0"
+    },
+    {
+      "va": "004b4b80",
+      "hex": "8b442404",
+      "text": "MOV EAX,dword ptr [ESP + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b84",
+      "hex": "53",
+      "text": "PUSH EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b85",
+      "hex": "56",
+      "text": "PUSH ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b86",
+      "hex": "57",
+      "text": "PUSH EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b87",
+      "hex": "8b38",
+      "text": "MOV EDI,dword ptr [EAX]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b89",
+      "hex": "81ff1e020000",
+      "text": "CMP EDI,0x21e",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b8f",
+      "hex": "7c44",
+      "text": "JL 0x004b4bd5",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b91",
+      "hex": "8b15401e5d00",
+      "text": "MOV EDX,dword ptr [0x005d1e40]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b97",
+      "hex": "8b5808",
+      "text": "MOV EBX,dword ptr [EAX + 0x8]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b9a",
+      "hex": "8b4004",
+      "text": "MOV EAX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b9d",
+      "hex": "33f6",
+      "text": "XOR ESI,ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4b9f",
+      "hex": "85d2",
+      "text": "TEST EDX,EDX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4ba1",
+      "hex": "b9401e5d00",
+      "text": "MOV ECX,0x5d1e40",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4ba6",
+      "hex": "0f841b010000",
+      "text": "JZ 0x004b4cc7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bac",
+      "hex": "3bd7",
+      "text": "CMP EDX,EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bae",
+      "hex": "7503",
+      "text": "JNZ 0x004b4bb3",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bb0",
+      "hex": "8b7104",
+      "text": "MOV ESI,dword ptr [ECX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bb3",
+      "hex": "8b510c",
+      "text": "MOV EDX,dword ptr [ECX + 0xc]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bb6",
+      "hex": "83c10c",
+      "text": "ADD ECX,0xc",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bb9",
+      "hex": "85d2",
+      "text": "TEST EDX,EDX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bbb",
+      "hex": "75ef",
+      "text": "JNZ 0x004b4bac",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bbd",
+      "hex": "85f6",
+      "text": "TEST ESI,ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bbf",
+      "hex": "0f8402010000",
+      "text": "JZ 0x004b4cc7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bc5",
+      "hex": "8d0c80",
+      "text": "LEA ECX,[EAX + EAX*0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bc8",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bc9",
+      "hex": "8d1448",
+      "text": "LEA EDX,[EAX + ECX*0x2]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bcc",
+      "hex": "c1e207",
+      "text": "SHL EDX,0x7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bcf",
+      "hex": "891c32",
+      "text": "MOV dword ptr [EDX + ESI*0x1],EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bd2",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bd3",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bd4",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bd5",
+      "hex": "81ff4e010000",
+      "text": "CMP EDI,0x14e",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bdb",
+      "hex": "7c34",
+      "text": "JL 0x004b4c11",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bdd",
+      "hex": "8b4804",
+      "text": "MOV ECX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4be0",
+      "hex": "890cbd30915e00",
+      "text": "MOV dword ptr [EDI*0x4 + 0x5e9130],ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4be7",
+      "hex": "8b4004",
+      "text": "MOV EAX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bea",
+      "hex": "8bc8",
+      "text": "MOV ECX,EAX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bec",
+      "hex": "81e1ff000000",
+      "text": "AND ECX,0xff",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bf2",
+      "hex": "8d1449",
+      "text": "LEA EDX,[ECX + ECX*0x2]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bf5",
+      "hex": "8b0c95d0c55c00",
+      "text": "MOV ECX,dword ptr [EDX*0x4 + 0x5cc5d0]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bfc",
+      "hex": "85c9",
+      "text": "TEST ECX,ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4bfe",
+      "hex": "0f84c3000000",
+      "text": "JZ 0x004b4cc7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c04",
+      "hex": "c1f808",
+      "text": "SAR EAX,0x8",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c07",
+      "hex": "50",
+      "text": "PUSH EAX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c08",
+      "hex": "ffd1",
+      "text": "CALL ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c0a",
+      "hex": "83c404",
+      "text": "ADD ESP,0x4",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c0d",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c0e",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c0f",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c10",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c11",
+      "hex": "8b0d401e5d00",
+      "text": "MOV ECX,dword ptr [0x005d1e40]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c17",
+      "hex": "33d2",
+      "text": "XOR EDX,EDX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c19",
+      "hex": "85c9",
+      "text": "TEST ECX,ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c1b",
+      "hex": "be401e5d00",
+      "text": "MOV ESI,0x5d1e40",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c20",
+      "hex": "0f84a1000000",
+      "text": "JZ 0x004b4cc7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c26",
+      "hex": "3bcf",
+      "text": "CMP ECX,EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c28",
+      "hex": "7503",
+      "text": "JNZ 0x004b4c2d",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c2a",
+      "hex": "8b5604",
+      "text": "MOV EDX,dword ptr [ESI + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c2d",
+      "hex": "8b4e0c",
+      "text": "MOV ECX,dword ptr [ESI + 0xc]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c30",
+      "hex": "83c60c",
+      "text": "ADD ESI,0xc",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c33",
+      "hex": "85c9",
+      "text": "TEST ECX,ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c35",
+      "hex": "75ef",
+      "text": "JNZ 0x004b4c26",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c37",
+      "hex": "85d2",
+      "text": "TEST EDX,EDX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c39",
+      "hex": "0f8488000000",
+      "text": "JZ 0x004b4cc7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c3f",
+      "hex": "81ff42010000",
+      "text": "CMP EDI,0x142",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c45",
+      "hex": "7c3b",
+      "text": "JL 0x004b4c82",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c47",
+      "hex": "81ff47010000",
+      "text": "CMP EDI,0x147",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c4d",
+      "hex": "7c11",
+      "text": "JL 0x004b4c60",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c4f",
+      "hex": "8b4804",
+      "text": "MOV ECX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c52",
+      "hex": "8d3489",
+      "text": "LEA ESI,[ECX + ECX*0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c55",
+      "hex": "8d0c71",
+      "text": "LEA ECX,[ECX + ESI*0x2]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c58",
+      "hex": "c1e107",
+      "text": "SHL ECX,0x7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c5b",
+      "hex": "03d1",
+      "text": "ADD EDX,ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c5d",
+      "hex": "83c004",
+      "text": "ADD EAX,0x4",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c60",
+      "hex": "8b4804",
+      "text": "MOV ECX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c63",
+      "hex": "33f6",
+      "text": "XOR ESI,ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c65",
+      "hex": "85c9",
+      "text": "TEST ECX,ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c67",
+      "hex": "7e5e",
+      "text": "JLE 0x004b4cc7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c69",
+      "hex": "8d4808",
+      "text": "LEA ECX,[EAX + 0x8]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c6c",
+      "hex": "8b39",
+      "text": "MOV EDI,dword ptr [ECX]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c6e",
+      "hex": "46",
+      "text": "INC ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c6f",
+      "hex": "893a",
+      "text": "MOV dword ptr [EDX],EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c71",
+      "hex": "8b7804",
+      "text": "MOV EDI,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c74",
+      "hex": "83c104",
+      "text": "ADD ECX,0x4",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c77",
+      "hex": "83c204",
+      "text": "ADD EDX,0x4",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c7a",
+      "hex": "3bf7",
+      "text": "CMP ESI,EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c7c",
+      "hex": "7cee",
+      "text": "JL 0x004b4c6c",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c7e",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c7f",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c80",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c81",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c82",
+      "hex": "81ff0e010000",
+      "text": "CMP EDI,0x10e",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c88",
+      "hex": "7c38",
+      "text": "JL 0x004b4cc2",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c8a",
+      "hex": "81ff3a010000",
+      "text": "CMP EDI,0x13a",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c90",
+      "hex": "7c11",
+      "text": "JL 0x004b4ca3",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c92",
+      "hex": "8b4804",
+      "text": "MOV ECX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c95",
+      "hex": "8d3489",
+      "text": "LEA ESI,[ECX + ECX*0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c98",
+      "hex": "8d0c71",
+      "text": "LEA ECX,[ECX + ESI*0x2]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c9b",
+      "hex": "c1e107",
+      "text": "SHL ECX,0x7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4c9e",
+      "hex": "03d1",
+      "text": "ADD EDX,ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4ca0",
+      "hex": "83c004",
+      "text": "ADD EAX,0x4",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4ca3",
+      "hex": "8d4804",
+      "text": "LEA ECX,[EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4ca6",
+      "hex": "8bf2",
+      "text": "MOV ESI,EDX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4ca8",
+      "hex": "83c008",
+      "text": "ADD EAX,0x8",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cab",
+      "hex": "8a11",
+      "text": "MOV DL,byte ptr [ECX]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cad",
+      "hex": "41",
+      "text": "INC ECX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cae",
+      "hex": "3bc8",
+      "text": "CMP ECX,EAX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cb0",
+      "hex": "8816",
+      "text": "MOV byte ptr [ESI],DL",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cb2",
+      "hex": "7603",
+      "text": "JBE 0x004b4cb7",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cb4",
+      "hex": "83c004",
+      "text": "ADD EAX,0x4",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cb7",
+      "hex": "8a16",
+      "text": "MOV DL,byte ptr [ESI]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cb9",
+      "hex": "46",
+      "text": "INC ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cba",
+      "hex": "84d2",
+      "text": "TEST DL,DL",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cbc",
+      "hex": "75ed",
+      "text": "JNZ 0x004b4cab",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cbe",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cbf",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc0",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc1",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc2",
+      "hex": "8b4004",
+      "text": "MOV EAX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc5",
+      "hex": "8902",
+      "text": "MOV dword ptr [EDX],EAX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc7",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc8",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cc9",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004b4cca",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004b4b80"
+    },
+    {
+      "va": "004fbf30",
+      "hex": "a1001d6900",
+      "text": "MOV EAX,[0x00691d00]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf35",
+      "hex": "53",
+      "text": "PUSH EBX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf36",
+      "hex": "56",
+      "text": "PUSH ESI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf37",
+      "hex": "33c9",
+      "text": "XOR ECX,ECX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf39",
+      "hex": "8b30",
+      "text": "MOV ESI,dword ptr [EAX]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf3b",
+      "hex": "8b4004",
+      "text": "MOV EAX,dword ptr [EAX + 0x4]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf3e",
+      "hex": "2bc6",
+      "text": "SUB EAX,ESI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf40",
+      "hex": "57",
+      "text": "PUSH EDI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf41",
+      "hex": "c1f802",
+      "text": "SAR EAX,0x2",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf44",
+      "hex": "85c0",
+      "text": "TEST EAX,EAX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf46",
+      "hex": "7e17",
+      "text": "JLE 0x004fbf5f",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf48",
+      "hex": "8b7c2410",
+      "text": "MOV EDI,dword ptr [ESP + 0x10]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf4c",
+      "hex": "8bd6",
+      "text": "MOV EDX,ESI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf4e",
+      "hex": "8b1a",
+      "text": "MOV EBX,dword ptr [EDX]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf50",
+      "hex": "0fbf1b",
+      "text": "MOVSX EBX,word ptr [EBX]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf53",
+      "hex": "3bdf",
+      "text": "CMP EBX,EDI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf55",
+      "hex": "740e",
+      "text": "JZ 0x004fbf65",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf57",
+      "hex": "41",
+      "text": "INC ECX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf58",
+      "hex": "83c204",
+      "text": "ADD EDX,0x4",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf5b",
+      "hex": "3bc8",
+      "text": "CMP ECX,EAX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf5d",
+      "hex": "7cef",
+      "text": "JL 0x004fbf4e",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf5f",
+      "hex": "8b06",
+      "text": "MOV EAX,dword ptr [ESI]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf61",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf62",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf63",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf64",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf65",
+      "hex": "8b048e",
+      "text": "MOV EAX,dword ptr [ESI + ECX*0x4]",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf68",
+      "hex": "5f",
+      "text": "POP EDI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf69",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf6a",
+      "hex": "5b",
+      "text": "POP EBX",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "004fbf6b",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "004fbf30"
+    },
+    {
+      "va": "005a0fbf",
+      "hex": "55",
+      "text": "PUSH EBP",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fc0",
+      "hex": "8bec",
+      "text": "MOV EBP,ESP",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fc2",
+      "hex": "83ec20",
+      "text": "SUB ESP,0x20",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fc5",
+      "hex": "8b4508",
+      "text": "MOV EAX,dword ptr [EBP + 0x8]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fc8",
+      "hex": "56",
+      "text": "PUSH ESI",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fc9",
+      "hex": "8945e8",
+      "text": "MOV dword ptr [EBP + -0x18],EAX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fcc",
+      "hex": "8945e0",
+      "text": "MOV dword ptr [EBP + -0x20],EAX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fcf",
+      "hex": "8d4510",
+      "text": "LEA EAX,[EBP + 0x10]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fd2",
+      "hex": "c745ec42000000",
+      "text": "MOV dword ptr [EBP + -0x14],0x42",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fd9",
+      "hex": "50",
+      "text": "PUSH EAX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fda",
+      "hex": "8d45e0",
+      "text": "LEA EAX,[EBP + -0x20]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fdd",
+      "hex": "ff750c",
+      "text": "PUSH dword ptr [EBP + 0xc]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fe0",
+      "hex": "c745e4ffffff7f",
+      "text": "MOV dword ptr [EBP + -0x1c],0x7fffffff",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fe7",
+      "hex": "50",
+      "text": "PUSH EAX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fe8",
+      "hex": "e884330000",
+      "text": "CALL 0x005a4371",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fed",
+      "hex": "83c40c",
+      "text": "ADD ESP,0xc",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0ff0",
+      "hex": "ff4de4",
+      "text": "DEC dword ptr [EBP + -0x1c]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0ff3",
+      "hex": "8bf0",
+      "text": "MOV ESI,EAX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0ff5",
+      "hex": "7808",
+      "text": "JS 0x005a0fff",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0ff7",
+      "hex": "8b45e0",
+      "text": "MOV EAX,dword ptr [EBP + -0x20]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0ffa",
+      "hex": "802000",
+      "text": "AND byte ptr [EAX],0x0",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0ffd",
+      "hex": "eb0d",
+      "text": "JMP 0x005a100c",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a0fff",
+      "hex": "8d45e0",
+      "text": "LEA EAX,[EBP + -0x20]",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a1002",
+      "hex": "50",
+      "text": "PUSH EAX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a1003",
+      "hex": "6a00",
+      "text": "PUSH 0x0",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a1005",
+      "hex": "e84f320000",
+      "text": "CALL 0x005a4259",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a100a",
+      "hex": "59",
+      "text": "POP ECX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a100b",
+      "hex": "59",
+      "text": "POP ECX",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a100c",
+      "hex": "8bc6",
+      "text": "MOV EAX,ESI",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a100e",
+      "hex": "5e",
+      "text": "POP ESI",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a100f",
+      "hex": "c9",
+      "text": "LEAVE",
+      "indexed_owner": "005a0fbf"
+    },
+    {
+      "va": "005a1010",
+      "hex": "c3",
+      "text": "RET",
+      "indexed_owner": "005a0fbf"
+    }
+  ],
+  "registration": {
+    "record_va": "005d2ac4",
+    "id": "0000010f",
+    "pointer_cell": "005d2ac8",
+    "destination": "00657444",
+    "label_va": "005d5274",
+    "label_hex": "545241434b5f4e414d4500"
+  },
+  "initializer_cutpoint": {
+    "start": "004b0ff0",
+    "stop": "004b4b75",
+    "instruction_count": 1637,
+    "span_sha256": "233a99cf62cb3a3e71dcb59f1e360a786d2a51ed55b1df4cfc05291eb9af08e7",
+    "entry_proved": false
+  },
+  "consumer_cases": [
+    {
+      "source_length": 31,
+      "packet_hex": "0f0100005151515151515151515151515151515151515151515151515151515151515100",
+      "registration_hex": "0f0100004474650074525d00",
+      "source_after_hex": "5151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "destination_after_hex": "5151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_after_hex": "a5a5a5a5",
+      "root_changed": false,
+      "following_buffer_changed": false
+    },
+    {
+      "source_length": 32,
+      "packet_hex": "0f010000515151515151515151515151515151515151515151515151515151515151515100",
+      "registration_hex": "0f0100004474650074525d00",
+      "source_after_hex": "515151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "destination_after_hex": "515151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_after_hex": "00a5a5a5",
+      "root_changed": true,
+      "following_buffer_changed": false
+    },
+    {
+      "source_length": 40,
+      "packet_hex": "0f0100005151515151515151515151515151515151515151515151515151515151515151515151515151515100",
+      "registration_hex": "0f0100004474650074525d00",
+      "source_after_hex": "5151515151515151515151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "destination_after_hex": "5151515151515151515151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_after_hex": "51515151",
+      "root_changed": true,
+      "following_buffer_changed": true
+    },
+    {
+      "source_length": 63,
+      "packet_hex": "0f01000051515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515100",
+      "registration_hex": "0f0100004474650074525d00",
+      "source_after_hex": "51515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515100",
+      "destination_after_hex": "51515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515151515100a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_after_hex": "51515151",
+      "root_changed": true,
+      "following_buffer_changed": true
+    }
+  ],
+  "format_wrapper_cutpoint": {
+    "start": "005a0fbf",
+    "stop": "005a0fe8",
+    "stream_hex": "44746500ffffff7f447465004200000000000000000000000000000000000000",
+    "remaining_capacity": 2147483647,
+    "format_va": "005d5274",
+    "format_core": "005a4371"
+  },
+  "format_writer": {
+    "site": "00439e68",
+    "owner": "00439bd0",
+    "destination": "00657444",
+    "format_source": "004fbf30 result+8",
+    "lookup": "signed16 item identifier through pointer vector00691d00; no length check in60Blookup"
+  },
+  "limits": [
+    "Controlled valid packets prove writer/copy effects, not that shipped data or a full game session supplies these lengths",
+    "No bound on every upstream packet constructor or resource string is claimed"
+  ]
+}

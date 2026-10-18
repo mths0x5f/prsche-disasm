@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "kind": "exact-frame-float-data",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "source": "iterations/v2/001-original-recovery/runs/300-frame-float-data/frame_floats_300.cpp",
+  "game_object": {
+    "path": "local/experiments/v2-frame-floats-300/001/frame_floats_300.obj",
+    "sha256": "c47af39bee166349607bb6fd3ec3b6b48a56a2aaa3735fdde8975a047bc04efe"
+  },
+  "symbols": {
+    "defined": [
+      "?frame_limit_005b47d8@porsche@@3MB",
+      "?frame_step_005b2764@porsche@@3MB"
+    ],
+    "undefined": [],
+    "common": [],
+    "weak": []
+  },
+  "storage": {
+    ".p3lim": {
+      "bytes": "0000fa45",
+      "size": 4,
+      "relocations": 0,
+      "flags": "40300040"
+    },
+    ".p3step": {
+      "bytes": "00401c46",
+      "size": 4,
+      "relocations": 0,
+      "flags": "40300040"
+    }
+  },
+  "original_read_sites": {
+    "005b47d8": 9,
+    "005b2764": 26
+  },
+  "compiler_batches": 1,
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/a1063fc5c40601f562d1f6e1095ba3b7fd82e89c614a25a7b54ec9bc8f202086.json",
+    "sha256": "a1063fc5c40601f562d1f6e1095ba3b7fd82e89c614a25a7b54ec9bc8f202086"
+  },
+  "source_manifest": {
+    "path": "research/v2/proof-manifests/sha256/d02afeaa6dc4eaf5bf6dc08be6021e068112a7de715292650aff1fe5f61b7dd7.json",
+    "sha256": "d02afeaa6dc4eaf5bf6dc08be6021e068112a7de715292650aff1fe5f61b7dd7"
+  },
+  "compile_receipt": {
+    "path": "local/experiments/v2-frame-floats-300/001/compile.receipt.json",
+    "sha256": "6843ff6eec92c3550220cd1d3a0ef25e67b6f95e623373619dd3a421af234d68"
+  },
+  "output_sha256": {
+    "local/experiments/v2-frame-floats-300/001/frame_floats_300.obj": "c47af39bee166349607bb6fd3ec3b6b48a56a2aaa3735fdde8975a047bc04efe",
+    "local/experiments/v2-frame-floats-300/001/compile.log": "c90aedf701abfbae3f115262dda1a76e2369adafea3739fc4132d3ab8589abd3",
+    "local/experiments/v2-frame-floats-300/001/compile.receipt.json": "6843ff6eec92c3550220cd1d3a0ef25e67b6f95e623373619dd3a421af234d68"
+  },
+  "limits": [
+    "Only two isolated read-only cells; original whole-section layout is not reproduced",
+    "Unindexed indirect access and full game behavior remain outside this bounded proof"
+  ]
+}

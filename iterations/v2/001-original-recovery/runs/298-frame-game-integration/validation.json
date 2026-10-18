@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "passed": true,
+  "packets": {
+    "295-frame-helpers": {
+      "summary_sha256": "c37652552ab93234894a375284b24c593aa5df15e6c8e2f0a12a0540a24d1d42",
+      "native_cases": 11,
+      "game_sources": [
+        "iterations/v2/001-original-recovery/runs/295-frame-helpers/00423840.cpp",
+        "iterations/v2/001-original-recovery/runs/295-frame-helpers/00482e50.cpp"
+      ]
+    },
+    "296-frame-root-state": {
+      "summary_sha256": "08318c7abbac3af1ba1bc66acb2dcdec7cacf2df7fc204abdbc0a4228de16a41",
+      "native_cases": 0,
+      "game_sources": []
+    },
+    "297-frame-action": {
+      "summary_sha256": "b98c0fbd4d8892f7111b78d2c16b84b7ff42842109c08e361cf72c5c9d80f54a",
+      "native_cases": 480,
+      "game_sources": [
+        "iterations/v2/001-original-recovery/runs/297-frame-action/00476170.cpp"
+      ]
+    },
+    "299-frame-action-children": {
+      "summary_sha256": "a20922cc679cced09110b6c688c9a6875fed91c6f2caef1e84715bec7766c69e",
+      "native_cases": 648,
+      "game_sources": [
+        "iterations/v2/001-original-recovery/runs/299-frame-action-children/00476710.cpp"
+      ]
+    },
+    "300-frame-float-data": {
+      "summary_sha256": "83a323a96ab4dc1eac25290d7db1321f9d3183959f8e4ef816c668398091626f",
+      "native_cases": 0,
+      "game_sources": [
+        "iterations/v2/001-original-recovery/runs/300-frame-float-data/frame_floats_300.cpp"
+      ]
+    },
+    "301-frame-name-bound": {
+      "summary_sha256": "633722618c6d4b575b689ffb2bedb4ca9f3d62fecab1ea2954c42fdfae2f33ff",
+      "native_cases": 0,
+      "game_sources": []
+    }
+  },
+  "native_comparisons": 1139,
+  "original_function_bytes": 441,
+  "read_only_float_bytes": 8,
+  "fresh_compiler_sources": 156,
+  "source_pins": 389,
+  "reader_counts": {
+    "unique_files": 473,
+    "unique_sha256": 389,
+    "unique_json": 0,
+    "manifest_documents": 9,
+    "raw_sha256": 93
+  },
+  "build_report_sha256": "3e3c16a934a2d95833f7e2a5173fc7b48779e7335448ad3d538eb2d974f453e3",
+  "fresh_objects": {
+    "00423840": {
+      "path": "local/builds/v2/frame-game-integration-298/entry-289/porsche_game_entry_bridges.dir/Release/00423840.obj",
+      "sha256": "e58e343648c3074cbd61d8192422a0aca40fe5806d948fe2d3581e297448c7b9",
+      "symbols": {
+        "defined": [
+          "?advance_00423840@FrameIterator_290@porsche@@QAEXXZ"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    },
+    "00482e50": {
+      "path": "local/builds/v2/frame-game-integration-298/entry-289/porsche_game_entry_bridges.dir/Release/00482e50.obj",
+      "sha256": "70d4e6586ee564a68a2ba4f88eff4a133c2e07f640775da32d8e00bb7159848d",
+      "symbols": {
+        "defined": [
+          "?invoke_00482e50@FrameTail_290@porsche@@QAEXXZ"
+        ],
+        "undefined": [
+          "?frame_limit_005b47d8@porsche@@3MB",
+          "?frame_step_005b2764@porsche@@3MB"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "00476170": {
+      "path": "local/builds/v2/frame-game-integration-298/entry-289/porsche_game_entry_bridges.dir/Release/00476170.obj",
+      "sha256": "6bd325f7a23cf24dfa33171aa6ec0e233f0b180419c00e9a9adacefaffe27893",
+      "symbols": {
+        "defined": [
+          "?invoke_00476170@FrameAction_290@porsche@@QAEXXZ"
+        ],
+        "undefined": [
+          "?update_00476710@FrameActionBoundary_297@porsche@@QAEXI@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "00476710": {
+      "path": "local/builds/v2/frame-game-integration-298/entry-289/porsche_game_entry_bridges.dir/Release/00476710.obj",
+      "sha256": "4deb24eef29f89072bdee39eec5d68dba0f66346e4a941315792be2adf087715",
+      "symbols": {
+        "defined": [
+          "?update_00476710@FrameActionBoundary_297@porsche@@QAEXI@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    },
+    "frame_floats_300": {
+      "path": "local/builds/v2/frame-game-integration-298/entry-289/porsche_game_entry_bridges.dir/Release/frame_floats_300.obj",
+      "sha256": "126a7fe6522bd0f81ccec70d5bec45a5d64b9bb1fcafa00e47292dbdebdf9efe",
+      "symbols": {
+        "defined": [
+          "?frame_limit_005b47d8@porsche@@3MB",
+          "?frame_step_005b2764@porsche@@3MB"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    }
+  },
+  "closed_game_names": [
+    "?advance_00423840@FrameIterator_290@porsche@@QAEXXZ",
+    "?invoke_00476170@FrameAction_290@porsche@@QAEXXZ",
+    "?invoke_00482e50@FrameTail_290@porsche@@QAEXXZ"
+  ],
+  "new_game_names": [],
+  "unresolved_names": 266,
+  "unresolved_references": 302,
+  "game_executed": false,
+  "root_layout": "HOLD",
+  "sandbox_build_attempt_preserved": true
+}

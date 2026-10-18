@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "kind": "typed-frame-helpers",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_bodies": {
+    "00423840": {
+      "size": 67,
+      "hex": "8b118b420c85c0741889018b500885d274308b018b400889018b500885d275f2c38b4204563b500c750c89018b40048b113b500c74f48b118b720c3bf05e74028901c3"
+    },
+    "00482e50": {
+      "size": 69,
+      "hex": "8b41185733ff85c076395633f68b41408d14308a44303484c0741cd94204d81dd8475b00dfe0f6c441740cd94204d80564275b00d95a048b41184783c6383bf872cb5e5fc3"
+    }
+  },
+  "game_sources": [
+    "iterations/v2/001-original-recovery/runs/295-frame-helpers/00423840.cpp",
+    "iterations/v2/001-original-recovery/runs/295-frame-helpers/00482e50.cpp"
+  ],
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-frame-helpers-295/005/objects/00423840.obj",
+      "sha256": "f2079f84380cffc7dd49323e0f64af82b332b5639db6a8bb5f9eb25ef6931f44"
+    },
+    {
+      "path": "local/experiments/v2-frame-helpers-295/005/objects/00482e50.obj",
+      "sha256": "3aca5fd04c357d63bd23f3faf3cfd08bc65835cace680febc45702d696d3053f"
+    }
+  ],
+  "symbols": [
+    {
+      "defined": [
+        "?advance_00423840@FrameIterator_290@porsche@@QAEXXZ"
+      ],
+      "undefined": [],
+      "common": [],
+      "weak": []
+    },
+    {
+      "defined": [
+        "?invoke_00482e50@FrameTail_290@porsche@@QAEXXZ"
+      ],
+      "undefined": [
+        "?frame_limit_005b47d8@porsche@@3MB",
+        "?frame_step_005b2764@porsche@@3MB"
+      ],
+      "common": [],
+      "weak": []
+    }
+  ],
+  "compiler_batches": 1,
+  "native_cases": 11,
+  "attempt": "005",
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/ea361818dfaadce9331124b6872c8bf89b64ca9e943aa52251405a08b283aae5.json",
+    "sha256": "ea361818dfaadce9331124b6872c8bf89b64ca9e943aa52251405a08b283aae5"
+  },
+  "source_manifest": {
+    "path": "research/v2/proof-manifests/sha256/e709a2f3dce9ba9d1a6e950502707b1720d66eecb453b45ad0621dc3ce460245.json",
+    "sha256": "e709a2f3dce9ba9d1a6e950502707b1720d66eecb453b45ad0621dc3ce460245"
+  },
+  "external_tools_sha256": {
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7"
+  },
+  "external_dependencies_sha256": {},
+  "output_sha256": {
+    "local/experiments/v2-frame-helpers-295/005/objects/00423840.obj": "f2079f84380cffc7dd49323e0f64af82b332b5639db6a8bb5f9eb25ef6931f44",
+    "local/experiments/v2-frame-helpers-295/005/objects/00482e50.obj": "3aca5fd04c357d63bd23f3faf3cfd08bc65835cace680febc45702d696d3053f",
+    "local/experiments/v2-frame-helpers-295/005/objects/fixture.obj": "ffef5e554efa4c9434a93a4ea96b9692da0c74e41fa75f5c3e6816571e1ee52b",
+    "local/experiments/v2-frame-helpers-295/005/fixture.exe": "30db82c04e3afff5eee1054f7120179575bfbe05c1b83ee5fe2f9b76787910af",
+    "local/experiments/v2-frame-helpers-295/005/compile.receipt.json": "6b0140d1bb07c0015edd36df15ed58797a7b430128b15981e0d821fbc95d8132",
+    "local/experiments/v2-frame-helpers-295/005/link.receipt.json": "8f604cf3f994c8ed8b00b8289e91396e5473dd133d8c38948e9f8a5803023323",
+    "local/experiments/v2-frame-helpers-295/005/native.receipt.json": "e9b9111fc68b02394cdbef969126d99e9034a89cef3abea8fde0245fbb663304",
+    "local/experiments/v2-frame-helpers-295/005/compile.log": "7d10b86a6449e77d20953dc8d0520b8b88555e6f5218441bef5b610b1c5f75bc",
+    "local/experiments/v2-frame-helpers-295/005/link.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local/experiments/v2-frame-helpers-295/005/native.log": "c9885478e8513b0d2330b7b44a18194d8a9f9dfc971e6e342a19b14156365b40"
+  },
+  "limitations": [
+    "The two original float data cells need a game storage owner",
+    "Finite native cases do not establish complete game behavior"
+  ]
+}

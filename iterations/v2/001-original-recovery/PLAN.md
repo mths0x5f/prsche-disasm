@@ -1,5 +1,19 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint 2026-10-18, Run298: четыре оригинальных frame-функции подключены к игровой сборке.
+- 295/297/299: 441 байт оригинала, 1139 finite native comparisons PASS; 300: две
+  read-only float-ячейки / 8 байт, 35 исходных чтений, COFF и аудит PASS.
+- Все 156 C++ TUs реального game graph скомпилированы. Link: 266 имён / 302 ссылки
+  вместо 269/305 в293; закрыты три контракта, новых unresolved нет. EXE ещё нет.
+- 389 source pins неизменны; общий reader/manifests применены к новым отчётам.
+  Сохранена sandbox-попытка001; build002 и независимый batch audit PASS по заявленным
+  проверкам. Успешная компиляция не означает успешную линковку или запуск игры.
+- 296/301: TRACK_NAME consumer допускает длинные строки; original-copy пересекает
+  root00628960. Standalone storage HOLD, требуется общий исходный layout/init.
+Текущая работа: REA CLI pilot302 — frame_helpers_295; heap shutdown303 — resolver_291;
+координатор — приёмка и интеграция. Следующий build только после готовых providers.
+
+
 Checkpoint 2026-10-18, Run294: общий формат повторяющихся input/source pins готов.
 - v2_shared_manifests.py:immutable content-addressedbase,delta/removals,
   legacyreader,explicitraw/crlf-to-lf modes,existingProofCache;9tests PASS.

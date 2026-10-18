@@ -1,0 +1,22 @@
+{
+  "schema": 2,
+  "kind": "frame-name-bound-trace",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "upper_bound_31_proved": false,
+  "storage_definition_added": false,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "original_packet_copy_cases": 4,
+  "original_formatter_cutpoints": 1,
+  "hold": "Registered TRACK_NAME consumer copies inlineNUL string without a31byte bound; lengths32/40/63 survive into00657444 then cross root in original initialization copy",
+  "shared_layout_requirements": [
+    "00628940 destination must retain root00628960 at offset32 and following00628964 at offset36 for any allowed crossing write",
+    "Final storage extent still requires an upstream allowed-length bound; no arbitrary allocation or entire-data-section owner is justified",
+    "Original root constructor/store and cleanup remain separate algorithms; shared layout does not implement them"
+  ],
+  "next_target": "If continuing length proof: inspect payload producers for004155da/0048f9b8 and resources underlying00691d00 item+8; do not infer bounds from consumer or formatting wrapper",
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/8894865977d4534b3f77c54b5696f86d34e8402917ae161c5a07940fbc3141dd.json",
+    "sha256": "8894865977d4534b3f77c54b5696f86d34e8402917ae161c5a07940fbc3141dd"
+  }
+}

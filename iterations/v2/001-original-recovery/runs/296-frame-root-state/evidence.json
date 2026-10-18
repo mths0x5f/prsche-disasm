@@ -1,0 +1,548 @@
+{
+  "section": {
+    "name": ".data",
+    "virtual_size": 1008952,
+    "rva": 1880064,
+    "raw_size": 114688,
+    "raw_pointer": 1880064,
+    "flags": 3221225536
+  },
+  "root_initial": {
+    "hex": "00000000",
+    "physical_file_bytes": false,
+    "reason": "PE loader zero-filled writable virtual tail"
+  },
+  "direct_consumers": [
+    {
+      "va": "0046d1d3",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "0046d1d0"
+    },
+    {
+      "va": "00471b60",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "00471b60"
+    },
+    {
+      "va": "00471bae",
+      "hex": "a360896200",
+      "text": "MOV [0x00628960],EAX",
+      "owner": "00471b70"
+    },
+    {
+      "va": "00471bb5",
+      "hex": "c7056089620000000000",
+      "text": "MOV dword ptr [0x00628960],0x0",
+      "owner": "00471b70"
+    },
+    {
+      "va": "00471bdf",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "00471b70"
+    },
+    {
+      "va": "00471c4b",
+      "hex": "8b3560896200",
+      "text": "MOV ESI,dword ptr [0x00628960]",
+      "owner": "00471c40"
+    },
+    {
+      "va": "00471c6d",
+      "hex": "c7056089620000000000",
+      "text": "MOV dword ptr [0x00628960],0x0",
+      "owner": "00471c40"
+    },
+    {
+      "va": "0047328b",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "00473240"
+    },
+    {
+      "va": "0047335d",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "00473330"
+    },
+    {
+      "va": "00473462",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "00473420"
+    },
+    {
+      "va": "00473692",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "00473650"
+    },
+    {
+      "va": "00473889",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "00473870"
+    },
+    {
+      "va": "00473a42",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "004739e0"
+    },
+    {
+      "va": "00473bd5",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "00473ba0"
+    },
+    {
+      "va": "00473e35",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "00473e00"
+    },
+    {
+      "va": "004740f4",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "004740d0"
+    },
+    {
+      "va": "0047f08d",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "0047f040"
+    },
+    {
+      "va": "0047f418",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "0047f400"
+    },
+    {
+      "va": "0047f876",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "0047f550"
+    },
+    {
+      "va": "0047f893",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "0047f890"
+    },
+    {
+      "va": "0047f9a2",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "0047f890"
+    },
+    {
+      "va": "0047fb43",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "0047fb40"
+    },
+    {
+      "va": "004832c9",
+      "hex": "8b0d60896200",
+      "text": "MOV ECX,dword ptr [0x00628960]",
+      "owner": "004832b0"
+    },
+    {
+      "va": "004a1297",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "004a1280"
+    },
+    {
+      "va": "004a153a",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "004a1510"
+    },
+    {
+      "va": "004a17f0",
+      "hex": "a160896200",
+      "text": "MOV EAX,[0x00628960]",
+      "owner": "004a17f0"
+    },
+    {
+      "va": "004af168",
+      "hex": "8b1560896200",
+      "text": "MOV EDX,dword ptr [0x00628960]",
+      "owner": "004aef30"
+    }
+  ],
+  "nearby_highlow": [
+    {
+      "site_va": "0046d1d4",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0046d1d3"
+      ]
+    },
+    {
+      "site_va": "0046f8b1",
+      "target_va": "00628944"
+    },
+    {
+      "site_va": "00471b62",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00471b60"
+      ]
+    },
+    {
+      "site_va": "00471b89",
+      "target_va": "00628940"
+    },
+    {
+      "site_va": "00471baf",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00471bae"
+      ]
+    },
+    {
+      "site_va": "00471bb7",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00471bb5"
+      ]
+    },
+    {
+      "site_va": "00471bcb",
+      "target_va": "00628940"
+    },
+    {
+      "site_va": "00471bd6",
+      "target_va": "00628964"
+    },
+    {
+      "site_va": "00471be1",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00471bdf"
+      ]
+    },
+    {
+      "site_va": "00471be9",
+      "target_va": "00628964"
+    },
+    {
+      "site_va": "00471c4d",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00471c4b"
+      ]
+    },
+    {
+      "site_va": "00471c6f",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00471c6d"
+      ]
+    },
+    {
+      "site_va": "0047328d",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047328b"
+      ]
+    },
+    {
+      "site_va": "0047335e",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047335d"
+      ]
+    },
+    {
+      "site_va": "00473464",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00473462"
+      ]
+    },
+    {
+      "site_va": "00473694",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00473692"
+      ]
+    },
+    {
+      "site_va": "0047388a",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00473889"
+      ]
+    },
+    {
+      "site_va": "00473a44",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00473a42"
+      ]
+    },
+    {
+      "site_va": "00473bd7",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00473bd5"
+      ]
+    },
+    {
+      "site_va": "00473e37",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "00473e35"
+      ]
+    },
+    {
+      "site_va": "004740f6",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "004740f4"
+      ]
+    },
+    {
+      "site_va": "0047f08e",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047f08d"
+      ]
+    },
+    {
+      "site_va": "0047f41a",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047f418"
+      ]
+    },
+    {
+      "site_va": "0047f878",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047f876"
+      ]
+    },
+    {
+      "site_va": "0047f894",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047f893"
+      ]
+    },
+    {
+      "site_va": "0047f9a4",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047f9a2"
+      ]
+    },
+    {
+      "site_va": "0047fb45",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "0047fb43"
+      ]
+    },
+    {
+      "site_va": "004832cb",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "004832c9"
+      ]
+    },
+    {
+      "site_va": "004a1298",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "004a1297"
+      ]
+    },
+    {
+      "site_va": "004a153c",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "004a153a"
+      ]
+    },
+    {
+      "site_va": "004a17f1",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "004a17f0"
+      ]
+    },
+    {
+      "site_va": "004af16a",
+      "target_va": "00628960",
+      "indexed_instructions": [
+        "004af168"
+      ]
+    }
+  ],
+  "raw_byte_pattern_navigation": [
+    {
+      "file_offset": 446932,
+      "va": "0046d1d4"
+    },
+    {
+      "file_offset": 465762,
+      "va": "00471b62"
+    },
+    {
+      "file_offset": 465839,
+      "va": "00471baf"
+    },
+    {
+      "file_offset": 465847,
+      "va": "00471bb7"
+    },
+    {
+      "file_offset": 465889,
+      "va": "00471be1"
+    },
+    {
+      "file_offset": 465997,
+      "va": "00471c4d"
+    },
+    {
+      "file_offset": 466031,
+      "va": "00471c6f"
+    },
+    {
+      "file_offset": 471693,
+      "va": "0047328d"
+    },
+    {
+      "file_offset": 471902,
+      "va": "0047335e"
+    },
+    {
+      "file_offset": 472164,
+      "va": "00473464"
+    },
+    {
+      "file_offset": 472724,
+      "va": "00473694"
+    },
+    {
+      "file_offset": 473226,
+      "va": "0047388a"
+    },
+    {
+      "file_offset": 473668,
+      "va": "00473a44"
+    },
+    {
+      "file_offset": 474071,
+      "va": "00473bd7"
+    },
+    {
+      "file_offset": 474679,
+      "va": "00473e37"
+    },
+    {
+      "file_offset": 475382,
+      "va": "004740f6"
+    },
+    {
+      "file_offset": 520334,
+      "va": "0047f08e"
+    },
+    {
+      "file_offset": 521242,
+      "va": "0047f41a"
+    },
+    {
+      "file_offset": 522360,
+      "va": "0047f878"
+    },
+    {
+      "file_offset": 522388,
+      "va": "0047f894"
+    },
+    {
+      "file_offset": 522660,
+      "va": "0047f9a4"
+    },
+    {
+      "file_offset": 523077,
+      "va": "0047fb45"
+    },
+    {
+      "file_offset": 537291,
+      "va": "004832cb"
+    },
+    {
+      "file_offset": 660120,
+      "va": "004a1298"
+    },
+    {
+      "file_offset": 660796,
+      "va": "004a153c"
+    },
+    {
+      "file_offset": 661489,
+      "va": "004a17f1"
+    },
+    {
+      "file_offset": 717162,
+      "va": "004af16a"
+    }
+  ],
+  "accepted_function_owners": [],
+  "copy_cutpoint_cases": [
+    {
+      "source_length": 0,
+      "cutpoint_va": "00471b99",
+      "destination_va": "00628940",
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "00a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_bytes_after_hex": "a5a5a5a5",
+      "root_changed": false
+    },
+    {
+      "source_length": 31,
+      "cutpoint_va": "00471b99",
+      "destination_va": "00628940",
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "5858585858585858585858585858585858585858585858585858585858585800a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_bytes_after_hex": "a5a5a5a5",
+      "root_changed": false
+    },
+    {
+      "source_length": 32,
+      "cutpoint_va": "00471b99",
+      "destination_va": "00628940",
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "585858585858585858585858585858585858585858585858585858585858585800a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_bytes_after_hex": "00a5a5a5",
+      "root_changed": true
+    },
+    {
+      "source_length": 35,
+      "cutpoint_va": "00471b99",
+      "destination_va": "00628940",
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "585858585858585858585858585858585858585858585858585858585858585858585800a5a5a5a5a5a5a5a5a5a5a5a5",
+      "root_bytes_after_hex": "58585800",
+      "root_changed": true
+    },
+    {
+      "source_length": 40,
+      "cutpoint_va": "00471b99",
+      "destination_va": "00628940",
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "5858585858585858585858585858585858585858585858585858585858585858585858585858585800a5a5a5a5a5a5a5",
+      "root_bytes_after_hex": "58585858",
+      "root_changed": true
+    }
+  ]
+}

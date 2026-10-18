@@ -1,5 +1,17 @@
 # Автоматизация восстановления
 
+Checkpoint298:156 actual game TUs compiled,389 shared source pins; link266names/302refs.
+1139 finite frame comparisons and exact8B data proof PASS. NoEXE.295–301 используют
+общий ManifestReader; batch audit переиспользует чтения между пакетами.
+
+REA pilot302 согласован пользователем. Это MCP/CLI-доступ к анализаторам, не готовые
+компилируемые исходники. Проверяем одну native x86 цепочку без отдельного LLM API и
+без изменения global MCP/skills. [Документация](https://github.com/morluto/rea)
+и [Windows boundary](https://github.com/morluto/rea/blob/main/docs/windows-ghidra-p0.md)
+различают current main с x86 PE и npm <=5.0.0 с x64-only Windows admission.
+Нужны фактический provider query, версия/commit, время, неизменность оригинала и
+сравнение с индексом; до этого ускорение не заявляется.
+
 Checkpoint293 (2026-10-18): свежий game-target graph151C++TUs/8projects прошёл
 компиляцию, link269names/305refs.380sourcepins unchanged; getter512cases и
 48-slot lockprefix112cases PASS. NoEXE/gameexecution. Старые candidate-archive
