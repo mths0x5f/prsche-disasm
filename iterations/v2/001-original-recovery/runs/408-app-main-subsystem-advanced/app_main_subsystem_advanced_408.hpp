@@ -1,5 +1,5 @@
-#ifndef PORSCHE_APP_MAIN_SUBSYSTEM_ADVANCED_303_HPP
-#define PORSCHE_APP_MAIN_SUBSYSTEM_ADVANCED_303_HPP
+#ifndef PORSCHE_APP_MAIN_SUBSYSTEM_ADVANCED_408_HPP
+#define PORSCHE_APP_MAIN_SUBSYSTEM_ADVANCED_408_HPP
 
 #include <cstdint>
 #include <cstddef>
@@ -92,7 +92,7 @@ struct PreTickTargetSubsystem {
     SimSubsystem_00536080* handle_04;
 };
 
-struct InputSubsystem_303 {
+struct InputSubsystem_408 {
     std::uint8_t pad_00[8];
     void* queue_08;
     std::uint8_t pad_0c[0xbf - 0x0c];
@@ -104,7 +104,7 @@ extern "C" {
     extern std::uint32_t g_val_00606ac0;
     extern std::uint32_t g_val_00606ac4;
     extern const char g_str_005d6e3c[16];
-    extern InputSubsystem_303* g_input_subsystem_00628c70;
+    extern InputSubsystem_408* g_input_subsystem_00628c70;
     extern void* g_data_00657444;
 
     void CALL_CDECL pipe_004690f0();
@@ -214,4 +214,4 @@ extern "C" {
 
 } // namespace porsche
 
-#endif // PORSCHE_APP_MAIN_SUBSYSTEM_ADVANCED_303_HPP
+#endif // PORSCHE_APP_MAIN_SUBSYSTEM_ADVANCED_408_HPP

@@ -1,4 +1,4 @@
-#include "app_main_subsystem_advanced_303.hpp"
+#include "app_main_subsystem_advanced_408.hpp"
 
 namespace porsche {
 
@@ -188,7 +188,7 @@ void CALL_CDECL app_loop_pre_tick_pipeline_004b67b0() {
     std::uint32_t val = pipe_00569a90();
     heap_trace_log_005a177b(g_str_005d6e3c, val);
 
-    InputSubsystem_303* input = g_input_subsystem_00628c70;
+    InputSubsystem_408* input = g_input_subsystem_00628c70;
     if (input != nullptr && input->queue_08 != nullptr && input->flag_bf == 0) {
         input_poll_update_0048cdf0();
     }

@@ -10,8 +10,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/303-app-main-subsystem-advanced'
-OUT = ROOT / 'local/experiments/v2-app-main-303'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/408-app-main-subsystem-advanced'
+OUT = ROOT / 'local/experiments/v2-app-main-408'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 
@@ -104,8 +104,8 @@ def main(finalize: bool, attempt: int):
     compiler = pin(resolve_compiler())
     roots = resolve_roots(compiler)
 
-    source = pin(RUN / 'app_main_subsystem_advanced_303.cpp')
-    header = pin(RUN / 'app_main_subsystem_advanced_303.hpp')
+    source = pin(RUN / 'app_main_subsystem_advanced_408.cpp')
+    header = pin(RUN / 'app_main_subsystem_advanced_408.hpp')
     fixture = pin(OUT / 'app_main_fixture.cpp')
 
     prepare = dict(
@@ -124,7 +124,7 @@ def main(finalize: bool, attempt: int):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'app_main_subsystem_advanced_303.obj'
+    obj = OUT / 'objects' / 'app_main_subsystem_advanced_408.obj'
     fixture_obj = OUT / 'objects' / 'app_main_fixture.obj'
     includes = []
     for r in roots:
@@ -193,12 +193,12 @@ def main(finalize: bool, attempt: int):
     executed = run([str(exe)], native_name)
     assert executed['exit_code'] == 0, executed
 
-    coff = module('coff303', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff408', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='303-app-main-subsystem-advanced',
+        run='408-app-main-subsystem-advanced',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=['00531f90', '004a6840', '004b67b0', '004b4b80', '004b68f0'],
         original_selected_bytes=1536,
@@ -222,7 +222,7 @@ def main(finalize: bool, attempt: int):
     )
 
     validation = dict(
-        run='303-app-main-subsystem-advanced',
+        run='408-app-main-subsystem-advanced',
         status='PASS',
         exit_code=executed['exit_code'],
         cases_passed=11,

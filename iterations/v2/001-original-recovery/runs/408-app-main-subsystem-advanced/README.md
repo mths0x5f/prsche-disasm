@@ -1,4 +1,4 @@
-# Run 303 — app_main advanced subsystem recovery
+# Run 408 — app_main advanced subsystem recovery
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`: 5 advanced functions (1,536 bytes) called across the `app_main_004b6a50` subsystem:
 1. `00531f90` (278 bytes): `heap_pool_block_free_00531f90` — Heap Pool Block deallocator. Handles coalescing with forward and backward physical heap blocks, midpoint calculation for bidirectional free-list sentinel search, and thread lock release (`005322c0`).
