@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "run": "309-app-main-render-driver-sync",
+  "run": "414-app-main-render-driver-sync",
   "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
   "original_vas": [
     "004d3420"
@@ -13,14 +13,14 @@
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
-    "iterations/v2/001-original-recovery/runs/309-app-main-render-driver-sync"
+    "iterations/v2/001-original-recovery/runs/414-app-main-render-driver-sync"
   ],
-  "source": "iterations/v2/001-original-recovery/runs/309-app-main-render-driver-sync/app_main_render_driver_sync_309.cpp",
-  "source_sha256": "3c8e91b48fabbe428c55388e08167169c7e4f0d15277d924e557b13cc65cf6ce",
-  "header": "iterations/v2/001-original-recovery/runs/309-app-main-render-driver-sync/app_main_render_driver_sync_309.hpp",
-  "header_sha256": "b59f22c57daf6c070e166c7d3d369bbd94064d7172fd014485d9f4ff09fc2075",
-  "fixture": "local/experiments/v2-app-main-309/fixture_309.cpp",
-  "fixture_sha256": "c8933f58b91600cf0bf307982ba8216833f8490e947f410abe6e70a9f690f135",
+  "source": "iterations/v2/001-original-recovery/runs/414-app-main-render-driver-sync/app_main_render_driver_sync_414.cpp",
+  "source_sha256": "0969cecf3b48f64abe8c27775db2997efa115b8af3268d14f6c4ecfadd19f41c",
+  "header": "iterations/v2/001-original-recovery/runs/414-app-main-render-driver-sync/app_main_render_driver_sync_414.hpp",
+  "header_sha256": "13b28fbaf095efd6027c9aa6cfe0b7462e5a62aaace6fda5a8fe6d079c8cfd80",
+  "fixture": "local/experiments/v2-app-main-414/fixture_414.cpp",
+  "fixture_sha256": "4e31fd12aebd22c8f8175953ff438103c380e7f76c3d7e0e9251b3f4a7680bb8",
   "symbols": {
     "defined": [
       "??$hook_004298a0@PBDI@porsche@@YAIPBDI@Z",
@@ -53,7 +53,7 @@
       "??$hook_00539b00@PAE@porsche@@YAIPAE@Z",
       "??$hook_00539b30@HIIH@porsche@@YAIHIIH@Z",
       "??$hook_00539b80@III@porsche@@YAIIII@Z",
-      "?execute_004d3420@RenderDriverSync_309@porsche@@QAEIPBDPAXH@Z"
+      "?execute_004d3420@RenderDriverSync_414@porsche@@QAEIPBDPAXH@Z"
     ],
     "undefined": [
       "?RTTI_Type_Descriptor@FEAccessor@porsche@@3DA",
@@ -278,7 +278,7 @@
     "??$hook_00539b00@PAE@porsche@@YAIPAE@Z",
     "??$hook_00539b30@HIIH@porsche@@YAIHIIH@Z",
     "??$hook_00539b80@III@porsche@@YAIIII@Z",
-    "?execute_004d3420@RenderDriverSync_309@porsche@@QAEIPBDPAXH@Z"
+    "?execute_004d3420@RenderDriverSync_414@porsche@@QAEIPBDPAXH@Z"
   ],
   "compile": {
     "command": [
@@ -299,7 +299,7 @@
       "/MP6",
       "/Zl",
       "/sourceDependencies",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\dependencies",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\dependencies",
       "/I",
       "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
       "/I",
@@ -309,15 +309,15 @@
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
       "/I",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\309-app-main-render-driver-sync",
-      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\objects\\",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\309-app-main-render-driver-sync\\app_main_render_driver_sync_309.cpp",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\fixture_309.cpp"
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\414-app-main-render-driver-sync",
+      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\objects\\",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\414-app-main-render-driver-sync\\app_main_render_driver_sync_414.cpp",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\fixture_414.cpp"
     ],
     "exit_code": 0,
-    "seconds": 2.456749,
-    "log": "local/experiments/v2-app-main-309/compile-001.log",
-    "log_sha256": "c032a614785c1bf991b70e4fc5ef1e5dcf7b9c8da6d98f0783ca9f9755c2bcb5"
+    "seconds": 1.070401,
+    "log": "local/experiments/v2-app-main-414/compile-001.log",
+    "log_sha256": "3747738f83e5c8f375662f71cc02fc6bf15d89a24023265573c0afe0167e0400"
   },
   "link": {
     "command": [
@@ -330,16 +330,16 @@
       "/INCREMENTAL:NO",
       "/SECTION:.data,ERW",
       "/SECTION:.bss,ERW",
-      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\native-fixture.map",
-      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\native-fixture.exe",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\objects\\app_main_render_driver_sync_309.obj",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\objects\\fixture_309.obj",
+      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\native-fixture.map",
+      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\native-fixture.exe",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\objects\\app_main_render_driver_sync_414.obj",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\objects\\fixture_414.obj",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
     ],
     "exit_code": 0,
-    "seconds": 0.173555,
-    "log": "local/experiments/v2-app-main-309/fixture-link-001.log",
+    "seconds": 0.179824,
+    "log": "local/experiments/v2-app-main-414/fixture-link-001.log",
     "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "native_fixture": {
@@ -348,12 +348,12 @@
     "cases_passed": 10,
     "execution": {
       "command": [
-        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-309\\native-fixture.exe"
+        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-app-main-414\\native-fixture.exe"
       ],
       "exit_code": 0,
-      "seconds": 0.156676,
-      "log": "local/experiments/v2-app-main-309/fixture-native-001.log",
-      "log_sha256": "cdd6541ad91b99767fb170b18dcdbd435c85cf19c10f8bf45533bcee1416910c"
+      "seconds": 0.151753,
+      "log": "local/experiments/v2-app-main-414/fixture-native-001.log",
+      "log_sha256": "443de91e0133682137f39bfe45406d343172fc3918cd60b987e83a60b70dd5a4"
     }
   }
 }

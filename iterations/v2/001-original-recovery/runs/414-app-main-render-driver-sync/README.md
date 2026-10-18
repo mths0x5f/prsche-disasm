@@ -1,4 +1,4 @@
-# Run 309 — App Main Render Driver Sync Recovery (`render_driver_sync_004d3420`)
+# Run 414 — App Main Render Driver Sync Recovery (`render_driver_sync_004d3420`)
 
 [English](#english) | [Русский](#русский)
 
@@ -7,7 +7,7 @@
 ## English
 
 ### Overview
-Run 309 recovers `render_driver_sync_004d3420` (8,592 bytes: `0x004d3420..0x004d55b0`) in retail binary `Porsche.exe` (`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`).
+Run 414 recovers `render_driver_sync_004d3420` (8,592 bytes: `0x004d3420..0x004d55b0`) in retail binary `Porsche.exe` (`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`).
 This function represents the **70th and final direct CALL target** originating from top-level entry point `app_main_004b6a50`.
 With this run completed, **100% of all direct call targets of `app_main_004b6a50` (70 functions, 26,209 PE body bytes) are recovered and verified bit-exact**.
 
@@ -29,7 +29,7 @@ With this run completed, **100% of all direct call targets of `app_main_004b6a50
   5. Synchronizes 3D engine scene parameters, sound drivers, video replay streams, and driver framebuffers.
 
 ### Differential Verification
-Native differential execution is performed by `local/experiments/v2-app-main-309/native-fixture.exe` against the original physical x86 CPU memory slab:
+Native differential execution is performed by `local/experiments/v2-app-main-414/native-fixture.exe` against the original physical x86 CPU memory slab:
 1. **10/10 Test Cases Passed (100% bit-exact):**
    - TC 1: `01_quick_setup_p4_1` (`orig_ret = 0, cpp_ret = 0`)
    - TC 2: `02_cold_startup_p4_0` (`orig_ret = 1, cpp_ret = 1`)
@@ -53,7 +53,7 @@ Native differential execution is performed by `local/experiments/v2-app-main-309
 ## Русский
 
 ### Обзор
-Запуск 309 восстанавливает функцию `render_driver_sync_004d3420` (8 592 байта: `0x004d3420..0x004d55b0`) в оригинальном релизном исполняемом файле `Porsche.exe` (`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`).
+Запуск 414 восстанавливает функцию `render_driver_sync_004d3420` (8 592 байта: `0x004d3420..0x004d55b0`) в оригинальном релизном исполняемом файле `Porsche.exe` (`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`).
 Эта функция является **70-й и последней прямой вызываемой функцией (CALL target)** точки входа `app_main_004b6a50`.
 С завершением этого запуска **100% всех прямых вызываемых функций `app_main_004b6a50` (70 функций, 26 209 байт машинного кода PE) полностью восстановлены и верифицированы бит-в-бит**.
 
@@ -75,7 +75,7 @@ Native differential execution is performed by `local/experiments/v2-app-main-309
   5. Синхронизация параметров сцены 3D-движка, звуковых драйверов, видеопотоков повторов и кадровых буферов драйвера.
 
 ### Дифференциальная верификация
-Нативное дифференциальное тестирование выполнено исполняемым файлом `local/experiments/v2-app-main-309/native-fixture.exe` на физическом x86 CPU memory slab:
+Нативное дифференциальное тестирование выполнено исполняемым файлом `local/experiments/v2-app-main-414/native-fixture.exe` на физическом x86 CPU memory slab:
 1. **10/10 тестов пройдены успешно (100% совпадение):**
    - TC 1: `01_quick_setup_p4_1` (`orig_ret = 0, cpp_ret = 0`)
    - TC 2: `02_cold_startup_p4_0` (`orig_ret = 1, cpp_ret = 1`)

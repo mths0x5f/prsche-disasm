@@ -6,8 +6,8 @@ import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/309-app-main-render-driver-sync'
-OUT = ROOT / 'local/experiments/v2-app-main-309'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/414-app-main-render-driver-sync'
+OUT = ROOT / 'local/experiments/v2-app-main-414'
 
 
 def sha(p):
@@ -47,10 +47,10 @@ def main():
     pe_bytes = pe_read(original, 0x004d3420, 8592)
     assert len(pe_bytes) == 8592
 
-    cof = module('coff309audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
-    obj = OUT / 'objects/app_main_render_driver_sync_309.obj'
+    cof = module('coff414audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    obj = OUT / 'objects/app_main_render_driver_sync_414.obj'
     symbols = cof.coff_symbols(obj)
-    assert '?execute_004d3420@RenderDriverSync_309@porsche@@QAEIPBDPAXH@Z' in symbols['defined'], symbols['defined']
+    assert '?execute_004d3420@RenderDriverSync_414@porsche@@QAEIPBDPAXH@Z' in symbols['defined'], symbols['defined']
 
     # Verify execution receipts
     receipt = json.loads((OUT / 'fixture-native-001.execution.json').read_bytes())
