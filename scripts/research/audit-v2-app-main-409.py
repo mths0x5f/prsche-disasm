@@ -1,10 +1,10 @@
-"""Independent verification audit for Run 304."""
+"""Independent verification audit for Run 409."""
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large'
-EXP = ROOT / 'local/experiments/v2-app-main-304'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large'
+EXP = ROOT / 'local/experiments/v2-app-main-409'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 
@@ -30,7 +30,7 @@ def main():
     rec = json.loads(native_exec.read_text(encoding='utf-8'))
     assert rec['exit_code'] == 0, 'Native fixture non-zero exit'
 
-    print('Run 304 verified: PE 2,302B across 4 functions, physical x86 slab verified, 10 differential cases passed, receipts verified')
+    print('Run 409 verified: PE 2,302B across 4 functions, physical x86 slab verified, 10 differential cases passed, receipts verified')
 
 
 if __name__ == '__main__':

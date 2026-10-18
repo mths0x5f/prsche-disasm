@@ -10,8 +10,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large'
-OUT = ROOT / 'local/experiments/v2-app-main-304'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large'
+OUT = ROOT / 'local/experiments/v2-app-main-409'
 SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 
 
@@ -104,8 +104,8 @@ def main(finalize: bool, attempt: int):
     compiler = pin(resolve_compiler())
     roots = resolve_roots(compiler)
 
-    source = pin(RUN / 'app_main_subsystem_large_304.cpp')
-    header = pin(RUN / 'app_main_subsystem_large_304.hpp')
+    source = pin(RUN / 'app_main_subsystem_large_409.cpp')
+    header = pin(RUN / 'app_main_subsystem_large_409.hpp')
     fixture = pin(OUT / 'app_main_fixture.cpp')
 
     prepare = dict(
@@ -123,7 +123,7 @@ def main(finalize: bool, attempt: int):
     write(prepare_path, prepare)
     pin(prepare_path)
 
-    obj = OUT / 'objects' / 'app_main_subsystem_large_304.obj'
+    obj = OUT / 'objects' / 'app_main_subsystem_large_409.obj'
     fixture_obj = OUT / 'objects' / 'app_main_fixture.obj'
     includes = []
     for r in roots:
@@ -192,12 +192,12 @@ def main(finalize: bool, attempt: int):
     executed = run([str(exe)], native_name)
     assert executed['exit_code'] == 0, executed
 
-    coff = module('coff304', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = module('coff409', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
     summary = dict(
         schema=1,
-        run='304-app-main-subsystem-large',
+        run='409-app-main-subsystem-large',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),
         original_vas=['0059d650', '004a88a0', '004640b0', '00467470'],
         original_selected_bytes=2302,
@@ -221,7 +221,7 @@ def main(finalize: bool, attempt: int):
     )
 
     validation = dict(
-        run='304-app-main-subsystem-large',
+        run='409-app-main-subsystem-large',
         status='PASS',
         exit_code=executed['exit_code'],
         cases_passed=10,

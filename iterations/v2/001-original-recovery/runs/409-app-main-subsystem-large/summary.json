@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "run": "304-app-main-subsystem-large",
+  "run": "409-app-main-subsystem-large",
   "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
   "original_vas": [
     "0059d650",
@@ -16,14 +16,14 @@
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
-    "iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large"
+    "iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large"
   ],
-  "source": "iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large/app_main_subsystem_large_304.cpp",
-  "source_sha256": "25c2b41e6b3b0f55c1d3acb2e3ea931923ceaa75e0ff4136f615ad062ee23ad0",
-  "header": "iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large/app_main_subsystem_large_304.hpp",
-  "header_sha256": "9c30ab4961c207827136e0a868adcfb914ce83e2459e59b382bc6bc78988a57b",
-  "object": "local/experiments/v2-app-main-304/objects/app_main_subsystem_large_304.obj",
-  "object_sha256": "3e27f760f9843699d24b7ae7165adc0c24c803aab238480450e75fad7df9df69",
+  "source": "iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large/app_main_subsystem_large_409.cpp",
+  "source_sha256": "34b8f25a8968ca59126d298cfaf889d3794975c0f10a997820b3703453670d65",
+  "header": "iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large/app_main_subsystem_large_409.hpp",
+  "header_sha256": "2efe3a2dde82713f3813b82eb625fe967482230b48f20c81a1225d576b29ac87",
+  "object": "local/experiments/v2-app-main-409/objects/app_main_subsystem_large_409.obj",
+  "object_sha256": "58d67ba4a65084348c401b6c6c458129321bd48bf021f95e296933c485eab42e",
   "symbols": {
     "defined": [
       "__real@3f000000",
@@ -124,21 +124,21 @@
     "weak": []
   },
   "native_fixture": {
-    "executable": "local/experiments/v2-app-main-304/native-fixture.exe",
-    "executable_sha256": "d4f2b444717aa814e018875ee7214e2e6d3d14b25713773fd116323df6b45234",
+    "executable": "local/experiments/v2-app-main-409/native-fixture.exe",
+    "executable_sha256": "8240b429fcad08d2f4eac0abd8d3d6192ecac01c5b87ae4018c5f664d9ecf6ff",
     "exit_code": 0,
     "cases": 10
   },
   "input_sha256": {
     "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x86/cl.exe": "58702ed8002b28348dbbd1099e9d2c2b2b092681cda024a5eaee371cc28aa881",
-    "iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large/app_main_subsystem_large_304.cpp": "25c2b41e6b3b0f55c1d3acb2e3ea931923ceaa75e0ff4136f615ad062ee23ad0",
-    "iterations/v2/001-original-recovery/runs/304-app-main-subsystem-large/app_main_subsystem_large_304.hpp": "9c30ab4961c207827136e0a868adcfb914ce83e2459e59b382bc6bc78988a57b",
-    "local/experiments/v2-app-main-304/app_main_fixture.cpp": "8b2b67c9e2535c546dda77fa38b76cf052652b04ff53ada4575fac99e10e959c",
-    "local/experiments/v2-app-main-304/native-fixture.exe": "d4f2b444717aa814e018875ee7214e2e6d3d14b25713773fd116323df6b45234",
-    "local/experiments/v2-app-main-304/native-fixture.map": "8c0943f18a1cd7dc4da56aa6f0e1787b9234cd99ad8bff9beb66f2c5ffa65984",
-    "local/experiments/v2-app-main-304/objects/app_main_fixture.obj": "4cfb4230665c8ff27ebb522b43b0cf80ce1257ee143b88ba973ec09d941a6ec9",
-    "local/experiments/v2-app-main-304/objects/app_main_subsystem_large_304.obj": "3e27f760f9843699d24b7ae7165adc0c24c803aab238480450e75fad7df9df69",
-    "local/experiments/v2-app-main-304/prepare-001.json": "636daf55b7c06d8c17cd6eae0d07e699549ddad8c89b480b3c08c7172ad42f49",
+    "iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large/app_main_subsystem_large_409.cpp": "34b8f25a8968ca59126d298cfaf889d3794975c0f10a997820b3703453670d65",
+    "iterations/v2/001-original-recovery/runs/409-app-main-subsystem-large/app_main_subsystem_large_409.hpp": "2efe3a2dde82713f3813b82eb625fe967482230b48f20c81a1225d576b29ac87",
+    "local/experiments/v2-app-main-409/app_main_fixture.cpp": "44da1f9bcfcde8cc6ac84ae7c404a8bf35ff17f1ad090d8690c4f24eddb8434b",
+    "local/experiments/v2-app-main-409/native-fixture.exe": "8240b429fcad08d2f4eac0abd8d3d6192ecac01c5b87ae4018c5f664d9ecf6ff",
+    "local/experiments/v2-app-main-409/native-fixture.map": "563857f58fa2d66d3090826509ade64f37f7bfd8c67f572a41b21f6683e76187",
+    "local/experiments/v2-app-main-409/objects/app_main_fixture.obj": "1b69a3db4314189aa72d3c33b95dcd9703c70bdab7d86ae0da52d38a6c9a84e3",
+    "local/experiments/v2-app-main-409/objects/app_main_subsystem_large_409.obj": "58d67ba4a65084348c401b6c6c458129321bd48bf021f95e296933c485eab42e",
+    "local/experiments/v2-app-main-409/prepare-001.json": "417a71a3e9cf5241ed1a4c30deac2245429ebd4b78c2b8af0ec6d2ac874fc26e",
     "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
   }
 }

@@ -1,4 +1,4 @@
-# Run 304 — original app_main large subsystem cluster
+# Run 409 — original app_main large subsystem cluster
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`:
 This run recovers 4 large subsystem initialization and sync routines directly called by `app_main_004b6a50` totaling 2,302 PE body bytes:
@@ -7,7 +7,7 @@ This run recovers 4 large subsystem initialization and sync routines directly ca
 3. `004640b0..004642e4` (564 bytes) — `audio_listener_update_004640b0`: 3D audio listener orientation and emitter synchronization updating 0x10c-byte listener slots.
 4. `00467470..004676f2` (642 bytes) — `input_subsystem_init_00467470`: User input subsystem and controller device initialization.
 
-All callees remain typed external boundaries. Verified with 10 native differential cases against original physical x86 execution slab (`scripts/research/experiment-v2-app-main-304.py`, `scripts/research/audit-v2-app-main-304.py`).
+All callees remain typed external boundaries. Verified with 10 native differential cases against original physical x86 execution slab (`scripts/research/experiment-v2-app-main-409.py`, `scripts/research/audit-v2-app-main-409.py`).
 
 ## Russian / Описание
 
