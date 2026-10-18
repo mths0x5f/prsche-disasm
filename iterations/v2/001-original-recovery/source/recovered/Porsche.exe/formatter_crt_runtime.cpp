@@ -7,7 +7,7 @@ alignas(4) std::uint8_t formatter_crt_lock1_006afd00[24]{};
 alignas(4) std::uint8_t formatter_crt_lock17_006afd18[24]{};
 alignas(4) std::uint8_t formatter_crt_lock9_006afd30[24]{};
 alignas(4) std::uint8_t formatter_crt_lock13_006afd48[24]{};
-void* formatter_crt_locks_005e57a8[26] = {nullptr,formatter_crt_lock1_006afd00,
+void* formatter_crt_locks_005e57a8[48] = {nullptr,formatter_crt_lock1_006afd00,
  nullptr,nullptr,nullptr,nullptr,nullptr,nullptr,nullptr,formatter_crt_lock9_006afd30,
  nullptr,nullptr,nullptr,formatter_crt_lock13_006afd48,nullptr,nullptr,nullptr,
  formatter_crt_lock17_006afd18,nullptr};

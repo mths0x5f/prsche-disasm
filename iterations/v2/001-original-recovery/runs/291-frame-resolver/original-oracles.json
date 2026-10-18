@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "body_va": "004898f0",
+  "cases": [
+    {
+      "name": "zero_zero",
+      "self_word": 0,
+      "tag_dword": 0,
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "a5a5a5a5a5a5a5a50000000000a50000a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "eax": 50339848,
+      "esp_delta": 12,
+      "nonvolatile_preserved": true
+    },
+    {
+      "name": "highbit_fullword",
+      "self_word": 2166572391,
+      "tag_dword": 2882343476,
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "a5a5a5a5a5a5a5a56745238100a53412a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "eax": 50339848,
+      "esp_delta": 12,
+      "nonvolatile_preserved": true
+    },
+    {
+      "name": "all_ones",
+      "self_word": 4294967295,
+      "tag_dword": 4294967295,
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "a5a5a5a5a5a5a5a5ffffffff00a5ffffa5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "eax": 50339848,
+      "esp_delta": 12,
+      "nonvolatile_preserved": true
+    },
+    {
+      "name": "low_tag_zero",
+      "self_word": 4275878552,
+      "tag_dword": 2863267840,
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "a5a5a5a5a5a5a5a598badcfe00a50000a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "eax": 50339848,
+      "esp_delta": 12,
+      "nonvolatile_preserved": true
+    },
+    {
+      "name": "low_tag_high",
+      "self_word": 1,
+      "tag_dword": 305430528,
+      "before_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "after_hex": "a5a5a5a5a5a5a5a50100000000a50080a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "eax": 50339848,
+      "esp_delta": 12,
+      "nonvolatile_preserved": true
+    }
+  ]
+}

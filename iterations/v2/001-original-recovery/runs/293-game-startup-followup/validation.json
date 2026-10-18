@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "passed": true,
+  "audit_sha256": "33547389acc162e94ae7eb6774f531fd13cc328df5625f4023fc0e97741051c7",
+  "packets": {
+    "291-frame-resolver": {
+      "summary_sha256": "5b1c3b8c7649e2da58ed2a4611e04881125d6f9c2bdc7cc8a090902c8873a0eb",
+      "input_pins": 38,
+      "native_cases": 512
+    },
+    "292-stdio-lock-prefix": {
+      "summary_sha256": "ed5a1e53168214f451eb48d37169dee2c7decbb8c563a41b2addb4faa084e784",
+      "input_pins": 156,
+      "native_cases": 112
+    }
+  },
+  "highlow_prefix_sites": [
+    "005e57ac",
+    "005e57cc",
+    "005e57dc",
+    "005e57ec"
+  ],
+  "fresh_build_sha256": "c9ced05f716309387b6d6ef783c45e3a0b7204d983ae66017c35071361fa39c5",
+  "fresh_compiler_sources": 151,
+  "source_pins": 380,
+  "unresolved_names": 269,
+  "unresolved_references": 305,
+  "closed_getter": [
+    "?resolve_004898f0@FrameResolver_290@porsche@@QAEPAUFrameTemporary_290@2@PAU32@I@Z"
+  ],
+  "compiled_original_newline_found": true,
+  "platform_macro_warnings": 3,
+  "game_executed": false,
+  "historical_source_pin_note": "Earlier26-entry proof snapshots retain their parent Git bytes;292 proves the two explicit current-source changes"
+}

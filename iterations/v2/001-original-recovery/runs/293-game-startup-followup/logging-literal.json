@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "resource_va": "005d6e84",
+  "literal_hex": "496e697469616c697a696e672072656e646572696e670a00",
+  "caller_pc": "004b6b0e",
+  "call_pc": "004b6b13",
+  "callee_va": "005a177b",
+  "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_main.cpp",
+  "source_before_sha256": "92f2fc350ad5b103a951cb0ed7e72028e97db411b5776a2186c6ea249d468a61",
+  "source_after_sha256": "fac07cb4b8362b5be62c43e18313fcf3ccdc4d11895a2c7f72799eda1c003abc",
+  "parent_commit": "86dd669a33ad1eafc660c9c0ba165a79f975ceb9",
+  "old_cpp": "application_main_log(\"Initializing rendering\");",
+  "new_cpp": "application_main_log(\"Initializing rendering\\n\");",
+  "change": "Restore original newline at the original call site; bridge stays byte-preserving",
+  "requires_recompiled_caller": true
+}

@@ -68,7 +68,7 @@ std::int32_t __cdecl app_main_004b6a50(std::int32_t argc,char** argv) {
     auto* initial=fe_build_004b6660(argc,argv);
     application_fe_apply_release_004b6ad8(initial);
     application_main_setup_heaps(0x40000,0x8000);
-    application_main_log("Initializing rendering");
+    application_main_log("Initializing rendering\n");
     render_startup_00467470();
 
     copy_fe_string_to_network(startup_network_00628c70);
