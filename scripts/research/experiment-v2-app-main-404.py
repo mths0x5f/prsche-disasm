@@ -1,10 +1,10 @@
-"""Physical x86 CPU differential test for Run 299 (app_main memory and input cluster)."""
+"""Physical x86 CPU differential test for Run 404 (app_main memory and input cluster)."""
 import argparse, hashlib, importlib.util, json, os, re, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RUN = ROOT / 'iterations/v2/001-original-recovery/runs/299-app-main-memory-input'
-OUT = ROOT / 'local/experiments/v2-app-main-299'
+RUN = ROOT / 'iterations/v2/001-original-recovery/runs/404-app-main-memory-input'
+OUT = ROOT / 'local/experiments/v2-app-main-404'
 
 def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -93,7 +93,7 @@ def main(finalize, attempt):
         p = Path(p)
         if p.suffix == '.json':
             content = json.dumps(data, indent=2) + '\n'
-            p.write_text(content, encoding='utf8')
+            p.write_bytes((content).replace("\r\n", "\n").encode("utf-8"))
         else:
             p.write_bytes(data)
 
@@ -105,12 +105,12 @@ def main(finalize, attempt):
         ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl',
         ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm',
         ROOT / 'iterations/v2/001-original-recovery/source/recovered/functions.json',
-        RUN / 'app_main_memory_input_299.hpp',
-        RUN / 'app_main_memory_input_299.cpp',
+        RUN / 'app_main_memory_input_404.hpp',
+        RUN / 'app_main_memory_input_404.cpp',
     ]:
         pin(p)
 
-    source = pin(RUN / 'app_main_memory_input_299.cpp')
+    source = pin(RUN / 'app_main_memory_input_404.cpp')
     fixture = pin(OUT / 'app_main_fixture.cpp')
     compiler_path, compiler_expected_sha = resolve_compiler(baseline)
     compiler = pin(compiler_path, compiler_expected_sha)
@@ -153,8 +153,8 @@ def main(finalize, attempt):
             assert any(include.is_relative_to(root) for root in roots), include
             pin(include)
 
-    coff = module('coff299', ROOT / 'scripts/research/build-v2-compile-corpus.py')
-    obj = pin(OUT / 'objects' / 'app_main_memory_input_299.obj')
+    coff = module('coff404', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    obj = pin(OUT / 'objects' / 'app_main_memory_input_404.obj')
     fixture_obj = pin(OUT / 'objects' / 'app_main_fixture.obj')
     view = coff.coff_symbols(obj)
     assert not view['common'] and not view['weak']
