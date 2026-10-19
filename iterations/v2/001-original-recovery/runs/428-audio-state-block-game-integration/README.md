@@ -39,6 +39,22 @@ Result: 192 sources, 0 compiler errors, 0 other linker errors. The frontier went
 
 No EXE yet.
 
+## Input re-verification (unicorn 2.1.3)
+
+After the caps buffer moved into `input_state.cpp`, the input probes were rebuilt from the
+current sources and the unicorn verifiers were run against the original x86. Reports were
+written to `local/experiments/input-reverify-428`. All four pass:
+
+| Verifier | Cases | Functions | Result |
+| --- | --- | --- | --- |
+| `verify-v2-input-state.py` | 1026 | `00532e10`, `0056fce0`, `0056fd00`, `0056fd30` | equal |
+| `verify-v2-input-snapshot.py` | 13 | `0055feb0` | equal |
+| `verify-v2-input-buffer.py` | 37 | `0056fdb0`, `0056fff0` | pass |
+| `verify-v2-startup-input.py` | 8 | `0055fcf0` and 8 more | equal |
+
+`verify-v2-mouse-input.py` was not re-run. It uses the separate Run 089 build, which does not
+include `input_state.cpp`.
+
 ---
 
 # Запуск 428 — блок состояния аудио и буфер caps ввода в игровой цели
