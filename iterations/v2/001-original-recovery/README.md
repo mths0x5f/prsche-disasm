@@ -1,6 +1,11 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Текущий checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
+Текущий игровой checkpoint — [Run310](runs/310-pr-intake-integration/README.md):
+161 C++ TU compiled;268 unresolved names/304 references, EXE нет. PR#3 слит;
+четыре выборочные функции #3/#4 прошли10 native comparisons и подключены без
+фиктивных data providers. Остальные тела400 и ошибочный clock401 не приняты.
+
+Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.
 [Run258](runs/258-x86-call-chain/README.md):3original CALLцепочки/36 864native comparisons PASS.
 [Run262](runs/262-x86-cpu-primitives/README.md):15 744synthetic CPU cases PASS.

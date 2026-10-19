@@ -1,5 +1,20 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint 2026-10-19, [310 selective PR intake](runs/310-pr-intake-integration/README.md) завершён:
+
+- PR#3 merge42813f7,21 TU compiled; в game graph только00412030/00425780.
+  Из PR#4 адаптированы004a54b0/004a54e0 в311 с canonical data/callee reuse.
+  Четыре тела275B,10 native cases PASS; fixture-only providers исключены изgame.
+- Свежая actual build002:161 TU/8projects,4 old names closed/8 dependencies exposed,
+ 268 names/304 refs, ноль compiler/other linker errors, noEXE/run; audit310 PASS.
+  Сохраняются389-pin base/13delta и все предыдущие305/307 providers.
+- Остальные19 тел400, mutable-count401, duplicate00471b60 из402 не подключены.
+  Whole PR#4/#19 не слиты. Незавершённые storage/init не подменены нулями.
+
+Владельцы review/311 завершили задачи; активных назначений нет. Следующий005338d0
+(53B) уже в400: native slot bounds/state/vtable+0x20 ABI/callback tests, затем
+provider binding.296/301/303 HOLD и docs/recovery-validation-backlog.md обязательны.
+
 Checkpoint 2026-10-19:PR review #2–#19 завершён, main16638e4 не менялся по коду.
 - [Результаты и конкретные addresses/lines](../../../docs/research/pr-applicability-2026-10-19.md).
   Все blobs #2–#18 содержатся в #19; это не свидетельство корректности.

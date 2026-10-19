@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 10,
+  "original_bytes": 275,
+  "compiled_pr3_sources": 21,
+  "integrated_functions": 4,
+  "game_sources": 161,
+  "build_report_sha256": "42904b7182c67c91417c090c0786dc3471ad6478773a6adf468e7fd461076c2d",
+  "native310_sha256": "a298d00d7609e173029594e572e2553a4819e5458b605333b35740379d38d58b",
+  "helper311_sha256": "211d46d6d83364c5594eae6c30184f50c363813e4dde92a225ba2d463b58bc42",
+  "source_pins": 402,
+  "closed_names": [
+    "?application_main_function_00412030@porsche@@YAXXZ",
+    "?application_main_function_00425780@porsche@@YAXXZ",
+    "?application_main_function_004a54b0@porsche@@YAXXZ",
+    "?application_main_function_004a54e0@porsche@@YAXXZ"
+  ],
+  "new_names": [
+    "?destroy_0048ff30@ShutdownNetwork311@porsche@@QAEXXZ",
+    "?frame_callback_vector_0060c9f4@porsche@@3PAUFrameVector_400@1@A",
+    "?frame_compact_vector_0060c9c4@porsche@@3PAUFrameVector_400@1@A",
+    "?frame_control_enabled_005e940c@porsche@@3IA",
+    "?frame_control_index_005e9410@porsche@@3IA",
+    "?frame_control_slot_release_005338d0@porsche@@YAXH@Z",
+    "?frame_control_table_005e9420@porsche@@3PAUFrameControlIndexTuple_400@1@A",
+    "?platform_flush_0059eb20@porsche@@YAXXZ"
+  ],
+  "unresolved_names": 268,
+  "unresolved_references": 304,
+  "fresh_objects": {
+    "00412030": {
+      "path": "local/builds/v2/pr-intake-310/entry-289/porsche_game_entry_bridges.dir/Release/00412030.obj",
+      "sha256": "5ddd67731ce3fa10db6c1cf3a91e328e16d48aac320bd170dfc2466e853c8f3b",
+      "symbols": {
+        "defined": [
+          "?application_main_function_00412030@porsche@@YAXXZ",
+          "__Avx2WmemEnabledWeakValue"
+        ],
+        "undefined": [
+          "?frame_control_enabled_005e940c@porsche@@3IA",
+          "?frame_control_index_005e9410@porsche@@3IA",
+          "?frame_control_slot_release_005338d0@porsche@@YAXH@Z",
+          "?frame_control_table_005e9420@porsche@@3PAUFrameControlIndexTuple_400@1@A"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "00425780": {
+      "path": "local/builds/v2/pr-intake-310/entry-289/porsche_game_entry_bridges.dir/Release/00425780.obj",
+      "sha256": "bf2e9522749a9b92c20211e4ac486fc481872d0501aab63c51799c3e9025463a",
+      "symbols": {
+        "defined": [
+          "?application_main_function_00425780@porsche@@YAXXZ",
+          "__Avx2WmemEnabledWeakValue"
+        ],
+        "undefined": [
+          "?frame_callback_vector_0060c9f4@porsche@@3PAUFrameVector_400@1@A",
+          "?frame_compact_vector_0060c9c4@porsche@@3PAUFrameVector_400@1@A"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "shutdown_helpers_311": {
+      "path": "local/builds/v2/pr-intake-310/entry-289/porsche_game_entry_bridges.dir/Release/shutdown_helpers_311.obj",
+      "sha256": "e69d65b049e376c42feabbcc709c39833fb9943bb6ed58a39c6a5ce378a23c42",
+      "symbols": {
+        "defined": [
+          "?application_main_function_004a54b0@porsche@@YAXXZ",
+          "?application_main_function_004a54e0@porsche@@YAXXZ"
+        ],
+        "undefined": [
+          "?application_release_0059f050@porsche@@YAIPAX@Z",
+          "?destroy_0048ff30@ShutdownNetwork311@porsche@@QAEXXZ",
+          "?install_paths_cleanup_004b7070@porsche@@YAIXZ",
+          "?platform_flush_0059eb20@porsche@@YAXXZ",
+          "?startup_network_00628c70@porsche@@3PAXA"
+        ],
+        "common": [],
+        "weak": []
+      }
+    }
+  },
+  "game_executed": false
+}

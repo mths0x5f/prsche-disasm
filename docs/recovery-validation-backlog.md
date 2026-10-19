@@ -1,5 +1,21 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint310/311, selective PR intake,2026-10-19:
+- [x] PR#3 merge42813f7;21 C++ TU compile, fresh5 native cases для00412030/00425780.
+- [x] PR#4 selective004a54b0/004a54e0:49 original bytes,5 native cases; canonical
+  cleanup/network/free reused. Реальные0048ff30/0059eb20 остаются boundaries.
+- [x] Run310 actual161 TU build,4 old contracts closed/8 new exposed,
+ 268 names/304 refs, fresh COFF/receipt/shared-pin batch audit PASS. NoEXE/run.
+- [ ] Остальные19 Run400 тел: upstream native fixture отсутствует в Git;
+  самостоятельная воспроизводимая проверка до интеграции. Следующий005338d0,
+ 53B: slot bounds, state0xffffffff, vtable+0x20 stack/ECX ABI и callback mutation.
+- [ ] PR#4 clock401: callback меняет005e8bfc, original00413f29 перечитывает count,
+  current401:44/46 кэширует. Исправить в новом owned source и добавить этот случай.
+- [ ] Не компилировать duplicate00471b60 из402; сохранять canonical290.
+- [ ] Реальные writable owners/init для frame-control/vector globals, arbitrary
+  alias/fault behavior, полные flags/virtual consumers, graphical/game runtime
+  acceptance. Root/arena/context HOLD296/301/303 не закрыты слиянием PR.
+
 Checkpoint302–309, 2026-10-19:
 - [x] REA6.7.0 CLI: настоящие function/xrefs запросы, SHA/index match; API не нужен.
 - [x] Постоянный MCP SDK-сеанс: initialize/list/open/session; первый анализ86.7s,

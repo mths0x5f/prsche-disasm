@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run": 311,
+  "kind": "pr4-shutdown-helper-candidate",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_functions": [
+    {"va": "004a54b0", "body_bytes": 44},
+    {"va": "004a54e0", "body_bytes": 5}
+  ],
+  "original_selected_bytes": 49,
+  "upstream_provenance": "origin/pr/4:iterations/v2/001-original-recovery/runs/402-frame-clock-helpers",
+  "source": "iterations/v2/001-original-recovery/runs/311-pr4-shutdown-helpers/shutdown_helpers_311.cpp",
+  "source_sha256": "093d4a5dbcafcd1eda759ce89ab0288b3a693b46f9074967166cc3a41eb22c9b",
+  "header": "iterations/v2/001-original-recovery/runs/311-pr4-shutdown-helpers/shutdown_helpers_311.hpp",
+  "header_sha256": "51d949ec7f4ca2f5f177e85fddb6c5042f5d50aa50c0c25e7e6e4d5165e4493f",
+  "verifier": "scripts/research/verify-v2-pr4-helpers-311.py",
+  "verifier_sha256": "0af15ac12ceb8b9b5a610790526c59dcac0facc7325887978a2dd4e7aa096beb",
+  "static_attempt": "local/experiments/v2-pr4-helpers-311/attempt-003.json",
+  "native_attempt": "local/experiments/v2-pr4-helpers-311/attempt-007.json",
+  "native_attempt_sha256": "416715a658684636fed144c349d572f6ad090c50f404f52a5d2bee267fe5a45b",
+  "static_pe_verified": true,
+  "native_cases_passed": 5,
+  "native_status": "native-pass",
+  "game_object_compiled": true,
+  "game_link_verified": false,
+  "new_game_data_definitions": 0,
+  "external_holds": ["0048ff30", "0059eb20"]
+}

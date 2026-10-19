@@ -1,5 +1,19 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-19, [Run310](iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
+PR#3 слит42813f7 как Run400; из PR#4 выборочно перенесены два shutdown helpers311.
+
+- 21 PR3 TU compile PASS; четыре интегрированных тела #3/#4 (275 original bytes)
+ прошли10 native cases. Нет новых original-data providers/duplicate owners.
+- Actual game graph161 TUs compile,4 старых контракта закрыты/8 зависимостей
+ открылись;268 names/304 refs. NoEXE/run; batch audit310 PASS,389-pin base reused.
+- Остальные19 тел400 не подключены. Whole PR#4 HOLD:401 кэширует count после
+ callback,402 повторяет owner290 для00471b60. PR#2/#12–#16/#19 blockers сохраняются.
+
+Активных назначений нет. Следующий bounded шаг: native original005338d0 из400
+(53B,slot/vtable+0x20/callback mutation), затем canonical data/callee bindings.
+Root/arena/context296/301/303 и backlog остаются открытыми; см.docs/recovery-validation-backlog.md.
+
 Checkpoint 2026-10-19, разбор PR #2–#19 относительно16638e4 завершён.
 - [Применимость, адреса и блокеры](docs/research/pr-applicability-2026-10-19.md).
   Ничего не слито; #19 содержит дефекты ABI, раздельные root cells и

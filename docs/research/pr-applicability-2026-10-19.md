@@ -3,7 +3,17 @@
 База проверки: `main` **16638e4**, Run309: 158 C++ TUs,
 264 unresolved names / 300 references; рабочего EXE пока нет.
 Проверены 18 открытых PR из `xfynx/prsche-disasm`, refs `origin/pr/2`–`origin/pr/19`.
-Ничего не слито; комментарии и reviews на GitHub не отправлялись.
+На момент исходного review ничего не было слито; комментарии и reviews на GitHub
+не отправлялись.
+
+После разрешения пользователя: PR#3 слит42813f7 как отдельный Run400 packet.
+Все21 TU скомпилированы;00412030/00425780 прошли свежие native comparisons.
+Из PR#4 выборочно перенесены004a54b0/004a54e0 с canonical providers (Run311).
+Четыре тела подключены в [Run310](../../iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
+10 native cases PASS,161 game TUs compiled,268 names/304 refs, EXE нет.
+Whole PR#4 не слит: дополнительная проверка выявила cached-count ошибку401:44/46
+против original00413f29, а402 повторяет compiled owner290 для00471b60.
+Остальные решения исходного review ниже сохраняются; PR#4 применён частично.
 
 ## Решение
 

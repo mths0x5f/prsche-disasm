@@ -1,5 +1,17 @@
 # Состояние проекта
 
+Checkpoint 2026-10-19, [Run310](iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
+
+- PR#3 слит42813f7;21 TU compile PASS. Подключены только00412030/00425780
+  и selective PR#4 helpers004a54b0/004a54e0 (Run311),10 native cases/275B PASS.
+- Actual game graph161 TUs скомпилированы:4 old contracts closed/8 new dependencies,
+  268 names/304 refs, ноль compiler/other linker errors. EXE не получен и не запускался.
+  Shared389-pin base+13delta; независимый audit-v2-pr-intake-310.py PASS.
+- Остальные19 тел400 не приняты в игровой граф. Whole PR#4 не слит:
+  clock401 кэширует изменяемый count,402 дублирует compiled owner290.
+- Активных назначений нет. Следующий шаг: original53B005338d0 из400, native slot/
+  virtual-call/callback verification. Storage/init и296/301/303 HOLD остаются.
+
 Checkpoint 2026-10-19:18 открытых PR разобраны относительно16638e4.
 - [Решения по каждому PR и доказательства](docs/research/pr-applicability-2026-10-19.md).
   Merge/review submission не выполнялись. #19 целиком не принимать: потерянный
