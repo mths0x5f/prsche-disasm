@@ -35,7 +35,7 @@ EXPECTED_CLOSED = {
 
 def main():
     reader = ManifestReader(ROOT)
-    s = load(RUN / 'build-001.json')
+    s = load(RUN / 'build-002.json')
     _, pins = reader.verify(s, 'source', expected_hash_mode='crlf-to-lf')
 
     assert s['source_count'] == 188 and len(s['project_paths']) == 8 and s['input_unchanged']
@@ -75,7 +75,7 @@ def main():
         closed_names_count=len(closed),
         unresolved_names=s['unresolved_names'],
         unresolved_references=s['unresolved_references'],
-        build_report_sha256=sha(RUN / 'build-001.json'),
+        build_report_sha256=sha(RUN / 'build-002.json'),
         game_executed=False,
     )
     output = RUN / 'validation.json'

@@ -4,10 +4,11 @@
 namespace porsche {
     void __cdecl frame_root_init_00471b70();
     void __cdecl frame_root_teardown_00471c40();
-    extern void* g_frame_service_root_00628960;
-
-    // 419 Bridge: provide frame_service_root_00628960 cell for 00471b60.obj
-    std::uint32_t frame_service_root_00628960 = 0;
+    // The 00628960 cell is NOT defined here. Run 419 defines
+    // frame_service_root_00628960 inside the contiguous original block, which is
+    // the same symbol Run 290's frozen header declares, so 00471b60.obj reads
+    // exactly what 00471b70 writes. A bridge-local cell would resolve the link
+    // while leaving the consumer reading storage nothing ever writes.
 
     // 419 Bridge: startup_sequence_call_00471b70 called by startup_sequence.obj
     void __cdecl startup_sequence_call_00471b70() {

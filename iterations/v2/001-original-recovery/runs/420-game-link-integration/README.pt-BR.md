@@ -1,5 +1,7 @@
 # Run 420: Integração do Heap Shutdown (418) e Frame Root Lifecycle (419) no Target do Jogo
 
+> **Nota de correção:** o bridge **não** define mais a célula `00628960`. Ela vem do objeto do Run 419, que define `frame_service_root_00628960` — o mesmo símbolo que o header congelado do Run 290 declara. Antes, o bridge definia uma célula própria: o contrato de linkedição fechava, mas o consumidor `00471b60` lia um armazenamento que nada escrevia. A reconstrução (`build-002.json`) mantém 188 fontes, 415 nomes / 446 referências não resolvidas e zero erros, com o símbolo resolvido pelo 419.
+
 ## Resumo
 - Integradas 188 unidades de translação C++ no grafo real do jogo (`porsche_original_game_link`), compilando 100% de forma limpa no MSVC Win32 (`/MP6`, 0 erros de compilação, 0 outros erros de linker).
 - Conectados `heap_shutdown_418.cpp` (5 funções PE, 623 bytes) e `frame_root_lifecycle_419.cpp` (2 funções PE + layout de armazenamento contíguo).

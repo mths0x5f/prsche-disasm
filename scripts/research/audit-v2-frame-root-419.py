@@ -65,11 +65,11 @@ def main():
     assert validation['summary_sha256'] == sha(RUN / 'summary.json')
     assert validation['actual_pe_body_bytes'] == 263
     assert validation['physical_x86_slab_bytes_verified'] == 263
-    assert validation['native_cases_passed'] == 5
+    assert validation['native_cases_passed'] == 8
     assert validation['game_object_count'] == 1
     assert set(validation['actual_coff_defined_symbols']) == set(symbols['defined'])
 
-    print('Run 419 verified: PE 263B across 2 functions, physical x86 slab verified, 5 differential cases passed, receipts verified')
+    print('Run 419 verified: PE 263B across 2 functions, physical x86 slab verified, 8 differential cases passed, receipts verified')
 
 if __name__ == '__main__':
     main()

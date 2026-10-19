@@ -231,7 +231,7 @@ def main(finalize, attempt):
         summary_sha256=sha(RUN / 'summary.json'),
         actual_pe_body_bytes=263,
         physical_x86_slab_bytes_verified=263,
-        native_cases_passed=5,
+        native_cases_passed=8,
         game_object_count=1,
         successful_compile_batches=1,
         actual_coff_defined_symbols=sorted(view['defined']),
@@ -243,7 +243,7 @@ def main(finalize, attempt):
     print(json.dumps(dict(
         compile=compiled['exit_code'],
         native=executed['exit_code'],
-        cases=5,
+        cases=8,
         game_objects=1,
         bytes=263,
     )))

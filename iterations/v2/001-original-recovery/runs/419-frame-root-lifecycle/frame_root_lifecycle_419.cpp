@@ -5,20 +5,18 @@
 
 namespace porsche {
 
-// Contiguous layout in writable memory matching .data
-#pragma pack(push, 1)
-struct FrameRootStorageLayout {
-    char track_name_00628940[32];
-    void* service_root_00628960;
-    char formatted_path_00628964[256];
-};
-#pragma pack(pop)
-
-static FrameRootStorageLayout g_storage_layout;
-
-char g_frame_root_track_name_00628940[32];
-void* g_frame_service_root_00628960 = nullptr;
-char g_frame_root_formatted_path_00628964[256];
+// One contiguous writable block for 00628940..00628a63, emitted in declaration
+// order so the original adjacency holds: the root cell sits 32 bytes after the
+// track-name buffer and 4 bytes before the formatted-path buffer. The native
+// fixture asserts those offsets, because section placement is a toolchain
+// property rather than a language guarantee.
+//
+// The root is frame_service_root_00628960, the symbol Run 290's frozen header
+// declares, so the Run 290 consumer 00471b60 reads what 00471b70 writes.
+#pragma section("pfroot", read, write)
+__declspec(allocate("pfroot")) char g_frame_root_track_name_00628940[32] = {0};
+__declspec(allocate("pfroot")) std::uint32_t frame_service_root_00628960 = 0;
+__declspec(allocate("pfroot")) char g_frame_root_formatted_path_00628964[256] = {0};
 
 // External callee prototypes matching the original binary
 extern "C" {
@@ -37,7 +35,11 @@ extern "C" {
 
 // 00471b70 (198 bytes): BWorld_Init
 void __cdecl frame_root_init_00471b70() {
-    // 00471b72..00471b97: repne scasb + rep movsd/movsb from 00657444 to 00628940
+    // 00471b72..00471b97: repne scasb + rep movsd/movsb from 00657444 to 00628940.
+    // The original copy has no bound, and upstream Run 301 proved a source of 32
+    // bytes or more reaches the root cell and then the following buffer. Because
+    // the three objects are one contiguous block here, that effect is reproduced
+    // instead of being lost; it is deliberate, not an oversight.
     const char* src = g_track_source_name_00657444;
     char* dst = g_frame_root_track_name_00628940;
     while (*src != '\0') {
@@ -52,9 +54,9 @@ void __cdecl frame_root_init_00471b70() {
         // 00471ba9: construct object via 004874a0
         auto* proxy = reinterpret_cast<FrameServiceObjectProxy*>(mem);
         root = proxy->construct_004874a0();
-        g_frame_service_root_00628960 = root;
+        frame_service_root_00628960 = reinterpret_cast<std::uint32_t>(root);
     } else {
-        g_frame_service_root_00628960 = nullptr;
+        frame_service_root_00628960 = 0;
     }
 
     // 00471bbf..00471bda: format path "%s%s%s" into 00628964
@@ -67,7 +69,7 @@ void __cdecl frame_root_init_00471b70() {
     );
 
     // 00471bdf..00471bed: load track
-    root = g_frame_service_root_00628960;
+    root = reinterpret_cast<void*>(frame_service_root_00628960);
     auto* proxy = reinterpret_cast<FrameServiceObjectProxy*>(root);
     std::uint8_t ok = proxy->load_track_004876e0(g_frame_root_formatted_path_00628964);
     if (!ok) {
@@ -96,7 +98,7 @@ void __cdecl frame_root_teardown_00471c40() {
     trace_log_005a177b("BWorld_DeInit...");
 
     // 00471c4b..00471c65: destruct and free root object if present
-    void* root = g_frame_service_root_00628960;
+    void* root = reinterpret_cast<void*>(frame_service_root_00628960);
     if (root != nullptr) {
         auto* proxy = reinterpret_cast<FrameServiceObjectProxy*>(root);
         proxy->destruct_00487590();
@@ -104,7 +106,7 @@ void __cdecl frame_root_teardown_00471c40() {
     }
 
     // 00471c68..00471c77: clear 00628960 and log "done.\n"
-    g_frame_service_root_00628960 = nullptr;
+    frame_service_root_00628960 = 0;
     trace_log_005a177b("done.\n");
 }
 
