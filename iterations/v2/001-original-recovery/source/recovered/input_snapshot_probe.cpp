@@ -2,6 +2,7 @@
 #include "porsche/input_buffer.hpp"
 #include "porsche/input_snapshot.hpp"
 #include "porsche/input_state.hpp"
+#include "porsche/files.hpp"
 #include "porsche/shared_runtime_globals.hpp"
 #include "porsche/startup_input.hpp"
 
@@ -112,10 +113,12 @@ std::uint32_t __cdecl input_caps_success_unrecovered_0056fdf9(
     return config.caps_boundary_result;
 }
 
-void* __cdecl input_unrecovered_mode_00532e10(std::uint32_t, std::uint32_t, InputSlot*) {
-    std::abort();
-}
-void __cdecl input_invalid_type_00532eae(std::uint32_t) { std::abort(); }
+// Run 423 recovered the remaining 00532e10 modes, so input_state.cpp now calls
+// the diagnostic handler and fills the mode-2 caps buffer. Neither path is
+// reached by these snapshot cases; both are provided here so the probe links.
+std::uint8_t input_caps_buffer_006bde20[0x21c];
+static void __cdecl unreached_getstate_diagnostic(const char*) { std::abort(); }
+void (__cdecl* diagnostic_handler_005debf0)(const char*) = unreached_getstate_diagnostic;
 void* __cdecl input_negative_index_00532e10(std::int32_t, std::uint32_t) { std::abort(); }
 void* __cdecl input_unmapped_index_00532e10(std::uint32_t, std::uint32_t) { std::abort(); }
 
