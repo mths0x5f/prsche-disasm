@@ -11,6 +11,11 @@
 
 ## Текущий результат
 
+[PR20 research tooling](docs/research/pr20-acceptance-2026-10-20.md) adds an
+experimental x86 lowering/oracle tool after review corrections.107 supported
+fragments/109568 native cases pass; unsupported x87 boundaries are explicit.
+It is outside the production game graph and does not replace original recovery.
+
 [Очередь PR #2–#19 разобрана](docs/research/pr-triage-2026-10-19.md): #3 слит,
 остальные17 закрыты с объяснениями; открытых PR нет. Непринятый полезный код
 сохранён как кандидаты в очереди восстановления. Продолжаем основной путь с REA.

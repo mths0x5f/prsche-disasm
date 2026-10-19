@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "pr": 20,
+  "head": "1bfa0145f7dcc78f4f525cf6046694bb48888cd1",
+  "research_only": true,
+  "game_graph_changed": false,
+  "native": {
+    "candidate_fragments": 108,
+    "supported_fragments": 107,
+    "expected_unsupported": [
+      "fsqrt"
+    ],
+    "cases": 109568,
+    "mismatches": 0,
+    "hardware_match": true,
+    "output_dir": "local/experiments/pr20-final-suite-001",
+    "command": [
+      "py",
+      "-3",
+      "scripts/research/verify-v2-x86-fpu.py",
+      "--json",
+      "--output-dir",
+      "local/experiments/pr20-final-suite-001"
+    ]
+  },
+  "edge": {
+    "receipt": "local/experiments/v2-x86-fpu-edge/attempt-001/receipt.json",
+    "receipt_sha256": "b72bec6d6fb1ebf2205af8fc23b78d90cf1aef22ec27e69bec31c3cc0380a350",
+    "native_cases": 14,
+    "required_rejections": 3
+  },
+  "census": {
+    "total_catalog_functions": 5772,
+    "thunk_functions": 52,
+    "multi_range_functions": 26,
+    "evaluated_functions": 5694,
+    "syntax_supported": 5674,
+    "syntax_rejected": 20,
+    "coverage_percentage": 99.65,
+    "duration_seconds": 10.2,
+    "total_x86_bytes_evaluated": 1330276,
+    "total_cpp_bytes_generated": 59169420,
+    "top_rejection_reasons": [
+      [
+        "Unsupported",
+        14
+      ],
+      [
+        "pfmul",
+        2
+      ],
+      [
+        "pi2fd",
+        2
+      ],
+      [
+        "fnsave",
+        1
+      ],
+      [
+        "femms",
+        1
+      ]
+    ]
+  },
+  "inputs_sha256": {
+    "scripts/research/x86-cpp-backend-fpu.py": "651faf47f14a432dcb7652d17b93ecbcfb3bf70d53d2dd6d21005afae7012a32",
+    "scripts/research/verify-v2-x86-fpu.py": "d1136bb1ead775186e7a02af3bb392d8fa95606f6f3956a61b4c47cbea4ba37e",
+    "scripts/research/verify-v2-x86-fpu-edge.py": "dbe3619e6711b4babafa3f0a957880390dc7e99710c9f3ba58e1cf648c0bfe83",
+    "scripts/research/census-v2-x86-global.py": "8cc2b7aeb3fc2c9cbb55d154898aff6c828cd262cfe7009e547ba3d0d49a3a12",
+    "scripts/research/census-v2-x86-fpu.py": "7770ffdd394efd91379521f461be54cd95583d50edd1d0016e59f4a91e4000a4",
+    "scripts/research/x86-cpp-backend-277.py": "7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b",
+    "scripts/research/x86-cpp-backend-257.py": "fd4edaa76a75a07ded0aac11e44e63741ca67a1889bf846fdf3f843ec98d72dc",
+    "scripts/research/verify-v2-scalar-fill-317.py": "8ce72b0ed16a9e0fcc38df95bcea694c52c26c2309b4f9be4419169980d3b9c3",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
+  },
+  "native_artifacts_sha256": {
+    "local/experiments/pr20-final-suite-001/machine257.h": "40acf6bdfc646e96399b191b7e91143e61b0526b8e581c0da488c46dd4448e78",
+    "local/experiments/pr20-final-suite-001/primitives.cpp": "580c8625e31289017b6a25adceab1425cb8b91ef120bfb614879c8eaedfa5ad7",
+    "local/experiments/pr20-final-suite-001/state-fixture.cpp": "26a84dae01e33c62824886ce99df074671673feb84501807ccb7fa0663084d5f",
+    "local/experiments/pr20-final-suite-001/state-fixture.exe": "12c44e203ee92bddc8de19a5717c56c16e79e7a700798d77429679ff4fa85a45",
+    "local/experiments/pr20-final-suite-001/objects/primitives.obj": "2473a2a20e2cdd682845b38ac610d01b2fe8ed49aa69dcb854769c7d7293d9d6",
+    "local/experiments/pr20-final-suite-001/objects/state-fixture.obj": "23007b563d505f75bef4834878e857a88c445cdce767e6c265c3a57ae25d4c84"
+  },
+  "toolchain_sha256": {
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86\\libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86\\libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x86\\libucrt.lib": "bb7ca922d003d269f7408dd56655ea46c0bfc2a7b66b79ff248094d8143b72dd",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7"
+  },
+  "original_pr_native": {
+    "fragments": 108,
+    "cases": 110592,
+    "mismatches": 0,
+    "provenance": "local/experiments/pr20-review/native-provenance-001.json",
+    "provenance_sha256": "f243085ea0fccbc5f2c5a8ffc13afebcf9635bdb1a7be7e404e732b3b7b4acea"
+  }
+}

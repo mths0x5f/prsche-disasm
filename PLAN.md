@@ -1,5 +1,14 @@
 # План восстановления Porsche Unleashed
 
+2026-10-20: PR20 prepared for merge as research-only tooling with fail-closed
+80-bit/FSQRT boundaries, NaN comparison/FABS corrections,107 supported native
+fragments/109568 cases and14 generated-code edge cases PASS. Final syntax census
+5674/5694 accepted,20 rejected; no production graph change. See
+docs/research/pr20-acceptance-2026-10-20.md and pinned validation record.
+319/320/321 and PR20 review assignments complete. Next original-game step:
+file_exists00561b80 exact wrapper, then index/trace open callback00561ce0;
+details in docs/research/file-resource-frontier-2026-10-20.md. No active agents.
+
 2026-10-20 checkpoint [321](iterations/v2/001-original-recovery/runs/321-simd-fill-game-integration/README.md):
 319MMX/320SSE recovered and integrated;1440+3456 standalone native cases and
 27648 complete original-chain cases PASS. Actual166-TU/8-project build passes

@@ -1,5 +1,12 @@
 # Состояние проекта
 
+PR20 research-tool corrections verified:107 supported fragments/109568 native
+cases,14 generated-code edge cases, three required unsupported-operation rejections.
+The original108-fragment result is retained separately; final syntax census5674/
+5694 is not game execution. See docs/research/pr20-acceptance-2026-10-20.md.
+Game checkpoint321 unchanged:166 TU,266 names/295 refs, noEXE. Remaining resource
+file boundaries are documented; no active implementation assignments remain.
+
 2026-10-20: Run321 integrates both original SIMD fill backends. Standalone1440
 MMX+3456SSE cases and27648 complete dispatcher/backend chain cases PASS.
 All166 C++ TUs compiled;266 unresolved names/295 refs, no EXE/game execution.

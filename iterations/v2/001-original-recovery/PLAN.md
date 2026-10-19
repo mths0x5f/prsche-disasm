@@ -1,5 +1,13 @@
 # v2 / 001 — план восстановления исходного кода
 
+PR20 is accepted only as research tooling after corrections; native107fragments/
+109568cases and14 generated-code edges PASS.80-bit memory andFSQRT reject rather
+than approximate. No production graph change. All assigned agents completed.
+Next concrete original-game step:20B00561b80 wrapper with canonical005df770 and
+explicit00533f00 boundary; then index interior callback00561ce0 and prove its
+device/dispatcher/open/read/close/transform ABI/state. Source/evidence:
+../../../docs/research/file-resource-frontier-2026-10-20.md.
+
 2026-10-20: [321 SIMD integration](runs/321-simd-fill-game-integration/README.md) PASS.
 319/320 finished;1440MMX+3456SSE standalone cases,27648 real-chain cases.
 Exact guarded memory/ABI/FP-state checks, no extra production fence or EMMS.
