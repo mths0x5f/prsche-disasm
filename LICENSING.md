@@ -29,3 +29,16 @@ research-tool contributions imported through PR3 and PR20. Until that permission
 is established, do not assume the root license covers those contributions.
 
 This notice does not replace any third-party copyright or license notice.
+
+## Contributor agreements
+
+- **mths0x5f (Matheus Silva Santos)**, author of the fork
+  [mths0x5f/prsche-disasm](https://github.com/mths0x5f/prsche-disasm), licenses
+  under the [MIT License](LICENSE) the rights they hold in their contributions to
+  this repository. This covers pull requests #2–#20, including the parts merged
+  or applied from #3, #4, #7, #9 and #20, and every later contribution submitted
+  from that fork or account unless it states otherwise. Some of that work was
+  written with AI assistance (commits with a `Co-Authored-By: Claude` trailer); it
+  is submitted under the same terms. Original game material reproduced in those
+  contributions remains excluded, as described above. Agreement given in the pull
+  request that adds this entry.
