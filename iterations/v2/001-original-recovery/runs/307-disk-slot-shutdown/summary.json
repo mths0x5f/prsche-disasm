@@ -1,0 +1,175 @@
+{
+  "schema": 2,
+  "kind": "original-disk-slot-shutdown",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "va": "005918c0",
+  "original_body_hex": "a184f06a0085c00f84a7000000a17cf06a005650e8d709faffa180f06a0083c40433f685c07e2a5733ff8b0d84f06a00803c0f00740d8bd6f7d252e89009000083c404a180f06a004683c7203bf07cda5fa184f06a0050e824cdfdff83c404c70584f06a0000000000befcef6a008b0685c0740f50e89609faff83c404c7060000000083c60481fe7cf06a007ce08b0d7cf06a0051e86609faff8b157cf06a0052e86a09faff83c408c7057cf06a00000000005ec3",
+  "original_body_bytes": 181,
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-disk-slot-shutdown-307/objects/005918c0.obj",
+      "sha256": "70e2d88db8ea6b26eb33f7efeb0017b5eff80e3286ac9c3f8453b11bcb8251ca"
+    }
+  ],
+  "game_source": "iterations/v2/001-original-recovery/runs/307-disk-slot-shutdown/005918c0.cpp",
+  "symbols": {
+    "defined": [
+      "?application_pool_disk_slots_release_005918c0@porsche@@YAXXZ"
+    ],
+    "undefined": [
+      "?disk_mutexes_006aeffc@porsche@@3PAPAXA",
+      "?disk_slot_mutex_006af07c@porsche@@3PAXA",
+      "?file_object_free_0056e640@porsche@@YAIPAX@Z",
+      "?file_physical_close_00592290@porsche@@YAIPAX@Z",
+      "?heap_enter_005322b0@porsche@@YAXPAX@Z",
+      "?heap_leave_005322c0@porsche@@YAXPAX@Z",
+      "?heap_lock_destroy_005322d0@porsche@@YAXPAX@Z",
+      "?physical_count_006af080@porsche@@3HA",
+      "?physical_files_006af084@porsche@@3PAUPhysicalFile@1@A"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "original_relocations": [
+    {
+      "offset": 1,
+      "next": 0,
+      "target": 7008388
+    },
+    {
+      "offset": 14,
+      "next": 0,
+      "target": 7008380
+    },
+    {
+      "offset": 21,
+      "next": 25,
+      "target": 5448368
+    },
+    {
+      "offset": 26,
+      "next": 0,
+      "target": 7008384
+    },
+    {
+      "offset": 44,
+      "next": 0,
+      "target": 7008388
+    },
+    {
+      "offset": 60,
+      "next": 64,
+      "target": 5841552
+    },
+    {
+      "offset": 68,
+      "next": 0,
+      "target": 7008384
+    },
+    {
+      "offset": 82,
+      "next": 0,
+      "target": 7008388
+    },
+    {
+      "offset": 88,
+      "next": 92,
+      "target": 5695040
+    },
+    {
+      "offset": 97,
+      "next": 0,
+      "target": 7008388
+    },
+    {
+      "offset": 106,
+      "next": 0,
+      "target": 7008252
+    },
+    {
+      "offset": 118,
+      "next": 122,
+      "target": 5448400
+    },
+    {
+      "offset": 136,
+      "next": 0,
+      "target": 7008380
+    },
+    {
+      "offset": 144,
+      "next": 0,
+      "target": 7008380
+    },
+    {
+      "offset": 150,
+      "next": 154,
+      "target": 5448384
+    },
+    {
+      "offset": 156,
+      "next": 0,
+      "target": 7008380
+    },
+    {
+      "offset": 162,
+      "next": 166,
+      "target": 5448400
+    },
+    {
+      "offset": 171,
+      "next": 0,
+      "target": 7008380
+    }
+  ],
+  "endpoint_relocation": {
+    "offset": 136,
+    "original_literal": "006af07c",
+    "native_role": "disk_mutexes_006aeffc+32; pure CMP end, not global mutex cell"
+  },
+  "accepted_callee_vas": [
+    "005322b0",
+    "005322c0",
+    "005322d0",
+    "0056e640",
+    "00592290"
+  ],
+  "native_cases": 48,
+  "native_exit": 0,
+  "compiler_batches": 1,
+  "selected_attempt": "001",
+  "tool_sha256": {
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\string.h": "39767b2e1963b8ef679b62d5e27cb2d0ca1de6a6173b75389b79c9d575da92fc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memory.h": "18ca520416579183bc369c0a8e555914db5c7577075b9359173fc6bc45595560",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memcpy_s.h": "359f3ce9e84bc00c983f01d9c3375d0ca9e0ef6a42e797d16e119c62b2ef333b",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\errno.h": "c64e8df96f057fdebc0474bd765cee3ae17de34a2b1fc9d197597321f2d1e447",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstring.h": "c485f918d43f0f846d77a36eaee9e111f57bf2eec32db7d9719ff924771744c6",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stddef.h": "3f1f7eeefad270928749c89a2a2094ccc3f38829b1d8c197f6ce7483ead2284c",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86\\libvcruntime.lib": "f94b4942804e5893ae2a255fa3845b35d2eaac9f5d427c89e84a7f84f7face64",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\lib\\x86\\libcmt.lib": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660"
+  },
+  "limits": [
+    "Callee algorithms are existing accepted owners; fixture providers are controlled only",
+    "Finite valid-memory states; not whole game or arbitrary fault/DF behavior acceptance"
+  ],
+  "fixture_runtime_support": {
+    "library": "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/lib/x86/libcmt.lib",
+    "library_sha256": "77a18147a9cf6475995bbfd4d8eb46109912884ec03aaa2ee4f2e4d71ba97660",
+    "member_offset": 5342924,
+    "member_header_hex": "2f3130363331362020202020202020202d3120202020202020202020202020202020202020202020313030363636202032333138352020202020600a",
+    "member_bytes": 23185,
+    "object": "local/experiments/v2-disk-slot-shutdown-307/libcmt-isa-5186cc.obj",
+    "object_sha256": "357cade37933bc038119982ced51a231a06aee53b6bd4aaa6ed674f98cb0cd58",
+    "fixture_only": true,
+    "selection": "dumpbin /LINKERMEMBER:1 confirms three actual memset CPU-state providers; extracted bytes compared to exact archive member"
+  },
+  "selected_link_attempt": "004",
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/332f45dbf1d8b51ef2eddb95a6850bf5196639525ea087f253bb55561ddd6a23.json",
+    "sha256": "332f45dbf1d8b51ef2eddb95a6850bf5196639525ea087f253bb55561ddd6a23"
+  }
+}

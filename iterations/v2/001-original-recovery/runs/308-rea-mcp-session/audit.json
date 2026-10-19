@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "kind": "rea-persistent-mcp-session",
+  "status": "PASS",
+  "target_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "package_version": "6.7.0",
+  "sdk_client_version": "2.3.1",
+  "server_pid": 168488,
+  "analysis_run_id": "286fd2d8-3804-4d57-8ad5-2224a67122e3",
+  "tools_list_count": 207,
+  "function": "00476170",
+  "function_bytes": 169,
+  "callers": [
+    "00487e20"
+  ],
+  "callees": [
+    "00476710"
+  ],
+  "unresolved_calls": [
+    "004761c0",
+    "004761f1"
+  ],
+  "cold_ms": 86368.268,
+  "warm_ms": 23.333,
+  "warm_source": "local REA analysis snapshot; provider did not rerun",
+  "identical_normalized_result": true,
+  "cached_index_match": true,
+  "target_unchanged": true,
+  "attempts": {
+    "001": {
+      "path": "local/experiments/v2-rea-mcp-session-308/001/receipt.json",
+      "sha256": "a309f242368fa96e5436ce60fb52f76e26771c045f3cec44973d88909fc48b82",
+      "exit_code": 1,
+      "seconds": 0.30441049998626113
+    },
+    "002": {
+      "path": "local/experiments/v2-rea-mcp-session-308/002/receipt.json",
+      "sha256": "f5e56ebd039e7dc32b9f52506d2cd163f743dfcb8194c8f2d90f33758a3df0f5",
+      "exit_code": 1,
+      "seconds": 5.629671499948017
+    },
+    "003": {
+      "path": "local/experiments/v2-rea-mcp-session-308/003/receipt.json",
+      "sha256": "a62f9a3a6714a841089e09400685806bd49a73a58a4d4c1f2d5ffcae0c792c19",
+      "exit_code": 0,
+      "seconds": 92.63555050001014
+    }
+  },
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/ad5eb8429108e69c888bf88f9b1726f29458c9c112ae044e9ffd692dafaf0838.json",
+    "sha256": "ad5eb8429108e69c888bf88f9b1726f29458c9c112ae044e9ffd692dafaf0838"
+  },
+  "source_manifest": {
+    "path": "research/v2/proof-manifests/sha256/2a8d8b7ca3ca2b913377bc34a843c28dc2554de5d5d7bd786a19a78001b5226f.json",
+    "sha256": "2a8d8b7ca3ca2b913377bc34a843c28dc2554de5d5d7bd786a19a78001b5226f"
+  },
+  "output_sha256": {
+    "local/experiments/v2-rea-mcp-session-308/003/events.jsonl": "81c515e57bfa565d952ab74774606ffa0ad40265528498f238bb37156e3b8536",
+    "local/experiments/v2-rea-mcp-session-308/003/tools-list.json": "fa8002fee587f5b61bdf0cc65b3b18a902891501241ba824cd6eeb18455d68d3",
+    "local/experiments/v2-rea-mcp-session-308/003/selected-tool-schemas.json": "3c82389f9163bc6ac36e6ccee7bd4c044ff25c9b3548a2a1c219710a33849c1f",
+    "local/experiments/v2-rea-mcp-session-308/003/function-cold.json": "eb1552764630c6a92331d28f3c2ec4c93733d6ccb911823b2c1e864a530d0d08",
+    "local/experiments/v2-rea-mcp-session-308/003/function-warm.json": "2a009915befaae58fd7201021fc9db3a4fcb136101e7ce5915e317d8bde1192e",
+    "local/experiments/v2-rea-mcp-session-308/003/session-before.json": "02049e1eb4b2bfb923919dd547aa3da63804eb9e6eef237a79e21e339e6dfb51",
+    "local/experiments/v2-rea-mcp-session-308/003/session-middle.json": "6ff4429285e78bd0c6669a41deb49f7c876105a37f955b20acaf48865c7fa7bb",
+    "local/experiments/v2-rea-mcp-session-308/003/session-after.json": "6ff4429285e78bd0c6669a41deb49f7c876105a37f955b20acaf48865c7fa7bb",
+    "local/experiments/v2-rea-mcp-session-308/003/server-stderr.log": "20a3b3c9830f2f1cbbff94abb34985366e072377283dfc332c8c1f250833db93",
+    "local/experiments/v2-rea-mcp-session-308/003/status.json": "df992dbfe0a77fe6fa6d2390acfea0693a145a28d85a73dd5af07e838f20f11d",
+    "local/experiments/v2-rea-mcp-session-308/003/receipt.json": "a62f9a3a6714a841089e09400685806bd49a73a58a4d4c1f2d5ffcae0c792c19"
+  },
+  "limitations": [
+    "The warm speed measures REA snapshot reuse, not live Ghidra process reuse",
+    "Two indirect call targets remain unresolved",
+    "This SDK-protocol test did not register tools in the IDE or root ALL_TOOLS"
+  ]
+}

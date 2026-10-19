@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "kind": "rea-mcp-distinct-function-followup",
+  "status": "PASS",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "server_pid": 161708,
+  "analysis_run_id": "dd589dba-9e62-4a8b-a847-12e1f215a857",
+  "queries": [
+    "00476170",
+    "00476170",
+    "00476710"
+  ],
+  "milliseconds": {
+    "function-cold": 86662.412,
+    "function-warm": 24.035,
+    "function-different": 64.965
+  },
+  "second_query_source": "REA local analysis snapshot; provider did not rerun",
+  "third_query_source": "distinct function Evidence without snapshot limitation",
+  "third_function_bytes": 136,
+  "third_callers": [
+    "00476170",
+    "00476810"
+  ],
+  "index_match": true,
+  "same_mcp_session": true,
+  "target_unchanged": true,
+  "live_ghidra_pid_observed": false,
+  "receipt": {
+    "path": "local/experiments/v2-rea-mcp-session-308/004/receipt.json",
+    "sha256": "3a2e666a291ef840d08aeb3a5ebafba16c9e95bba82dd0814ede4603ed8e43d7"
+  },
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/ad5eb8429108e69c888bf88f9b1726f29458c9c112ae044e9ffd692dafaf0838.json",
+    "sha256": "ad5eb8429108e69c888bf88f9b1726f29458c9c112ae044e9ffd692dafaf0838"
+  },
+  "source_manifest": {
+    "path": "research/v2/proof-manifests/sha256/4b6fdc53b1f14fdf32074393175ee8b27a6050c283fe154809f6183481caad26.json",
+    "sha256": "4b6fdc53b1f14fdf32074393175ee8b27a6050c283fe154809f6183481caad26"
+  },
+  "output_sha256": {
+    "local/experiments/v2-rea-mcp-session-308/004/events.jsonl": "a43f85c304e854833025245cd249fb1040e64b1bd80dfbdeed4fc49a930b98ac",
+    "local/experiments/v2-rea-mcp-session-308/004/tools-list.json": "fa8002fee587f5b61bdf0cc65b3b18a902891501241ba824cd6eeb18455d68d3",
+    "local/experiments/v2-rea-mcp-session-308/004/function-cold.json": "97fbd1113ee91ea4a46a49d72798909168d364d9606b0cc91536f89bf665c719",
+    "local/experiments/v2-rea-mcp-session-308/004/function-warm.json": "9e8ec8365fac42594e623e46c2996e830866bb3f42d2b98d99da0dd26b6a0327",
+    "local/experiments/v2-rea-mcp-session-308/004/function-different.json": "a62fcbb6444aa91f14ed5979a38091fa531f597e5d4ab139ee0a0d825124997c",
+    "local/experiments/v2-rea-mcp-session-308/004/session-final.json": "a7d95fbc3a57d9563247ba55c83ce67f1cd33f2bf7fec5f793ed6045b4e44f51",
+    "local/experiments/v2-rea-mcp-session-308/004/server-stderr.log": "7bb1d17cf2e7423e41a889b17f0de29755132a3cf1c454827f7ac2b3552c326e",
+    "local/experiments/v2-rea-mcp-session-308/004/status.json": "707cc813a628bfcbda1a5432314b0df999d953e4c98bca89bc0aac13ccbfd20a",
+    "local/experiments/v2-rea-mcp-session-308/004/receipt.json": "3a2e666a291ef840d08aeb3a5ebafba16c9e95bba82dd0814ede4603ed8e43d7"
+  },
+  "limitations": [
+    "Third query indicates retained provider state without rerunning cold import; Ghidra process identity was not observed",
+    "No IDE/root MCP registration was performed"
+  ]
+}

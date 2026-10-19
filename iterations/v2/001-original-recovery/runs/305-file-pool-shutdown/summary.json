@@ -1,0 +1,228 @@
+{
+  "schema": 2,
+  "kind": "original-file-pool-shutdown",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "va": "005678f0",
+  "original_body_hex": "a17c5c6a0085c00f84ea00000053565768385c6a00e8868e01008bf083c40485f674228b460c50e874a9020056e81e6d000068385c6a00e8648e01008bf083c40c85f675dec705805c6a000100000033db8b0d7c5c6a008d340b833e0074468b7e5c57e8d881ffff83c4048b0685c074106a00e8d87dffff83c4048b0685c075f057e89982ffff8b566452e80083ffff8d464050e8378d010083c62456e82e8d010083c41083c37081fb000e00007ca18b0d545c6a0051e8946c00008b157c5c6a0052e8886c000068585c6a00e8fe8c010068385c6a00e8f48c0100a1785c6a0050e8f9a8fcff83c414c7057c5c6a00000000005f5e5bc3",
+  "original_body_bytes": 248,
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-file-pool-shutdown-305/objects/005678f0.obj",
+      "sha256": "1b1e88008af87a63691370462af9bebdb75978440ce74826030d6548b07c99cd"
+    }
+  ],
+  "game_source": "iterations/v2/001-original-recovery/runs/305-file-pool-shutdown/005678f0.cpp",
+  "symbols": {
+    "defined": [
+      "?application_pool_shutdown_005678f0@porsche@@YAXXZ",
+      "__Avx2WmemEnabledWeakValue"
+    ],
+    "undefined": [
+      "?application_pool_lock_006a5c78@porsche@@3PAXA",
+      "?devices_006a5c7c@porsche@@3PAUFileDevice@1@A",
+      "?file_close_event_0055fc10@porsche@@YAIPAX@Z",
+      "?file_event_signal_0055fb30@porsche@@YAIPAX@Z",
+      "?file_object_free_0056e640@porsche@@YAIPAX@Z",
+      "?file_physical_close_00592290@porsche@@YAIPAX@Z",
+      "?file_shutdown_006a5c80@porsche@@3IA",
+      "?file_signal_close_0055fc80@porsche@@YAIPAX@Z",
+      "?file_sleep_0055f740@porsche@@YAII@Z",
+      "?free_auxiliary_006a5c38@porsche@@3UIoList@1@A",
+      "?free_operation_arena_006a5c54@porsche@@3PAXA",
+      "?free_operations_006a5c58@porsche@@3UIoList@1@A",
+      "?heap_lock_destroy_005322d0@porsche@@YAXPAX@Z",
+      "?io_pop_00580790@porsche@@YAPAUIoNode@1@PAUIoList@1@@Z",
+      "?network_worker_queue_dispose_005806c0@porsche@@YAXPAUIoList@1@@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "original_relocations": [
+    {
+      "offset": 1,
+      "next": 0,
+      "target": 6970492
+    },
+    {
+      "offset": 17,
+      "next": 0,
+      "target": 6970424
+    },
+    {
+      "offset": 22,
+      "next": 26,
+      "target": 5769104
+    },
+    {
+      "offset": 40,
+      "next": 44,
+      "target": 5841552
+    },
+    {
+      "offset": 46,
+      "next": 50,
+      "target": 5695040
+    },
+    {
+      "offset": 51,
+      "next": 0,
+      "target": 6970424
+    },
+    {
+      "offset": 56,
+      "next": 60,
+      "target": 5769104
+    },
+    {
+      "offset": 71,
+      "next": 0,
+      "target": 6970496
+    },
+    {
+      "offset": 83,
+      "next": 0,
+      "target": 6970492
+    },
+    {
+      "offset": 100,
+      "next": 104,
+      "target": 5634864
+    },
+    {
+      "offset": 116,
+      "next": 120,
+      "target": 5633856
+    },
+    {
+      "offset": 131,
+      "next": 135,
+      "target": 5635088
+    },
+    {
+      "offset": 140,
+      "next": 144,
+      "target": 5635200
+    },
+    {
+      "offset": 149,
+      "next": 153,
+      "target": 5768896
+    },
+    {
+      "offset": 158,
+      "next": 162,
+      "target": 5768896
+    },
+    {
+      "offset": 178,
+      "next": 0,
+      "target": 6970452
+    },
+    {
+      "offset": 184,
+      "next": 188,
+      "target": 5695040
+    },
+    {
+      "offset": 190,
+      "next": 0,
+      "target": 6970492
+    },
+    {
+      "offset": 196,
+      "next": 200,
+      "target": 5695040
+    },
+    {
+      "offset": 201,
+      "next": 0,
+      "target": 6970456
+    },
+    {
+      "offset": 206,
+      "next": 210,
+      "target": 5768896
+    },
+    {
+      "offset": 211,
+      "next": 0,
+      "target": 6970424
+    },
+    {
+      "offset": 216,
+      "next": 220,
+      "target": 5768896
+    },
+    {
+      "offset": 221,
+      "next": 0,
+      "target": 6970488
+    },
+    {
+      "offset": 227,
+      "next": 231,
+      "target": 5448400
+    },
+    {
+      "offset": 236,
+      "next": 0,
+      "target": 6970492
+    }
+  ],
+  "accepted_callee_vas": [
+    "005322d0",
+    "0055f740",
+    "0055fb30",
+    "0055fc10",
+    "0055fc80",
+    "0056e640",
+    "005806c0",
+    "00580790",
+    "00592290"
+  ],
+  "native_cases": 48,
+  "native_exit": 0,
+  "compiler_batches": 1,
+  "selected_attempt": "001",
+  "tool_sha256": {
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\string.h": "39767b2e1963b8ef679b62d5e27cb2d0ca1de6a6173b75389b79c9d575da92fc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memory.h": "18ca520416579183bc369c0a8e555914db5c7577075b9359173fc6bc45595560",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memcpy_s.h": "359f3ce9e84bc00c983f01d9c3375d0ca9e0ef6a42e797d16e119c62b2ef333b",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\errno.h": "c64e8df96f057fdebc0474bd765cee3ae17de34a2b1fc9d197597321f2d1e447",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstring.h": "c485f918d43f0f846d77a36eaee9e111f57bf2eec32db7d9719ff924771744c6",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stddef.h": "3f1f7eeefad270928749c89a2a2094ccc3f38829b1d8c197f6ce7483ead2284c",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\crtdbg.h": "d9ebd063f0243dd122ec33901661d1ae175359adbb019f0d815fb902e6f617e4",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h": "fb747990091c8c6e4ed8b4cfb40ed14eadd37547153607459e9ddef71c64edff",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_math.h": "ca2f0f25b2e07b3613984efd1135dd9f1d0786fabaa56da2ba3c83b1a23eb918",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stdlib.h": "1576fdb40eb225dff53489db2fd52e41c7bb24f1e621e4a95c2c7f4a7216949c",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_malloc.h": "44bd1bb518e730ba0be045f44a4735869e08f7d54ab85c298270770812fcff80",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_search.h": "fe06c4dd27c3df5ca6bed52a433b8848f32e14ed0f3712d00f7e602416471c1b",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstdlib.h": "98b62ac5fb4291961c19ecf5c1b2e641b437f9042054f1a56ebdfd0deb71eca1",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stdio.h": "06cbab3a501306fdd9176a00a83e5bb92ea4d7863cfd666355743527cf99edc6",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h": "a10bbf4667b3aada380a6b80df853f9fbddc3cc691ca57389b3b6759f119e515",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_stdio_config.h": "a7e100624320a8e0123890c5008bcb2281c1273ca7ce5bb1d297f987fdbe79a0",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\wchar.h": "802dc6f33d128ac94cb0e8a978c65382c7c18e85dc2eb7d340b038d79ad10ea5",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wconio.h": "6cfdcfd9e1ec60014c4e7e87913275ce3cacda008dbc397a17306976266aa5b6",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wctype.h": "b622b24cbda842a1736987f38c9deb5076e51af018630842a127bebd9104076e",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wdirect.h": "b8477593983d23ed4ef93c3efcabb8239375b518ba589a65338db29bb0dc2237",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wio.h": "e6a08ad4c75ef96fd5fafcff334048c4cc610f990f39c15e07c03af14d607197",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_share.h": "08e7a7eb0b0c7ebdd7e5fa9f9a65f626f5a725b688502ac178ca67334328b898",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wprocess.h": "e75c5cdf244070ddcebac8920dd4cc96c33d0e21fdfbc82446c0374950e98487",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wtime.h": "4e487fddafbc724cf4e6df45feb920bc46dae80f54ffe5d983bf742a1fd9a12f",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\sys\\stat.h": "2b720dd0426cf0a74eefdb684ac559c8b4f84b1d7d345e3582ce0dfeb01b9aa7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\sys\\types.h": "dfb9ebc7d527c30d71f1056ddd85e33fb931df573b41424bb1db9a48457bebd7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\malloc.h": "8acfe0c7a33a4d5ae2253f7167f92b0e728dea86f83289cee9d583c45b175b6e"
+  },
+  "limits": [
+    "Callee algorithms are existing accepted owners; fixture providers are controlled only",
+    "Finite valid-memory states; not whole game or arbitrary fault/DF behavior acceptance"
+  ],
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/9d35b8db82367e3b9e22478a7ff0efb88fa8b6d90824095479f8516fcea2b8ec.json",
+    "sha256": "9d35b8db82367e3b9e22478a7ff0efb88fa8b6d90824095479f8516fcea2b8ec"
+  }
+}

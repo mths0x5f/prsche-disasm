@@ -1,5 +1,20 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint302–309, 2026-10-19:
+- [x] REA6.7.0 CLI: настоящие function/xrefs запросы, SHA/index match; API не нужен.
+- [x] Постоянный MCP SDK-сеанс: initialize/list/open/session; первый анализ86.7s,
+  повтор24ms из snapshot, другая функция65ms без такого указания. Прямой PID Ghidra
+  не наблюдался; глобальная IDE-регистрация не выполнялась.
+- [x] 304: heap-slot release72B,960 finite native cases, повторно использован272 owner.
+- [x] 305/307: shutdown248B/181B, по48 native cases, существующие canonical providers.
+- [x] 306/309: actual game graph157→158 TUs, frontier265/301→264/300, ноль новых
+  unresolved.389-pin shared base +3/+6 delta pins; independent audits PASS. NoEXE.
+- [ ] Root/frame layout и arena/context HOLD296/301/303, startup/OS concurrency,
+  реальные callbacks, графика и gameplay остаются открытыми.
+- [ ] Будущая triage:10 frontier-имён с совпадающим acceptedVA. Partial hooks
+  input00532e10/resource0059d650 нельзя бездоказательно замыкать на ту же функцию.
+  Задание310 не началось из-за лимита агента; незавершённых файлов нет.
+
 Checkpoint295–301:
 - [x] Четыре frame-алгоритма: 441 original bytes, 1139 native comparisons; exact
   callbacks/reloads/forward-copy, float threshold/NaN path в пределах fixtures.
@@ -11,6 +26,14 @@ Checkpoint295–301:
 - [ ] Реальные virtual callees, null/invalid-memory faults, полное x87 status/control
   поведение и full-game integration не покрыты конечными native fixtures.
 - [ ] REA pilot302: readiness/real x86 query/time сравнить, пока tool не принят.
+- [ ] 303: shutdown004a54e0→0059eb20 требует исходной общей arena/context memory.
+  Индекс16 обращается к guard006af3f4; нынешние primary scalar и other[15] разнесены.
+  Также проверить старый application_object_start0059ebc0: original0059ebf3 пишет
+  arena[index] без диапазонного фильтра, current application_heap_init.cpp ограничивает
+  запись индексами1..15. Не сохранять этот фильтр как подтверждённое поведение.
+  Для исправления нужны общий storage owner и stateful original/native сравнение,
+  включая возврат16 из00569a70 при заполненных heap-слотах. Контекст005e4fe8/005e4fec
+  и default005e3e18 тоже должны сохранять writable identity.
 
 Checkpoint294:
 - [x] Sharedsource/input manifest reader,legacy+delta modes;9testsPASS.

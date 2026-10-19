@@ -1,0 +1,79 @@
+{
+  "schema": 2,
+  "kind": "original-heap-slot-release",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "va": "005699f0",
+  "original_body_hex": "8b4c24045683e10f5733c08b348d204f6b008d3c8d204f6b0085f674288b463885c0740950e8b688fcff83c4046a406a0056e86928fdff83c40cc70700000000b8010000005f5ec3",
+  "original_body_bytes": 72,
+  "game_objects": [
+    {
+      "path": "local/experiments/v2-heap-slot-release-304/objects/005699f0.obj",
+      "sha256": "36ce16c4524fe3e548649b79a28d43e46c4b555fd7a766f16ad9b3ea227fea32"
+    }
+  ],
+  "game_source": "iterations/v2/001-original-recovery/runs/304-heap-slot-release/005699f0.cpp",
+  "symbols": {
+    "defined": [
+      "?heap_slot_release_005699f0@porsche@@YAII@Z"
+    ],
+    "undefined": [
+      "?heap_fill_0053c290@porsche@@YAXPAXII@Z",
+      "?heap_lock_destroy_005322d0@porsche@@YAXPAX@Z",
+      "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "reused_table_object": {
+    "path": "local/experiments/v2-shared-heap-table-272/objects/original_heap_table.obj",
+    "sha256": "d4facaa0d59a35ed8de3542c739d7d8de6189f9b701586feeb44f6ac4b9de7d8"
+  },
+  "original_relocations": [
+    {
+      "kind": "DIR32",
+      "offset": 14,
+      "target": "006b4f20"
+    },
+    {
+      "kind": "DIR32",
+      "offset": 21,
+      "target": "006b4f20"
+    },
+    {
+      "kind": "REL32",
+      "offset": 38,
+      "next": 42,
+      "target": "005322d0"
+    },
+    {
+      "kind": "REL32",
+      "offset": 51,
+      "next": 55,
+      "target": "0053c290"
+    }
+  ],
+  "native_cases": 960,
+  "native_exit": 0,
+  "compiler_batches": 1,
+  "selected_attempt": "001",
+  "tool_sha256": {
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+    "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe": "83b11a6a9b1674472fe069a8d315a6ac6d6dfe3670d39cb55c2cda303544b1d6",
+    "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.lib": "0916cf9c90410acf8fe000b23443f54c467bdecb14078034f3c9ec086200afc7",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stddef.h": "3f1f7eeefad270928749c89a2a2094ccc3f38829b1d8c197f6ce7483ead2284c",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h": "822e503b81dd7b3d7df93ca22fced3672a5154484fd42054d5941e619bcf6cbc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\string.h": "39767b2e1963b8ef679b62d5e27cb2d0ca1de6a6173b75389b79c9d575da92fc",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memory.h": "18ca520416579183bc369c0a8e555914db5c7577075b9359173fc6bc45595560",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memcpy_s.h": "359f3ce9e84bc00c983f01d9c3375d0ca9e0ef6a42e797d16e119c62b2ef333b",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\errno.h": "c64e8df96f057fdebc0474bd765cee3ae17de34a2b1fc9d197597321f2d1e447",
+    "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstring.h": "c485f918d43f0f846d77a36eaee9e111f57bf2eec32db7d9719ff924771744c6"
+  },
+  "limits": [
+    "Lock destruction and fill remain canonical external boundaries; fixture providers are controlled only",
+    "Finite valid-memory states; not whole game or arbitrary fault/DF behavior acceptance"
+  ],
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/e38464e16ae26b3b7b6e25df9fd3f5d0e4774ab7bef29692bdab1eff785980ce.json",
+    "sha256": "e38464e16ae26b3b7b6e25df9fd3f5d0e4774ab7bef29692bdab1eff785980ce"
+  }
+}

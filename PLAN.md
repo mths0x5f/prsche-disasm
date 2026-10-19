@@ -1,5 +1,23 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+- Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
+  После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых
+  unresolved нет. EXE не получен, игра не запускалась.
+- 305/307: 248/181 original bytes, по48 native comparisons PASS, существующие
+  canonical providers. 304: отдельный heap-slot release72B/960cases, без подключения
+  до восстановления parent. Общий source base389pins +3/+6delta, audits PASS.
+- REA302/308: CLI и реальная постоянная MCP stdio-сессия PASS, без API.
+  Cold86.7s; повтор24ms из snapshot; другая функция65ms в том же соединении.
+  IDE/global MCP registration не выполнялась; прямой PID Ghidra не наблюдался.
+- 296/301/303: shared root/arena/context layout и исходная инициализация HOLD.
+  Сохраняем явные границы; неподтверждённых storage/нулевых providers не добавлено.
+Активных назначений нет. Пользователь просит закончить коммит и затем разбирать PR.
+310 canonical-binding triage не началась из-за лимита агента; WIP-файлов нет.
+Не начинать новые recovery-пакеты перед следующим поручением по PR.
+Проверки: audit-v2-disk-game-integration-309.py, audit-v2-pool-game-integration-306.py,
+audit-v2-rea-pilot-302.py, audit-v2-rea-mcp-session-308-004.py (scripts/research).
+
 Checkpoint 2026-10-19, Run420: интеграция Heap Shutdown (418) и Frame Root (419) в реальный игровой target.
 - Все 188 C++ TUs реального game graph скомпилированы чисто (MSVC Win32, /MP6). 0 compiler errors, 0 other linker errors.
 - Закрыты 8 контрактов в линкере из фронтира Run417 (включая platform_flush_0059eb20, application_pool_shutdown_005678f0, startup_sequence_call_00471b70, frame_service_root_00628960 и ячейки селектора/состояния heap 005e4fe8/005e4fec).
