@@ -92,7 +92,13 @@ Rust/WebGPU прототипы сохранены в `iterations/`. Снимки
 незавершённой; её интеграция остановлена после перехода на восстановление v2.
 Инструкции запуска и управление прототипом находятся в README этой итерации.
 
-## Благодарности
+## License
+
+Project-owned original code and documentation use the [MIT License](LICENSE),
+subject to the [licensing scope](LICENSING.md). Original game material and
+third-party contributions are not automatically relicensed by this notice.
+
+## Acknowledgements
 
 При исследовании CRP и FSH использовались открытые описания и реализации:
 [CrpLib / FSHTool, Denis Auroux](https://auroux.free.fr/),

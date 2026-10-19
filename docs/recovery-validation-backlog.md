@@ -31,6 +31,9 @@ GitHub PR и по закреплённым SHA из [разбора](research/pr
 - [x] #2 tool defects revisited in PR20: SIMD effects and bounded hardware oracle;
   NaN comparison/FABS fixed,80-bit operands/FSQRT explicitly rejected.107 supported
   fragments/109568 cases plus14 generated-code edges PASS. Research only.
+- [ ] Licensing: obtain/record applicable license or author agreement for existing
+  external contributions (including PR3/PR20); do not assume the newly added MIT
+  license retroactively covers them. See ../LICENSING.md for scope.
 - [ ] Experimental lowering remains incomplete for arbitrary x87 precision/status/
   rounding, unmasked traps, MMX/ST alias/tag and memory-order/fault behavior.
   See research/pr20-acceptance-2026-10-20.md; syntax counts never close these holds.

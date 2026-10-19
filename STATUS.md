@@ -28,6 +28,10 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+Licensing: MIT for project-owned original work; LICENSING.md records exclusions
+and pending agreement for older external contributions. The repository is not
+claimed to be uniformly MIT-licensed. Game checkpoint321 remains unchanged.
+
 PR20 merged (final integration c44928c); GitHub confirms closed/merged.
 Research-tool corrections verified:107 supported fragments/109568 native
 cases,14 generated-code edge cases, three required unsupported-operation rejections.
