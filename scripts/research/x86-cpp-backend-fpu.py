@@ -1,8 +1,8 @@
-"""Complete ISA static lowering extension; mechanically inherits frozen Run277.
+"""Experimental static lowering extension inheriting frozen Run277.
 
-Adds shifts (shl/shr/sar), inc/dec, cdq, setcc, imul/mul/idiv, leave,
-rep string repeats (repne scasb, rep stosd, rep movsd), and x87 FPU.
-Brings frozen 85-body census support from 29/85 to 85/85 (100%).
+Provides tested integer/SSE/MMX operations and a limited binary64 x87 model.
+Unsupported 80-bit operands and FSQRT are rejected. Translation counts measure
+syntax acceptance only, never recovered game behavior or executable readiness.
 """
 import hashlib
 import importlib.util
@@ -267,8 +267,13 @@ static inline double fpu_pop(Machine257& s) {
 }
 static inline void fpu_comp(Machine257& s, double a, double b) {
     s.fpu_status &= ~0x4700u;
-    if (a < b) s.fpu_status |= 0x0100u;
+    if (a != a || b != b) s.fpu_status |= 0x4501u; // unordered C0/C2/C3 and invalid-operation
+    else if (a < b) s.fpu_status |= 0x0100u;
     else if (a == b) s.fpu_status |= 0x4000u;
+}
+static inline double fabs257(double x) {
+    reinterpret_cast<B*>(&x)[7] &= 0x7fu; // IEEE binary64 on little-endian x86
+    return x;
 }
 static inline U fistp257(double v) {
     int res;
@@ -277,16 +282,6 @@ static inline U fistp257(double v) {
         fistp res
     }
     return (U)res;
-}
-static inline double sqrt(double x) {
-    // Real x87 FSQRT: a negative input gives the invalid-operation NaN and -0 keeps its sign.
-    double r;
-    __asm {
-        fld x
-        fsqrt
-        fstp r
-    }
-    return r;
 }
 static inline U64 read64_257(U a) { return static_cast<U64>(read257(a, 4u)) | (static_cast<U64>(read257(a + 4u, 4u)) << 32u); }
 static inline void write64_257(U a, U64 v) { write257(a, 4u, static_cast<U>(v)); write257(a + 4u, 4u, static_cast<U>(v >> 32u)); }
@@ -430,6 +425,7 @@ PATCHES = [
             code = f's.fpu_cw = read257({address(i, ops[0])}, 2u);'
         elif m == 'fld':
             if len(ops) == 1 and ops[0].type == X86_OP_MEM:
+                if ops[0].size not in (4, 8): raise ValueError('Unsupported fld memory width')
                 fn = 'read_f32' if ops[0].size == 4 else 'read_f64'
                 code = f'fpu_push(s, {fn}({address(i, ops[0])}));'
             elif len(ops) == 1 and ops[0].type == X86_OP_REG and i.reg_name(ops[0].reg).startswith('st'):
@@ -448,6 +444,7 @@ PATCHES = [
         elif m in ('fst', 'fstp'):
             pop = 'fpu_pop(s);' if m == 'fstp' else ''
             if len(ops) == 1 and ops[0].type == X86_OP_MEM:
+                if ops[0].size not in (4, 8): raise ValueError('Unsupported fst/fstp memory width')
                 fn = 'write_f32' if ops[0].size == 4 else 'write_f64'
                 val = '(float)fpu_st(s)' if ops[0].size == 4 else 'fpu_st(s)'
                 code = f'{fn}({address(i, ops[0])}, {val});' + pop
@@ -534,7 +531,7 @@ PATCHES = [
         elif m == 'fchs' and len(ops) == 0:
             code = 'fpu_st(s) = -fpu_st(s);'
         elif m == 'fsqrt' and len(ops) == 0:
-            code = 'fpu_st(s) = sqrt(fpu_st(s));'
+            raise ValueError('Unsupported fsqrt until guest FPU status/CW parity is modelled')
         elif m == 'fxch':
             idx = 1
             if len(ops) == 1: idx = int(i.reg_name(ops[0].reg)[3])
@@ -557,7 +554,7 @@ PATCHES = [
         elif m == 'div' and len(ops) == 1:
             code = f'div257_1(s, {expression(i, ops[0])});'
         elif m == 'fabs' and len(ops) == 0:
-            code = 'fpu_st(s) = (fpu_st(s) < 0.0) ? -fpu_st(s) : fpu_st(s);'
+            code = 'fpu_st(s) = fabs257(fpu_st(s));'
         elif m == 'sahf' and len(ops) == 0:
             code = 's.flags = (s.flags & ~0xd5u) | ((s.r[0] >> 8) & 0xd5u);'
         elif m == 'lahf':

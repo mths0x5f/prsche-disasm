@@ -1,10 +1,8 @@
-"""Physical CPU oracle verification for the full ISA backend extension.
+"""Bounded hardware-oracle checks for the experimental lowering backend.
 
-Translates 61 synthetic x86 fragments covering shifts, unary, bitwise,
-multiplication, division, rep string operations, and the full x87 FPU.
-Compiles and links a native x86 test fixture (state-fixture.exe) using MSVC,
-then executes 62,464 test cases comparing the translated C++ simulation
-directly against the host x86 CPU hardware state (registers, EFLAGS, FPU status, stack memory).
+107 supported fragments run 109568 cases. One additional FSQRT fragment must
+be rejected explicitly until guest x87 status/control-word behavior is modeled.
+This fixture does not establish whole-game or complete x87 correctness.
 """
 import argparse
 import hashlib
@@ -189,11 +187,22 @@ def find_toolchain():
 
 
 def main():
+    global WORK_DIR
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--json', action='store_true', help='Output JSON summary')
+    parser.add_argument('--output-dir', type=Path, help='Use a fresh directory for this verification attempt')
     args = parser.parse_args()
 
-    WORK_DIR.mkdir(parents=True, exist_ok=True)
+    if args.output_dir:
+        WORK_DIR = args.output_dir.resolve()
+        WORK_DIR.mkdir(parents=True, exist_ok=False)
+    else:
+        parent = WORK_DIR
+        attempt = 1
+        while (parent / f'attempt-{attempt:03d}').exists():
+            attempt += 1
+        WORK_DIR = parent / f'attempt-{attempt:03d}'
+        WORK_DIR.mkdir(parents=True, exist_ok=False)
     objects_dir = WORK_DIR / 'objects'
     objects_dir.mkdir(parents=True, exist_ok=True)
 
@@ -204,7 +213,17 @@ def main():
     translated_sources = []
     dispatch_cases = []
 
+    expected_unsupported = ('fsqrt',)  # guest exception/CW state is not yet exact
     for i, (name, raw_hex, asm_text, kind, bits) in enumerate(FRAGMENTS):
+        if name in expected_unsupported:
+            try:
+                backend.translate(bytes.fromhex(raw_hex), 0x20001000 + i * 0x100)
+            except ValueError as error:
+                if 'Unsupported fsqrt' not in str(error):
+                    raise
+            else:
+                raise AssertionError('FSQRT unexpectedly lowered without guest-status proof')
+            continue
         entry_va = 0x20001000 + i * 0x100
         raw_bytes = bytes.fromhex(raw_hex)
         cpp_source, witness = backend.translate(raw_bytes, entry_va)
@@ -607,6 +626,7 @@ void run_test(U id, const char* kind, U width, U val_a, U val_b, U flag_seed) {{
 
 extern "C" void __cdecl entry() {{
     for (U id = 0; id < {len(FRAGMENTS)}; ++id) {{
+        if ({' || '.join(f'id == {i}u' for i, fragment in enumerate(FRAGMENTS) if fragment[0] in expected_unsupported) or 'false'}) continue;
         const char* kind = "unary";
         U width = 32;
         if (id >= 61u) {{
@@ -727,11 +747,13 @@ extern "C" void __cdecl entry() {{
     failures = int(parts['FAILURES'])
 
     report = {
-        'total_fragments': len(FRAGMENTS),
+        'candidate_fragments': len(FRAGMENTS),
+        'expected_unsupported': list(expected_unsupported),
+        'total_fragments': len(FRAGMENTS) - len(expected_unsupported),
         'total_cases': total_cases,
         'failures': failures,
         'duration_seconds': round(dur, 3),
-        'hardware_match': (failures == 0 and total_cases == len(FRAGMENTS) * 8 * 8 * 16),
+        'hardware_match': (failures == 0 and total_cases == (len(FRAGMENTS) - len(expected_unsupported)) * 8 * 8 * 16),
         'exit_code': p_run.returncode
     }
 
@@ -747,7 +769,7 @@ extern "C" void __cdecl entry() {{
         else:
             print("\nFAILED: Verification failed.")
 
-    if failures > 0:
+    if not report['hardware_match']:
         sys.exit(1)
 
 

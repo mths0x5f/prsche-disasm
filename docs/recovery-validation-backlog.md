@@ -28,8 +28,12 @@ GitHub PR и по закреплённым SHA из [разбора](research/pr
 - [ ] #19 updated3e665758: duplicate00628960 cell исправлена, но original shared
   layout не восстановлен: root→path gap8 вместо4; unbounded copy остаётся.
   Нулевые heap providers420 и arena alias418 не закрывают HOLD296/301/303.
-- [ ] #2 experimental backend: SIMD effects вместо no-op, x87 values/status/NaN,
-  compile+execute evidence вместо одного translate-without-exception census.
+- [x] #2 tool defects revisited in PR20: SIMD effects and bounded hardware oracle;
+  NaN comparison/FABS fixed,80-bit operands/FSQRT explicitly rejected.107 supported
+  fragments/109568 cases plus14 generated-code edges PASS. Research only.
+- [ ] Experimental lowering remains incomplete for arbitrary x87 precision/status/
+  rounding, unmasked traps, MMX/ST alias/tag and memory-order/fault behavior.
+  See research/pr20-acceptance-2026-10-20.md; syntax counts never close these holds.
 
 Scalar005b0980 принят в317/318:1296 cases/9075 checks,164 game TU,
 268 names/297 refs, noEXE. Далее005b0a40/005b0b00 в одном REA MCP-сеансе,

@@ -1,168 +1,39 @@
-# Полное расширение статического бэкенда x86 → C++ (x87 FPU, сдвиги, целочисленные примитивы)
+# Experimental x86 lowering tool
 
-## 1. Контекст и назначение
+Imported from PR #20, head 1bfa0145f7dcc78f4f525cf6046694bb48888cd1, with maintainer corrections from review. This is a research and differential-checking tool. It is not connected to the production game build and does not replace canonical original-function recovery.
 
-В рамках восстановления оригинального кода (`v2/001-original-recovery`) транслятор машинного кода x86 в эквивалентный C++ (`scripts/research/x86-cpp-backend-257.py` и его расширение `x86-cpp-backend-277.py`) поддерживал только базовые целочисленные инструкции (29 из 85 тел функций фронтира Run 252).
+The extension inherits the frozen Run277 backend with a checked SHA. It adds integer operations, a limited x87 model, SSE register/MXCSR handling and MMX operations. Unsupported instructions raise an error instead of becoming no-ops. Generated C++ still needs ABI, memory, dependency and original-behavior validation before any production use.
 
-Данное расширение (`scripts/research/x86-cpp-backend-fpu.py`):
-1. Механически наследует замороженный `Run 277` (`BASELINE_SHA = 7dd257f43dc304ad183f25dd483a33dd9f76f285b8a7478dd3c9762debbab42b`).
-2. Добавляет поддержку недостающих семейств инструкций x86 и полного набора операций x87 FPU, покрывая практически всю систему команд оригинального исполняемого файла `Porsche.exe`.
-3. Доводит синтаксическое покрытие фронтира из 85 тел до **85 из 85 (100%)** с **0 регрессий**.
-4. Синтаксическое покрытие **всего исполняемого файла**: **5 687 из 5 694 (99.88%)**. 7 функций с 3DNow!/`femms`/`fnsave`/`fnstenv` отклоняются: точного lowering для них нет (см. раздел «Исправления»).
-5. Верифицировано на физическом процессоре x86 через нативный тестовый фикстур MSVC: 108 фрагментов, **110 592 тест-кейса**, **0 расхождений**.
+## Accepted corrections
 
----
+- SSE/MMX effects replace the no-op lowering rejected in PR #2. SSE arithmetic and conversion helpers execute host instructions under the modeled MXCSR and retain sticky flags for the tested masked environments.
+- Unordered FCOM sets C0/C2/C3 and invalid-operation IE for the tested quiet-NaN cases.
+- FABS clears the binary64 sign bit, including negative zero and signed quiet NaNs.
+- FLD/FST/FSTP memory operands must be 4 or 8 bytes. Ten-byte x87 values are explicitly rejected instead of silently truncated.
+- FSQRT is explicitly rejected. The submitted implementation fixed the result for negative inputs and signed zero, but did not propagate guest exception status/control-word behavior. A correct value alone was insufficient.
+- The native verifier reports supported and expected-unsupported fragments separately, derives the skipped index from the fragment list, fails on an unexpected case count, and preserves fresh attempt directories.
 
-## 2. Реализованный набор инструкций
+## Verified scope
 
-### 2.1 Целочисленные примитивы, сдвиги и вращения
-- **Унарные операции**: `inc`, `dec` для 8-, 16- и 32-битных регистров и памяти с точным сохранением `CF` и пересчётом `OF`, `SF`, `ZF`, включая атомарные префиксы `lock inc` и `lock dec`.
-- **Знаковое расширение**: `cdq` (расширение знака `EAX` в `EDX:EAX`).
-- **Сдвиги и вращения**:
-  - Логические и арифметические сдвиги: `shl`, `sal`, `shr`, `sar` (с непосредственным счётчиком и регистром `CL`, разрядности 8, 16, 32 бита).
-  - Двойные сдвиги: `shld`, `shrd` (сдвиг пары регистров с непосредственным счётчиком и `CL`).
-  - Циклические сдвиги (вращения): `rol`, `ror`, `rcr` (с учётом флага переноса `CF`).
-- **Битовые операции**: `bt` (bit test), `bts` (bit test and set), `bswap` (byte swap endianness).
-- **Байтовые проверки (SETcc)**: 12 семейств условий: `sete`/`setz`, `setne`/`setnz`, `setl`, `setle`, `setg`, `setge`, `setb`/`setc`, `setae`, `setbe`, `seta`, `sets`, `setns`.
-- **Переходы по условию**: добавлены `js` (`SF=1`), `jns` (`SF=0`), `jecxz` (`ECX=0`), а также автоматическая диспетчеризация (`dispatch257`) внешних или невыровненных ветвлений компилятора.
-- **Умножение и деление**:
-  - `imul` (однооперандный 8-битный `imul r/m8` в `AX`, однооперандный 32-битный `imul r/m32` в `EDX:EAX`, двухоперандный `imul reg, r/m`, трёхоперандный `imul reg, r/m, imm`).
-  - `mul` (однооперандный `mul r/m` в `EDX:EAX` с флагами `CF`/`OF`).
-  - `idiv` (однооперандный знаковый `idiv r/m` над `EDX:EAX`).
-  - `div` (однооперандный беззнаковый `div r/m` над `EDX:EAX`).
-- **Стек и регистры**:
-  - `leave` (`mov esp, ebp; pop ebp`).
-  - `pushal` / `popal` (сохранение и восстановление всех 8 регистров общего назначения).
-  - `pushfd` / `popfd` (сохранение и восстановление регистра флагов `EFLAGS`).
-  - `xchg` (атомарный обмен значений регистров и памяти).
-  - `sahf` / `lahf` (запись и чтение регистра `AH` в/из флагов `SF:ZF:0:AF:0:PF:1:CF`).
-  - `xlatb` (табличная замена байта в `AL` из памяти `[EBX + AL]`).
-- **Строковые инструкции и повторения**:
-  - `repne scasb`: сканирование байта в памяти до совпадения с `AL` или обнуления `ECX`.
-  - `rep stosd`, `rep stosb`, `rep stosw`: заполнение памяти двойными словами, байтами или словами.
-  - `rep movsd`, `rep movsb`: копирование блоков памяти двойными словами или байтами.
-  - `repe cmpsb`, `repe cmpsd`: поблочное сравнение памяти.
-  - Одиночные строковые инструкции: `stosb`, `stosw`, `stosd`, `movsb`, `movsw`, `movsd`.
-- **Аппаратные инструкции**: `cpuid`, `rdtsc` (чтение счётчика тактов), `int3` (ловушка отладчика), `nop`, `cld`, `std`.
-- **Сегментные обращения**: поддержка адресации кадра исключений MSVC CRT через `FS:[0]` и явного сегмента `ES:[edi]`.
-- **SIMD / MMX / SSE**: поддержка машинных инструкций Pentium III (`movd`, `movq`, `movss`, `movaps`, `cvtpi2ps`, `cvtsi2ss`, `femms`, `stmxcsr`, `ldmxcsr`, `addps`, `addss`, `subps`, `subss`, `mulps`, `mulss`, `shufps`, `pfmul`, `pfadd`, `pfsub`, `pi2fd`, `por`, `psllq`, `punpckldq`).
+The original PR fixture passed 108 fragments and 110592 cases. After the fail-closed FSQRT correction, the revised fixture passes **107 supported fragments / 109568 cases**, with FSQRT recorded as one expected rejection. This is bounded input coverage, not complete instruction or x87 correctness.
 
-### 2.2 Сопроцессор x87 FPU
-Модель состояния расширена 8-элементным кольцевым стеком `st[8]`, указателем вершины `fpu_top`, словом состояния `fpu_status` и управляющим словом `fpu_cw`:
-- **Загрузка констант**: `fldz` (+0.0), `fld1` (+1.0), `fldl2e` ($\log_2 e$), `fldpi` ($\pi$).
-- **Загрузка и сохранение**:
-  - Вещественные: `fld` (память 32/64 бит, `st(i)`), `fst` / `fstp` (память 32/64 бит, `st(i)`).
-  - Целочисленные: `fild` (память 16/32/64 бит int), `fistp` (память 32/64 бит int с аппаратным округлением).
-- **Арифметика вещественная и целочисленная**:
-  - Сложение: `fadd`, `faddp`, `fiadd` (сложение с целым из памяти).
-  - Вычитание: `fsub`, `fsubp`, `fsubr`, `fsubrp`, `fisub` (вычитание целого из памяти, включая 2-регистровые формы `fsubr st(i), st(0)`).
-  - Умножение: `fmul`, `fmulp`, `fimul` (умножение на целое из памяти, включая 2-регистровые формы `fmul st(i), st(0)`).
-  - Деление: `fdiv`, `fdivp`, `fdivr`, `fdivrp`, `fidiv`, `fidivr` (деление на целое из памяти, включая форму с одним регистром `fdivr st(i)`).
-  - Математические функции: `fchs` (смена знака), `fabs` (модуль), `fsqrt` (квадратный корень), `fsin` (синус), `fcos` (косинус), `fptan` (тангенс), `fpatan` (арктангенс), `frndint` (округление до целого), `fscale` (масштабирование степенями двойки), `fprem` (остаток от деления), `f2xm1` ($2^x - 1$), `fyl2x` ($y \cdot \log_2 x$).
-- **Стек и регистры**: `fxch` (обмен вершины с `st(i)`), `fxam` (анализ вершины стека).
-- **Сравнение**: `fcom`, `fcomp`, `fcompp` (с установкой битов условия C0 и C3 в `fpu_status`).
-- **Служебные**: `fnstsw ax` и `fnstsw [mem]` (перенос слова состояния FPU с указателем `TOP` в `AX` или память), `fnstcw`, `fldcw`, `fnstenv`, `fldenv`, `fnsave`, `frstor`, `fnclex` (сброс исключений), `emms` (сброс состояния MMX/FPU), `wait`/`fwait`.
+The edge regression executes generated FABS and FCOMPP/FNSTSW code against physical x86 results for 14 cases, including negative zero, signed quiet NaNs, unordered/equal/ordered comparisons and observable status. It also requires rejection of ten-byte FLD/FSTP and FSQRT. Earlier focused failure receipts are preserved in the local PR review experiment.
 
----
+`powershell
+py -3 scripts/research/verify-v2-x86-fpu.py --json
+py -3 scripts/research/verify-v2-x86-fpu-edge.py --attempt 002
+py -3 scripts/research/census-v2-x86-global.py --json
+`
 
-## 3. Результаты синтаксического ценза (Frontier 252)
+The edge command needs an unused attempt ID. The main native verifier automatically creates a new attempt directory, or accepts --output-dir with a fresh explicit path. The census measures only whether translation throws; its percentages do not mean the generated bodies compile, link or execute. It excludes thunks and multi-range functions and is not a complete-binary behavior audit. Run252 frontier census is another syntax check and may exit nonzero for intentionally rejected instructions.
 
-Запуск:
-```powershell
-python scripts/research/census-v2-x86-fpu.py
-```
+## Explicit limitations
 
-Результат:
-```
-Total frontier bodies: 85
-Baseline 277 supported: 29 / 85
-FPU + Full ISA supported: 85 / 85 (100.0%)
-Regressions against Run 277: 0
+- x87 registers use binary64, not original 80-bit extended precision. General exception propagation, guest x87 rounding/control-word execution, stack faults, tags and unmasked traps are not fully modeled. The passing cases do not authorize arbitrary x87 recovery.
+- MMX registers do not alias the x87 register array; the x87 tag word is absent. TOP behavior is checked for the tested MMX fragments. Mixed x87/MMX programs need separate validation.
+- Alignment faults, reserved LDMXCSR faults, unmasked SIMD traps and the hardware memory-order/cache effects of non-temporal stores are not emulated.
+- 3DNow!, reciprocal approximation and x87 environment save/restore remain rejected. An unknown instruction must not be accepted by silently dropping results.
+- The six lowering mutations described in the upstream PR were not supplied as a repeatable negative-control harness. They are not counted as independently reproduced acceptance evidence.
+- Hardware-oracle output does not prove all generated bodies, callbacks, resource data, game state, visual output or gameplay.
 
-100% of census bodies successfully lowered to C++!
-```
-
----
-
-## 4. Результаты Глобального Ценза (`Porsche.exe` — Все 5 772 функции)
-
-Запуск:
-```powershell
-python scripts/research/census-v2-x86-global.py
-```
-
-Результат:
-```
-============================================================
-       GLOBAL CENSUS REPORT: Porsche.exe (All Functions)
-============================================================
-Total catalog functions:       5772
-  - Thunk / JMP wrappers:      52
-  - Multi-range bodies:        26
-  - Evaluated normal bodies:   5694
-------------------------------------------------------------
-Syntax Supported (Lowered):    5687 / 5694 (99.88%)
-Syntax Rejected:               7 / 5694 (0.12%)
-Evaluation time:               64.48s (88.3 funcs/sec)
-X86 machine code evaluated:    1,330,276 bytes
-C++ source code generated:     59,457,044 bytes
-------------------------------------------------------------
-Top Remaining Rejection Families:
-============================================================
-```
-
-Синтаксическое покрытие 99.88%. Это означает только, что `translate()` не выбросил исключение; сборка и запуск всех тел не проверялись.
-
-### Исправления после review upstream (PR #2)
-
-- SIMD/3DNow! и `fnstenv`/`fldenv`/`fnsave`/`frstor` раньше превращались в no-op и молча теряли результаты (например `0059a660`).
-- Теперь SSE и MMX понижаются точно. Состояние машины получило `xmm[8][4]`, `mxcsr` и `mm[8]`.
-  - SSE: `movss`, `movaps`, `movups`, `movlps`, `movntps`, `addss/ps`, `subss/ps`, `mulss/ps`, `shufps`, `cvtsi2ss`, `cvtpi2ps` (из памяти), `stmxcsr`, `ldmxcsr`. Арифметика и преобразования выполняют настоящую инструкцию под гостевым MXCSR (округление, FTZ/DAZ, маски) и сохраняют sticky-флаги.
-  - MMX: `movd`, `movq`, `por`, `psllq`, `pslld`, `psrad`, `punpckldq`, `punpcklwd`, `punpckhwd`, `emms`. Любая MMX-инструкция, кроме `emms`, ставит TOP x87 в 0.
-  - Не моделируются: алиасинг `mm[]` на 80-битные регистры `st[]`, tag word и #GP при невыровненном `movaps`/`movntps` или зарезервированных битах `ldmxcsr`.
-- По-прежнему отклоняются, с `Unsupported instruction`:
-  - 3DNow! (`pfmul`, `pfadd`, `pfsub`, `pfacc`, `pi2fd`, `pfrcp*`, `femms`): не IEEE, только AMD, на современных CPU нет аппаратного оракула.
-  - `rcpss`: приближение, зависит от производителя.
-  - `fnsave`/`frstor`/`fnstenv`/`fldenv`: образ содержит 80-битные регистры, tag word и FIP/FDP; эмулятор их не хранит.
-- Стенд загружает XMM/MM/MXCSR (все четыре режима округления и FTZ+DAZ, NaN, денормалы, −0) и сравнивает их для всех кейсов, а для MMX также TOP. Отрицательный контроль: шесть мутаций SSE/MMX lowering проваливаются.
-- `fsqrt` раньше возвращал +0 для отрицательного входа и терял знак −0; теперь выполняется настоящий x87 `fsqrt` (invalid NaN, −0 сохраняется).
-- Стенд теперь сравнивает TOP, битовые образы живых ST0/ST1 и C0/C2/C3 для сравнений. Отрицательный контроль: старое поведение `fsqrt` даёт 512 расхождений.
-
----
-
-## 5. Верификация на аппаратном CPU (Physical x86 Oracles)
-
-Для доказательства точной семантики трансляции разработан нативный стенд с оракулом реального процессора x86:
-- 61 синтетический фрагмент, охватывающий все добавленные инструкции.
-- Для каждого фрагмента генерируется naked-функция на ассемблере MSVC x86, исполняющаяся на реальном кремнии процессора.
-- Начальные состояния: граничные значения (0, 1, sign, max, edge), различные значения регистров, маски флагов EFLAGS (0..15) и состояния стека FPU.
-- После каждого шага сверяются:
-  - Все регистры общего назначения `EAX`..`EDI`.
-  - Флаги процессора `CF`, `ZF`, `SF`, `OF`.
-  - Слово состояния FPU (включая указатель вершины `TOP` в битах 11..13 и флаги C0/C3).
-  - Область стековой памяти (побайтовое сравнение `memcmp` на 256 байт).
-
-Запуск:
-```powershell
-python scripts/research/verify-v2-x86-fpu.py
-```
-
-Результат:
-```
-Total fragments tested: 61
-Total input permutations: 62464
-Physical CPU mismatches: 0
-Execution time: 0.278s
-
-100% SUCCESS: All synthetic fragments match physical x86 CPU hardware bit-for-bit!
-```
-
----
-
-## 6. Структура файлов
-
-- `scripts/research/x86-cpp-backend-fpu.py`: модуль транслятора с расширением полного набора ISA и FPU.
-- `scripts/research/census-v2-x86-fpu.py`: валидатор синтаксического покрытия 85 тел функций frontier.
-- `scripts/research/census-v2-x86-global.py`: глобальный ценз по всем 5 772 функциям `Porsche.exe`.
-- `scripts/research/verify-v2-x86-fpu.py`: стенд компиляции и исполнения оракула аппаратного CPU.
-- `docs/research/x86-full-isa-lowering.md`: настоящее техническое описание.
+Use this tool to inspect candidates and construct differential experiments. Keep the original PE/index and native acceptance as the source of truth. See [the PR20 acceptance report](pr20-acceptance-2026-10-20.md) for pinned inputs and final results.
