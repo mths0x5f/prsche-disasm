@@ -9,7 +9,7 @@ Checkpoint 19/10/2026, Run420: integração de Heap Shutdown (418) e Frame Root 
 
 Checkpoint 18/10/2026, Run419: recuperado o ciclo de vida do Frame Root Storage (`00628960`, `00471b70` e `00471c40`).
 - Recuperadas 2 funções originais (263 bytes de corpo PE): `frame_root_init_00471b70` (198B) e `frame_root_teardown_00471c40` (65B).
-- Fechado o HOLD de longa data sobre a célula de armazenamento frame root `00628960` (conhecido desde a Run 296/301), comprovada a adjacência de memória `FrameRootStorageLayout`: `00628940` (32B), `00628960` (4B) e `00628964` (256B).
+- Estreitada a retenção de longa data (HOLD) sobre a célula de armazenamento da raiz de frame `00628960` (conhecida desde as Runs 296/301): a célula é única e coincide com o símbolo declarado no header congelado da Run 290, então o consumidor `00471b60` lê o que `00471b70` escreve. A adjacência `00628940` → célula é conferida pela fixture em tempo de execução (32 bytes, como no original). Permanece um desvio: o original tem 4 bytes até `00628964` e este toolchain insere 8, portanto o alcance da cópia até esse buffer não é reproduzido.
 - Fechados 2 contratos diretos de linkedição: `?startup_sequence_call_00471b70@porsche@@YAXXZ` (de `004b67b0`) e `pipe_00471c40` (de `004b68f0`).
 - Verificação diferencial no slab físico da CPU x86 (`native-fixture.exe`): 5/5 cenários PASS em todas as funções e objetos. Auditoria independente (`audit-v2-frame-root-419.py`) PASS.
 - Próximos passos: conexão dos módulos recuperados da Run418 e Run419 ao `CMakeLists.txt` (`porsche_original_game_link`).
