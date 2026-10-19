@@ -463,6 +463,18 @@ void run_test(U id, const char* kind, U width, U val_a, U val_b, U flag_seed) {{
         }}
     }}
 
+    // Validate the x87 result: stack top, live ST0/ST1 bit patterns, and C0/C2/C3 for compares.
+    if (kind[0] == 'f' && kind[1] == 'p' && kind[2] == 'u' && !str_eq(kind, "fpu_status_ax")) {{
+        U native_top = (static_cast<U>(seen_fpu_status) >> 11u) & 7u;
+        require_msg(native_top == (state.fpu_top & 7u));
+        U depth = (8u - native_top) & 7u;
+        if (depth >= 1u) require_msg(memcmp(&state.st[state.fpu_top & 7u], &seen_st0, 8) == 0);
+        if (depth >= 2u) require_msg(memcmp(&state.st[(state.fpu_top + 1u) & 7u], &seen_st1, 8) == 0);
+        if (str_eq(kind, "fpu_comp_mem32") || str_eq(kind, "fpu_compp")) {{
+            require_msg(((static_cast<U>(seen_fpu_status) ^ state.fpu_status) & 0x4500u) == 0);
+        }}
+    }}
+
     require_msg(state.r[4] == expected_sp && state.pc == halt_pc && state.stop == Stop257::Returned);
     ++total_cases;
 }}
