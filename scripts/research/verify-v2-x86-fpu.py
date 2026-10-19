@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[2]
 BACKEND_REL = 'scripts/research/x86-cpp-backend-fpu.py'
 WORK_DIR = ROOT / 'local/experiments/v2-x86-fpu'
 
-# 61 synthetic fragments covering the full ISA extension
+# Synthetic fragments: integer, x87, SSE and MMX
 FRAGMENTS = [
     # 0..5 Unary
     ('inc-ah', 'fec4c3', 'inc ah\n ret', 'unary', 8),
@@ -89,6 +89,53 @@ FRAGMENTS = [
     ('fcomp-mem32', 'd818c3', 'fcomp dword ptr [eax]\n ret', 'fpu_comp_mem32', 32),
     ('fcompp', 'ded9c3', 'fcompp\n ret', 'fpu_compp', 32),
     ('fnstsw-ax', 'dfe0c3', 'fnstsw ax\n ret', 'fpu_status_ax', 32),
+    ('movss-load', 'f30f1000c3', 'movss xmm0, dword ptr [eax]\n ret', 'simd_sse', 32),
+    ('movss-store', 'f30f1108c3', 'movss dword ptr [eax], xmm1\n ret', 'simd_sse', 32),
+    ('movss-reg', 'f30f10d4c3', 'movss xmm2, xmm4\n ret', 'simd_sse', 32),
+    ('movaps-load', '0f2808c3', 'movaps xmm1, xmmword ptr [eax]\n ret', 'simd_sse', 32),
+    ('movaps-reg', '0f28c3c3', 'movaps xmm0, xmm3\n ret', 'simd_sse', 32),
+    ('movaps-store', '0f2910c3', 'movaps xmmword ptr [eax], xmm2\n ret', 'simd_sse', 32),
+    ('movups-load', '0f1008c3', 'movups xmm1, xmmword ptr [eax]\n ret', 'simd_sse', 32),
+    ('movlps-load', '0f1200c3', 'movlps xmm0, qword ptr [eax]\n ret', 'simd_sse', 32),
+    ('movlps-store', '0f1300c3', 'movlps qword ptr [eax], xmm0\n ret', 'simd_sse', 32),
+    ('movntps-store', '0f2b08c3', 'movntps xmmword ptr [eax], xmm1\n ret', 'simd_sse', 32),
+    ('addss-reg', 'f30f58c1c3', 'addss xmm0, xmm1\n ret', 'simd_sse', 32),
+    ('addss-mem', 'f30f5808c3', 'addss xmm1, dword ptr [eax]\n ret', 'simd_sse', 32),
+    ('addps-reg', '0f58c1c3', 'addps xmm0, xmm1\n ret', 'simd_sse', 32),
+    ('addps-mem', '0f5818c3', 'addps xmm3, xmmword ptr [eax]\n ret', 'simd_sse', 32),
+    ('subss-reg', 'f30f5ce2c3', 'subss xmm4, xmm2\n ret', 'simd_sse', 32),
+    ('subss-mem', 'f30f5c10c3', 'subss xmm2, dword ptr [eax]\n ret', 'simd_sse', 32),
+    ('subps-reg', '0f5ce0c3', 'subps xmm4, xmm0\n ret', 'simd_sse', 32),
+    ('subps-mem', '0f5c08c3', 'subps xmm1, xmmword ptr [eax]\n ret', 'simd_sse', 32),
+    ('mulss-reg', 'f30f59c1c3', 'mulss xmm0, xmm1\n ret', 'simd_sse', 32),
+    ('mulss-mem', 'f30f5910c3', 'mulss xmm2, dword ptr [eax]\n ret', 'simd_sse', 32),
+    ('mulss-self', 'f30f59ffc3', 'mulss xmm7, xmm7\n ret', 'simd_sse', 32),
+    ('mulps-reg', '0f59dac3', 'mulps xmm3, xmm2\n ret', 'simd_sse', 32),
+    ('mulps-mem', '0f5920c3', 'mulps xmm4, xmmword ptr [eax]\n ret', 'simd_sse', 32),
+    ('shufps-0', '0fc6c000c3', 'shufps xmm0, xmm0, 0\n ret', 'simd_sse', 32),
+    ('shufps-1b', '0fc6db1bc3', 'shufps xmm3, xmm3, 1bh\n ret', 'simd_sse', 32),
+    ('shufps-2reg', '0fc6ca4ec3', 'shufps xmm1, xmm2, 4eh\n ret', 'simd_sse', 32),
+    ('cvtsi2ss', 'f30f2af1c3', 'cvtsi2ss xmm6, ecx\n ret', 'simd_sse', 32),
+    ('cvtpi2ps-mem', '0f2a28c3', 'cvtpi2ps xmm5, qword ptr [eax]\n ret', 'simd_sse', 32),
+    ('stmxcsr', '0fae18c3', 'stmxcsr dword ptr [eax]\n ret', 'simd_sse', 32),
+    ('ldmxcsr', '0fae10c3', 'ldmxcsr dword ptr [eax]\n ret', 'simd_ldmxcsr', 32),
+    ('movd-load', '0f6e00c3', 'movd mm0, dword ptr [eax]\n ret', 'simd_mmx', 32),
+    ('movd-reg', '0f6ec1c3', 'movd mm0, ecx\n ret', 'simd_mmx', 32),
+    ('movd-store', '0f7e08c3', 'movd dword ptr [eax], mm1\n ret', 'simd_mmx', 32),
+    ('movq-load', '0f6f00c3', 'movq mm0, qword ptr [eax]\n ret', 'simd_mmx', 32),
+    ('movq-reg', '0f6fc8c3', 'movq mm1, mm0\n ret', 'simd_mmx', 32),
+    ('movq-store', '0f7f10c3', 'movq qword ptr [eax], mm2\n ret', 'simd_mmx', 32),
+    ('por', '0febc1c3', 'por mm0, mm1\n ret', 'simd_mmx', 32),
+    ('psllq-20', '0f73f020c3', 'psllq mm0, 20h\n ret', 'simd_mmx', 32),
+    ('psllq-40', '0f73f040c3', 'psllq mm0, 40h\n ret', 'simd_mmx', 32),
+    ('pslld-10', '0f72f110c3', 'pslld mm1, 10h\n ret', 'simd_mmx', 32),
+    ('psrad-10', '0f72e110c3', 'psrad mm1, 10h\n ret', 'simd_mmx', 32),
+    ('psrad-21', '0f72e121c3', 'psrad mm1, 21h\n ret', 'simd_mmx', 32),
+    ('punpckldq-mem', '0f6200c3', 'punpckldq mm0, dword ptr [eax]\n ret', 'simd_mmx', 32),
+    ('punpckldq-reg', '0f62fcc3', 'punpckldq mm7, mm4\n ret', 'simd_mmx', 32),
+    ('punpcklwd', '0f61c8c3', 'punpcklwd mm1, mm0\n ret', 'simd_mmx', 32),
+    ('punpckhwd', '0f69d0c3', 'punpckhwd mm2, mm0\n ret', 'simd_mmx', 32),
+    ('emms-after-mmx', '0f6fc80f77c3', 'movq mm1, mm0\n emms\n ret', 'simd_mmx', 32),
 ]
 
 
@@ -220,10 +267,14 @@ U seed_regs[8], seen_regs[8], seed_flags, seen_flags, target_addr, continuation_
 double seed_st0, seed_st1, seen_st0, seen_st1;
 unsigned short seen_fpu_status;
 U failures = 0, total_cases = 0;
-B stack_arena[256], before_stack[256], native_stack[256];
+__declspec(align(16)) B stack_arena[256];
+B before_stack[256], native_stack[256];
+U seed_xmm[32], seen_xmm[32], seed_mxcsr, seen_mxcsr, host_mxcsr, seed_mmx;
+U64 seed_mm[8], seen_mm[8];
 const U halt_pc = 0x0badf00du;
 
 U current_test_id = 0;
+const char* simd_kinds[] = {{ {', '.join(chr(34) + f[3] + chr(34) for f in FRAGMENTS[61:])} }};
 U last_failed_id = 9999;
 void require(bool val, const char* reason = 0) {{
     if (!val) {{
@@ -265,6 +316,25 @@ __declspec(naked) void capture_state() {{
         fnstsw seen_fpu_status
         fstp seen_st0
         fstp seen_st1
+        movups xmmword ptr seen_xmm[0], xmm0
+        movups xmmword ptr seen_xmm[16], xmm1
+        movups xmmword ptr seen_xmm[32], xmm2
+        movups xmmword ptr seen_xmm[48], xmm3
+        movups xmmword ptr seen_xmm[64], xmm4
+        movups xmmword ptr seen_xmm[80], xmm5
+        movups xmmword ptr seen_xmm[96], xmm6
+        movups xmmword ptr seen_xmm[112], xmm7
+        stmxcsr seen_mxcsr
+        ldmxcsr host_mxcsr
+        movq qword ptr seen_mm[0], mm0
+        movq qword ptr seen_mm[8], mm1
+        movq qword ptr seen_mm[16], mm2
+        movq qword ptr seen_mm[24], mm3
+        movq qword ptr seen_mm[32], mm4
+        movq qword ptr seen_mm[40], mm5
+        movq qword ptr seen_mm[48], mm6
+        movq qword ptr seen_mm[56], mm7
+        emms
         mov esp, saved_sp
         pushfd
         pop seen_flags
@@ -285,11 +355,32 @@ __declspec(naked) void native_edge() {{
         mov saved_di, edi
         mov eax, offset resume_point
         mov continuation_addr, eax
-        push seed_flags
-        popfd
         fninit
         fld seed_st1
         fld seed_st0
+        movups xmm0, xmmword ptr seed_xmm[0]
+        movups xmm1, xmmword ptr seed_xmm[16]
+        movups xmm2, xmmword ptr seed_xmm[32]
+        movups xmm3, xmmword ptr seed_xmm[48]
+        movups xmm4, xmmword ptr seed_xmm[64]
+        movups xmm5, xmmword ptr seed_xmm[80]
+        movups xmm6, xmmword ptr seed_xmm[96]
+        movups xmm7, xmmword ptr seed_xmm[112]
+        stmxcsr host_mxcsr
+        ldmxcsr seed_mxcsr
+        cmp seed_mmx, 0
+        je no_mmx_seed
+        movq mm0, qword ptr seed_mm[0]
+        movq mm1, qword ptr seed_mm[8]
+        movq mm2, qword ptr seed_mm[16]
+        movq mm3, qword ptr seed_mm[24]
+        movq mm4, qword ptr seed_mm[32]
+        movq mm5, qword ptr seed_mm[40]
+        movq mm6, qword ptr seed_mm[48]
+        movq mm7, qword ptr seed_mm[56]
+    no_mmx_seed:
+        push seed_flags
+        popfd
         mov eax, seed_regs[0]
         mov ecx, seed_regs[4]
         mov edx, seed_regs[8]
@@ -389,6 +480,30 @@ void run_test(U id, const char* kind, U width, U val_a, U val_b, U flag_seed) {{
         seed_regs[0] = mem_addr;
     }}
 
+    // SIMD seeds: normal floats, edge bit patterns (NaN, denormal, -0, max), all
+    // four MXCSR rounding modes and FTZ+DAZ.
+    for (U k = 0; k < 32u; ++k) {{
+        U a = val_a + k * 0x01010101u, b = val_b ^ (k * 0x9e3779b9u);
+        float f;
+        switch ((k + (val_a & 7u)) % 6u) {{
+            case 0: f = (static_cast<float>(static_cast<int>(val_a) % 100) + 0.375f) * static_cast<float>(k + 1u); memcpy(&seed_xmm[k], &f, 4); break;
+            case 1: seed_xmm[k] = edge_val((val_a + k) & 7u, 32); break;
+            case 2: seed_xmm[k] = edge_val((val_b + k) & 7u, 32) ^ (k & 1u ? 0x00400000u : 0u); break;
+            case 3: f = static_cast<float>(static_cast<int>(b) % 1000) / 3.0f; memcpy(&seed_xmm[k], &f, 4); break;
+            case 4: seed_xmm[k] = (k & 1u) ? 0x7f7fffffu : 0x00800001u; break;
+            default: seed_xmm[k] = a; break;
+        }}
+    }}
+    for (U k = 0; k < 8u; ++k) seed_mm[k] = static_cast<U64>(seed_xmm[2u * k]) | (static_cast<U64>(seed_xmm[2u * k + 1u]) << 32);
+    seed_mxcsr = 0x1f80u | ((flag_seed & 3u) << 13u) | ((flag_seed & 4u) ? 0x8040u : 0u);
+    seed_mmx = str_eq(kind, "simd_mmx") ? 1u : 0u;
+    if (kind[0] == 's' && kind[1] == 'i') {{
+        seed_regs[0] = mem_addr;
+        if (str_eq(kind, "simd_ldmxcsr")) {{
+            write257(mem_addr, 4u, 0x1f80u | ((val_a & 3u) << 13u) | (val_b & 0x3fu) | ((val_a & 4u) ? 0x8040u : 0u));
+        }}
+    }}
+
     for (U i = 0; i < 256; ++i) before_stack[i] = stack_arena[i];
 
     seed_flags = 0x202u | (flag_seed & 1u) | ((flag_seed & 2u) << 5u) | ((flag_seed & 4u) << 5u) | ((flag_seed & 8u) << 8u);
@@ -424,6 +539,9 @@ void run_test(U id, const char* kind, U width, U val_a, U val_b, U flag_seed) {{
     state.st[7] = seed_st1;
     state.st[6] = seed_st0;
     state.fpu_cw = 0x037fu;
+    for (U k = 0; k < 32u; ++k) state.xmm[k / 4u][k % 4u] = seed_xmm[k];
+    state.mxcsr = seed_mxcsr;
+    if (seed_mmx) for (U k = 0; k < 8u; ++k) state.mm[k] = seed_mm[k];
 
     dispatch257(state, entry);
 
@@ -441,7 +559,7 @@ void run_test(U id, const char* kind, U width, U val_a, U val_b, U flag_seed) {{
 
     // Validate flags
     U flag_mask = 0x8c1u;
-    if (str_eq(kind, "cdq") || str_eq(kind, "setcc") || str_eq(kind, "leave") || str_eq(kind, "rep_stosd") || str_eq(kind, "rep_movsd") || (kind[0] == 'f' && kind[1] == 'p' && kind[2] == 'u')) {{
+    if (str_eq(kind, "cdq") || str_eq(kind, "setcc") || str_eq(kind, "leave") || str_eq(kind, "rep_stosd") || str_eq(kind, "rep_movsd") || (kind[0] == 'f' && kind[1] == 'p' && kind[2] == 'u') || (kind[0] == 's' && kind[1] == 'i')) {{
         require_msg(((state.flags ^ seed_flags) & flag_mask) == 0);
     }} else if (str_eq(kind, "unary")) {{
         require_msg(((state.flags ^ seen_flags) & 0x8c0u) == 0);
@@ -475,6 +593,14 @@ void run_test(U id, const char* kind, U width, U val_a, U val_b, U flag_seed) {{
         }}
     }}
 
+    // SSE state is compared for every case: integer and x87 code must not touch it.
+    for (U k = 0; k < 32u; ++k) require_msg(state.xmm[k / 4u][k % 4u] == seen_xmm[k]);
+    require_msg(state.mxcsr == seen_mxcsr);
+    if (seed_mmx) {{
+        for (U k = 0; k < 8u; ++k) require_msg(state.mm[k] == seen_mm[k]);
+        require_msg(((static_cast<U>(seen_fpu_status) >> 11u) & 7u) == (state.fpu_top & 7u));
+    }}
+
     require_msg(state.r[4] == expected_sp && state.pc == halt_pc && state.stop == Stop257::Returned);
     ++total_cases;
 }}
@@ -483,7 +609,9 @@ extern "C" void __cdecl entry() {{
     for (U id = 0; id < {len(FRAGMENTS)}; ++id) {{
         const char* kind = "unary";
         U width = 32;
-        if (id <= 5) {{
+        if (id >= 61u) {{
+            kind = simd_kinds[id - 61u]; width = 32;
+        }} else if (id <= 5) {{
             kind = "unary";
             width = (id % 3 == 0) ? 8 : ((id % 3 == 1) ? 16 : 32);
         }} else if (id <= 15) {{
@@ -603,7 +731,7 @@ extern "C" void __cdecl entry() {{
         'total_cases': total_cases,
         'failures': failures,
         'duration_seconds': round(dur, 3),
-        'hardware_match': (failures == 0 and total_cases == 62464),
+        'hardware_match': (failures == 0 and total_cases == len(FRAGMENTS) * 8 * 8 * 16),
         'exit_code': p_run.returncode
     }
 
