@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "native_original_mmx_backend_verified_not_integrated",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_range": "005b0a40..005b0aef",
+  "original_body_bytes": 176,
+  "original_body_sha256": "687d53c6291f21397365b986ccade4f04e6b40081685f9d1054a63c3fb590138",
+  "accepted_source_list": ["005b0a40.cpp", "005b0a40.hpp"],
+  "original_function_count": 1,
+  "source_sha256": {
+    "005b0a40.cpp": "9836e51772b34092d599cafcdc4c3af53417e254ededf7f52e312bfb14c8d39b",
+    "005b0a40.hpp": "8a32f0d90890fcd48ce98ac811625bbbfefe502b03b2bcdd1cfc37c70b385e97"
+  },
+  "native_attempt": "local/experiments/v2-mmx-fill-319/attempt-001",
+  "native_receipt_sha256": "727804f1661bd3f4fa246864beb4fbeb9813b8e91bb990089ed9607df6525951",
+  "native_status": "pass",
+  "native_cases_passed": 1440,
+  "native_checks": 12963,
+  "game_object_sha256": "e56c6bae57e7931e6a962c11a353219ce7e7b44fa4d47f600e39b262fc008c09",
+  "native_executable_sha256": "233dcaefa95e98dfdcde540c40ad2c642a7849a76ea6bc808ce69389d09a60a9",
+  "game_object_defined": [
+    "?heap_fill_mmx_005b0a40@porsche@@YAXPAXII@Z",
+    "?heap_fill_mmx_005b0a40_core@porsche@@YAPAXPAXII@Z"
+  ],
+  "game_object_undefined": [],
+  "open_boundaries": ["Run321 dispatcher and game-graph integration", "SSE 005b0b00 backend", "counts above 257 and invalid pointers"]
+}

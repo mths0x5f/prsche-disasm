@@ -26,6 +26,19 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
   006bde20 — объявленные границы: похоже на единый блок, раскладка не восстановлена.
 - Парсер фронтира 420 исправлен (вызывающие C-символов считались отсутствующими): 415 → 423.
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
+2026-10-20 checkpoint [321](iterations/v2/001-original-recovery/runs/321-simd-fill-game-integration/README.md):
+319MMX/320SSE recovered and integrated;1440+3456 standalone native cases and
+27648 complete original-chain cases PASS. Actual166-TU/8-project build passes
+compilation;266 names/295 refs remain, no EXE. Shared audit PASS,418pins389base+29delta.
+319/320 implementation assignments complete. Next: canonical file-open00561ca0/
+exists00561b80 ownership/ABI triage; PR20 research-tool review runs separately.
+Original root/arena/context holds296/301/303 and full-game acceptance remain open.
+
+Активная работа 2026-10-19:319 — original MMX005b0a40,320 — original SSE005b0b00;
+независимые исполнители восстанавливают C++ и native PE memory/ABI/state fixtures
+по REA316 и индексу. Координатор — приёмка, общий audit и game integration321
+поверх318. Новых data providers и приближённых backends не добавлять.
+
 REA316, attempt002 PASS: одна MCP-сессия/PID177356, неизменённая SHA-копия PE,
 scalar cold91.38s/warm38.88ms, MMX72.89ms/SSE138.05ms.001 spawn EPERM сохранён,
 002 выполнен вне sandbox. API-провайдер не использован. Следующий шаг — восстановить

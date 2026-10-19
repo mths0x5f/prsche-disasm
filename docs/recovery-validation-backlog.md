@@ -45,8 +45,10 @@ Checkpoint312–314, selective PR#7/#9:
 - [x]314 actual163 TU compile,3 old contracts closed/4 dependencies exposed,
  269 names/298 refs, fresh COFF/receipt/shared-pin batch audit PASS. NoEXE/run.
 - [x] Scalar005b0980:317/318,1296 native cases, actual game graph integration.
-- [ ] Original fill backends005b0b00/005b0a40: actual memory writes,
- tails/alignment/bounds and FP/MMX state; dispatcher mocks do not prove these.
+- [x] Original fill backends005b0b00/005b0a40:319/320,3456/1440 standalone native
+ cases.321 complete original/C++ chain27648 cases covers guarded memory, branch
+ precedence, alignment/tails, FP/MMX state and dispatcher EMMS. Game166 TU,
+ 266 names/295 refs, noEXE; huge lengths/invalid pointers remain outside coverage.
 - [ ] Low-level00561ca0 pointer-return file-open binding and00561b80 exists,
  stateful composition. Перед реализацией сверять всех existing/candidate owners.
 - [ ] Полный runtime/visual/gameplay и296/301/303 holds остаются открытыми.

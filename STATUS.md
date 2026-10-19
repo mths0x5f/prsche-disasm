@@ -28,6 +28,16 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+2026-10-20: Run321 integrates both original SIMD fill backends. Standalone1440
+MMX+3456SSE cases and27648 complete dispatcher/backend chain cases PASS.
+All166 C++ TUs compiled;266 unresolved names/295 refs, no EXE/game execution.
+No new dependencies/providers. Shared-cache audit PASS;418 unchanged source pins.
+PR20 is under separate research-tool review; no lowering backend is in the game.
+
+Продолжение:319 MMX005b0a40 и320 SSE005b0b00 восстанавливаются параллельно;
+игровой checkpoint пока318 (164 TU,268 names/297 refs, noEXE).
+Координатор готовит321 и общую проверку; результаты ещё не приняты.
+
 REA316 выполнен: scalar/MMX/SSE в одной постоянной MCP-сессии без API,
 SHA оригинала и копии до/после совпали. Cold91.38s, repeat38.88ms,
 MMX72.89ms/SSE138.05ms. Это анализ, не приёмка SIMD-backends; они ещё unresolved.

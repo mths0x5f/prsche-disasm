@@ -1,5 +1,26 @@
 # v2 / 001 — план восстановления исходного кода
 
+2026-10-20: [321 SIMD integration](runs/321-simd-fill-game-integration/README.md) PASS.
+319/320 finished;1440MMX+3456SSE standalone cases,27648 real-chain cases.
+Exact guarded memory/ABI/FP-state checks, no extra production fence or EMMS.
+Actual166 TU compiled;266 names/295 refs, noEXE.418 unchanged pins389base+29delta.
+Audit: `py -3 scripts/research/audit-v2-simd-fill-integration-321.py --chain-attempt 002 --build-attempt 001`.
+Current owners: pr2_backend_review — isolated PR20 tool review/fix proposal;
+pr3_12_recovery_review — read-only low-level file-open00561ca0/00561b80 triage;
+coordinator — acceptance/commits. No new body recovery assigned until owner/ABI
+findings. PR20 cannot replace native C++ recovery or silently enter the game graph.
+
+Активные владельцы:319MMX005b0a40 — pr2_backend_review;320SSE005b0b00 —
+pr3_12_recovery_review;321интеграция/аудит — координатор. Источник: REA316/002,
+Porsche.exe SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39,
+индекс176/214B и callers0053c290. Registry/body owner check обязателен.
+Критерии: exact memory/guards/EAX/ESP/nonvolatiles, MMX/x87/XMM/MXCSR состояние,
+bounded native PE comparisons; затем один fresh actual game build321 поверх318,
+проверка COFF/frontier/input hashes одним общим cache. При неопределённости HOLD.
+Команды новых verifiers будут зафиксированы в319/320README после готовности;
+не запускать повторные успешные fixtures ради metadata. Следующий шаг — приёмка
+двух независимых пакетов и подключение только принятых тел.
+
 REA316 attempt002 PASS: scalar/MMX/SSE, одна MCP-сессия/PID177356, cold91.38s,
 warm38.88ms/новые72.89ms и138.05ms.001 sandbox spawn EPERM сохранён.
 Воспроизведение с новым ID: `py -3 scripts/research/run-v2-rea-fill-316.py --attempt 003`.

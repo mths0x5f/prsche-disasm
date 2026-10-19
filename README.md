@@ -33,11 +33,11 @@
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Свежая игровая сборка, Run318](iterations/v2/001-original-recovery/runs/318-scalar-fill-game-integration/README.md):
-все 164 C++-исходника её графа скомпилированы; линковка оставляет 268 имён / 297 ссылок.
-Поверх выборочных функций №3/№4/№7/№9 восстановлено scalar-заполнение памяти:
-1296 нативных сравнений с оригиналом проверили память, EAX и сохранение регистров.
-Закрыта одна зависимость без появления новых; пакетный аудит прошёл. EXE пока нет.
+[Latest game build, Run321](iterations/v2/001-original-recovery/runs/321-simd-fill-game-integration/README.md):
+all166 C++ sources compile; linking leaves266 unresolved names/295 references.
+Original scalar/MMX/SSE fill backends are now connected. The new SIMD bodies passed
+4896 standalone native cases; the full original dispatcher/backend chain passed
+27648 cases. Two dependencies closed with none added; batch audit PASS. No EXE yet.
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.
 
