@@ -1,4 +1,6 @@
 #include "porsche/input_state.hpp"
+#include "porsche/files.hpp"
+#include "porsche/input_buffer.hpp"
 #include <cstring>
 #include <iomanip>
 #include <iostream>
@@ -35,10 +37,17 @@ InputVtable table{};
 InputDevice device{&table};
 }
 namespace porsche {
-void* __cdecl input_unrecovered_mode_00532e10(std::uint32_t, std::uint32_t, InputSlot*) {
-    calls.emplace_back("U"); return nullptr;
-}
-void __cdecl input_invalid_type_00532eae(std::uint32_t) { calls.emplace_back("D"); }
+// Run 423 replaced the two boundaries this probe used to hook (the unrecovered
+// modes and the invalid-type report) with the real callees. They are hooked
+// here instead; "D" still marks the diagnostic call, as in the Unicorn trace.
+std::uint32_t __cdecl input_caps_0056fdb0(InputBufferDevice*, void*) { calls.emplace_back("C"); return 0; }
+std::uint32_t __cdecl input_property_mode8_0056fff0(InputBufferDevice*) { calls.emplace_back("M"); return 0; }
+static void __cdecl probe_diagnostic(const char*) { calls.emplace_back("D"); }
+void (__cdecl* diagnostic_handler_005debf0)(const char*) = probe_diagnostic;
+static const char* probe_diagnostic_file;
+static std::uint32_t probe_diagnostic_line;
+void diagnostic_file_005deb74_set(const char* value) noexcept { probe_diagnostic_file = value; }
+std::uint32_t& diagnostic_line_005deb78 = probe_diagnostic_line;
 void* __cdecl input_negative_index_00532e10(std::int32_t, std::uint32_t) {
     calls.emplace_back("N"); return nullptr;
 }

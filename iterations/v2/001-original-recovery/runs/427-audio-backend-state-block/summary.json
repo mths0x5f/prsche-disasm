@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "run": "427-audio-backend-state-block",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "block": {
+    "begin": "006b00c0",
+    "end": "006b4a44",
+    "bytes": 18820
+  },
+  "pe": {
+    "data_raw_end": "005e7000",
+    "data_virtual_end": "006c1538",
+    "highlow_targets": 175,
+    "highlow_sites": 723,
+    "lowest_target": "006b00c0",
+    "highest_target": "006b4a40",
+    "below": []
+  },
+  "names": [
+    {
+      "va": "006b1800",
+      "symbol": "?audio_backend_lock_cs_006b1800@porsche@@3PAEA",
+      "bytes": 24,
+      "offset": "0x1740"
+    },
+    {
+      "va": "006b489c",
+      "symbol": "?audio_voice_table_006b489c@porsche@@3IA",
+      "bytes": 4,
+      "offset": "0x47dc"
+    },
+    {
+      "va": "006b48b0",
+      "symbol": "?application_audio_device_state_006b48c0@porsche@@3UApplicationAudioDeviceStateStorage@1@A",
+      "bytes": 396,
+      "offset": "0x47f0"
+    },
+    {
+      "va": "006b499c",
+      "symbol": "?audio_system_active_006b499c@porsche@@3EA",
+      "bytes": 1,
+      "offset": "0x48dc"
+    },
+    {
+      "va": "006b499f",
+      "symbol": "?audio_backend_lock_depth_006b499f@porsche@@3EA",
+      "bytes": 1,
+      "offset": "0x48df"
+    },
+    {
+      "va": "006b49a4",
+      "symbol": "?audio_backend_channel_count_006b49a4@porsche@@3FA",
+      "bytes": 2,
+      "offset": "0x48e4"
+    },
+    {
+      "va": "006b49a8",
+      "symbol": "?audio_backend_stamp_006b49a8@porsche@@3IA",
+      "bytes": 4,
+      "offset": "0x48e8"
+    },
+    {
+      "va": "006b4a00",
+      "symbol": "?audio_backend_channels_006b4a00@porsche@@3IA",
+      "bytes": 4,
+      "offset": "0x4940"
+    },
+    {
+      "va": "006b4a18",
+      "symbol": "?audio_backend_pool_006b4a18@porsche@@3IA",
+      "bytes": 4,
+      "offset": "0x4958"
+    }
+  ],
+  "asm_sha256": "236672ab1b764722423581dff3fc42e1b302c0ed19d14b4402ab117383f13146",
+  "fixture_sha256": "ce794a84fa0d1e6f19f4948c68f2d273c8bc6ca91b07aeb7386d726d9c098eff",
+  "native_checks_ok": 19,
+  "native_exit_code": 0
+}
