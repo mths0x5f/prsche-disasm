@@ -1,6 +1,8 @@
 # Run 420: Integração do Heap Shutdown (418) e Frame Root Lifecycle (419) no Target do Jogo
 
-> **Nota de correção:** o bridge **não** define mais a célula `00628960`. Ela vem do objeto do Run 419, que define `frame_service_root_00628960` — o mesmo símbolo que o header congelado do Run 290 declara. Antes, o bridge definia uma célula própria: o contrato de linkedição fechava, mas o consumidor `00471b60` lia um armazenamento que nada escrevia. A reconstrução (`build-002.json`) mantém 188 fontes, 415 nomes / 446 referências não resolvidas e zero erros, com o símbolo resolvido pelo 419.
+> **Nota de correção:** o bridge **não** define mais a célula `00628960`. Ela vem do objeto do Run 419, que define `frame_service_root_00628960` — o mesmo símbolo que o header congelado do Run 290 declara. Antes, o bridge definia uma célula própria: o contrato de linkedição fechava, mas o consumidor `00471b60` lia um armazenamento que nada escrevia. A reconstrução mantém 188 fontes, 446 referências não resolvidas e zero erros, com o símbolo resolvido pelo 419.
+>
+> **Correção da contagem (`build-003.json`):** o parser pegava o primeiro nome `(?decorado)` de cada linha LNK, então, para um símbolo faltante com ligação C, registrava *quem chama* (10 linhas). A contagem correta é **423 nomes / 446 referências**: os 348 do Run 417, menos os 8 contratos fechados aqui, mais 83 dependências novas que os Runs 418/419 trazem ao grafo. A auditoria agora reextrai a frontier do log de link e exige que bata com o relatório; ela reprova o `build-002.json` antigo.
 
 ## Resumo
 - Integradas 188 unidades de translação C++ no grafo real do jogo (`porsche_original_game_link`), compilando 100% de forma limpa no MSVC Win32 (`/MP6`, 0 erros de compilação, 0 outros erros de linker).

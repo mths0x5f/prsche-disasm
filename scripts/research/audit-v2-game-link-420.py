@@ -1,5 +1,6 @@
 """Batch audit for Run 420: Integration of Heap Shutdown (418) and Frame Root Lifecycle (419) into the game target."""
 import collections
+import importlib.util
 import hashlib
 import json
 from pathlib import Path
@@ -35,12 +36,12 @@ EXPECTED_CLOSED = {
 
 def main():
     reader = ManifestReader(ROOT)
-    s = load(RUN / 'build-002.json')
+    s = load(RUN / 'build-003.json')
     _, pins = reader.verify(s, 'source', expected_hash_mode='crlf-to-lf')
 
     assert s['source_count'] == 188 and len(s['project_paths']) == 8 and s['input_unchanged']
     assert not s['compiler_errors'] and not s['other_linker_errors'] and not s['executable'] and not s['game_executed']
-    assert s['exit_code'] == 1 and s['unresolved_names'] == 415 and s['unresolved_references'] == 446
+    assert s['exit_code'] == 1 and s['unresolved_names'] == 423 and s['unresolved_references'] == 446
 
     receipt = load(ROOT / s['receipt'])
     assert sha(ROOT / s['receipt']) == s['receipt_sha256']
@@ -50,6 +51,22 @@ def main():
     printed = collections.Counter(re.findall(r'(?m)^\s+([A-Za-z0-9_.-]+\.cpp)\s*$', text))
     assert printed == collections.Counter(Path(x).name for x in s['compiled_source_roots'])
     assert not any(Path(x).name == 'fixture.cpp' or 'original-body' in x for x in s['compiled_source_roots'])
+
+    # Re-derive the frontier from the link log with the producer's own parser and
+    # require it to match the report exactly. A parser that took the first
+    # "(?decorated)" on a line counted callers of C-linkage symbols as missing.
+    spec = importlib.util.spec_from_file_location(
+        'build420', ROOT / 'scripts/research/build-v2-game-link-420.py')
+    build420 = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(build420)
+    rederived = collections.defaultdict(int)
+    for line in text.splitlines():
+        if re.search(r'\berror LNK(?:2001|2019):', line):
+            symbol, caller = build420.parse_unresolved(line)
+            assert symbol != caller, f'Caller reported as missing: {line}'
+            rederived[symbol] += 1
+    reported = {item['symbol']: len(item['references']) for item in s['frontier']}
+    assert dict(rederived) == reported, 'Frontier does not match the link log'
 
     names = {item['symbol'] for item in s['frontier']}
 
@@ -75,7 +92,7 @@ def main():
         closed_names_count=len(closed),
         unresolved_names=s['unresolved_names'],
         unresolved_references=s['unresolved_references'],
-        build_report_sha256=sha(RUN / 'build-002.json'),
+        build_report_sha256=sha(RUN / 'build-003.json'),
         game_executed=False,
     )
     output = RUN / 'validation.json'

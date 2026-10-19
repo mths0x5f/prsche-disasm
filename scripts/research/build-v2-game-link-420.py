@@ -49,6 +49,44 @@ def capture(command, name):
     return result, record, receipt
 
 
+UNRESOLVED_RE = re.compile(
+    r'(?:s[íi]mbolo externo n[ãa]o resolvido|unresolved external symbol)[,\s]+(.*)$', re.I)
+CALLER_RE = re.compile(
+    r'(?:referenciad[oa] na fun[çc][ãa]o|referenced in function)\s+(.*)$', re.I)
+
+
+def parse_unresolved(line):
+    """Return (missing_symbol, caller) from one LNK2001/LNK2019 diagnostic.
+
+    The missing symbol is whatever follows "unresolved external symbol": a quoted
+    demangled name followed by its "(?decorated)" form, or a bare C-linkage name.
+    The caller is read only after "referenced in function". Taking the first
+    "(?decorated)" on the line instead would report the caller as missing
+    whenever the missing symbol has C linkage.
+    """
+    m = UNRESOLVED_RE.search(line)
+    assert m, f'Cannot parse LNK symbol from: {line}'
+    rest = m.group(1)
+    if rest.startswith('"'):
+        close = rest.find('"', 1)
+        assert close > 0, f'Unterminated quoted symbol in: {line}'
+        tail = rest[close + 1:]
+        decorated = re.match(r'\s*\((\?[^()]+)\)', tail)
+        symbol = decorated.group(1) if decorated else rest[1:close]
+        after = tail[decorated.end():] if decorated else tail
+    else:
+        symbol = re.split(r'[,\s]', rest, maxsplit=1)[0]
+        after = rest[len(symbol):]
+    caller = None
+    c = CALLER_RE.search(after)
+    if c:
+        text = c.group(1)
+        decorated = re.search(r'\((\?[^()]+)\)', text)
+        caller = decorated.group(1) if decorated else re.split(r'[\s\[]', text.strip().strip('"'), maxsplit=1)[0]
+    assert symbol, f'Empty LNK symbol in: {line}'
+    return symbol, caller
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--phase', choices=['configure', 'build'], required=True)
@@ -101,17 +139,7 @@ def main():
     compiler = []
     for line in log.splitlines():
         if re.search(r'\berror LNK(?:2001|2019):', line):
-            decorated = re.findall(r'\((\?[^()]+)\)', line)
-            if decorated:
-                symbol = decorated[0]
-                caller = decorated[1] if len(decorated) > 1 else None
-            else:
-                m = re.search(r's[íi]mbolo externo n[ãa]o resolvido[,\s]+([^,]+?)(?:,\s*referenciado na fun[çc][ãa]o\s+([^\[]+?))?\s*(?:\[.*\])?$', line)
-                if not m:
-                    m = re.search(r'unresolved external symbol\s+(.+?)(?:,\s*referenced in function\s+(.+?))?\s*(?:\[.*\])?$', line, re.IGNORECASE)
-                assert m, f'Cannot parse LNK symbol from: {line}'
-                symbol = m.group(1).strip().strip('"')
-                caller = m.group(2).strip().strip('"') if m.group(2) else None
+            symbol, caller = parse_unresolved(line)
             frontier.setdefault(symbol, []).append(dict(caller=caller, diagnostic=line))
         elif re.search(r'\b(?:fatal )?error LNK\d+:', line) and 'LNK1120:' not in line:
             other.append(line)
