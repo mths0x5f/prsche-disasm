@@ -1,5 +1,9 @@
 # Состояние проекта
 
+REA316 выполнен: scalar/MMX/SSE в одной постоянной MCP-сессии без API,
+SHA оригинала и копии до/после совпали. Cold91.38s, repeat38.88ms,
+MMX72.89ms/SSE138.05ms. Это анализ, не приёмка SIMD-backends; они ещё unresolved.
+
 Run318, 2026-10-19: проверенный scalar005b0980 теперь в игровой сборке.
 1296 native cases/9075 checks (317); actual164 C++ TU/8projects compiled,
 268 names/297 refs. Закрыто одно имя, новых нет; batch audit318 PASS,412 pins.

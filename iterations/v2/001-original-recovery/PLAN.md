@@ -1,5 +1,12 @@
 # v2 / 001 — план восстановления исходного кода
 
+REA316 attempt002 PASS: scalar/MMX/SSE, одна MCP-сессия/PID177356, cold91.38s,
+warm38.88ms/новые72.89ms и138.05ms.001 sandbox spawn EPERM сохранён.
+Воспроизведение с новым ID: `py -3 scripts/research/run-v2-rea-fill-316.py --attempt 003`.
+Следующий конкретный шаг — original005b0a40/005b0b00 → C++, memory/ABI/MMX/FP
+native comparisons, затем интеграция поверх318.316/317 владельцы завершают
+передачу; незавершённых реализационных назначений не оставлять.
+
 Checkpoint [318 scalar integration](runs/318-scalar-fill-game-integration/README.md):
 317 original005b0980 принят в graph314.1296 native cases/9075 checks, все164 TU
 compiled;268 names/297 refs, noEXE.412 unchanged pins,389base+23delta; audit PASS.

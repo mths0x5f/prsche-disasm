@@ -1,5 +1,11 @@
 # План восстановления Porsche Unleashed
 
+REA316, attempt002 PASS: одна MCP-сессия/PID177356, неизменённая SHA-копия PE,
+scalar cold91.38s/warm38.88ms, MMX72.89ms/SSE138.05ms.001 spawn EPERM сохранён,
+002 выполнен вне sandbox. API-провайдер не использован. Следующий шаг — восстановить
+005b0a40/005b0b00 по этим результатам и индексу, проверить память/MMX/FP ABI,
+затем интегрировать поверх318. Активных реализационных задач после checkpoint нет.
+
 Checkpoint 2026-10-19, [Run318](iterations/v2/001-original-recovery/runs/318-scalar-fill-game-integration/README.md):
 original scalar005b0980 подключён после1296 native cases/9075 checks (317).
 Все164 C++ TU/8projects скомпилированы;268 unresolved names/297 refs, EXE нет.
