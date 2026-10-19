@@ -1,5 +1,16 @@
 # Автоматизация восстановления
 
+Checkpoint309 (2026-10-19): actual game graph158 C++ TUs скомпилирован;
+link264 names/300 refs, NoEXE. Новые305/307 повторно используют canonical providers.
+Общие build wrappers сохраняют389-pin base, далее только3/6 delta pins.
+
+REA302/308 проверен в CLI и настоящей постоянной MCP stdio-сессии без отдельного API.
+В наблюдаемом сеансе cold query86.7s, повтор24ms (явный snapshot cache), другая функция
+65ms без snapshot-оговорки. Это поддерживает использование постоянной сессии для
+живых уточнений, но не доказывает такую скорость для всех функций или PID Ghidra.
+Сам сервер в инструментах IDE ещё не зарегистрирован. Сохранённый индекс остаётся
+быстрым первым источником; REA не заменяет оригинальные bytes/consumers/native checks.
+
 Checkpoint298:156 actual game TUs compiled,389 shared source pins; link266names/302refs.
 1139 finite frame comparisons and exact8B data proof PASS. NoEXE.295–301 используют
 общий ManifestReader; batch audit переиспользует чтения между пакетами.

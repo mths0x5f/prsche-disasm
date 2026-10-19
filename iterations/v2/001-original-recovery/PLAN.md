@@ -1,17 +1,22 @@
 # v2 / 001 — план восстановления исходного кода
 
-Checkpoint 2026-10-18, Run298: четыре оригинальных frame-функции подключены к игровой сборке.
-- 295/297/299: 441 байт оригинала, 1139 finite native comparisons PASS; 300: две
-  read-only float-ячейки / 8 байт, 35 исходных чтений, COFF и аудит PASS.
-- Все 156 C++ TUs реального game graph скомпилированы. Link: 266 имён / 302 ссылки
-  вместо 269/305 в293; закрыты три контракта, новых unresolved нет. EXE ещё нет.
-- 389 source pins неизменны; общий reader/manifests применены к новым отчётам.
-  Сохранена sandbox-попытка001; build002 и независимый batch audit PASS по заявленным
-  проверкам. Успешная компиляция не означает успешную линковку или запуск игры.
-- 296/301: TRACK_NAME consumer допускает длинные строки; original-copy пересекает
-  root00628960. Standalone storage HOLD, требуется общий исходный layout/init.
-Текущая работа: REA CLI pilot302 — frame_helpers_295; heap shutdown303 — resolver_291;
-координатор — приёмка и интеграция. Следующий build только после готовых providers.
+Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+- Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
+  После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых
+  unresolved нет. EXE не получен, игра не запускалась.
+- 305/307: 248/181 original bytes, по48 native comparisons PASS, существующие
+  canonical providers. 304: отдельный heap-slot release72B/960cases, без подключения
+  до восстановления parent. Общий source base389pins +3/+6delta, audits PASS.
+- REA302/308: CLI и реальная постоянная MCP stdio-сессия PASS, без API.
+  Cold86.7s; повтор24ms из snapshot; другая функция65ms в том же соединении.
+  IDE/global MCP registration не выполнялась; прямой PID Ghidra не наблюдался.
+- 296/301/303: shared root/arena/context layout и исходная инициализация HOLD.
+  Сохраняем явные границы; неподтверждённых storage/нулевых providers не добавлено.
+Активных назначений нет. Пользователь просит закончить коммит и затем разбирать PR.
+310 canonical-binding triage не началась из-за лимита агента; WIP-файлов нет.
+Не начинать новые recovery-пакеты перед следующим поручением по PR.
+Проверки: audit-v2-disk-game-integration-309.py, audit-v2-pool-game-integration-306.py,
+audit-v2-rea-pilot-302.py, audit-v2-rea-mcp-session-308-004.py (scripts/research).
 
 
 Checkpoint 2026-10-18, Run294: общий формат повторяющихся input/source pins готов.

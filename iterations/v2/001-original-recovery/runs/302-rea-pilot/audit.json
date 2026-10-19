@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "kind": "rea-windows-x86-pilot",
+  "status": "PASS",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "source_commit": "cee95b2ae6a19122de95103b2d23bc6f8c9c4428",
+  "package_version": "6.7.0",
+  "node_version": "26.12.0",
+  "node_zip_sha256": "50efaf01a08c520b4bbe499c09a8c5a5c370002c419c0d9da2c6815d3066a453",
+  "package_tarball_sha256": "20958a66dba1a011e50a486beb9463a343128ed368c984f94065362c13f51f90",
+  "provider": "Ghidra 12.1.3",
+  "target": "00476170",
+  "function_range": [
+    "00476170",
+    "00476218"
+  ],
+  "bytes": 169,
+  "callers": [
+    "00487e20"
+  ],
+  "call_sites": [
+    "00487e4d"
+  ],
+  "callees": [
+    "00476710"
+  ],
+  "callee_call_sites": [
+    "0047619b"
+  ],
+  "unresolved_call_sites": [
+    "004761c0",
+    "004761f1"
+  ],
+  "relationship_coverage": "partial",
+  "xrefs": [
+    "00487e4d"
+  ],
+  "cached_index_match": true,
+  "receipts": {
+    "pack-001": {
+      "path": "local/experiments/v2-rea-pilot-302/pack-001/receipt.json",
+      "sha256": "6a4cbee23de75da234a3bc7b697879b23e996d371462ad0cf0a57fd94b2824c4",
+      "exit_code": 1,
+      "seconds": 0.9270644000498578
+    },
+    "pack-002": {
+      "path": "local/experiments/v2-rea-pilot-302/pack-002/receipt.json",
+      "sha256": "c68d39db0520b6ae38eeec53130ead075a10ce11587a1855c83b6ee6b639a7f7",
+      "exit_code": 1,
+      "seconds": 70.48697580001317
+    },
+    "pack-003": {
+      "path": "local/experiments/v2-rea-pilot-302/pack-003/receipt.json",
+      "sha256": "91436e7fc7fab0873ccbaec5bc9528b5dd08c91ce08734b717e2e5d925a8d164",
+      "exit_code": 0,
+      "seconds": 5.199654099997133
+    },
+    "verify-package-001": {
+      "path": "local/experiments/v2-rea-pilot-302/verify-package-001/receipt.json",
+      "sha256": "31ef7cb3eb3ac47f295c8b7aae2c6397410c691f4f6de998fee820009619e90d",
+      "exit_code": 0,
+      "seconds": 22.522852799971588
+    },
+    "copy-target-001": {
+      "path": "local/experiments/v2-rea-pilot-302/copy-target-001/receipt.json",
+      "sha256": "fed7eda213280438f2588d23cf02893eba3b89f0986ff1fe63d08ded14b442d2",
+      "exit_code": 0,
+      "seconds": 0.1261706999503076
+    },
+    "install-001": {
+      "path": "local/experiments/v2-rea-pilot-302/install-001/receipt.json",
+      "sha256": "0425b274a72d066158ba431f6f29408fb93d4e40b281fb943a0e7a82c9973d27",
+      "exit_code": 1,
+      "seconds": 70.99576939991675
+    },
+    "install-002": {
+      "path": "local/experiments/v2-rea-pilot-302/install-002/receipt.json",
+      "sha256": "89b6d9830fdd134037b4d7c758bf9ea7bfc6da0c723d85175d36af3e4497835c",
+      "exit_code": 0,
+      "seconds": 11.707520899944939
+    },
+    "help-001": {
+      "path": "local/experiments/v2-rea-pilot-302/help-001/receipt.json",
+      "sha256": "9cc849f50cff85ffdfd57c10c62fa28d0216673b436229ec1ecc474f24a22a43",
+      "exit_code": 0,
+      "seconds": 1.0700614999514073
+    },
+    "doctor-001": {
+      "path": "local/experiments/v2-rea-pilot-302/doctor-001/receipt.json",
+      "sha256": "8920c28ba4f790d48701b16dbec1e0f762b3ae4256b1d76d01c03eedc9354235",
+      "exit_code": 1,
+      "seconds": 1.511873299954459
+    },
+    "providers-001": {
+      "path": "local/experiments/v2-rea-pilot-302/providers-001/receipt.json",
+      "sha256": "fe5e44aa531ae3bd1af9cf430c2bcc9126ab4be64319e5ff8f8d2a5205178529",
+      "exit_code": 0,
+      "seconds": 1.2801526000257581
+    },
+    "function-001": {
+      "path": "local/experiments/v2-rea-pilot-302/function-001/receipt.json",
+      "sha256": "6515fe5104fdd6fea1724ca1b10313517cdbcb6c7a28d72447283fe0f9377f73",
+      "exit_code": 1,
+      "seconds": 1.38096380000934
+    },
+    "function-002": {
+      "path": "local/experiments/v2-rea-pilot-302/function-002/receipt.json",
+      "sha256": "02951397c29d09c0d2119651e01a766455f8b3a3308233b97f0490c1807967f6",
+      "exit_code": 0,
+      "seconds": 94.08585670008324
+    },
+    "xrefs-001": {
+      "path": "local/experiments/v2-rea-pilot-302/xrefs-001/receipt.json",
+      "sha256": "8389c69da8fb55dbd29df0adc589020e72daf88eb5993bf3216f18b5a665117d",
+      "exit_code": 0,
+      "seconds": 91.85896920005325
+    }
+  },
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/5f3cada3d0865f33bc41008f6cb65d9b894e3bedb4693686bf3828aaa9fd070b.json",
+    "sha256": "5f3cada3d0865f33bc41008f6cb65d9b894e3bedb4693686bf3828aaa9fd070b"
+  },
+  "source_manifest": {
+    "path": "research/v2/proof-manifests/sha256/56d1061d38ed22b1642d0860004c6e4ebcd1e0f482b5628a8564cd580f3d11a7.json",
+    "sha256": "56d1061d38ed22b1642d0860004c6e4ebcd1e0f482b5628a8564cd580f3d11a7"
+  },
+  "limitations": [
+    "Two indirect call targets remain unresolved",
+    "Ghidra 12.1.3 is accepted by REA but its verified build is 12.1.4",
+    "Doctor overall fails broad Hopper/agent checks despite healthy Ghidra scope",
+    "extract-001 completed but runner crashed before receipt; verify-package-001 independently matched 1775 files"
+  ]
+}
