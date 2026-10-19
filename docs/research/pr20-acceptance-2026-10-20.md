@@ -6,6 +6,12 @@ It resubmits the experimental lowering tool rejected in PR2. The user authorized
 finishing the corrections and merging. The original PR snapshot and the local
 repair proposal remain separate under `local/experiments/pr20-review`.
 
+During integration the author rebased onto Run321, producing head
+`5e269baf5ca8750720fd64b51882e99b9b669bfc`. All five PR file blobs were compared
+byte-for-byte with the reviewed head and are identical. The rebased head was
+merged without rewriting published history; the already-tested maintainer
+corrections were retained. No test rerun was needed for this identical input.
+
 The new SSE/MMX lowering replaces the earlier silent no-ops, and the original
 PR's native fixture passed108 fragments/110592 cases. Review nevertheless found
 four observable errors absent from that input set:
