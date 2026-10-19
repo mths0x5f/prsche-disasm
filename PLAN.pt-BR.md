@@ -1,5 +1,12 @@
 # Plano de Recuperação de Porsche Unleashed
 
+Checkpoint 18/10/2026, Run419: recuperado o ciclo de vida do Frame Root Storage (`00628960`, `00471b70` e `00471c40`).
+- Recuperadas 2 funções originais (263 bytes de corpo PE): `frame_root_init_00471b70` (198B) e `frame_root_teardown_00471c40` (65B).
+- Fechado o HOLD de longa data sobre a célula de armazenamento frame root `00628960` (conhecido desde a Run 296/301), comprovada a adjacência de memória `FrameRootStorageLayout`: `00628940` (32B), `00628960` (4B) e `00628964` (256B).
+- Fechados 2 contratos diretos de linkedição: `?startup_sequence_call_00471b70@porsche@@YAXXZ` (de `004b67b0`) e `pipe_00471c40` (de `004b68f0`).
+- Verificação diferencial no slab físico da CPU x86 (`native-fixture.exe`): 5/5 cenários PASS em todas as funções e objetos. Auditoria independente (`audit-v2-frame-root-419.py`) PASS.
+- Próximos passos: conexão dos módulos recuperados da Run418 e Run419 ao `CMakeLists.txt` (`porsche_original_game_link`).
+
 Checkpoint 18/10/2026, Run418: recuperado o fechamento transitivo do algoritmo de Heap Shutdown (`004a54e0 -> 0059eb20`).
 - Recuperadas 5 funções originais (623 bytes de corpo PE): `platform_flush_0059eb20` (159B), `application_pool_shutdown_005678f0` (248B), `printf_shutdown_0055ec30` (20B), `heap_destroy_slot_005699f0` (72B) e `queue_drain_0059ee30` (124B).
 - Correspondência exata de assinaturas e nomes em `namespace porsche` com as expectativas de `porsche_original_game_link` (Run417) e reutilização das estruturas canônicas `FileDevice`/`IoList`/`IoNode` e globais `006a5c38..006a5c80` / `006af3b4..006af3fc`.

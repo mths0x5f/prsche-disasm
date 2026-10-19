@@ -1,5 +1,12 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint 2026-10-18, Run419: восстановлен жизненный цикл Frame Root Storage (`00628960`, `00471b70` и `00471c40`).
+- Восстановлены 2 оригинальные функции (263 байта тела PE): `frame_root_init_00471b70` (198B) и `frame_root_teardown_00471c40` (65B).
+- Закрыт долгосрочный HOLD на ячейку хранения frame root `00628960` (известный с Run 296/301), доказана смежность памяти `FrameRootStorageLayout`: `00628940` (32B), `00628960` (4B) и `00628964` (256B).
+- Закрыты 2 прямых контракта линкера: `?startup_sequence_call_00471b70@porsche@@YAXXZ` (из `004b67b0`) и `pipe_00471c40` (из `004b68f0`).
+- Дифференциальная проверка на физическом слэбе CPU x86 (`native-fixture.exe`): 5/5 сценариев PASS по всем функциям и объектам. Независимый аудит (`audit-v2-frame-root-419.py`) PASS.
+- Ближайшие шаги: подключение восстановленных модулей Run418 и Run419 в `CMakeLists.txt` (`porsche_original_game_link`).
+
 Checkpoint 2026-10-18, Run418: восстановлено транзитивное замыкание алгоритма Heap Shutdown (`004a54e0 -> 0059eb20`).
 - Восстановлены 5 оригинальных функций (623 байта тела PE): `platform_flush_0059eb20` (159B), `application_pool_shutdown_005678f0` (248B), `printf_shutdown_0055ec30` (20B), `heap_destroy_slot_005699f0` (72B) и `queue_drain_0059ee30` (124B).
 - Полное совпадение сигнатур и имён в `namespace porsche` с ожиданиями `porsche_original_game_link` (Run417) и переиспользование канонических структур `FileDevice`/`IoList`/`IoNode` и глобалов `006a5c38..006a5c80` / `006af3b4..006af3fc`.
