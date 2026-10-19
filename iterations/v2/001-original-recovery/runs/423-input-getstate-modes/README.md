@@ -30,8 +30,10 @@ were **not** re-run: `unicorn` is not installed here.
 Validation: 24/24 differential cases on a physical x86 slab holding `00532e10` and its
 original `0056fce0`/`0056fd00`/`0056fd30` chain, with both jump tables relocated and the
 three original strings copied byte for byte so message content is compared. Negative
-control is **incomplete**: 3 of 8 planned mutations ran and all failed as expected; the run
-stopped on an escaping error in the mutation script itself. No independent audit script yet.
+control: eight mutations of the canonical source each fail — count + 1 in mode 1, ignoring
+the caps result, an off-by-one line, an altered message, an altered file string, mode 8
+returning zero, an unmasked device type, and mode 3 treated as mode 1. No independent
+audit script yet.
 
 ```
 python scripts/research/experiment-v2-input-getstate-423.py --finalize --attempt 1
