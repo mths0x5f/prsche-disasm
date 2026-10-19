@@ -1,5 +1,9 @@
 # Состояние проекта
 
+Licensing: MIT for project-owned original work; LICENSING.md records exclusions
+and pending agreement for older external contributions. The repository is not
+claimed to be uniformly MIT-licensed. Game checkpoint321 remains unchanged.
+
 PR20 merged (final integration c44928c); GitHub confirms closed/merged.
 Research-tool corrections verified:107 supported fragments/109568 native
 cases,14 generated-code edge cases, three required unsupported-operation rejections.

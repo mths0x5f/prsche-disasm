@@ -1,5 +1,10 @@
 # v2 / 001 — план восстановления исходного кода
 
+Licensing follow-up: root MIT grant covers only rights held by its licensors;
+original game material and unlicensed external contributions remain excluded.
+Track author permission for PR3/PR20 separately; no recovered-source provenance,
+frozen artifacts or game behavior changed during license adoption.
+
 PR20 is accepted only as research tooling after corrections; native107fragments/
 109568cases and14 generated-code edges PASS.80-bit memory andFSQRT reject rather
 than approximate. No production graph change. All assigned agents completed.

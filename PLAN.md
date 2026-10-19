@@ -1,5 +1,11 @@
 # План восстановления Porsche Unleashed
 
+2026-10-20: added MIT LICENSE for project-owned contributions and LICENSING.md
+scope. Original game/third-party rights are not relicensed. Existing external
+contributions, including PR3/PR20, need applicable license/author agreement before
+being described as MIT-covered. License adoption does not close that follow-up.
+The original-game recovery next step and checkpoint321 remain unchanged.
+
 2026-10-20: PR20 merged as research-only tooling with fail-closed
 80-bit/FSQRT boundaries, NaN comparison/FABS corrections,107 supported native
 fragments/109568 cases and14 generated-code edge cases PASS. Final syntax census
