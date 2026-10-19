@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "run": "422-audio-channel-voice-lookup",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_vas": [
+    "00589d20",
+    "00590340"
+  ],
+  "original_selected_bytes": 212,
+  "original_bodies": [
+    {
+      "va": "00589d20",
+      "bytes": 79,
+      "body_sha256": "cff8c8233458475e404ed921665dbc29d6e6333d41dd9b538bfe7e6f1b2beb3e"
+    },
+    {
+      "va": "00590340",
+      "bytes": 133,
+      "body_sha256": "c4f7df84adfcb347c39cf02fbe3c7024b8b81b8b8c2e6953cd8a3ac504aa8a12"
+    }
+  ],
+  "original_scalars": [],
+  "compiler": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx86/x86/cl.exe",
+  "compiler_sha256": "aa25483dec4821a189e494689ff8b619d99224328e290dafd790a96527b568b3",
+  "include_roots": [
+    "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+    "iterations/v2/001-original-recovery/runs/422-audio-channel-voice-lookup",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "source": "iterations/v2/001-original-recovery/runs/422-audio-channel-voice-lookup/audio_channel_voice_lookup_422.cpp",
+  "source_sha256": "69efcf0265428e5c2bd2331edac72ef7600cf17e5be3ab306a2f408029b189f0",
+  "header": "iterations/v2/001-original-recovery/runs/422-audio-channel-voice-lookup/audio_channel_voice_lookup_422.hpp",
+  "header_sha256": "3aeb1d041ed7556b76c7169d2287f4bd75a96b97e81afd0f40c011bda8c8af15",
+  "fixture": "local/experiments/v2-audio-channel-voice-422/audio_channel_voice_fixture.cpp",
+  "fixture_sha256": "0576be7c5bb97e7619142dafa9229dc533a0da759658c771c3f396a7e603fc79",
+  "symbols": {
+    "defined": [
+      "?audio_backend_find_channel_00589d20@porsche@@YAHI@Z",
+      "?audio_backend_next_voice_00590340@porsche@@YAIHPAI@Z"
+    ],
+    "undefined": [
+      "?audio_backend_channel_count_006b49a4@porsche@@3FA",
+      "?audio_backend_channels_006b4a00@porsche@@3IA"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "functions": [
+    "?audio_backend_find_channel_00589d20@porsche@@YAHI@Z",
+    "?audio_backend_next_voice_00590340@porsche@@YAIHPAI@Z"
+  ],
+  "compile": {
+    "command": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Oi",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/EHsc",
+      "/TP",
+      "/W4",
+      "/utf-8",
+      "/diagnostics:column",
+      "/MP2",
+      "/Zl",
+      "/sourceDependencies",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\dependencies",
+      "/I",
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
+      "/I",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\422-audio-channel-voice-lookup",
+      "/I",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\objects\\",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\422-audio-channel-voice-lookup\\audio_channel_voice_lookup_422.cpp",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\audio_channel_voice_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 1.351763,
+    "log": "local/experiments/v2-audio-channel-voice-422/compile-001.log",
+    "log_sha256": "1e66e342e19e5adf35e0d156e0dcab0e5637f6d34d472c8242b6d30e64b89bd0"
+  },
+  "link": {
+    "command": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/INCREMENTAL:NO",
+      "/SECTION:.data,ERW",
+      "/SECTION:.bss,ERW",
+      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\native-fixture.map",
+      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\native-fixture.exe",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\objects\\audio_channel_voice_lookup_422.obj",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\objects\\audio_channel_voice_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.160995,
+    "log": "local/experiments/v2-audio-channel-voice-422/fixture-link-001.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "exit_code": 0,
+    "cases": 17,
+    "cases_passed": 17,
+    "execution": {
+      "command": [
+        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-channel-voice-422\\native-fixture.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 0.100963,
+      "log": "local/experiments/v2-audio-channel-voice-422/fixture-native-001.log",
+      "log_sha256": "bb125b75efee94002f722252089de6e1b6a50bbed7c396bde5adc45c01c09a9c"
+    }
+  }
+}
