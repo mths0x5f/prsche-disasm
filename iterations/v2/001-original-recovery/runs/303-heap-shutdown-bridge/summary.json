@@ -1,0 +1,44 @@
+{
+  "schema": 2,
+  "kind": "heap-shutdown-binding-state-preflight",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "wrapper": "004a54e0",
+  "body": "0059eb20",
+  "original_bytes": 164,
+  "original_cutpoint_cases": 8,
+  "canonical_accepted_owners": 0,
+  "actual_274_provider_vas": [
+    "0055ec30"
+  ],
+  "provider_abi": {
+    "005678f0": "cdecl noargs RET0; canonical declaration only",
+    "0055ec30": "cdecl noargs RET0; actual rawCOFF provider, returns oldglobalEAX but caller ignores",
+    "0059ee30": "cdecl oneDWORD RET0; caller pushes modular NEG selectorindex",
+    "005699f0": "cdecl oneDWORD RET0; caller ignores EAX; child masks IDlow4 but parent arenaindex is unmasked",
+    "005b2148": "VirtualFree stdcall3DWORD RET12; canonical application_virtual_free has equivalent argument/return boundary but provider remains external"
+  },
+  "state_hold": [
+    "006af3b4 indexed base is split across canonical primary scalar and other15array; original unmasked index16 overlaps guardDWORD006af3f4",
+    "005e4fe8 is writable context pointer reset to address005e3e18; existing canonical getter has no writable owner/setter",
+    "005e4fec is writable selector-table pointer initially006af374, read again after queuecallee; existing getter boundaries do not own this pointer cell",
+    "005e3e18 default context firstDWORD also holds006af374; original alias between defaultcontext andselector must be retained"
+  ],
+  "implementation_added": false,
+  "storage_added": false,
+  "compiler_commands": 0,
+  "native_commands": 0,
+  "next_targets": [
+    "Recover one canonical selector/context owner for005e4fe8/005e4fec/default005e3e18 using original writers",
+    "Reconcile006af3b4 arena indexing with existing scalar/array owners and guard/page/id neighbors before binding parent",
+    "005699f0 is72B bounded child over existing16slot heaps;0059ee30 is124B queuecleanup over context state;005678f0 is248B pool shutdown"
+  ],
+  "metadata_finalization": "Correct indexed005699f0 body size56 to72; original evidence and8executions unchanged; initial summary retained",
+  "input_manifest": {
+    "path": "research/v2/proof-manifests/sha256/407785f5dc4979eb7df6fa4ae9acdc12b40093b328d8e64346cc09a4923bee28.json",
+    "sha256": "407785f5dc4979eb7df6fa4ae9acdc12b40093b328d8e64346cc09a4923bee28"
+  },
+  "input_delta": {
+    "scripts/research/trace-v2-heap-shutdown-303.py": "3331dd5d11a4508d2027c1d7408fdfa21372ef30b759a22dcf3dd1b3af899846",
+    "iterations/v2/001-original-recovery/runs/303-heap-shutdown-bridge/summary-initial.json": "82a7aec4862b26dfd7a9e2fbb6e32344d85cca21f1c0ab131dac0fe8ea0c0f33"
+  }
+}

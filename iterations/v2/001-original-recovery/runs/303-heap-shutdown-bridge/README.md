@@ -1,0 +1,23 @@
+# Run303 — heap-shutdown binding/state preflight
+
+Original `Porsche.exe` SHA256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`. Query`004a54e0` confirms its5-byte tail JMP to`0059eb20..0059ebbe` (159 bytes), no stack arguments, RET0. Neither entry nor any of the four direct callees has an accepted registry or accepted interior-range owner. Original import index maps`005b2148` to KERNEL32`VirtualFree`.
+
+Provider search found one actual Run274 game candidate: raw`0055ec30`, object SHA`7f3c8ce9060cf50e2bd788a1a1862ba455fb9c7d4b4e25bbcfa70a64d8cda1e1`, defined`?FUN_0055ec30@@YAXXZ`, unresolved`?DAT_006a57cc@@3HA`. Its original20-byte body reads that DWORD and conditionally clears it. Return EAX retains the old value; this parent ignores it, so the existing no-argument cdecl void contract is sufficient at this call site. Canonical`application_pool_shutdown_005678f0()` is only declared in`application_pool.hpp`, with a startup callback registration but no game implementation. `0059ee30` and`005699f0` have no accepted or actual274 object provider. The parent calls each with one DWORD and explicitly removes four stack bytes; `005699f0`'s return is ignored. Existing`application_virtual_free` has matching argument/return semantics as a controlled OS boundary, but remains externally supplied.
+
+The parent checks byte`006af3f4`, calls pool shutdown then`0055ec30`, and caches the current object ID from`006af3fc`. It scans16 selector DWORDs through the pointer at`005e4fec`. A match calls`0059ee30` with modular negative scan index and clears that selector through a **reloaded** pointer. It calls`005699f0(cachedID)`, reads arena`006af3b4+cachedID*4`, and calls`VirtualFree(arena,0,0x8000)`. It reloads object ID **after VirtualFree**, clears cached-ID arena and primary arena, restores context pointer`005e4fe8` to`005e3e18`, then clears the newly loaded-ID arena. It does not explicitly clear the initialization flag.
+
+Eight original-byte Unicorn cutpoints verify disabled/no-match/first-match/last-match paths, negative selector argument, selector-pointer replacement during queue cleanup, object-ID replacement during pool shutdown or VirtualFree, and unmasked arena index16. They check callback order/arguments, resulting memory, RET0 stack cleanup and preserved nonvolatiles. All external callees and VirtualFree are controlled cutpoints: this proves parent behavior under those effects, not child algorithms or OS execution. In the index16 case the arena store aliases DWORD`006af3f4`, including the guard byte, demonstrating why separate scalar/array owners cannot silently substitute for original relative layout. Actual gameplay occurrence of index16 is not claimed.
+
+**Implementation remains HOLD** because the existing state contracts do not yet preserve these writes and aliases:
+
+- Canonical`application_heap.cpp` owns guard`006af3f4`, ID`006af3fc` and primary scalar`006af3b4`. `application_heap_init.cpp` separately owns`application_other_arenas_006af3b8[15]`. The original parent indexes the arena base without a mask or range check, including the guard/page/ID neighborhood.
+- Original physical pointer cell`005e4fe8` initially contains`005e3e18`; original`005e4fec` initially contains`006af374`. Default context`005e3e18` also begins with`006af374`. Existing context-state/selector getters have declarations and fixture implementations, without a canonical writable pointer-cell owner for the parent reset or callback replacement.
+- Existing`application_queue_indices[16]` represents selector entries but does not by itself establish the mutable selector pointer, default-context identity, or its interaction with the context manager used by`0059ee30`.
+
+No wrapper/body, duplicate storage, zero provider or synthetic write adapter was added. Restore those identities before introducing the parent bridge. The smallest next child is`005699f0` (72 bytes): it masks its own ID to low4bits, uses the existing16-slot`heaps_006b4f20`, optionally deletes a lock through`005322d0`, zeros64 bytes through`0053c290`, clears the slot and returns0/1. `0059ee30` (124 bytes) depends on context/queue ownership; `005678f0` (248 bytes) depends on pool shutdown services.
+
+`evidence.json` contains exact original wrapper/body, physical initializers, provider object/source pins and eight cutpoint results. Common shared manifests pin source inputs. A metadata-only finalization corrected the next-child size from56 to indexed72 bytes; `summary-initial.json` is retained and no original evidence/execution was changed. No compiler, native executable or game build was invoked.
+
+```powershell
+py -3 scripts/research/audit-v2-heap-shutdown-303.py
+```
