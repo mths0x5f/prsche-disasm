@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "run": "425-audio-voice-stop",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_vas": [
+    "0058a8b0",
+    "00597010",
+    "0058ac30",
+    "00589c00"
+  ],
+  "original_selected_bytes": 551,
+  "original_bodies": [
+    {
+      "va": "0058a8b0",
+      "bytes": 88,
+      "body_sha256": "2d077122a5f36c27e4de4a216a7fbb5b07d59acf550ae6fb2fc08ab0db91f06c"
+    },
+    {
+      "va": "00597010",
+      "bytes": 83,
+      "body_sha256": "c85841f4961be8cd29816a84262229eb7493e93e5ca4402de52862c9518c0ac0"
+    },
+    {
+      "va": "0058ac30",
+      "bytes": 103,
+      "body_sha256": "231c710d19684c59633d1e9070212c399f6ec267cae2cf1fe68238f838e648a4"
+    },
+    {
+      "va": "00589c00",
+      "bytes": 277,
+      "body_sha256": "a217bfc049ace7834895aa3389ac941072aa8e1b7cfb7e3a2b9c66d2c4b9ddad"
+    }
+  ],
+  "original_scalars": [],
+  "compiler": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx86/x86/cl.exe",
+  "compiler_sha256": "aa25483dec4821a189e494689ff8b619d99224328e290dafd790a96527b568b3",
+  "include_roots": [
+    "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+    "iterations/v2/001-original-recovery/runs/425-audio-voice-stop",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "source": "iterations/v2/001-original-recovery/runs/425-audio-voice-stop/audio_voice_stop_425.cpp",
+  "source_sha256": "8391ba14ac5489bb9898ec6a5cf559a92bae7889d5c58483ff90c7e891a70947",
+  "header": "iterations/v2/001-original-recovery/runs/425-audio-voice-stop/audio_voice_stop_425.hpp",
+  "header_sha256": "f2389d1b3e22ee11dc069abbabf9833ceae4f048e8b16696acf34d94cce8faff",
+  "fixture": "local/experiments/v2-audio-voice-stop-425/audio_voice_stop_fixture.cpp",
+  "fixture_sha256": "4e00ad03d31750ea9868c5e690acdac97945dfa29dc804083fd18018bb50c682",
+  "symbols": {
+    "defined": [
+      "?application_audio_backend_release_0058ac30@porsche@@YAXI@Z",
+      "?audio_backend_stop_voice_0058a8b0@porsche@@YAXI@Z",
+      "?audio_channel_group_release_00589c00@porsche@@YAXI@Z",
+      "?audio_voice_release_links_00597010@porsche@@YAXI@Z",
+      "__Avx2WmemEnabledWeakValue"
+    ],
+    "undefined": [
+      "?audio_backend_channel_count_006b49a4@porsche@@3FA",
+      "?audio_backend_channels_006b4a00@porsche@@3IA",
+      "?audio_backend_pool_006b4a18@porsche@@3IA",
+      "?audio_backend_stamp_006b49a8@porsche@@3IA",
+      "?audio_voice_table_006b489c@porsche@@3IA"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "functions": [
+    "?application_audio_backend_release_0058ac30@porsche@@YAXI@Z",
+    "?audio_backend_stop_voice_0058a8b0@porsche@@YAXI@Z",
+    "?audio_channel_group_release_00589c00@porsche@@YAXI@Z",
+    "?audio_voice_release_links_00597010@porsche@@YAXI@Z",
+    "__Avx2WmemEnabledWeakValue"
+  ],
+  "compile": {
+    "command": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Oi",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/EHsc",
+      "/TP",
+      "/W4",
+      "/utf-8",
+      "/diagnostics:column",
+      "/MP2",
+      "/Zl",
+      "/sourceDependencies",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\dependencies",
+      "/I",
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
+      "/I",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\425-audio-voice-stop",
+      "/I",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\objects\\",
+      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\425-audio-voice-stop\\audio_voice_stop_425.cpp",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\audio_voice_stop_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 1.430056,
+    "log": "local/experiments/v2-audio-voice-stop-425/compile-001.log",
+    "log_sha256": "90aa19041bcfdc708b7485e241fbeac922b431f0cd524bf3f288a7387a536c35"
+  },
+  "link": {
+    "command": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/INCREMENTAL:NO",
+      "/SECTION:.data,ERW",
+      "/SECTION:.bss,ERW",
+      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\native-fixture.map",
+      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\native-fixture.exe",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\objects\\audio_voice_stop_425.obj",
+      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\objects\\audio_voice_stop_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.130755,
+    "log": "local/experiments/v2-audio-voice-stop-425/fixture-link-001.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "exit_code": 0,
+    "cases": 22,
+    "cases_passed": 22,
+    "execution": {
+      "command": [
+        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-voice-stop-425\\native-fixture.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 0.061855,
+      "log": "local/experiments/v2-audio-voice-stop-425/fixture-native-001.log",
+      "log_sha256": "ec69f250d46f9a8db77efffaa3b682406cd73aff0e43f7b213df8a4f8b405c79"
+    }
+  }
+}
