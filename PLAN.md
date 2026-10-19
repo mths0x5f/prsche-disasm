@@ -15,6 +15,62 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
   006bde20 — объявленные границы: похоже на единый блок, раскладка не восстановлена.
 - Парсер фронтира 420 исправлен (вызывающие C-символов считались отсутствующими): 415 → 423.
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
+REA316, attempt002 PASS: одна MCP-сессия/PID177356, неизменённая SHA-копия PE,
+scalar cold91.38s/warm38.88ms, MMX72.89ms/SSE138.05ms.001 spawn EPERM сохранён,
+002 выполнен вне sandbox. API-провайдер не использован. Следующий шаг — восстановить
+005b0a40/005b0b00 по этим результатам и индексу, проверить память/MMX/FP ABI,
+затем интегрировать поверх318. Активных реализационных задач после checkpoint нет.
+
+Checkpoint 2026-10-19, [Run318](iterations/v2/001-original-recovery/runs/318-scalar-fill-game-integration/README.md):
+original scalar005b0980 подключён после1296 native cases/9075 checks (317).
+Все164 C++ TU/8projects скомпилированы;268 unresolved names/297 refs, EXE нет.
+Закрыто одно имя, новых зависимостей нет;412 pins/389base+23delta, batch audit PASS.
+Далее MMX005b0a40/SSE005b0b00: REA316, затем original memory/ABI/state сравнения.
+Исполнитель317 завершил; координатор завершает checkpoint,316 ведёт REA.
+
+Checkpoint 2026-10-19: [очередь PR #2–#19 закрыта](docs/research/pr-triage-2026-10-19.md).
+Все 18 получили итоговые комментарии через GitHub MCP; #3 слит, остальные 17
+закрыты без полного merge. Открытых PR: 0. Полезный остаток и причины отказа
+сохранены в docs/recovery-validation-backlog.md; закрытие не означает приёмку кода.
+Текущая игровая сборка — Run314: 163 TU, 269 names/298 refs, EXE нет.
+Работа возобновлена: исполнитель316 — свежая постоянная REA-сессия трёх fill
+backends; исполнитель317 — scalar005b0980 и native сверка. Координатор — приёмка
+и следующая интеграция после PASS. Root/arena/context296/301/303 остаются HOLD.
+Исторические checkpoint ниже описывают состояние на момент их записи.
+
+Checkpoint 2026-10-19, [Run314](iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
+из PR#7/#9 выборочно применены0053c290/0059d8e0 (312/313),283 original bytes,
+37 native cases PASS. Whole PRs не слиты, остальные405/407 owners не дублируются.
+Actual game graph163 TUs compiled;3 old contracts closed/4 dependencies exposed,
+269 names/298 refs, noEXE/run. Batch audit314 PASS,389-pin base+19delta reused.
+Активных назначений нет. Следующий connected шаг: original fill backends,
+начиная с005b0980, после owner/index проверки.005338d0 остаётся в backlog.
+
+Checkpoint 2026-10-19, [Run310](iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
+PR#3 слит42813f7 как Run400; из PR#4 выборочно перенесены два shutdown helpers311.
+
+- 21 PR3 TU compile PASS; четыре интегрированных тела #3/#4 (275 original bytes)
+ прошли10 native cases. Нет новых original-data providers/duplicate owners.
+- Actual game graph161 TUs compile,4 старых контракта закрыты/8 зависимостей
+ открылись;268 names/304 refs. NoEXE/run; batch audit310 PASS,389-pin base reused.
+- Остальные19 тел400 не подключены. Whole PR#4 HOLD:401 кэширует count после
+ callback,402 повторяет owner290 для00471b60. PR#2/#12–#16/#19 blockers сохраняются.
+
+Активных назначений нет. Следующий bounded шаг: native original005338d0 из400
+(53B,slot/vtable+0x20/callback mutation), затем canonical data/callee bindings.
+Root/arena/context296/301/303 и backlog остаются открытыми; см.docs/recovery-validation-backlog.md.
+
+Checkpoint 2026-10-19, разбор PR #2–#19 относительно16638e4 завершён.
+- [Применимость, адреса и блокеры](docs/research/pr-applicability-2026-10-19.md).
+  Ничего не слито; #19 содержит дефекты ABI, раздельные root cells и
+  неподтверждённые heap providers. #2 не реализует заявленную полную SIMD/x87 семантику.
+- Первыми проверять новые функции #3/#4:9 exact frontier symbols; это кандидаты,
+  не принятый recovery. Не дублировать canonical owners. Затем selective bindings.
+- Свежие x86 cl/dumpbin cross-checks411/417/419/420 PASS подтверждают несовпадение
+  UI symbols и две разные root cells. Native suite PR и game build не запускались.
+- Игровой checkpoint остаётся309:158 TUs,264 names/300 refs, EXE нет.
+  Следующий шаг: intake поверх309 с проверкой CALL/RET/ECX и mutable globals,
+  воспроизводимый batch native audit и одна свежая игровая сборка. Назначений нет.
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 - Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.

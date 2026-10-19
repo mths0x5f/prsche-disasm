@@ -1,6 +1,13 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Текущий checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
+Текущий игровой checkpoint — [Run318](runs/318-scalar-fill-game-integration/README.md):
+164 C++ TU compiled;268 unresolved names/297 references, EXE нет. Поверх
+выборочных функций #3/#4/#7/#9 подключён original scalar005b0980:
+1296 native cases/9075 checks PASS. Нет фиктивных providers/duplicate owners.
+[REA316](runs/316-rea-fill-session/README.md) разобрал scalar/MMX/SSE в одной
+постоянной MCP-сессии. Следующий шаг — native-восстановление MMX/SSE.
+
+Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.
 [Run258](runs/258-x86-call-chain/README.md):3original CALLцепочки/36 864native comparisons PASS.
 [Run262](runs/262-x86-cpu-primitives/README.md):15 744synthetic CPU cases PASS.

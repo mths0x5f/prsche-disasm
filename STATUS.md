@@ -17,6 +17,59 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+REA316 выполнен: scalar/MMX/SSE в одной постоянной MCP-сессии без API,
+SHA оригинала и копии до/после совпали. Cold91.38s, repeat38.88ms,
+MMX72.89ms/SSE138.05ms. Это анализ, не приёмка SIMD-backends; они ещё unresolved.
+
+Run318, 2026-10-19: проверенный scalar005b0980 теперь в игровой сборке.
+1296 native cases/9075 checks (317); actual164 C++ TU/8projects compiled,
+268 names/297 refs. Закрыто одно имя, новых нет; batch audit318 PASS,412 pins.
+EXE/запуска игры нет. Следом MMX/SSE original backends через REA и native сверку.
+
+2026-10-19: [PR #2–#19 разобраны и закрыты](docs/research/pr-triage-2026-10-19.md):
+18 итоговых комментариев, #3 merged, 17 closed без полного merge, 0 открытых PR.
+GitHub MCP после перезапуска проверен чтением и записью; прямой HTTP MCP-клиент
+работает с локальным токеном. Выборочные принятые тела уже входят в Run314:
+163 TU compiled, 269 unresolved names/298 refs; рабочего EXE пока нет.
+Основная задача продолжена: REA316 анализирует fill backends в одной сессии,
+317 восстанавливает scalar005b0980 со сверкой оригинальных байтов и ABI.
+Остаток PR сохранён в docs/recovery-validation-backlog.md. Старые записи ниже
+исторические; исправление duplicate root в новом #19 не снимает layout/init HOLD.
+
+Checkpoint 2026-10-19, [Run314](iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
+PR#7/#9 применены выборочно:0053c290 dispatcher и0059d8e0 resource open,
+283 original bytes/37 native cases PASS. Остальные функции этих PR не импортированы.
+163 actual game TUs compiled,3 old contracts closed/4 new dependencies,
+269 names/298 refs, ноль compiler/other linker errors, noEXE/run; audit314 PASS.
+408 source pins,389shared+19delta; data providers/oracle bytes не подменены.
+Активных назначений нет; далее original fill backends, сначала005b0980.
+GitHub plugin установлен CLI; token/MCP initialization и46tools list проверены.
+В текущем IDE-сеансе инструменты ещё не загружены; нужен полный restart VSCode.
+
+Checkpoint 2026-10-19, [Run310](iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
+
+- PR#3 слит42813f7;21 TU compile PASS. Подключены только00412030/00425780
+  и selective PR#4 helpers004a54b0/004a54e0 (Run311),10 native cases/275B PASS.
+- Actual game graph161 TUs скомпилированы:4 old contracts closed/8 new dependencies,
+  268 names/304 refs, ноль compiler/other linker errors. EXE не получен и не запускался.
+  Shared389-pin base+13delta; независимый audit-v2-pr-intake-310.py PASS.
+- Остальные19 тел400 не приняты в игровой граф. Whole PR#4 не слит:
+  clock401 кэширует изменяемый count,402 дублирует compiled owner290.
+- Активных назначений нет. Следующий шаг: original53B005338d0 из400, native slot/
+  virtual-call/callback verification. Storage/init и296/301/303 HOLD остаются.
+
+Checkpoint 2026-10-19:18 открытых PR разобраны относительно16638e4.
+- [Решения по каждому PR и доказательства](docs/research/pr-applicability-2026-10-19.md).
+  Merge/review submission не выполнялись. #19 целиком не принимать: потерянный
+  ECX, несовпадающие UI symbols, две root cells и zero heap providers.
+- Кандидаты первого приоритета:#3/#4 (9 exact frontier symbols, ещё не приняты).
+  Большая часть #5–#11/#17/#18 повторяет canonical owners; переносить выборочно.
+- Выполнены Git blob comparison и свежая x86 компиляция/dumpbin411/417/419/420.
+  Native suites PR и свежий game build не запускались. Активных назначений нет.
+- Игровой результат не изменился:Run309,158 TUs,264 names/300 refs, EXE нет.
+  Следующий шаг: bounded intake #3/#4 поверх309 с original ABI/data verification.
+
+Предыдущий checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 - Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
   После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых
   unresolved нет. EXE не получен, игра не запускалась.

@@ -1,5 +1,72 @@
 # Отложенные проверки восстановления v2
 
+## Остаток пакетных PR #2–#19
+
+Закрытие PR не означает принятие всех его функций. Источники остаются в
+GitHub PR и по закреплённым SHA из [разбора](research/pr-applicability-2026-10-19.md).
+Для повторного чтения закрытого PR: `git fetch origin refs/pull/N/head:refs/remotes/origin/pr/N`.
+Перед реализацией проверять current canonical owners, кандидатов и interior ranges.
+
+- [ ] Run400/#3: оставшиеся19 тел уже в main, но не приняты в игровой граф.
+  В частности005338d0 требует slot bounds/state, vtable+0x20 ABI и callback mutation.
+- [ ] #4: исправленный00413ea0 с перечитыванием005e8bfc после callback;
+  helpers0046d960/0046d9b0/004659e0 с canonical globals. Не дублировать00471b60.
+- [ ] #6:005a177b logger, varargs/ABI и реальные callers, вместо новых владельцев
+  существующих wrapper-имён.
+- [ ] #10:004b68f0 post-tick pipeline, реальные callees и canonical C++ binding;
+  не заменять уже принятый00531f90.
+- [ ] #11:004a88a0/004640b0, original state transitions/callbacks и canonical ABI.
+- [ ] #12: кандидаты0056a680/005a0f98; устранить потерю ECX в004dd600.
+  Ошибочный cached-index00412030 не переносить поверх принятого400/310.
+- [ ] #13:0048cdf0/0048dcb0/0048e1a0 — настоящий stack layout, адреса00508e70/
+ 005b4980 и IAT GetTickCount, затем воспроизводимый native boundary test.
+- [ ] #14:004b4da0 — event-stream ABI, mutable consumers и shared006573e8 layout.
+- [ ] #15:004a4a70 — дополнение существующего splash/render owner, реальные
+  render/UI providers, инициализация и сравнение переходов, не второй owner.
+- [ ] #16:004d3420 — ECX receivers, реальные аргументы/ветви/изменяемая память,
+  tracked generator input; исправить fixture/README claims.
+- [ ] #19 updated3e665758: duplicate00628960 cell исправлена, но original shared
+  layout не восстановлен: root→path gap8 вместо4; unbounded copy остаётся.
+  Нулевые heap providers420 и arena alias418 не закрывают HOLD296/301/303.
+- [ ] #2 experimental backend: SIMD effects вместо no-op, x87 values/status/NaN,
+  compile+execute evidence вместо одного translate-without-exception census.
+
+Scalar005b0980 принят в317/318:1296 cases/9075 checks,164 game TU,
+268 names/297 refs, noEXE. Далее005b0a40/005b0b00 в одном REA MCP-сеансе,
+затем оригинал→C++ memory/ABI/state comparisons. Крайние огромные длины scalar
+не охвачены bounded native fixture (длины0..129); не считать доказанными.
+Работа через REA дополняет проверенный индекс, не заменяет native acceptance.
+
+Checkpoint312–314, selective PR#7/#9:
+- [x]0053c290 dispatcher:77 original bytes,28 native cases/211 checks; branch
+ precedence,args,MMX EMMS verified. Canonical CPU flags reused.
+- [x]0059d8e0 resource opener:206B,9 native cases incl root/fallback/callback
+ mutation; canonical data/formatter and two pointer-return aliases.
+- [x]314 actual163 TU compile,3 old contracts closed/4 dependencies exposed,
+ 269 names/298 refs, fresh COFF/receipt/shared-pin batch audit PASS. NoEXE/run.
+- [x] Scalar005b0980:317/318,1296 native cases, actual game graph integration.
+- [ ] Original fill backends005b0b00/005b0a40: actual memory writes,
+ tails/alignment/bounds and FP/MMX state; dispatcher mocks do not prove these.
+- [ ] Low-level00561ca0 pointer-return file-open binding and00561b80 exists,
+ stateful composition. Перед реализацией сверять всех existing/candidate owners.
+- [ ] Полный runtime/visual/gameplay и296/301/303 holds остаются открытыми.
+
+Checkpoint310/311, selective PR intake,2026-10-19:
+- [x] PR#3 merge42813f7;21 C++ TU compile, fresh5 native cases для00412030/00425780.
+- [x] PR#4 selective004a54b0/004a54e0:49 original bytes,5 native cases; canonical
+  cleanup/network/free reused. Реальные0048ff30/0059eb20 остаются boundaries.
+- [x] Run310 actual161 TU build,4 old contracts closed/8 new exposed,
+ 268 names/304 refs, fresh COFF/receipt/shared-pin batch audit PASS. NoEXE/run.
+- [ ] Остальные19 Run400 тел: upstream native fixture отсутствует в Git;
+  самостоятельная воспроизводимая проверка до интеграции. Следующий005338d0,
+ 53B: slot bounds, state0xffffffff, vtable+0x20 stack/ECX ABI и callback mutation.
+- [ ] PR#4 clock401: callback меняет005e8bfc, original00413f29 перечитывает count,
+  current401:44/46 кэширует. Исправить в новом owned source и добавить этот случай.
+- [ ] Не компилировать duplicate00471b60 из402; сохранять canonical290.
+- [ ] Реальные writable owners/init для frame-control/vector globals, arbitrary
+  alias/fault behavior, полные flags/virtual consumers, graphical/game runtime
+  acceptance. Root/arena/context HOLD296/301/303 не закрыты слиянием PR.
+
 Checkpoint302–309, 2026-10-19:
 - [x] REA6.7.0 CLI: настоящие function/xrefs запросы, SHA/index match; API не нужен.
 - [x] Постоянный MCP SDK-сеанс: initialize/list/open/session; первый анализ86.7s,

@@ -1,6 +1,72 @@
 # v2 / 001 — план восстановления исходного кода
 
-Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+REA316 attempt002 PASS: scalar/MMX/SSE, одна MCP-сессия/PID177356, cold91.38s,
+warm38.88ms/новые72.89ms и138.05ms.001 sandbox spawn EPERM сохранён.
+Воспроизведение с новым ID: `py -3 scripts/research/run-v2-rea-fill-316.py --attempt 003`.
+Следующий конкретный шаг — original005b0a40/005b0b00 → C++, memory/ABI/MMX/FP
+native comparisons, затем интеграция поверх318.316/317 владельцы завершают
+передачу; незавершённых реализационных назначений не оставлять.
+
+Checkpoint [318 scalar integration](runs/318-scalar-fill-game-integration/README.md):
+317 original005b0980 принят в graph314.1296 native cases/9075 checks, все164 TU
+compiled;268 names/297 refs, noEXE.412 unchanged pins,389base+23delta; audit PASS.
+Команда: `py -3 scripts/research/audit-v2-scalar-fill-integration-318.py`.
+Воспроизведение native317: `py -3 scripts/research/verify-v2-scalar-fill-317.py`
+(без `--help`: скрипт запускает новый fixture). Исполнитель317 завершил.
+316 REA в работе; следующий код — original MMX005b0a40/SSE005b0b00 после анализа,
+с отдельной проверкой памяти и MMX/FP состояния. Полная приёмка остаётся открытой.
+
+Checkpoint 2026-10-19: [закрытие PR #2–#19](../../../docs/research/pr-triage-2026-10-19.md).
+Все18 PR получили комментарии, #3 merged, остальные17 closed, открытых0.
+Непринятые полезные тела и проверки сохранены в recovery-validation-backlog.md.
+Игровой checkpoint остаётся314:163 TU/269 names/298 refs, без EXE.
+Активные владельцы:316 — REA-сессия scalar/MMX/SSE;317 — original scalar005b0980,
+C++ и native differential fixture; координатор — приёмка и интеграция после PASS.
+Критерий scalar: точные записи памяти/guards/EAX/ESP/nonvolatiles против PE,
+без заглушек и новых data providers. Команды:
+`py -3 scripts/research/run-v2-rea-fill-316.py --help` и
+`py -3 scripts/research/verify-v2-scalar-fill-317.py`.
+REA-декомпиляция — свидетельство для анализа; native parity и полная игровая
+приёмка отдельные. Следующий конкретный шаг — результаты316/317, затем свежий
+game build поверх314. Исторические назначения ниже не активны.
+
+Checkpoint 2026-10-19, [314 selective PR7/PR9 integration](runs/314-pr7-pr9-game-integration/README.md):
+312 dispatcher0053c290 и313 resource0059d8e0,283 original bytes/37 native cases
+PASS. Canonical data reuse, typed file-open aliases; no duplicate owners/zero stubs.
+Actual163-source graph compile PASS;3 old names closed/4 dependencies exposed,
+269 names/298 refs, noEXE/run; batch audit314 PASS,389-pin base+19delta.
+Исполнители312/313 завершили задачи. Далее005b0980 scalar fill и прочие original
+backends: проверить owner/index и native outputs до подключения.005338d0 остаётся
+в backlog;296/301/303 HOLD и полная игровая приёмка не закрыты.
+
+Checkpoint 2026-10-19, [310 selective PR intake](runs/310-pr-intake-integration/README.md) завершён:
+
+- PR#3 merge42813f7,21 TU compiled; в game graph только00412030/00425780.
+  Из PR#4 адаптированы004a54b0/004a54e0 в311 с canonical data/callee reuse.
+  Четыре тела275B,10 native cases PASS; fixture-only providers исключены изgame.
+- Свежая actual build002:161 TU/8projects,4 old names closed/8 dependencies exposed,
+ 268 names/304 refs, ноль compiler/other linker errors, noEXE/run; audit310 PASS.
+  Сохраняются389-pin base/13delta и все предыдущие305/307 providers.
+- Остальные19 тел400, mutable-count401, duplicate00471b60 из402 не подключены.
+  Whole PR#4/#19 не слиты. Незавершённые storage/init не подменены нулями.
+
+Владельцы review/311 завершили задачи; активных назначений нет. Следующий005338d0
+(53B) уже в400: native slot bounds/state/vtable+0x20 ABI/callback tests, затем
+provider binding.296/301/303 HOLD и docs/recovery-validation-backlog.md обязательны.
+
+Checkpoint 2026-10-19:PR review #2–#19 завершён, main16638e4 не менялся по коду.
+- [Результаты и конкретные addresses/lines](../../../docs/research/pr-applicability-2026-10-19.md).
+  Все blobs #2–#18 содержатся в #19; это не свидетельство корректности.
+  #19 HOLD: root alias420, heap layout/init418/420, UI bridge417, ECX414.
+- Полезный следующий intake:#3/#4,9 exact names текущего frontier. Сначала
+  original CALL/RET, canonical owners, callback mutations и реальные data providers;
+  затем batch native comparison и свежий graph поверх309. Без duplicate owners.
+- Свежие cl/dumpbin411/417/419/420 PASS; они подтверждают mismatched symbols
+  и две root cells, не native parity. Native suites/game target не запускались.
+- Игровой checkpoint309 неизменён:158 TUs,264 names/300 refs, EXE нет.
+  Исполнители review завершили задачи; активных назначений нет.
+
+Предыдущий checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 - Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
   После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых
   unresolved нет. EXE не получен, игра не запускалась.

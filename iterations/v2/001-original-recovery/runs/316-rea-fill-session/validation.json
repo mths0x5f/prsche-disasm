@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "run": 316,
+  "attempt": "002",
+  "status": "pass-bounded-rea-evidence",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt_sha256": "058f97a8daa8a318c7176fd7fc4e978ff488955dc6861c4d7ff1725a5d3e3de8",
+  "server_pid": 177356,
+  "analysis_run_id": "b39461ed-dc4c-4e1c-8be9-b6ac77a63cf0",
+  "checks": {
+    "receipt_exit_zero": true,
+    "all_receipt_output_hashes_match": true,
+    "target_sha_before_after_matches_original": true,
+    "same_run_id_at_four_session_observations": true,
+    "scalar_cold_warm_normalized_result_equal": true,
+    "scalar_body_matches_index": true,
+    "mmx_body_matches_index": true,
+    "sse_body_matches_index": true,
+    "three_backends_have_plain_ret": true,
+    "three_backends_have_no_direct_callees": true,
+    "caller_coverage_complete": false,
+    "native_memory_or_game_acceptance": false
+  },
+  "functions": [
+    {
+      "va": "005b0980",
+      "ranges": [["005b0980", "005b099d"], ["005b09a0", "005b0a39"]],
+      "body_bytes": 184,
+      "ret_vas": ["005b09d6", "005b09fb"],
+      "rea_resolved_caller": "0053c290",
+      "indexed_additional_call_sites": ["00562511", "00562534", "00562588"]
+    },
+    {
+      "va": "005b0a40",
+      "ranges": [["005b0a40", "005b0aef"]],
+      "body_bytes": 176,
+      "ret_vas": ["005b0a8c", "005b0ab1"],
+      "rea_resolved_caller": "0053c290"
+    },
+    {
+      "va": "005b0b00",
+      "ranges": [["005b0b00", "005b0b23"], ["005b0b40", "005b0bf1"]],
+      "body_bytes": 214,
+      "ret_vas": ["005b0b64", "005b0b89"],
+      "rea_resolved_caller": "0053c290"
+    }
+  ],
+  "abi_evidence": "Original 0053c290 and 005625xx callers ADD ESP,0xc after three-argument CALL; all backend returns are RET without immediate. Run179 inferred __stdcall is inconsistent with these instructions. REA signature is undefined FUN_...(void), not an authoritative prototype.",
+  "limitations": [
+    "REA reports partial caller coverage and omits three indexed scalar direct call sites.",
+    "Session process lineage does not expose a live Ghidra PID.",
+    "This query did not execute the original fill functions on test buffers or validate a game executable."
+  ]
+}

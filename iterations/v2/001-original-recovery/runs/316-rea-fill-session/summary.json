@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "run": 316,
+  "kind": "rea-fill-persistent-session",
+  "status": "pass-bounded-rea-evidence",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "mcp_client": "scripts/research/rea-fill-session-316.mjs",
+  "mcp_client_sha256": "9fe543c87e7fac8cd65fb3577d1e074a87aad9271e31d7284a9bc956518e0019",
+  "runner": "scripts/research/run-v2-rea-fill-316.py",
+  "runner_sha256": "37ca84118b2450ef854d5efea67adb0bf97afe80a27226f38481a4e75d3b37d8",
+  "attempt": "local/experiments/v2-rea-followup-316/002/receipt.json",
+  "attempt_sha256": "058f97a8daa8a318c7176fd7fc4e978ff488955dc6861c4d7ff1725a5d3e3de8",
+  "previous_attempt": "local/experiments/v2-rea-followup-316/001/receipt.json",
+  "previous_status": "sandbox-spawn-eperm",
+  "validation": "iterations/v2/001-original-recovery/runs/316-rea-fill-session/validation.json",
+  "validation_sha256": "645d6a3404ddb54703adb39013f5de96c4c0adce2cb5915cd56f5a7cb4859cf7",
+  "server_pid": 177356,
+  "analysis_run_id": "b39461ed-dc4c-4e1c-8be9-b6ac77a63cf0",
+  "analysis_queries": 4,
+  "distinct_functions": ["005b0980", "005b0a40", "005b0b00"],
+  "timings_ms": {
+    "scalar_cold": 91378.086,
+    "scalar_warm": 38.878,
+    "mmx": 72.892,
+    "sse": 138.045
+  },
+  "caller_coverage": "partial",
+  "abi_status": "cdecl-caller-cleanup-confirmed-original; REA prototype undefined",
+  "game_executable_verified": false,
+  "next_body_target": "005b0a40"
+}
