@@ -1,5 +1,20 @@
 # v2 / 001 — plano de recuperação do código-fonte
 
+Checkpoint 18/10/2026, Run418: recuperado o fechamento transitivo do algoritmo de Heap Shutdown (`004a54e0 -> 0059eb20`).
+- Recuperadas 5 funções originais (623 bytes de corpo PE): `platform_flush_0059eb20` (159B), `application_pool_shutdown_005678f0` (248B), `printf_shutdown_0055ec30` (20B), `heap_destroy_slot_005699f0` (72B) e `queue_drain_0059ee30` (124B).
+- Correspondência exata de assinaturas e nomes em `namespace porsche` com as expectativas de `porsche_original_game_link` (Run417) e reutilização das estruturas canônicas `FileDevice`/`IoList`/`IoNode` e globais `006a5c38..006a5c80` / `006af3b4..006af3fc`.
+- Compilado 1 objeto de jogo `heap_shutdown_418.obj` (MSVC x86 `/W4 /Od /Zl`, 0 avisos, 0 erros).
+- Verificação diferencial no slab físico da CPU x86 (`heap_shutdown_fixture.exe`): 8/8 cenários PASS em todas as 5 funções (paridade bit a bit de registradores, memória e traces de chamadas). Auditoria independente (`audit-v2-heap-shutdown-418.py`) PASS.
+- Próximos passos: conectar `heap_shutdown_418.cpp` e as células `005e4fe8`/`005e4fec` à build do jogo, ou recuperar o layout/inicializadores compartilhados da raiz de frame (`00628960`, `00471b70`, `00471c40`).
+
+Checkpoint 18/10/2026, Run417: integração de 29 TUs (Runs 400..411) no target real do jogo.
+- Todas as 185 TUs C++ do game graph real compilaram de forma limpa (MSVC Win32, `/MP6`). 0 erros de compilador, 0 outros erros de linker.
+- Fechados 21 contratos no linker a partir da fronteira da Run298 (incluindo 13 chamadas diretas de `app_main_004b6a50` e 8 tratadores/relatórios de subsistemas).
+- Ponte limpa `entry_bridges_417.cpp` isola as chamadas `004a54b0`/`004a54e0` e adaptadores de nomes sem duplicar `00471b60` (`LNK2005` prevenido).
+- Fronteira do linker atualizada: 348 nomes / 381 referências, mapeando com precisão as dependências filhas e células de dados não recuperadas dos subsistemas adicionados.
+- 427 source pins verificados via `v2_shared_manifests.py`. Auditoria independente em lote (`audit-v2-game-entry-417.py`) PASS.
+- Próximos passos: heap shutdown `004a54e0 -> 0059eb20` e recuperação do layout/armazenamento compartilhado de frame-root (`00628960` e globais associados).
+
 Checkpoint 18/10/2026, Run298: quatro funções de frame originais conectadas à build do jogo.
 - 295/297/299: 441 bytes de original, 1139 comparações nativas finitas PASS; 300: duas
   células float somente-leitura / 8 bytes, 35 leituras originais, COFF e auditoria PASS.
