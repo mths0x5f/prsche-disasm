@@ -1,5 +1,17 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-19, разбор PR #2–#19 относительно16638e4 завершён.
+- [Применимость, адреса и блокеры](docs/research/pr-applicability-2026-10-19.md).
+  Ничего не слито; #19 содержит дефекты ABI, раздельные root cells и
+  неподтверждённые heap providers. #2 не реализует заявленную полную SIMD/x87 семантику.
+- Первыми проверять новые функции #3/#4:9 exact frontier symbols; это кандидаты,
+  не принятый recovery. Не дублировать canonical owners. Затем selective bindings.
+- Свежие x86 cl/dumpbin cross-checks411/417/419/420 PASS подтверждают несовпадение
+  UI symbols и две разные root cells. Native suite PR и game build не запускались.
+- Игровой checkpoint остаётся309:158 TUs,264 names/300 refs, EXE нет.
+  Следующий шаг: intake поверх309 с проверкой CALL/RET/ECX и mutable globals,
+  воспроизводимый batch native audit и одна свежая игровая сборка. Назначений нет.
+
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 - Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
   После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых

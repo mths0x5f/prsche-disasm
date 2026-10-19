@@ -1,6 +1,17 @@
 # Состояние проекта
 
-Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+Checkpoint 2026-10-19:18 открытых PR разобраны относительно16638e4.
+- [Решения по каждому PR и доказательства](docs/research/pr-applicability-2026-10-19.md).
+  Merge/review submission не выполнялись. #19 целиком не принимать: потерянный
+  ECX, несовпадающие UI symbols, две root cells и zero heap providers.
+- Кандидаты первого приоритета:#3/#4 (9 exact frontier symbols, ещё не приняты).
+  Большая часть #5–#11/#17/#18 повторяет canonical owners; переносить выборочно.
+- Выполнены Git blob comparison и свежая x86 компиляция/dumpbin411/417/419/420.
+  Native suites PR и свежий game build не запускались. Активных назначений нет.
+- Игровой результат не изменился:Run309,158 TUs,264 names/300 refs, EXE нет.
+  Следующий шаг: bounded intake #3/#4 поверх309 с original ABI/data verification.
+
+Предыдущий checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 - Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
   После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых
   unresolved нет. EXE не получен, игра не запускалась.

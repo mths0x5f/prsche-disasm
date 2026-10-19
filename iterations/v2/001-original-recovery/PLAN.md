@@ -1,6 +1,18 @@
 # v2 / 001 — план восстановления исходного кода
 
-Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+Checkpoint 2026-10-19:PR review #2–#19 завершён, main16638e4 не менялся по коду.
+- [Результаты и конкретные addresses/lines](../../../docs/research/pr-applicability-2026-10-19.md).
+  Все blobs #2–#18 содержатся в #19; это не свидетельство корректности.
+  #19 HOLD: root alias420, heap layout/init418/420, UI bridge417, ECX414.
+- Полезный следующий intake:#3/#4,9 exact names текущего frontier. Сначала
+  original CALL/RET, canonical owners, callback mutations и реальные data providers;
+  затем batch native comparison и свежий graph поверх309. Без duplicate owners.
+- Свежие cl/dumpbin411/417/419/420 PASS; они подтверждают mismatched symbols
+  и две root cells, не native parity. Native suites/game target не запускались.
+- Игровой checkpoint309 неизменён:158 TUs,264 names/300 refs, EXE нет.
+  Исполнители review завершили задачи; активных назначений нет.
+
+Предыдущий checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 - Реальный игровой граф: 158 C++ TUs скомпилированы, link264 имён/300 ссылок.
   После298 закрыты pool shutdown005678f0 и disk-slot shutdown005918c0; новых
   unresolved нет. EXE не получен, игра не запускалась.
