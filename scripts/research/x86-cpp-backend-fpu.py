@@ -276,10 +276,14 @@ static inline U fistp257(double v) {
     return (U)res;
 }
 static inline double sqrt(double x) {
-    if (x <= 0.0) return 0.0;
-    double guess = x;
-    for (int i = 0; i < 16; ++i) guess = 0.5 * (guess + x / guess);
-    return guess;
+    // Real x87 FSQRT: a negative input gives the invalid-operation NaN and -0 keeps its sign.
+    double r;
+    __asm {
+        fld x
+        fsqrt
+        fstp r
+    }
+    return r;
 }
 '''
 
@@ -599,10 +603,12 @@ PATCHES = [
             code = 'U value = !(s.flags & 0x80u) ? 1u : 0u;' + store(i, ops[0], 'value')
         elif m == 'xchg' and len(ops) == 2:
             code = f'U v0 = {expression(i, ops[0])}; U v1 = {expression(i, ops[1])}; ' + store(i, ops[0], 'v1') + store(i, ops[1], 'v0')
-        elif m in ('nop', 'cld', 'std', 'fnstenv', 'fldenv', 'fnsave', 'frstor'):
+        elif m in ('nop', 'cld', 'std'):
             code = ''
-        elif m in ('movd', 'movq', 'movss', 'movaps', 'cvtpi2ps', 'cvtsi2ss', 'femms', 'stmxcsr', 'ldmxcsr', 'addps', 'addss', 'subps', 'subss', 'mulps', 'mulss', 'shufps', 'pfmul', 'pfadd', 'pfsub', 'pi2fd', 'por', 'psllq', 'punpckldq'):
-            code = '// SIMD instruction lowered as machine state nop;'
+        elif m in ('fnstenv', 'fldenv', 'fnsave', 'frstor', 'movd', 'movq', 'movss', 'movaps', 'cvtpi2ps', 'cvtsi2ss', 'femms', 'stmxcsr', 'ldmxcsr', 'addps', 'addss', 'subps', 'subss', 'mulps', 'mulss', 'shufps', 'pfmul', 'pfadd', 'pfsub', 'pi2fd', 'por', 'psllq', 'punpckldq'):
+            # No lowering for SIMD/3DNow! or FPU environment save/restore: they change
+            # memory and register state, so dropping them would silently lose results.
+            raise ValueError('Unsupported instruction (no exact lowering): ' + m)
         elif m in ('fnstsw', 'fstsw') and len(ops) == 1 and ops[0].type == X86_OP_MEM:
             code = f'write257({address(i, ops[0])}, 2u, ((s.fpu_status&~0x3800u)|((s.fpu_top&7u)<<11u))&0xffffu);'
         elif m == 'lea'""")
