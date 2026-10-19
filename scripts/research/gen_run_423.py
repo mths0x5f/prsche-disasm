@@ -96,7 +96,7 @@ static void __cdecl hook_diag(const char* fmt) {
     rec('D', fnv(fmt), extra);
 }
 namespace porsche {
-std::uint8_t input_caps_buffer_006bde20[0x21c];
+// input_caps_buffer_006bde20 is defined by the canonical input_state.cpp (Run 428).
 std::uint32_t __cdecl input_caps_0056fdb0(InputBufferDevice* device, void* out) {
     rec('C', reinterpret_cast<U>(device), out == input_caps_buffer_006bde20 ? 1u : 0u);
     *static_cast<U*>(out) = 0xcafe0000u | s_caps_result;

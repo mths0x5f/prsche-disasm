@@ -4,7 +4,12 @@
 
 namespace porsche {
 
+#ifndef PORSCHE_AUDIO_STATE_BLOCK
 ApplicationAudioDeviceStateStorage application_audio_device_state_006b48c0{};
+#endif
+// In the game target this storage lies inside the audio state block (Run 427,
+// 006b00c0..006b4a44), which also places the backend cells it contains
+// (006b499c, 006b49a4, 006b4a00, 006b4a18, ...) at their original offsets.
 std::uint32_t application_audio_descriptor_initialized_006a5c30 = 0;
 // Original defined-data row 005e2470 is exactly 60 bytes including NUL.
 char application_audio_author_text_005e2470[60] =

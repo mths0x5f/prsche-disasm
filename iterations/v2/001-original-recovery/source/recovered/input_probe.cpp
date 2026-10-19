@@ -40,7 +40,6 @@ namespace porsche {
 // Run 423 replaced the two boundaries this probe used to hook (the unrecovered
 // modes and the invalid-type report) with the real callees. They are hooked
 // here instead; "D" still marks the diagnostic call, as in the Unicorn trace.
-std::uint8_t input_caps_buffer_006bde20[0x21c];
 std::uint32_t __cdecl input_caps_0056fdb0(InputBufferDevice*, void*) { calls.emplace_back("C"); return 0; }
 std::uint32_t __cdecl input_property_mode8_0056fff0(InputBufferDevice*) { calls.emplace_back("M"); return 0; }
 static void __cdecl probe_diagnostic(const char*) { calls.emplace_back("D"); }

@@ -5,6 +5,11 @@
 namespace porsche {
 std::int32_t input_count_0069cb0c;
 InputSlot input_slots_006be040[32];
+// 006bde20: mode-2 capabilities buffer. Its only users are 00532e10 (address)
+// and 0056fdb0, which clears exactly 0x21c bytes; zero-fill .data like the slots.
+// The original places it 0x220 bytes before the slots; that distance is not
+// reproduced, and only the unrecovered negative-index path could depend on it.
+std::uint8_t input_caps_buffer_006bde20[0x21c];
 
 static bool lost(std::uint32_t result) {
     return result == 0x8007000cu || result == 0x8007001eu;
