@@ -1,5 +1,10 @@
 # Состояние проекта
 
+Run318, 2026-10-19: проверенный scalar005b0980 теперь в игровой сборке.
+1296 native cases/9075 checks (317); actual164 C++ TU/8projects compiled,
+268 names/297 refs. Закрыто одно имя, новых нет; batch audit318 PASS,412 pins.
+EXE/запуска игры нет. Следом MMX/SSE original backends через REA и native сверку.
+
 2026-10-19: [PR #2–#19 разобраны и закрыты](docs/research/pr-triage-2026-10-19.md):
 18 итоговых комментариев, #3 merged, 17 closed без полного merge, 0 открытых PR.
 GitHub MCP после перезапуска проверен чтением и записью; прямой HTTP MCP-клиент

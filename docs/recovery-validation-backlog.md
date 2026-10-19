@@ -31,8 +31,10 @@ GitHub PR и по закреплённым SHA из [разбора](research/pr
 - [ ] #2 experimental backend: SIMD effects вместо no-op, x87 values/status/NaN,
   compile+execute evidence вместо одного translate-without-exception census.
 
-Следующий connected пакет после PR cleanup: scalar005b0980, затем005b0a40/
-005b0b00 в одном REA MCP-сеансе, далее оригинал→C++ memory/ABI comparisons.
+Scalar005b0980 принят в317/318:1296 cases/9075 checks,164 game TU,
+268 names/297 refs, noEXE. Далее005b0a40/005b0b00 в одном REA MCP-сеансе,
+затем оригинал→C++ memory/ABI/state comparisons. Крайние огромные длины scalar
+не охвачены bounded native fixture (длины0..129); не считать доказанными.
 Работа через REA дополняет проверенный индекс, не заменяет native acceptance.
 
 Checkpoint312–314, selective PR#7/#9:
@@ -42,7 +44,8 @@ Checkpoint312–314, selective PR#7/#9:
  mutation; canonical data/formatter and two pointer-return aliases.
 - [x]314 actual163 TU compile,3 old contracts closed/4 dependencies exposed,
  269 names/298 refs, fresh COFF/receipt/shared-pin batch audit PASS. NoEXE/run.
-- [ ] Original fill backends005b0b00/005b0a40/005b0980: actual memory writes,
+- [x] Scalar005b0980:317/318,1296 native cases, actual game graph integration.
+- [ ] Original fill backends005b0b00/005b0a40: actual memory writes,
  tails/alignment/bounds and FP/MMX state; dispatcher mocks do not prove these.
 - [ ] Low-level00561ca0 pointer-return file-open binding and00561b80 exists,
  stateful composition. Перед реализацией сверять всех existing/candidate owners.

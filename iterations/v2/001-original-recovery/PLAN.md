@@ -1,5 +1,14 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint [318 scalar integration](runs/318-scalar-fill-game-integration/README.md):
+317 original005b0980 принят в graph314.1296 native cases/9075 checks, все164 TU
+compiled;268 names/297 refs, noEXE.412 unchanged pins,389base+23delta; audit PASS.
+Команда: `py -3 scripts/research/audit-v2-scalar-fill-integration-318.py`.
+Воспроизведение native317: `py -3 scripts/research/verify-v2-scalar-fill-317.py`
+(без `--help`: скрипт запускает новый fixture). Исполнитель317 завершил.
+316 REA в работе; следующий код — original MMX005b0a40/SSE005b0b00 после анализа,
+с отдельной проверкой памяти и MMX/FP состояния. Полная приёмка остаётся открытой.
+
 Checkpoint 2026-10-19: [закрытие PR #2–#19](../../../docs/research/pr-triage-2026-10-19.md).
 Все18 PR получили комментарии, #3 merged, остальные17 closed, открытых0.
 Непринятые полезные тела и проверки сохранены в recovery-validation-backlog.md.
@@ -9,7 +18,7 @@ C++ и native differential fixture; координатор — приёмка и
 Критерий scalar: точные записи памяти/guards/EAX/ESP/nonvolatiles против PE,
 без заглушек и новых data providers. Команды:
 `py -3 scripts/research/run-v2-rea-fill-316.py --help` и
-`py -3 scripts/research/verify-v2-scalar-fill-317.py --help`.
+`py -3 scripts/research/verify-v2-scalar-fill-317.py`.
 REA-декомпиляция — свидетельство для анализа; native parity и полная игровая
 приёмка отдельные. Следующий конкретный шаг — результаты316/317, затем свежий
 game build поверх314. Исторические назначения ниже не активны.

@@ -1,5 +1,12 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-19, [Run318](iterations/v2/001-original-recovery/runs/318-scalar-fill-game-integration/README.md):
+original scalar005b0980 подключён после1296 native cases/9075 checks (317).
+Все164 C++ TU/8projects скомпилированы;268 unresolved names/297 refs, EXE нет.
+Закрыто одно имя, новых зависимостей нет;412 pins/389base+23delta, batch audit PASS.
+Далее MMX005b0a40/SSE005b0b00: REA316, затем original memory/ABI/state сравнения.
+Исполнитель317 завершил; координатор завершает checkpoint,316 ведёт REA.
+
 Checkpoint 2026-10-19: [очередь PR #2–#19 закрыта](docs/research/pr-triage-2026-10-19.md).
 Все 18 получили итоговые комментарии через GitHub MCP; #3 слит, остальные 17
 закрыты без полного merge. Открытых PR: 0. Полезный остаток и причины отказа
