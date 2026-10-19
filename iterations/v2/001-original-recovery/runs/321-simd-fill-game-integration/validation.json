@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "passed": true,
+  "packets": {
+    "319-mmx-fill-backend": {
+      "summary_sha256": "1bfdc095111bdc5d19b8115e4996ad59f0011b813272ddf3a7232617557d8b38",
+      "native_cases": 1440,
+      "native_checks": 12963,
+      "raw_span_sha256": "687d53c6291f21397365b986ccade4f04e6b40081685f9d1054a63c3fb590138"
+    },
+    "320-sse-fill-backend": {
+      "summary_sha256": "c04e6af448d666ce076c8048488b1ff182150a7dc4b61330b7d74dae2d697186",
+      "native_cases": 3456,
+      "native_checks": 34563,
+      "raw_span_sha256": "a8a2bae3c3081a89bb8ef5d1b07dc64576fc0ec1b38ee473d722b54abdd5a3cc"
+    }
+  },
+  "chain_cases": 27648,
+  "chain_checks": 193547,
+  "original_new_function_count": 2,
+  "original_new_indexed_bytes": 390,
+  "chain_receipt": "local/experiments/v2-fill-chain-321/attempt-002/receipt.json",
+  "chain_receipt_sha256": "13c1d00e215fd784f00a154803268d84f587c94de99550e2d9731a7c6400f9a8",
+  "closed_names": [
+    "?heap_fill_mmx_005b0a40@porsche@@YAXPAXII@Z",
+    "?heap_fill_sse_005b0b00@porsche@@YAXPAXII@Z"
+  ],
+  "new_names": [],
+  "game_sources": 166,
+  "source_pins": 418,
+  "unresolved_names": 266,
+  "unresolved_references": 295,
+  "build_report": "build-001.json",
+  "build_report_sha256": "44f8e417c489fa82165039ef99b01bd4b643c47cb103c202cdbe943da82abf30",
+  "objects": {
+    "005b0a40": {
+      "path": "local/builds/v2/simd-fill-game-integration-321/entry-289/porsche_game_entry_bridges.dir/Release/005b0a40.obj",
+      "sha256": "dd30ada30c2ba5970857517d1ae0c3e0b2102d391e3c8ab84c7e97e0f7c32907",
+      "symbols": {
+        "defined": [
+          "?heap_fill_mmx_005b0a40@porsche@@YAXPAXII@Z",
+          "?heap_fill_mmx_005b0a40_core@porsche@@YAPAXPAXII@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    },
+    "005b0b00": {
+      "path": "local/builds/v2/simd-fill-game-integration-321/entry-289/porsche_game_entry_bridges.dir/Release/005b0b00.obj",
+      "sha256": "9187e12b1fadeab261c02a8edea2f2b68552dd46172c0f440431c9508578f22f",
+      "symbols": {
+        "defined": [
+          "?heap_fill_sse_005b0b00@porsche@@YAXPAXII@Z",
+          "?heap_fill_sse_005b0b00_core@porsche@@YAPAXPAXII@Z"
+        ],
+        "undefined": [],
+        "common": [],
+        "weak": []
+      }
+    }
+  },
+  "game_executed": false
+}
