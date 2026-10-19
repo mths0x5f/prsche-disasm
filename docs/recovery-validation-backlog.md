@@ -1,5 +1,40 @@
 # Отложенные проверки восстановления v2
 
+## Остаток пакетных PR #2–#19
+
+Закрытие PR не означает принятие всех его функций. Источники остаются в
+GitHub PR и по закреплённым SHA из [разбора](research/pr-applicability-2026-10-19.md).
+Для повторного чтения закрытого PR: `git fetch origin refs/pull/N/head:refs/remotes/origin/pr/N`.
+Перед реализацией проверять current canonical owners, кандидатов и interior ranges.
+
+- [ ] Run400/#3: оставшиеся19 тел уже в main, но не приняты в игровой граф.
+  В частности005338d0 требует slot bounds/state, vtable+0x20 ABI и callback mutation.
+- [ ] #4: исправленный00413ea0 с перечитыванием005e8bfc после callback;
+  helpers0046d960/0046d9b0/004659e0 с canonical globals. Не дублировать00471b60.
+- [ ] #6:005a177b logger, varargs/ABI и реальные callers, вместо новых владельцев
+  существующих wrapper-имён.
+- [ ] #10:004b68f0 post-tick pipeline, реальные callees и canonical C++ binding;
+  не заменять уже принятый00531f90.
+- [ ] #11:004a88a0/004640b0, original state transitions/callbacks и canonical ABI.
+- [ ] #12: кандидаты0056a680/005a0f98; устранить потерю ECX в004dd600.
+  Ошибочный cached-index00412030 не переносить поверх принятого400/310.
+- [ ] #13:0048cdf0/0048dcb0/0048e1a0 — настоящий stack layout, адреса00508e70/
+ 005b4980 и IAT GetTickCount, затем воспроизводимый native boundary test.
+- [ ] #14:004b4da0 — event-stream ABI, mutable consumers и shared006573e8 layout.
+- [ ] #15:004a4a70 — дополнение существующего splash/render owner, реальные
+  render/UI providers, инициализация и сравнение переходов, не второй owner.
+- [ ] #16:004d3420 — ECX receivers, реальные аргументы/ветви/изменяемая память,
+  tracked generator input; исправить fixture/README claims.
+- [ ] #19 updated3e665758: duplicate00628960 cell исправлена, но original shared
+  layout не восстановлен: root→path gap8 вместо4; unbounded copy остаётся.
+  Нулевые heap providers420 и arena alias418 не закрывают HOLD296/301/303.
+- [ ] #2 experimental backend: SIMD effects вместо no-op, x87 values/status/NaN,
+  compile+execute evidence вместо одного translate-without-exception census.
+
+Следующий connected пакет после PR cleanup: scalar005b0980, затем005b0a40/
+005b0b00 в одном REA MCP-сеансе, далее оригинал→C++ memory/ABI comparisons.
+Работа через REA дополняет проверенный индекс, не заменяет native acceptance.
+
 Checkpoint312–314, selective PR#7/#9:
 - [x]0053c290 dispatcher:77 original bytes,28 native cases/211 checks; branch
  precedence,args,MMX EMMS verified. Canonical CPU flags reused.

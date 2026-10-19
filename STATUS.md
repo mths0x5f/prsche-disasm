@@ -1,5 +1,15 @@
 # Состояние проекта
 
+2026-10-19: [PR #2–#19 разобраны и закрыты](docs/research/pr-triage-2026-10-19.md):
+18 итоговых комментариев, #3 merged, 17 closed без полного merge, 0 открытых PR.
+GitHub MCP после перезапуска проверен чтением и записью; прямой HTTP MCP-клиент
+работает с локальным токеном. Выборочные принятые тела уже входят в Run314:
+163 TU compiled, 269 unresolved names/298 refs; рабочего EXE пока нет.
+Основная задача продолжена: REA316 анализирует fill backends в одной сессии,
+317 восстанавливает scalar005b0980 со сверкой оригинальных байтов и ABI.
+Остаток PR сохранён в docs/recovery-validation-backlog.md. Старые записи ниже
+исторические; исправление duplicate root в новом #19 не снимает layout/init HOLD.
+
 Checkpoint 2026-10-19, [Run314](iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
 PR#7/#9 применены выборочно:0053c290 dispatcher и0059d8e0 resource open,
 283 original bytes/37 native cases PASS. Остальные функции этих PR не импортированы.

@@ -1,5 +1,15 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-19: [очередь PR #2–#19 закрыта](docs/research/pr-triage-2026-10-19.md).
+Все 18 получили итоговые комментарии через GitHub MCP; #3 слит, остальные 17
+закрыты без полного merge. Открытых PR: 0. Полезный остаток и причины отказа
+сохранены в docs/recovery-validation-backlog.md; закрытие не означает приёмку кода.
+Текущая игровая сборка — Run314: 163 TU, 269 names/298 refs, EXE нет.
+Работа возобновлена: исполнитель316 — свежая постоянная REA-сессия трёх fill
+backends; исполнитель317 — scalar005b0980 и native сверка. Координатор — приёмка
+и следующая интеграция после PASS. Root/arena/context296/301/303 остаются HOLD.
+Исторические checkpoint ниже описывают состояние на момент их записи.
+
 Checkpoint 2026-10-19, [Run314](iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
 из PR#7/#9 выборочно применены0053c290/0059d8e0 (312/313),283 original bytes,
 37 native cases PASS. Whole PRs не слиты, остальные405/407 owners не дублируются.

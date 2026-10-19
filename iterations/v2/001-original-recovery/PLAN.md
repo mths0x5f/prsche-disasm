@@ -1,5 +1,19 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint 2026-10-19: [закрытие PR #2–#19](../../../docs/research/pr-triage-2026-10-19.md).
+Все18 PR получили комментарии, #3 merged, остальные17 closed, открытых0.
+Непринятые полезные тела и проверки сохранены в recovery-validation-backlog.md.
+Игровой checkpoint остаётся314:163 TU/269 names/298 refs, без EXE.
+Активные владельцы:316 — REA-сессия scalar/MMX/SSE;317 — original scalar005b0980,
+C++ и native differential fixture; координатор — приёмка и интеграция после PASS.
+Критерий scalar: точные записи памяти/guards/EAX/ESP/nonvolatiles против PE,
+без заглушек и новых data providers. Команды:
+`py -3 scripts/research/run-v2-rea-fill-316.py --help` и
+`py -3 scripts/research/verify-v2-scalar-fill-317.py --help`.
+REA-декомпиляция — свидетельство для анализа; native parity и полная игровая
+приёмка отдельные. Следующий конкретный шаг — результаты316/317, затем свежий
+game build поверх314. Исторические назначения ниже не активны.
+
 Checkpoint 2026-10-19, [314 selective PR7/PR9 integration](runs/314-pr7-pr9-game-integration/README.md):
 312 dispatcher0053c290 и313 resource0059d8e0,283 original bytes/37 native cases
 PASS. Canonical data reuse, typed file-open aliases; no duplicate owners/zero stubs.
