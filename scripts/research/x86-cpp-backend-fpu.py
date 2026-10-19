@@ -33,6 +33,9 @@ struct Machine257 {
     U fpu_top;
     U fpu_status;
     U fpu_cw;
+    U xmm[8][4];   // SSE registers, four 32-bit lanes each
+    U mxcsr;
+    U64 mm[8];     // MMX registers (not aliased onto st[]; see notes)
 };
 
 U read257(U address, U bytes);
@@ -284,6 +287,72 @@ static inline double sqrt(double x) {
         fstp r
     }
     return r;
+}
+static inline U64 read64_257(U a) { return static_cast<U64>(read257(a, 4u)) | (static_cast<U64>(read257(a + 4u, 4u)) << 32u); }
+static inline void write64_257(U a, U64 v) { write257(a, 4u, static_cast<U>(v)); write257(a + 4u, 4u, static_cast<U>(v >> 32u)); }
+static inline void load128_257(U* d, U a) { for (U k = 0; k < 4u; ++k) d[k] = read257(a + 4u * k, 4u); }
+static inline void store128_257(U a, const U* v) { for (U k = 0; k < 4u; ++k) write257(a + 4u * k, 4u, v[k]); }
+// SSE arithmetic runs the real instruction under the guest MXCSR (rounding,
+// DAZ/FTZ, masks) and keeps the sticky exception flags it raises.
+enum Sse257 : U { SseAddSs, SseAddPs, SseSubSs, SseSubPs, SseMulSs, SseMulPs };
+#define SSE257_OP(INSN) __asm { \\
+    __asm mov eax, d \\
+    __asm mov edx, src \\
+    __asm stmxcsr host \\
+    __asm ldmxcsr guest \\
+    __asm movups xmm0, [eax] \\
+    __asm movups xmm1, [edx] \\
+    __asm INSN xmm0, xmm1 \\
+    __asm movups [eax], xmm0 \\
+    __asm stmxcsr guest \\
+    __asm ldmxcsr host }
+static inline void sse257(Machine257& s, U op, U* d, const U* src) {
+    U host, guest = s.mxcsr;
+    switch (op) {
+        case SseAddSs: SSE257_OP(addss) break;
+        case SseAddPs: SSE257_OP(addps) break;
+        case SseSubSs: SSE257_OP(subss) break;
+        case SseSubPs: SSE257_OP(subps) break;
+        case SseMulSs: SSE257_OP(mulss) break;
+        default:       SSE257_OP(mulps) break;
+    }
+    s.mxcsr = guest;
+}
+// cvtsi2ss / cvtpi2ps lane: int32 -> float under the guest MXCSR.
+static inline U cvt_i2f257(Machine257& s, U value) {
+    U host, guest = s.mxcsr, r;
+    __asm {
+        stmxcsr host
+        ldmxcsr guest
+        cvtsi2ss xmm0, value
+        movss r, xmm0
+        stmxcsr guest
+        ldmxcsr host
+    }
+    s.mxcsr = guest;
+    return r;
+}
+static inline void shufps257(U* d, const U* src, U imm) {
+    U r[4] = { d[imm & 3u], d[(imm >> 2) & 3u], src[(imm >> 4) & 3u], src[(imm >> 6) & 3u] };
+    for (U k = 0; k < 4u; ++k) d[k] = r[k];
+}
+// MMX: any MMX instruction other than EMMS sets the x87 TOP to 0.
+static inline void mmx_enter257(Machine257& s) { s.fpu_top = 0u; }
+static inline U64 punpcklwd257(U64 d, U64 s) {
+    return (d & 0xffffull) | ((s & 0xffffull) << 16) | (((d >> 16) & 0xffffull) << 32) | (((s >> 16) & 0xffffull) << 48);
+}
+static inline U64 punpckhwd257(U64 d, U64 s) {
+    return ((d >> 32) & 0xffffull) | (((s >> 32) & 0xffffull) << 16) | (((d >> 48) & 0xffffull) << 32) | (((s >> 48) & 0xffffull) << 48);
+}
+static inline U64 pslld257(U64 v, U n) {
+    if (n > 31u) return 0;
+    return (static_cast<U64>(static_cast<U>(v >> 32) << n) << 32) | static_cast<U>(static_cast<U>(v) << n);
+}
+static inline U64 psrad257(U64 v, U n) {
+    if (n > 31u) n = 31u;
+    U lo = static_cast<U>(static_cast<int>(static_cast<U>(v)) >> n);
+    U hi = static_cast<U>(static_cast<int>(static_cast<U>(v >> 32)) >> n);
+    return (static_cast<U64>(hi) << 32) | lo;
 }
 '''
 
@@ -605,14 +674,137 @@ PATCHES = [
             code = f'U v0 = {expression(i, ops[0])}; U v1 = {expression(i, ops[1])}; ' + store(i, ops[0], 'v1') + store(i, ops[1], 'v0')
         elif m in ('nop', 'cld', 'std'):
             code = ''
-        elif m in ('fnstenv', 'fldenv', 'fnsave', 'frstor', 'movd', 'movq', 'movss', 'movaps', 'cvtpi2ps', 'cvtsi2ss', 'femms', 'stmxcsr', 'ldmxcsr', 'addps', 'addss', 'subps', 'subss', 'mulps', 'mulss', 'shufps', 'pfmul', 'pfadd', 'pfsub', 'pi2fd', 'por', 'psllq', 'punpckldq'):
-            # No lowering for SIMD/3DNow! or FPU environment save/restore: they change
-            # memory and register state, so dropping them would silently lose results.
+        elif m in SIMD_LOWERED:
+            code = simd_lower(i, ops, m, address, expression, store)
+        elif m in ('fnstenv', 'fldenv', 'fnsave', 'frstor', 'femms', 'pfmul', 'pfadd', 'pfsub', 'pfacc', 'pi2fd', 'pfrcp', 'pfrcpit1', 'pfrcpit2', 'rcpss'):
+            # No exact lowering: 3DNow! (AMD-only, not IEEE, no hardware oracle on
+            # current CPUs), RCPSS (vendor-specific approximation) and the FPU
+            # environment images (80-bit registers, tag word, FIP/FDP). Dropping them
+            # would silently lose results, so the body is rejected.
             raise ValueError('Unsupported instruction (no exact lowering): ' + m)
         elif m in ('fnstsw', 'fstsw') and len(ops) == 1 and ops[0].type == X86_OP_MEM:
             code = f'write257({address(i, ops[0])}, 2u, ((s.fpu_status&~0x3800u)|((s.fpu_top&7u)<<11u))&0xffffu);'
         elif m == 'lea'""")
 ]
+
+SIMD_LOWERED = ('movss', 'movaps', 'movups', 'movlps', 'movntps', 'addss', 'addps', 'subss', 'subps',
+                'mulss', 'mulps', 'shufps', 'cvtsi2ss', 'cvtpi2ps', 'stmxcsr', 'ldmxcsr',
+                'movd', 'movq', 'por', 'psllq', 'pslld', 'psrad', 'punpckldq', 'punpcklwd', 'punpckhwd', 'emms')
+_SSE_ARITH = {'addss': 'SseAddSs', 'addps': 'SseAddPs', 'subss': 'SseSubSs', 'subps': 'SseSubPs',
+              'mulss': 'SseMulSs', 'mulps': 'SseMulPs'}
+
+
+def simd_lower(i, ops, m, address, expression, store):
+    """Exact SSE/MMX lowering; memory goes through read257/write257 in dwords."""
+    Reg = capstone.x86.X86_OP_REG
+    Mem = capstone.x86.X86_OP_MEM
+
+    def vec(op, prefix):
+        if op.type != Reg:
+            return None
+        name = i.reg_name(op.reg)
+        if not name.startswith(prefix) or not name[len(prefix):].isdigit():
+            if prefix == 'mm' or name.startswith('xmm') or name.startswith('mm'):
+                raise ValueError(f'Unsupported {prefix} operand: {name}')
+            return None
+        return int(name[len(prefix):])
+
+    if m == 'emms':
+        return ''   # the tag word is not modelled; EMMS leaves TOP unchanged
+    if m in ('stmxcsr', 'ldmxcsr'):
+        if ops[0].type != Mem:
+            raise ValueError('MXCSR operand must be memory')
+        a = address(i, ops[0])
+        return f'write257({a}, 4u, s.mxcsr);' if m == 'stmxcsr' else f's.mxcsr = read257({a}, 4u);'
+
+    if m == 'cvtsi2ss':
+        d = vec(ops[0], 'xmm')
+        return f's.xmm[{d}][0] = cvt_i2f257(s, {expression(i, ops[1])});'
+    if m == 'cvtpi2ps':
+        d = vec(ops[0], 'xmm')
+        if ops[1].type != Mem:
+            raise ValueError('cvtpi2ps from an MMX register is not lowered')
+        a = address(i, ops[1])
+        return (f'{{ U lo = read257({a}, 4u), hi = read257({a} + 4u, 4u); '
+                f's.xmm[{d}][0] = cvt_i2f257(s, lo); s.xmm[{d}][1] = cvt_i2f257(s, hi); }}')
+
+    if m in _SSE_ARITH or m in ('movss', 'movaps', 'movups', 'movlps', 'movntps', 'shufps'):
+        d, sreg = vec(ops[0], 'xmm'), vec(ops[1], 'xmm')
+        if m in _SSE_ARITH:
+            if d is None:
+                raise ValueError('SSE arithmetic destination must be a register')
+            if sreg is not None:
+                return (f'{{ U t[4]; for (U k = 0; k < 4u; ++k) t[k] = s.xmm[{sreg}][k]; '
+                        f'sse257(s, {_SSE_ARITH[m]}, s.xmm[{d}], t); }}')
+            a = address(i, ops[1])
+            if m.endswith('ss'):
+                return f'{{ U t[4] = {{ read257({a}, 4u), 0u, 0u, 0u }}; sse257(s, {_SSE_ARITH[m]}, s.xmm[{d}], t); }}'
+            return f'{{ U t[4]; load128_257(t, {a}); sse257(s, {_SSE_ARITH[m]}, s.xmm[{d}], t); }}'
+        if m == 'shufps':
+            imm = ops[2].imm & 0xff
+            if sreg is not None:
+                return (f'{{ U t[4]; for (U k = 0; k < 4u; ++k) t[k] = s.xmm[{sreg}][k]; '
+                        f'shufps257(s.xmm[{d}], t, {imm}u); }}')
+            return f'{{ U t[4]; load128_257(t, {address(i, ops[1])}); shufps257(s.xmm[{d}], t, {imm}u); }}'
+        if m == 'movss':
+            if d is not None and sreg is not None:
+                return f's.xmm[{d}][0] = s.xmm[{sreg}][0];'
+            if d is not None:
+                a = address(i, ops[1])
+                return (f's.xmm[{d}][0] = read257({a}, 4u); s.xmm[{d}][1] = 0u; '
+                        f's.xmm[{d}][2] = 0u; s.xmm[{d}][3] = 0u;')
+            return f'write257({address(i, ops[0])}, 4u, s.xmm[{sreg}][0]);'
+        if m == 'movlps':
+            if d is not None:
+                a = address(i, ops[1])
+                return f's.xmm[{d}][0] = read257({a}, 4u); s.xmm[{d}][1] = read257({a} + 4u, 4u);'
+            a = address(i, ops[0])
+            return f'write257({a}, 4u, s.xmm[{sreg}][0]); write257({a} + 4u, 4u, s.xmm[{sreg}][1]);'
+        # movaps / movups / movntps; the alignment fault of movaps/movntps is not modelled
+        if d is not None and sreg is not None:
+            return f'for (U k = 0; k < 4u; ++k) s.xmm[{d}][k] = s.xmm[{sreg}][k];'
+        if d is not None:
+            return f'load128_257(s.xmm[{d}], {address(i, ops[1])});'
+        return f'store128_257({address(i, ops[0])}, s.xmm[{sreg}]);'
+
+    # MMX
+    if m == 'movd':
+        d = vec(ops[0], 'mm') if ops[0].type == Reg and i.reg_name(ops[0].reg).startswith('mm') else None
+        if d is not None:
+            return f'mmx_enter257(s); s.mm[{d}] = static_cast<U64>({expression(i, ops[1])});'
+        sreg = vec(ops[1], 'mm')
+        return 'mmx_enter257(s); ' + store(i, ops[0], f'static_cast<U>(s.mm[{sreg}])')
+    if m == 'movq':
+        d, sreg = vec(ops[0], 'mm'), vec(ops[1], 'mm')
+        if d is not None and sreg is not None:
+            return f'mmx_enter257(s); s.mm[{d}] = s.mm[{sreg}];'
+        if d is not None:
+            return f'mmx_enter257(s); s.mm[{d}] = read64_257({address(i, ops[1])});'
+        return f'mmx_enter257(s); write64_257({address(i, ops[0])}, s.mm[{sreg}]);'
+    d = vec(ops[0], 'mm')
+    if d is None:
+        raise ValueError('MMX destination must be a register')
+    if m in ('psllq', 'pslld', 'psrad'):
+        if ops[1].type != capstone.x86.X86_OP_IMM:
+            raise ValueError('MMX shift count must be immediate')
+        n = ops[1].imm & 0xff
+        if m == 'psllq':
+            value = '0ull' if n > 63 else f's.mm[{d}] << {n}u'
+            return f'mmx_enter257(s); s.mm[{d}] = {value};'
+        return f'mmx_enter257(s); s.mm[{d}] = {m}257(s.mm[{d}], {n}u);'
+    sreg = vec(ops[1], 'mm')
+    if sreg is not None:
+        src = f's.mm[{sreg}]'
+    elif m == 'punpckldq':
+        src = f'static_cast<U64>(read257({address(i, ops[1])}, 4u))'
+    else:
+        src = f'read64_257({address(i, ops[1])})'
+    if m == 'por':
+        return f'mmx_enter257(s); s.mm[{d}] |= {src};'
+    if m == 'punpckldq':
+        return f'mmx_enter257(s); s.mm[{d}] = (s.mm[{d}] & 0xffffffffull) | (({src} & 0xffffffffull) << 32);'
+    return f'mmx_enter257(s); s.mm[{d}] = {m}257(s.mm[{d}], {src});'
+
 
 DERIVED_SOURCE = getattr(_base, 'DERIVED_SOURCE', None) or inspect.getsource(_base.translate)
 for _before, _after in PATCHES:
@@ -623,6 +815,8 @@ for _before, _after in PATCHES:
 _namespace = dict(vars(_base._base))
 _namespace.update(vars(_base))
 _namespace['capstone'] = capstone
+_namespace['SIMD_LOWERED'] = SIMD_LOWERED
+_namespace['simd_lower'] = simd_lower
 _namespace['X86_OP_IMM'] = capstone.x86.X86_OP_IMM
 _namespace['X86_OP_MEM'] = capstone.x86.X86_OP_MEM
 _namespace['X86_OP_REG'] = capstone.x86.X86_OP_REG
