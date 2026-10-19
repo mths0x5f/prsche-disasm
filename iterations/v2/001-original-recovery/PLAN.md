@@ -1,5 +1,12 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint 2026-10-19, Run420: интеграция Heap Shutdown (418) и Frame Root (419) в реальный игровой target.
+- Все 188 C++ TUs реального game graph скомпилированы чисто (MSVC Win32, /MP6). 0 compiler errors, 0 other linker errors.
+- Закрыты 8 контрактов в линкере из фронтира Run417 (включая platform_flush_0059eb20, application_pool_shutdown_005678f0, startup_sequence_call_00471b70, frame_service_root_00628960 и ячейки селектора/состояния heap 005e4fe8/005e4fec).
+- Чистый мост entry_bridges_420.cpp изолирует доступ к селекторам кучи и C/C++ связывание для app_loop_post_tick_pipeline_004b68f0.
+- 433 source pins проверены через v2_shared_manifests.py. Независимый batch audit (audit-v2-game-link-420.py) PASS.
+- Ближайшие шаги: восстановление оставшихся дочерних подсистем цикла (streaming packet write 004b60d0, flush buffer 00569640, setup resource 0059e440).
+
 Checkpoint 2026-10-18, Run419: восстановлен жизненный цикл Frame Root Storage (`00628960`, `00471b70` и `00471c40`).
 - Восстановлены 2 оригинальные функции (263 байта тела PE): `frame_root_init_00471b70` (198B) и `frame_root_teardown_00471c40` (65B).
 - Закрыт долгосрочный HOLD на ячейку хранения frame root `00628960` (известный с Run 296/301), доказана смежность памяти `FrameRootStorageLayout`: `00628940` (32B), `00628960` (4B) и `00628964` (256B).

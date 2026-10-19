@@ -1,5 +1,12 @@
 # Plano de Recuperação de Porsche Unleashed
 
+Checkpoint 19/10/2026, Run420: integração de Heap Shutdown (418) e Frame Root (419) no target real do jogo.
+- Todas as 188 TUs C++ do game graph real compilaram de forma limpa (MSVC Win32, /MP6). 0 erros de compilador, 0 outros erros de linker.
+- Fechados 8 contratos no linker a partir da fronteira da Run417 (incluindo platform_flush_0059eb20, application_pool_shutdown_005678f0, startup_sequence_call_00471b70, frame_service_root_00628960 e células do seletor/estado de heap 005e4fe8/005e4fec).
+- Ponte limpa entry_bridges_420.cpp isola acesso a seletores de heap e vinculação C/C++ para app_loop_post_tick_pipeline_004b68f0.
+- 433 source pins verificados via v2_shared_manifests.py. Auditoria independente em lote (audit-v2-game-link-420.py) PASS.
+- Próximos passos: recuperação dos subsistemas filhos remanescentes do ciclo (escrita de pacotes de streaming 004b60d0, flush de buffer 00569640, recursos de setup 0059e440).
+
 Checkpoint 18/10/2026, Run419: recuperado o ciclo de vida do Frame Root Storage (`00628960`, `00471b70` e `00471c40`).
 - Recuperadas 2 funções originais (263 bytes de corpo PE): `frame_root_init_00471b70` (198B) e `frame_root_teardown_00471c40` (65B).
 - Fechado o HOLD de longa data sobre a célula de armazenamento frame root `00628960` (conhecido desde a Run 296/301), comprovada a adjacência de memória `FrameRootStorageLayout`: `00628940` (32B), `00628960` (4B) e `00628964` (256B).
