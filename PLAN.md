@@ -1,6 +1,6 @@
 # План восстановления Porsche Unleashed
 
-2026-10-20: PR20 prepared for merge as research-only tooling with fail-closed
+2026-10-20: PR20 merged as research-only tooling with fail-closed
 80-bit/FSQRT boundaries, NaN comparison/FABS corrections,107 supported native
 fragments/109568 cases and14 generated-code edge cases PASS. Final syntax census
 5674/5694 accepted,20 rejected; no production graph change. See

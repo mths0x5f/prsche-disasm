@@ -1,6 +1,7 @@
 # Состояние проекта
 
-PR20 research-tool corrections verified:107 supported fragments/109568 native
+PR20 merged (final integration c44928c); GitHub confirms closed/merged.
+Research-tool corrections verified:107 supported fragments/109568 native
 cases,14 generated-code edge cases, three required unsupported-operation rejections.
 The original108-fragment result is retained separately; final syntax census5674/
 5694 is not game execution. See docs/research/pr20-acceptance-2026-10-20.md.

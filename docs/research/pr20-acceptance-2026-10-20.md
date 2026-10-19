@@ -1,5 +1,9 @@
 # PR20 acceptance: research-only x86 lowering
 
+GitHub confirms PR20 closed and merged after integration commits `3fbad44` and
+`c44928c`. [Acceptance comment](https://github.com/xfynx/prsche-disasm/pull/20#issuecomment-6275545850)
+records the corrections, test results and research-only scope.
+
 Reviewed [PR20](https://github.com/xfynx/prsche-disasm/pull/20), head
 `1bfa0145f7dcc78f4f525cf6046694bb48888cd1`, including its description and discussion.
 It resubmits the experimental lowering tool rejected in PR2. The user authorized
