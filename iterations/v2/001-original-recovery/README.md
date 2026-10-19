@@ -1,9 +1,9 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Текущий игровой checkpoint — [Run310](runs/310-pr-intake-integration/README.md):
-161 C++ TU compiled;268 unresolved names/304 references, EXE нет. PR#3 слит;
-четыре выборочные функции #3/#4 прошли10 native comparisons и подключены без
-фиктивных data providers. Остальные тела400 и ошибочный clock401 не приняты.
+Текущий игровой checkpoint — [Run314](runs/314-pr7-pr9-game-integration/README.md):
+163 C++ TU compiled;269 unresolved names/298 references, EXE нет. После четырёх
+функций #3/#4 выборочно подключены dispatcher0053c290 и resource-open0059d8e0 из
+#7/#9:37 native comparisons PASS. Нет фиктивных providers/duplicate owners.
 
 Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.

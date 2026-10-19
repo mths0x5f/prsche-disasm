@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "status": "dispatcher_native_verified_backend_unrecovered",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_range": "0053c290..0053c2dc",
+  "original_bytes": 77,
+  "original_body_sha256": "9f38ee7738c9f3eacdcf8503ee47b211a34e4fa547992285061cc2c303dde34c",
+  "borrowed_pr_head": "a349d056a0dc981b770e34121c5d2b5476295393",
+  "borrowed_pr_source": "iterations/v2/001-original-recovery/runs/405-app-main-timer-display/app_main_timer_display_405.cpp",
+  "borrowed_pr_source_sha256": "8ac7f4bef3e418e5ef0054d29f5db2bb4f68940365b186d2965e5951fd3929b0",
+  "accepted_source_list": ["0053c290.cpp", "0053c290.hpp"],
+  "source_sha256": {
+    "0053c290.cpp": "92a7ddd3306bbc41dcac8d9b5361e56104059917653aa6de12361176014ee73a",
+    "0053c290.hpp": "2361a5e191b39b55570b5ff0aef197f94ad2bca4fa4bbcd10a5761ae32e76f29"
+  },
+  "native_attempt": "local/experiments/v2-pr7-fill-312/attempt-005",
+  "native_receipt_sha256": "43a8f899782962a4042a3bcd6771b87fe786fb0616c1583881d87bdebb7ae64e",
+  "native_status": "pass",
+  "native_cases_passed": 28,
+  "native_checks": 211,
+  "game_object_sha256": "4194fb31db8bed5ad3df81098982932ec9bf530aa0c4020eebf156fb38ba81ce",
+  "native_executable_sha256": "b65f8fff7af130c9241e91bcc7cd0105712cf2ad91babccb76042dda10279ddd",
+  "game_object_defined": ["?heap_fill_0053c290@porsche@@YAXPAXII@Z"],
+  "game_object_undefined": [
+    "?heap_fill_sse_005b0b00@porsche@@YAXPAXII@Z",
+    "?heap_fill_mmx_005b0a40@porsche@@YAXPAXII@Z",
+    "?heap_fill_scalar_005b0980@porsche@@YAXPAXII@Z",
+    "?copy_flag_005deb1c@porsche@@3AAIA",
+    "?copy_flag_005deb18@porsche@@3IA"
+  ],
+  "open_boundaries": ["005b0b00 fill body", "005b0a40 fill body", "005b0980 fill body", "production link and game execution"]
+}

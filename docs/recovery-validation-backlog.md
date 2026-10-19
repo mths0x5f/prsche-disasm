@@ -1,5 +1,18 @@
 # Отложенные проверки восстановления v2
 
+Checkpoint312–314, selective PR#7/#9:
+- [x]0053c290 dispatcher:77 original bytes,28 native cases/211 checks; branch
+ precedence,args,MMX EMMS verified. Canonical CPU flags reused.
+- [x]0059d8e0 resource opener:206B,9 native cases incl root/fallback/callback
+ mutation; canonical data/formatter and two pointer-return aliases.
+- [x]314 actual163 TU compile,3 old contracts closed/4 dependencies exposed,
+ 269 names/298 refs, fresh COFF/receipt/shared-pin batch audit PASS. NoEXE/run.
+- [ ] Original fill backends005b0b00/005b0a40/005b0980: actual memory writes,
+ tails/alignment/bounds and FP/MMX state; dispatcher mocks do not prove these.
+- [ ] Low-level00561ca0 pointer-return file-open binding and00561b80 exists,
+ stateful composition. Перед реализацией сверять всех existing/candidate owners.
+- [ ] Полный runtime/visual/gameplay и296/301/303 holds остаются открытыми.
+
 Checkpoint310/311, selective PR intake,2026-10-19:
 - [x] PR#3 merge42813f7;21 C++ TU compile, fresh5 native cases для00412030/00425780.
 - [x] PR#4 selective004a54b0/004a54e0:49 original bytes,5 native cases; canonical

@@ -1,5 +1,14 @@
 # v2 / 001 — план восстановления исходного кода
 
+Checkpoint 2026-10-19, [314 selective PR7/PR9 integration](runs/314-pr7-pr9-game-integration/README.md):
+312 dispatcher0053c290 и313 resource0059d8e0,283 original bytes/37 native cases
+PASS. Canonical data reuse, typed file-open aliases; no duplicate owners/zero stubs.
+Actual163-source graph compile PASS;3 old names closed/4 dependencies exposed,
+269 names/298 refs, noEXE/run; batch audit314 PASS,389-pin base+19delta.
+Исполнители312/313 завершили задачи. Далее005b0980 scalar fill и прочие original
+backends: проверить owner/index и native outputs до подключения.005338d0 остаётся
+в backlog;296/301/303 HOLD и полная игровая приёмка не закрыты.
+
 Checkpoint 2026-10-19, [310 selective PR intake](runs/310-pr-intake-integration/README.md) завершён:
 
 - PR#3 merge42813f7,21 TU compiled; в game graph только00412030/00425780.

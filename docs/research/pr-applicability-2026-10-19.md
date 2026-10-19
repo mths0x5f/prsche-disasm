@@ -15,6 +15,13 @@ Whole PR#4 не слит: дополнительная проверка выяв
 против original00413f29, а402 повторяет compiled owner290 для00471b60.
 Остальные решения исходного review ниже сохраняются; PR#4 применён частично.
 
+Следующий selective intake: из PR#7 взят0053c290 с canonical heap-fill ABI,
+из PR#9 —0059d8e0 с canonical globals/formatter и двумя pointer-return aliases.
+[Run314](../../iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
+37 native cases PASS,163 TUs compiled,269 names/298 refs, EXE нет. Полные PR#7/#9
+не слиты; прочие405/407 функции не импортированы. В описании #9 ошибочно названы
+registry query/228B: индекс и тело доказывают resource opener/206B.
+
 ## Решение
 
 Переносить выборочно, начиная с новых функций **#3 и #4**. Это кандидаты,

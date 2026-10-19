@@ -1,5 +1,13 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-19, [Run314](iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
+из PR#7/#9 выборочно применены0053c290/0059d8e0 (312/313),283 original bytes,
+37 native cases PASS. Whole PRs не слиты, остальные405/407 owners не дублируются.
+Actual game graph163 TUs compiled;3 old contracts closed/4 dependencies exposed,
+269 names/298 refs, noEXE/run. Batch audit314 PASS,389-pin base+19delta reused.
+Активных назначений нет. Следующий connected шаг: original fill backends,
+начиная с005b0980, после owner/index проверки.005338d0 остаётся в backlog.
+
 Checkpoint 2026-10-19, [Run310](iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
 PR#3 слит42813f7 как Run400; из PR#4 выборочно перенесены два shutdown helpers311.
 

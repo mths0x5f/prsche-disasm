@@ -1,5 +1,15 @@
 # Состояние проекта
 
+Checkpoint 2026-10-19, [Run314](iterations/v2/001-original-recovery/runs/314-pr7-pr9-game-integration/README.md):
+PR#7/#9 применены выборочно:0053c290 dispatcher и0059d8e0 resource open,
+283 original bytes/37 native cases PASS. Остальные функции этих PR не импортированы.
+163 actual game TUs compiled,3 old contracts closed/4 new dependencies,
+269 names/298 refs, ноль compiler/other linker errors, noEXE/run; audit314 PASS.
+408 source pins,389shared+19delta; data providers/oracle bytes не подменены.
+Активных назначений нет; далее original fill backends, сначала005b0980.
+GitHub plugin установлен CLI; token/MCP initialization и46tools list проверены.
+В текущем IDE-сеансе инструменты ещё не загружены; нужен полный restart VSCode.
+
 Checkpoint 2026-10-19, [Run310](iterations/v2/001-original-recovery/runs/310-pr-intake-integration/README.md):
 
 - PR#3 слит42813f7;21 TU compile PASS. Подключены только00412030/00425780

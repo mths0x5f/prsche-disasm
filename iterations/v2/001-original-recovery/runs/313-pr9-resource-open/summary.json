@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "run": 313,
+  "kind": "pr9-resource-open-selective-intake",
+  "upstream_head": "223580ab7ee93c7decb14d2be09ee10367afdbfc",
+  "upstream_source": "origin/pr/9:iterations/v2/001-original-recovery/runs/407-app-main-subsystem-medium/app_main_subsystem_medium_407.cpp",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_va": "0059d8e0",
+  "original_body_bytes": 206,
+  "format_literal_va": "005cc588",
+  "source": "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.cpp",
+  "source_sha256": "1217a6a2648fc5b80f0215e7cd7239c90709127c65ef176de14e1551d9c5a7ad",
+  "header": "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.hpp",
+  "header_sha256": "8c282f10633043b664245596e5722d09804a5b426b17369adae0f505a62a639b",
+  "verifier": "scripts/research/verify-v2-pr9-resource-313.py",
+  "verifier_sha256": "797704eb0e64b346188cac5b1104a04525396fc6cb2c8415766a4b7055611739",
+  "native_attempt": "local/experiments/v2-pr9-resource-313/attempt-003.json",
+  "native_attempt_sha256": "62454cb779fae186af8a855705932fab16b1bd7fca339e440d2bbfdc0a610658",
+  "native_status": "native-pass",
+  "native_cases_passed": 9,
+  "game_object_compiled": true,
+  "game_link_verified": false,
+  "coff_defined_0059d8e0": [
+    "?resource_open_0059d8e0@porsche@@YAPAXPBDI@Z",
+    "?game_setup_resource_file_open_0059d8e0@porsche@@YAPAXPBDI@Z",
+    "?splash_progress_load_resource_0059d8e0@porsche@@YAPAXPBDI@Z"
+  ],
+  "external_holds": ["00561ca0", "00561b80"],
+  "new_game_data_definitions": 0
+}

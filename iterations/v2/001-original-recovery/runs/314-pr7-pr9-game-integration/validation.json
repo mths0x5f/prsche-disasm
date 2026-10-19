@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 37,
+  "original_body_bytes": 283,
+  "integrated_original_functions": 2,
+  "closed_names": [
+    "?game_setup_resource_file_open_0059d8e0@porsche@@YAPAXPBDI@Z",
+    "?heap_fill_0053c290@porsche@@YAXPAXII@Z",
+    "?splash_progress_load_resource_0059d8e0@porsche@@YAPAXPBDI@Z"
+  ],
+  "new_names": [
+    "?file_open_00561ca0@porsche@@YAPAXPBDI@Z",
+    "?heap_fill_mmx_005b0a40@porsche@@YAXPAXII@Z",
+    "?heap_fill_scalar_005b0980@porsche@@YAXPAXII@Z",
+    "?heap_fill_sse_005b0b00@porsche@@YAXPAXII@Z"
+  ],
+  "game_sources": 163,
+  "source_pins": 408,
+  "unresolved_names": 269,
+  "unresolved_references": 298,
+  "build_report_sha256": "4ea8080bdd1e98eb3a9c3169d7d2715ea61f98a14b8a52c600f6a77d43f8edc7",
+  "packet312_sha256": "34d53afba3cd93cfcb3c4a67b805af61e5e94f3b8e4275c6b4d32643f9e48490",
+  "packet313_sha256": "462b4769a0d4f9200ec280e9923db1941aae3b98a88d81cbc3e9ef8594c24427",
+  "fresh_objects": {
+    "0053c290": {
+      "path": "local/builds/v2/pr7-pr9-game-integration-314/entry-289/porsche_game_entry_bridges.dir/Release/0053c290.obj",
+      "sha256": "406235cb2b836f706db5518f4ac25cbe629ed58ec64150310d6d1948d9b49ac0",
+      "symbols": {
+        "defined": [
+          "?heap_fill_0053c290@porsche@@YAXPAXII@Z"
+        ],
+        "undefined": [
+          "?copy_flag_005deb18@porsche@@3IA",
+          "?copy_flag_005deb1c@porsche@@3AAIA",
+          "?heap_fill_mmx_005b0a40@porsche@@YAXPAXII@Z",
+          "?heap_fill_scalar_005b0980@porsche@@YAXPAXII@Z",
+          "?heap_fill_sse_005b0b00@porsche@@YAXPAXII@Z"
+        ],
+        "common": [],
+        "weak": []
+      }
+    },
+    "resource_open_313": {
+      "path": "local/builds/v2/pr7-pr9-game-integration-314/entry-289/porsche_game_entry_bridges.dir/Release/resource_open_313.obj",
+      "sha256": "8e54f0292166292f9b854a4c9e6235906f1b37dbe4b0c16fbd5cb27222efa09e",
+      "symbols": {
+        "defined": [
+          "??_C@_04HDOCAJNK@?$CFs?$CFs@",
+          "?game_setup_resource_file_open_0059d8e0@porsche@@YAPAXPBDI@Z",
+          "?resource_open_0059d8e0@porsche@@YAPAXPBDI@Z",
+          "?splash_progress_load_resource_0059d8e0@porsche@@YAPAXPBDI@Z"
+        ],
+        "undefined": [
+          "?file_exists_00561b80@porsche@@YAHPBD@Z",
+          "?file_fallback_006af26c@porsche@@3PADA",
+          "?file_open_00561ca0@porsche@@YAPAXPBDI@Z",
+          "?file_root_006af168@porsche@@3PADA",
+          "?file_roots_enabled_006af370@porsche@@3DA",
+          "?formatter_entry_005a0fbf@porsche@@YAHPADPBDZZ",
+          "?missing_file_006afbe4@porsche@@3P6AXPBDH@ZA",
+          "@__security_check_cookie@4",
+          "___security_cookie"
+        ],
+        "common": [],
+        "weak": []
+      }
+    }
+  },
+  "game_executed": false
+}
