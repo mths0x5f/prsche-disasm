@@ -35,11 +35,17 @@ extern InputSlot input_slots_006be040[32];
 std::uint32_t __cdecl input_poll_0056fd00(InputDevice* device);
 std::uint32_t __cdecl input_read_0056fd30(InputDevice* device, std::uint32_t size, void* destination);
 std::uint32_t __cdecl input_poll_read_0056fce0(InputDevice* device, void* destination, std::uint32_t size);
-// Mode 6 plus index/device early exits; other modes remain typed external boundary.
+// \real\patch3\pc\input.c "_getstate" (0x00532e10..0x00532f34, 293 bytes):
+// modes 1, 2, 6 and 8 and both diagnostics are recovered (Run 423). Negative and
+// >= 32 indices stay typed boundaries: the original performs no bound check
+// beyond the signed count, so it reads outside the 32-slot array, into memory
+// whose layout is not recovered (the mode-2 buffer below ends 4 bytes before the
+// slots).
 void* __cdecl fe_input_getstate_00532e10(std::uint32_t index, std::uint32_t mode);
-void* __cdecl input_unrecovered_mode_00532e10(std::uint32_t index, std::uint32_t mode,
-                                                InputSlot* slot);
-void __cdecl input_invalid_type_00532eae(std::uint32_t type);
 void* __cdecl input_negative_index_00532e10(std::int32_t index, std::uint32_t mode);
 void* __cdecl input_unmapped_index_00532e10(std::uint32_t index, std::uint32_t mode);
+// 0x006bde20: 0x21c-byte capabilities buffer filled by 0x0056fdb0 for mode 2 and
+// returned to the caller, 0x220 bytes before input_slots_006be040. Storage
+// boundary until that block's layout is recovered.
+extern std::uint8_t input_caps_buffer_006bde20[0x21c];
 }
