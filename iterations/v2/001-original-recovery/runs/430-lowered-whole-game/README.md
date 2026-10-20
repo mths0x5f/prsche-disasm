@@ -240,6 +240,13 @@ Limites:
 - só ~2% das funções têm arquivo de origem comprovado;
 - a fronteira entre arquivos sem âncora não é conhecida e não é inventada.
 
+Validação após os nomes `recovered` (2026-10-20): link sem erros (115 fontes recompiladas) e
+traces nativo × rebaixado iguais nas 865 chamadas comparáveis (só mudam os handles). Numa de
+quatro execuções o rebaixado parou aos ~14 s, durante o vídeo `ch6.mad`, com
+`fault while running pc=0056c597` (em `0056c540`, `\real\cmn\stream.c`), com duas threads
+executando código rebaixado. As outras três passaram 30 s sem falha. A renomeação não muda a
+semântica, então isso é uma corrida intermitente, ainda não investigada (próximo passo 5).
+
 ## Próximos passos
 
 1. Verificar o uso do resultado da calibração de CPU (`005560b0`) e medir a corrida
@@ -250,6 +257,9 @@ Limites:
 4. Com o jogo rodando, começar a humanizar: trocar `translated_XXXXXXXX` por funções
    legíveis, uma por vez, comparando estado/memória com a versão rebaixada (os 482 corpos
    já recuperados na main entram primeiro).
+5. Corrida intermitente em `0056c540` (`stream.c`, thread de streaming do vídeo): verificar
+   se o runtime protege o estado compartilhado entre threads (fila de streaming, área
+   reservada) e reproduzir com várias execuções seguidas.
 
 Comandos:
 
