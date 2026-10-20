@@ -193,6 +193,35 @@ Uso na atribuição:
 - **Raiz única.** O jogo foi compilado em `d:\Nfs\` e o gimme em `D:\dev\`. A árvore
   unifica as duas em `Nfs5/...`, `Support/...` e `real/...`.
 
+#### Linhagem NFS4 (protótipo do High Stakes de PS1)
+
+O protótipo `Need For Speed 4 v9.0.iso` (do usuário; fica fora do repositório) traz
+`NFS4.EXE`, o mapa do linker `NFS4.MAP` e os símbolos Psy-Q `NFS4.SYM`:
+- 2.581 funções com nome e arquivo;
+- 153 arquivos-fonte em `c:\nfs4\game\{common,psx}`, `c:\nfs4\frontend\{common,psx}` e
+  `c:\lib\psx`.
+
+As fontes indicam que a versão de PS1 do NFS4 e o Porsche de PC são da EA Canada, e a
+estrutura `game\common` / `game\psx` / `frontend\common` aparece nos dois. Como o código
+MIPS não casa com x86 por bytes, a transferência é indireta
+(`scripts/research/nfs4-lineage-430.py`, resumo em `nfs4-evidence-summary.json`):
+1. **`nfs4-strings`.** Uma string usada por uma única função do NFS4 e por uma única função
+   do Porsche forma um par. O par é aceito com ≥2 strings exclusivas, ou com 1 distintiva
+   (`%`, `.`, `\`, espaço ou ≥12 caracteres). Saíram 13 nomes, entre eles:
+   - `AIInit_LoadConfigs` (`%strafcfg.dat`);
+   - `AIPerson_Startup` (`%sprsonal.bin`, `%sscripts.bin`);
+   - `Night_InitNightDriving`, `TrackSpec_Read` (`%sTr%02d.bin`);
+   - `AudioMus_SysStartUp` (`Music Buffer`, `%szzz%s.viv`);
+   - `CopSpeak_StartUp`, `PAD_update`.
+2. **Dados globais.** Zero pares, tanto byte a byte quanto convertendo ponto fixo 16.16 para
+   `float`. É um resultado negativo registrado; as tabelas de ajuste parecem ter ido para
+   arquivos `.bin`.
+3. **`nfs4-heranca`, só inferência.** Uma classe RTTI cujo nome é abreviado por um arquivo do
+   NFS4, sempre cortando em fronteira de palavra (`AIHigh_Human` → `AIH_HUM.CPP`,
+   `FEDialogButton` → `FEDIALOG.CPP`), dá o nome provável do arquivo para 29 classes (125
+   funções). O arquivo vai para `_inferido_nfs4/<pasta do NFS4>/`, porque a pasta no NFS5 é
+   desconhecida, e nunca substitui um arquivo comprovado.
+
 Limites:
 - só ~2% das funções têm arquivo de origem comprovado;
 - a fronteira entre arquivos sem âncora não é conhecida e não é inventada.

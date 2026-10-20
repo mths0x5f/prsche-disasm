@@ -500,6 +500,16 @@ def source_layout(entries):
             original = info['file']
             rel = canonical_rel(original)
             SOURCE_NOTES[rel] = f'original source: {original} (evidence: see attribution.json)'
+        elif info.get('inferred_file') and not shared:
+            # Lineage only (NFS4 file names): kept apart from proven paths.
+            original = info['inferred_file']
+            parts = [p for p in re.split(r'[\\/]', original) if p and not p.endswith(':')]
+            if parts and parts[0].lower() == 'nfs4':
+                parts = parts[1:]
+            rel = '_inferido_nfs4/' + '/'.join([p.lower() for p in parts[:-1]] +
+                                               [parts[-1].rsplit('.', 1)[0] + '.cpp'])
+            SOURCE_NOTES[rel] = (f'file name inferred from NFS4 (High Stakes PS1 prototype): {original}; '
+                                 'Porsche Unleashed directory unknown (evidence: attribution.json)')
         elif shared:
             rel = '_sem_arquivo/classes/_compartilhadas.cpp'
             SOURCE_NOTES[rel] = ('original file unknown; bodies folded by the linker and shared by several '

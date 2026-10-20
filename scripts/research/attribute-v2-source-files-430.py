@@ -325,6 +325,19 @@ def main():
                     real[va].add(f'{top}::{method}')
                     real_evidence.setdefault(va, 'gimme-vtable')
 
+    # NFS4 (High Stakes PS1 prototype, nfs4-lineage-430.py): names inherited through unique shared
+    # strings, and file names inherited by class abbreviation. Both are lineage evidence, weaker
+    # than anything read from Porsche.exe or gimme.dll, and kept apart: `inferred_file` never
+    # replaces `file`.
+    nfs4_path = OUT / 'nfs4-evidence.json'
+    nfs4 = json.loads(nfs4_path.read_text(encoding='utf-8')) if nfs4_path.exists() else {}
+    for va, p in nfs4.get('string_pairs', {}).items():
+        real[va].add(p['readable'])
+        real_evidence.setdefault(va, 'nfs4-strings')
+        entry = by_func.setdefault(va, dict(file=None, evidence='nfs4-strings'))
+        entry['inferred_file'] = p['nfs4_file']
+    nfs4_class_files = {k.lower(): v for k, v in nfs4.get('class_files', {}).items()}
+
     # class-file: EA's C++ code names files after the class or namespace (RCustomLayers.cpp
     # holds RCustomLayers::*, FEIntro.cpp holds FEIntro). A class whose outermost name equals a
     # known source file's base name is placed in that file.
@@ -350,11 +363,15 @@ def main():
             hits = {p for o in outer for p in stems.get(o, ())}
             if len(outer) == 1 and len(hits) == 1:
                 entry['file'], entry['evidence'] = hits.pop(), 'class-file'
+            elif len(outer) == 1 and next(iter(outer)) in nfs4_class_files:
+                entry['inferred_file'] = nfs4_class_files[next(iter(outer))]
+                entry['inferred_evidence'] = 'nfs4-heranca'
 
     counts = collections.Counter(v['evidence'] for v in by_func.values())
     files = collections.Counter(v['file'] for v in by_func.values() if v.get('file'))
     result = dict(schema=1, original_sha256=PE_SHA, gimme_vtable_checks=dict(vtable_checks),
-                  real_names=len(real), functions=len(funcs), source_paths=len(set(strings.values())),
+                  real_names=len(real), inferred_files=sum(1 for v in by_func.values() if v.get("inferred_file") and not v.get("file")),
+                  functions=len(funcs), source_paths=len(set(strings.values())),
                   evidence=dict(counts), named_by_rtti=len(names), classes=len(classes),
                   files={k: n for k, n in sorted(files.items())})
     (OUT / 'attribution.json').write_text(json.dumps(dict(result, by_function=by_func), indent=1), encoding='utf-8')
