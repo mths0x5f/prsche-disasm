@@ -38,6 +38,26 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 
+Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/
+286 references, noEXE or game execution. Two original constructor/drive bodies
+plus the existing canonical search TU enter production.20736 fresh native
+cases, six detected mutations and shared433-pin audit PASS; three names close
+with no new dependencies. REA333 confirms original allocator/drive/search.
+All current assignments complete. Next334/335: original open wrapper/callback
+with an extern-only transform-cell contract; storage/aliases/full-system proof
+remain open. Root/arena/context and visual/game acceptance remain HOLD.
+Older entries below describe earlier checkpoints.
+
+Run328:168 current C++ TUs/8 projects compile,264 unresolved names/289
+references, noEXE/game execution. Original resource existence/request and device
+routing bodies (4VAs/134B) integrated after19456 native cases. REA325 completed
+one persistent session; shared427-pin audit PASS. Compared with324: three old
+names closed, three dependencies exposed, four fewer unresolved references.
+Next constructor00568260; canonical search graph intake and drive-letter helper
+follow. Callback00561ce0 is now indexed but remains evidence-only; transform
+state006ad750 and root/arena/context/full-game validation holds remain open.
+No unfinished agent assignments. Older entries below describe earlier checkpoints.
+
 PR22 andPR23 are merged with corrected evidence, and GitHub confirms0 open PRs.
 PR22 changes canonical input behavior; PR23 is research-only. All review tasks
 and commits are complete. Current game324:166 TU compiled,264 names/293 refs,

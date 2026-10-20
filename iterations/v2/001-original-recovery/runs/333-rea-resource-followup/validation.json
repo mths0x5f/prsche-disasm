@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "passed": true,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-rea-resource-followup-333/001/receipt.json",
+  "receipt_sha256": "2e0573af068ddff19ef952b5a873d6ce4230c580cc0133d21b10ffea4a065710",
+  "config_sha256": "952f3a655cc6923a7fbf528f26514e6e9d537aa1afa67a8d869811c4a0b90aa6",
+  "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+  "server_pid": 195444,
+  "same_server_identity": true,
+  "bodies": {
+    "allocator-cold": {
+      "address": "0x5682a0",
+      "bytes": 236,
+      "sha256": "a1a1834a52be18be836b063a1cb25598c632d5989e1f616250c35fe1ae847f75"
+    },
+    "allocator-warm": {
+      "address": "0x5682a0",
+      "bytes": 236,
+      "sha256": "a1a1834a52be18be836b063a1cb25598c632d5989e1f616250c35fe1ae847f75"
+    },
+    "drive-letter": {
+      "address": "0x5916a0",
+      "bytes": 111,
+      "sha256": "1664d1ed6fbdfabe2bf76b9dbc96d52f5b44ac985acc2d9fb284a6074782c6c7"
+    },
+    "character-search": {
+      "address": "0x5a2780",
+      "bytes": 188,
+      "sha256": "6979c6178f67a389b905ed0e7c5328630a49bc83d5660fb2758fd6de07864049"
+    }
+  },
+  "repeated_equal": [
+    [
+      "allocator-cold",
+      "allocator-warm"
+    ]
+  ],
+  "timings_ms": {
+    "initialize": 12735.998,
+    "open": 5780.724,
+    "session-before": 127.411,
+    "allocator-cold": 117938.967,
+    "allocator-warm": 59.53,
+    "drive-letter": 49.829,
+    "character-search": 142.743,
+    "session-final": 121.477,
+    "close": 407.785
+  },
+  "native_acceptance": false,
+  "game_executed": false
+}

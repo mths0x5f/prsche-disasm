@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "passed": true,
+  "rea_receipt_sha256": "bef592d712482ef021935ef82b6838ba56eb9e8c0a112364cf30de4e3207d9cf",
+  "packets": {
+    "326-resource-exists": {
+      "cases": 9216,
+      "summary_sha256": "9653f2ef39e5571c720bddfc9a5ac06e4402b6721d59dd651b02a9d30cd4a62a",
+      "receipt_sha256": "467b5f7bc57f60b81708ce73a338de83a2cf30146d423e3fc1e6c7e5d66fcd8f"
+    },
+    "327-resource-open-callback-evidence": {
+      "cases": 10240,
+      "summary_sha256": "ee1b283d8d280705aeaed97c899a5360f6702ef0353bb425a8daa927835f8eca",
+      "receipt_sha256": "510874f352099b8fc7717f055d0ea35c4360bc3a5f661c095913f303ce65ba99"
+    }
+  },
+  "native_cases": 19456,
+  "original_functions": 4,
+  "indexed_body_bytes": 134,
+  "game_sources": 168,
+  "source_pins": 427,
+  "unresolved_names": 264,
+  "unresolved_references": 289,
+  "closed_names": [
+    "?disk_path_device_00591760@porsche@@YAEPBD@Z",
+    "?file_device_name_00568e90@porsche@@YAIPBD@Z",
+    "?file_exists_00561b80@porsche@@YAHPBD@Z"
+  ],
+  "new_names": [
+    "?formatter_search_character_005a2780@porsche@@YAPBDPBDH@Z",
+    "?request_exists_00568260@porsche@@YAIPBDIPAX@Z",
+    "?resource_drive_letter_005916a0@porsche@@YAEPBD@Z"
+  ],
+  "game_executed": false,
+  "build_report_sha256": "8c7f8c5d7fb90fbb6582603380a7c87f47adfe99b2ab55223b534f0fdf0d42c9",
+  "objects": {
+    "resource_exists_326": {
+      "sha256": "7898af7a78975abaabb526c999e981e30d711a4268d680c919321a3030fd1868",
+      "defined": [
+        "?file_exists_00561b80@porsche@@YAHPBD@Z",
+        "?resource_exists_request_00533f00@porsche@@YAHPBDI@Z"
+      ],
+      "undefined": [
+        "?file_wait_00567f70@porsche@@YAHI@Z",
+        "?operation_complete_00567df0@porsche@@YAII@Z",
+        "?request_exists_00568260@porsche@@YAIPBDIPAX@Z",
+        "?resource_leaf_group_005df770@porsche@@3IA"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "resource_device_327": {
+      "sha256": "25cdc2e760ea6b96fa7057960522519159f554919a34f443b4e701852adaa8f7",
+      "defined": [
+        "?disk_path_device_00591760@porsche@@YAEPBD@Z",
+        "?file_device_name_00568e90@porsche@@YAIPBD@Z",
+        "?resource_device_prefix_full_00591760@porsche@@YAIPBD@Z"
+      ],
+      "undefined": [
+        "?formatter_search_character_005a2780@porsche@@YAPBDPBDH@Z",
+        "?resource_drive_letter_005916a0@porsche@@YAEPBD@Z"
+      ],
+      "common": [],
+      "weak": []
+    }
+  }
+}

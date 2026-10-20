@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "run": 331,
+  "status": "PASS",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_vas": [
+    "005916a0"
+  ],
+  "original_selected_bytes": 111,
+  "original_body_sha256": "1664d1ed6fbdfabe2bf76b9dbc96d52f5b44ac985acc2d9fb284a6074782c6c7",
+  "native_cases_passed": 6912,
+  "native_attemptdir": "local/experiments/v2-drive-letter-331/001",
+  "native_receipt_sha256": "fcdc7ab94394660fd9076043d3be2d02a590cc179b77af1734d8df35f06d24da",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/331-drive-letter/drive_letter_331.cpp": "08f4baf9ea09597eb74951a469e426dc253595aa1836e45c22d491f4e8ec89f3",
+    "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/resource_device_327.hpp": "ef317c9404f626947e624b223e1555a166210a2b3f6e0e03f6e590afd5c47f22",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+    "iterations/v2/001-original-recovery/runs/331-drive-letter/native_fixture_331.cpp": "7abc354eae9c49fdca636f81bdc19c355a04237db9849830d8ece0f082455c1e"
+  },
+  "negative_controls": [
+    {
+      "name": "unsigned-length",
+      "exit_code": 10,
+      "detected": true
+    },
+    {
+      "name": "before-upper-byte",
+      "exit_code": 10,
+      "detected": true
+    },
+    {
+      "name": "api-error-shortcut",
+      "exit_code": 10,
+      "detected": true
+    }
+  ],
+  "coff_symbols": {
+    "defined": [
+      "?resource_drive_letter_005916a0@porsche@@YAEPBD@Z"
+    ],
+    "undefined": [
+      "?formatter_search_character_005a2780@porsche@@YAPBDPBDH@Z",
+      "__imp__CharUpperA@4",
+      "__imp__GetFullPathNameA@16"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "rea333_cross_review": {
+    "path": "iterations/v2/001-original-recovery/runs/331-drive-letter/rea333-cross-review.json",
+    "sha256": "15b5acf68f93c31186c00cafcb9b6351a124d6746100c4cc6d8b72846f0f75de",
+    "status": "PASS",
+    "normalized_instruction_count": 36
+  }
+}
