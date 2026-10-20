@@ -30,6 +30,8 @@ PE_SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 CATALOG = ROOT / 'research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl'
 RUN = ROOT / 'iterations/v2/001-original-recovery/runs/430-lowered-whole-game'
 OUT = ROOT / 'local/experiments/v2-lowered-exe-430'
+# Generated C++ (the game's code, never committed) lives outside the repository.
+GEN = Path(os.environ.get('PORSCHE430_GEN', r'D:\projetos\porsche-src'))
 PER_TU = 64
 
 FS_BEFORE = "        terms = [f'0x{m.disp & 0xffffffff:08x}u']"
@@ -356,7 +358,7 @@ def gap_pieces(img, entries, targets):
 
 
 def generate(translate, header, img, entries, pointers=()):
-    gen = OUT / 'gen'
+    gen = GEN
     gen.mkdir(parents=True, exist_ok=True)
     written = set()
 
@@ -518,7 +520,7 @@ def toolchain():
 
 def build(jobs):
     cl, link, env = toolchain()
-    gen, obj = OUT / 'gen', OUT / 'obj'
+    gen, obj = GEN, OUT / 'obj'
     obj.mkdir(parents=True, exist_ok=True)
     sources = sorted((gen / 'src').rglob('*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
     keep = {p.stem for p in sources} | {'reserve_430'}
