@@ -38,13 +38,15 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run324](iterations/v2/001-original-recovery/runs/324-input-modes-game-integration/README.md):
-all166 C++ sources compile; linking leaves264 unresolved names/293 references.
-PR22 recovers supported input modes and closes two boundaries. Native24 and
-rebuilt input/snapshot/buffer/startup comparisons pass; negative/layout holds remain.
-Original scalar/MMX/SSE fill backends are now connected. The new SIMD bodies passed
-4896 standalone native cases; the full original dispatcher/backend chain passed
-27648 cases. Two dependencies closed with none added; batch audit PASS. No EXE yet.
+[Latest game build, Run332](iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/README.md):
+all171 C++ sources/8 projects compile;261 unresolved names/286 references remain.
+Original request constructor and drive helper enter after20736 fresh native
+comparisons. Existing canonical character-search code is reused once; three
+linker names close with no new dependencies. Shared433-pin audit PASS. No EXE.
+[REA333](iterations/v2/001-original-recovery/runs/333-rea-resource-followup/README.md)
+checks allocator/drive/search with a reusable query-manifest session. Next: open
+wrapper/callback with an explicit unresolved transform-cell contract.
+
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.
 

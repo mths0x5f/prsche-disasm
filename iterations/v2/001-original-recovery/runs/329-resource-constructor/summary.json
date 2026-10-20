@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "status": "native_original_constructor_verified_not_integrated",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_ranges": [
+    "00568260..00568292"
+  ],
+  "indexed_body_bytes": 51,
+  "original_body": {
+    "va": "00568260",
+    "bytes": 51,
+    "sha256": "2d76d7cc139123d46257f30dd104c963b506628f1d4f182ee34b0d28b20f2510"
+  },
+  "original_function_count": 1,
+  "accepted_source_list": [
+    "resource_constructor_329.cpp",
+    "resource_constructor_329.hpp"
+  ],
+  "source_sha256": {
+    "resource_constructor_329.cpp": "adfb2d0bd08a397d6707bcf058995743a766bfa716add0e51b80318c29ace0e5",
+    "resource_constructor_329.hpp": "58e775770ce857e73e54b468592faf018afc9e978bc45740ededa5065ecdb563"
+  },
+  "native_attempt": "local/experiments/v2-resource-constructor-329/attempt-001",
+  "native_attemptdir": "local/experiments/v2-resource-constructor-329/attempt-001",
+  "native_receipt_sha256": "98902869fd4879f0713e50be0fe503b758351cde177c74f422d3c468827bc1ec",
+  "native_status": "pass",
+  "native_cases_passed": 13824,
+  "native_checks": 124431,
+  "negative_controls": [
+    {
+      "name": "group",
+      "source": "local/experiments/v2-resource-constructor-329/attempt-001/mutant_group.cpp",
+      "source_sha256": "cfaa33d8915cdf2e0622e313e3ec8c8918a6b425048579ea209c09f747e1c709",
+      "detected": true
+    },
+    {
+      "name": "result",
+      "source": "local/experiments/v2-resource-constructor-329/attempt-001/mutant_result.cpp",
+      "source_sha256": "731808a222d80767a3966d4e4405780e59efd09c5ad64e57425e8e3023a41a6e",
+      "detected": true
+    },
+    {
+      "name": "null",
+      "source": "local/experiments/v2-resource-constructor-329/attempt-001/mutant_null.cpp",
+      "source_sha256": "4147e18cb67e560fb2fffbd36a39e5ed0ed16d58da8272cde9051d1820bb74bb",
+      "detected": true
+    }
+  ],
+  "game_object_sha256": "fbdc3feff1899c8e2b578fe09d0eb4ef4a03abb86fd1cc4457a7d2fd544c7644",
+  "native_executable_sha256": "93ff1c27d522d8f0fec4c59174959d96bc223a5f758676c1559cdad9720130d3",
+  "game_object_defined": [
+    "?request_exists_00568260@porsche@@YAIPBDIPAX@Z"
+  ],
+  "game_object_undefined": [
+    "?file_device_name_00568e90@porsche@@YAIPBD@Z",
+    "?operation_allocate_005682a0@porsche@@YAPAUFileOperation@1@IEPAXI@Z",
+    "?operation_name_005684e0@porsche@@YAXPAUFileOperation@1@PBD@Z",
+    "?operation_queue_00568200@porsche@@YAIPAUFileOperation@1@@Z"
+  ],
+  "group_transport": {
+    "va": "00568309",
+    "bytes_hex": "8a4c2418",
+    "instruction": "mov cl, byte ptr [esp+0x18]",
+    "contract": "original constructor transports a DWORD; canonical allocator consumes low byte"
+  },
+  "rea325": {
+    "receipt": "local/experiments/v2-rea-resource-325/001/receipt.json",
+    "receipt_sha256": "bef592d712482ef021935ef82b6838ba56eb9e8c0a112364cf30de4e3207d9cf",
+    "constructor_evidence_id": "ev_d778fedef1e0df55409ae5dfaad91fae701197fce1f59d2ddb199f5adf38ac6f",
+    "analysis_sha256": "ed8be043c7ceba448341996f497c1636ba5835b0bd92e13fba7b93e616f885cd",
+    "signature_caution": "inferred void ignored; actual queue EAX is returned"
+  },
+  "open_boundaries": [
+    "controlled canonical callees in fixture",
+    "real route/allocator/name/queue state and physical file behavior remain separately bounded",
+    "x86 transport adapter requires a separate ABI implementation on other targets",
+    "game integration332 pending"
+  ],
+  "rea333_cross_review": "rea333-cross-review.json",
+  "rea333_cross_review_sha256": "ef99624e61c4216d6b7fe0313062b66665c2dbf96a44fcfaa600583a014c4564"
+}

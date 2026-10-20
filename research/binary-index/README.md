@@ -1,5 +1,10 @@
 # Индекс оригинальных бинарников
 
+Run327 supplemental navigation: [resource-open-callback-327.json](resource-open-callback-327.json)
+records00561ce0..00561df3 (276B), exact PE SHA/decoded boundaries/call sites and
+fresh REA325 missing-procedure evidence. It is evidence-only, not an accepted
+implementation or transform-cell006ad750 provider; global counts are unchanged.
+
 Обновлено 2026-10-03. **Перед реализацией поведения ищем свидетельства здесь.**
 Исправление 2026-10-08: static/imports.jsonl теперь вычисляет IAT как
 FirstThunk + ordinal_index*4, независимо от положения OriginalFirstThunk.

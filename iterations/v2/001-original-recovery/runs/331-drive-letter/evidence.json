@@ -1,0 +1,261 @@
+{
+  "schema": 1,
+  "run": 331,
+  "query": "005916a0;005a2780;005cd1f4;005b221c/GetFullPathNameA;005b2290/CharUpperA;00591760",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "indexed_function": {
+    "entry_va": "005916a0",
+    "name": "FUN_005916a0",
+    "signature": "undefined FUN_005916a0(void)",
+    "ranges": [
+      [
+        "005916a0",
+        "0059170e"
+      ]
+    ],
+    "body_bytes": 111,
+    "thunk": false,
+    "recovery_status": "unrecovered"
+  },
+  "body_sha256": "1664d1ed6fbdfabe2bf76b9dbc96d52f5b44ac985acc2d9fb284a6074782c6c7",
+  "instructions": [
+    {
+      "va": "005916a0",
+      "bytes": "81ec0c010000",
+      "text": "sub esp, 0x10c"
+    },
+    {
+      "va": "005916a6",
+      "bytes": "56",
+      "text": "push esi"
+    },
+    {
+      "va": "005916a7",
+      "bytes": "8bb42414010000",
+      "text": "mov esi, dword ptr [esp + 0x114]"
+    },
+    {
+      "va": "005916ae",
+      "bytes": "6a7c",
+      "text": "push 0x7c"
+    },
+    {
+      "va": "005916b0",
+      "bytes": "56",
+      "text": "push esi"
+    },
+    {
+      "va": "005916b1",
+      "bytes": "e8ca100100",
+      "text": "call 0x5a2780"
+    },
+    {
+      "va": "005916b6",
+      "bytes": "83c408",
+      "text": "add esp, 8"
+    },
+    {
+      "va": "005916b9",
+      "bytes": "89442404",
+      "text": "mov dword ptr [esp + 4], eax"
+    },
+    {
+      "va": "005916bd",
+      "bytes": "85c0",
+      "text": "test eax, eax"
+    },
+    {
+      "va": "005916bf",
+      "bytes": "7544",
+      "text": "jne 0x591705"
+    },
+    {
+      "va": "005916c1",
+      "bytes": "85f6",
+      "text": "test esi, esi"
+    },
+    {
+      "va": "005916c3",
+      "bytes": "7505",
+      "text": "jne 0x5916ca"
+    },
+    {
+      "va": "005916c5",
+      "bytes": "bef4d15c00",
+      "text": "mov esi, 0x5cd1f4"
+    },
+    {
+      "va": "005916ca",
+      "bytes": "8d442404",
+      "text": "lea eax, [esp + 4]"
+    },
+    {
+      "va": "005916ce",
+      "bytes": "8d4c2408",
+      "text": "lea ecx, [esp + 8]"
+    },
+    {
+      "va": "005916d2",
+      "bytes": "50",
+      "text": "push eax"
+    },
+    {
+      "va": "005916d3",
+      "bytes": "51",
+      "text": "push ecx"
+    },
+    {
+      "va": "005916d4",
+      "bytes": "6805010000",
+      "text": "push 0x105"
+    },
+    {
+      "va": "005916d9",
+      "bytes": "56",
+      "text": "push esi"
+    },
+    {
+      "va": "005916da",
+      "bytes": "ff151c225b00",
+      "text": "call dword ptr [0x5b221c]"
+    },
+    {
+      "va": "005916e0",
+      "bytes": "8d542408",
+      "text": "lea edx, [esp + 8]"
+    },
+    {
+      "va": "005916e4",
+      "bytes": "8bf0",
+      "text": "mov esi, eax"
+    },
+    {
+      "va": "005916e6",
+      "bytes": "52",
+      "text": "push edx"
+    },
+    {
+      "va": "005916e7",
+      "bytes": "ff1590225b00",
+      "text": "call dword ptr [0x5b2290]"
+    },
+    {
+      "va": "005916ed",
+      "bytes": "83fe01",
+      "text": "cmp esi, 1"
+    },
+    {
+      "va": "005916f0",
+      "bytes": "7e13",
+      "text": "jle 0x591705"
+    },
+    {
+      "va": "005916f2",
+      "bytes": "807c24093a",
+      "text": "cmp byte ptr [esp + 9], 0x3a"
+    },
+    {
+      "va": "005916f7",
+      "bytes": "750c",
+      "text": "jne 0x591705"
+    },
+    {
+      "va": "005916f9",
+      "bytes": "8a442408",
+      "text": "mov al, byte ptr [esp + 8]"
+    },
+    {
+      "va": "005916fd",
+      "bytes": "5e",
+      "text": "pop esi"
+    },
+    {
+      "va": "005916fe",
+      "bytes": "81c40c010000",
+      "text": "add esp, 0x10c"
+    },
+    {
+      "va": "00591704",
+      "bytes": "c3",
+      "text": "ret"
+    },
+    {
+      "va": "00591705",
+      "bytes": "32c0",
+      "text": "xor al, al"
+    },
+    {
+      "va": "00591707",
+      "bytes": "5e",
+      "text": "pop esi"
+    },
+    {
+      "va": "00591708",
+      "bytes": "81c40c010000",
+      "text": "add esp, 0x10c"
+    },
+    {
+      "va": "0059170e",
+      "bytes": "c3",
+      "text": "ret"
+    }
+  ],
+  "literal": {
+    "va": "005cd1f4",
+    "bytes": "2e00",
+    "value": "."
+  },
+  "owners": {
+    "accepted_registry_entries": 482,
+    "entry_or_intersecting_body_owners": [],
+    "existing_source_mentions": [
+      {
+        "path": "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/resource_device_327.cpp",
+        "line": 8,
+        "text": "    const std::uint32_t letter = resource_drive_letter_005916a0(path);"
+      },
+      {
+        "path": "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/resource_device_327.hpp",
+        "line": 9,
+        "text": "// Original 005916a0 defines AL, not the upper 24 bits of EAX. Its Win32"
+      },
+      {
+        "path": "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/resource_device_327.hpp",
+        "line": 11,
+        "text": "std::uint8_t __cdecl resource_drive_letter_005916a0(const char* path);"
+      },
+      {
+        "path": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/prototypes.h",
+        "line": 10208,
+        "text": "/* VA 005916a0; inferred ABI __stdcall */"
+      },
+      {
+        "path": "iterations/v2/001-original-recovery/runs/179-ghidra-declarations/export/prototypes.h",
+        "line": 10209,
+        "text": "CHAR FUN_005916a0(LPCSTR param_1);"
+      }
+    ],
+    "interpretation": "All pre-existing mentions are declarations or calls; no previous implementation body."
+  },
+  "inputs_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/decompiled.c": "507a8d2321899cb6cf3cc0b07ad616e1a7478bcd5b51474e08a0389bb93d2d32",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "research/binary-index/README.md": "2350295d41a6fb630e18d4ced69f73849a87d677cb8b03eb1540608af8dc4cd2",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55"
+  },
+  "confirmation": [
+    "Search(|) occurs before null fallback; search return is also initial file-part cell.",
+    "Null fallback is original literal dot, not empty.",
+    "GetFullPathNameA receives261-byte buffer and pointer-to-file-part; CharUpperA always follows even for0/1/high-bit lengths.",
+    "Length comparison is signed32; accepted letter is post-CharUpper buffer[0] when buffer[1] is colon.",
+    "Return ABI definesAL only; fullEAX is not accepted."
+  ],
+  "limits": [
+    "Host OS path/uppercase behavior is outside controlled API verification.",
+    "Null branch tested only with controlled search; canonical original search does not permit null."
+  ]
+}

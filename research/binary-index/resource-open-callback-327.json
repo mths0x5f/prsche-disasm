@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "path": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "entry_va": "00561ce0",
+  "name": "callback_00561ce0",
+  "status": "supplemental-boundary-evidence-only",
+  "ranges": [
+    [
+      "00561ce0",
+      "00561df3"
+    ]
+  ],
+  "body_bytes": 276,
+  "body_sha256": "d28a032e01cdc7be73ca9ac517af5eec551131a8bbc5f906e46e075cd37f6828",
+  "file_offset": 1449184,
+  "signature": "cdecl two stack DWORDs (group,context); plain RET; raw EAX result",
+  "returns": [
+    "00561d79",
+    "00561dc1",
+    "00561df3"
+  ],
+  "callback_address_sites": [
+    {
+      "va": "00561cd1",
+      "bytes": "68e01c5600",
+      "sha256": "6c9d2dae5b65e2307a188be61a8b85a8d93e2889fd720b2f9df32905fb827f48",
+      "instruction": "PUSH 00561ce0"
+    },
+    {
+      "va": "00561e31",
+      "bytes": "68e01c5600",
+      "sha256": "6c9d2dae5b65e2307a188be61a8b85a8d93e2889fd720b2f9df32905fb827f48",
+      "instruction": "PUSH 00561ce0"
+    }
+  ],
+  "reason": "Original wrapper and sibling push this entry; full decoded contiguous PE span, three RET paths, NOP padding and no existing indexed containing range.",
+  "evidence": "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/evidence.json",
+  "limits": [
+    "No recovered implementation or provider is accepted.",
+    "Catalog/global totals unchanged; this is a bounded supplementary navigation artifact."
+  ]
+}

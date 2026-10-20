@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "status": "native_original_resource_exists_bounded_verified_not_integrated",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_ranges": [
+    "00561b80..00561b93",
+    "00533f00..00533f33"
+  ],
+  "original_bodies": [
+    {
+      "va": "00561b80",
+      "bytes": 20,
+      "sha256": "6c38d1ce8539e936a15a3d0b914a4bcb912fa03129e780dbc5991568018c2812"
+    },
+    {
+      "va": "00533f00",
+      "bytes": 52,
+      "sha256": "aef1dd8cf8d1da9b8dc07ad127c846b1a4b6ea91bf42a4c002d6ae12a4366dc0"
+    }
+  ],
+  "indexed_body_bytes": 72,
+  "original_function_count": 2,
+  "accepted_source_list": [
+    "resource_exists_326.cpp",
+    "resource_exists_326.hpp"
+  ],
+  "source_sha256": {
+    "resource_exists_326.cpp": "bde5e632d819fd418278a0e150e2e3dda72a89467b257d86ca8201c7403d7c17",
+    "resource_exists_326.hpp": "58fd77cc3d485feee83f78b26722b2b8c6dc17257b481a495d873ec5360dcfa7"
+  },
+  "native_attempt": "local/experiments/v2-resource-exists-326/attempt-001",
+  "native_attempt_dir": "local/experiments/v2-resource-exists-326/attempt-001",
+  "native_receipt_sha256": "467b5f7bc57f60b81708ce73a338de83a2cf30146d423e3fc1e6c7e5d66fcd8f",
+  "native_status": "pass",
+  "native_cases_passed": 9216,
+  "native_checks": 175117,
+  "game_object_sha256": "efa7fda1b8bd83b588476f0cf83e5302b26eee9914166dfa94a6e04eb059e83f",
+  "native_executable_sha256": "0dbf82946ca768a252be4a948295a10d15bd2478d819efa458896f59dd23819a",
+  "game_object_defined": [
+    "?file_exists_00561b80@porsche@@YAHPBD@Z",
+    "?resource_exists_request_00533f00@porsche@@YAHPBDI@Z"
+  ],
+  "game_object_undefined": [
+    "?file_wait_00567f70@porsche@@YAHI@Z",
+    "?operation_complete_00567df0@porsche@@YAII@Z",
+    "?request_exists_00568260@porsche@@YAIPBDIPAX@Z",
+    "?resource_leaf_group_005df770@porsche@@3IA"
+  ],
+  "rea_cross_review": "rea-cross-review.json",
+  "rea_cross_review_sha256": "b7a1db273a1afb396032f031da969073bdff19eb3254c02f5337dd799e87d66b",
+  "canonical_reused_owners": {
+    "005df770": "source/recovered/Porsche.exe/resource_dispatch_globals.cpp",
+    "00567f70": "source/recovered/Porsche.exe/file_wait.cpp",
+    "00567df0": "source/recovered/Porsche.exe/files.cpp"
+  },
+  "new_constructor_boundary": {
+    "va": "00568260",
+    "symbol": "request_exists_00568260",
+    "abi": "cdecl(path, uint32 group, void* context) -> raw uint32 EAX"
+  },
+  "open_boundaries": [
+    "constructor00568260/device routing/queue/physical file existence",
+    "fixture wait/completion callbacks controlled; canonical production bodies retained",
+    "game-graph integration owned by coordinator"
+  ]
+}

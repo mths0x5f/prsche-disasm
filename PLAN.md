@@ -36,6 +36,29 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 - Парсер фронтира 420 исправлен (вызывающие C-символов считались отсутствующими): 415 → 423.
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
 
+Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
+20736 fresh native cases and six mutation controls PASS. Existing canonical
+search TU330 integrated once using172/327 proof, no duplicate recovery count.
+Actual171 C++ TUs/8 projects compile;261 names/286 refs, noEXE. Three linker
+names close, no new unresolved dependencies; shared433-pin audit PASS.
+REA333 confirms allocator/drive/search using a reusable query-manifest session;
+no successful native run was repeated for metadata. All329/330/331/332/333
+assignments complete. Next334: open wrapper00561ca0 +callback00561ce0 with an
+extern-only typed transform cell006ad750;335 game intake after nativePASS.
+No storage definition is authorized without ownership/layout proof. Older
+checkpoint entries below are historical; full-game/root holds remain open.
+
+Checkpoint2026-10-20 Run328: REA325 evidence and four original resource
+bodies326/327 integrated.19456 native cases and shared427-pin audit PASS;
+168 C++ TUs/8 projects compile,264 unresolved names/289 refs, noEXE.
+Three old names close and constructor/drive/search dependencies are exposed.
+Assignments325/326/327/328 complete; no active agent implementation remains.
+Next: constructor00568260 (51B), then existing canonical character-search
+ownership/graph intake and drive-letter005916a0. Callback00561ce0 has a new
+276B supplemental index, but implementation/transform006ad750 remain HOLD.
+Detailed acceptance/commands/next steps: active iteration PLAN and Run328 README.
+The entries below are historical checkpoints.
+
 PR review closeout2026-10-20:22/f53921f and23/a733aaa merged with fixes;
 GitHub verified0 open PRs and both acceptance comments posted. No active agents
 or pending merge work. Game324 remains166 TU/264 names/293 refs/noEXE. Next:
