@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "passed": true,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-rea-resource-325/001/receipt.json",
+  "receipt_sha256": "bef592d712482ef021935ef82b6838ba56eb9e8c0a112364cf30de4e3207d9cf",
+  "server_pid": 189684,
+  "same_server_identity": true,
+  "repeat_normalized_equal": true,
+  "bodies": {
+    "exists-cold": {
+      "address": "0x561b80",
+      "bytes": 20
+    },
+    "request-exists": {
+      "address": "0x533f00",
+      "bytes": 52
+    },
+    "request-constructor": {
+      "address": "0x568260",
+      "bytes": 51
+    },
+    "open-wrapper": {
+      "address": "0x561ca0",
+      "bytes": 63
+    },
+    "device-route": {
+      "address": "0x568e90",
+      "bytes": 35
+    },
+    "device-prefix": {
+      "address": "0x591760",
+      "bytes": 27
+    }
+  },
+  "callback_bytes": 276,
+  "callback_sha256": "d28a032e01cdc7be73ca9ac517af5eec551131a8bbc5f906e46e075cd37f6828",
+  "callback_function_recognized": false,
+  "timings_ms": {
+    "initialize": 9917.157,
+    "open": 3862.327,
+    "session-before": 126.187,
+    "exists-cold": 93258.868,
+    "exists-warm": 19.449,
+    "request-exists": 25.302,
+    "request-constructor": 23.424,
+    "open-wrapper": 27.476,
+    "device-route": 30.112,
+    "device-prefix": 17.163,
+    "callback-function": 6.341,
+    "callback-context": 9.022,
+    "callback-region-bytes": 8.069,
+    "callback-entry-instruction": 10.139,
+    "callback-last-instruction": 3.751,
+    "session-final": 63.783,
+    "close": 362.056
+  },
+  "native_acceptance": false,
+  "game_executed": false
+}

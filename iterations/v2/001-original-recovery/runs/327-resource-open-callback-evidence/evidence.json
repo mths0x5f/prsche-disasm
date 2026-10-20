@@ -1,0 +1,1727 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "kind": "read-only-original-evidence-not-recovered-code",
+  "bodies": [
+    {
+      "entry_va": "00561ca0",
+      "end_va": "00561cde",
+      "body_bytes": 63,
+      "body_sha256": "62cde604a74b26595127dfe81c686105a5a0f1efa3adfd6457a1f3c930a3fec7",
+      "file_offset": 1449120,
+      "raw_hex": "83ec108b4c24188b442414894c24088b0d70f75d008d54240089442400525150c744241801000000e8c371000083c4045068e01c5600e87570000083c420c3",
+      "returns": [
+        "00561cde"
+      ],
+      "instructions": [
+        {
+          "va": "00561ca0",
+          "bytes": "83ec10",
+          "instruction": "sub esp, 0x10",
+          "index_line": 442325
+        },
+        {
+          "va": "00561ca3",
+          "bytes": "8b4c2418",
+          "instruction": "mov ecx, dword ptr [esp + 0x18]",
+          "index_line": 442326
+        },
+        {
+          "va": "00561ca7",
+          "bytes": "8b442414",
+          "instruction": "mov eax, dword ptr [esp + 0x14]",
+          "index_line": 442327
+        },
+        {
+          "va": "00561cab",
+          "bytes": "894c2408",
+          "instruction": "mov dword ptr [esp + 8], ecx",
+          "index_line": 442328
+        },
+        {
+          "va": "00561caf",
+          "bytes": "8b0d70f75d00",
+          "instruction": "mov ecx, dword ptr [0x5df770]",
+          "index_line": 442329
+        },
+        {
+          "va": "00561cb5",
+          "bytes": "8d542400",
+          "instruction": "lea edx, [esp]",
+          "index_line": 442330
+        },
+        {
+          "va": "00561cb9",
+          "bytes": "89442400",
+          "instruction": "mov dword ptr [esp], eax",
+          "index_line": 442331
+        },
+        {
+          "va": "00561cbd",
+          "bytes": "52",
+          "instruction": "push edx",
+          "index_line": 442332
+        },
+        {
+          "va": "00561cbe",
+          "bytes": "51",
+          "instruction": "push ecx",
+          "index_line": 442333
+        },
+        {
+          "va": "00561cbf",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 442334
+        },
+        {
+          "va": "00561cc0",
+          "bytes": "c744241801000000",
+          "instruction": "mov dword ptr [esp + 0x18], 1",
+          "index_line": 442335
+        },
+        {
+          "va": "00561cc8",
+          "bytes": "e8c3710000",
+          "instruction": "call 0x568e90",
+          "index_line": 442336
+        },
+        {
+          "va": "00561ccd",
+          "bytes": "83c404",
+          "instruction": "add esp, 4",
+          "index_line": 442337
+        },
+        {
+          "va": "00561cd0",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 442338
+        },
+        {
+          "va": "00561cd1",
+          "bytes": "68e01c5600",
+          "instruction": "push 0x561ce0",
+          "index_line": 442339
+        },
+        {
+          "va": "00561cd6",
+          "bytes": "e875700000",
+          "instruction": "call 0x568d50",
+          "index_line": 442340
+        },
+        {
+          "va": "00561cdb",
+          "bytes": "83c420",
+          "instruction": "add esp, 0x20",
+          "index_line": 442341
+        },
+        {
+          "va": "00561cde",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 442342
+        }
+      ],
+      "indexed_entries": [
+        {
+          "entry_va": "00561ca0",
+          "name": "FUN_00561ca0",
+          "signature": "undefined FUN_00561ca0(void)",
+          "ranges": [
+            [
+              "00561ca0",
+              "00561cde"
+            ]
+          ],
+          "body_bytes": 63,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      ]
+    },
+    {
+      "entry_va": "00561ce0",
+      "end_va": "00561df3",
+      "body_bytes": 276,
+      "body_sha256": "d28a032e01cdc7be73ca9ac517af5eec551131a8bbc5f906e46e075cd37f6828",
+      "file_offset": 1449184,
+      "raw_hex": "5153558b6c241456578b7c24188b75008d44241850576a015689742420e88e1efdff83c41085c00f84b50000008b4c24184f5751e8c720fdff8b6d088bd8555356e87afffcff8bf083c41485f6744b8b5424185753566a0052e8b21efdff8b44242c5750e85720fdffa150d76a0083c41c85c0741d8b4c2410555156ffd08bf883c40c85ff750956e82302fdff83c4048bf78bc65f5e5d5b59c38b54241c8b420c85c074278b442410c70574eb5d0000cd5b0050685ccd5b00c70578eb5d00d2000000ff15f0eb5d0083c4088b4c24185751e8e91ffdff83c40833c05f5e5d5b59c38b450c85c07423566838cd5b00c70574eb5d0000cd5b00c70578eb5d00da000000ff15f0eb5d0083c4085f5e5d33c05b59c3",
+      "returns": [
+        "00561d79",
+        "00561dc1",
+        "00561df3"
+      ],
+      "instructions": [
+        {
+          "va": "00561ce0",
+          "bytes": "51",
+          "instruction": "push ecx",
+          "index_line": 442343
+        },
+        {
+          "va": "00561ce1",
+          "bytes": "53",
+          "instruction": "push ebx",
+          "index_line": 442344
+        },
+        {
+          "va": "00561ce2",
+          "bytes": "55",
+          "instruction": "push ebp",
+          "index_line": 442345
+        },
+        {
+          "va": "00561ce3",
+          "bytes": "8b6c2414",
+          "instruction": "mov ebp, dword ptr [esp + 0x14]",
+          "index_line": 442346
+        },
+        {
+          "va": "00561ce7",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442347
+        },
+        {
+          "va": "00561ce8",
+          "bytes": "57",
+          "instruction": "push edi",
+          "index_line": 442348
+        },
+        {
+          "va": "00561ce9",
+          "bytes": "8b7c2418",
+          "instruction": "mov edi, dword ptr [esp + 0x18]",
+          "index_line": 442349
+        },
+        {
+          "va": "00561ced",
+          "bytes": "8b7500",
+          "instruction": "mov esi, dword ptr [ebp]",
+          "index_line": 442350
+        },
+        {
+          "va": "00561cf0",
+          "bytes": "8d442418",
+          "instruction": "lea eax, [esp + 0x18]",
+          "index_line": 442351
+        },
+        {
+          "va": "00561cf4",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 442352
+        },
+        {
+          "va": "00561cf5",
+          "bytes": "57",
+          "instruction": "push edi",
+          "index_line": 442353
+        },
+        {
+          "va": "00561cf6",
+          "bytes": "6a01",
+          "instruction": "push 1",
+          "index_line": 442354
+        },
+        {
+          "va": "00561cf8",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442355
+        },
+        {
+          "va": "00561cf9",
+          "bytes": "89742420",
+          "instruction": "mov dword ptr [esp + 0x20], esi",
+          "index_line": 442356
+        },
+        {
+          "va": "00561cfd",
+          "bytes": "e88e1efdff",
+          "instruction": "call 0x533b90",
+          "index_line": 442357
+        },
+        {
+          "va": "00561d02",
+          "bytes": "83c410",
+          "instruction": "add esp, 0x10",
+          "index_line": 442358
+        },
+        {
+          "va": "00561d05",
+          "bytes": "85c0",
+          "instruction": "test eax, eax",
+          "index_line": 442359
+        },
+        {
+          "va": "00561d07",
+          "bytes": "0f84b5000000",
+          "instruction": "je 0x561dc2",
+          "index_line": 442360
+        },
+        {
+          "va": "00561d0d",
+          "bytes": "8b4c2418",
+          "instruction": "mov ecx, dword ptr [esp + 0x18]",
+          "index_line": 442361
+        },
+        {
+          "va": "00561d11",
+          "bytes": "4f",
+          "instruction": "dec edi",
+          "index_line": 442362
+        },
+        {
+          "va": "00561d12",
+          "bytes": "57",
+          "instruction": "push edi",
+          "index_line": 442363
+        },
+        {
+          "va": "00561d13",
+          "bytes": "51",
+          "instruction": "push ecx",
+          "index_line": 442364
+        },
+        {
+          "va": "00561d14",
+          "bytes": "e8c720fdff",
+          "instruction": "call 0x533de0",
+          "index_line": 442365
+        },
+        {
+          "va": "00561d19",
+          "bytes": "8b6d08",
+          "instruction": "mov ebp, dword ptr [ebp + 8]",
+          "index_line": 442366
+        },
+        {
+          "va": "00561d1c",
+          "bytes": "8bd8",
+          "instruction": "mov ebx, eax",
+          "index_line": 442367
+        },
+        {
+          "va": "00561d1e",
+          "bytes": "55",
+          "instruction": "push ebp",
+          "index_line": 442368
+        },
+        {
+          "va": "00561d1f",
+          "bytes": "53",
+          "instruction": "push ebx",
+          "index_line": 442369
+        },
+        {
+          "va": "00561d20",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442370
+        },
+        {
+          "va": "00561d21",
+          "bytes": "e87afffcff",
+          "instruction": "call 0x531ca0",
+          "index_line": 442371
+        },
+        {
+          "va": "00561d26",
+          "bytes": "8bf0",
+          "instruction": "mov esi, eax",
+          "index_line": 442372
+        },
+        {
+          "va": "00561d28",
+          "bytes": "83c414",
+          "instruction": "add esp, 0x14",
+          "index_line": 442373
+        },
+        {
+          "va": "00561d2b",
+          "bytes": "85f6",
+          "instruction": "test esi, esi",
+          "index_line": 442374
+        },
+        {
+          "va": "00561d2d",
+          "bytes": "744b",
+          "instruction": "je 0x561d7a",
+          "index_line": 442375
+        },
+        {
+          "va": "00561d2f",
+          "bytes": "8b542418",
+          "instruction": "mov edx, dword ptr [esp + 0x18]",
+          "index_line": 442376
+        },
+        {
+          "va": "00561d33",
+          "bytes": "57",
+          "instruction": "push edi",
+          "index_line": 442377
+        },
+        {
+          "va": "00561d34",
+          "bytes": "53",
+          "instruction": "push ebx",
+          "index_line": 442378
+        },
+        {
+          "va": "00561d35",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442379
+        },
+        {
+          "va": "00561d36",
+          "bytes": "6a00",
+          "instruction": "push 0",
+          "index_line": 442380
+        },
+        {
+          "va": "00561d38",
+          "bytes": "52",
+          "instruction": "push edx",
+          "index_line": 442381
+        },
+        {
+          "va": "00561d39",
+          "bytes": "e8b21efdff",
+          "instruction": "call 0x533bf0",
+          "index_line": 442382
+        },
+        {
+          "va": "00561d3e",
+          "bytes": "8b44242c",
+          "instruction": "mov eax, dword ptr [esp + 0x2c]",
+          "index_line": 442383
+        },
+        {
+          "va": "00561d42",
+          "bytes": "57",
+          "instruction": "push edi",
+          "index_line": 442384
+        },
+        {
+          "va": "00561d43",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 442385
+        },
+        {
+          "va": "00561d44",
+          "bytes": "e85720fdff",
+          "instruction": "call 0x533da0",
+          "index_line": 442386
+        },
+        {
+          "va": "00561d49",
+          "bytes": "a150d76a00",
+          "instruction": "mov eax, dword ptr [0x6ad750]",
+          "index_line": 442387
+        },
+        {
+          "va": "00561d4e",
+          "bytes": "83c41c",
+          "instruction": "add esp, 0x1c",
+          "index_line": 442388
+        },
+        {
+          "va": "00561d51",
+          "bytes": "85c0",
+          "instruction": "test eax, eax",
+          "index_line": 442389
+        },
+        {
+          "va": "00561d53",
+          "bytes": "741d",
+          "instruction": "je 0x561d72",
+          "index_line": 442390
+        },
+        {
+          "va": "00561d55",
+          "bytes": "8b4c2410",
+          "instruction": "mov ecx, dword ptr [esp + 0x10]",
+          "index_line": 442391
+        },
+        {
+          "va": "00561d59",
+          "bytes": "55",
+          "instruction": "push ebp",
+          "index_line": 442392
+        },
+        {
+          "va": "00561d5a",
+          "bytes": "51",
+          "instruction": "push ecx",
+          "index_line": 442393
+        },
+        {
+          "va": "00561d5b",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442394
+        },
+        {
+          "va": "00561d5c",
+          "bytes": "ffd0",
+          "instruction": "call eax",
+          "index_line": 442395
+        },
+        {
+          "va": "00561d5e",
+          "bytes": "8bf8",
+          "instruction": "mov edi, eax",
+          "index_line": 442396
+        },
+        {
+          "va": "00561d60",
+          "bytes": "83c40c",
+          "instruction": "add esp, 0xc",
+          "index_line": 442397
+        },
+        {
+          "va": "00561d63",
+          "bytes": "85ff",
+          "instruction": "test edi, edi",
+          "index_line": 442398
+        },
+        {
+          "va": "00561d65",
+          "bytes": "7509",
+          "instruction": "jne 0x561d70",
+          "index_line": 442399
+        },
+        {
+          "va": "00561d67",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442400
+        },
+        {
+          "va": "00561d68",
+          "bytes": "e82302fdff",
+          "instruction": "call 0x531f90",
+          "index_line": 442401
+        },
+        {
+          "va": "00561d6d",
+          "bytes": "83c404",
+          "instruction": "add esp, 4",
+          "index_line": 442402
+        },
+        {
+          "va": "00561d70",
+          "bytes": "8bf7",
+          "instruction": "mov esi, edi",
+          "index_line": 442403
+        },
+        {
+          "va": "00561d72",
+          "bytes": "8bc6",
+          "instruction": "mov eax, esi",
+          "index_line": 442404
+        },
+        {
+          "va": "00561d74",
+          "bytes": "5f",
+          "instruction": "pop edi",
+          "index_line": 442405
+        },
+        {
+          "va": "00561d75",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 442406
+        },
+        {
+          "va": "00561d76",
+          "bytes": "5d",
+          "instruction": "pop ebp",
+          "index_line": 442407
+        },
+        {
+          "va": "00561d77",
+          "bytes": "5b",
+          "instruction": "pop ebx",
+          "index_line": 442408
+        },
+        {
+          "va": "00561d78",
+          "bytes": "59",
+          "instruction": "pop ecx",
+          "index_line": 442409
+        },
+        {
+          "va": "00561d79",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 442410
+        },
+        {
+          "va": "00561d7a",
+          "bytes": "8b54241c",
+          "instruction": "mov edx, dword ptr [esp + 0x1c]",
+          "index_line": 442411
+        },
+        {
+          "va": "00561d7e",
+          "bytes": "8b420c",
+          "instruction": "mov eax, dword ptr [edx + 0xc]",
+          "index_line": 442412
+        },
+        {
+          "va": "00561d81",
+          "bytes": "85c0",
+          "instruction": "test eax, eax",
+          "index_line": 442413
+        },
+        {
+          "va": "00561d83",
+          "bytes": "7427",
+          "instruction": "je 0x561dac",
+          "index_line": 442414
+        },
+        {
+          "va": "00561d85",
+          "bytes": "8b442410",
+          "instruction": "mov eax, dword ptr [esp + 0x10]",
+          "index_line": 442415
+        },
+        {
+          "va": "00561d89",
+          "bytes": "c70574eb5d0000cd5b00",
+          "instruction": "mov dword ptr [0x5deb74], 0x5bcd00",
+          "index_line": 442416
+        },
+        {
+          "va": "00561d93",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 442417
+        },
+        {
+          "va": "00561d94",
+          "bytes": "685ccd5b00",
+          "instruction": "push 0x5bcd5c",
+          "index_line": 442418
+        },
+        {
+          "va": "00561d99",
+          "bytes": "c70578eb5d00d2000000",
+          "instruction": "mov dword ptr [0x5deb78], 0xd2",
+          "index_line": 442419
+        },
+        {
+          "va": "00561da3",
+          "bytes": "ff15f0eb5d00",
+          "instruction": "call dword ptr [0x5debf0]",
+          "index_line": 442420
+        },
+        {
+          "va": "00561da9",
+          "bytes": "83c408",
+          "instruction": "add esp, 8",
+          "index_line": 442421
+        },
+        {
+          "va": "00561dac",
+          "bytes": "8b4c2418",
+          "instruction": "mov ecx, dword ptr [esp + 0x18]",
+          "index_line": 442422
+        },
+        {
+          "va": "00561db0",
+          "bytes": "57",
+          "instruction": "push edi",
+          "index_line": 442423
+        },
+        {
+          "va": "00561db1",
+          "bytes": "51",
+          "instruction": "push ecx",
+          "index_line": 442424
+        },
+        {
+          "va": "00561db2",
+          "bytes": "e8e91ffdff",
+          "instruction": "call 0x533da0",
+          "index_line": 442425
+        },
+        {
+          "va": "00561db7",
+          "bytes": "83c408",
+          "instruction": "add esp, 8",
+          "index_line": 442426
+        },
+        {
+          "va": "00561dba",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax",
+          "index_line": 442427
+        },
+        {
+          "va": "00561dbc",
+          "bytes": "5f",
+          "instruction": "pop edi",
+          "index_line": 442428
+        },
+        {
+          "va": "00561dbd",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 442429
+        },
+        {
+          "va": "00561dbe",
+          "bytes": "5d",
+          "instruction": "pop ebp",
+          "index_line": 442430
+        },
+        {
+          "va": "00561dbf",
+          "bytes": "5b",
+          "instruction": "pop ebx",
+          "index_line": 442431
+        },
+        {
+          "va": "00561dc0",
+          "bytes": "59",
+          "instruction": "pop ecx",
+          "index_line": 442432
+        },
+        {
+          "va": "00561dc1",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 442433
+        },
+        {
+          "va": "00561dc2",
+          "bytes": "8b450c",
+          "instruction": "mov eax, dword ptr [ebp + 0xc]",
+          "index_line": 442434
+        },
+        {
+          "va": "00561dc5",
+          "bytes": "85c0",
+          "instruction": "test eax, eax",
+          "index_line": 442435
+        },
+        {
+          "va": "00561dc7",
+          "bytes": "7423",
+          "instruction": "je 0x561dec",
+          "index_line": 442436
+        },
+        {
+          "va": "00561dc9",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 442437
+        },
+        {
+          "va": "00561dca",
+          "bytes": "6838cd5b00",
+          "instruction": "push 0x5bcd38",
+          "index_line": 442438
+        },
+        {
+          "va": "00561dcf",
+          "bytes": "c70574eb5d0000cd5b00",
+          "instruction": "mov dword ptr [0x5deb74], 0x5bcd00",
+          "index_line": 442439
+        },
+        {
+          "va": "00561dd9",
+          "bytes": "c70578eb5d00da000000",
+          "instruction": "mov dword ptr [0x5deb78], 0xda",
+          "index_line": 442440
+        },
+        {
+          "va": "00561de3",
+          "bytes": "ff15f0eb5d00",
+          "instruction": "call dword ptr [0x5debf0]",
+          "index_line": 442441
+        },
+        {
+          "va": "00561de9",
+          "bytes": "83c408",
+          "instruction": "add esp, 8",
+          "index_line": 442442
+        },
+        {
+          "va": "00561dec",
+          "bytes": "5f",
+          "instruction": "pop edi",
+          "index_line": 442443
+        },
+        {
+          "va": "00561ded",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 442444
+        },
+        {
+          "va": "00561dee",
+          "bytes": "5d",
+          "instruction": "pop ebp",
+          "index_line": 442445
+        },
+        {
+          "va": "00561def",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax",
+          "index_line": 442446
+        },
+        {
+          "va": "00561df1",
+          "bytes": "5b",
+          "instruction": "pop ebx",
+          "index_line": 442447
+        },
+        {
+          "va": "00561df2",
+          "bytes": "59",
+          "instruction": "pop ecx",
+          "index_line": 442448
+        },
+        {
+          "va": "00561df3",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 442449
+        }
+      ],
+      "indexed_entries": []
+    },
+    {
+      "entry_va": "00568e90",
+      "end_va": "00568eb2",
+      "body_bytes": 35,
+      "body_sha256": "39a3707f51099fd1ae5546253fe56fe0e6093bca1924cbd53d624f09bdfe6c0b",
+      "file_offset": 1478288,
+      "raw_hex": "568b7424086a7c56e8e398030083c40885c0750b56e8b688020083c4045ec333c05ec3",
+      "returns": [
+        "00568eae",
+        "00568eb2"
+      ],
+      "instructions": [
+        {
+          "va": "00568e90",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 450164
+        },
+        {
+          "va": "00568e91",
+          "bytes": "8b742408",
+          "instruction": "mov esi, dword ptr [esp + 8]",
+          "index_line": 450165
+        },
+        {
+          "va": "00568e95",
+          "bytes": "6a7c",
+          "instruction": "push 0x7c",
+          "index_line": 450166
+        },
+        {
+          "va": "00568e97",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 450167
+        },
+        {
+          "va": "00568e98",
+          "bytes": "e8e3980300",
+          "instruction": "call 0x5a2780",
+          "index_line": 450168
+        },
+        {
+          "va": "00568e9d",
+          "bytes": "83c408",
+          "instruction": "add esp, 8",
+          "index_line": 450169
+        },
+        {
+          "va": "00568ea0",
+          "bytes": "85c0",
+          "instruction": "test eax, eax",
+          "index_line": 450170
+        },
+        {
+          "va": "00568ea2",
+          "bytes": "750b",
+          "instruction": "jne 0x568eaf",
+          "index_line": 450171
+        },
+        {
+          "va": "00568ea4",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 450172
+        },
+        {
+          "va": "00568ea5",
+          "bytes": "e8b6880200",
+          "instruction": "call 0x591760",
+          "index_line": 450173
+        },
+        {
+          "va": "00568eaa",
+          "bytes": "83c404",
+          "instruction": "add esp, 4",
+          "index_line": 450174
+        },
+        {
+          "va": "00568ead",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 450175
+        },
+        {
+          "va": "00568eae",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 450176
+        },
+        {
+          "va": "00568eaf",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax",
+          "index_line": 450177
+        },
+        {
+          "va": "00568eb1",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 450178
+        },
+        {
+          "va": "00568eb2",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 450179
+        }
+      ],
+      "indexed_entries": [
+        {
+          "entry_va": "00568e90",
+          "name": "FUN_00568e90",
+          "signature": "undefined FUN_00568e90(void)",
+          "ranges": [
+            [
+              "00568e90",
+              "00568eb2"
+            ]
+          ],
+          "body_bytes": 35,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      ]
+    },
+    {
+      "entry_va": "00591760",
+      "end_va": "0059177a",
+      "body_bytes": 27,
+      "body_sha256": "acc20270b66ebca0881f491c3365e644e9f3a7f429fc621c9fa698bab4cc6dc9",
+      "file_offset": 1644384,
+      "raw_hex": "8b44240450e836ffffff83c40425ff000000740483c0c0c333c0c3",
+      "returns": [
+        "00591777",
+        "0059177a"
+      ],
+      "instructions": [
+        {
+          "va": "00591760",
+          "bytes": "8b442404",
+          "instruction": "mov eax, dword ptr [esp + 4]",
+          "index_line": 492945
+        },
+        {
+          "va": "00591764",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 492946
+        },
+        {
+          "va": "00591765",
+          "bytes": "e836ffffff",
+          "instruction": "call 0x5916a0",
+          "index_line": 492947
+        },
+        {
+          "va": "0059176a",
+          "bytes": "83c404",
+          "instruction": "add esp, 4",
+          "index_line": 492948
+        },
+        {
+          "va": "0059176d",
+          "bytes": "25ff000000",
+          "instruction": "and eax, 0xff",
+          "index_line": 492949
+        },
+        {
+          "va": "00591772",
+          "bytes": "7404",
+          "instruction": "je 0x591778",
+          "index_line": 492950
+        },
+        {
+          "va": "00591774",
+          "bytes": "83c0c0",
+          "instruction": "add eax, -0x40",
+          "index_line": 492951
+        },
+        {
+          "va": "00591777",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 492952
+        },
+        {
+          "va": "00591778",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax",
+          "index_line": 492953
+        },
+        {
+          "va": "0059177a",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 492954
+        }
+      ],
+      "indexed_entries": [
+        {
+          "entry_va": "00591760",
+          "name": "FUN_00591760",
+          "signature": "undefined FUN_00591760(void)",
+          "ranges": [
+            [
+              "00591760",
+              "0059177a"
+            ]
+          ],
+          "body_bytes": 27,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      ]
+    },
+    {
+      "entry_va": "005916a0",
+      "end_va": "0059170e",
+      "body_bytes": 111,
+      "body_sha256": "1664d1ed6fbdfabe2bf76b9dbc96d52f5b44ac985acc2d9fb284a6074782c6c7",
+      "file_offset": 1644192,
+      "raw_hex": "81ec0c010000568bb424140100006a7c56e8ca10010083c4088944240485c0754485f67505bef4d15c008d4424048d4c24085051680501000056ff151c225b008d5424088bf052ff1590225b0083fe017e13807c24093a750c8a4424085e81c40c010000c332c05e81c40c010000c3",
+      "returns": [
+        "00591704",
+        "0059170e"
+      ],
+      "instructions": [
+        {
+          "va": "005916a0",
+          "bytes": "81ec0c010000",
+          "instruction": "sub esp, 0x10c",
+          "index_line": 492907
+        },
+        {
+          "va": "005916a6",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 492908
+        },
+        {
+          "va": "005916a7",
+          "bytes": "8bb42414010000",
+          "instruction": "mov esi, dword ptr [esp + 0x114]",
+          "index_line": 492909
+        },
+        {
+          "va": "005916ae",
+          "bytes": "6a7c",
+          "instruction": "push 0x7c",
+          "index_line": 492910
+        },
+        {
+          "va": "005916b0",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 492911
+        },
+        {
+          "va": "005916b1",
+          "bytes": "e8ca100100",
+          "instruction": "call 0x5a2780",
+          "index_line": 492912
+        },
+        {
+          "va": "005916b6",
+          "bytes": "83c408",
+          "instruction": "add esp, 8",
+          "index_line": 492913
+        },
+        {
+          "va": "005916b9",
+          "bytes": "89442404",
+          "instruction": "mov dword ptr [esp + 4], eax",
+          "index_line": 492914
+        },
+        {
+          "va": "005916bd",
+          "bytes": "85c0",
+          "instruction": "test eax, eax",
+          "index_line": 492915
+        },
+        {
+          "va": "005916bf",
+          "bytes": "7544",
+          "instruction": "jne 0x591705",
+          "index_line": 492916
+        },
+        {
+          "va": "005916c1",
+          "bytes": "85f6",
+          "instruction": "test esi, esi",
+          "index_line": 492917
+        },
+        {
+          "va": "005916c3",
+          "bytes": "7505",
+          "instruction": "jne 0x5916ca",
+          "index_line": 492918
+        },
+        {
+          "va": "005916c5",
+          "bytes": "bef4d15c00",
+          "instruction": "mov esi, 0x5cd1f4",
+          "index_line": 492919
+        },
+        {
+          "va": "005916ca",
+          "bytes": "8d442404",
+          "instruction": "lea eax, [esp + 4]",
+          "index_line": 492920
+        },
+        {
+          "va": "005916ce",
+          "bytes": "8d4c2408",
+          "instruction": "lea ecx, [esp + 8]",
+          "index_line": 492921
+        },
+        {
+          "va": "005916d2",
+          "bytes": "50",
+          "instruction": "push eax",
+          "index_line": 492922
+        },
+        {
+          "va": "005916d3",
+          "bytes": "51",
+          "instruction": "push ecx",
+          "index_line": 492923
+        },
+        {
+          "va": "005916d4",
+          "bytes": "6805010000",
+          "instruction": "push 0x105",
+          "index_line": 492924
+        },
+        {
+          "va": "005916d9",
+          "bytes": "56",
+          "instruction": "push esi",
+          "index_line": 492925
+        },
+        {
+          "va": "005916da",
+          "bytes": "ff151c225b00",
+          "instruction": "call dword ptr [0x5b221c]",
+          "index_line": 492926
+        },
+        {
+          "va": "005916e0",
+          "bytes": "8d542408",
+          "instruction": "lea edx, [esp + 8]",
+          "index_line": 492927
+        },
+        {
+          "va": "005916e4",
+          "bytes": "8bf0",
+          "instruction": "mov esi, eax",
+          "index_line": 492928
+        },
+        {
+          "va": "005916e6",
+          "bytes": "52",
+          "instruction": "push edx",
+          "index_line": 492929
+        },
+        {
+          "va": "005916e7",
+          "bytes": "ff1590225b00",
+          "instruction": "call dword ptr [0x5b2290]",
+          "index_line": 492930
+        },
+        {
+          "va": "005916ed",
+          "bytes": "83fe01",
+          "instruction": "cmp esi, 1",
+          "index_line": 492931
+        },
+        {
+          "va": "005916f0",
+          "bytes": "7e13",
+          "instruction": "jle 0x591705",
+          "index_line": 492932
+        },
+        {
+          "va": "005916f2",
+          "bytes": "807c24093a",
+          "instruction": "cmp byte ptr [esp + 9], 0x3a",
+          "index_line": 492933
+        },
+        {
+          "va": "005916f7",
+          "bytes": "750c",
+          "instruction": "jne 0x591705",
+          "index_line": 492934
+        },
+        {
+          "va": "005916f9",
+          "bytes": "8a442408",
+          "instruction": "mov al, byte ptr [esp + 8]",
+          "index_line": 492935
+        },
+        {
+          "va": "005916fd",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 492936
+        },
+        {
+          "va": "005916fe",
+          "bytes": "81c40c010000",
+          "instruction": "add esp, 0x10c",
+          "index_line": 492937
+        },
+        {
+          "va": "00591704",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 492938
+        },
+        {
+          "va": "00591705",
+          "bytes": "32c0",
+          "instruction": "xor al, al",
+          "index_line": 492939
+        },
+        {
+          "va": "00591707",
+          "bytes": "5e",
+          "instruction": "pop esi",
+          "index_line": 492940
+        },
+        {
+          "va": "00591708",
+          "bytes": "81c40c010000",
+          "instruction": "add esp, 0x10c",
+          "index_line": 492941
+        },
+        {
+          "va": "0059170e",
+          "bytes": "c3",
+          "instruction": "ret ",
+          "index_line": 492942
+        }
+      ],
+      "indexed_entries": [
+        {
+          "entry_va": "005916a0",
+          "name": "FUN_005916a0",
+          "signature": "undefined FUN_005916a0(void)",
+          "ranges": [
+            [
+              "005916a0",
+              "0059170e"
+            ]
+          ],
+          "body_bytes": 111,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      ]
+    }
+  ],
+  "index_gap": {
+    "entry_va": "00561ce0",
+    "kind": "missing-function-entry-not-missing-instructions",
+    "label": [
+      {
+        "va": "00561ce0",
+        "name": "LAB_00561ce0",
+        "type": "Label",
+        "source": "DEFAULT",
+        "external": false
+      },
+      {
+        "va": "006ad750",
+        "name": "DAT_006ad750",
+        "type": "Label",
+        "source": "DEFAULT",
+        "external": false
+      }
+    ],
+    "indexed_instruction_bytes_match_pe": true,
+    "function_entry_absent": true,
+    "containing_function_range_absent": true,
+    "decompile_status_entry_absent": true,
+    "padding_before": "90",
+    "padding_after": "909090909090909090909090",
+    "callback_address_sites": [
+      {
+        "va": "00561cd1",
+        "bytes": "68e01c5600",
+        "sha256": "6c9d2dae5b65e2307a188be61a8b85a8d93e2889fd720b2f9df32905fb827f48",
+        "instruction": "PUSH 00561ce0"
+      },
+      {
+        "va": "00561e31",
+        "bytes": "68e01c5600",
+        "sha256": "6c9d2dae5b65e2307a188be61a8b85a8d93e2889fd720b2f9df32905fb827f48",
+        "instruction": "PUSH 00561ce0"
+      }
+    ]
+  },
+  "callback_references": [
+    {
+      "from_va": "00561cd1",
+      "to_va": "00561ce0",
+      "from_function": "00561ca0",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "LAB_00561ce0"
+    },
+    {
+      "from_va": "00561d49",
+      "to_va": "006ad750",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad750"
+    },
+    {
+      "from_va": "00561e31",
+      "to_va": "00561ce0",
+      "from_function": "00561e00",
+      "type": "DATA",
+      "source": "ANALYSIS",
+      "target_symbol": "LAB_00561ce0"
+    }
+  ],
+  "owners": {
+    "registry_entries": [],
+    "registered_containing_ranges": [],
+    "all_run_source_matches": [
+      "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.cpp:13:        return file_open_00561ca0(path, flags);",
+      "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.cpp:19:        return file_open_00561ca0(path, flags);",
+      "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.cpp:24:            return file_open_00561ca0(path, flags);",
+      "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.hpp:10:// 00561ca0 is an unrecovered pointer-returning boundary (CALL at 0059d927).",
+      "iterations/v2/001-original-recovery/runs/313-pr9-resource-open/resource_open_313.hpp:11:void* __cdecl file_open_00561ca0(const char* path, std::uint32_t flags);"
+    ],
+    "canonical_callees": {
+      "00533b90": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00533b90",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp",
+          "status": "native-differential-verified",
+          "calling_convention": "cdecl, x86 32-bit; open bool compared using AL",
+          "recovered_dependencies": [
+            "00567af0",
+            "00567df0",
+            "00567f70",
+            "00568aa0"
+          ],
+          "unrecovered_dependencies": [],
+          "unrecovered_indirect_dependencies": [],
+          "binary_matched": false,
+          "verification": "scripts/research/verify-v2-files.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/joint-disk/verification.json",
+          "verification_boundary": "Original worker/wait/FE/heap/IO execute synchronously in the event fixture; backend, platform events/thread identity/pump and CRT/SIMD/FE callbacks remain recorded boundaries."
+        }
+      ],
+      "00533bf0": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00533bf0",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp",
+          "status": "native-differential-verified",
+          "calling_convention": "cdecl, x86 32-bit",
+          "recovered_dependencies": [
+            "00533c20"
+          ],
+          "unrecovered_dependencies": [],
+          "unrecovered_indirect_dependencies": [],
+          "binary_matched": false,
+          "verification": "scripts/research/verify-v2-files.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/joint-disk/verification.json",
+          "verification_boundary": "Original worker/wait/FE/heap/IO execute synchronously in the event fixture; backend, platform events/thread identity/pump and CRT/SIMD/FE callbacks remain recorded boundaries."
+        }
+      ],
+      "00533da0": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00533da0",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp",
+          "status": "native-differential-verified",
+          "calling_convention": "cdecl, x86 32-bit",
+          "recovered_dependencies": [
+            "00567df0",
+            "00567f70",
+            "00568ae0"
+          ],
+          "unrecovered_dependencies": [],
+          "unrecovered_indirect_dependencies": [],
+          "binary_matched": false,
+          "verification": "scripts/research/verify-v2-files.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/joint-disk/verification.json",
+          "verification_boundary": "Original worker/wait/FE/heap/IO execute synchronously in the event fixture; backend, platform events/thread identity/pump and CRT/SIMD/FE callbacks remain recorded boundaries."
+        }
+      ],
+      "00533de0": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00533de0",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp",
+          "status": "native-differential-verified",
+          "calling_convention": "cdecl, x86 32-bit",
+          "recovered_dependencies": [
+            "00567df0",
+            "00567f70",
+            "00568b90"
+          ],
+          "unrecovered_dependencies": [],
+          "unrecovered_indirect_dependencies": [],
+          "binary_matched": false,
+          "verification": "scripts/research/verify-v2-files.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/joint-disk/verification.json",
+          "verification_boundary": "Original worker/wait/FE/heap/IO execute synchronously in the event fixture; backend, platform events/thread identity/pump and CRT/SIMD/FE callbacks remain recorded boundaries."
+        }
+      ],
+      "00531ca0": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00531ca0",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+          "status": "native-differential-verified",
+          "calling_convention": "cdecl, x86 32-bit",
+          "recovered_dependencies": [
+            "00531c60",
+            "005320b0",
+            "005322b0",
+            "005322c0"
+          ],
+          "unrecovered_dependencies": [],
+          "unrecovered_indirect_dependencies": [
+            "0069cb00 allocation-failure callback"
+          ],
+          "binary_matched": false,
+          "verification": "scripts/research/verify-v2-heap.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+          "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+          "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+        }
+      ],
+      "00531f90": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00531f90",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+          "status": "native-differential-verified",
+          "calling_convention": "cdecl, x86 32-bit",
+          "recovered_dependencies": [
+            "005322b0",
+            "005322c0"
+          ],
+          "unrecovered_dependencies": [],
+          "unrecovered_indirect_dependencies": [],
+          "binary_matched": false,
+          "verification": "scripts/research/verify-v2-heap.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+          "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only",
+          "integration_verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-bootstrap/verification.json"
+        }
+      ],
+      "00568d50": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00568d50",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_dispatch.cpp",
+          "calling_convention": "cdecl (callback, signed device index, priority/group, context), four DWORD arguments",
+          "recovered_dependencies": [
+            "00568390",
+            "005322b0",
+            "005322c0",
+            "0055fb30"
+          ],
+          "unrecovered_dependencies": [
+            "diagnostic_handler_005debf0"
+          ],
+          "verification": "scripts/research/verify-v2-resource-dispatch.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/111-runtime-integration/resource-dispatch/verification.json",
+          "verification_boundary": "Full device-state, return, callback and service order differential against original x86; filesystem/lock/event effects remain explicit boundaries.",
+          "status": "native-differential-verified",
+          "binary_matched": false,
+          "unrecovered_indirect_dependencies": [],
+          "dependency_scope": "Original indexed direct callees; indirect callback/OS edges are stated in the packet."
+        }
+      ],
+      "00561be0": [
+        {
+          "module": "Porsche.exe",
+          "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+          "entry_va": "00561be0",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_dispatch.cpp",
+          "calling_convention": "cdecl (priority/group, context), two DWORD arguments",
+          "recovered_dependencies": [
+            "00533b90",
+            "00533de0",
+            "00533da0"
+          ],
+          "unrecovered_dependencies": [
+            "diagnostic_handler_005debf0"
+          ],
+          "verification": "scripts/research/verify-v2-resource-dispatch.py",
+          "verification_report": "iterations/v2/001-original-recovery/runs/111-runtime-integration/resource-dispatch/verification.json",
+          "verification_boundary": "Full return, open/size/close argument and order differential against original x86; disk and optional diagnostic effects remain boundaries.",
+          "status": "native-differential-verified",
+          "binary_matched": false,
+          "unrecovered_indirect_dependencies": [],
+          "dependency_scope": "Original indexed direct callees; indirect callback/OS edges are stated in the packet."
+        }
+      ],
+      "005a2780": [],
+      "00591760": []
+    }
+  },
+  "transform_cell": {
+    "va": "006ad750",
+    "bytes": 4,
+    "section": ".data",
+    "raw_file_backed": false,
+    "initial_bytes": "00000000",
+    "known_indexed_references": [
+      {
+        "from_va": "00561d49",
+        "to_va": "006ad750",
+        "type": "READ",
+        "source": "DEFAULT",
+        "target_symbol": "DAT_006ad750"
+      }
+    ],
+    "accepted_storage_owner": "UNKNOWN",
+    "setter_or_all_indirect_writers": "UNKNOWN",
+    "warning": "The single indexed absolute read does not prove the absence of aliased/bulk writes."
+  },
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/decompile-status.jsonl": "260b2ffee48b18f3676d4d22a001b59c43e545aafa13a83c1553cfa5bdc46437",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/symbols.jsonl": "249e707b5b253cb5c0fd8818c54b144349d14fc73de294f34b7b72153295f4f0",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740"
+  },
+  "rea325": {
+    "attempt": "001",
+    "receipt": "local/experiments/v2-rea-resource-325/001/receipt.json",
+    "receipt_sha256": "bef592d712482ef021935ef82b6838ba56eb9e8c0a112364cf30de4e3207d9cf",
+    "server_pid": 189684,
+    "original_and_copy_unchanged": true,
+    "callback_still_not_in_procedure": true,
+    "callback_region_exact_pe_match": true,
+    "outputs": {
+      "device-route.json": "fbb004511632f1ee84e960d1508a54eaf31fd9f2f9fc435ba5d57fe74d4fc4f7",
+      "device-prefix.json": "430248640d12fcf224c27bcdf70ea48f993cadcd0de1ce1ee6157f5ff83818d4",
+      "callback-context.json": "2a1e78b48a27a140a96fcce1d478e454f27e5c5870d449805de4938548bbe5f1",
+      "callback-function.json": "7999620091ce8596b813927edfafb36ed953fb5cd610ac46c0e42f7a5e17cd4a",
+      "callback-entry-instruction.json": "cb876a3e128f48a0ec3beab2007e0b72a97aed5f009fd579be51d0c8f8db921a",
+      "callback-last-instruction.json": "801943faf56739bffc3c08d5d4abe2c1326a358253bcda2e19f549687fc9e99d",
+      "callback-region-bytes.json": "b4d60db49b9eb11ff80bdd78f3e134b5a2db2905719f428883db7dafae775534"
+    },
+    "limits": [
+      "REA function analysis of00561ce0 reports no procedure; this is the coverage gap itself, not a recovered function.",
+      "No pseudo-C or provider inference overrides the original instruction-level evidence."
+    ]
+  },
+  "acceptance": "Device packet PASS62B/2VAs; callback276B evidence-only HOLD; root owns game integration.",
+  "callback_contract": {
+    "signature": "void* __cdecl callback(uint32_t group,void* context); raw32 EAX result",
+    "incoming_stack": {
+      "S+0": "return address",
+      "S+4": "group, subsequently overwritten by opened handle via output pointer",
+      "S+8": "context"
+    },
+    "context_fields": {
+      "00": "path pointer snapshotted before file_open",
+      "04": "opaque/unread by this callback",
+      "08": "allocation flags, reloaded after size returns",
+      "0c": "diagnostic flag, checked separately on open/allocation failure"
+    },
+    "prologue": {
+      "local_bytes": 4,
+      "saved_registers": [
+        "EBX",
+        "EBP",
+        "ESI",
+        "EDI"
+      ]
+    },
+    "calls": [
+      {
+        "va": "00561cfd",
+        "target": "00533b90",
+        "arguments": [
+          "saved_path",
+          "1",
+          "group",
+          "address of incoming group stack slot reused for handle"
+        ],
+        "return_use": "test full EAX for nonzero"
+      },
+      {
+        "va": "00561d14",
+        "target": "00533de0",
+        "arguments": [
+          "handle",
+          "group-1 modulo32"
+        ],
+        "return_use": "raw EAX retained as signed allocation byte count"
+      },
+      {
+        "va": "00561d21",
+        "target": "00531ca0",
+        "arguments": [
+          "saved_path",
+          "size",
+          "context+08 loaded after size"
+        ],
+        "return_use": "nonnull allocated buffer"
+      },
+      {
+        "va": "00561d39",
+        "target": "00533bf0",
+        "arguments": [
+          "handle",
+          "0",
+          "buffer",
+          "size raw DWORD",
+          "group-1"
+        ],
+        "return_use": "ignored"
+      },
+      {
+        "va": "00561d44",
+        "target": "00533da0",
+        "arguments": [
+          "handle",
+          "group-1"
+        ],
+        "return_use": "ignored"
+      },
+      {
+        "va": "00561d49",
+        "target": "read006ad750",
+        "return_use": "reload mutable transform pointer only after close returns"
+      },
+      {
+        "va": "00561d5c",
+        "target": "transform pointer loaded from006ad750",
+        "arguments": [
+          "buffer",
+          "saved_path",
+          "saved_allocation_flags"
+        ],
+        "return_use": "raw pointer; null triggers original-buffer free; nonnull replaces return pointer without freeing original here"
+      },
+      {
+        "va": "00561d68",
+        "target": "00531f90",
+        "arguments": [
+          "original_buffer"
+        ],
+        "return_use": "ignored"
+      },
+      {
+        "va": "00561db2",
+        "target": "00533da0",
+        "arguments": [
+          "handle",
+          "group-1"
+        ],
+        "return_use": "allocation failure closes then returns0"
+      }
+    ],
+    "diagnostics": [
+      {
+        "va": "00561da3",
+        "source_va": "005bcd00",
+        "line": 210,
+        "format_va": "005bcd5c",
+        "condition": "allocation failed and freshly reloaded context+0c nonzero",
+        "after": "close handle and return0"
+      },
+      {
+        "va": "00561de3",
+        "source_va": "005bcd00",
+        "line": 218,
+        "format_va": "005bcd38",
+        "condition": "open failed and context+0c nonzero",
+        "after": "return0; no close because open failed"
+      }
+    ],
+    "canonical_owners": {
+      "005df770": "resource_dispatch_globals.cpp: initialized group100",
+      "005deb74": "shared_runtime_globals.cpp: shared raw DWORD plus typed views",
+      "005deb78": "shared_runtime_globals.cpp: shared raw DWORD plus aliases",
+      "005debf0": "files.cpp: existing mutable diagnostic callback",
+      "006ad750": "UNKNOWN; leave explicit unresolved storage boundary"
+    },
+    "not_accepted": [
+      "No allocation/read/close/transform callback implementation is provided.",
+      "No size-leaf or dispatcher alias can replace these distinct side effects.",
+      "No evidence proves a transform-cell setter/complete layout or ownership."
+    ]
+  },
+  "device_packet": {
+    "status": "PASS",
+    "native_cases_passed": 10240,
+    "original_vas": [
+      "00568e90",
+      "00591760"
+    ],
+    "original_selected_bytes": 62,
+    "native_attemptdir": "local/experiments/v2-resource-open-327/004",
+    "native_receipt_sha256": "510874f352099b8fc7717f055d0ea35c4360bc3a5f661c095913f303ce65ba99",
+    "new_body_count": 2,
+    "adapter_additional_body_count": 0,
+    "unrecovered_helper": "005916a0 AL-returning boundary",
+    "proof_scope": "Controlled helper and canonical search; full EAX, trace, ESP, nonvolatiles and legacy AL verified."
+  }
+}

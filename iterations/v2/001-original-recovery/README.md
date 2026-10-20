@@ -1,12 +1,13 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Current game checkpoint — [Run324](runs/324-input-modes-game-integration/README.md):
-166 C++ TUs compiled;264 unresolved names/293 references, no EXE. PR22 input
-modes pass native24/rebuilt1026/13/37/8 checks; two boundaries close. Original
-scalar/MMX/SSE fill is connected: new SIMD bodies passed4896 native cases;
-the complete dispatcher/backend chain passed27648. No guessed providers or
-duplicate owners. [REA316](runs/316-rea-fill-session/README.md) supplied analysis
-evidence. Next: canonical low-level resource-file bindings and remaining holds.
+Current game checkpoint - [Run328](runs/328-resource-device-game-integration/README.md):
+168 C++ TUs/8 projects compile;264 unresolved names/289 references, noEXE.
+Four original resource existence/device functions (134B) pass19456 native cases;
+shared427-pin audit PASS. [REA325](runs/325-rea-resource-session/README.md) provides
+fresh function evidence and confirms the missing276B callback index boundary.
+Constructor00568260, existing search graph intake and drive-letter005916a0 are
+next. Callback/transform-state and full-game holds remain open. [PLAN.md](PLAN.md)
+contains exact next steps; older checkpoints below are historical.
 
 Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.

@@ -1,5 +1,36 @@
 # v2 / 001 — план восстановления исходного кода
 
+Current checkpoint:328,2026-10-20. Goal remains a linked runnable original game
+from recovered C/C++; completion requires original behavioral and visual checks.
+Confirmed:325 persistent REA session;326 two existence/request VAs72B;327 two
+device VAs62B;19456 native cases, three detected mutations;328 actual168-TU/
+8-project compile and427-pin audit PASS. Link264 names/289 refs; noEXE/run.
+Source PE ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+Canonical group/wait/completion owners retained; no storage provider added.
+All325/326/327/328 assignments complete. No active agent work remains.
+
+Next bounded work (unassigned):
+1.329 constructor00568260..00568292 (51B), using325 dossier and index first.
+   Calls route00568e90, allocator005682a0, name005684e0, queue00568200. Check
+   existing owners before coding. Preserve absent null guard and raw queue EAX.
+   Resolve full DWORD group transport versus allocator low-byte consumer with
+   original-chain tests or a verified alias; do not silently claim stack identity.
+2. Existing formatter_search_character005a2780 owner is outside game328 graph.
+   Scope its graph intake/native provenance and unrelated locale dependencies;
+   do not duplicate the body or add fake locale providers.
+3. Drive-letter005916a0 original111B/Win32 calls; retain AL return ABI.
+4. Open wrapper00561ca0/callback00561ce0: supplemental276B index exists, but
+   transform cell006ad750 ownership/layout is unknown. No guessed cell/provider.
+
+Validation commands (completed, reuse immutable native/session receipts):
+`py -3 scripts/research/audit-v2-rea-resource-325.py`
+`py -3 scripts/research/audit-v2-resource-integration-328.py`
+Fresh builds: `py -3 scripts/research/build-v2-game-entry-328.py --phase configure --attempt NNN`
+and `--phase build --attempt NNN`; select unused attempt IDs. Native commands,
+failed attempts and scoped acceptance are recorded in326/327 READMEs.
+Root/arena/context296/301/303 and recovery-validation-backlog remain HOLD.
+Older checkpoint entries below are historical, not active assignments.
+
 Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
 fixes, fresh receipts, shared game audit and acceptance comments complete.
 All agents done; no unfinished implementation. Resume with original00561b80

@@ -1,5 +1,15 @@
 # Состояние проекта
 
+Run328:168 current C++ TUs/8 projects compile,264 unresolved names/289
+references, noEXE/game execution. Original resource existence/request and device
+routing bodies (4VAs/134B) integrated after19456 native cases. REA325 completed
+one persistent session; shared427-pin audit PASS. Compared with324: three old
+names closed, three dependencies exposed, four fewer unresolved references.
+Next constructor00568260; canonical search graph intake and drive-letter helper
+follow. Callback00561ce0 is now indexed but remains evidence-only; transform
+state006ad750 and root/arena/context/full-game validation holds remain open.
+No unfinished agent assignments. Older entries below describe earlier checkpoints.
+
 PR22 andPR23 are merged with corrected evidence, and GitHub confirms0 open PRs.
 PR22 changes canonical input behavior; PR23 is research-only. All review tasks
 and commits are complete. Current game324:166 TU compiled,264 names/293 refs,

@@ -1,5 +1,14 @@
 # Отложенные проверки восстановления v2
 
+Run328 resource acceptance is bounded:19456 native cases prove four wrapper/
+device bodies against copied original code with controlled unrecovered helpers.
+Real filesystem/queue/concurrency is not accepted. Constructor00568260 and drive
+helper005916a0 remain unresolved. Existing search005a2780 is outside the game
+graph; its canonical body must be reused with independently accepted dependencies.
+Open callback00561ce0 is indexed at276B but not implemented;006ad750 storage
+ownership/layout and callback failure/read/transform composition remain HOLD.
+Retain296/301/303 root/arena/context, visual and full-game acceptance checks.
+
 PR22/423 valid-slot input modes pass native24 and rebuilt1026/13/37/8 comparisons;
 324 fresh166-TU graph closes two names,264 names/293 refs remain. Negative/unmapped
 index layout, caps success parser and default diagnostic composition stay open.

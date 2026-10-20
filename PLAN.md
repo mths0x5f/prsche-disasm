@@ -1,5 +1,16 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint2026-10-20 Run328: REA325 evidence and four original resource
+bodies326/327 integrated.19456 native cases and shared427-pin audit PASS;
+168 C++ TUs/8 projects compile,264 unresolved names/289 refs, noEXE.
+Three old names close and constructor/drive/search dependencies are exposed.
+Assignments325/326/327/328 complete; no active agent implementation remains.
+Next: constructor00568260 (51B), then existing canonical character-search
+ownership/graph intake and drive-letter005916a0. Callback00561ce0 has a new
+276B supplemental index, but implementation/transform006ad750 remain HOLD.
+Detailed acceptance/commands/next steps: active iteration PLAN and Run328 README.
+The entries below are historical checkpoints.
+
 PR review closeout2026-10-20:22/f53921f and23/a733aaa merged with fixes;
 GitHub verified0 open PRs and both acceptance comments posted. No active agents
 or pending merge work. Game324 remains166 TU/264 names/293 refs/noEXE. Next:

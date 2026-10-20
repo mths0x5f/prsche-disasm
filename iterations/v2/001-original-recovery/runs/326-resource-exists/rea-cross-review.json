@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "status": "matches_original_bytes_and_native_controlled_callee_comparison",
+  "rea_run": "325",
+  "rea_receipt": "local/experiments/v2-rea-resource-325/001/receipt.json",
+  "rea_receipt_sha256": "bef592d712482ef021935ef82b6838ba56eb9e8c0a112364cf30de4e3207d9cf",
+  "rea_status": "local/experiments/v2-rea-resource-325/001/status.json",
+  "rea_status_sha256": "63348ffaa4c213e1d23eda94df3fd8b52687f7790172086ad66a0ec9d8ddc997",
+  "analysis": [
+    {
+      "file": "local/experiments/v2-rea-resource-325/001/exists-cold.json",
+      "sha256": "252b4fc38a58846d6345f09a53ad8ff2fea47b1c21fb4965f1c18c4a45408399",
+      "evidence_id": "ev_fcf76ad67a0bc584344e223e27180c4c4d46b8f9f89823f3b87fa382efd5fa85",
+      "va": "00561b80",
+      "body_bytes": 20,
+      "assembly": [
+        "0x561b80: MOV EAX, [0x005df770]",
+        "0x561b85: MOV ECX, dword ptr [ESP + 0x4]",
+        "0x561b89: PUSH EAX",
+        "0x561b8a: PUSH ECX",
+        "0x561b8b: CALL 0x00533f00",
+        "0x561b90: ADD ESP, 0x8",
+        "0x561b93: RET"
+      ],
+      "relationship_coverage": {
+        "status": "partial",
+        "limitations": [
+          "Ghidra's caller inventory omits sources of 2 call reference(s) into this function's body."
+        ],
+        "limited_directions": [
+          "callers"
+        ],
+        "diagnostics": [
+          "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals."
+        ]
+      }
+    },
+    {
+      "file": "local/experiments/v2-rea-resource-325/001/request-exists.json",
+      "sha256": "65c701a3dda9abcbfdfa34016d06e9f07cbe4d894f538222b435caea2485a666",
+      "evidence_id": "ev_94afc87fb284df28bc6a9ad9be658b4d050ef75e715de23d0a5e804f9aba618c",
+      "va": "00533f00",
+      "body_bytes": 52,
+      "assembly": [
+        "0x533f00: MOV EAX, dword ptr [ESP + 0x8]",
+        "0x533f04: MOV ECX, dword ptr [ESP + 0x4]",
+        "0x533f08: PUSH ESI",
+        "0x533f09: PUSH EDI",
+        "0x533f0a: XOR EDI, EDI",
+        "0x533f0c: PUSH EDI",
+        "0x533f0d: PUSH EAX",
+        "0x533f0e: PUSH ECX",
+        "0x533f0f: CALL 0x00568260",
+        "0x533f14: MOV ESI, EAX",
+        "0x533f16: ADD ESP, 0xc",
+        "0x533f19: TEST ESI, ESI",
+        "0x533f1b: JZ 0x00533f2f",
+        "0x533f1d: PUSH ESI",
+        "0x533f1e: CALL 0x00567f70",
+        "0x533f23: PUSH ESI",
+        "0x533f24: CALL 0x00567df0",
+        "0x533f29: ADD ESP, 0x8",
+        "0x533f2c: POP EDI",
+        "0x533f2d: POP ESI",
+        "0x533f2e: RET",
+        "0x533f2f: MOV EAX, EDI",
+        "0x533f31: POP EDI",
+        "0x533f32: POP ESI",
+        "0x533f33: RET"
+      ],
+      "relationship_coverage": {
+        "status": "complete",
+        "diagnostics": [
+          "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals."
+        ]
+      }
+    },
+    {
+      "file": "local/experiments/v2-rea-resource-325/001/request-constructor.json",
+      "sha256": "ed8be043c7ceba448341996f497c1636ba5835b0bd92e13fba7b93e616f885cd",
+      "evidence_id": "ev_d778fedef1e0df55409ae5dfaad91fae701197fce1f59d2ddb199f5adf38ac6f",
+      "va": "00568260",
+      "body_bytes": 51,
+      "assembly": [
+        "0x568260: PUSH ESI",
+        "0x568261: PUSH EDI",
+        "0x568262: MOV EDI, dword ptr [ESP + 0xc]",
+        "0x568266: PUSH EDI",
+        "0x568267: CALL 0x00568e90",
+        "0x56826c: MOV ECX, dword ptr [ESP + 0x14]",
+        "0x568270: PUSH EAX",
+        "0x568271: MOV EAX, dword ptr [ESP + 0x1c]",
+        "0x568275: PUSH EAX",
+        "0x568276: PUSH ECX",
+        "0x568277: PUSH 0x6",
+        "0x568279: CALL 0x005682a0",
+        "0x56827e: MOV ESI, EAX",
+        "0x568280: PUSH EDI",
+        "0x568281: PUSH ESI",
+        "0x568282: CALL 0x005684e0",
+        "0x568287: PUSH ESI",
+        "0x568288: CALL 0x00568200",
+        "0x56828d: ADD ESP, 0x20",
+        "0x568290: POP EDI",
+        "0x568291: POP ESI",
+        "0x568292: RET"
+      ],
+      "relationship_coverage": {
+        "status": "complete",
+        "diagnostics": [
+          "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals."
+        ]
+      }
+    }
+  ],
+  "signature_caution": "Ghidra emits void for00561b80/00568260; actual assembly preserves EAX, and00533f00 consumes constructor EAX. Native tests verify raw EAX, not guessed void pseudocode.",
+  "context_evidence": "00568260 forwards third argument through005682a0 request context;00533f00 pushes zero. Constructor itself remains unimplemented.",
+  "limitations": [
+    "325 Ghidra caller inventory is partial for00561b80; exact indexed call sites and bytes remain authoritative.",
+    "No physical file existence or complete queue/wait/completion behavior accepted by326."
+  ]
+}
