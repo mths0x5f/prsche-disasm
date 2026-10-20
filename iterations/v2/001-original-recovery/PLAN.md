@@ -1,5 +1,10 @@
 # v2 / 001 — план восстановления исходного кода
 
+Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
+fixes, fresh receipts, shared game audit and acceptance comments complete.
+All agents done; no unfinished implementation. Resume with original00561b80
+exists wrapper and00561ce0 open-callback tracing, retaining existing holds.
+
 PR review work complete:22 integrated in game324;23 corrected native47cases,
 13 mutation controls and10 audit-tamper controls PASS/rejected as appropriate.
 421/422 remain unlinked research; state providers/full audio not accepted.

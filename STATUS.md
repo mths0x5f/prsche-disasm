@@ -1,5 +1,10 @@
 # Состояние проекта
 
+PR22 andPR23 are merged with corrected evidence, and GitHub confirms0 open PRs.
+PR22 changes canonical input behavior; PR23 is research-only. All review tasks
+and commits are complete. Current game324:166 TU compiled,264 names/293 refs,
+noEXE or game execution. Full-game and recovery-validation holds remain open.
+
 PR22 merged; PR23 reviewed/fixed for isolated research intake. Final main-tree
 audio fixtures30/30+17/17 and strict audits PASS. No audio production integration.
 Game324 remains166 TU,264 names/293 refs, noEXE. Contributor licensing agreed.

@@ -1,5 +1,11 @@
 # План восстановления Porsche Unleashed
 
+PR review closeout2026-10-20:22/f53921f and23/a733aaa merged with fixes;
+GitHub verified0 open PRs and both acceptance comments posted. No active agents
+or pending merge work. Game324 remains166 TU/264 names/293 refs/noEXE. Next:
+original resource-file exists00561b80 wrapper, then open callback00561ce0;
+root/arena/context and full-game acceptance remain open.
+
 PR22 merged f53921f with native/probe/game324 evidence; PR23 corrected destination
 fixtures30+17 and both provenance/COFF audits PASS. Accept421/422 as research-only;
 shared audio state/concurrency/callees remain boundaries. All review agents done.
