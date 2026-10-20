@@ -93,17 +93,86 @@ __declspec(naked) void __cdecl forward_asm(Fwd*)
 }
 
 // ---- import trace (PORSCHE430_TRACE=<max lines>) -------------------------------------
-struct ImportName { U address; U iat_slot; char name[64]; signed char traced; };  // traced: -1 unknown
+struct ImportName {
+    U address;
+    U iat_slot;
+    char name[64];
+    signed char traced;  // trace filter result: 0 unknown, 1 yes, -1 no
+    U callback_arg;      // 1-based stack argument that carries a callback, or 0
+};
 const U kMaxImports = 2048;
 ImportName g_imports[kMaxImports];
 U g_import_count;
+U g_import_hash[8192];  // address -> index + 1
 long g_trace_left;
+
+// Native functions that receive a callback pointer of the game as a plain argument. The
+// pointer is swapped for an executable stub, so the native side enters the lowered body
+// without a DEP fault (Thrash calls its state callback ~20k times per second).
+struct CallbackArg { const char* name; U arg; };
+const CallbackArg kCallbackArgs[] = {
+    { "proc!_THRASH_setstate@8", 2 },
+    { "WINMM.dll!timeSetEvent", 3 },
+};
+
+U import_hash(U address) { return (address * 2654435761u) >> 19; }
+
+ImportName* find_import(U address)
+{
+    for (U k = import_hash(address), probes = 0; probes < 8192; k = (k + 1) & 8191, ++probes) {
+        U i = g_import_hash[k];
+        if (!i) return nullptr;
+        if (g_imports[i - 1].address == address) return &g_imports[i - 1];
+    }
+    return nullptr;
+}
+
+void add_import(U address, U iat_slot, const char* fmt, const char* a, const char* b)
+{
+    if (g_import_count >= kMaxImports || find_import(address)) return;
+    ImportName& im = g_imports[g_import_count];
+    im.address = address;
+    im.iat_slot = iat_slot;
+    _snprintf(im.name, sizeof im.name, fmt, a, b);
+    for (const CallbackArg& c : kCallbackArgs)
+        if (!strcmp(im.name, c.name)) im.callback_arg = c.arg;
+    U k = import_hash(address);
+    while (g_import_hash[k]) k = (k + 1) & 8191;
+    g_import_hash[k] = ++g_import_count;
+}
 
 const char* import_name(U target)
 {
-    for (U i = 0; i < g_import_count; ++i)
-        if (g_imports[i].address == target) return g_imports[i].name;
-    return nullptr;
+    ImportName* im = find_import(target);
+    return im ? im->name : nullptr;
+}
+
+// ---- callback stubs: `push va; jmp reverse_asm` in executable memory ------------------
+void reverse_asm();
+CRITICAL_SECTION g_stub_lock;
+BYTE* g_stub_pool;
+U g_stub_used;
+U g_stub_keys[1024], g_stub_values[1024];
+
+U stub_for(U va)
+{
+    EnterCriticalSection(&g_stub_lock);
+    U k = (va * 2654435761u) >> 22;
+    while (g_stub_keys[k] && g_stub_keys[k] != va) k = (k + 1) & 1023;
+    if (!g_stub_keys[k] && g_stub_used + 10u <= 0x10000u) {
+        if (!g_stub_pool)
+            g_stub_pool = static_cast<BYTE*>(VirtualAlloc(nullptr, 0x10000, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
+        BYTE* p = g_stub_pool + g_stub_used;
+        p[0] = 0x68; *reinterpret_cast<U*>(p + 1) = va;
+        p[5] = 0xe9; *reinterpret_cast<U*>(p + 6) = reinterpret_cast<U>(&reverse_asm) - reinterpret_cast<U>(p + 10);
+        FlushInstructionCache(GetCurrentProcess(), p, 10);
+        g_stub_keys[k] = va;
+        g_stub_values[k] = reinterpret_cast<U>(p);
+        g_stub_used += 10u;
+    }
+    U stub = g_stub_keys[k] == va ? g_stub_values[k] : va;
+    LeaveCriticalSection(&g_stub_lock);
+    return stub;
 }
 
 const char* g_trace_filter;  // ';'-separated substrings of import names, or null for all
@@ -137,12 +206,11 @@ bool trace_matches(const char* name)
 }
 
 // Formats the call into `line`; returns false when the call is not traced.
-bool trace_native(const Machine257& s, U target, char* line, int room)
+bool trace_native(const Machine257& s, ImportName* found, char* line, int room)
 {
-    if (g_trace_left <= 0) return false;
-    const char* name = import_name(target);
-    if (!name) return false;
-    ImportName& im = *reinterpret_cast<ImportName*>(const_cast<char*>(name) - offsetof(ImportName, name));
+    if (g_trace_left <= 0 || !found) return false;
+    ImportName& im = *found;
+    const char* name = im.name;
     if (!im.traced) im.traced = trace_matches(name) ? 1 : -1;
     if (im.traced < 0) return false;
     --g_trace_left;
@@ -155,7 +223,14 @@ bool trace_native(const Machine257& s, U target, char* line, int room)
 void native_call(Machine257& s, U target)
 {
     char line[512];
-    bool traced = trace_native(s, target, line, sizeof line - 32);
+    ImportName* im = find_import(target);
+    bool traced = trace_native(s, im, line, sizeof line - 32);
+    if (im && im->callback_arg) {
+        U slot = s.r[4] + 4u * im->callback_arg;
+        U cb = read257(slot, 4u);
+        if (cb >= g_code_lo && cb < g_code_hi && g_entries[cb - g_code_lo])
+            write257(slot, 4u, stub_for(cb));
+    }
     U return_pc = read257(s.r[4], 4u);
     Fwd f{ s.r[0], s.r[1], s.r[2], s.r[4] + 4u, target, 0u };
     ++g_native_calls;
@@ -169,17 +244,11 @@ void native_call(Machine257& s, U target)
     g_last = &s;
     s.r[0] = f.eax; s.r[1] = f.ecx; s.r[2] = f.edx; s.r[4] = f.esp;
     if (traced) fprintf(stderr, "%s -> %08x\n", line, f.eax);
-    if (g_trace_left > 0 && f.eax && g_import_count < kMaxImports) {
-        // Name pointers returned by GetProcAddress so calls through them are traced too.
-        const char* name = import_name(target);
+    if (f.eax && im && im->iat_slot && !strcmp(im->name, "KERNEL32.dll!GetProcAddress")) {
+        // Name pointers returned by GetProcAddress: traced by name, callback args known.
         U proc = read257(f.esp - 4u, 4u);  // stdcall popped (module, name): name was at esp-4
-        if (name && !strcmp(name, "KERNEL32.dll!GetProcAddress") && proc >= 0x10000u && !import_name(f.eax)) {
-            g_imports[g_import_count].address = f.eax;
-            g_imports[g_import_count].iat_slot = 0;
-            _snprintf(g_imports[g_import_count].name, sizeof g_imports[0].name, "proc!%s",
-                      reinterpret_cast<const char*>(proc));
-            ++g_import_count;
-        }
+        if (proc >= 0x10000u)
+            add_import(f.eax, 0, "proc!%s%s", reinterpret_cast<const char*>(proc), "");
     }
     s.pc = return_pc;
     s.stop = Stop257::Returned;
@@ -188,6 +257,18 @@ void native_call(Machine257& s, U target)
 // ---- reverse bridge -------------------------------------------------------------------
 struct Resume { U edi, esi, ebp, esp, ebx, edx, ecx, eax, pc; };
 __declspec(thread) Resume t_resume;
+
+// Reverse-entry counts by target (open addressing), dumped with the profile.
+struct ReverseCount { volatile LONG va; volatile LONG n; };
+ReverseCount g_reverse_counts[1024];
+
+void count_reverse(U va)
+{
+    for (U k = (va * 2654435761u) >> 22, probes = 0; probes < 1024; k = (k + 1) & 1023, ++probes) {
+        LONG seen = InterlockedCompareExchange(&g_reverse_counts[k].va, static_cast<LONG>(va), 0);
+        if (seen == 0 || seen == static_cast<LONG>(va)) { InterlockedIncrement(&g_reverse_counts[k].n); return; }
+    }
+}
 
 extern "C" U __cdecl pick_host_stack430()
 {
@@ -211,6 +292,7 @@ extern "C" Resume* __cdecl reverse_entry430(U* block)
     m.r[7] = block[0]; m.r[6] = block[1]; m.r[5] = block[2];
     m.r[3] = block[4]; m.r[2] = block[5]; m.r[1] = block[6]; m.r[0] = block[7];
     U target = block[8];
+    count_reverse(target);
     m.r[4] = reinterpret_cast<U>(block + 9);
     Machine257* outer = t_current;
     t_current = &m;
@@ -343,13 +425,9 @@ void map_image(const char* path)
             if (!p) fprintf(stderr, "[430] unresolved import %s!%s\n", dll,
                             (*names & 0x80000000u) ? "#ordinal" : fn);
             *iat = reinterpret_cast<U>(p);
-            if (p && g_import_count < kMaxImports) {
-                g_imports[g_import_count].address = reinterpret_cast<U>(p);
-                g_imports[g_import_count].iat_slot = reinterpret_cast<U>(iat);
-                _snprintf(g_imports[g_import_count].name, sizeof g_imports[0].name, "%s!%s", dll,
-                          (*names & 0x80000000u) ? "#ordinal" : fn);
-                ++g_import_count;
-            }
+            if (p)
+                add_import(reinterpret_cast<U>(p), reinterpret_cast<U>(iat), "%s!%s", dll,
+                           (*names & 0x80000000u) ? "#ordinal" : fn);
         }
     }
     g_entries = static_cast<void (**)(Machine257&)>(
@@ -364,12 +442,16 @@ void map_image(const char* path)
 DWORD WINAPI profile430(void* arg)
 {
     const DWORD seconds = static_cast<DWORD>(reinterpret_cast<ULONG_PTR>(arg));
+    if (const char* delay = getenv("PORSCHE430_PROFILE_DELAY"))
+        Sleep(static_cast<DWORD>(atol(delay)) * 1000u);
     auto* own = reinterpret_cast<IMAGE_NT_HEADERS32*>(kBase + reinterpret_cast<IMAGE_DOS_HEADER*>(kBase)->e_lfanew);
     const U host_end = kBase + own->OptionalHeader.SizeOfImage;
     U* hits = static_cast<U*>(VirtualAlloc(nullptr, (host_end - kBase) / 4u * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
     const U kMaxNative = 1u << 20;
     U* native = static_cast<U*>(VirtualAlloc(nullptr, kMaxNative * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
     U total = 0, native_n = 0;
+    static LONG reverse_before[1024];
+    for (U k = 0; k < 1024; ++k) reverse_before[k] = g_reverse_counts[k].n;
     const DWORD end = GetTickCount() + seconds * 1000u;
     timeBeginPeriod(1);
     while (GetTickCount() < end) {
@@ -389,6 +471,9 @@ DWORD WINAPI profile430(void* arg)
     FILE* out = fopen(path ? path : "profile430.txt", "w");
     if (!out) return 0;
     fprintf(out, "total %u\n", total);
+    for (U k = 0; k < 1024; ++k)
+        if (g_reverse_counts[k].n - reverse_before[k])
+            fprintf(out, "reverse %08lx %ld\n", g_reverse_counts[k].va, g_reverse_counts[k].n - reverse_before[k]);
     for (U i = 0; i < (host_end - kBase) / 4u; ++i)
         if (hits[i]) fprintf(out, "host %08x %u\n", kBase + 4u * i, hits[i]);
     for (U i = 0; i < native_n; ++i) {
@@ -495,7 +580,7 @@ void run_native()
         *reinterpret_cast<U*>(p + 6) = reinterpret_cast<U>(&import_hook_common430) - reinterpret_cast<U>(p + 10);
     }
     for (U i = 0; i < g_import_count; ++i)
-        *reinterpret_cast<U*>(g_imports[i].iat_slot) = reinterpret_cast<U>(stubs + 10u * i);
+        if (g_imports[i].iat_slot) *reinterpret_cast<U*>(g_imports[i].iat_slot) = reinterpret_cast<U>(stubs + 10u * i);
     reinterpret_cast<void (*)()>(g_entry_va)();
 }
 
@@ -542,6 +627,7 @@ int main(int argc, char** argv)
     const char* path = argc > 1 ? argv[1] : "Porsche.exe";
     if (!GetFullPathNameA(path, MAX_PATH, g_original_path, nullptr)) return 2;
     g_t0 = GetTickCount();
+    InitializeCriticalSection(&g_stub_lock);
     DuplicateHandle(GetCurrentProcess(), GetCurrentThread(), GetCurrentProcess(), &g_main_thread, 0, FALSE,
                     DUPLICATE_SAME_ACCESS);
     map_image(g_original_path);

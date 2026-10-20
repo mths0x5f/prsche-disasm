@@ -86,10 +86,47 @@ diferencial contra a rebaixada ou contra o original.
   rebaixado também caiu uma vez no mesmo lugar. Como acontece nos dois modos, é ambiente
   (layout de memória do host), não rebaixamento.
 
+### Atualização: desempenho (2026-10-20)
+
+Medido com a cópia `local/run-430`, onde o `gimme.dll` foi renomeado para `gimme.dll.bak`
+(a correção clássica da era XP: o jogo pula a conversão do retrato, e o `ConvertFile` deixa
+de cair de forma intermitente).
+
+| Medida | Original (modo nativo) | Rebaixado antes | Rebaixado agora |
+|---|---|---|---|
+| Até o menu (`LoadLibrary("gimme.dll")`) | ~11–12 s | 15,3 s | ~13 s |
+| CPU no menu (20–30 s, % de um núcleo) | 42% | 71–82% | 45% |
+
+O que mudou:
+- **Inline e flags.** Os helpers da máquina são `__forceinline` e compilados com `/O2`; com
+  `/O1` eles não entravam inline e custavam ~37% do tempo. `div`/`idiv` usam 32 bits quando
+  EDX só estende EAX, sem chamar a divisão de 64 bits da CRT.
+- **Flags mortos.** Uma escrita de flags sobrescrita por outra escrita completa
+  (`add/sub/cmp/test/and/or/xor/neg`) antes de qualquer leitura vira uma forma `nf`, que só
+  calcula o valor. São 31.720 instruções. Só atravessa instruções que comprovadamente não
+  tocam em EFLAGS.
+- **Callbacks sem exceção.** O Thrash (`dx7z.dll`) chama o callback de estado `00575a20`
+  ~20 mil vezes por segundo. Cada chamada era uma falha de DEP tratada pelo VEH, ~16% da
+  thread principal no menu. Agora, nas APIs conhecidas que recebem callback
+  (`_THRASH_setstate@8`, arg. 2; `timeSetEvent`, arg. 3), o ponteiro é trocado por um stub
+  executável `push va; jmp reverse_asm`.
+- **Nomes de import.** A busca virou uma tabela hash, e o resultado do filtro de trace
+  fica em cache.
+- **Ferramentas.** `PORSCHE430_PROFILE=<s>` (com `PORSCHE430_PROFILE_DELAY` e
+  `PORSCHE430_PROFILE_OUT`) amostra o EIP da thread principal a 1 kHz e conta as entradas
+  da ponte de volta. Para simbolizar:
+  `py -3 scripts/research/profile-v2-lowered-exe-430.py <arquivo>`.
+- **Equivalência mantida.** Com o filtro
+  `LoadLibrary;GetProcAddress;CreateFileA;RegOpen;RegQuery;FindFirst`, as 1.796 primeiras
+  chamadas são idênticas às do original no modo nativo; só os handles diferem.
+- **Calibração de CPU.** `005560b0` conta quantas `idiv` cabem num intervalo fixo do
+  relógio `[006b7c7c]` e domina a partida (24%). Ela dura o mesmo tempo nas duas versões,
+  mas o rebaixado faz menos iterações. Falta verificar se o jogo usa o resultado para
+  escolher detalhes.
+
 ## Próximos passos
 
-1. Medir e reduzir a lentidão do rebaixado (perfil por função; `/O2`; `step257` e
-   `read257/write257` são os candidatos).
+1. Verificar o uso do resultado da calibração de CPU (`005560b0`) e medir a corrida
 2. Ir além do menu (corrida) comparando traces nativo × rebaixado e corrigindo cada
    divergência ou parada fatal (`[430] ...` no stderr).
 3. Investigar o crash do `gimme.dll!ConvertFile` no host (provável dependência de layout

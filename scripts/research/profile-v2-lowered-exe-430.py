@@ -24,6 +24,7 @@ def main():
     syms.sort()
     starts = [a for a, _, _ in syms]
     funcs, objs, modules = collections.Counter(), collections.Counter(), collections.Counter()
+    reverse = collections.Counter()
     total = 0
     for line in profile.read_text(encoding='utf-8').splitlines():
         kind, *rest = line.split()
@@ -36,6 +37,8 @@ def main():
             m = re.match(r'\?translated_([0-9a-f]{8})@', name)
             funcs['lowered ' + m.group(1) if m else name] += n
             objs['lowered' if obj.startswith('lowered_') else obj] += n
+        elif kind == 'reverse':
+            reverse[rest[0]] += int(rest[1])
         elif kind == 'native':
             modules[rest[0]] += 1
             objs['native'] += 1
@@ -46,6 +49,9 @@ def main():
     print('-- native modules')
     for name, n in modules.most_common(8):
         print(f'{100 * n / total:5.1f}% {name}')
+    print('-- reverse entries (native -> lowered) in the window')
+    for va, n in reverse.most_common(10):
+        print(f'{n:8d} {va}')
     print('-- functions')
     for name, n in funcs.most_common(top):
         print(f'{100 * n / total:5.1f}% {name}')
