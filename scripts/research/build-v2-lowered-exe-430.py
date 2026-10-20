@@ -441,12 +441,33 @@ def generate(translate, header, img, entries, pointers=()):
     put(gen / 'lowered_table.cpp', '\n'.join(table))
     for old in list(gen.glob('lowered_[0-9]*.cpp')) + [p for p in src.rglob('*.cpp') if str(p) not in written]:
         old.unlink()
+    for d in sorted((p for p in src.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
+        if not any(d.iterdir()):
+            d.rmdir()
     return dict(dead_flag_writes=STATS["dead_flag_writes"], gap_pieces_added=added, lowered=functions, ranges=ranges,
                 table_entries=len(table_rows), rejected=rejected, instructions=insns, source_files=tu_index,
                 generate_seconds=round(time.time() - t0, 1))
 
 
 SOURCE_NOTES = {}
+CANON_CASE = {}
+
+
+def canonical_rel(original):
+    """Original path -> relative .cpp path, one tree for both build roots.
+
+    Porsche.exe was built under d:\\Nfs\\ and the gimme.dll objects under D:\\dev\\; both hold the
+    same tree (Nfs5\\..., Support\\..., library\\...). Drive and root are dropped, and each
+    directory keeps the spelling it was first seen with (Windows paths are case-insensitive).
+    """
+    parts = [p for p in re.split(r'[\\/]', original) if p and not p.endswith(':') and p != '..']
+    if parts and parts[0].lower() in ('dev', 'nfs') and len(parts) > 2:
+        parts = parts[1:]
+    out = []
+    for k, p in enumerate(parts[:-1]):
+        key = '/'.join(x.lower() for x in parts[:k + 1])
+        out.append(CANON_CASE.setdefault(key, p))
+    return '/'.join(out + [parts[-1].rsplit('.', 1)[0] + '.cpp'])
 
 
 def source_layout(entries):
@@ -464,9 +485,12 @@ def source_layout(entries):
     for e in sorted(entries, key=lambda e: int(e['entry_va'], 16)):
         va = e['entry_va']
         info = by_func.get(va, {})
-        names = info.get('names') or []
+        real = info.get('real_names') or []
+        names = real or info.get('names') or []
         shared = len({n.split('::')[0] for n in names}) > 1  # folded body used by several classes
-        if shared:
+        if real and not shared:
+            ident = re.sub(r'[^A-Za-z0-9]+', '_', real[0].replace('::', '__')) + '_' + va
+        elif shared:
             ident = f'shared_{va}'
         elif names:
             ident = re.sub(r'[^A-Za-z0-9]+', '_', names[0].replace('::', '__')) + '_' + va
@@ -474,8 +498,7 @@ def source_layout(entries):
             ident = f'PTR_{va}' if e.get('synthetic') else f'FUN_{va}'
         if info.get('file'):
             original = info['file']
-            parts = [p for p in re.split(r'[\\/]', original) if p and not p.endswith(':') and p != '..']
-            rel = '/'.join(parts[:-1] + [parts[-1].rsplit('.', 1)[0] + '.cpp'])
+            rel = canonical_rel(original)
             SOURCE_NOTES[rel] = f'original source: {original} (evidence: see attribution.json)'
         elif shared:
             rel = '_sem_arquivo/classes/_compartilhadas.cpp'

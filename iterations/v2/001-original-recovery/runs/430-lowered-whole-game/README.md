@@ -163,6 +163,36 @@ Layout:
 Cada arquivo diz na primeira linha de onde veio, e `attribution.json` guarda a evidência de
 cada função. Ao todo são 442 arquivos.
 
+#### Evidência do `gimme.dll`
+
+O `gimme.dll` (ferramenta "FaceInRace", SHA `3a43b0f6…`, igual no repack e na instalação
+completa) foi linkado com buffers que sobraram de **arquivos-objeto do NFS5 com debug
+CodeView**. A extração é feita por `scripts/research/extract-v2-gimme-debug-430.py`; a saída
+completa fica em `gimme-evidence.json` (local) e o resumo em `gimme-evidence-summary.json`.
+- **10 objetos**, com o nome que o compilador gravou:
+  - Release: `WMap.obj`, `WFarGroundBundle.obj`, `RShadowManager.obj`, `FEdaCar.obj`,
+    `FECarListTypes.obj`;
+  - Debug: `FEdaChronicle.obj`, `FEChroniclePictureControl.obj`, `FEdaDisplay.obj`,
+    `WWorldHandle.obj`, `WAnimatableHandle.obj`.
+- **133 caminhos reais** em `D:\dev\NFS5\...`, `D:\dev\library\...` e `D:\dev\support\...`,
+  sendo 12 `.cpp` e 121 headers.
+- **62 funções nomeadas** com parâmetros e locais (todas dos objetos Debug), **3.046 nomes
+  de tipo** e 56 corpos de função.
+
+Uso na atribuição:
+- **`gimme-bytes`.** Corpos casados com o `Porsche.exe` de forma única, com os dwords
+  relocados mascarados: `WMap::Find` em `0047bad0` e `0047bc20`, ambos em `WMap.cpp`.
+- **`gimme-vtable`.** O slot k da vtable embutida dá nome ao slot k da mesma classe, ou de
+  suas derivadas (hierarquia RTTI), no jogo. Só vale se os bytes que o nome decorado diz que
+  o método `__thiscall` remove da pilha forem iguais a todo `ret N` da função. Passaram
+  `WArticleBundle::SubReLoad` (`00477d10`) e `FEdaCar::Initialize` (`004f1ea0`). As classes
+  `W*Bundle` têm 11 slots no jogo contra 10 no gimme (a interface mudou entre as builds),
+  então os demais slots foram rejeitados pela checagem.
+- **`class-file`.** Os `.cpp` reais do gimme entram como âncoras; 29 funções no total, entre
+  elas as de `FEdaCar.cpp`, `FEdaChronicle.cpp` e `FECarSetupCallbackList.cpp`.
+- **Raiz única.** O jogo foi compilado em `d:\Nfs\` e o gimme em `D:\dev\`. A árvore
+  unifica as duas em `Nfs5/...`, `Support/...` e `real/...`.
+
 Limites:
 - só ~2% das funções têm arquivo de origem comprovado;
 - a fronteira entre arquivos sem âncora não é conhecida e não é inventada.
