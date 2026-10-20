@@ -1,5 +1,14 @@
 # Состояние проекта
 
+Run324:166 TUs compiled,264 names/293 refs, noEXE. PR22 closes two names with
+no new dependencies; native24, rebuilt1026/13/37/8 and corrected423/324 audits PASS.
+PR23 remains isolated; corrected provenance is finalized before research intake.
+
+Current review: PR22 input modes and PR23 audio recovery; game checkpoint321
+unchanged pending decisions. Main fast-forwarded to3c5f9b8, which records the
+contributor's MIT agreement in LICENSING.md. Earlier pending-consent entries
+below are historical for this contributor.
+
 Licensing: MIT for project-owned original work; LICENSING.md records exclusions
 and pending agreement for older external contributions. The repository is not
 claimed to be uniformly MIT-licensed. Game checkpoint321 remains unchanged.

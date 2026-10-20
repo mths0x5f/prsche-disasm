@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 24,
+  "probes": {
+    "input": {
+      "cases": 1026,
+      "result_sha256": "35e1d5791ea1506a3e65a3d55800b2c5413f54a545fef6bf64a308e42e72ea30",
+      "build_log_sha256": "46514b23b1d02aac779a124a5a721e3423e4f2c66d8e4d1ca94e6cfdaa7c3b3d",
+      "verify_log_sha256": "301cc20e2ee30b0f9db5c37a6381f8deeaf06998386a1da286719c310df08fdd"
+    },
+    "input_snapshot": {
+      "cases": 13,
+      "result_sha256": "6b41e3cde7f96e067259aa53d06cde6b2e789c37f8e53321816f6564138232ed",
+      "build_log_sha256": "6cdef47556972a42a5c1aa1d8e5c70d26f8d5c4a9034b94b641be5423b19699a",
+      "verify_log_sha256": "944e960850adf327d470e8a98cd57f2843076fe55d00d2b45a094624c06964c4"
+    },
+    "input_buffer": {
+      "cases": 37,
+      "result_sha256": "bbfd7031f7f5aacc350594bac5d703834818893c4b6fbe4a8931158767a92dc5",
+      "build_log_sha256": "e5444786456591d0300b466f2133b210dcdc0569ad91134655076854217b60e2",
+      "verify_log_sha256": "6fd2a1329e5aaec786942903e7786bfb6066c79b5ec76b704911e989496119db"
+    },
+    "startup_input": {
+      "cases": 8,
+      "result_sha256": "c8f084771d8ef224ca5dde69a3de37163c03e6580fceb3f0f1af681ac6596926",
+      "build_log_sha256": "528ee97f8f7b200b4012274b140e70752911b8fc89a81c0fa132a9989a2d9aa6",
+      "verify_log_sha256": "04e69cd9519d8086fd89a718ee2184d9c5124c8e854fb01d63d433e24cf2a433"
+    }
+  },
+  "game_sources": 166,
+  "source_pins": 420,
+  "unresolved_names": 264,
+  "unresolved_references": 293,
+  "closed_names": [
+    "?input_invalid_type_00532eae@porsche@@YAXI@Z",
+    "?input_unrecovered_mode_00532e10@porsche@@YAPAXIIPAUInputSlot@1@@Z"
+  ],
+  "new_names": [],
+  "game_executed": false,
+  "build_report_sha256": "3a768408943dc54987dbbc46cf2f347fbbeab94ea4f4f647be1bfe7a0686da2d",
+  "packet423_sha256": "d35b88b5926df7da7d82601a58839647e140815dcf484f82138b6262bde0e996",
+  "object_sha256": "71f7e531aace915ab5529d95bdfdc223a6a1428429eda4d9b368f08a6b179951",
+  "symbols": {
+    "defined": [
+      "??_C@_0BI@FNNNPPPI@?2real?2patch3?2pc?2input?4c@",
+      "??_C@_0CB@DEFDNCHH@?$FLINPUT?$FN?5?9?5Invalid?5getstate?5?$CI?$CFd?$CJ@",
+      "??_C@_0DB@CGNGFFLE@?$FLINPUT?$FN?5_getstate?0?5Internal?5err@",
+      "?fe_input_getstate_00532e10@porsche@@YAPAXII@Z",
+      "?input_caps_buffer_006bde20@porsche@@3PAEA",
+      "?input_count_0069cb0c@porsche@@3HA",
+      "?input_poll_0056fd00@porsche@@YAIPAUInputDevice@1@@Z",
+      "?input_poll_read_0056fce0@porsche@@YAIPAUInputDevice@1@PAXI@Z",
+      "?input_read_0056fd30@porsche@@YAIPAUInputDevice@1@IPAX@Z",
+      "?input_slots_006be040@porsche@@3PAUInputSlot@1@A"
+    ],
+    "undefined": [
+      "?diagnostic_file_005deb74_set@porsche@@YAXPBD@Z",
+      "?diagnostic_handler_005debf0@porsche@@3P6AXPBD@ZA",
+      "?diagnostic_line_005deb78@porsche@@3AAIA",
+      "?input_caps_0056fdb0@porsche@@YAIPAUInputBufferDevice@1@PAX@Z",
+      "?input_negative_index_00532e10@porsche@@YAPAXHI@Z",
+      "?input_property_mode8_0056fff0@porsche@@YAIPAUInputBufferDevice@1@@Z",
+      "?input_unmapped_index_00532e10@porsche@@YAPAXII@Z"
+    ],
+    "common": [],
+    "weak": []
+  }
+}

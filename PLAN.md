@@ -1,5 +1,16 @@
 # План восстановления Porsche Unleashed
 
+PR22/Run324 verified: native24 and rebuilt1026/13/37/8 PASS;166 game TUs compile,
+264 names/293 refs remain, noEXE.420 unchanged pins; shared audit PASS. PR23
+research intake needs corrected destination receipts before merge. Both reviews
+are complete; coordinator owns merges. See docs/research/pr-review-2026-10-20.md.
+
+2026-10-20: reviewing open PR22 (input423) and PR23 (audio421/422) against
+current main3c5f9b8. Independent reviewers own isolated local snapshots/reports;
+coordinator owns original-evidence acceptance, integration and PR decisions.
+No proposed behavior has entered the game graph. PR21 already records mths0x5f's
+MIT agreement for existing and future contributions; that follow-up is resolved.
+
 2026-10-20: added MIT LICENSE for project-owned contributions and LICENSING.md
 scope. Original game/third-party rights are not relicensed. Existing external
 contributions, including PR3/PR20, need applicable license/author agreement before

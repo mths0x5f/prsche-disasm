@@ -1,5 +1,17 @@
 # v2 / 001 — план восстановления исходного кода
 
+PR22/Run324 ready: native24, rebuilt1026/13/37/8,166-TU fresh compile,
+264 names/293 refs,420 unchanged pins and audit PASS.423 audit/docs repaired.
+PR23 local proposal accepted for research-only intake after fresh destination
+receipts; audio state/game integration remains open. Reviews complete;
+coordinator owns merge/proof bookkeeping. Next game work: resource-file recovery.
+
+PR review assignments: pr22_input_review — canonical getstate modes/storage,
+original/native and rebuilt probe checks in local/experiments/pr22-review;
+pr23_audio_review — isolated421/422 source/native/ownership checks in
+local/experiments/pr23-review. Coordinator — decisions and any integration.
+Game321 remains166 TU/266 names/295 refs/noEXE until fresh evidence proves otherwise.
+
 Licensing follow-up: root MIT grant covers only rights held by its licensors;
 original game material and unlicensed external contributions remain excluded.
 Track author permission for PR3/PR20 separately; no recovered-source provenance,
