@@ -13,6 +13,8 @@
 #include <windows.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#pragma comment(lib, "winmm.lib")
 #include "machine257.h"
 
 struct LoweredEntry430 { U va; void (*fn)(Machine257&); };
@@ -29,6 +31,8 @@ void (**g_entries)(Machine257&);
 char g_original_path[MAX_PATH];
 U g_entry_va;
 const U kReserveBytes = 0x2e2000u;  // must match reserve_430.asm
+DWORD g_t0;                         // start time for trace timestamps
+HANDLE g_main_thread;
 
 __declspec(thread) U t_host_sp;      // host stack to resume on while native code runs
 __declspec(thread) U t_side_top;     // side stack of a thread first entered from native code
@@ -89,7 +93,7 @@ __declspec(naked) void __cdecl forward_asm(Fwd*)
 }
 
 // ---- import trace (PORSCHE430_TRACE=<max lines>) -------------------------------------
-struct ImportName { U address; U iat_slot; char name[64]; };
+struct ImportName { U address; U iat_slot; char name[64]; signed char traced; };  // traced: -1 unknown
 const U kMaxImports = 2048;
 ImportName g_imports[kMaxImports];
 U g_import_count;
@@ -137,9 +141,13 @@ bool trace_native(const Machine257& s, U target, char* line, int room)
 {
     if (g_trace_left <= 0) return false;
     const char* name = import_name(target);
-    if (!name || !trace_matches(name)) return false;
+    if (!name) return false;
+    ImportName& im = *reinterpret_cast<ImportName*>(const_cast<char*>(name) - offsetof(ImportName, name));
+    if (!im.traced) im.traced = trace_matches(name) ? 1 : -1;
+    if (im.traced < 0) return false;
     --g_trace_left;
-    int n = _snprintf(line, room, "[430] t%lu %s from %08x:", GetCurrentThreadId(), name, read257(s.r[4], 4u));
+    int n = _snprintf(line, room, "[430] +%lums t%lu %s from %08x:", GetTickCount() - g_t0, GetCurrentThreadId(), name,
+                      read257(s.r[4], 4u));
     for (U k = 1; k <= 4 && n > 0 && n < room; ++k) n += format_arg(line + n, room - n, read257(s.r[4] + 4u * k, 4u));
     return true;
 }
@@ -350,6 +358,54 @@ void map_image(const char* path)
         g_entries[lowered_table430[i].va - g_code_lo] = lowered_table430[i].fn;
 }
 
+// Sampling profiler (PORSCHE430_PROFILE=<seconds>, PORSCHE430_PROFILE_OUT=<file>): samples
+// the main thread's EIP every millisecond. Host-image samples are written as raw addresses
+// (symbolized afterwards with the linker map); other samples are grouped by module.
+DWORD WINAPI profile430(void* arg)
+{
+    const DWORD seconds = static_cast<DWORD>(reinterpret_cast<ULONG_PTR>(arg));
+    auto* own = reinterpret_cast<IMAGE_NT_HEADERS32*>(kBase + reinterpret_cast<IMAGE_DOS_HEADER*>(kBase)->e_lfanew);
+    const U host_end = kBase + own->OptionalHeader.SizeOfImage;
+    U* hits = static_cast<U*>(VirtualAlloc(nullptr, (host_end - kBase) / 4u * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
+    const U kMaxNative = 1u << 20;
+    U* native = static_cast<U*>(VirtualAlloc(nullptr, kMaxNative * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
+    U total = 0, native_n = 0;
+    const DWORD end = GetTickCount() + seconds * 1000u;
+    timeBeginPeriod(1);
+    while (GetTickCount() < end) {
+        Sleep(1);
+        if (SuspendThread(g_main_thread) == static_cast<DWORD>(-1)) break;
+        CONTEXT c;
+        c.ContextFlags = CONTEXT_CONTROL;
+        BOOL ok = GetThreadContext(g_main_thread, &c);
+        ResumeThread(g_main_thread);
+        if (!ok) continue;
+        ++total;
+        if (c.Eip >= kBase && c.Eip < host_end) ++hits[(c.Eip - kBase) / 4u];
+        else if (native_n < kMaxNative) native[native_n++] = c.Eip;
+    }
+    timeEndPeriod(1);
+    const char* path = getenv("PORSCHE430_PROFILE_OUT");
+    FILE* out = fopen(path ? path : "profile430.txt", "w");
+    if (!out) return 0;
+    fprintf(out, "total %u\n", total);
+    for (U i = 0; i < (host_end - kBase) / 4u; ++i)
+        if (hits[i]) fprintf(out, "host %08x %u\n", kBase + 4u * i, hits[i]);
+    for (U i = 0; i < native_n; ++i) {
+        HMODULE m = nullptr;
+        char name[MAX_PATH] = "?";
+        if (GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+                               reinterpret_cast<LPCSTR>(static_cast<ULONG_PTR>(native[i])), &m) && m)
+            GetModuleFileNameA(m, name, MAX_PATH);
+        const char* base = strrchr(name, '\\');
+        fprintf(out, "native %s %08x\n", base ? base + 1 : name, native[i]);
+    }
+    fclose(out);
+    fprintf(stderr, "[430] profile: %u samples written\n", total);
+    fflush(stderr);
+    return 0;
+}
+
 DWORD WINAPI watchdog430(void*)
 {
     for (;;) {
@@ -395,12 +451,15 @@ __declspec(naked) void __cdecl switch_to_side(U, void (__cdecl*)(U))
 extern "C" void __cdecl import_hook_log430(U* slot)
 {
     // slot[0]: import index (replaced by the real target), slot[1]: return address, args.
-    const ImportName& im = g_imports[slot[0]];
+    ImportName& im = g_imports[slot[0]];
     slot[0] = im.address;
-    if (g_trace_left <= 0 || !trace_matches(im.name)) return;
+    if (g_trace_left <= 0) return;
+    if (!im.traced) im.traced = trace_matches(im.name) ? 1 : -1;
+    if (im.traced < 0) return;
     --g_trace_left;
     char line[512];
-    int n = _snprintf(line, sizeof line - 32, "[430] t%lu %s from %08x:", GetCurrentThreadId(), im.name, slot[1]);
+    int n = _snprintf(line, sizeof line - 32, "[430] +%lums t%lu %s from %08x:", GetTickCount() - g_t0,
+                      GetCurrentThreadId(), im.name, slot[1]);
     for (U k = 2; k <= 5 && n > 0 && n < 480; ++k) n += format_arg(line + n, 480 - n, slot[k]);
     fprintf(stderr, "%s\n", line);
 }
@@ -482,7 +541,12 @@ int main(int argc, char** argv)
 {
     const char* path = argc > 1 ? argv[1] : "Porsche.exe";
     if (!GetFullPathNameA(path, MAX_PATH, g_original_path, nullptr)) return 2;
+    g_t0 = GetTickCount();
+    DuplicateHandle(GetCurrentProcess(), GetCurrentThread(), GetCurrentProcess(), &g_main_thread, 0, FALSE,
+                    DUPLICATE_SAME_ACCESS);
     map_image(g_original_path);
+    if (const char* p = getenv("PORSCHE430_PROFILE"))
+        CreateThread(nullptr, 0, &profile430, reinterpret_cast<void*>(static_cast<ULONG_PTR>(atol(p))), 0, nullptr);
     AddVectoredExceptionHandler(1, &vectored430);
     if (const char* t = getenv("PORSCHE430_TRACE"))
         g_trace_left = atol(t);

@@ -118,14 +118,32 @@ def backend():
         header = header.replace(decl, '')
     header = header.replace('void dispatch257(Machine257&, U target);\n',
                             'void dispatch257(Machine257&, U target);\n' + HEADER_EXTRA)
+    # Speed (same results): force-inline every helper, and divide in 32 bits when EDX only
+    # sign-/zero-extends EAX (the cdq/xor edx,edx + div pattern) instead of calling the
+    # CRT's 64-bit division.
+    header = header.replace('static inline ', 'static __forceinline ')
+    fast_paths = [
+        ('static __forceinline void idiv257_1(Machine257& s, U b) {\n',
+         'static __forceinline void idiv257_1(Machine257& s, U b) {\n'
+         '    if (b != 0u && s.r[2] == ((s.r[0] & 0x80000000u) ? 0xffffffffu : 0u) &&\n'
+         '        !(s.r[0] == 0x80000000u && b == 0xffffffffu)) {\n'
+         '        int a = (int)s.r[0], d = (int)b; s.r[0] = (U)(a / d); s.r[2] = (U)(a % d); return;\n'
+         '    }\n'),
+        ('static __forceinline void div257_1(Machine257& s, U b) {\n',
+         'static __forceinline void div257_1(Machine257& s, U b) {\n'
+         '    if (b != 0u && s.r[2] == 0u) { U a = s.r[0]; s.r[0] = a / b; s.r[2] = a % b; return; }\n'),
+    ]
+    for before, after in fast_paths:
+        assert header.count(before) == 1, before
+        header = header.replace(before, after)
     # The runtime never budgets execution; keep pc for diagnostics.
-    step_old = ('static inline bool step257(Machine257&s,U pc){\n'
+    step_old = ('static __forceinline bool step257(Machine257&s,U pc){\n'
                 '    if(s.stop!=Stop257::Running)return false;s.pc=pc;\n'
                 '    if(!s.budget){s.stop=Stop257::BudgetExhausted;return false;}--s.budget;return true;\n}')
     assert header.count(step_old) == 1
-    header = header.replace(step_old, 'static inline bool step257(Machine257&s,U pc){\n'
+    header = header.replace(step_old, 'static __forceinline bool step257(Machine257&s,U pc){\n'
                             '    if(s.stop!=Stop257::Running)return false;s.pc=pc;return true;\n}')
-    return ns['translate'], header
+    return ns["translate"], header + HEADER_NF
 
 
 class Image:
@@ -153,13 +171,73 @@ class Image:
 JMP_TABLE = re.compile(r'dword ptr \[(?:e[a-z]{2})\*4 \+ (0x[0-9a-f]+)\]')
 
 
+STATS = {"dead_flag_writes": 0}
 BRANCH_IMM = re.compile(r'0x[0-9a-f]+')
+
+# Dead-flag elimination. A flag write is dead when, going forward in the same range, a full
+# flag writer comes before anything that may read EFLAGS or leave the straight line. Only
+# instructions known not to touch EFLAGS are crossed; everything else keeps flags live.
+FLAG_FULL = {'add', 'sub', 'cmp', 'test', 'and', 'or', 'xor', 'neg'}
+FLAG_PARTIAL = {'inc', 'dec'}
+FLAG_NEUTRAL = {'mov', 'movzx', 'movsx', 'lea', 'push', 'pop', 'nop', 'not', 'cdq', 'xchg',
+                'fld', 'fst', 'fstp', 'fild', 'fistp', 'fadd', 'faddp', 'fsub', 'fsubp', 'fsubr',
+                'fsubrp', 'fmul', 'fmulp', 'fdiv', 'fdivp', 'fdivr', 'fdivrp', 'fchs', 'fabs', 'fxch',
+                'fldz', 'fld1', 'fnstsw', 'fldcw', 'fnstcw', 'fcom', 'fcomp', 'fcompp', 'fucom',
+                'fucomp', 'fucompp', 'fst', 'fsin', 'fcos', 'fsqrt', 'wait',
+                'movss', 'movaps', 'movups', 'movd', 'movq'}
+NO_FLAGS = [('add257(s,', 'add257nf('), ('subtract257(s,', 'subtract257nf('), ('logical257(s,', 'logical257nf('),
+            ('inc257(s,', 'inc257nf('), ('dec257(s,', 'dec257nf(')]
+HEADER_NF = r'''
+// Value-only forms used where the flags an instruction writes are provably dead.
+static __forceinline U add257nf(U a,U b,U bits){return (a+b)&mask257(bits);}
+static __forceinline U subtract257nf(U a,U b,U c,U bits){return (a-b-c)&mask257(bits);}
+static __forceinline U logical257nf(U v,U bits){return v&mask257(bits);}
+static __forceinline U inc257nf(U a,U bits){return (a+1u)&mask257(bits);}
+static __forceinline U dec257nf(U a,U bits){return (a-1u)&mask257(bits);}
+'''
+
+
+def full_writer(w):
+    # Only a lowering that really goes through a full-flag helper counts as a killer.
+    return w['mnemonic'] in FLAG_FULL and any(h in w['cpp'] for h in ('add257(s,', 'subtract257(s,', 'logical257(s,'))
+
+
+def kill_dead_flags(code, witness):
+    killed = 0
+    for k, w in enumerate(witness):
+        m = w['mnemonic']
+        if m not in FLAG_FULL and m not in FLAG_PARTIAL:
+            continue
+        if not any(old in w['cpp'] for old, _ in NO_FLAGS):
+            continue
+        dead = False
+        for nxt in witness[k + 1:k + 24]:
+            n = nxt['mnemonic']
+            if full_writer(nxt):
+                dead = True
+                break
+            if n not in FLAG_NEUTRAL:
+                break
+        if not dead:
+            continue
+        new = w['cpp']
+        for old, nf in NO_FLAGS:
+            new = new.replace(old, nf)
+        marker = f" // {w['va']} {w['bytes']} "
+        at = code.index(marker)
+        block = '{ ' + w['cpp'] + ' }'
+        at = code.index(block, at)
+        code = code[:at] + '{ ' + new + ' }' + code[at + len(block):]
+        killed += 1
+    return code, killed
 
 
 def lower(translate, img, va, size, entries=()):
     """Lower one contiguous range. `entries` are mid-range addresses other ranges enter."""
     raw = img.read(va, size)
     code, witness = translate(raw, va)
+    code, killed = kill_dead_flags(code, witness)
+    STATS["dead_flag_writes"] += killed
     starts = [int(w['va'], 16) for w in witness]
     lo, hi = va, va + len(raw)
     need = set(t for t in entries if t in starts and t != va)
@@ -350,7 +428,7 @@ def generate(translate, header, img, entries, pointers=()):
     for old in gen.glob('lowered_*.cpp'):
         if old.name not in written:
             old.unlink()
-    return dict(gap_pieces_added=added, lowered=functions, ranges=ranges, table_entries=len(table_rows), rejected=rejected,
+    return dict(dead_flag_writes=STATS["dead_flag_writes"], gap_pieces_added=added, lowered=functions, ranges=ranges, table_entries=len(table_rows), rejected=rejected,
                 instructions=insns, tus=tu_index, generate_seconds=round(time.time() - t0, 1))
 
 
@@ -382,7 +460,7 @@ def build(jobs):
     t0 = time.time()
     r = subprocess.CompletedProcess([], 0, '', '')
     if sources:
-        cmd = [str(cl), '/nologo', '/c', '/std:c++17', '/O1', '/GS-', '/EHs-c-', '/bigobj', '/W0', f'/MP{jobs}',
+        cmd = [str(cl), '/nologo', '/c', '/std:c++17', '/O2', '/GS-', '/EHs-c-', '/bigobj', '/W0', f'/MP{jobs}',
                f'/I{gen}', f'/Fo{obj}\\', *map(str, sources)]
         r = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=OUT)
     (OUT / 'compile.log').write_text(r.stdout + r.stderr, encoding='utf-8')
@@ -400,7 +478,7 @@ def build(jobs):
     exe = OUT / 'PorscheLowered.exe'
     # Based at the original's 0x00400000: reserve_430.obj holds the original image's pages.
     cmd = [str(link), '/nologo', '/MACHINE:X86', '/SUBSYSTEM:CONSOLE,5.01', '/MANIFEST:NO', '/BASE:0x400000', '/DYNAMICBASE:NO',
-           '/FIXED', '/NXCOMPAT', '/LARGEADDRESSAWARE', '/STACK:0x200000,0x200000', f'/OUT:{exe}', *map(str, sorted(obj.glob('*.obj'))),
+           '/FIXED', '/NXCOMPAT', '/LARGEADDRESSAWARE', '/STACK:0x200000,0x200000', f'/OUT:{exe}', f'/MAP:{OUT / "PorscheLowered.map"}', *map(str, sorted(obj.glob('*.obj'))),
            'kernel32.lib', 'user32.lib']
     r = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=OUT)
     (OUT / 'link.log').write_text(r.stdout + r.stderr, encoding='utf-8')
