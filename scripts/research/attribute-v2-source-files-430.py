@@ -224,6 +224,7 @@ def main():
     starts = [a for a, _, _ in funcs]
     strings = source_strings(img)
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+    md.detail = True
 
     def refs(lo, hi):
         o = img.off(lo)
@@ -373,6 +374,37 @@ def main():
             real[va] = set(ns)  # differentially verified: replaces weaker names
             real_evidence[va] = 'recovered'
 
+    # self-message: EA's "real" library prefixes its diagnostics with the function's own name
+    # ("STREAM_get - invalid stream handle"). A prefix used by exactly one function, which uses
+    # no other prefix, is that function's original name. It outranks the descriptive names of
+    # hand recoveries (kept as aliases); bare tags such as ERROR or DTEX are not names.
+    def message_at(va):
+        o = img.off(va)
+        if o is None:
+            return None
+        end = img.data.find(b'\0', o, o + 200)
+        s = img.data[o:end] if end > o else b''
+        return s.decode('latin1') if len(s) >= 6 and all(32 <= c < 127 or c in (9, 10, 13) for c in s) else None
+
+    prefixes, prefix_users = collections.defaultdict(set), collections.defaultdict(set)
+    for lo, hi, va in funcs:
+        o = img.off(lo)
+        for ins in md.disasm(img.data[o:o + hi - lo], lo):
+            for op in ins.operands:
+                if op.type == capstone.x86.X86_OP_IMM and op.imm > img.base:
+                    m = re.match(r'([A-Za-z_][A-Za-z0-9_]{3,40}) ?[-:] ', message_at(op.imm & 0xffffffff) or '')
+                    if m and m.group(1) not in ('ERROR', 'Error', 'DTEX', 'WARNING', 'Warning'):
+                        prefixes[va].add(m.group(1))
+                        prefix_users[m.group(1)].add(va)
+    self_named = {va: next(iter(ps)) for va, ps in prefixes.items()
+                  if len(ps) == 1 and len(prefix_users[next(iter(ps))]) == 1}
+    aliases = {}
+    for va, name in self_named.items():
+        if real.get(va):
+            aliases[va] = sorted(real[va])
+        real[va] = {name}
+        real_evidence[va] = 'self-message'
+
     # NFS4 (High Stakes PS1 prototype, nfs4-lineage-430.py): names inherited through unique shared
     # strings, and file names inherited by class abbreviation. Both are lineage evidence, weaker
     # than anything read from Porsche.exe or gimme.dll, and kept apart: `inferred_file` never
@@ -398,6 +430,8 @@ def main():
     for va, ns in real.items():
         entry = by_func.setdefault(va, dict(file=None, evidence=real_evidence[va]))
         entry['real_names'] = sorted(ns)
+        if va in aliases:
+            entry['aliases'] = aliases[va]
         entry['name_evidence'] = real_evidence[va]
         outer = {n.split('::')[0].lower() for n in ns}
         hits = {p for o in outer for p in stems.get(o, ())}
@@ -421,6 +455,7 @@ def main():
     files = collections.Counter(v['file'] for v in by_func.values() if v.get('file'))
     result = dict(schema=1, original_sha256=PE_SHA, gimme_vtable_checks=dict(vtable_checks),
                   recovered_names=sum(1 for ns in recovered.values() if len(ns) == 1),
+                  self_message_names=len(self_named),
                   recovered_conflicts=recovered_conflicts,
                   real_names=len(real), inferred_files=sum(1 for v in by_func.values() if v.get("inferred_file") and not v.get("file")),
                   functions=len(funcs), source_paths=len(set(strings.values())),

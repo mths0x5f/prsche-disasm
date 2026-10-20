@@ -207,6 +207,30 @@ do jogo e verificadas diferencialmente contra o original, emprestam o nome à á
 - **Resultado:** 484 nomes. Os 20 endereços com mais de uma definição dona e nomes diferentes
   (`0053c290`, `0059d8e0`…) ficam sem nome.
 
+#### Nomes originais pelas próprias mensagens (`self-message`)
+
+A biblioteca "real" da EA começa as mensagens de diagnóstico com o nome da própria função
+(`STREAM_get - invalid stream handle`, `FILE_loadat - ...`). Um prefixo usado por uma única
+função, que não usa nenhum outro prefixo, é o nome original dela. Saíram 60 nomes, todos
+coerentes com os arquivos já comprovados:
+- os `STREAM_*` em `\real\cmn\stream.c`;
+- `FILE_size` e `FILE_loadat` em `hlsfile.c`;
+- `FILESYS_*` e `FILE_queueop` em `nfile.c`;
+- os `FONT_*` em `font*.c`;
+- `showmad` em `FEIntro.cpp`.
+
+As etiquetas genéricas (`ERROR`, `Error`, `DTEX`, `WARNING`) foram descartadas. Esse nome tem
+precedência sobre o nome descritivo das recuperações manuais, que fica em `aliases` (por
+exemplo, `FILE_size` / `resource_leaf_callback_00561be0`). A função da corrida intermitente,
+`0056c540`, é a `STREAM_get`.
+
+O High Stakes de PC confirma a origem dessas mensagens. O `NFSHS.EXE` sem SafeDisc que o
+usuário tem (comprimido com Petite; lido da memória depois de se descomprimir, nada copiado
+para o repositório) foi compilado com **Watcom C/C++**, e por isso nenhum código casa por
+bytes com o Porsche (MSVC). Mesmo assim, ele traz as mesmas mensagens `STREAM_*`/`showmad`,
+o que mostra que `stream.c` é a mesma fonte nos dois jogos. Traz também 17 caminhos próprios
+(`\nfs4\game\sim.c`, `copter.c`, `\nfs4\frontend\Thrashed.c`…), mas não traz símbolos.
+
 #### Linhagem NFS4 (protótipo do High Stakes de PS1)
 
 O protótipo `Need For Speed 4 v9.0.iso` (do usuário; fica fora do repositório) traz
@@ -257,7 +281,7 @@ semântica, então isso é uma corrida intermitente, ainda não investigada (pr�
 4. Com o jogo rodando, começar a humanizar: trocar `translated_XXXXXXXX` por funções
    legíveis, uma por vez, comparando estado/memória com a versão rebaixada (os 482 corpos
    já recuperados na main entram primeiro).
-5. Corrida intermitente em `0056c540` (`stream.c`, thread de streaming do vídeo): verificar
+5. Corrida intermitente em `0056c540` = `STREAM_get` (`stream.c`, thread de streaming do vídeo): verificar
    se o runtime protege o estado compartilhado entre threads (fila de streaming, área
    reservada) e reproduzir com várias execuções seguidas.
 
