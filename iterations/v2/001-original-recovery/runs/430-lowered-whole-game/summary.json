@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "run": "430-lowered-whole-game",
+ "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+ "catalogued": 5772,
+ "pointer_targets": 4533,
+ "synthetic_functions": 2694,
+ "lowered": 8250,
+ "ranges": 8322,
+ "table_entries": 9343,
+ "instructions": 528815,
+ "tus": 130,
+ "generate_seconds": 78.6,
+ "rejected_synthetic": 216,
+ "rejected_catalogued": [],
+ "first_run": {
+  "result": "same as original",
+  "observed": "PorscheLowered.exe and the original Porsche.exe both show MessageBox \"Error:\" / \"Run 3D Setup before running the game.\" and wait in the message loop",
+  "native_calls_in_25s": 40105
+ }
+}

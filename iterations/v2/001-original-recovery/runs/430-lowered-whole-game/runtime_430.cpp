@@ -33,6 +33,8 @@ const U kReserveBytes = 0x2e2000u;  // must match reserve_430.asm
 __declspec(thread) U t_host_sp;      // host stack to resume on while native code runs
 __declspec(thread) U t_side_top;     // side stack of a thread first entered from native code
 __declspec(thread) Machine257* t_current;
+Machine257* volatile g_last;      // diagnostics: last machine that changed hands
+volatile U g_native_calls, g_last_native;
 
 void fatal(const char* what, const Machine257* s, U extra)
 {
@@ -90,12 +92,15 @@ void native_call(Machine257& s, U target)
 {
     U return_pc = read257(s.r[4], 4u);
     Fwd f{ s.r[0], s.r[1], s.r[2], s.r[4] + 4u, target, 0u };
+    ++g_native_calls;
+    g_last_native = target;
     U saved = t_host_sp;
     char here;
     t_host_sp = (reinterpret_cast<U>(&here) - 0x1000u) & ~15u;
     forward_asm(&f);
     t_host_sp = saved;
     t_current = &s;
+    g_last = &s;
     s.r[0] = f.eax; s.r[1] = f.ecx; s.r[2] = f.edx; s.r[4] = f.esp;
     s.pc = return_pc;
     s.stop = Stop257::Returned;
@@ -130,10 +135,12 @@ extern "C" Resume* __cdecl reverse_entry430(U* block)
     m.r[4] = reinterpret_cast<U>(block + 9);
     Machine257* outer = t_current;
     t_current = &m;
+    g_last = &m;
     dispatch257(m, target);
     if (m.stop != Stop257::Returned)
         fatal("reverse entry did not return", &m, target);
     t_current = outer;
+    g_last = outer;
     Resume& r = t_resume;
     r.edi = m.r[7]; r.esi = m.r[6]; r.ebp = m.r[5]; r.esp = m.r[4];
     r.ebx = m.r[3]; r.edx = m.r[2]; r.ecx = m.r[1]; r.eax = m.r[0]; r.pc = m.pc;
@@ -265,6 +272,17 @@ void map_image(const char* path)
         g_entries[lowered_table430[i].va - g_code_lo] = lowered_table430[i].fn;
 }
 
+DWORD WINAPI watchdog430(void*)
+{
+    for (;;) {
+        Sleep(3000);
+        Machine257* m = g_last;
+        fprintf(stderr, "[430] watchdog pc=%08x native_calls=%u last_native=%08x\n", m ? m->pc : 0u,
+                g_native_calls, g_last_native);
+        fflush(stderr);
+    }
+}
+
 void __cdecl run_guest(U guest_esp)
 {
     Machine257 m;
@@ -272,6 +290,7 @@ void __cdecl run_guest(U guest_esp)
     m.r[4] = guest_esp - 4u;
     write257(m.r[4], 4u, 0xfffffff0u);
     t_current = &m;
+    g_last = &m;
     dispatch257(m, g_entry_va);
     fatal(m.stop == Stop257::Returned ? "entry returned" : "entry stopped", &m, g_entry_va);
 }
@@ -335,6 +354,8 @@ int main(int argc, char** argv)
     if (!GetFullPathNameA(path, MAX_PATH, g_original_path, nullptr)) return 2;
     map_image(g_original_path);
     AddVectoredExceptionHandler(1, &vectored430);
+    if (getenv("PORSCHE430_WATCHDOG"))
+        CreateThread(nullptr, 0, &watchdog430, nullptr, 0, nullptr);
     fprintf(stderr, "[430] image mapped, %u lowered bodies, entry %08x\n", lowered_count430, g_entry_va);
     char* side = static_cast<char*>(VirtualAlloc(nullptr, 64u << 20, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE));
     switch_to_side(reinterpret_cast<U>(side) + (64u << 20) - 64u, &run_guest);

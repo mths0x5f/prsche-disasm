@@ -51,6 +51,32 @@ diferencial contra a rebaixada ou contra o original.
 - Não há suporte a desenrolar SEH nem a `longjmp` que atravesse a recursão do host.
 - Os helpers `rep movs/stos` ignoram o DF (no binário só aparece o `std` acima).
 
-## Resultado
+## Resultado (2026-10-19)
 
-Ver `summary.json`.
+- Todas as 5.772 funções do catálogo foram rebaixadas. Somam-se 2.694 pedaços sintéticos
+  achados por relocação; 216 deles são dados e foram descartados. No total são 8.250 corpos,
+  9.343 entradas e ~435 mil instruções. Compilação e link sem erros; `PorscheLowered.exe`
+  tem ~16 MB.
+- Primeira execução, a partir de uma cópia do jogo em `local/run-430` (`local/game` é só
+  leitura): o EXE rebaixado passa pela CRT e pelo WinMain, lê o registro e mostra
+  **a mesma** MessageBox do original: "Error:" / "Run 3D Setup before running the game.". As
+  duas ficam no laço de mensagens, com ~40 mil chamadas nativas em 25 s. A chave
+  `HKCU|HKLM\Software\Electronic Arts\Need for Speed - Porsche Unleashed` não existe nesta
+  máquina; quem a grava é o `config.exe` (3D Setup).
+
+## Próximos passos
+
+1. Rodar o 3D Setup (`local/run-430/config.exe`) uma vez para gravar a configuração e
+   confirmar que o original abre o menu.
+2. Rodar o EXE rebaixado até o menu e corrigir cada parada fatal (`[430] ...` no stderr).
+   Ligue `PORSCHE430_WATCHDOG=1` para ver o `pc` a cada 3 s.
+3. Com o jogo rodando, começar a humanizar: trocar `translated_XXXXXXXX` por funções
+   legíveis, uma por vez, comparando estado/memória com a versão rebaixada (os 482 corpos
+   já recuperados na main entram primeiro).
+
+Comandos:
+
+```
+py -3 scripts/research/build-v2-lowered-exe-430.py          # gera + compila (incremental)
+cd local/run-430 && ../experiments/v2-lowered-exe-430/PorscheLowered.exe Porsche.exe
+```
