@@ -1,0 +1,209 @@
+{
+  "provenance": "local/experiments/v2-audio-backend-421/provenance-001.json",
+  "provenance_sha256": "dc4056e92fdcef144e40ccb174e0f46f9a1a43670062c7fbe4e616b617b00b7a",
+  "schema": 1,
+  "run": "421-audio-backend-lock-pool",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_vas": [
+    "0058e2d0",
+    "0058e2e0",
+    "0058e2f0",
+    "0058e300",
+    "005896d0",
+    "005896f0",
+    "0058aa90",
+    "0058aac0",
+    "0058fef0",
+    "0058ff10"
+  ],
+  "original_selected_bytes": 239,
+  "original_bodies": [
+    {
+      "va": "0058e2d0",
+      "bytes": 12,
+      "body_sha256": "c18c8d5c01e36176e27f003e1121d2729387a31f66fd7f7993bdcbb18ca27b0b"
+    },
+    {
+      "va": "0058e2e0",
+      "bytes": 12,
+      "body_sha256": "a6226eb7f2aae6e22745a6f303ebe061d53c9fa24095775d1595d624772ad92e"
+    },
+    {
+      "va": "0058e2f0",
+      "bytes": 12,
+      "body_sha256": "190b028a580459671dd5968b047688a0b854bbea0439bb79d1f4d8adef13c410"
+    },
+    {
+      "va": "0058e300",
+      "bytes": 12,
+      "body_sha256": "d15f037561e5740cad63aff2f03fc207d39d331d26c0aa76c97af5df7122b27b"
+    },
+    {
+      "va": "005896d0",
+      "bytes": 18,
+      "body_sha256": "9021e6ce3cdd9eb979bc2e8c1e58337ba0529f13beea79507209ed677a786339"
+    },
+    {
+      "va": "005896f0",
+      "bytes": 17,
+      "body_sha256": "9be3da08ee0c2cb0cbcfb754f7cbb6663fd3bab080b58cc21fa4a6c3d799db6c"
+    },
+    {
+      "va": "0058aa90",
+      "bytes": 44,
+      "body_sha256": "e28ca7509211e5e0e22297b8c47094f8b1b51a0886f09c5e19073a6a2c4b3c27"
+    },
+    {
+      "va": "0058aac0",
+      "bytes": 31,
+      "body_sha256": "8667c58ce1362cb46671ea2d717ada2acacedf3844d3c00fbb962d62b979bc9b"
+    },
+    {
+      "va": "0058fef0",
+      "bytes": 31,
+      "body_sha256": "f8d8826bcf8d778264a09c146ab87a65162d08fc2120de7a58269bf7ca6c3419"
+    },
+    {
+      "va": "0058ff10",
+      "bytes": 50,
+      "body_sha256": "3a781d72cc94ed6385bd5780e1bf0d02605de11dbc432ee6d9d0ee0978d0e80f"
+    }
+  ],
+  "original_scalars": [],
+  "compiler": "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
+  "include_roots": [
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+    "iterations/v2/001-original-recovery/runs/421-audio-backend-lock-pool",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "source": "iterations/v2/001-original-recovery/runs/421-audio-backend-lock-pool/audio_backend_lock_pool_421.cpp",
+  "source_sha256": "13eb00f357b24befdb5fbcdf9eaf90ad1278eef5c9e55372fab8c2cfc888b263",
+  "header": "iterations/v2/001-original-recovery/runs/421-audio-backend-lock-pool/audio_backend_lock_pool_421.hpp",
+  "header_sha256": "df7cd5fdb24037677ae9c844d4d098b6dcd2cb53452d8907d6a8fec55bcaaccf",
+  "fixture": "local/experiments/v2-audio-backend-421/audio_backend_fixture.cpp",
+  "fixture_sha256": "57986313d7ef91da57c365dd327805ca79d3a530328c74e750884921e745f45f",
+  "symbols": {
+    "defined": [
+      "?application_audio_backend_close_0058aac0@porsche@@YAHXZ",
+      "?application_audio_backend_configure_0058aa90@porsche@@YAXII@Z",
+      "?application_audio_backend_configure_0058fef0@porsche@@YAXII@Z",
+      "?application_audio_backend_quiet_0058ff10@porsche@@YAXXZ",
+      "?application_audio_backend_start_0058e2d0@porsche@@YAXXZ",
+      "?application_audio_backend_stop_0058e2e0@porsche@@YAXXZ",
+      "?audio_backend_enter_0058e2f0@porsche@@YAXXZ",
+      "?audio_backend_leave_0058e300@porsche@@YAXXZ",
+      "?audio_backend_lock_005896d0@porsche@@YAXXZ",
+      "?audio_backend_unlock_005896f0@porsche@@YAXXZ",
+      "__Avx2WmemEnabledWeakValue"
+    ],
+    "undefined": [
+      "?audio_backend_channel_count_006b49a4@porsche@@3FA",
+      "?audio_backend_channels_006b4a00@porsche@@3IA",
+      "?audio_backend_lock_cs_006b1800@porsche@@3PAEA",
+      "?audio_backend_lock_depth_006b499f@porsche@@3EA",
+      "?audio_backend_pool_006b4a18@porsche@@3IA",
+      "?audio_channel_stop_00565d60@porsche@@YAHI@Z",
+      "?platform_delete_critical_section@porsche@@YGXPAX@Z",
+      "?platform_enter_critical_section@porsche@@YGXPAX@Z",
+      "?platform_initialize_critical_section@porsche@@YGXPAX@Z",
+      "?platform_leave_critical_section@porsche@@YGXPAX@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "functions": [
+    "?application_audio_backend_close_0058aac0@porsche@@YAHXZ",
+    "?application_audio_backend_configure_0058aa90@porsche@@YAXII@Z",
+    "?application_audio_backend_configure_0058fef0@porsche@@YAXII@Z",
+    "?application_audio_backend_quiet_0058ff10@porsche@@YAXXZ",
+    "?application_audio_backend_start_0058e2d0@porsche@@YAXXZ",
+    "?application_audio_backend_stop_0058e2e0@porsche@@YAXXZ",
+    "?audio_backend_enter_0058e2f0@porsche@@YAXXZ",
+    "?audio_backend_leave_0058e300@porsche@@YAXXZ",
+    "?audio_backend_lock_005896d0@porsche@@YAXXZ",
+    "?audio_backend_unlock_005896f0@porsche@@YAXXZ",
+    "__Avx2WmemEnabledWeakValue"
+  ],
+  "compile": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
+      "/nologo",
+      "/c",
+      "/std:c++17",
+      "/Od",
+      "/Oi",
+      "/Gy",
+      "/GS-",
+      "/GR-",
+      "/EHsc",
+      "/TP",
+      "/W4",
+      "/utf-8",
+      "/diagnostics:column",
+      "/MP2",
+      "/Zl",
+      "/sourceDependencies",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\dependencies",
+      "/I",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared",
+      "/I",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
+      "/I",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\421-audio-backend-lock-pool",
+      "/I",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\421-audio-backend-lock-pool\\audio_backend_lock_pool_421.cpp",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\audio_backend_fixture.cpp"
+    ],
+    "exit_code": 0,
+    "seconds": 0.605345,
+    "log": "local/experiments/v2-audio-backend-421/compile-001.log",
+    "log_sha256": "5377c3ea1b55c0edf87e753d8ef8cb16096c829412e6616dd064e9017b2884d8"
+  },
+  "link": {
+    "command": [
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
+      "/nologo",
+      "/MACHINE:X86",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:entry",
+      "/NODEFAULTLIB",
+      "/INCREMENTAL:NO",
+      "/SECTION:.data,ERW",
+      "/SECTION:.bss,ERW",
+      "/MAP:F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.map",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\objects\\audio_backend_lock_pool_421.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\objects\\audio_backend_fixture.obj",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
+      "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
+    ],
+    "exit_code": 0,
+    "seconds": 0.069827,
+    "log": "local/experiments/v2-audio-backend-421/fixture-link-001.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_fixture": {
+    "exit_code": 0,
+    "cases": 30,
+    "cases_passed": 30,
+    "execution": {
+      "command": [
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 0.038917,
+      "log": "local/experiments/v2-audio-backend-421/fixture-native-001.log",
+      "log_sha256": "e22dfd4bad47648ed043acd47b5868582232acf5532b688adb4ef2ed23b1ffac"
+    }
+  }
+}

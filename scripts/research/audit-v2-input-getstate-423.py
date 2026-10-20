@@ -102,7 +102,7 @@ def main():
         assert receipt['exit_code'] == 0
         assert sha(resolve(receipt['log'])) == receipt['log_sha256'], f'log drift: {name}'
         expected_receipt = summary['compile'] if name == 'compile-001' else summary['link'] if name == 'fixture-link-001' else summary['native_fixture']['execution']
-        assert receipt == expected_receipt, f'receipt mismatch: {name}' 
+        assert receipt == expected_receipt, f'receipt mismatch: {name}'
     log = (EXP / 'fixture-native-001.log').read_text(encoding='utf-8')
     assert log.count(' OK ') == CASES and 'FAILED' not in log
 

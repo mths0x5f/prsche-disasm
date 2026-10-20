@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+PR22/423 valid-slot input modes pass native24 and rebuilt1026/13/37/8 comparisons;
+324 fresh166-TU graph closes two names,264 names/293 refs remain. Negative/unmapped
+index layout, caps success parser and default diagnostic composition stay open.
+PR23/421/422 audio12 bodies pass bounded47 native cases with repaired provenance;
+shared state, real concurrency/devices, complete ABI/caller coverage and game
+integration remain open. See research/pr-review-2026-10-20.md.
+
 ## Остаток пакетных PR #2–#19
 
 Закрытие PR не означает принятие всех его функций. Источники остаются в

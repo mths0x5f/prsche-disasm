@@ -1,5 +1,11 @@
 # v2 / 001 — план восстановления исходного кода
 
+PR review work complete:22 integrated in game324;23 corrected native47cases,
+13 mutation controls and10 audit-tamper controls PASS/rejected as appropriate.
+421/422 remain unlinked research; state providers/full audio not accepted.
+All agents complete. Coordinator finalizes PR records; next original-game task
+is resource-file exists/open recovery, then root/arena/context holds.
+
 PR22/Run324 ready: native24, rebuilt1026/13/37/8,166-TU fresh compile,
 264 names/293 refs,420 unchanged pins and audit PASS.423 audit/docs repaired.
 PR23 local proposal accepted for research-only intake after fresh destination

@@ -1,5 +1,9 @@
 # Состояние проекта
 
+PR22 merged; PR23 reviewed/fixed for isolated research intake. Final main-tree
+audio fixtures30/30+17/17 and strict audits PASS. No audio production integration.
+Game324 remains166 TU,264 names/293 refs, noEXE. Contributor licensing agreed.
+
 Run324:166 TUs compiled,264 names/293 refs, noEXE. PR22 closes two names with
 no new dependencies; native24, rebuilt1026/13/37/8 and corrected423/324 audits PASS.
 PR23 remains isolated; corrected provenance is finalized before research intake.

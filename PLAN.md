@@ -1,5 +1,10 @@
 # План восстановления Porsche Unleashed
 
+PR22 merged f53921f with native/probe/game324 evidence; PR23 corrected destination
+fixtures30+17 and both provenance/COFF audits PASS. Accept421/422 as research-only;
+shared audio state/concurrency/callees remain boundaries. All review agents done.
+Current game166 TU/264 names/293 refs/noEXE; next game step unchanged.
+
 PR22/Run324 verified: native24 and rebuilt1026/13/37/8 PASS;166 game TUs compile,
 264 names/293 refs remain, noEXE.420 unchanged pins; shared audit PASS. PR23
 research intake needs corrected destination receipts before merge. Both reviews
