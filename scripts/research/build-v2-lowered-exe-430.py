@@ -556,7 +556,8 @@ def build(jobs):
     gen, obj = GEN, OUT / 'obj'
     obj.mkdir(parents=True, exist_ok=True)
     sources = sorted((gen / 'src').rglob('*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
-    keep = {p.stem for p in sources} | {'reserve_430'}
+    # Windows file names are case-insensitive: cl may keep an old object's spelling.
+    keep = {p.stem.lower() for p in sources} | {'reserve_430'}
     header = gen / 'machine257.h'
 
     def stale(src):
@@ -576,7 +577,7 @@ def build(jobs):
     (OUT / 'compile.log').write_text(r.stdout + r.stderr, encoding='utf-8')
     compile_s = round(time.time() - t0, 1)
     for o in obj.glob('*.obj'):
-        if o.stem not in keep:
+        if o.stem.lower() not in keep:
             o.unlink()
     if r.returncode:
         errors = [ln for ln in r.stdout.splitlines() if ' error ' in ln]
