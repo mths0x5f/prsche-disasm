@@ -271,6 +271,34 @@ quatro execuções o rebaixado parou aos ~14 s, durante o vídeo `ch6.mad`, com
 executando código rebaixado. As outras três passaram 30 s sem falha. A renomeação não muda a
 semântica, então isso é uma corrida intermitente, ainda não investigada (próximo passo 5).
 
+### Até a corrida (2026-10-20)
+
+Com perfil "claude" criado à mão em `local/run-430/SaveData`, o rebaixado vai do menu até a
+corrida pelo mesmo caminho do original: **continue → single player → quick race → RACE**
+(356 A Conversível, Côte d'Azur, 4 oponentes). Ele roda 50 s depois de clicar em RACE e mostra
+a corrida aos 31 s (HUD, mapa, retrovisor, IA à frente), sem nenhuma parada `[430]`. O menu é
+guiado por mouse; teclado não funciona nele (testado), nem na caixa de nome. O roteiro de
+cliques fica no scratchpad da sessão (`drive430.ps1`).
+
+Três correções levaram até aí:
+1. **Ordem de memória entre threads.** `read257`/`write257` passaram a usar `volatile`. Com
+   ponteiros comuns, o `/O2` podia reordenar ou juntar acessos à memória do jogo, enquanto o
+   código original depende da ordem do x86. A falha intermitente era isso: `STREAM_get`
+   (`0056c540`), na thread do vídeo, lia a contagem da tap (`[eax+8]`) e depois a cabeça
+   (`[eax+0xc]`) fora da trava e encontrava `-1` (`ebx=ffffffff`, leitura em `0x3`).
+   Depois da correção, 6 de 6 execuções de 30 s passaram (antes, 1 de 4 falhava). Como a falha
+   é intermitente, isso é indício, não prova.
+2. **`lock inc/dec` atômicos** (`SEMANTIC_PATCHES`). São as únicas 6 instruções com `lock`, o
+   contador de leitores do locale do CRT (`006c02e8`, em `005ae3c0`/`005ae490`). Agora usam
+   `_InterlockedExchangeAdd`, com as mesmas flags.
+3. **Código fora do catálogo alcançado só por `call`/`jmp` direto.** A largada da corrida
+   parava em `no lowered body pc=00419c50`: a região `004184e2..00419d4f` não está no catálogo,
+   e `00419c50` só é chamada de `00418629`, que também fica fora. `closed_entries` fecha
+   transitivamente os alvos rel32 fora do catálogo e cria peças sintéticas para eles: são
+   5.608 alvos diretos, 2.840 peças sintéticas e 8.401 corpos rebaixados (antes, 8.284). O
+   catálogo versionado (`research/v2/binaries/...`) continua com essa lacuna; corrigi-la é
+   trabalho do índice.
+
 ## Próximos passos
 
 1. Verificar o uso do resultado da calibração de CPU (`005560b0`) e medir a corrida

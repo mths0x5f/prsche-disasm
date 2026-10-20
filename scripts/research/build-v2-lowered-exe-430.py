@@ -38,6 +38,20 @@ FS_BEFORE = "        terms = [f'0x{m.disp & 0xffffffff:08x}u']"
 FS_AFTER = "        terms = [f'0x{m.disp & 0xffffffff:08x}u'] + (['fs257()'] if m.segment == 32 else [])"
 
 # Approximations this branch accepts (documented in the run README); upstream rejects them.
+SEMANTIC_PATCHES = [
+    # `lock inc/dec [mem]` (CRT locale reader count 006c02e8 in 005ae3c0/005ae490) must stay
+    # atomic between guest threads: interlocked add, then the same flags from the old value.
+    ("            fn = 'inc257' if 'inc' in m else 'dec257'\n"
+     "            code = f'U a={expression(i,ops[0])};U value={fn}(s,a,{bits}u);' + store(i, ops[0], 'value')",
+     "            fn = 'inc257' if 'inc' in m else 'dec257'\n"
+     "            if m.startswith('lock') and ops[0].type == X86_OP_MEM and bits == 32:\n"
+     "                delta = '1' if 'inc' in m else '-1'\n"
+     "                code = (f'U old=static_cast<U>(_InterlockedExchangeAdd(reinterpret_cast<volatile long*>({address(i,ops[0])}),{delta}));'\n"
+     "                        f'U value={fn}(s,old,32u);(void)value;')\n"
+     "            else:\n"
+     "                code = f'U a={expression(i,ops[0])};U value={fn}(s,a,{bits}u);' + store(i, ops[0], 'value')"),
+]
+
 APPROXIMATIONS = [
     ("            raise ValueError('Unsupported fsqrt until guest FPU status/CW parity is modelled')",
      "            code = 'fpu_st(s) = sqrt(fpu_st(s));'"),
@@ -64,16 +78,20 @@ APPROXIMATIONS = [
 
 HEADER_EXTRA = r'''
 #include <math.h>
+#include <intrin.h>
 extern "C" unsigned long __readfsdword(unsigned long);
 #pragma intrinsic(__readfsdword)
 static inline U fs257(){return static_cast<U>(__readfsdword(0x18));}
+// Guest memory is shared between guest threads (e.g. STREAM_get on the movie thread reads a
+// tap's count and head outside the lock). Volatile keeps every access, in program order, like
+// the original x86 code (MSVC /volatile:ms); plain pointers let /O2 reorder or merge them.
 static inline U read257(U a,U n){
-    return n==1?*reinterpret_cast<const B*>(a):n==2?*reinterpret_cast<const unsigned short*>(a):*reinterpret_cast<const U*>(a);
+    return n==1?*reinterpret_cast<const volatile B*>(a):n==2?*reinterpret_cast<const volatile unsigned short*>(a):*reinterpret_cast<const volatile U*>(a);
 }
 static inline void write257(U a,U n,U v){
-    if(n==1)*reinterpret_cast<B*>(a)=static_cast<B>(v);
-    else if(n==2)*reinterpret_cast<unsigned short*>(a)=static_cast<unsigned short>(v);
-    else *reinterpret_cast<U*>(a)=v;
+    if(n==1)*reinterpret_cast<volatile B*>(a)=static_cast<B>(v);
+    else if(n==2)*reinterpret_cast<volatile unsigned short*>(a)=static_cast<unsigned short>(v);
+    else *reinterpret_cast<volatile U*>(a)=v;
 }
 static inline double read_f80_430(U a){
     U64 man=static_cast<U64>(read257(a,4u))|(static_cast<U64>(read257(a+4u,4u))<<32);
@@ -110,7 +128,7 @@ def load(name, path):
 def backend():
     be = load('backend_fpu_430', ROOT / 'scripts/research/x86-cpp-backend-fpu.py')
     src = be.DERIVED_SOURCE
-    for before, after in [(FS_BEFORE, FS_AFTER), *APPROXIMATIONS]:
+    for before, after in [(FS_BEFORE, FS_AFTER), *SEMANTIC_PATCHES, *APPROXIMATIONS]:
         assert src.count(before) == 1, 'patch context drift: ' + before
         src = src.replace(before, after)
     ns = dict(be._namespace)
@@ -320,6 +338,39 @@ def pointer_entries(img, entries):
                     targets.add(v)
         at += block
     return gap_pieces(img, entries, targets), targets
+
+
+def direct_targets(img, bodies):
+    """Targets of rel32 `call`/`jmp` instructions in the given bodies (entry dicts)."""
+    import capstone
+    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+    out = set()
+    for e in bodies:
+        for a, b in e['ranges']:
+            lo, hi = int(a, 16), int(b, 16) + 1
+            for ins in md.disasm(img.read(lo, hi - lo) or b'', lo):
+                if ins.mnemonic in ('call', 'jmp') and ins.size == 5 and ins.bytes[0] in (0xe8, 0xe9):
+                    out.add(int(ins.op_str, 16))
+    return out
+
+
+def closed_entries(img, entries, pointers):
+    """Synthetic pieces for pointer targets and, transitively, for direct call/jmp targets that
+    land outside the catalog (code reached only from other uncatalogued code, e.g. the
+    race-start region 004184e2..00419d4f with 00419c50 called from 00418629)."""
+    targets = set(pointers)
+    synthetic = gap_pieces(img, entries, targets)
+    scanned = set()
+    while True:
+        fresh = [e for e in entries + synthetic if e['entry_va'] not in scanned]
+        if not fresh:
+            return synthetic, targets
+        scanned.update(e['entry_va'] for e in fresh)
+        before = len(targets)
+        targets |= direct_targets(img, fresh)
+        if len(targets) == before:
+            return synthetic, targets
+        synthetic = gap_pieces(img, entries, targets)
 
 
 def code_ranges(img):
@@ -615,8 +666,10 @@ def main():
     img = Image(data)
     entries = [json.loads(ln) for ln in CATALOG.read_text(encoding='utf-8').splitlines() if ln.strip()]
     result = dict(schema=1, run='430-lowered-whole-game', original_sha256=PE_SHA, catalogued=len(entries))
-    synthetic, pointers = pointer_entries(img, entries)
-    result.update(pointer_targets=len(pointers), synthetic_functions=len(synthetic))
+    _, pointers = pointer_entries(img, entries)
+    synthetic, closure = closed_entries(img, entries, pointers)
+    result.update(pointer_targets=len(pointers), direct_targets=len(closure - set(pointers)),
+                  synthetic_functions=len(synthetic))
     if not args.build_only:
         translate, header = backend()
         result.update(generate(translate, header, img, entries + synthetic, pointers))
