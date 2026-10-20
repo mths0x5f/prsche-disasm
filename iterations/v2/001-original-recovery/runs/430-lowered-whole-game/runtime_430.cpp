@@ -88,8 +88,66 @@ __declspec(naked) void __cdecl forward_asm(Fwd*)
     }
 }
 
+// ---- import trace (PORSCHE430_TRACE=<max lines>) -------------------------------------
+struct ImportName { U address; U iat_slot; char name[64]; };
+const U kMaxImports = 2048;
+ImportName g_imports[kMaxImports];
+U g_import_count;
+long g_trace_left;
+
+const char* import_name(U target)
+{
+    for (U i = 0; i < g_import_count; ++i)
+        if (g_imports[i].address == target) return g_imports[i].name;
+    return nullptr;
+}
+
+const char* g_trace_filter;  // ';'-separated substrings of import names, or null for all
+
+int format_arg(char* out, int room, U v)
+{
+    // A stack argument, shown as text when it points at a printable string.
+    MEMORY_BASIC_INFORMATION mi;
+    if (v >= 0x10000u && VirtualQuery(reinterpret_cast<void*>(v), &mi, sizeof mi) && mi.State == MEM_COMMIT &&
+        !(mi.Protect & (PAGE_NOACCESS | PAGE_GUARD))) {
+        const char* p = reinterpret_cast<const char*>(v);
+        int n = 0;
+        while (n < 80 && p[n] >= 0x20 && p[n] < 0x7f) ++n;
+        if (n >= 2 && (p[n] == 0 || n == 80)) return _snprintf(out, room, " \"%.*s\"", n, p);
+    }
+    return _snprintf(out, room, " %08x", v);
+}
+
+bool trace_matches(const char* name)
+{
+    if (!g_trace_filter) return true;
+    for (const char* f = g_trace_filter; *f;) {
+        const char* end = strchr(f, ';');
+        size_t n = end ? static_cast<size_t>(end - f) : strlen(f);
+        for (const char* p = name; *p; ++p)
+            if (n && !_strnicmp(p, f, n)) return true;
+        if (!end) break;
+        f = end + 1;
+    }
+    return false;
+}
+
+// Formats the call into `line`; returns false when the call is not traced.
+bool trace_native(const Machine257& s, U target, char* line, int room)
+{
+    if (g_trace_left <= 0) return false;
+    const char* name = import_name(target);
+    if (!name || !trace_matches(name)) return false;
+    --g_trace_left;
+    int n = _snprintf(line, room, "[430] t%lu %s from %08x:", GetCurrentThreadId(), name, read257(s.r[4], 4u));
+    for (U k = 1; k <= 4 && n > 0 && n < room; ++k) n += format_arg(line + n, room - n, read257(s.r[4] + 4u * k, 4u));
+    return true;
+}
+
 void native_call(Machine257& s, U target)
 {
+    char line[512];
+    bool traced = trace_native(s, target, line, sizeof line - 32);
     U return_pc = read257(s.r[4], 4u);
     Fwd f{ s.r[0], s.r[1], s.r[2], s.r[4] + 4u, target, 0u };
     ++g_native_calls;
@@ -102,6 +160,7 @@ void native_call(Machine257& s, U target)
     t_current = &s;
     g_last = &s;
     s.r[0] = f.eax; s.r[1] = f.ecx; s.r[2] = f.edx; s.r[4] = f.esp;
+    if (traced) fprintf(stderr, "%s -> %08x\n", line, f.eax);
     s.pc = return_pc;
     s.stop = Stop257::Returned;
 }
@@ -264,6 +323,13 @@ void map_image(const char* path)
             if (!p) fprintf(stderr, "[430] unresolved import %s!%s\n", dll,
                             (*names & 0x80000000u) ? "#ordinal" : fn);
             *iat = reinterpret_cast<U>(p);
+            if (p && g_import_count < kMaxImports) {
+                g_imports[g_import_count].address = reinterpret_cast<U>(p);
+                g_imports[g_import_count].iat_slot = reinterpret_cast<U>(iat);
+                _snprintf(g_imports[g_import_count].name, sizeof g_imports[0].name, "%s!%s", dll,
+                          (*names & 0x80000000u) ? "#ordinal" : fn);
+                ++g_import_count;
+            }
         }
     }
     g_entries = static_cast<void (**)(Machine257&)>(
@@ -310,6 +376,58 @@ __declspec(naked) void __cdecl switch_to_side(U, void (__cdecl*)(U))
     }
 }
 
+// ---- native reference mode (PORSCHE430_NATIVE=1) --------------------------------------
+// Runs the original machine code itself in the same image and environment, with every IAT
+// entry routed through a logging trampoline, so its import trace can be diffed with the
+// lowered build's trace line by line.
+extern "C" void __cdecl import_hook_log430(U* slot)
+{
+    // slot[0]: import index (replaced by the real target), slot[1]: return address, args.
+    const ImportName& im = g_imports[slot[0]];
+    slot[0] = im.address;
+    if (g_trace_left <= 0 || !trace_matches(im.name)) return;
+    --g_trace_left;
+    char line[512];
+    int n = _snprintf(line, sizeof line - 32, "[430] t%lu %s from %08x:", GetCurrentThreadId(), im.name, slot[1]);
+    for (U k = 2; k <= 5 && n > 0 && n < 480; ++k) n += format_arg(line + n, 480 - n, slot[k]);
+    fprintf(stderr, "%s\n", line);
+}
+
+__declspec(naked) void import_hook_common430()
+{
+    __asm {
+        pushad
+        pushfd
+        lea eax, [esp + 36]
+        push eax
+        call import_hook_log430
+        add esp, 4
+        popfd
+        popad
+        ret
+    }
+}
+
+void run_native()
+{
+    // Code becomes executable again; IAT entries go through `push index; jmp common`.
+    DWORD old = 0;
+    VirtualProtect(reinterpret_cast<void*>(g_code_lo), g_code_hi - g_code_lo, PAGE_EXECUTE_READWRITE, &old);
+    auto* stubs = static_cast<BYTE*>(VirtualAlloc(nullptr, g_import_count * 10u, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
+    auto* nt = reinterpret_cast<IMAGE_NT_HEADERS32*>(
+        reinterpret_cast<BYTE*>(kBase) + reinterpret_cast<IMAGE_DOS_HEADER*>(kBase)->e_lfanew);
+    (void)nt;
+    for (U i = 0; i < g_import_count; ++i) {
+        BYTE* p = stubs + 10u * i;
+        p[0] = 0x68; *reinterpret_cast<U*>(p + 1) = i;
+        p[5] = 0xe9;
+        *reinterpret_cast<U*>(p + 6) = reinterpret_cast<U>(&import_hook_common430) - reinterpret_cast<U>(p + 10);
+    }
+    for (U i = 0; i < g_import_count; ++i)
+        *reinterpret_cast<U*>(g_imports[i].iat_slot) = reinterpret_cast<U>(stubs + 10u * i);
+    reinterpret_cast<void (*)()>(g_entry_va)();
+}
+
 }  // namespace
 
 void repne_scasb_down430(Machine257& s)
@@ -354,8 +472,16 @@ int main(int argc, char** argv)
     if (!GetFullPathNameA(path, MAX_PATH, g_original_path, nullptr)) return 2;
     map_image(g_original_path);
     AddVectoredExceptionHandler(1, &vectored430);
+    if (const char* t = getenv("PORSCHE430_TRACE"))
+        g_trace_left = atol(t);
+    g_trace_filter = getenv("PORSCHE430_TRACE_FILTER");
     if (getenv("PORSCHE430_WATCHDOG"))
         CreateThread(nullptr, 0, &watchdog430, nullptr, 0, nullptr);
+    if (getenv("PORSCHE430_NATIVE")) {
+        fprintf(stderr, "[430] image mapped, NATIVE reference mode, entry %08x\n", g_entry_va);
+        run_native();
+        return 0;
+    }
     fprintf(stderr, "[430] image mapped, %u lowered bodies, entry %08x\n", lowered_count430, g_entry_va);
     char* side = static_cast<char*>(VirtualAlloc(nullptr, 64u << 20, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE));
     switch_to_side(reinterpret_cast<U>(side) + (64u << 20) - 64u, &run_guest);

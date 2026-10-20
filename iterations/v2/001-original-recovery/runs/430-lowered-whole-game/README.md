@@ -64,13 +64,37 @@ diferencial contra a rebaixada ou contra o original.
   `HKCU|HKLM\Software\Electronic Arts\Need for Speed - Porsche Unleashed` não existe nesta
   máquina; quem a grava é o `config.exe` (3D Setup).
 
+### Atualização: menu principal
+
+- O `config.exe` do repack é do nGlide, não do jogo. O setup do jogo é o `3DSetup.exe`. O
+  repack guarda os drivers do Thrash em subpastas (`drivers\dx7\dx7z.dll`); na cópia
+  `local/run-430` o `dx7z.dll` e o `thrash.ini` foram copiados para `drivers\`.
+- O EXE é linkado com `/SUBSYSTEM:CONSOLE,5.01 /MANIFEST:NO`, como um executável de 2000.
+  Mesmo assim, o `RegOpenKeyExA(HKLM\SOFTWARE\Electronic Arts\..., KEY_ALL_ACCESS)` ainda
+  devolve 5 (acesso negado) no rebaixado. O jogo segue com os valores já gravados.
+- O original e o rebaixado chegam ao **mesmo menu principal**. O rebaixado é mais lento:
+  aos 12 s ainda está em "LOADING".
+- Ferramentas do runtime:
+  - `PORSCHE430_TRACE=<n>` e `PORSCHE430_TRACE_FILTER=a;b;c` registram chamadas de import
+    (nome, endereço de retorno, 4 argumentos, retorno), uma linha por chamada;
+  - `PORSCHE430_NATIVE=1` roda o código **original** na mesma imagem e no mesmo host, com
+    a IAT passando por trampolins de log. É a referência para comparar linha a linha;
+  - `PORSCHE430_WATCHDOG=1` mostra o `pc` a cada 3 s.
+- Comparação de `LoadLibrary`/`GetProcAddress` entre o modo nativo e o rebaixado: as
+  43 primeiras chamadas são idênticas (nome, origem, argumentos). Na 43ª,
+  `gimme.dll!ConvertFile`, o original no host às vezes cai dentro do `gimme.dll`, e o
+  rebaixado também caiu uma vez no mesmo lugar. Como acontece nos dois modos, é ambiente
+  (layout de memória do host), não rebaixamento.
+
 ## Próximos passos
 
-1. Rodar o 3D Setup (`local/run-430/config.exe`) uma vez para gravar a configuração e
-   confirmar que o original abre o menu.
-2. Rodar o EXE rebaixado até o menu e corrigir cada parada fatal (`[430] ...` no stderr).
-   Ligue `PORSCHE430_WATCHDOG=1` para ver o `pc` a cada 3 s.
-3. Com o jogo rodando, começar a humanizar: trocar `translated_XXXXXXXX` por funções
+1. Medir e reduzir a lentidão do rebaixado (perfil por função; `/O2`; `step257` e
+   `read257/write257` são os candidatos).
+2. Ir além do menu (corrida) comparando traces nativo × rebaixado e corrigindo cada
+   divergência ou parada fatal (`[430] ...` no stderr).
+3. Investigar o crash do `gimme.dll!ConvertFile` no host (provável dependência de layout
+   de heap ou pilha).
+4. Com o jogo rodando, começar a humanizar: trocar `translated_XXXXXXXX` por funções
    legíveis, uma por vez, comparando estado/memória com a versão rebaixada (os 482 corpos
    já recuperados na main entram primeiro).
 

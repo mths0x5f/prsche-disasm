@@ -238,12 +238,24 @@ def pointer_entries(img, entries):
                 if any(lo <= v < hi for lo, hi in code):
                     targets.add(v)
         at += block
+    return gap_pieces(img, entries, targets), targets
+
+
+def code_ranges(img):
+    return [(sva, sva + vs) for name, sva, vs, rs, raw, ch in img.sections if ch & 0x20000000]
+
+
+def gap_pieces(img, entries, targets):
+    """Synthetic functions for code targets that no range of `entries` covers."""
+    code = code_ranges(img)
     ranges = sorted((int(a, 16), int(b, 16) + 1) for e in entries for a, b in e['ranges'])
     starts = [a for a, _ in ranges]
     synthetic = []
     import bisect
     outside = []
     for t in sorted(targets):
+        if not any(lo <= t < hi for lo, hi in code):
+            continue
         k = bisect.bisect_right(starts, t) - 1
         if not (k >= 0 and ranges[k][0] <= t < ranges[k][1]):
             outside.append((t, k))
@@ -261,7 +273,7 @@ def pointer_entries(img, entries):
         if n:
             synthetic.append(dict(entry_va=f'{t:08x}', name=f'PTR_{t:08x}', ranges=[[f'{t:08x}', f'{t + n - 1:08x}']],
                                   body_bytes=n, synthetic=True))
-    return synthetic, targets
+    return synthetic
 
 
 def generate(translate, header, img, entries, pointers=()):
@@ -290,17 +302,26 @@ def generate(translate, header, img, entries, pointers=()):
     # outside the range they land in (cross-range jumps, shared CRT tails such as strcpy ->
     # strcat). Pass 2 re-lowers only the ranges that such targets enter mid-body.
     first, external = {}, set(pointers)
-    for e in entries:
-        spans = [(int(a, 16), int(b, 16) + 1 - int(a, 16)) for a, b in e['ranges']]
-        try:
-            first[e['entry_va']] = [(a, n, lower(translate, img, a, n)) for a, n in spans]
-        except Exception as x:  # noqa: BLE001 - recorded as an explicit boundary
-            rejected.append(dict(va=e['entry_va'], reason=str(x)[:120]))
-            continue
-        for a, n, res in first[e['entry_va']]:
-            external.update(t for t in res[4] if not a <= t < a + n)
-            if f'dispatch257(s,0x{a + n:08x}u); return;' in res[0][-200:]:
-                external.add(a + n)  # fallthrough into the next range
+    entries = list(entries)
+    pending = list(entries)
+    added = 0
+    while pending:
+        for e in pending:
+            spans = [(int(a, 16), int(b, 16) + 1 - int(a, 16)) for a, b in e['ranges']]
+            try:
+                first[e['entry_va']] = [(a, n, lower(translate, img, a, n)) for a, n in spans]
+            except Exception as x:  # noqa: BLE001 - recorded as an explicit boundary
+                rejected.append(dict(va=e['entry_va'], reason=str(x)[:120]))
+                continue
+            for a, n, res in first[e['entry_va']]:
+                external.update(t for t in res[4] if not a <= t < a + n)
+                if f'dispatch257(s,0x{a + n:08x}u); return;' in res[0][-200:]:
+                    external.add(a + n)  # fallthrough into the next range
+        # Direct targets in gaps (code no catalogued range covers) become new pieces.
+        pending = [p for p in gap_pieces(img, entries, external) if p['entry_va'] not in first]
+        pending = [p for p in pending if p['entry_va'] not in {r['va'] for r in rejected}]
+        entries += pending
+        added += len(pending)
     for e in entries:
         if e['entry_va'] not in first:
             continue
@@ -329,7 +350,7 @@ def generate(translate, header, img, entries, pointers=()):
     for old in gen.glob('lowered_*.cpp'):
         if old.name not in written:
             old.unlink()
-    return dict(lowered=functions, ranges=ranges, table_entries=len(table_rows), rejected=rejected,
+    return dict(gap_pieces_added=added, lowered=functions, ranges=ranges, table_entries=len(table_rows), rejected=rejected,
                 instructions=insns, tus=tu_index, generate_seconds=round(time.time() - t0, 1))
 
 
@@ -350,7 +371,7 @@ def build(jobs):
     cl, link, env = toolchain()
     gen, obj = OUT / 'gen', OUT / 'obj'
     obj.mkdir(parents=True, exist_ok=True)
-    sources = sorted(gen.glob('lowered_*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
+    sources = sorted(gen.glob('lowered_[0-9]*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
     header = gen / 'machine257.h'
 
     def stale(src):
@@ -378,7 +399,7 @@ def build(jobs):
         return dict(compile_seconds=compile_s, compile_errors=1, first_errors=r.stdout.splitlines()[-5:])
     exe = OUT / 'PorscheLowered.exe'
     # Based at the original's 0x00400000: reserve_430.obj holds the original image's pages.
-    cmd = [str(link), '/nologo', '/MACHINE:X86', '/SUBSYSTEM:CONSOLE', '/BASE:0x400000', '/DYNAMICBASE:NO',
+    cmd = [str(link), '/nologo', '/MACHINE:X86', '/SUBSYSTEM:CONSOLE,5.01', '/MANIFEST:NO', '/BASE:0x400000', '/DYNAMICBASE:NO',
            '/FIXED', '/NXCOMPAT', '/LARGEADDRESSAWARE', '/STACK:0x200000,0x200000', f'/OUT:{exe}', *map(str, sorted(obj.glob('*.obj'))),
            'kernel32.lib', 'user32.lib']
     r = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=OUT)
