@@ -161,6 +161,18 @@ void native_call(Machine257& s, U target)
     g_last = &s;
     s.r[0] = f.eax; s.r[1] = f.ecx; s.r[2] = f.edx; s.r[4] = f.esp;
     if (traced) fprintf(stderr, "%s -> %08x\n", line, f.eax);
+    if (g_trace_left > 0 && f.eax && g_import_count < kMaxImports) {
+        // Name pointers returned by GetProcAddress so calls through them are traced too.
+        const char* name = import_name(target);
+        U proc = read257(f.esp - 4u, 4u);  // stdcall popped (module, name): name was at esp-4
+        if (name && !strcmp(name, "KERNEL32.dll!GetProcAddress") && proc >= 0x10000u && !import_name(f.eax)) {
+            g_imports[g_import_count].address = f.eax;
+            g_imports[g_import_count].iat_slot = 0;
+            _snprintf(g_imports[g_import_count].name, sizeof g_imports[0].name, "proc!%s",
+                      reinterpret_cast<const char*>(proc));
+            ++g_import_count;
+        }
+    }
     s.pc = return_pc;
     s.stop = Stop257::Returned;
 }
