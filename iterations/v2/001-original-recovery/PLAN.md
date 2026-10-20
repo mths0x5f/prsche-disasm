@@ -1,5 +1,28 @@
 # v2 / 001 — план восстановления исходного кода
 
+Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
+fixes, fresh receipts, shared game audit and acceptance comments complete.
+All agents done; no unfinished implementation. Resume with original00561b80
+exists wrapper and00561ce0 open-callback tracing, retaining existing holds.
+
+PR review work complete:22 integrated in game324;23 corrected native47cases,
+13 mutation controls and10 audit-tamper controls PASS/rejected as appropriate.
+421/422 remain unlinked research; state providers/full audio not accepted.
+All agents complete. Coordinator finalizes PR records; next original-game task
+is resource-file exists/open recovery, then root/arena/context holds.
+
+PR22/Run324 ready: native24, rebuilt1026/13/37/8,166-TU fresh compile,
+264 names/293 refs,420 unchanged pins and audit PASS.423 audit/docs repaired.
+PR23 local proposal accepted for research-only intake after fresh destination
+receipts; audio state/game integration remains open. Reviews complete;
+coordinator owns merge/proof bookkeeping. Next game work: resource-file recovery.
+
+PR review assignments: pr22_input_review — canonical getstate modes/storage,
+original/native and rebuilt probe checks in local/experiments/pr22-review;
+pr23_audio_review — isolated421/422 source/native/ownership checks in
+local/experiments/pr23-review. Coordinator — decisions and any integration.
+Game321 remains166 TU/266 names/295 refs/noEXE until fresh evidence proves otherwise.
+
 Licensing follow-up: root MIT grant covers only rights held by its licensors;
 original game material and unlicensed external contributions remain excluded.
 Track author permission for PR3/PR20 separately; no recovered-source provenance,

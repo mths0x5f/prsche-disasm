@@ -44,6 +44,9 @@ def module(name, p):
 
 
 def resolve_compiler():
+    local = ROOT / 'local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe'
+    if local.exists():
+        return local
     roots = [
         Path(r'C:\Program Files\Microsoft Visual Studio'),
         Path(r'C:\Program Files (x86)\Microsoft Visual Studio'),
@@ -164,6 +167,15 @@ def main(finalize: bool, attempt: int):
     roots = resolve_roots(compiler)
     sdk_lib = resolve_sdk_lib(roots[1].parent)
 
+    provenance = module('audio_provenance', ROOT / 'scripts/research/audio_recovery_provenance.py')
+    for path in (Path(__file__), ROOT / 'scripts/research/gen_run_422.py', ROOT / 'scripts/research/build-v2-compile-corpus.py', ROOT / 'scripts/research/audio_recovery_provenance.py'):
+        pin(path)
+    for path in (compiler.parent / 'c1xx.dll', compiler.parent / 'c2.dll', compiler.parent / 'link.exe', sdk_lib / 'kernel32.Lib', sdk_lib / 'user32.Lib'):
+        pin(path)
+    for path in SRC_INCLUDE.rglob('*'):
+        if path.is_file():
+            pin(path)
+
     source = pin(RUN / 'audio_channel_voice_lookup_422.cpp')
     header = pin(RUN / 'audio_channel_voice_lookup_422.hpp')
     fixture = pin(OUT / 'audio_channel_voice_fixture.cpp')
@@ -197,10 +209,20 @@ def main(finalize: bool, attempt: int):
         str(fixture),
     ]
 
+    # Discover actual system-header closure, then pin it before the authoritative
+    # compile. The probe is not the accepted object/native result.
+    guard()
+    probe = run(compile_cmd, 'dependency-probe-' + suffix)
+    assert probe['exit_code'] == 0, 'dependency probe failed'
+    dependency_inputs = provenance.dependency_paths(OUT)
+    for path in dependency_inputs:
+        pin(path)
     guard()
     compiled = run(compile_cmd, 'compile-' + suffix)
     assert compiled['exit_code'] == 0, (OUT / ('compile-' + suffix + '.log')).read_text()
 
+    guard()
+    assert provenance.dependency_paths(OUT) == dependency_inputs, 'dependency closure changed'
     pin(obj)
     pin(fixture_obj)
 
@@ -219,6 +241,7 @@ def main(finalize: bool, attempt: int):
     guard()
     linked = run(link_cmd, 'fixture-link-' + suffix)
     assert linked['exit_code'] == 0, (OUT / ('fixture-link-' + suffix + '.log')).read_text()
+    guard()
     pin(exe)
     pin(map_file)
 
@@ -226,13 +249,32 @@ def main(finalize: bool, attempt: int):
     executed = run([str(exe)], 'fixture-native-' + suffix)
     native_log = (OUT / ('fixture-native-' + suffix + '.log')).read_text()
     assert executed['exit_code'] == 0, native_log
+    guard()
     passed = native_log.count(' OK')
     assert passed == CASES, native_log
 
     coff = module('coff422', ROOT / 'scripts/research/build-v2-compile-corpus.py')
     view = coff.coff_symbols(obj)
 
+    # Persist the checked manifest separately so tracked summaries remain small.
+    provenance_path = OUT / ('provenance-' + suffix + '.json')
+    outputs = [obj, fixture_obj, exe, map_file]
+    outputs += list((OUT / 'dependencies').glob('*.json'))
+    for prefix in ('dependency-probe-', 'compile-', 'fixture-link-', 'fixture-native-'):
+        outputs.extend([OUT / (prefix + suffix + '.execution.json'), OUT / (prefix + suffix + '.log')])
+    write(provenance_path, dict(
+        input_sha256={rel(p): h for p, h in sorted(pins.items(), key=lambda x: str(x[0]))},
+        output_sha256={rel(p): sha(p) for p in outputs},
+        dependency_input_paths=sorted(map(str, dependency_inputs)),
+        source_file=source.name, header_file=header.name, fixture_file=fixture.name,
+        object_file=obj.name,
+        guards_before_and_after_compile_link_native=True,
+    ))
+    guard()
+
     summary = dict(
+        provenance=rel(provenance_path),
+        provenance_sha256=sha(provenance_path),
         schema=1,
         run='422-audio-channel-voice-lookup',
         original_sha256=sha(ROOT / 'local/game/Porsche.exe'),

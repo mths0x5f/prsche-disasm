@@ -38,8 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run321](iterations/v2/001-original-recovery/runs/321-simd-fill-game-integration/README.md):
-all166 C++ sources compile; linking leaves266 unresolved names/295 references.
+[Latest game build, Run324](iterations/v2/001-original-recovery/runs/324-input-modes-game-integration/README.md):
+all166 C++ sources compile; linking leaves264 unresolved names/293 references.
+PR22 recovers supported input modes and closes two boundaries. Native24 and
+rebuilt input/snapshot/buffer/startup comparisons pass; negative/layout holds remain.
 Original scalar/MMX/SSE fill backends are now connected. The new SIMD bodies passed
 4896 standalone native cases; the full original dispatcher/backend chain passed
 27648 cases. Two dependencies closed with none added; batch audit PASS. No EXE yet.

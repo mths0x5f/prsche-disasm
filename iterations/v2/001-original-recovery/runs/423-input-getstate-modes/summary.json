@@ -14,10 +14,10 @@
     }
   ],
   "original_scalars": [],
-  "compiler": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx86/x86/cl.exe",
-  "compiler_sha256": "aa25483dec4821a189e494689ff8b619d99224328e290dafd790a96527b568b3",
+  "compiler": "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
   "include_roots": [
-    "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
@@ -25,15 +25,16 @@
     "iterations/v2/001-original-recovery/source/include"
   ],
   "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/input_state.cpp",
-  "source_sha256": "de5f2b4a7511fcc6e4b18c88fdbda5e4e27e38c437729112806d89179beb2f37",
+  "source_sha256": "fe4d9ae1bbfc4eca6ee6de7bc93d08174a77b9a23dd619dec09a6635822eb66d",
   "header": "iterations/v2/001-original-recovery/source/include/porsche/input_state.hpp",
   "header_sha256": "155738aaa6c72e5467d18f139f68af5dc172d50adf3e37744270d064e58e7e01",
   "fixture": "local/experiments/v2-input-getstate-423/input_getstate_fixture.cpp",
-  "fixture_sha256": "fd1e868849b706df6894c3270ac2916f193a4d642bf85b94b5987263831af7a5",
+  "fixture_sha256": "99212de534c95355e8a4cb56df04d61397809103cf40d4d51295b255f8a928a1",
   "symbols": {
     "defined": [
       "??_C@_0BI@FNNNPPPI@?2real?2patch3?2pc?2input?4c@",
       "?fe_input_getstate_00532e10@porsche@@YAPAXII@Z",
+      "?input_caps_buffer_006bde20@porsche@@3PAEA",
       "?input_count_0069cb0c@porsche@@3HA",
       "?input_poll_0056fd00@porsche@@YAIPAUInputDevice@1@@Z",
       "?input_poll_read_0056fce0@porsche@@YAIPAUInputDevice@1@PAXI@Z",
@@ -45,7 +46,6 @@
       "?diagnostic_handler_005debf0@porsche@@3P6AXPBD@ZA",
       "?diagnostic_line_005deb78@porsche@@3AAIA",
       "?input_caps_0056fdb0@porsche@@YAIPAUInputBufferDevice@1@PAX@Z",
-      "?input_caps_buffer_006bde20@porsche@@3PAEA",
       "?input_negative_index_00532e10@porsche@@YAPAXHI@Z",
       "?input_property_mode8_0056fff0@porsche@@YAIPAUInputBufferDevice@1@@Z",
       "?input_unmapped_index_00532e10@porsche@@YAPAXII@Z"
@@ -56,6 +56,7 @@
   "functions": [
     "??_C@_0BI@FNNNPPPI@?2real?2patch3?2pc?2input?4c@",
     "?fe_input_getstate_00532e10@porsche@@YAPAXII@Z",
+    "?input_caps_buffer_006bde20@porsche@@3PAEA",
     "?input_count_0069cb0c@porsche@@3HA",
     "?input_poll_0056fd00@porsche@@YAIPAUInputDevice@1@@Z",
     "?input_poll_read_0056fce0@porsche@@YAIPAUInputDevice@1@PAXI@Z",
@@ -64,7 +65,7 @@
   ],
   "compile": {
     "command": [
-      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\cl.exe",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
       "/nologo",
       "/c",
       "/std:c++17",
@@ -81,9 +82,9 @@
       "/MP2",
       "/Zl",
       "/sourceDependencies",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\dependencies",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\dependencies",
       "/I",
-      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
       "/I",
@@ -91,21 +92,21 @@
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
       "/I",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\423-input-getstate-modes",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\423-input-getstate-modes",
       "/I",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\source\\include",
-      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\objects\\",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\input_state.cpp",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\input_getstate_fixture.cpp"
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\recovered\\Porsche.exe\\input_state.cpp",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\input_getstate_fixture.cpp"
     ],
     "exit_code": 0,
-    "seconds": 1.721128,
+    "seconds": 0.419382,
     "log": "local/experiments/v2-input-getstate-423/compile-001.log",
     "log_sha256": "22ce390ba1ce668ffedd94897826de60f53bd02465033198d8c40d9c84bb6943"
   },
   "link": {
     "command": [
-      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\link.exe",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
       "/nologo",
       "/MACHINE:X86",
       "/SUBSYSTEM:CONSOLE",
@@ -114,15 +115,15 @@
       "/INCREMENTAL:NO",
       "/SECTION:.data,ERW",
       "/SECTION:.bss,ERW",
-      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\native-fixture.map",
-      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\native-fixture.exe",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\objects\\input_state.obj",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\objects\\input_getstate_fixture.obj",
+      "/MAP:F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\native-fixture.map",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\native-fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\objects\\input_state.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\objects\\input_getstate_fixture.obj",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
     ],
     "exit_code": 0,
-    "seconds": 0.196449,
+    "seconds": 0.108273,
     "log": "local/experiments/v2-input-getstate-423/fixture-link-001.log",
     "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
@@ -132,10 +133,10 @@
     "cases_passed": 24,
     "execution": {
       "command": [
-        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-input-getstate-423\\native-fixture.exe"
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-input-getstate-423\\native-fixture.exe"
       ],
       "exit_code": 0,
-      "seconds": 0.128244,
+      "seconds": 0.041112,
       "log": "local/experiments/v2-input-getstate-423/fixture-native-001.log",
       "log_sha256": "308c592bb281110831c542e24d9b0714014e8e2df2666bbdfd23d19e0b5ac3c8"
     }

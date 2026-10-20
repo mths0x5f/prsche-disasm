@@ -2,7 +2,7 @@
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
-Ten leaf bodies of the audio backend, 239 PE body bytes, taken from the game link
+Ten bodies of the audio backend, 239 PE body bytes, taken from the game link
 frontier (Run 420, `build-003.json`). Six of them were already declared, with typed
 signatures, by the canonical `source/include/porsche/application_audio_device.hpp` and
 `application_audio_lifecycle.hpp`; two more by Run 400. Their recovery is compiled
@@ -82,6 +82,14 @@ The object defines the ten functions plus `__Avx2WmemEnabledWeakValue`, a weak v
 MSVC STL emits into any translation unit that includes `<array>`, which the canonical
 header does. It leaves undefined the five storage cells, `audio_channel_stop_00565d60`
 (Run 400) and the four `platform_*_critical_section` wrappers.
+
+The audit verifies current source/header/script hashes, the compiler dependency
+closure pinned before the authoritative compile, actual COFF definitions and
+undefined boundaries, output hashes, and matching execution receipts/log hashes.
+The dependency probe discovers system headers and is separate from the accepted
+compile. Compiler DLLs, linker and imported libraries are pinned as inputs.
+Critical-section calls in the fixture are recording hooks; these results do not
+prove real Win32 synchronization, concurrency, or a complete audio device.
 
 ### Boundaries
 

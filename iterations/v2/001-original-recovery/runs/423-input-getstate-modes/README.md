@@ -1,40 +1,65 @@
-# Run 423 — input `_getstate` (00532e10), every mode
+# Run 423 — bounded `_getstate` modes
 
-Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
+Canonical owner: `source/recovered/Porsche.exe/input_state.cpp`, original
+`Porsche.exe` SHA-256
+`ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
+The indexed body is `00532e10..00532f34` (293 bytes), SHA-256
+`f8f0b37499524cfa089f53c5d4737bd8e14e6e5e7185a7513011c03d038c3a4a`.
+Index query: `query-binary-index.py --binary Porsche.exe --address 0x532e10 --disassemble`.
+No new function owner is introduced; this extends the existing partial owner.
 
-Completes `fe_input_getstate_00532e10` (293 bytes) in the canonical
-`source/recovered/Porsche.exe/input_state.cpp`. Previously only mode 6 was recovered; the
-other modes and the device-type error were typed boundaries. The original source file is
-`\real\patch3\pc\input.c` (string at `005bb2f8`) and the function reports itself as
-`[INPUT] _getstate`.
+The mode table at `00532f38` selects count (1), capabilities (2), state (6),
+property (8), and the invalid-mode diagnostic. The type table at `00532f58`
+selects state sizes `0x50/0x10/0x100/0x50` from the low byte. The source strings
+and diagnostic lines `0x1fa/0x219` come from the original PE. Invalid mode pushes
+format and mode, then pops eight bytes; invalid type pushes only format.
 
-Mode table `00532f38`: 1 returns the device count; 2 fills the `0x21c`-byte caps buffer
-`006bde20` through `input_caps_0056fdb0` and returns it, or null on failure; 6 reads the
-device state (unchanged); 8 returns `input_property_mode8_0056fff0`; 3, 4, 5, 7 and anything
-outside 1..8 report `"[INPUT] - Invalid getstate (%d)\n"` at line `0x219`. An invalid
-device type in mode 6 reports `"[INPUT] _getstate, Internal error in devicetype\n"` at line
-`0x1fa`. Both reports set the diagnostic file/line cells and call the handler at `005debf0`;
-the invalid-mode call is printf-style (format plus mode, 8 bytes popped).
+`input_caps_buffer_006bde20[0x21c]` is defined once by the canonical source.
+The original buffer sits `0x220` bytes before the slots, including a four-byte
+gap. The port does not preserve this adjacency. A full original HIGHLOW scan
+found only two references into the buffer/gap, at `00532edf` and `00532ef1`, both
+targeting its base; this is bounded evidence, not proof against computed aliases.
+The original caps helper clears `0x21c` bytes; its success parser remains an
+explicit existing boundary. This change does not recover that parser.
 
-The boundaries `input_unrecovered_mode_00532e10` and `input_invalid_type_00532eae` are
-removed. The latter's signature was inaccurate: the original passes no type to the report.
-Negative and `>= 32` indices stay boundaries, because the original reads outside the slot
-array there. The caps buffer is declared `extern`: it ends 4 bytes before
-`input_slots_006be040`, the memory a negative index reads.
+Negative indices and indices >=32 admitted by the signed count compare remain
+typed boundaries. They are not tested or accepted. Count is captured on entry,
+and callback results/state are compared only within the documented valid slots.
+The existing fixed-argument diagnostic declaration is called through an x86
+cdecl variadic view for the invalid-mode path. The actual game diagnostic body
+and complete game execution remain outside this fixture.
 
-`input_probe.cpp` and `input_snapshot_probe.cpp` now provide the new callees; both compile
-and link, and an `input_probe` smoke run gives `P,G80s` for a valid type and `D` for an
-invalid one. The Unicorn verifiers (`verify-v2-input-state.py`, `verify-v2-input-snapshot.py`)
-were **not** re-run: `unicorn` is not installed here.
+Review on 2026-10-20 rebuilt the final PR22 head `1b907749e4b0c8a507d795fc38ebd7cc4e120a84`
+in `local/experiments/pr22-review/snapshot`. Original source, headers and generator
+were materialized byte-for-byte using `git show`. The retail PE was copied
+read-only for this work. The only native-run adaptation was selecting local
+MSVC `14.44.35207/bin/Hostx64/x86/cl.exe`; source and generated fixture were not
+changed. Fresh summary/validation replace the earlier records that described
+the buffer as an undefined external.
 
-Validation: 24/24 differential cases on a physical x86 slab holding `00532e10` and its
-original `0056fce0`/`0056fd00`/`0056fd30` chain, with both jump tables relocated and the
-three original strings copied byte for byte so message content is compared. Negative
-control: eight mutations of the canonical source each fail — count + 1 in mode 1, ignoring
-the caps result, an off-by-one line, an altered message, an altered file string, mode 8
-returning zero, an unmasked device type, and mode 3 treated as mode 1. No independent
-audit script yet.
+Fresh checks:
+
+- Native original-PE slab: **24/24**, compile/link/run exit zero. Both jump tables,
+  poll/read chain, original strings, return value, trace and post-state are checked.
+- Rebuilt `input_probe`: **1026** Unicorn comparisons pass.
+- Rebuilt `input_snapshot_probe`: **13** comparisons pass.
+- Rebuilt `input_buffer_probe`: **37** comparisons pass.
+- Rebuilt `startup_input_probe`: **8** comparisons pass.
+- Corrected audit: fresh source/header/fixture/compiler hashes, prepared input
+  hashes, actual COFF object, receipt/log hashes and native record pass. An old
+  summary fails rather than producing a stale green result.
+
+Artifacts are under `local/experiments/pr22-review/snapshot/local/experiments/v2-input-getstate-423`
+and `snapshot/local/probes/*`. Commands used from the repository root:
 
 ```
-python scripts/research/experiment-v2-input-getstate-423.py --finalize --attempt 1
+py -3 local/experiments/pr22-review/review_setup.py
+py -3 local/experiments/pr22-review/review_setup.py native
+py -3 local/experiments/pr22-review/probes.py
+py -3 local/experiments/pr22-review/proposal/audit-v2-input-getstate-423.py --root local/experiments/pr22-review/snapshot --summary local/experiments/pr22-review/proposal/summary.json
 ```
+
+The historical eight source mutations were not repeated during review and are
+not claimed as fresh results. These bounded comparisons do not prove physical
+DirectInput behavior, arbitrary callback mutation, nonvolatile/FP ABI state,
+negative-index layout, the caps success parser or full-game acceptance.
