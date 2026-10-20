@@ -56,7 +56,7 @@ diferencial contra a rebaixada ou contra o original.
 - Todas as 5.772 funções do catálogo foram rebaixadas. Somam-se 2.694 pedaços sintéticos
   achados por relocação; 216 deles são dados e foram descartados. No total são 8.250 corpos,
   9.343 entradas e ~435 mil instruções. Compilação e link sem erros; `PorscheLowered.exe`
-  tem ~16 MB.
+  tem ~19 MB.
 - Primeira execução, a partir de uma cópia do jogo em `local/run-430` (`local/game` é só
   leitura): o EXE rebaixado passa pela CRT e pelo WinMain, lê o registro e mostra
   **a mesma** MessageBox do original: "Error:" / "Run 3D Setup before running the game.". As
