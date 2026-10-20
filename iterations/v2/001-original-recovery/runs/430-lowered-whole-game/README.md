@@ -11,7 +11,7 @@ diferencial contra a rebaixada ou contra o original.
 ## Como funciona
 
 - `scripts/research/build-v2-lowered-exe-430.py` gera o C++ em
-  `D:projetosporsche-src` (fora do repositório; muda com `PORSCHE430_GEN`) e compila
+  `D:\projetos\porsche-src` (fora do repositório; muda com `PORSCHE430_GEN`) e compila
   `PorscheLowered.exe`. A build é incremental: só recompila TUs alterados.
 - Regras de rebaixamento somadas às do backend:
   - operandos `fs:` somam a base do TEB, pois o backend congelado tratava `fs` como plano;
@@ -126,7 +126,7 @@ O que mudou:
 
 ### Atualização: estrutura de pastas do código original (2026-10-20)
 
-O C++ rebaixado agora sai em `D:projetosporsche-srcsrc` com a árvore de fontes do próprio jogo (opção B). O
+O C++ rebaixado agora sai em `D:\projetos\porsche-src\src\` com a árvore de fontes do próprio jogo (opção B). O
 binário traz 48 caminhos de arquivos-fonte (`__FILE__` de asserts e mensagens), por exemplo:
 - `\real\pc\startup.c`, `\real\pc\nfile.c`;
 - `\real\patch3\pc\input.c`, `\real\cmn\stream.c`;
