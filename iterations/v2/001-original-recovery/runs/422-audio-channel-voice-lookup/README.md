@@ -2,8 +2,9 @@
 
 Original `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
-Two leaf bodies over the audio channel table, 212 PE body bytes, both called only by
-`audio_channel_stop_00565d60` (Run 400). With Run 421's lock and unlock, they leave
+Two leaf bodies over the audio channel table, 212 PE body bytes, called by
+`audio_channel_stop_00565d60` (Run 400) and other channel-control functions
+(including `00565dd0`, `00565f00`, `005902a0`, and `00590e70`). With Run 421's lock and unlock, they leave
 `audio_backend_stop_voice_0058a8b0` as that function's last unrecovered callee.
 
 | VA | Bytes | Symbol |
@@ -60,6 +61,14 @@ bound test, and an unsigned slot test for ungrouped channels.
 The object defines exactly the two functions, whose mangled names match the game link
 frontier, and leaves only the two storage cells undefined.
 
+The audit verifies current source/header/script hashes, the compiler dependency
+closure pinned before the authoritative compile, actual COFF definitions and
+undefined boundaries, output hashes, and matching execution receipts/log hashes.
+The dependency probe discovers system headers and is separate from the accepted
+compile. Compiler DLLs, linker and imported libraries are pinned as inputs.
+Critical-section calls in the fixture are recording hooks; these results do not
+prove real Win32 synchronization, concurrency, or a complete audio device.
+
 ### Boundaries
 
 - Storage for the channel table cells.
@@ -75,7 +84,7 @@ frontier, and leaves only the two storage cells undefined.
 Оригинал `Porsche.exe` SHA-256 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
 
 Две листовые функции над таблицей аудиоканалов, 212 байт тела PE; обе вызываются
-только из `audio_channel_stop_00565d60` (Run 400).
+из `audio_channel_stop_00565d60` (Run 400) и других функций управления каналами.
 
 - `00589d20` (79 байт): индекс канала — младший байт дескриптора; возвращается, только
   если дескриптор неотрицателен, индекс меньше знакового счётчика, байт активности

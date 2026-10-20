@@ -1,7 +1,8 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Current game checkpoint — [Run321](runs/321-simd-fill-game-integration/README.md):
-166 C++ TUs compiled;266 unresolved names/295 references, no EXE. Original
+Current game checkpoint — [Run324](runs/324-input-modes-game-integration/README.md):
+166 C++ TUs compiled;264 unresolved names/293 references, no EXE. PR22 input
+modes pass native24/rebuilt1026/13/37/8 checks; two boundaries close. Original
 scalar/MMX/SSE fill is connected: new SIMD bodies passed4896 native cases;
 the complete dispatcher/backend chain passed27648. No guessed providers or
 duplicate owners. [REA316](runs/316-rea-fill-session/README.md) supplied analysis

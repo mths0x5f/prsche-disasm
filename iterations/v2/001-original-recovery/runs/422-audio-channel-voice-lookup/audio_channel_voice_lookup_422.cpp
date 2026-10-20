@@ -3,8 +3,10 @@
 // Channel lookup and voice iteration over the 0x70-byte channel table:
 //   00589d20..00589d6e (79 bytes)   audio_backend_find_channel_00589d20
 //   00590340..005903c4 (133 bytes)  audio_backend_next_voice_00590340
-// Both are leaves. Their only caller is audio_channel_stop_00565d60 (Run 400),
+// Both are leaves. Callers include audio_channel_stop_00565d60 (Run 400),
 // which starts the voice slot at 0xffffffff and stops each voice returned.
+// The index also contains other channel-control callers; this fixture checks
+// these leaf contracts, not every caller or the complete audio subsystem.
 #include "audio_channel_voice_lookup_422.hpp"
 
 namespace porsche {

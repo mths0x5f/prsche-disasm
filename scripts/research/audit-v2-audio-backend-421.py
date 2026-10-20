@@ -7,6 +7,7 @@ calls through the IAT; the COFF symbols the recovery object defines; and the
 native fixture result.
 """
 import hashlib
+import importlib.util
 import json
 import struct
 from pathlib import Path
@@ -98,6 +99,8 @@ def reader(image):
     return base, read
 
 
+EXPECTED_UNDEFINED = {'?audio_backend_channels_006b4a00@porsche@@3IA', '?audio_channel_stop_00565d60@porsche@@YAHI@Z', '?audio_backend_channel_count_006b49a4@porsche@@3FA', '?platform_initialize_critical_section@porsche@@YGXPAX@Z', '?audio_backend_pool_006b4a18@porsche@@3IA', '?audio_backend_lock_depth_006b499f@porsche@@3EA', '?platform_leave_critical_section@porsche@@YGXPAX@Z', '?platform_enter_critical_section@porsche@@YGXPAX@Z', '?platform_delete_critical_section@porsche@@YGXPAX@Z', '?audio_backend_lock_cs_006b1800@porsche@@3PAEA'}
+
 def main():
     image = (ROOT / 'local/game/Porsche.exe').read_bytes()
     assert hashlib.sha256(image).hexdigest() == SHA, 'original image SHA mismatch'
@@ -140,6 +143,11 @@ def main():
     assert defined - EXPECTED_DEFINED <= STL_WEAK, f'unexpected definitions: {defined - EXPECTED_DEFINED}'
     assert summary['native_fixture']['exit_code'] == 0
     assert summary['native_fixture']['cases'] == CASES == summary['native_fixture']['cases_passed']
+
+    spec = importlib.util.spec_from_file_location('audio_provenance_audit', ROOT / 'scripts/research/audio_recovery_provenance.py')
+    provenance = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(provenance)
+    provenance.verify(ROOT, RUN, EXP, summary, EXPECTED_DEFINED, STL_WEAK, EXPECTED_UNDEFINED)
 
     validation = json.loads((RUN / 'validation.json').read_text(encoding='utf-8'))
     assert validation['status'] == 'PASS' and validation['cases_passed'] == CASES

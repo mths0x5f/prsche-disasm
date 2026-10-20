@@ -37,6 +37,25 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
+
+PR22 andPR23 are merged with corrected evidence, and GitHub confirms0 open PRs.
+PR22 changes canonical input behavior; PR23 is research-only. All review tasks
+and commits are complete. Current game324:166 TU compiled,264 names/293 refs,
+noEXE or game execution. Full-game and recovery-validation holds remain open.
+
+PR22 merged; PR23 reviewed/fixed for isolated research intake. Final main-tree
+audio fixtures30/30+17/17 and strict audits PASS. No audio production integration.
+Game324 remains166 TU,264 names/293 refs, noEXE. Contributor licensing agreed.
+
+Run324:166 TUs compiled,264 names/293 refs, noEXE. PR22 closes two names with
+no new dependencies; native24, rebuilt1026/13/37/8 and corrected423/324 audits PASS.
+PR23 remains isolated; corrected provenance is finalized before research intake.
+
+Current review: PR22 input modes and PR23 audio recovery; game checkpoint321
+unchanged pending decisions. Main fast-forwarded to3c5f9b8, which records the
+contributor's MIT agreement in LICENSING.md. Earlier pending-consent entries
+below are historical for this contributor.
+
 Licensing: MIT for project-owned original work; LICENSING.md records exclusions
 and pending agreement for older external contributions. The repository is not
 claimed to be uniformly MIT-licensed. Game checkpoint321 remains unchanged.

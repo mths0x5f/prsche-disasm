@@ -43,6 +43,10 @@ def module(name, p):
 
 
 def resolve_compiler():
+    local = ROOT / 'local/tools/BuildTools/VC/Tools/MSVC'
+    available = sorted(local.glob('*/bin/Hostx64/x86/cl.exe'))
+    if available:
+        return available[-1]
     roots = [
         Path(r'C:\Program Files\Microsoft Visual Studio'),
         Path(r'C:\Program Files (x86)\Microsoft Visual Studio'),

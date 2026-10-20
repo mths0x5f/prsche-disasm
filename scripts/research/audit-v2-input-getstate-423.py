@@ -6,6 +6,8 @@ strings and that the canonical source contains them byte for byte; the two
 diagnostic lines; the absolute operands the fixture patches. Then checks the
 COFF symbols, the native result and the receipts.
 """
+import argparse
+import importlib.util
 import hashlib
 import json
 import struct
@@ -36,8 +38,11 @@ EXPECTED_DEFINED = {'?fe_input_getstate_00532e10@porsche@@YAPAXII@Z',
                     '?input_poll_read_0056fce0@porsche@@YAIPAUInputDevice@1@PAXI@Z',
                     '?input_read_0056fd30@porsche@@YAIPAUInputDevice@1@IPAX@Z',
                     '?input_count_0069cb0c@porsche@@3HA',
+                    '?input_caps_buffer_006bde20@porsche@@3PAEA',
                     '?input_slots_006be040@porsche@@3PAUInputSlot@1@A'}
 
+
+SUMMARY = None
 
 def main():
     image = (ROOT / 'local/game/Porsche.exe').read_bytes()
@@ -68,17 +73,36 @@ def main():
         assert struct.unpack('<I', body[off + 6:off + 10])[0] == line
         assert f'diagnostic_line_005deb78 = 0x{line:x};' in source
 
-    summary = json.loads((RUN / 'summary.json').read_text(encoding='utf-8'))
+    summary_path = SUMMARY or RUN / 'summary.json'
+    summary = json.loads(summary_path.read_text(encoding='utf-8'))
+    sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+    resolve = lambda p: Path(p) if Path(p).is_absolute() else ROOT / p
+    for path_key, hash_key in [('source','source_sha256'), ('header','header_sha256'),
+                               ('fixture','fixture_sha256'), ('compiler','compiler_sha256')]:
+        assert sha(resolve(summary[path_key])) == summary[hash_key], f'input drift: {path_key}'
+    assert resolve(summary['source']).resolve() == SRC.resolve()
+    assert resolve(summary['fixture']).resolve() == (EXP / 'input_getstate_fixture.cpp').resolve()
+    prepare = json.loads((EXP / 'prepare-001.json').read_text(encoding='utf-8'))
+    for path, expected in prepare['input_sha256'].items():
+        assert sha(resolve(path)) == expected, f'prepared input drift: {path}'
+    spec = importlib.util.spec_from_file_location('coff423audit', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    coff = importlib.util.module_from_spec(spec); spec.loader.exec_module(coff)
+    assert coff.coff_symbols(EXP / 'objects/input_state.obj') == summary['symbols'], 'COFF mismatch'
+    assert '?input_caps_buffer_006bde20@porsche@@3PAEA' not in summary['symbols']['undefined']
     defined = set(summary['symbols']['defined'])
     assert EXPECTED_DEFINED <= defined, EXPECTED_DEFINED - defined
     assert all(s.startswith('??_C@') for s in defined - EXPECTED_DEFINED), 'only string literals beyond the functions'
     for gone in ('input_unrecovered_mode_00532e10', 'input_invalid_type_00532eae'):
         assert gone not in source and not any(gone in s for s in summary['symbols']['undefined'])
     assert summary['native_fixture']['cases'] == CASES == summary['native_fixture']['cases_passed']
-    v = json.loads((RUN / 'validation.json').read_text(encoding='utf-8'))
+    v = json.loads((summary_path.parent / 'validation.json').read_text(encoding='utf-8'))
     assert v['status'] == 'PASS' and v['cases_passed'] == CASES
     for name in ('compile-001', 'fixture-link-001', 'fixture-native-001'):
-        assert json.loads((EXP / (name + '.execution.json')).read_text(encoding='utf-8'))['exit_code'] == 0
+        receipt = json.loads((EXP / (name + '.execution.json')).read_text(encoding='utf-8'))
+        assert receipt['exit_code'] == 0
+        assert sha(resolve(receipt['log'])) == receipt['log_sha256'], f'log drift: {name}'
+        expected_receipt = summary['compile'] if name == 'compile-001' else summary['link'] if name == 'fixture-link-001' else summary['native_fixture']['execution']
+        assert receipt == expected_receipt, f'receipt mismatch: {name}'
     log = (EXP / 'fixture-native-001.log').read_text(encoding='utf-8')
     assert log.count(' OK ') == CASES and 'FAILED' not in log
 
@@ -88,4 +112,14 @@ def main():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--root', type=Path, default=ROOT)
+    parser.add_argument('--summary', type=Path)
+    parser.add_argument('--experiment', type=Path)
+    args = parser.parse_args()
+    ROOT = args.root.resolve()
+    RUN = ROOT / 'iterations/v2/001-original-recovery/runs/423-input-getstate-modes'
+    SRC = ROOT / 'iterations/v2/001-original-recovery/source/recovered/Porsche.exe/input_state.cpp'
+    EXP = args.experiment.resolve() if args.experiment else ROOT / 'local/experiments/v2-input-getstate-423'
+    SUMMARY = args.summary.resolve() if args.summary else None
     main()

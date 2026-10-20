@@ -1,4 +1,6 @@
 {
+  "provenance": "local/experiments/v2-audio-backend-421/provenance-001.json",
+  "provenance_sha256": "dc4056e92fdcef144e40ccb174e0f46f9a1a43670062c7fbe4e616b617b00b7a",
   "schema": 1,
   "run": "421-audio-backend-lock-pool",
   "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
@@ -68,10 +70,10 @@
     }
   ],
   "original_scalars": [],
-  "compiler": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx86/x86/cl.exe",
-  "compiler_sha256": "aa25483dec4821a189e494689ff8b619d99224328e290dafd790a96527b568b3",
+  "compiler": "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe",
+  "compiler_sha256": "303bfbe5523af2e925871a1bc7fd2ec5f199a69208a3b6716724c3e6d6b6962d",
   "include_roots": [
-    "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+    "local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/include",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
@@ -128,7 +130,7 @@
   ],
   "compile": {
     "command": [
-      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\cl.exe",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe",
       "/nologo",
       "/c",
       "/std:c++17",
@@ -145,9 +147,9 @@
       "/MP2",
       "/Zl",
       "/sourceDependencies",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\dependencies",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\dependencies",
       "/I",
-      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt",
       "/I",
@@ -155,21 +157,21 @@
       "/I",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um",
       "/I",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\421-audio-backend-lock-pool",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\421-audio-backend-lock-pool",
       "/I",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\source\\include",
-      "/FoD:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\objects\\",
-      "D:\\projetos\\prsche-disasm\\iterations\\v2\\001-original-recovery\\runs\\421-audio-backend-lock-pool\\audio_backend_lock_pool_421.cpp",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\audio_backend_fixture.cpp"
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\source\\include",
+      "/FoF:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\objects\\",
+      "F:\\claude\\porsche disasm\\iterations\\v2\\001-original-recovery\\runs\\421-audio-backend-lock-pool\\audio_backend_lock_pool_421.cpp",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\audio_backend_fixture.cpp"
     ],
     "exit_code": 0,
-    "seconds": 1.913451,
+    "seconds": 0.605345,
     "log": "local/experiments/v2-audio-backend-421/compile-001.log",
     "log_sha256": "5377c3ea1b55c0edf87e753d8ef8cb16096c829412e6616dd064e9017b2884d8"
   },
   "link": {
     "command": [
-      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx86\\x86\\link.exe",
+      "F:\\claude\\porsche disasm\\local\\tools\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\link.exe",
       "/nologo",
       "/MACHINE:X86",
       "/SUBSYSTEM:CONSOLE",
@@ -178,15 +180,15 @@
       "/INCREMENTAL:NO",
       "/SECTION:.data,ERW",
       "/SECTION:.bss,ERW",
-      "/MAP:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.map",
-      "/OUT:D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.exe",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\objects\\audio_backend_lock_pool_421.obj",
-      "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\objects\\audio_backend_fixture.obj",
+      "/MAP:F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.map",
+      "/OUT:F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.exe",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\objects\\audio_backend_lock_pool_421.obj",
+      "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\objects\\audio_backend_fixture.obj",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\kernel32.Lib",
       "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x86\\user32.Lib"
     ],
     "exit_code": 0,
-    "seconds": 0.154481,
+    "seconds": 0.069827,
     "log": "local/experiments/v2-audio-backend-421/fixture-link-001.log",
     "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
@@ -196,10 +198,10 @@
     "cases_passed": 30,
     "execution": {
       "command": [
-        "D:\\projetos\\prsche-disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.exe"
+        "F:\\claude\\porsche disasm\\local\\experiments\\v2-audio-backend-421\\native-fixture.exe"
       ],
       "exit_code": 0,
-      "seconds": 0.09445,
+      "seconds": 0.038917,
       "log": "local/experiments/v2-audio-backend-421/fixture-native-001.log",
       "log_sha256": "e22dfd4bad47648ed043acd47b5868582232acf5532b688adb4ef2ed23b1ffac"
     }

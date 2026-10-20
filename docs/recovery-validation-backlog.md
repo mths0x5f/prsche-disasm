@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+PR22/423 valid-slot input modes pass native24 and rebuilt1026/13/37/8 comparisons;
+324 fresh166-TU graph closes two names,264 names/293 refs remain. Negative/unmapped
+index layout, caps success parser and default diagnostic composition stay open.
+PR23/421/422 audio12 bodies pass bounded47 native cases with repaired provenance;
+shared state, real concurrency/devices, complete ABI/caller coverage and game
+integration remain open. See research/pr-review-2026-10-20.md.
+
 ## Остаток пакетных PR #2–#19
 
 Закрытие PR не означает принятие всех его функций. Источники остаются в
@@ -31,9 +38,9 @@ GitHub PR и по закреплённым SHA из [разбора](research/pr
 - [x] #2 tool defects revisited in PR20: SIMD effects and bounded hardware oracle;
   NaN comparison/FABS fixed,80-bit operands/FSQRT explicitly rejected.107 supported
   fragments/109568 cases plus14 generated-code edges PASS. Research only.
-- [ ] Licensing: obtain/record applicable license or author agreement for existing
-  external contributions (including PR3/PR20); do not assume the newly added MIT
-  license retroactively covers them. See ../LICENSING.md for scope.
+- [x] Licensing: mths0x5f's MIT agreement for existing and later contributions
+  (including PR3/PR20) recorded by merged PR21/main3c5f9b8 in LICENSING.md.
+  Original-game exclusions remain; other authors still require applicable rights.
 - [ ] Experimental lowering remains incomplete for arbitrary x87 precision/status/
   rounding, unmasked traps, MMX/ST alias/tag and memory-order/fault behavior.
   See research/pr20-acceptance-2026-10-20.md; syntax counts never close these holds.
