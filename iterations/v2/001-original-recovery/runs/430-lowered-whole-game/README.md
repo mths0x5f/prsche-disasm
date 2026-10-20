@@ -193,6 +193,20 @@ Uso na atribuição:
 - **Raiz única.** O jogo foi compilado em `d:\Nfs\` e o gimme em `D:\dev\`. A árvore
   unifica as duas em `Nfs5/...`, `Support/...` e `real/...`.
 
+#### Nomes das recuperações aceitas (`recovered`)
+
+É a evidência de nome mais forte. As funções que o projeto já recuperou à mão, aceitas no grafo
+do jogo e verificadas diferencialmente contra o original, emprestam o nome à árvore rebaixada
+(`fe_input_getstate_00532e10`, `audio_channel_stop_00565d60`,
+`application_main_function_00413ea0`…).
+- **Fontes:** os grafos `429-unified-game-integration/build-004.json` (nosso, unificado) e
+  `324-input-modes-game-integration/build-001.json` (upstream, PR22 aceito).
+- **O que conta:** só definições com corpo (`nome_XXXXXXXX(...) {`), num endereço catalogado.
+  Os adaptadores `*_links.cpp` / `*bridge*` ficam de fora: eles só dão um apelido do
+  consumidor ao mesmo endereço.
+- **Resultado:** 484 nomes. Os 20 endereços com mais de uma definição dona e nomes diferentes
+  (`0053c290`, `0059d8e0`…) ficam sem nome.
+
 #### Linhagem NFS4 (protótipo do High Stakes de PS1)
 
 O protótipo `Need For Speed 4 v9.0.iso` (do usuário; fica fora do repositório) traz

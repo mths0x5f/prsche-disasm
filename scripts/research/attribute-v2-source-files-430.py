@@ -25,6 +25,9 @@ ROOT = Path(__file__).resolve().parents[2]
 PE_PATH = ROOT / 'local/game/Porsche.exe'
 PE_SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 OUT = ROOT / 'local/experiments/v2-lowered-exe-430'
+# Accepted hand-recovered game graphs whose function names are reused (strongest name evidence).
+RECOVERED_GRAPHS = ('iterations/v2/001-original-recovery/runs/429-unified-game-integration/build-004.json',
+                    'iterations/v2/001-original-recovery/runs/324-input-modes-game-integration/build-001.json')
 RUN = ROOT / 'iterations/v2/001-original-recovery/runs/430-lowered-whole-game'
 PATH_RE = re.compile(r'[A-Za-z0-9_:.\\/-]*\\[A-Za-z0-9_.\\/-]+\.(?:c|cpp|h|asm)$')
 
@@ -186,6 +189,29 @@ def ret_bytes(img, md, va, size):
     return rets
 
 
+def defined_functions(text):
+    """(name, address) for every function *definition* named <name>_<8-hex address>.
+
+    Comments and strings are blanked first; a match counts only when the name is followed by a
+    balanced parameter list and then, past qualifiers, by `{` (calls, declarations and
+    function-pointer variables are skipped).
+    """
+    text = re.sub(r'//[^\n]*|/\*.*?\*/|"(?:\\.|[^"\\])*"', lambda m: ' ' * len(m.group()), text, flags=re.S)
+    out = []
+    for m in re.finditer(r'\b([A-Za-z_][A-Za-z0-9_]*_(00[4-5][0-9a-f]{5}))\s*\(', text):
+        depth, k = 0, m.end() - 1
+        while k < len(text):
+            depth += {'(': 1, ')': -1}.get(text[k], 0)
+            if depth == 0:
+                break
+            k += 1
+        rest = re.match(r'\s*(?:const|noexcept|override)*\s*\{', text[k + 1:])
+        prev = text[:m.start()].rstrip()
+        if rest and not prev.endswith(('.', '->', '=', ',', '(', 'return')):
+            out.append((m.group(1), m.group(2)))
+    return out
+
+
 def main():
     data = PE_PATH.read_bytes()
     assert hashlib.sha256(data).hexdigest() == PE_SHA
@@ -325,6 +351,28 @@ def main():
                     real[va].add(f'{top}::{method}')
                     real_evidence.setdefault(va, 'gimme-vtable')
 
+    # recovered: names of functions already recovered by hand and accepted into the game graph
+    # (Run 429 unified graph, Run 324 upstream input graph). Only definitions in the compiled
+    # sources count, only at a catalogued entry, and only when one address has one name.
+    recovered = collections.defaultdict(set)
+    entries = {va for _, _, va in funcs}
+    for build in RECOVERED_GRAPHS:
+        receipt = json.loads((ROOT / build).read_text(encoding='utf-8'))
+        for src in receipt['compiled_source_roots']:
+            path = ROOT / src
+            # *_links.cpp / *bridge* files are link adapters: they alias an address under a
+            # consumer's name and forward to the owning definition, which is the one we keep.
+            if path.suffix != '.cpp' or not path.exists() or re.search(r'links?\.cpp$|bridge', path.name):
+                continue
+            for name, va in defined_functions(path.read_text(encoding='utf-8', errors='replace')):
+                if va in entries:
+                    recovered[va].add(name)
+    recovered_conflicts = sum(1 for ns in recovered.values() if len(ns) > 1)
+    for va, ns in recovered.items():
+        if len(ns) == 1:
+            real[va] = set(ns)  # differentially verified: replaces weaker names
+            real_evidence[va] = 'recovered'
+
     # NFS4 (High Stakes PS1 prototype, nfs4-lineage-430.py): names inherited through unique shared
     # strings, and file names inherited by class abbreviation. Both are lineage evidence, weaker
     # than anything read from Porsche.exe or gimme.dll, and kept apart: `inferred_file` never
@@ -332,6 +380,8 @@ def main():
     nfs4_path = OUT / 'nfs4-evidence.json'
     nfs4 = json.loads(nfs4_path.read_text(encoding='utf-8')) if nfs4_path.exists() else {}
     for va, p in nfs4.get('string_pairs', {}).items():
+        if real_evidence.get(va) == 'recovered':
+            continue
         real[va].add(p['readable'])
         real_evidence.setdefault(va, 'nfs4-strings')
         entry = by_func.setdefault(va, dict(file=None, evidence='nfs4-strings'))
@@ -370,6 +420,8 @@ def main():
     counts = collections.Counter(v['evidence'] for v in by_func.values())
     files = collections.Counter(v['file'] for v in by_func.values() if v.get('file'))
     result = dict(schema=1, original_sha256=PE_SHA, gimme_vtable_checks=dict(vtable_checks),
+                  recovered_names=sum(1 for ns in recovered.values() if len(ns) == 1),
+                  recovered_conflicts=recovered_conflicts,
                   real_names=len(real), inferred_files=sum(1 for v in by_func.values() if v.get("inferred_file") and not v.get("file")),
                   functions=len(funcs), source_paths=len(set(strings.values())),
                   evidence=dict(counts), named_by_rtti=len(names), classes=len(classes),

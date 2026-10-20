@@ -486,10 +486,14 @@ def source_layout(entries):
         va = e['entry_va']
         info = by_func.get(va, {})
         real = info.get('real_names') or []
-        names = real or info.get('names') or []
+        # Free-function names (recovered C names, NFS4 names) carry no class: grouping by class
+        # uses only Class::method names, from the real names or else from RTTI.
+        names = [n for n in real if '::' in n] or info.get('names') or []
         shared = len({n.split('::')[0] for n in names}) > 1  # folded body used by several classes
-        if real and not shared:
-            ident = re.sub(r'[^A-Za-z0-9]+', '_', real[0].replace('::', '__')) + '_' + va
+        if real and len(real) == 1:
+            ident = re.sub(r'[^A-Za-z0-9]+', '_', real[0].replace('::', '__'))
+            if not ident.endswith('_' + va):
+                ident += '_' + va
         elif shared:
             ident = f'shared_{va}'
         elif names:
