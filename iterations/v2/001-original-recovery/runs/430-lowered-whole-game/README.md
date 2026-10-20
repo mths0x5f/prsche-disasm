@@ -124,6 +124,49 @@ O que mudou:
   mas o rebaixado faz menos iterações. Falta verificar se o jogo usa o resultado para
   escolher detalhes.
 
+### Atualização: estrutura de pastas do código original (2026-10-20)
+
+O C++ rebaixado agora sai em `gen/src/` com a árvore de fontes do próprio jogo (opção B). O
+binário traz 48 caminhos de arquivos-fonte (`__FILE__` de asserts e mensagens), por exemplo:
+- `\real\pc\startup.c`, `\real\pc\nfile.c`;
+- `\real\patch3\pc\input.c`, `\real\cmn\stream.c`;
+- `d:\Nfs\Nfs5\Frontend\common\Src\FEIntro.cpp`;
+- `d:\Nfs\Nfs5\game\Common\Render\RCustomLayers.cpp`;
+- `d:\Nfs\Support\Utility\UMemory.cpp`.
+
+`scripts/research/attribute-v2-source-files-430.py` atribui as funções com níveis de
+evidência:
+
+| Evidência | Funções | Regra |
+|---|---|---|
+| `path` | 79 | a função cita o caminho de um `.c`/`.cpp` (um `.h` só indica código inlinado) |
+| `between` | 38 | fica no `.text` entre duas funções `path` do mesmo arquivo, sem outro arquivo no meio |
+| `class-file` | 12 | todos os nomes RTTI da função são da mesma classe ou namespace, e ele coincide com o nome de um arquivo conhecido (`RCustomLayers::*` → `RCustomLayers.cpp`) |
+| `class` | 1.752 | só a classe RTTI é conhecida; o arquivo não |
+
+Nomes de função:
+- **RTTI** (366 classes, 360 vtables):
+  - `Classe__Sub__virtual_NN_<va>` para métodos virtuais, `NN` sendo a posição na vtable;
+  - `Classe__ctor_or_dtor_<va>` para funções que gravam o ponteiro da vtable no objeto.
+  O binário não guarda o nome do método, só da classe.
+- `shared_<va>`: corpo fundido pelo linker (ICF) e usado por várias classes, como
+  `xor eax,eax; ret`.
+- `FUN_<va>` (catálogo) e `PTR_<va>` (código achado só por ponteiro) para o resto.
+
+Layout:
+- arquivo conhecido → caminho original, sem drive e com extensão `.cpp`
+  (`real/pc/nfile.cpp`, `Nfs/Nfs5/game/Common/Render/RCustomLayers.cpp`);
+- só classe → `_sem_arquivo/classes/<Classe>.cpp`;
+- compartilhadas → `_sem_arquivo/classes/_compartilhadas.cpp`;
+- resto → `_sem_arquivo/codigo/<va inicial>_<va final>.cpp`, em blocos contíguos do `.text`.
+
+Cada arquivo diz na primeira linha de onde veio, e `attribution.json` guarda a evidência de
+cada função. Ao todo são 442 arquivos.
+
+Limites:
+- só ~2% das funções têm arquivo de origem comprovado;
+- a fronteira entre arquivos sem âncora não é conhecida e não é inventada.
+
 ## Próximos passos
 
 1. Verificar o uso do resultado da calibração de CPU (`005560b0`) e medir a corrida

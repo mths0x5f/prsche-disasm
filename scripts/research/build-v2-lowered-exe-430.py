@@ -13,6 +13,7 @@ Extra lowering rules on top of x86-cpp-backend-fpu.py (needed to execute, not sy
 Usage: py -3 scripts/research/build-v2-lowered-exe-430.py [--generate-only] [--jobs N]
 """
 import argparse
+import collections
 import hashlib
 import importlib.util
 import json
@@ -361,7 +362,7 @@ def generate(translate, header, img, entries, pointers=()):
 
     def put(path, text):
         # Rewrite only changed files so the build recompiles only what changed.
-        written.add(path.name)
+        written.add(str(path))
         if not path.exists() or path.read_text(encoding='utf-8') != text:
             path.write_text(text, encoding='utf-8')
 
@@ -400,6 +401,8 @@ def generate(translate, header, img, entries, pointers=()):
         pending = [p for p in pending if p['entry_va'] not in {r['va'] for r in rejected}]
         entries += pending
         added += len(pending)
+    layout = source_layout(entries)
+    files = collections.defaultdict(list)
     for e in entries:
         if e['entry_va'] not in first:
             continue
@@ -408,28 +411,96 @@ def generate(translate, header, img, entries, pointers=()):
             mids = {t for t in external if a < t < a + n} & set(res[3])
             out.append(lower(translate, img, a, n, mids) if mids else res)
         spans = [(a, n) for a, n, _ in first[e['entry_va']]]
+        rel, ident = layout[e['entry_va']]
         functions += 1
-        for (a, _), (code, n, mids, _, _) in zip(spans, out):
+        for k, ((a, _), (code, n, mids, _, _)) in enumerate(zip(spans, out)):
             ranges += 1
             insns += n
-            tu.append(code.replace('#include "machine257.h"\n', ''))
-            table_rows.append((a, a))
-            table_rows.extend((t, a) for t in mids)
-        if len(tu) >= PER_TU:
-            flush()
-    flush()
+            name = ident if k == 0 else f'{ident}_part_{a:08x}'
+            code = code.replace('#include "machine257.h"\n', '')
+            code = code.replace(f'void translated_{a:08x}(Machine257&s){{', f'void {name}(Machine257&s){{', 1)
+            files[rel].append((a, name, code))
+            table_rows.append((a, name))
+            table_rows.extend((t, name) for t in mids)
+    src = gen / 'src'
+    for rel, items in sorted(files.items()):
+        path = src / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        origin = SOURCE_NOTES.get(rel, '')
+        body = '\n'.join(code for _, _, code in sorted(items))
+        put(path, f'// {origin}\n#include "machine257.h"\n' + body if origin else '#include "machine257.h"\n' + body)
+        tu_index += 1
     fns = sorted({f for _, f in table_rows})
-    table = ['#include "machine257.h"', *(f'void translated_{v:08x}(Machine257&);' for v in fns),
+    table = ['#include "machine257.h"', *(f'void {f}(Machine257&);' for f in fns),
              'struct LoweredEntry430{U va;void(*fn)(Machine257&);};',
              f'extern const unsigned lowered_count430={len(table_rows)}u;',
              'extern const LoweredEntry430 lowered_table430[]={',
-             *(f'{{0x{v:08x}u,translated_{f:08x}}},' for v, f in sorted(table_rows)), '};', '']
+             *(f'{{0x{v:08x}u,{f}}},' for v, f in sorted(table_rows)), '};', '']
     put(gen / 'lowered_table.cpp', '\n'.join(table))
-    for old in gen.glob('lowered_*.cpp'):
-        if old.name not in written:
-            old.unlink()
-    return dict(dead_flag_writes=STATS["dead_flag_writes"], gap_pieces_added=added, lowered=functions, ranges=ranges, table_entries=len(table_rows), rejected=rejected,
-                instructions=insns, tus=tu_index, generate_seconds=round(time.time() - t0, 1))
+    for old in list(gen.glob('lowered_[0-9]*.cpp')) + [p for p in src.rglob('*.cpp') if str(p) not in written]:
+        old.unlink()
+    return dict(dead_flag_writes=STATS["dead_flag_writes"], gap_pieces_added=added, lowered=functions, ranges=ranges,
+                table_entries=len(table_rows), rejected=rejected, instructions=insns, source_files=tu_index,
+                generate_seconds=round(time.time() - t0, 1))
+
+
+SOURCE_NOTES = {}
+
+
+def source_layout(entries):
+    """entry_va -> (relative .cpp path, function identifier), following the game's own source tree.
+
+    Uses attribution.json from attribute-v2-source-files-430.py. Functions whose original file
+    is known go to that path (drive and leading separators dropped, extension .cpp). Functions
+    with only an RTTI class go to _sem_arquivo/classes/<outer name>.cpp; the rest go to
+    _sem_arquivo/codigo/ in contiguous .text chunks. Identifiers come from RTTI names when
+    present, otherwise FUN_<va> (catalog) or PTR_<va> (pointer-only pieces).
+    """
+    path = OUT / 'attribution.json'
+    by_func = json.loads(path.read_text(encoding='utf-8'))['by_function'] if path.exists() else {}
+    layout, used, rest = {}, {}, []
+    for e in sorted(entries, key=lambda e: int(e['entry_va'], 16)):
+        va = e['entry_va']
+        info = by_func.get(va, {})
+        names = info.get('names') or []
+        shared = len({n.split('::')[0] for n in names}) > 1  # folded body used by several classes
+        if shared:
+            ident = f'shared_{va}'
+        elif names:
+            ident = re.sub(r'[^A-Za-z0-9]+', '_', names[0].replace('::', '__')) + '_' + va
+        else:
+            ident = f'PTR_{va}' if e.get('synthetic') else f'FUN_{va}'
+        if info.get('file'):
+            original = info['file']
+            parts = [p for p in re.split(r'[\\/]', original) if p and not p.endswith(':') and p != '..']
+            rel = '/'.join(parts[:-1] + [parts[-1].rsplit('.', 1)[0] + '.cpp'])
+            SOURCE_NOTES[rel] = f'original source: {original} (evidence: see attribution.json)'
+        elif shared:
+            rel = '_sem_arquivo/classes/_compartilhadas.cpp'
+            SOURCE_NOTES[rel] = ('original file unknown; bodies folded by the linker and shared by several '
+                                 'classes (all names in attribution.json)')
+        elif names:
+            outer = re.sub(r'[^A-Za-z0-9]+', '_', names[0].split('::')[0])
+            rel = f'_sem_arquivo/classes/{outer}.cpp'
+            SOURCE_NOTES[rel] = 'original file unknown; grouped by RTTI class/namespace'
+        else:
+            rel = None
+            rest.append(va)
+        layout[va] = (rel, ident)
+    for k in range(0, len(rest), 64):
+        chunk = rest[k:k + 64]
+        rel = f'_sem_arquivo/codigo/{chunk[0]}_{chunk[-1]}.cpp'
+        SOURCE_NOTES[rel] = 'original file unknown; contiguous .text range'
+        for va in chunk:
+            layout[va] = (rel, layout[va][1])
+    # Object files are named after the source base name; keep base names unique.
+    count, final = collections.Counter(), {}
+    for rel in sorted({r for r, _ in layout.values()}):
+        base = rel.rsplit('/', 1)[-1].lower()
+        count[base] += 1
+        final[rel] = rel if count[base] == 1 else rel[:-4] + f'_{count[base]}.cpp'
+        SOURCE_NOTES[final[rel]] = SOURCE_NOTES.get(rel, '')
+    return {va: (final[rel], ident) for va, (rel, ident) in layout.items()}
 
 
 def toolchain():
@@ -449,7 +520,8 @@ def build(jobs):
     cl, link, env = toolchain()
     gen, obj = OUT / 'gen', OUT / 'obj'
     obj.mkdir(parents=True, exist_ok=True)
-    sources = sorted(gen.glob('lowered_[0-9]*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
+    sources = sorted((gen / 'src').rglob('*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
+    keep = {p.stem for p in sources} | {'reserve_430'}
     header = gen / 'machine257.h'
 
     def stale(src):
@@ -460,13 +532,16 @@ def build(jobs):
     t0 = time.time()
     r = subprocess.CompletedProcess([], 0, '', '')
     if sources:
+        # Hundreds of sources: pass them through a response file.
+        rsp = OUT / 'compile.rsp'
+        rsp.write_text('\n'.join(f'"{p}"' for p in sources), encoding='utf-8')
         cmd = [str(cl), '/nologo', '/c', '/std:c++17', '/O2', '/GS-', '/EHs-c-', '/bigobj', '/W0', f'/MP{jobs}',
-               f'/I{gen}', f'/Fo{obj}\\', *map(str, sources)]
+               f'/I{gen}', f'/Fo{obj}\\', f'@{rsp}']
         r = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=OUT)
     (OUT / 'compile.log').write_text(r.stdout + r.stderr, encoding='utf-8')
     compile_s = round(time.time() - t0, 1)
-    for o in obj.glob('lowered_*.obj'):
-        if not (gen / (o.stem + '.cpp')).exists():
+    for o in obj.glob('*.obj'):
+        if o.stem not in keep:
             o.unlink()
     if r.returncode:
         errors = [ln for ln in r.stdout.splitlines() if ' error ' in ln]
@@ -476,9 +551,11 @@ def build(jobs):
     if r.returncode:
         return dict(compile_seconds=compile_s, compile_errors=1, first_errors=r.stdout.splitlines()[-5:])
     exe = OUT / 'PorscheLowered.exe'
+    link_rsp = OUT / 'link.rsp'
+    link_rsp.write_text('\n'.join(f'"{p}"' for p in sorted(obj.glob('*.obj'))), encoding='utf-8')
     # Based at the original's 0x00400000: reserve_430.obj holds the original image's pages.
     cmd = [str(link), '/nologo', '/MACHINE:X86', '/SUBSYSTEM:CONSOLE,5.01', '/MANIFEST:NO', '/BASE:0x400000', '/DYNAMICBASE:NO',
-           '/FIXED', '/NXCOMPAT', '/LARGEADDRESSAWARE', '/STACK:0x200000,0x200000', f'/OUT:{exe}', f'/MAP:{OUT / "PorscheLowered.map"}', *map(str, sorted(obj.glob('*.obj'))),
+           '/FIXED', '/NXCOMPAT', '/LARGEADDRESSAWARE', '/STACK:0x200000,0x200000', f'/OUT:{exe}', f'/MAP:{OUT / "PorscheLowered.map"}', f'@{link_rsp}',
            'kernel32.lib', 'user32.lib']
     r = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=OUT)
     (OUT / 'link.log').write_text(r.stdout + r.stderr, encoding='utf-8')
