@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run": 331,
+  "status": "PASS",
+  "rea333_dossier": "local/experiments/v2-rea-resource-followup-333/001/drive-letter.json",
+  "rea333_dossier_sha256": "053c634b929178c3e9e1b8c0a72e029fa2e937a6e0a36817bd491f306e9d505a",
+  "rea333_receipt": "local/experiments/v2-rea-resource-followup-333/001/receipt.json",
+  "rea333_receipt_sha256": "2e0573af068ddff19ef952b5a873d6ce4230c580cc0133d21b10ffea4a065710",
+  "evidence_id": "ev_7303bbd3ee18b4d76044fa64457ec58ebd41e511e93fd25eb2a91c2b0f37a7e9",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "entry_va": "005916a0",
+  "end_va": "0059170e",
+  "bytes": 111,
+  "normalized_instruction_count": 36,
+  "instruction_comparison": "All36 instructions equal existing binary index after whitespace/case/hex normalization.",
+  "source_sha256": "08f4baf9ea09597eb74951a469e426dc253595aa1836e45c22d491f4e8ec89f3",
+  "review": [
+    "Search precedes null fallback; original literal address005cd1f4 unchanged.",
+    "GetFullPathNameA261-byte parameters and unconditional CharUpperA order agree.",
+    "Signed JLE length gate and post-uppercase colon/AL loads agree.",
+    "Cdecl return and both AL-only return paths agree."
+  ],
+  "source_edits_needed": false,
+  "native_rerun": false
+}

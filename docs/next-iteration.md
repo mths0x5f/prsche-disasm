@@ -1,8 +1,8 @@
 # Текущий этап: v2/001-original-recovery
 
 Current v2 work is tracked in [the active PLAN](../iterations/v2/001-original-recovery/PLAN.md).
-Run328 now compiles168 TUs with264 names/289 refs and noEXE. Next: constructor
-00568260, existing canonical search graph intake, then drive helper005916a0.
+Run332 compiles171 TUs with261 names/286 refs and noEXE. Next334/335: original
+open wrapper/callback with extern-only006ad750 transform cell; no invented storage.
 The older iteration proposal below is historical, not the active assignment.
 
 2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные

@@ -1,5 +1,16 @@
 # Отложенные проверки восстановления v2
 
+Run332: constructor/drive bounded20736 native cases and canonical search intake
+accepted; physical filesystem/queue/concurrency still unverified. Drive fixture
+uses controlled Win32 APIs; real OS path/domain/error composition remains open.
+Canonical search172/327 proof is reused; prior ctype/locale holds remain open.
+Next334 can recover open callback with a declared transform-function-pointer cell
+006ad750. Its ownership/layout/setters/aliases remain unresolved; fixture storage
+must not become a production provider. Preserve raw32/int32/pointer dispatcher ABI,
+late context/global reads, ignored read result and transform-zero free behavior.
+Game332 compiles171TUs,261names286refs,noEXE. Older packet entries below retain
+historical scope; accepted wrappers do not close root or full-game holds.
+
 Run328 resource acceptance is bounded:19456 native cases prove four wrapper/
 device bodies against copied original code with controlled unrecovered helpers.
 Real filesystem/queue/concurrency is not accepted. Constructor00568260 and drive

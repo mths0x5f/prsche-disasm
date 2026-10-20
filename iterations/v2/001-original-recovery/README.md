@@ -1,13 +1,13 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Current game checkpoint - [Run328](runs/328-resource-device-game-integration/README.md):
-168 C++ TUs/8 projects compile;264 unresolved names/289 references, noEXE.
-Four original resource existence/device functions (134B) pass19456 native cases;
-shared427-pin audit PASS. [REA325](runs/325-rea-resource-session/README.md) provides
-fresh function evidence and confirms the missing276B callback index boundary.
-Constructor00568260, existing search graph intake and drive-letter005916a0 are
-next. Callback/transform-state and full-game holds remain open. [PLAN.md](PLAN.md)
-contains exact next steps; older checkpoints below are historical.
+Current game checkpoint - [Run332](runs/332-resource-chain-game-integration/README.md):
+171 C++ TUs/8 projects compile;261 unresolved names/286 references, noEXE.
+Constructor/drive2VAs162B pass20736 fresh native cases/six mutations; existing
+canonical search TU is reused. Three names close, zero new dependencies;
+shared433-pin audit PASS. [REA333](runs/333-rea-resource-followup/README.md)
+confirms allocator/drive/search. Next: open wrapper/callback, with transform
+storage ownership still unresolved. [PLAN.md](PLAN.md) has exact next steps;
+older checkpoints below are historical.
 
 Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.

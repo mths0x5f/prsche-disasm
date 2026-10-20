@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "passed": true,
+  "analysis_run": 333,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-rea-resource-followup-333/001/receipt.json",
+  "receipt_sha256": "2e0573af068ddff19ef952b5a873d6ce4230c580cc0133d21b10ffea4a065710",
+  "status_sha256": "2b76fb20ebc2b34ec3af9e34b0ab66f9a424fe02c3c141c4f4dad806ac926d35",
+  "allocator_cold_sha256": "e8a88d5da726415b89fbb1c98dfe6dcd972636f5737bd7f7f1b27355f30b9146",
+  "allocator_warm_sha256": "45a5e70a851ca51cb18e1241eb85b9a8126a7e5600f049b41539e9108eb77bc4",
+  "evidence_id": "ev_314333d3a5aa9b744ccb05495247cbf083866bb641c4bcc38c1201a04078255c",
+  "allocator_range": "005682a0..0056838b",
+  "allocator_bytes": 236,
+  "consumer_instructions": [
+    "00568309 MOV CL,byte ptr[ESP+18h]",
+    "00568315 MOV byte ptr[ESI+11h],CL"
+  ],
+  "conclusion": "Fresh allocator analysis agrees with retained uint8_t semantic contract. Run329 transport adapter preserves original constructor DWORD stack slot, already verified in native001.",
+  "native_rerun": false,
+  "complete_allocator_behavior_newly_accepted": false
+}

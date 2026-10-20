@@ -1,5 +1,17 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
+20736 fresh native cases and six mutation controls PASS. Existing canonical
+search TU330 integrated once using172/327 proof, no duplicate recovery count.
+Actual171 C++ TUs/8 projects compile;261 names/286 refs, noEXE. Three linker
+names close, no new unresolved dependencies; shared433-pin audit PASS.
+REA333 confirms allocator/drive/search using a reusable query-manifest session;
+no successful native run was repeated for metadata. All329/330/331/332/333
+assignments complete. Next334: open wrapper00561ca0 +callback00561ce0 with an
+extern-only typed transform cell006ad750;335 game intake after nativePASS.
+No storage definition is authorized without ownership/layout proof. Older
+checkpoint entries below are historical; full-game/root holds remain open.
+
 Checkpoint2026-10-20 Run328: REA325 evidence and four original resource
 bodies326/327 integrated.19456 native cases and shared427-pin audit PASS;
 168 C++ TUs/8 projects compile,264 unresolved names/289 refs, noEXE.

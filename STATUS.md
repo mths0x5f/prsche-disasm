@@ -1,5 +1,15 @@
 # Состояние проекта
 
+Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/
+286 references, noEXE or game execution. Two original constructor/drive bodies
+plus the existing canonical search TU enter production.20736 fresh native
+cases, six detected mutations and shared433-pin audit PASS; three names close
+with no new dependencies. REA333 confirms original allocator/drive/search.
+All current assignments complete. Next334/335: original open wrapper/callback
+with an extern-only transform-cell contract; storage/aliases/full-system proof
+remain open. Root/arena/context and visual/game acceptance remain HOLD.
+Older entries below describe earlier checkpoints.
+
 Run328:168 current C++ TUs/8 projects compile,264 unresolved names/289
 references, noEXE/game execution. Original resource existence/request and device
 routing bodies (4VAs/134B) integrated after19456 native cases. REA325 completed
