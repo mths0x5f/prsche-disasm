@@ -261,6 +261,23 @@ bytes com o Porsche (MSVC). Mesmo assim, ele traz as mesmas mensagens `STREAM_*`
 o que mostra que `stream.c` é a mesma fonte nos dois jogos. Traz também 17 caminhos próprios
 (`\nfs4\game\sim.c`, `copter.c`, `\nfs4\frontend\Thrashed.c`…), mas não traz símbolos.
 
+#### 007 Everything or Nothing PS2, protótipo Alpha 53 (`eon-order`, resultado negativo)
+
+O `ACTION.ELF` do protótipo (2003-12-11, ISO do usuário, lida por
+`scripts/research/eon-ps2-symbols-430.py`) tem tabela de símbolos completa, com 14.132 funções.
+A biblioteca "real" foi linkada já compilada, então aparecem só os nomes globais da EA, na
+ordem do fonte: `STREAM_` (17), `FILESYS_` (24, API mais nova que os `FILE_*` do Porsche),
+`FILEDEV_`, `BIG_`, `TIMER_`, `SYNCTASK_`, `MEM_`, `THREAD_`, `LOCALE_`, `REAL_`. Não há
+arquivo de origem nem funções `static`. O `DRIVING.ELF`, que é o código de carro derivado do
+Porsche, foi despojado.
+
+As 16 funções `STREAM_*` que conhecemos estão na mesma ordem nos dois jogos. O nível
+`eon-order` nomeia por posição uma sequência de funções ainda sem nome entre duas âncoras (nomes
+presentes nos dois), mas só quando as contagens e os tamanhos batem (até 4x). Resultado: **0
+nomes**. Só existem 20 âncoras, todas já nomeadas pelas mensagens, e os intervalos contêm as
+funções `static` que o EoN não lista. Strings exclusivas em comum também não servem: são só 6,
+todas genéricas. A regra fica no código porque é segura e pode render com outra fonte.
+
 #### Linhagem NFS4 (protótipo do High Stakes de PS1)
 
 O protótipo `Need For Speed 4 v9.0.iso` (do usuário; fica fora do repositório) traz

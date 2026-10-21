@@ -434,6 +434,59 @@ def main():
         entry['inferred_file'] = p['nfs4_file']
     nfs4_class_files = {k.lower(): v for k, v in nfs4.get('class_files', {}).items()}
 
+    # eon-order: 007 Everything or Nothing PS2 (eon-ps2-symbols-430.py) links the same "real"
+    # library with EA's global names in link order, which is source order. Inside one proven
+    # Porsche file, two consecutive functions whose names both exist in EoN (anchors, in the same
+    # order in both) bracket a run; when the run has as many still-unnamed Porsche functions as
+    # EoN functions, and every pair has a compatible size (MIPS vs x86, within 4x), the run is
+    # named by position. Only unnamed functions are touched; ends outside anchors are left alone.
+    eon_path = OUT / 'eon-symbols.json'
+    eon = json.loads(eon_path.read_text(encoding='utf-8'))['functions'] if eon_path.exists() else []
+    eon_index = collections.defaultdict(list)
+    for k, e in enumerate(eon):
+        eon_index[e['name']].append(k)
+    sizes_all = {va: hi - lo for lo, hi, va in funcs}
+    by_file = collections.defaultdict(list)
+    for va, entry in by_func.items():
+        if entry.get('file'):
+            by_file[entry['file']].append(va)
+    eon_named, eon_checks = {}, collections.Counter()
+    for f, vas in by_file.items():
+        vas.sort()
+        anchors = []
+        for i, va in enumerate(vas):
+            for name in real.get(va, ()):
+                ks = eon_index.get(name.split('::')[-1] if '::' not in name else name, [])
+                if len(ks) == 1:
+                    anchors.append((i, ks[0]))
+        for (i0, k0), (i1, k1) in zip(anchors, anchors[1:]):
+            if not (i1 > i0 and k1 > k0):
+                eon_checks['anchors out of order'] += 1
+                continue
+            gap = [va for va in vas[i0 + 1:i1] if not real.get(va)]
+            if len(gap) != i1 - i0 - 1:
+                eon_checks['run has named functions'] += 1
+                continue
+            mips = eon[k0 + 1:k1]
+            if not gap and not mips:
+                continue
+            if len(gap) != len(mips):
+                eon_checks['count differs'] += 1
+                continue
+            if not all(0.25 <= sizes_all.get(va, 0) / max(e['size'], 1) <= 4 for va, e in zip(gap, mips)):
+                eon_checks['size incompatible'] += 1
+                continue
+            for va, e in zip(gap, mips):
+                eon_named[va] = e['name']
+            eon_checks['runs named'] += 1
+    used = {n for ns in real.values() for n in ns}
+    for va, name in eon_named.items():
+        if real.get(va) or name in used:
+            continue
+        real[va].add(name)
+        real_evidence[va] = 'eon-order'
+        used.add(name)
+
     # class-file: EA's C++ code names files after the class or namespace (RCustomLayers.cpp
     # holds RCustomLayers::*, FEIntro.cpp holds FEIntro). A class whose outermost name equals a
     # known source file's base name is placed in that file.
@@ -470,7 +523,8 @@ def main():
     result = dict(schema=1, original_sha256=PE_SHA, gimme_vtable_checks=dict(vtable_checks),
                   recovered_names=sum(1 for ns in recovered.values() if len(ns) == 1),
                   self_message_names=len(self_named),
-                  recovered_conflicts=recovered_conflicts,
+                  recovered_conflicts=recovered_conflicts, eon_order_checks=dict(eon_checks),
+                  eon_order_names=sum(1 for v in real_evidence.values() if v == "eon-order"),
                   real_names=len(real), inferred_files=sum(1 for v in by_func.values() if v.get("inferred_file") and not v.get("file")),
                   functions=len(funcs), source_paths=len(set(strings.values())),
                   evidence=dict(counts), named_by_rtti=len(names), classes=len(classes),
