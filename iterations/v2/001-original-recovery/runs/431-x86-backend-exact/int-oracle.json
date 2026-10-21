@@ -1,12 +1,12 @@
 {
  "schema": 1,
  "cpu": "Intel(R) Core(TM) i3-3220 CPU @ 3.30GHz",
- "forms": 957,
+ "forms": 961,
  "failed": [],
  "cases_per_form": 300,
  "exit_code": 0,
  "untranslated": [],
- "tail": "forms 957 failed 0 cases 285300",
+ "tail": "forms 961 failed 0 cases 285765",
  "results": [
   {
    "form": "adc eax, edx",
@@ -3430,6 +3430,26 @@
   },
   {
    "form": "or cl, al",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "prefetcht0 byte ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "prefetcht0 byte ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "prefetchw byte ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "prefetchw byte ptr [esi + ebx*2 + 0x10]",
    "result": "PASS",
    "cases": "300/300"
   },
