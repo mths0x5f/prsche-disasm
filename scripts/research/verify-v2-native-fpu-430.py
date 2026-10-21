@@ -56,7 +56,7 @@ def load_build():
 
 EXCLUDED_INT = {'push', 'pop', 'call', 'ret', 'jmp', 'leave', 'enter', 'int3', 'rdtsc', 'cpuid', 'pushal',
                 'popal', 'pushfd', 'popfd', 'lock', 'rep', 'repne', 'repe', 'stosb', 'stosw', 'stosd', 'movsb',
-                'movsw', 'movsd', 'lodsb', 'lodsd', 'scasb', 'cmpsb', 'xlatb', 'nop', 'prefetcht0', 'prefetchw',
+                'movsw', 'movsd', 'lodsb', 'lodsd', 'scasb', 'cmpsb', 'xlatb', 'nop',
                 'jecxz', 'ldmxcsr', 'stmxcsr', 'loop'}
 
 
