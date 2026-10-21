@@ -37,6 +37,7 @@ Semantic bugs:
 - `cld`/`std` were no-ops. They now set DF, and every string step (ESI/EDI) follows it.
 - `lock inc/dec` were a plain read-modify-write. They are now an interlocked add with the
   same flags.
+- `prefetch*` were rejected; they are cache hints without architectural effect and lower to nothing.
 
 x87 stays the frozen binary64 model. Run 430 runs x87 natively instead; that is a design choice
 of that executable, not of this translator.
@@ -50,7 +51,7 @@ natively and through the backend from the same random state. The comparison cove
 
 | Set | Forms | Cases | Differences | Receipt |
 |---|---|---|---|---|
-| Integer (`--set int`) | 957 | 285,300 | 0 | `int-oracle.json` |
+| Integer (`--set int`) | 961 | 285,765 | 0 | `int-oracle.json` |
 | SSE (`--set sse`) | 172 | 51,600 | 0 | `sse-oracle.json` |
 | Short Jcc 70..7f (`--set branch`) | 16 | 4,800 | 0 | `branch-oracle.json` |
 | String forms, random DF (`--set string`) | 14 | 4,200 | 0 | `string-oracle.json` |

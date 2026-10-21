@@ -199,7 +199,9 @@ import re
 SOURCE_PATCHES.append(("        elif m in ('nop', 'cld', 'std'):\n            code = ''\n",
                        "        elif m == 'cld':\n            code = 's.flags&=~0x400u;'\n"
                        "        elif m == 'std':\n            code = 's.flags|=0x400u;'\n"
-                       "        elif m == 'nop':\n            code = ''\n"))
+                       "        elif m in ('nop', 'prefetch', 'prefetchw', 'prefetchnta', 'prefetcht0', 'prefetcht1', 'prefetcht2'):\n"
+                       "            code = ''\n"))
+# PREFETCH*: cache hints without architectural effect.
 _DF_STEP = re.compile(r's\.r\[([67])\] \+= ([124])u;')
 
 
