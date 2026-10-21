@@ -193,6 +193,25 @@ Uso na atribuição:
 - **Raiz única.** O jogo foi compilado em `d:\Nfs\` e o gimme em `D:\dev\`. A árvore
   unifica as duas em `Nfs5/...`, `Support/...` e `real/...`.
 
+#### Estrutura de pastas (2026-10-21)
+
+A árvore gerada reproduz os caminhos originais, **sem unificar raízes**:
+- `Nfs/...`: o `Porsche.exe` foi compilado em `d:\Nfs\` (`Nfs/Nfs5/...`, `Nfs/Support/...`);
+- `dev/...`: os objetos do `gimme.dll` foram compilados em `D:\dev\` (`dev/NFS5/...`,
+  `dev/library/...`, `dev/support/...`, `dev/toolsupport/...`). Os caminhos relativos dele
+  (`..\..\library\...`) são resolvidos a partir de `D:\dev\NFS5\Game`;
+- `real/...`: a biblioteca "real" é citada como `\real\...` na raiz do disco.
+
+Os arquivos mantêm a extensão original (`stream.c`); os `.c` com código rebaixado são compilados
+como C++ (`/TP`). Todo arquivo original conhecido existe na árvore, mesmo sem funções
+atribuídas: fica com um comentário de origem e não é compilado (`Window.cpp`, `FEError.cpp`,
+`WMapNode.h`…). Todas as pastas conhecidas também existem (`dev/library/eagl2/include`,
+`dev/library/ffc/inc`, `dev/library/realpc/3rash`…).
+
+Os headers que o `gimme.dll` repete em ~13 pastas de include (`fememory.h`, `stl_set.h`…) são o
+compilador procurando o arquivo, não arquivos reais. Eles provam a pasta, não o arquivo. A
+grafia de cada pasta é a mais frequente entre as que têm maiúsculas.
+
 #### Precedência de nomes
 
 O nome que a própria EA escreveu é a verdade final. Isso vale para os objetos de debug do
