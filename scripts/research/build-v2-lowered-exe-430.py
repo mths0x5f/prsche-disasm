@@ -39,7 +39,248 @@ FS_BEFORE = "        terms = [f'0x{m.disp & 0xffffffff:08x}u']"
 FS_AFTER = "        terms = [f'0x{m.disp & 0xffffffff:08x}u'] + (['fs257()'] if m.segment == 32 else [])"
 
 # Approximations this branch accepts (documented in the run README); upstream rejects them.
+def native_alu():
+    """Shift/rotate helpers that run the instruction itself on the CPU, so every flag (including
+    the ones Intel leaves undefined, e.g. OF for counts above 1) is the CPU's own. The guest's
+    arithmetic flags are loaded with POPFD first (RCR/RCL read CF; a zero count keeps them)."""
+    regs = {8: ('al', 'cl', 'dl'), 16: ('ax', 'cx', 'dx'), 32: ('eax', 'ecx', 'edx')}
+    out = []
+    load = ('  pushfd\n  pop eax\n  and eax, 0xfffff72a\n  or eax, f_\n  push eax\n')
+    save = ('  pushfd\n  pop eax\n  mov fo_, eax\n')
+    for op in ('shl', 'shr', 'sar', 'rol', 'ror', 'rcl', 'rcr'):
+        for bits, (a, c, _) in regs.items():
+            out.append(f'static U nat_{op}{bits}(Machine257& s, U a_, U c_) {{\n'
+                       f' U f_ = s.flags & 0x8d5u, r_, fo_;\n __asm {{\n{load}'
+                       f'  mov eax, a_\n  mov ecx, c_\n  popfd\n  {op} {a}, cl\n  movzx eax, {a}\n  mov r_, eax\n{save} }}\n'
+                       f' s.flags = (s.flags & ~0x8d5u) | (fo_ & 0x8d5u); return r_;\n}}\n'
+                       .replace('movzx eax, eax', 'mov eax, eax'))
+    for op in ('shld', 'shrd'):
+        for bits, (a, c, d) in ((16, regs[16]), (32, regs[32])):
+            out.append(f'static U nat_{op}{bits}(Machine257& s, U a_, U b_, U c_) {{\n'
+                       f' U f_ = s.flags & 0x8d5u, r_, fo_;\n __asm {{\n{load}'
+                       f'  mov eax, a_\n  mov edx, b_\n  mov ecx, c_\n  popfd\n  {op} {a}, {d}, cl\n'
+                       f'  movzx eax, {a}\n  mov r_, eax\n{save} }}\n'
+                       f' s.flags = (s.flags & ~0x8d5u) | (fo_ & 0x8d5u); return r_;\n}}\n'
+                       .replace('movzx eax, eax', 'mov eax, eax'))
+    for op in ('shl', 'shr', 'sar'):
+        out.append(f'static __forceinline U {op}257(Machine257& s, U a, U count, U bits) {{\n'
+                   f'    return bits == 8 ? nat_{op}8(s, a, count) : bits == 16 ? nat_{op}16(s, a, count) : nat_{op}32(s, a, count);\n}}\n')
+    return ''.join(out)
+
+
+def native_shift_imm(i, ops, expression, store):
+    """Shift/rotate with an immediate count, run in place with the same immediate: the CPU's
+    undefined flags differ between the immediate and the CL forms (e.g. OF of ROL/ROR with a count
+    above 1 is kept by `rol r32, imm8` and changed by `rol r32, cl` on the target CPU)."""
+    bits = ops[0].size * 8
+    reg = {8: 'al', 16: 'ax', 32: 'eax'}[bits]
+    extra = ''
+    if len(ops) == 3:                                   # shld/shrd dst, src, imm
+        src = {16: 'dx', 32: 'edx'}[bits]
+        extra = f'U b_={expression(i, ops[1])};'
+        operation = f'{i.mnemonic} {reg}, {src}, {ops[2].imm & 0xff}'
+        load_b = '  mov edx, b_\n'
+    else:
+        operation = f'{i.mnemonic} {reg}, {ops[1].imm & 0xff}'
+        load_b = ''
+    widen = '  mov r_, eax\n' if bits == 32 else f'  movzx eax, {reg}\n  mov r_, eax\n'
+    return ('{U a_=' + expression(i, ops[0]) + ';' + extra + 'U f_=s.flags&0xcd5u, r_, fo_;\n __asm {\n'
+            '  pushfd\n  pop eax\n  and eax, 0xfffff32a\n  or eax, f_\n  push eax\n'
+            f'  mov eax, a_\n{load_b}  popfd\n  {operation}\n{widen}'
+            '  pushfd\n  pop eax\n  mov fo_, eax\n  cld\n }\n'
+            ' s.flags=(s.flags&~0x8d5u)|(fo_&0x8d5u); U value=r_;' + store(i, ops[0], 'value') + '}')
+
+
+SHIFT_LOWERING = [
+    ("        elif m in ('shl', 'sal', 'shr', 'sar') and len(ops) == 2:\n",
+     "        elif m in ('shl', 'sal', 'shr', 'sar', 'rol', 'ror', 'rcl', 'rcr') and len(ops) == 2 \\\n"
+     "                and ops[1].type == X86_OP_IMM and ops[0].size in (1, 2, 4):\n"
+     "            code = native_shift_imm(i, ops, expression, store)\n"
+     "        elif m in ('shld', 'shrd') and len(ops) == 3 and ops[2].type == X86_OP_IMM and ops[0].size in (2, 4):\n"
+     "            code = native_shift_imm(i, ops, expression, store)\n"
+     "        elif m in ('shl', 'sal', 'shr', 'sar') and len(ops) == 2:\n"),
+    ("        elif m in ('rol', 'ror') and len(ops) == 2:\n            sh_left = (m == 'rol')\n            code = ",
+     "        elif m in ('rol', 'ror', 'rcl', 'rcr') and len(ops) == 2 and ops[0].size in (1, 2, 4):\n"
+     "            code = (f'U value=nat_{m}{ops[0].size * 8}(s,{expression(i, ops[0])},{expression(i, ops[1])});'\n"
+     "                    + store(i, ops[0], 'value'))\n"
+     "        elif False:\n            code = "),
+    ("        elif m == 'shld' and len(ops) == 3:\n            code = ",
+     "        elif m in ('shld', 'shrd') and len(ops) == 3 and ops[0].size in (2, 4):\n"
+     "            code = (f'U value=nat_{m}{ops[0].size * 8}(s,{expression(i, ops[0])},{expression(i, ops[1])},{expression(i, ops[2])});'\n"
+     "                    + store(i, ops[0], 'value'))\n"
+     "        elif False:\n            code = "),
+]
+
+MUL_FLAGS = '(of ? 0x801u : 0u)'
+FLAG_FIXES = [
+    # imul/mul: Intel leaves SF/ZF/AF/PF undefined; the target CPU sets SF from the sign and PF
+    # from the parity of the (low) result, and clears ZF and AF.
+    ('    U of = ((long long)(int)v != res);\n    s.flags = (s.flags & ~0x801u) | ' + MUL_FLAGS + ';\n',
+     '    U of = ((long long)(int)v != res);\n'
+     '    s.flags = (s.flags & ~0x8d5u) | ' + MUL_FLAGS + ' | parity257(v) | (v & 0x80000000u ? 0x80u : 0u);\n'),
+    ('    U of = ((long long)(int)s.r[0] != res);\n    s.flags = (s.flags & ~0x801u) | ' + MUL_FLAGS + ';\n',
+     '    U of = ((long long)(int)s.r[0] != res);\n'
+     '    s.flags = (s.flags & ~0x8d5u) | ' + MUL_FLAGS + ' | parity257(s.r[0]) | (s.r[0] & 0x80000000u ? 0x80u : 0u);\n'),
+    ('    U of = ((short)(signed char)(res & 0xff) != res);\n    s.flags = (s.flags & ~0x801u) | ' + MUL_FLAGS + ';\n',
+     '    U of = ((short)(signed char)(res & 0xff) != res);\n'
+     '    s.flags = (s.flags & ~0x8d5u) | ' + MUL_FLAGS + ' | parity257((U)res) | (res & 0x80 ? 0x80u : 0u);\n'),
+    ('    U of = (s.r[2] != 0u);\n    s.flags = (s.flags & ~0x801u) | ' + MUL_FLAGS + ';\n',
+     '    U of = (s.r[2] != 0u);\n'
+     '    s.flags = (s.flags & ~0x8d5u) | ' + MUL_FLAGS + ' | parity257(s.r[0]) | (s.r[0] & 0x80000000u ? 0x80u : 0u);\n'),
+    ('static __forceinline void flags257(Machine257&s,U v,U bits,U cf,U of){\n'
+     '    v&=mask257(bits);\n'
+     '    s.flags=(s.flags&~0x8c1u)|(cf?1u:0u)|(v==0?0x40u:0u)|\n',
+     'static __forceinline U parity257(U v){v&=0xffu;v^=v>>4;v^=v>>2;v^=v>>1;return (~v&1u)<<2;}\n'
+     'static __forceinline void flags257(Machine257&s,U v,U bits,U cf,U of){\n'
+     '    v&=mask257(bits);\n'
+     '    s.flags=(s.flags&~0x8d5u)|parity257(v)|(cf?1u:0u)|(v==0?0x40u:0u)|\n'),
+    ('    flags257(s,v,bits,(sum>>bits)!=0,((~(a^b)&(a^v))>>(bits-1))&1u);return v;\n',
+     '    flags257(s,v,bits,(sum>>bits)!=0,((~(a^b)&(a^v))>>(bits-1))&1u);s.flags|=(a^b^v)&0x10u;return v;\n'),
+    ('        (((a^b)&(a^v))>>(bits-1))&1u);return v;\n',
+     '        (((a^b)&(a^v))>>(bits-1))&1u);s.flags|=(a^b^v)&0x10u;return v;\n'),
+    ('    flags257(s, v, bits, (sum >> bits) != 0, ((~(a ^ b) & (a ^ v)) >> (bits - 1)) & 1u);\n    return v;\n',
+     '    flags257(s, v, bits, (sum >> bits) != 0, ((~(a ^ b) & (a ^ v)) >> (bits - 1)) & 1u);\n'
+     '    s.flags |= (a ^ b ^ v) & 0x10u;\n    return v;\n'),
+    ('    U of = (a == (mask >> 1));\n'
+     '    s.flags = (s.flags & ~0x8c0u) | (v == 0 ? 0x40u : 0u) | (((v >> (bits - 1)) & 1u) ? 0x80u : 0u) | (of ? 0x800u : 0u);\n',
+     '    U of = (a == (mask >> 1));\n'
+     '    s.flags = (s.flags & ~0x8d4u) | parity257(v) | ((a ^ v) & 0x10u) | (v == 0 ? 0x40u : 0u) | (((v >> (bits - 1)) & 1u) ? 0x80u : 0u) | (of ? 0x800u : 0u);\n'),
+    ('    U of = (a == ((mask >> 1) + 1u));\n'
+     '    s.flags = (s.flags & ~0x8c0u) | (v == 0 ? 0x40u : 0u) | (((v >> (bits - 1)) & 1u) ? 0x80u : 0u) | (of ? 0x800u : 0u);\n',
+     '    U of = (a == ((mask >> 1) + 1u));\n'
+     '    s.flags = (s.flags & ~0x8d4u) | parity257(v) | ((a ^ v) & 0x10u) | (v == 0 ? 0x40u : 0u) | (((v >> (bits - 1)) & 1u) ? 0x80u : 0u) | (of ? 0x800u : 0u);\n'),
+]
+
+THREEDNOW = {'femms', 'pfmul', 'pfadd', 'pfsub', 'pfacc', 'pi2fd', 'pfrcp', 'pfrcpit1', 'pfrcpit2'}
+GPR32 = {'eax': 0, 'ecx': 1, 'edx': 2, 'ebx': 3, 'esp': 4, 'ebp': 5, 'esi': 6, 'edi': 7}
+
+
+def native_kind(i):
+    """'x87', 'mmx' or 'rcpss' when the instruction runs on the host CPU itself, else None.
+
+    x87 and MMX state lives in the host FPU (MMX registers alias the x87 stack), exactly as in the
+    original process: every x87/MMX instruction is executed as itself. 3DNow! does not exist on
+    the target CPU and stays unlowered.
+    """
+    m = i.mnemonic
+    if m in THREEDNOW:
+        return None
+    if m.startswith('f') or m in ('wait', 'fwait'):
+        return 'x87'
+    regs = [i.reg_name(op.reg) for op in i.operands if op.type == 1]
+    if m == 'emms' or any(r.startswith('mm') for r in regs):
+        return 'mmx'
+    if m == 'rcpss':
+        return 'rcpss'
+    return None
+
+
+def native_bytes(i):
+    """The instruction's own encoding, with only its memory operand redirected to [ECX] (mod 00,
+    rm 001: no SIB, no displacement) or its rm-field GPR redirected to EAX. Everything else
+    (prefixes, opcode, reg field, immediate) is the original byte for byte."""
+    raw = bytes(i.bytes)
+    k = i.modrm_offset
+    if not k:
+        return raw
+    modrm = raw[k]
+    mem = any(op.type == 3 for op in i.operands)
+    if mem:
+        new = (modrm & 0x38) | 0x01
+    elif modrm >> 6 == 3 and any(op.type == 1 and i.reg_name(op.reg) in GPR32 for op in i.operands):
+        new = (modrm & 0xf8) | 0x00
+    else:
+        return raw
+    tail = raw[i.imm_offset:] if i.imm_offset else b''
+    return raw[:k] + bytes([new]) + tail
+
+
+def native_code(i, address):
+    """C++ with MSVC inline assembly that runs instruction `i` on the host CPU with the guest's
+    operands: memory through ECX (host address = guest address), the GPR operand through EAX,
+    XMM registers loaded from/stored to s.xmm, EFLAGS bridged where the instruction reads or
+    writes it. x87/MMX are emitted as their own bytes (native_bytes); forms with XMM are written
+    as mnemonics so the compiler sees the XMM registers it must not keep values in."""
+    m, ops = i.mnemonic, i.operands
+    pre, asm, post = [], [], []
+    mem = [op for op in ops if op.type == 3]
+    if any(op.mem.segment for op in mem):
+        raise ValueError('Native FPU operand with segment override')
+    if mem:
+        pre.append(f'U a_={address(i, mem[0])};')
+        asm.append('mov ecx, a_')
+    gprs = [i.reg_name(op.reg) for op in ops if op.type == 1 and i.reg_name(op.reg) in GPR32]
+    xmms = [i.reg_name(op.reg) for op in ops if op.type == 1 and i.reg_name(op.reg).startswith('xmm')]
+    if len(gprs) > 1:
+        raise ValueError('Native MMX with several GPR operands')
+    if gprs:
+        g = gprs[0]
+        pre.append(f'U g_=s.r[{GPR32[g]}];')
+        asm.append('mov eax, g_')
+        if ops[0].type == 1 and i.reg_name(ops[0].reg) == g:
+            post.append(f's.r[{GPR32[g]}]=g_;')
+    if m == 'fnstsw' and ops and ops[0].type == 1:
+        pre.append('U g_;')
+        post.append('s.r[0]=(s.r[0]&0xffff0000u)|(g_&0xffffu);')
+    if m.startswith('fcmov'):
+        pre.append('U f_=s.flags&0x8d5u;')
+        asm += ['pushfd', 'pop eax', 'and eax, 0xfffff72a', 'or eax, f_', 'push eax', 'popfd']
+    if xmms:
+        lanes = list(dict.fromkeys(xmms))
+        for k, x in enumerate(lanes):
+            pre.append(f'U x{k}_=reinterpret_cast<U>(&s.xmm[{int(x[3:])}][0]);')
+            asm += [f'mov edx, x{k}_', f'movups {x}, [edx]']
+        pre.append('U mx_=s.mxcsr; U hx_;')
+        asm += ['stmxcsr hx_', 'ldmxcsr mx_']
+        text = i.op_str.replace('xword ptr', 'tbyte ptr')
+        text = re.sub(r'\[[^\]]*\]', '[ecx]', text)
+        for g in gprs:
+            text = re.sub(rf'\b{g}\b', 'eax', text)
+        asm.append(f'{m} {text}')
+        asm.append('stmxcsr mx_')
+        for k, x in enumerate(lanes):
+            asm += [f'mov edx, x{k}_', f'movups [edx], {x}']
+        asm.append('ldmxcsr hx_')
+        post.append('s.mxcsr=mx_;')
+    else:
+        asm += [f'_emit 0x{b:02x}' for b in native_bytes(i)]
+    if m == 'fnstsw' and ops and ops[0].type == 1:
+        asm += ['movzx eax, ax', 'mov g_, eax']
+    if m in ('fcomi', 'fcomip', 'fucomi', 'fucomip'):
+        pre.append('U fl_;')
+        asm += ['pushfd', 'pop eax', 'mov fl_, eax']
+        post.append('s.flags=(s.flags&~0x8d5u)|(fl_&0x45u);')
+    if gprs and any(x.startswith('s.r[') for x in post) and m != 'fnstsw':
+        asm.append('mov g_, eax')
+    # One instruction per line inside __asm { }: in MSVC inline assembly ';' starts a comment.
+    return '{' + ''.join(pre) + '\n __asm {\n' + ''.join(f'  {x}\n' for x in asm) + ' }\n ' + ''.join(post) + '}'
+
+
+BT_MEM = ("            if ops[0].type == X86_OP_MEM and ops[1].type == X86_OP_REG:\n"
+          "                # Bit-string addressing: a register offset may leave the dword (signed).\n"
+          "                code = (f'U off = {expression(i, ops[1])}; U a = {address(i, ops[0])} + (U)(((int)off >> 5) * 4); '\n"
+          "                        f'U bit = 1u << (off & 31u); U val = read257(a, 4u); '\n"
+          "                        f's.flags = (s.flags & ~1u) | ((val & bit) ? 1u : 0u);' + ({extra}))\n"
+          "            else:\n")
+
 SEMANTIC_PATCHES = [
+    # LAHF: bit 1 of EFLAGS is always 1.
+    ("            code = 's.r[0] = (s.r[0] & 0xffff00ffu) | ((s.flags & 0xd5u) << 8u);'",
+     "            code = 's.r[0] = (s.r[0] & 0xffff00ffu) | (((s.flags & 0xd5u) | 2u) << 8u);'"),
+    # DIV r/m8 divides AX, quotient to AL and remainder to AH (it was lowered as a 32-bit DIV).
+    ("            code = f'div257_1(s, {expression(i, ops[0])});'",
+     "            code = (f'div257_1_8(s, {expression(i, ops[0])});' if ops[0].size == 1\n"
+     "                    else f'div257_1(s, {expression(i, ops[0])});')"),
+    ("        elif m == 'bts' and len(ops) == 2:\n            code = ",
+     "        elif m == 'bts' and len(ops) == 2:\n" + BT_MEM.replace('{extra}', "' write257(a, 4u, val | bit);'") + "                code = "),
+    ("        elif m == 'bt' and len(ops) == 2:\n            code = ",
+     "        elif m == 'bt' and len(ops) == 2:\n" + BT_MEM.replace('{extra}', "''") + "                code = "),
+    # x87, MMX and RCPSS run on the host CPU itself (see native_code); this takes precedence over
+    # every emulated lowering of those instructions.
+    ("        if m == 'mov' and len(ops) == 2:",
+     "        if native_kind(i):\n"
+     "            code = native_code(i, address)\n"
+     "        elif m == 'mov' and len(ops) == 2:"),
     # `lock inc/dec [mem]` (CRT locale reader count 006c02e8 in 005ae3c0/005ae490) must stay
     # atomic between guest threads: interlocked add, then the same flags from the old value.
     ("            fn = 'inc257' if 'inc' in m else 'dec257'\n"
@@ -129,10 +370,11 @@ def load(name, path):
 def backend():
     be = load('backend_fpu_430', ROOT / 'scripts/research/x86-cpp-backend-fpu.py')
     src = be.DERIVED_SOURCE
-    for before, after in [(FS_BEFORE, FS_AFTER), *SEMANTIC_PATCHES, *APPROXIMATIONS]:
+    for before, after in [(FS_BEFORE, FS_AFTER), *SEMANTIC_PATCHES, *SHIFT_LOWERING, *APPROXIMATIONS]:
         assert src.count(before) == 1, 'patch context drift: ' + before
         src = src.replace(before, after)
     ns = dict(be._namespace)
+    ns.update(native_kind=native_kind, native_code=native_code, native_shift_imm=native_shift_imm, re=re)
     exec(compile(src, 'backend-430::derived', 'exec'), ns)
     header = be.HEADER
     for decl in ('U read257(U address, U bytes);\n', 'void write257(U address, U bytes, U value);\n'):
@@ -158,6 +400,23 @@ def backend():
     for before, after in fast_paths:
         assert header.count(before) == 1, before
         header = header.replace(before, after)
+    # PF and AF (verify-v2-native-fpu-430.py --set int): the parity of the result's low byte is
+    # set by every flag-writing helper; AF is the carry/borrow out of bit 3 for add/adc/sub/sbb/
+    # cmp/neg/inc/dec and 0 for the logical operations (measured on the target CPU).
+    for before, after in FLAG_FIXES:
+        assert header.count(before) == 1, before
+        header = header.replace(before, after)
+    for op in ('shl', 'shr', 'sar'):
+        old = f'static __forceinline U {op}257(Machine257& s, U a, U count, U bits) {{'
+        assert header.count(old) == 1, old
+        header = header.replace(old, old.replace(f'{op}257(', f'{op}257_old('))
+    first = 'static __forceinline U shl257_old('
+    header = header.replace(first, native_alu() + first)
+    div = 'static __forceinline void div257_1(Machine257& s, U b) {'
+    assert header.count(div) == 1
+    header = header.replace(div, 'static __forceinline void div257_1_8(Machine257& s, U b) {\n'
+                            '    U ax = s.r[0] & 0xffffu; b &= 0xffu; U q = ax / b, r = ax % b;\n'
+                            '    s.r[0] = (s.r[0] & 0xffff0000u) | ((r & 0xffu) << 8) | (q & 0xffu);\n}\n' + div)
     # The runtime never budgets execution; keep pc for diagnostics.
     step_old = ('static __forceinline bool step257(Machine257&s,U pc){\n'
                 '    if(s.stop!=Stop257::Running)return false;s.pc=pc;\n'

@@ -1,0 +1,1307 @@
+{
+ "schema": 1,
+ "cpu": "Intel(R) Core(TM) i3-3220 CPU @ 3.30GHz",
+ "forms": 259,
+ "failed": [],
+ "cases_per_form": 300,
+ "exit_code": 0,
+ "untranslated": [],
+ "tail": "forms 259 failed 0 cases 77700",
+ "results": [
+  {
+   "form": "emms ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "f2xm1 ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fabs ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd st(0), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd st(1), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fadd st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "faddp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "faddp st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "faddp st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "faddp st(4)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "faddp st(5)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "faddp st(6)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fchs ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcom dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcom dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcom qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcom qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcom st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcomp st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcompp ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fcos ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdiv st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivr dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivr dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivr qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivr qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivr st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivr st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fdivrp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fiadd dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fiadd dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fidiv dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fidiv dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fidivr dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fidivr dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fild word ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fild word ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fild dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fild dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fild qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fild qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fimul dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fimul dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fistp dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fistp dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fistp qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fistp qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fisub dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fisub dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld xword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld xword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(4)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(5)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld st(6)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fld1 ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldcw word ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldcw word ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldenv [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldenv [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldl2e ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldpi ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fldz ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(1), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(2), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(3), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(4)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(4), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmul st(5)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmulp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmulp st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fmulp st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnclex ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnsave dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnsave dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstcw word ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstcw word ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstenv [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstenv [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstsw ax",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstsw word ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fnstsw word ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fpatan ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fprem ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fptan ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "frndint ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "frstor dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "frstor dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fscale ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsin ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsqrt ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fst dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fst dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fst qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fst qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp xword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp xword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fstp st(4)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsub st(5)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubp st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubp st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr st(1), st(0)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubr st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubrp st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fsubrp st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fxam ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fxch st(1)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fxch st(2)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fxch st(3)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fxch st(7)",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "fyl2x ",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi], mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi + ebx*2 + 0x10], mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi], mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi + ebx*2 + 0x10], mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi], mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi + ebx*2 + 0x10], mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi], mm3",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi + ebx*2 + 0x10], mm3",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi], mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd dword ptr [esi + ebx*2 + 0x10], mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm0, edx",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm0, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm0, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm1, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm1, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm2, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm2, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm3, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm3, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm4, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm4, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm5, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm5, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm6, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm6, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm7, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movd mm7, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm3",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm3",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm5",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm5",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi], mm6",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq qword ptr [esi + ebx*2 + 0x10], mm6",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm0, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm0, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm0, mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm1, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm1, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm1, mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm2, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm2, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm2, mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm2, mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm3, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm3, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm3, mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm4, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm4, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm4, mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm4, mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm4, mm3",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm5, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm5, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm5, mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm5, mm3",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm6, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm6, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm6, mm2",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm7, qword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "movq mm7, qword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "por mm0, mm1",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "pslld mm1, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "pslld mm2, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "pslld mm3, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "pslld mm4, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "psllq mm0, 0x20",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "psrad mm1, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "psrad mm2, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "psrad mm3, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "psrad mm4, 0x10",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckhwd mm2, mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckhwd mm4, mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm0, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm0, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm0, mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm1, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm1, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm2, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm2, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm3, dword ptr [esi]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm3, dword ptr [esi + ebx*2 + 0x10]",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpckldq mm7, mm4",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpcklwd mm1, mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "punpcklwd mm3, mm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "rcpss xmm1, xmm0",
+   "result": "PASS",
+   "cases": "300/300"
+  },
+  {
+   "form": "wait ",
+   "result": "PASS",
+   "cases": "300/300"
+  }
+ ]
+}
