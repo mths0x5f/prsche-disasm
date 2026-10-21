@@ -193,6 +193,15 @@ Uso na atribuição:
 - **Raiz única.** O jogo foi compilado em `d:\Nfs\` e o gimme em `D:\dev\`. A árvore
   unifica as duas em `Nfs5/...`, `Support/...` e `real/...`.
 
+#### Precedência de nomes
+
+O nome que a própria EA escreveu é a verdade final. Isso vale para os objetos de debug do
+`gimme.dll` (`gimme-bytes`, `gimme-vtable`) e para o prefixo da mensagem da própria função
+(`self-message`); nenhuma outra fonte o substitui. Abaixo deles vêm os nomes das recuperações
+manuais aceitas (`recovered`), que viram `aliases` quando encontram um nome da EA. Por último
+vem a linhagem do NFS4 (`nfs4-strings`), que só nomeia funções ainda sem nome. A regra está em
+`EA_EVIDENCE` no script de atribuição; ao ser explicitada, em 2026-10-21, nenhum nome mudou.
+
 #### Nomes das recuperações aceitas (`recovered`)
 
 É a evidência de nome mais forte. As funções que o projeto já recuperou à mão, aceitas no grafo

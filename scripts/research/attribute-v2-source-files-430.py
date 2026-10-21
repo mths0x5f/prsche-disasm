@@ -26,6 +26,7 @@ PE_PATH = ROOT / 'local/game/Porsche.exe'
 PE_SHA = 'ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39'
 OUT = ROOT / 'local/experiments/v2-lowered-exe-430'
 # Accepted hand-recovered game graphs whose function names are reused (strongest name evidence).
+EA_EVIDENCE = ('gimme-bytes', 'gimme-vtable', 'self-message')
 RECOVERED_GRAPHS = ('iterations/v2/001-original-recovery/runs/429-unified-game-integration/build-004.json',
                     'iterations/v2/001-original-recovery/runs/324-input-modes-game-integration/build-001.json',
                     'iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/build-001.json',
@@ -371,10 +372,18 @@ def main():
                 if va in entries:
                     recovered[va].add(name)
     recovered_conflicts = sum(1 for ns in recovered.values() if len(ns) > 1)
+    # Name precedence (user rule 2026-10-21): a name EA itself wrote down (gimme.dll debug
+    # objects, the function's own diagnostic prefix) is final. Hand-recovery names rank next and
+    # become aliases when they meet an EA name; lineage names (NFS4) only fill unnamed functions.
+    aliases = collections.defaultdict(set)
     for va, ns in recovered.items():
-        if len(ns) == 1:
-            real[va] = set(ns)  # differentially verified: replaces weaker names
-            real_evidence[va] = 'recovered'
+        if len(ns) != 1:
+            continue
+        if real_evidence.get(va) in EA_EVIDENCE:
+            aliases[va] |= ns
+            continue
+        real[va] = set(ns)  # differentially verified: replaces weaker names
+        real_evidence[va] = 'recovered'
 
     # self-message: EA's "real" library prefixes its diagnostics with the function's own name
     # ("STREAM_get - invalid stream handle"). A prefix used by exactly one function, which uses
@@ -400,10 +409,13 @@ def main():
                         prefix_users[m.group(1)].add(va)
     self_named = {va: next(iter(ps)) for va, ps in prefixes.items()
                   if len(ps) == 1 and len(prefix_users[next(iter(ps))]) == 1}
-    aliases = {}
     for va, name in self_named.items():
+        if real_evidence.get(va) in EA_EVIDENCE:  # two EA sources: the first one stays
+            if name not in real[va]:
+                aliases[va].add(name)
+            continue
         if real.get(va):
-            aliases[va] = sorted(real[va])
+            aliases[va] |= real[va]
         real[va] = {name}
         real_evidence[va] = 'self-message'
 
@@ -414,7 +426,7 @@ def main():
     nfs4_path = OUT / 'nfs4-evidence.json'
     nfs4 = json.loads(nfs4_path.read_text(encoding='utf-8')) if nfs4_path.exists() else {}
     for va, p in nfs4.get('string_pairs', {}).items():
-        if real_evidence.get(va) == 'recovered':
+        if va in real_evidence:  # lineage never adds to or replaces a stronger name
             continue
         real[va].add(p['readable'])
         real_evidence.setdefault(va, 'nfs4-strings')
@@ -432,8 +444,8 @@ def main():
     for va, ns in real.items():
         entry = by_func.setdefault(va, dict(file=None, evidence=real_evidence[va]))
         entry['real_names'] = sorted(ns)
-        if va in aliases:
-            entry['aliases'] = aliases[va]
+        if aliases.get(va):
+            entry['aliases'] = sorted(aliases[va] - set(ns))
         entry['name_evidence'] = real_evidence[va]
         outer = {n.split('::')[0].lower() for n in ns}
         hits = {p for o in outer for p in stems.get(o, ())}
