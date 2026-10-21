@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "target": "Porsche.exe:005a30ee..005a3191",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "index_query": "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d symbols and references for 005a30ee and sole callee 005a545c; research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm",
+  "implementation": "crt_tokenizer.cpp",
+  "source_facts": [
+    "005a30ee has 164 file-backed bytes; cdecl takes input and delimiter pointers, returns token pointer or null.",
+    "It calls 005a545c at 005a30fa and uses the returned CRT TLS block at +0x18 for continuation.",
+    "It builds a 32-byte byte-membership bitset and includes the delimiter NUL byte, skips leading delimiters, overwrites the next delimiter with NUL, and stores the resulting pointer at TLS+0x18.",
+    "The canonical accepted formatter_crt_thread_005a545c provider is called by production; no second production TLS block is defined."
+  ],
+  "native_proof": {
+    "receipt": "local/experiments/v2-crt-tokenizer-native-349/003/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 19,
+    "detected_mutations": 7,
+    "pe_body_sha256": "39ac14e07f59c472c601c18d6e56bb42f3ab3d2af8dce77cbc11421315e3b7eb",
+    "compared": [
+      "x86 ESP, EBP, EBX, ESI, EDI and normalized EAX token pointer",
+      "complete mutable input buffer and CRT TLS block including normalized +0x18 continuation",
+      "one canonical provider call per invocation",
+      "multi-call continuation with comma, space, semicolon and changing delimiter sets",
+      "empty delimiter set, all-delimiter input, null first input resuming existing state, high bytes and upper bitset range"
+    ]
+  },
+  "holds": [
+    "Null input with a null TLS continuation would dereference null in the original and is not an accepted bounded case.",
+    "The original tokenizer stores state in canonical CRT TLS; shared concurrency and full game behavior require subsystem integration checks."
+  ]
+}

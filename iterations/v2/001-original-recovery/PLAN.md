@@ -1,36 +1,36 @@
 # v2 / 001 ? original source recovery plan
 
-Current348,2026-10-22: seven diagnostic parser/lookup/environment functions661B
-restored.164 original-byte comparisons (/Od,/O2),eight mutations and463-input
-shared audit PASS. Fresh182-TU/8-project build002:251 unresolved names/268 refs,
-noEXE/game execution. Three names close,two original CRT boundaries appear.
-REA347/002 accepted; native348/003. Details: runs/348-diagnostic-parsers/README.md.
-Build348/001 sandbox stopped before compiling and is retained; only002 qualifies.
+Current349,2026-10-22: original CRT tokenizer005a30ee164B restored with canonical
+005a545c thread owner.38 native /Od+/O2 comparisons,seven mutations and465-input
+shared audit PASS. Fresh183-TU/8-project build001:250 names/267 refs,noEXE/game
+execution. One name closes,none appear. Native349/003; REA350/002 six dossiers.
+Prior348: seven parser/lookup/environment functions661B,164 comparisons/eight
+mutations and463-input audit. Passed native batches stay fixed.
 
-Active349: diagnostic_parser_native_348 owns crt_tokenizer.cpp,fixture/config/
-evidence in349-crt-tokenizer (gpt-6-sol/medium,compact context). Root owns game
-integration/audit/docs. Recover005a30ee164B using canonical005a545c CRT thread
-provider; verify +0x18 continuation/byte delimiter bitset, do not create host strtok
-or duplicate TLS. Native proof first, then one clean game intake. Passed348 fixed.
-Root REA350/002 traces tokenizer and five mono-format children in one session;
-attempt001 spawnEPERM preserved. Explorer environment_state_349 is complete.
+Active351-heap-lock-bindings: diagnostic_parser_native_348 owns new adapters/
+fixture/config/evidence (gpt-6-sol/medium,compact). Root owns game integration/
+audit/docs. application_lock_enter/leave pointer ABI matches accepted canonical
+heap_enter005322b0/heap_leave005322c0; compare original24B and adapter+provider
+chain with same OS endpoints. No new lock state/algorithm or concurrency claim.
+Explorer environment_state_349 complete; triage local/experiments/v2-service-next-
+351/evidence.json. Startup report005a177b stays HOLD: uint32 original format VAs
+005d6e3c/005d1400 are not host strings; variadic/return contract is not an alias.
 
-Environment lifecycle mapping: startup005a2d1a calls005a940c then005a9106;
-006afcc8 ANSI/006afcd0 wide vectors and006c1528 guard have no canonical storage
-owner yet. Adjacent006afccc/006afcd4 sentinel alias/copy-on-write layout matters.
-Keep these extern until original lifecycle/alias proof; next original set includes
-005a9106,005a9a4a,005aa28f,005aa039,005aa416,005aa1cc,005ad5fb.
-Mono-format00592a50 remains original display subsystem, not a host printf shim.
+Environment lifecycle: startup005a2d1a calls005a940c then005a9106;006afcc8 ANSI/
+006afcd0 wide vectors and006c1528 guard lack canonical storage ownership proof.
+Adjacent006afccc/006afcd4 sentinel alias/copy-on-write layout matters. Keep extern
+until original lifecycle/alias proof; next original set005a9106,005a9a4a,005aa28f,
+005aa039,005aa416,005aa1cc,005ad5fb. Mono-format00592a50 is a display subsystem;
+REA350 covers five children, but display cells and00592ac0 still need ownership.
+No host printf/environment substitutes or guessed zero providers.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/acceptance.json.
-Native: local/experiments/v2-diagnostic-parser-native-348/003/receipt.json.
-Build348/002 fresh; no fixture or duplicate providers enter production. Prior
-345/346 data/import/fill proofs reused unchanged, no native rerun for metadata.
-Keep capacity-zero/parser>=255 overflow,formatter/locale domains,invalid indices,
-arbitrary aliases,root296/301,006ad750 transform,allocator/OS/game/visual holds
-in docs/recovery-validation-backlog.md. Original SHA:
-ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+iterations/v2/001-original-recovery/runs/349-crt-tokenizer/acceptance.json.
+Native local/experiments/v2-crt-tokenizer-native-349/003/receipt.json. Build349/001.
+Keep full parser/TLS concurrency/composition,capacity-zero/parser>=255 overflow,
+formatter/locale domains,invalid indices,arbitrary aliases,root296/301,006ad750
+transform,allocator/OS/game/visual holds in docs/recovery-validation-backlog.md.
+Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
 
 Historical checkpoints below are not active assignments.
 

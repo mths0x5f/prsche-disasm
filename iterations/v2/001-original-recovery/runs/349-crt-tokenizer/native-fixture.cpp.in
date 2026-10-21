@@ -1,0 +1,124 @@
+#include "../348-diagnostic-parsers/diagnostic_parsers.hpp"
+#include "porsche/formatter_crt_runtime.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char original[164]={@TOKENIZER@};
+static unsigned char* body;
+static U cases=0,calls=0;
+static unsigned char tls_block[0x80];
+static U word(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void fail(const char* why){std::printf("fixture %s\n",why);ExitProcess(98);}
+namespace porsche {
+void* __cdecl formatter_crt_thread_005a545c(){++calls;return tls_block;}
+}
+static void install(){
+    body=static_cast<unsigned char*>(VirtualAlloc(nullptr,0x1000,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE));
+    if(!body)fail("alloc");
+    std::memcpy(body,original,sizeof(original));
+    unsigned char* call=body+(0x5a30fa-0x5a30ee);
+    if(*call!=0xe8)fail("call-opcode");
+    std::int32_t displacement;std::memcpy(&displacement,call+1,4);
+    if(static_cast<U>(0x5a30ff+displacement)!=0x5a545c)fail("call-target");
+    U replacement=word(reinterpret_cast<const void*>(&porsche::formatter_crt_thread_005a545c))-word(call+5);
+    std::memcpy(call+1,&replacement,4);
+    FlushInstructionCache(GetCurrentProcess(),body,164);
+}
+struct Capture{U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;};
+static Capture invoke(const void* fn,U a,U b){
+    Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push b
+        push a
+        mov ecx,fn
+        call ecx
+        add esp,8
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    return r;
+}
+static bool abi(const Capture& r){return r.esp0==r.esp1&&r.ebp0==r.ebp1&&r.ebx0==r.ebx1&&r.esi0==r.esi1&&r.edi0==r.edi1&&r.ebx0==0x13579bdfu&&r.esi0==0x2468ace0u&&r.edi0==0x6a31c5e7u;}
+struct Step{const char* delimiters;bool fresh;};
+struct Observation{unsigned char data[128];unsigned char tls[0x80];U result,continuation,provider_calls;bool abi_ok;};
+static U normalized(char* pointer,char* base){
+    if(pointer==nullptr)return 0xffffffffu;
+    if(pointer<base||pointer>base+127)fail("pointer-outside-input");
+    return static_cast<U>(pointer-base);
+}
+static Observation run_step(const void* fn,unsigned char* input,const Step& step){
+    const auto capture=invoke(fn,step.fresh?word(input):0,word(step.delimiters));
+    Observation observation{};
+    observation.abi_ok=abi(capture);
+    observation.result=normalized(reinterpret_cast<char*>(capture.eax),reinterpret_cast<char*>(input));
+    char* continuation=nullptr;std::memcpy(&continuation,tls_block+0x18,sizeof(continuation));
+    observation.continuation=normalized(continuation,reinterpret_cast<char*>(input));
+    std::memcpy(observation.data,input,sizeof(observation.data));
+    std::memcpy(observation.tls,tls_block,sizeof(observation.tls));
+    std::memset(observation.tls+0x18,0,sizeof(void*));
+    observation.provider_calls=calls;
+    return observation;
+}
+static bool scenario(const char* label,const unsigned char* initial,U length,
+    const Step* steps,U count,U start=0xffffffffu){
+    if(length>=128||start>=128&&start!=0xffffffffu)fail("bad-case");
+    auto execute=[&](const void* fn,Observation* result){
+        unsigned char buffer[128];std::memset(buffer,0xa5,sizeof(buffer));
+        std::memcpy(buffer,initial,length);buffer[length]=0;
+        std::memset(tls_block,0x5a,sizeof(tls_block));calls=0;
+        char* continuation=start==0xffffffffu?nullptr:reinterpret_cast<char*>(buffer+start);
+        std::memcpy(tls_block+0x18,&continuation,sizeof(continuation));
+        for(U i=0;i<count;++i)result[i]=run_step(fn,buffer,steps[i]);
+    };
+    Observation expected[8]{},actual[8]{};
+    execute(body,expected);
+    execute(reinterpret_cast<const void*>(&porsche::application_diagnostic_tokenize_005a30ee),actual);
+    for(U i=0;i<count;++i){++cases;
+        if(!expected[i].abi_ok||!actual[i].abi_ok||
+            std::memcmp(&expected[i],&actual[i],sizeof(Observation))){
+            std::printf("divergence %s step=%u case=%u result=%u/%u continuation=%u/%u calls=%u/%u\n",
+                label,i,cases,expected[i].result,actual[i].result,expected[i].continuation,actual[i].continuation,
+                expected[i].provider_calls,actual[i].provider_calls);return false;}}
+    return true;
+}
+int main(){
+    install();bool ok=true;
+    const Step comma[]={{" ,",true},{" ,",false},{" ,",false},{" ,",false}};
+    ok&=scenario("commas",reinterpret_cast<const unsigned char*>(" ,ALPHA,Bravo  ,zed"),19,comma,4);
+    const Step changed[]={{",",true},{";",false},{" ",false},{" ,;",false}};
+    ok&=scenario("changed-delimiters",reinterpret_cast<const unsigned char*>("a,b;c d"),7,changed,4);
+    const Step empty[]={{"",true},{"",false}};
+    ok&=scenario("empty-delimiters",reinterpret_cast<const unsigned char*>("a,b"),3,empty,2);
+    const Step only[]={{",",true},{",",false}};
+    ok&=scenario("only-delimiters",reinterpret_cast<const unsigned char*>(",,,"),3,only,2);
+    const Step resume[]={{";",false},{";",false},{";",false}};
+    ok&=scenario("existing-continuation",reinterpret_cast<const unsigned char*>("xx;abc;def"),10,resume,3,3);
+    const unsigned char high[]={0x80,0xff,';',0x80,0xff,0};
+    const char high_delimiters[]={static_cast<char>(0x80),static_cast<char>(0xff),';',0};
+    const Step high_steps[]={{high_delimiters,true},{high_delimiters,false}};
+    ok&=scenario("all-byte-bitset",high,5,high_steps,2);
+    unsigned char byte_input[127];for(U i=1;i<127;++i)byte_input[i-1]=static_cast<unsigned char>(i);byte_input[126]=0;
+    const char end_delimiter[]={static_cast<char>(126),0};
+    const Step last[]={{end_delimiter,true},{end_delimiter,false}};
+    ok&=scenario("bitset-upper-range",byte_input,126,last,2);
+    std::printf("crt_tokenizer_original_vs_cpp=%s cases=%u\n",ok?"PASS":"FAIL",cases);
+    return ok?0:1;
+}

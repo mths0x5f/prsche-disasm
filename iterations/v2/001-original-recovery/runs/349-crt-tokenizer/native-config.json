@@ -1,0 +1,30 @@
+{
+  "run": 349,
+  "experiment": "local/experiments/v2-crt-tokenizer-native-349",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/349-crt-tokenizer/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@TOKENIZER@","va":"005a30ee","bytes":164,"sha256":"39ac14e07f59c472c601c18d6e56bb42f3ab3d2af8dce77cbc11421315e3b7eb"}
+  ],
+  "pass_marker":"crt_tokenizer_original_vs_cpp=PASS",
+  "mutations": [
+    {"name":"drop-high-delimiter-bit","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"bits[byte >> 3] |= static_cast<std::uint8_t>(1u << (byte & 7u));\n        if (byte == 0) break;","new":"if (byte == 0x80u) continue;\n        bits[byte >> 3] |= static_cast<std::uint8_t>(1u << (byte & 7u));\n        if (byte == 0) break;","expected_exit":1},
+    {"name":"wrong-delimiter-bit","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"bits[byte >> 3] |= static_cast<std::uint8_t>(1u << (byte & 7u));","new":"bits[byte >> 3] |= static_cast<std::uint8_t>(1u << ((byte + 1u) & 7u));","expected_exit":1},
+    {"name":"resume-one-byte-late","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"if (current == nullptr) std::memcpy(&current,tls+0x18,sizeof(current));","new":"if (current == nullptr) {std::memcpy(&current,tls+0x18,sizeof(current));if (*current) ++current;}","expected_exit":1},
+    {"name":"no-leading-separator-skip","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"if (byte == 0 || (bits[byte >> 3] & (1u << (byte & 7u))) == 0) break;\n        ++current;","new":"if (byte == 0 || (bits[byte >> 3] & (1u << (byte & 7u))) == 0) break;\n        break;","expected_exit":1},
+    {"name":"leave-separator-intact","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"*current++ = 0;","new":"++current;","expected_exit":1},
+    {"name":"store-token-start","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"std::memcpy(tls+0x18,&current,sizeof(current));","new":"std::memcpy(tls+0x18,&begin,sizeof(begin));","expected_exit":1},
+    {"name":"return-empty-token","source":"iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp","old":"return begin == current ? nullptr : begin;","new":"return begin;","expected_exit":1}
+  ]
+}

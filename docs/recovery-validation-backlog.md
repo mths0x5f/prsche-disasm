@@ -1,5 +1,11 @@
 # Отложенные проверки восстановления v2
 
+Run349 restores the original tokenizer and canonical CRT thread access after38
+native comparisons/seven mutations. Full parser+TLS concurrency/composition and
+null input with null saved continuation remain unaccepted; no host fallback.
+Mono formatting350 stays evidence-only pending display-state/lifecycle proof.
+
+
 Run348: seven diagnostic functions pass164 native comparisons/eight mutations;
 tokenizer and environment-inner remain explicit boundaries. Inclusive copy can
 write a terminator at destination[capacity]; capacity zero underflows and parser

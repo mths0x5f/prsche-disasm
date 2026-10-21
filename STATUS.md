@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run348](iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/README.md):
-182 TUs/8 projects compile;251 unresolved names/268 refs,noEXE. Seven diagnostic
-parser/lookup/environment bodies pass164 native comparisons,eight mutations and
-463-input audit. Next349 original tokenizer; detailed scope in active PLAN.
+Current [Run349](iterations/v2/001-original-recovery/runs/349-crt-tokenizer/README.md):
+183 TUs/8 projects compile;250 unresolved names/267 refs,noEXE. Original tokenizer
+reuses canonical CRT thread state;38 native comparisons,seven mutations and465-
+input audit PASS. Next351 binds existing original heap lock providers.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/
