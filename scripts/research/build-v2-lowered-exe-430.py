@@ -414,8 +414,12 @@ def generate(translate, header, img, entries, pointers=()):
     written = set()
 
     def put(path, text):
-        # Rewrite only changed files so the build recompiles only what changed.
-        written.add(str(path))
+        # Rewrite only changed files so the build recompiles only what changed. Windows names
+        # are case-insensitive: a file whose spelling changed (FECREDITS -> FECredits) is
+        # removed first so the new spelling reaches the disk.
+        written.add(str(path).lower())
+        if path.exists() and path.name not in os.listdir(path.parent):
+            path.unlink()
         if not path.exists() or path.read_text(encoding='utf-8') != text:
             path.write_text(text, encoding='utf-8')
 
@@ -490,7 +494,7 @@ def generate(translate, header, img, entries, pointers=()):
              'extern const LoweredEntry430 lowered_table430[]={',
              *(f'{{0x{v:08x}u,{f}}},' for v, f in sorted(table_rows)), '};', '']
     put(gen / 'lowered_table.cpp', '\n'.join(table))
-    for old in list(gen.glob('lowered_[0-9]*.cpp')) + [p for p in src.rglob('*.cpp') if str(p) not in written]:
+    for old in list(gen.glob('lowered_[0-9]*.cpp')) + [p for p in src.rglob('*.cpp') if str(p).lower() not in written]:
         old.unlink()
     for d in sorted((p for p in src.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
         if not any(d.iterdir()):
@@ -501,6 +505,24 @@ def generate(translate, header, img, entries, pointers=()):
 
 
 SOURCE_NOTES = {}
+INFERRED_STEM = {}
+
+
+def case_like(stem, ref):
+    """Spell an NFS4 (all-caps) file stem the way Porsche's own names spell it.
+
+    FECREDITS + class FECreditsCallBackList -> FECredits; AIH_HUM + AIHigh_Human -> AIH_Hum;
+    AUDIOMUS + function AudioMus_SysStartUp -> AudioMus. Without a matching name the stem is
+    left as NFS4 wrote it.
+    """
+    parts, ref_parts = stem.split('_'), ref.split('_')
+    if len(parts) > 1 and len(parts) == len(ref_parts):
+        if all(r.lower().startswith(p.lower()) for p, r in zip(parts, ref_parts)):
+            return '_'.join(r[:len(p)] for p, r in zip(parts, ref_parts))
+    flat = ref.replace('_', '')
+    if len(parts) == 1 and flat.lower().startswith(stem.lower()):
+        return flat[:len(stem)]
+    return stem
 CANON_CASE = {}
 
 
@@ -561,8 +583,9 @@ def source_layout(entries):
             parts = [p for p in re.split(r'[\\/]', original) if p and not p.endswith(':')]
             if parts and parts[0].lower() == 'nfs4':
                 parts = parts[1:]
-            rel = '_inferido_nfs4/' + '/'.join([p.lower() for p in parts[:-1]] +
-                                               [parts[-1].rsplit('.', 1)[0] + '.cpp'])
+            ref = (names[0].split('::')[0] if names else '') or (real[0] if real else '')
+            stem = INFERRED_STEM.setdefault(original.lower(), case_like(parts[-1].rsplit('.', 1)[0], ref))
+            rel = '_inferido_nfs4/' + '/'.join([p.lower() for p in parts[:-1]] + [stem + '.cpp'])
             SOURCE_NOTES[rel] = (f'file name inferred from NFS4 (High Stakes PS1 prototype): {original}; '
                                  'Porsche Unleashed directory unknown (evidence: attribution.json)')
         elif shared:

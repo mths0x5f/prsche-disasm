@@ -267,7 +267,8 @@ MIPS não casa com x86 por bytes, a transferência é indireta
    arquivos `.bin`.
 3. **`nfs4-heranca`, só inferência.** Uma classe RTTI cujo nome é abreviado por um arquivo do
    NFS4, sempre cortando em fronteira de palavra (`AIHigh_Human` → `AIH_HUM.CPP`,
-   `FEDialogButton` → `FEDIALOG.CPP`), dá o nome provável do arquivo para 29 classes (125
+   `FEDialogButton` → `FEDIALOG.CPP`, gravado como `FEDialog.cpp`, com a grafia do próprio nome da classe ou da função
+   no Porsche), dá o nome provável do arquivo para 29 classes (125
    funções). O arquivo vai para `_inferido_nfs4/<pasta do NFS4>/`, porque a pasta no NFS5 é
    desconhecida, e nunca substitui um arquivo comprovado.
 
