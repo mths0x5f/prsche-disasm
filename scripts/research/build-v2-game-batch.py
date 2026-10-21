@@ -47,13 +47,25 @@ def main():
                               *sorted(cmake)], compiled_sources=compiled_sources)
 
     driver.source_hashes = pins
+    capture = driver.capture
+
+    def fresh_capture(command, name):
+        if '--build' in command:
+            # A retry in the same tree must still compile the complete graph.
+            # An incremental one-file receipt cannot prove a fresh source build.
+            command = [*command, '--clean-first']
+        return capture(command, name)
+
+    driver.capture = fresh_capture
     sys.argv = [sys.argv[0], '--phase', args.phase, '--attempt', args.attempt]
     driver.main()
     if args.phase == 'build':
         summary = json.loads((driver.RUN / f'build-{args.attempt}.json').read_bytes())
         receipt = json.loads((ROOT / summary['receipt']).read_bytes())
         log = (ROOT / receipt['log']).read_text(encoding='utf8')
-        assert re.search(r'(?m)^\s+[A-Za-z0-9_.-]+\.cpp\s*$', log), 'No compiler events; receipt retained'
+        from collections import Counter
+        events = re.findall(r'(?m)^\s+([A-Za-z0-9_.-]+\.cpp)\s*$', log)
+        assert Counter(events) == Counter(Path(p).name for p in summary['compiled_source_roots']), 'Incomplete fresh compile; receipt retained'
         assert not summary['compiler_errors'] and not summary['other_linker_errors'], 'See build report'
 
 

@@ -1,11 +1,11 @@
 #include "porsche/application_heap_init.hpp"
 #include "porsche/application_heap.hpp"
+#include "porsche/application_heap_state.hpp"
 #include "porsche/heap.hpp"
 #include <cstddef>
 
 namespace porsche {
 void* application_default_arena_005deb98=nullptr;
-void* application_other_arenas_006af3b8[15]{};
 char application_object_heap_name_005e8e50[32]{};
 
 // 005aef70..005aef72: callback stored by primary heap initialization.
@@ -33,16 +33,15 @@ std::int32_t __cdecl application_object_start(std::uint32_t bytes,const char*,
     std::uint32_t queue_slot,std::uint32_t locked,std::uint32_t quantum){
     const auto index=object_heap_slot_00569a70();
     if(queue_slot){
-        const auto offset=-static_cast<std::int32_t>(queue_slot);
-        if(offset>=0 && offset<16)
-            application_queue_indices[offset]=reinterpret_cast<void*>(index);
+        application_heap_store(application_heap_address(application_heap_contexts.selectors,
+            0u-queue_slot*4u),index);
     }
     void* arena=application_page_alloc_0059ed40(&bytes);
-    // 006af3b4 is slot zero; this array starts at slot one.
-    if(index>=1 && index<=15)application_other_arenas_006af3b8[index-1]=arena;
+    application_heap_store(application_heap_arena_cell(index),application_heap_word(arena));
     if(!arena)return -1;
     heap_init_005697f0(index,application_object_heap_name_005e8e50,arena,
-        static_cast<std::int32_t>(bytes),quantum,0x20,0,0,0,0,locked?1:0,nullptr);
+        static_cast<std::int32_t>(bytes),quantum,0x20,0,0,0,0,
+        static_cast<std::uint8_t>(locked)?1:0,nullptr);
     return static_cast<std::int32_t>(index);
 }
 }

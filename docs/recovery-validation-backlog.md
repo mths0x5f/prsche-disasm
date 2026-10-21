@@ -1,10 +1,14 @@
 # Отложенные проверки восстановления v2
 
-339 REA confirms missing heap-manager publication in current application_heap.cpp:
-original0059ea06 stores live005e4700 before pool setup; C++ uses detached records.
-Do not close303state HOLD with zero getters. Unify default/live manager identity,
-callback relocation, selector/arena/guard storage and init/reset effects; validate
-original state transitions as one batch.339 bindings preserve this open boundary.
+Run340 closes the bounded manager publication/reset and tested state-alias gap:
+canonical default/live headers/pools, mutable selector pointer and adjacent
+arena/guard/page/ID storage pass688 original-byte comparisons and seven mutations.
+Full303 allocator/OS composition and arbitrary out-of-object index domain remain
+HOLD. Next341 must recover the three live callbacks, queue cleanup, heap destroy
+and secondary shutdown currently explicit link boundaries. Old078 heap/bootstrap
+receipts remain historical: detached-state standalone probes are not current
+source acceptance after340; preserve their scenarios when updating those harnesses.
+No fabricated providers or full-game/visual acceptance.
 
 Run335 update: bounded open wrapper/callback339B now passes60480 Od/O2
 comparisons, plus816 search binding transport cases.006ad750 is DECLARED only:

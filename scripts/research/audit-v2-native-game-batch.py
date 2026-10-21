@@ -1,0 +1,139 @@
+"""Read-only acceptance for config-driven original/native subsystem batches."""
+import argparse
+import collections
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import re
+from v2_shared_manifests import ManifestReader
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+def module(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    value = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(value)
+    return value
+
+
+def audit(config_path):
+    reader = ManifestReader(ROOT)
+    cache = reader.cache
+    load = cache.document
+    hashes = {}
+
+    def sha(path):
+        path = Path(path).resolve()
+        if path not in hashes:
+            hashes[path] = hashlib.sha256(cache.data(path)).hexdigest()
+        return hashes[path]
+
+    cfg = load(config_path)
+    native_cfg = load(ROOT / cfg['native_config'])
+    native = load(ROOT / cfg['native_receipt'])
+    assert native['status'] == 'PASS'
+    assert native['config'] == cfg['native_config']
+    assert native['original_sha256'] == native_cfg['original_sha256']
+    for group in ('inputs_sha256', 'outputs_sha256'):
+        assert native[group], group
+        for name, expected in native[group].items():
+            assert sha(ROOT / name) == expected, f'{group}: {name}'
+    pe = cache.data(ROOT / native_cfg['original_pe'])
+    assert hashlib.sha256(pe).hexdigest() == native_cfg['original_sha256']
+    utility = module('native_batch_pe', ROOT / 'scripts/research/verify-v2-native-batch.py')
+    assert native['original_bodies'] == native_cfg['original_bodies']
+    for body in native['original_bodies']:
+        data = utility.pe_at(pe, int(body['va'], 16), body['bytes'])
+        assert hashlib.sha256(data).hexdigest() == body['sha256']
+    assert set(native['variants']) == {'od', 'o2'}
+    case_marker = re.search(r'\bcases=(\d+)\b', native_cfg['pass_marker'])
+    assert case_marker and cfg['native_cases'] == int(case_marker.group(1)) * len(native['variants'])
+    mutations = {item['name']: item for item in native_cfg['mutations']}
+    assert {item['name'] for item in native['mutation_controls']} == set(mutations)
+    for item in native['mutation_controls']:
+        assert item['detected'] and item['exit_code'] == mutations[item['name']].get('expected_exit', 10)
+    for name, receipt in native['receipts'].items():
+        expected = next((item.get('expected_exit', 10) for key, item in mutations.items()
+                         if name == f'mutation-{key}-native'), 0)
+        assert receipt['exit_code'] == expected, name
+        assert sha(ROOT / receipt['log']) == receipt['log_sha256'], name
+    for variant, result in native['variants'].items():
+        receipt = native['receipts'][f'{variant}-native']
+        assert native_cfg['pass_marker'] in cache.data(ROOT / receipt['log']).decode('utf8')
+        assert result['output_sha256'] == receipt['log_sha256']
+    dependencies = module('native_batch_dependencies', ROOT / 'scripts/research/audio_recovery_provenance.py')
+    paths = dependencies.dependency_paths(ROOT / native['attempt_dir'])
+    pinned = {(ROOT / name).resolve() for name in native['inputs_sha256']}
+    assert paths <= pinned, 'compiler dependency closure not pinned'
+
+    rea_module = module('native_batch_rea', ROOT / 'scripts/research/audit-v2-rea-session.py')
+    rea = [rea_module.audit(ROOT / item['config'], item['attempt'], cache, sha)
+           for item in cfg['rea_sessions']]
+    for name, expected in cfg['evidence_sha256'].items():
+        assert sha(ROOT / name) == expected, name
+    build_cfg = load(ROOT / cfg['build_config'])
+    run, build = ROOT / build_cfg['run'], ROOT / build_cfg['build']
+    current_path = run / f"build-{cfg['build_attempt']}.json"
+    current, baseline = load(current_path), load(ROOT / cfg['baseline'])
+    _, pins = reader.verify(current, 'source', expected_hash_mode='crlf-to-lf')
+    assert current['input_unchanged'] and not current['compiler_errors'] and not current['other_linker_errors']
+    old_sources, sources = set(baseline['compiled_source_roots']), set(current['compiled_source_roots'])
+    assert old_sources <= sources and sources - old_sources == set(cfg['added_sources'])
+    assert current['source_count'] == len(sources)
+    assert collections.Counter(Path(p).name for p in current['project_paths']) == collections.Counter(
+        Path(p).name for p in baseline['project_paths'])
+    assert not any('fixture' in p.lower() or 'probe' in Path(p).name.lower() for p in sources)
+    assert sha(ROOT / current['receipt']) == current['receipt_sha256']
+    receipt = load(ROOT / current['receipt'])
+    assert sha(ROOT / receipt['log']) == receipt['log_sha256']
+    compiler_events = re.findall(r'(?m)^\s+([A-Za-z0-9_.-]+\.cpp)\s*$', cache.data(ROOT / receipt['log']).decode('utf8'))
+    assert collections.Counter(compiler_events) == collections.Counter(Path(p).name for p in sources)
+    before, after = ({item['symbol'] for item in report['frontier']} for report in (baseline, current))
+    assert before - after == set(cfg['expected_closed_names'])
+    assert after - before == set(cfg['expected_new_names'])
+    assert current['unresolved_names'] == len(after)
+    assert current['unresolved_references'] == sum(len(item['references']) for item in current['frontier'])
+    assert current['exit_code'] == receipt['exit_code'] == (1 if after else 0)
+    assert current['game_executed'] is False and bool(current['executable']) == (not after)
+    coff = module('native_batch_coff', ROOT / 'scripts/research/build-v2-compile-corpus.py')
+    definitions = collections.defaultdict(list)
+    for path in build.glob('**/*.obj'):
+        for symbol in coff.coff_symbols(path)['defined']:
+            definitions[symbol].append(path.relative_to(build).as_posix())
+    for symbol, owner in cfg['canonical_providers'].items():
+        assert len(definitions[symbol]) == 1 and Path(definitions[symbol][0]).name == owner, symbol
+    for symbol in cfg['expected_new_names']:
+        assert not definitions[symbol], f'fabricated provider: {symbol}'
+    graph = module('native_batch_graph', ROOT / 'scripts/research/v2_build_graph.py')
+    entries = list(build.glob('**/porsche_original_game_link.vcxproj'))
+    assert len(entries) == 1
+    assert graph.compiled_sources(entries[0].parent, 'porsche_original_game_link') == current['compiled_source_roots']
+    cache.check_stable()
+    return dict(schema=1, passed=True, native_cases=cfg['native_cases'],
+                mutations=len(mutations), native_receipt_sha256=sha(ROOT / cfg['native_receipt']),
+                rea=rea, source_pins=len(pins), game_sources=len(sources),
+                build_sha256=sha(current_path), unresolved_names=len(after),
+                unresolved_references=current['unresolved_references'],
+                closed_names=sorted(before - after), new_names=sorted(after - before),
+                canonical_providers=cfg['canonical_providers'], game_executed=False,
+                executable=current['executable'])
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--config', type=Path, required=True)
+    args = parser.parse_args()
+    result = audit(args.config.resolve())
+    output = args.config.parent / 'validation.json'
+    if output.exists():
+        assert json.loads(output.read_bytes()) == result, 'completed audit changed'
+    else:
+        output.write_text(json.dumps(result, indent=2) + '\n', encoding='utf8', newline='\n')
+    print(json.dumps({key: result[key] for key in ('passed', 'native_cases', 'mutations', 'game_sources',
+                                                  'source_pins', 'unresolved_names', 'unresolved_references')}))
+
+
+if __name__ == '__main__':
+    main()

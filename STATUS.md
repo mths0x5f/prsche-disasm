@@ -1,10 +1,11 @@
 # Состояние проекта
 
-Current [Run339](iterations/v2/001-original-recovery/runs/339-startup-context-batch/README.md):
-174 TUs/8 projects compile;258 unresolved names/283 refs,noEXE.584 transport
-cases/four mutations and447-pin audit PASS. REA confirmed the live heap-manager
-publication/layout gap; no provider added. Active PLAN owns the next state batch.
-All339work complete; older entries below describe historical checkpoints.
+Current [Run340](iterations/v2/001-original-recovery/runs/340-heap-context-state/README.md):
+175 TUs/8 projects compile;259 unresolved names/274 refs,noEXE.
+Canonical heap/context state and shutdown integrated after688 original-byte
+comparisons, seven detected mutations and450-input audit PASS. Next341: actual
+heap callbacks/cleanup dependencies; detailed scope in active iteration PLAN.
+Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/
 286 references, noEXE or game execution. Two original constructor/drive bodies

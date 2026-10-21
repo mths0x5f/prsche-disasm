@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 688,
+  "mutations": 7,
+  "native_receipt_sha256": "9c3b78b073d9433bd6c0c7e04a982037e327902f7bc07da813b3bc3465f137af",
+  "rea": [
+    {
+      "schema": 1,
+      "passed": true,
+      "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "receipt": "local/experiments/v2-startup-context-339-rea/001/receipt.json",
+      "receipt_sha256": "db17f7d1fb8392ac5134da20b195f3c7d959881970886cf46f35da5543bbf3f1",
+      "config_sha256": "5fa2a0c98137af93062167354630b04a8b9350a4666a5a6fcb27ffd37917612a",
+      "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+      "server_pid": 197548,
+      "same_server_identity": true,
+      "bodies": {
+        "manager-initialize": {
+          "address": "0x59e9d0",
+          "bytes": 324,
+          "sha256": "c8fcfb0e3fac9e6dd385c4e48aeddc5d35b58b5eb0bc3a4a6aca875187a7f750"
+        },
+        "manager-switch": {
+          "address": "0x59eb20",
+          "bytes": 159,
+          "sha256": "261e6fb967804979309f6adefa8eb793dfe72a60b45cf5c415cd376bf3897913"
+        },
+        "context-allocate": {
+          "address": "0x4211d0",
+          "bytes": 142,
+          "sha256": "afd08f85abc65c2de9e91dc460768424cb39c0fac2c625ce284e86ad75723927"
+        },
+        "context-release": {
+          "address": "0x4237d0",
+          "bytes": 103,
+          "sha256": "5fb776c5edfcc0ff10ddec0873da6b802e66efee51880ce0138df3a60e2370ba"
+        }
+      },
+      "repeated_equal": [],
+      "timings_ms": {
+        "initialize": 8110.873,
+        "open": 4424.823,
+        "session-before": 101.774,
+        "manager-initialize": 94835.763,
+        "manager-switch": 70.056,
+        "context-allocate": 254.321,
+        "context-release": 193.296,
+        "manager-pointer": 10.599,
+        "selector-pointer": 6.717,
+        "session-final": 62.693,
+        "close": 359.767
+      },
+      "native_acceptance": false,
+      "game_executed": false
+    },
+    {
+      "schema": 1,
+      "passed": true,
+      "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "receipt": "local/experiments/v2-heap-state-340-rea/001/receipt.json",
+      "receipt_sha256": "0484f5bc83471f4bae8be524f4a226948ee398cbcb02f68b42ef20c42c5c6a2f",
+      "config_sha256": "e9cd485d398efd304e313ca942f7fb9a11ac33f598b2ee6896f0f87ac6058ae0",
+      "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+      "server_pid": 202004,
+      "same_server_identity": true,
+      "bodies": {
+        "object-create": {
+          "address": "0x59ebc0",
+          "bytes": 122,
+          "sha256": "c915c4d0bfcc12003aa208895b47caf76b8be4816f63e76f3c871c87804a71c3"
+        },
+        "queue-start": {
+          "address": "0x59edb0",
+          "bytes": 116,
+          "sha256": "5b89d67564f61dc1ef932831f9ffd06fe19a6dca722f809eef760c7c67986a82"
+        },
+        "queue-grow": {
+          "address": "0x59eeb0",
+          "bytes": 217,
+          "sha256": "f30101b7047dddbcba6563aa31f06adee7773772cd9173db495efbf626ea81ab"
+        },
+        "queue-clean": {
+          "address": "0x59ee30",
+          "bytes": 124,
+          "sha256": "75f46c66cd561f228e1e45d402154230e7753794b22a79b97afbae0872b0feb7"
+        },
+        "heap-slot-destroy": {
+          "address": "0x5699f0",
+          "bytes": 72,
+          "sha256": "40b19ab2730c3e09243cb92cdd0dc84c6960b851180e0ee691b4143f2c984150"
+        }
+      },
+      "repeated_equal": [],
+      "timings_ms": {
+        "initialize": 1124.519,
+        "open": 3416.93,
+        "session-before": 98.436,
+        "object-create": 82728.908,
+        "queue-start": 47.671,
+        "queue-grow": 120.398,
+        "queue-clean": 49.686,
+        "heap-slot-destroy": 36.898,
+        "default-cleanup-entry": 12.815,
+        "default-cleanup-bytes": 11.778,
+        "session-final": 63.095,
+        "close": 332.556
+      },
+      "native_acceptance": false,
+      "game_executed": false
+    }
+  ],
+  "source_pins": 450,
+  "game_sources": 175,
+  "build_sha256": "4eeddda88fb6a8f59bcec7312b4f533bb15dcb3f0beb005f89b98ab11dbd27ea",
+  "unresolved_names": 259,
+  "unresolved_references": 274,
+  "closed_names": [
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ",
+    "?application_queue_allocate@porsche@@YAPAXIIPAX@Z",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ",
+    "?platform_flush_0059eb20@porsche@@YAXXZ"
+  ],
+  "new_names": [
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z"
+  ],
+  "canonical_providers": {
+    "?platform_flush_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ": "application_heap_state.obj",
+    "?application_main_function_004a54e0@porsche@@YAXXZ": "shutdown_helpers_311.obj",
+    "?application_heap_shutdown_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?application_heap_identity_0059e9b0@porsche@@YAPAXPAXH@Z": "application_heap_state.obj",
+    "?application_heap_zero_0059e9c0@porsche@@YAIZZ": "application_heap_state.obj"
+  },
+  "game_executed": false,
+  "executable": null
+}

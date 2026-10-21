@@ -1,0 +1,603 @@
+#define PORSCHE_DEFINE_SHARED_RUNTIME_GLOBALS_FIXTURE
+#include "porsche/application_heap.hpp"
+#include "porsche/application_heap_state.hpp"
+#include "porsche/application_heap_init.hpp"
+#include "porsche/application_alloc.hpp"
+#include "porsche/fe_stream.hpp"
+#include "porsche/heap.hpp"
+#include "porsche/install_paths.hpp"
+#include "porsche/application_pool.hpp"
+#include "porsche/application_main.hpp"
+#include "porsche/application_context_base.hpp"
+#include "porsche/context_effects.hpp"
+#include "shutdown_helpers_311.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U = std::uint32_t;
+static_assert(sizeof(void*) == 4, "x86 original ABI");
+static const unsigned char queue_bytes[0x74] = {@QUEUE@};
+static const unsigned char init_bytes[324] = {@INIT@};
+static const unsigned char object_bytes[122] = {@OBJECT@};
+static const unsigned char shutdown_bytes[159] = {@SHUTDOWN@};
+static const unsigned char wrapper_bytes[5] = {@WRAPPER@};
+static const unsigned char default_header_bytes[40] = {@DEFAULT@};
+static const unsigned char live_header_bytes[40] = {@LIVE@};
+static const unsigned char identity_bytes[5] = {@IDENTITY@};
+static const unsigned char zero_bytes[3] = {@ZERO@};
+static unsigned char* image;
+static U mode, sequence, event_count, cases;
+static unsigned char nodes[4][32];
+static unsigned char primary_arena[64];
+static bool primary_success, alloc_fail_second;
+static U alloc_calls;
+static U object_slot;
+static U shutdown_mode;
+static bool init_switch_manager;
+static void* replacement_selectors[16];
+struct Event { U tag, a, b, c; };
+static Event events[64];
+static U word(const void* p) { return reinterpret_cast<U>(p); }
+static void record(U tag,U a=0,U b=0,U c=0) {
+    if(event_count>=64) ExitProcess(98);
+    events[event_count++]={tag,a,b,c};
+}
+static void unexpected() { std::puts("unexpected provider invoked"); ExitProcess(99); }
+
+static void* __cdecl alloc_b(const char*,U,U);
+static void* __cdecl alloc_a(const char* source,U bytes,U selector) {
+    record(3,source==porsche::application_heap_queue_source_005e5064 || word(source)==0x5e5064 ? 0x5e5064 : word(source),bytes,selector);
+    if(sequence>=4) unexpected();
+    if(mode==2) {
+        auto* record_ptr=porsche::application_heap_address(&porsche::application_heap_contexts.live,0x28);
+        porsche::application_heap_store(record_ptr,0x33334444);
+    }
+    void* node=nodes[sequence++];
+    if(mode==4 && sequence==1) {
+        porsche::application_heap_contexts.current=&porsche::application_heap_contexts.defaults;
+        porsche::application_heap_contexts.defaults.header[1]=word(reinterpret_cast<void*>(&alloc_b));
+    }
+    return node;
+}
+static void* __cdecl alloc_b(const char* source,U bytes,U selector) {
+    record(4,source==porsche::application_heap_queue_source_005e5064 || word(source)==0x5e5064 ? 0x5e5064 : word(source),bytes,selector);
+    if(sequence>=4) unexpected();
+    return nodes[sequence++];
+}
+static void __cdecl enter_raw(void* lock) {
+    record(1,word(lock));
+    if(mode==1) {
+        porsche::application_heap_contexts.current=&porsche::application_heap_contexts.defaults;
+        porsche::application_heap_contexts.defaults.header[1]=word(reinterpret_cast<void*>(&alloc_b));
+    }
+    if(mode==3) porsche::application_heap_runtime.selectors[0]=reinterpret_cast<void*>(0x99998888);
+}
+static void __cdecl leave_raw(void* lock) {record(2,word(lock));}
+
+namespace porsche {
+void* startup_network_00628c70=nullptr;
+void __thiscall ShutdownNetwork311::destroy_0048ff30() {unexpected();}
+std::uint32_t __cdecl application_release_0059f050(void*) {unexpected();return 0;}
+std::uint32_t __cdecl install_paths_cleanup_004b7070() {unexpected();return 0;}
+OriginalHeap* heaps_006b4f20[16]{};
+void __cdecl application_heap_secondary_stop_0055ec30() {record(31);}
+std::uint32_t __cdecl application_heap_destroy_005699f0(U id) {record(33,id);return 0xdeadbeefu;}
+void __cdecl application_heap_queue_clean_0059ee30(U selector) {
+    record(32,selector);
+    if(shutdown_mode==4) application_heap_contexts.selectors=replacement_selectors;
+}
+void __cdecl application_pool_shutdown_005678f0() {
+    record(30);
+    if(shutdown_mode==5) application_heap_runtime.object_heap=4;
+}
+U __cdecl application_system_page_size() {record(11,0x1000);return 0x1000;}
+void* __cdecl application_virtual_alloc(void* p,U bytes,U alloc_type,U protect) {
+    record(12,word(p),bytes,alloc_type);
+    if(protect!=4) unexpected();
+    ++alloc_calls;
+    return primary_success && !(alloc_fail_second && alloc_calls>=2) ? primary_arena : nullptr;
+}
+U __cdecl application_virtual_free(void* address,U bytes,U mode_value) {
+    record(34,word(address),bytes,mode_value);
+    if(shutdown_mode==6) application_heap_runtime.object_heap=5;
+    return 0x31415926u;
+}
+void __cdecl application_os_start(U value) {record(10,value);}
+void __cdecl application_fill(void* target,U value,U bytes) {
+    const auto current=application_heap_contexts.current;
+    record(13,word(target),value,word(current));
+    if(bytes!=0x8c0 || target!=application_heap_contexts.live.records) unexpected();
+    std::memset(target,static_cast<int>(value),bytes);
+}
+void* __cdecl application_lock_create() {
+    const auto current=application_heap_contexts.current;
+    record(14,sequence,word(current));
+    const U number=sequence++;
+    if(init_switch_manager && number==2)
+        application_heap_contexts.current=&application_heap_contexts.defaults;
+    return reinterpret_cast<void*>(0x10000000u+number);
+}
+void __cdecl application_memory_diagnostic(U value) {record(15,value);}
+void __cdecl application_secondary_start() {record(16);}
+void __cdecl application_queue_kind(U a,U b) {record(17,a,b);}
+void __cdecl application_printf_start(U a,const char* s) {
+    record(18,a,(word(s)==0x5e4ff0 || std::strcmp(s,"NFSPrintf")==0)?0x5e4ff0:word(s));
+}
+void __cdecl application_heap_kind(U a,U b) {record(19,a,b);}
+void __cdecl application_heap_finish(U a,U b,U c) {record(20,a,b,c);}
+std::int32_t __cdecl heap_init_005697f0(U index,const char* label,void* arena,std::int32_t bytes,U quantum,U alignment,
+    std::int32_t,std::int32_t,U,std::int32_t,std::int32_t locked,void*) {
+    if(index==0) record(21,index,word(arena),static_cast<U>(bytes));
+    else {
+        const U name=(word(label)==0x5e8e50 || label==application_object_heap_name_005e8e50)?0x5e8e50:word(label);
+        record(22,index,name,word(arena));
+        record(23,static_cast<U>(bytes),quantum,alignment);
+        record(24,static_cast<U>(locked));
+    }
+    return 0;
+}
+void __cdecl application_lock_enter(void* p) {enter_raw(p);}
+void __cdecl application_lock_leave(void* p) {leave_raw(p);}
+// Static manager callback relocations are checked, but unowned bodies fail closed.
+void* __cdecl application_allocator_entry_00531f70(const char*,std::uint32_t,std::uint32_t) {unexpected();return nullptr;}
+std::uint32_t __cdecl free_00531f90(void*) {unexpected();return 0;}
+void* __cdecl resize_00569640(void*,std::int32_t) {unexpected();return nullptr;}
+void* __cdecl application_heap_block_005aef20(void*) {unexpected();return nullptr;}
+std::uint32_t __cdecl install_paths_size_00556640(const void*) {unexpected();return 0;}
+const char* __cdecl heap_name_00556650(void*) {unexpected();return nullptr;}
+std::uint32_t __cdecl application_heap_tag_00556680(const void*) {unexpected();return 0;}
+std::uint32_t __cdecl application_heap_measure_00569ad0(std::uint32_t) {unexpected();return 0;}
+}
+
+struct Result {
+    U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;
+    U event_count; Event events[64];
+    porsche::ApplicationHeapContexts contexts;
+    porsche::ApplicationHeapRuntime runtime;
+    unsigned char nodes[sizeof(::nodes)];
+    void* replacement[16];
+    U diagnostic_source,diagnostic_line,default_arena,getters_ok;
+};
+static U getters_ok() {
+    return porsche::application_context_heap_state_005e4fe8()==porsche::application_heap_contexts.current &&
+        porsche::context_selector_pointer_005e4fec()==porsche::application_heap_contexts.selectors &&
+        porsche::application_context_heap_selector_005e4fec()==
+            porsche::application_heap_load(porsche::application_heap_contexts.selectors);
+}
+static void reset(U selected_mode,U slot) {
+    mode=selected_mode; sequence=event_count=0;
+    std::memset(nodes,0xa5,sizeof(nodes));
+    std::memset(porsche::application_heap_contexts.live.records,0x6d,sizeof(porsche::application_heap_contexts.live.records));
+    std::memset(porsche::application_heap_contexts.defaults.records,0x6d,sizeof(porsche::application_heap_contexts.defaults.records));
+    porsche::application_heap_contexts.current=&porsche::application_heap_contexts.live;
+    porsche::application_heap_contexts.selectors=porsche::application_heap_runtime.selectors;
+    porsche::application_heap_contexts.live.header[1]=word(reinterpret_cast<void*>(&alloc_a));
+    porsche::application_heap_contexts.defaults.header[1]=word(reinterpret_cast<void*>(&alloc_a));
+    porsche::application_heap_runtime.selectors[0]=reinterpret_cast<void*>(0x11112222);
+    porsche::application_heap_runtime.selectors[1]=reinterpret_cast<void*>(0x55556666);
+    auto* record_ptr=porsche::application_heap_address(&porsche::application_heap_contexts.live,0x28u-slot*0x8cu);
+    porsche::application_heap_store(record_ptr,0x11113333);
+    porsche::application_heap_store(porsche::application_heap_address(record_ptr,4),0x77778888);
+}
+static Result invoke(const void* fn,U count,U slot) {
+    Result r{};
+    __asm {
+        lea eax,r
+        mov [eax],esp
+        mov [eax+8],ebp
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        mov [eax+16],ebx
+        mov [eax+24],esi
+        mov [eax+32],edi
+        push slot
+        push count
+        mov ecx,fn
+        call ecx
+        add esp,8
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    r.event_count=event_count;
+    std::memcpy(r.events,events,sizeof(events));
+    r.contexts=porsche::application_heap_contexts;
+    r.runtime=porsche::application_heap_runtime;
+    std::memcpy(r.nodes,nodes,sizeof(nodes));
+    std::memcpy(r.replacement,replacement_selectors,sizeof(replacement_selectors));
+    r.diagnostic_source=porsche::application_diagnostic_source_005deb74;
+    r.diagnostic_line=porsche::application_diagnostic_line_005deb78;
+    r.default_arena=word(porsche::application_default_arena_005deb98);
+    r.getters_ok=getters_ok();
+    return r;
+}
+static bool abi(const Result& r) {
+    return r.esp0==r.esp1 && r.ebp0==r.ebp1 && r.ebx0==r.ebx1 && r.esi0==r.esi1 && r.edi0==r.edi1;
+}
+static bool same(const Result& a,const Result& b) {
+    return abi(a)&&abi(b)&&a.event_count==b.event_count&&
+        std::memcmp(a.events,b.events,sizeof(a.events))==0&&
+        std::memcmp(&a.contexts,&b.contexts,sizeof(a.contexts))==0&&
+        std::memcmp(&a.runtime,&b.runtime,sizeof(a.runtime))==0&&
+        std::memcmp(a.nodes,b.nodes,sizeof(a.nodes))==0&&
+        std::memcmp(a.replacement,b.replacement,sizeof(a.replacement))==0&&
+        a.diagnostic_source==b.diagnostic_source&&a.diagnostic_line==b.diagnostic_line&&
+        a.default_arena==b.default_arena&&a.getters_ok==1&&b.getters_ok==1;
+}
+static void __stdcall get_system_info_raw(SYSTEM_INFO* info) {
+    std::memset(info,0,sizeof(*info));
+    info->dwPageSize=porsche::application_system_page_size();
+    porsche::application_page_size_006af3f8=info->dwPageSize;
+}
+static void __cdecl diagnostic_raw(const char*,U value) {
+    porsche::application_memory_diagnostic(value);
+}
+static U __cdecl object_slot_raw() {
+    U index=3;
+    while(index<16 && porsche::heaps_006b4f20[index]) ++index;
+    return index;
+}
+static void init_reset(bool success,bool second_failure=false,bool switch_manager=false) {
+    primary_success=success;alloc_fail_second=second_failure;
+    init_switch_manager=switch_manager;
+    alloc_calls=sequence=event_count=0;
+    std::memset(events,0,sizeof(events));
+    std::memset(&porsche::application_heap_runtime,0,sizeof(porsche::application_heap_runtime));
+    porsche::application_heap_runtime.object_heap=0x13572468;
+    std::memset(porsche::application_heap_contexts.live.records,0x6d,sizeof(porsche::application_heap_contexts.live.records));
+    std::memset(porsche::application_heap_contexts.defaults.records,0x6d,sizeof(porsche::application_heap_contexts.defaults.records));
+    porsche::application_heap_contexts.current=&porsche::application_heap_contexts.defaults;
+    porsche::application_heap_contexts.selectors=porsche::application_heap_runtime.selectors;
+    porsche::application_default_arena_005deb98=nullptr;
+    std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));
+    porsche::application_diagnostic_source_005deb74=0;
+    porsche::application_diagnostic_line_005deb78=0;
+}
+static Result invoke_init(const void* fn,U primary,U object,U third,U fourth) {
+    Result r{};
+    __asm {
+        lea eax,r
+        mov [eax],esp
+        mov [eax+8],ebp
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        mov [eax+16],ebx
+        mov [eax+24],esi
+        mov [eax+32],edi
+        push fourth
+        push third
+        push object
+        push primary
+        mov ecx,fn
+        call ecx
+        add esp,16
+        lea edx,r
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    r.event_count=event_count;
+    std::memcpy(r.events,events,sizeof(events));
+    r.contexts=porsche::application_heap_contexts;
+    r.runtime=porsche::application_heap_runtime;
+    std::memcpy(r.nodes,nodes,sizeof(nodes));
+    std::memcpy(r.replacement,replacement_selectors,sizeof(replacement_selectors));
+    r.diagnostic_source=porsche::application_diagnostic_source_005deb74;
+    r.diagnostic_line=porsche::application_diagnostic_line_005deb78;
+    r.default_arena=word(porsche::application_default_arena_005deb98);
+    r.getters_ok=getters_ok();
+    return r;
+}
+static void object_reset(U slot,bool success) {
+    init_reset(success);
+    object_slot=slot;
+    porsche::application_page_size_006af3f8=0x1000;
+    for(U i=3;i<16;++i) porsche::heaps_006b4f20[i]=
+        i<slot?reinterpret_cast<porsche::OriginalHeap*>(0x77770000u+i):nullptr;
+}
+static Result invoke_object(const void* fn,U bytes,U queue_slot,U locked,U quantum) {
+    Result r{};
+    __asm {
+        lea eax,r
+        mov [eax],esp
+        mov [eax+8],ebp
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        mov [eax+16],ebx
+        mov [eax+24],esi
+        mov [eax+32],edi
+        push quantum
+        push locked
+        push queue_slot
+        push 12345678h
+        push bytes
+        mov ecx,fn
+        call ecx
+        add esp,20
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    r.event_count=event_count;
+    std::memcpy(r.events,events,sizeof(events));
+    r.contexts=porsche::application_heap_contexts;
+    r.runtime=porsche::application_heap_runtime;
+    std::memcpy(r.nodes,nodes,sizeof(nodes));
+    std::memcpy(r.replacement,replacement_selectors,sizeof(replacement_selectors));
+    r.diagnostic_source=porsche::application_diagnostic_source_005deb74;
+    r.diagnostic_line=porsche::application_diagnostic_line_005deb78;
+    r.default_arena=word(porsche::application_default_arena_005deb98);
+    r.getters_ok=getters_ok();
+    return r;
+}
+static void shutdown_reset(U selected_mode) {
+    shutdown_mode=selected_mode;event_count=sequence=0;
+    std::memset(events,0,sizeof(events));
+    std::memset(&porsche::application_heap_runtime,0,sizeof(porsche::application_heap_runtime));
+    porsche::application_heap_runtime.initialized=selected_mode==0?0:1;
+    porsche::application_heap_runtime.object_heap=selected_mode==7?16:3;
+    porsche::application_heap_runtime.primary_arena=reinterpret_cast<void*>(0x40112233);
+    porsche::application_heap_runtime.other_arenas[2]=reinterpret_cast<void*>(0x40334455);
+    porsche::application_heap_runtime.other_arenas[3]=reinterpret_cast<void*>(0x40445566);
+    porsche::application_heap_runtime.other_arenas[4]=reinterpret_cast<void*>(0x40556677);
+    porsche::application_heap_contexts.current=&porsche::application_heap_contexts.live;
+    porsche::application_heap_contexts.selectors=porsche::application_heap_runtime.selectors;
+    for(U i=0;i<16;++i) {
+        porsche::application_heap_runtime.selectors[i]=reinterpret_cast<void*>(0x100u+i);
+        replacement_selectors[i]=reinterpret_cast<void*>(0x200u+i);
+    }
+    const U id=selected_mode==5?4u:static_cast<U>(porsche::application_heap_runtime.object_heap);
+    if(selected_mode>=2) porsche::application_heap_runtime.selectors[selected_mode==3?15:0]=reinterpret_cast<void*>(id);
+}
+static Result invoke_shutdown(const void* fn) {
+    Result r{};
+    __asm {
+        lea eax,r
+        mov [eax],esp
+        mov [eax+8],ebp
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        mov [eax+16],ebx
+        mov [eax+24],esi
+        mov [eax+32],edi
+        mov ecx,fn
+        call ecx
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    r.event_count=event_count;
+    std::memcpy(r.events,events,sizeof(events));
+    r.contexts=porsche::application_heap_contexts;
+    r.runtime=porsche::application_heap_runtime;
+    std::memcpy(r.nodes,nodes,sizeof(nodes));
+    std::memcpy(r.replacement,replacement_selectors,sizeof(replacement_selectors));
+    r.diagnostic_source=porsche::application_diagnostic_source_005deb74;
+    r.diagnostic_line=porsche::application_diagnostic_line_005deb78;
+    r.default_arena=word(porsche::application_default_arena_005deb98);
+    r.getters_ok=getters_ok();
+    return r;
+}
+static U replace_abs(unsigned char* body,U size,U old,const void* replacement) {
+    U found=0;
+    for(U i=0;i+4<=size;++i)
+      if(*reinterpret_cast<U*>(body+i)==old) {
+        *reinterpret_cast<U*>(body+i)=word(replacement);
+        ++found;i+=3;
+      }
+    return found;
+}
+static bool replace_call(unsigned char* body,U original_va,U call_va,U target_va,const void* replacement) {
+    auto* call=body+(call_va-original_va);
+    if(call[0]!=0xe8 || call_va+5+*reinterpret_cast<std::int32_t*>(call+1)!=target_va) return false;
+    *reinterpret_cast<U*>(call+1)=word(replacement)-word(call+5);
+    return true;
+}
+static bool replace_jump(unsigned char* body,U original_va,U target_va,const void* replacement) {
+    if(body[0]!=0xe9 || original_va+5+*reinterpret_cast<std::int32_t*>(body+1)!=target_va) return false;
+    *reinterpret_cast<U*>(body+1)=word(replacement)-word(body+5);
+    return true;
+}
+static const char printf_label[]="NFSPrintf";
+static void* system_info_slot=reinterpret_cast<void*>(&get_system_info_raw);
+static void* diagnostic_slot=reinterpret_cast<void*>(&diagnostic_raw);
+static U __stdcall virtual_free_raw(void* p,U bytes,U mode) {
+    return porsche::application_virtual_free(p,bytes,mode);
+}
+static void* virtual_free_slot=reinterpret_cast<void*>(&virtual_free_raw);
+static bool static_state_check() {
+    using namespace porsche;
+    const U original_default[10]={0x6af374,0x59e9c0,0x59e9c0,0x59e9b0,0x59e9c0,0,
+                                   0x59e9c0,0x59e9c0,0x59e9c0,0x59e9c0};
+    const U original_live[10]={0x6af374,0x531f70,0x531f90,0x569640,0x5aef20,0,
+                                0x556640,0x556650,0x556680,0x569ad0};
+    if(std::memcmp(default_header_bytes,original_default,40)!=0 ||
+       std::memcmp(live_header_bytes,original_live,40)!=0) return false;
+    const U mapped_default[10]={word(application_heap_runtime.selectors),
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0)),
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0)),
+        word(reinterpret_cast<void*>(&application_heap_identity_0059e9b0)),
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0)),0,
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0)),
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0)),
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0)),
+        word(reinterpret_cast<void*>(&application_heap_zero_0059e9c0))};
+    const U mapped_live[10]={word(application_heap_runtime.selectors),
+        word(reinterpret_cast<void*>(&application_allocator_entry_00531f70)),
+        word(reinterpret_cast<void*>(&free_00531f90)),
+        word(reinterpret_cast<void*>(&resize_00569640)),
+        word(reinterpret_cast<void*>(&application_heap_block_005aef20)),0,
+        word(reinterpret_cast<void*>(&install_paths_size_00556640)),
+        word(reinterpret_cast<void*>(&heap_name_00556650)),
+        word(reinterpret_cast<void*>(&application_heap_tag_00556680)),
+        word(reinterpret_cast<void*>(&application_heap_measure_00569ad0))};
+    return std::memcmp(application_heap_contexts.defaults.header,mapped_default,40)==0 &&
+        std::memcmp(application_heap_contexts.live.header,mapped_live,40)==0 &&
+        application_heap_contexts.current==&application_heap_contexts.defaults &&
+        application_heap_contexts.selectors==application_heap_runtime.selectors &&
+        application_context_heap_state_005e4fe8()==&application_heap_contexts.defaults &&
+        context_selector_pointer_005e4fec()==application_heap_runtime.selectors &&
+        application_context_heap_selector_005e4fec()==0;
+}
+int main() {
+    if(!static_state_check()) {std::puts("static state/header mismatch");return 92;}
+    image=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE));
+    if(!image)return 90;
+    auto* queue=image;auto* init=image+0x400;auto* object=image+0x800;
+    auto* shutdown=image+0xc00;auto* wrapper=image+0xe00;
+    auto* identity=image+0xf00;auto* zero=image+0xf10;
+    std::memcpy(queue,queue_bytes,sizeof(queue_bytes));
+    std::memcpy(init,init_bytes,sizeof(init_bytes));
+    std::memcpy(object,object_bytes,sizeof(object_bytes));
+    std::memcpy(shutdown,shutdown_bytes,sizeof(shutdown_bytes));
+    std::memcpy(wrapper,wrapper_bytes,sizeof(wrapper_bytes));
+    std::memcpy(identity,identity_bytes,sizeof(identity_bytes));
+    std::memcpy(zero,zero_bytes,sizeof(zero_bytes));
+    using namespace porsche;
+    bool patched=true;
+    patched&=replace_abs(queue,116,0x5e4fec,&application_heap_contexts.selectors)==1;
+    patched&=replace_abs(queue,116,0x5e4fe8,&application_heap_contexts.current)==2;
+    patched&=replace_call(queue,0x59edb0,0x59ede2,0x5322b0,reinterpret_cast<void*>(&enter_raw));
+    patched&=replace_call(queue,0x59edb0,0x59ee18,0x5322c0,reinterpret_cast<void*>(&leave_raw));
+    patched&=replace_abs(init,324,0x5b21b0,&system_info_slot)==1;
+    patched&=replace_abs(init,324,0x6af3f8,&application_heap_runtime.page)==1;
+    patched&=replace_abs(init,324,0x6af3f4,&application_heap_runtime.initialized)==1;
+    patched&=replace_abs(init,324,0x5e4fe8,&application_heap_contexts.current)==2;
+    patched&=replace_abs(init,324,0x5e4728,application_heap_contexts.live.records)==1;
+    patched&=replace_abs(init,324,0x5e4700,&application_heap_contexts.live)==1;
+    patched&=replace_abs(init,324,0x6af3b4,&application_heap_runtime.primary_arena)==1;
+    patched&=replace_abs(init,324,0x6af3fc,&application_heap_runtime.object_heap)==2;
+    patched&=replace_abs(init,324,0x5deb74,&shared_runtime_word_005deb74)==1;
+    patched&=replace_abs(init,324,0x5deb78,&shared_runtime_word_005deb78)==1;
+    patched&=replace_abs(init,324,0x5debf0,&diagnostic_slot)==1;
+    patched&=replace_abs(init,324,0x5e4ff0,printf_label)==1;
+    patched&=replace_call(init,0x59e9d0,0x59e9d6,0x55f320,reinterpret_cast<void*>(&application_os_start));
+    patched&=replace_call(init,0x59e9d0,0x59ea10,0x53c290,reinterpret_cast<void*>(&application_fill));
+    patched&=replace_call(init,0x59e9d0,0x59ea1a,0x5321f0,reinterpret_cast<void*>(&application_lock_create));
+    patched&=replace_call(init,0x59e9d0,0x59ea3c,0x59ed40,reinterpret_cast<void*>(&application_page_alloc_0059ed40));
+    patched&=replace_call(init,0x59e9d0,0x59ea57,0x5aef80,reinterpret_cast<void*>(&application_heap_commit));
+    patched&=replace_call(init,0x59e9d0,0x59ea73,0x59ebc0,object);
+    patched&=replace_call(init,0x59e9d0,0x59eab1,0x55eba0,reinterpret_cast<void*>(&application_secondary_start));
+    for(U va: {0x59eabau,0x59eac3u,0x59eaccu}) patched&=replace_call(init,0x59e9d0,va,0x55ecd0,reinterpret_cast<void*>(&application_queue_kind));
+    patched&=replace_call(init,0x59e9d0,0x59ead8,0x55f150,reinterpret_cast<void*>(&application_printf_start));
+    for(U va: {0x59eae1u,0x59eaeau}) patched&=replace_call(init,0x59e9d0,va,0x55ef90,reinterpret_cast<void*>(&application_heap_kind));
+    patched&=replace_call(init,0x59e9d0,0x59eafb,0x5679f0,reinterpret_cast<void*>(&application_heap_finish));
+    patched&=replace_abs(object,122,0x5e4fec,&application_heap_contexts.selectors)==1;
+    patched&=replace_abs(object,122,0x6af3b4,&application_heap_runtime.primary_arena)==1;
+    patched&=replace_call(object,0x59ebc0,0x59ebc2,0x569a70,reinterpret_cast<void*>(&object_slot_raw));
+    patched&=replace_call(object,0x59ebc0,0x59ebeb,0x59ed40,reinterpret_cast<void*>(&application_page_alloc_0059ed40));
+    patched&=replace_call(object,0x59ebc0,0x59ec2d,0x5697f0,reinterpret_cast<void*>(&heap_init_005697f0));
+    patched&=replace_abs(shutdown,159,0x6af3f4,&application_heap_runtime.initialized)==1;
+    patched&=replace_abs(shutdown,159,0x6af3fc,&application_heap_runtime.object_heap)==2;
+    patched&=replace_abs(shutdown,159,0x5e4fec,&application_heap_contexts.selectors)==2;
+    patched&=replace_abs(shutdown,159,0x6af3b4,&application_heap_runtime.primary_arena)==4;
+    patched&=replace_abs(shutdown,159,0x5e4fe8,&application_heap_contexts.current)==1;
+    patched&=replace_abs(shutdown,159,0x5e3e18,&application_heap_contexts.defaults)==1;
+    patched&=replace_abs(shutdown,159,0x5b2148,&virtual_free_slot)==1;
+    patched&=replace_call(shutdown,0x59eb20,0x59eb2f,0x5678f0,reinterpret_cast<void*>(&application_pool_shutdown_005678f0));
+    patched&=replace_call(shutdown,0x59eb20,0x59eb34,0x55ec30,reinterpret_cast<void*>(&application_heap_secondary_stop_0055ec30));
+    patched&=replace_call(shutdown,0x59eb20,0x59eb5a,0x59ee30,reinterpret_cast<void*>(&application_heap_queue_clean_0059ee30));
+    patched&=replace_call(shutdown,0x59eb20,0x59eb70,0x5699f0,reinterpret_cast<void*>(&application_heap_destroy_005699f0));
+    patched&=replace_jump(wrapper,0x4a54e0,0x59eb20,shutdown);
+    if(!patched) {std::puts("original relocation mismatch");return 91;}
+    FlushInstructionCache(GetCurrentProcess(),image,4096);
+    for(U selected_mode=0;selected_mode<5;++selected_mode)
+      for(U raw_slot: {0u,0xffffffffu})
+      for(U count: {0u,1u,2u}) {
+        reset(selected_mode,raw_slot);
+        Result original=invoke(queue,count,raw_slot);
+        reset(selected_mode,raw_slot);
+        Result recovered=invoke(reinterpret_cast<const void*>(&porsche::startup_queue_0059edb0),count,raw_slot);
+        if(!same(original,recovered)) {
+            std::printf("divergence queue mode=%u slot=%08x count=%u events=%u/%u abi=%u/%u\n",
+                selected_mode,raw_slot,count,original.event_count,recovered.event_count,abi(original),abi(recovered));
+            return 10;
+        }
+        ++cases;
+      }
+    for(U selected_mode=0;selected_mode<8;++selected_mode)
+      for(U via_wrapper=0;via_wrapper<2;++via_wrapper) {
+        shutdown_reset(selected_mode);
+        Result original=invoke_shutdown(via_wrapper?wrapper:shutdown);
+        shutdown_reset(selected_mode);
+        Result recovered=invoke_shutdown(via_wrapper?
+            reinterpret_cast<const void*>(&application_main_function_004a54e0):
+            reinterpret_cast<const void*>(&application_heap_shutdown_0059eb20));
+        if(!same(original,recovered)) {
+            std::printf("divergence shutdown mode=%u wrapper=%u events=%u/%u abi=%u/%u\n",
+                selected_mode,via_wrapper,original.event_count,recovered.event_count,abi(original),abi(recovered));
+            return 10;
+        }
+        ++cases;
+      }
+    for(U scenario=0;scenario<4;++scenario)
+      for(U switch_manager=0;switch_manager<2;++switch_manager)
+      for(U primary: {0u,1u,0x12345u,0x400000u}) {
+        const U object_size=scenario==1?0u:0x2345u;
+        init_reset(scenario!=0,scenario==3,switch_manager!=0);
+        Result original=invoke_init(init,primary,object_size,0x36,0x59);
+        init_reset(scenario!=0,scenario==3,switch_manager!=0);
+        Result recovered=invoke_init(reinterpret_cast<const void*>(&porsche::startup_heap_0059e9d0),primary,object_size,0x36,0x59);
+        if(!same(original,recovered)) {
+            std::printf("divergence init scenario=%u switch=%u primary=%08x events=%u/%u abi=%u/%u\n",
+                scenario,switch_manager,primary,original.event_count,recovered.event_count,abi(original),abi(recovered));
+            return 10;
+        }
+        ++cases;
+      }
+    for(U slot: {3u,4u,16u})for(U success=0;success<2;++success)
+      for(U queue_slot: {0u,0xffffffffu,0xfffffff0u})
+      for(U locked: {0u,0x100u,0x101u,0xffffffffu})
+      for(U bytes: {0u,1u,0x12345u}) {
+        object_reset(slot,success!=0);
+        Result original=invoke_object(object,bytes,queue_slot,locked,8);
+        object_reset(slot,success!=0);
+        Result recovered=invoke_object(reinterpret_cast<const void*>(&porsche::application_object_start),bytes,queue_slot,locked,8);
+        if(!same(original,recovered)||original.eax!=recovered.eax) {
+            std::printf("divergence object slot=%u success=%u queue=%08x locked=%08x bytes=%u EAX=%08x/%08x events=%u/%u abi=%u/%u\n",
+                slot,success,queue_slot,locked,bytes,original.eax,recovered.eax,
+                original.event_count,recovered.event_count,abi(original),abi(recovered));
+            return 10;
+        }
+        ++cases;
+      }
+    for(U a: {0u,1u,0x80000000u,0xffffffffu,0x12345678u})
+      for(U b: {0u,1u,0x80000000u,0xffffffffu,0x12345678u})
+      for(U kind=0;kind<2;++kind) {
+        reset(0,0);
+        Result original=invoke(kind?zero:identity,a,b);
+        reset(0,0);
+        Result recovered=invoke(kind?
+            reinterpret_cast<const void*>(&application_heap_zero_0059e9c0):
+            reinterpret_cast<const void*>(&application_heap_identity_0059e9b0),a,b);
+        if(!same(original,recovered)||original.eax!=recovered.eax) {
+            std::printf("divergence primitive kind=%u a=%08x b=%08x EAX=%08x/%08x\n",
+                kind,a,b,original.eax,recovered.eax);
+            return 10;
+        }
+        ++cases;
+      }
+    std::printf("cases=%u state_init_queue_object_shutdown_original_vs_cpp=PASS\n",cases);
+    return cases==344?0:93;
+}

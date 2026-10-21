@@ -48,3 +48,5 @@ iterations/v2/001-original-recovery/runs/288-game-startup-bindings/validation.js
 iterations/v2/001-original-recovery/runs/290-frame-service-cluster/original-oracles.json -text whitespace=cr-at-eol
 # Preserve the raw native receipt already hashed by the selective PR audit.
 iterations/v2/001-original-recovery/runs/310-pr-intake-integration/native-002.json -text whitespace=cr-at-eol
+# Preserve the reviewed callback-map bytes pinned by Run340 acceptance.
+iterations/v2/001-original-recovery/runs/340-heap-context-state/callback-map.json -text whitespace=cr-at-eol

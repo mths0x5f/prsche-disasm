@@ -1,34 +1,37 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current339,2026-10-21:174 TUs/8 projects compile;258 names/283 refs,noEXE.
-Two existing startup/context ABI views pass584 O2 transport cases/four mutations;
-173timer/143context proof reused. No new original algorithms or providers.
-Two names closed, one timer diagnostic seam exposed;447-pin shared audit PASS.
-REA339: four function dossiers/two data contexts, unchanged private PE copy.
-One compact-context gpt-6-sol/medium worker;339 complete, no active assignments.
-Commands/evidence: runs/339-startup-context-batch/README.md. Shared runners now
-consume native/build/acceptance/query configs instead of per-packet script copies.
+Current340, 2026-10-21: canonical heap/context state integrated. 175 C++ TUs/
+8 projects compile,259 unresolved names/274 refs; noEXE or game execution.
+688 original-byte native comparisons (/Od,/O2), seven mutation controls and
+450-input shared audit PASS. Three new original bodies, three existing bodies
+corrected; accepted311 shutdown wrapper reused. Full details/commands:
+runs/340-heap-context-state/README.md and acceptance.json.
 
-Next340: canonical heap/context state unification (not isolated getters).
-- Source evidence:005e4fe8 initially005e3e18, live manager005e4700; each manager
-  header40+16pools*140=2280B. Selector pointer005e4fec initially006af374.
-- Confirmed defect: application_heap.cpp startup_heap0059e9d0 omits the original
-  live-manager pointer publication at0059ea06 and initializes detached records.
-  Reset at0059eba8 belongs to shutdown. See339heap-evidence/REA,303cutpoints.
-- Own one shared manager/pool/selector/arena model; preserve initial callback
-  relocation/identity, mutable pointer publication/reset and pool address formula
-  mode*-140+40. Reuse existing owners; do not add zero contexts or mask indices.
-- Resolve arena/guard/page/ID aliases from303, including index16 and callback
-  replacement/reloads. Map default/live callback slots to canonical ABI bodies.
-  Scope any unsupported address domain explicitly; no guessed bounds/errors.
-- Validate original init/shutdown/state consumers together before connecting
-  getters/shutdown. Then one shared game build/audit for the subsystem batch.
+Confirmed: default/live managers005e3e18/005e4700, each40+16*140B, original
+mutable current/selector cells005e4fe8/005e4fec and BSS006af374..006af3ff share
+canonical storage. Original manager publication/reset, callback reloads,
+unmasked arena16 guard alias and low-byte locked flag pass native cutpoints.
+New named extern boundaries preserve missing callback/cleanup implementations;
+no zero-provider substitutes. REA339/340 receipt inputs are unchanged.
 
-Shared validation: audit-v2-abi-game-batch.py --config339/acceptance.json.
+Next341: recover actual surfaced heap helpers as one subsystem batch, beginning
+00556680/00569ad0/005aef20 and0055ec30/005699f0/0059ee30. Search index/owners
+first, reuse canonical heap/lock/fill and340 state. Native compare bounded child
+algorithms, then one clean game intake/audit. No expansion of the passed340proof.
+Owners: root integration; heap_callback_map_340 read-only341 evidence in
+local/experiments/v2-heap-dependencies-341/evidence.json; no production ownership.
+heap_native_340 finished and accepted; no remaining340 worker changes.
+
+Checks: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/340-heap-context-state/acceptance.json.
+Native accepted receipt: local/experiments/v2-heap-context-native-340/025/receipt.json.
+Build003 is fresh;001 failed duplicate wrapper,002 incremental, both retained.
+Old078 heap/bootstrap fixtures are historical after state ownership correction.
 Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
-Keep296/301root,303state,006ad750,ctype/stdio/OS/runtime/visual/full-game holds
-in recovery-validation-backlog.md. Root docs carry pointers, details stay here.
-Historical checkpoint entries below are not active assignments.
+Keep arbitrary-index domain, full allocator/OS/visual/game,296/301root,
+006ad750 and locale/runtime holds in recovery-validation-backlog.md.
+
+Historical checkpoints below are not active assignments.
 
 Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
 fixes, fresh receipts, shared game audit and acceptance comments complete.

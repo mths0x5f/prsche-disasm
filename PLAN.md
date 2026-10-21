@@ -1,9 +1,10 @@
 # План восстановления Porsche Unleashed
 
-Current [Run339](iterations/v2/001-original-recovery/runs/339-startup-context-batch/README.md):
-174 files compile;258 names/283 refs,noEXE. Shared audit PASS; next is canonical
-heap/context state unification. Scope and evidence: active iteration PLAN.
-339 complete; no active assignments. Older checkpoints below are historical.
+Current [Run340](iterations/v2/001-original-recovery/runs/340-heap-context-state/README.md):
+canonical heap/context state integrated;175 files compile,259 names/274 refs,
+noEXE.688 native comparisons, seven mutations and450-input audit PASS.
+Next341 recovers the surfaced heap dependencies; active iteration PLAN owns scope.
+Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
 20736 fresh native cases and six mutation controls PASS. Existing canonical
