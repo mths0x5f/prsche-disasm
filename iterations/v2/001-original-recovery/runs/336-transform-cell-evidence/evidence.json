@@ -1,0 +1,1359 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "cell_va": "006ad750",
+  "cell_rva": "002ad750",
+  "cell_bytes": 4,
+  "pe_entry_va": "005a2d1a",
+  "pe_image_size": 3026944,
+  "section": {
+    "name": ".data",
+    "rva": 1880064,
+    "virtual_size": 1008952,
+    "raw_size": 114688,
+    "raw_offset": 1880064,
+    "characteristics": "c0000040"
+  },
+  "cell_offset_in_section": "000e2750",
+  "raw_file_backed": false,
+  "zero_fill_tail_start_va": "005e7000",
+  "zero_fill_tail_end_exclusive_va": "006c1538",
+  "initial_bytes": "00000000",
+  "relocation_at_cell": false,
+  "porsche_export_directory": [
+    0,
+    0
+  ],
+  "porsche_tls_directory": [
+    0,
+    0
+  ],
+  "pe_scan_paths": 25,
+  "pe_scan_unique_hashes": 24,
+  "modules": [
+    {
+      "paths": [
+        "3DSetup/3DSetup.dll"
+      ],
+      "sha256": "31799f8af882488343b98b243900522c73775fdfd213aa613ddc80fd3656f817",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 4919,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 30
+    },
+    {
+      "paths": [
+        "3DSetup/3DSetup.exe"
+      ],
+      "sha256": "b5fcdeb7ea4f7daee7b58bedded706642497bf1763f3b1ec0c8f571bf3fafd5d",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 10465,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "_Redist/dxwebsetup.exe"
+      ],
+      "sha256": "ed79c8f65b02ed83d5db8c355328294a73dc447f08f657312bf8f3a5b40c7494",
+      "preferred_image_base": "01000000",
+      "highlow_entries": 0,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "_Redist/nGlide210_setup.exe"
+      ],
+      "sha256": "3cfcd03a923386c36685a772d24797fb78762cfbe63fe5676756091cf27da7a4",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 0,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "CD_Porsche.exe"
+      ],
+      "sha256": "c48eb45e2bb2def17e3b4d77faa049e502751975ff4bdc96fd76fe0ac44d6fcd",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 2348,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "clcd32.dll"
+      ],
+      "sha256": "cab52e367b5b05b27dc12a20a1b2425ed116df3dd68b51cf81101f0028fd82a6",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 408,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 11
+    },
+    {
+      "paths": [
+        "clokspl.exe"
+      ],
+      "sha256": "2d0c474c1279f265148b7fab973e9a475498ee2cb54b7a1aad494ad74069ef76",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 0,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "config.exe"
+      ],
+      "sha256": "8149374c3806c5420635f150f561de0a849f891add4d24bcf967d5d60f0e312e",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 0,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "dinput.dll"
+      ],
+      "sha256": "a6df5467e7e41ae5b8f029e5dec78bca1a2b67d7fca18b4a747fd25757df6d92",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 9888,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 5377
+    },
+    {
+      "paths": [
+        "dplayerx.dll"
+      ],
+      "sha256": "b8387146e44ca186a4a84752ed2ae79c054f8d054924d17ca9b99810c67780d7",
+      "preferred_image_base": "008e0000",
+      "highlow_entries": 1659,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 2
+    },
+    {
+      "paths": [
+        "Drivers/dx7/dx7z.dll"
+      ],
+      "sha256": "9e4b48c6e29191d71f9791e089f9f624c7f5cd90cc3b3728ad11e0be64b82fe6",
+      "preferred_image_base": "60000000",
+      "highlow_entries": 2450,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 45
+    },
+    {
+      "paths": [
+        "Drivers/glide3x/voodoo2z.dll",
+        "Drivers/nglide/voodoo2z.dll"
+      ],
+      "sha256": "1eefad7315ab3fc6546bfc8625dd9c9492764867898b73f6c6346c5f11d684a3",
+      "preferred_image_base": "60000000",
+      "highlow_entries": 2187,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 41
+    },
+    {
+      "paths": [
+        "Drivers/nglide/glide3x.dll"
+      ],
+      "sha256": "c637c164dfaf6b6abb5a022057be53364a8a54560054439f1f5b112575c03ced",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 23830,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 129
+    },
+    {
+      "paths": [
+        "Drivers/opengl1/opengl1z.dll"
+      ],
+      "sha256": "510fc1d2af0016cb1de25bac702d79bc430945bbbd3b041f694e40330ca639ff",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 1836,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 41
+    },
+    {
+      "paths": [
+        "Drivers/opengl3/opengl3z.dll"
+      ],
+      "sha256": "5a57e6c244ea40ea90d69cf13bd3b79144ebca0a980f1d7cb87af48197581f6f",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 2018,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 41
+    },
+    {
+      "paths": [
+        "drvmgt.dll"
+      ],
+      "sha256": "4531dbf1dee3e48b9bf2da45ba7854990287c64c73da4cf406d7f9d647256774",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 502,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 3
+    },
+    {
+      "paths": [
+        "gimme.dll"
+      ],
+      "sha256": "3a43b0f6a1608f69adc3a5009c9fe055a24e17197e85c4045c2c43e37eb75f6b",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 34697,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 1
+    },
+    {
+      "paths": [
+        "ISSkin.dll"
+      ],
+      "sha256": "25fdb94e386f8a41f10aba00ed092a91b878339f8e256a7252b11169122b0a68",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 7395,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 2
+    },
+    {
+      "paths": [
+        "mrbupd.dll"
+      ],
+      "sha256": "53caa8293f2bcac23f1f80b6f2a605f6b9cf801554fd92c09a068d2220235722",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 1622,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 71
+    },
+    {
+      "paths": [
+        "nfs5.dll"
+      ],
+      "sha256": "f24b5c82404f403645e5bc3e52d47e4dd6d19bd92613c243ac31bea285fce758",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 363,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 1
+    },
+    {
+      "paths": [
+        "nfs5.exe"
+      ],
+      "sha256": "c318af393d4c2b7071a820ca3d69e956bbd94769b6e5c2e3e49f498ecbc94906",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 0,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [
+        {
+          "file_offset": "00161d4a",
+          "mapped_va": "00561d4a",
+          "section": ".text",
+          "highlow_site": false
+        }
+      ],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": true,
+      "containing_section_names": [
+        ".data"
+      ],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "Porsche.exe"
+      ],
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 56746,
+      "exact_cell_highlow_targets": [
+        {
+          "site": "00561d4a",
+          "target": "006ad750"
+        }
+      ],
+      "exact_cell_va_literal_occurrences": [
+        {
+          "file_offset": "00161d4a",
+          "mapped_va": "00561d4a",
+          "section": ".text",
+          "highlow_site": true
+        }
+      ],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": true,
+      "containing_section_names": [
+        ".data"
+      ],
+      "export_count": 0
+    },
+    {
+      "paths": [
+        "SilentPatchNFS90s.asi"
+      ],
+      "sha256": "4c01963618be1e78375f16d8f71aebd90438b49921c97c938edef364534566cb",
+      "preferred_image_base": "10000000",
+      "highlow_entries": 2345,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 2
+    },
+    {
+      "paths": [
+        "Uninstall/unins000.exe"
+      ],
+      "sha256": "eda5509646b60c8cdb8b1eb565e27bcd5772ed64a37039fcd10fa0986b5f84d6",
+      "preferred_image_base": "00400000",
+      "highlow_entries": 0,
+      "exact_cell_highlow_targets": [],
+      "exact_cell_va_literal_occurrences": [],
+      "porsche_cell_rva_literal_occurrences": [],
+      "numeric_va_maps_in_this_image": false,
+      "containing_section_names": [],
+      "export_count": 0
+    }
+  ],
+  "exact_numeric_references_across_index": [
+    {
+      "index": "research/binary-index/ghidra/nfs5.exe-c318af393d4c/references.jsonl",
+      "references": [
+        {
+          "from_va": "00561d49",
+          "to_va": "006ad750",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "DAT_006ad750"
+        }
+      ],
+      "warning": "Numeric address matches in a separate EXE are not inter-module writer relationships."
+    },
+    {
+      "index": "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl",
+      "references": [
+        {
+          "from_va": "00561d49",
+          "to_va": "006ad750",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "DAT_006ad750"
+        }
+      ],
+      "warning": "Numeric address matches in a separate EXE are not inter-module writer relationships."
+    }
+  ],
+  "nearby_highlow_targets": [
+    {
+      "site": "00561d4a",
+      "target": "006ad750",
+      "indexed_instruction": {
+        "instruction_va": "00561d49",
+        "bytes_hex": "a150d76a00",
+        "instruction": "MOV EAX,[0x006ad750]"
+      }
+    },
+    {
+      "site": "00587bf1",
+      "target": "006ad748",
+      "indexed_instruction": {
+        "instruction_va": "00587bf0",
+        "bytes_hex": "a148d76a00",
+        "instruction": "MOV EAX,[0x006ad748]"
+      }
+    },
+    {
+      "site": "00587c00",
+      "target": "006ad748",
+      "indexed_instruction": {
+        "instruction_va": "00587bff",
+        "bytes_hex": "a348d76a00",
+        "instruction": "MOV [0x006ad748],EAX"
+      }
+    },
+    {
+      "site": "00587e54",
+      "target": "006ad748",
+      "indexed_instruction": {
+        "instruction_va": "00587e53",
+        "bytes_hex": "a148d76a00",
+        "instruction": "MOV EAX,[0x006ad748]"
+      }
+    },
+    {
+      "site": "00587e64",
+      "target": "006ad748",
+      "indexed_instruction": {
+        "instruction_va": "00587e63",
+        "bytes_hex": "a348d76a00",
+        "instruction": "MOV [0x006ad748],EAX"
+      }
+    },
+    {
+      "site": "00587ffc",
+      "target": "006ad744",
+      "indexed_instruction": {
+        "instruction_va": "00587ffb",
+        "bytes_hex": "a344d76a00",
+        "instruction": "MOV [0x006ad744],EAX"
+      }
+    },
+    {
+      "site": "00588017",
+      "target": "006ad744",
+      "indexed_instruction": {
+        "instruction_va": "00588015",
+        "bytes_hex": "8b0d44d76a00",
+        "instruction": "MOV ECX,dword ptr [0x006ad744]"
+      }
+    },
+    {
+      "site": "00589919",
+      "target": "006ad74c",
+      "indexed_instruction": {
+        "instruction_va": "00589918",
+        "bytes_hex": "a14cd76a00",
+        "instruction": "MOV EAX,[0x006ad74c]"
+      }
+    },
+    {
+      "site": "00589923",
+      "target": "006ad74c",
+      "indexed_instruction": {
+        "instruction_va": "00589922",
+        "bytes_hex": "a34cd76a00",
+        "instruction": "MOV [0x006ad74c],EAX"
+      }
+    },
+    {
+      "site": "0058992b",
+      "target": "006ad74c",
+      "indexed_instruction": {
+        "instruction_va": "00589929",
+        "bytes_hex": "89354cd76a00",
+        "instruction": "MOV dword ptr [0x006ad74c],ESI"
+      }
+    },
+    {
+      "site": "00589ac7",
+      "target": "006ad74c",
+      "indexed_instruction": {
+        "instruction_va": "00589ac5",
+        "bytes_hex": "8b354cd76a00",
+        "instruction": "MOV ESI,dword ptr [0x006ad74c]"
+      }
+    },
+    {
+      "site": "0058a198",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058a196",
+        "bytes_hex": "8b1560d76a00",
+        "instruction": "MOV EDX,dword ptr [0x006ad760]"
+      }
+    },
+    {
+      "site": "0058a1b1",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058a1af",
+        "bytes_hex": "8a1579d76a00",
+        "instruction": "MOV DL,byte ptr [0x006ad779]"
+      }
+    },
+    {
+      "site": "0058ccfe",
+      "target": "006ad754",
+      "indexed_instruction": {
+        "instruction_va": "0058ccfc",
+        "bytes_hex": "8b1554d76a00",
+        "instruction": "MOV EDX,dword ptr [0x006ad754]"
+      }
+    },
+    {
+      "site": "0058cd0f",
+      "target": "006ad758",
+      "indexed_instruction": {
+        "instruction_va": "0058cd0d",
+        "bytes_hex": "8b0d58d76a00",
+        "instruction": "MOV ECX,dword ptr [0x006ad758]"
+      }
+    },
+    {
+      "site": "0058cd27",
+      "target": "006ad754",
+      "indexed_instruction": {
+        "instruction_va": "0058cd26",
+        "bytes_hex": "a354d76a00",
+        "instruction": "MOV [0x006ad754],EAX"
+      }
+    },
+    {
+      "site": "0058cd2f",
+      "target": "006ad758",
+      "indexed_instruction": {
+        "instruction_va": "0058cd2d",
+        "bytes_hex": "893558d76a00",
+        "instruction": "MOV dword ptr [0x006ad758],ESI"
+      }
+    },
+    {
+      "site": "0058e594",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e593",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058e664",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e663",
+        "bytes_hex": "6860d76a00",
+        "instruction": "PUSH 0x6ad760"
+      }
+    },
+    {
+      "site": "0058e680",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e67e",
+        "bytes_hex": "892d60d76a00",
+        "instruction": "MOV dword ptr [0x006ad760],EBP"
+      }
+    },
+    {
+      "site": "0058e69b",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e699",
+        "bytes_hex": "892d60d76a00",
+        "instruction": "MOV dword ptr [0x006ad760],EBP"
+      }
+    },
+    {
+      "site": "0058e6b6",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e6b5",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058e6c6",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e6c4",
+        "bytes_hex": "8b0d60d76a00",
+        "instruction": "MOV ECX,dword ptr [0x006ad760]"
+      }
+    },
+    {
+      "site": "0058e6d0",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e6cf",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058e70d",
+      "target": "006ad778",
+      "indexed_instruction": {
+        "instruction_va": "0058e70b",
+        "bytes_hex": "880d78d76a00",
+        "instruction": "MOV byte ptr [0x006ad778],CL"
+      }
+    },
+    {
+      "site": "0058e71c",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e71b",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058e737",
+      "target": "006ad764",
+      "indexed_instruction": {
+        "instruction_va": "0058e736",
+        "bytes_hex": "6864d76a00",
+        "instruction": "PUSH 0x6ad764"
+      }
+    },
+    {
+      "site": "0058e74e",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058e74b",
+        "bytes_hex": "0fbe1579d76a00",
+        "instruction": "MOVSX EDX,byte ptr [0x006ad779]"
+      }
+    },
+    {
+      "site": "0058e75d",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e75c",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058e770",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058e76e",
+        "bytes_hex": "892d60d76a00",
+        "instruction": "MOV dword ptr [0x006ad760],EBP"
+      }
+    },
+    {
+      "site": "0058e785",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058e783",
+        "bytes_hex": "8a0d79d76a00",
+        "instruction": "MOV CL,byte ptr [0x006ad779]"
+      }
+    },
+    {
+      "site": "0058eacc",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058eacb",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058eb77",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058eb75",
+        "bytes_hex": "c60579d76a0001",
+        "instruction": "MOV byte ptr [0x006ad779],0x1"
+      }
+    },
+    {
+      "site": "0058eb81",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058eb80",
+        "bytes_hex": "a079d76a00",
+        "instruction": "MOV AL,[0x006ad779]"
+      }
+    },
+    {
+      "site": "0058ebcf",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058ebcd",
+        "bytes_hex": "881d79d76a00",
+        "instruction": "MOV byte ptr [0x006ad779],BL"
+      }
+    },
+    {
+      "site": "0058ec6b",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058ec6a",
+        "bytes_hex": "6860d76a00",
+        "instruction": "PUSH 0x6ad760"
+      }
+    },
+    {
+      "site": "0058ecb9",
+      "target": "006ad77c",
+      "indexed_instruction": {
+        "instruction_va": "0058ecb7",
+        "bytes_hex": "891d7cd76a00",
+        "instruction": "MOV dword ptr [0x006ad77c],EBX"
+      }
+    },
+    {
+      "site": "0058ecde",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058ecdc",
+        "bytes_hex": "8b1560d76a00",
+        "instruction": "MOV EDX,dword ptr [0x006ad760]"
+      }
+    },
+    {
+      "site": "0058eced",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058ecec",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058ed2e",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058ed2d",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058ed38",
+      "target": "006ad764",
+      "indexed_instruction": {
+        "instruction_va": "0058ed37",
+        "bytes_hex": "6864d76a00",
+        "instruction": "PUSH 0x6ad764"
+      }
+    },
+    {
+      "site": "0058ed66",
+      "target": "006ad764",
+      "indexed_instruction": {
+        "instruction_va": "0058ed65",
+        "bytes_hex": "a164d76a00",
+        "instruction": "MOV EAX,[0x006ad764]"
+      }
+    },
+    {
+      "site": "0058eee1",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058eee0",
+        "bytes_hex": "bf68d76a00",
+        "instruction": "MOV EDI,0x6ad768"
+      }
+    },
+    {
+      "site": "0058eef8",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058eef7",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058efa0",
+      "target": "006ad779",
+      "indexed_instruction": {
+        "instruction_va": "0058ef9e",
+        "bytes_hex": "381d79d76a00",
+        "instruction": "CMP byte ptr [0x006ad779],BL"
+      }
+    },
+    {
+      "site": "0058f033",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f031",
+        "bytes_hex": "891d60d76a00",
+        "instruction": "MOV dword ptr [0x006ad760],EBX"
+      }
+    },
+    {
+      "site": "0058f04f",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f04d",
+        "bytes_hex": "891d60d76a00",
+        "instruction": "MOV dword ptr [0x006ad760],EBX"
+      }
+    },
+    {
+      "site": "0058f080",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f07f",
+        "bytes_hex": "bd68d76a00",
+        "instruction": "MOV EBP,0x6ad768"
+      }
+    },
+    {
+      "site": "0058f0fb",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f0fa",
+        "bytes_hex": "be68d76a00",
+        "instruction": "MOV ESI,0x6ad768"
+      }
+    },
+    {
+      "site": "0058f131",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f130",
+        "bytes_hex": "bf68d76a00",
+        "instruction": "MOV EDI,0x6ad768"
+      }
+    },
+    {
+      "site": "0058f15d",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f15c",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058f167",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f166",
+        "bytes_hex": "6868d76a00",
+        "instruction": "PUSH 0x6ad768"
+      }
+    },
+    {
+      "site": "0058f177",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f176",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058f1b8",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f1b7",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058f1c8",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f1c7",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058f1f6",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f1f5",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058f206",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f204",
+        "bytes_hex": "c70560d76a0000000000",
+        "instruction": "MOV dword ptr [0x006ad760],0x0"
+      }
+    },
+    {
+      "site": "0058f221",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f220",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058f2a0",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f29f",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058f5d2",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f5d1",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058f5df",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f5de",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058f8f1",
+      "target": "006ad760",
+      "indexed_instruction": {
+        "instruction_va": "0058f8f0",
+        "bytes_hex": "a160d76a00",
+        "instruction": "MOV EAX,[0x006ad760]"
+      }
+    },
+    {
+      "site": "0058f904",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f903",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058f92f",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058f92e",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058fa0d",
+      "target": "006ad778",
+      "indexed_instruction": {
+        "instruction_va": "0058fa0b",
+        "bytes_hex": "8a0d78d76a00",
+        "instruction": "MOV CL,byte ptr [0x006ad778]"
+      }
+    },
+    {
+      "site": "0058fa50",
+      "target": "006ad77c",
+      "indexed_instruction": {
+        "instruction_va": "0058fa4e",
+        "bytes_hex": "8b0d7cd76a00",
+        "instruction": "MOV ECX,dword ptr [0x006ad77c]"
+      }
+    },
+    {
+      "site": "0058fa5f",
+      "target": "006ad77c",
+      "indexed_instruction": {
+        "instruction_va": "0058fa5d",
+        "bytes_hex": "890d7cd76a00",
+        "instruction": "MOV dword ptr [0x006ad77c],ECX"
+      }
+    },
+    {
+      "site": "0058fa79",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058fa76",
+        "bytes_hex": "8b04b568d76a00",
+        "instruction": "MOV EAX,dword ptr [ESI*0x4 + 0x6ad768]"
+      }
+    },
+    {
+      "site": "0058faba",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058fab9",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058faff",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058fafc",
+        "bytes_hex": "8b04b568d76a00",
+        "instruction": "MOV EAX,dword ptr [ESI*0x4 + 0x6ad768]"
+      }
+    },
+    {
+      "site": "0058fb2f",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058fb2e",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058fb9f",
+      "target": "006ad768",
+      "indexed_instruction": {
+        "instruction_va": "0058fb9e",
+        "bytes_hex": "a168d76a00",
+        "instruction": "MOV EAX,[0x006ad768]"
+      }
+    },
+    {
+      "site": "0058fcd1",
+      "target": "006ad77c",
+      "indexed_instruction": {
+        "instruction_va": "0058fcd0",
+        "bytes_hex": "a17cd76a00",
+        "instruction": "MOV EAX,[0x006ad77c]"
+      }
+    },
+    {
+      "site": "0058fcee",
+      "target": "006ad77c",
+      "indexed_instruction": {
+        "instruction_va": "0058fced",
+        "bytes_hex": "a37cd76a00",
+        "instruction": "MOV [0x006ad77c],EAX"
+      }
+    },
+    {
+      "site": "0058fd13",
+      "target": "006ad77c",
+      "indexed_instruction": {
+        "instruction_va": "0058fd12",
+        "bytes_hex": "a37cd76a00",
+        "instruction": "MOV [0x006ad77c],EAX"
+      }
+    }
+  ],
+  "nearby_symbols": [
+    {
+      "va": "006ad744",
+      "name": "DAT_006ad744",
+      "type": "Label",
+      "source": "DEFAULT",
+      "external": false
+    },
+    {
+      "va": "006ad748",
+      "name": "DAT_006ad748",
+      "type": "Label",
+      "source": "DEFAULT",
+      "external": false
+    },
+    {
+      "va": "006ad74c",
+      "name": "DAT_006ad74c",
+      "type": "Label",
+      "source": "DEFAULT",
+      "external": false
+    },
+    {
+      "va": "006ad750",
+      "name": "DAT_006ad750",
+      "type": "Label",
+      "source": "DEFAULT",
+      "external": false
+    },
+    {
+      "va": "006ad754",
+      "name": "DAT_006ad754",
+      "type": "Label",
+      "source": "DEFAULT",
+      "external": false
+    },
+    {
+      "va": "006ad758",
+      "name": "DAT_006ad758",
+      "type": "Label",
+      "source": "DEFAULT",
+      "external": false
+    }
+  ],
+  "nearby_indexed_references": [
+    {
+      "from_va": "00561d49",
+      "to_va": "006ad750",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad750"
+    },
+    {
+      "from_va": "00587bf0",
+      "to_va": "006ad748",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad748"
+    },
+    {
+      "from_va": "00587bff",
+      "to_va": "006ad748",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad748"
+    },
+    {
+      "from_va": "00587e53",
+      "to_va": "006ad748",
+      "from_function": "00587de0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad748"
+    },
+    {
+      "from_va": "00587e63",
+      "to_va": "006ad748",
+      "from_function": "00587de0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad748"
+    },
+    {
+      "from_va": "00587ffb",
+      "to_va": "006ad744",
+      "from_function": "00587ff0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad744"
+    },
+    {
+      "from_va": "00588015",
+      "to_va": "006ad744",
+      "from_function": "00588010",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad744"
+    },
+    {
+      "from_va": "00589918",
+      "to_va": "006ad74c",
+      "from_function": "005898f0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad74c"
+    },
+    {
+      "from_va": "00589922",
+      "to_va": "006ad74c",
+      "from_function": "005898f0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad74c"
+    },
+    {
+      "from_va": "00589929",
+      "to_va": "006ad74c",
+      "from_function": "005898f0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad74c"
+    },
+    {
+      "from_va": "00589ac5",
+      "to_va": "006ad74c",
+      "from_function": "005898f0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad74c"
+    },
+    {
+      "from_va": "0058ccfc",
+      "to_va": "006ad754",
+      "from_function": "0058ccf0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad754"
+    },
+    {
+      "from_va": "0058cd0d",
+      "to_va": "006ad758",
+      "from_function": "0058ccf0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad758"
+    },
+    {
+      "from_va": "0058cd26",
+      "to_va": "006ad754",
+      "from_function": "0058ccf0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad754"
+    },
+    {
+      "from_va": "0058cd2d",
+      "to_va": "006ad758",
+      "from_function": "0058ccf0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006ad758"
+    }
+  ],
+  "known_consumer": {
+    "instruction_va": "00561d49",
+    "operand_va": "00561d4a",
+    "instruction": "MOV EAX,[006ad750]",
+    "transform_abi": "void* __cdecl(void* buffer, const char* saved_path, uint32 saved_flags)",
+    "call_va": "00561d5c",
+    "caller_cleanup_bytes": 12,
+    "original_contract_packet": "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/evidence.json",
+    "original_storage_observation": {
+      "va": "006ad750",
+      "bytes": 4,
+      "section": ".data",
+      "raw_file_backed": false,
+      "initial_bytes": "00000000",
+      "known_indexed_references": [
+        {
+          "from_va": "00561d49",
+          "to_va": "006ad750",
+          "type": "READ",
+          "source": "DEFAULT",
+          "target_symbol": "DAT_006ad750"
+        }
+      ],
+      "accepted_storage_owner": "UNKNOWN",
+      "setter_or_all_indirect_writers": "UNKNOWN",
+      "warning": "The single indexed absolute read does not prove the absence of aliased/bulk writes."
+    }
+  },
+  "coverage": {
+    "pe_paths": 25,
+    "source_coverage_counts": {
+      "total_paths": 26,
+      "unique_hashes": 25,
+      "indexed_paths": 25,
+      "missing_paths": 0,
+      "partial_paths": 0,
+      "timeout_paths": 0,
+      "static_failure_paths": 1,
+      "unresolved_target_paths": 24
+    },
+    "gaps": [
+      "indexed references do not cover all computed aliases, bulk writes or generated code",
+      "HIGHLOW scan covers stored absolute operands, not base-plus-offset calculations",
+      "raw constant matches are candidates, not proof of instruction/data semantics",
+      "separate executable numeric matches do not prove a shared runtime image"
+    ]
+  },
+  "accepted_storage_owner": null,
+  "complete_layout_proved": false,
+  "writer_coverage_complete": false,
+  "proposed_production_provider": null,
+  "production_storage_authorized": false,
+  "next_trace": {
+    "target_rva": "002ad750",
+    "method": "From main-image mapping before initialization, watch all writes to loaded_image_base+002ad750 through startup and resource-open flows; record writer instruction/module/thread/old-new DWORD and containing write extent.",
+    "consumer_breakpoints": [
+      "loaded_image_base+00161d49",
+      "loaded_image_base+00161d5c"
+    ],
+    "acceptance_limit": "No observed write in sampled runs is bounded runtime evidence, not a proof of immutable zero or complete ownership."
+  },
+  "input_sha256": {
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "local/game/3DSetup/3DSetup.dll": "31799f8af882488343b98b243900522c73775fdfd213aa613ddc80fd3656f817",
+    "local/game/3DSetup/3DSetup.exe": "b5fcdeb7ea4f7daee7b58bedded706642497bf1763f3b1ec0c8f571bf3fafd5d",
+    "local/game/_Redist/dxwebsetup.exe": "ed79c8f65b02ed83d5db8c355328294a73dc447f08f657312bf8f3a5b40c7494",
+    "local/game/_Redist/nGlide210_setup.exe": "3cfcd03a923386c36685a772d24797fb78762cfbe63fe5676756091cf27da7a4",
+    "local/game/CD_Porsche.exe": "c48eb45e2bb2def17e3b4d77faa049e502751975ff4bdc96fd76fe0ac44d6fcd",
+    "local/game/clcd32.dll": "cab52e367b5b05b27dc12a20a1b2425ed116df3dd68b51cf81101f0028fd82a6",
+    "local/game/clokspl.exe": "2d0c474c1279f265148b7fab973e9a475498ee2cb54b7a1aad494ad74069ef76",
+    "local/game/config.exe": "8149374c3806c5420635f150f561de0a849f891add4d24bcf967d5d60f0e312e",
+    "local/game/dinput.dll": "a6df5467e7e41ae5b8f029e5dec78bca1a2b67d7fca18b4a747fd25757df6d92",
+    "local/game/dplayerx.dll": "b8387146e44ca186a4a84752ed2ae79c054f8d054924d17ca9b99810c67780d7",
+    "local/game/Drivers/dx7/dx7z.dll": "9e4b48c6e29191d71f9791e089f9f624c7f5cd90cc3b3728ad11e0be64b82fe6",
+    "local/game/Drivers/glide3x/voodoo2z.dll": "1eefad7315ab3fc6546bfc8625dd9c9492764867898b73f6c6346c5f11d684a3",
+    "local/game/Drivers/nglide/glide3x.dll": "c637c164dfaf6b6abb5a022057be53364a8a54560054439f1f5b112575c03ced",
+    "local/game/Drivers/nglide/voodoo2z.dll": "1eefad7315ab3fc6546bfc8625dd9c9492764867898b73f6c6346c5f11d684a3",
+    "local/game/Drivers/opengl1/opengl1z.dll": "510fc1d2af0016cb1de25bac702d79bc430945bbbd3b041f694e40330ca639ff",
+    "local/game/Drivers/opengl3/opengl3z.dll": "5a57e6c244ea40ea90d69cf13bd3b79144ebca0a980f1d7cb87af48197581f6f",
+    "local/game/drvmgt.dll": "4531dbf1dee3e48b9bf2da45ba7854990287c64c73da4cf406d7f9d647256774",
+    "local/game/gimme.dll": "3a43b0f6a1608f69adc3a5009c9fe055a24e17197e85c4045c2c43e37eb75f6b",
+    "local/game/ISSkin.dll": "25fdb94e386f8a41f10aba00ed092a91b878339f8e256a7252b11169122b0a68",
+    "local/game/mrbupd.dll": "53caa8293f2bcac23f1f80b6f2a605f6b9cf801554fd92c09a068d2220235722",
+    "local/game/nfs5.dll": "f24b5c82404f403645e5bc3e52d47e4dd6d19bd92613c243ac31bea285fce758",
+    "local/game/nfs5.exe": "c318af393d4c2b7071a820ca3d69e956bbd94769b6e5c2e3e49f498ecbc94906",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "local/game/SilentPatchNFS90s.asi": "4c01963618be1e78375f16d8f71aebd90438b49921c97c938edef364534566cb",
+    "local/game/Uninstall/unins000.exe": "eda5509646b60c8cdb8b1eb565e27bcd5772ed64a37039fcd10fa0986b5f84d6",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/binary-index/ghidra/nfs5.exe-c318af393d4c/references.jsonl": "e64ea9f1b09fecae7a73f82ca3b037439c081e8d4b3067c4627b10c5fd2c8779",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/symbols.jsonl": "249e707b5b253cb5c0fd8818c54b144349d14fc73de294f34b7b72153295f4f0",
+    "research/binary-index/coverage.json": "d33605293be8a3bac3fa32ed72152f6cc672c210b8cecfd7ccf590fbac89657a",
+    "iterations/v2/001-original-recovery/runs/327-resource-open-callback-evidence/evidence.json": "8f58f1f08f9ea852db39990a61011053ec35e1b96236e6ad5490ca173b4db16d",
+    "scripts/research/audit-v2-transform-cell-336.py": "dee127f8b3f301a42a98e0a42df6fc248a999f90b0e2d27ec793f58a4eaeaa50"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "source": "local/game/Porsche.exe",
+    "index": [
+      "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl",
+      "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm"
+    ],
+    "rea": "local/experiments/v2-secondary-heap-343-rea/001"
+  },
+  "index_queries": [
+    "0055eba0|0055ec30|0055ecd0|0055ef90|0055f150|006a57cc",
+    "005df4a0|005e1c8c|005e1c88|00586ca0|00586cb0|00586cc0",
+    "0055ed20|0055ed50|0055efd0|0055f060|005a3050"
+  ],
+  "functions": [
+    {"va":"0055eba0","size":134,"sha256":"217b93ba7da60e371db725ae2985e2915b52764c18cf445af49baa1ede51afbd","rea":"secondary-start.json","abi":"cdecl void()","facts":"guard==0 writes 1 before four bounded physical table loops; calls 0055ef90(2,1) then 0055ecd0(1,1)","calls":["0055ec14:0055ef90","0055ec1d:0055ecd0"]},
+    {"va":"0055ec30","size":20,"sha256":"cff600936754a11377cea54f0fedec83f6ccf7dad2925ea58b03e4f110c1a064","rea":"secondary-stop.json","abi":"cdecl void()","facts":"reads DWORD 006a57cc; writes DWORD 0 only when nonzero"},
+    {"va":"0055ecd0","size":72,"sha256":"d25b570413714b84c4826264136d56e5cf6a0bb8f8be843a5af9386bb91aada8","rea":"queue-kind.json","abi":"cdecl void(uint32,uint32)","facts":"tests callback DWORD at 005e1c8c+index*12 before lazy start; then child setter and PRINT_DEVICE environment/parser","calls":["0055ecec:0055eba0","0055ecf7:0055ed20","0055ed01:005a3050","0055ed0e:0055ed50"]},
+    {"va":"0055ef90","size":54,"sha256":"9378c6cfbad9dce323ed58e4c09b039e1cfefd87733067deea5a729af5f107dc","rea":"heap-kind.json","abi":"cdecl void(uint32,uint32)","facts":"lazy start; child setter then PRINT_CHANNEL environment/parser","calls":["0055ef99:0055eba0","0055efa8:0055efd0","0055efb2:005a3050","0055efbf:0055f060"]},
+    {"va":"0055f150","size":54,"sha256":"69999dccc52bb7a5ac12a51b8992ff34a16d4cf0cfd0aafc27c58f4cfae63456","rea":"printf-start.json","abi":"cdecl void(uint32,const char*)","facts":"lazy start; writes pointer DWORD to 005df4a0+index*8 before PRINT_CHANNEL environment/parser","calls":["0055f159:0055eba0","0055f172:005a3050","0055f17f:0055f060"]}
+  ],
+  "physical_data": {
+    "device_image": {"va":"005e1c88","size":100,"sha256":"e49beea73e6c359cfc94833853bf0884d9533b74f5e4ba0ea181715e1c0ed3a4","view":"DWORD name prefix followed by eight 12-byte callback/flags/following-name records at +4","initial_tail_word":"005e1ce8=00000001; this is record[7].name in the selected interior view, not flags","relocations_HIGHLOW":["005e1c88","005e1c8c","005e1c94","005e1c98","005e1ca0","005e1ca4"]},
+    "channel_table": {"va":"005df4a0","size":512,"sha256":"15681a00395e8c07815ade7041b17cc27357bf0b41b24c5c3b2be9e4ecedccf2","view":"64 8-byte name/flags records; first 16 names relocated and flags 2 except index 2 flag 3; remaining bytes zero","relocations_HIGHLOW":["005df4a0","005df4a8","005df4b0","005df4b8","005df4c0","005df4c8","005df4d0","005df4d8","005df4e0","005df4e8","005df4f0","005df4f8","005df500","005df508","005df510","005df518"]},
+    "device_strings": {"va":"005c1588","size":25,"sha256":"a812a27994b1f9c42db12b0e7bb331217c0d41bdc9541aa6ebad85c0bd0a7151","interior_strings":{"005c1588":"debugger","005c1594":"console","005c159c":"mono"}},
+    "channel_strings": {"va":"005bcbe4","size":162,"sha256":"f0e00c8b58eb37c8b480623841bf53532c96a88d8dcfb298f81575bbc7494f07","interior_aliases":{"005bcc60":"all","005bcc64":"PRINT_DEVICE","005bcc78":"PRINT_CHANNEL"}},
+    "guard": {"va":"006a57cc","size":4,"section":".data virtual BSS tail","initial":0,"indexed_references":8,"writes":["0055ebab=1","0055ec39=0"],"other_reference":"0055ec50 reads same DWORD"}
+  },
+  "abi_boundaries": [
+    {"va":"0055ed20","prototype":"void __cdecl (uint32,uint32)","evidence":"0055ecd0 pushes two DWORDs and caller pops eight"},
+    {"va":"0055ed50","prototype":"void __cdecl (const char*)","evidence":"0055ecd0 pushes environment pointer and caller pops four"},
+    {"va":"0055efd0","prototype":"void __cdecl (uint32,uint32)","evidence":"0055ef90 pushes two DWORDs and caller pops eight"},
+    {"va":"0055f060","prototype":"void __cdecl (const char*)","evidence":"0055ef90 and 0055f150 push environment pointer and caller pop four"},
+    {"va":"005a3050","prototype":"const char* __cdecl (const char*)","evidence":"both PRINT_* literals passed as one DWORD; returned EAX tested and forwarded; caller pops four"},
+    {"va":"00586ca0/00586cb0/00586cc0","prototype":"void __cdecl (uint32,const char*)","evidence":"consumer 0055ec50 calls callback at 005e1c8c+12*i with channel DWORD and formatted buffer pointer; caller pops eight; raw PE callbacks have RET, not RET imm"}
+  ],
+  "canonical_owner_check": "No accepted source/recovered C++ body or table owner for these five VAs or diagnostic images before run345; generic ABI declarations in source/include/porsche/application_heap.hpp and the stop declaration in application_heap_state.hpp are reused. Generated Run181/188 COFF candidates are not accepted canonical owners.",
+  "native": {"receipt":"local/experiments/v2-diagnostic-devices-native-345/005/receipt.json","status":"PASS","variants":["/Od","/O2"],"cases_per_variant":18,"mutations_detected":4,"initial_data_check":"raw PE 100/512-byte images and 25/162-byte string spans compared before case seeding after address relocation; guard BSS zero checked","checks":"ESP/nonvolatile registers, event order, guard and all table bytes; children are controlled probes; callback stubs fail closed"},
+  "remaining_boundaries": "Five child bodies and three callback bodies are ABI-bound only; parser/environment semantics and unbounded invalid index behavior remain unrecovered. The five selected wrappers do not clamp indices."
+}

@@ -1,5 +1,27 @@
 # Работа в проекте
 
+## Lean recovery workflow (2026-10-21)
+
+- Batch related functions and proven ABI bindings by subsystem; avoid a new run,
+  agent, bespoke runner and audit for every small function. Do not enlarge a
+  passed batch just to improve its count; put later work in the next batch.
+- Reuse native harnesses, shared manifest/hash caches and manifest-driven REA.
+  Add only the new oracle/case logic. New general tooling must replace repeated
+  work immediately; do not pause recovery for a broad framework rewrite.
+- Keep original comparisons and required checks. Reuse unchanged accepted proof;
+  build/audit integration once per batch. Repeat only for changed inputs, failures
+  or a specific unresolved concern. Generated JSON is an artifact, not prose to
+  copy into chat or manually regenerate for cosmetic metadata.
+- One active iteration PLAN owns detailed scope, evidence, commands and next
+  steps. Root PLAN, STATUS and README get brief current pointers, not duplicated
+  histories or full packet reports. One concise handoff per completed batch.
+- Usually use 1–2 workers on independent module batches. Start new agents with
+  compact context and file ownership, not the full conversation. Use adequate
+  model/effort; reserve stronger reasoning for ambiguous reverse engineering.
+- Prioritize closing real game dependencies and verified subsystem integration.
+  Fidelity, provenance, immutable originals and explicit unresolved boundaries
+  remain mandatory; reducing paperwork does not permit guessed implementations.
+
 ## Восстановление оригинала — основной метод
 
 - Решение пользователя 2026-10-04 действует для всего проекта и старого кода:

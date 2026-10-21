@@ -1,0 +1,27 @@
+{
+  "run": 339,
+  "source": "iterations/v2/001-original-recovery/runs/339-startup-context-batch/startup_context_bindings.cpp",
+  "header": "iterations/v2/001-original-recovery/runs/339-startup-context-batch/startup_context_bindings.hpp",
+  "fixture": "iterations/v2/001-original-recovery/runs/339-startup-context-batch/native_fixture.cpp",
+  "experiment": "local/experiments/v2-startup-context-339",
+  "summary": "iterations/v2/001-original-recovery/runs/339-startup-context-batch/binding-summary.json",
+  "cases": 584,
+  "proofs": [
+    {"path": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/timer-setup/verification.json", "cases": 9, "entry_va": "00565030"},
+    {"path": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/context-effects/verification.json", "cases": 24, "entry_va": "004237d0"}
+  ],
+  "expected_defined": [
+    "?startup_capacity_00565030@porsche@@YAXI@Z",
+    "?game_setup_movie_delta_004237d0@porsche@@YAXPAXII@Z"
+  ],
+  "expected_undefined": [
+    "?timer_setup_00565030@porsche@@YAXI@Z",
+    "?application_context_clear_004237d0@porsche@@YAXPAXII@Z"
+  ],
+  "mutations": [
+    {"name":"timer-wrong-callee", "old":"timer_setup_00565030(interval);", "new":"application_context_clear_004237d0(nullptr, interval, 0);"},
+    {"name":"context-wrong-callee", "old":"application_context_clear_004237d0(begin, bytes, mode);", "new":"timer_setup_00565030(bytes);"},
+    {"name":"context-swapped-size-mode", "old":"application_context_clear_004237d0(begin, bytes, mode);", "new":"application_context_clear_004237d0(begin, mode, bytes);"},
+    {"name":"context-wrong-pointer", "old":"application_context_clear_004237d0(begin, bytes, mode);", "new":"application_context_clear_004237d0(nullptr, bytes, mode);"}
+  ]
+}

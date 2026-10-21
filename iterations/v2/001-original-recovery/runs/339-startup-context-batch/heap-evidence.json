@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "queries": "005e4fe8/005e4fec;0059e9d0/0059eb20;004211d0/004237d0",
+  "rea_receipt": "local/experiments/v2-startup-context-339-rea/001/receipt.json",
+  "rea_receipt_sha256": "db17f7d1fb8392ac5134da20b195f3c7d959881970886cf46f35da5543bbf3f1",
+  "manager_pointer": {
+    "cell_va": "005e4fe8",
+    "initial_target_va": "005e3e18",
+    "indexed_reads": 390,
+    "indexed_writes": [
+      "0059ea06",
+      "0059eba8"
+    ]
+  },
+  "selector_pointer": {
+    "cell_va": "005e4fec",
+    "initial_target_va": "006af374",
+    "indexed_reads": 20,
+    "indexed_writes": []
+  },
+  "confirmed_layout": {
+    "default_manager_va": "005e3e18",
+    "live_manager_va": "005e4700",
+    "manager_bytes": 2280,
+    "header_bytes": 40,
+    "pool_count": 16,
+    "pool_stride": 140,
+    "pool_bytes": 2240,
+    "selector_count": 16
+  },
+  "findings": [
+    "0059e9d0 publishes live manager005e4700 before clearing its pool area005e4728..005e4fe7 and creating16 locks atstride140.",
+    "0059eb20 restores defaultmanager005e3e18 after shutdown; selector pointer is reloaded after callbacks.",
+    "004211d0/004237d0 address pool with modular mode*-140+40; selector addressing uses mode*-4. Negative slot identifiers select successive records. Do not replace with masked indices.",
+    "Current application_heap.cpp initializes standalone application_heap_records and omits the live-manager publication. Its consumer identity/layout is unaccepted, not repaired by defining a zero context.",
+    "Selector/arena/guard overlap from303 persists, including arena index16 alias to006af3f4."
+  ],
+  "next_batch": "Unify one canonical context-manager/pool/selector/arena state model; preserve physical pointer-cell identities and publish/reset effects; validate original initialization/shutdown and alias cutpoints before connecting state getters.",
+  "production_provider_added": false,
+  "holds": [
+    "Default/live callback relocation and typed consumers must be mapped to existing owners.",
+    "Unmasked or callback-mutated selector/arena values need explicit storage-domain evidence; no clamping or new zero provider.",
+    "This is static/REA evidence, not original runtime or full initialization acceptance."
+  ],
+  "input_sha256": {
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap.cpp": "12169d888a52230053ceb8e28d406c6a533d5f4be16c53b3c97a4ea488b428c5",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp": "8deea392280ea118486a9174b2053a7190e29de26b34a6f95f7c5a085cd0b8a7",
+    "iterations/v2/001-original-recovery/runs/303-heap-shutdown-bridge/README.md": "87905421390ed7536f196e54355a2bef84fdba489ad636c81a866812badc3d22"
+  }
+}

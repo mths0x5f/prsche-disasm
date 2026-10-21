@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 122,
+  "entry_vas": [
+    "0059ee30",
+    "005699f0"
+  ],
+  "new_original_functions": 2,
+  "mutation_controls": 7,
+  "native_receipt": "local/experiments/v2-heap-dependencies-native-341/001/receipt.json",
+  "native_receipt_sha256": "b3b8273716fb6b2893250041f7b0c3b08681ce43791871e771e5d534667d5813",
+  "scope": "Bounded input domains with fixture-controlled extern data/callees. Canonical production state ownership remains Run340; no whole allocator/game acceptance.",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/native-config.json": "7eead48f2b33eaf043e4197b82ac6ca822f098497ec180ca4cd07b9078bf97f5",
+    "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp": "4a5519a3b132dbeabd84edabca59cc871c065134656edfbc439ea46cd53cfbe1",
+    "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/native-fixture.cpp.in": "512dbd888470f48483dcb5b0810ec2d2a0346822679dc277520eb4a139255726",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp": "3e3bd34f871c0146d2b379a7d7d6a8a4134e0fe6403c199b7404fb863d8bda3e",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "0a81eebdef41820d773e553a061eda3c9a117aba88d1b42afc7a42a6fd6497ee",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap_locks.hpp": "2aadb26f89cdf7ee84259187e6087d33beb3e9b969ac9a9885919429f4d6b92e",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f"
+  }
+}

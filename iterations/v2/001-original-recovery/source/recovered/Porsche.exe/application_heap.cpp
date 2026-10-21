@@ -1,17 +1,11 @@
 #include "porsche/application_heap.hpp"
+#include "porsche/application_heap_state.hpp"
 #include <cstddef>
 
 namespace porsche {
-std::uint32_t application_page_size_006af3f8=0;
-std::uint8_t application_heap_initialized_006af3f4=0;
-void* application_primary_arena_006af3b4=nullptr;
-std::int32_t application_object_heap_006af3fc=0;
-std::uint8_t application_heap_records[0x8c0]{};
-void* application_queue_indices[16]{};
-
+const char application_heap_queue_source_005e5064[10]="FastBlock";
 namespace {
 constexpr std::uint32_t record_stride=0x8c;
-void*& record_pointer(std::size_t offset){return *reinterpret_cast<void**>(application_heap_records+offset);}
 }
 
 // 0059ed40..0059ed8a. The original reads SYSTEM_INFO.dwPageSize once, then
@@ -41,9 +35,13 @@ void __cdecl startup_heap_0059e9d0(std::uint32_t primary_bytes,
     application_os_start(0);
     application_page_size_006af3f8=application_system_page_size();
     application_heap_initialized_006af3f4=1;
+    application_heap_contexts.current=&application_heap_contexts.live;
     application_fill(application_heap_records,0,0x8c0);
-    for(std::size_t i=0;i<16;++i)
-        record_pointer(i*record_stride)=application_lock_create();
+    for(std::uint32_t i=0;i<16;++i){
+        auto* lock=application_lock_create();
+        application_heap_store(application_heap_address(application_heap_contexts.current,
+            0x28u+i*record_stride),application_heap_word(lock));
+    }
     application_primary_arena_006af3b4=application_page_alloc_0059ed40(&primary_bytes);
     if(application_primary_arena_006af3b4){
         application_heap_commit(application_primary_arena_006af3b4,primary_bytes);
@@ -74,17 +72,19 @@ void __cdecl startup_heap_0059e9d0(std::uint32_t primary_bytes,
 // 0059edb0..0059ee23. Startup uses slot zero. The original indexes the
 // record and 16-entry table backwards for negative slot IDs.
 void __cdecl startup_queue_0059edb0(std::uint32_t count,std::uint32_t slot){
-    const auto index=static_cast<std::uint32_t>(-static_cast<std::int32_t>(slot));
-    auto* record=application_heap_records+index*record_stride;
-    void* lock=*reinterpret_cast<void**>(record);
-    void* heap=application_queue_indices[index];
+    auto* record=application_heap_address(application_heap_contexts.current,0x28u-slot*record_stride);
+    void* lock=application_heap_pointer(application_heap_load(record));
+    const auto heap=application_heap_load(application_heap_address(application_heap_contexts.selectors,0u-slot*4u));
     application_lock_enter(lock);
     for(std::uint32_t i=0;i<count;++i){
-        void* node=application_queue_allocate(0x005e5064,0x1000,heap);
-        *reinterpret_cast<void**>(static_cast<std::uint8_t*>(node)+4)=
-            *reinterpret_cast<void**>(record+4);
-        *reinterpret_cast<void**>(record+4)=node;
+        using Allocate=void* (__cdecl*)(const char*,std::uint32_t,std::uint32_t);
+        const auto allocate=reinterpret_cast<Allocate>(application_heap_pointer(
+            application_heap_load(application_heap_address(application_heap_contexts.current,4))));
+        void* node=allocate(application_heap_queue_source_005e5064,0x1000,heap);
+        application_heap_store(application_heap_address(node,4),
+            application_heap_load(application_heap_address(record,4)));
+        application_heap_store(application_heap_address(record,4),application_heap_word(node));
     }
-    application_lock_leave(lock);
+    application_lock_leave(application_heap_pointer(application_heap_load(record)));
 }
 }

@@ -1,0 +1,253 @@
+#include "resource_open_334.hpp"
+#include "porsche/files.hpp"
+#include "porsche/fe_stream.hpp"
+#include "porsche/shared_runtime_globals.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+using U=std::uint32_t;
+using porsche::ResourceAtomicContext;
+static_assert(sizeof(void*)==4,"original x86 ABI");
+static const unsigned char wrapper_bytes[63]={@WRAPPER@};
+static const unsigned char callback_bytes[276]={@CALLBACK@};
+static const char kSource[]="\\real\\cmn\\hlsfile.c";
+static const char kOpenFormat[]="FILE_load - unable to open file %s\n";
+static const char kAllocFormat[]="FILE_load - unable to reserve memory for file %s\n";
+struct Event { U tag,a,b,c,d,e; };
+struct Scene {
+    unsigned char left[32],arena[160],right[32];
+    char path_a[32],path_b[32];
+    ResourceAtomicContext context;
+};
+static Scene scene;
+static Event events[32];static U count,variant,open_ok,alloc_ok,transform_mode;
+static U mutation,group_seed,flags_seed,read_result;
+static std::int32_t size_value;
+static ResourceAtomicContext* current_context;
+static void** handle_slot;
+static U ctx_after[3];
+static unsigned char* slab;
+static U checks,cases;
+static U word(const void* p) {return reinterpret_cast<U>(p);}
+static void record(U tag,U a=0,U b=0,U c=0,U d=0,U e=0) {
+    if(count>=32)ExitProcess(97);
+    events[count++]={tag,a,b,c,d,e};
+}
+static void* __cdecl transform_a(void*,const char*,U);
+static void* __cdecl transform_b(void*,const char*,U);
+namespace porsche {
+ResourceOpenTransform resource_open_transform_006ad750;
+void (__cdecl* diagnostic_handler_005debf0)(const char*);
+}
+static void mutate(U stage) {
+    if(mutation==stage && current_context) {
+        current_context->path=scene.path_b;
+        current_context->opaque_08=flags_seed^0xabcdef01u;
+        current_context->callback_diagnostic_flag^=1u;
+    }
+    if(mutation==10+stage)porsche::resource_open_transform_006ad750=&transform_b;
+    if(mutation==20+stage)porsche::resource_open_transform_006ad750=nullptr;
+}
+extern "C" U __cdecl open_raw(const char* path,U mode,U group,void** handle) {
+    record(3,word(path),mode,group,word(*handle));
+    handle_slot=handle;*handle=reinterpret_cast<void*>(0x12345000u);
+    mutate(3);return open_ok;
+}
+extern "C" void __cdecl diagnostic_raw(const char* format,const char* path) {
+    U which=std::strcmp(format,kOpenFormat)==0?1u:std::strcmp(format,kAllocFormat)==0?2u:0u;
+    const char* source=porsche::diagnostic_file_005deb74();
+    record(9,which,word(path),porsche::diagnostic_line_005deb78,
+        source && std::strcmp(source,kSource)==0?1u:0u);
+    if(mutation==30 && handle_slot)*handle_slot=reinterpret_cast<void*>(0x76543000u);
+    mutate(9);
+}
+namespace porsche {
+__declspec(naked) void __cdecl diagnostic_entry_334(const char*) {
+    __asm {jmp diagnostic_raw}
+}
+__declspec(naked) bool __cdecl file_open_00533b90(const char*,U,U,void**) {
+    __asm {jmp open_raw}
+}
+std::int32_t __cdecl size_00533de0(void* handle,U group) {
+    record(4,word(handle),group);mutate(4);return size_value;
+}
+void* __cdecl allocate_00531ca0(const char* name,std::int32_t bytes,U flags) {
+    record(5,word(name),static_cast<U>(bytes),flags);mutate(5);
+    return alloc_ok?scene.arena+48:nullptr;
+}
+U __cdecl read_00533bf0(void* handle,U offset,void* buffer,U bytes,U group) {
+    record(6,word(handle),offset,word(buffer),bytes,group);
+    for(U i=0;i<17;++i)static_cast<unsigned char*>(buffer)[i]=static_cast<unsigned char>(0x30+i);
+    mutate(6);return read_result;
+}
+U __cdecl close_00533da0(void* handle,U group) {
+    record(7,word(handle),group);mutate(7);return 0xfeedbabeu;
+}
+U __cdecl free_00531f90(void* buffer) {
+    record(8,word(buffer));mutate(8);return 0x33445566u;
+}
+U __cdecl file_device_name_00568e90(const char* path) {
+    record(1,word(path),resource_leaf_group_005df770);
+    if(mutation==1)resource_leaf_group_005df770^=0x55aa55aau;
+    return 0x19;
+}
+std::int32_t __cdecl resource_leaf_atomic_dispatch_00568d50(
+    ResourceLeafAtomicCallback callback,U device,U group,void* context) {
+    current_context=static_cast<ResourceAtomicContext*>(context);
+    // +04 is deliberately never read: it is uninitialized in the wrapper.
+    const U identity=(word(reinterpret_cast<const void*>(callback))==word(slab+0x100) ||
+        callback==&resource_open_callback_00561ce0)?0x561ce0u:0u;
+    record(2,identity,device,group,word(current_context->path),current_context->opaque_08);
+    record(12,current_context->callback_diagnostic_flag);
+    mutate(2);
+    const std::int32_t result=callback(group,context);
+    ctx_after[0]=word(current_context->path);
+    ctx_after[1]=current_context->opaque_08;
+    ctx_after[2]=current_context->callback_diagnostic_flag;
+    return result;
+}
+}
+static void* transformed(void* buffer,const char* path,U flags,U id) {
+    record(10,id,word(buffer),word(path),flags);
+    if(mutation==8)porsche::resource_open_transform_006ad750=nullptr;
+    if(transform_mode==1)return nullptr;
+    if(transform_mode==2)return buffer;
+    return reinterpret_cast<void*>(id==1?0x80001001u:0xf1234567u);
+}
+static void* __cdecl transform_a(void* b,const char* p,U f) {return transformed(b,p,f,1);}
+static void* __cdecl transform_b(void* b,const char* p,U f) {return transformed(b,p,f,2);}
+struct Result {
+    U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;
+    U count,group,transform,diag_source,diag_line,after[3];
+    Scene state; Event events[32];
+};
+static void setup(U seed) {
+    std::memset(&scene,0xcc,sizeof(scene));
+    std::strcpy(scene.path_a,"original.fsh");std::strcpy(scene.path_b,"changed.fsh");
+    scene.context.path=scene.path_a;
+    scene.context.opaque_04=0xccccccccu;
+    scene.context.opaque_08=flags_seed;
+    scene.context.callback_diagnostic_flag=seed&1u;
+    porsche::resource_leaf_group_005df770=group_seed;
+    porsche::resource_open_transform_006ad750=variant==0?nullptr:&transform_a;
+    porsche::diagnostic_handler_005debf0=&porsche::diagnostic_entry_334;
+    porsche::shared_runtime_word_005deb74=0;
+    porsche::diagnostic_line_005deb78=0;
+    current_context=&scene.context;handle_slot=nullptr;count=0;
+    for(U i=0;i<3;++i)ctx_after[i]=0;
+}
+static Result invoke(const void* fn,U a,U b) {
+    Result r{};
+    __asm {
+        lea eax,r
+        mov [eax+0],esp
+        mov [eax+8],ebp
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        mov [eax+16],ebx
+        mov [eax+24],esi
+        mov [eax+32],edi
+        mov eax,b
+        push eax
+        mov eax,a
+        push eax
+        mov ecx,fn
+        call ecx
+        add esp,8
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    r.count=count;r.group=porsche::resource_leaf_group_005df770;
+    r.transform=porsche::resource_open_transform_006ad750==nullptr?0:
+        porsche::resource_open_transform_006ad750==&transform_a?1:2;
+    const char* source=porsche::diagnostic_file_005deb74();
+    r.diag_source=source?(std::strcmp(source,kSource)==0?1u:2u):0u;
+    r.diag_line=porsche::diagnostic_line_005deb78;
+    for(U i=0;i<3;++i)r.after[i]=ctx_after[i];
+    std::memcpy(&r.state,&scene,sizeof(scene));
+    for(U i=0;i<count;++i)r.events[i]=events[i];
+    return r;
+}
+static bool abi(const Result& r) {
+    return r.esp0==r.esp1 && r.ebp0==r.ebp1 && r.ebx0==r.ebx1 &&
+        r.esi0==r.esi1 && r.edi0==r.edi1;
+}
+static bool same(const Result&a,const Result&b) {
+    ++checks;if(!abi(a)||!abi(b))return false;
+    ++checks;if(a.eax!=b.eax)return false;
+    ++checks;if(std::memcmp(&a.count,&b.count,sizeof(Result)-offsetof(Result,count))!=0)return false;
+    ++checks;
+    for(U i=0;i<32;++i)if(a.state.left[i]!=0xcc||a.state.right[i]!=0xcc)return false;
+    ++checks;
+    for(U i=0;i<160;++i)if((i<48||i>=65)&&a.state.arena[i]!=0xcc)return false;
+    return true;
+}
+static bool abs_patch(unsigned char* body,U off,U old,const void* target) {
+    if(*reinterpret_cast<U*>(body+off)!=old)return false;
+    *reinterpret_cast<U*>(body+off)=word(target);return true;
+}
+static bool rel_patch(unsigned char* body,U va,U off,U old,const void* target) {
+    if(body[off]!=0xe8 || va+off+5+*reinterpret_cast<U*>(body+off+1)!=old)return false;
+    *reinterpret_cast<U*>(body+off+1)=word(target)-word(body+off+5);return true;
+}
+int main() {
+    slab=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));
+    if(!slab)return 90;
+    std::memcpy(slab,wrapper_bytes,63);std::memcpy(slab+0x100,callback_bytes,276);
+    using namespace porsche;
+    bool ok=true;
+    ok&=abs_patch(slab,0x11,0x5df770,&resource_leaf_group_005df770);
+    ok&=abs_patch(slab,0x32,0x561ce0,slab+0x100);
+    ok&=rel_patch(slab,0x561ca0,0x28,0x568e90,reinterpret_cast<const void*>(&file_device_name_00568e90));
+    ok&=rel_patch(slab,0x561ca0,0x36,0x568d50,reinterpret_cast<const void*>(&resource_leaf_atomic_dispatch_00568d50));
+    auto* cb=slab+0x100;
+    ok&=abs_patch(cb,0x6a,0x6ad750,&resource_open_transform_006ad750);
+    for(U off:{0xabu,0xf1u})ok&=abs_patch(cb,off,0x5deb74,&shared_runtime_word_005deb74);
+    for(U off:{0xafu,0xf5u})ok&=abs_patch(cb,off,0x5bcd00,kSource);
+    for(U off:{0xbbu,0xfbu})ok&=abs_patch(cb,off,0x5deb78,&diagnostic_line_005deb78);
+    for(U off:{0xc5u,0x105u})ok&=abs_patch(cb,off,0x5debf0,&diagnostic_handler_005debf0);
+    ok&=abs_patch(cb,0xb5,0x5bcd5c,kAllocFormat);ok&=abs_patch(cb,0xeb,0x5bcd38,kOpenFormat);
+    ok&=rel_patch(cb,0x561ce0,0x1d,0x533b90,reinterpret_cast<const void*>(&file_open_00533b90));
+    ok&=rel_patch(cb,0x561ce0,0x34,0x533de0,reinterpret_cast<const void*>(&size_00533de0));
+    ok&=rel_patch(cb,0x561ce0,0x41,0x531ca0,reinterpret_cast<const void*>(&allocate_00531ca0));
+    ok&=rel_patch(cb,0x561ce0,0x59,0x533bf0,reinterpret_cast<const void*>(&read_00533bf0));
+    for(U off:{0x64u,0xd2u})ok&=rel_patch(cb,0x561ce0,off,0x533da0,reinterpret_cast<const void*>(&close_00533da0));
+    ok&=rel_patch(cb,0x561ce0,0x88,0x531f90,reinterpret_cast<const void*>(&free_00531f90));
+    if(!ok)return 91;
+    DWORD previous=0;
+    if(!VirtualProtect(slab,4096,PAGE_EXECUTE_READ,&previous)||!FlushInstructionCache(GetCurrentProcess(),slab,4096))return 92;
+    const U groups[]={0,1,100,0x80000000u,0xffffffffu};
+    const U flags[]={0,1,0x87654321u};
+    const U mutations[]={0,1,2,3,4,5,6,7,8,9,13,14,15,16,17,23,24,25,26,27,30};
+    const std::int32_t sizes[]={0,17,-1,0x7fffffff};
+    for(U wrapper=0;wrapper<2;++wrapper)for(U diagnostic=0;diagnostic<2;++diagnostic)
+    for(U group:groups)for(U flags_value:flags)for(U stage:mutations)
+    for(U branch=0;branch<6;++branch)for(std::int32_t size:sizes) {
+        group_seed=group;flags_seed=flags_value;mutation=stage;size_value=size;
+        open_ok=branch==0?0u:1u;alloc_ok=branch==1?0u:1u;
+        variant=branch==2?0u:1u;transform_mode=branch==3?1u:branch==4?2u:3u;
+        read_result=(group^flags_value)&1?0u:0x12345678u;
+        setup(diagnostic);
+        const void* orig=wrapper?slab:cb;
+        Result a=invoke(orig,wrapper?word(scene.path_a):group,wrapper?flags_value:word(&scene.context));
+        setup(diagnostic);
+        const void* cpp=wrapper?reinterpret_cast<const void*>(&file_open_00561ca0):reinterpret_cast<const void*>(&resource_open_callback_00561ce0);
+        Result b=invoke(cpp,wrapper?word(scene.path_a):group,wrapper?flags_value:word(&scene.context));
+        if(!same(a,b)) {
+            std::printf("divergence wrapper=%u diagnostic=%u group=%08x flags=%08x mutation=%u branch=%u size=%08x EAX=%08x/%08x count=%u/%u ABI=%u/%u\n",wrapper,diagnostic,group,flags_value,stage,branch,static_cast<U>(size),a.eax,b.eax,a.count,b.count,abi(a),abi(b));
+            for(U i=0;i<a.count||i<b.count;++i)std::printf("event%u tag=%u/%u a=%08x/%08x b=%08x/%08x c=%08x/%08x d=%08x/%08x e=%08x/%08x\n",i,a.events[i].tag,b.events[i].tag,a.events[i].a,b.events[i].a,a.events[i].b,b.events[i].b,a.events[i].c,b.events[i].c,a.events[i].d,b.events[i].d,a.events[i].e,b.events[i].e);
+            return 10;
+        }
+        ++cases;
+    }
+    std::printf("cases=%u checks=%u failures=0 raw_EAX_ESP_nonvolatile_guards=PASS\n",cases,checks);
+    return cases==30240?0:93;
+}

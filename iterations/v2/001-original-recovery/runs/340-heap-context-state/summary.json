@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 688,
+  "mutation_controls": 7,
+  "new_original_functions": [
+    "0059e9b0",
+    "0059e9c0",
+    "0059eb20"
+  ],
+  "corrected_existing_functions": [
+    "0059e9d0",
+    "0059edb0",
+    "0059ebc0"
+  ],
+  "reused_wrapper": {
+    "entry_va": "004a54e0",
+    "source": "iterations/v2/001-original-recovery/runs/311-pr4-shutdown-helpers/shutdown_helpers_311.cpp"
+  },
+  "native_receipt": "local/experiments/v2-heap-context-native-340/025/receipt.json",
+  "native_receipt_sha256": "9c3b78b073d9433bd6c0c7e04a982037e327902f7bc07da813b3bc3465f137af",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/340-heap-context-state/native-config.json": "44251d1291854c6d8a2d477dd1b968238dc8e1e363b6efc88e0a4c3cb6568f9b",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_state.cpp": "28fe34aa714511432b2adead3ab255c23f6d3b01f29acddc9740ae81bc43ee3b",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap.cpp": "24f76c27012810e0d2089b09a93575ee2379f35f27f3e8a1e71105e8a5b7fc04",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_init.cpp": "b2b2af61bbaed2030df4b998fa2a9ebca81105689a5b6a2d89a32b402d629201",
+    "iterations/v2/001-original-recovery/runs/311-pr4-shutdown-helpers/shutdown_helpers_311.cpp": "093d4a5dbcafcd1eda759ce89ab0288b3a693b46f9074967166cc3a41eb22c9b",
+    "iterations/v2/001-original-recovery/runs/340-heap-context-state/native-fixture.cpp.in": "7bb2f45233353fd56bd130dddb07cb81a98b0c97b0a789f92e318b3f029d1947",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp": "3e3bd34f871c0146d2b379a7d7d6a8a4134e0fe6403c199b7404fb863d8bda3e",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "0a81eebdef41820d773e553a061eda3c9a117aba88d1b42afc7a42a6fd6497ee",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_init.hpp": "2c6b5f26a4a14efccb4425f9da5ce503e5ae25000c6e3c9de8b09615d941a7ae",
+    "iterations/v2/001-original-recovery/runs/311-pr4-shutdown-helpers/shutdown_helpers_311.hpp": "51d949ec7f4ca2f5f177e85fddb6c5042f5d50aa50c0c25e7e6e4d5165e4493f",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/context_effects.hpp": "76cacc6b99877d6e27aefbd1a7900bd4e7a3fbebe2a17689d3061cdba8185b2e",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_pool.hpp": "9317b50d1388ac677ad08a5deee3f127b0750d08f7df407785dcf30e36a89275",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/install_paths.hpp": "8fcc8eeb15e9079a2d546919709a4ae2ab0557eb26c2e41e5ac1a746cbeebd0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_main.hpp": "e6d177a4e6a340affc66f4570c8271ce1c3d8069d6dfb5d37fe8f1f40be34c0f",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_alloc.hpp": "16854c76f9a82d623b9c92a3ac84adb86652c4560d381bf870a684cb5ef42be7",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup.hpp": "9ab14c148623bf71355cce6a782b8e213c4d4e8fffbe7bc7389fee166ec874c9",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup_services.hpp": "18165f0f29be587af92f0ec1d245ee69fcdd03b2ead7b0f77be9290ff41a9720"
+  },
+  "game_build": "build-003.json",
+  "game_sources": 175,
+  "unresolved_names": 259,
+  "unresolved_references": 274,
+  "executable": null,
+  "scope": "Bounded original-byte comparisons with controlled child/OS callbacks. No full allocator, platform, arbitrary-index-domain or game acceptance.",
+  "retained_boundaries": [
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z"
+  ]
+}

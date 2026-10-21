@@ -38,6 +38,12 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 
 Checkpoint 2026-10-19, Run309 — готовый результат перед разбором PR.
 
+Current [Run346](iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/README.md):
+181 TUs/8 projects compile;252 unresolved names/269 refs,noEXE. Five diagnostic
+leaves and direct Win32 import binding integrated;100 native comparisons,four
+mutations and460-input audit PASS.347 parser/environment tracing is active.
+Older entries below describe historical checkpoints.
+
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/
 286 references, noEXE or game execution. Two original constructor/drive bodies
 plus the existing canonical search TU enter production.20736 fresh native

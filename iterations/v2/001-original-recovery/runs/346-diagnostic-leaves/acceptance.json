@@ -1,0 +1,79 @@
+{
+  "native_config": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/native-config.json",
+  "native_receipt": "local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json",
+  "native_cases": 100,
+  "build_config": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/build-config.json",
+  "build_attempt": "001",
+  "baseline": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/build-001.json",
+  "added_sources": [
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp",
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/platform_debug_output.cpp"
+  ],
+  "expected_closed_names": [
+    "?application_diagnostic_channel_set_0055efd0@porsche@@YAXII@Z",
+    "?application_diagnostic_device_callback_00586ca0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_callback_00586cb0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_callback_00586cc0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_set_0055ed20@porsche@@YAXII@Z"
+  ],
+  "expected_new_names": [
+    "?application_diagnostic_mono_format_00592a50@porsche@@YAHPBDZZ"
+  ],
+  "canonical_providers": {
+    "?platform_flush_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ": "application_heap_state.obj",
+    "?application_main_function_004a54e0@porsche@@YAXXZ": "shutdown_helpers_311.obj",
+    "?application_heap_shutdown_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?application_heap_identity_0059e9b0@porsche@@YAPAXPAXH@Z": "application_heap_state.obj",
+    "?application_heap_zero_0059e9c0@porsche@@YAIZZ": "application_heap_state.obj",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z": "heap_callbacks.obj",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z": "heap_shutdown.obj",
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z": "heap_callbacks.obj",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z": "heap_shutdown.obj",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z": "heap_callbacks.obj",
+    "?application_diagnostic_channels_005df4a0@porsche@@3PAUDiagnosticChannel@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_device_image_005e1c88@porsche@@3UDiagnosticDeviceImage@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_devices_005e1c8c@porsche@@3AAY07UDiagnosticDevice@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_started_006a57cc@porsche@@3IA": "diagnostic_devices.obj",
+    "?application_heap_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_printf_start@porsche@@YAXIPBD@Z": "diagnostic_devices.obj",
+    "?application_queue_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_secondary_start@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_fill@porsche@@YAXPAXII@Z": "fill_binding.obj",
+    "?heap_fill_0053c290@porsche@@YAXPAXII@Z": "0053c290.obj",
+    "?application_diagnostic_channel_set_0055efd0@porsche@@YAXII@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_callback_00586ca0@porsche@@YAXIPBD@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_callback_00586cb0@porsche@@YAXIPBD@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_callback_00586cc0@porsche@@YAXIPBD@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_set_0055ed20@porsche@@YAXII@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_output_debug_string@porsche@@YGXPBD@Z": "platform_debug_output.obj"
+  },
+  "evidence_sha256": {
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/evidence.json": "69c16bdb8521041ca68efc52c2389e62b4a80a2c77bf83ce944edf605ff690c2",
+    "research/binary-index/supplemental/diagnostic-callback-346.jsonl": "4e6c4a4623028bb4b0b0797b4a66dab2769d8d4c269fd65c4e41a12a90d1898b",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8"
+  },
+  "rea_sessions": [
+    {
+      "config": "iterations/v2/001-original-recovery/runs/343-secondary-heap-state/rea-queries.json",
+      "attempt": "001"
+    }
+  ],
+  "platform_import_thunks": [
+    {
+      "object": "platform_debug_output.obj",
+      "symbol": "?application_diagnostic_output_debug_string@porsche@@YGXPBD@Z",
+      "import_symbol": "__imp__OutputDebugStringA@4",
+      "index": "research/binary-index/static/imports.jsonl",
+      "original_import": {
+        "path": "Porsche.exe",
+        "dll": "KERNEL32.dll",
+        "symbol": "OutputDebugStringA",
+        "iat_rva": "0x1b2208"
+      }
+    }
+  ]
+}

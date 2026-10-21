@@ -1,0 +1,213 @@
+#include "porsche/application_heap_state.hpp"
+#include "porsche/application_heap.hpp"
+#include "porsche/heap.hpp"
+#include "porsche/heap_locks.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char queue_bytes[124]={@QUEUE_CLEAN@};
+static const unsigned char destroy_bytes[72]={@HEAP_DESTROY@};
+static unsigned char* image;
+static U mode, events_count, calls, cases, selected_index;
+struct Event {U tag,a,b,c;};
+static Event events[32];
+static U nodes[4][8];
+static porsche::OriginalHeap heap_a,heap_b;
+static U word(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void event(U tag,U a=0,U b=0,U c=0){
+    if(events_count>=32) ExitProcess(98);
+    events[events_count++]={tag,a,b,c};
+}
+static void unexpected(){std::puts("unexpected provider invoked");ExitProcess(99);}
+
+static U __cdecl free_b(void* node);
+static U __cdecl free_a(void* node){
+    event(3,word(node),calls);
+    if(mode==3 && calls==0){
+        porsche::application_heap_contexts.current=&porsche::application_heap_contexts.defaults;
+        porsche::application_heap_contexts.defaults.header[2]=word(reinterpret_cast<void*>(&free_b));
+    }
+    if(mode==5 && calls==0)nodes[2][1]=0;
+    ++calls;
+    return 0xfeed0001u;
+}
+static U __cdecl free_b(void* node){event(4,word(node),calls++);return 0xfeed0002u;}
+namespace porsche {
+ApplicationHeapContexts application_heap_contexts{};
+ApplicationHeapRuntime application_heap_runtime{};
+OriginalHeap* heaps_006b4f20[16]{};
+void __cdecl application_lock_enter(void* lock){
+    event(1,word(lock));
+    if(mode==4){
+        application_heap_contexts.current=&application_heap_contexts.defaults;
+        application_heap_contexts.defaults.header[2]=word(reinterpret_cast<void*>(&free_b));
+    }
+    if(mode==6){
+        auto* record=application_heap_address(&application_heap_contexts.live,0x28u);
+        application_heap_store(record,0x44556677u);
+    }
+}
+void __cdecl application_lock_leave(void* lock){event(2,word(lock));}
+void __cdecl heap_lock_destroy_005322d0(void* lock){
+    event(5,word(lock));
+    if(mode==12)heaps_006b4f20[selected_index]=&heap_b;
+    if(mode==14)std::memset(&heap_a,0x66,sizeof(heap_a));
+}
+void __cdecl heap_fill_0053c290(void* dst,U value,U bytes){
+    event(6,word(dst),value,bytes);
+    if(dst!=&heap_a || value!=0 || bytes!=0x40)unexpected();
+    std::memset(dst,static_cast<int>(value),bytes);
+    if(mode==13)heaps_006b4f20[selected_index]=&heap_b;
+}
+}
+struct Result {
+    U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;
+    U event_count;Event events[32];
+    porsche::ApplicationHeapContexts contexts;
+    porsche::ApplicationHeapRuntime runtime;
+    porsche::OriginalHeap* heaps[16];
+    porsche::OriginalHeap heap_a,heap_b;
+    U nodes[4][8];
+};
+static Result invoke(const void* fn,U arg){
+    Result r{};
+    __asm {
+        lea eax,r
+        mov [eax],esp
+        mov [eax+8],ebp
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        mov [eax+16],ebx
+        mov [eax+24],esi
+        mov [eax+32],edi
+        push arg
+        mov ecx,fn
+        call ecx
+        add esp,4
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    r.event_count=events_count;
+    std::memcpy(r.events,events,sizeof(events));
+    r.contexts=porsche::application_heap_contexts;
+    r.runtime=porsche::application_heap_runtime;
+    std::memcpy(r.heaps,porsche::heaps_006b4f20,sizeof(r.heaps));
+    r.heap_a=heap_a;r.heap_b=heap_b;
+    std::memcpy(r.nodes,nodes,sizeof(nodes));
+    return r;
+}
+static bool same(const Result& a,const Result& b,bool eax){
+    return a.esp0==a.esp1 && b.esp0==b.esp1 &&
+        a.ebp0==a.ebp1 && b.ebp0==b.ebp1 &&
+        a.ebx0==a.ebx1 && b.ebx0==b.ebx1 &&
+        a.esi0==a.esi1 && b.esi0==b.esi1 &&
+        a.edi0==a.edi1 && b.edi0==b.edi1 &&
+        (!eax || a.eax==b.eax) &&
+        a.event_count==b.event_count &&
+        std::memcmp(a.events,b.events,sizeof(a.events))==0 &&
+        std::memcmp(&a.contexts,&b.contexts,sizeof(a.contexts))==0 &&
+        std::memcmp(&a.runtime,&b.runtime,sizeof(a.runtime))==0 &&
+        std::memcmp(a.heaps,b.heaps,sizeof(a.heaps))==0 &&
+        std::memcmp(&a.heap_a,&b.heap_a,sizeof(a.heap_a))==0 &&
+        std::memcmp(&a.heap_b,&b.heap_b,sizeof(a.heap_b))==0 &&
+        std::memcmp(a.nodes,b.nodes,sizeof(a.nodes))==0;
+}
+static void queue_reset(U selected_mode,U selector){
+    mode=selected_mode;events_count=calls=0;std::memset(events,0,sizeof(events));
+    std::memset(&porsche::application_heap_contexts,0x6d,sizeof(porsche::application_heap_contexts));
+    std::memset(&porsche::application_heap_runtime,0,sizeof(porsche::application_heap_runtime));
+    std::memset(nodes,0xa5,sizeof(nodes));
+    porsche::application_heap_contexts.current=&porsche::application_heap_contexts.live;
+    porsche::application_heap_contexts.live.header[2]=word(reinterpret_cast<void*>(&free_a));
+    porsche::application_heap_contexts.defaults.header[2]=word(reinterpret_cast<void*>(&free_a));
+    auto* record=porsche::application_heap_address(&porsche::application_heap_contexts.live,
+        0x28u-selector*0x8cu);
+    porsche::application_heap_store(record,0x11223344u);
+    porsche::application_heap_store(porsche::application_heap_address(record,4),0);
+    porsche::application_heap_store(porsche::application_heap_address(record,8),0);
+    if(selected_mode==0)return;
+    const U count=selected_mode==1?1:3;
+    for(U i=0;i<count;++i)nodes[i][1]=i+1<count?word(nodes[i+1]):0;
+    porsche::application_heap_store(porsche::application_heap_address(record,8),word(nodes[0]));
+    if(selected_mode==7){
+        nodes[3][1]=0;
+        porsche::application_heap_store(porsche::application_heap_address(record,4),word(nodes[3]));
+    }
+}
+static void destroy_reset(U selected_mode,U index){
+    mode=selected_mode;selected_index=index;events_count=calls=0;
+    std::memset(events,0,sizeof(events));
+    std::memset(&porsche::application_heap_contexts,0,sizeof(porsche::application_heap_contexts));
+    std::memset(&porsche::application_heap_runtime,0,sizeof(porsche::application_heap_runtime));
+    std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));
+    std::memset(&heap_a,0xa5,sizeof(heap_a));
+    std::memset(&heap_b,0x5a,sizeof(heap_b));
+    if(selected_mode!=10)porsche::heaps_006b4f20[index]=&heap_a;
+    heap_a.lock=reinterpret_cast<void*>(selected_mode==11?0u:0x31415926u);
+}
+static U replace_abs(unsigned char* body,U length,U old,const void* replacement){
+    U count=0;
+    for(U i=0;i+4<=length;++i)if(*reinterpret_cast<U*>(body+i)==old){
+        *reinterpret_cast<U*>(body+i)=word(replacement);++count;i+=3;
+    }
+    return count;
+}
+static bool replace_call(unsigned char* body,U base,U at,U target,const void* replacement){
+    auto* p=body+at-base;
+    if(p[0]!=0xe8 || at+5+*reinterpret_cast<std::int32_t*>(p+1)!=target)return false;
+    *reinterpret_cast<U*>(p+1)=word(replacement)-word(p+5);
+    return true;
+}
+int main(){
+    image=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE));
+    if(!image)return 90;
+    auto* queue=image;auto* destroy=image+0x200;
+    std::memcpy(queue,queue_bytes,sizeof(queue_bytes));
+    std::memcpy(destroy,destroy_bytes,sizeof(destroy_bytes));
+    bool patched=true;
+    patched&=replace_abs(queue,124,0x5e4fe8,&porsche::application_heap_contexts.current)==2;
+    patched&=replace_call(queue,0x59ee30,0x59ee53,0x5322b0,reinterpret_cast<void*>(&porsche::application_lock_enter));
+    patched&=replace_call(queue,0x59ee30,0x59eea1,0x5322c0,reinterpret_cast<void*>(&porsche::application_lock_leave));
+    patched&=replace_abs(destroy,72,0x6b4f20,porsche::heaps_006b4f20)==2;
+    patched&=replace_call(destroy,0x5699f0,0x569a15,0x5322d0,reinterpret_cast<void*>(&porsche::heap_lock_destroy_005322d0));
+    patched&=replace_call(destroy,0x5699f0,0x569a22,0x53c290,reinterpret_cast<void*>(&porsche::heap_fill_0053c290));
+    if(!patched){std::puts("original relocation mismatch");return 91;}
+    FlushInstructionCache(GetCurrentProcess(),image,4096);
+    for(U selector:{0u,0xffffffffu})for(U selected_mode=0;selected_mode<8;++selected_mode){
+        queue_reset(selected_mode,selector);
+        Result original=invoke(queue,selector);
+        queue_reset(selected_mode,selector);
+        Result recovered=invoke(reinterpret_cast<const void*>(&porsche::application_heap_queue_clean_0059ee30),selector);
+        if(!same(original,recovered,false)){
+            std::printf("divergence queue mode=%u selector=%08x events=%u/%u\n",selected_mode,selector,original.event_count,recovered.event_count);
+            return 10;
+        }
+        ++cases;
+    }
+    for(U index:{0u,3u,15u})for(U selected_mode=10;selected_mode<=14;++selected_mode)
+      for(U high:{0u,0x80000000u,0xfffffff0u}){
+        destroy_reset(selected_mode,index);
+        Result original=invoke(destroy,index|high);
+        destroy_reset(selected_mode,index);
+        Result recovered=invoke(reinterpret_cast<const void*>(&porsche::application_heap_destroy_005699f0),index|high);
+        if(!same(original,recovered,true)){
+            std::printf("divergence destroy mode=%u index=%u high=%08x eax=%u/%u events=%u/%u\n",
+                selected_mode,index,high,original.eax,recovered.eax,original.event_count,recovered.event_count);
+            return 10;
+        }
+        ++cases;
+    }
+    std::printf("cases=%u queue_clean_heap_destroy_original_vs_cpp=PASS\n",cases);
+    return cases==61?0:93;
+}

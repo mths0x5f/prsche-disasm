@@ -1,0 +1,67 @@
+{
+  "run": 341,
+  "experiment": "local/experiments/v2-heap-dependencies-native-341",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/native-fixture.cpp.in",
+  "include_dirs": ["iterations/v2/001-original-recovery/source/include"],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap_locks.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@QUEUE_CLEAN@","va":"0059ee30","bytes":124,"sha256":"75f46c66cd561f228e1e45d402154230e7753794b22a79b97afbae0872b0feb7"},
+    {"token":"@HEAP_DESTROY@","va":"005699f0","bytes":72,"sha256":"40b19ab2730c3e09243cb92cdd0dc84c6960b851180e0ee691b4143f2c984150"}
+  ],
+  "pass_marker": "cases=61 queue_clean_heap_destroy_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name":"cached-free-manager",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"application_heap_address(application_heap_contexts.current,8)",
+      "new":"application_heap_address(&application_heap_contexts.live,8)"
+    },
+    {
+      "name":"post-free-next-read",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"callback(application_heap_pointer(node));\n        node=next;",
+      "new":"callback(application_heap_pointer(node));\n        node=application_heap_load(application_heap_address(application_heap_pointer(node),4));"
+    },
+    {
+      "name":"clear-pending-head",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"for(std::uint32_t i=0;i<16;++i)",
+      "new":"application_heap_store(application_heap_address(record,8),0);\n    for(std::uint32_t i=0;i<16;++i)"
+    },
+    {
+      "name":"cached-leave-lock",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"application_lock_leave(application_heap_pointer(application_heap_load(record)));",
+      "new":"application_lock_leave(application_heap_pointer(0x11223344u));"
+    },
+    {
+      "name":"wrong-destroy-mask",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"const auto index=id&15u;",
+      "new":"const auto index=id&7u;"
+    },
+    {
+      "name":"conditional-slot-clear",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"heaps_006b4f20[index]=nullptr;",
+      "new":"if(heaps_006b4f20[index]==heap)heaps_006b4f20[index]=nullptr;"
+    },
+    {
+      "name":"skip-heap-fill",
+      "source":"iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "old":"heap_fill_0053c290(heap,0,0x40);",
+      "new":"/* original heap fill omitted */"
+    }
+  ]
+}

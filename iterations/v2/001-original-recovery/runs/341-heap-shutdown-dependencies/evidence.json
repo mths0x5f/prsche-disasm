@@ -1,0 +1,602 @@
+{
+  "schema": 1,
+  "kind": "read-only Run 341 heap dependency preparation",
+  "module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "functions": [
+    {
+      "va": "005699f0",
+      "body_bytes": 72,
+      "raw_pe_hex": "8b4c24045683e10f5733c08b348d204f6b008d3c8d204f6b0085f674288b463885c0740950e8b688fcff83c4046a406a0056e86928fdff83c40cc70700000000b8010000005f5ec3",
+      "raw_pe_sha256": "40b19ab2730c3e09243cb92cdd0dc84c6960b851180e0ee691b4143f2c984150",
+      "section": ".text",
+      "indexed_body": [
+        {
+          "entry_va": "005699f0",
+          "body_ranges": [
+            [
+              "005699f0",
+              "00569a37"
+            ]
+          ],
+          "body_bytes": 72
+        }
+      ],
+      "canonical_body_owner": [],
+      "assembly": [
+        {
+          "va": "005699f0",
+          "bytes": "8b4c2404",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [esp + 4]"
+        },
+        {
+          "va": "005699f4",
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "va": "005699f5",
+          "bytes": "83e10f",
+          "mnemonic": "and",
+          "operands": "ecx, 0xf"
+        },
+        {
+          "va": "005699f8",
+          "bytes": "57",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "va": "005699f9",
+          "bytes": "33c0",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "va": "005699fb",
+          "bytes": "8b348d204f6b00",
+          "mnemonic": "mov",
+          "operands": "esi, dword ptr [ecx*4 + 0x6b4f20]"
+        },
+        {
+          "va": "00569a02",
+          "bytes": "8d3c8d204f6b00",
+          "mnemonic": "lea",
+          "operands": "edi, [ecx*4 + 0x6b4f20]"
+        },
+        {
+          "va": "00569a09",
+          "bytes": "85f6",
+          "mnemonic": "test",
+          "operands": "esi, esi"
+        },
+        {
+          "va": "00569a0b",
+          "bytes": "7428",
+          "mnemonic": "je",
+          "operands": "0x569a35"
+        },
+        {
+          "va": "00569a0d",
+          "bytes": "8b4638",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esi + 0x38]"
+        },
+        {
+          "va": "00569a10",
+          "bytes": "85c0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "va": "00569a12",
+          "bytes": "7409",
+          "mnemonic": "je",
+          "operands": "0x569a1d"
+        },
+        {
+          "va": "00569a14",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "va": "00569a15",
+          "bytes": "e8b688fcff",
+          "mnemonic": "call",
+          "operands": "0x5322d0"
+        },
+        {
+          "va": "00569a1a",
+          "bytes": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "va": "00569a1d",
+          "bytes": "6a40",
+          "mnemonic": "push",
+          "operands": "0x40"
+        },
+        {
+          "va": "00569a1f",
+          "bytes": "6a00",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "va": "00569a21",
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "va": "00569a22",
+          "bytes": "e86928fdff",
+          "mnemonic": "call",
+          "operands": "0x53c290"
+        },
+        {
+          "va": "00569a27",
+          "bytes": "83c40c",
+          "mnemonic": "add",
+          "operands": "esp, 0xc"
+        },
+        {
+          "va": "00569a2a",
+          "bytes": "c70700000000",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edi], 0"
+        },
+        {
+          "va": "00569a30",
+          "bytes": "b801000000",
+          "mnemonic": "mov",
+          "operands": "eax, 1"
+        },
+        {
+          "va": "00569a35",
+          "bytes": "5f",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "va": "00569a36",
+          "bytes": "5e",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "va": "00569a37",
+          "bytes": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "input_abi": "one uint32 stack argument, caller cleanup; return EAX=0 if slot null, EAX=1 after destroy",
+      "output": "index &=15; if heaps_006b4f20[index] nonnull: destroy nonnull heap+0x38 lock, fill 64-byte heap header with zero, clear heap slot, return 1; otherwise return 0",
+      "mutable_global_reads": [
+        "006b4f20[index&15] at 005699fb"
+      ],
+      "mutable_global_writes": [
+        "006b4f20[index&15]=0 at 00569a2a on nonnull path"
+      ],
+      "indirect_or_heap_reads": [
+        "heap+0x38 lock at 00569a0d"
+      ],
+      "children": [
+        {
+          "va": "005322d0",
+          "call": "00569a15",
+          "abi": "void __cdecl(void* lock), caller adds ESP,4",
+          "owner": "source/recovered/Porsche.exe/heap_locks.cpp; include/porsche/heap_locks.hpp; native-differential-verified"
+        },
+        {
+          "va": "0053c290",
+          "call": "00569a22",
+          "abi": "void __cdecl(void* dst,uint32_t value,uint32_t bytes), args (heap,0,0x40), caller adds ESP,12",
+          "owner": "include/porsche/heap.hpp declaration; probe-only definitions; no canonical recovered body"
+        }
+      ],
+      "canonical_headers": [
+        "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp",
+        "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp",
+        "iterations/v2/001-original-recovery/source/include/porsche/heap_locks.hpp"
+      ],
+      "canonical_existing_owners": [
+        "heaps_006b4f20 array and OriginalHeap layout: source/recovered/Porsche.exe/heap.cpp, include/porsche/heap.hpp",
+        "body application_heap_destroy_005699f0 remains declaration-only in application_heap_state.hpp"
+      ],
+      "rea_evidence_id": "ev_b2f691fe3eb5692ad33c0c538e8fc0410e7f4783e1e07fce4d09713ff32ce632",
+      "evidence": [
+        "PE 005699f0..00569a37",
+        "340 REA heap-slot-destroy"
+      ]
+    },
+    {
+      "va": "0059ee30",
+      "body_bytes": 124,
+      "raw_pe_hex": "8b4c2404568b35e84f5e00578d04cd000000002bc18d0480c1e0022bf083c6288b0e51e85834f9ff8b460883c40485c074138b7e048d48048bd08b01893985c089560475ed8b7e0485ff74168b15e84f5e008bc78b7f0450ff520883c40485ff75ea8d7e0cb91000000033c0f3ab8b0650e81a34f9ff83c4045f5ec3",
+      "raw_pe_sha256": "75f46c66cd561f228e1e45d402154230e7753794b22a79b97afbae0872b0feb7",
+      "section": ".text",
+      "indexed_body": [
+        {
+          "entry_va": "0059ee30",
+          "body_ranges": [
+            [
+              "0059ee30",
+              "0059eeab"
+            ]
+          ],
+          "body_bytes": 124
+        }
+      ],
+      "canonical_body_owner": [],
+      "assembly": [
+        {
+          "va": "0059ee30",
+          "bytes": "8b4c2404",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [esp + 4]"
+        },
+        {
+          "va": "0059ee34",
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "va": "0059ee35",
+          "bytes": "8b35e84f5e00",
+          "mnemonic": "mov",
+          "operands": "esi, dword ptr [0x5e4fe8]"
+        },
+        {
+          "va": "0059ee3b",
+          "bytes": "57",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "va": "0059ee3c",
+          "bytes": "8d04cd00000000",
+          "mnemonic": "lea",
+          "operands": "eax, [ecx*8]"
+        },
+        {
+          "va": "0059ee43",
+          "bytes": "2bc1",
+          "mnemonic": "sub",
+          "operands": "eax, ecx"
+        },
+        {
+          "va": "0059ee45",
+          "bytes": "8d0480",
+          "mnemonic": "lea",
+          "operands": "eax, [eax + eax*4]"
+        },
+        {
+          "va": "0059ee48",
+          "bytes": "c1e002",
+          "mnemonic": "shl",
+          "operands": "eax, 2"
+        },
+        {
+          "va": "0059ee4b",
+          "bytes": "2bf0",
+          "mnemonic": "sub",
+          "operands": "esi, eax"
+        },
+        {
+          "va": "0059ee4d",
+          "bytes": "83c628",
+          "mnemonic": "add",
+          "operands": "esi, 0x28"
+        },
+        {
+          "va": "0059ee50",
+          "bytes": "8b0e",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [esi]"
+        },
+        {
+          "va": "0059ee52",
+          "bytes": "51",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "va": "0059ee53",
+          "bytes": "e85834f9ff",
+          "mnemonic": "call",
+          "operands": "0x5322b0"
+        },
+        {
+          "va": "0059ee58",
+          "bytes": "8b4608",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esi + 8]"
+        },
+        {
+          "va": "0059ee5b",
+          "bytes": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "va": "0059ee5e",
+          "bytes": "85c0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "va": "0059ee60",
+          "bytes": "7413",
+          "mnemonic": "je",
+          "operands": "0x59ee75"
+        },
+        {
+          "va": "0059ee62",
+          "bytes": "8b7e04",
+          "mnemonic": "mov",
+          "operands": "edi, dword ptr [esi + 4]"
+        },
+        {
+          "va": "0059ee65",
+          "bytes": "8d4804",
+          "mnemonic": "lea",
+          "operands": "ecx, [eax + 4]"
+        },
+        {
+          "va": "0059ee68",
+          "bytes": "8bd0",
+          "mnemonic": "mov",
+          "operands": "edx, eax"
+        },
+        {
+          "va": "0059ee6a",
+          "bytes": "8b01",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ecx]"
+        },
+        {
+          "va": "0059ee6c",
+          "bytes": "8939",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx], edi"
+        },
+        {
+          "va": "0059ee6e",
+          "bytes": "85c0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "va": "0059ee70",
+          "bytes": "895604",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esi + 4], edx"
+        },
+        {
+          "va": "0059ee73",
+          "bytes": "75ed",
+          "mnemonic": "jne",
+          "operands": "0x59ee62"
+        },
+        {
+          "va": "0059ee75",
+          "bytes": "8b7e04",
+          "mnemonic": "mov",
+          "operands": "edi, dword ptr [esi + 4]"
+        },
+        {
+          "va": "0059ee78",
+          "bytes": "85ff",
+          "mnemonic": "test",
+          "operands": "edi, edi"
+        },
+        {
+          "va": "0059ee7a",
+          "bytes": "7416",
+          "mnemonic": "je",
+          "operands": "0x59ee92"
+        },
+        {
+          "va": "0059ee7c",
+          "bytes": "8b15e84f5e00",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [0x5e4fe8]"
+        },
+        {
+          "va": "0059ee82",
+          "bytes": "8bc7",
+          "mnemonic": "mov",
+          "operands": "eax, edi"
+        },
+        {
+          "va": "0059ee84",
+          "bytes": "8b7f04",
+          "mnemonic": "mov",
+          "operands": "edi, dword ptr [edi + 4]"
+        },
+        {
+          "va": "0059ee87",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "va": "0059ee88",
+          "bytes": "ff5208",
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 8]"
+        },
+        {
+          "va": "0059ee8b",
+          "bytes": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "va": "0059ee8e",
+          "bytes": "85ff",
+          "mnemonic": "test",
+          "operands": "edi, edi"
+        },
+        {
+          "va": "0059ee90",
+          "bytes": "75ea",
+          "mnemonic": "jne",
+          "operands": "0x59ee7c"
+        },
+        {
+          "va": "0059ee92",
+          "bytes": "8d7e0c",
+          "mnemonic": "lea",
+          "operands": "edi, [esi + 0xc]"
+        },
+        {
+          "va": "0059ee95",
+          "bytes": "b910000000",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x10"
+        },
+        {
+          "va": "0059ee9a",
+          "bytes": "33c0",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "va": "0059ee9c",
+          "bytes": "f3ab",
+          "mnemonic": "rep stosd",
+          "operands": "dword ptr es:[edi], eax"
+        },
+        {
+          "va": "0059ee9e",
+          "bytes": "8b06",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esi]"
+        },
+        {
+          "va": "0059eea0",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "va": "0059eea1",
+          "bytes": "e81a34f9ff",
+          "mnemonic": "call",
+          "operands": "0x5322c0"
+        },
+        {
+          "va": "0059eea6",
+          "bytes": "83c404",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "va": "0059eea9",
+          "bytes": "5f",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "va": "0059eeaa",
+          "bytes": "5e",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "va": "0059eeab",
+          "bytes": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "input_abi": "one signed 32-bit mode/slot argument, plain RET and caller cleanup; EAX after final child call is not a proven semantic return",
+      "output": "pool address=current_manager - (mode*140 modulo 2^32)+40; lock, splice pending list at +8 into head at +4, walk head and call current manager header+8 on each node, clear 16 DWORDs at pool+0xc, unlock. Manager is reloaded for each indirect free.",
+      "mutable_global_reads": [
+        "005e4fe8 at 0059ee35 and 0059ee7c"
+      ],
+      "mutable_global_writes": [],
+      "indirect_or_heap_reads": [
+        "pool+0 lock",
+        "pool+4 head",
+        "pool+8 pending",
+        "node+4 next"
+      ],
+      "indirect_or_heap_writes": [
+        "node+4 next relink",
+        "pool+4 head",
+        "pool+0xc..+0x4b 16 DWORD clear"
+      ],
+      "children": [
+        {
+          "va": "005322b0",
+          "call": "0059ee53",
+          "abi": "void __cdecl(void* lock), caller adds ESP,4",
+          "owner": "source/recovered/Porsche.exe/heap_locks.cpp; include/porsche/heap.hpp; native-differential-verified"
+        },
+        {
+          "va": "manager+08",
+          "call": "0059ee88",
+          "abi": "one pointer arg, caller adds ESP,4; dispatches currently selected callback (live 00531f90, default 0059e9c0)",
+          "owner": "340 canonical manager storage; live free body source/recovered/Porsche.exe/heap.cpp"
+        },
+        {
+          "va": "005322c0",
+          "call": "0059eea1",
+          "abi": "void __cdecl(void* lock), caller adds ESP,4",
+          "owner": "source/recovered/Porsche.exe/heap_locks.cpp; include/porsche/heap.hpp; native-differential-verified"
+        }
+      ],
+      "canonical_headers": [
+        "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp",
+        "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp"
+      ],
+      "canonical_existing_owners": [
+        "manager/pool bytes and pointer cell: application_heap_state.cpp plus application_heap_state.hpp (340 pending acceptance)",
+        "body application_heap_queue_clean_0059ee30 remains declaration-only"
+      ],
+      "rea_evidence_id": "ev_262e09dc318f7cf901de8d3fdc1fcbed3212060d7238d55c964e6b162e71e942",
+      "evidence": [
+        "PE 0059ee30..0059eeab",
+        "340 REA queue-clean"
+      ]
+    }
+  ],
+  "input_sha256": {
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/catalog/Porsche.exe-ddd748fdbe6d/functions.jsonl": "97278d226a719805b7cd32dbcbc457bf01695bee13a4e1bc9cb4adf107d66cca",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "local/experiments/v2-heap-state-340-rea/001/queue-clean.json": "576f81bb1b7978d583607aefb7a4aa119d766382e3f91405073b50484a890902",
+    "local/experiments/v2-heap-state-340-rea/001/heap-slot-destroy.json": "a7a2c9980f8c8737685c89e3f210eb64f46fbab40c2214b27f08eef07f332258",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp": "3e3bd34f871c0146d2b379a7d7d6a8a4134e0fe6403c199b7404fb863d8bda3e",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap_locks.hpp": "2aadb26f89cdf7ee84259187e6087d33beb3e9b969ac9a9885919429f4d6b92e"
+  },
+  "shared_owner_constraints": [
+    "Do not add another manager, selector or heap slot array: 340 canonical application_heap_state and existing heap.cpp own them.",
+    "Unindexed entries 00556680,00569ad0,005aef20 require bounded index coverage repair before implementation; raw PE assembly is pinned here, not a catalog function claim.",
+    "0053c290 remains an existing original memfill/CRT child boundary, not a zero provider. Preserve its explicit 64-byte clear call in 005699f0."
+  ],
+  "recommended_bounded_subset": {
+    "targets": [
+      "0055ec30",
+      "0059ee30",
+      "005699f0"
+    ],
+    "reason": "These are the three direct 340 shutdown dependencies and share canonical manager/heap/lock owners. 0055ec30 is a 20-byte global clear; 0059ee30 reuses existing lock and active-free bodies; 005699f0 reuses lock destroy but retains existing 0053c290 fill boundary. Integrate/test as one shutdown batch, then tackle three live callback bodies together after index coverage repair.",
+    "acceptance_focus": "Compare original pre/post mutable flag, pool bytes, lock/free call order, heap slot/header bytes, callback replacement/reload and final pointer-cell state; retain unhandled address-domain cases explicitly."
+  },
+  "review_corrections": {
+    "0053c290": "Canonical Run312 dispatcher and Run317/319/320 backends already integrated by321. Reuse heap_fill_0053c290, no new child implementation or provider. Preparatory notes below describe a missed owner lookup, not current linkage."
+  }
+}

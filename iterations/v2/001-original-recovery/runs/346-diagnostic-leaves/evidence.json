@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "original_pe": "local/game/Porsche.exe",
+  "index_queries": [
+    "0055ed20|0055efd0|00586ca0|00586cb0|00586cc0",
+    "005e1c90|005df4a4|005df6a4|005b2208",
+    "00592a50|005a177b|OutputDebugStringA"
+  ],
+  "index_sources": [
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm",
+    "research/binary-index/supplemental/diagnostic-callback-346.jsonl"
+  ],
+  "bodies": [
+    {"va":"0055ed20","bytes":42,"sha256":"6b862bcc677aaef8b57c9acf0f0b876feca527fbbbd8670e9625a4604285034b","abi":"cdecl void(uint32,uint32)","facts":"flags at 005e1c90+index*12; enabled nonzero becomes bit0; all other 31 bits preserved; direct unmasked index"},
+    {"va":"0055efd0","bytes":134,"sha256":"b44cd0a05784e2e7c4ac14f7d4c68c34e4afab432473494426bbac897ab4060e","abi":"cdecl void(uint32,uint32)","facts":"index0 updates bit0 for 64 flags at 005df4a4+8*i; index1 updates only entries whose bit1 is set; all other indices directly update one unmasked flag word; enabled nonzero maps to bit0; unrelated bits retained"},
+    {"va":"00586ca0","bytes":12,"sha256":"b389254510fd668ce286927114f37da4eda09de827c74f1264e667ef2954b833","abi":"cdecl void(uint32,const char*)","assembly":"MOV EAX,[ESP+8]; PUSH EAX; CALL 00592a50; POP ECX; RET","facts":"first callback argument ignored; second pointer forwarded unchanged; child cdecl stack cleaned by wrapper"},
+    {"va":"00586cb0","bytes":12,"sha256":"cf82b7f66ad16a8f9d38095715d5ed0da2f6c46ac067e8f6fe529488d220ccdc","abi":"cdecl void(uint32,const char*)","assembly":"MOV EAX,[ESP+8]; PUSH EAX; CALL 005a177b; POP ECX; RET","facts":"second pointer forwarded as sole printf format argument; canonical formatter_stdio_printf_005a177b reused"},
+    {"va":"00586cc0","bytes":12,"sha256":"f67ec717fcb920948275113de90aea2f629ab095063f9c4445daf662071bc761","abi":"cdecl void(uint32,const char*)","assembly":"MOV EAX,[ESP+8]; PUSH EAX; CALL DWORD PTR [005b2208]; RET","facts":"second pointer forwarded through KERNEL32 OutputDebugStringA IAT, stdcall callee removes four bytes; original body omitted from Ghidra function index and repaired by supplemental raw PE record"}
+  ],
+  "original_call_and_data_evidence": {
+    "device_set":"0055ed20..0055ed49: EAX=index*3; read/write 005e1c90+EAX*4; SETNZ DL from enabled; XOR/AND1/XOR preserves unrelated flag bits",
+    "channel_set":"0055efd0..0055f055: branches on index 0 and 1; index0/1 loops compare pointer to 005df6a4; index1 tests AL&2; other indices use ECX*8+005df4a4",
+    "callback_consumer":"0055ec50 pushes channel DWORD and formatted message pointer to callback at 005e1c8c+12*i, then ADD ESP,8",
+    "format_child":"00592a50 reads first argument as format pointer and takes address of following stack argument for 005a299e; one-pointer forwarding verified but arbitrary formatted strings remain outside this batch",
+    "console_owner":"iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp and source/recovered/Porsche.exe/formatter_stdio.cpp",
+    "debug_iat":"research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl: 005b2208 imported KERNEL32.DLL::OutputDebugStringA",
+    "state_owner":"iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.hpp and diagnostic_devices.cpp"
+  },
+  "owner_search": "No accepted recovered source owner existed for the two setters or three callback wrappers before run346. Run345 supplies their canonical declarations and physical state. Existing formatter_stdio_printf_005a177b is reused only for 00586cb0; 00592a50 and OutputDebugStringA remain explicit typed boundaries.",
+  "native": {
+    "receipt":"local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json",
+    "status":"PASS",
+    "variants":["/Od","/O2"],
+    "cases_per_variant":50,
+    "mutations_detected":4,
+    "checks":"raw original body bytes; ESP and EBP/EBX/ESI/EDI; complete device/channel images; callback event identity and full 32-bit message pointer; one-bit preservation and special index loops"
+  },
+  "holds": "00592a50 varargs body, formatted-string domain, environment/parser bodies and real OutputDebugStringA platform binding are not recovered here. Index inputs are valid physical slots only; no synthetic clamp or mask is added."
+}

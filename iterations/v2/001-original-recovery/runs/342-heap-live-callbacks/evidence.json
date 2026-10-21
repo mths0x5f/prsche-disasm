@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "run": 342,
+  "kind": "original-byte native differential verification",
+  "original_module": "Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "source": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp",
+  "supplemental_index": "research/binary-index/supplemental/heap-live-callbacks-342.jsonl",
+  "canonical_headers": [
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp"
+  ],
+  "bodies": [
+    {
+      "entry_va": "00556680",
+      "body_bytes": 11,
+      "body_sha256": "21d6c05aecc976f395658c40c4c00604604b4fa0bb301e83e7cf7408538af888",
+      "pe_relocation_field_va": "005e4720",
+      "original_abi": "one pointer argument at ESP+4, plain RET; EAX zero-extends WORD at pointer-14",
+      "proven_scope": "return uint16_t at pointer-14 (HeapBlock.flags for a normal payload pointer)"
+    },
+    {
+      "entry_va": "00569ad0",
+      "body_bytes": 58,
+      "body_sha256": "8f10709f43ab33a67fb08ff7ecc46f6883080924155f9ecdb449a46973b92ef9",
+      "pe_relocation_field_va": "005e4724",
+      "original_abi": "one uint32 index at ESP+4, plain RET; EAX selected positive block-size DWORD or zero",
+      "proven_scope": "mask index with 15, traverse heap block chain from heap+0x20; track largest positive block size until magic WORD 0x4253 sentinel; return tracked block+4 size or zero. PE has no null-heap guard."
+    },
+    {
+      "entry_va": "005aef20",
+      "body_bytes": 80,
+      "body_sha256": "4d7ee6a5ae2e3223b09562a7af2b9607ccb487d7713bd5cbfde02110818d6961",
+      "pe_relocation_field_va": "005e4710",
+      "original_abi": "one pointer argument at ESP+4, plain RET; EAX found block+0x10 pointer or zero",
+      "proven_scope": "scan 16 heap slots; for each nonnull heap follow heap+8 then its +8 block chain; if input lies in [block+16, block+16+block-size) and block byte+3 & 0xc0 is zero, return block+16; otherwise return zero after all slots. PE dereferences heap+8 without a separate null guard."
+    }
+  ],
+  "proof": {
+    "receipt": "local/experiments/v2-heap-live-native-342/002/receipt.json",
+    "attempt": 2,
+    "variants": [
+      "/Od",
+      "/O2"
+    ],
+    "cases_per_variant": 59,
+    "total_original_native_cases": 118,
+    "mutation_controls": [
+      "tag-wrong-word",
+      "measure-check-sentinel-on-equal",
+      "block-continue-after-flag",
+      "block-ignore-flag-40"
+    ],
+    "checks": [
+      "exact original PE body SHA before execution",
+      "original absolute heap table operand relocated to existing heaps_006b4f20 owner, exactly once per body that reads it",
+      "EAX return and ESP/nonvolatile register preservation on original and native",
+      "fixture heap graphs and 16-slot pointer table unchanged after each call",
+      "bounded valid-chain, tag-byte, low-nibble ID, slot 15, signed length, unsigned wrapped end-address and flagged-block cases"
+    ]
+  },
+  "provenance_sha256": {
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp": "b0d61d4e3d44d92f6669e3d7cfa5b6caa0b6a9536b283ceea5376b6eabad1555",
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/native-fixture.cpp.in": "83b626d0f20051d96a8c55bab33d43e0b42d47aa18026112f8ff8267f85db197",
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/native-config.json": "fcf1e74a2889e7156d00bebf91525cd83b3ad41a6240a14f9b1a2872c57787cf",
+    "research/binary-index/supplemental/heap-live-callbacks-342.jsonl": "fec89856535ba56ed0cf11aa60105d1292f47c2ea5bd79cadad2e3d594e78001",
+    "local/experiments/v2-heap-live-native-342/002/receipt.json": "60f80cf07553f9b3e0d707c1a0f7fc128323bdb373a9795870525d2ec2e59698",
+    "local/experiments/v2-heap-dependencies-341/evidence.json": "b07c82c5d924a6a86f0651e05c5c6545b60586a2d70e23cc6f5b36bfbe7d3a5d",
+    "local/experiments/v2-heap-state-340/input-scan.json": "df012d2f692adb7922cee3f221b77d3891f9a1c0931c846679f499dc048509f0",
+    "local/game/Porsche.exe": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp": "3e3bd34f871c0146d2b379a7d7d6a8a4134e0fe6403c199b7404fb863d8bda3e",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf"
+  },
+  "bounded_holds": [
+    "Null allocation pointer for 00556680 and invalid/dangling heap graphs are outside the proven domain; the original performs unchecked dereferences.",
+    "00569ad0 requires a finite chain with a terminal 0x4253 block whose signed size beats the running maximum; otherwise the original loop may not terminate.",
+    "005aef20 reads valid low->next and block-chain pointers; comparison only uses unsigned x86 addresses/length arithmetic. No extra guards or heap storage provider were added.",
+    "No full allocator, application execution or game visual acceptance is claimed."
+  ]
+}

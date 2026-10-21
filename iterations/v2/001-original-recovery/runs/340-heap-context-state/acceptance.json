@@ -1,0 +1,49 @@
+{
+  "native_config": "iterations/v2/001-original-recovery/runs/340-heap-context-state/native-config.json",
+  "native_receipt": "local/experiments/v2-heap-context-native-340/025/receipt.json",
+  "native_cases": 688,
+  "build_config": "iterations/v2/001-original-recovery/runs/340-heap-context-state/build-config.json",
+  "build_attempt": "003",
+  "baseline": "iterations/v2/001-original-recovery/runs/339-startup-context-batch/build-001.json",
+  "expected_closed_names": [
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ",
+    "?application_queue_allocate@porsche@@YAPAXIIPAX@Z",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ",
+    "?platform_flush_0059eb20@porsche@@YAXXZ"
+  ],
+  "expected_new_names": [
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z"
+  ],
+  "added_sources": [
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_heap_state.cpp"
+  ],
+  "canonical_providers": {
+    "?platform_flush_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ": "application_heap_state.obj",
+    "?application_main_function_004a54e0@porsche@@YAXXZ": "shutdown_helpers_311.obj",
+    "?application_heap_shutdown_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?application_heap_identity_0059e9b0@porsche@@YAPAXPAXH@Z": "application_heap_state.obj",
+    "?application_heap_zero_0059e9c0@porsche@@YAIZZ": "application_heap_state.obj"
+  },
+  "evidence_sha256": {
+    "iterations/v2/001-original-recovery/runs/340-heap-context-state/callback-map.json": "1a938d744b69263e894f27f1fe242d060de00b06e672d14bc87e98208713a25c"
+  },
+  "rea_sessions": [
+    {
+      "config": "iterations/v2/001-original-recovery/runs/339-startup-context-batch/rea-queries.json",
+      "attempt": "001"
+    },
+    {
+      "config": "iterations/v2/001-original-recovery/runs/340-heap-context-state/rea-queries.json",
+      "attempt": "001"
+    }
+  ]
+}
