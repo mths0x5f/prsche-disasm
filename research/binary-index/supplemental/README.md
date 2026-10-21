@@ -1,5 +1,12 @@
 # Supplemental candidate navigation index
 
+`heap-live-callbacks-342.jsonl` records three previously unindexed Porsche.exe
+callback entries at 00556680, 00569ad0 and 005aef20. Each entry is backed by
+the original live-manager HIGHLOW relocation, exact PE bytes and a complete
+decoded span ending in RET. Run342 native differential proof and supported
+input domains are in `iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/evidence.json`;
+this file supplies navigation evidence.
+
 `heap-consumers-271.jsonl` preserves four omitted heap-consumer **candidate** spans
 from original Porsche.exe SHA256
 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.

@@ -18,19 +18,8 @@ def module(name, path):
     return value
 
 
-def audit(config_path):
-    reader = ManifestReader(ROOT)
-    cache = reader.cache
+def audit_native(cfg, cache, sha):
     load = cache.document
-    hashes = {}
-
-    def sha(path):
-        path = Path(path).resolve()
-        if path not in hashes:
-            hashes[path] = hashlib.sha256(cache.data(path)).hexdigest()
-        return hashes[path]
-
-    cfg = load(config_path)
     native_cfg = load(ROOT / cfg['native_config'])
     native = load(ROOT / cfg['native_receipt'])
     assert native['status'] == 'PASS'
@@ -48,8 +37,6 @@ def audit(config_path):
         data = utility.pe_at(pe, int(body['va'], 16), body['bytes'])
         assert hashlib.sha256(data).hexdigest() == body['sha256']
     assert set(native['variants']) == {'od', 'o2'}
-    case_marker = re.search(r'\bcases=(\d+)\b', native_cfg['pass_marker'])
-    assert case_marker and cfg['native_cases'] == int(case_marker.group(1)) * len(native['variants'])
     mutations = {item['name']: item for item in native_cfg['mutations']}
     assert {item['name'] for item in native['mutation_controls']} == set(mutations)
     for item in native['mutation_controls']:
@@ -59,14 +46,41 @@ def audit(config_path):
                          if name == f'mutation-{key}-native'), 0)
         assert receipt['exit_code'] == expected, name
         assert sha(ROOT / receipt['log']) == receipt['log_sha256'], name
+    total_cases = 0
     for variant, result in native['variants'].items():
         receipt = native['receipts'][f'{variant}-native']
-        assert native_cfg['pass_marker'] in cache.data(ROOT / receipt['log']).decode('utf8')
+        output = cache.data(ROOT / receipt['log']).decode('utf8')
+        assert native_cfg['pass_marker'] in output
+        case_marker = re.search(r'\bcases=(\d+)\b', output)
+        assert case_marker, 'native result must report its measured case count'
+        total_cases += int(case_marker.group(1))
         assert result['output_sha256'] == receipt['log_sha256']
+    assert total_cases == cfg['native_cases']
     dependencies = module('native_batch_dependencies', ROOT / 'scripts/research/audio_recovery_provenance.py')
     paths = dependencies.dependency_paths(ROOT / native['attempt_dir'])
     pinned = {(ROOT / name).resolve() for name in native['inputs_sha256']}
     assert paths <= pinned, 'compiler dependency closure not pinned'
+
+    return dict(cases=cfg['native_cases'], mutations=len(mutations),
+                receipt_sha256=sha(ROOT / cfg['native_receipt']))
+
+
+def audit(config_path):
+    reader = ManifestReader(ROOT)
+    cache = reader.cache
+    load = cache.document
+    hashes = {}
+
+    def sha(path):
+        path = Path(path).resolve()
+        if path not in hashes:
+            hashes[path] = hashlib.sha256(cache.data(path)).hexdigest()
+        return hashes[path]
+
+    cfg = load(config_path)
+    batches = cfg.get('native_batches', [cfg])
+    native_proofs = [audit_native(item, cache, sha) for item in batches]
+    assert sum(item['cases'] for item in native_proofs) == cfg['native_cases']
 
     rea_module = module('native_batch_rea', ROOT / 'scripts/research/audit-v2-rea-session.py')
     rea = [rea_module.audit(ROOT / item['config'], item['attempt'], cache, sha)
@@ -111,14 +125,19 @@ def audit(config_path):
     assert len(entries) == 1
     assert graph.compiled_sources(entries[0].parent, 'porsche_original_game_link') == current['compiled_source_roots']
     cache.check_stable()
-    return dict(schema=1, passed=True, native_cases=cfg['native_cases'],
-                mutations=len(mutations), native_receipt_sha256=sha(ROOT / cfg['native_receipt']),
+    result = dict(schema=1, passed=True, native_cases=cfg['native_cases'],
+                mutations=sum(item['mutations'] for item in native_proofs),
                 rea=rea, source_pins=len(pins), game_sources=len(sources),
                 build_sha256=sha(current_path), unresolved_names=len(after),
                 unresolved_references=current['unresolved_references'],
                 closed_names=sorted(before - after), new_names=sorted(after - before),
                 canonical_providers=cfg['canonical_providers'], game_executed=False,
                 executable=current['executable'])
+    if 'native_batches' in cfg:
+        result['native_proofs'] = native_proofs
+    else:
+        result['native_receipt_sha256'] = native_proofs[0]['receipt_sha256']
+    return result
 
 
 def main():

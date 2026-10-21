@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "classification": "Diagnostic output devices/channels, not heap allocation; legacy application_* ABI names retained.",
+  "query": "0055eba0/0055ec30/0055ecd0/0055ef90/0055f150 and006a57cc",
+  "rea_receipt": "local/experiments/v2-secondary-heap-343-rea/001/receipt.json",
+  "rea_receipt_sha256": "b318671822749aac6580ab050ad52216b9d2cc1f1b048f1575f97ba4c8ed3058",
+  "functions": [
+    {
+      "label": "secondary-start",
+      "entry_va": "0x55eba0",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55eba0",
+            "end": "0x55ec25"
+          }
+        ],
+        "total_bytes": 134,
+        "span_bytes": 134,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055eba0(void)\r\n\r\n{\r\n  uint *puVar1;\r\n  undefined4 *puVar2;\r\n  uint *puVar3;\r\n  \r\n  if (DAT_006a57cc == 0) {\r\n    DAT_006a57cc = 1;\r\n    puVar3 = (uint *)&DAT_005e1c90;\r\n    do {\r\n      puVar1 = puVar3 + 3;\r\n      *puVar3 = *puVar3 & 0xfffffffe;\r\n      puVar3 = puVar1;\r\n    } while ((int)puVar1 < 0x5e1cf0);\r\n    puVar3 = &DAT_005df4a4;\r\n    do {\r\n      puVar1 = puVar3 + 2;\r\n      *puVar3 = *puVar3 & 0xfffffffe;\r\n      puVar3 = puVar1;\r\n    } while ((int)puVar1 < 0x5df6a4);\r\n    puVar2 = &DAT_005e1cb0;\r\n    do {\r\n      puVar2[-1] = 0;\r\n      *puVar2 = 0;\r\n      puVar2 = puVar2 + 3;\r\n    } while ((int)puVar2 < 0x5e1cec);\r\n    puVar3 = &DAT_005df524;\r\n    do {\r\n      puVar3[-1] = 0;\r\n      *puVar3 = *puVar3 & 0xfffffffd;\r\n      puVar3 = puVar3 + 2;\r\n    } while ((int)puVar3 < 0x5df6a4);\r\n    FUN_0055ef90(2,1);\r\n    FUN_0055ecd0(1,1);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55eba0: MOV EAX, [0x006a57cc]",
+        "0x55eba5: XOR ECX, ECX",
+        "0x55eba7: CMP EAX, ECX",
+        "0x55eba9: JNZ 0x0055ec25",
+        "0x55ebab: MOV dword ptr [0x006a57cc], 0x1",
+        "0x55ebb5: MOV EAX, 0x5e1c90",
+        "0x55ebba: MOV EDX, dword ptr [EAX]",
+        "0x55ebbc: ADD EAX, 0xc",
+        "0x55ebbf: AND EDX, 0xfffffffe",
+        "0x55ebc2: CMP EAX, 0x5e1cf0",
+        "0x55ebc7: MOV dword ptr [EAX + -0xc], EDX",
+        "0x55ebca: JL 0x0055ebba",
+        "0x55ebcc: MOV EAX, 0x5df4a4",
+        "0x55ebd1: MOV EDX, dword ptr [EAX]",
+        "0x55ebd3: ADD EAX, 0x8",
+        "0x55ebd6: AND EDX, 0xfffffffe",
+        "0x55ebd9: CMP EAX, 0x5df6a4",
+        "0x55ebde: MOV dword ptr [EAX + -0x8], EDX",
+        "0x55ebe1: JL 0x0055ebd1",
+        "0x55ebe3: MOV EAX, 0x5e1cb0",
+        "0x55ebe8: MOV dword ptr [EAX + -0x4], ECX",
+        "0x55ebeb: MOV dword ptr [EAX], ECX",
+        "0x55ebed: ADD EAX, 0xc",
+        "0x55ebf0: CMP EAX, 0x5e1cec",
+        "0x55ebf5: JL 0x0055ebe8",
+        "0x55ebf7: MOV EAX, 0x5df524",
+        "0x55ebfc: MOV dword ptr [EAX + -0x4], ECX",
+        "0x55ebff: MOV EDX, dword ptr [EAX]",
+        "0x55ec01: AND EDX, 0xfffffffd",
+        "0x55ec04: MOV dword ptr [EAX], EDX",
+        "0x55ec06: ADD EAX, 0x8",
+        "0x55ec09: CMP EAX, 0x5df6a4",
+        "0x55ec0e: JL 0x0055ebfc",
+        "0x55ec10: PUSH 0x1",
+        "0x55ec12: PUSH 0x2",
+        "0x55ec14: CALL 0x0055ef90",
+        "0x55ec19: PUSH 0x1",
+        "0x55ec1b: PUSH 0x1",
+        "0x55ec1d: CALL 0x0055ecd0",
+        "0x55ec22: ADD ESP, 0x10",
+        "0x55ec25: RET"
+      ],
+      "dossier": "local/experiments/v2-secondary-heap-343-rea/001/secondary-start.json",
+      "sha256": "a21261a37ec010cc2c2ae943bcb1e86746fe81469f5951473617d4817d62d612"
+    },
+    {
+      "label": "secondary-stop",
+      "entry_va": "0x55ec30",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55ec30",
+            "end": "0x55ec43"
+          }
+        ],
+        "total_bytes": 20,
+        "span_bytes": 20,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055ec30(void)\r\n\r\n{\r\n  if (DAT_006a57cc != 0) {\r\n    DAT_006a57cc = 0;\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55ec30: MOV EAX, [0x006a57cc]",
+        "0x55ec35: TEST EAX, EAX",
+        "0x55ec37: JZ 0x0055ec43",
+        "0x55ec39: MOV dword ptr [0x006a57cc], 0x0",
+        "0x55ec43: RET"
+      ],
+      "dossier": "local/experiments/v2-secondary-heap-343-rea/001/secondary-stop.json",
+      "sha256": "70cd09a82258668851681d5a80ac4f01e4d768590aea0120d6e5ebf1db5e1508"
+    },
+    {
+      "label": "queue-kind",
+      "entry_va": "0x55ecd0",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55ecd0",
+            "end": "0x55ed17"
+          }
+        ],
+        "total_bytes": 72,
+        "span_bytes": 72,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055ecd0(int param_1,undefined4 param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n  if ((&PTR_FUN_005e1c8c)[param_1 * 3] != (undefined *)0x0) {\r\n    if (DAT_006a57cc == 0) {\r\n      FUN_0055eba0();\r\n    }\r\n    FUN_0055ed20(param_1,param_2);\r\n    iVar1 = FUN_005a3050(\"PRINT_DEVICE\");\r\n    if (iVar1 != 0) {\r\n      FUN_0055ed50(iVar1);\r\n    }\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55ecd0: PUSH ESI",
+        "0x55ecd1: MOV ESI, dword ptr [ESP + 0x8]",
+        "0x55ecd5: LEA EAX, [ESI + ESI*0x2]",
+        "0x55ecd8: MOV ECX, dword ptr [EAX*0x4 + 0x5e1c8c]",
+        "0x55ecdf: TEST ECX, ECX",
+        "0x55ece1: JZ 0x0055ed16",
+        "0x55ece3: MOV EAX, [0x006a57cc]",
+        "0x55ece8: TEST EAX, EAX",
+        "0x55ecea: JNZ 0x0055ecf1",
+        "0x55ecec: CALL 0x0055eba0",
+        "0x55ecf1: MOV ECX, dword ptr [ESP + 0xc]",
+        "0x55ecf5: PUSH ECX",
+        "0x55ecf6: PUSH ESI",
+        "0x55ecf7: CALL 0x0055ed20",
+        "0x55ecfc: PUSH 0x5bcc64",
+        "0x55ed01: CALL 0x005a3050",
+        "0x55ed06: ADD ESP, 0xc",
+        "0x55ed09: TEST EAX, EAX",
+        "0x55ed0b: JZ 0x0055ed16",
+        "0x55ed0d: PUSH EAX",
+        "0x55ed0e: CALL 0x0055ed50",
+        "0x55ed13: ADD ESP, 0x4",
+        "0x55ed16: POP ESI",
+        "0x55ed17: RET"
+      ],
+      "dossier": "local/experiments/v2-secondary-heap-343-rea/001/queue-kind.json",
+      "sha256": "5b9833a3edfb71c45cafb910a7bd81fb51a1e416d741c95915609215f46f7fdd"
+    },
+    {
+      "label": "heap-kind",
+      "entry_va": "0x55ef90",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55ef90",
+            "end": "0x55efc5"
+          }
+        ],
+        "total_bytes": 54,
+        "span_bytes": 54,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055ef90(undefined4 param_1,undefined4 param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n  if (DAT_006a57cc == 0) {\r\n    FUN_0055eba0();\r\n  }\r\n  FUN_0055efd0(param_1,param_2);\r\n  iVar1 = FUN_005a3050(\"PRINT_CHANNEL\");\r\n  if (iVar1 != 0) {\r\n    FUN_0055f060(iVar1);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55ef90: MOV EAX, [0x006a57cc]",
+        "0x55ef95: TEST EAX, EAX",
+        "0x55ef97: JNZ 0x0055ef9e",
+        "0x55ef99: CALL 0x0055eba0",
+        "0x55ef9e: MOV EAX, dword ptr [ESP + 0x8]",
+        "0x55efa2: MOV ECX, dword ptr [ESP + 0x4]",
+        "0x55efa6: PUSH EAX",
+        "0x55efa7: PUSH ECX",
+        "0x55efa8: CALL 0x0055efd0",
+        "0x55efad: PUSH 0x5bcc78",
+        "0x55efb2: CALL 0x005a3050",
+        "0x55efb7: ADD ESP, 0xc",
+        "0x55efba: TEST EAX, EAX",
+        "0x55efbc: JZ 0x0055efc5",
+        "0x55efbe: PUSH EAX",
+        "0x55efbf: CALL 0x0055f060",
+        "0x55efc4: POP ECX",
+        "0x55efc5: RET"
+      ],
+      "dossier": "local/experiments/v2-secondary-heap-343-rea/001/heap-kind.json",
+      "sha256": "30f1e4c1d73615d0e9ea7311ccdc6584ef6718c7af982b98dc1230149c3175e9"
+    },
+    {
+      "label": "printf-start",
+      "entry_va": "0x55f150",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55f150",
+            "end": "0x55f185"
+          }
+        ],
+        "total_bytes": 54,
+        "span_bytes": 54,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055f150(int param_1,undefined *param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n  if (DAT_006a57cc == 0) {\r\n    FUN_0055eba0();\r\n  }\r\n  (&PTR_DAT_005df4a0)[param_1 * 2] = param_2;\r\n  iVar1 = FUN_005a3050(\"PRINT_CHANNEL\");\r\n  if (iVar1 != 0) {\r\n    FUN_0055f060(iVar1);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55f150: MOV EAX, [0x006a57cc]",
+        "0x55f155: TEST EAX, EAX",
+        "0x55f157: JNZ 0x0055f15e",
+        "0x55f159: CALL 0x0055eba0",
+        "0x55f15e: MOV ECX, dword ptr [ESP + 0x4]",
+        "0x55f162: MOV EAX, dword ptr [ESP + 0x8]",
+        "0x55f166: PUSH 0x5bcc78",
+        "0x55f16b: MOV dword ptr [ECX*0x8 + 0x5df4a0], EAX",
+        "0x55f172: CALL 0x005a3050",
+        "0x55f177: ADD ESP, 0x4",
+        "0x55f17a: TEST EAX, EAX",
+        "0x55f17c: JZ 0x0055f185",
+        "0x55f17e: PUSH EAX",
+        "0x55f17f: CALL 0x0055f060",
+        "0x55f184: POP ECX",
+        "0x55f185: RET"
+      ],
+      "dossier": "local/experiments/v2-secondary-heap-343-rea/001/printf-start.json",
+      "sha256": "408925dc656e7cd09f1d3f3b5f729bf9a4669688709c705561a10fb354a367eb"
+    }
+  ],
+  "guard_references": [
+    {
+      "from_va": "0055eba0",
+      "to_va": "006a57cc",
+      "from_function": "0055eba0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055ebab",
+      "to_va": "006a57cc",
+      "from_function": "0055eba0",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055ec30",
+      "to_va": "006a57cc",
+      "from_function": "0055ec30",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055ec39",
+      "to_va": "006a57cc",
+      "from_function": "0055ec30",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055ec50",
+      "to_va": "006a57cc",
+      "from_function": "0055ec50",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055ece3",
+      "to_va": "006a57cc",
+      "from_function": "0055ecd0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055ef90",
+      "to_va": "006a57cc",
+      "from_function": "0055ef90",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    },
+    {
+      "from_va": "0055f150",
+      "to_va": "006a57cc",
+      "from_function": "0055f150",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_006a57cc"
+    }
+  ],
+  "table_observations": [
+    {
+      "base_va": "005e1c8c",
+      "observed_records": 8,
+      "stride": 12,
+      "bytes": 96,
+      "sha256": "c210d0606e3f623104286b376e791b0ca8937e4057898608d09af1b82fa91743",
+      "raw_hex": "a06c58000000000094155c00b06c58000100000088155c00c06c58000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000"
+    },
+    {
+      "base_va": "005df4a0",
+      "observed_records": 64,
+      "stride": 8,
+      "bytes": 512,
+      "sha256": "15681a00395e8c07815ade7041b17cc27357bf0b41b24c5c3b2be9e4ecedccf2",
+      "raw_hex": "60cc5b000200000058cc5b000200000050cc5b000300000048cc5b000200000040cc5b000200000034cc5b000200000028cc5b000200000020cc5b000200000018cc5b000200000010cc5b00020000000ccc5b000200000004cc5b0002000000fccb5b0002000000f4cb5b0002000000eccb5b0002000000e4cb5b0002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "confirmed": [
+    "006a57cc is tested as DWORD initialization guard, set to1 only by0055eba0 and cleared by0055ec30 in indexed direct writes.",
+    "0055ecd0 uses PRINT_DEVICE;0055ef90 and0055f150 use PRINT_CHANNEL.",
+    "Startup clears specific flag bits and pointer fields in fixed12/8-byte strides; preserve tail word at005e1ce8 and unmasked addressing."
+  ],
+  "holds": [
+    "State extent/alias and callback initializer ABI must be established before production providers.",
+    "Names/strings/loading alone do not implement device/channel consumers."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-secondary-heap-343-rea",
+  "queries": [
+    {
+      "label": "secondary-start",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0055eba0"
+      }
+    },
+    {
+      "label": "secondary-stop",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0055ec30"
+      }
+    },
+    {
+      "label": "queue-kind",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0055ecd0"
+      }
+    },
+    {
+      "label": "heap-kind",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0055ef90"
+      }
+    },
+    {
+      "label": "printf-start",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0055f150"
+      }
+    },
+    {
+      "label": "secondary-state",
+      "tool": "inspect_address_context",
+      "arguments": {
+        "address": "0x006a57cc"
+      }
+    }
+  ]
+}

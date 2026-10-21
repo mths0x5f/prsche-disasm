@@ -9393,6 +9393,89 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/340-heap-context-state/summary.json",
       "verification_boundary": "Bounded original-byte comparisons with controlled child/OS callbacks. No full allocator, platform, arbitrary-index-domain or game acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0059ee30",
+      "source": "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; one DWORD/pointer argument, caller cleanup, ESP and nonvolatile registers checked",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "mutable current-manager +8 free callback"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/summary.json",
+      "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005699f0",
+      "source": "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/heap_shutdown.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; one DWORD/pointer argument, caller cleanup, ESP and nonvolatile registers checked",
+      "recovered_dependencies": [
+        "005322d0",
+        "0053c290"
+      ],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/341-heap-shutdown-dependencies/summary.json",
+      "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00556680",
+      "source": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; one DWORD/pointer argument, caller cleanup, ESP and nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/summary.json",
+      "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00569ad0",
+      "source": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; one DWORD/pointer argument, caller cleanup, ESP and nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/summary.json",
+      "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005aef20",
+      "source": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; one DWORD/pointer argument, caller cleanup, ESP and nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/summary.json",
+      "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
     }
   ]
 }

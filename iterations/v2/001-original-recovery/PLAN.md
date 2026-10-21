@@ -1,35 +1,36 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current340, 2026-10-21: canonical heap/context state integrated. 175 C++ TUs/
-8 projects compile,259 unresolved names/274 refs; noEXE or game execution.
-688 original-byte native comparisons (/Od,/O2), seven mutation controls and
-450-input shared audit PASS. Three new original bodies, three existing bodies
-corrected; accepted311 shutdown wrapper reused. Full details/commands:
-runs/340-heap-context-state/README.md and acceptance.json.
+Current344, 2026-10-21: five original heap dependency bodies341/342 integrated
+in one clean build.177 C++ TUs/8 projects compile,254 names/271 refs; noEXE.
+240 original-byte comparisons (/Od,/O2),11 mutations and453-input audit PASS.
+No new unresolved names. Canonical340 state,312/321 fill and existing lock owners
+are reused; no duplicated providers. Details: runs/344-heap-dependencies-integration/README.md.
 
-Confirmed: default/live managers005e3e18/005e4700, each40+16*140B, original
-mutable current/selector cells005e4fe8/005e4fec and BSS006af374..006af3ff share
-canonical storage. Original manager publication/reset, callback reloads,
-unmasked arena16 guard alias and low-byte locked flag pass native cutpoints.
-New named extern boundaries preserve missing callback/cleanup implementations;
-no zero-provider substitutes. REA339/340 receipt inputs are unchanged.
+Confirmed340 state publication/reset and alias proof remains accepted (688 cases,
+seven mutations).341 restores queue cleanup and heap destruction;342 restores
+three live callbacks and supplies relocation-backed supplemental index entries.
+Complete allocator/OS composition, arbitrary pointer/index domains and malformed
+nonterminating chains remain HOLD. Old078 detached-state probes are historical.
 
-Next341: recover actual surfaced heap helpers as one subsystem batch, beginning
-00556680/00569ad0/005aef20 and0055ec30/005699f0/0059ee30. Search index/owners
-first, reuse canonical heap/lock/fill and340 state. Native compare bounded child
-algorithms, then one clean game intake/audit. No expansion of the passed340proof.
-Owners: root integration; heap_callback_map_340 read-only341 evidence in
-local/experiments/v2-heap-dependencies-341/evidence.json; no production ownership.
-heap_native_340 finished and accepted; no remaining340 worker changes.
+REA343 identified0055eba0/0055ec30/0055ecd0/0055ef90/0055f150 as diagnostic
+output device/channel setup, not allocation. Guard006a57cc indexed8DWORDrefs,
+start1/stop0 writes; device8*12B and channel64*8B spans/initialbytes are pinned.
+Source query artifacts remain in343-secondary-heap-state (historical name).
+
+Active345: heap_callback_map_340 owns diagnostic_devices.hpp/.cpp, native config/
+fixture and evidence under345-diagnostic-devices; establish table callback ABI/
+relocations/aliases before providers, leave unknown children named externs.
+Root owns integration and application_fill ABI binding to already accepted312/321
+fill chain; do not rerun27648 unchanged backend cases. heap_native_340 complete.
+Next concrete step: finish345 native/ABI proof, then one shared fresh game intake.
 
 Checks: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/340-heap-context-state/acceptance.json.
-Native accepted receipt: local/experiments/v2-heap-context-native-340/025/receipt.json.
-Build003 is fresh;001 failed duplicate wrapper,002 incremental, both retained.
-Old078 heap/bootstrap fixtures are historical after state ownership correction.
+iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/acceptance.json.
+Native: local/experiments/v2-heap-dependencies-native-341/001/receipt.json and
+local/experiments/v2-heap-live-native-342/002/receipt.json. Build344/001 is fresh.
+Keep root296/301,006ad750 transform,locale/runtime,game/visual and complete
+allocator acceptance holds in recovery-validation-backlog.md.
 Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
-Keep arbitrary-index domain, full allocator/OS/visual/game,296/301root,
-006ad750 and locale/runtime holds in recovery-validation-backlog.md.
 
 Historical checkpoints below are not active assignments.
 

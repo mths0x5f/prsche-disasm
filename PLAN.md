@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run340](iterations/v2/001-original-recovery/runs/340-heap-context-state/README.md):
-canonical heap/context state integrated;175 files compile,259 names/274 refs,
-noEXE.688 native comparisons, seven mutations and450-input audit PASS.
-Next341 recovers the surfaced heap dependencies; active iteration PLAN owns scope.
+Current [Run344](iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/README.md):
+177 files compile,254 names/271 refs,noEXE. Five original heap helpers close
+five names after240 comparisons,11 mutations and453-input audit. Next345:
+diagnostic device/channel setup and an existing fill ABI binding; active PLAN owns scope.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),

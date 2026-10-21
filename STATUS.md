@@ -1,10 +1,9 @@
 # Состояние проекта
 
-Current [Run340](iterations/v2/001-original-recovery/runs/340-heap-context-state/README.md):
-175 TUs/8 projects compile;259 unresolved names/274 refs,noEXE.
-Canonical heap/context state and shutdown integrated after688 original-byte
-comparisons, seven detected mutations and450-input audit PASS. Next341: actual
-heap callbacks/cleanup dependencies; detailed scope in active iteration PLAN.
+Current [Run344](iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/README.md):
+177 TUs/8 projects compile;254 unresolved names/271 refs,noEXE. Five original
+heap helpers integrated after240 native comparisons,11 mutations and453-input
+audit PASS.345 diagnostic device/channel recovery is active; details in iteration PLAN.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

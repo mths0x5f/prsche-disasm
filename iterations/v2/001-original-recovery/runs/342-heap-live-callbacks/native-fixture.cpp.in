@@ -1,0 +1,221 @@
+#include "porsche/application_heap_state.hpp"
+#include "porsche/heap.hpp"
+#include <windows.h>
+#include <climits>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4,"original x86 ABI");
+static const unsigned char tag_bytes[11]={@TAG@};
+static const unsigned char measure_bytes[58]={@MEASURE@};
+static const unsigned char block_bytes[80]={@BLOCK@};
+
+namespace porsche { OriginalHeap* heaps_006b4f20[16]{}; }
+
+struct BlockArea { porsche::HeapBlock header; std::uint8_t payload[256]; };
+struct Owned {
+    porsche::OriginalHeap heaps[16];
+    porsche::HeapFreeBlock measure_nodes[8];
+    porsche::HeapBlock low[16];
+    BlockArea blocks[4];
+    std::uint8_t tag[64];
+};
+static Owned owned;
+static unsigned char* executable;
+static unsigned char* tag_original;
+static unsigned char* measure_original;
+static unsigned char* block_original;
+static U cases;
+
+static U word(const void* p) {return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void clear_owned() {
+    std::memset(&owned,0,sizeof(owned));
+    std::memset(porsche::heaps_006b4f20,0,sizeof(porsche::heaps_006b4f20));
+}
+static U replace_abs(unsigned char* body,U size,U old,const void* replacement) {
+    U count=0;
+    for(U i=0;i+4<=size;++i) {
+        U value;
+        std::memcpy(&value,body+i,4);
+        if(value==old) {
+            value=word(replacement);
+            std::memcpy(body+i,&value,4);
+            ++count;i+=3;
+        }
+    }
+    return count;
+}
+struct Capture {U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;};
+static Capture invoke(const void* fn,U arg) {
+    Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push arg
+        mov ecx,fn
+        call ecx
+        add esp,4
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    return r;
+}
+static bool abi(const Capture& r) {
+    return r.esp0==r.esp1 && r.ebp0==r.ebp1 && r.ebx0==r.ebx1 &&
+        r.esi0==r.esi1 && r.edi0==r.edi1 && r.ebx0==0x13579bdfu &&
+        r.esi0==0x2468ace0u && r.edi0==0x6a31c5e7u;
+}
+static bool check(const char* name,const void* original,const void* recovered,U arg) {
+    const Owned before=owned;
+    porsche::OriginalHeap* table[16];
+    std::memcpy(table,porsche::heaps_006b4f20,sizeof(table));
+    const auto a=invoke(original,arg);
+    const bool original_memory=std::memcmp(&before,&owned,sizeof(owned))==0 &&
+        std::memcmp(table,porsche::heaps_006b4f20,sizeof(table))==0;
+    const auto b=invoke(recovered,arg);
+    const bool recovered_memory=std::memcmp(&before,&owned,sizeof(owned))==0 &&
+        std::memcmp(table,porsche::heaps_006b4f20,sizeof(table))==0;
+    ++cases;
+    if(!abi(a) || !abi(b) || a.eax!=b.eax || !original_memory || !recovered_memory) {
+        std::printf("divergence %s case=%u arg=%08x original=%08x native=%08x abi=%u/%u memory=%u/%u\n",
+            name,cases,arg,a.eax,b.eax,abi(a),abi(b),original_memory,recovered_memory);
+        return false;
+    }
+    return true;
+}
+static bool tag_case(U flags,U shift) {
+    clear_owned();
+    std::memset(owned.tag,0x5a,sizeof(owned.tag));
+    const std::uint16_t value=static_cast<std::uint16_t>(flags);
+    std::memcpy(owned.tag+2,&value,2);
+    return check("tag",tag_original,
+        reinterpret_cast<const void*>(&porsche::application_heap_tag_00556680),
+        word(owned.tag+16+shift));
+}
+static porsche::HeapBlock* measure_node(U i,std::uint16_t magic,std::int32_t size) {
+    auto* node=&owned.measure_nodes[i];
+    node->block.magic=magic;
+    node->block.bytes=size;
+    return &node->block;
+}
+static void measure_link(porsche::HeapBlock* a,porsche::HeapBlock* b) {
+    reinterpret_cast<porsche::HeapFreeBlock*>(a)->free_next=b;
+}
+static bool measure_case(U raw_index,U shape) {
+    clear_owned();
+    auto& heap=owned.heaps[raw_index&15u];
+    porsche::heaps_006b4f20[raw_index&15u]=&heap;
+    auto* terminal=measure_node(7,0x4253,INT_MAX);
+    measure_link(terminal,terminal);
+    if(shape==0) heap.sentinel.free_next=terminal;
+    else if(shape==1) {
+        auto* a=measure_node(0,0x4246,9);
+        auto* b=measure_node(1,0x4246,5);
+        auto* c=measure_node(2,0x4246,12);
+        heap.sentinel.free_next=a;measure_link(a,b);measure_link(b,c);measure_link(c,terminal);
+    } else if(shape==2) {
+        auto* a=measure_node(0,0x4246,-1);
+        auto* b=measure_node(1,0x4246,0);
+        heap.sentinel.free_next=a;measure_link(a,b);measure_link(b,terminal);
+    } else if(shape==3) {
+        auto* a=measure_node(0,0x4246,100);
+        auto* early=measure_node(1,0x4253,100);
+        auto* c=measure_node(2,0x4246,101);
+        heap.sentinel.free_next=a;measure_link(a,early);measure_link(early,c);measure_link(c,terminal);
+    } else if(shape==4) {
+        auto* a=measure_node(0,0x4246,INT_MAX-1);
+        heap.sentinel.free_next=a;measure_link(a,terminal);
+    } else {
+        auto* a=measure_node(0,0x4246,5);
+        auto* early=measure_node(1,0x4253,6);
+        heap.sentinel.free_next=a;measure_link(a,early);measure_link(early,terminal);
+    }
+    return check("measure",measure_original,
+        reinterpret_cast<const void*>(&porsche::application_heap_measure_00569ad0),raw_index);
+}
+static U block_begin(U i) {return word(&owned.blocks[i].header)+16u;}
+static void block_node(U i,std::int32_t bytes,std::uint16_t flags,porsche::HeapBlock* next=nullptr) {
+    auto& b=owned.blocks[i].header;
+    b.magic=0x424d;b.flags=flags;b.bytes=bytes;b.next=next;
+}
+static void scan_heap(U index,porsche::HeapBlock* first) {
+    auto& heap=owned.heaps[index];
+    heap.low=&owned.low[index];
+    owned.low[index].next=first;
+    porsche::heaps_006b4f20[index]=&heap;
+}
+static bool block_case(U shape) {
+    clear_owned();
+    U address=0;
+    if(shape==0) address=block_begin(0);
+    else if(shape>=1 && shape<=5) {
+        block_node(0,64,0);
+        scan_heap(0,&owned.blocks[0].header);
+        address=block_begin(0)+(shape==1?0u:shape==2?63u:shape==3?64u:shape==4?U(-1):1u);
+    } else if(shape==6 || shape==7 || shape==8) {
+        const std::uint16_t flags=shape==6?0x4000:shape==7?0x8000:0x3fff;
+        block_node(0,64,flags);
+        scan_heap(0,&owned.blocks[0].header);
+        address=block_begin(0);
+    } else if(shape==9) {
+        block_node(0,-1,0);
+        scan_heap(0,&owned.blocks[0].header);
+        address=block_begin(0);
+    } else if(shape==10) {
+        block_node(0,64,0);
+        scan_heap(15,&owned.blocks[0].header);
+        address=block_begin(0)+1u;
+    } else if(shape==11 || shape==12) {
+        block_node(0,1024,0);
+        block_node(2,64,0x4000,&owned.blocks[0].header);
+        scan_heap(0,&owned.blocks[2].header);
+        if(shape==12) scan_heap(1,&owned.blocks[0].header);
+        address=block_begin(2);
+    } else if(shape==13) {
+        scan_heap(0,nullptr);
+        block_node(0,64,0);
+        scan_heap(1,&owned.blocks[0].header);
+        address=block_begin(0);
+    } else {
+        block_node(0,64,0);
+        scan_heap(0,&owned.blocks[0].header);
+        address=0x80000000u;
+    }
+    return check("block",block_original,
+        reinterpret_cast<const void*>(&porsche::application_heap_block_005aef20),address);
+}
+int main() {
+    executable=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE));
+    if(!executable) return 91;
+    tag_original=executable;measure_original=executable+0x100;block_original=executable+0x200;
+    std::memcpy(tag_original,tag_bytes,sizeof(tag_bytes));
+    std::memcpy(measure_original,measure_bytes,sizeof(measure_bytes));
+    std::memcpy(block_original,block_bytes,sizeof(block_bytes));
+    if(replace_abs(measure_original,58,0x006b4f20u,porsche::heaps_006b4f20)!=1 ||
+       replace_abs(block_original,80,0x006b4f20u,porsche::heaps_006b4f20)!=1) {
+        std::puts("original relocation mismatch");return 92;
+    }
+    FlushInstructionCache(GetCurrentProcess(),executable,4096);
+    for(U flags:{0u,1u,0x40u,0x4000u,0x8000u,0xc000u,0xffffu})
+      for(U shift:{0u,1u}) if(!tag_case(flags,shift)) return 10;
+    for(U id:{0u,15u,0x8000000fu,0xfffffff0u,0xffffffffu})
+      for(U shape=0;shape<6;++shape) if(!measure_case(id,shape)) return 10;
+    for(U shape=0;shape<15;++shape) if(!block_case(shape)) return 10;
+    std::printf("cases=%u heap_live_original_vs_cpp=PASS\n",cases);
+    return 0;
+}
