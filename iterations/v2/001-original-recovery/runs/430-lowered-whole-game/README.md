@@ -347,6 +347,73 @@ Três correções levaram até aí:
    catálogo versionado (`research/v2/binaries/...`) continua com essa lacuna; corrigi-la é
    trabalho do índice.
 
+### Prova em hardware (2026-10-21)
+
+**O que mudou.** Antes, o x87 era imitado com `double`: 64 bits em vez de 80, sem palavra de
+controle (precisão e arredondamento), com transcendentais da biblioteca C e com MMX separado da
+pilha do x87. Havia também `fnsave`/`frstor`/`fnstenv`/`fldenv` e `rcpss` sem tradução, e PF/AF
+nunca eram calculadas. Nenhuma dessas aproximações tinha prova em hardware.
+
+**Como ficou:**
+- **x87, MMX e `rcpss` rodam na CPU.** O estado da FPU do jogo fica vivo no próprio processador,
+  como no original; isso inclui a precisão que o Direct3D impõe ao processo. Cada instrução é
+  emitida com os próprios bytes (`__asm _emit`), mudando só o operando de memória (passa a ser
+  `[ecx]`, porque o endereço do jogo é o endereço real) ou o de registrador (passa a ser `eax`).
+  As formas com XMM são escritas pelo nome, para o compilador saber que os registradores XMM
+  foram usados.
+- **Flags exatas:**
+  - PF e AF em todas as operações aritméticas;
+  - flags de `imul`/`mul` iguais às da CPU (SF do sinal, PF da paridade, ZF e AF zeradas);
+  - deslocamentos e rotações (`shl`/`shr`/`sar`/`rol`/`ror`/`rcl`/`rcr`/`shld`/`shrd`)
+    executados na CPU. As formas com contagem imediata rodam no próprio ponto, porque o OF
+    "indefinido" de `rol`/`ror` com contagem maior que 1 difere entre a forma com imediato e a
+    forma com `cl`.
+- **Bugs de semântica achados pelo oráculo:**
+  - `div r/m8` era traduzido como divisão de 32 bits;
+  - o `lahf` não punha o bit 1;
+  - `bt`/`bts` com operando de memória ignoravam o endereçamento de cadeia de bits.
+
+**Oráculos.** Rodam na CPU-alvo (Intel Core i3-3220). Cada **forma de instrução que o jogo usa**
+vira um caso, com os operandos de memória em `[esi]` e em `[esi+ebx*2+0x10]`. Os estados são
+aleatórios: NaN, infinitos, desnormais, todos os modos de precisão e arredondamento do x87,
+MXCSR e EFLAGS. A comparação cobre GPRs, EFLAGS (com DF), memória, imagem `fnsave` (sem FIP e
+opcode), XMM e MXCSR.
+
+| Conjunto | Script | Formas | Casos | Diferenças |
+|---|---|---|---|---|
+| x87 + MMX + `rcpss` | `verify-v2-native-fpu-430.py --set fpu` | 259 | 77.700 | 0 |
+| Inteiras | `verify-v2-native-fpu-430.py --set int` | 957 | 284.578 | 0 |
+| SSE | `verify-v2-native-fpu-430.py --set sse` | 172 | 51.600 | 0 |
+| `lock inc/dec` | `verify-v2-lock-430.py` | 2 | 200.000 + 2×2M em 2 threads | 0 |
+| Saltos condicionais `70`–`7f` | `verify-v2-native-fpu-430.py --set branch` | 16 | 32.000 | 0 |
+
+Com o x87 real, a corrida passou a usar o laço de `fmod` do runtime C (`005a18e4`:
+`fprem`/`fnstsw`/`sahf`/`jp`), que nunca era alcançado com o x87 imitado. Ele exigia `jp`, que não
+existia na tradução; `jp`/`jnp`/`jo`/`jno` foram acrescentados e provados no conjunto `branch`. As
+216 peças sintéticas ainda rejeitadas são dados lidos como código: 178 com bytes que nem
+decodificam, e o resto com `int 6`, `arpl`, `bound`, `insd`, `salc`, `push cs/es/ds`, `aaa`/`aas`.
+
+Validação no jogo (build `e6b7ad4` + `jp`): o trace do menu é idêntico ao original em 1.982
+chamadas (só mudam os handles), e a corrida roda 70 s depois de clicar em RACE, sem parada
+`[430]`. Os arquivos de `_sem_arquivo/codigo` passaram a ter no máximo 16 KB de código x86 cada,
+porque funções muito grandes juntas esgotavam a memória do compilador (`C1002`).
+
+Controles negativos: um emissor propositalmente errado tem de reprovar. Endereço +4 reprova
+146 formas, `fnstsw` perdido reprova 1, GPR lido errado 1, XMM perdido 1, sem PF 634, sem AF
+244; o `lock` sem atomicidade perde 37–44% das contagens. O jogo não usa `fcomi`, `fcmov` nem
+`movd` com GPR de destino; essas pontes existem no emissor, mas não têm caso.
+
+**O que continua fora da prova:**
+- **3DNow!** (166 pontos em `0059a…0059d`/`005b1…`): não existe no Intel-alvo, então não há
+  hardware para comparar, e o código continua sem tradução. O jogo só escolhe esse caminho
+  numa CPU AMD da época.
+- Instruções que o harness não controla: controle de fluxo, pilha, `rep`/strings, `rdtsc`,
+  `cpuid`, `int3`. São validadas rodando o jogo.
+- `volatile`: a ordem dos acessos é garantia do compilador (`/volatile:ms`), não um caso do
+  oráculo.
+- As flags de `div`/`idiv` ficam inalteradas, igual à CPU-alvo; uma CPU de 2000 poderia
+  deixar outros valores nessas flags indefinidas.
+
 ## Próximos passos
 
 1. Verificar o uso do resultado da calibração de CPU (`005560b0`) e medir a corrida

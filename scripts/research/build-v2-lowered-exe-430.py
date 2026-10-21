@@ -264,6 +264,16 @@ BT_MEM = ("            if ops[0].type == X86_OP_MEM and ops[1].type == X86_OP_RE
           "            else:\n")
 
 SEMANTIC_PATCHES = [
+    # Parity/overflow branches (the CRT fmod loop at 005a18e4 repeats FPREM with fnstsw/sahf/jp).
+    ("branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae','js','jns','jecxz')",
+     "branches = ('jl','jge','je','jz','jne','jnz','jg','jle','ja','jbe','jb','jae','js','jns','jecxz',"
+     "'jp','jnp','jo','jno')"),
+    ("            elif m=='jns': condition='!(s.flags&0x80u)'\n",
+     "            elif m=='jns': condition='!(s.flags&0x80u)'\n"
+     "            elif m=='jp': condition='(s.flags&0x4u)'\n"
+     "            elif m=='jnp': condition='!(s.flags&0x4u)'\n"
+     "            elif m=='jo': condition='(s.flags&0x800u)'\n"
+     "            elif m=='jno': condition='!(s.flags&0x800u)'\n"),
     # LAHF: bit 1 of EFLAGS is always 1.
     ("            code = 's.r[0] = (s.r[0] & 0xffff00ffu) | ((s.flags & 0xd5u) << 8u);'",
      "            code = 's.r[0] = (s.r[0] & 0xffff00ffu) | (((s.flags & 0xd5u) | 2u) << 8u);'"),
@@ -896,8 +906,20 @@ def source_layout(entries):
             rel = None
             rest.append(va)
         layout[va] = (rel, ident)
-    for k in range(0, len(rest), 64):
-        chunk = rest[k:k + 64]
+    # Contiguous chunks of at most 64 functions and 16 KB of x86 code: a few very large bodies
+    # in one file exhausted the compiler's heap (C1002).
+    size_of = {e['entry_va']: e.get('body_bytes', 0) for e in entries}
+    chunks, cur, cur_bytes = [], [], 0
+    for va in rest:
+        n = size_of.get(va, 0)
+        if cur and (len(cur) == 64 or cur_bytes + n > 16384):
+            chunks.append(cur)
+            cur, cur_bytes = [], 0
+        cur.append(va)
+        cur_bytes += n
+    if cur:
+        chunks.append(cur)
+    for chunk in chunks:
         rel = f'_sem_arquivo/codigo/{chunk[0]}_{chunk[-1]}.cpp'
         SOURCE_NOTES[rel] = 'original file unknown; contiguous .text range'
         for va in chunk:

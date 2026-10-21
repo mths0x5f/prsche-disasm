@@ -294,11 +294,16 @@ int main(int argc, char** argv) {
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--cases', type=int, default=300)
-    ap.add_argument('--set', choices=('fpu', 'int', 'sse'), default='fpu')
+    ap.add_argument('--set', choices=('fpu', 'int', 'sse', 'branch'), default='fpu')
     ap.add_argument('--mutate', choices=sorted(MUTANTS), help='negative control: a deliberately wrong lowering')
     args = ap.parse_args()
     b = load_build()
-    form_list = forms(b, args.set)
+    if args.set == 'branch':
+        # jcc rel8 over 'mov eax,1; ret' to 'mov eax,2': every condition code 70..7f.
+        form_list = {(f'jcc{op:02x}', ()): bytes([op, 0x06]) + bytes.fromhex('b801000000c3b802000000')
+                     for op in range(0x70, 0x80)}
+    else:
+        form_list = forms(b, args.set)
     if args.mutate == 'emulated':
         b.native_kind = lambda i: None     # the previous double-based emulation, for comparison
     elif args.mutate and MUTANTS[args.mutate]:
@@ -316,11 +321,11 @@ def main():
     decls, frags, bodies, names, untranslated = [], [], [], [], []
     for (m, kinds), raw in sorted(form_list.items()):
         for mode in (0, 1):
-            code = reencode(raw, mode)
+            code = reencode(raw, mode) if args.set != 'branch' else (raw if mode == 0 else None)
             if code is None:
                 continue
             decoded = list(md.disasm(code, 0))
-            if len(decoded) != 1 or decoded[0].size != len(code):
+            if args.set != 'branch' and (len(decoded) != 1 or decoded[0].size != len(code)):
                 untranslated.append(f'{m} {kinds}: re-encoding not decodable')
                 continue
             frag = code + b'\xc3'
@@ -366,7 +371,8 @@ def main():
     if args.mutate:
         print(json.dumps(dict(mutant=args.mutate, failed_forms=len(summary['failed']))))
         return
-    (RUN / {'fpu': 'native-fpu-oracle.json', 'int': 'integer-oracle.json', 'sse': 'sse-oracle.json'}[args.set]).write_text(json.dumps(dict(summary, results=results), indent=1) + '\n', encoding='utf-8')
+    (RUN / {'fpu': 'native-fpu-oracle.json', 'int': 'integer-oracle.json', 'sse': 'sse-oracle.json',
+           'branch': 'branch-oracle.json'}[args.set]).write_text(json.dumps(dict(summary, results=results), indent=1) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in summary.items() if k != 'failed'}, indent=1))
     for f in summary['failed'][:40]:
         print('FAIL', f)
