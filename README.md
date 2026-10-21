@@ -38,14 +38,11 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run332](iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/README.md):
-all171 C++ sources/8 projects compile;261 unresolved names/286 references remain.
-Original request constructor and drive helper enter after20736 fresh native
-comparisons. Existing canonical character-search code is reused once; three
-linker names close with no new dependencies. Shared433-pin audit PASS. No EXE.
-[REA333](iterations/v2/001-original-recovery/runs/333-rea-resource-followup/README.md)
-checks allocator/drive/search with a reusable query-manifest session. Next: open
-wrapper/callback with an explicit unresolved transform-cell contract.
+[Latest game build, Run335](iterations/v2/001-original-recovery/runs/335-resource-open-game-integration/README.md):
+173 C++ files compile;259 unresolved names/284 references remain, noEXE.
+Original open wrapper/callback and two existing search ABI bindings pass61296
+native comparisons; shared439-pin audit PASS. [Active plan](iterations/v2/001-original-recovery/PLAN.md)
+tracks remaining state providers and full-game acceptance.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

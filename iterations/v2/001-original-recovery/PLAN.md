@@ -1,41 +1,35 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current checkpoint:332,2026-10-20. Goal remains a linked runnable original game
-from recovered C/C++; completion requires original behavior and visual checks.
-Confirmed:329 constructor51B/13824cases/124431checks;331 drive111B/6912cases;
-six mutations detected;330 canonical search wholeTU reused with172/327 proofs.
-REA333 fresh allocator/drive/search matches the index. Actual171 C++ TUs in
-8 projects compile;261 names/286 refs remain, noEXE/run. Three names close,
-zero new unresolved dependencies. Shared433-pin audit PASS. No new storage.
+Current checkpoint335,2026-10-21. Goal: linked original C/C++ game with original
+behavior and visual acceptance.173 TUs/8 projects compile;259 names/284 refs,
+noEXE/run.334 recovers two original VAs339B;338 adds two existing search ABI
+views, not new algorithms.60480 open comparisons (Od/O2) +816 optimized binding
+cases, nine mutations and439-pin shared audit PASS. Canonical owners retained.
 Original PE SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
-All329/330/331/332/333 assignments complete; no unfinished implementation.
+334/335/336/337/338 complete; no active owners. Evidence/commands are linked in
+runs/335-resource-open-game-integration/README.md and the individual packets.
 
-Next bounded work (unassigned):
-1.334 recover open wrapper00561ca0(63B) and callback00561ce0(276B),339B total,
-   from index327/REA325. Recheck canonical owners and exact caller declarations.
-   Consumer proves `void* (__cdecl*)(void*,const char*,uint32_t)` transform ABI;
-   declare006ad750 cell extern ONLY. Unknown setters/layout/aliasing block a
-   storage provider/full-game acceptance, not a bounded consumer implementation.
-2. Existing ResourceLeafAtomicCallback returns int32. Use bit-preserving raw32/
-   pointer transport; never cast an incompatible pointer-return callback type.
-   Preserve context+4 uninitialized, saved path, late flags/diagnostic reads,
-   ignored read result, close-before-cell-reload and free-on-transform-zero.
-3. Native334 compare339B original chain, callbacks/argument identity/order,
-   mutable context/global timing, failure paths, raw return bits, memory guards,
-   ESP/nonvolatiles and typed adapter. Fixture-only006ad750 does not authorize
-   a production provider.335 integrates only afterPASS with the cell unresolved.
-4. Trace006ad750 HIGHLOW/index/writers/containing arena before storage definition.
-   Retain root/arena/context296/301/303, locale domains, filesystem/concurrency,
-   visual and full-game acceptance holds in recovery-validation-backlog.md.
+Next batch, unassigned:
+- Bind proven startup_capacity00565030 and game_setup_movie_delta004237d0 to
+  existing canonical timer/context bodies per337; verify transport in one shared
+  batch, preserving their existing scheduling/diagnostic/selector/state holds.
+- Independently trace application heap/context state providers as a dependency
+  group (highest-reference frontier), rather than recovering unrelated leaves.
+-006ad750 has one direct Porsche read across25 scanned PE paths/24 hashes;
+  this does not prove ownership or absence of aliases/bulk writers. Runtime write
+  watchpoint: loaded image base+002ad750 from mapping beforeinit, correlated with
+  consumer+00161d49/+00161d5c; capture writer/module/callstack/write extent.
+- Ctype signed-byte/EOF storage and stdio original-format-VA relocation remain
+  NOT READY per337; no same-VA shortcuts or guessed providers. Keep296/301/303,
+  real filesystem/concurrency, locale domains and full-game/visual checks open.
 
-Read-only validation (reuse immutable native/session receipts):
-`py -3 scripts/research/audit-v2-resource-chain-332.py`
-`py -3 scripts/research/audit-v2-rea-session.py --config iterations/v2/001-original-recovery/runs/333-rea-resource-followup/queries.json --attempt 001`
-Fresh332 capture: `py -3 scripts/research/build-v2-game-entry-332.py --phase configure --attempt NNN`
-and `--phase build --attempt NNN`, with unused IDs. Native commands/failed
-fixture attempts remain in329/330/331 READMEs. New REA sessions use query manifests
-instead of copied clients/runners; current shared auditor accepts success-only queries.
-Older checkpoint entries below are historical, not active assignments.
+Validation: `py -3 scripts/research/audit-v2-resource-open-integration-335.py`.
+Fresh build: build-v2-game-entry-335.py --phase configure/build --attempt NNN
+(unused IDs). Reuse accepted native/session proof unless inputs change or a
+specific failure/concern requires another run. Lean workflow in AGENTS.md:
+module batches, shared tools, compact worker context, one detailed active plan;
+root PLAN/STATUS/README get only brief pointers. Do not start a broad tooling
+rewrite before the next accepted batch. Historical checkpoint entries follow.
 
 Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
 fixes, fresh receipts, shared game audit and acceptance comments complete.

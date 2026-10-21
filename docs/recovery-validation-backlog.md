@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Run335 update: bounded open wrapper/callback339B now passes60480 Od/O2
+comparisons, plus816 search binding transport cases.006ad750 is DECLARED only:
+336 direct-reference scan does not prove storage/alias ownership. Preserve the
+runtime watchpoint step in active PLAN; no transform provider is accepted.
+Physical filesystem/queue/concurrency, ctype/locale and full-game/visual holds
+remain open.337's timer/context candidates retain their existing state holds;
+ctype/stdio bindings are not accepted. Older packet scope below is historical.
+
 Run332: constructor/drive bounded20736 native cases and canonical search intake
 accepted; physical filesystem/queue/concurrency still unverified. Drive fixture
 uses controlled Win32 APIs; real OS path/domain/error composition remains open.

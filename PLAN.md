@@ -1,5 +1,11 @@
 # План восстановления Porsche Unleashed
 
+Current checkpoint: [Run335](iterations/v2/001-original-recovery/runs/335-resource-open-game-integration/README.md),2026-10-21.
+173 TUs compile;259 names/284 refs,noEXE. Open339B plus two existing search ABI
+views pass61296 comparisons;439-pin audit PASS. Detailed scope/next batch lives
+in the active iteration PLAN. Lean workflow rules are in AGENTS.md. No active
+assignments remain; older checkpoint notes below are historical.
+
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
 20736 fresh native cases and six mutation controls PASS. Existing canonical
 search TU330 integrated once using172/327 proof, no duplicate recovery count.

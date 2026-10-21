@@ -1,13 +1,10 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Current game checkpoint - [Run332](runs/332-resource-chain-game-integration/README.md):
-171 C++ TUs/8 projects compile;261 unresolved names/286 references, noEXE.
-Constructor/drive2VAs162B pass20736 fresh native cases/six mutations; existing
-canonical search TU is reused. Three names close, zero new dependencies;
-shared433-pin audit PASS. [REA333](runs/333-rea-resource-followup/README.md)
-confirms allocator/drive/search. Next: open wrapper/callback, with transform
-storage ownership still unresolved. [PLAN.md](PLAN.md) has exact next steps;
-older checkpoints below are historical.
+Current checkpoint - [Run335](runs/335-resource-open-game-integration/README.md):
+173 C++ TUs/8 projects compile;259 unresolved names/284 references,noEXE.
+61296 native comparisons/nine mutations and439-pin audit PASS. Open339B is
+recovered; two search ABI views reuse existing bodies.006ad750 ownership stays
+unresolved. [PLAN.md](PLAN.md) owns detailed scope/next batch; older notes follow.
 
 Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.
