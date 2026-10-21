@@ -1,34 +1,36 @@
-# v2 / 001 — план восстановления исходного кода
+# v2 / 001 ? original source recovery plan
 
-Current346,2026-10-21: five diagnostic leaf bodies212B restored.100 original-byte
-comparisons (/Od,/O2),four mutations and460-input shared audit PASS. Canonical
-345tables and formatter_stdio owner reused; OutputDebugStringA platform binding
-is proven as a pure six-byte x86 jump to the original KERNEL32 import.
-Fresh181-TU/8-project build:252 unresolved names/269 refs,noEXE. Five names
-close,one mono-format seam exposed. Details: runs/346-diagnostic-leaves/README.md.
+Current348,2026-10-22: seven diagnostic parser/lookup/environment functions661B
+restored.164 original-byte comparisons (/Od,/O2),eight mutations and463-input
+shared audit PASS. Fresh182-TU/8-project build002:251 unresolved names/268 refs,
+noEXE/game execution. Three names close,two original CRT boundaries appear.
+REA347/002 accepted; native348/003. Details: runs/348-diagnostic-parsers/README.md.
+Build348/001 sandbox stopped before compiling and is retained; only002 qualifies.
 
-Prior345 remains accepted: diagnostic physical100B device image with prefix/
-interior view/tail word,512B channel table,readonly aliases and guard;36 original
-comparisons plus128 ABI fill checks/seven mutations.27648 unchanged fill-chain
-cases reused. No parser/environment/output approximation or duplicate provider.
-Same-VA ABI triage found0safe aliases; reasons stay in local346triage artifact.
+Active349: diagnostic_parser_native_348 owns crt_tokenizer.cpp,fixture/config/
+evidence in349-crt-tokenizer (gpt-6-sol/medium,compact context). Root owns game
+integration/audit/docs. Recover005a30ee164B using canonical005a545c CRT thread
+provider; verify +0x18 continuation/byte delimiter bitset, do not create host strtok
+or duplicate TLS. Native proof first, then one clean game intake. Passed348 fixed.
+Root REA350/002 traces tokenizer and five mono-format children in one session;
+attempt001 spawnEPERM preserved. Explorer environment_state_349 is complete.
 
-Active347 root ownership: REA attempt002 completed six dossiers (device/channel
-parsers,environment,mono formatter,both name lookups). Attempt001 hit sandbox
-spawnEPERM;002 succeeded with proper escalation. The worker then hit quota before
-writing evidence; no unfinished production source was left. Root continues its
-bounded analysis and preserves both attempts; no active worker assignments.
-Next concrete step: bounded parser/lookup recovery using existing diagnostic
-state and setter owners; no host getenv/printf/tokenizer substitutes.
+Environment lifecycle mapping: startup005a2d1a calls005a940c then005a9106;
+006afcc8 ANSI/006afcd0 wide vectors and006c1528 guard have no canonical storage
+owner yet. Adjacent006afccc/006afcd4 sentinel alias/copy-on-write layout matters.
+Keep these extern until original lifecycle/alias proof; next original set includes
+005a9106,005a9a4a,005aa28f,005aa039,005aa416,005aa1cc,005ad5fb.
+Mono-format00592a50 remains original display subsystem, not a host printf shim.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/acceptance.json.
-Native: local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json.
-Build346/001 fresh. Platform evidence: same original IAT005b2208 API plus
-actual COFF sole DIR32 target__imp__OutputDebugStringA@4; no output/visual claim.
-Keep formatter/locale domains,invalid indices/arbitrary aliases,root296/301,
-006ad750 transform,fullallocator/OS/game/visual holds in backlog.
-Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/acceptance.json.
+Native: local/experiments/v2-diagnostic-parser-native-348/003/receipt.json.
+Build348/002 fresh; no fixture or duplicate providers enter production. Prior
+345/346 data/import/fill proofs reused unchanged, no native rerun for metadata.
+Keep capacity-zero/parser>=255 overflow,formatter/locale domains,invalid indices,
+arbitrary aliases,root296/301,006ad750 transform,allocator/OS/game/visual holds
+in docs/recovery-validation-backlog.md. Original SHA:
+ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
 
 Historical checkpoints below are not active assignments.
 

@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run346](iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/README.md):
-181 TUs/8 projects compile;252 unresolved names/269 refs,noEXE. Five diagnostic
-leaves and direct Win32 import binding integrated;100 native comparisons,four
-mutations and460-input audit PASS.347 parser/environment tracing is active.
+Current [Run348](iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/README.md):
+182 TUs/8 projects compile;251 unresolved names/268 refs,noEXE. Seven diagnostic
+parser/lookup/environment bodies pass164 native comparisons,eight mutations and
+463-input audit. Next349 original tokenizer; detailed scope in active PLAN.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

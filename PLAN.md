@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run346](iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/README.md):
-181 files compile,252 names/269 refs,noEXE. Five diagnostic leaves pass100
-comparisons/four mutations and460-input audit. Next347 traces parser/environment
-dependencies in one REA session; detailed scope stays in active iteration PLAN.
+Current [Run348](iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/README.md):
+182 TUs/8 projects compile;251 unresolved names/268 refs,noEXE. Seven diagnostic
+parser/lookup/environment bodies pass164 native comparisons,eight mutations and
+463-input audit. Next349 original tokenizer; detailed scope in active PLAN.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),

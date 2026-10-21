@@ -1,0 +1,395 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "rea_attempt": "002",
+  "functions": [
+    {
+      "label": "device-parser",
+      "entry_va": "0x55ed50",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55ed50",
+            "end": "0x55ede0"
+          }
+        ],
+        "total_bytes": 145,
+        "span_bytes": 145,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055ed50(undefined4 param_1)\r\n\r\n{\r\n  char *pcVar1;\r\n  int iVar2;\r\n  undefined4 uVar3;\r\n  undefined2 local_104;\r\n  undefined1 local_102;\r\n  undefined1 local_100 [256];\r\n  \r\n  local_104 = 0x2c20;\r\n  local_102 = 0;\r\n  FUN_0055edf0(param_1,local_100,0x100);\r\n  pcVar1 = (char *)FUN_005a30ee(local_100,&local_104);\r\n  do {\r\n    if (pcVar1 == (char *)0x0) {\r\n      return;\r\n    }\r\n    if (*pcVar1 == '-') {\r\n      iVar2 = FUN_0055ee70(pcVar1 + 1);\r\n      if (-1 < iVar2) {\r\n        uVar3 = 0;\r\nLAB_0055edbe:\r\n        FUN_0055ed20(iVar2,uVar3);\r\n      }\r\n    }\r\n    else {\r\n      iVar2 = FUN_0055ee70(pcVar1);\r\n      if (-1 < iVar2) {\r\n        uVar3 = 1;\r\n        goto LAB_0055edbe;\r\n      }\r\n    }\r\n    pcVar1 = (char *)FUN_005a30ee(0,&local_104);\r\n  } while( true );\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55ed50: SUB ESP, 0x104",
+        "0x55ed56: MOV AX, [0x005bcc74]",
+        "0x55ed5c: MOV CL, byte ptr [0x005bcc76]",
+        "0x55ed62: MOV word ptr [ESP], AX",
+        "0x55ed67: MOV EAX, dword ptr [ESP + 0x108]",
+        "0x55ed6e: LEA EDX, [ESP + 0x4]",
+        "0x55ed72: PUSH 0x100",
+        "0x55ed77: PUSH EDX",
+        "0x55ed78: PUSH EAX",
+        "0x55ed79: MOV byte ptr [ESP + 0xe], CL",
+        "0x55ed7d: CALL 0x0055edf0",
+        "0x55ed82: LEA ECX, [ESP + 0xc]",
+        "0x55ed86: LEA EDX, [ESP + 0x10]",
+        "0x55ed8a: PUSH ECX",
+        "0x55ed8b: PUSH EDX",
+        "0x55ed8c: CALL 0x005a30ee",
+        "0x55ed91: ADD ESP, 0x14",
+        "0x55ed94: TEST EAX, EAX",
+        "0x55ed96: JZ 0x0055edda",
+        "0x55ed98: CMP byte ptr [EAX], 0x2d",
+        "0x55ed9b: JNZ 0x0055edaf",
+        "0x55ed9d: INC EAX",
+        "0x55ed9e: PUSH EAX",
+        "0x55ed9f: CALL 0x0055ee70",
+        "0x55eda4: ADD ESP, 0x4",
+        "0x55eda7: TEST EAX, EAX",
+        "0x55eda9: JL 0x0055edc7",
+        "0x55edab: PUSH 0x0",
+        "0x55edad: JMP 0x0055edbe",
+        "0x55edaf: PUSH EAX",
+        "0x55edb0: CALL 0x0055ee70",
+        "0x55edb5: ADD ESP, 0x4",
+        "0x55edb8: TEST EAX, EAX",
+        "0x55edba: JL 0x0055edc7",
+        "0x55edbc: PUSH 0x1",
+        "0x55edbe: PUSH EAX",
+        "0x55edbf: CALL 0x0055ed20",
+        "0x55edc4: ADD ESP, 0x8",
+        "0x55edc7: LEA EAX, [ESP]",
+        "0x55edcb: PUSH EAX",
+        "0x55edcc: PUSH 0x0",
+        "0x55edce: CALL 0x005a30ee",
+        "0x55edd3: ADD ESP, 0x8",
+        "0x55edd6: TEST EAX, EAX",
+        "0x55edd8: JNZ 0x0055ed98",
+        "0x55edda: ADD ESP, 0x104",
+        "0x55ede0: RET"
+      ],
+      "callees": [
+        "0x55ed20",
+        "0x55edf0",
+        "0x55ee70",
+        "0x5a30ee"
+      ],
+      "dossier": "local/experiments/v2-diagnostic-parser-347-rea/002/device-parser.json",
+      "dossier_sha256": "4a73e153bf3e9ea98be44a2181b539dbb85a04ab1f570e8abecf54da06b547e3"
+    },
+    {
+      "label": "channel-parser",
+      "entry_va": "0x55f060",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55f060",
+            "end": "0x55f0eb"
+          }
+        ],
+        "total_bytes": 140,
+        "span_bytes": 140,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nvoid FUN_0055f060(undefined4 param_1)\r\n\r\n{\r\n  char *pcVar1;\r\n  int iVar2;\r\n  undefined4 uVar3;\r\n  undefined4 local_104;\r\n  undefined1 local_100 [256];\r\n  \r\n  local_104 = 0x3b2c20;\r\n  FUN_0055edf0(param_1,local_100,0x100);\r\n  pcVar1 = (char *)FUN_005a30ee(local_100,&local_104);\r\n  do {\r\n    if (pcVar1 == (char *)0x0) {\r\n      return;\r\n    }\r\n    if ((*pcVar1 == '-') || (*pcVar1 == '!')) {\r\n      iVar2 = FUN_0055f0f0(pcVar1 + 1);\r\n      if (-1 < iVar2) {\r\n        uVar3 = 0;\r\n        goto LAB_0055f0c9;\r\n      }\r\n    }\r\n    else {\r\n      iVar2 = FUN_0055f0f0(pcVar1);\r\n      if (-1 < iVar2) {\r\n        uVar3 = 1;\r\nLAB_0055f0c9:\r\n        FUN_0055efd0(iVar2,uVar3);\r\n      }\r\n    }\r\n    pcVar1 = (char *)FUN_005a30ee(0,&local_104);\r\n  } while( true );\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55f060: SUB ESP, 0x104",
+        "0x55f066: MOV EDX, dword ptr [ESP + 0x108]",
+        "0x55f06d: MOV EAX, [0x005bcc88]",
+        "0x55f072: LEA ECX, [ESP + 0x4]",
+        "0x55f076: PUSH 0x100",
+        "0x55f07b: PUSH ECX",
+        "0x55f07c: PUSH EDX",
+        "0x55f07d: MOV dword ptr [ESP + 0xc], EAX",
+        "0x55f081: CALL 0x0055edf0",
+        "0x55f086: LEA EAX, [ESP + 0xc]",
+        "0x55f08a: LEA ECX, [ESP + 0x10]",
+        "0x55f08e: PUSH EAX",
+        "0x55f08f: PUSH ECX",
+        "0x55f090: CALL 0x005a30ee",
+        "0x55f095: ADD ESP, 0x14",
+        "0x55f098: TEST EAX, EAX",
+        "0x55f09a: JZ 0x0055f0e5",
+        "0x55f09c: MOV CL, byte ptr [EAX]",
+        "0x55f09e: CMP CL, 0x2d",
+        "0x55f0a1: JZ 0x0055f0b9",
+        "0x55f0a3: CMP CL, 0x21",
+        "0x55f0a6: JZ 0x0055f0b9",
+        "0x55f0a8: PUSH EAX",
+        "0x55f0a9: CALL 0x0055f0f0",
+        "0x55f0ae: ADD ESP, 0x4",
+        "0x55f0b1: TEST EAX, EAX",
+        "0x55f0b3: JL 0x0055f0d2",
+        "0x55f0b5: PUSH 0x1",
+        "0x55f0b7: JMP 0x0055f0c9",
+        "0x55f0b9: INC EAX",
+        "0x55f0ba: PUSH EAX",
+        "0x55f0bb: CALL 0x0055f0f0",
+        "0x55f0c0: ADD ESP, 0x4",
+        "0x55f0c3: TEST EAX, EAX",
+        "0x55f0c5: JL 0x0055f0d2",
+        "0x55f0c7: PUSH 0x0",
+        "0x55f0c9: PUSH EAX",
+        "0x55f0ca: CALL 0x0055efd0",
+        "0x55f0cf: ADD ESP, 0x8",
+        "0x55f0d2: LEA EDX, [ESP]",
+        "0x55f0d6: PUSH EDX",
+        "0x55f0d7: PUSH 0x0",
+        "0x55f0d9: CALL 0x005a30ee",
+        "0x55f0de: ADD ESP, 0x8",
+        "0x55f0e1: TEST EAX, EAX",
+        "0x55f0e3: JNZ 0x0055f09c",
+        "0x55f0e5: ADD ESP, 0x104",
+        "0x55f0eb: RET"
+      ],
+      "callees": [
+        "0x55edf0",
+        "0x55efd0",
+        "0x55f0f0",
+        "0x5a30ee"
+      ],
+      "dossier": "local/experiments/v2-diagnostic-parser-347-rea/002/channel-parser.json",
+      "dossier_sha256": "53f62185557dd6fd86569a23ffa679a2c9d3cc3eef3aef361658e93159fd3780"
+    },
+    {
+      "label": "environment",
+      "entry_va": "0x5a3050",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x5a3050",
+            "end": "0x5a3070"
+          }
+        ],
+        "total_bytes": 33,
+        "span_bytes": 33,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nundefined4 FUN_005a3050(undefined4 param_1)\r\n\r\n{\r\n  undefined4 uVar1;\r\n  \r\n  FUN_005a4ba4(0xc);\r\n  uVar1 = FUN_005a3071(param_1);\r\n  FUN_005a4c05(0xc);\r\n  return uVar1;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x5a3050: PUSH ESI",
+        "0x5a3051: PUSH 0xc",
+        "0x5a3053: CALL 0x005a4ba4",
+        "0x5a3058: PUSH dword ptr [ESP + 0xc]",
+        "0x5a305c: CALL 0x005a3071",
+        "0x5a3061: PUSH 0xc",
+        "0x5a3063: MOV ESI, EAX",
+        "0x5a3065: CALL 0x005a4c05",
+        "0x5a306a: ADD ESP, 0xc",
+        "0x5a306d: MOV EAX, ESI",
+        "0x5a306f: POP ESI",
+        "0x5a3070: RET"
+      ],
+      "callees": [
+        "0x5a3071",
+        "0x5a4ba4",
+        "0x5a4c05"
+      ],
+      "dossier": "local/experiments/v2-diagnostic-parser-347-rea/002/environment.json",
+      "dossier_sha256": "8b92f7825e2b85afc823db31eccd656aa379f608db61530f7f2bd9336dd4a67c"
+    },
+    {
+      "label": "mono-format",
+      "entry_va": "0x592a50",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x592a50",
+            "end": "0x592ab4"
+          }
+        ],
+        "total_bytes": 101,
+        "span_bytes": 101,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nundefined4 FUN_00592a50(undefined4 param_1)\r\n\r\n{\r\n  undefined1 local_100 [256];\r\n  \r\n  if (1 < DAT_005e25dc) {\r\n    if (DAT_006af140 == 0) {\r\n      DAT_006af140 = FUN_005321f0();\r\n    }\r\n    FUN_005322b0(DAT_006af140);\r\n    FUN_005a299e(local_100,param_1,&stack0x00000008);\r\n    FUN_00592b60(local_100);\r\n    FUN_005322c0(DAT_006af140);\r\n  }\r\n  return 0;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x592a50: MOV EAX, [0x005e25dc]",
+        "0x592a55: SUB ESP, 0x100",
+        "0x592a5b: CMP EAX, 0x2",
+        "0x592a5e: JL 0x00592aac",
+        "0x592a60: MOV EAX, [0x006af140]",
+        "0x592a65: TEST EAX, EAX",
+        "0x592a67: JNZ 0x00592a73",
+        "0x592a69: CALL 0x005321f0",
+        "0x592a6e: MOV [0x006af140], EAX",
+        "0x592a73: PUSH EAX",
+        "0x592a74: CALL 0x005322b0",
+        "0x592a79: MOV ECX, dword ptr [ESP + 0x108]",
+        "0x592a80: LEA EAX, [ESP + 0x10c]",
+        "0x592a87: PUSH EAX",
+        "0x592a88: LEA EDX, [ESP + 0x8]",
+        "0x592a8c: PUSH ECX",
+        "0x592a8d: PUSH EDX",
+        "0x592a8e: CALL 0x005a299e",
+        "0x592a93: LEA EAX, [ESP + 0x10]",
+        "0x592a97: PUSH EAX",
+        "0x592a98: CALL 0x00592b60",
+        "0x592a9d: MOV ECX, dword ptr [0x006af140]",
+        "0x592aa3: PUSH ECX",
+        "0x592aa4: CALL 0x005322c0",
+        "0x592aa9: ADD ESP, 0x18",
+        "0x592aac: XOR EAX, EAX",
+        "0x592aae: ADD ESP, 0x100",
+        "0x592ab4: RET"
+      ],
+      "callees": [
+        "0x5321f0",
+        "0x5322b0",
+        "0x5322c0",
+        "0x592b60",
+        "0x5a299e"
+      ],
+      "dossier": "local/experiments/v2-diagnostic-parser-347-rea/002/mono-format.json",
+      "dossier_sha256": "87489a0a87ad7d2fb3db981f38de1bfec691bf7ebd74fa35cacc02738c257b67"
+    },
+    {
+      "label": "device-name-lookup",
+      "entry_va": "0x55ee70",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55ee70",
+            "end": "0x55eeae"
+          }
+        ],
+        "total_bytes": 63,
+        "span_bytes": 63,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nint FUN_0055ee70(undefined4 param_1)\r\n\r\n{\r\n  int iVar1;\r\n  int iVar2;\r\n  int iVar3;\r\n  undefined **ppuVar4;\r\n  int iVar5;\r\n  \r\n  iVar3 = -1;\r\n  iVar2 = 0;\r\n  iVar5 = 0;\r\n  ppuVar4 = &PTR_DAT_005e1c88;\r\n  do {\r\n    if (*ppuVar4 != (undefined *)0x0) {\r\n      iVar1 = FUN_0055eeb0(*ppuVar4,param_1);\r\n      if (iVar2 < iVar1) {\r\n        iVar2 = iVar1;\r\n        iVar3 = iVar5;\r\n      }\r\n    }\r\n    ppuVar4 = ppuVar4 + 3;\r\n    iVar5 = iVar5 + 1;\r\n  } while ((int)ppuVar4 < 0x5e1ce8);\r\n  return iVar3;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55ee70: PUSH EBX",
+        "0x55ee71: PUSH EBP",
+        "0x55ee72: PUSH ESI",
+        "0x55ee73: PUSH EDI",
+        "0x55ee74: OR EBP, 0xffffffff",
+        "0x55ee77: XOR EBX, EBX",
+        "0x55ee79: XOR EDI, EDI",
+        "0x55ee7b: MOV ESI, 0x5e1c88",
+        "0x55ee80: MOV EAX, dword ptr [ESI]",
+        "0x55ee82: TEST EAX, EAX",
+        "0x55ee84: JZ 0x0055ee9c",
+        "0x55ee86: MOV ECX, dword ptr [ESP + 0x14]",
+        "0x55ee8a: PUSH ECX",
+        "0x55ee8b: PUSH EAX",
+        "0x55ee8c: CALL 0x0055eeb0",
+        "0x55ee91: ADD ESP, 0x8",
+        "0x55ee94: CMP EAX, EBX",
+        "0x55ee96: JLE 0x0055ee9c",
+        "0x55ee98: MOV EBP, EDI",
+        "0x55ee9a: MOV EBX, EAX",
+        "0x55ee9c: ADD ESI, 0xc",
+        "0x55ee9f: INC EDI",
+        "0x55eea0: CMP ESI, 0x5e1ce8",
+        "0x55eea6: JL 0x0055ee80",
+        "0x55eea8: POP EDI",
+        "0x55eea9: MOV EAX, EBP",
+        "0x55eeab: POP ESI",
+        "0x55eeac: POP EBP",
+        "0x55eead: POP EBX",
+        "0x55eeae: RET"
+      ],
+      "callees": [
+        "0x55eeb0"
+      ],
+      "dossier": "local/experiments/v2-diagnostic-parser-347-rea/002/device-name-lookup.json",
+      "dossier_sha256": "6abeb61712b6a41a587598893014dccbd4ca9d55aad9ff8de72f4dfd2089c02b"
+    },
+    {
+      "label": "channel-name-lookup",
+      "entry_va": "0x55f0f0",
+      "body": {
+        "available": true,
+        "provenance": "ghidra-function-body-address-set",
+        "ranges": [
+          {
+            "start": "0x55f0f0",
+            "end": "0x55f12e"
+          }
+        ],
+        "total_bytes": 63,
+        "span_bytes": 63,
+        "non_contiguous": false,
+        "contains_entry": true
+      },
+      "pseudocode": "\r\nint FUN_0055f0f0(undefined4 param_1)\r\n\r\n{\r\n  int iVar1;\r\n  int iVar2;\r\n  int iVar3;\r\n  undefined **ppuVar4;\r\n  int iVar5;\r\n  \r\n  iVar3 = -1;\r\n  iVar2 = 0;\r\n  iVar5 = 0;\r\n  ppuVar4 = &PTR_DAT_005df4a0;\r\n  do {\r\n    if (*ppuVar4 != (undefined *)0x0) {\r\n      iVar1 = FUN_0055eeb0(*ppuVar4,param_1);\r\n      if (iVar2 < iVar1) {\r\n        iVar2 = iVar1;\r\n        iVar3 = iVar5;\r\n      }\r\n    }\r\n    ppuVar4 = ppuVar4 + 2;\r\n    iVar5 = iVar5 + 1;\r\n  } while ((int)ppuVar4 < 0x5df6a0);\r\n  return iVar3;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x55f0f0: PUSH EBX",
+        "0x55f0f1: PUSH EBP",
+        "0x55f0f2: PUSH ESI",
+        "0x55f0f3: PUSH EDI",
+        "0x55f0f4: OR EBP, 0xffffffff",
+        "0x55f0f7: XOR EBX, EBX",
+        "0x55f0f9: XOR EDI, EDI",
+        "0x55f0fb: MOV ESI, 0x5df4a0",
+        "0x55f100: MOV EAX, dword ptr [ESI]",
+        "0x55f102: TEST EAX, EAX",
+        "0x55f104: JZ 0x0055f11c",
+        "0x55f106: MOV ECX, dword ptr [ESP + 0x14]",
+        "0x55f10a: PUSH ECX",
+        "0x55f10b: PUSH EAX",
+        "0x55f10c: CALL 0x0055eeb0",
+        "0x55f111: ADD ESP, 0x8",
+        "0x55f114: CMP EAX, EBX",
+        "0x55f116: JLE 0x0055f11c",
+        "0x55f118: MOV EBP, EDI",
+        "0x55f11a: MOV EBX, EAX",
+        "0x55f11c: ADD ESI, 0x8",
+        "0x55f11f: INC EDI",
+        "0x55f120: CMP ESI, 0x5df6a0",
+        "0x55f126: JL 0x0055f100",
+        "0x55f128: POP EDI",
+        "0x55f129: MOV EAX, EBP",
+        "0x55f12b: POP ESI",
+        "0x55f12c: POP EBP",
+        "0x55f12d: POP EBX",
+        "0x55f12e: RET"
+      ],
+      "callees": [
+        "0x55eeb0"
+      ],
+      "dossier": "local/experiments/v2-diagnostic-parser-347-rea/002/channel-name-lookup.json",
+      "dossier_sha256": "10920aaba8d6b33c75febd80504aaebfbf74aa8be3ff74d2fd27b74a1d5c97fa"
+    }
+  ],
+  "confirmed": [
+    "Device separators are space/comma; channels also accept semicolon. Tokens starting - disable; channels also accept !.",
+    "Both lookups select the first strictly greatest positive prefix score, not exact name equality.",
+    "005a3050 locks CRT ID12, calls005a3071, unlocks and returns cached pointer.",
+    "Mono formatter00592a50 needs state005e25dc and006af140, vsprintf and output00592b60; retain HOLD until traced."
+  ],
+  "next_batch": {
+    "targets": [
+      "0055edf0",
+      "0055eeb0",
+      "0055ed50",
+      "0055f060",
+      "0055ee70",
+      "0055f0f0",
+      "005a3050"
+    ],
+    "remaining_boundaries": [
+      "original strtok005a30ee",
+      "original environment-inner005a3071"
+    ]
+  },
+  "holds": [
+    "Parser fixed256-byte buffers inherit original copy-helper limit/terminator behavior. Trace long-input spill before claiming malformed/overlong input acceptance.",
+    "No host getenv/printf/tokenizer replacements."
+  ]
+}

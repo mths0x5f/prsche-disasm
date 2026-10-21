@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 164,
+  "new_original_functions": 7,
+  "entry_vas": [
+    "0055edf0",
+    "0055eeb0",
+    "0055ee70",
+    "0055f0f0",
+    "0055ed50",
+    "0055f060",
+    "005a3050"
+  ],
+  "original_code_bytes": 661,
+  "mutation_controls": 8,
+  "native_receipt": "local/experiments/v2-diagnostic-parser-native-348/003/receipt.json",
+  "native_receipt_sha256": "9f70855e8d38273ceb747ab95c5206aa60d2cd14892ae03af86df90689f46efd",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/native-fixture.cpp.in": "684f5abd543344b58be5392a00883b2635629a51704db1c889b22c3a060740d8",
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp": "7d24b6981a04e578bc19b87628bf510bb7b47e2b4636397ca5b31e9ab2d7e089",
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.hpp": "b42e282f98f00da89d7f3c90510480dcd7060f8781f942d88594b3c14aaa1221",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.hpp": "67fd6b0c90309b29f9977d0bfd04aa15fd4a3140af32bc2ea630a8ac60ee8e33",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp": "3e3bd34f871c0146d2b379a7d7d6a8a4134e0fe6403c199b7404fb863d8bda3e",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40"
+  },
+  "holds": [
+    "Capacity zero in 0055edf0 underflows the original unsigned limit and is not a bounded native case.",
+    "Parser inputs of length at least 255 can spill the original 256-byte local buffer and remain outside acceptance.",
+    "The original 005a30ee tokenizer body and 005a3071 environment-inner body remain unrecovered; only their caller contracts were compared."
+  ]
+}

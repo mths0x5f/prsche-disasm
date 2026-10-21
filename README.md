@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run346](iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/README.md):
-181 C++ files compile;252 names/269 references remain,noEXE. Five original diagnostic
-leaves pass100 comparisons and four mutation checks; the real Win32 import is bound.
-[Active plan](iterations/v2/001-original-recovery/PLAN.md) tracks parser/environment tracing.
+[Latest game build, Run348](iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/README.md):
+182 C++ TUs compile;251 unresolved names/268 refs,noEXE. Seven original parser/
+lookup/environment bodies pass164 comparisons/eight mutations and463-input audit.
+Next: original tokenizer using canonical CRT thread state.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

@@ -9647,6 +9647,125 @@
       "platform_imports": [
         "KERNEL32.dll!OutputDebugStringA"
       ]
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055edf0",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055eeb0",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055ee70",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [
+        "0055eeb0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055f0f0",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [
+        "0055eeb0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055ed50",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [
+        "0055edf0",
+        "0055ee70",
+        "0055ed20"
+      ],
+      "unrecovered_dependencies": [
+        "005a30ee"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055f060",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [
+        "0055edf0",
+        "0055f0f0",
+        "0055efd0"
+      ],
+      "unrecovered_dependencies": [
+        "005a30ee"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a3050",
+      "source": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; caller cleanup and nonvolatile registers; integer/pointer EAX where applicable",
+      "recovered_dependencies": [
+        "005a4ba4",
+        "005a4c05"
+      ],
+      "unrecovered_dependencies": [
+        "005a3071"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/summary.json",
+      "verification_boundary": "Seven original bodies, bounded bytes/overlap/prefix/tokens and cached environment result. Tokenizer, environment storage, capacity-zero and parser inputs >=255 remain outside this proof."
     }
   ]
 }

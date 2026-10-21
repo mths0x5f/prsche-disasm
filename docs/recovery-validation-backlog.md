@@ -1,5 +1,15 @@
 # Отложенные проверки восстановления v2
 
+Run348: seven diagnostic functions pass164 native comparisons/eight mutations;
+tokenizer and environment-inner remain explicit boundaries. Inclusive copy can
+write a terminator at destination[capacity]; capacity zero underflows and parser
+input>=255 can spill its original256-byte local. These are unaccepted domains,
+not authorization for a silent clamp. Full parser/TLS and environment lifecycle
+composition, arbitrary table aliases, formatter/display/OS/game/visual checks remain
+open. Original environment state is owned by CRT startup005a2d1a/005a9106;
+006afcc8/006afcd0 vectors and006c1528 guard must not receive guessed zero providers.
+
+
 Run346 diagnostic setters/callbacks pass100 bounded native cases/four mutations.
 OutputDebugStringA binding is structurally proven as a pure JMP to the original
 Win32 import; real output/OS/visual composition remains untested. Device/channel
