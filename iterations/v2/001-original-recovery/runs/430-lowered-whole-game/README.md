@@ -325,6 +325,16 @@ Três correções levaram até aí:
    se o runtime protege o estado compartilhado entre threads (fila de streaming, área
    reservada) e reproduzir com várias execuções seguidas.
 
+6. Decisão do usuário (2026-10-21): as DLLs que acrescentam funcionalidade exclusiva ao jogo
+   também serão decompiladas e viram código, a partir dos binários **originais**:
+   - `gimme.dll`: conversor da foto do jogador, da EA;
+   - os drivers THRASH `Drivers\dx7z.dll` e `voodoo2z.dll`. O `dx7z.dll` do repack é uma
+     reconstrução de 2016; o original de 02/03/2000 está no protótipo, e o da versão final de
+     junho de 2000 ainda falta;
+   - o `mrbupd.dll` (atualizador da Marimba, de terceiros) ainda depende de decisão.
+
+   As DLLs do Windows e os drivers que o repack acrescentou (OpenGL, nGlide) ficam fora.
+
 Comandos:
 
 ```
