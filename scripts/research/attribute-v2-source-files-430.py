@@ -475,6 +475,21 @@ def main():
                   functions=len(funcs), source_paths=len(set(strings.values())),
                   evidence=dict(counts), named_by_rtti=len(names), classes=len(classes),
                   files={k: n for k, n in sorted(files.items())})
+    # Every original file and directory the binaries name, for the source tree. gimme.dll repeats
+    # the same few header names across ~13 include directories: that is the compiler probing the
+    # include path, so such a header proves the directory, not the file.
+    gimme_paths = [normalize(x) for x in gimme.get('paths', [])]
+    seen_in = collections.defaultdict(set)
+    for x in gimme_paths:
+        d, f = x.replace('/', '\\').rsplit('\\', 1)
+        seen_in[f.lower()].add(d.lower())
+    known_files, known_dirs = set(strings.values()), set()
+    for x in gimme_paths:
+        d, f = x.replace('/', '\\').rsplit('\\', 1)
+        known_dirs.add(d)
+        if f.lower().endswith(('.c', '.cpp')) or len(seen_in[f.lower()]) <= 2:
+            known_files.add(x)
+    result.update(known_files=sorted(known_files, key=str.lower), known_dirs=sorted(known_dirs, key=str.lower))
     (OUT / 'attribution.json').write_text(json.dumps(dict(result, by_function=by_func), indent=1), encoding='utf-8')
     (RUN / 'attribution-summary.json').write_text(json.dumps(result, indent=1) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in result.items() if k != 'files'}, indent=1))

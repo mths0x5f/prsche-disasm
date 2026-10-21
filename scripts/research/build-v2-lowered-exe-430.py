@@ -17,6 +17,7 @@ import collections
 import hashlib
 import importlib.util
 import json
+import ntpath
 import os
 import re
 import struct
@@ -494,10 +495,24 @@ def generate(translate, header, img, entries, pointers=()):
              'extern const LoweredEntry430 lowered_table430[]={',
              *(f'{{0x{v:08x}u,{f}}},' for v, f in sorted(table_rows)), '};', '']
     put(gen / 'lowered_table.cpp', '\n'.join(table))
-    for old in list(gen.glob('lowered_[0-9]*.cpp')) + [p for p in src.rglob('*.cpp') if str(p).lower() not in written]:
+    # Every original file the binaries name exists in the tree, even before any function is
+    # attributed to it; every original directory exists too.
+    for original in KNOWN['files']:
+        path = src / canonical_rel(original)
+        if str(path).lower() not in written:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            put(path, f'// original source: {original}\n'
+                      '// Arquivo original conhecido; nenhuma funcao atribuida ainda.\n')
+    keep_dirs = set()
+    for original in KNOWN['dirs']:
+        d = src / canonical_rel(original)
+        d.mkdir(parents=True, exist_ok=True)
+        keep_dirs.add(str(d).lower())
+    tree = [p for p in src.rglob('*') if p.is_file() and p.suffix.lower() in SOURCE_SUFFIXES]
+    for old in list(gen.glob('lowered_[0-9]*.cpp')) + [p for p in tree if str(p).lower() not in written]:
         old.unlink()
     for d in sorted((p for p in src.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
-        if not any(d.iterdir()):
+        if not any(d.iterdir()) and str(d).lower() not in keep_dirs:
             d.rmdir()
     return dict(dead_flag_writes=STATS["dead_flag_writes"], gap_pieces_added=added, lowered=functions, ranges=ranges,
                 table_entries=len(table_rows), rejected=rejected, instructions=insns, source_files=tu_index,
@@ -523,24 +538,42 @@ def case_like(stem, ref):
     if len(parts) == 1 and flat.lower().startswith(stem.lower()):
         return flat[:len(stem)]
     return stem
-CANON_CASE = {}
+SPELLING = {}
+KNOWN = {'files': [], 'dirs': []}
+SOURCE_SUFFIXES = ('.c', '.cpp', '.h', '.hpp', '.inl')
+# gimme.dll objects were compiled from D:\dev\NFS5\Game (objects in Game\Debug, Game\Release);
+# their relative includes (..\..\library\...) resolve from there.
+GIMME_CWD = 'D:\\dev\\NFS5\\Game'
+
+
+def path_parts(original):
+    """Original path -> its components below the drive, each build root kept as written:
+    D:\\dev\\... stays dev\\..., d:\\Nfs\\Nfs5\\... stays Nfs\\Nfs5\\..., \\real\\... stays real\\...
+    """
+    p = original.replace('/', '\\')
+    if p.startswith('..'):
+        p = ntpath.normpath(ntpath.join(GIMME_CWD, p))
+    return [x for x in p.split('\\') if x and not x.endswith(':')]
+
+
+def learn_spelling(paths):
+    """Windows paths are case-insensitive, so one directory shows up in several spellings. Each
+    directory takes the most frequent spelling that has capitals (all-lowercase names come
+    from the compiler's normalised include probes), else the most frequent one."""
+    seen = collections.defaultdict(collections.Counter)
+    for original in paths:
+        parts = path_parts(original)
+        for k in range(len(parts)):
+            seen['/'.join(x.lower() for x in parts[:k + 1])][parts[k]] += 1
+    for key, spellings in seen.items():
+        mixed = [s for s in spellings if s != s.lower()] or list(spellings)
+        SPELLING[key] = max(mixed, key=lambda s: (spellings[s], s))
 
 
 def canonical_rel(original):
-    """Original path -> relative .cpp path, one tree for both build roots.
-
-    Porsche.exe was built under d:\\Nfs\\ and the gimme.dll objects under D:\\dev\\; both hold the
-    same tree (Nfs5\\..., Support\\..., library\\...). Drive and root are dropped, and each
-    directory keeps the spelling it was first seen with (Windows paths are case-insensitive).
-    """
-    parts = [p for p in re.split(r'[\\/]', original) if p and not p.endswith(':') and p != '..']
-    if parts and parts[0].lower() in ('dev', 'nfs') and len(parts) > 2:
-        parts = parts[1:]
-    out = []
-    for k, p in enumerate(parts[:-1]):
-        key = '/'.join(x.lower() for x in parts[:k + 1])
-        out.append(CANON_CASE.setdefault(key, p))
-    return '/'.join(out + [parts[-1].rsplit('.', 1)[0] + '.cpp'])
+    """Original path -> relative path in the generated tree, with the original extension."""
+    parts = path_parts(original)
+    return '/'.join(SPELLING.get('/'.join(y.lower() for y in parts[:k + 1]), parts[k]) for k in range(len(parts)))
 
 
 def source_layout(entries):
@@ -553,7 +586,11 @@ def source_layout(entries):
     present, otherwise FUN_<va> (catalog) or PTR_<va> (pointer-only pieces).
     """
     path = OUT / 'attribution.json'
-    by_func = json.loads(path.read_text(encoding='utf-8'))['by_function'] if path.exists() else {}
+    attribution = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+    by_func = attribution.get('by_function', {})
+    KNOWN['files'] = attribution.get('known_files', [])
+    KNOWN['dirs'] = attribution.get('known_dirs', [])
+    learn_spelling(KNOWN['files'] + KNOWN['dirs'] + [v['file'] for v in by_func.values() if v.get('file')])
     layout, used, rest = {}, {}, []
     for e in sorted(entries, key=lambda e: int(e['entry_va'], 16)):
         va = e['entry_va']
@@ -611,7 +648,8 @@ def source_layout(entries):
     for rel in sorted({r for r, _ in layout.values()}):
         base = rel.rsplit('/', 1)[-1].lower()
         count[base] += 1
-        final[rel] = rel if count[base] == 1 else rel[:-4] + f'_{count[base]}.cpp'
+        stem, ext = rel.rsplit('.', 1)
+        final[rel] = rel if count[base] == 1 else f'{stem}_{count[base]}.{ext}'
         SOURCE_NOTES[final[rel]] = SOURCE_NOTES.get(rel, '')
     return {va: (final[rel], ident) for va, (rel, ident) in layout.items()}
 
@@ -633,7 +671,11 @@ def build(jobs):
     cl, link, env = toolchain()
     gen, obj = GEN, OUT / 'obj'
     obj.mkdir(parents=True, exist_ok=True)
-    sources = sorted((gen / 'src').rglob('*.cpp')) + [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
+    # Original .c files hold lowered C++ too (compiled with /TP); placeholders of known files
+    # without functions are not compiled.
+    tree = [q for q in (gen / 'src').rglob('*') if q.suffix.lower() in ('.c', '.cpp')]
+    sources = sorted(q for q in tree if '#include "machine257.h"' in q.read_text(encoding='utf-8'))
+    sources += [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp']
     # Windows file names are case-insensitive: cl may keep an old object's spelling.
     keep = {p.stem.lower() for p in sources} | {'reserve_430'}
     header = gen / 'machine257.h'
@@ -649,7 +691,7 @@ def build(jobs):
         # Hundreds of sources: pass them through a response file.
         rsp = OUT / 'compile.rsp'
         rsp.write_text('\n'.join(f'"{p}"' for p in sources), encoding='utf-8')
-        cmd = [str(cl), '/nologo', '/c', '/std:c++17', '/O2', '/GS-', '/EHs-c-', '/bigobj', '/W0', f'/MP{jobs}',
+        cmd = [str(cl), '/nologo', '/c', '/TP', '/std:c++17', '/O2', '/GS-', '/EHs-c-', '/bigobj', '/W0', f'/MP{jobs}',
                f'/I{gen}', f'/Fo{obj}\\', f'@{rsp}']
         r = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=OUT)
     (OUT / 'compile.log').write_text(r.stdout + r.stderr, encoding='utf-8')
