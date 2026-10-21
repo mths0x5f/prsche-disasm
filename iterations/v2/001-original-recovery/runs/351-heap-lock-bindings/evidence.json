@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "enter": {"va": "005322b0", "bytes": 12, "sha256": "d76e4a8c0e8c1bdbff0d6ba0a9f4b2f531091b08c1ae2a442e1a13b67d202908"},
+    "leave": {"va": "005322c0", "bytes": 12, "sha256": "375b6abe99aa46928969108f591c2e1a722cf79be6b39278222308c25f0e79b0"}
+  },
+  "index_query": "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d references for 005322b0, 005322c0 and callers 0059edb0, 0059ee30; research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm",
+  "reused_provider": {
+    "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap_locks.cpp",
+    "source_sha256": "280a5903bb07b57e48c1ebc9f501b6683fa5b88624f9315446075662c3bf54ec",
+    "accepted_proof": "iterations/v2/001-original-recovery/runs/014-heap-locks/verification.json",
+    "accepted_source_sha256_matches_current": true,
+    "recovery_count": 0
+  },
+  "adapter": "lock_binding.cpp forwards application_lock_enter/leave(void*) to canonical heap_enter_005322b0/heap_leave_005322c0(void*)",
+  "native_proof": {
+    "receipt": "local/experiments/v2-heap-lock-bindings-native-351/003/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 9,
+    "mutations_detected": 5,
+    "compared": "Original 12-byte PE bodies versus actual application adapter plus compiled accepted heap_locks.cpp providers, using the same controlled Win32 enter/leave endpoints. Checked pointer identity, ordered events, x86 cdecl ESP and nonvolatile EBP/EBX/ESI/EDI.",
+    "fixture_boundary": "Unused functions in heap_locks.cpp have fail-closed link stubs; no lock allocation or runtime contention was exercised."
+  },
+  "hold": "Lock contention and full game lifecycle remain outside the bounded adapter proof."
+}

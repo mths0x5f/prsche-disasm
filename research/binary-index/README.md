@@ -1,5 +1,10 @@
 # Индекс оригинальных бинарников
 
+Run352 navigation: [diagnostic-mono-callback-352.jsonl](supplemental/diagnostic-mono-callback-352.jsonl)
+adds omitted00592ac0..00592b56 (151 raw PE bytes, fullRET). Exact indexed
+instructions match SHA-checked original bytes. Default mono dispatch is off;
+PRINT_DEVICE can enable it. This is evidence, not host-display acceptance.
+
 Run327 supplemental navigation: [resource-open-callback-327.json](resource-open-callback-327.json)
 records00561ce0..00561df3 (276B), exact PE SHA/decoded boundaries/call sites and
 fresh REA325 missing-procedure evidence. It is evidence-only, not an accepted

@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run349](iterations/v2/001-original-recovery/runs/349-crt-tokenizer/README.md):
-183 TUs/8 projects compile;250 unresolved names/267 refs,noEXE. Original tokenizer
-reuses canonical CRT thread state;38 native comparisons,seven mutations and465-
-input audit PASS. Next351 binds existing original heap lock providers.
+Current [Run351](iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/README.md):
+184 TUs/8 projects compile;248 unresolved names/263 refs,noEXE. Two existing
+original lock providers bound after18 native comparisons/five mutations;467-input
+audit PASS. Next353 original mono subsystem;352 repairs missing callback index.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

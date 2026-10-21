@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run349](iterations/v2/001-original-recovery/runs/349-crt-tokenizer/README.md):
-183 C++ TUs compile;250 unresolved names/267 refs,noEXE. Original CRT tokenizer
-passes38 comparisons/seven mutations; canonical TLS owner and465-input audit PASS.
-Next: bind original heap lock providers.
+[Latest game build, Run351](iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/README.md):
+184 C++ TUs compile;248 unresolved names/263 refs,noEXE. Canonical heap lock
+bindings pass18 comparisons/five mutations and467-input audit. Next: original
+mono subsystem, using the repaired352 callback index and REA347/350.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

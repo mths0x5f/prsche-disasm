@@ -1,5 +1,14 @@
 # Отложенные проверки восстановления v2
 
+Run351 binds canonical lock providers after18 pointer/ABI comparisons/five
+mutations; real contention/lifecycle remain unaccepted. Run352 pins omitted
+mono callback00592ac0 and original state/routing. Default device flags avoid mono,
+but PRINT_DEVICE may enable it;0xb0000 access in a live original/host process is
+not proven.353 may recover exact bounded algorithms/data, with this OS/alias/
+format-overflow domain kept explicit. Startup report raw original string VAs
+005d6e3c/005d1400 require mapping/variadic proof; a same-VA alias is not accepted.
+
+
 Run349 restores the original tokenizer and canonical CRT thread access after38
 native comparisons/seven mutations. Full parser+TLS concurrency/composition and
 null input with null saved continuation remain unaccepted; no host fallback.

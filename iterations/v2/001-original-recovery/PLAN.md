@@ -1,36 +1,42 @@
 # v2 / 001 ? original source recovery plan
 
-Current349,2026-10-22: original CRT tokenizer005a30ee164B restored with canonical
-005a545c thread owner.38 native /Od+/O2 comparisons,seven mutations and465-input
-shared audit PASS. Fresh183-TU/8-project build001:250 names/267 refs,noEXE/game
-execution. One name closes,none appear. Native349/003; REA350/002 six dossiers.
-Prior348: seven parser/lookup/environment functions661B,164 comparisons/eight
-mutations and463-input audit. Passed native batches stay fixed.
+Current351,2026-10-22: two typed lock boundaries reuse accepted005322b0/005322c0
+providers.18 native /Od+/O2 pointer/ABI comparisons,five mutations and467-input
+shared audit PASS. Fresh184-TU/8-project build001:248 names/263 refs,noEXE/game
+execution. Two names/four refs close,none appear. Native351/003; no new original
+recovery count or lock state. Prior349 tokenizer (38comparisons/seven mutations)
+and348 parser batch (164comparisons/eight mutations) remain accepted unchanged.
 
-Active351-heap-lock-bindings: diagnostic_parser_native_348 owns new adapters/
-fixture/config/evidence (gpt-6-sol/medium,compact). Root owns game integration/
-audit/docs. application_lock_enter/leave pointer ABI matches accepted canonical
-heap_enter005322b0/heap_leave005322c0; compare original24B and adapter+provider
-chain with same OS endpoints. No new lock state/algorithm or concurrency claim.
-Explorer environment_state_349 complete; triage local/experiments/v2-service-next-
-351/evidence.json. Startup report005a177b stays HOLD: uint32 original format VAs
-005d6e3c/005d1400 are not host strings; variadic/return contract is not an alias.
+Active353-diagnostic-mono: diagnostic_parser_native_348 owns new source/header,
+fixture/config/evidence and native proof (gpt-6-sol/medium,compact). Root owns
+CMake/build/audit/docs. Seven bodies00592a50,00592ac0,00592b60,00592d00,00592d70,
+00592e00,005a299e reuse accepted heap lock/fill/copy and formatter core providers.
+Require exact raw14B state+zero-fill identity before fixture overrides, bounded
+framebuffer/control bytes/scroll/XY/raw-varargs/ABI comparisons; do not own gap
+006af144,adjacent005e25ea..eb or unproved aliases. Passed351 stays fixed.
 
-Environment lifecycle: startup005a2d1a calls005a940c then005a9106;006afcc8 ANSI/
-006afcd0 wide vectors and006c1528 guard lack canonical storage ownership proof.
-Adjacent006afccc/006afcd4 sentinel alias/copy-on-write layout matters. Keep extern
-until original lifecycle/alias proof; next original set005a9106,005a9a4a,005aa28f,
-005aa039,005aa416,005aa1cc,005ad5fb. Mono-format00592a50 is a display subsystem;
-REA350 covers five children, but display cells and00592ac0 still need ownership.
-No host printf/environment substitutes or guessed zero providers.
+352 state/routing evidence complete; supplemental diagnostic-mono-callback-352
+indexes omitted151B00592ac0 with fullRET/exact original byte equality. REA347/350
+already supply needed dossiers; no new cold session. Default original mono device
+flags are0 and startup disables it, but PRINT_DEVICE can enable it. Preserve
+original display pointer0xb0000; no host screen/forced-off policy. Live enabled-
+path OS memory access, arbitrary aliases and formatting overflow remain HOLD.
+Explorer environment_state_349 has completed state/routing evidence; no pending edit.
+
+Startup report005a177b stays HOLD: uint32 format VAs005d6e3c/005d1400 are not
+host strings; variadic/return contract is not a safe linker alias. Environment
+startup005a2d1a calls005a940c then005a9106;006afcc8 ANSI/006afcd0 wide vectors and
+006c1528 guard lack canonical storage ownership proof. Adjacent006afccc/006afcd4
+sentinel/copy-on-write layout matters. Next bounded original set005a9106,005a9a4a,
+005aa28f,005aa039,005aa416,005aa1cc,005ad5fb; keep extern rather than guessed zeros.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/349-crt-tokenizer/acceptance.json.
-Native local/experiments/v2-crt-tokenizer-native-349/003/receipt.json. Build349/001.
-Keep full parser/TLS concurrency/composition,capacity-zero/parser>=255 overflow,
-formatter/locale domains,invalid indices,arbitrary aliases,root296/301,006ad750
-transform,allocator/OS/game/visual holds in docs/recovery-validation-backlog.md.
-Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/acceptance.json.
+Native local/experiments/v2-heap-lock-bindings-native-351/003/receipt.json; build351/001.
+Keep parser/TLS concurrency/composition,capacity-zero/parser>=255 overflow,
+formatter/locale,invalid indices,arbitrary aliases,root296/301,006ad750 transform,
+allocator/OS/game/visual holds in docs/recovery-validation-backlog.md. Original SHA
+ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
 
 Historical checkpoints below are not active assignments.
 
