@@ -28,7 +28,8 @@ OUT = ROOT / 'local/experiments/v2-lowered-exe-430'
 # Accepted hand-recovered game graphs whose function names are reused (strongest name evidence).
 RECOVERED_GRAPHS = ('iterations/v2/001-original-recovery/runs/429-unified-game-integration/build-004.json',
                     'iterations/v2/001-original-recovery/runs/324-input-modes-game-integration/build-001.json',
-                    'iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/build-001.json')
+                    'iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/build-001.json',
+                    'iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/build-001.json')
 RUN = ROOT / 'iterations/v2/001-original-recovery/runs/430-lowered-whole-game'
 PATH_RE = re.compile(r'[A-Za-z0-9_:.\\/-]*\\[A-Za-z0-9_.\\/-]+\.(?:c|cpp|h|asm)$')
 

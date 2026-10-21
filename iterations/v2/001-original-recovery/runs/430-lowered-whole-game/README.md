@@ -200,12 +200,13 @@ do jogo e verificadas diferencialmente contra o original, emprestam o nome à á
 (`fe_input_getstate_00532e10`, `audio_channel_stop_00565d60`,
 `application_main_function_00413ea0`…).
 - **Fontes:** os grafos `429-unified-game-integration/build-004.json` (nosso, unificado),
-  `332-resource-chain-game-integration/build-001.json` (upstream, Runs 325–333) e
+  `332-resource-chain-game-integration/build-001.json` (upstream, Runs 325–333),
+  `346-diagnostic-leaves/build-001.json` (upstream, Runs 334–346) e
   `324-input-modes-game-integration/build-001.json` (upstream, PR22 aceito).
 - **O que conta:** só definições com corpo (`nome_XXXXXXXX(...) {`), num endereço catalogado.
   Os adaptadores `*_links.cpp` / `*bridge*` ficam de fora: eles só dão um apelido do
   consumidor ao mesmo endereço.
-- **Resultado:** 492 nomes (484 antes do Run 332). Os 21 endereços com mais de uma definição dona e nomes diferentes
+- **Resultado:** 497 nomes (484 antes do Run 332, 492 antes do 346). Os 26 endereços com mais de uma definição dona e nomes diferentes
   (`0053c290`, `0059d8e0`…) ficam sem nome.
 
 #### Nomes originais pelas próprias mensagens (`self-message`)
