@@ -1,0 +1,107 @@
+{
+  "native_batches": [
+    {
+      "native_config": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/native-config.json",
+      "native_receipt": "local/experiments/v2-diagnostic-devices-native-345/005/receipt.json",
+      "native_cases": 36
+    },
+    {
+      "native_config": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill-native-config.json",
+      "native_receipt": "local/experiments/v2-fill-transport-345/001/receipt.json",
+      "native_cases": 128,
+      "reused_chains": [
+        {
+          "auditor": "scripts/research/audit-v2-simd-fill-integration-321.py",
+          "auditor_sha256": "b336e4e2fa2ef02eefcc7ed3f433a259ec1fe11d35f8e94a163ad668b4bdd595",
+          "work": "local/experiments/v2-fill-chain-321/attempt-002",
+          "receipt_sha256": "13c1d00e215fd784f00a154803268d84f587c94de99550e2d9731a7c6400f9a8",
+          "cases": 27648,
+          "original_bodies": [
+            {
+              "file": "dispatcher.bin",
+              "va": "0053c290",
+              "bytes": 77
+            },
+            {
+              "file": "scalar.bin",
+              "va": "005b0980",
+              "bytes": 186
+            },
+            {
+              "file": "mmx.bin",
+              "va": "005b0a40",
+              "bytes": 176
+            },
+            {
+              "file": "sse.bin",
+              "va": "005b0b00",
+              "bytes": 242
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "native_cases": 164,
+  "build_config": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/build-config.json",
+  "build_attempt": "001",
+  "baseline": "iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/build-001.json",
+  "added_sources": [
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill_binding.cpp"
+  ],
+  "expected_closed_names": [
+    "?application_fill@porsche@@YAXPAXII@Z",
+    "?application_heap_kind@porsche@@YAXII@Z",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ",
+    "?application_printf_start@porsche@@YAXIPBD@Z",
+    "?application_queue_kind@porsche@@YAXII@Z",
+    "?application_secondary_start@porsche@@YAXXZ"
+  ],
+  "expected_new_names": [
+    "?application_diagnostic_channel_parse_0055f060@porsche@@YAXPBD@Z",
+    "?application_diagnostic_channel_set_0055efd0@porsche@@YAXII@Z",
+    "?application_diagnostic_device_callback_00586ca0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_callback_00586cb0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_callback_00586cc0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_parse_0055ed50@porsche@@YAXPBD@Z",
+    "?application_diagnostic_device_set_0055ed20@porsche@@YAXII@Z",
+    "?application_diagnostic_environment_005a3050@porsche@@YAPBDPBD@Z"
+  ],
+  "canonical_providers": {
+    "?platform_flush_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ": "application_heap_state.obj",
+    "?application_main_function_004a54e0@porsche@@YAXXZ": "shutdown_helpers_311.obj",
+    "?application_heap_shutdown_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?application_heap_identity_0059e9b0@porsche@@YAPAXPAXH@Z": "application_heap_state.obj",
+    "?application_heap_zero_0059e9c0@porsche@@YAIZZ": "application_heap_state.obj",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z": "heap_callbacks.obj",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z": "heap_shutdown.obj",
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z": "heap_callbacks.obj",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z": "heap_shutdown.obj",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z": "heap_callbacks.obj",
+    "?application_diagnostic_channels_005df4a0@porsche@@3PAUDiagnosticChannel@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_device_image_005e1c88@porsche@@3UDiagnosticDeviceImage@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_devices_005e1c8c@porsche@@3AAY07UDiagnosticDevice@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_started_006a57cc@porsche@@3IA": "diagnostic_devices.obj",
+    "?application_heap_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_printf_start@porsche@@YAXIPBD@Z": "diagnostic_devices.obj",
+    "?application_queue_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_secondary_start@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_fill@porsche@@YAXPAXII@Z": "fill_binding.obj",
+    "?heap_fill_0053c290@porsche@@YAXPAXII@Z": "0053c290.obj"
+  },
+  "evidence_sha256": {
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/evidence.json": "b2f63662b6766558ff72fd82229f877d3f56fa4a6932eb4320a1b048285dc02a",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill-reused-chain.json": "11044d6b2e5034da3066b143450248f600fd5ac5e345729bdff6d56b66abb421"
+  },
+  "rea_sessions": [
+    {
+      "config": "iterations/v2/001-original-recovery/runs/343-secondary-heap-state/rea-queries.json",
+      "attempt": "001"
+    }
+  ]
+}

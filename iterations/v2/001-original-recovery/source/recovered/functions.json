@@ -9476,6 +9476,96 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/summary.json",
       "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055eba0",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed void return, caller cleanup and nonvolatile registers checked",
+      "recovered_dependencies": [
+        "0055ef90",
+        "0055ecd0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/summary.json",
+      "verification_boundary": "Initial PE table/readonly data identities plus bounded valid-index native cases; child parsers/environment/output remain controlled boundaries."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055ec30",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed void return, caller cleanup and nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/summary.json",
+      "verification_boundary": "Initial PE table/readonly data identities plus bounded valid-index native cases; child parsers/environment/output remain controlled boundaries."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055ecd0",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed void return, caller cleanup and nonvolatile registers checked",
+      "recovered_dependencies": [
+        "0055eba0"
+      ],
+      "unrecovered_dependencies": [
+        "0055ed20",
+        "005a3050",
+        "0055ed50"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/summary.json",
+      "verification_boundary": "Initial PE table/readonly data identities plus bounded valid-index native cases; child parsers/environment/output remain controlled boundaries."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055ef90",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed void return, caller cleanup and nonvolatile registers checked",
+      "recovered_dependencies": [
+        "0055eba0"
+      ],
+      "unrecovered_dependencies": [
+        "0055efd0",
+        "005a3050",
+        "0055f060"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/summary.json",
+      "verification_boundary": "Initial PE table/readonly data identities plus bounded valid-index native cases; child parsers/environment/output remain controlled boundaries."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055f150",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed void return, caller cleanup and nonvolatile registers checked",
+      "recovered_dependencies": [
+        "0055eba0"
+      ],
+      "unrecovered_dependencies": [
+        "005a3050",
+        "0055f060"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/summary.json",
+      "verification_boundary": "Initial PE table/readonly data identities plus bounded valid-index native cases; child parsers/environment/output remain controlled boundaries."
     }
   ]
 }

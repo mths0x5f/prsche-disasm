@@ -1,35 +1,34 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current344, 2026-10-21: five original heap dependency bodies341/342 integrated
-in one clean build.177 C++ TUs/8 projects compile,254 names/271 refs; noEXE.
-240 original-byte comparisons (/Od,/O2),11 mutations and453-input audit PASS.
-No new unresolved names. Canonical340 state,312/321 fill and existing lock owners
-are reused; no duplicated providers. Details: runs/344-heap-dependencies-integration/README.md.
+Current345, 2026-10-21: diagnostic device/channel initialization, shutdown and
+configuration wrappers restored with exact physical tables/readonly aliases.
+Five original bodies334B pass36 original-byte comparisons/four mutations; the
+application_fill ABI view passes128 transport cases/three mutations, reusing the
+unchanged27648-case312/321 full fill-chain proof. No native backend rerun.
+Fresh179-TU/8-project build:256 names/273 refs,noEXE. Six names close, eight
+actual child/callback seams surface. Shared457-input audit PASS. Commands and
+provenance: runs/345-diagnostic-devices/README.md / acceptance.json.
 
-Confirmed340 state publication/reset and alias proof remains accepted (688 cases,
-seven mutations).341 restores queue cleanup and heap destruction;342 restores
-three live callbacks and supplies relocation-backed supplemental index entries.
-Complete allocator/OS composition, arbitrary pointer/index domains and malformed
-nonterminating chains remain HOLD. Old078 detached-state probes are historical.
+Confirmed: diagnostic device name-prefix005e1c88, callback view005e1c8c,
+adjacent tail005e1ce8=1, channel005df4a0 (64*8B), guard006a57cc and both
+readonly string spans. Direct PE initial-data comparison caught/fixed an earlier
+misplaced tail DWORD;005 final native receipt supersedes earlier345 attempts.
+Current state is canonical; no callback/parser/environment behavior is invented.
 
-REA343 identified0055eba0/0055ec30/0055ecd0/0055ef90/0055f150 as diagnostic
-output device/channel setup, not allocation. Guard006a57cc indexed8DWORDrefs,
-start1/stop0 writes; device8*12B and channel64*8B spans/initialbytes are pinned.
-Source query artifacts remain in343-secondary-heap-state (historical name).
+Active346: heap_callback_map_340 finished five leaf bodies (setters0055ed20/
+0055efd0, callbacks00586ca0/b0/c0) and original-byte proof100 comparisons/four
+mutations. Root owns review, index supplementcc0, platform binding and one clean
+intake. ABI-only suffix triage byheap_native_340 found0safe candidates; local
+artifactv2-next-abi-candidates-346.json retains excluded-domain reasons.
+Next concrete step: accept346leaves, then diagnostic parser/environment bodies
+0055ed50/0055f060/005a3050 and mono formatter00592a50 after original tracing.
 
-Active345: heap_callback_map_340 owns diagnostic_devices.hpp/.cpp, native config/
-fixture and evidence under345-diagnostic-devices; establish table callback ABI/
-relocations/aliases before providers, leave unknown children named externs.
-Root owns integration and application_fill ABI binding to already accepted312/321
-fill chain; do not rerun27648 unchanged backend cases. heap_native_340 complete.
-Next concrete step: finish345 native/ABI proof, then one shared fresh game intake.
-
-Checks: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/acceptance.json.
-Native: local/experiments/v2-heap-dependencies-native-341/001/receipt.json and
-local/experiments/v2-heap-live-native-342/002/receipt.json. Build344/001 is fresh.
-Keep root296/301,006ad750 transform,locale/runtime,game/visual and complete
-allocator acceptance holds in recovery-validation-backlog.md.
+Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/345-diagnostic-devices/acceptance.json.
+Native receipts: v2-diagnostic-devices-native-345/005 andv2-fill-transport-345/001
+underlocal/experiments. Build345/001 is fresh. All345workers complete.
+Keep original formatter/locale domains, invalid indices/arbitrary table aliases,
+root296/301,006ad750 transform, fullallocator/OS/game/visual holds in backlog.
 Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
 
 Historical checkpoints below are not active assignments.

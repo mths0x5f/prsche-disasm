@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run344](iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/README.md):
-177 TUs/8 projects compile;254 unresolved names/271 refs,noEXE. Five original
-heap helpers integrated after240 native comparisons,11 mutations and453-input
-audit PASS.345 diagnostic device/channel recovery is active; details in iteration PLAN.
+Current [Run345](iterations/v2/001-original-recovery/runs/345-diagnostic-devices/README.md):
+179 TUs/8 projects compile;256 unresolved names/273 refs,noEXE. Diagnostic
+tables/wrappers and existing fill binding pass36 original comparisons,128 ABI
+checks and seven mutations;457-input audit PASS.346 leaf integration is active.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

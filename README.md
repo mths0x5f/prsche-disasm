@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run344](iterations/v2/001-original-recovery/runs/344-heap-dependencies-integration/README.md):
-177 C++ files compile;254 names/271 references remain,noEXE. Five original heap
-helpers pass240 comparisons and11 mutation controls; canonical340 state is reused.
-[Active plan](iterations/v2/001-original-recovery/PLAN.md) tracks diagnostic setup next.
+[Latest game build, Run345](iterations/v2/001-original-recovery/runs/345-diagnostic-devices/README.md):
+179 C++ files compile;256 names/273 references remain,noEXE. Original diagnostic
+setup and the existing fill binding pass36 original comparisons and128 ABI checks.
+[Active plan](iterations/v2/001-original-recovery/PLAN.md) tracks diagnostic leaf integration.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

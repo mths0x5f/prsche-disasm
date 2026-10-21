@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Run345 diagnostic tables/guard and five wrappers pass initial-data/alias checks
+and36 native comparisons; fill binding128transportcases reuses unchanged321chain.
+Next346real leaf setters/output callbacks; parsers/environment/mono formatting
+remain explicit dependencies. Device/channel valid-index domains are bounded;
+unmapped indices, arbitrary cross-span aliases, formatter/locale/OS composition
+and full game/visual acceptance remain HOLD.345 attempts before005 missed an
+initial tail DWORD; only005 is current diagnostic proof.
+
 Run344 integrates five bounded original heap helpers after240 native comparisons
 and11 mutations. Live callbacks,queue cleanup andheap destroy from340 now have
 real providers. Full303 allocator/OS composition, arbitrary out-of-object index

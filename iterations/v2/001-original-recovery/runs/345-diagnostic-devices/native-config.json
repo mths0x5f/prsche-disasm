@@ -1,0 +1,35 @@
+{
+  "run": 345,
+  "experiment": "local/experiments/v2-diagnostic-devices-native-345",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@START@","va":"0055eba0","bytes":134,"sha256":"217b93ba7da60e371db725ae2985e2915b52764c18cf445af49baa1ede51afbd"},
+    {"token":"@STOP@","va":"0055ec30","bytes":20,"sha256":"cff600936754a11377cea54f0fedec83f6ccf7dad2925ea58b03e4f110c1a064"},
+    {"token":"@DEVICE_KIND@","va":"0055ecd0","bytes":72,"sha256":"d25b570413714b84c4826264136d56e5cf6a0bb8f8be843a5af9386bb91aada8"},
+    {"token":"@CHANNEL_KIND@","va":"0055ef90","bytes":54,"sha256":"9378c6cfbad9dce323ed58e4c09b039e1cfefd87733067deea5a729af5f107dc"},
+    {"token":"@CHANNEL_NAME@","va":"0055f150","bytes":54,"sha256":"69999dccc52bb7a5ac12a51b8992ff34a16d4cf0cfd0aafc27c58f4cfae63456"},
+    {"token":"@DEVICE_IMAGE@","va":"005e1c88","bytes":100,"sha256":"e49beea73e6c359cfc94833853bf0884d9533b74f5e4ba0ea181715e1c0ed3a4"},
+    {"token":"@CHANNEL_TABLE@","va":"005df4a0","bytes":512,"sha256":"15681a00395e8c07815ade7041b17cc27357bf0b41b24c5c3b2be9e4ecedccf2"},
+    {"token":"@DEVICE_STRINGS@","va":"005c1588","bytes":25,"sha256":"a812a27994b1f9c42db12b0e7bb331217c0d41bdc9541aa6ebad85c0bd0a7151"},
+    {"token":"@CHANNEL_STRINGS@","va":"005bcbe4","bytes":162,"sha256":"f0e00c8b58eb37c8b480623841bf53532c96a88d8dcfb298f81575bbc7494f07"}
+  ],
+  "pass_marker": "diagnostic_devices_original_vs_cpp=PASS",
+  "mutations": [
+    {"name":"start-clear-wrong-bit","source":"iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp","old":"device.flags&=~1u","new":"device.flags&=~2u","expected_exit":1},
+    {"name":"device-skip-callback-gate","source":"iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp","old":"if(application_diagnostic_devices_005e1c8c[index].callback==0)return;","new":"if(application_diagnostic_devices_005e1c8c[index].callback!=0)return;","expected_exit":1},
+    {"name":"channel-name-wrong-index","source":"iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp","old":"application_diagnostic_channels_005df4a0[index].name=word(name);","new":"application_diagnostic_channels_005df4a0[index^1u].name=word(name);","expected_exit":1},
+    {"name":"device-wrong-tail-word","source":"iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp","old":"{},{},{},{},{0,0,1}}","new":"{},{},{},{},{0,1,0}}","expected_exit":1,"failure_marker":"physical-initializer divergence"}
+  ]
+}

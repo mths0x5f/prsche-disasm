@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 164,
+  "mutations": 7,
+  "rea": [
+    {
+      "schema": 1,
+      "passed": true,
+      "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "receipt": "local/experiments/v2-secondary-heap-343-rea/001/receipt.json",
+      "receipt_sha256": "b318671822749aac6580ab050ad52216b9d2cc1f1b048f1575f97ba4c8ed3058",
+      "config_sha256": "7351e061f5d963a8d98ea69a73d8222bad515cdfc0c925d919c6f6cee39d77d8",
+      "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+      "server_pid": 206388,
+      "same_server_identity": true,
+      "bodies": {
+        "secondary-start": {
+          "address": "0x55eba0",
+          "bytes": 134,
+          "sha256": "217b93ba7da60e371db725ae2985e2915b52764c18cf445af49baa1ede51afbd"
+        },
+        "secondary-stop": {
+          "address": "0x55ec30",
+          "bytes": 20,
+          "sha256": "cff600936754a11377cea54f0fedec83f6ccf7dad2925ea58b03e4f110c1a064"
+        },
+        "queue-kind": {
+          "address": "0x55ecd0",
+          "bytes": 72,
+          "sha256": "d25b570413714b84c4826264136d56e5cf6a0bb8f8be843a5af9386bb91aada8"
+        },
+        "heap-kind": {
+          "address": "0x55ef90",
+          "bytes": 54,
+          "sha256": "9378c6cfbad9dce323ed58e4c09b039e1cfefd87733067deea5a729af5f107dc"
+        },
+        "printf-start": {
+          "address": "0x55f150",
+          "bytes": 54,
+          "sha256": "69999dccc52bb7a5ac12a51b8992ff34a16d4cf0cfd0aafc27c58f4cfae63456"
+        }
+      },
+      "repeated_equal": [],
+      "timings_ms": {
+        "initialize": 1739.683,
+        "open": 5345.062,
+        "session-before": 130.711,
+        "secondary-start": 109423.119,
+        "secondary-stop": 20.438,
+        "queue-kind": 42.116,
+        "heap-kind": 37.356,
+        "printf-start": 34.08,
+        "secondary-state": 11.493,
+        "session-final": 76.778,
+        "close": 390.253
+      },
+      "native_acceptance": false,
+      "game_executed": false
+    }
+  ],
+  "source_pins": 457,
+  "game_sources": 179,
+  "build_sha256": "65bc2f3a9f5760f8ba1f11bde9093f62fa536e683efa18e9fc38bbf18bfb0190",
+  "unresolved_names": 256,
+  "unresolved_references": 273,
+  "closed_names": [
+    "?application_fill@porsche@@YAXPAXII@Z",
+    "?application_heap_kind@porsche@@YAXII@Z",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ",
+    "?application_printf_start@porsche@@YAXIPBD@Z",
+    "?application_queue_kind@porsche@@YAXII@Z",
+    "?application_secondary_start@porsche@@YAXXZ"
+  ],
+  "new_names": [
+    "?application_diagnostic_channel_parse_0055f060@porsche@@YAXPBD@Z",
+    "?application_diagnostic_channel_set_0055efd0@porsche@@YAXII@Z",
+    "?application_diagnostic_device_callback_00586ca0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_callback_00586cb0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_callback_00586cc0@porsche@@YAXIPBD@Z",
+    "?application_diagnostic_device_parse_0055ed50@porsche@@YAXPBD@Z",
+    "?application_diagnostic_device_set_0055ed20@porsche@@YAXII@Z",
+    "?application_diagnostic_environment_005a3050@porsche@@YAPBDPBD@Z"
+  ],
+  "canonical_providers": {
+    "?platform_flush_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ": "application_heap_state.obj",
+    "?application_main_function_004a54e0@porsche@@YAXXZ": "shutdown_helpers_311.obj",
+    "?application_heap_shutdown_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?application_heap_identity_0059e9b0@porsche@@YAPAXPAXH@Z": "application_heap_state.obj",
+    "?application_heap_zero_0059e9c0@porsche@@YAIZZ": "application_heap_state.obj",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z": "heap_callbacks.obj",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z": "heap_shutdown.obj",
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z": "heap_callbacks.obj",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z": "heap_shutdown.obj",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z": "heap_callbacks.obj",
+    "?application_diagnostic_channels_005df4a0@porsche@@3PAUDiagnosticChannel@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_device_image_005e1c88@porsche@@3UDiagnosticDeviceImage@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_devices_005e1c8c@porsche@@3AAY07UDiagnosticDevice@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_started_006a57cc@porsche@@3IA": "diagnostic_devices.obj",
+    "?application_heap_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_printf_start@porsche@@YAXIPBD@Z": "diagnostic_devices.obj",
+    "?application_queue_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_secondary_start@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_fill@porsche@@YAXPAXII@Z": "fill_binding.obj",
+    "?heap_fill_0053c290@porsche@@YAXPAXII@Z": "0053c290.obj"
+  },
+  "game_executed": false,
+  "executable": null,
+  "native_proofs": [
+    {
+      "cases": 36,
+      "mutations": 4,
+      "receipt_sha256": "28dad40f6abe5b08688019e621a79fab64ed9193c5735f1285c51368361d8032"
+    },
+    {
+      "cases": 128,
+      "mutations": 3,
+      "receipt_sha256": "535da76e65c3db7ff870f13b331f49dfb32908bf9ee330fd100458b94600cbfd",
+      "reused_chains": [
+        {
+          "cases": 27648,
+          "receipt_sha256": "13c1d00e215fd784f00a154803268d84f587c94de99550e2d9731a7c6400f9a8",
+          "rerun": false
+        }
+      ]
+    }
+  ]
+}

@@ -61,8 +61,24 @@ def audit_native(cfg, cache, sha):
     pinned = {(ROOT / name).resolve() for name in native['inputs_sha256']}
     assert paths <= pinned, 'compiler dependency closure not pinned'
 
-    return dict(cases=cfg['native_cases'], mutations=len(mutations),
-                receipt_sha256=sha(ROOT / cfg['native_receipt']))
+    result = dict(cases=cfg['native_cases'], mutations=len(mutations),
+                  receipt_sha256=sha(ROOT / cfg['native_receipt']))
+    reused = []
+    for proof in cfg.get('reused_chains', []):
+        path = ROOT / proof['auditor']
+        assert sha(path) == proof['auditor_sha256']
+        verifier = module('native_batch_reused_chain', path)
+        work = ROOT / proof['work']
+        assert sha(work / 'receipt.json') == proof['receipt_sha256']
+        receipt = verifier.audit_receipt(work)
+        verifier.cache.check_stable()
+        assert receipt['native_cases_passed'] == proof['cases']
+        for body in proof['original_bodies']:
+            assert utility.pe_at(pe, int(body['va'], 16), body['bytes']) == cache.data(work / body['file'])
+        reused.append(dict(cases=proof['cases'], receipt_sha256=proof['receipt_sha256'], rerun=False))
+    if reused:
+        result['reused_chains'] = reused
+    return result
 
 
 def audit(config_path):

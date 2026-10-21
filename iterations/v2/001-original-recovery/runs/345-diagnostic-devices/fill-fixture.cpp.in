@@ -1,0 +1,55 @@
+#include "porsche/application_heap.hpp"
+#include "porsche/heap.hpp"
+#include <cstdio>
+#include <initializer_list>
+
+using U = std::uint32_t;
+static_assert(sizeof(void*) == 4);
+static U observed[3], calls;
+namespace porsche {
+void __cdecl heap_fill_0053c290(void* destination, U value, U bytes) {
+    ++calls;
+    observed[0] = reinterpret_cast<U>(destination);
+    observed[1] = value;
+    observed[2] = bytes;
+}
+}
+static bool invoke(U destination, U value, U bytes) {
+    U esp0, esp1, ebp0, ebp1, ebx1, esi1, edi1;
+    const void* target = reinterpret_cast<const void*>(&porsche::application_fill);
+    calls = 0;
+    __asm {
+        mov esp0, esp
+        mov ebp0, ebp
+        mov ebx, 13579bdfh
+        mov esi, 2468ace0h
+        mov edi, 6a31c5e7h
+        push bytes
+        push value
+        push destination
+        call target
+        add esp, 12
+        mov esp1, esp
+        mov ebp1, ebp
+        mov ebx1, ebx
+        mov esi1, esi
+        mov edi1, edi
+    }
+    return calls == 1 && observed[0] == destination && observed[1] == value &&
+        observed[2] == bytes && esp0 == esp1 && ebp0 == ebp1 &&
+        ebx1 == 0x13579bdfu && esi1 == 0x2468ace0u && edi1 == 0x6a31c5e7u;
+}
+int main() {
+    U cases = 0;
+    for (U destination : {0u, 0x12345000u, 0x89abcdefu, 0xffffffffu})
+        for (U value : {0u, 0x10000u, 0x89abcdefu, 0xffffffffu})
+            for (U bytes : {0u, 1u, 0x80000001u, 0xffffffffu}) {
+                if (!invoke(destination, value, bytes)) {
+                    std::puts("divergence fill ABI transport");
+                    return 10;
+                }
+                ++cases;
+            }
+    std::printf("cases=%u fill_transport=PASS\n", cases);
+    return cases == 64 ? 0 : 93;
+}
