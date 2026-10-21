@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-heap-state-340-rea",
+  "queries": [
+    {
+      "label": "object-create",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0059ebc0"
+      }
+    },
+    {
+      "label": "queue-start",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0059edb0"
+      }
+    },
+    {
+      "label": "queue-grow",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0059eeb0"
+      }
+    },
+    {
+      "label": "queue-clean",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0059ee30"
+      }
+    },
+    {
+      "label": "heap-slot-destroy",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005699f0"
+      }
+    },
+    {
+      "label": "default-cleanup-entry",
+      "tool": "inspect_address_context",
+      "arguments": {
+        "address": "0x0059e9b0"
+      }
+    },
+    {
+      "label": "default-cleanup-bytes",
+      "tool": "read_bytes",
+      "arguments": {
+        "address": "0x0059e9b0",
+        "length": 16
+      }
+    }
+  ]
+}

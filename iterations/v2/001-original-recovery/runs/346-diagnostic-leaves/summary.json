@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 100,
+  "new_original_functions": 5,
+  "entry_vas": [
+    "0055ed20",
+    "0055efd0",
+    "00586ca0",
+    "00586cb0",
+    "00586cc0"
+  ],
+  "original_code_bytes": 212,
+  "mutation_controls": 4,
+  "native_receipt": "local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json",
+  "native_receipt_sha256": "f305b7ef4f1088334710fe9fd74d8f0085230427aa38bc20c8ea4807edc7eee0",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/native-config.json": "2f435a39a9651c0a7be35f817e22fee9b313abdc3e8fe44351777546a8c128d9",
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp": "8a841e9468ac479913ccbe0e4973920fc31e6f3eb2e4a98314f2d4f16744d507",
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/native-fixture.cpp.in": "352794c6462c14e19d19e4059f2a5635f49f09c88265cd691dcfb6b78aaf9bb4",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.hpp": "67fd6b0c90309b29f9977d0bfd04aa15fd4a3140af32bc2ea630a8ac60ee8e33",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_stdio.hpp": "19ae922b1efccdbfb03632b771784654cf2e4280bce1166ee2fab228073841f7",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "bac5720fbfd1436528dd99129bb2162811d9e703a652f2d2106954426a9680b1",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_output.hpp": "68b58fd329f1a1870191052d3bcd027d7d559873dbe3aa652fd1d85ee0e04436",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_lowio.hpp": "647ef0075f0cda31b989374cf2fb66955ae85d327237a06403dd44dc2b327486",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_locale.hpp": "01efc1a27c0e03f67a04d822080e4999e2210b65b5bd9e3b52ecc9de30863e4a",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3"
+  },
+  "scope": "Valid table indices with fixture-controlled canonical-layout data and output targets. Formatter/locale and malformed-index domains remain HOLD. Platform binding is separately proven as pure jump to original Win32 import."
+}

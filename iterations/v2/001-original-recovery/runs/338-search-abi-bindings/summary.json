@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "run": 338,
+  "status": "PASS",
+  "kind": "ABI bindings to existing172 canonical functions",
+  "new_original_functions": 0,
+  "native_cases_passed": 816,
+  "native_attemptdir": "local/experiments/v2-search-bindings-338/001",
+  "native_receipt_sha256": "df94cdee17f80b75cfb812c045e44cc9ba757011ee4af8f2c03e0eab58592cdb",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/338-search-abi-bindings/search_bindings_338.cpp": "760ba6c588d7c74c244f82cb0d66eab78d079f834e56af26b9dd3d4de74c6ece",
+    "iterations/v2/001-original-recovery/runs/338-search-abi-bindings/search_bindings_338.hpp": "92dccf074c459302b1bfabd796c8662767fc22aa9d9caeeea521a5d6c0e8a57c",
+    "iterations/v2/001-original-recovery/runs/338-search-abi-bindings/native_fixture_338.cpp": "24eccf3de19533f0fee942a3f3cabde4d6b5f7a22d87a83070233f0543b45ada"
+  },
+  "coff_symbols": {
+    "defined": [
+      "?compare_005ae3c0@porsche@@YAHPBD0@Z",
+      "?render_settings_read_config_005a1e10@porsche@@YAHPADPBD@Z"
+    ],
+    "undefined": [
+      "?formatter_search_compare_005ae3c0@porsche@@YAHPBD0@Z",
+      "?formatter_search_substring_005a1e10@porsche@@YAPBDPBD0@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "original_body_proof": {
+    "path": "iterations/v2/001-original-recovery/runs/172-formatter-search/production-verification.json",
+    "sha256": "3cc21d52cdee451fafad72b5e49d459b23f6bec2656efc6be55629de7bf5a803",
+    "cases": 9374,
+    "current_source_pins": 22,
+    "rerun": false
+  },
+  "negative_controls": [
+    {
+      "name": "substring-bool",
+      "detected": true,
+      "exit_code": 10
+    },
+    {
+      "name": "compare-wrong-callee",
+      "detected": true,
+      "exit_code": 10
+    },
+    {
+      "name": "compare-swapped-arguments",
+      "detected": true,
+      "exit_code": 10
+    }
+  ],
+  "predicted_closed_names": [
+    "?compare_005ae3c0@porsche@@YAHPBD0@Z",
+    "?render_settings_read_config_005a1e10@porsche@@YAHPADPBD@Z"
+  ],
+  "predicted_closed_references": 2,
+  "new_dependencies": []
+}

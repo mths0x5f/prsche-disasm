@@ -1,0 +1,445 @@
+{
+  "schema": 1,
+  "scope": "Read-only callback header and canonical owner map; no production implementation or native rerun",
+  "query": "Porsche.exe PE 005e3e18..005e3e3f and 005e4700..005e4727; indexed references, function ranges, all run/source C++ VAs; 339 REA manager publication",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "geometry": {
+    "default_manager_va": "005e3e18",
+    "live_manager_va": "005e4700",
+    "header_bytes": 40,
+    "pool_count": 16,
+    "pool_stride": 140,
+    "manager_bytes": 2280
+  },
+  "headers": {
+    "default": [
+      {
+        "offset": "00",
+        "slot_va": "005e3e18",
+        "pe_initial_dword": "006af374",
+        "highlow_relocation": true,
+        "target_status": "selector-array-pointer"
+      },
+      {
+        "offset": "04",
+        "slot_va": "005e3e1c",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      },
+      {
+        "offset": "08",
+        "slot_va": "005e3e20",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      },
+      {
+        "offset": "0c",
+        "slot_va": "005e3e24",
+        "pe_initial_dword": "0059e9b0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body"
+      },
+      {
+        "offset": "10",
+        "slot_va": "005e3e28",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      },
+      {
+        "offset": "14",
+        "slot_va": "005e3e2c",
+        "pe_initial_dword": "00000000",
+        "highlow_relocation": false,
+        "target_status": "literal-zero"
+      },
+      {
+        "offset": "18",
+        "slot_va": "005e3e30",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      },
+      {
+        "offset": "1c",
+        "slot_va": "005e3e34",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      },
+      {
+        "offset": "20",
+        "slot_va": "005e3e38",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      },
+      {
+        "offset": "24",
+        "slot_va": "005e3e3c",
+        "pe_initial_dword": "0059e9c0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-indexed"
+      }
+    ],
+    "live": [
+      {
+        "offset": "00",
+        "slot_va": "005e4700",
+        "pe_initial_dword": "006af374",
+        "highlow_relocation": true,
+        "target_status": "selector-array-pointer"
+      },
+      {
+        "offset": "04",
+        "slot_va": "005e4704",
+        "pe_initial_dword": "00531f70",
+        "highlow_relocation": true,
+        "target_status": "canonical-verified"
+      },
+      {
+        "offset": "08",
+        "slot_va": "005e4708",
+        "pe_initial_dword": "00531f90",
+        "highlow_relocation": true,
+        "target_status": "canonical-verified"
+      },
+      {
+        "offset": "0c",
+        "slot_va": "005e470c",
+        "pe_initial_dword": "00569640",
+        "highlow_relocation": true,
+        "target_status": "canonical-verified"
+      },
+      {
+        "offset": "10",
+        "slot_va": "005e4710",
+        "pe_initial_dword": "005aef20",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-unindexed"
+      },
+      {
+        "offset": "14",
+        "slot_va": "005e4714",
+        "pe_initial_dword": "00000000",
+        "highlow_relocation": false,
+        "target_status": "literal-zero"
+      },
+      {
+        "offset": "18",
+        "slot_va": "005e4718",
+        "pe_initial_dword": "00556640",
+        "highlow_relocation": true,
+        "target_status": "canonical-verified"
+      },
+      {
+        "offset": "1c",
+        "slot_va": "005e471c",
+        "pe_initial_dword": "00556650",
+        "highlow_relocation": true,
+        "target_status": "canonical-verified"
+      },
+      {
+        "offset": "20",
+        "slot_va": "005e4720",
+        "pe_initial_dword": "00556680",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-unindexed"
+      },
+      {
+        "offset": "24",
+        "slot_va": "005e4724",
+        "pe_initial_dword": "00569ad0",
+        "highlow_relocation": true,
+        "target_status": "unowned-original-body-unindexed"
+      }
+    ]
+  },
+  "pointer_cells": [
+    {
+      "va": "005e4fe8",
+      "value": "005e3e18",
+      "highlow_relocation": true
+    },
+    {
+      "va": "005e4fec",
+      "value": "006af374",
+      "highlow_relocation": true
+    }
+  ],
+  "targets": {
+    "0059e9b0": {
+      "observed_effect": "first stacked DWORD returned unchanged; RET",
+      "abi": "cdecl compatible, at least one DWORD; caller pops",
+      "cpp_symbol": null,
+      "status": "unowned-original-body",
+      "registry_source": null,
+      "registry_verification": null,
+      "indexed_body_ranges": [],
+      "source_mentions": 0,
+      "all_run_source_mentions": 0,
+      "raw_pe_body": {
+        "bytes": "8b442404c3",
+        "length": 5,
+        "sha256": "6d072d11a5144359746b0e9d2eaf5a06531a0162b9f7d07a44dd01f51006e142"
+      }
+    },
+    "0059e9c0": {
+      "observed_effect": "EAX=0; RET; does not read arguments",
+      "abi": "cdecl compatible for distinct slot signatures; caller pops",
+      "cpp_symbol": null,
+      "status": "unowned-original-body-indexed",
+      "registry_source": null,
+      "registry_verification": null,
+      "indexed_body_ranges": [
+        {
+          "va": "0059e9c0",
+          "body_ranges": [
+            [
+              "0059e9c0",
+              "0059e9c2"
+            ]
+          ],
+          "body_bytes": 3
+        }
+      ],
+      "source_mentions": 0,
+      "all_run_source_mentions": 2,
+      "raw_pe_body": {
+        "bytes": "33c0c3",
+        "length": 3,
+        "sha256": "4bc724f3b1d0caf4fe369c18cba3102e6c4ea057f63fe1587e3973134a7f755e"
+      }
+    },
+    "00531f70": {
+      "observed_effect": "passes three DWORD arguments to 00531ca0",
+      "abi": "void* __cdecl(const char*, uint32_t, uint32_t)",
+      "cpp_symbol": "application_allocator_entry_00531f70",
+      "status": "canonical-verified",
+      "registry_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_alloc.cpp",
+      "registry_verification": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-alloc/verification.json",
+      "indexed_body_ranges": [
+        {
+          "va": "00531f70",
+          "body_ranges": [
+            [
+              "00531f70",
+              "00531f87"
+            ]
+          ],
+          "body_bytes": 24
+        }
+      ],
+      "source_mentions": 9,
+      "all_run_source_mentions": 2
+    },
+    "00531f90": {
+      "observed_effect": "frees one allocation",
+      "abi": "uint32_t __cdecl(void*)",
+      "cpp_symbol": "free_00531f90",
+      "status": "canonical-verified",
+      "registry_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "registry_verification": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "indexed_body_ranges": [
+        {
+          "va": "00531f90",
+          "body_ranges": [
+            [
+              "00531f90",
+              "005320a5"
+            ]
+          ],
+          "body_bytes": 278
+        }
+      ],
+      "source_mentions": 57,
+      "all_run_source_mentions": 5
+    },
+    "00569640": {
+      "observed_effect": "resizes one allocation; returns pointer",
+      "abi": "void* __cdecl(void*, int32_t)",
+      "cpp_symbol": "resize_00569640",
+      "status": "canonical-verified",
+      "registry_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "registry_verification": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "indexed_body_ranges": [
+        {
+          "va": "00569640",
+          "body_ranges": [
+            [
+              "00569640",
+              "005697c2"
+            ]
+          ],
+          "body_bytes": 387
+        }
+      ],
+      "source_mentions": 16,
+      "all_run_source_mentions": 2
+    },
+    "005aef20": {
+      "observed_effect": "scans 16 heaps for containing block and returns computed EAX or zero",
+      "abi": "one stacked DWORD, caller cleanup; pointer-sized return",
+      "cpp_symbol": null,
+      "status": "unowned-original-body-unindexed",
+      "registry_source": null,
+      "registry_verification": null,
+      "indexed_body_ranges": [],
+      "source_mentions": 0,
+      "all_run_source_mentions": 0,
+      "raw_pe_body": {
+        "bytes": "8b542404535633f68bc683e00f8b0485204f6b0085c0742d8b48088b490885c974238d41103bd072098b590403d83bd372098b490885c975e9eb0a85c97406f64103c074084683fe0f7ebd33c05e5bc3",
+        "length": 80,
+        "sha256": "4d7ee6a5ae2e3223b09562a7af2b9607ccb487d7713bd5cbfde02110818d6961"
+      }
+    },
+    "00556640": {
+      "observed_effect": "reads DWORD at argument pointer minus 12",
+      "abi": "uint32_t __cdecl(const void*)",
+      "cpp_symbol": "install_paths_size_00556640",
+      "status": "canonical-verified",
+      "registry_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/install_paths.cpp",
+      "registry_verification": "iterations/v2/001-original-recovery/runs/117-install-integration/path-table-integration/verification.json",
+      "indexed_body_ranges": [
+        {
+          "va": "00556640",
+          "body_ranges": [
+            [
+              "00556640",
+              "00556647"
+            ]
+          ],
+          "body_bytes": 8
+        }
+      ],
+      "source_mentions": 4,
+      "all_run_source_mentions": 2
+    },
+    "00556650": {
+      "observed_effect": "returns optional name pointer of allocation",
+      "abi": "const char* __cdecl(void*)",
+      "cpp_symbol": "heap_name_00556650",
+      "status": "canonical-verified",
+      "registry_source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "registry_verification": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "indexed_body_ranges": [
+        {
+          "va": "00556650",
+          "body_ranges": [
+            [
+              "00556650",
+              "00556673"
+            ]
+          ],
+          "body_bytes": 36
+        }
+      ],
+      "source_mentions": 4,
+      "all_run_source_mentions": 2
+    },
+    "00556680": {
+      "observed_effect": "reads unsigned WORD at argument pointer minus 14",
+      "abi": "one stacked pointer, caller cleanup; unsigned 16-bit value in EAX",
+      "cpp_symbol": null,
+      "status": "unowned-original-body-unindexed",
+      "registry_source": null,
+      "registry_verification": null,
+      "indexed_body_ranges": [],
+      "source_mentions": 0,
+      "all_run_source_mentions": 0,
+      "raw_pe_body": {
+        "bytes": "8b4c240433c0668b41f2c3",
+        "length": 11,
+        "sha256": "21d6c05aecc976f395658c40c4c00604604b4fa0bb301e83e7cf7408538af888"
+      }
+    },
+    "00569ad0": {
+      "observed_effect": "uses low 4 bits of argument as heap index, traverses blocks, returns selected block DWORD or zero",
+      "abi": "one stacked DWORD, caller cleanup; DWORD return",
+      "cpp_symbol": null,
+      "status": "unowned-original-body-unindexed",
+      "registry_source": null,
+      "registry_verification": null,
+      "indexed_body_ranges": [],
+      "source_mentions": 0,
+      "all_run_source_mentions": 0,
+      "raw_pe_body": {
+        "bytes": "8b4424045683e00f33f68b0485204f6b0083c01033d28b40108b48043bca7ef6668138534274068bf08bd1ebe985f674058b46045ec333c05ec3",
+        "length": 58,
+        "sha256": "8f10709f43ab33a67fb08ff7ecc46f6883080924155f9ecdb449a46973b92ef9"
+      }
+    }
+  },
+  "observed_indirect_consumers": {
+    "04": [
+      "0059ecc4",
+      "0059ee03",
+      "0059ef2c",
+      "0059efaf",
+      "0059efde",
+      "0059f00a",
+      "0059f03e"
+    ],
+    "08": [
+      "0059ecdb",
+      "0059ee88",
+      "0059f05e"
+    ],
+    "18": [
+      "0059eceb"
+    ],
+    "24": [
+      "0059ed0b",
+      "0059ed2c"
+    ]
+  },
+  "consumer_abi_notes": [
+    "0059ecb0 pushes three DWORDs for +04 and adds ESP,12 after CALL.",
+    "0059ecd0 pushes one DWORD for +08 and pops ECX after CALL.",
+    "0059ece0 pushes one DWORD for +18 and adds ESP,4 after CALL.",
+    "0059ed00 and 0059ed20 push one DWORD for +24 and add ESP,4 after CALL.",
+    "Other populated callback slots have PE relocation and original target-body evidence, but no indexed indirect call site in the bounded manager-dispatch slice; their slot-specific call ABI is not independently observed.",
+    "Ghidra labels 13 manager indirect calls as computed references to 0059e9c0; the actual x86 CALL offsets, not that aggregate target guess, distinguish slots."
+  ],
+  "coff_definitions_339": [
+    {
+      "object": "application_alloc.obj",
+      "sha256": "cee557940b1a4ca974603b17bef45379f7d4565ef4029f8d6c1d89fa85edc9f6",
+      "symbol": "application_allocator_entry_00531f70"
+    },
+    {
+      "object": "heap.obj",
+      "sha256": "517f48f43ed185e629ebf7d379759e29a8571995519a58872a903d0e7aa4ca50",
+      "symbols": [
+        "free_00531f90",
+        "resize_00569640",
+        "heap_name_00556650"
+      ]
+    },
+    {
+      "object": "install_paths.obj",
+      "sha256": "01fff9360de9bd006b05686638eb4a58bf8ef0ad2c4f08c17cd120647cd88c9c",
+      "symbol": "install_paths_size_00556640"
+    }
+  ],
+  "minimal_initializer_plan": [
+    "Place the two 40-byte headers inside the single canonical manager/pool storage owner, before their respective 16-by-140 pool records; retain exact original field order and original shared selector-array address identity at +00.",
+    "Emit one static relocation-bearing DWORD for every nonzero PE field, including all seven repeated default 0059e9c0 aliases and the separate 0059e9b0 identity at +0c; keep +14 as literal zero in both headers. Do not instantiate duplicate bodies for the five canonical live targets.",
+    "Use the existing canonical live C++ symbols for +04,+08,+0c,+18,+1c. Preserve separate unresolved named-VA external boundaries for live +10,+20,+24 until the original bodies are recovered. Default identity and zero callbacks likewise require exact small original bodies/ABI aliases, not fabricated zero contexts.",
+    "Initialize 005e4fe8 to the default manager and 005e4fec to the selector array with relocations. Startup 0059ea06 publishes live manager; shutdown 0059eba8 restores default. Compare the 40 header bytes and pointer cells at initial, post-startup and post-shutdown cutpoints with original before connecting dependent getters."
+  ],
+  "unresolved_boundaries": [
+    "0059e9b0 is absent from indexed function ranges though raw PE contains a five-byte MOV/RET body. 005aef20, 00556680 and 00569ad0 likewise have raw PE bodies without indexed function entries. Supplement the index before recovering these bodies.",
+    "No slot-specific dynamic callback replacement or non-initial address-domain behavior is proven here. Preserve mutable storage and do not infer table types or default zero contents beyond these 40 bytes."
+  ],
+  "input_sha256": {
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/source/catalog/Porsche.exe-ddd748fdbe6d/functions.jsonl": "97278d226a719805b7cd32dbcbc457bf01695bee13a4e1bc9cb4adf107d66cca",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "iterations/v2/001-original-recovery/runs/339-startup-context-batch/heap-evidence.json": "113af55395e0039b0a9d003fbd287d75f60dd2d7329477f0917d1ddf95deb64f",
+    "local/experiments/v2-heap-state-340/input-scan.json": "df012d2f692adb7922cee3f221b77d3891f9a1c0931c846679f499dc048509f0"
+  }
+}

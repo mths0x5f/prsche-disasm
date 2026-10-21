@@ -1,5 +1,36 @@
 # Отложенные проверки восстановления v2
 
+Run346 diagnostic setters/callbacks pass100 bounded native cases/four mutations.
+OutputDebugStringA binding is structurally proven as a pure JMP to the original
+Win32 import; real output/OS/visual composition remains untested. Device/channel
+parsers0055ed50/0055f060, environment005a3050 and monoformat00592a50 remain
+original dependencies;347 traces these,without host-library substitutions.
+Formatter/locale validity and malformed-index/table alias domains stay HOLD.
+
+Run345 diagnostic tables/guard and five wrappers pass initial-data/alias checks
+and36 native comparisons; fill binding128transportcases reuses unchanged321chain.
+Next346real leaf setters/output callbacks; parsers/environment/mono formatting
+remain explicit dependencies. Device/channel valid-index domains are bounded;
+unmapped indices, arbitrary cross-span aliases, formatter/locale/OS composition
+and full game/visual acceptance remain HOLD.345 attempts before005 missed an
+initial tail DWORD; only005 is current diagnostic proof.
+
+Run344 integrates five bounded original heap helpers after240 native comparisons
+and11 mutations. Live callbacks,queue cleanup andheap destroy from340 now have
+real providers. Full303 allocator/OS composition, arbitrary out-of-object index
+and malformed-chain domains remain HOLD.0055ec30 is diagnostic state cleanup:
+REA343 identifies its device/channel family,continued in345. Old078 detached-
+state heap/bootstrap receipts remain historical; preserve scenarios when updating
+those harnesses. No full-game or visual acceptance is implied.
+
+Run335 update: bounded open wrapper/callback339B now passes60480 Od/O2
+comparisons, plus816 search binding transport cases.006ad750 is DECLARED only:
+336 direct-reference scan does not prove storage/alias ownership. Preserve the
+runtime watchpoint step in active PLAN; no transform provider is accepted.
+Physical filesystem/queue/concurrency, ctype/locale and full-game/visual holds
+remain open.337's timer/context candidates retain their existing state holds;
+ctype/stdio bindings are not accepted. Older packet scope below is historical.
+
 Run332: constructor/drive bounded20736 native cases and canonical search intake
 accepted; physical filesystem/queue/concurrency still unverified. Drive fixture
 uses controlled Win32 APIs; real OS path/domain/error composition remains open.

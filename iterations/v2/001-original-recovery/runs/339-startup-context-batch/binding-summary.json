@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "run": 339,
+  "status": "PASS",
+  "new_original_functions": 0,
+  "native_cases_passed": 584,
+  "native_attemptdir": "local/experiments/v2-startup-context-339/001",
+  "native_receipt_sha256": "a6835f8fc3604bec4fecc236bd7e61a2a0d8a5038a3f33b18acf34c3854f5ae9",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/339-startup-context-batch/startup_context_bindings.cpp": "9ab83fb556c2c2818dc8bd4b17859e30512bddd3c898b351e69dfd3d5bba9e40",
+    "iterations/v2/001-original-recovery/runs/339-startup-context-batch/startup_context_bindings.hpp": "aab869c88989fc10f7e7652c4961b79c98e193f467356de0b6c3b2c2c2109dc8",
+    "iterations/v2/001-original-recovery/runs/339-startup-context-batch/native_fixture.cpp": "a335dccb8c662fc51032362173388efd77d8026cb07b543f3f74eb4b53cebc81"
+  },
+  "coff_symbols": {
+    "defined": [
+      "?game_setup_movie_delta_004237d0@porsche@@YAXPAXII@Z",
+      "?startup_capacity_00565030@porsche@@YAXI@Z"
+    ],
+    "undefined": [
+      "?application_context_clear_004237d0@porsche@@YAXPAXII@Z",
+      "?timer_setup_00565030@porsche@@YAXI@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "original_body_proofs": [
+    {
+      "path": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/timer-setup/verification.json",
+      "sha256": "19a6a6f9b014cee86bfad30e2c502f2506b27dff4d78610d9936c8c5df8d8262",
+      "cases": 9,
+      "source_pins": 31,
+      "entry_va": "00565030",
+      "body_regions_rechecked": 0,
+      "rerun": false
+    },
+    {
+      "path": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/context-effects/verification.json",
+      "sha256": "be48b7f84b3507a3085eec8cedda6ad5344af1cd9628105185b849d487e645e1",
+      "cases": 24,
+      "source_pins": 16,
+      "entry_va": "004237d0",
+      "body_regions_rechecked": 1,
+      "rerun": false
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "timer-wrong-callee",
+      "detected": true,
+      "exit_code": 10
+    },
+    {
+      "name": "context-wrong-callee",
+      "detected": true,
+      "exit_code": 10
+    },
+    {
+      "name": "context-swapped-size-mode",
+      "detected": true,
+      "exit_code": 10
+    },
+    {
+      "name": "context-wrong-pointer",
+      "detected": true,
+      "exit_code": 10
+    }
+  ],
+  "predicted_closed_names": [
+    "?startup_capacity_00565030@porsche@@YAXI@Z",
+    "?game_setup_movie_delta_004237d0@porsche@@YAXPAXII@Z"
+  ],
+  "predicted_closed_references": 2,
+  "new_dependencies": [
+    "?timer_diagnostic_boundary@porsche@@YAXPBDZZ"
+  ],
+  "dependency_scope": "Measured339link frontier: timer archive activation exposes its existing diagnostic seam; direct bridge callees remain canonical."
+}

@@ -1,41 +1,36 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current checkpoint:332,2026-10-20. Goal remains a linked runnable original game
-from recovered C/C++; completion requires original behavior and visual checks.
-Confirmed:329 constructor51B/13824cases/124431checks;331 drive111B/6912cases;
-six mutations detected;330 canonical search wholeTU reused with172/327 proofs.
-REA333 fresh allocator/drive/search matches the index. Actual171 C++ TUs in
-8 projects compile;261 names/286 refs remain, noEXE/run. Three names close,
-zero new unresolved dependencies. Shared433-pin audit PASS. No new storage.
-Original PE SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
-All329/330/331/332/333 assignments complete; no unfinished implementation.
+Current346,2026-10-21: five diagnostic leaf bodies212B restored.100 original-byte
+comparisons (/Od,/O2),four mutations and460-input shared audit PASS. Canonical
+345tables and formatter_stdio owner reused; OutputDebugStringA platform binding
+is proven as a pure six-byte x86 jump to the original KERNEL32 import.
+Fresh181-TU/8-project build:252 unresolved names/269 refs,noEXE. Five names
+close,one mono-format seam exposed. Details: runs/346-diagnostic-leaves/README.md.
 
-Next bounded work (unassigned):
-1.334 recover open wrapper00561ca0(63B) and callback00561ce0(276B),339B total,
-   from index327/REA325. Recheck canonical owners and exact caller declarations.
-   Consumer proves `void* (__cdecl*)(void*,const char*,uint32_t)` transform ABI;
-   declare006ad750 cell extern ONLY. Unknown setters/layout/aliasing block a
-   storage provider/full-game acceptance, not a bounded consumer implementation.
-2. Existing ResourceLeafAtomicCallback returns int32. Use bit-preserving raw32/
-   pointer transport; never cast an incompatible pointer-return callback type.
-   Preserve context+4 uninitialized, saved path, late flags/diagnostic reads,
-   ignored read result, close-before-cell-reload and free-on-transform-zero.
-3. Native334 compare339B original chain, callbacks/argument identity/order,
-   mutable context/global timing, failure paths, raw return bits, memory guards,
-   ESP/nonvolatiles and typed adapter. Fixture-only006ad750 does not authorize
-   a production provider.335 integrates only afterPASS with the cell unresolved.
-4. Trace006ad750 HIGHLOW/index/writers/containing arena before storage definition.
-   Retain root/arena/context296/301/303, locale domains, filesystem/concurrency,
-   visual and full-game acceptance holds in recovery-validation-backlog.md.
+Prior345 remains accepted: diagnostic physical100B device image with prefix/
+interior view/tail word,512B channel table,readonly aliases and guard;36 original
+comparisons plus128 ABI fill checks/seven mutations.27648 unchanged fill-chain
+cases reused. No parser/environment/output approximation or duplicate provider.
+Same-VA ABI triage found0safe aliases; reasons stay in local346triage artifact.
 
-Read-only validation (reuse immutable native/session receipts):
-`py -3 scripts/research/audit-v2-resource-chain-332.py`
-`py -3 scripts/research/audit-v2-rea-session.py --config iterations/v2/001-original-recovery/runs/333-rea-resource-followup/queries.json --attempt 001`
-Fresh332 capture: `py -3 scripts/research/build-v2-game-entry-332.py --phase configure --attempt NNN`
-and `--phase build --attempt NNN`, with unused IDs. Native commands/failed
-fixture attempts remain in329/330/331 READMEs. New REA sessions use query manifests
-instead of copied clients/runners; current shared auditor accepts success-only queries.
-Older checkpoint entries below are historical, not active assignments.
+Active347 root ownership: REA attempt002 completed six dossiers (device/channel
+parsers,environment,mono formatter,both name lookups). Attempt001 hit sandbox
+spawnEPERM;002 succeeded with proper escalation. The worker then hit quota before
+writing evidence; no unfinished production source was left. Root continues its
+bounded analysis and preserves both attempts; no active worker assignments.
+Next concrete step: bounded parser/lookup recovery using existing diagnostic
+state and setter owners; no host getenv/printf/tokenizer substitutes.
+
+Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/acceptance.json.
+Native: local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json.
+Build346/001 fresh. Platform evidence: same original IAT005b2208 API plus
+actual COFF sole DIR32 target__imp__OutputDebugStringA@4; no output/visual claim.
+Keep formatter/locale domains,invalid indices/arbitrary aliases,root296/301,
+006ad750 transform,fullallocator/OS/game/visual holds in backlog.
+Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+
+Historical checkpoints below are not active assignments.
 
 Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
 fixes, fresh receipts, shared game audit and acceptance comments complete.

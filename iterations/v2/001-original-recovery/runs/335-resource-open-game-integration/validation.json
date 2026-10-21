@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "passed": true,
+  "rea_receipt_sha256": "bef592d712482ef021935ef82b6838ba56eb9e8c0a112364cf30de4e3207d9cf",
+  "native_cases": 61296,
+  "open_native_cases": 60480,
+  "binding_native_cases": 816,
+  "packets": {
+    "334-resource-open": {
+      "cases": 60480,
+      "summary_sha256": "2b45c3f87367cf0564d3c7a35248cd403c35003c7ddac9fd7eac0a6c2a6a377e",
+      "receipt_sha256": "2944c78bb2c49a9166c7d7189c54f8141ba4f69932a64a76cf28eb5cff3a29d5"
+    },
+    "338-search-abi-bindings": {
+      "cases": 816,
+      "summary_sha256": "5300083d58b83b5fd9f7487c0bdb57be145d3cbccbb26ae27e9ad3d3bf62b009",
+      "receipt_sha256": "df94cdee17f80b75cfb812c045e44cc9ba757011ee4af8f2c03e0eab58592cdb"
+    }
+  },
+  "original_functions": 2,
+  "indexed_body_bytes": 339,
+  "new_original_functions_in_bindings": 0,
+  "game_sources": 173,
+  "source_pins": 439,
+  "unresolved_names": 259,
+  "unresolved_references": 284,
+  "closed_names": [
+    "?compare_005ae3c0@porsche@@YAHPBD0@Z",
+    "?file_open_00561ca0@porsche@@YAPAXPBDI@Z",
+    "?render_settings_read_config_005a1e10@porsche@@YAHPADPBD@Z"
+  ],
+  "new_names": [
+    "?resource_open_transform_006ad750@porsche@@3P6APAXPAXPBDI@ZA"
+  ],
+  "game_executed": false,
+  "build_report_sha256": "84c65b485b90f9bcbf43019fae92a71932a9ce9a0e542fe80dd99f1b07bfe82b",
+  "objects": {
+    "resource_open_334": {
+      "sha256": "9d5bde119470309a6b9b2cdc22aef30a457ca96acdc0699f9cdb5f926a27ebb7",
+      "defined": [
+        "??_C@_0BE@ODJNHKNA@?2real?2cmn?2hlsfile?4c@",
+        "??_C@_0CE@PHMAKHAM@FILE_load?5?9?5unable?5to?5open?5file@",
+        "??_C@_0DC@BMMOILMK@FILE_load?5?9?5unable?5to?5reserve?5m@",
+        "?file_open_00561ca0@porsche@@YAPAXPBDI@Z",
+        "?resource_open_callback_00561ce0@porsche@@YAHIPAX@Z"
+      ],
+      "undefined": [
+        "?allocate_00531ca0@porsche@@YAPAXPBDHI@Z",
+        "?close_00533da0@porsche@@YAIPAXI@Z",
+        "?diagnostic_file_005deb74_set@porsche@@YAXPBD@Z",
+        "?diagnostic_handler_005debf0@porsche@@3P6AXPBD@ZA",
+        "?diagnostic_line_005deb78@porsche@@3AAIA",
+        "?file_device_name_00568e90@porsche@@YAIPBD@Z",
+        "?file_open_00533b90@porsche@@YA_NPBDIIPAPAX@Z",
+        "?free_00531f90@porsche@@YAIPAX@Z",
+        "?read_00533bf0@porsche@@YAIPAXI0II@Z",
+        "?resource_leaf_atomic_dispatch_00568d50@porsche@@YAHP6AHIPAX@ZII0@Z",
+        "?resource_leaf_group_005df770@porsche@@3IA",
+        "?resource_open_transform_006ad750@porsche@@3P6APAXPAXPBDI@ZA",
+        "?size_00533de0@porsche@@YAHPAXI@Z"
+      ],
+      "common": [],
+      "weak": []
+    },
+    "search_bindings_338": {
+      "sha256": "ce3171c63534ccd6300ec985a7bc90c2f4e0983c36dd0b03b7e79c942b6cbaa7",
+      "defined": [
+        "?compare_005ae3c0@porsche@@YAHPBD0@Z",
+        "?render_settings_read_config_005a1e10@porsche@@YAHPADPBD@Z"
+      ],
+      "undefined": [
+        "?formatter_search_compare_005ae3c0@porsche@@YAHPBD0@Z",
+        "?formatter_search_substring_005a1e10@porsche@@YAPBDPBD0@Z"
+      ],
+      "common": [],
+      "weak": []
+    }
+  },
+  "storage_evidence_sha256": "89cf90338741b929fb676ef56f54b83a92e4d391439fba48b29191ffa564d5b0",
+  "triage_sha256": "aa3e8a24c8e2b3955072b5c0317cc877c89933ac95ecc552de7155f066094ee2"
+}

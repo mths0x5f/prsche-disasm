@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": false,
+  "cases": 128,
+  "entry_vas": [],
+  "new_original_functions": 0,
+  "kind": "ABI transport only; existing original fill chain reused",
+  "mutation_controls": 3,
+  "native_receipt": "local/experiments/v2-fill-transport-345/001/receipt.json",
+  "native_receipt_sha256": "535da76e65c3db7ff870f13b331f49dfb32908bf9ee330fd100458b94600cbfd",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill-native-config.json": "5b84f4d77dcf628c1d9d4f7fac737227f5590471cdec029ae5eaab67a2f7610d",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill_binding.cpp": "5d3159a683d84461fc15a73ca42f7b324919001c98febd5bee9d0be90c1fd16b",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill-fixture.cpp.in": "74e5338568d111ad7360a0167e5fb961e92e388244d39d320620a804116a1bbd",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "0a81eebdef41820d773e553a061eda3c9a117aba88d1b42afc7a42a6fd6497ee",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f"
+  },
+  "scope": "Mapped valid table/index domains and controlled child/callback boundaries; no full parser/environment/OS/game acceptance.",
+  "reused_chains": [
+    {
+      "auditor": "scripts/research/audit-v2-simd-fill-integration-321.py",
+      "auditor_sha256": "b336e4e2fa2ef02eefcc7ed3f433a259ec1fe11d35f8e94a163ad668b4bdd595",
+      "work": "local/experiments/v2-fill-chain-321/attempt-002",
+      "receipt_sha256": "13c1d00e215fd784f00a154803268d84f587c94de99550e2d9731a7c6400f9a8",
+      "cases": 27648,
+      "original_bodies": [
+        {
+          "file": "dispatcher.bin",
+          "va": "0053c290",
+          "bytes": 77
+        },
+        {
+          "file": "scalar.bin",
+          "va": "005b0980",
+          "bytes": 186
+        },
+        {
+          "file": "mmx.bin",
+          "va": "005b0a40",
+          "bytes": 176
+        },
+        {
+          "file": "sse.bin",
+          "va": "005b0b00",
+          "bytes": 242
+        }
+      ]
+    }
+  ]
+}

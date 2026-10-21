@@ -1,0 +1,29 @@
+{
+  "auditor": "scripts/research/audit-v2-simd-fill-integration-321.py",
+  "auditor_sha256": "b336e4e2fa2ef02eefcc7ed3f433a259ec1fe11d35f8e94a163ad668b4bdd595",
+  "work": "local/experiments/v2-fill-chain-321/attempt-002",
+  "receipt_sha256": "13c1d00e215fd784f00a154803268d84f587c94de99550e2d9731a7c6400f9a8",
+  "cases": 27648,
+  "original_bodies": [
+    {
+      "file": "dispatcher.bin",
+      "va": "0053c290",
+      "bytes": 77
+    },
+    {
+      "file": "scalar.bin",
+      "va": "005b0980",
+      "bytes": 186
+    },
+    {
+      "file": "mmx.bin",
+      "va": "005b0a40",
+      "bytes": 176
+    },
+    {
+      "file": "sse.bin",
+      "va": "005b0b00",
+      "bytes": 242
+    }
+  ]
+}

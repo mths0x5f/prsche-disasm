@@ -1,0 +1,37 @@
+{
+  "run": 345,
+  "experiment": "local/experiments/v2-fill-transport-345",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill_binding.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [],
+  "original_bodies": [],
+  "pass_marker": "cases=64 fill_transport=PASS",
+  "mutations": [
+    {
+      "name": "swap-fill-value-count",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill_binding.cpp",
+      "old": "heap_fill_0053c290(destination, value, bytes);",
+      "new": "heap_fill_0053c290(destination, bytes, value);"
+    },
+    {
+      "name": "lose-fill-pointer",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill_binding.cpp",
+      "old": "heap_fill_0053c290(destination, value, bytes);",
+      "new": "heap_fill_0053c290(nullptr, value, bytes);"
+    },
+    {
+      "name": "truncate-fill-pattern",
+      "source": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/fill_binding.cpp",
+      "old": "heap_fill_0053c290(destination, value, bytes);",
+      "new": "heap_fill_0053c290(destination, static_cast<std::uint8_t>(value), bytes);"
+    }
+  ]
+}

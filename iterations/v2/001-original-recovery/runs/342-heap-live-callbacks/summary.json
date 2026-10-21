@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 118,
+  "entry_vas": [
+    "00556680",
+    "00569ad0",
+    "005aef20"
+  ],
+  "new_original_functions": 3,
+  "mutation_controls": 4,
+  "native_receipt": "local/experiments/v2-heap-live-native-342/002/receipt.json",
+  "native_receipt_sha256": "60f80cf07553f9b3e0d707c1a0f7fc128323bdb373a9795870525d2ec2e59698",
+  "scope": "Bounded input domains with fixture-controlled extern data/callees. Canonical production state ownership remains Run340; no whole allocator/game acceptance.",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/native-config.json": "fcf1e74a2889e7156d00bebf91525cd83b3ad41a6240a14f9b1a2872c57787cf",
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp": "b0d61d4e3d44d92f6669e3d7cfa5b6caa0b6a9536b283ceea5376b6eabad1555",
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/native-fixture.cpp.in": "83b626d0f20051d96a8c55bab33d43e0b42d47aa18026112f8ff8267f85db197",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp": "3e3bd34f871c0146d2b379a7d7d6a8a4134e0fe6403c199b7404fb863d8bda3e",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f"
+  }
+}

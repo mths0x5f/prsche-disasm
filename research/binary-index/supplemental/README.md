@@ -1,5 +1,12 @@
 # Supplemental candidate navigation index
 
+`heap-live-callbacks-342.jsonl` records three previously unindexed Porsche.exe
+callback entries at 00556680, 00569ad0 and 005aef20. Each entry is backed by
+the original live-manager HIGHLOW relocation, exact PE bytes and a complete
+decoded span ending in RET. Run342 native differential proof and supported
+input domains are in `iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/evidence.json`;
+this file supplies navigation evidence.
+
 `heap-consumers-271.jsonl` preserves four omitted heap-consumer **candidate** spans
 from original Porsche.exe SHA256
 `ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39`.
@@ -27,3 +34,7 @@ Generate once: `py -3 scripts/research/index-v2-heap-candidates-271.py`.
 Read-only validation: `py -3 scripts/research/index-v2-heap-candidates-271.py --validate`.
 No compiler, native execution or Ghidra is invoked; seven tamper/promotion guards
 protect the candidate boundary. Run271 README/summary/validation contain provenance.
+
+`diagnostic-callback-346.jsonl` adds relocation-backed entry00586cc0, exact12B
+PE body and RET, plus its OutputDebugStringA IAT consumer. This is raw PE
+evidence; Run346 contains bounded C++/native acceptance and platform binding.

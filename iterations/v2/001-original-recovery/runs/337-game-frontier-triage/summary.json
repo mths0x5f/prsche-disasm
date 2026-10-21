@@ -1,0 +1,661 @@
+{
+  "schema": 1,
+  "run": 337,
+  "status": "read-only-triage-complete",
+  "baseline": {
+    "run": 332,
+    "names": 261,
+    "references": 286,
+    "compiled_sources": 171,
+    "objects_read": 172
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp",
+      "source_sha256": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+      "status": "READY bounded ABI-binding packet; canonical whole-TU closure already complete",
+      "missing_symbols": [
+        "?compare_005ae3c0@porsche@@YAHPBD0@Z",
+        "?render_settings_read_config_005a1e10@porsche@@YAHPADPBD@Z"
+      ],
+      "canonical_symbols": [
+        "?formatter_search_compare_005ae3c0@porsche@@YAHPBD0@Z",
+        "?formatter_search_substring_005a1e10@porsche@@YAPBDPBD0@Z"
+      ],
+      "closed_names_if_bound": 2,
+      "closed_references_if_bound": 2,
+      "new_names_if_bound": [],
+      "actual_objects": {
+        "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/formatter_search.obj": {
+          "defined": [
+            "?formatter_search_character_005a2780@porsche@@YAPBDPBDH@Z",
+            "?formatter_search_compare_005ae3c0@porsche@@YAHPBD0@Z",
+            "?formatter_search_substring_005a1e10@porsche@@YAPBDPBD0@Z"
+          ],
+          "undefined": [
+            "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+            "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+            "?formatter_text_locale_006afd80@porsche@@3IA",
+            "?formatter_text_locale_readers_006c02e8@porsche@@3HA",
+            "?formatter_text_locale_writer_006c02e4@porsche@@3IA",
+            "?formatter_text_lower_inner_005a22b7@porsche@@YAHH@Z"
+          ],
+          "common": [],
+          "weak": []
+        }
+      },
+      "object_undefined_without_current_provider": [],
+      "proof": {
+        "path": "iterations/v2/001-original-recovery/runs/172-formatter-search/production-verification.json",
+        "sha256": "3cc21d52cdee451fafad72b5e49d459b23f6bec2656efc6be55629de7bf5a803",
+        "native_cases": 9374,
+        "current_normalized_pins": 22,
+        "native_equal": true
+      },
+      "indexed_entries": {
+        "005a1e10": {
+          "entry_va": "005a1e10",
+          "name": "FUN_005a1e10",
+          "signature": "undefined FUN_005a1e10(void)",
+          "ranges": [
+            [
+              "005a1e10",
+              "005a1e8f"
+            ],
+            [
+              "005a2770",
+              "005a2774"
+            ]
+          ],
+          "body_bytes": 133,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        },
+        "005ae3c0": {
+          "entry_va": "005ae3c0",
+          "name": "FUN_005ae3c0",
+          "signature": "undefined FUN_005ae3c0(void)",
+          "ranges": [
+            [
+              "005ae3c0",
+              "005ae48f"
+            ]
+          ],
+          "body_bytes": 208,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      },
+      "next_step": "Add two transport-only bridges; preserve substring pointer bits in int32 EAX and verify transport without rerunning9374 cases.",
+      "holds": [
+        "Existing locale/EOF domain holds remain; this is not a new algorithm."
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp",
+      "source_sha256": "2b040a5ca5e59b6452c6861fecf6f5f28389d8714a900483a774c100ca9fc658",
+      "status": "MECHANICAL alias candidate; existing diagnostic boundary remains",
+      "missing_symbols": [
+        "?startup_capacity_00565030@porsche@@YAXI@Z"
+      ],
+      "canonical_symbols": [
+        "?timer_setup_00565030@porsche@@YAXI@Z"
+      ],
+      "closed_names_if_bound": 1,
+      "closed_references_if_bound": 1,
+      "new_names_if_bound": [],
+      "actual_objects": {
+        "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/timer_setup.obj": {
+          "defined": [
+            "??_C@_0BD@PIPHGPDE@?2real?2pc?2inittmr?4c@",
+            "??_C@_0CK@FFFOKGE@TIMER_init?5?9?5MULTIMEDIA?5TIMER?5N@",
+            "??_C@_0CN@NFMDPHFB@TIMER_init?5?9?5FAILED?5TO?5CREATE?5T@",
+            "??_C@_0CP@GBOCANEC@TIMER_init?5?9?5BAD?5TIMER?5FREQUENC@",
+            "??_C@_0DF@LJECCAEC@TIMER_init?5?9?5FAILED?5TO?5INITIALI@",
+            "??_C@_0DO@PALPOCNE@TIMER_init?5?9?5MULTIMEDIA?5TIMER?5C@",
+            "??_C@_0EN@HCHENBCC@TIMER_init?5?9?5FAILED?5TO?5INITIALI@",
+            "?timer_cleanup_00564fa0@porsche@@YAXXZ",
+            "?timer_producer_00564eb0@porsche@@YGXIIIII@Z",
+            "?timer_setup_00565030@porsche@@YAXI@Z",
+            "?timer_setup_clock_006a5c04@porsche@@3IA",
+            "?timer_setup_correction_count_006a5c1c@porsche@@3IA",
+            "?timer_setup_event_id_006a5c10@porsche@@3IA",
+            "?timer_setup_fraction_006a5c00@porsche@@3IA",
+            "?timer_setup_interval_006a5bf8@porsche@@3IA",
+            "?timer_setup_period_006a5c08@porsche@@3IA",
+            "?timer_setup_saved_clock_006a5c20@porsche@@3IA",
+            "?timer_setup_thread_record_006b7c60@porsche@@3UThreadRecord@1@A"
+          ],
+          "undefined": [
+            "?application_diagnostic_line_005deb78@porsche@@3AAIA",
+            "?clock_worker_00565270@porsche@@YAIXZ",
+            "?clock_worker_active_006a5c0c@porsche@@3IA",
+            "?clock_worker_carry_006b7c44@porsche@@3IA",
+            "?clock_worker_event_006a5bfc@porsche@@3PAXA",
+            "?clock_worker_iterations_006b7c7c@porsche@@3IA",
+            "?diagnostic_file_005deb74_set@porsche@@YAXPBD@Z",
+            "?file_event_signal_0055fb30@porsche@@YAIPAX@Z",
+            "?platform_get_tick_count@porsche@@YGIXZ",
+            "?thread_exit_register_00557380@porsche@@YAXP6AXXZ@Z",
+            "?timer_auxiliary_wait_boundary@porsche@@YAXXZ",
+            "?timer_begin_period_boundary@porsche@@YGII@Z",
+            "?timer_diagnostic_boundary@porsche@@YAXPBDZZ",
+            "?timer_end_period_boundary@porsche@@YGII@Z",
+            "?timer_get_device_caps_boundary@porsche@@YGIPAXI@Z",
+            "?timer_kill_event_boundary@porsche@@YGII@Z",
+            "?timer_rate_005deb48@porsche@@3IA",
+            "?timer_set_event_boundary@porsche@@YGIIIP6GXIIIII@ZII@Z",
+            "?window_idle_0055f740@porsche@@YAXI@Z",
+            "?window_thread_start_0055f420@porsche@@YAIPAXIIIPAI@Z"
+          ],
+          "common": [],
+          "weak": []
+        }
+      },
+      "object_undefined_without_current_provider": [
+        "?timer_diagnostic_boundary@porsche@@YAXPBDZZ"
+      ],
+      "proof": {
+        "path": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/timer-setup/verification.json",
+        "sha256": "19a6a6f9b014cee86bfad30e2c502f2506b27dff4d78610d9936c8c5df8d8262",
+        "native_cases": 9,
+        "current_normalized_pins": 31,
+        "native_equal": true
+      },
+      "indexed_entries": {
+        "00565030": {
+          "entry_va": "00565030",
+          "name": "FUN_00565030",
+          "signature": "undefined FUN_00565030(void)",
+          "ranges": [
+            [
+              "00565030",
+              "0056526d"
+            ]
+          ],
+          "body_bytes": 574,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      },
+      "next_step": "Typed cdecl void(uint32) forwarding is a bounded follow-up; verify original004a5444 argument0x80 and bridge transport.",
+      "holds": [
+        "timer_diagnostic_boundary is already unresolved; live asynchronous scheduling is not accepted."
+      ]
+    },
+    {
+      "rank": 3,
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_effects.cpp",
+      "source_sha256": "e84eac5c7ad905582c63c544823d143022cdb94cb22e4da08fad5cf9757c758d",
+      "status": "MECHANICAL alias candidate; context state HOLD retained",
+      "missing_symbols": [
+        "?game_setup_movie_delta_004237d0@porsche@@YAXPAXII@Z"
+      ],
+      "canonical_symbols": [
+        "?application_context_clear_004237d0@porsche@@YAXPAXII@Z"
+      ],
+      "closed_names_if_bound": 1,
+      "closed_references_if_bound": 1,
+      "new_names_if_bound": [],
+      "actual_objects": {
+        "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/context_effects.obj": {
+          "defined": [
+            "?application_context_clear_004237d0@porsche@@YAXPAXII@Z",
+            "?application_context_member_block_0059ecb0@porsche@@YAPAXIII@Z",
+            "?application_context_member_destroy_block_00441200@porsche@@YAXPAXI@Z",
+            "?application_context_member_storage_004211d0@porsche@@YAPAXII@Z",
+            "?application_context_unlink_005262e0@porsche@@YIXPAX0I@Z",
+            "?context_free_00424000@porsche@@YAXPAXI@Z",
+            "?context_table_release_0059ecd0@porsche@@YAXPAX@Z"
+          ],
+          "undefined": [
+            "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ",
+            "?application_context_new_head_0059eeb0@porsche@@YAXII@Z",
+            "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ",
+            "?heap_enter_005322b0@porsche@@YAXPAX@Z",
+            "?heap_leave_005322c0@porsche@@YAXPAX@Z"
+          ],
+          "common": [],
+          "weak": []
+        }
+      },
+      "object_undefined_without_current_provider": [
+        "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ",
+        "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ"
+      ],
+      "proof": {
+        "path": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/context-effects/verification.json",
+        "sha256": "be48b7f84b3507a3085eec8cedda6ad5344af1cd9628105185b849d487e645e1",
+        "native_cases": 24,
+        "current_normalized_pins": 16,
+        "native_equal": true
+      },
+      "indexed_entries": {
+        "004237d0": {
+          "entry_va": "004237d0",
+          "name": "FUN_004237d0",
+          "signature": "undefined FUN_004237d0(void)",
+          "ranges": [
+            [
+              "004237d0",
+              "00423836"
+            ]
+          ],
+          "body_bytes": 103,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      },
+      "next_step": "Use exact void(void*,uint32,uint32) forwarding only after bounded argument/ABI review.",
+      "holds": [
+        "application_context_heap_state005e4fe8 and context_selector_pointer005e4fec have no current provider; do not invent them."
+      ]
+    },
+    {
+      "rank": 4,
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp",
+      "source_sha256": "9c74b82610047ec959b7187c44d6934b1cd752d86dbe94116887f6fbc6017330",
+      "status": "NOT READY for full caller domain",
+      "missing_symbols": [
+        "?startup_drive_character_005a2c24@porsche@@YAHH@Z"
+      ],
+      "canonical_symbols": [
+        "?formatter_text_alpha_005a2c24@porsche@@YAHH@Z"
+      ],
+      "closed_names_if_bound": 1,
+      "closed_references_if_bound": 1,
+      "new_names_if_bound": [],
+      "actual_objects": {
+        "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_text.obj": {
+          "defined": [
+            "?formatter_float_classify_005a2eae@porsche@@YAHHH@Z",
+            "?formatter_float_lower_005a2248@porsche@@YAHH@Z",
+            "?formatter_text_alpha_005a2c24@porsche@@YAHH@Z",
+            "?formatter_text_compare_n_005a2210@porsche@@YAHPBD0I@Z",
+            "?formatter_text_decrement_005b2254@porsche@@3P6GHPAH@ZA",
+            "?formatter_text_digit_005a2c52@porsche@@YAHH@Z",
+            "?formatter_text_find_last_005a2870@porsche@@YAPBDPBDH@Z",
+            "?formatter_text_increment_005b2258@porsche@@3P6GHPAH@ZA",
+            "?formatter_text_locale_006afd80@porsche@@3IA",
+            "?formatter_text_locale_readers_006c02e8@porsche@@3HA",
+            "?formatter_text_locale_writer_006c02e4@porsche@@3IA",
+            "?formatter_text_lower_inner_005a22b7@porsche@@YAHH@Z",
+            "?formatter_text_reject_span_005a2e70@porsche@@YAIPBD0@Z",
+            "?formatter_text_space_005a2c7a@porsche@@YAHH@Z",
+            "?formatter_text_upper_005a262c@porsche@@YAHH@Z",
+            "?formatter_text_upper_inner_005a269b@porsche@@YAHH@Z"
+          ],
+          "undefined": [
+            "?exit_registry_lock_api_005a4ba4@porsche@@YAXI@Z",
+            "?exit_registry_unlock_api_005a4c05@porsche@@YAXI@Z",
+            "?formatter_ctype_table_005e52d0@porsche@@3PBEB",
+            "?formatter_float_character_width_005e54dc@porsche@@3HA",
+            "?formatter_text_map_005a7e05@porsche@@YAHIIPBDHPADHIH@Z",
+            "?formatter_text_platform_decrement@porsche@@YGHPAH@Z",
+            "?formatter_text_platform_increment@porsche@@YGHPAH@Z",
+            "?formatter_text_type_005a98c2@porsche@@YAHIPBDHPAGIIH@Z"
+          ],
+          "common": [],
+          "weak": []
+        }
+      },
+      "object_undefined_without_current_provider": [],
+      "proof": {
+        "path": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-text/verification.json",
+        "sha256": "346c2933f59cdfc7e77e209a1e59ba134dc3b550f833ad79b68d005008dcac2d",
+        "native_cases": 8178,
+        "current_normalized_pins": 20,
+        "native_equal": true
+      },
+      "indexed_entries": {
+        "005a2c24": {
+          "entry_va": "005a2c24",
+          "name": "FUN_005a2c24",
+          "signature": "undefined FUN_005a2c24(void)",
+          "ranges": [
+            [
+              "005a2c24",
+              "005a2c51"
+            ]
+          ],
+          "body_bytes": 46,
+          "thunk": false,
+          "recovery_status": "unrecovered"
+        }
+      },
+      "next_step": "Resolve initial ctype EOF/negative-input storage before admitting signed filename bytes from004a5c30.",
+      "holds": [
+        "Run236 initial ctype predecessor storage gap remains; startup caller sign-extends filename[0]."
+      ]
+    },
+    {
+      "rank": 5,
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_stdio.cpp",
+      "status": "NOT READY: format-address relocation and ABI adapter proof required",
+      "missing_symbols": [
+        "?startup_sequence_report_005a177b@porsche@@YAXII@Z",
+        "?render_display_texture_report_005a177b@porsche@@YAXPBDI@Z"
+      ],
+      "canonical_symbols": [
+        "?formatter_stdio_printf_005a177b@porsche@@YAHPBDZZ"
+      ],
+      "closed_names_if_bound": 2,
+      "closed_references_if_bound": 3,
+      "actual_object": "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/formatter_stdio.obj",
+      "object_undefined_without_current_provider": [],
+      "holds": [
+        "Startup consumers pass original005d6e3c/005d1400 integers. A raw pointer cast would not relocate those literals.",
+        "Void fixed-argument views versus variadic int return require an explicit transport proof.",
+        "No new behavioral/native acceptance is established by this triage."
+      ]
+    }
+  ],
+  "uncompiled_canonical_sources": [
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_audio_init.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_base_destroy_partial.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_core_candidate.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp"
+  ],
+  "uncompiled_source_decision": "No whole-TU mechanical intake matching330 remains: audio init/context destructor/context candidate/RTTI each retain explicit holds.",
+  "rejected_same_va_shortcuts": [
+    {
+      "symbol": "input_negative_index00532e10/input_unmapped_index00532e10",
+      "reason": "These are explicit outside-storage-domain seams inside fe_input_getstate00532e10; aliasing to the same function recurses and does not recover adjacent storage."
+    },
+    {
+      "symbol": "resource_invalid_module_path0059d650",
+      "reason": "Error boundary inside same-VA resource_paths function; self-alias would recurse."
+    },
+    {
+      "symbol": "render_event_invoke_callback005debec",
+      "reason": "Same VA is a mutable callback-pointer data cell, not an implementation entry."
+    },
+    {
+      "symbol": "network_group_text005e8e50",
+      "reason": "Multiple same-VA storage views already exist; shared extent/identity is unresolved. Do not select a name by address alone."
+    }
+  ],
+  "original_caller_windows": [
+    "0044eab3  6824e95c00  PUSH 0x5ce924",
+    "0044eab8  57  PUSH EDI",
+    "0044eab9  a394976100  MOV [0x00619794],EAX",
+    "0044eabe  e84d331500  CALL 0x005a1e10",
+    "0044eac3  83c408  ADD ESP,0x8",
+    "0044eac6  85c0  TEST EAX,EAX",
+    "0044eac8  7411  JZ 0x0044eadb",
+    "0044eb0d  681ce95c00  PUSH 0x5ce91c",
+    "0044eb12  57  PUSH EDI",
+    "0044eb13  e8f8321500  CALL 0x005a1e10",
+    "0044eb18  83c408  ADD ESP,0x8",
+    "0044eb1b  85c0  TEST EAX,EAX",
+    "0044eb1d  7407  JZ 0x0044eb26",
+    "004a543f  6880000000  PUSH 0x80",
+    "004a5444  e8e7fb0b00  CALL 0x00565030",
+    "004a5449  a1708c6200  MOV EAX,[0x00628c70]",
+    "004a544e  83c41c  ADD ESP,0x1c"
+  ],
+  "corpus274": {
+    "objects": 1144,
+    "limits": [
+      "Compile candidates only: no EXE, startup, original behavior or fidelity acceptance.",
+      "DLL /NOENTRY /WHOLEARCHIVE diagnostic forces all bodies; counts are not complete game dependency closure.",
+      "Only explicit support packets may provide proven link bindings or original data; no guessed source repairs or dummy implementations.",
+      "Data evidence is read-only original PE/179 inference; overlapping/conflicting views remain explicit.",
+      "Historical178/181 compiler binary identity remains unproven; current tools and recorded closure are checked."
+    ],
+    "decision": "Existing raw compile-candidate corpus is not native acceptance; no corpus compile or raw-body import performed."
+  },
+  "inputs_sha256": {
+    "scripts/research/audit-v2-frontier-triage-337.py": "103d7774cdb2e3a53f8805476530246b7625751d8c54f6c9333a4f37a055ebb9",
+    "iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/build-001.json": "c7c927e2343e906fdd7e362cd19087caf91f4e23c6ed5f71c135c830deb36d95",
+    "scripts/research/build-v2-compile-corpus.py": "a14e73ce4a6167d34a059ca8bc36c40892ca3087c8e6428526d64f49d7bfa6f8",
+    "local/builds/v2/resource-chain-game-integration-332/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj": "235c792931bf861d354dcae27c03481e4eda0fe9fbe09f5a65fcc4d5874f0fad",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/application_service_links.obj": "5290f729b05df5adf69be7d3139c73f127bbdeb1539c182c6f9b7a5f9e27018c",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/formatter_crt_links.obj": "7e08f92610b1b462922b672e3aefe7d6083766e76daf11dc3e2e1d0983fe220f",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/formatter_error_links.obj": "5027b49f3513507196886f8b863d0be9779751b9b54157ebff459e31604d7ed2",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/formatter_locale_heap_links.obj": "33d110ca8009ac5203ecbd0c0940308e68d609bda2ef45166ac8c697b24f6547",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/formatter_lowio_links.obj": "dac6ff064c12eef39071848aff700035b72382a1f75360ef08bb92f98673cbb9",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/formatter_output_links.obj": "aaea161d3bc54fc823e983aecb30e6126634abe64e4be7d1a34b2fa4f51363b7",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/win32_core.obj": "e9283825397c8ef99e024aa261761fdf3ad0d90579ea50adc788001788f55679",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-thread/platform/porsche_platform_win32.dir/Release/win32_shutdown.obj": "866d6fa3d98f04f922300de97c59b57e4218b01723fb4c4f2baa9be86d5d64ae",
+    "local/builds/v2/resource-chain-game-integration-332/common/native-window-bindings/win32_window_bindings.dir/Release/win32_window.obj": "dd261d2e5bff59a56425568526f5519aa97dd45c214fd3d0d34f991a2f44d218",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_alloc.obj": "4cd999d788805ce68d57a2dbc3a806034e9244f0f26b725de103adbcb7a16d89",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_audio_device.obj": "d37aa293357c8391614d0c09289d5e97f7aac22fb59e0e47fe07e7ff9de2f169",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_audio_lifecycle.obj": "6aae06d261b693e7671fe9b61dd1c5b7eb11ba1572ca3f473af64572040c9735",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_context.obj": "d4be8c024690401c7da7ea7cfbeb65eef5d1acfb914f6ea3c724636e446d0142",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_context_base.obj": "4c0fd8886b49eb5f387d750e463de5505d8c1a32f90971d330ff4416941168c1",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_fe.obj": "f480165076ee0fb86e952d022ad04db42d753422bb10dcf6f8bf82e1b2edc2d7",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_globals.obj": "5b50e2892d0eecc6fe2df35d5401112e18373b8c0222e4434ff75dcb871632a3",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_heap.obj": "2a3b9b2b309d51a996f61b7f6e18b24eacf57128ea06ee68c293891d9b320db7",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_heap_init.obj": "62083376390a20fecbe6a643db1ead7d88f6f70f31ec4895b4e304527391fa1e",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_instance.obj": "8f4b455c91740155a3b9a977012c6ecde568ad3a3bc257e3649345bd7bd89c3e",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_main.obj": "14d3a3ccd61bbcc269ffb5f6312385f8731283479b4e00a517e7ec3dc3f9467a",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_main_globals.obj": "b5dc46c2de89a713e2130beacdfa2036067af8cda094f9d8541407aabc36c598",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_pool.obj": "7e5f68ddb81a40bfd75b4a08ed6acebe52201054707e7d0c6a0d28c8ed32102b",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_services.obj": "742538d23e89ca7b6257d7ae4ca9d1c791b2d068ab91e287efe600010ddfc1ab",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_services_next.obj": "52798d6c5ba53eeb662bd3ab73176de0beede5a94403840437740982a85a8ea0",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/application_state.obj": "1eddba13103691de97aa49765c93237ff530042e906ec43535d9a36996af14ed",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/auxiliary_wait.obj": "0a90ea2ff58a13564a0c23f88c04a617a116774258d830d8f19c017b57585018",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/clock_worker.obj": "fc7f7b7e44ccc5fe5b1dc162a488cbe244476a32b09eedbb591a9db5b0abadad",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/context_effects.obj": "84ce3f28cc8494dc7ef447cdedf40c71557f7c199bbb56edec3f51353364133a",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/context_move.obj": "13ca82466c8fdb53af33e27212bb3ec50052a9eb6dcac550184e596117f91b63",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/context_ranges.obj": "66f397348521f84c3a2132be6cc5d25b31c5f4cda7528dfb065929978b6c156c",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/context_services.obj": "9921df6ff85e6910e6cbdc956b760fd5fdc7771a2233b0441b476e1d0606c606",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/disk_open.obj": "71c3c3d80dfa07ddd7e52e8a8aaa69eceed59cd8d6916278bcd0f223216b0401",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/engine_service_427a60.obj": "e5c9b9e9a15157c186afa20c4775221ed9ea1df1d1387ec8c3e0c6dfc669794a",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/event_lifecycle.obj": "ccc9aa13e204b3d33b53a491da5d53496cfdec66806e07137616725c30e20e3d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/exit_registry.obj": "1158ad62353b167382c0a45adfc40bad874be516df6e1c0d12271e4265b7612d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/exit_shutdown.obj": "cbb916810bd068a260297e0fa2a46b0e4b61f495745012c136f6a2d78094d800",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/fe_callbacks.obj": "36df2dc9fa14fba2a7a347d0d41132d9485101c82da6174d76d22310adddce2b",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/fe_stream.obj": "c2ef41e7b5738c9a094a8ac924442f4e14f6d57a1c18838d20417d11f6d902e1",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/files.obj": "b6967881b61b642e67611e8ec7c2e9bd0afda9bbbba9f47dd2c7a852595c11f6",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_device.obj": "245427ffefe1295dd0cf64b368544b4d4fcbf17d2fa3f9efa8d083419c2177f3",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_disk.obj": "f66e6c9cb7bc3f129e3cec4a60164b5c8d8e47bbb9d44068bceabec55404734a",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_events.obj": "fba86a3b75fd4eb3a47cf01ca4979c75f37e72fdaa3369d8498e82c6cff6f129",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_pages.obj": "3e55ae52dc9b658cb84663621c4104b437cf02b5e4e159c59762002d22205b08",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_threads.obj": "d21a0720936ade38c3fb17dc13d4df0c1111289d7fa46a9708732eeb5b59e5e6",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_wait.obj": "145d1456c59b57d472ffbc838bc28421e1120d356ae621efa01f2b5d88143b9a",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/file_worker.obj": "41305e5796fcdc98bef90c99cd1931bd301c3667259c9855958b1d8d44b5d758",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_bootstrap.obj": "c178334368fd09742506a0cb8309efadb58f36f9c6f619204fda8c8c08092d36",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_cleanup.obj": "3d5314f47eb00d93a5f5d198547f4c365e85cfe72e8ffff7f94814cfffbae486",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_crt_runtime.obj": "e359f1c00d2f714001391bdf2cdd50155419cc0ac312c9945125bcdb3e5574b1",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_entry.obj": "7ce2f4c4197e0401f6af27555f3c4aa0d77ec8dbf2ebc744d68465521502c864",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_float_helpers.obj": "3d02ecdebf596fe16c7a53fdd8a755a2114f45fbd78add911f1fc73e50ccfe84",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_float_output.obj": "ab480cf312ab766de16fe20271f00155930c17ecbee048a920fb2e0e1a1545d0",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_float_parse.obj": "889b2400d6dd16f5ba7e2f2f582237fcfe968b234d27d658b10b19a442709003",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_locale.obj": "2bfad40a3009a7ba043903fdcca13c8fcc26edadf9c312404d6109d545919e2e",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_lowio.obj": "76657218902db293d493c20370ed93fd12e00273a235e2678ecf68154a03b887",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_original.obj": "108747dd3c31935df9bf9038f837e816143be2bc267c76f73499e6ce5af24c91",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_output.obj": "96bc7833896f715afc7391f2d91aff74fee953b0c88d09dfbab7f5876927be76",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_parser.obj": "baa1e5a47f08594f8771e222b13b7d8ef665f7ba3820ce475a5587a2bfb6f244",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_parser_entry_bridge.obj": "af5b6d3d8b5b53c56b4375b34379ee416e3d681e85ffa282b0e0bc194a8863f0",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_runtime.obj": "e5c91f2a9441db0f1517338254dc6760fa9ede649dfa755fd55f278b6ecd845b",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_runtime_links.obj": "cac634a2f126af37a74b0c257091d87eb4d36d95b9f78858178c7c82e1e12ec7",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_runtime_storage.obj": "374ea3938f107efe6233aafc1a808e83a46222e33addb3c08a41333478dca6fd",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_small_heap.obj": "80d4f7e59cbf5bb31858651fb43b9e16c57c1e4280d32bfce6a910e4000743ef",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_strings.obj": "be0f91238d484ba9e65010383bc91fc2cc2331498d56d0474fb752865b5956fd",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/formatter_text.obj": "18f17b55cf1266aa4d70f4da9b4353012b11c7cc33cfced0b86d93c1b600c319",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/frame_pump.obj": "0f7e61ae9eae1215d1fbb47025ed44901867cf73b6be6eab4e2ff45911df3f73",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/frame_services.obj": "57f5dae5fb66c39a59ebdd23e69f9a153ed69c2ae68118a0d89949a654b09053",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/game_setup.obj": "a0842353f88ea96c02d5c66c6ede65d04e918e3c76b852b75ccf637a1314c391",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/game_setup_globals.obj": "16c0891db18c220442a5320c8f9ed2e263af4440896cefd8b3766e86b38520ce",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/heap.obj": "3173081fd1df8139ba41f3bf7cfede3322294c31a643e2983d5689f394b29010",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/heap_locks.obj": "a76841ca37a5a609c18a3d92dd3e0bb351f1237738cdaad08083cb8a2c54ad6f",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/input_buffer.obj": "bee27a645dd2e259591036ec6727b6ed6a58d7beff5b018951b3cc370782626d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/input_snapshot.obj": "7a01698452db5f3fd170bd42fcecbfa2515878ac5384d59a20b9bed5df8b5b86",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/input_state.obj": "749987c2b055b1187c8730880d4251f9706ddb5b07e52a16fd0902359eadd6df",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/install_paths.obj": "d51475e951b307113df1d653b4d4e642fc8fc57a5ef9bd6e0bba77f30dd2528e",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/install_paths_storage.obj": "9ce810f70fbf2db0517fabb9500b7233f7f67650768a88ef20abd96a27ea3d8d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/io_lists.obj": "ebbfe50b622f19e381bc4846d63a60962e88f4bc816dae36a01efb1534683abe",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/io_worker_lists.obj": "12976bf831c6fd89a8ea6415da8402224f46c4e8d02b3f854fc5f39230ffbe81",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/mouse_input.obj": "829190935e0ff5d5b2084a6f06bacabc2fed9b4afbf7aeb96544ff33636c31bc",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/movie_header.obj": "b61507f6070594cb3c75b65341a5548f7796997b38cda47e9c30d43e429ab4a7",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_cleanup.obj": "dc0a07ac5d1d7f7687e323eebf98b521376f51eddf970b419efcefaaa863fe68",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_constructors.obj": "a34cafeea4e6fed5773f768f3cc30fe9cf27115bd59fa8d2818741f05197cf5c",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_groups.obj": "59fce1b1f11666748e7d78a2d53d5845446a1fd78197062ffc513f7873b12b3d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_lifecycle.obj": "ab4aa2ffd2dd1000de62c0058993210f9bf4217e006b6dcd18f9ebf1457b369d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_services.obj": "b300923378c6fb39146b6bd83b1a7aad93559c047732a1a3297820fe27be4410",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_session.obj": "c2a3737bd6647eba271312d829b40a6286379b14bb75d67e7186dd107fab2d53",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_transport.obj": "30a7fcfcaaf350dd66c8b040bdcbd69088735c865832b338f73c7a7eb770b78a",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_vtables.obj": "abb494ea93e49e636987ed4ef3d6d4dc8066745673c1d91d2998ef0f29a4d0fa",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/network_workers_members.obj": "a78f59a95bbffe979ec93ceec3a6dc06f298cefc10a4678e51de10404a4877f0",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/object_cleanup.obj": "0ba5070be8e9c32c3f0bfd4c928c333e2d08f1760234eb9adc98ec6577f02e3c",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/object_update.obj": "50f3ae8721db071a023a15ce68368fd494fbeaafe8cc36ff1300865777633ebc",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/process_exit.obj": "4871010c94e0f93443674c4dbb19a40864127aa2ba181bc1e230b3a91a46c9f4",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_activate.obj": "568e4e8e88388b8d40462b0157312b4d300766ed78eae11eb6b7f5dbe48afb7e",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_display.obj": "4d9cc7f86560519a67e965a22bce61310306a60f438dbba1e73816faf8bb34e6",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_driver_calls.obj": "d9f0302306d2afeab9d1a59d069f0ec17156f731bad991bec090f771b76435bf",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_event_route.obj": "2255e4c345bd19c384c224eb3960c282a7d76dfdeb76f6d34e3a2d18a0fb9040",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_loader.obj": "93a77863919d214b9d04c838f447d5961de4869d2ab62eb7123b5459524e399d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_mode.obj": "a3aadf04a458fe4b54153485073ed21224e536918a5ae1f4d2e4fde269b0abe3",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_objects.obj": "bf0775bd1034dc6ca81006097ac40d4f12f394a654e4a522ef1a1d5148f444ef",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_registry.obj": "10ab88e4b686b52d89219b2a097da1b14e6ef9a93ec10dcc537d57461d320351",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_settings.obj": "a62114352afdc0ddf8ef531994c7e5db1021470eb68f563b75b8e6f55e98a4a9",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_startup.obj": "fa029aa6c5d8073bc7bcdc1ecef129f82f6d167c5fb267d94c08cc8b5241831c",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_state_init.obj": "ed2c792d63bc6199dac5f8e903824604578bd42b4d849d45231232ae74fbfd93",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/render_window.obj": "338e0e907e198c5efc87bbfc73f02b1dc3610713e75484506875ddc081db78d6",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/resource_dispatch.obj": "8a72eaec7c799bfa47e7d0df69beece26e503ed3005c49a684a0d5d8e4c90d3d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/resource_dispatch_globals.obj": "f7bc197fcfd8f12f22f4dcea9982085552c451150951e2eba708d37e706f8f3f",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/resource_leaf.obj": "a6b62c82970fc35362eaff49832be5992d2da6aa665a138ccb8770e4699dd7b8",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/resource_paths.obj": "41beddea197455b87d1ca2afe666874a5d09ac8ea646c39c5f8052a84abde162",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/resource_predicate.obj": "849b8be4e00100ebdf9fca39f0b720967ca21066d8f5b0532a1e603ab31099c3",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/shared_runtime_globals.obj": "edfd04f944d8a05a26387223483bae6fbcf50f3aecd0eb220106ca086624b27b",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/splash_progress.obj": "f835ca3b98ddac1a918ba590449b7d9f002dfc59233e505b9bae21cda7d35fd9",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup.obj": "e15f9e7f4d986782711df521e1ddc824aefd11d22d8898e5de519a43638daf22",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_input.obj": "a93e8f4613657eb9e9eda37c8954ef2600e1e9845b087385d86596c49b3b8b9b",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_install_exit_links.obj": "c30baa60bfedab3cdc8d19910a79f0eadf48ce898de4c066e8830639330f3b39",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_sequence.obj": "16297c8ef7c654473c2b73ac5979827d5b44f24d6a050721021c7fb3d9a492f2",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_services.obj": "48c09dc9706a153b8d9ecc159ba036a123c31d3b1d31e442ba71a95295264b0f",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_service_516950.obj": "2f3f4ea58977b00d00e7b3d3a7717128e8e702be7cb62cb9683251a27deda391",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_service_56a490.obj": "fd84a0c008ed7d4eaf152d8b5a5ce0e3f61cff7692833c7642bf01b53770aa51",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_subsystems.obj": "603b626422971692efbe0342897f5ebb23544c9f5be51ee9ede6e4290e53f567",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/startup_timer_links.obj": "8a0094929f82f2d0aaec2a82c430d9afc1e3e6b582c918b9853f3087f49a4e44",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/thread_shutdown.obj": "b4e4f5cb87bac57c148b49760e92566ef084192ef18fad6193498bd877aa95ab",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/thread_wait.obj": "c346c63b4ff41505de70866da23809dae1c5fe60078287fc929c4298921777a0",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/timer_setup.obj": "b1d864e74b518370e28dfe44ebea29698257c5358041319dc1bee755ff608824",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_callback_bindings.obj": "1147ef44120be0536648c00451c4a06b0f8b69c2a03dcb791733a01f10645daa",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_channels.obj": "436c6b2ca887db308880da46f12bc8cdf49594bd2ffedba08e7fd58ccd2eac84",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_create.obj": "d703141a2dbc2342db1de795f31e3f1f134d2e7a59de8ac179863a1478d6751d",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_event_queue.obj": "368a26d09d337f42a06540f0880a9611a5d2fc4637c547566def679567db9df0",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_event_translation.obj": "adb703d72e1aa72cdc499021d599e2965d6e712cb6a52a68b2a96513c6990381",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_exit_cleanup.obj": "0b3f0adde9a6bc5529ca2457c7b58d59b128e33142ec1bae567b17ea0a0688d9",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_handlers.obj": "cf15baa018d6bcfcb0c7170c2490a557345b140bf436be7e43b8ded338555f02",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_init.obj": "0c7719d1b469fd58ff25e3755d4ed9451c579012303f7221ea67da9879d170c3",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_input_bindings.obj": "2840d4bbfb82aebd5659a2474dfada30849936cbf3c118e1883feee947110d05",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_keys.obj": "7cc027e0ee93a405b5f84a300b5ee445c1b6c3ba285906bb98417760427a9221",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_messages.obj": "04c967ad7e5853b6619830cd90e2a45c253635c21d3c780accc1ee04d147fadf",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_position.obj": "4498124a4c84e80500578972783285134f9a622c915249141d130e4a3879bd08",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_procedure.obj": "ea5e8af9cd6d9a474d6620a60279f6eb908941ade9e954721bb65c90d8600449",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_runtime.obj": "43492397fe460ce3ff44096e911e9bea61be4ddad27171cfb3f4a45bbadda7ae",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_scheduler.obj": "bb0c832798d28aee127e5fd6a7550b4de474e96644b93ec93e806fac38fe7ca9",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_shutdown.obj": "a1cf4ee0d6ff14364aac101a120eafa1de0d2ec447bbefc681a24f9ed09dca51",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_state.obj": "0aa7f5996340f53c816f85e9e10191a0d308f7651ed39141d2e9c0874a2952e7",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_support.obj": "89412063d07b92fffc2c980f2d2cb0e1dad60acb29b6af5c51a89dc7bb696b09",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_threads.obj": "636de867e25ae0307b2b891b3554a961286cde5ae95444fe12de7d9af47eb5bf",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_original.dir/Release/window_worker.obj": "8d77dcea88510fd0c33c299761b11365ede0740afffd2937878c6e5f0b05d755",
+    "local/builds/v2/resource-chain-game-integration-332/common/porsche_window_links.dir/Release/window_links.obj": "51db9b86c94c58ca394645cd1e105e7e9f95545c5ecbdff1c099c7e60d1de068",
+    "local/builds/v2/resource-chain-game-integration-332/common/recovered-links/porsche_recovered_links.dir/Release/recovered_links.obj": "e99fea8c9c6e5d19d27178f40f87db71e1255310e2f55a846b9d83ff5872d386",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00412030.obj": "741e15928eaa5c0a830c8e03b7cd866af4251b2fa5ab5dcbb3780addc3e8a08c",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00423840.obj": "3d2bc206dcc54ebd3fdd755da5669b32842302a2af5fa4894bcb1a742a865e54",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00425780.obj": "aad8a0e6cda3814cc8aaf148301ddd2a9446085df3ce6c7a6c24f2db45e398d1",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00471b60.obj": "3227d248eab75dfd4be9b1796d18c038f52b0bc65ab27f9bb79813693e3bc8db",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00476170.obj": "f20fee6737dc014c9828d6ff4903d0877e6fd566104ad5fa8b46d300fcf3df82",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00476710.obj": "af26c3aedc5d68cdaf39449640369c3ba33c4a746073ee6e62846a1afae0d655",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00482e50.obj": "45e9f458cfd0cb2027bb78df8ef30f7b73b31b5afc48f4956352cd8d5d2b7815",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/00487e20.obj": "5b9ac792eff1f31120ed036759baee557115778123895b598494e3b98e6359a7",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/004898f0.obj": "9ea33a3b393259b52bfa50afcb09297f3debac2dddfe9cd6884e8ff1f9dd09c5",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/0053c290.obj": "0e785f902756637131a738db5ecc7208935ea4f68f73527fdc16ce34caecdbf7",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/005678f0.obj": "980e2a0eace419b422a3f2da341982d1768727a8020b954cd489e9f5072bb8a9",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/005918c0.obj": "8fd4d24bcdd53ec8e6a9b46b3062af9fb6197d4b2977ac1a8aee3feb06e226d7",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/005b0980.obj": "62c30a6e5270c47181cd380dac46a1b1b29dfb07753ab9f0f4599bfd0e32a06b",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/005b0a40.obj": "0ecf8a5063afb2dff56e1448992ae46c40ce6242ae51716dbc976974f4ff4e95",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/005b0b00.obj": "813feac1464c8c047aca823b67d2b58dd291c9d35c3257c18c1041fe9cf78226",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/application-log-bridge.obj": "6bed3a4d523c1233d05418485b4578fa196e7b3c36fb91f2b7046fca26a883e5",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/drive_letter_331.obj": "fa5e752f3a34c4998d7b5b0403d1ebc03eacf65108edf5270b9553b0d8648e5c",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/formatter_search.obj": "3a8665438f062ee789179a646f61b34301a808f0fd13ab14f91862a17dc250f1",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/formatter_stdio.obj": "45aaf8e0ecf1f3a58d8637abbac85c659e0f489f4ea115056efaf82ac4e617d6",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/frame_floats_300.obj": "0dde4ad5799d83d9eaf1076e57f5dd636b2cb9dbafe931da8c9fc540381846bb",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/resource_constructor_329.obj": "924f4dcb6ea9e5db2c40278406d5e28dabe9dc58c8a86634c0c561e3e27553a9",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/resource_device_327.obj": "d0cb9c2a0657aa0934df4412726753ba27e6fc3670554651b330494b2d41f6c8",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/resource_exists_326.obj": "aa2f70774f6d9fb28b580b816aa1d2646a7f1c9aaea00e5b69be66672e4f56a0",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/resource_open_313.obj": "f408edc8022326c1939436877cfce568cfe1274ba3d46c9fbaee35c8a92ac198",
+    "local/builds/v2/resource-chain-game-integration-332/entry-289/porsche_game_entry_bridges.dir/Release/shutdown_helpers_311.obj": "50fc76715e08c0fdbffd29d02df49fd5dd98f9468ddf00b46ac772b7f8e86968",
+    "local/builds/v2/resource-chain-game-integration-332/game-entry/porsche_original_game_link.dir/Release/host-entry.obj": "29055a7da7a902c08538ec792fcdefb918c6555148d9c05097bf20bae333d1b5",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm": "80a788a52be53feaeabb6321ea48990fd92151b86ba7ca87efaec6932e0e4502",
+    "research/binary-index/README.md": "2350295d41a6fb630e18d4ced69f73849a87d677cb8b03eb1540608af8dc4cd2",
+    "iterations/v2/001-original-recovery/source/recovered/functions.json": "e6de4440d840104f57331ba0c169c7e584e75cfeee3dc9b01c3d12c060ed8740",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_search.cpp": "d1000fcdb5bfce9afa866fa5ca85b00bb6fa05c6eb95b83b7c1acaf212b500be",
+    "iterations/v2/001-original-recovery/runs/172-formatter-search/production-verification.json": "3cc21d52cdee451fafad72b5e49d459b23f6bec2656efc6be55629de7bf5a803",
+    "iterations/v2/001-original-recovery/runs/172-formatter-search/CMakeLists.txt": "4895b66bd6db29480901dac9bc37b53bd0e1c115255a70fe87a3c8ce451329b0",
+    "iterations/v2/001-original-recovery/runs/172-formatter-search/README.md": "1e14316b87954c87f5a26939d12d1901d1a22f9439c3323b4d373fc44e3f0b8f",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp": "eb10b10683fcf151b72eb2aaf6bdace49ec8bbc63d915fb911eaa4c570d67c40",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_bootstrap.hpp": "c06fabceed3499694ef5af09d219bde98c5e5d1524286e407a2f20b6890be0f3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_cleanup.hpp": "321e57876d7a1b4b69559f2a5b8d8aba702ebbbaca84a3c52ef17760f757ed12",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_float_helpers.hpp": "6b2730847bf5f010d0735d13d40999ebe40fa64e7c33198701085d2e53ceb087",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_original.hpp": "68ee490dc7cf70316168bc17fbbc9be472797a8c16b6e6ec0dc6a1ea38672287",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_parser.hpp": "5f8b249b68113eb346b2ba829f19243f818292cc0d6d9826bd9be8c673ca0502",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_runtime_storage.hpp": "0c8093cae7ae7278ba2158d3f92bdf22088185eb24a214b839f81b8b7212c8c3",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_search.hpp": "41f86f0b0569807144191c65aa9e58fbf7c2c3ba80fc5e5abe703bcbb22179d5",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp": "252a71cf91298da3045775fb93692b0f21f4264e7965a41f078f788bc0e4689b",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_search_probe.cpp": "de0d9f3df932a32419346820118820e65c32aa8fc0573f9941fe2318700ef4e6",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_text.cpp": "9c74b82610047ec959b7187c44d6934b1cd752d86dbe94116887f6fbc6017330",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl": "2d7a6e930326a97e49309556b81aca01a4eab89b34513ef8f2d6eeddab44027d",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl": "91fbb6d7a04d458620363d31f30df2dc1f9c8db4518a532a4e0ad61272b171e8",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl": "de53284c58185c6ed26cc0d0ab676f0215a7b59a394abdf084c59b40b9974b55",
+    "research/binary-index/static/binaries.jsonl": "e361bb9d54b435ad71740525e63b277aa73aa35cb1f0ee21dc13bb6a7289407f",
+    "research/binary-index/static/imports.jsonl": "4a3f10cfd9631d677a6f1ed17761adcc0dc00131a2069028cbb13d52acff71f8",
+    "scripts/research/v2_source_dependencies.py": "e3cf38029dc348859dac4a1769feb33d65832cc269e6dd1080020780451434e7",
+    "scripts/research/verify-v2-formatter-search.py": "d7954b0be7c9e8a2b8edcd199977ce1507a1735fa523c90535f1b6248d5ef1b0",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/timer_setup.cpp": "2b040a5ca5e59b6452c6861fecf6f5f28389d8714a900483a774c100ca9fc658",
+    "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/timer-setup/verification.json": "19a6a6f9b014cee86bfad30e2c502f2506b27dff4d78610d9936c8c5df8d8262",
+    "iterations/v2/001-original-recovery/runs/118-timer-setup/CMakeLists.txt": "125c7cd5514422abd092666552dfe49d23a910a0e25c328760bec4fe18ddbd50",
+    "iterations/v2/001-original-recovery/runs/118-timer-setup/README.md": "9167fe51f1d469be641c1e860f86773bd3619b6f2633d07958f7e34c264a4160",
+    "iterations/v2/001-original-recovery/source/include/porsche/clock_worker.hpp": "5b483a4968a47ef0d6c1bab5b5171346f29d3150e41ff7e071584ceef40ef69b",
+    "iterations/v2/001-original-recovery/source/include/porsche/fe_stream.hpp": "7bd12248e541e83f326edeb4b166a5f50e9fb809880d2978372fa8d34353dc45",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_device.hpp": "7365e18d0e7ae6364f3b2295a09dc579332afb760aceef4fe75d833cbc640dd6",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp": "0fcbcd21c92477deecd5d0162eaf77381f04f2c23dea7ee9013af14c7c1c4f50",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp": "e3535f0fdf85141719d4741e60a900d6c454b9e6140fc7ec283fa5f18a33ef76",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_wait.hpp": "ec7945ecf6d319a271ee6f8242ed6bb99b3db1d9e1ddd9837c7d0b8e20002a0c",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_worker.hpp": "a86c1eaa5ae08e71caa7e18d961fc13154912c5f1837fd69e35f7dcc72ad37c2",
+    "iterations/v2/001-original-recovery/source/include/porsche/files.hpp": "23b8bac1d7c316d0f1950073f3ba01b8e0dd5d9c6d3abdd81053c609cd6dba24",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/object_update.hpp": "b648b612de0f910609420d770bc2f67dec229d77663ae109887b7001e180f3ff",
+    "iterations/v2/001-original-recovery/source/include/porsche/shared_runtime_globals.hpp": "326c5379138e3ae6af1e87c0b72d039f27c1229548defdd2ff654a6faaeaaf1f",
+    "iterations/v2/001-original-recovery/source/include/porsche/timer_setup.hpp": "b17aea941674cbd59a2c8aeaf84db1285ce9219803ed2d38418aed89928d2787",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_create.hpp": "227f5127eca5c565bc7980c3c9a9a41bc0e87976e3791334c0d53c7927c5d902",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_runtime.hpp": "251834cade05b25efb0ff60fee9035da800d5d051f476fffac7a7698c6fec3b9",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_state.hpp": "77f52e368e15cf55e8aa80946bb4c37fea999a3caa172011c2cd8aa0ee9de01f",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_threads.hpp": "3a121528c478a70feaae8ba669a4d3673449c993d847670cddce79e3323ab0ad",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/file_events.cpp": "bd4c4af16c0071324bae11c5102ab0c26968fa901434a8e5421a11add855f33d",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/shared_runtime_globals.cpp": "fa56877fdc040c687823d4e67eb25fc3d8a3738205bdf20c41492135f7086314",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_threads.cpp": "b57d7b8ef628bc2ea4d7ae978d975b3391a36ee3ac42737888fe7904c3e75be8",
+    "iterations/v2/001-original-recovery/source/recovered/timer_setup_probe.cpp": "3aefca6b95f7a43d4ef0fe4fe8f12319844c6dc173d2effdc75099e2c95c20e2",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/strings.jsonl": "e8930a01cebc9d34e6d32e49ea5ca5e2f7787ba5f8bb4f478f4093063146bda8",
+    "scripts/research/verify-v2-timer-setup.py": "3cb0653d9caf241b79aae5c79574706d54fbf28100792c2a18b138c3b3d61f6a",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/context_effects.cpp": "e84eac5c7ad905582c63c544823d143022cdb94cb22e4da08fad5cf9757c758d",
+    "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/context-effects/verification.json": "be48b7f84b3507a3085eec8cedda6ad5344af1cd9628105185b849d487e645e1",
+    "iterations/v2/001-original-recovery/runs/139-context-effects/CMakeLists.txt": "c7dc650ff8426984b2453fca1d7006cf6e8006884e4ee09baba362881dc2e3e1",
+    "iterations/v2/001-original-recovery/runs/139-context-effects/README.md": "154ad734f6f221c2526abc541f060e272d8243038889fb54ba6f7b6ca684926a",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context.hpp": "4759e4b78c80a93be3b09fe3e5eb960806ee6f228bc9096f89cdc4c63648845d",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_context_base.hpp": "09c3045760c522d7ca9228dbe94471b8634ea43418145f76f3a85c555df14bce",
+    "iterations/v2/001-original-recovery/source/include/porsche/context_effects.hpp": "76cacc6b99877d6e27aefbd1a7900bd4e7a3fbebe2a17689d3061cdba8185b2e",
+    "iterations/v2/001-original-recovery/source/recovered/context_effects_probe.cpp": "6950616866c9036d54c6a26f1da9971ca8a2294d4fd1f3670540ba6735b2260f",
+    "scripts/research/verify-v2-context-effects.py": "27768f0899e480cd4ce32fba079ba6c5eed3219a1a581d8f398521aa16748693",
+    "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-text/verification.json": "346c2933f59cdfc7e77e209a1e59ba134dc3b550f833ad79b68d005008dcac2d",
+    "iterations/v2/001-original-recovery/runs/158-formatter-text/CMakeLists.txt": "27b1a43b04bfecb2805f429f32c6aba14f39270621c3c46d32d646ffaaeb0426",
+    "iterations/v2/001-original-recovery/runs/158-formatter-text/README.md": "79437b7f4fd68cfffd9818e6dfd7d9a9981077ad18c48fcf6e60a6edeb35c861",
+    "iterations/v2/001-original-recovery/source/recovered/formatter_text_probe.cpp": "727d7be404395180d40b3aabfbd42a0b378a43140ea36b799b844a1477b224b5",
+    "scripts/research/verify-v2-formatter-text.py": "d98c77ee58084069fdb823905290823cb97f0a480fc73d97fc900b80e9337c43",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_audio_init.cpp": "5b738edba9c04d627ee9f6877e70236711ca95f3269259b3463db5c7eb4598d2",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_base_destroy_partial.cpp": "c2dacb0cba3dfbdc749de26e6f45cf63a1ae041576fc5bdb1b6e753417f62a25",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/application_context_core_candidate.cpp": "49c6af8cd7f3d4dd28b89350bfce0f3f5ea4cfbbfd7a2b00f83058ccae5fea2e",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/rtti.cpp": "e4d3c6bab9ecc9dc15037e9a2343891ef2b0dfbbd85f1bb320518b29983e1335",
+    "iterations/v2/001-original-recovery/runs/274-shared-heap-union/summary.json": "f072346146bf867fba52188d4362447e8656f28a6bec4a18a481082af193cbff"
+  },
+  "subprocesses": 0,
+  "native_rerun": false,
+  "game_graph_modified": false
+}

@@ -36,6 +36,12 @@ Checkpoint 2026-10-19, Runs 421–426: подсистемы ввода и зву
 - Парсер фронтира 420 исправлен (вызывающие C-символов считались отсутствующими): 415 → 423.
 Следующий шаг: раскладка блока состояния аудио-бэкенда; EXE пока нет.
 
+Current [Run346](iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/README.md):
+181 files compile,252 names/269 refs,noEXE. Five diagnostic leaves pass100
+comparisons/four mutations and460-input audit. Next347 traces parser/environment
+dependencies in one REA session; detailed scope stays in active iteration PLAN.
+Older checkpoints below are historical.
+
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
 20736 fresh native cases and six mutation controls PASS. Existing canonical
 search TU330 integrated once using172/327 proof, no duplicate recovery count.
