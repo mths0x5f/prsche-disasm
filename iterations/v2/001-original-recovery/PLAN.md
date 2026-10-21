@@ -1,34 +1,33 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current345, 2026-10-21: diagnostic device/channel initialization, shutdown and
-configuration wrappers restored with exact physical tables/readonly aliases.
-Five original bodies334B pass36 original-byte comparisons/four mutations; the
-application_fill ABI view passes128 transport cases/three mutations, reusing the
-unchanged27648-case312/321 full fill-chain proof. No native backend rerun.
-Fresh179-TU/8-project build:256 names/273 refs,noEXE. Six names close, eight
-actual child/callback seams surface. Shared457-input audit PASS. Commands and
-provenance: runs/345-diagnostic-devices/README.md / acceptance.json.
+Current346,2026-10-21: five diagnostic leaf bodies212B restored.100 original-byte
+comparisons (/Od,/O2),four mutations and460-input shared audit PASS. Canonical
+345tables and formatter_stdio owner reused; OutputDebugStringA platform binding
+is proven as a pure six-byte x86 jump to the original KERNEL32 import.
+Fresh181-TU/8-project build:252 unresolved names/269 refs,noEXE. Five names
+close,one mono-format seam exposed. Details: runs/346-diagnostic-leaves/README.md.
 
-Confirmed: diagnostic device name-prefix005e1c88, callback view005e1c8c,
-adjacent tail005e1ce8=1, channel005df4a0 (64*8B), guard006a57cc and both
-readonly string spans. Direct PE initial-data comparison caught/fixed an earlier
-misplaced tail DWORD;005 final native receipt supersedes earlier345 attempts.
-Current state is canonical; no callback/parser/environment behavior is invented.
+Prior345 remains accepted: diagnostic physical100B device image with prefix/
+interior view/tail word,512B channel table,readonly aliases and guard;36 original
+comparisons plus128 ABI fill checks/seven mutations.27648 unchanged fill-chain
+cases reused. No parser/environment/output approximation or duplicate provider.
+Same-VA ABI triage found0safe aliases; reasons stay in local346triage artifact.
 
-Active346: heap_callback_map_340 finished five leaf bodies (setters0055ed20/
-0055efd0, callbacks00586ca0/b0/c0) and original-byte proof100 comparisons/four
-mutations. Root owns review, index supplementcc0, platform binding and one clean
-intake. ABI-only suffix triage byheap_native_340 found0safe candidates; local
-artifactv2-next-abi-candidates-346.json retains excluded-domain reasons.
-Next concrete step: accept346leaves, then diagnostic parser/environment bodies
-0055ed50/0055f060/005a3050 and mono formatter00592a50 after original tracing.
+Active347 root ownership: REA attempt002 completed six dossiers (device/channel
+parsers,environment,mono formatter,both name lookups). Attempt001 hit sandbox
+spawnEPERM;002 succeeded with proper escalation. The worker then hit quota before
+writing evidence; no unfinished production source was left. Root continues its
+bounded analysis and preserves both attempts; no active worker assignments.
+Next concrete step: bounded parser/lookup recovery using existing diagnostic
+state and setter owners; no host getenv/printf/tokenizer substitutes.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/345-diagnostic-devices/acceptance.json.
-Native receipts: v2-diagnostic-devices-native-345/005 andv2-fill-transport-345/001
-underlocal/experiments. Build345/001 is fresh. All345workers complete.
-Keep original formatter/locale domains, invalid indices/arbitrary table aliases,
-root296/301,006ad750 transform, fullallocator/OS/game/visual holds in backlog.
+iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/acceptance.json.
+Native: local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json.
+Build346/001 fresh. Platform evidence: same original IAT005b2208 API plus
+actual COFF sole DIR32 target__imp__OutputDebugStringA@4; no output/visual claim.
+Keep formatter/locale domains,invalid indices/arbitrary aliases,root296/301,
+006ad750 transform,fullallocator/OS/game/visual holds in backlog.
 Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
 
 Historical checkpoints below are not active assignments.

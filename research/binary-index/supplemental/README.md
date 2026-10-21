@@ -34,3 +34,7 @@ Generate once: `py -3 scripts/research/index-v2-heap-candidates-271.py`.
 Read-only validation: `py -3 scripts/research/index-v2-heap-candidates-271.py --validate`.
 No compiler, native execution or Ghidra is invoked; seven tamper/promotion guards
 protect the candidate boundary. Run271 README/summary/validation contain provenance.
+
+`diagnostic-callback-346.jsonl` adds relocation-backed entry00586cc0, exact12B
+PE body and RET, plus its OutputDebugStringA IAT consumer. This is raw PE
+evidence; Run346 contains bounded C++/native acceptance and platform binding.

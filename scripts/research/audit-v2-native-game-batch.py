@@ -6,6 +6,7 @@ import importlib.util
 import json
 from pathlib import Path
 import re
+import struct
 from v2_shared_manifests import ManifestReader
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -16,6 +17,40 @@ def module(name, path):
     value = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(value)
     return value
+
+
+def audit_import_thunk(data, symbol, imported):
+    """Prove a platform adapter is only JMP [the original Win32 import]."""
+    machine, sections, _, table, count, optional, _ = struct.unpack_from('<HHIIIHH', data)
+    assert machine == 0x14c and optional == 0
+    strings = table + count * 18
+
+    def name(index):
+        offset = table + index * 18
+        raw = data[offset:offset + 8]
+        if raw[:4] == b'\0' * 4:
+            start = strings + struct.unpack_from('<I', raw, 4)[0]
+            return data[start:data.index(b'\0', start)].decode('ascii')
+        return raw.rstrip(b'\0').decode('ascii')
+
+    entries = []
+    index = 0
+    while index < count:
+        offset = table + index * 18
+        if name(index) == symbol:
+            entries.append(struct.unpack_from('<Ih', data, offset + 8))
+        index += 1 + data[offset + 17]
+    assert len(entries) == 1
+    value, section = entries[0]
+    assert 1 <= section <= sections
+    offset = 20 + (section - 1) * 40
+    size, raw, relocations = struct.unpack_from('<III', data, offset + 16)
+    relocation_count = struct.unpack_from('<H', data, offset + 32)[0]
+    code = data[raw + value:raw + size]
+    assert code == b'\xff\x25\0\0\0\0' and relocation_count == 1
+    address, target, kind = struct.unpack_from('<IIH', data, relocations)
+    assert address == value + 2 and kind == 6 and name(target) == imported
+    return code.hex()
 
 
 def audit_native(cfg, cache, sha):
@@ -136,6 +171,18 @@ def audit(config_path):
         assert len(definitions[symbol]) == 1 and Path(definitions[symbol][0]).name == owner, symbol
     for symbol in cfg['expected_new_names']:
         assert not definitions[symbol], f'fabricated provider: {symbol}'
+    platform = []
+    for thunk in cfg.get('platform_import_thunks', []):
+        candidates = list(build.glob('**/' + thunk['object']))
+        assert len(candidates) == 1
+        path = candidates[0]
+        view = coff.coff_symbols(path)
+        assert view['defined'] == [thunk['symbol']] and view['undefined'] == [thunk['import_symbol']]
+        code = audit_import_thunk(cache.data(path), thunk['symbol'], thunk['import_symbol'])
+        imports = [json.loads(line) for line in cache.data(ROOT / thunk['index']).decode('utf8').splitlines()]
+        assert thunk['original_import'] in imports
+        platform.append(dict(symbol=thunk['symbol'], import_symbol=thunk['import_symbol'],
+                             code=code, object_sha256=sha(path), original_import=thunk['original_import']))
     graph = module('native_batch_graph', ROOT / 'scripts/research/v2_build_graph.py')
     entries = list(build.glob('**/porsche_original_game_link.vcxproj'))
     assert len(entries) == 1
@@ -153,6 +200,8 @@ def audit(config_path):
         result['native_proofs'] = native_proofs
     else:
         result['native_receipt_sha256'] = native_proofs[0]['receipt_sha256']
+    if platform:
+        result['platform_import_thunks'] = platform
     return result
 
 

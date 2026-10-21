@@ -9566,6 +9566,87 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/summary.json",
       "verification_boundary": "Initial PE table/readonly data identities plus bounded valid-index native cases; child parsers/environment/output remain controlled boundaries."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055ed20",
+      "source": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl void; two stack arguments, caller cleanup, ESP/nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/summary.json",
+      "verification_boundary": "Valid table indices with fixture-controlled canonical-layout data and output targets. Formatter/locale and malformed-index domains remain HOLD. Platform binding is separately proven as pure jump to original Win32 import.",
+      "platform_imports": []
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0055efd0",
+      "source": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl void; two stack arguments, caller cleanup, ESP/nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/summary.json",
+      "verification_boundary": "Valid table indices with fixture-controlled canonical-layout data and output targets. Formatter/locale and malformed-index domains remain HOLD. Platform binding is separately proven as pure jump to original Win32 import.",
+      "platform_imports": []
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00586ca0",
+      "source": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl void; two stack arguments, caller cleanup, ESP/nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "00592a50"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/summary.json",
+      "verification_boundary": "Valid table indices with fixture-controlled canonical-layout data and output targets. Formatter/locale and malformed-index domains remain HOLD. Platform binding is separately proven as pure jump to original Win32 import.",
+      "platform_imports": []
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00586cb0",
+      "source": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl void; two stack arguments, caller cleanup, ESP/nonvolatile registers checked",
+      "recovered_dependencies": [
+        "005a177b"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/summary.json",
+      "verification_boundary": "Valid table indices with fixture-controlled canonical-layout data and output targets. Formatter/locale and malformed-index domains remain HOLD. Platform binding is separately proven as pure jump to original Win32 import.",
+      "platform_imports": []
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00586cc0",
+      "source": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/diagnostic_leaves.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl void; two stack arguments, caller cleanup, ESP/nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/summary.json",
+      "verification_boundary": "Valid table indices with fixture-controlled canonical-layout data and output targets. Formatter/locale and malformed-index domains remain HOLD. Platform binding is separately proven as pure jump to original Win32 import.",
+      "platform_imports": [
+        "KERNEL32.dll!OutputDebugStringA"
+      ]
     }
   ]
 }

@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run345](iterations/v2/001-original-recovery/runs/345-diagnostic-devices/README.md):
-179 TUs/8 projects compile;256 unresolved names/273 refs,noEXE. Diagnostic
-tables/wrappers and existing fill binding pass36 original comparisons,128 ABI
-checks and seven mutations;457-input audit PASS.346 leaf integration is active.
+Current [Run346](iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/README.md):
+181 TUs/8 projects compile;252 unresolved names/269 refs,noEXE. Five diagnostic
+leaves and direct Win32 import binding integrated;100 native comparisons,four
+mutations and460-input audit PASS.347 parser/environment tracing is active.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

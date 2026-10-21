@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run346 diagnostic setters/callbacks pass100 bounded native cases/four mutations.
+OutputDebugStringA binding is structurally proven as a pure JMP to the original
+Win32 import; real output/OS/visual composition remains untested. Device/channel
+parsers0055ed50/0055f060, environment005a3050 and monoformat00592a50 remain
+original dependencies;347 traces these,without host-library substitutions.
+Formatter/locale validity and malformed-index/table alias domains stay HOLD.
+
 Run345 diagnostic tables/guard and five wrappers pass initial-data/alias checks
 and36 native comparisons; fill binding128transportcases reuses unchanged321chain.
 Next346real leaf setters/output callbacks; parsers/environment/mono formatting
