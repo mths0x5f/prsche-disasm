@@ -1,35 +1,34 @@
 # v2 / 001 — план восстановления исходного кода
 
-Current checkpoint335,2026-10-21. Goal: linked original C/C++ game with original
-behavior and visual acceptance.173 TUs/8 projects compile;259 names/284 refs,
-noEXE/run.334 recovers two original VAs339B;338 adds two existing search ABI
-views, not new algorithms.60480 open comparisons (Od/O2) +816 optimized binding
-cases, nine mutations and439-pin shared audit PASS. Canonical owners retained.
-Original PE SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
-334/335/336/337/338 complete; no active owners. Evidence/commands are linked in
-runs/335-resource-open-game-integration/README.md and the individual packets.
+Current339,2026-10-21:174 TUs/8 projects compile;258 names/283 refs,noEXE.
+Two existing startup/context ABI views pass584 O2 transport cases/four mutations;
+173timer/143context proof reused. No new original algorithms or providers.
+Two names closed, one timer diagnostic seam exposed;447-pin shared audit PASS.
+REA339: four function dossiers/two data contexts, unchanged private PE copy.
+One compact-context gpt-6-sol/medium worker;339 complete, no active assignments.
+Commands/evidence: runs/339-startup-context-batch/README.md. Shared runners now
+consume native/build/acceptance/query configs instead of per-packet script copies.
 
-Next batch, unassigned:
-- Bind proven startup_capacity00565030 and game_setup_movie_delta004237d0 to
-  existing canonical timer/context bodies per337; verify transport in one shared
-  batch, preserving their existing scheduling/diagnostic/selector/state holds.
-- Independently trace application heap/context state providers as a dependency
-  group (highest-reference frontier), rather than recovering unrelated leaves.
--006ad750 has one direct Porsche read across25 scanned PE paths/24 hashes;
-  this does not prove ownership or absence of aliases/bulk writers. Runtime write
-  watchpoint: loaded image base+002ad750 from mapping beforeinit, correlated with
-  consumer+00161d49/+00161d5c; capture writer/module/callstack/write extent.
-- Ctype signed-byte/EOF storage and stdio original-format-VA relocation remain
-  NOT READY per337; no same-VA shortcuts or guessed providers. Keep296/301/303,
-  real filesystem/concurrency, locale domains and full-game/visual checks open.
+Next340: canonical heap/context state unification (not isolated getters).
+- Source evidence:005e4fe8 initially005e3e18, live manager005e4700; each manager
+  header40+16pools*140=2280B. Selector pointer005e4fec initially006af374.
+- Confirmed defect: application_heap.cpp startup_heap0059e9d0 omits the original
+  live-manager pointer publication at0059ea06 and initializes detached records.
+  Reset at0059eba8 belongs to shutdown. See339heap-evidence/REA,303cutpoints.
+- Own one shared manager/pool/selector/arena model; preserve initial callback
+  relocation/identity, mutable pointer publication/reset and pool address formula
+  mode*-140+40. Reuse existing owners; do not add zero contexts or mask indices.
+- Resolve arena/guard/page/ID aliases from303, including index16 and callback
+  replacement/reloads. Map default/live callback slots to canonical ABI bodies.
+  Scope any unsupported address domain explicitly; no guessed bounds/errors.
+- Validate original init/shutdown/state consumers together before connecting
+  getters/shutdown. Then one shared game build/audit for the subsystem batch.
 
-Validation: `py -3 scripts/research/audit-v2-resource-open-integration-335.py`.
-Fresh build: build-v2-game-entry-335.py --phase configure/build --attempt NNN
-(unused IDs). Reuse accepted native/session proof unless inputs change or a
-specific failure/concern requires another run. Lean workflow in AGENTS.md:
-module batches, shared tools, compact worker context, one detailed active plan;
-root PLAN/STATUS/README get only brief pointers. Do not start a broad tooling
-rewrite before the next accepted batch. Historical checkpoint entries follow.
+Shared validation: audit-v2-abi-game-batch.py --config339/acceptance.json.
+Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+Keep296/301root,303state,006ad750,ctype/stdio/OS/runtime/visual/full-game holds
+in recovery-validation-backlog.md. Root docs carry pointers, details stay here.
+Historical checkpoint entries below are not active assignments.
 
 Closeout: PR22/f53921f andPR23/a733aaa merged;0 open PRs confirmed. Reviews,
 fixes, fresh receipts, shared game audit and acceptance comments complete.

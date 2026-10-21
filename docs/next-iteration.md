@@ -1,8 +1,8 @@
 # Текущий этап: v2/001-original-recovery
 
 Current v2 work is tracked in [the active PLAN](../iterations/v2/001-original-recovery/PLAN.md).
-Run335 compiles173 TUs with259 names/284 refs,noEXE. Next: grouped startup/
-context bindings and heap-state provider tracing, with lean workflow from AGENTS.md.
+Run339 compiles174 TUs with258 names/283 refs,noEXE. Next: canonical heap/context
+state unification from REA initialization/shutdown evidence; see active PLAN.
 The older iteration proposal below is historical, not the active assignment.
 
 2026-10-14: compilation-first192/190:1054 разных Porsche.exe VA дали реальные

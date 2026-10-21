@@ -1,10 +1,9 @@
 # v2 / 001 — восстановление исходного кода оригинала
 
-Current checkpoint - [Run335](runs/335-resource-open-game-integration/README.md):
-173 C++ TUs/8 projects compile;259 unresolved names/284 references,noEXE.
-61296 native comparisons/nine mutations and439-pin audit PASS. Open339B is
-recovered; two search ABI views reuse existing bodies.006ad750 ownership stays
-unresolved. [PLAN.md](PLAN.md) owns detailed scope/next batch; older notes follow.
+Current [Run339](runs/339-startup-context-batch/README.md):174 C++ TUs/8 projects
+compile;258 names/283 refs,noEXE. Shared audit and584 transport cases pass.
+REA confirms the manager publication/layout gap; no guessed provider is added.
+[PLAN.md](PLAN.md) owns the next subsystem batch. Older checkpoints below are historical.
 
 Отдельный compile-corpus checkpoint — [Run274](runs/274-shared-heap-union/README.md):1125candidate
 function VAs+19supportobjects,414linknames remain, EXE/DLL отсутствует.

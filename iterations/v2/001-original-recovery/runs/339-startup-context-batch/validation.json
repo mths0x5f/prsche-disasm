@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 584,
+  "mutations": 4,
+  "new_original_functions": 0,
+  "reused_proofs": [
+    {
+      "path": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/formatter-timer-integration/timer-setup/verification.json",
+      "sha256": "19a6a6f9b014cee86bfad30e2c502f2506b27dff4d78610d9936c8c5df8d8262",
+      "cases": 9,
+      "source_pins": 31,
+      "entry_va": "00565030",
+      "body_regions_rechecked": 0,
+      "rerun": false
+    },
+    {
+      "path": "iterations/v2/001-original-recovery/runs/143-runtime-network-integration/context-effects/verification.json",
+      "sha256": "be48b7f84b3507a3085eec8cedda6ad5344af1cd9628105185b849d487e645e1",
+      "cases": 24,
+      "source_pins": 16,
+      "entry_va": "004237d0",
+      "body_regions_rechecked": 1,
+      "rerun": false
+    }
+  ],
+  "rea": {
+    "schema": 1,
+    "passed": true,
+    "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "receipt": "local/experiments/v2-startup-context-339-rea/001/receipt.json",
+    "receipt_sha256": "db17f7d1fb8392ac5134da20b195f3c7d959881970886cf46f35da5543bbf3f1",
+    "config_sha256": "5fa2a0c98137af93062167354630b04a8b9350a4666a5a6fcb27ffd37917612a",
+    "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+    "server_pid": 197548,
+    "same_server_identity": true,
+    "bodies": {
+      "manager-initialize": {
+        "address": "0x59e9d0",
+        "bytes": 324,
+        "sha256": "c8fcfb0e3fac9e6dd385c4e48aeddc5d35b58b5eb0bc3a4a6aca875187a7f750"
+      },
+      "manager-switch": {
+        "address": "0x59eb20",
+        "bytes": 159,
+        "sha256": "261e6fb967804979309f6adefa8eb793dfe72a60b45cf5c415cd376bf3897913"
+      },
+      "context-allocate": {
+        "address": "0x4211d0",
+        "bytes": 142,
+        "sha256": "afd08f85abc65c2de9e91dc460768424cb39c0fac2c625ce284e86ad75723927"
+      },
+      "context-release": {
+        "address": "0x4237d0",
+        "bytes": 103,
+        "sha256": "5fb776c5edfcc0ff10ddec0873da6b802e66efee51880ce0138df3a60e2370ba"
+      }
+    },
+    "repeated_equal": [],
+    "timings_ms": {
+      "initialize": 8110.873,
+      "open": 4424.823,
+      "session-before": 101.774,
+      "manager-initialize": 94835.763,
+      "manager-switch": 70.056,
+      "context-allocate": 254.321,
+      "context-release": 193.296,
+      "manager-pointer": 10.599,
+      "selector-pointer": 6.717,
+      "session-final": 62.693,
+      "close": 359.767
+    },
+    "native_acceptance": false,
+    "game_executed": false
+  },
+  "binding_summary_sha256": "979448bd7679c245a56cd0d8c051f8b5fbc04c59cf4bd7a9e4794bb2f504a1df",
+  "heap_evidence_sha256": "113af55395e0039b0a9d003fbd287d75f60dd2d7329477f0917d1ddf95deb64f",
+  "build_sha256": "94d5eba740b3f3b726eea51feb42d4e770caa8475becb277ad641e85aea80a03",
+  "game_sources": 174,
+  "source_pins": 447,
+  "unresolved_names": 258,
+  "unresolved_references": 283,
+  "closed_names": [
+    "?game_setup_movie_delta_004237d0@porsche@@YAXPAXII@Z",
+    "?startup_capacity_00565030@porsche@@YAXI@Z"
+  ],
+  "new_names": [
+    "?timer_diagnostic_boundary@porsche@@YAXPBDZZ"
+  ],
+  "symbols": {
+    "defined": [
+      "?game_setup_movie_delta_004237d0@porsche@@YAXPAXII@Z",
+      "?startup_capacity_00565030@porsche@@YAXI@Z"
+    ],
+    "undefined": [
+      "?application_context_clear_004237d0@porsche@@YAXPAXII@Z",
+      "?timer_setup_00565030@porsche@@YAXI@Z"
+    ],
+    "common": [],
+    "weak": []
+  },
+  "object_sha256": "cc44551ec281ec2c21ef413a836e6933aedcf3dfc8bb65e241ceca09a23ad13d",
+  "game_executed": false,
+  "executable": null
+}

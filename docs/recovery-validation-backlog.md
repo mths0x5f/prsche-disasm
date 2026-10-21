@@ -1,5 +1,11 @@
 # Отложенные проверки восстановления v2
 
+339 REA confirms missing heap-manager publication in current application_heap.cpp:
+original0059ea06 stores live005e4700 before pool setup; C++ uses detached records.
+Do not close303state HOLD with zero getters. Unify default/live manager identity,
+callback relocation, selector/arena/guard storage and init/reset effects; validate
+original state transitions as one batch.339 bindings preserve this open boundary.
+
 Run335 update: bounded open wrapper/callback339B now passes60480 Od/O2
 comparisons, plus816 search binding transport cases.006ad750 is DECLARED only:
 336 direct-reference scan does not prove storage/alias ownership. Preserve the

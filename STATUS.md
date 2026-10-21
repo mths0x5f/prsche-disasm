@@ -1,10 +1,10 @@
 # Состояние проекта
 
-Current: [Run335](iterations/v2/001-original-recovery/runs/335-resource-open-game-integration/README.md),2026-10-21.
-173 TUs/8 projects compile;259 unresolved names/284 refs,noEXE.61296 native
-comparisons/nine mutations and439-pin audit PASS. Transform006ad750 stays
-unresolved; ownership/runtime/full-game holds remain. All current work complete.
-See active iteration PLAN for the next batch; older entries below are historical.
+Current [Run339](iterations/v2/001-original-recovery/runs/339-startup-context-batch/README.md):
+174 TUs/8 projects compile;258 unresolved names/283 refs,noEXE.584 transport
+cases/four mutations and447-pin audit PASS. REA confirmed the live heap-manager
+publication/layout gap; no provider added. Active PLAN owns the next state batch.
+All339work complete; older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/
 286 references, noEXE or game execution. Two original constructor/drive bodies

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-startup-context-339-rea",
+  "queries": [
+    {
+      "label": "manager-initialize",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0059e9d0"
+      }
+    },
+    {
+      "label": "manager-switch",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0059eb20"
+      }
+    },
+    {
+      "label": "context-allocate",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x004211d0"
+      }
+    },
+    {
+      "label": "context-release",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x004237d0"
+      }
+    },
+    {
+      "label": "manager-pointer",
+      "tool": "inspect_address_context",
+      "arguments": {
+        "address": "0x005e4fe8"
+      }
+    },
+    {
+      "label": "selector-pointer",
+      "tool": "inspect_address_context",
+      "arguments": {
+        "address": "0x005e4fec"
+      }
+    }
+  ]
+}
