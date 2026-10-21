@@ -66,6 +66,8 @@ def wanted(b, i, which):
     if which == 'fpu':
         return bool(b.native_kind(i))
     m = i.mnemonic
+    if which == 'string':
+        return m in ('stosb', 'stosw', 'stosd', 'movsb', 'movsw', 'movsd', 'lodsb', 'lodsd', 'scasb', 'cmpsb')             or (m in ('rep', 'repne', 'repe') or i.prefix[0] in (0xf2, 0xf3)) and 'xmm' not in i.op_str
     if which == 'sse':
         xmm = any(op.type == 1 and i.reg_name(op.reg).startswith('xmm') for op in i.operands)
         return (xmm or m in ('ldmxcsr', 'stmxcsr', 'movntps')) and not b.native_kind(i)             and not any(op.type == 3 and op.mem.segment for op in i.operands)
@@ -138,6 +140,7 @@ HARNESS = r'''
 #include <string.h>
 #include "machine257.h"
 #define INTSET %INTSET%
+#define STRINGSET %STRINGSET%
 void dispatch257(Machine257& s, U target) { s.stop = Stop257::BadReturn; (void)target; }
 void unlowered430(Machine257& s) { s.stop = Stop257::BadReturn; }
 %DECLS%
@@ -254,7 +257,9 @@ int main(int argc, char** argv) {
             for (int r = 0; r < 8; ++r) r_in[r] = rnd();
             r_in[6] = (U)(buf + 64); r_in[3] = r_in_fix ? 0u : rnd() % 64; if (INTSET) r_in[7] = (U)(buf + 256);
             if (!strncmp(frags[f].name, "bt", 2)) r_in[0] = rnd() % 1024;   // bit strings stay inside the buffer
+            if (STRINGSET) { r_in[1] = rnd() % 16; r_in[6] = (U)(buf + 192); r_in[7] = (U)(buf + 320); }
             flags_in = rnd() & 0x8d5;
+            if (STRINGSET) flags_in |= (rnd() & 1u) << 10;         // DF
             for (int r = 0; r < 8; ++r) for (int l = 0; l < 4; ++l) xmm_in[r][l] = rnd();
             mx_in = 0x1f80 | ((rnd() & 3) << 13) | ((rnd() & 1) << 15);
             memcpy(buf, mem_in, 512);
@@ -294,7 +299,7 @@ int main(int argc, char** argv) {
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--cases', type=int, default=300)
-    ap.add_argument('--set', choices=('fpu', 'int', 'sse', 'branch'), default='fpu')
+    ap.add_argument('--set', choices=('fpu', 'int', 'sse', 'branch', 'string'), default='fpu')
     ap.add_argument('--mutate', choices=sorted(MUTANTS), help='negative control: a deliberately wrong lowering')
     args = ap.parse_args()
     b = load_build()
@@ -321,11 +326,11 @@ def main():
     decls, frags, bodies, names, untranslated = [], [], [], [], []
     for (m, kinds), raw in sorted(form_list.items()):
         for mode in (0, 1):
-            code = reencode(raw, mode) if args.set != 'branch' else (raw if mode == 0 else None)
+            code = reencode(raw, mode) if args.set not in ('branch', 'string') else (raw if mode == 0 else None)
             if code is None:
                 continue
             decoded = list(md.disasm(code, 0))
-            if args.set != 'branch' and (len(decoded) != 1 or decoded[0].size != len(code)):
+            if args.set not in ('branch', 'string') and (len(decoded) != 1 or decoded[0].size != len(code)):
                 untranslated.append(f'{m} {kinds}: re-encoding not decodable')
                 continue
             frag = code + b'\xc3'
@@ -349,7 +354,7 @@ def main():
         frag_arrays.append(f'static const unsigned char code{k}[] = {{{arr}}};')
     table = 'static const Frag frags[] = {\n' + ',\n'.join(
         f.split('(const unsigned char[])', 1)[0] + f'code{k}, ' + f.split('}, ', 1)[1] for k, f in enumerate(frags)) + '\n};'
-    src = HARNESS.replace('%INTSET%', '1' if args.set == 'int' else '0').replace('%DECLS%', '\n'.join(decls)).replace('%FRAGS%', '\n'.join(frag_arrays) + '\n' + table)
+    src = HARNESS.replace('%STRINGSET%', '1' if args.set == 'string' else '0').replace('%INTSET%', '1' if args.set in ('int', 'string') else '0').replace('%DECLS%', '\n'.join(decls)).replace('%FRAGS%', '\n'.join(frag_arrays) + '\n' + table)
     (WORK / 'harness.cpp').write_text(src, encoding='utf-8')
     (WORK / 'fragments.cpp').write_text('#include "machine257.h"\n' + '\n'.join(bodies), encoding='utf-8')
     cl, link, env = b.toolchain()
@@ -372,7 +377,7 @@ def main():
         print(json.dumps(dict(mutant=args.mutate, failed_forms=len(summary['failed']))))
         return
     (RUN / {'fpu': 'native-fpu-oracle.json', 'int': 'integer-oracle.json', 'sse': 'sse-oracle.json',
-           'branch': 'branch-oracle.json'}[args.set]).write_text(json.dumps(dict(summary, results=results), indent=1) + '\n', encoding='utf-8')
+           'branch': 'branch-oracle.json', 'string': 'string-oracle.json'}[args.set]).write_text(json.dumps(dict(summary, results=results), indent=1) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in summary.items() if k != 'failed'}, indent=1))
     for f in summary['failed'][:40]:
         print('FAIL', f)

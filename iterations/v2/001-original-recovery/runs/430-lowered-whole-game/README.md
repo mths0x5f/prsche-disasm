@@ -349,6 +349,14 @@ Três correções levaram até aí:
 
 ### Prova em hardware (2026-10-21)
 
+**Base:** desde o Run 431, a tradução vem de `scripts/research/x86-cpp-backend-exact.py`, que
+está na main: flags exatas, deslocamentos e rotações em C++ portátil com as regras medidas na
+CPU, `div r/m8`, `lahf`, `bt`/`bts`, `jp`/`jo`, DF nas operações de string e `lock` atômico. O
+Run 430 acrescenta só o que é próprio deste executável: x87, MMX e `rcpss` nativos, memória
+`volatile`, nenhum orçamento de passos e `unlowered430` para o 3DNow!. Os oráculos abaixo foram
+refeitos com essa base, incluindo o conjunto `string` com DF aleatória (14 formas, 4.200 casos,
+0 diferenças).
+
 **O que mudou.** Antes, o x87 era imitado com `double`: 64 bits em vez de 80, sem palavra de
 controle (precisão e arredondamento), com transcendentais da biblioteca C e com MMX separado da
 pilha do x87. Havia também `fnsave`/`frstor`/`fnstenv`/`fldenv` e `rcpss` sem tradução, e PF/AF
