@@ -47,6 +47,24 @@ void fatal(const char* what, const Machine257* s, U extra)
         fprintf(stderr, " eax=%08x ecx=%08x edx=%08x ebx=%08x esp=%08x ebp=%08x esi=%08x edi=%08x stop=%u",
                 s->r[0], s->r[1], s->r[2], s->r[3], s->r[4], s->r[5], s->r[6], s->r[7], static_cast<U>(s->stop));
     fprintf(stderr, "\n");
+    if (s) {
+        // Memory each register points at, and the guest stack, for post-mortem analysis.
+        static const char* names[8] = {"eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"};
+        for (U k = 0; k < 8; ++k) {
+            MEMORY_BASIC_INFORMATION mb;
+            U a = s->r[k] & ~3u;
+            if (k == 4) a = s->r[4];
+            if (a < 0x10000u || !VirtualQuery(reinterpret_cast<void*>(a), &mb, sizeof mb) ||
+                mb.State != MEM_COMMIT || (mb.Protect & (PAGE_NOACCESS | PAGE_GUARD)))
+                continue;
+            U n = k == 4 ? 24u : 8u;
+            U end = reinterpret_cast<U>(mb.BaseAddress) + static_cast<U>(mb.RegionSize);
+            fprintf(stderr, "[430]   [%s=%08x]", names[k], a);
+            for (U j = 0; j < n && a + 4 * j + 4 <= end; ++j)
+                fprintf(stderr, " %08x", *reinterpret_cast<const U*>(a + 4 * j));
+            fprintf(stderr, "\n");
+        }
+    }
     fflush(stderr);
     TerminateProcess(GetCurrentProcess(), 0x430);
 }

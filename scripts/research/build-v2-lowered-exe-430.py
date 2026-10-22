@@ -148,9 +148,59 @@ def native_code(i, address):
 # x87, MMX and RCPSS run on the host CPU itself (see native_code); this takes precedence over every
 # emulated lowering of those instructions.
 NATIVE_HOOK = ("        if m == 'mov' and len(ops) == 2:",
-               "        if native_kind(i):\n"
+               "        if i.address in NATIVE_ISLANDS:\n"
+               "            code = island_code(raw, entry, i.address, NATIVE_ISLANDS[i.address][0])\n"
+               "        elif any(lo < i.address < hi for lo, (hi, _) in NATIVE_ISLANDS.items()):\n"
+               "            code = ''   # executed by the island that starts before it\n"
+               "        elif native_kind(i):\n"
                "            code = native_code(i, address)\n"
                "        elif m == 'mov' and len(ops) == 2:")
+
+# Native islands: short runs of original instructions executed as themselves on the CPU, where
+# the game relies on how little time passes between them. Each entry: start -> (end, reason).
+NATIVE_ISLANDS = {
+    0x0056bf24: (0x0056bf30,
+                 'stream producer publishes a block: count ([tap+8]) then head ([tap+0xc]); '
+                 'STREAM_get (0056c540) reads both without the lock. Lowered, the 2-store window '
+                 'grew enough for the reader to see the new count with the uninitialised head '
+                 '(-1) in ~20% of runs; the original never does (20/20).'),
+}
+_ISLAND_REGS = ['eax', 'ecx', 'edx', 'ebx', 'esp', 'ebp', 'esi', 'edi']
+
+
+def island_code(raw, entry, lo, hi):
+    """Run the original bytes [lo, hi) on the CPU with the guest's registers and EFLAGS.
+
+    A register the island does not touch holds &s.r[0]; ESP is the host's (the island must not
+    use the stack). Guest arithmetic flags and DF go in with POPFD and come back with PUSHFD.
+    """
+    import capstone
+    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+    md.detail = True
+    body = raw[lo - entry:hi - entry]
+    used = set()
+    for i in md.disasm(body, lo):
+        if i.mnemonic in ('call', 'ret', 'push', 'pop', 'pushfd', 'popfd', 'leave', 'enter'):
+            raise ValueError(f'native island {lo:08x}: stack instruction {i.mnemonic}')
+        r, w = i.regs_access()
+        used |= {i.reg_name(x) for x in list(r) + list(w)}
+    full = {'al': 'eax', 'ah': 'eax', 'ax': 'eax', 'cl': 'ecx', 'ch': 'ecx', 'cx': 'ecx', 'dl': 'edx',
+            'dh': 'edx', 'dx': 'edx', 'bl': 'ebx', 'bh': 'ebx', 'bx': 'ebx', 'si': 'esi', 'di': 'edi', 'bp': 'ebp'}
+    used = {full.get(x, x) for x in used}
+    if 'esp' in used:
+        raise ValueError(f'native island {lo:08x} uses ESP')
+    base = next(r for r in ('ebx', 'esi', 'edi') if r not in used)
+    regs = [(4 * k, r) for k, r in enumerate(_ISLAND_REGS) if r not in ('esp', 'ebp', base)]
+    asm = (['push ebp', 'mov ecx, fi_', f'mov {base}, p_', 'pushfd', 'pop eax', 'and eax, 0xfffff32a',
+            'or eax, ecx', 'push eax']
+           + [f'mov {r}, [{base} + {o}]' for o, r in regs]
+           + [f'mov ebp, [{base} + 20]', 'popfd']
+           + [f'_emit 0x{b:02x}' for b in body]
+           + ['pushfd'] + [f'mov [{base} + {o}], {r}' for o, r in regs]
+           + [f'mov [{base} + 20], ebp', f'pop dword ptr [{base} + 32]', 'cld', 'pop ebp'])
+    return ('{U p_=reinterpret_cast<U>(&s.r[0]); U fl_=s.flags; U fi_=fl_&0xcd5u;\n __asm {\n'
+            + ''.join(f'  {x}\n' for x in asm) + ' }\n'
+            ' s.flags=(fl_&~0xcd5u)|(s.flags&0xcd5u); }')
 
 APPROXIMATIONS = [
     # Unreachable for x87 (native_code runs first); kept so an instruction that is neither native nor
@@ -215,7 +265,8 @@ def backend():
         assert src.count(before) == 1, 'patch context drift: ' + before
         src = src.replace(before, after)
     ns = dict(be._namespace)
-    ns.update(native_kind=native_kind, native_code=native_code, re=re)
+    ns.update(native_kind=native_kind, native_code=native_code, island_code=island_code,
+              NATIVE_ISLANDS=NATIVE_ISLANDS, re=re)
     exec(compile(src, 'backend-430::derived', 'exec'), ns)
     header = be.HEADER
     for decl in ('U read257(U address, U bytes);\n', 'void write257(U address, U bytes, U value);\n'):
