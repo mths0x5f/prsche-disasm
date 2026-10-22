@@ -1,26 +1,30 @@
 # v2 / 001 - original source recovery plan
 
-Current356,2026-10-22: nine game_setup/splash renderer table bindings accepted.
-22 original-callsite comparisons/seven mutations and475-input audit PASS. Fresh
-187-TU/8-project build001:235 names/249 refs,noEXE/game execution. Nine names/ten
-refs close,none appear. Native356/003; fixture-only appendedRET/EDI setup explicit.
-Canonical loader/header match078 proof; no new table/state/recovery count.
-Prior354 optimized-copy and353 mono batches accepted unchanged, all edits frozen.
+Current357,2026-10-22: eleven display/procedure bindings accepted.26 native
+comparisons/seven mutations and477-input audit PASS. Fresh188-TU/8-project
+build001:224 names/232 refs,noEXE/game execution. Eleven names/17 refs close,
+none appear. Native357/002, explicit synthetic argument/RET harness boundary.
+Equal-basename COFF objects now use full owner paths; wrong-owner control fails.
+SDK extra_libraries pins libs before compile. Prior runner SHA9c53c111... is
+verified from immutable Git blob0733c15bb343c2043d6e3f642e82bc40b26dccde only
+for that exact tool input; all source/fixture drift stays strict. Negative source
+control fails. No old native rerun for metadata; passed357 source is frozen.
 
-Active357-render-display-bindings: diagnostic_parser_native_348 owns source/
-native fixture/config/evidence (gpt-6-sol/medium,compact); root game/audit/docs.
-Nine display facades plus about/setstate explicit-proc helpers. Original caller
-arity and used EAX returns are in local/experiments/v2-render-bindings-next-357/
-evidence.json. Proc helper parameter is not a DLL argument. Use current canonical
-table, no guards/renderer. Settings/unlock/alias-slot cases remain separateHOLD.
+Active358-render-platform-bindings: worker native proof complete (16 cases/six
+mutations, receipt008), root owns CMake/build/audit/docs. Six exact KERNEL32
+loader boundaries reuse four compiled providers plus direct FreeLibrary and
+DisableThreadLibraryCalls. Fixture redirects/restores only its own EXE IAT;
+actual canonical TUs compiled with extra user32/gdi32 SDK libs. Source/evidence
+at runs/358-render-platform-bindings. No active worker production edit remains.
 
-Parallel358 read-only platform triage: environment_state_349 owns local/
-experiments/v2-render-platform-358/evidence.json, checking six render_win_*
-KERNEL32 imports and existing canonical providers before any new code.
+Parallel359 read-only: environment_state_349 checks three settings return facades,
+006bd918 alias-cell calls and window_shutdown display callback. Evidence local/
+experiments/v2-render-settings-bindings-359/evidence.json. Unlock006bd92c naming/
+ownership remains separateHOLD; no Win32 CloseHandle substitution.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/356-render-bindings/acceptance.json.
-Native local/experiments/v2-render-bindings-native-356/003/receipt.json; game356/001.
+iterations/v2/001-original-recovery/runs/357-render-display-bindings/acceptance.json.
+Native local/experiments/v2-render-display-bindings-native-357/002/receipt.json; game357/001.
 CPU proof uses empty/default x87 and zero XMM0/1,selected FXSAVE fields; arbitrary
 ambient CPU state/FIP/FDP/invalid spans/concurrent streaming ordering and complete
 dispatcher+backend composition remain in recovery-validation-backlog.md. Fixture

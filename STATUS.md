@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run356](iterations/v2/001-original-recovery/runs/356-render-bindings/README.md):
-187 TUs/8 projects compile;235 unresolved names/249 refs,noEXE. Nine renderer
-export-table bindings pass22 comparisons/seven mutations and475-input audit.
-Next357 verifies display/procedure-helper ABI; actual DLL/game effects stay open.
+Current [Run357](iterations/v2/001-original-recovery/runs/357-render-display-bindings/README.md):
+188 TUs/8 projects compile;224 unresolved names/232 refs,noEXE. Eleven renderer
+display/procedure bindings pass26 comparisons/seven mutations and477-input audit.
+Next358 binds original loader Win32 APIs; actual DLL/game acceptance stays open.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

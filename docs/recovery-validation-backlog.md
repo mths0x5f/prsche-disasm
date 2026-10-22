@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Run357 adds11 renderer transports after26 comparisons/seven mutations. Original
+CALL excerpts plus synthetic argument/RET setup prove selected ABI, not runtime
+renderer behavior. Settings/alias/unlock cases remain separate. Full COFF paths
+now distinguish equal source basenames. SDK library support preserves historical
+native-runner provenance via its exact committed blob; source/fixture drift is
+still rejected, and accepted native cases are not rerun for tool-only changes.
+
+
 Run356 binds nine game_setup/splash renderer names after22 original-callsite
 comparisons/seven mutations. Synthetic snippet RET/EDI setup is harness-only;
 loader078 proof covers unchanged table acquisition, not live THRASH effects.
