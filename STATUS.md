@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run359](iterations/v2/001-original-recovery/runs/359-render-settings-bindings/README.md):
-190 TUs/8 projects compile;213 unresolved names/220 refs,noEXE. Loader/settings
-batches358/359 pass34 native comparisons/12 mutations; final481-input audit PASS.
-Next361 restores real pre-render device/pool startup; ordered path is in360.
+Current [Run363](iterations/v2/001-original-recovery/runs/363-startup-bindings/README.md):
+191 TUs/8 projects compile;207 unresolved names/214 refs,noEXE. Six early startup
+bindings pass18 native comparisons/seven mutations; shared483-input audit PASS.
+Next361 device/pool remains under review; ordered startup path is recorded in360.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

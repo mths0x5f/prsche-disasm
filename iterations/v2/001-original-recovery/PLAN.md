@@ -1,38 +1,45 @@
 # v2 / 001 - original source recovery plan
 
-Current359,2026-10-22: six loader Win32 bindings358 plus five settings/alias
-facades359 accepted.34 native comparisons/12 mutations; final481-input audit
-PASS. Fresh190-TU/8-project build001:213 names/220 refs,noEXE/game execution.
-359 closes5names/6refs after358 closes6names; no new boundary. Native358/008 and
-359/002. All renderer binding worker assignments complete and source frozen.
-Original18 algorithm bodies and33 typed bindings recovered/bound since346;
-linker totals are not a remaining-function estimate or time-to-game forecast.
+Current363,2026-10-22: six early startup bindings accepted. Native002 passes18
+comparisons/seven mutations; shared483-input audit PASS. Fresh build001 compiles
+191 C++ TUs/8 projects:207 unresolved names/214 refs,noEXE/game execution. All six
+names close with no new dependency. Passed batch/source frozen; no active worker
+assignment remains. Root owns next integration/review.
 
 Priority: actual startup path to a linked EXE and real display. Evidence360 maps
-hostWinMain->004b6710->004b6a50 and separates conditionalCD/laterframe dependencies
-from runtime order. No WHOLEARCHIVE override; missing symbols still include core
-services that may expand the graph. First linkedEXE,display,playablemenu unproven.
+hostWinMain->004b6710->004b6a50; counts are not a remaining-function estimate.
+Next361 targets unconditional00536e50 DirectInput456B and00563ad0 pool251B before
+rendering. Unaccepted source/native artifacts remain outside production. Pool
+native002 passed but needs initial productionBSS assertions before fixture reset.
+Device review must verify rawPE GUID005bf9a0/CreateDevice and005bf8c0/QueryInterface,
+original initializedDWORD return, and overlapping cursor/property-success local;
+no zero-initialized replacement or relabeled constant is accepted without proof.
+Workers from the prior session are not live; resume from files, preserve attempts.
 
-Active361-startup-device-pool: copy_backends_354 owns new source/headers/native
-fixture/config/evidence (gpt-6-sol/high,compact). Root game/audit/docs/REA. Targets
-00536e50 DirectInput setup456B and00563ad0 pool251B, unconditional before rendering.
-Pool can be proved first; device remains explicitHOLD until COM/data/ABI evidence.
-Reuse existing005deac8/cc and accepted children; no guessed GUID/state/zero stubs
-or switch toDirectInput8. REA362/001 six original dossiers auditedPASS. Explorer's
-earlier DirectDraw label is corrected by originalDirectInputCreateA thunk.
+REA362/001 six original dossiers auditedPASS. Reuse existing005deac8/cc and accepted
+children. Next coherent original child batch:00572690(82B),005370c0(446B),005727c0
+(229B),00537070(62B),and0056e940 DirectInputCreateA import transport(6B). Verify
+state ownership/COM ABI and missing body traces first; keep unknown00565340 extern.
+No switch toDirectInput8, guessed GUID/state or zero services. Linked EXE, real
+display and playable menu remain separate unachieved milestones.
 
-Parallel363 read-only startup binding triage: environment_state_349 checks exact
-canonical instance/thread/lock/module/ctype reuse on earliest startup path, with
-no raw PE string VA->hostpointer guesses. Evidence local/experiments/v2-startup-
-bindings-363/evidence.json. Unlock006bd92c remains separateHOLD.
+363 evidence records six original callsites and reused078/169 proof. Module name/
+last-error use actual canonical platform sources; mutex CreateMutexA exact COFF
+import pinned. ConditionalCD relaunch and duplicate-instance window handling
+remain outside scope. Read-only followup:0059eafb calls partial005679f0 with three
+args and discards EAX; current application_pool.cpp owns the existing provider.
+A future typed application_heap_finish binding needs focused caller/state proof;
+first normal BSS handoff does not establish failure/repeated-init/shutdown paths.
+Unlock006bd92c token provenance, OS/visual/full-game holds remain open.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/359-render-settings-bindings/acceptance.json.
-Native local/experiments/v2-render-settings-bindings-native-359/002/receipt.json;
-game359/001. Native runner extra_libraries pinsSDK inputs; prior runnerSHA9c53c111
-is verified only from committedGitblob0733c15bb343c2043d6e3f642e82bc40b26dccde.
-Other source/fixture drift remains strict; no old native rerun for tooling metadata.
-Keep CPU/parser/allocator/OS/DLL/visual/full-game holds in recovery-validation-backlog.
+iterations/v2/001-original-recovery/runs/363-startup-bindings/acceptance.json.
+Native local/experiments/v2-startup-bindings-native-363/002/receipt.json; game363/001.
+Configure/build use scripts/research/build-v2-game-batch.py with run363 build-config,
+--phase configure orbuild --attempt001 (new attempts afterchangedinputs). Native
+runner extra_libraries pinsSDK inputs; historical runnerSHA9c53c111 is verified
+only from committedGitblob0733c15bb343c2043d6e3f642e82bc40b26dccde. Other source/
+fixture drift stays strict. No unchanged accepted proof rerun for metadata.
 
 352 state/routing evidence complete; supplemental diagnostic-mono-callback-352
 indexes omitted151B00592ac0 with fullRET/exact original byte equality. REA347/350

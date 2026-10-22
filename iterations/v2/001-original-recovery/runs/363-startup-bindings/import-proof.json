@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "object": "local/builds/v2/startup-bindings-363/entry-289/porsche_game_entry_bridges.dir/Release/startup_binding.obj",
+  "object_sha256": "eee165ddfd58ead6371e08b8a94231418b5f27e17d28227ab05283676cd8ac4f",
+  "undefined": [
+    "?formatter_error_module_name@porsche@@YGIPAXPADI@Z",
+    "?formatter_text_alpha_005a2c24@porsche@@YAHH@Z",
+    "?heap_lock_create_005321f0@porsche@@YAPAXXZ",
+    "?platform_last_error@porsche@@YGIXZ",
+    "?thread_init_0055f320@porsche@@YAXI@Z",
+    "__imp__CreateMutexA@12"
+  ],
+  "original_imports": [
+    {
+      "path": "Porsche.exe",
+      "dll": "KERNEL32.dll",
+      "symbol": "CreateMutexA",
+      "iat_rva": "0x1b21ac"
+    }
+  ],
+  "scope": "Exact direct import and canonical provider identities from actual game COFF. Native callsite excerpts prove ABI/order with controlled endpoints; real OS lifecycle/contention remains unvalidated."
+}

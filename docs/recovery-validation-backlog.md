@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run363 closes six startup transports with18 comparisons/seven mutations and
+exact CreateMutexA/canonical provider identities. Controlled IAT endpoints are
+not real OS lifecycle, duplicate-instance or CD relaunch acceptance. Pending361
+requires rawPE GUID identity, returned EAX, cursor failure-state and initialBSS
+checks before its device/pool code enters production. Mouse-state child batch
+and partial005679f0 composition remain open; no game EXE/display/menu yet.
+
 Runs358/359 bind six Win32 loader and five settings/alias facades after34 native
 comparisons/12 mutations. Tests redirect only their own EXE IAT and restore it;
 no real DLL/display acceptance. Alias cell2 is read live, independently of cell27.
