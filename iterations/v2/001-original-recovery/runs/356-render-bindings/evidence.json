@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "index_query": "research/binary-index/README.md and indexed Porsche.exe callsites for 004dd6a2..004dd6c2, 004a535b..004a5371, 004a53af; checked research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm and PE bytes",
+    "callsite_instruction_blocks": ["004dd6a2:8", "004dd6aa:6", "004dd6b0:6", "004dd6b6:6", "004dd6bc:7", "004a535b:8", "004a5363:6", "004a53af:6", "004a5369:8"],
+    "slot_indices": {"006bd9b0": 40, "006bd91c": 3, "006bd970": 24, "006bd948": 14, "006bd978": 26},
+    "binding": "Nine game_setup and splash_progress wrappers use current canonical render_thrash_exports_006bd910[43] and typed x86 stdcall calls. Original window callers push 2; original sync callers push EDI=0 or immediate 0; clear, flush, pageflip have no stack argument. Results are unused by these callers."
+  },
+  "reused_provider": {
+    "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_loader.cpp",
+    "source_sha256": "230047dbf667eb22601e6667f5c2ee8391957070f5a27aaff32a2fe2b7c3ffc8",
+    "header_sha256": "791c31583efb742a11a7c55545766a19b8bed23dda44480e4f4cedd436b2344d",
+    "accepted_proof": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/render-loader/verification.json",
+    "source_hashes_match_current": true,
+    "recovery_count": 0
+  },
+  "native_proof": {
+    "receipt": "local/experiments/v2-render-bindings-native-356/003/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 11,
+    "mutations_detected": 7,
+    "compared": "SHA-pinned PE instruction blocks for the nine calls versus compiled C++ wrappers at the same fixture-owned live table slots: callback slot, 32-bit argument, ordered events, ESP and nonvolatile EBP/EBX/ESI/EDI. Five game and four splash calls are also compared as ordered sequences.",
+    "harness_construction": "The original bytes are callsite excerpts, not whole original functions. The fixture verifies each original FF 15 absolute slot operand, remaps that operand to the same fixture table cell used by C++, and appends a synthetic RET or RET 4 to execute the excerpt. The harness supplies EDI=0 for the game sync caller. Its five stdcall endpoints record calls and return ignored sentinel EAX values.",
+    "cleanup_check": "Both original-excerpt and C++ paths preserve caller ESP under the declared stdcall arity. A separate wrong-endpoint-cleanup control in attempt 002 changed Proc1 to cdecl and caused access violation 0xc0000005 in the original-excerpt harness: the unpopped argument was consumed as the synthetic return address. It is not a passing mutation receipt; the seven clean differential controls are in attempt 003."
+  },
+  "hold": [
+    "Actual THRASH DLL execution, OS display effects, and full game startup remain outside this controlled transport comparison.",
+    "about, setstate, getstate, unlockwindow, and alias-slot result/input ABI mismatches from v2-render-bindings-356 triage remain unresolved."
+  ]
+}

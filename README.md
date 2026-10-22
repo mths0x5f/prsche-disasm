@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run354](iterations/v2/001-original-recovery/runs/354-copy-backends/README.md):
-186 C++ TUs compile;244 unresolved names/259 refs,noEXE. Three original optimized
-copy backends pass82944 comparisons/six mutations and473-input audit. Next:
-render export-table ABI bindings; full-game and visual acceptance remain open.
+[Latest game build, Run356](iterations/v2/001-original-recovery/runs/356-render-bindings/README.md):
+187 C++ TUs compile;235 unresolved names/249 refs,noEXE. Nine original export-
+table bindings pass22 comparisons/seven mutations and475-input audit. Next:
+display/procedure-helper ABI; actual renderer and full-game acceptance remain open.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

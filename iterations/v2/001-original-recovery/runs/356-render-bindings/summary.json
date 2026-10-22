@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 22,
+  "new_original_functions": 0,
+  "abi_bindings": 9,
+  "original_callsite_blocks": 9,
+  "original_callsite_bytes": 61,
+  "mutation_controls": 7,
+  "native_receipt": "local/experiments/v2-render-bindings-native-356/003/receipt.json",
+  "native_receipt_sha256": "6d5d9268543173eb5b51281cf39534bdd4af372340c0d18b1cf066b64cae4553",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/356-render-bindings/native-fixture.cpp.in": "80bd2b03d1170c143df9f632115f9de9da88a8cd85b40d14bc3f93546c8fa88f",
+    "iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp": "e207cbf95c4ca64e547ff0a97795c795a6b405f16c0ff53e5bc141a5fbdf6f80",
+    "iterations/v2/001-original-recovery/source/include/porsche/game_setup.hpp": "45b8c0e8c46b0bffbbbeeda9fa4b01f9c17562d7ca4510d53564ddcf42ead2eb",
+    "iterations/v2/001-original-recovery/source/include/porsche/splash_progress.hpp": "99145e6a8c74eca4a49353eaa917c1d356350de9086a29b7186dd3eeb9f743ec",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp": "791c31583efb742a11a7c55545766a19b8bed23dda44480e4f4cedd436b2344d"
+  },
+  "holds": [
+    "Actual THRASH DLL execution, OS display effects, and full game startup remain outside this controlled transport comparison.",
+    "about, setstate, getstate, unlockwindow, and alias-slot result/input ABI mismatches from v2-render-bindings-356 triage remain unresolved."
+  ]
+}

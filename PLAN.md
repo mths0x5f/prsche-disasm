@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run354](iterations/v2/001-original-recovery/runs/354-copy-backends/README.md):
-186 TUs/8 projects compile;244 unresolved names/259 refs,noEXE. Three original
-copy backends pass82944 comparisons/six mutations and473-input audit. Next356
-checks render export-table bindings; CPU/OS/full-game holds remain explicit.
+Current [Run356](iterations/v2/001-original-recovery/runs/356-render-bindings/README.md):
+187 TUs/8 projects compile;235 unresolved names/249 refs,noEXE. Nine renderer
+export-table bindings pass22 comparisons/seven mutations and475-input audit.
+Next357 verifies display/procedure-helper ABI; actual DLL/game effects stay open.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),

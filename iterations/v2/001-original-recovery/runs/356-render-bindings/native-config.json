@@ -1,0 +1,36 @@
+{
+  "run": 356,
+  "experiment": "local/experiments/v2-render-bindings-native-356",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/356-render-bindings/native-fixture.cpp.in",
+  "include_dirs": ["iterations/v2/001-original-recovery/source/include"],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/include/porsche/game_setup.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/splash_progress.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@GAME_WINDOW@","va":"004dd6a2","bytes":8,"sha256":"f2154b3962414a470e7017f483e910b8d30b44bbb3e8ac63a2ba4545bd7b30c6"},
+    {"token":"@GAME_CLEAR@","va":"004dd6aa","bytes":6,"sha256":"77caf27dec0d6cce18483bebf95c9d485ce727c566dec06c82bc1b1b1d0c2e2a"},
+    {"token":"@GAME_FLUSH@","va":"004dd6b0","bytes":6,"sha256":"e24ded0a7df41d890c4d3b8fb5d038df4cc52c2dd1014a9dd2953a681722d89c"},
+    {"token":"@GAME_FLIP@","va":"004dd6b6","bytes":6,"sha256":"0c4079d127d3a7e7b21a5b56a77f889c39a1d2b4f786897a16ce60b361bc54d7"},
+    {"token":"@GAME_SYNC@","va":"004dd6bc","bytes":7,"sha256":"ec02e003279b3a338fe3a9f338a5992bca9caeb541fa3a52622b8aa8360735dd"},
+    {"token":"@SPLASH_WINDOW@","va":"004a535b","bytes":8,"sha256":"f2154b3962414a470e7017f483e910b8d30b44bbb3e8ac63a2ba4545bd7b30c6"},
+    {"token":"@SPLASH_CLEAR@","va":"004a5363","bytes":6,"sha256":"77caf27dec0d6cce18483bebf95c9d485ce727c566dec06c82bc1b1b1d0c2e2a"},
+    {"token":"@SPLASH_FLIP@","va":"004a53af","bytes":6,"sha256":"0c4079d127d3a7e7b21a5b56a77f889c39a1d2b4f786897a16ce60b361bc54d7"},
+    {"token":"@SPLASH_SYNC@","va":"004a5369","bytes":8,"sha256":"8e4b575089b2be5f3a99e2ab9aabce1fddaa1570f2fd410346f16e0de319579e"}
+  ],
+  "pass_marker":"render_bindings_original_calls_vs_cpp=PASS",
+  "mutations": [
+    {"name":"game-window-wrong-slot","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"game_setup_render_begin_006bd9b0(std::uint32_t mode){proc1(40)(mode);}","new":"game_setup_render_begin_006bd9b0(std::uint32_t mode){proc1(26)(mode);}","expected_exit":1},
+    {"name":"game-clear-wrong-slot","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"game_setup_render_reset_006bd91c(){proc0(3)();}","new":"game_setup_render_reset_006bd91c(){proc0(24)();}","expected_exit":1},
+    {"name":"game-flush-wrong-slot","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"game_setup_render_prepare_006bd970(){proc0(24)();}","new":"game_setup_render_prepare_006bd970(){proc0(14)();}","expected_exit":1},
+    {"name":"game-sync-wrong-slot","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"game_setup_render_finish_006bd978(std::uint32_t zero){proc1(26)(zero);}","new":"game_setup_render_finish_006bd978(std::uint32_t zero){proc1(40)(zero);}","expected_exit":1},
+    {"name":"splash-window-wrong-argument","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"splash_progress_thrash_window_006bd9b0(std::uint32_t mode){proc1(40)(mode);}","new":"splash_progress_thrash_window_006bd9b0(std::uint32_t mode){proc1(40)(mode+1u);}","expected_exit":1},
+    {"name":"splash-sync-wrong-argument","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"splash_progress_thrash_sync_006bd978(std::uint32_t zero){proc1(26)(zero);}","new":"splash_progress_thrash_sync_006bd978(std::uint32_t zero){proc1(26)(zero+1u);}","expected_exit":1},
+    {"name":"splash-flip-wrong-slot","source":"iterations/v2/001-original-recovery/runs/356-render-bindings/render_binding.cpp","old":"splash_progress_thrash_pageflip_006bd948(){proc0(14)();}","new":"splash_progress_thrash_pageflip_006bd948(){proc0(3)();}","expected_exit":1}
+  ]
+}

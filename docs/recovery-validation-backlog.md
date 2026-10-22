@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run356 binds nine game_setup/splash renderer names after22 original-callsite
+comparisons/seven mutations. Synthetic snippet RET/EDI setup is harness-only;
+loader078 proof covers unchanged table acquisition, not live THRASH effects.
+357 display/proc helpers are separate; settings/unlock/alias-slot ABI, DLL/OS,
+framebuffer/visual and full-game acceptance remain open. No new renderer state.
+
+
 Run354 restores three original x87/MMX/SSE copy backends after82944 comparisons/
 six mutations. Bounds cover sizes0..257,32 alignments and both overlap directions.
 CPU checks use EMMS/FNINIT and zero XMM0/1; arbitrary ambient stack/control/XMM

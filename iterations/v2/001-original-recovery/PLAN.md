@@ -1,23 +1,26 @@
 # v2 / 001 - original source recovery plan
 
-Current354,2026-10-22: three original copy backends1015 indexed codebytes restored.
-82944 native comparisons/9455616 checks,six mutations and473-input audit PASS.
-Fresh186-TU/8-project build001:244 names/259 refs,noEXE/game execution. Three names
-close,none appear. Native354/008; REA355/001 five dossiers; actual native/game COFF
-instruction counts match and preserve MMX/SSE cleanup/fence boundaries. Copy agent
-complete,passed354 fixed. Earlier007 omitted mutation controls and is historical.
-Prior353 seven mono bodies909B,88 comparisons/nine mutations,470-pin audit PASS.
+Current356,2026-10-22: nine game_setup/splash renderer table bindings accepted.
+22 original-callsite comparisons/seven mutations and475-input audit PASS. Fresh
+187-TU/8-project build001:235 names/249 refs,noEXE/game execution. Nine names/ten
+refs close,none appear. Native356/003; fixture-only appendedRET/EDI setup explicit.
+Canonical loader/header match078 proof; no new table/state/recovery count.
+Prior354 optimized-copy and353 mono batches accepted unchanged, all edits frozen.
 
-Active356 read-only render binding triage: environment_state_349 owns only local/
-experiments/v2-render-bindings-356/evidence.json (gpt-6-sol/medium,compact). Root
-owns next production scope/acceptance. Existing render_thrash_exports006bd910[43]
-is canonical; inspect original callsite and export ABI before any wrapper. About
-@0 versus generated one-arg declarations is a known concern; no same-VA guess.
-No active production edits or copy/mono assignments remain.
+Active357-render-display-bindings: diagnostic_parser_native_348 owns source/
+native fixture/config/evidence (gpt-6-sol/medium,compact); root game/audit/docs.
+Nine display facades plus about/setstate explicit-proc helpers. Original caller
+arity and used EAX returns are in local/experiments/v2-render-bindings-next-357/
+evidence.json. Proc helper parameter is not a DLL argument. Use current canonical
+table, no guards/renderer. Settings/unlock/alias-slot cases remain separateHOLD.
+
+Parallel358 read-only platform triage: environment_state_349 owns local/
+experiments/v2-render-platform-358/evidence.json, checking six render_win_*
+KERNEL32 imports and existing canonical providers before any new code.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/354-copy-backends/acceptance.json.
-Native local/experiments/v2-copy-backends-native-354/008/receipt.json; game354/001.
+iterations/v2/001-original-recovery/runs/356-render-bindings/acceptance.json.
+Native local/experiments/v2-render-bindings-native-356/003/receipt.json; game356/001.
 CPU proof uses empty/default x87 and zero XMM0/1,selected FXSAVE fields; arbitrary
 ambient CPU state/FIP/FDP/invalid spans/concurrent streaming ordering and complete
 dispatcher+backend composition remain in recovery-validation-backlog.md. Fixture
