@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run363](iterations/v2/001-original-recovery/runs/363-startup-bindings/README.md):
-191 TUs/8 projects compile;207 unresolved names/214 refs,noEXE. Six early startup
-bindings pass18 native comparisons/seven mutations; shared483-input audit PASS.
-Next361 device/pool remains under review; ordered startup path is recorded in360.
+Current [Run361](iterations/v2/001-original-recovery/runs/361-startup-device-pool/README.md):
+193 TUs/8 projects compile;215 unresolved names/222 refs,noEXE. Two original
+startup bodies pass138 comparisons/nine mutations; shared488-input audit PASS.
+Next: frame-initialization blocker and recovered mouse children364; see active PLAN.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

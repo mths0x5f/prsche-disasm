@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Run361 integrates original mouse/pool startup after138 comparisons/nine mutations.
+Original GUID/format data and BSS are checked before oracle relocation/reset;
+known property-success/cursor.x overlap preserved. Failed GetCursorPos followed
+by successful ScreenToClient leaves opaque y; real COM/OS, allocator failure,
+concurrency and full startup remain HOLD. Ten hidden child dependencies exposed.
+365 partial REA fails at unrecognized00572640; callback/index/ownership gap blocks
+frame00572690. Trace raw assembly callbacks before defining cells; no guessed VAs.
+
 Run363 closes six startup transports with18 comparisons/seven mutations and
 exact CreateMutexA/canonical provider identities. Controlled IAT endpoints are
 not real OS lifecycle, duplicate-instance or CD relaunch acceptance. Pending361

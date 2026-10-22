@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run363](iterations/v2/001-original-recovery/runs/363-startup-bindings/README.md):
-191 C++ TUs compile;207 unresolved names/214 refs,noEXE. Six early startup
-bindings pass18 native comparisons/seven mutations;483-input audit PASS. Next:
-finish pre-render device/pool review using original path360 and REA362.
+[Latest game build, Run361](iterations/v2/001-original-recovery/runs/361-startup-device-pool/README.md):
+193 C++ TUs compile;215 unresolved names/222 refs,noEXE. Two original startup
+bodies pass138 comparisons/nine mutations;488-input audit PASS. Next: finish
+frame initialization and the recovered mouse children364.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

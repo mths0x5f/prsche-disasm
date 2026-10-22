@@ -1,0 +1,25 @@
+{
+  "run":361,
+  "experiment":"local/experiments/v2-startup-device-native-361",
+  "timeout_seconds":180,
+  "original_pe":"local/game/Porsche.exe",
+  "original_sha256":"ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources":["iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.cpp"],
+  "fixture":"iterations/v2/001-original-recovery/runs/361-startup-device-pool/device-native-fixture.cpp.in",
+  "include_dirs":["iterations/v2/001-original-recovery/runs/361-startup-device-pool","iterations/v2/001-original-recovery/source/include"],
+  "headers":["iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.hpp","iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp","iterations/v2/001-original-recovery/source/include/porsche/startup_input.hpp","iterations/v2/001-original-recovery/source/include/porsche/window_create.hpp","iterations/v2/001-original-recovery/source/include/porsche/window_handlers.hpp","iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp"],
+  "original_bodies":[
+    {"token":"@DEVICE_BODY@","va":"00536e50","bytes":456,"sha256":"bfddf11bdb874a02573589ead619bb4fb21307af6379431817d7594007e29323"},
+    {"token":"@CREATE_GUID@","va":"005bf9a0","bytes":16,"sha256":"c26d2395db46e7ded4df601be1674467605bb6717800e48696cb730a640bb99f"},
+    {"token":"@QUERY_GUID@","va":"005bf8c0","bytes":16,"sha256":"1d671c60ffd122313a51519ff4e20053378091f3f1edd34c67019f1df8b87de4"},
+    {"token":"@AXIS_GUIDS@","va":"005bf8f0","bytes":48,"sha256":"058090028aa9a321a0e52f248cf24e8b3c62aee8d8842cc9acbf0dfcb5d559a2"},
+    {"token":"@MOUSE_OBJECTS@","va":"0056e950","bytes":112,"sha256":"9e2034ac3f7cd7a92939ce365ff5bf844cce42b14ba06d5a7c2317211ee00b11"},
+    {"token":"@MOUSE_FORMAT@","va":"0056e9c0","bytes":24,"sha256":"567aa4f68779403956f13b52e1278785c0a2cad752cd75e01b7216390ad95a46"}
+  ],
+  "pass_marker":"startup_device_original_vs_cpp=PASS",
+  "mutations":[
+    {"name":"create-guid","source":"iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.cpp","old":"startup_directinput_0069e098,&create_device_guid_005bf9a0,&temporary,nullptr);","new":"startup_directinput_0069e098,&query_interface_guid_005bf8c0,&temporary,nullptr);","expected_exit":1,"failure_marker":"divergence device"},
+    {"name":"property-value","source":"iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.cpp","old":"const PropertyValue property={20,16,0,0,1};","new":"const PropertyValue property={20,16,0,0,2};","expected_exit":1,"failure_marker":"divergence device"},
+    {"name":"return-value","source":"iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.cpp","old":"return startup_mouse_initialized_0069e0a0;","new":"return 0;","expected_exit":98,"failure_marker":"return-EAX"}
+  ]
+}

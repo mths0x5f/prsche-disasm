@@ -1,35 +1,40 @@
 # v2 / 001 - original source recovery plan
 
-Current363,2026-10-22: six early startup bindings accepted. Native002 passes18
-comparisons/seven mutations; shared483-input audit PASS. Fresh build001 compiles
-191 C++ TUs/8 projects:207 unresolved names/214 refs,noEXE/game execution. All six
-names close with no new dependency. Passed batch/source frozen. Root owns
-integration/review; startup_361_finish(gpt-6-sol/high) resumes only361 source/native
-proof, preserving prior attempts and root-owned integration/docs.
+Current361,2026-10-22: original00536e50(456B) and00563ad0(251B) integrated.
+Pool004/device005 pass138 comparisons/nine mutations; shared488-input audit PASS.
+Fresh build001 compiles193 TUs/8 projects:215 names/222 refs,noEXE/game execution.
+Two names close; ten hidden dependencies exposed. No native fixture/stub in game.
+Passed batch source frozen. Both worker assignments complete; root owns intake364.
 
-Repository skill: .agents/skills/porsche-recovery/SKILL.md routes index/REA,
-canonical ownership, shared native/game checks and concise acceptance handoff.
-Skill validator and five relative references PASS. Project-local .codex/rules/
-porsche-recovery.rules allows only the five named shared recovery entrypoints;
-10 positive/2 negative policy checks PASS. Local rules are ignored by Git and
-load on Codex restart; no blanket Python/shell allowance was added.
+Repo skill .agents/skills/porsche-recovery/SKILL.md validated and pushed4e9f2b4.
+Project-local ignored .codex/rules/porsche-recovery.rules allows five shared script
+entrypoints (10 positive/2 negative policy checks); loads on Codex restart. No
+blanket Python/shell allowance. Prefer existing commands over custom scripts;
+new tooling only when necessary and immediately eliminates repeated work.
 
-Priority: actual startup path to a linked EXE and real display. Evidence360 maps
-hostWinMain->004b6710->004b6a50; counts are not a remaining-function estimate.
-Next361 targets unconditional00536e50 DirectInput456B and00563ad0 pool251B before
-rendering. Unaccepted source/native artifacts remain outside production. Pool
-native002 passed but needs initial productionBSS assertions before fixture reset.
-Device review must verify rawPE GUID005bf9a0/CreateDevice and005bf8c0/QueryInterface,
-original initializedDWORD return, and overlapping cursor/property-success local;
-no zero-initialized replacement or relabeled constant is accepted without proof.
-Prior-session workers are not live; the replacement resumes from files/attempts.
+Work order: finish one actual startup chain, prioritizing the first unconditional
+blocker, including state/callbacks. Do not select batches by net symbol count.
+Root next: frame00572690 callback index/ownership gap;364 already passes three
+mouse child bodies00537070/005370c0/005727c0 (62 native comparisons/3 mutations),
+ready for review/intake without rerunning unchanged proof. Existing362 dossiers
+reused;365 obtained cleanup/cursor dossiers then failed on unrecognized00572640.
+365 is partial navigation, not auditedPASS; no second cold session for recognition.
+Inspect existing assembly/raw PE bytes at00572640/70/80 and supplement the index.
+Frame callback cells005debe0/e4/e8 and006a644c need actual ownership/ABI proof.
+364 reuses render_driver_calls/render_event_route/361 state and preserves raw
+mode initializers4/2/1; cursor snapshot helpers00570ed0/00570f00 remain extern.
 
-REA362/001 six original dossiers auditedPASS. Reuse existing005deac8/cc and accepted
-children. Next coherent original child batch:00572690(82B),005370c0(446B),005727c0
-(229B),00537070(62B),and0056e940 DirectInputCreateA import transport(6B). Verify
-state ownership/COM ABI and missing body traces first; keep unknown00565340 extern.
-No switch toDirectInput8, guessed GUID/state or zero services. Linked EXE, real
-display and playable menu remain separate unachieved milestones.
+361 review fixed draft swapped GUIDs: raw005bf9a0 CreateDevice vs005bf8c0 QI.
+Native pins axisGUIDs/objecttable/format/fullstrings before relocation; initialBSS
+checked before resets. Integer core preserves original EAX, void startup facade;
+known property-success/cursor.x overlap preserved. Failed GetCursorPos followed by
+successful ScreenToClient still exposes opaque y and remains HOLD. Real COM/OS,
+allocator failure, concurrency and full startup/display/menu remain unachieved.
+
+Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/361-startup-device-pool/acceptance.json.
+Native pool004/device005; game361/001. Reuse unchanged proof; build/audit once per
+ready batch. Configure/build through shared build-v2-game-batch.py with361 config.
 
 363 evidence records six original callsites and reused078/169 proof. Module name/
 last-error use actual canonical platform sources; mutex CreateMutexA exact COFF

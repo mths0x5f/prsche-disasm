@@ -9949,6 +9949,52 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/354-copy-backends/summary.json",
       "verification_boundary": "32 alignments, sizes0..257 around thresholds and forward chunk overlap; empty/default x87 and zero XMM0/1 initial state. FIP/FDP equality, arbitrary ambient state, invalid spans and concurrent streaming visibility remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00536e50",
+      "source": "iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; original returns and typed startup facades as documented in run README",
+      "recovered_dependencies": [
+        "0053a800",
+        "00537600",
+        "00557380",
+        "00557460"
+      ],
+      "unrecovered_dependencies": [
+        "00572690",
+        "0056e940",
+        "00537070",
+        "005370c0",
+        "00537020",
+        "005370b0"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/361-startup-device-pool/validation.json",
+      "verification_boundary": "Original 456B with raw GUID/format/object/axis data and initial BSS checked. Integer core preserves EAX; void startup facade. Controlled COM/OS endpoints; failed GetCursorPos followed by successful ScreenToClient exposes opaque original coordinate and remains HOLD. Real device/OS/full-game acceptance remains open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00563ad0",
+      "source": "iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_pool.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; original returns and typed startup facades as documented in run README",
+      "recovered_dependencies": [
+        "00531ca0",
+        "005321f0",
+        "005365e0"
+      ],
+      "unrecovered_dependencies": [
+        "00563bd0"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/361-startup-device-pool/validation.json",
+      "verification_boundary": "Original 251B with initial BSS, full raw PE strings, ordered child calls and arena bytes checked. Allocator supplies bounded valid arena; zero/negative counts retain original unsafe/wrapping arithmetic. Real allocator failure/concurrency/scheduler composition remains HOLD."
     }
   ]
 }
