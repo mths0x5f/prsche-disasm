@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run353 restores seven mono functions and exact initial state after88 comparisons/
+nine mutations. Signed tab/newline state now includes negative cursors; negative
+glyph writes,row>24 and output>=256 remain unsafe/unaccepted. Original0xb0000
+access with PRINT_DEVICE enabled, descriptor-tail arbitrary contents and full
+formatter/OS/game composition remain HOLD. Native003 supersedes001/002.
+
+
 Run351 binds canonical lock providers after18 pointer/ABI comparisons/five
 mutations; real contention/lifecycle remain unaccepted. Run352 pins omitted
 mono callback00592ac0 and original state/routing. Default device flags avoid mono,

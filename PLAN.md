@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run351](iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/README.md):
-184 TUs/8 projects compile;248 unresolved names/263 refs,noEXE. Two existing
-original lock providers bound after18 native comparisons/five mutations;467-input
-audit PASS. Next353 original mono subsystem;352 repairs missing callback index.
+Current [Run353](iterations/v2/001-original-recovery/runs/353-diagnostic-mono/README.md):
+185 TUs/8 projects compile;247 unresolved names/262 refs,noEXE. Seven original
+mono functions pass88 comparisons/nine mutations and470-input audit. Enabled
+0xb0000 display access remains HOLD. Next354: original optimized copy backends.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),

@@ -1,19 +1,20 @@
-# v2 / 001 ? original source recovery plan
+# v2 / 001 - original source recovery plan
 
-Current351,2026-10-22: two typed lock boundaries reuse accepted005322b0/005322c0
-providers.18 native /Od+/O2 pointer/ABI comparisons,five mutations and467-input
-shared audit PASS. Fresh184-TU/8-project build001:248 names/263 refs,noEXE/game
-execution. Two names/four refs close,none appear. Native351/003; no new original
-recovery count or lock state. Prior349 tokenizer (38comparisons/seven mutations)
-and348 parser batch (164comparisons/eight mutations) remain accepted unchanged.
+Current353,2026-10-22: seven mono/XY/format/output bodies909B restored.88
+native comparisons/nine mutations and470-input audit PASS. Fresh185-TU/8-project
+build001:247 names/262 refs,noEXE/game execution. One name closes,none appear.
+Native353/003 corrects signed IDIV cursor math; initial14-byte/BSS checks precede
+fixture overrides. Actual formatter entry owner136 reused unchanged.353 agent
+complete; no unfinished production edits in that batch. Earlier353/001/002 are
+historical. Detailed evidence/commands: runs/353-diagnostic-mono/README.md.
 
-Active353-diagnostic-mono: diagnostic_parser_native_348 owns new source/header,
-fixture/config/evidence and native proof (gpt-6-sol/medium,compact). Root owns
-CMake/build/audit/docs. Seven bodies00592a50,00592ac0,00592b60,00592d00,00592d70,
-00592e00,005a299e reuse accepted heap lock/fill/copy and formatter core providers.
-Require exact raw14B state+zero-fill identity before fixture overrides, bounded
-framebuffer/control bytes/scroll/XY/raw-varargs/ABI comparisons; do not own gap
-006af144,adjacent005e25ea..eb or unproved aliases. Passed351 stays fixed.
+Parallel354-copy-backends: copy_backends_354 owns three original optimized-copy
+sources/native proof (gpt-6-sol/high,compact). Root integration after353. Triage
+local/experiments/v2-copy-backends-354/evidence.json; REA355/001 five dossiers PASS.
+Three no-callee backends total1015 indexed codebytes:005b0100 x87,005b02c0 MMX,
+005b0480 SSE. Preserve load/store ordering,alignment/threshold/overlap and CPU
+state. x87 hardware helper approach requires explicit evidence; no memcpy/memmove
+substitute. MMX dispatcher EMMS and SSE no-SFENCE boundaries stay visible.
 
 352 state/routing evidence complete; supplemental diagnostic-mono-callback-352
 indexes omitted151B00592ac0 with fullRET/exact original byte equality. REA347/350

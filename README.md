@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run351](iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/README.md):
-184 C++ TUs compile;248 unresolved names/263 refs,noEXE. Canonical heap lock
-bindings pass18 comparisons/five mutations and467-input audit. Next: original
-mono subsystem, using the repaired352 callback index and REA347/350.
+[Latest game build, Run353](iterations/v2/001-original-recovery/runs/353-diagnostic-mono/README.md):
+185 C++ TUs compile;247 unresolved names/262 refs,noEXE. Seven original mono
+functions pass88 comparisons/nine mutations and470-input audit. Actual enabled
+display access remains HOLD. Next: original optimized copy backends.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.
