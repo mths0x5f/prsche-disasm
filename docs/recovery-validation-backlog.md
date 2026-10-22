@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run366 accepts original frameinit/three callbacks (120 comparisons/four mutations).
+Cell defaults relocate canonical005367b0; raw reader005727b0 is oracle/navigation
+only. Missing e0/e4 consumers, actual reader execution, computed aliases and
+concurrency remain open. Next mouse callback00537020 isstdcall RET0x18 despite
+legacy address-onlycdecl declaration361: prove binding or update affected proofs.
+DirectInput original import library and renderer snapshot composition remain open.
+
 Run364 restores mouse cleanup/mode/cursor (62 comparisons/three mutations).
 Live COM, snapshot00570ed0/00570f00 composition, thread transitions/concurrency
 and game/display remain HOLD. Initial mode words are4/2/1. Frame366 must index

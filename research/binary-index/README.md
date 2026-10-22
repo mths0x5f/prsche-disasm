@@ -1,5 +1,11 @@
 # Индекс оригинальных бинарников
 
+Run366: [frame-callbacks-366.jsonl](supplemental/frame-callbacks-366.jsonl) indexes
+three omitted complete callbacks00572640/70/80 and raw6B JMP[005debe8]005727b0.
+All indexed bytes equal the SHA-checked PE. Native proof/counts and limits are in
+[Run366](../../iterations/v2/001-original-recovery/runs/366-frame-init/README.md);
+the JMP reader is navigation/oracle only, not a new C++ provider.
+
 Run352 navigation: [diagnostic-mono-callback-352.jsonl](supplemental/diagnostic-mono-callback-352.jsonl)
 adds omitted00592ac0..00592b56 (151 raw PE bytes, fullRET). Exact indexed
 instructions match SHA-checked original bytes. Default mono dispatch is off;

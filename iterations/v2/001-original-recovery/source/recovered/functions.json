@@ -10049,6 +10049,66 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/validation.json",
       "verification_boundary": "Bounded original COM order, mode branches, diagnostics and signed cursor clamps; raw initial data4/2/1/0/0 verified. Controlled COM/thread/snapshot/window endpoints; live DirectInput, snapshot composition, concurrency and game acceptance remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00572640",
+      "source": "iterations/v2/001-original-recovery/runs/366-frame-init/frame_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; copy EAX checked, inc/dec EAX undefined, init caller ignores EAX",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/366-frame-init/validation.json",
+      "verification_boundary": "Raw original initial data/default callback relocations, bounds/gate writes, copy return, wrapping counters and staged callback identity/state. Opaque native uintptr_t cells; no homogeneous ABI, missing production readers, concurrency or full-game acceptance claimed."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00572670",
+      "source": "iterations/v2/001-original-recovery/runs/366-frame-init/frame_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; copy EAX checked, inc/dec EAX undefined, init caller ignores EAX",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/366-frame-init/validation.json",
+      "verification_boundary": "Raw original initial data/default callback relocations, bounds/gate writes, copy return, wrapping counters and staged callback identity/state. Opaque native uintptr_t cells; no homogeneous ABI, missing production readers, concurrency or full-game acceptance claimed."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00572680",
+      "source": "iterations/v2/001-original-recovery/runs/366-frame-init/frame_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; copy EAX checked, inc/dec EAX undefined, init caller ignores EAX",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/366-frame-init/validation.json",
+      "verification_boundary": "Raw original initial data/default callback relocations, bounds/gate writes, copy return, wrapping counters and staged callback identity/state. Opaque native uintptr_t cells; no homogeneous ABI, missing production readers, concurrency or full-game acceptance claimed."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00572690",
+      "source": "iterations/v2/001-original-recovery/runs/366-frame-init/frame_init.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; copy EAX checked, inc/dec EAX undefined, init caller ignores EAX",
+      "recovered_dependencies": [
+        "00572640",
+        "00572670",
+        "00572680"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/366-frame-init/validation.json",
+      "verification_boundary": "Raw original initial data/default callback relocations, bounds/gate writes, copy return, wrapping counters and staged callback identity/state. Opaque native uintptr_t cells; no homogeneous ABI, missing production readers, concurrency or full-game acceptance claimed."
     }
   ]
 }

@@ -1,13 +1,12 @@
 # v2 / 001 - original source recovery plan
 
-Current364,2026-10-22: original cleanup00537070/mode005370c0/cursor005727c0
-integrated (737B). Native003 passes62 comparisons/three mutations;491-input audit
-PASS. Fresh build001 compiles194TUs/8 projects:215names/222refs,noEXE. Two names
-close; renderer snapshot00570ed0/00570f00 exposed.361/364 source frozen.
-Root owns integration; frame_init_366(gpt-6.1-sol/high) owns only new366 sources/
-native proof and supplemental callback index. No other active worker assignment.
+Current366,2026-10-22: frame00572690 and callbacks00572640/70/80 integrated
+(4newVAs/136B). Native003 passes120 comparisons/four mutations;494-input audit
+PASS. Fresh build001 compiles195TUs/8 projects:214names/221refs,noEXE. One startup
+name closes with no new dependency.361/364/366 sources frozen; no active worker
+assignments. Root resumes next concrete startup dependency below.
 Default model:6.1Sol for coordination/workers, Astra only for a specific blocker
-after two unsuccessful same-hypothesis attempts (user choice2026-10-22).
+after two unsuccessful same-hypothesis attempts (user choice2026-10-22; saved).
 
 Repo skill .agents/skills/porsche-recovery/SKILL.md validated and pushed4e9f2b4.
 Project-local ignored .codex/rules/porsche-recovery.rules allows five shared script
@@ -17,14 +16,26 @@ new tooling only when necessary and immediately eliminates repeated work.
 
 Work order: finish one actual startup chain, prioritizing the first unconditional
 blocker, including state/callbacks. Do not select batches by net symbol count.
-Current first startup blocker: frame00572690, plus callbacks00572640/70/80.
-366 reuses existing canonical bounds/limits/gate and364 cursor state. Native
-callbackcells use explicit host-address transport; unproven consumers remainHOLD.
-Existing assembly contains complete callbacks despite missing function-index entries.
-Raw PE relocation scan also finds omitted6B JMP[005debe8] at005727b0; supplement
-index with exact raw-byte equality. No second coldREA session for recognition.
-365 partial navigation obtained cleanup/cursor dossiers, then unrecognized00572640
-failed; no whole-sessionPASS. Snapshot00570ed0/00570f00 next afterframe/callbacks.
+Next367: complete remaining mouse/platform callback closure before more peripheral
+frontier work: DirectInputCreateA transport0056e940 (also keyboard path), exact
+GetCursorPos/ScreenToClient imports, mouse exit005370b0 and callback00537020;
+then snapshot00570ed0/00570f00 and async callback/list services. Read actual caller
+order before assigning. No guessed DLL replacement or change toDirectInput8.
+Critical ABI finding:00537020 endsRET0x18 (stdcall6args), while361 legacy extern
+usescdecl name only for address registration. Window procedure invokes handler
+asstdcall. Do not implement that legacy declaration as a cdecl-returning body.
+Prove a typed address-only binding to the actualstdcall entry, or update affected
+headers/native proofs with preserved new attempts; no silent alias assumption.
+SDK dinput.lib is absent; originalDINPUT.dll import identity/library binding needs
+an exact solution, not first-use LoadLibrary semantics guessed equivalent.
+
+366 closes original frame initializer using existing canonical bounds/limits/gate
+and364 cursor state. New cursorz/counter/callbackcells have rawdata/zero-fill,
+HIGHLOW/alias and unique COFF ownership evidence. Three callbacks indexed against
+rawPE completeRET. Missing6B JMP[005debe8]005727b0 is evidence/oracle only. Callback
+cells transport canonical native addresses asuintptr_t; no invented common ABI.
+No e0/e4 reader or actual caller of005727b0 proved; concurrency/computed aliasesHOLD.
+365 remains honest partial navigation, not a whole-sessionPASS; no cold retry.
 
 361 review fixed draft swapped GUIDs: raw005bf9a0 CreateDevice vs005bf8c0 QI.
 Native pins axisGUIDs/objecttable/format/fullstrings before relocation; initialBSS
@@ -34,9 +45,9 @@ successful ScreenToClient still exposes opaque y and remains HOLD. Real COM/OS,
 allocator failure, concurrency and full startup/display/menu remain unachieved.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/364-mouse-startup-children/acceptance.json.
-Native364/003; game364/001. Reuse unchanged proof; build/audit once per
-ready batch. Configure/build through shared build-v2-game-batch.py with361 config.
+iterations/v2/001-original-recovery/runs/366-frame-init/acceptance.json.
+Native366/003; game366/001. Reuse unchanged proof; build/audit once per
+ready batch. Configure/build through shared build-v2-game-batch.py with366 config.
 
 363 evidence records six original callsites and reused078/169 proof. Module name/
 last-error use actual canonical platform sources; mutex CreateMutexA exact COFF

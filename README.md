@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run364](iterations/v2/001-original-recovery/runs/364-mouse-startup-children/README.md):
-194 C++ TUs compile;215 unresolved names/222 refs,noEXE. Three mouse child bodies
-pass62 comparisons/three mutations;491-input audit PASS. Next: original frame
-initialization and callbacks366, using existing assembly.
+[Latest game build, Run366](iterations/v2/001-original-recovery/runs/366-frame-init/README.md):
+195 C++ TUs compile;214 unresolved names/221 refs,noEXE. Frame init and three
+callbacks pass120 comparisons/four mutations;494-input audit PASS. Next: remaining
+mouse/platform callbacks and renderer snapshot dependencies.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

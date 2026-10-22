@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run364](iterations/v2/001-original-recovery/runs/364-mouse-startup-children/README.md):
-194 TUs/8 projects compile;215 names/222 refs,noEXE. Three mouse child bodies
-pass62 comparisons/three mutations;491-input audit PASS. Next366: original
-frame init/callbacks, using existing assembly rather than another cold REA session.
+Current [Run366](iterations/v2/001-original-recovery/runs/366-frame-init/README.md):
+195 TUs/8 projects compile;214 names/221 refs,noEXE. Frame init/three callbacks
+pass120 comparisons/four mutations;494-input audit PASS. Next: remaining mouse/
+platform callbacks and snapshot dependencies; detailed scope in active PLAN.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
