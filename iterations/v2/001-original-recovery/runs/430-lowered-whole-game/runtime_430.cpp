@@ -363,6 +363,23 @@ LONG CALLBACK vectored430(EXCEPTION_POINTERS* info)
         e->ExceptionCode == EXCEPTION_STACK_OVERFLOW || e->ExceptionCode == EXCEPTION_ILLEGAL_INSTRUCTION) {
         fprintf(stderr, "[430] exception %08lx at host eip=%08lx addr=%08lx\n", e->ExceptionCode, c->Eip,
                 e->NumberParameters > 1 ? static_cast<unsigned long>(e->ExceptionInformation[1]) : 0ul);
+        // Module + offset of the faulting EIP, and the host registers (native code, e.g. a DLL).
+        HMODULE mod = nullptr;
+        char path[MAX_PATH] = "?";
+        if (GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+                               reinterpret_cast<LPCSTR>(static_cast<ULONG_PTR>(c->Eip)), &mod))
+            GetModuleFileNameA(mod, path, MAX_PATH);
+        fprintf(stderr, "[430]   in %s base=%08lx +%08lx; eax=%08lx ecx=%08lx edx=%08lx ebx=%08lx esp=%08lx ebp=%08lx esi=%08lx edi=%08lx\n",
+                path, static_cast<unsigned long>(reinterpret_cast<ULONG_PTR>(mod)),
+                static_cast<unsigned long>(c->Eip - reinterpret_cast<ULONG_PTR>(mod)),
+                c->Eax, c->Ecx, c->Edx, c->Ebx, c->Esp, c->Ebp, c->Esi, c->Edi);
+        for (U k = 0; k < 16; ++k) {
+            U a = c->Esp + 4 * k;
+            MEMORY_BASIC_INFORMATION mb;
+            if (!VirtualQuery(reinterpret_cast<void*>(a), &mb, sizeof mb) || mb.State != MEM_COMMIT) break;
+            fprintf(stderr, k ? " %08x" : "[430]   stack %08x", *reinterpret_cast<const U*>(a));
+        }
+        fprintf(stderr, "\n");
         fatal("fault while running", t_current, c->Eip);
     }
     return EXCEPTION_CONTINUE_SEARCH;
