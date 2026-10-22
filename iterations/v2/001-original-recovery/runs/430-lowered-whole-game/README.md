@@ -356,6 +356,8 @@ Run 430 acrescenta só o que é próprio deste executável: x87, MMX e `rcpss` n
 `volatile`, nenhum orçamento de passos e `unlowered430` para o 3DNow!. Os oráculos abaixo foram
 refeitos com essa base, incluindo o conjunto `string` com DF aleatória (14 formas, 4.200 casos,
 0 diferenças).
+Build completa sobre o backend exato (`2ab689d`): 8.406 corpos rebaixados, trace do menu idêntico
+ao original em 2.247 chamadas (só mudam os handles) e corrida rodando 70 s sem parada `[430]`.
 
 **O que mudou.** Antes, o x87 era imitado com `double`: 64 bits em vez de 80, sem palavra de
 controle (precisão e arredondamento), com transcendentais da biblioteca C e com MMX separado da
