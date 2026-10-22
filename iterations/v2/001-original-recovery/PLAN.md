@@ -3,8 +3,16 @@
 Current363,2026-10-22: six early startup bindings accepted. Native002 passes18
 comparisons/seven mutations; shared483-input audit PASS. Fresh build001 compiles
 191 C++ TUs/8 projects:207 unresolved names/214 refs,noEXE/game execution. All six
-names close with no new dependency. Passed batch/source frozen; no active worker
-assignment remains. Root owns next integration/review.
+names close with no new dependency. Passed batch/source frozen. Root owns
+integration/review; startup_361_finish(gpt-6-sol/high) resumes only361 source/native
+proof, preserving prior attempts and root-owned integration/docs.
+
+Repository skill: .agents/skills/porsche-recovery/SKILL.md routes index/REA,
+canonical ownership, shared native/game checks and concise acceptance handoff.
+Skill validator and five relative references PASS. Project-local .codex/rules/
+porsche-recovery.rules allows only the five named shared recovery entrypoints;
+10 positive/2 negative policy checks PASS. Local rules are ignored by Git and
+load on Codex restart; no blanket Python/shell allowance was added.
 
 Priority: actual startup path to a linked EXE and real display. Evidence360 maps
 hostWinMain->004b6710->004b6a50; counts are not a remaining-function estimate.
@@ -14,7 +22,7 @@ native002 passed but needs initial productionBSS assertions before fixture reset
 Device review must verify rawPE GUID005bf9a0/CreateDevice and005bf8c0/QueryInterface,
 original initializedDWORD return, and overlapping cursor/property-success local;
 no zero-initialized replacement or relabeled constant is accepted without proof.
-Workers from the prior session are not live; resume from files, preserve attempts.
+Prior-session workers are not live; the replacement resumes from files/attempts.
 
 REA362/001 six original dossiers auditedPASS. Reuse existing005deac8/cc and accepted
 children. Next coherent original child batch:00572690(82B),005370c0(446B),005727c0
