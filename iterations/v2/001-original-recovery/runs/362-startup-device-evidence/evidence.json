@@ -1,0 +1,1600 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "rea_attempt": "001",
+  "functions": [
+    {
+      "label": "device-setup",
+      "procedure": {
+        "address": "0x536e50",
+        "name": "FUN_00536e50",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x536e50",
+              "end": "0x537017"
+            }
+          ],
+          "total_bytes": 456,
+          "span_bytes": 456,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined FUN_00536e50()",
+        "locals": [
+          {
+            "description": "undefined local_20 @ Stack[-0x20]:1",
+            "provenance": "ghidra-function-database"
+          }
+        ]
+      },
+      "pseudocode": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nint FUN_00536e50(void)\r\n\r\n{\r\n  HMODULE pHVar1;\r\n  int iVar2;\r\n  HWND hWnd;\r\n  BOOL BVar3;\r\n  undefined4 uVar4;\r\n  undefined4 *puVar5;\r\n  int *piVar6;\r\n  undefined4 uVar7;\r\n  tagPOINT *lpPoint;\r\n  undefined4 *local_20;\r\n  tagPOINT tStack_1c;\r\n  undefined4 uStack_14;\r\n  undefined4 uStack_10;\r\n  undefined4 uStack_c;\r\n  undefined4 uStack_8;\r\n  undefined4 uStack_4;\r\n  \r\n  if (DAT_0069e0a0 == 0) {\r\n    DAT_0069e0a0 = 1;\r\n    FUN_00572690();\r\n    FUN_0053a800(0x20a,&LAB_00537020);\r\n  }\r\n  if (DAT_0069e098 == (int *)0x0) {\r\n    uVar7 = 0;\r\n    puVar5 = &DAT_0069e098;\r\n    uVar4 = 0x500;\r\n    pHVar1 = GetModuleHandleA((LPCSTR)0x0);\r\n    iVar2 = DirectInputCreateA(pHVar1,uVar4,puVar5,uVar7);\r\n    if (iVar2 == 0) {\r\n      iVar2 = (**(code **)(*DAT_0069e098 + 0xc))(DAT_0069e098,&DAT_005bf9a0,&local_20,0);\r\n      if (iVar2 == 0) {\r\n        piVar6 = (int *)&DAT_0069e09c;\r\n        iVar2 = (**(code **)*local_20)(local_20,&DAT_005bf8c0);\r\n        (**(code **)(*piVar6 + 8))(piVar6);\r\n        if (iVar2 == 0) {\r\n          iVar2 = (**(code **)(*DAT_0069e09c + 0x2c))(DAT_0069e09c,&LAB_0056e9c0);\r\n          if (iVar2 == 0) {\r\n            uStack_14 = 0x14;\r\n            uStack_10 = 0x10;\r\n            uStack_c = 0;\r\n            uStack_8 = 0;\r\n            uStack_4 = 1;\r\n            iVar2 = (**(code **)(*DAT_0069e09c + 0x18))(DAT_0069e09c,2,&uStack_14);\r\n            tStack_1c.x = (LONG)(iVar2 == 0);\r\n            if (tStack_1c.x != 0) goto LAB_00536f3e;\r\n          }\r\n        }\r\n      }\r\n    }\r\n    FUN_00537070();\r\n  }\r\nLAB_00536f3e:\r\n  _DAT_0069e078 = 2;\r\n  DAT_0069e07c = 0;\r\n  DAT_0069e080 = 0;\r\n  DAT_0069e084 = 0;\r\n  DAT_0069e088 = 0;\r\n  DAT_0069e089 = 0;\r\n  DAT_0069e08a = 0;\r\n  DAT_0069e08b = 0;\r\n  FUN_005370c0(8,2);\r\n  FUN_005370c0(9,1);\r\n  FUN_00537600(0,0,0,DAT_005deac8,DAT_005deacc,100);\r\n  if (DAT_0069e098 != (int *)0x0) {\r\n    FUN_005370c0(7,4);\r\n  }\r\n  if (DAT_0069e0a4 == 0) {\r\n    FUN_00557380(&LAB_005370b0);\r\n    DAT_0069e0a4 = 1;\r\n  }\r\n  GetCursorPos(&tStack_1c);\r\n  lpPoint = &tStack_1c;\r\n  hWnd = (HWND)FUN_00557460();\r\n  BVar3 = ScreenToClient(hWnd,lpPoint);\r\n  if (BVar3 != 0) {\r\n    FUN_005370c0(3,tStack_1c.x);\r\n    FUN_005370c0(4,tStack_1c.y);\r\n  }\r\n  return DAT_0069e0a0;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x536e50: MOV EAX, [0x0069e0a0]",
+        "0x536e55: SUB ESP, 0x20",
+        "0x536e58: PUSH EBX",
+        "0x536e59: XOR EBX, EBX",
+        "0x536e5b: CMP EAX, EBX",
+        "0x536e5d: JNZ 0x00536e7d",
+        "0x536e5f: MOV dword ptr [0x0069e0a0], 0x1",
+        "0x536e69: CALL 0x00572690",
+        "0x536e6e: PUSH 0x537020",
+        "0x536e73: PUSH 0x20a",
+        "0x536e78: CALL 0x0053a800",
+        "0x536e7d: CMP dword ptr [0x0069e098], EBX",
+        "0x536e83: JNZ 0x00536f3e",
+        "0x536e89: PUSH EBX",
+        "0x536e8a: PUSH 0x69e098",
+        "0x536e8f: PUSH 0x500",
+        "0x536e94: PUSH EBX",
+        "0x536e95: CALL dword ptr [0x005b2138]",
+        "0x536e9b: PUSH EAX",
+        "0x536e9c: CALL 0x0056e940",
+        "0x536ea1: TEST EAX, EAX",
+        "0x536ea3: JNZ 0x00536f39",
+        "0x536ea9: MOV EAX, [0x0069e098]",
+        "0x536eae: LEA EDX, [ESP + 0x4]",
+        "0x536eb2: PUSH EBX",
+        "0x536eb3: PUSH EDX",
+        "0x536eb4: MOV ECX, dword ptr [EAX]",
+        "0x536eb6: PUSH 0x5bf9a0",
+        "0x536ebb: PUSH EAX",
+        "0x536ebc: CALL dword ptr [ECX + 0xc]",
+        "0x536ebf: TEST EAX, EAX",
+        "0x536ec1: JNZ 0x00536f39",
+        "0x536ec3: MOV EAX, dword ptr [ESP + 0x4]",
+        "0x536ec7: PUSH ESI",
+        "0x536ec8: PUSH 0x69e09c",
+        "0x536ecd: PUSH 0x5bf8c0",
+        "0x536ed2: MOV ECX, dword ptr [EAX]",
+        "0x536ed4: PUSH EAX",
+        "0x536ed5: CALL dword ptr [ECX]",
+        "0x536ed7: MOV ESI, EAX",
+        "0x536ed9: MOV EAX, dword ptr [ESP + 0x8]",
+        "0x536edd: PUSH EAX",
+        "0x536ede: MOV EDX, dword ptr [EAX]",
+        "0x536ee0: CALL dword ptr [EDX + 0x8]",
+        "0x536ee3: CMP ESI, EBX",
+        "0x536ee5: POP ESI",
+        "0x536ee6: JNZ 0x00536f39",
+        "0x536ee8: MOV EAX, [0x0069e09c]",
+        "0x536eed: PUSH 0x56e9c0",
+        "0x536ef2: PUSH EAX",
+        "0x536ef3: MOV ECX, dword ptr [EAX]",
+        "0x536ef5: CALL dword ptr [ECX + 0x2c]",
+        "0x536ef8: TEST EAX, EAX",
+        "0x536efa: JNZ 0x00536f39",
+        "0x536efc: MOV EAX, [0x0069e09c]",
+        "0x536f01: LEA ECX, [ESP + 0x10]",
+        "0x536f05: MOV dword ptr [ESP + 0x10], 0x14",
+        "0x536f0d: MOV dword ptr [ESP + 0x14], 0x10",
+        "0x536f15: MOV dword ptr [ESP + 0x18], EBX",
+        "0x536f19: MOV dword ptr [ESP + 0x1c], EBX",
+        "0x536f1d: MOV dword ptr [ESP + 0x20], 0x1",
+        "0x536f25: MOV EDX, dword ptr [EAX]",
+        "0x536f27: PUSH ECX",
+        "0x536f28: PUSH 0x2",
+        "0x536f2a: PUSH EAX",
+        "0x536f2b: CALL dword ptr [EDX + 0x18]",
+        "0x536f2e: NEG EAX",
+        "0x536f30: SBB EAX, EAX",
+        "0x536f32: INC EAX",
+        "0x536f33: MOV dword ptr [ESP + 0x8], EAX",
+        "0x536f37: JNZ 0x00536f3e",
+        "0x536f39: CALL 0x00537070",
+        "0x536f3e: PUSH 0x2",
+        "0x536f40: PUSH 0x8",
+        "0x536f42: MOV dword ptr [0x0069e078], 0x2",
+        "0x536f4c: MOV dword ptr [0x0069e07c], EBX",
+        "0x536f52: MOV dword ptr [0x0069e080], EBX",
+        "0x536f58: MOV dword ptr [0x0069e084], EBX",
+        "0x536f5e: MOV byte ptr [0x0069e088], BL",
+        "0x536f64: MOV byte ptr [0x0069e089], BL",
+        "0x536f6a: MOV byte ptr [0x0069e08a], BL",
+        "0x536f70: MOV byte ptr [0x0069e08b], BL",
+        "0x536f76: CALL 0x005370c0",
+        "0x536f7b: PUSH 0x1",
+        "0x536f7d: PUSH 0x9",
+        "0x536f7f: CALL 0x005370c0",
+        "0x536f84: MOV EDX, dword ptr [0x005deacc]",
+        "0x536f8a: MOV EAX, [0x005deac8]",
+        "0x536f8f: PUSH 0x64",
+        "0x536f91: PUSH EDX",
+        "0x536f92: PUSH EAX",
+        "0x536f93: PUSH EBX",
+        "0x536f94: PUSH EBX",
+        "0x536f95: PUSH EBX",
+        "0x536f96: CALL 0x00537600",
+        "0x536f9b: MOV EAX, [0x0069e098]",
+        "0x536fa0: ADD ESP, 0x28",
+        "0x536fa3: CMP EAX, EBX",
+        "0x536fa5: JZ 0x00536fb3",
+        "0x536fa7: PUSH 0x4",
+        "0x536fa9: PUSH 0x7",
+        "0x536fab: CALL 0x005370c0",
+        "0x536fb0: ADD ESP, 0x8",
+        "0x536fb3: MOV EAX, [0x0069e0a4]",
+        "0x536fb8: CMP EAX, EBX",
+        "0x536fba: POP EBX",
+        "0x536fbb: JNZ 0x00536fd4",
+        "0x536fbd: PUSH 0x5370b0",
+        "0x536fc2: CALL 0x00557380",
+        "0x536fc7: ADD ESP, 0x4",
+        "0x536fca: MOV dword ptr [0x0069e0a4], 0x1",
+        "0x536fd4: LEA ECX, [ESP + 0x4]",
+        "0x536fd8: PUSH ECX",
+        "0x536fd9: CALL dword ptr [0x005b2280]",
+        "0x536fdf: LEA EDX, [ESP + 0x4]",
+        "0x536fe3: PUSH EDX",
+        "0x536fe4: CALL 0x00557460",
+        "0x536fe9: PUSH EAX",
+        "0x536fea: CALL dword ptr [0x005b228c]",
+        "0x536ff0: TEST EAX, EAX",
+        "0x536ff2: JZ 0x0053700f",
+        "0x536ff4: MOV EAX, dword ptr [ESP + 0x4]",
+        "0x536ff8: PUSH EAX",
+        "0x536ff9: PUSH 0x3",
+        "0x536ffb: CALL 0x005370c0",
+        "0x537000: MOV ECX, dword ptr [ESP + 0x10]",
+        "0x537004: PUSH ECX",
+        "0x537005: PUSH 0x4",
+        "0x537007: CALL 0x005370c0",
+        "0x53700c: ADD ESP, 0x10",
+        "0x53700f: MOV EAX, [0x0069e0a0]",
+        "0x537014: ADD ESP, 0x20",
+        "0x537017: RET"
+      ],
+      "callees": [
+        {
+          "address": "EXTERNAL:0x41",
+          "name": "KERNEL32.DLL::GetModuleHandleA",
+          "classification": {
+            "external": true,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [],
+            "total_bytes": 0,
+            "span_bytes": 0,
+            "non_contiguous": false,
+            "contains_entry": false
+          }
+        },
+        {
+          "address": "EXTERNAL:0x90",
+          "name": "USER32.DLL::GetCursorPos",
+          "classification": {
+            "external": true,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [],
+            "total_bytes": 0,
+            "span_bytes": 0,
+            "non_contiguous": false,
+            "contains_entry": false
+          }
+        },
+        {
+          "address": "EXTERNAL:0x93",
+          "name": "USER32.DLL::ScreenToClient",
+          "classification": {
+            "external": true,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [],
+            "total_bytes": 0,
+            "span_bytes": 0,
+            "non_contiguous": false,
+            "contains_entry": false
+          }
+        },
+        {
+          "address": "0x537070",
+          "name": "FUN_00537070",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x537070",
+                "end": "0x5370ad"
+              }
+            ],
+            "total_bytes": 62,
+            "span_bytes": 62,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x5370c0",
+          "name": "FUN_005370c0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x5370c0",
+                "end": "0x53727d"
+              }
+            ],
+            "total_bytes": 446,
+            "span_bytes": 446,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x537600",
+          "name": "FUN_00537600",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x537600",
+                "end": "0x53764b"
+              }
+            ],
+            "total_bytes": 76,
+            "span_bytes": 76,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x53a800",
+          "name": "FUN_0053a800",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x53a800",
+                "end": "0x53a8db"
+              }
+            ],
+            "total_bytes": 220,
+            "span_bytes": 220,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x557380",
+          "name": "FUN_00557380",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x557380",
+                "end": "0x55738b"
+              }
+            ],
+            "total_bytes": 12,
+            "span_bytes": 12,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x557460",
+          "name": "FUN_00557460",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x557460",
+                "end": "0x557465"
+              }
+            ],
+            "total_bytes": 6,
+            "span_bytes": 6,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x56e940",
+          "name": "DINPUT.DLL::DirectInputCreateA",
+          "classification": {
+            "external": false,
+            "thunk": true,
+            "thunk_target": "EXTERNAL:0xc4",
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x56e940",
+                "end": "0x56e945"
+              }
+            ],
+            "total_bytes": 6,
+            "span_bytes": 6,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x572690",
+          "name": "FUN_00572690",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x572690",
+                "end": "0x5726e1"
+              }
+            ],
+            "total_bytes": 82,
+            "span_bytes": 82,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ],
+      "callers": [
+        {
+          "address": "0x4a5410",
+          "name": "FUN_004a5410",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x4a5410",
+                "end": "0x4a54ac"
+              }
+            ],
+            "total_bytes": 157,
+            "span_bytes": 157,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x556bb0",
+          "name": "FUN_00556bb0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x556bb0",
+                "end": "0x556ccc"
+              }
+            ],
+            "total_bytes": 285,
+            "span_bytes": 285,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "pool-setup",
+      "procedure": {
+        "address": "0x563ad0",
+        "name": "FUN_00563ad0",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x563ad0",
+              "end": "0x563bca"
+            }
+          ],
+          "total_bytes": 251,
+          "span_bytes": 251,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined FUN_00563ad0()",
+        "locals": []
+      },
+      "pseudocode": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_00563ad0(int param_1,undefined4 param_2,undefined4 param_3)\r\n\r\n{\r\n  int iVar1;\r\n  int *piVar2;\r\n  int iVar3;\r\n  int iVar4;\r\n  \r\n  if (DAT_006a5bc0 != 0) {\r\n    DAT_005deb74 = \"\\\\real\\\\cmn\\\\nasync.c\";\r\n    DAT_005deb78 = 0x21a;\r\n    (*(code *)PTR_FUN_005debf0)(\"initasync - already initialized\\n\");\r\n    return;\r\n  }\r\n  if (param_1 < 0x101) {\r\n    _DAT_006a5bd8 = param_2;\r\n    DAT_006a5be0 = param_1;\r\n    iVar4 = param_1 * 0x2c;\r\n    DAT_006a5bc0 = FUN_00531ca0(\"ASYNCREQ\",iVar4,param_3);\r\n    _DAT_006a5bd4 = iVar4 + -0x2c + DAT_006a5bc0;\r\n    _DAT_006a5bc8 = 0;\r\n    _DAT_006a5bcc = 0;\r\n    DAT_006a5be4 = 0;\r\n    _DAT_006a5bd0 = DAT_006a5bc0;\r\n    DAT_006a5be8 = FUN_005321f0();\r\n    iVar1 = DAT_006a5bc0;\r\n    iVar3 = 0;\r\n    if (0 < param_1) {\r\n      piVar2 = (int *)(DAT_006a5bc0 + 4);\r\n      do {\r\n        piVar2[-1] = iVar3;\r\n        *piVar2 = (int)(piVar2 + 10);\r\n        piVar2[5] = 0;\r\n        iVar3 = iVar3 + 1;\r\n        piVar2 = piVar2 + 0xb;\r\n      } while (iVar3 < param_1);\r\n    }\r\n    *(undefined4 *)(iVar4 + -0x28 + iVar1) = 0;\r\n    FUN_005365e0(FUN_00563bd0,1,1);\r\n    return;\r\n  }\r\n  DAT_005deb74 = \"\\\\real\\\\cmn\\\\nasync.c\";\r\n  DAT_005deb78 = 0x220;\r\n  (*(code *)PTR_FUN_005debf0)(\"initasync - too many async request blocks specified\\n\");\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x563ad0: MOV EAX, [0x006a5bc0]",
+        "0x563ad5: PUSH EBX",
+        "0x563ad6: XOR EBX, EBX",
+        "0x563ad8: PUSH ESI",
+        "0x563ad9: CMP EAX, EBX",
+        "0x563adb: JZ 0x00563b02",
+        "0x563add: PUSH 0x5bcfb4",
+        "0x563ae2: MOV dword ptr [0x005deb74], 0x5bcfa0",
+        "0x563aec: MOV dword ptr [0x005deb78], 0x21a",
+        "0x563af6: CALL dword ptr [0x005debf0]",
+        "0x563afc: ADD ESP, 0x4",
+        "0x563aff: POP ESI",
+        "0x563b00: POP EBX",
+        "0x563b01: RET",
+        "0x563b02: MOV ESI, dword ptr [ESP + 0xc]",
+        "0x563b06: CMP ESI, 0x100",
+        "0x563b0c: JLE 0x00563b33",
+        "0x563b0e: PUSH 0x5bcf68",
+        "0x563b13: MOV dword ptr [0x005deb74], 0x5bcfa0",
+        "0x563b1d: MOV dword ptr [0x005deb78], 0x220",
+        "0x563b27: CALL dword ptr [0x005debf0]",
+        "0x563b2d: ADD ESP, 0x4",
+        "0x563b30: POP ESI",
+        "0x563b31: POP EBX",
+        "0x563b32: RET",
+        "0x563b33: MOV EDX, dword ptr [ESP + 0x14]",
+        "0x563b37: MOV EAX, dword ptr [ESP + 0x10]",
+        "0x563b3b: LEA ECX, [ESI + ESI*0x4]",
+        "0x563b3e: PUSH EDI",
+        "0x563b3f: PUSH EDX",
+        "0x563b40: MOV [0x006a5bd8], EAX",
+        "0x563b45: LEA EDI, [ESI + ECX*0x2]",
+        "0x563b48: MOV dword ptr [0x006a5be0], ESI",
+        "0x563b4e: SHL EDI, 0x2",
+        "0x563b51: PUSH EDI",
+        "0x563b52: PUSH 0x5bcf5c",
+        "0x563b57: CALL 0x00531ca0",
+        "0x563b5c: MOV [0x006a5bc0], EAX",
+        "0x563b61: MOV [0x006a5bd0], EAX",
+        "0x563b66: LEA EAX, [EDI + EAX*0x1 + -0x2c]",
+        "0x563b6a: ADD ESP, 0xc",
+        "0x563b6d: MOV [0x006a5bd4], EAX",
+        "0x563b72: MOV dword ptr [0x006a5bc8], EBX",
+        "0x563b78: MOV dword ptr [0x006a5bcc], EBX",
+        "0x563b7e: MOV dword ptr [0x006a5be4], EBX",
+        "0x563b84: CALL 0x005321f0",
+        "0x563b89: MOV EDX, dword ptr [0x006a5bc0]",
+        "0x563b8f: XOR ECX, ECX",
+        "0x563b91: CMP ESI, EBX",
+        "0x563b93: MOV [0x006a5be8], EAX",
+        "0x563b98: JLE 0x00563bb2",
+        "0x563b9a: PUSH EBP",
+        "0x563b9b: LEA EAX, [EDX + 0x4]",
+        "0x563b9e: LEA EBP, [EAX + 0x28]",
+        "0x563ba1: MOV dword ptr [EAX + -0x4], ECX",
+        "0x563ba4: MOV dword ptr [EAX], EBP",
+        "0x563ba6: MOV dword ptr [EAX + 0x14], EBX",
+        "0x563ba9: INC ECX",
+        "0x563baa: ADD EAX, 0x2c",
+        "0x563bad: CMP ECX, ESI",
+        "0x563baf: JL 0x00563b9e",
+        "0x563bb1: POP EBP",
+        "0x563bb2: PUSH 0x1",
+        "0x563bb4: PUSH 0x1",
+        "0x563bb6: PUSH 0x563bd0",
+        "0x563bbb: MOV dword ptr [EDI + EDX*0x1 + -0x28], EBX",
+        "0x563bbf: CALL 0x005365e0",
+        "0x563bc4: ADD ESP, 0xc",
+        "0x563bc7: POP EDI",
+        "0x563bc8: POP ESI",
+        "0x563bc9: POP EBX",
+        "0x563bca: RET"
+      ],
+      "callees": [
+        {
+          "address": "0x531ca0",
+          "name": "FUN_00531ca0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x531ca0",
+                "end": "0x531f63"
+              }
+            ],
+            "total_bytes": 708,
+            "span_bytes": 708,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x5321f0",
+          "name": "FUN_005321f0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x5321f0",
+                "end": "0x532240"
+              }
+            ],
+            "total_bytes": 81,
+            "span_bytes": 81,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x5365e0",
+          "name": "FUN_005365e0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x5365e0",
+                "end": "0x536697"
+              }
+            ],
+            "total_bytes": 184,
+            "span_bytes": 184,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x565340",
+          "name": "FUN_00565340",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x565340",
+                "end": "0x5654bc"
+              }
+            ],
+            "total_bytes": 381,
+            "span_bytes": 381,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ],
+      "callers": [
+        {
+          "address": "0x4a5410",
+          "name": "FUN_004a5410",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x4a5410",
+                "end": "0x4a54ac"
+              }
+            ],
+            "total_bytes": 157,
+            "span_bytes": 157,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "device-child",
+      "procedure": {
+        "address": "0x572690",
+        "name": "FUN_00572690",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x572690",
+              "end": "0x5726e1"
+            }
+          ],
+          "total_bytes": 82,
+          "span_bytes": 82,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined FUN_00572690()",
+        "locals": []
+      },
+      "pseudocode": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_00572690(void)\r\n\r\n{\r\n  DAT_006a6430 = DAT_005deac8;\r\n  DAT_006a643c = 0;\r\n  DAT_006a6438 = 0;\r\n  _DAT_006a644c = 0;\r\n  DAT_006a6434 = DAT_005deacc;\r\n  DAT_005deaac = 1;\r\n  PTR_FUN_005debe0 = &LAB_00572680;\r\n  PTR_FUN_005debe4 = &LAB_00572670;\r\n  PTR_FUN_005debe8 = &LAB_00572640;\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x572690: MOV ECX, dword ptr [0x005deac8]",
+        "0x572696: MOV EDX, dword ptr [0x005deacc]",
+        "0x57269c: XOR EAX, EAX",
+        "0x57269e: MOV dword ptr [0x006a6430], ECX",
+        "0x5726a4: MOV [0x006a643c], EAX",
+        "0x5726a9: MOV [0x006a6438], EAX",
+        "0x5726ae: MOV [0x006a644c], EAX",
+        "0x5726b3: MOV EAX, 0x1",
+        "0x5726b8: MOV dword ptr [0x006a6434], EDX",
+        "0x5726be: MOV [0x005deaac], EAX",
+        "0x5726c3: MOV dword ptr [0x005debe0], 0x572680",
+        "0x5726cd: MOV dword ptr [0x005debe4], 0x572670",
+        "0x5726d7: MOV dword ptr [0x005debe8], 0x572640",
+        "0x5726e1: RET"
+      ],
+      "callees": [],
+      "callers": [
+        {
+          "address": "0x536e50",
+          "name": "FUN_00536e50",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x536e50",
+                "end": "0x537017"
+              }
+            ],
+            "total_bytes": 456,
+            "span_bytes": 456,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "pool-child",
+      "procedure": {
+        "address": "0x56e940",
+        "name": "DINPUT.DLL::DirectInputCreateA",
+        "classification": {
+          "external": false,
+          "thunk": true,
+          "thunk_target": "EXTERNAL:0xc4",
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x56e940",
+              "end": "0x56e945"
+            }
+          ],
+          "total_bytes": 6,
+          "span_bytes": 6,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined DirectInputCreateA()",
+        "locals": []
+      },
+      "pseudocode": "\r\nvoid DirectInputCreateA(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0056e940. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  DirectInputCreateA();\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x56e940: JMP dword ptr [0x005b202c]"
+      ],
+      "callees": [],
+      "callers": [
+        {
+          "address": "0x532b80",
+          "name": "FUN_00532b80",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x532b80",
+                "end": "0x532c35"
+              }
+            ],
+            "total_bytes": 182,
+            "span_bytes": 182,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x536e50",
+          "name": "FUN_00536e50",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x536e50",
+                "end": "0x537017"
+              }
+            ],
+            "total_bytes": 456,
+            "span_bytes": 456,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x55fcf0",
+          "name": "FUN_0055fcf0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x55fcf0",
+                "end": "0x55fdf4"
+              }
+            ],
+            "total_bytes": 261,
+            "span_bytes": 261,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "display-child",
+      "procedure": {
+        "address": "0x5370c0",
+        "name": "FUN_005370c0",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x5370c0",
+              "end": "0x53727d"
+            }
+          ],
+          "total_bytes": 446,
+          "span_bytes": 446,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined FUN_005370c0()",
+        "locals": []
+      },
+      "pseudocode": "\r\nbool FUN_005370c0(undefined4 param_1,int param_2)\r\n\r\n{\r\n  undefined4 uVar1;\r\n  int iVar2;\r\n  byte bVar3;\r\n  bool bVar4;\r\n  \r\n  bVar4 = true;\r\n  switch(param_1) {\r\n  case 3:\r\n    DAT_0069e07c = param_2;\r\n    if (DAT_005de758 == 4) {\r\n      FUN_005727c0(param_2,DAT_0069e080);\r\n      return true;\r\n    }\r\n    break;\r\n  case 4:\r\n    DAT_0069e080 = param_2;\r\n    if (DAT_005de758 == 4) {\r\n      FUN_005727c0(DAT_0069e07c,param_2);\r\n      return true;\r\n    }\r\n    break;\r\n  case 5:\r\n    DAT_0069e084 = param_2;\r\n    return true;\r\n  default:\r\n    bVar4 = false;\r\n    DAT_005deb74 = \"\\\\real\\\\patch3\\\\pc\\\\mouse.c\";\r\n    DAT_005deb78 = 0x188;\r\n    (*(code *)PTR_FUN_005debf0)(\"[MOUSE] - Invalid setstate\\n\");\r\n    break;\r\n  case 7:\r\n    if (DAT_005de758 != param_2) {\r\n      if (DAT_0069e098 == 0) {\r\n        DAT_005deb74 = \"\\\\real\\\\patch3\\\\pc\\\\mouse.c\";\r\n        DAT_005deb78 = 0x158;\r\n        (*(code *)PTR_FUN_005debf0)\r\n                  (\r\n                  \"MOUSE_setstate(INPUT_STATE_ACCESSMODE) - Cannot change the access mode as Direct Input was not initialized correctly\\n\"\r\n                  );\r\n        DAT_005de758 = param_2;\r\n        return true;\r\n      }\r\n      if ((param_2 == 4) && (DAT_005de758 != 4)) {\r\n        (**(code **)(*DAT_0069e09c + 0x20))(DAT_0069e09c);\r\n        FUN_005727c0(DAT_0069e07c,DAT_0069e080);\r\n        DAT_005de758 = param_2;\r\n        return true;\r\n      }\r\n      iVar2 = *DAT_0069e09c;\r\n      bVar3 = (param_2 != 5) + 1U | 4;\r\n      uVar1 = FUN_00557460(bVar3);\r\n      iVar2 = (**(code **)(iVar2 + 0x34))(DAT_0069e09c,uVar1);\r\n      bVar4 = iVar2 == 0;\r\n      if ((!bVar4) &&\r\n         ((iVar2 = (**(code **)(*DAT_0069e09c + 0x20))(DAT_0069e09c), iVar2 == 0 || (iVar2 == 1))))\r\n      {\r\n        iVar2 = *DAT_0069e09c;\r\n        uVar1 = FUN_00557460(bVar3);\r\n        iVar2 = (**(code **)(iVar2 + 0x34))(DAT_0069e09c,uVar1);\r\n        bVar4 = iVar2 == 0;\r\n        (**(code **)(*DAT_0069e09c + 0x1c))(DAT_0069e09c);\r\n      }\r\n    }\r\n    DAT_005de758 = param_2;\r\n    return bVar4;\r\n  case 8:\r\n    DAT_005de75c = param_2;\r\n    return true;\r\n  case 9:\r\n    DAT_005de760 = param_2;\r\n    return true;\r\n  }\r\n  return bVar4;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x5370c0: MOV EAX, dword ptr [ESP + 0x4]",
+        "0x5370c4: PUSH ESI",
+        "0x5370c5: ADD EAX, -0x3",
+        "0x5370c8: MOV ESI, 0x1",
+        "0x5370cd: CMP EAX, 0x6",
+        "0x5370d0: JA 0x00537256",
+        "0x5370d6: JMP dword ptr [EAX*0x4 + 0x537280]",
+        "0x5370dd: MOV ECX, dword ptr [0x005de758]",
+        "0x5370e3: MOV EAX, dword ptr [ESP + 0xc]",
+        "0x5370e7: CMP ECX, 0x4",
+        "0x5370ea: MOV [0x0069e07c], EAX",
+        "0x5370ef: JNZ 0x0053727a",
+        "0x5370f5: MOV ECX, dword ptr [0x0069e080]",
+        "0x5370fb: PUSH ECX",
+        "0x5370fc: PUSH EAX",
+        "0x5370fd: CALL 0x005727c0",
+        "0x537102: ADD ESP, 0x8",
+        "0x537105: MOV EAX, ESI",
+        "0x537107: POP ESI",
+        "0x537108: RET",
+        "0x537109: MOV ECX, dword ptr [0x005de758]",
+        "0x53710f: MOV EAX, dword ptr [ESP + 0xc]",
+        "0x537113: CMP ECX, 0x4",
+        "0x537116: MOV [0x0069e080], EAX",
+        "0x53711b: JNZ 0x0053727a",
+        "0x537121: MOV EDX, dword ptr [0x0069e07c]",
+        "0x537127: PUSH EAX",
+        "0x537128: PUSH EDX",
+        "0x537129: CALL 0x005727c0",
+        "0x53712e: ADD ESP, 0x8",
+        "0x537131: MOV EAX, ESI",
+        "0x537133: POP ESI",
+        "0x537134: RET",
+        "0x537135: MOV EAX, dword ptr [ESP + 0xc]",
+        "0x537139: MOV [0x0069e084], EAX",
+        "0x53713e: MOV EAX, ESI",
+        "0x537140: POP ESI",
+        "0x537141: RET",
+        "0x537142: MOV EAX, [0x005de758]",
+        "0x537147: PUSH EBX",
+        "0x537148: MOV EBX, dword ptr [ESP + 0x10]",
+        "0x53714c: PUSH EDI",
+        "0x53714d: CMP EAX, EBX",
+        "0x53714f: JZ 0x0053722f",
+        "0x537155: MOV ECX, dword ptr [0x0069e098]",
+        "0x53715b: TEST ECX, ECX",
+        "0x53715d: JNZ 0x0053718d",
+        "0x53715f: PUSH 0x5bb740",
+        "0x537164: MOV dword ptr [0x005deb74], 0x5bb728",
+        "0x53716e: MOV dword ptr [0x005deb78], 0x158",
+        "0x537178: CALL dword ptr [0x005debf0]",
+        "0x53717e: ADD ESP, 0x4",
+        "0x537181: MOV dword ptr [0x005de758], EBX",
+        "0x537187: MOV EAX, ESI",
+        "0x537189: POP EDI",
+        "0x53718a: POP EBX",
+        "0x53718b: POP ESI",
+        "0x53718c: RET",
+        "0x53718d: CMP EBX, 0x4",
+        "0x537190: JNZ 0x005371c2",
+        "0x537192: CMP EAX, EBX",
+        "0x537194: JZ 0x005371c2",
+        "0x537196: MOV EAX, [0x0069e09c]",
+        "0x53719b: PUSH EAX",
+        "0x53719c: MOV ECX, dword ptr [EAX]",
+        "0x53719e: CALL dword ptr [ECX + 0x20]",
+        "0x5371a1: MOV EDX, dword ptr [0x0069e080]",
+        "0x5371a7: MOV EAX, [0x0069e07c]",
+        "0x5371ac: PUSH EDX",
+        "0x5371ad: PUSH EAX",
+        "0x5371ae: CALL 0x005727c0",
+        "0x5371b3: ADD ESP, 0x8",
+        "0x5371b6: MOV dword ptr [0x005de758], EBX",
+        "0x5371bc: MOV EAX, ESI",
+        "0x5371be: POP EDI",
+        "0x5371bf: POP EBX",
+        "0x5371c0: POP ESI",
+        "0x5371c1: RET",
+        "0x5371c2: XOR ECX, ECX",
+        "0x5371c4: CMP EBX, 0x5",
+        "0x5371c7: MOV EDX, dword ptr [0x0069e09c]",
+        "0x5371cd: SETNZ CL",
+        "0x5371d0: MOV ESI, dword ptr [EDX]",
+        "0x5371d2: INC ECX",
+        "0x5371d3: MOV EDI, ECX",
+        "0x5371d5: OR EDI, 0x4",
+        "0x5371d8: PUSH EDI",
+        "0x5371d9: CALL 0x00557460",
+        "0x5371de: PUSH EAX",
+        "0x5371df: MOV EAX, [0x0069e09c]",
+        "0x5371e4: PUSH EAX",
+        "0x5371e5: CALL dword ptr [ESI + 0x34]",
+        "0x5371e8: MOV ESI, EAX",
+        "0x5371ea: NEG ESI",
+        "0x5371ec: SBB ESI, ESI",
+        "0x5371ee: INC ESI",
+        "0x5371ef: JNZ 0x0053722f",
+        "0x5371f1: MOV EAX, [0x0069e09c]",
+        "0x5371f6: PUSH EAX",
+        "0x5371f7: MOV ECX, dword ptr [EAX]",
+        "0x5371f9: CALL dword ptr [ECX + 0x20]",
+        "0x5371fc: TEST EAX, EAX",
+        "0x5371fe: JZ 0x00537205",
+        "0x537200: CMP EAX, 0x1",
+        "0x537203: JNZ 0x0053722f",
+        "0x537205: MOV EDX, dword ptr [0x0069e09c]",
+        "0x53720b: PUSH EDI",
+        "0x53720c: MOV ESI, dword ptr [EDX]",
+        "0x53720e: CALL 0x00557460",
+        "0x537213: PUSH EAX",
+        "0x537214: MOV EAX, [0x0069e09c]",
+        "0x537219: PUSH EAX",
+        "0x53721a: CALL dword ptr [ESI + 0x34]",
+        "0x53721d: MOV ESI, EAX",
+        "0x53721f: MOV EAX, [0x0069e09c]",
+        "0x537224: NEG ESI",
+        "0x537226: MOV ECX, dword ptr [EAX]",
+        "0x537228: PUSH EAX",
+        "0x537229: SBB ESI, ESI",
+        "0x53722b: INC ESI",
+        "0x53722c: CALL dword ptr [ECX + 0x1c]",
+        "0x53722f: MOV dword ptr [0x005de758], EBX",
+        "0x537235: POP EDI",
+        "0x537236: POP EBX",
+        "0x537237: MOV EAX, ESI",
+        "0x537239: POP ESI",
+        "0x53723a: RET",
+        "0x53723b: MOV EDX, dword ptr [ESP + 0xc]",
+        "0x53723f: MOV EAX, ESI",
+        "0x537241: MOV dword ptr [0x005de75c], EDX",
+        "0x537247: POP ESI",
+        "0x537248: RET",
+        "0x537249: MOV EAX, dword ptr [ESP + 0xc]",
+        "0x53724d: MOV [0x005de760], EAX",
+        "0x537252: MOV EAX, ESI",
+        "0x537254: POP ESI",
+        "0x537255: RET",
+        "0x537256: PUSH 0x5bb70c",
+        "0x53725b: XOR ESI, ESI",
+        "0x53725d: MOV dword ptr [0x005deb74], 0x5bb728",
+        "0x537267: MOV dword ptr [0x005deb78], 0x188",
+        "0x537271: CALL dword ptr [0x005debf0]",
+        "0x537277: ADD ESP, 0x4",
+        "0x53727a: MOV EAX, ESI",
+        "0x53727c: POP ESI",
+        "0x53727d: RET"
+      ],
+      "callees": [
+        {
+          "address": "0x557460",
+          "name": "FUN_00557460",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x557460",
+                "end": "0x557465"
+              }
+            ],
+            "total_bytes": 6,
+            "span_bytes": 6,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x565340",
+          "name": "FUN_00565340",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x565340",
+                "end": "0x5654bc"
+              }
+            ],
+            "total_bytes": 381,
+            "span_bytes": 381,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x5727c0",
+          "name": "FUN_005727c0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x5727c0",
+                "end": "0x5728a4"
+              }
+            ],
+            "total_bytes": 229,
+            "span_bytes": 229,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ],
+      "callers": [
+        {
+          "address": "0x4d3420",
+          "name": "FUN_004d3420",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x4d3420",
+                "end": "0x4d55ac"
+              }
+            ],
+            "total_bytes": 8589,
+            "span_bytes": 8589,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x536e50",
+          "name": "FUN_00536e50",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x536e50",
+                "end": "0x537017"
+              }
+            ],
+            "total_bytes": 456,
+            "span_bytes": 456,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "startup-services",
+      "procedure": {
+        "address": "0x4a5410",
+        "name": "FUN_004a5410",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x4a5410",
+              "end": "0x4a54ac"
+            }
+          ],
+          "total_bytes": 157,
+          "span_bytes": 157,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined FUN_004a5410()",
+        "locals": []
+      },
+      "pseudocode": "\r\nvoid FUN_004a5410(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n  PTR_FUN_005debf0 = &LAB_0059fbc0;\r\n  FUN_0059e9d0(0x1800000,0x400000,0x100,0x100);\r\n  FUN_0059edb0(400,0);\r\n  FUN_00565030(0x80);\r\n  if (DAT_00628c70 == 0) {\r\n    iVar1 = FUN_0059ef90(0x268);\r\n    if (iVar1 != 0) {\r\n      FUN_0048fc80();\r\n    }\r\n  }\r\n  FUN_0055fcf0();\r\n  FUN_00564e70();\r\n  FUN_00564ab0();\r\n  thunk_FUN_00564ab0(2);\r\n  FUN_00536e50();\r\n  FUN_005367b0(0,1000,1);\r\n  FUN_004b6ff0();\r\n  FUN_00563ad0(0x1e,0x2000,0);\r\n  return;\r\n}\r\n\r\n",
+      "assembly": [
+        "0x4a5410: PUSH 0x100",
+        "0x4a5415: PUSH 0x100",
+        "0x4a541a: PUSH 0x400000",
+        "0x4a541f: PUSH 0x1800000",
+        "0x4a5424: MOV dword ptr [0x005debf0], 0x59fbc0",
+        "0x4a542e: CALL 0x0059e9d0",
+        "0x4a5433: PUSH 0x0",
+        "0x4a5435: PUSH 0x190",
+        "0x4a543a: CALL 0x0059edb0",
+        "0x4a543f: PUSH 0x80",
+        "0x4a5444: CALL 0x00565030",
+        "0x4a5449: MOV EAX, [0x00628c70]",
+        "0x4a544e: ADD ESP, 0x1c",
+        "0x4a5451: TEST EAX, EAX",
+        "0x4a5453: JNZ 0x004a546d",
+        "0x4a5455: PUSH 0x268",
+        "0x4a545a: CALL 0x0059ef90",
+        "0x4a545f: ADD ESP, 0x4",
+        "0x4a5462: TEST EAX, EAX",
+        "0x4a5464: JZ 0x004a546d",
+        "0x4a5466: MOV ECX, EAX",
+        "0x4a5468: CALL 0x0048fc80",
+        "0x4a546d: CALL 0x0055fcf0",
+        "0x4a5472: CALL 0x00564e70",
+        "0x4a5477: CALL 0x00564ab0",
+        "0x4a547c: PUSH 0x2",
+        "0x4a547e: CALL 0x00564850",
+        "0x4a5483: CALL 0x00536e50",
+        "0x4a5488: PUSH 0x1",
+        "0x4a548a: PUSH 0x3e8",
+        "0x4a548f: PUSH 0x0",
+        "0x4a5491: CALL 0x005367b0",
+        "0x4a5496: CALL 0x004b6ff0",
+        "0x4a549b: PUSH 0x0",
+        "0x4a549d: PUSH 0x2000",
+        "0x4a54a2: PUSH 0x1e",
+        "0x4a54a4: CALL 0x00563ad0",
+        "0x4a54a9: ADD ESP, 0x1c",
+        "0x4a54ac: RET"
+      ],
+      "callees": [
+        {
+          "address": "0x48fc80",
+          "name": "FUN_0048fc80",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x48fc80",
+                "end": "0x48ff2d"
+              }
+            ],
+            "total_bytes": 686,
+            "span_bytes": 686,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x4b6ff0",
+          "name": "FUN_004b6ff0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x4b6ff0",
+                "end": "0x4b7062"
+              }
+            ],
+            "total_bytes": 115,
+            "span_bytes": 115,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x5367b0",
+          "name": "FUN_005367b0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x5367b0",
+                "end": "0x5367b2"
+              }
+            ],
+            "total_bytes": 3,
+            "span_bytes": 3,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x536e50",
+          "name": "FUN_00536e50",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x536e50",
+                "end": "0x537017"
+              }
+            ],
+            "total_bytes": 456,
+            "span_bytes": 456,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x55fcf0",
+          "name": "FUN_0055fcf0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x55fcf0",
+                "end": "0x55fdf4"
+              }
+            ],
+            "total_bytes": 261,
+            "span_bytes": 261,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x563ad0",
+          "name": "FUN_00563ad0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x563ad0",
+                "end": "0x563bca"
+              }
+            ],
+            "total_bytes": 251,
+            "span_bytes": 251,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x564850",
+          "name": "thunk_FUN_00564ab0",
+          "classification": {
+            "external": false,
+            "thunk": true,
+            "thunk_target": "0x564ab0",
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x564850",
+                "end": "0x564854"
+              }
+            ],
+            "total_bytes": 5,
+            "span_bytes": 5,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x564ab0",
+          "name": "FUN_00564ab0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x564ab0",
+                "end": "0x564af5"
+              }
+            ],
+            "total_bytes": 70,
+            "span_bytes": 70,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x564e70",
+          "name": "FUN_00564e70",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x564e70",
+                "end": "0x564ea6"
+              }
+            ],
+            "total_bytes": 55,
+            "span_bytes": 55,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x565030",
+          "name": "FUN_00565030",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x565030",
+                "end": "0x56526d"
+              }
+            ],
+            "total_bytes": 574,
+            "span_bytes": 574,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x59e9d0",
+          "name": "FUN_0059e9d0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x59e9d0",
+                "end": "0x59eb13"
+              }
+            ],
+            "total_bytes": 324,
+            "span_bytes": 324,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x59edb0",
+          "name": "FUN_0059edb0",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x59edb0",
+                "end": "0x59ee23"
+              }
+            ],
+            "total_bytes": 116,
+            "span_bytes": 116,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        },
+        {
+          "address": "0x59ef90",
+          "name": "FUN_0059ef90",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x59ef90",
+                "end": "0x59efb5"
+              }
+            ],
+            "total_bytes": 38,
+            "span_bytes": 38,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ],
+      "callers": [
+        {
+          "address": "0x4b6a50",
+          "name": "FUN_004b6a50",
+          "classification": {
+            "external": false,
+            "thunk": false,
+            "thunk_target": null,
+            "provenance": "ghidra-function-manager"
+          },
+          "body": {
+            "available": true,
+            "provenance": "ghidra-function-body-address-set",
+            "ranges": [
+              {
+                "start": "0x4b6a50",
+                "end": "0x4b6fe5"
+              }
+            ],
+            "total_bytes": 1430,
+            "span_bytes": 1430,
+            "non_contiguous": false,
+            "contains_entry": true
+          }
+        }
+      ]
+    }
+  ]
+}

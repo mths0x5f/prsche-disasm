@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "current_link": "iterations/v2/001-original-recovery/runs/358-render-platform-bindings/build-001.json: 189 compiled source TUs, 218 unresolved names, 226 references, no executable/game execution",
+  "entry_path": [
+    "runs/102-original-game-link/host-entry.cpp WinMain -> win_main_004b6710 (149 indexed bytes, original cmdline split) -> app_main_004b6a50 (1430 indexed bytes)",
+    "app_main_004b6a50 probes/returns a VM page, then calls startup_cd_relaunch_004a5c30 (231 indexed bytes), startup_services_004a5410 (157 bytes), creates directory/resource paths, initializes FE/heaps, and calls render_startup_00467470 (642 bytes)",
+    "render_startup_00467470 constructs RenderCore, selects driver/registry, then render_construct_display_004677e0 (1761 indexed bytes), applies display and misc; app_main later enters FE/game setup and frame loop"
+  ],
+  "earliest_unresolved_groups_in_execution_order": [
+    {
+      "stage": "single instance, reached first inside startup_cd_relaunch_004a5c30 -> startup_name_005655f0 adapter -> application_instance_check_005655f0",
+      "original_body_bytes": 141,
+      "frontier_names": [
+        "application_instance_create_mutex",
+        "application_instance_get_last_error",
+        "application_instance_find_window",
+        "application_instance_show_window",
+        "application_instance_set_foreground_window"
+      ],
+      "original_calls": "00565610/11/13 push name,1,0 -> 00565615 CALL [005b21ac] CreateMutexA; 00565620 CALL [005b213c] GetLastError; only on ERROR_ALREADY_EXISTS(183), 00565637 CALL [005b22a0] FindWindowA then 00565646 ShowWindow and 0056564d SetForegroundWindow",
+      "accepted_reuse": "startup_name_005655f0 already aliases accepted application_instance_check_005655f0 in source/platform/recovered_links.cpp. platform_last_error() in win32_core.cpp and native SetForegroundWindow transport exist; other Win32 calls need exact transport. Accepted instance proof: runs/078-shared-runtime-integration/application-instance/verification.json, typed endpoint only."
+    },
+    {
+      "stage": "module path/CD preflight in startup_cd_relaunch_004a5c30",
+      "original_body_bytes": 231,
+      "frontier_names": [
+        "startup_module_filename",
+        "startup_drive_character_005a2c24",
+        "startup_drive_type",
+        "startup_create_process"
+      ],
+      "original_calls": "004a5c49/4e/4f push 0xff, buffer, 0 -> 004a5c51 CALL [005b2064] GetModuleFileNameA; 004a5c82 PUSH signed first path char -> 004a5c83 CALL 005a2c24; if nonzero, 004a5ca7 CALL [005b2060] GetDriveTypeA; only CD-ROM type 5 invokes 004a5d01 CALL [005b204c] CreateProcessA then exit",
+      "accepted_reuse": "formatter_error_module_name in source/platform/formatter_error_links.cpp already calls GetModuleFileNameA; formatter_text_alpha_005a2c24 in source/recovered/Porsche.exe/formatter_text.cpp is accepted exact same-VA 46-byte body, including original 005e54dc/005e52d0 CRT state. DriveType/CreateProcess still need exact Win32 transport; CD branch cannot be replaced with assumed fixed-drive behavior. Accepted caller proof runs/078-shared-runtime-integration/startup-services/verification.json records endpoints only."
+    },
+    {
+      "stage": "startup_services_004a5410 begins with startup_heap_0059e9d0",
+      "original_body_bytes": 324,
+      "frontier_names": [
+        "application_os_start",
+        "application_lock_create",
+        "application_heap_finish"
+      ],
+      "original_calls": "0059e9d6 CALL 0055f320 with pushed 0; 0059ea1a CALL 005321f0 in 16-lock loop; 0059eafb CALL 005679f0 with three pushed args (third,0,fourth)",
+      "accepted_reuse": "thread_init_0055f320 (131 bytes) in file_threads.cpp and heap_lock_create_005321f0 (81 bytes) in heap_locks.cpp are accepted exact-VAs. application_pool_initialize_005679f0 (247 bytes) in application_pool.cpp is same-VA partial-native-differential provider; int32 cdecl return may be discarded by void caller, but verify shared storage and exact three-arg ABI before alias. Heap startup proof runs/340-heap-context-state/summary.json is bounded to controlled child/OS callbacks."
+    },
+    {
+      "stage": "later in startup_services_004a5410, before render_startup: startup_subsystem_00536e50 then startup_subsystem_00563ad0",
+      "original_body_bytes": {
+        "00536e50": 456,
+        "00563ad0": 251
+      },
+      "frontier_names": [
+        "startup_subsystem_00536e50",
+        "startup_subsystem_00563ad0"
+      ],
+      "original_calls": "004a5483 CALL 00536e50; its body initializes 0069e0a0/0069e098/0069e09c, calls 00572690, accepted 0053a800, 0056e940, vtable methods, 005370c0 and 00537600; later 004a54a4 CALL 00563ad0 with 30,0x2000,0, whose body allocates pool state 006a5bc0/...",
+      "accepted_reuse": "0053a800,00537600,00557380 and 00557460 have accepted same-VA recovered providers; 00572690,0056e940 and 005370c0 do not in the registry. 00536e50/00563ad0 themselves have no accepted provider. 004b6ff0 between them is already recovered as install_paths_load_004b6ff0. This DirectInput/device startup is a substantive pre-display service, not a facade alias."
+    },
+    {
+      "stage": "after FE, render_startup_00467470 -> render_construct_display_004677e0",
+      "original_body_bytes": 1761,
+      "frontier_names_sample": [
+        "render_clock_00555bc0",
+        "render_display_member_00466380",
+        "render_display_driver_ctor_00557100",
+        "render_display_driver_start_vslot1",
+        "render_display_texture_reset_0053c3d0",
+        "render_display_surface_ctor_00538d10"
+      ],
+      "proof_gap": "204-case accepted constructor proof records many typed engine/driver callees; source/render_objects.cpp uses a native vtable bridge, and a real THRASH DLL/visible display has not been launched or compared. This is the first-display barrier after preflight/services, far larger than one binding batch."
+    }
+  ],
+  "recommended_next_subsystem": "Prioritize the substantive DirectInput/device startup at 00536e50 (456 bytes) with its direct child calls/state and the adjacent 00563ad0 pool setup (251 bytes) as the next original subsystem evidence batch; it executes unconditionally in 004a5410 before render_startup and currently has no accepted provider. In parallel planning, close narrow preflight Win32 transports and proven same-VA 005a2c24/0055f320/005321f0 aliases, then audit the partial 005679f0 ABI. Do not equate those cheap links with a first display or stop at another peripheral facade inventory.",
+  "link_vs_runtime": "Run102 CMake links WIN32 host-entry to porsche_original, recovered_links, window_links, win32_window_bindings and platform_win32, with no explicit WHOLEARCHIVE or /OPT override found in its target. The 218-name linker frontier is relocation demand from linked objects, not an execution trace: CD-only startup_create_process, duplicate-instance ShowWindow/FindWindow, later application_audio_shutdown, splash_progress and frame_pump helpers appear despite not being unconditional prerequisites of the first display. The current failed link prevents proving which branches execute. Do not mark any frontier name unreachable for the final game; classify only its position/condition on this startup path.",
+  "milestones": "First linked EXE requires all 218 unresolved names to resolve (or a separately reviewed link strategy) and only proves linkability. First window requires real startup services, render core/display/driver construction and live OS/THRASH resources. Playable menu/game additionally requires FE resources, callbacks, frame/input/audio/game services and visual/original-state comparison; none is established by current build.",
+  "terminology_correction": "00536e50 calls the original DirectInputCreateA thunk0056e940; original import/REA362 corrects the earlier generic DirectDraw label."
+}

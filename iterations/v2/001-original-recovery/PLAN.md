@@ -1,34 +1,38 @@
 # v2 / 001 - original source recovery plan
 
-Current357,2026-10-22: eleven display/procedure bindings accepted.26 native
-comparisons/seven mutations and477-input audit PASS. Fresh188-TU/8-project
-build001:224 names/232 refs,noEXE/game execution. Eleven names/17 refs close,
-none appear. Native357/002, explicit synthetic argument/RET harness boundary.
-Equal-basename COFF objects now use full owner paths; wrong-owner control fails.
-SDK extra_libraries pins libs before compile. Prior runner SHA9c53c111... is
-verified from immutable Git blob0733c15bb343c2043d6e3f642e82bc40b26dccde only
-for that exact tool input; all source/fixture drift stays strict. Negative source
-control fails. No old native rerun for metadata; passed357 source is frozen.
+Current359,2026-10-22: six loader Win32 bindings358 plus five settings/alias
+facades359 accepted.34 native comparisons/12 mutations; final481-input audit
+PASS. Fresh190-TU/8-project build001:213 names/220 refs,noEXE/game execution.
+359 closes5names/6refs after358 closes6names; no new boundary. Native358/008 and
+359/002. All renderer binding worker assignments complete and source frozen.
+Original18 algorithm bodies and33 typed bindings recovered/bound since346;
+linker totals are not a remaining-function estimate or time-to-game forecast.
 
-Active358-render-platform-bindings: worker native proof complete (16 cases/six
-mutations, receipt008), root owns CMake/build/audit/docs. Six exact KERNEL32
-loader boundaries reuse four compiled providers plus direct FreeLibrary and
-DisableThreadLibraryCalls. Fixture redirects/restores only its own EXE IAT;
-actual canonical TUs compiled with extra user32/gdi32 SDK libs. Source/evidence
-at runs/358-render-platform-bindings. No active worker production edit remains.
+Priority: actual startup path to a linked EXE and real display. Evidence360 maps
+hostWinMain->004b6710->004b6a50 and separates conditionalCD/laterframe dependencies
+from runtime order. No WHOLEARCHIVE override; missing symbols still include core
+services that may expand the graph. First linkedEXE,display,playablemenu unproven.
 
-Parallel359 read-only: environment_state_349 checks three settings return facades,
-006bd918 alias-cell calls and window_shutdown display callback. Evidence local/
-experiments/v2-render-settings-bindings-359/evidence.json. Unlock006bd92c naming/
-ownership remains separateHOLD; no Win32 CloseHandle substitution.
+Active361-startup-device-pool: copy_backends_354 owns new source/headers/native
+fixture/config/evidence (gpt-6-sol/high,compact). Root game/audit/docs/REA. Targets
+00536e50 DirectInput setup456B and00563ad0 pool251B, unconditional before rendering.
+Pool can be proved first; device remains explicitHOLD until COM/data/ABI evidence.
+Reuse existing005deac8/cc and accepted children; no guessed GUID/state/zero stubs
+or switch toDirectInput8. REA362/001 six original dossiers auditedPASS. Explorer's
+earlier DirectDraw label is corrected by originalDirectInputCreateA thunk.
+
+Parallel363 read-only startup binding triage: environment_state_349 checks exact
+canonical instance/thread/lock/module/ctype reuse on earliest startup path, with
+no raw PE string VA->hostpointer guesses. Evidence local/experiments/v2-startup-
+bindings-363/evidence.json. Unlock006bd92c remains separateHOLD.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/357-render-display-bindings/acceptance.json.
-Native local/experiments/v2-render-display-bindings-native-357/002/receipt.json; game357/001.
-CPU proof uses empty/default x87 and zero XMM0/1,selected FXSAVE fields; arbitrary
-ambient CPU state/FIP/FDP/invalid spans/concurrent streaming ordering and complete
-dispatcher+backend composition remain in recovery-validation-backlog.md. Fixture
-SFENCE is observation-only; no production fence/EMMS is added to body.
+iterations/v2/001-original-recovery/runs/359-render-settings-bindings/acceptance.json.
+Native local/experiments/v2-render-settings-bindings-native-359/002/receipt.json;
+game359/001. Native runner extra_libraries pinsSDK inputs; prior runnerSHA9c53c111
+is verified only from committedGitblob0733c15bb343c2043d6e3f642e82bc40b26dccde.
+Other source/fixture drift remains strict; no old native rerun for tooling metadata.
+Keep CPU/parser/allocator/OS/DLL/visual/full-game holds in recovery-validation-backlog.
 
 352 state/routing evidence complete; supplemental diagnostic-mono-callback-352
 indexes omitted151B00592ac0 with fullRET/exact original byte equality. REA347/350

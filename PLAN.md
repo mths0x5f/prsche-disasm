@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run357](iterations/v2/001-original-recovery/runs/357-render-display-bindings/README.md):
-188 TUs/8 projects compile;224 unresolved names/232 refs,noEXE. Eleven renderer
-display/procedure bindings pass26 comparisons/seven mutations and477-input audit.
-Next358 binds original loader Win32 APIs; actual DLL/game acceptance stays open.
+Current [Run359](iterations/v2/001-original-recovery/runs/359-render-settings-bindings/README.md):
+190 TUs/8 projects compile;213 unresolved names/220 refs,noEXE. Loader/settings
+batches358/359 pass34 native comparisons/12 mutations; final481-input audit PASS.
+Next361 restores real pre-render device/pool startup; ordered path is in360.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),

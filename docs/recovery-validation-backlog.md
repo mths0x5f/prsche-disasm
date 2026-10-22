@@ -1,5 +1,14 @@
 # Отложенные проверки восстановления v2
 
+Runs358/359 bind six Win32 loader and five settings/alias facades after34 native
+comparisons/12 mutations. Tests redirect only their own EXE IAT and restore it;
+no real DLL/display acceptance. Alias cell2 is read live, independently of cell27.
+Unlock006bd92c token provenance remains open. Startup360 identifies unconditional
+DirectInput00536e50 and pool00563ad0 before rendering; linked EXE, first display
+and playable menu remain separate, unachieved milestones.361 must prove original
+state/COM/pool behavior; no guessed services or device globals.
+
+
 Run357 adds11 renderer transports after26 comparisons/seven mutations. Original
 CALL excerpts plus synthetic argument/RET setup prove selected ABI, not runtime
 renderer behavior. Settings/alias/unlock cases remain separate. Full COFF paths

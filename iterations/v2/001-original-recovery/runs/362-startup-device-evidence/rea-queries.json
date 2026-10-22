@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-startup-device-362-rea",
+  "queries": [
+    {
+      "label": "device-setup",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00536e50"
+      }
+    },
+    {
+      "label": "pool-setup",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00563ad0"
+      }
+    },
+    {
+      "label": "device-child",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00572690"
+      }
+    },
+    {
+      "label": "pool-child",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x0056e940"
+      }
+    },
+    {
+      "label": "display-child",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005370c0"
+      }
+    },
+    {
+      "label": "startup-services",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x004a5410"
+      }
+    }
+  ]
+}

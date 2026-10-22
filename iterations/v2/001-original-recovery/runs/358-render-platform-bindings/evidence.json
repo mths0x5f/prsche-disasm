@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "index_query": "research/binary-index/README.md and research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/symbols.jsonl for six KERNEL32 IAT labels; checked calls and argument order at 00574ff3..0057503f and 00575494..00575524 in research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm",
+    "iat": {"LoadLibraryA": "005b2050", "GetProcAddress": "005b205c", "FreeLibrary": "005b2088", "GetModuleHandleA": "005b2138", "DisableThreadLibraryCalls": "005b21b4", "GetLastError": "005b213c"},
+    "callsite_instructions": ["00575001", "0057503f", "005754e5", "00575499", "005754a4", "00575524"],
+    "register_load_instructions": ["00574ff3 MOV ESI,[005b2050]", "00575033 MOV ESI,[005b205c]"],
+    "behavior": "The original loader calls LoadLibraryA, GetProcAddress, GetModuleHandleA, FreeLibrary and DisableThreadLibraryCalls with x86 stdcall argument order. BOOL from the latter two is unused at selected callsites. GetLastError is called after load failure and its DWORD is consumed."
+  },
+  "production": {
+    "source": "iterations/v2/001-original-recovery/runs/358-render-platform-bindings/render_binding.cpp",
+    "compiled_existing_providers": [
+      {"source": "iterations/v2/001-original-recovery/source/platform/formatter_error_links.cpp", "sha256": "b6a4c66d756df5bc43bfe7c368c581c6b5036478cf195ab1bd07efca5bfefced", "provides": ["formatter_dialog_load_library", "formatter_dialog_get_proc_address"]},
+      {"source": "iterations/v2/001-original-recovery/source/platform/win32_window.cpp", "sha256": "e878e3d1148eb0e6bc2abcbcf1ae0b393702af478c5fe6b26e101fbdc561b24e", "provides": ["window_module_handle"]},
+      {"source": "iterations/v2/001-original-recovery/source/platform/win32_core.cpp", "sha256": "61be87c1064eae5221fd5d5e75d84daf901f1c34400c245da11a960f289ef143", "provides": ["platform_last_error"]}
+    ],
+    "prior_game_build_with_existing_providers": "iterations/v2/001-original-recovery/runs/356-render-bindings/build-001.json",
+    "direct_import_coff": "local/experiments/v2-render-platform-bindings-native-358/008/od-0.obj: dumpbin /symbols reports UNDEF __imp__FreeLibrary@4 and __imp__DisableThreadLibraryCalls@4. These resolve through the SDK kernel32.lib, matching the original IAT API identity.",
+    "binding": "Four render_win adapters forward to existing compiled providers without altering raw 32-bit pointer/handle/result bits. Two adapters call the exact Win32 APIs directly and discard only unused BOOL results. No new renderer state, loader policy, error value, or handle cache."
+  },
+  "native_proof": {
+    "receipt": "local/experiments/v2-render-platform-bindings-native-358/008/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 8,
+    "mutations_detected": 6,
+    "compared": "SHA-pinned original PE IAT call instructions and ESI loads versus six compiled C++ adapters plus the actual three provider translation units. Checked callback API identity, raw 32-bit arguments and returned handles/procedure/error values, x86 cdecl boundary cleanup with stdcall endpoint cleanup, nonvolatile registers, and failed-load then immediate GetLastError event order.",
+    "harness_construction": "The PE bytes are callsite excerpts, not full loader bodies. Fixture code adds argument pushes and RET, patches original IAT operands or ESI load operands to controlled stdcall endpoints, redirects the native test EXE's six KERNEL32 IAT cells to those same endpoints, then restores the cells before exit. No real DLL load or handle release is performed by the controlled native comparison."
+  },
+  "hold": "Full THRASH DLL behavior, OS display effects, and game visual acceptance remain outside this platform transport proof."
+}
