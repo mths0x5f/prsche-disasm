@@ -1,10 +1,13 @@
 # v2 / 001 - original source recovery plan
 
-Current361,2026-10-22: original00536e50(456B) and00563ad0(251B) integrated.
-Pool004/device005 pass138 comparisons/nine mutations; shared488-input audit PASS.
-Fresh build001 compiles193 TUs/8 projects:215 names/222 refs,noEXE/game execution.
-Two names close; ten hidden dependencies exposed. No native fixture/stub in game.
-Passed batch source frozen. Both worker assignments complete; root owns intake364.
+Current364,2026-10-22: original cleanup00537070/mode005370c0/cursor005727c0
+integrated (737B). Native003 passes62 comparisons/three mutations;491-input audit
+PASS. Fresh build001 compiles194TUs/8 projects:215names/222refs,noEXE. Two names
+close; renderer snapshot00570ed0/00570f00 exposed.361/364 source frozen.
+Root owns integration; frame_init_366(gpt-6.1-sol/high) owns only new366 sources/
+native proof and supplemental callback index. No other active worker assignment.
+Default model:6.1Sol for coordination/workers, Astra only for a specific blocker
+after two unsuccessful same-hypothesis attempts (user choice2026-10-22).
 
 Repo skill .agents/skills/porsche-recovery/SKILL.md validated and pushed4e9f2b4.
 Project-local ignored .codex/rules/porsche-recovery.rules allows five shared script
@@ -14,15 +17,14 @@ new tooling only when necessary and immediately eliminates repeated work.
 
 Work order: finish one actual startup chain, prioritizing the first unconditional
 blocker, including state/callbacks. Do not select batches by net symbol count.
-Root next: frame00572690 callback index/ownership gap;364 already passes three
-mouse child bodies00537070/005370c0/005727c0 (62 native comparisons/3 mutations),
-ready for review/intake without rerunning unchanged proof. Existing362 dossiers
-reused;365 obtained cleanup/cursor dossiers then failed on unrecognized00572640.
-365 is partial navigation, not auditedPASS; no second cold session for recognition.
-Inspect existing assembly/raw PE bytes at00572640/70/80 and supplement the index.
-Frame callback cells005debe0/e4/e8 and006a644c need actual ownership/ABI proof.
-364 reuses render_driver_calls/render_event_route/361 state and preserves raw
-mode initializers4/2/1; cursor snapshot helpers00570ed0/00570f00 remain extern.
+Current first startup blocker: frame00572690, plus callbacks00572640/70/80.
+366 reuses existing canonical bounds/limits/gate and364 cursor state. Native
+callbackcells use explicit host-address transport; unproven consumers remainHOLD.
+Existing assembly contains complete callbacks despite missing function-index entries.
+Raw PE relocation scan also finds omitted6B JMP[005debe8] at005727b0; supplement
+index with exact raw-byte equality. No second coldREA session for recognition.
+365 partial navigation obtained cleanup/cursor dossiers, then unrecognized00572640
+failed; no whole-sessionPASS. Snapshot00570ed0/00570f00 next afterframe/callbacks.
 
 361 review fixed draft swapped GUIDs: raw005bf9a0 CreateDevice vs005bf8c0 QI.
 Native pins axisGUIDs/objecttable/format/fullstrings before relocation; initialBSS
@@ -32,8 +34,8 @@ successful ScreenToClient still exposes opaque y and remains HOLD. Real COM/OS,
 allocator failure, concurrency and full startup/display/menu remain unachieved.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/361-startup-device-pool/acceptance.json.
-Native pool004/device005; game361/001. Reuse unchanged proof; build/audit once per
+iterations/v2/001-original-recovery/runs/364-mouse-startup-children/acceptance.json.
+Native364/003; game364/001. Reuse unchanged proof; build/audit once per
 ready batch. Configure/build through shared build-v2-game-batch.py with361 config.
 
 363 evidence records six original callsites and reused078/169 proof. Module name/

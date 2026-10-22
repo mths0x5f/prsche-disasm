@@ -1,0 +1,25 @@
+{
+  "run": 364,
+  "experiment": "local/experiments/v2-mouse-startup-children-native-364",
+  "timeout_seconds": 180,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/native-fixture.cpp.in",
+  "include_dirs": ["iterations/v2/001-original-recovery/runs/364-mouse-startup-children", "iterations/v2/001-original-recovery/source/include"],
+  "headers": ["iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.hpp", "iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.hpp"],
+  "original_bodies": [
+    {"token":"@CLEANUP@","va":"00537070","bytes":62,"sha256":"7e1f125172a79ba26a22bcab69dba7d8446390d9a1d15543cdb08943bad298b5"},
+    {"token":"@MODE@","va":"005370c0","bytes":446,"sha256":"d779581b20df2d6364634783aa026d83491817be104c7cab23c86e2800d54bb2"},
+    {"token":"@CURSOR@","va":"005727c0","bytes":229,"sha256":"c0fb036c15a61d56bf85fb2a7fc77831aa7b47b6100aad9fa14edce2517fe582"},
+    {"token":"@JUMP_TABLE@","va":"00537280","bytes":28,"sha256":"643acdb810e5d90f934cc8205a96f3b63e3bdb14d64a92ae552e10c880c8f295"},
+    {"token":"@MODE_DATA@","va":"005de758","bytes":12,"sha256":"fee8740799a9a7e10cd5a11952494945fcc1b65d615282c6fec859ea9fbef628"},
+    {"token":"@CURSOR_DATA@","va":"005deab0","bytes":8,"sha256":"af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"}
+  ],
+  "pass_marker": "mouse_startup_children_original_vs_cpp=PASS",
+  "mutations": [
+    {"name":"cleanup-order","source":"iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp","old":"if (startup_mouse_device_0069e09c) {\n        slot<Unary>(startup_mouse_device_0069e09c,8)(startup_mouse_device_0069e09c);","new":"if (startup_mouse_device_0069e09c) {\n        slot<Unary>(startup_mouse_device_0069e09c,2)(startup_mouse_device_0069e09c);","expected_exit":1,"failure_marker":"divergence"},
+    {"name":"mode-flags","source":"iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp","old":"const std::uint32_t flags=(value==5 ? 5u : 6u);","new":"const std::uint32_t flags=(value==5 ? 6u : 5u);","expected_exit":1,"failure_marker":"divergence"},
+    {"name":"cursor-upper","source":"iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp","old":"if (x>=right) x=right;","new":"if (x>=right) x=right+1;","expected_exit":1,"failure_marker":"divergence"}
+  ]
+}

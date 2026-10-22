@@ -1,5 +1,10 @@
 # Отложенные проверки восстановления v2
 
+Run364 restores mouse cleanup/mode/cursor (62 comparisons/three mutations).
+Live COM, snapshot00570ed0/00570f00 composition, thread transitions/concurrency
+and game/display remain HOLD. Initial mode words are4/2/1. Frame366 must index
+omitted callbacks and005727b0 jump and prove actual callback-cell transports.
+
 Run361 integrates original mouse/pool startup after138 comparisons/nine mutations.
 Original GUID/format data and BSS are checked before oracle relocation/reset;
 known property-success/cursor.x overlap preserved. Failed GetCursorPos followed

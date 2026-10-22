@@ -9995,6 +9995,60 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/361-startup-device-pool/validation.json",
       "verification_boundary": "Original 251B with initial BSS, full raw PE strings, ordered child calls and arena bytes checked. Allocator supplies bounded valid arena; zero/negative counts retain original unsafe/wrapping arithmetic. Real allocator failure/concurrency/scheduler composition remains HOLD."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00537070",
+      "source": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed DirectInput COM stdcall edges",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/validation.json",
+      "verification_boundary": "Bounded original COM order, mode branches, diagnostics and signed cursor clamps; raw initial data4/2/1/0/0 verified. Controlled COM/thread/snapshot/window endpoints; live DirectInput, snapshot composition, concurrency and game acceptance remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005370c0",
+      "source": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed DirectInput COM stdcall edges",
+      "recovered_dependencies": [
+        "00557460",
+        "005727c0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/validation.json",
+      "verification_boundary": "Bounded original COM order, mode branches, diagnostics and signed cursor clamps; raw initial data4/2/1/0/0 verified. Controlled COM/thread/snapshot/window endpoints; live DirectInput, snapshot composition, concurrency and game acceptance remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005727c0",
+      "source": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; typed DirectInput COM stdcall edges",
+      "recovered_dependencies": [
+        "0055f780",
+        "00534550",
+        "005322b0",
+        "005322c0",
+        "0053a970"
+      ],
+      "unrecovered_dependencies": [
+        "00570ed0",
+        "00570f00"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/validation.json",
+      "verification_boundary": "Bounded original COM order, mode branches, diagnostics and signed cursor clamps; raw initial data4/2/1/0/0 verified. Controlled COM/thread/snapshot/window endpoints; live DirectInput, snapshot composition, concurrency and game acceptance remain open."
     }
   ]
 }
