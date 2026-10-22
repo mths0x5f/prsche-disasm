@@ -1,20 +1,27 @@
 # v2 / 001 - original source recovery plan
 
-Current353,2026-10-22: seven mono/XY/format/output bodies909B restored.88
-native comparisons/nine mutations and470-input audit PASS. Fresh185-TU/8-project
-build001:247 names/262 refs,noEXE/game execution. One name closes,none appear.
-Native353/003 corrects signed IDIV cursor math; initial14-byte/BSS checks precede
-fixture overrides. Actual formatter entry owner136 reused unchanged.353 agent
-complete; no unfinished production edits in that batch. Earlier353/001/002 are
-historical. Detailed evidence/commands: runs/353-diagnostic-mono/README.md.
+Current354,2026-10-22: three original copy backends1015 indexed codebytes restored.
+82944 native comparisons/9455616 checks,six mutations and473-input audit PASS.
+Fresh186-TU/8-project build001:244 names/259 refs,noEXE/game execution. Three names
+close,none appear. Native354/008; REA355/001 five dossiers; actual native/game COFF
+instruction counts match and preserve MMX/SSE cleanup/fence boundaries. Copy agent
+complete,passed354 fixed. Earlier007 omitted mutation controls and is historical.
+Prior353 seven mono bodies909B,88 comparisons/nine mutations,470-pin audit PASS.
 
-Parallel354-copy-backends: copy_backends_354 owns three original optimized-copy
-sources/native proof (gpt-6-sol/high,compact). Root integration after353. Triage
-local/experiments/v2-copy-backends-354/evidence.json; REA355/001 five dossiers PASS.
-Three no-callee backends total1015 indexed codebytes:005b0100 x87,005b02c0 MMX,
-005b0480 SSE. Preserve load/store ordering,alignment/threshold/overlap and CPU
-state. x87 hardware helper approach requires explicit evidence; no memcpy/memmove
-substitute. MMX dispatcher EMMS and SSE no-SFENCE boundaries stay visible.
+Active356 read-only render binding triage: environment_state_349 owns only local/
+experiments/v2-render-bindings-356/evidence.json (gpt-6-sol/medium,compact). Root
+owns next production scope/acceptance. Existing render_thrash_exports006bd910[43]
+is canonical; inspect original callsite and export ABI before any wrapper. About
+@0 versus generated one-arg declarations is a known concern; no same-VA guess.
+No active production edits or copy/mono assignments remain.
+
+Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/354-copy-backends/acceptance.json.
+Native local/experiments/v2-copy-backends-native-354/008/receipt.json; game354/001.
+CPU proof uses empty/default x87 and zero XMM0/1,selected FXSAVE fields; arbitrary
+ambient CPU state/FIP/FDP/invalid spans/concurrent streaming ordering and complete
+dispatcher+backend composition remain in recovery-validation-backlog.md. Fixture
+SFENCE is observation-only; no production fence/EMMS is added to body.
 
 352 state/routing evidence complete; supplemental diagnostic-mono-callback-352
 indexes omitted151B00592ac0 with fullRET/exact original byte equality. REA347/350

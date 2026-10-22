@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Run354 restores three original x87/MMX/SSE copy backends after82944 comparisons/
+six mutations. Bounds cover sizes0..257,32 alignments and both overlap directions.
+CPU checks use EMMS/FNINIT and zero XMM0/1; arbitrary ambient stack/control/XMM
+state, FIP/FDP equality, invalid spans, full dispatcher/backend composition and
+concurrent streaming visibility remain unaccepted. The fixture observes memory
+after SFENCE; production preserves no-fence SSE and dispatcher-only MMX EMMS.
+
+
 Run353 restores seven mono functions and exact initial state after88 comparisons/
 nine mutations. Signed tab/newline state now includes negative cursors; negative
 glyph writes,row>24 and output>=256 remain unsafe/unaccepted. Original0xb0000

@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run353](iterations/v2/001-original-recovery/runs/353-diagnostic-mono/README.md):
-185 TUs/8 projects compile;247 unresolved names/262 refs,noEXE. Seven original
-mono functions pass88 comparisons/nine mutations and470-input audit. Enabled
-0xb0000 display access remains HOLD. Next354: original optimized copy backends.
+Current [Run354](iterations/v2/001-original-recovery/runs/354-copy-backends/README.md):
+186 TUs/8 projects compile;244 unresolved names/259 refs,noEXE. Three original
+copy backends pass82944 comparisons/six mutations and473-input audit. Next356
+checks render export-table bindings; CPU/OS/full-game holds remain explicit.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

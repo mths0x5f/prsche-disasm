@@ -9907,6 +9907,48 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/summary.json",
       "verification_boundary": "Bounded original mono data/framebuffer/ordered child calls and signed cursor state. Actual0xb0000 display mapping, invalid framebuffer spans, format overflow and arbitrary opaque descriptor tail remain HOLD."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005b0100",
+      "source": "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; advanced EAX, stack/nonvolatile and selected FXSAVE fields checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/354-copy-backends/summary.json",
+      "verification_boundary": "32 alignments, sizes0..257 around thresholds and forward chunk overlap; empty/default x87 and zero XMM0/1 initial state. FIP/FDP equality, arbitrary ambient state, invalid spans and concurrent streaming visibility remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005b02c0",
+      "source": "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; advanced EAX, stack/nonvolatile and selected FXSAVE fields checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/354-copy-backends/summary.json",
+      "verification_boundary": "32 alignments, sizes0..257 around thresholds and forward chunk overlap; empty/default x87 and zero XMM0/1 initial state. FIP/FDP equality, arbitrary ambient state, invalid spans and concurrent streaming visibility remain unverified."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005b0480",
+      "source": "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; advanced EAX, stack/nonvolatile and selected FXSAVE fields checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/354-copy-backends/summary.json",
+      "verification_boundary": "32 alignments, sizes0..257 around thresholds and forward chunk overlap; empty/default x87 and zero XMM0/1 initial state. FIP/FDP equality, arbitrary ambient state, invalid spans and concurrent streaming visibility remain unverified."
     }
   ]
 }
