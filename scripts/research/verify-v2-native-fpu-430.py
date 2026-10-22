@@ -141,7 +141,6 @@ HARNESS = r'''
 #include "machine257.h"
 #define INTSET %INTSET%
 #define STRINGSET %STRINGSET%
-#define ISLANDSET %ISLANDSET%
 void dispatch257(Machine257& s, U target) { s.stop = Stop257::BadReturn; (void)target; }
 void unlowered430(Machine257& s) { s.stop = Stop257::BadReturn; }
 %DECLS%
@@ -258,7 +257,6 @@ int main(int argc, char** argv) {
             for (int r = 0; r < 8; ++r) r_in[r] = rnd();
             r_in[6] = (U)(buf + 64); r_in[3] = r_in_fix ? 0u : rnd() % 64; if (INTSET) r_in[7] = (U)(buf + 256);
             if (!strncmp(frags[f].name, "bt", 2)) r_in[0] = rnd() % 1024;   // bit strings stay inside the buffer
-            if (ISLANDSET) r_in[0] = (U)(buf + 64 + (rnd() % 32) * 4);
             if (STRINGSET) { r_in[1] = rnd() % 16; r_in[6] = (U)(buf + 192); r_in[7] = (U)(buf + 320); }
             flags_in = rnd() & 0x8d5;
             if (STRINGSET) flags_in |= (rnd() & 1u) << 10;         // DF
@@ -301,14 +299,11 @@ int main(int argc, char** argv) {
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--cases', type=int, default=300)
-    ap.add_argument('--set', choices=('fpu', 'int', 'sse', 'branch', 'string', 'island'), default='fpu')
+    ap.add_argument('--set', choices=('fpu', 'int', 'sse', 'branch', 'string'), default='fpu')
     ap.add_argument('--mutate', choices=sorted(MUTANTS), help='negative control: a deliberately wrong lowering')
     args = ap.parse_args()
     b = load_build()
-    if args.set == 'island':
-        data = (ROOT / 'local/game/Porsche.exe').read_bytes()
-        form_list = {(f'island{lo:08x}', ()): data[lo - 0x400000:hi - 0x400000] for lo, (hi, _) in b.NATIVE_ISLANDS.items()}
-    elif args.set == 'branch':
+    if args.set == 'branch':
         # jcc rel8 over 'mov eax,1; ret' to 'mov eax,2': every condition code 70..7f.
         form_list = {(f'jcc{op:02x}', ()): bytes([op, 0x06]) + bytes.fromhex('b801000000c3b802000000')
                      for op in range(0x70, 0x80)}
@@ -331,19 +326,15 @@ def main():
     decls, frags, bodies, names, untranslated = [], [], [], [], []
     for (m, kinds), raw in sorted(form_list.items()):
         for mode in (0, 1):
-            code = reencode(raw, mode) if args.set not in ('branch', 'string', 'island') else (raw if mode == 0 else None)
+            code = reencode(raw, mode) if args.set not in ('branch', 'string') else (raw if mode == 0 else None)
             if code is None:
                 continue
             decoded = list(md.disasm(code, 0))
-            if args.set not in ('branch', 'string', 'island') and (len(decoded) != 1 or decoded[0].size != len(code)):
+            if args.set not in ('branch', 'string') and (len(decoded) != 1 or decoded[0].size != len(code)):
                 untranslated.append(f'{m} {kinds}: re-encoding not decodable')
                 continue
             frag = code + b'\xc3'
             va = 0x10000000 + 0x100 * len(frags)
-            if args.set == 'island':
-                va = int(m[6:], 16)
-                b.NATIVE_ISLANDS = {va: (va + len(code), '')}
-                translate, _ = b.backend()
             try:
                 low, _ = translate(frag, va)
             except ValueError as e:
@@ -363,7 +354,7 @@ def main():
         frag_arrays.append(f'static const unsigned char code{k}[] = {{{arr}}};')
     table = 'static const Frag frags[] = {\n' + ',\n'.join(
         f.split('(const unsigned char[])', 1)[0] + f'code{k}, ' + f.split('}, ', 1)[1] for k, f in enumerate(frags)) + '\n};'
-    src = HARNESS.replace('%ISLANDSET%', '1' if args.set == 'island' else '0').replace('%STRINGSET%', '1' if args.set == 'string' else '0').replace('%INTSET%', '1' if args.set in ('int', 'string') else '0').replace('%DECLS%', '\n'.join(decls)).replace('%FRAGS%', '\n'.join(frag_arrays) + '\n' + table)
+    src = HARNESS.replace('%STRINGSET%', '1' if args.set == 'string' else '0').replace('%INTSET%', '1' if args.set in ('int', 'string') else '0').replace('%DECLS%', '\n'.join(decls)).replace('%FRAGS%', '\n'.join(frag_arrays) + '\n' + table)
     (WORK / 'harness.cpp').write_text(src, encoding='utf-8')
     (WORK / 'fragments.cpp').write_text('#include "machine257.h"\n' + '\n'.join(bodies), encoding='utf-8')
     cl, link, env = b.toolchain()
@@ -386,8 +377,7 @@ def main():
         print(json.dumps(dict(mutant=args.mutate, failed_forms=len(summary['failed']))))
         return
     (RUN / {'fpu': 'native-fpu-oracle.json', 'int': 'integer-oracle.json', 'sse': 'sse-oracle.json',
-           'branch': 'branch-oracle.json', 'string': 'string-oracle.json',
-           'island': 'island-oracle.json'}[args.set]).write_text(json.dumps(dict(summary, results=results), indent=1) + '\n', encoding='utf-8')
+           'branch': 'branch-oracle.json', 'string': 'string-oracle.json'}[args.set]).write_text(json.dumps(dict(summary, results=results), indent=1) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in summary.items() if k != 'failed'}, indent=1))
     for f in summary['failed'][:40]:
         print('FAIL', f)

@@ -424,27 +424,18 @@ Controles negativos: um emissor propositalmente errado tem de reprovar. Endereç
 - As flags de `div`/`idiv` ficam inalteradas, igual à CPU-alvo; uma CPU de 2000 poderia
   deixar outros valores nessas flags indefinidas.
 
-### Corrida em `STREAM_get` resolvida: ilha nativa (2026-10-21)
+### Corrida em `STREAM_get`: diagnóstico (2026-10-21)
 
-O `volatile` não bastava. Com 20 execuções seguidas o rebaixado ainda falhava em 4
-(`pc=0056c597`, `ebx=ffffffff`), e o original no mesmo host passava as 20. O despejo da memória no
-momento da falha (o `fatal` agora mostra a memória apontada por cada registrador e a pilha)
-mostrou a contagem da tap igual a `0x344`, que é o tamanho do **primeiro bloco** do vídeo, e a
-cabeça igual a `-1`. O `STREAM_create` não inicializa a cabeça. O produtor (`0056bf24`) publica
-o bloco gravando primeiro a contagem e depois a cabeça, enquanto o `STREAM_get` lê as duas sem a
-trava.
+O `volatile` não bastava: com 20 execuções seguidas, o rebaixado falhou em 4
+(`pc=0056c597`, `ebx=ffffffff`), e o original passou as 20. Despejo da memória no momento da
+falha: a contagem da tap era `0x344`, o tamanho do primeiro bloco do vídeo, e a cabeça era `-1`.
+O `STREAM_create` não inicializa a cabeça. O produtor (`0056bf24`) publica o bloco gravando
+primeiro a contagem e depois a cabeça, enquanto o `STREAM_get` lê as duas sem a trava.
 
-**A corrida é do jogo original.** No original, a janela entre as duas gravações tem ~1 ns. No
-rebaixado, cada instrução passa por `step257` e cálculo de flags, e a janela fica grande o
-bastante para o leitor cair nela.
-
-**Correção: ilhas nativas** (`NATIVE_ISLANDS` no gerador). Trechos curtos de instruções
-originais rodam como elas mesmas na CPU, com os registradores e as flags do jogo; cada trecho
-tem a sua justificativa. A única ilha é `0056bf24..0056bf30`
-(`mov ecx,edx; mov [eax+8],edx; cmp ecx,ebp; jne; mov [eax+0xc],edi`). Prova:
-- oráculo `verify-v2-native-fpu-430.py --set island`: 20.000 casos e 0 diferenças; o controle
-  negativo (flags não devolvidas) reprova;
-- jogo: 30 de 30 execuções sem falha (antes, 4 falhas em 20).
+A corrida é do jogo original. No original, a janela entre as duas gravações é de ~1 ns; o
+código rebaixado é lento o bastante para o leitor cair nela. Uma "ilha" em assembly foi tentada
+e **removida por decisão do usuário**: a correção deve vir do código humanizado de `stream.c`,
+e não de assembly. **Continua em aberto.**
 
 ## Próximos passos
 
@@ -458,7 +449,7 @@ tem a sua justificativa. A única ilha é `0056bf24..0056bf30`
 4. Com o jogo rodando, começar a humanizar: trocar `translated_XXXXXXXX` por funções
    legíveis, uma por vez, comparando estado/memória com a versão rebaixada (os 482 corpos
    já recuperados na main entram primeiro).
-5. ~~Corrida intermitente em `STREAM_get`~~: resolvida com a ilha nativa `0056bf24` (acima).
+5. Corrida em `STREAM_get` (diagnóstico acima): resolver no código humanizado de `stream.c`.
 
 6. Decisão do usuário (2026-10-21): as DLLs que acrescentam funcionalidade exclusiva ao jogo
    também serão decompiladas e viram código, a partir dos binários **originais**:
