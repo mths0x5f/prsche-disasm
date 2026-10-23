@@ -30,7 +30,8 @@ EA_EVIDENCE = ('gimme-bytes', 'gimme-vtable', 'self-message')
 RECOVERED_GRAPHS = ('iterations/v2/001-original-recovery/runs/429-unified-game-integration/build-004.json',
                     'iterations/v2/001-original-recovery/runs/324-input-modes-game-integration/build-001.json',
                     'iterations/v2/001-original-recovery/runs/332-resource-chain-game-integration/build-001.json',
-                    'iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/build-001.json')
+                    'iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/build-001.json',
+                    'iterations/v2/001-original-recovery/runs/384-startup-render-integration/build-002.json')
 RUN = ROOT / 'iterations/v2/001-original-recovery/runs/430-lowered-whole-game'
 PATH_RE = re.compile(r'[A-Za-z0-9_:.\\/-]*\\[A-Za-z0-9_.\\/-]+\.(?:c|cpp|h|asm)$')
 
@@ -371,6 +372,18 @@ def main():
             for name, va in defined_functions(path.read_text(encoding='utf-8', errors='replace')):
                 if va in entries:
                     recovered[va].add(name)
+    # The canonical ownership registry (source/recovered/functions.json) also lists recovered
+    # entries outside the catalog (interior entries, pieces the build lowers as synthetic
+    # functions). Each takes the one name its own source defines at that address.
+    registry = json.loads((ROOT / 'iterations/v2/001-original-recovery/source/recovered/functions.json')
+                          .read_text(encoding='utf-8'))['functions']
+    for r in registry:
+        va, path = r['entry_va'], ROOT / r['source']
+        if va in recovered or r.get('sha256') != PE_SHA or not path.exists():
+            continue
+        defined = {n for n, v in defined_functions(path.read_text(encoding="utf-8", errors="replace")) if v == va}
+        if len(defined) == 1:
+            recovered[va] |= defined
     recovered_conflicts = sum(1 for ns in recovered.values() if len(ns) > 1)
     # Name precedence (user rule 2026-10-21): a name EA itself wrote down (gimme.dll debug
     # objects, the function's own diagnostic prefix) is final. Hand-recovery names rank next and
