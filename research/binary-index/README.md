@@ -1,5 +1,10 @@
 # Индекс оригинальных бинарников
 
+Run368: [mouse-callbacks-368.jsonl](supplemental/mouse-callbacks-368.jsonl) adds
+omitted00537020 completeRET24 and005370b0 exit against SHA-checked raw PE bytes.
+Native callback/typed-window ABI and exact wheel arithmetic are accepted in
+[Run370](../../iterations/v2/001-original-recovery/runs/370-input-startup-integration/README.md).
+
 Run366: [frame-callbacks-366.jsonl](supplemental/frame-callbacks-366.jsonl) indexes
 three omitted complete callbacks00572640/70/80 and raw6B JMP[005debe8]005727b0.
 All indexed bytes equal the SHA-checked PE. Native proof/counts and limits are in

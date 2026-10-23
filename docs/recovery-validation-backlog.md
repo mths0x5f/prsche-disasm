@@ -1,5 +1,14 @@
 # Отложенные проверки восстановления v2
 
+Run370 closes exact input transports, typed wheel/exit callbacks and originalsort.
+Native923322 comparisons/14mutations plus500-input game audit PASS. Originalnamed
+DINPUT export/library loads in isolated probes; no device function executes there.
+Legacy callback ABI issue is resolved by proved address-only alias tostdcall;
+existing361/364 source unchanged. Sort invalid spans/inconsistent callbacks and
+stack capacity outside bounded valid cases remain open. Next snapshot371 must
+reuse fragmented state owners, preserve block order/actualargument and explicitly
+bound unknown aliases; real OS/COM/concurrency/fullstartup/display still HOLD.
+
 Run366 accepts original frameinit/three callbacks (120 comparisons/four mutations).
 Cell defaults relocate canonical005367b0; raw reader005727b0 is oracle/navigation
 only. Missing e0/e4 consumers, actual reader execution, computed aliases and

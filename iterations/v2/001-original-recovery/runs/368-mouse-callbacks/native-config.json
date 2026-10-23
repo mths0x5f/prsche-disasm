@@ -1,0 +1,75 @@
+{
+  "run": 368,
+  "experiment": "local/experiments/v2-mouse-callbacks-native-368",
+  "timeout_seconds": 180,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+    "iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_device.cpp",
+    "iterations/v2/001-original-recovery/runs/364-mouse-startup-children/startup_mouse_children.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/368-mouse-callbacks",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.hpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@WHEEL@",
+      "va": "00537020",
+      "bytes": 67,
+      "sha256": "190674018863e405db58838002e7137f5686f54378a1e86b9aac3fac530a90b9"
+    },
+    {
+      "token": "@EXIT@",
+      "va": "005370b0",
+      "bytes": 16,
+      "sha256": "67508fe77ff5ca07e58b49182d7c3ce7de7dd3435c77559df65d2b78136b41e7"
+    },
+    {
+      "token": "@CLEANUP@",
+      "va": "00537070",
+      "bytes": 62,
+      "sha256": "7e1f125172a79ba26a22bcab69dba7d8446390d9a1d15543cdb08943bad298b5"
+    }
+  ],
+  "pass_marker": "mouse_callbacks_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "wheel-gate",
+      "source": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+      "old": "if (active && window_hwnd_006b7bf8==window)",
+      "new": "if (window_hwnd_006b7bf8==window)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "wheel-divisor",
+      "source": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+      "old": "delta/120",
+      "new": "delta/119",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "wheel-signed-high",
+      "source": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+      "old": "(high>=0x8000 ? high-0x10000 : high)",
+      "new": "high",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "exit-reset-order",
+      "source": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+      "old": "startup_directinput_cleanup_00537070();\n    startup_mouse_initialized_0069e0a0=0;",
+      "new": "startup_mouse_initialized_0069e0a0=0;\n    startup_directinput_cleanup_00537070();",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    }
+  ]
+}

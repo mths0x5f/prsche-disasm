@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "native_receipt": "local/experiments/v2-mouse-callbacks-native-368/002/receipt.json",
+  "native_receipt_sha256": "e814c58953c62b9e9901a0939be51e5664dd9e39f0ebd4b7e8c3b5f0f07392d2",
+  "legacy": "?startup_mouse_callback_00537020@porsche@@YAIIIIIII@Z",
+  "canonical": "?startup_mouse_window_handler_00537020@porsche@@YGIPAX0IIHPAH@Z",
+  "contract": "Legacy361 symbol is UNDEF and DIR32 address relocation only. No cdecl provider body. New object defines stdcall canonical provider and /alternatename. Fixture runs actual361 registration, tests legacy=registered=canonical address identity, invokes through WindowHandler signature and separately checks RET24/ESP/nonvolatile/EAX.",
+  "records": [
+    {
+      "object": "local/experiments/v2-mouse-callbacks-native-368/002/od-0.obj",
+      "object_sha256": "0d09a5078e1c412ee64aa328ebf18c4dba28310ba3094dc444269b5fb29fc19e",
+      "dump": "local/experiments/v2-mouse-callbacks-native-368/coff-002/od-0-coff.txt",
+      "dump_sha256": "5643cd77feee6eb708fda81339cdd369af08934f6373107c7f80c8a4d8ba6624"
+    },
+    {
+      "object": "local/experiments/v2-mouse-callbacks-native-368/002/od-1.obj",
+      "object_sha256": "ea1f0081d1c2a31571c7afb03384cce03bfa91acf95452d747c5f29c73001051",
+      "dump": "local/experiments/v2-mouse-callbacks-native-368/coff-002/od-1-coff.txt",
+      "dump_sha256": "eb743a32f3c26590ddd302c0d87ab683bd7178fb89ef64facf2351028713e47c"
+    },
+    {
+      "variant": "od",
+      "map": "local/experiments/v2-mouse-callbacks-native-368/coff-002/od-identity.map",
+      "map_sha256": "cbe0140dcaa61527c662fda4293afb0afbfb972c68e3718f9fd2d79d26876a63",
+      "symbols": [
+        " 0001:00000020       ?startup_mouse_callback_00537020@porsche@@YAIIIIIII@Z 00401020 f   od-0.obj",
+        " 0001:00000020       ?startup_mouse_window_handler_00537020@porsche@@YGIPAX0IIHPAH@Z 00401020 f   od-0.obj"
+      ]
+    },
+    {
+      "object": "local/experiments/v2-mouse-callbacks-native-368/002/o2-0.obj",
+      "object_sha256": "abb7c37bbba04b04e8d4130292709bcd8cee8e7c84bd24330d05f720bcf8c0c9",
+      "dump": "local/experiments/v2-mouse-callbacks-native-368/coff-002/o2-0-coff.txt",
+      "dump_sha256": "9957fb857c9f2337bb9695d7c768cf810ced1a60ded158fc8aa4004003584c22"
+    },
+    {
+      "object": "local/experiments/v2-mouse-callbacks-native-368/002/o2-1.obj",
+      "object_sha256": "515f9e2f900af7da2489e6964f428c2fd0605a07c957a725000dfaac90261e1f",
+      "dump": "local/experiments/v2-mouse-callbacks-native-368/coff-002/o2-1-coff.txt",
+      "dump_sha256": "5b3948bfef5f6f4fdd59adbd0b506f04278dd798019f2529798a7d6434467b93"
+    },
+    {
+      "variant": "o2",
+      "map": "local/experiments/v2-mouse-callbacks-native-368/coff-002/o2-identity.map",
+      "map_sha256": "c416f72decc3ceedf62bd1b3f8829fcd78c00d5c2ada54e40dc7941fc886b237",
+      "symbols": [
+        " 0001:00000010       ?startup_mouse_callback_00537020@porsche@@YAIIIIIII@Z 00401010 f   o2-0.obj",
+        " 0001:00000010       ?startup_mouse_window_handler_00537020@porsche@@YGIPAX0IIHPAH@Z 00401010 f   o2-0.obj"
+      ]
+    }
+  ]
+}

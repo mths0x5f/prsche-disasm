@@ -1,10 +1,13 @@
 # v2 / 001 - original source recovery plan
 
-Current366,2026-10-22: frame00572690 and callbacks00572640/70/80 integrated
-(4newVAs/136B). Native003 passes120 comparisons/four mutations;494-input audit
-PASS. Fresh build001 compiles195TUs/8 projects:214names/221refs,noEXE. One startup
-name closes with no new dependency.361/364/366 sources frozen; no active worker
-assignments. Root resumes next concrete startup dependency below.
+Current370,2026-10-23:367input imports/368mouse callbacks/369originalsort integrated
+in one game build/audit. Six originalVAs/551B plusfour platform facades. Native
+923322 comparisons/14 mutations; shared500-input audit PASS. Fresh build002 compiles
+198TUs/8 projects:206names/213refs,noEXE. Eight names close with no new dependency.
+Attempt001 sandboxedMSBuild stopped before compilation; zero parsed names there
+are NOT a link frontier.002 was a full fresh unsandboxed build. Passed sources frozen.
+367/368 workers complete; cursor_snapshot_371(Sol6.1/high) owns only new371 source/
+native proof. Root owns integration/registry/docs. No new runner or audit script.
 Default model:6.1Sol for coordination/workers, Astra only for a specific blocker
 after two unsuccessful same-hypothesis attempts (user choice2026-10-22; saved).
 
@@ -16,18 +19,23 @@ new tooling only when necessary and immediately eliminates repeated work.
 
 Work order: finish one actual startup chain, prioritizing the first unconditional
 blocker, including state/callbacks. Do not select batches by net symbol count.
-Next367: complete remaining mouse/platform callback closure before more peripheral
-frontier work: DirectInputCreateA transport0056e940 (also keyboard path), exact
-GetCursorPos/ScreenToClient imports, mouse exit005370b0 and callback00537020;
-then snapshot00570ed0/00570f00 and async callback/list services. Read actual caller
-order before assigning. No guessed DLL replacement or change toDirectInput8.
-Critical ABI finding:00537020 endsRET0x18 (stdcall6args), while361 legacy extern
-usescdecl name only for address registration. Window procedure invokes handler
-asstdcall. Do not implement that legacy declaration as a cdecl-returning body.
-Prove a typed address-only binding to the actualstdcall entry, or update affected
-headers/native proofs with preserved new attempts; no silent alias assumption.
-SDK dinput.lib is absent; originalDINPUT.dll import identity/library binding needs
-an exact solution, not first-use LoadLibrary semantics guessed equivalent.
+Next371: original00570ed0 save38B and00570f00 restore79B. Reuse window_shutdown
+005de620[12] and mode/state aliases; second48B005de650 is fragmented by existing
+65c/65d bytes and67cDWORD. Worker proves explicit stateview/initialdata/knowncaller
+stack96buffer domain, no duplicated arena/guessed contiguity. Preserve restore's
+second-block-first order and actual00534480(snapshot) argument. Existing partial
+00534480 provider stays external until exact binding/state proof. Async callback/
+list service after snapshot closes this current mouse dependency slice.
+
+370 closes original DINPUT.dll!DirectInputCreateA using lib.exe +unadornated.def
+and a compiledstdcall IAT-cell alias, with actual PE loader/import proofs. No
+LoadLibrary-on-first-use orDirectInput8 substitution. Cursor APIs preserve raw
+pointer/partial-write/failure semantics. Old361/364 sources/header proof unchanged.
+Legacy361 mousecallback is address-only;368 canonical provider is actualstdcall
+WindowHandler, verified by originalRET24, actual361 registration, stack/nonvolatile
+and linked-map identity. No cdecl-returning callback body exists. Originalqsort
+005a112b +shortsort005a127f/swap005a12cd preserve cutoff8,pivot/partition/stack30,
+exact comparison/tie order and forward byte overlap; no hostqsort in game.
 
 366 closes original frame initializer using existing canonical bounds/limits/gate
 and364 cursor state. New cursorz/counter/callbackcells have rawdata/zero-fill,
@@ -45,9 +53,9 @@ successful ScreenToClient still exposes opaque y and remains HOLD. Real COM/OS,
 allocator failure, concurrency and full startup/display/menu remain unachieved.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/366-frame-init/acceptance.json.
-Native366/003; game366/001. Reuse unchanged proof; build/audit once per
-ready batch. Configure/build through shared build-v2-game-batch.py with366 config.
+iterations/v2/001-original-recovery/runs/370-input-startup-integration/acceptance.json.
+Native367/001+368/002+369/002; game370/002. Reuse unchanged proof; build/audit once per
+ready batch. Configure/build through shared build-v2-game-batch.py with370 config.
 
 363 evidence records six original callsites and reused078/169 proof. Module name/
 last-error use actual canonical platform sources; mutex CreateMutexA exact COFF

@@ -10109,6 +10109,97 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/366-frame-init/validation.json",
       "verification_boundary": "Raw original initial data/default callback relocations, bounds/gate writes, copy return, wrapping counters and staged callback identity/state. Opaque native uintptr_t cells; no homogeneous ABI, missing production readers, concurrency or full-game acceptance claimed."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0056e940",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "stdcall4args; original DINPUT named import and HRESULT bits",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
+      "verification_boundary": "Original6B import thunk compared at bounded ABI and exact named DLL/export proved by actual import library and loader-only PE probes. Live DirectInput/device behavior remains open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00537020",
+      "source": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "stdcall6args WindowHandler, RET24; legacycdecl symbol is address-only alias",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
+      "verification_boundary": "Full signed16-bit wheel inputs, wrapping state, return/ESP/nonvolatile and actual frozen361 registration checked. No cdecl provider is defined; typedstdcall alias identity is proven in COFF/maps. Full window/OS/concurrency remains open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005370b0",
+      "source": "iterations/v2/001-original-recovery/runs/368-mouse-callbacks/mouse_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl noargs",
+      "recovered_dependencies": [
+        "00537070"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
+      "verification_boundary": "Original exit plus actual accepted cleanup composition; flag reset follows COM release, wheel/registration state preserved. Controlled COM endpoints, no live device acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a112b",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl4args including cdecl comparator",
+      "recovered_dependencies": [
+        "005a127f",
+        "005a12cd"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
+      "verification_boundary": "Original quicksort control, signed partition decision, cutoff8 and30-entry stack. Exact comparator trace and arena/guards compared for bounded valid spans up to128records; invalid pointers/ranges, inconsistent comparators and concurrency remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a127f",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl4args including cdecl comparator",
+      "recovered_dependencies": [
+        "005a12cd"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
+      "verification_boundary": "Original ascending shortsort search and last-element swaps, including exact tie/comparison order. Bounded valid spans and pure comparator; invalid ranges/widths remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "005a12cd",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl3args; original return unused",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
+      "verification_boundary": "Original ascending byte swaps preserve equal-address skip and forward overlap. Bounded valid buffer spans including zero width; invalid/wrapping spans remain open."
     }
   ]
 }

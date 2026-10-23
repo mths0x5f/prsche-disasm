@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run366](iterations/v2/001-original-recovery/runs/366-frame-init/README.md):
-195 TUs/8 projects compile;214 names/221 refs,noEXE. Frame init/three callbacks
-pass120 comparisons/four mutations;494-input audit PASS. Next: remaining mouse/
-platform callbacks and snapshot dependencies; detailed scope in active PLAN.
+Current [Run370](iterations/v2/001-original-recovery/runs/370-input-startup-integration/README.md):
+198 TUs/8 projects compile;206 names/213 refs,noEXE. Input bindings, mouse callbacks
+and original sort close8 names;923322 native comparisons/14 mutations and shared
+500-input audit PASS. Next371: original renderer snapshot/state ownership.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
