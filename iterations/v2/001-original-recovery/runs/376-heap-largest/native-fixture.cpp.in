@@ -1,0 +1,124 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+#include "porsche/heap.hpp"
+#include "porsche/startup_sequence.hpp"
+#include "porsche/application_heap_state.hpp"
+#include "../374-render-descriptor/render_descriptor.hpp"
+using U=std::uint32_t;using B=std::uint8_t;
+static_assert(sizeof(void*)==4);
+static_assert(sizeof(porsche::OriginalHeap)==64);
+static_assert(offsetof(porsche::OriginalHeap,sentinel)==16);
+static_assert(offsetof(porsche::HeapFreeBlock,free_next)==16);
+static const B original[59]={@ORIGINAL@},flag_initial[4]={@FLAG@};
+static B* code;static porsche::OriginalHeap heaps[16];
+static porsche::HeapFreeBlock blocks[16][8];static U cases=0,checks=0;
+// Fixture-only extern storage. Production ownership stays in heap.cpp and374;
+// their initial definitions and accepted COFF are pinned separately in evidence.
+namespace porsche {OriginalHeap* heaps_006b4f20[16]{};U render_descriptor_flags_005deb60=0;}
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U v;std::memcpy(&v,p,4);return v;}
+static void die(const char* s){std::printf("fixture %s\n",s);std::fflush(stdout);ExitProcess(98);}
+static void patch(U before,U after){U n=0;
+    for(U i=0;i+4<=59;++i)if(word(code+i)==before){std::memcpy(code+i,&after,4);++n;i+=3;}
+    if(n!=1)die("relocation-count");
+}
+static void install(){
+    code=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));
+    if(!code)die("alloc");std::memcpy(code,original,59);
+    patch(0x5deb60,ptr(&porsche::render_descriptor_flags_005deb60));
+    patch(0x6b4f20,ptr(porsche::heaps_006b4f20));
+    DWORD old;if(!VirtualProtect(code,4096,PAGE_EXECUTE_READ,&old))die("protect");
+    FlushInstructionCache(GetCurrentProcess(),code,59);
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1,eax;};
+static Capture invoke(const void* fn){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        mov ecx,fn
+        call ecx
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }return r;
+}
+static bool abi(const Capture& c){return c.sp0==c.sp1&&c.bp0==c.bp1&&c.bx0==c.bx1&&c.si0==c.si1&&c.di0==c.di1&&
+    c.bx0==0x13579bdfu&&c.si0==0x2468ace0u&&c.di0==0x6a31c5e7u;}
+struct State{porsche::OriginalHeap heaps[16];porsche::HeapFreeBlock blocks[16][8];porsche::OriginalHeap* roots[16];U flags;};
+static State state(){State s{};std::memcpy(s.heaps,heaps,sizeof heaps);std::memcpy(s.blocks,blocks,sizeof blocks);
+    std::memcpy(s.roots,porsche::heaps_006b4f20,sizeof s.roots);s.flags=porsche::render_descriptor_flags_005deb60;return s;
+}
+static U random(U& s){s=s*1664525u+1013904223u;return s;}
+static void reset(U flags,U shape,U seed){using namespace porsche;
+    std::memset(heaps,0,sizeof heaps);std::memset(blocks,0,sizeof blocks);
+    for(U h=0;h<16;++h){
+        heaps_006b4f20[h]=&heaps[h];
+        heaps[h].sentinel.free_next=&blocks[h][0].block;
+        // The original dereferences only free_next, signed bytes and magic.
+        // Unused links and header fields carry sentinels, not invented pointers.
+        for(U i=0;i<8;++i){auto& block=blocks[h][i];block.block.magic=0x4246;
+            block.block.flags=static_cast<std::uint16_t>(random(seed));
+            block.block.bytes=static_cast<std::int32_t>(random(seed)&0x7fffffffu);
+            block.block.next=reinterpret_cast<HeapBlock*>(0x89abcdefu);
+            block.block.previous=reinterpret_cast<HeapBlock*>(0xfedcba98u);
+            block.free_next=&blocks[h][i+1<8?i+1:i].block;
+            block.free_previous=reinterpret_cast<HeapBlock*>(0x81234567u);
+        }
+        auto& b=blocks[h];
+        if(shape==0){b[0].block.magic=0x4253;b[0].block.bytes=0x7fffffff;}
+        else if(shape==1){
+            b[0].block.bytes=100+static_cast<std::int32_t>(h);b[1].block.bytes=b[0].block.bytes;
+            b[1].block.magic=0x4253; // Equal-sized sentinel must be skipped.
+            b[2].block.bytes=200+static_cast<std::int32_t>(h);b[3].block.bytes=-1;
+            b[4].block.magic=0x4253;b[4].block.bytes=-0x40000000;
+            b[5].block.bytes=1;b[6].block.bytes=300+static_cast<std::int32_t>(h);
+        }else if(shape==2){
+            const U sizes[7]={0,0x80000000u,0xffffffffu,1,1,0x7ffffffeu,0x80000001u};
+            for(U i=0;i<7;++i)b[i].block.bytes=static_cast<std::int32_t>(sizes[i]);
+            b[0].block.magic=b[1].block.magic=b[4].block.magic=0x4253;
+        }else if(shape==3){
+            for(U i=0;i<7;++i){b[i].block.bytes=static_cast<std::int32_t>(7-i+h*32);
+                if(i&1)b[i].block.magic=0x4253;}
+        }else{
+            // A finite valid chain with arbitrary positive/negative/tied sizes.
+            for(U i=0;i<7;++i){const U r=random(seed);b[i].block.bytes=static_cast<std::int32_t>(r);
+                if((r&7)==0)b[i].block.bytes=0;
+                if((r&7)==1&&i)b[i].block.bytes=b[i-1].block.bytes;
+            }
+        }
+        b[7].block.magic=0x4253;b[7].block.bytes=0x7fffffff;
+    }
+    render_descriptor_flags_005deb60=flags;
+}
+static void compare(U flags,U shape,U seed){
+    reset(flags,shape,seed);State before=state();Capture a=invoke(code);State expected=state();
+    reset(flags,shape,seed);Capture b=invoke(reinterpret_cast<const void*>(&porsche::startup_sequence_value_00569a90));State actual=state();
+    ++cases;checks+=5;
+    if(!abi(a)||!abi(b)||a.eax!=b.eax||std::memcmp(&before,&expected,sizeof before)||std::memcmp(&expected,&actual,sizeof actual)){
+        std::printf("divergence heap-largest case=%u flags=%08x shape=%u eax=%08x/%08x abi=%u/%u\n",cases,flags,shape,a.eax,b.eax,abi(a),abi(b));std::fflush(stdout);ExitProcess(1);
+    }
+}
+int main(){
+    // Fixture externs match pinned production initialization, before overrides.
+    if(porsche::render_descriptor_flags_005deb60!=word(flag_initial))die("production-flags");
+    for(auto* heap:porsche::heaps_006b4f20)if(heap)die("production-roots");
+    install();
+    for(U low=0;low<16;++low)for(U high:{0u,0x80000000u,0xfffffff0u,0x12345670u})
+        for(U shape=0;shape<5;++shape)for(U seed:{0u,1u,0xffffffffu,0x87654321u})compare(high|low,shape,seed);
+    std::printf("heap_largest_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

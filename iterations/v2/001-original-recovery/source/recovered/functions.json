@@ -4333,7 +4333,8 @@
         "00516950",
         "0056a490",
         "00427a60",
-        "004b0d70"
+        "004b0d70",
+        "00569a90"
       ],
       "unrecovered_dependencies": [
         "004121b0",
@@ -4354,14 +4355,14 @@
         "004affd0",
         "004b0fa0",
         "00536080",
-        "00569a90",
         "005a177b"
       ],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-startup-sequence.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/117-install-integration/startup-sequence/verification.json",
       "verification_boundary": "Bounded original-x86 state, argument and ordered-call comparisons; assets, driver/COM methods and unimplemented engine services remain explicit typed boundaries.",
-      "dependency_scope": "Indexed direct callees plus omitted/indirect edges documented in packet."
+      "dependency_scope": "Indexed direct callees plus omitted/indirect edges documented in packet.",
+      "dependency_integration_report": "iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/validation.json"
     },
     {
       "module": "Porsche.exe",
@@ -10357,14 +10358,66 @@
       "source": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
       "status": "native-differential-verified",
       "calling_convention": "cdecl4args; pointer result",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "00535700"
       ],
+      "unrecovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/374-render-descriptor/validation.json",
-      "verification_boundary": "Original35B forwards four inputs and live005deb88 fifth option, preserving allocator result. Existing pointer/integer facades share core; allocator/failed allocation remain external."
+      "verification_boundary": "Original35B forwards four inputs/live fifth option and preserves result; allocator binding integrated377.374 controlled-allocator proof remains bounded; full live heap/renderer composition open.",
+      "dependency_integration_report": "iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/validation.json"
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00535700",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl5DWORDargs; pointer return",
+      "recovered_dependencies": [
+        "00535380",
+        "00537f90",
+        "005a0fbf",
+        "00531f70",
+        "0053c290",
+        "00569a90"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/validation.json",
+      "verification_boundary": "Full584B; signed dimensions/default depth/pitch/header/diagnostic/OOM paths with controlled formatter/allocator/fill/query/diagnostic endpoints. Valid mapped spans; full composition, arbitrary aliases/concurrency/ambientFP remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00535380",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1DWORDarg; DWORD return",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/validation.json",
+      "verification_boundary": "Full129B including exact depth aliases and unsupported default. Original jump/lookup tables pinned; all0..8999 values and seeded32bit inputs/ABI compared."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00569a90",
+      "source": "iterations/v2/001-original-recovery/runs/376-heap-largest/heap_largest.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl0args; DWORD return",
+      "recovered_dependencies": [
+        "00569ad0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/validation.json",
+      "verification_boundary": "Full59B global-flags variant reuses canonical342 scan; exact shared original scan bytes, existing374 flags and heap roots. Finite valid mapped chains and controlled extern data, not corruption/concurrency/full allocator acceptance."
     }
   ]
 }

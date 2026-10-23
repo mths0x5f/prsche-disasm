@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run377 accepts constructor/depth map/globalheap query (25288 comparisons/13
+mutations,512-input audit). OOM/failure/diagnostic branches are compared with
+controlled endpoints; actual heap scan/state owners reused, no duplicatearena.
+Real formatter/allocator/fill/renderer composition, malformed spans/chains and
+concurrency remain HOLD. Next378/380/381 originalpixel path, preserving legacy
+ABI and unusual byte/float transport. No linkedgame/live startup/display/menu.
+
 Run374 accepts full00534480 plusfour helpers:8800 comparisons/8 mutations,
 508-input integration audit PASS. Existing null-only wrapper/source stays frozen.
 The test uses a controlled external005dead0; actual splash owner is pinned and

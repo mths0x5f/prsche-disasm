@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-texture-constructor-375-rea",
+  "queries": [
+    {
+      "label": "texture-constructor",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00535700"
+      }
+    },
+    {
+      "label": "depth-format",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00535380"
+      }
+    },
+    {
+      "label": "heap-largest",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00569a90"
+      }
+    }
+  ]
+}

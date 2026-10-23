@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run374](iterations/v2/001-original-recovery/runs/374-render-descriptor/README.md):
-201 C++ TUs compile;200 names/207 refs,noEXE. Full original descriptor binding
-passed8800 native comparisons/8 mutations;508-input audit PASS. Next: original
-texture constructor00535700. Live startup/display/menu remain open.
+[Latest game build, Run377](iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/README.md):
+203 C++ TUs compile;198 names/205 refs,noEXE. Original texture construction and
+heap query passed25288 native comparisons/13 mutations;512-input audit PASS.
+Next: original pixel-write path. Live startup/display/menu remain open.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

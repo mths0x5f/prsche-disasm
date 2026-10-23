@@ -1,36 +1,35 @@
 # v2 / 001 - original source recovery plan
 
-Current374,2026-10-23: full original renderer descriptor path integrated.
-Five completeVAs/501B;00534480 upgrades old partial entry, four VAs newly accepted.
-Native003:8800 comparisons/eight detected mutations. Actual game001 compiles201TUs/
-8 projects;200names/207refs,noEXE. Four caller names close, original00535700 opens.
-Shared508-input audit PASS. New source/native proof frozen. Old null wrapper and
-all canonical state owners unchanged. No active workers;374 was finished by root
-after worker Sol capacity. No model switch for capacity or new custom runner.
+Current377,2026-10-23:375 texture constructor/depth map +376 heap query integrated.
+Three newVAs/772B;25288 comparisons/13 mutations PASS. REA375/001 all3 dossiers
+pass, original/copy hashes unchanged. Fresh game001:203TUs/8 projects,198names/
+205refs,noEXE. Two names close,nonewdependency; shared512-input audit PASS.
+Passed375/376 source/native proof frozen. Reused342 actual heap scan; no duplicate
+scan/heap roots. New005deb80 error counter only; diagnostics remain canonical.
 
-Next375: original00535700 texture constructor (decompiled.c:205782,
-disassembly.asm:390645), trace00535950?00535700 and its alloc/format/size children.
-Check canonical ownership before coding; reuse374 format/bits helpers and heap
-providers. Recover original arithmetic, flags, allocation/initialization order;
-no invented allocation failures or texture layout. Root owns next bounded batch.
-Prioritize first unconditional startup blockers and actual subsystem closure.
+Next ready378:00556910 pixel-write293B, existing legacyselect_buffer3DWORDfacade,
+14230 comparisons/7mutations PASS. All4original callers prove(x,y,pixel)ABI; old
+header unchanged. No newstate. Workerinput_platform_367(Sol6.1/high) now owns ONLY
+new381 draw/write helpers0056de20/0056e301. Workercursor_snapshot_371(Sol6.1/high)
+owns ONLY new380 address/convert00574050/00574b70. Both use existingowners/shared
+native runner; ready378+380+381 share next integration379, NOT frozen377.
+Root owns integration/registry/docs. Preserve unusual 24bit-write byteorder in
+0056e301, rawfloat transport in0056de20 and original modulo/signed addressmath.
+Unknown rectangle0056daf0 stays explicit until separately recovered.
 
-374 checks: shared verify-v2-native-batch.py with374/native-config.json attempt3;
-build-v2-game-batch.py with374/build-config.json configure/build attempt001;
-audit-v2-native-game-batch.py with374/acceptance.json. Reuse passed inputs.
-Attempt001 fixture linked full splash consumer and exposed unrelated dependencies;
-003 uses controlled external005dead0 plus pinned actual owner and production COFF
-ownership.002 normal passed but width-order mutation survived;003 callback side
-effect exposes byte16 restore/read ordering. No production semantic change.
-Valid48B descriptors/fallback and20B renderer buffers include selected aliases;
-invalid/computed spans, allocation failure, ambient x87/concurrency and actual
-snapshot?renderer composition/live startup/display/menu remain HOLD.
+377 checks: build-v2-game-batch.py with377/build-config.json configure/build001;
+audit-v2-native-game-batch.py with377/acceptance.json. Native375/001+376/002;
+REA375/001. Reuse accepted unchangedproof.375 endpoints control allocator/fill/
+formatter/query/callback;376 controls externalroots/flags but pins canonical
+actualsource/COFF/BSS. ProductionCOFF proves unique providers and state ownership.
+Real allocator/formatter/renderer composition, malformed aliases/chains, ambient
+FP/concurrency, linked game/startup/display/menu/gameplay remain open.
 
-373 remains accepted/pushedf89ada3: sixVAs/447B snapshot/async core,15446 comparisons/
-16 mutations,505-input audit. Canonical fragmented state/queue views unchanged;
-arbitrary snapshot aliases and malformed queues/scheduler composition remain open.
-Default6.1Sol; Astra only after two unsuccessful attempts on a specific ambiguous
-hypothesis. Reuse shared tooling, freeze passed batches, keep root pointers brief.
+374 accepted/pushed023ef6c: full descriptor path501B/5VAs (partial34480 upgraded),
+8800 comparisons/8mutations,201TUs/200names207refs,508-input audit. Oldnullwrapper
+and prior canonical source/proof unchanged.373 snapshot/async likewise frozen.
+Default6.1Sol; Astra only after2failed attempts on a specific ambiguoushypothesis.
+No newcustomrunner; originalresources read-only; root pointersbrief.
 
 Repo skill .agents/skills/porsche-recovery/SKILL.md validated/pushed4e9f2b4.
 Project-local rules allow five named shared scripts; no blanket Python/shell rule.

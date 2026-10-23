@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "module": "local/game/Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "index_query": [
+    "00569a90",
+    "00569ad0",
+    "005deb60",
+    "006b4f20"
+  ],
+  "body": {
+    "entry_va": "00569a90",
+    "end_exclusive": "00569acb",
+    "bytes": 59,
+    "sha256": "e8e77de9672a97b64b6a2b822cb875016e2a3d9b8026a8fde1d6747cd66e1110",
+    "raw_hex": "a160eb5d005683e00f33f68b0485204f6b0083c01033d28b40108b48043bca7ef6668138534274068bf08bd1ebe985f674058b46045ec333c05ec3",
+    "indexed_assembly": [
+      "00569a90  a160eb5d00  MOV EAX,[0x005deb60]",
+      "00569a95  56  PUSH ESI",
+      "00569a96  83e00f  AND EAX,0xf",
+      "00569a99  33f6  XOR ESI,ESI",
+      "00569a9b  8b0485204f6b00  MOV EAX,dword ptr [EAX*0x4 + 0x6b4f20]",
+      "00569aa2  83c010  ADD EAX,0x10",
+      "00569aa5  33d2  XOR EDX,EDX",
+      "00569aa7  8b4010  MOV EAX,dword ptr [EAX + 0x10]",
+      "00569aaa  8b4804  MOV ECX,dword ptr [EAX + 0x4]",
+      "00569aad  3bca  CMP ECX,EDX",
+      "00569aaf  7ef6  JLE 0x00569aa7",
+      "00569ab1  6681385342  CMP word ptr [EAX],0x4253",
+      "00569ab6  7406  JZ 0x00569abe",
+      "00569ab8  8bf0  MOV ESI,EAX",
+      "00569aba  8bd1  MOV EDX,ECX",
+      "00569abc  ebe9  JMP 0x00569aa7",
+      "00569abe  85f6  TEST ESI,ESI",
+      "00569ac0  7405  JZ 0x00569ac7",
+      "00569ac2  8b4604  MOV EAX,dword ptr [ESI + 0x4]",
+      "00569ac5  5e  POP ESI",
+      "00569ac6  c3  RET",
+      "00569ac7  33c0  XOR EAX,EAX",
+      "00569ac9  5e  POP ESI",
+      "00569aca  c3  RET"
+    ]
+  },
+  "canonical_reuse": {
+    "entry": {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00569ad0",
+      "source": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "x86 cdecl; one DWORD/pointer argument, caller cleanup, ESP and nonvolatile registers checked",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/summary.json",
+      "verification_boundary": "Bounded valid mapped input/chain domains, controlled extern data/callees; not whole allocator/game acceptance."
+    },
+    "source_sha256": "b0d61d4e3d44d92f6669e3d7cfa5b6caa0b6a9536b283ceea5376b6eabad1555",
+    "accepted_summary": "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/summary.json",
+    "accepted_summary_sha256": "2f82eceb896f6efb83db86b66722c0ae334fea439ba271ecf4049a9b254262e1",
+    "accepted_native_receipt": "local/experiments/v2-heap-live-native-342/002/receipt.json",
+    "accepted_native_receipt_sha256": "60f80cf07553f9b3e0d707c1a0f7fc128323bdb373a9795870525d2ec2e59698",
+    "byte_equivalence": "Original00569a90 bytes[5:59] exactly equal accepted00569ad0 bytes[4:58]; only original global-load vs canonical stack-argument load differs.",
+    "original_canonical_body_sha256": "8f10709f43ab33a67fb08ff7ecc46f6883080924155f9ecdb449a46973b92ef9"
+  },
+  "registry_before_intake": {
+    "path": "iterations/v2/001-original-recovery/source/recovered/functions.json",
+    "sha256": "8e5255aa05d7f368b4e9d6559b0d169c0bedfc977d8f750ea2b138d4cb7e2069",
+    "new_entry_owners": []
+  },
+  "production_data": [
+    {
+      "va": "005deb60",
+      "bytes": 4,
+      "section": {
+        "name": ".data",
+        "rva": 1880064,
+        "virtual_bytes": 1008952,
+        "raw_bytes": 114688,
+        "raw_offset": 1880064
+      },
+      "file_backed": true,
+      "loader_zero_fill": false,
+      "initial_hex": "00000000"
+    },
+    {
+      "va": "006b4f20",
+      "bytes": 64,
+      "section": {
+        "name": ".data",
+        "rva": 1880064,
+        "virtual_bytes": 1008952,
+        "raw_bytes": 114688,
+        "raw_offset": 1880064
+      },
+      "file_backed": false,
+      "loader_zero_fill": true,
+      "initial_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "production_coff_owners": [
+    {
+      "path": "local/builds/v2/render-descriptor-374/common/porsche_original.dir/Release/heap.obj",
+      "sha256": "8e9dc8f98d3faa99389e7e79e3a5904dbdc0e6464a8de8523d5ac0301ec55f9a",
+      "symbol": "?heaps_006b4f20@porsche@@3PAPAUOriginalHeap@1@A",
+      "section_number": 3,
+      "section_name": ".bss",
+      "section_characteristics": "0xc0400080",
+      "value": 0,
+      "bytes": 64,
+      "initial_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "storage_class": 2
+    },
+    {
+      "path": "local/builds/v2/render-descriptor-374/entry-289/porsche_game_entry_bridges.dir/Release/render_descriptor.obj",
+      "sha256": "4a13047e6071251755cf2ad2c22217bb3bccba54e9cd050d2c2ef233e0e0b7fb",
+      "symbol": "?render_descriptor_flags_005deb60@porsche@@3IA",
+      "section_number": 3,
+      "section_name": ".bss",
+      "section_characteristics": "0xc0300080",
+      "value": 4,
+      "bytes": 4,
+      "initial_hex": "00000000",
+      "storage_class": 2
+    }
+  ],
+  "source_owners": {
+    "005deb60": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+    "006b4f20": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp"
+  },
+  "pointer_domain": "Canonical x86 OriginalHeap* roots; helper reads root+16 sentinel free_next at+16, follows real native HeapFreeBlock pointers, reads signed bytes+4 and magic+0. Fixture only installs pointers to declared64-byte heap objects and24-byte block objects. No original VA is treated as a host pointer.",
+  "semantics": "flags&15 select root; signed size must exceed current maximum before magic4253 is tested; selected record size is reread for return. Zero/negative/equal tagged records are skipped. No null-root guard, corruption recovery or locking exists in original.",
+  "native": {
+    "receipt": "local/experiments/v2-heap-largest-native-376/002/receipt.json",
+    "cases_per_variant": 1280,
+    "total_comparisons": 2560,
+    "mutations": 3,
+    "controlled_storage": "Fixture-only16 roots and flags; actual342helper and newwrapper compiled. Actual production data owners remain source+acceptedCOFF pins, and unique ownership must be checked by root integration.",
+    "cases": [
+      "All16 low-nibbleindices and4highbit flag patterns",
+      "Immediate terminal sentinel/no selected block",
+      "Equal/negative/zero tagged records skipped before real termination",
+      "Increasing/decreasing/random maxima and signedINTMIN/INTMAX-1",
+      "Read-only all roots/heaps/block chains/flags",
+      "ESP,EBP,EBX,ESI,EDI,EAX at Od/O2"
+    ]
+  },
+  "initialization": "Original005deb60 raw-backedzero and006b4f20 loader-zeroed roots; actual accepted production COFF proves matching zero initialization before any fixture overrides.",
+  "attempt001": "Preserved link failure from unrelated dependencies of whole canonical owner TUs before native execution.002 uses explicit controlled extern storage and pins owners, not unrelated fake functions.",
+  "holds": [
+    "Only finite valid chains ending in a4253 record whose signed size beats current maximum",
+    "Null/unmapped roots or links, corrupt/nonterminatingchains and invalidspans",
+    "Concurrent heap mutation/locking and asynchronous state",
+    "Full allocator/renderer composition, live startup and game acceptance"
+  ]
+}

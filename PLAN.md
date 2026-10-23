@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run374](iterations/v2/001-original-recovery/runs/374-render-descriptor/README.md):
-201 TUs/8 projects compile;200 names/207 refs,noEXE. Full original descriptor
-binding closes4 caller names and exposes00535700 allocator.8800 comparisons/
-8 mutations and shared508-input audit PASS. Next: original texture constructor.
+Current [Run377](iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/README.md):
+203 TUs/8 projects compile;198 names/205 refs,noEXE. Original texture constructor,
+depth mapping and shared heap query close2 names without new dependencies.
+25288 comparisons/13 mutations and shared512-input audit PASS. Next: pixel path.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),
