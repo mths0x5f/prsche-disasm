@@ -1,0 +1,132 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+#include "rectangle.hpp"
+#include "../381-pixel-draw-helpers/pixel_draw_helpers.hpp"
+#include "../378-buffer-select/buffer_select.hpp"
+#include "porsche/render_loader.hpp"
+extern float _DAT_005b24a8;
+using U=std::uint32_t;using B=std::uint8_t;
+static_assert(sizeof(void*)==4&&sizeof(float)==4);
+static const B original[656]={@ORIGINAL@},wrapper_raw[34]={@WRAPPER@},initial_limits[20]={@LIMITS@},
+    zero_raw[4]={@ZERO@},one_raw[4]={@ONE@};
+static B *code,*wrapper_code;static U cases=0,checks=0,count=0,callback_mutation=0;
+struct Event{U offsets[4],vertices[4][8];};static Event events[2];
+namespace porsche {U render_thrash_exports_006bd910[43]{};}
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U v;std::memcpy(&v,p,4);return v;}
+static U bits(float value){U v;std::memcpy(&v,&value,4);return v;}
+static void die(const char* s,U detail=0){std::printf("fixture %s %08x\n",s,detail);std::fflush(stdout);ExitProcess(98);}
+extern "C" void __stdcall quad_endpoint(const void* a,const void* b,const void* c,const void* d){
+    if(count>=2)die("events");auto& e=events[count++];const void* p[4]={a,b,c,d};
+    for(U i=0;i<4;++i){e.offsets[i]=ptr(p[i])-ptr(a);if(e.offsets[i]!=32*i)die("vertex-stride");std::memcpy(e.vertices[i],p[i],32);}
+    if(callback_mutation){porsche::rectangle_state_006a6404[0]^=0x87654321u;porsche::rectangle_state_006a6404[1]^=0x12345678u;
+        porsche::rectangle_limits_005dfa08[0]^=0x81726354u;}
+}
+static B* install(const B* raw,U n){auto* p=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));if(!p)die("alloc");std::memcpy(p,raw,n);return p;}
+static void patch(U before,U after,U expected){U n=0;for(U i=0;i+4<=656;++i)if(word(code+i)==before){std::memcpy(code+i,&after,4);++n;i+=3;}if(n!=expected)die("relocation-count",before);}
+static void protect(B* p){DWORD old;if(!VirtualProtect(p,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),p,4096);}
+static void install_all(){using namespace porsche;code=install(original,656);wrapper_code=install(wrapper_raw,34);
+    patch(0x6a6404,ptr(rectangle_state_006a6404),1);patch(0x6a6408,ptr(rectangle_state_006a6404+1),1);patch(0x6a640c,ptr(rectangle_state_006a6404+2),1);
+    patch(0x6a6410,ptr(rectangle_state_006a6404+3),2);patch(0x6a6414,ptr(rectangle_state_006a6404+4),2);
+    patch(0x5dfa08,ptr(rectangle_limits_005dfa08),1);patch(0x5dfa0c,ptr(rectangle_limits_005dfa08+1),1);patch(0x5dfa10,ptr(rectangle_limits_005dfa08+2),1);
+    patch(0x5dfa14,ptr(rectangle_limits_005dfa08+3),1);patch(0x5dfa18,ptr(rectangle_limits_005dfa08+4),1);
+    patch(0x5b23f8,ptr(&rectangle_zero_005b23f8),8);patch(0x5b24a8,ptr(&_DAT_005b24a8),4);
+    patch(0x6bd9a8,ptr(&render_thrash_exports_006bd910[38]),1);
+    const U offset=0x56de39-0x56de20;
+    if(wrapper_code[offset]!=0xe8||0x56de39+5+word(wrapper_code+offset+1)!=0x56daf0)die("wrapper-target");
+    U rel=ptr(code)-ptr(wrapper_code+offset+5);std::memcpy(wrapper_code+offset+1,&rel,4);
+    render_thrash_exports_006bd910[38]=ptr(reinterpret_cast<const void*>(&quad_endpoint));protect(code);protect(wrapper_code);
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1;};
+static Capture invoke(const void* fn,const U* a,U argc){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        mov edx,a
+        cmp argc,5
+        jne three
+        push dword ptr [edx+16]
+        push dword ptr [edx+12]
+    three:
+        push dword ptr [edx+8]
+        push dword ptr [edx+4]
+        push dword ptr [edx]
+        mov ecx,fn
+        call ecx
+        mov ecx,argc
+        shl ecx,2
+        add esp,ecx
+        lea edx,r
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }return r;
+}
+static bool abi(const Capture& c){return c.sp0==c.sp1&&c.bp0==c.bp1&&c.bx0==c.bx1&&c.si0==c.si1&&c.di0==c.di1&&c.bx0==0x13579bdfu&&c.si0==0x2468ace0u&&c.di0==0x6a31c5e7u;}
+struct State{U state[5],limits[5],count;Event events[2];U control,status,mxcsr;};
+static State state(){State s{};std::memcpy(s.state,porsche::rectangle_state_006a6404,20);std::memcpy(s.limits,porsche::rectangle_limits_005dfa08,20);s.count=count;std::memcpy(s.events,events,sizeof events);
+    U control=0,status=0,mxcsr=0;
+    __asm fnstcw control
+    __asm fnstsw status
+    __asm stmxcsr mxcsr
+    s.control=control;s.status=status;s.mxcsr=mxcsr;return s;
+}
+static void fp_reset(){U mxcsr=0x1f80;
+    __asm fninit
+    __asm ldmxcsr mxcsr
+}
+static void reset(U view,U uv,U mutation){using namespace porsche;
+    U limits[5]={0x3f800000u,0x3f800000u,0x3f800000u,bits(640.0f),bits(480.0f)};
+    U state[5]={0x3eaaaaabu,bits(0.0f),bits(0.0f),bits(0.0f),bits(0.0f)};
+    if(view==1){state[3]=bits(-10.25f);state[4]=bits(-5.5f);limits[3]=bits(30.75f);limits[4]=bits(24.125f);}
+    if(view==2){state[3]=bits(5.75f);state[4]=bits(7.125f);limits[3]=bits(5.75f);limits[4]=bits(7.125f);}
+    if(view==3){state[3]=bits(20.125f);state[4]=bits(30.25f);limits[3]=bits(-4.5f);limits[4]=bits(-8.75f);}
+    if(uv==1){state[1]=bits(0.125f);state[2]=bits(-0.75f);limits[1]=bits(0.875f);limits[2]=bits(1.25f);}
+    if(uv==2){state[1]=bits(1.75f);state[2]=bits(0.25f);limits[1]=bits(-0.125f);limits[2]=bits(0.875f);}
+    if(uv==3){state[1]=0x3eaaaaabu;state[2]=0x3e4ccccdu;limits[1]=0x3f4ccccdu;limits[2]=0x3f2aaaabu;}
+    std::memcpy(rectangle_state_006a6404,state,20);std::memcpy(rectangle_limits_005dfa08,limits,20);
+    count=0;std::memset(events,0,sizeof events);callback_mutation=mutation;fp_reset();
+}
+static void compare(U x,U y,U w,U h,U color,U view,U uv,U mutation,bool chain=false){
+    U args[5]={x,y,w,h,color};if(chain)args[2]=color;
+    reset(view,uv,mutation);auto a=invoke(chain?wrapper_code:code,args,chain?3:5);auto expected=state();
+    reset(view,uv,mutation);auto b=invoke(chain?reinterpret_cast<const void*>(&porsche::render_buffer_draw_0056de20):reinterpret_cast<const void*>(&porsche::render_draw_rectangle_bits_0056daf0),args,chain?3:5);auto actual=state();++cases;checks+=3;
+    if(!abi(a)||!abi(b)||std::memcmp(&expected,&actual,sizeof actual)){
+        std::printf("divergence rectangle case=%u xywh=%08x/%08x/%08x/%08x view=%u uv=%u count=%u/%u abi=%u/%u fp=%04x/%04x\n",cases,x,y,w,h,view,uv,expected.count,actual.count,abi(a),abi(b),expected.status,actual.status);
+        const auto* e=reinterpret_cast<const B*>(&expected);const auto* c=reinterpret_cast<const B*>(&actual);
+        for(U i=0;i<sizeof(State);++i)if(e[i]!=c[i]){std::printf("first-state-offset=%u value=%02x/%02x\n",i,e[i],c[i]);break;}
+        std::fflush(stdout);ExitProcess(1);
+    }
+}
+static U random(U& seed){seed=seed*1664525u+1013904223u;return seed;}
+static U finite(U& seed,bool positive=false){U v=random(seed);return (positive?0u:(v&0x80000000u))|((116u+(v>>25)%22u)<<23)|(v&0x7fffffu);}
+int main(){using namespace porsche;
+    for(U v:rectangle_state_006a6404)if(v)die("production-state-initial");
+    if(std::memcmp(rectangle_limits_005dfa08,initial_limits,20)||word(&rectangle_zero_005b23f8)!=word(zero_raw)||word(&_DAT_005b24a8)!=word(one_raw))die("production-data-initial");
+    for(U v:render_thrash_exports_006bd910)if(v)die("fixture-table-initial");install_all();
+    // Every clipping side/corner and degenerate extent, with original data views.
+    for(U view=0;view<4;++view)for(U uv=0;uv<4;++uv)
+        for(float x:{-100.5f,-10.25f,0.0f,5.75f,20.125f,30.75f,639.75f,640.0f})
+        for(float y:{-80.25f,-5.5f,0.0f,7.125f,30.25f,479.75f,480.0f})
+        for(float w:{-1.0f,0.0f,0.5f,1.0f,11.75f,100.25f})
+        for(float h:{0.0f,0.25f,1.0f,20.5f,80.75f})compare(bits(x),bits(y),bits(w),bits(h),0x81f2a3b4u,view,uv,1);
+    U seed=0x5719ac83;
+    for(U i=0;i<4096;++i){U x=finite(seed),y=finite(seed),w=finite(seed,true),h=finite(seed,true),color=random(seed);
+        compare(x,y,w,h,color,i&3,(i>>2)&3,i&1);}
+    for(U view=0;view<4;++view)for(U uv=0;uv<4;++uv)for(float x:{-1.25f,0.0f,5.5f,20.0f,639.75f})
+        for(float y:{-0.5f,0.0f,7.0f,479.75f})compare(bits(x),bits(y),0,0,0xff123456u,view,uv,1,true);
+    std::printf("rectangle_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

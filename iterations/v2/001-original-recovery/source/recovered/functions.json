@@ -10473,14 +10473,15 @@
       "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
       "status": "native-differential-verified",
       "calling_convention": "cdecl3DWORDstackwords; FLOAT32 x/y copied as bits; EAX unused",
-      "recovered_dependencies": [],
-      "unrecovered_dependencies": [
+      "recovered_dependencies": [
         "0056daf0"
       ],
+      "unrecovered_dependencies": [],
       "binary_matched": false,
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
-      "verification_boundary": "Full34B wrapper forwards original x/y raw bits, two1.0 words and pixel to explicit five-DWORD geometry boundary. Includes SNaN payload and unchanged FPstate; geometry/live draw external."
+      "verification_boundary": "Full34B wrapper rawfloat transport including SNaNs.382 integrates actualgeometry and compares actual381 chain for finite defaultFP inputs; nonfinitegeometry/ambientFP/liveTHRASH remain open.",
+      "dependency_integration_report": "iterations/v2/001-original-recovery/runs/384-startup-render-integration/validation.json"
     },
     {
       "module": "Porsche.exe",
@@ -10495,6 +10496,23 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
       "verification_boundary": "Full55B separate adjacent entry; exact signed branches and unusual size3 word-then-byte0 overwrite, byte2 unchanged and pointer+3. Valid write spans/nonpositive null only; MMIO/concurrent stores unaccepted."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0056daf0",
+      "source": "iterations/v2/001-original-recovery/runs/382-rectangle/rectangle.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl5DWORDstackwords: rawFLOAT32 x/y/width/height plus pixel; EAX unused",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [
+        "006bd9a8 actual renderer effects"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/384-startup-render-integration/validation.json",
+      "verification_boundary": "Full656B clipping/UV/vertex body in bounded finite masked/defaultnearest FP domain. Small x87 primitives retain80bit live intermediates/FSTP32 stores; actual381 chain compared. Canonical357 quad transport/221scalar reused. Nonfinite/denormal/extreme/ambientFP, computedaliases/concurrency/live renderer remain open."
     }
   ]
 }

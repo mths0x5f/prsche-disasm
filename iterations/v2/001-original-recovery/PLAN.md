@@ -1,35 +1,40 @@
 # v2 / 001 - original source recovery plan
 
-Current379,2026-10-23:378 pixel-write +380 address/convert +381 draw/write integrated.
-Five newVAs/639B;1067246 comparisons/21mutations, shared519-input audit PASS.
-Fresh game001:206TUs/8 projects,198names/205refs,noEXE. Legacyselect_buffer caller
-closes and rectangle0056daf0 opens; unchangednetcount does not mean no recovery.
-Only newstate is proved256DWORDpalette BSS; canonicalconfig/THRASH reused.
-Passed378/380/381 source/proof frozen. RawARGB packing, modulo/SAR math, unusual
-size3 overwrite and SNaN transport retained; no approximated geometry.
+Current384,2026-10-23:382 rectangle656B +383 three original inputAPI facades
+integrated; unchanged221 two-cell readonlyowner added once. Native63720 comparisons/
+14mutations, shared524-input audit PASS. Game002:209TUs/8projects,194names/201refs,
+noEXE; four names close/no new ones.001 exposed missing221scalar integration;
+002 adds actualacceptedowner, not a duplicate. No nativeproof rerun/sourcechange.
+Passed382/383 sources/nativeproof frozen. Geometryfinite/defaultFP only; live
+OS/quad, nonfinite/denormal/extreme/ambientFP/concurrency remain explicitHOLD.
 
-Active382: input_platform_367(Sol6.1/high) owns only new382-rectangle0056daf0,
-656B clipping/UV/vertices. Newstate only2proved20Bblocks (006a6404,005dfa08),
-readonlyzero scalar if noowner; reuse221one scalar and357quad. Preserve80bitlive
-intermediates/FSTP32 boundaries; finite masked/nearest domain explicit; after2
-samehypothesis failures report evidence, no guessed C++double substitute.
-Active383: cursor_snapshot_371(Sol6.1/high) owns only new383-startup-input-imports,
-three early USER32/WINMM facade bindings. Reuse367 ownEXEIAT/nativefixture approach,
-SDK USER32/WINMM libs, exact partialwrite/failure/argument/return semantics.
-Root owns integration/registry/docs. Both new batches remain outside frozen379;
-ready382/383 share next integration384. No new customrunner or subdelegation.
+385 evidence-only startupreuse audit: four exactregistryhits all unsafealiases;
+no body/binding/state/build acceptance. Source/manifest pinned at baseline379,
+not regenerated cosmetically for384 counts. Audit finds raw0059fbc0 callback
+assignment, ECX0048fc80 networkconstructor behind cdeclfacade, partial005679f0
+and earlier conditionalCD/duplicateinstance OSgaps. Do notsilentlyalias these.
 
-379 checks: build-v2-game-batch.py with379/build-config.json configure/build001;
-audit-v2-native-game-batch.py with379/acceptance.json. Native378/001+380/001+381/001.
-Reuse unchanged passedproof.380 actual378caller composition uses controlled381
-endpoints; full geometry/renderer composition still open. Invalidindices/spans,
-computed aliases, ambientFP/concurrency and fullgame startup/display/menu HOLD.
+Active386: input_platform_367(Sol6.1/high) owns new386-heap-startup only: concrete
+0059eafb caller(256,0,256), EAXunused, rawpool/disk/page/list/exit?actualcanonical
+provider composition with unchanged oldsources. InitialBSS/startup domain must be
+proved; oldpartialpoolstatus/failure/reinit/shutdown stayHOLD. Root decides exact
+binding intake afterproof; never promote partialbody byalias or successfulcases.
+Active387: cursor_snapshot_371(Sol6.1/high) owns new387-startup-diagnostic andnew
+supplementalindexfile only:93B0059fbc0 varargscallback using canonicalformatter/
+vsprintf/sharedstate.356B0059fc20 terminal stays external; opaque253rdbyte and
+thread/debugger/exit behavior need separatefulltrace. No sharedstartupsourceedit.
+Root owns integration/registry/docs and later actualfunctionpointerbinding+fresh
+startupdispatch proof. RawfileVAtokens require genuinecallertransport, no automap.
 
-377 accepted/pushededd96ad: constructor/depth/heapquery772B,25288 comparisons/
-13mutations,512-input audit,203TUs/198names205refs. Reused actual342heap scan,
-canonical formatter/allocator/fill/state; live composition remains unaccepted.
-374/373 source/proofs likewise frozen. Default6.1Sol; Astra only after2failed
-attempts on a specific ambiguoushypothesis. Prioritize real startupdependencies.
+384 check: sharedbuild-v2-game-batch.py with384/build-config.json configure/build002;
+audit-v2-native-game-batch.py with384/acceptance.json. Native382/001+383/001 reuse.
+Game linkswinmm.lib/user32.lib; SDK/importCOFF/nativePE evidencepinned. Actual
+221scalar+357quad reused, no guessedgeometry/platform replacement or newrunner.
+
+379 accepted/pushed27b0a6c: fivepixel-pathVAs639B,1067246 comparisons/21mutations,
+519-input audit;206TUs/198names205refs.377constructor/heap772B,25288comparisons/
+13mutations likewise frozen. Default6.1Sol; Astra only after2failedattempts on a
+specific ambiguoushypothesis. Prioritize realstartupchain; originals read-only.
 
 Repo skill .agents/skills/porsche-recovery/SKILL.md validated/pushed4e9f2b4.
 Project-local rules allow five named shared scripts; no blanket Python/shell rule.

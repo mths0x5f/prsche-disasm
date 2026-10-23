@@ -1,0 +1,2244 @@
+{
+  "kind": "evidence-only-canonical-reuse-audit",
+  "baseline": {
+    "path": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/build-001.json",
+    "sha256": "0ef2ae950d027c5f042f85a142b0c5bfc1553656d7a07f29f91f6adda7051e5c"
+  },
+  "original_registry": {
+    "path": "iterations/v2/001-original-recovery/source/recovered/functions.json",
+    "sha256": "b0f58f0d7d6e5d8f8349a9f4e23a0b2b2ecb9ea46f759ed266b13073e9ef503a"
+  },
+  "catalog": {
+    "path": "iterations/v2/001-original-recovery/source/catalog/Porsche.exe-ddd748fdbe6d/functions.jsonl",
+    "sha256": "97278d226a719805b7cd32dbcbc457bf01695bee13a4e1bc9cb4adf107d66cca"
+  },
+  "build_source_manifest": {
+    "path": "research/v2/proof-manifests/sha256/03c3ce6ed44531087f65a15e8bf17502cd5375e1b8e9be714fff37aa840c4ef6.json",
+    "sha256": "03c3ce6ed44531087f65a15e8bf17502cd5375e1b8e9be714fff37aa840c4ef6"
+  },
+  "baseline_source_count": 206,
+  "baseline_frontier_names": 198,
+  "baseline_frontier_references": 205,
+  "matched_frontier_rows": 4,
+  "matched_unique_provider_tus": [
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/input_state.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/movie_header.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_paths.cpp"
+  ],
+  "new_bindings": [],
+  "new_sources": [],
+  "new_original_vas": [],
+  "new_state": [],
+  "frontier": [
+    {
+      "symbol": "?application_audio_backend_allocate_0058aae0@porsche@@YAII@Z",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058aae0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_apply_0058a690@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_apply_config_005656d0@porsche@@YAIPBE@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058a690"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_close_0058aac0@porsche@@YAHXZ",
+      "callers": [
+        "?application_audio_probe_measure_00565890@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [
+        "0058aac0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_configure_0058aa90@porsche@@YAXII@Z",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058aa90"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_configure_0058fef0@porsche@@YAXII@Z",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058fef0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_finalize_0058e0e0@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058e0e0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_initialize_0058a4f0@porsche@@YAHXZ",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058a4f0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_quiet_0058ff10@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_probe_measure_00565890@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [
+        "0058ff10"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_release_0058ac30@porsche@@YAXI@Z",
+      "callers": [
+        "?application_audio_probe_measure_00565890@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [
+        "0058ac30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_start_0058e2d0@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058e2d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_start_device_0058fdb0@porsche@@YAHXZ",
+      "callers": [
+        "?application_audio_create_device_00565720@porsche@@YAHIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "0058fdb0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_stop_0058e2e0@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_probe_measure_00565890@porsche@@YAHXZ",
+        null
+      ],
+      "candidate_va_tokens": [
+        "0058e2e0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_backend_stop_device_0058fe80@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_probe_measure_00565890@porsche@@YAHXZ",
+        null
+      ],
+      "candidate_va_tokens": [
+        "0058fe80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_period_control_00565c70@porsche@@YAXIIIII@Z",
+      "callers": [
+        "?application_audio_post_setup_004ab470@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00565c70"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_probe_configure_004ae100@porsche@@YAXHII@Z",
+      "callers": [
+        "?application_audio_setup_004a6840@porsche@@YAXHI@Z"
+      ],
+      "candidate_va_tokens": [
+        "004ae100"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_probe_initialize_004a66b0@porsche@@YAEXZ",
+      "callers": [
+        "?application_audio_setup_004a6840@porsche@@YAXHI@Z",
+        null
+      ],
+      "candidate_va_tokens": [
+        "004a66b0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_probe_prepare_004ae2b0@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_setup_004a6840@porsche@@YAXHI@Z",
+        null
+      ],
+      "candidate_va_tokens": [
+        "004ae2b0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_probe_start_004a8b80@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_setup_004a6840@porsche@@YAXHI@Z",
+        null
+      ],
+      "candidate_va_tokens": [
+        "004a8b80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_shutdown_channels_005659f0@porsche@@YAXH@Z",
+      "callers": [
+        "?application_audio_shutdown_004a6960@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005659f0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_shutdown_device_004ae310@porsche@@YAXXZ",
+      "callers": [
+        "?application_audio_shutdown_004a6960@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004ae310"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_source_storage_005e8bfc@porsche@@3PAIA",
+      "callers": [
+        "?application_audio_reset_004a6e30@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005e8bfc"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_stop_channel_005659f0@porsche@@YAHH@Z",
+      "callers": [
+        "?application_audio_transition_004a6a00@porsche@@YAXIIIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "005659f0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_transition_configure_004ae010@porsche@@YAXII@Z",
+      "callers": [
+        "?application_audio_transition_004a6a00@porsche@@YAXIIIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "004ae010"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_audio_transition_finish_004ae4d0@porsche@@YAXII@Z",
+      "callers": [
+        "?application_audio_transition_004a6a00@porsche@@YAXIIIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "004ae4d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_context_base_destroy_00525ec0@porsche@@YIIPAUApplicationSetupContext@1@PAX@Z",
+      "callers": [
+        "?application_setup_context_destroy_004d1ba0@porsche@@YIIPAUApplicationSetupContext@1@PAX@Z"
+      ],
+      "candidate_va_tokens": [
+        "00525ec0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_diagnostic_environment_inner_005a3071@porsche@@YAPBDPBD@Z",
+      "callers": [
+        "?application_diagnostic_environment_005a3050@porsche@@YAPBDPBD@Z"
+      ],
+      "candidate_va_tokens": [
+        "005a3071"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_heap_finish@porsche@@YAXIII@Z",
+      "callers": [
+        "?startup_heap_0059e9d0@porsche@@YAXIIII@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_instance_find_window@porsche@@YAPAXPBD0@Z",
+      "callers": [
+        "?application_instance_check_005655f0@porsche@@YAIPBD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_instance_set_foreground_window@porsche@@YAHPAX@Z",
+      "callers": [
+        "?application_instance_check_005655f0@porsche@@YAIPBD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_instance_show_window@porsche@@YAHPAXH@Z",
+      "callers": [
+        "?application_instance_check_005655f0@porsche@@YAIPBD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_main_front_end_display@porsche@@YAXPAI@Z",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_main_function_00413ea0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00413ea0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_00414eb0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00414eb0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_004152e0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "004152e0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_004640b0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "004640b0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_00467740@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00467740"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_0048cdf0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "0048cdf0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_004a88a0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "004a88a0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_004acb80@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "004acb80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_004b68f0@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "004b68f0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_function_00563d30@porsche@@YAXXZ",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00563d30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?application_main_game_setup@porsche@@YIHPAUApplicationSetupContext@1@PAXPBDPAII@Z",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_main_network_poll@porsche@@YAXII@Z",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_main_network_wait@porsche@@YAXIIPAE@Z",
+      "callers": [
+        "?app_main_004b6a50@porsche@@YAHHPAPAD@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_memory_diagnostic@porsche@@YAXI@Z",
+      "callers": [
+        "?startup_heap_0059e9d0@porsche@@YAXIIII@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?application_network_change_0048e1a0@porsche@@YIXPAX0III@Z",
+      "callers": [
+        "?application_main_function_0048e6f0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0048e1a0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?destroy_0048ff30@ShutdownNetwork311@porsche@@QAEXXZ",
+      "callers": [
+        "?application_main_function_004a54b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0048ff30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?engine_service_consume_resource_0048cb50@porsche@@YAXIPAXH@Z",
+      "callers": [
+        "?engine_service_00427a60@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0048cb50"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?exit_shutdown_static_callback_005a36d6@porsche@@YAXXZ",
+      "callers": [
+        "?exit_shutdown_execute_005a2490@porsche@@YAXIHI@Z"
+      ],
+      "candidate_va_tokens": [
+        "005a36d6"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?exit_shutdown_static_callback_005ac147@porsche@@YAXXZ",
+      "callers": [
+        "?exit_shutdown_execute_005a2490@porsche@@YAXIHI@Z"
+      ],
+      "candidate_va_tokens": [
+        "005ac147"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_backend_00591980@porsche@@YAIPAX@Z",
+      "callers": [
+        "?file_worker_00568530@porsche@@YAXI@Z"
+      ],
+      "candidate_va_tokens": [
+        "00591980"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_backend_00592490@porsche@@YAIPAX@Z",
+      "callers": [
+        "?file_worker_00568530@porsche@@YAXI@Z"
+      ],
+      "candidate_va_tokens": [
+        "00592490"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_backend_005924d0@porsche@@YAIPAXI@Z",
+      "callers": [
+        "?file_worker_00568530@porsche@@YAXI@Z"
+      ],
+      "candidate_va_tokens": [
+        "005924d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_backend_open_00568900@porsche@@YAPAXPBDII@Z",
+      "callers": [
+        "?file_worker_00568530@porsche@@YAXI@Z"
+      ],
+      "candidate_va_tokens": [
+        "00568900"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_backend_write_00591fa0@porsche@@YAIPAX0I@Z",
+      "callers": [
+        "?file_worker_00568530@porsche@@YAXI@Z"
+      ],
+      "candidate_va_tokens": [
+        "00591fa0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_diagnostic_00565340@porsche@@YAXPBD@Z",
+      "callers": [
+        null
+      ],
+      "candidate_va_tokens": [
+        "00565340"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?file_set_last_error@porsche@@YAXI@Z",
+      "callers": [
+        "?close_00533da0@porsche@@YAIPAXI@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?formatter_crt_signal_table_005e5ec8@porsche@@3QBEB",
+      "callers": [
+        "?formatter_crt_initialize_thread_005a5449@porsche@@YAXPAX@Z"
+      ],
+      "candidate_va_tokens": [
+        "005e5ec8"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_callback_vector_0060c9f4@porsche@@3PAUFrameVector_400@1@A",
+      "callers": [
+        "?application_main_function_00425780@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0060c9f4"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_compact_vector_0060c9c4@porsche@@3PAUFrameVector_400@1@A",
+      "callers": [
+        "?application_main_function_00425780@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0060c9c4"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_control_enabled_005e940c@porsche@@3IA",
+      "callers": [
+        "?application_main_function_00412030@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005e940c"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_control_index_005e9410@porsche@@3IA",
+      "callers": [
+        "?application_main_function_00412030@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005e9410"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_control_slot_release_005338d0@porsche@@YAXH@Z",
+      "callers": [
+        "?application_main_function_00412030@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005338d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_control_table_005e9420@porsche@@3PAUFrameControlIndexTuple_400@1@A",
+      "callers": [
+        "?application_main_function_00412030@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005e9420"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_pump_boundary_005360a0@porsche@@YAXPAXI@Z",
+      "callers": [
+        "?frame_pump_004b0d70@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005360a0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_pump_boundary_005363a0@porsche@@YAXPAX@Z",
+      "callers": [
+        "?frame_pump_004b0d70@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005363a0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_pump_boundary_00568f30@porsche@@YAXIIIIII@Z",
+      "callers": [
+        "?frame_pump_004b0d70@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00568f30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_pump_boundary_005693e0@porsche@@YAIXZ",
+      "callers": [
+        "?frame_pump_004b0d70@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "005693e0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_service_root_00628960@porsche@@3IA",
+      "callers": [
+        "?application_main_function_00471b60@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00628960"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_004ad510@porsche@@YAXXZ",
+      "callers": [
+        "?frame_services_004ab150@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "004ad510"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_004ae3c0@porsche@@YAII@Z",
+      "callers": [
+        "?frame_services_004ab150@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "004ae3c0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_004ae4d0@porsche@@YAXII@Z",
+      "callers": [
+        "?frame_services_004ab200@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "004ae4d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_004ae8c0@porsche@@YAXI@Z",
+      "callers": [
+        "?frame_services_004ab200@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "004ae8c0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_004af900@porsche@@YAXII@Z",
+      "callers": [
+        "?frame_services_004ab150@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "004af900"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_00565cd0@porsche@@YAXII@Z",
+      "callers": [
+        "?frame_services_004ab150@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "00565cd0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?frame_services_boundary_00566340@porsche@@YAIII@Z",
+      "callers": [
+        "?frame_services_004ab150@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [
+        "00566340"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_draw_begin_00534540@porsche@@YAXXZ",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00534540"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_draw_resource_00563440@porsche@@YAXPBXIIII@Z",
+      "callers": [
+        "?draw_table@?A0xdb8cf63f@porsche@@YAXPAXIIIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "00563440"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_file_exists_0059dc30@porsche@@YAIPBD@Z",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0059dc30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_movie_004dc850@porsche@@YAXPAXPAIIII@Z",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004dc850"
+      ],
+      "registered_matches": [
+        {
+          "entry_va": "004dc850",
+          "status": "partial-native-differential-verified",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/movie_header.cpp",
+          "source_in_actual379_closure": true,
+          "source_sha256": "edf012a511d99a4a54610359851da432455dd5c456de10687cf144ce29dbbee3",
+          "calling_convention": "Exact original caller ABI or documented explicit-object adapter; see package report.",
+          "verification_boundary": "Only accepted MAD-family header through renderer004dc180 entry, using explicit MovieHeaderState; not a replacement for original function ABI.",
+          "unrecovered_branches": [
+            "stream selection/scanning, playback/audio/input loop and renderer body"
+          ],
+          "verification_report": "iterations/v2/001-original-recovery/runs/098-startup-integration/movie-header/verification.json",
+          "decision": "NOT_BOUND",
+          "reason": "Only MAD header slice with explicit MovieHeaderState and drawboundary accepted; no original wholemovie ABI provider."
+        }
+      ],
+      "classification": "registered-but-incompatible-or-unaccepted-domain"
+    },
+    {
+      "symbol": "?game_setup_movie_004dd4a0@porsche@@YAXXZ",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004dd4a0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_movie_service_begin_00536080@porsche@@YAXPAX@Z",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00536080"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_movie_service_end_00536050@porsche@@YAXPAX@Z",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00536050"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_object_init_00403520@porsche@@YAXPAXI@Z",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00403520"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_resource_open_0059e440@porsche@@YAXPBDPAX@Z",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0059e440"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?game_setup_update_00560030@porsche@@YAXXZ",
+      "callers": [
+        "?game_setup_004dd600@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00560030"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?input_caps_success_unrecovered_0056fdf9@porsche@@YAIPAUInputBufferDevice@1@PAXPBX@Z",
+      "callers": [
+        "?input_caps_0056fdb0@porsche@@YAIPAUInputBufferDevice@1@PAX@Z"
+      ],
+      "candidate_va_tokens": [
+        "0056fdf9"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?input_negative_index_00532e10@porsche@@YAPAXHI@Z",
+      "callers": [
+        "?fe_input_getstate_00532e10@porsche@@YAPAXII@Z"
+      ],
+      "candidate_va_tokens": [
+        "00532e10"
+      ],
+      "registered_matches": [
+        {
+          "entry_va": "00532e10",
+          "status": "partial-native-differential-verified",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/input_state.cpp",
+          "source_in_actual379_closure": true,
+          "source_sha256": "fe4d9ae1bbfc4eca6ee6de7bc93d08174a77b9a23dd619dec09a6635822eb66d",
+          "calling_convention": "cdecl, x86 32-bit",
+          "verification_boundary": "Only mode6 and valid exits accepted; unknown modes and negative/unmapped index boundaries are explicit.",
+          "unrecovered_branches": [
+            "mode1",
+            "mode2",
+            "mode8",
+            "invalid_mode",
+            "negative_index",
+            "unmapped_index"
+          ],
+          "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-state/verification.json",
+          "decision": "NOT_BOUND",
+          "reason": "Requested negative/unmapped index branches are explicitly external holes of the canonical provider; aliasing back would recurse through the same hole."
+        }
+      ],
+      "classification": "registered-but-incompatible-or-unaccepted-domain"
+    },
+    {
+      "symbol": "?input_unmapped_index_00532e10@porsche@@YAPAXII@Z",
+      "callers": [
+        "?fe_input_getstate_00532e10@porsche@@YAPAXII@Z"
+      ],
+      "candidate_va_tokens": [
+        "00532e10"
+      ],
+      "registered_matches": [
+        {
+          "entry_va": "00532e10",
+          "status": "partial-native-differential-verified",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/input_state.cpp",
+          "source_in_actual379_closure": true,
+          "source_sha256": "fe4d9ae1bbfc4eca6ee6de7bc93d08174a77b9a23dd619dec09a6635822eb66d",
+          "calling_convention": "cdecl, x86 32-bit",
+          "verification_boundary": "Only mode6 and valid exits accepted; unknown modes and negative/unmapped index boundaries are explicit.",
+          "unrecovered_branches": [
+            "mode1",
+            "mode2",
+            "mode8",
+            "invalid_mode",
+            "negative_index",
+            "unmapped_index"
+          ],
+          "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/input-state/verification.json",
+          "decision": "NOT_BOUND",
+          "reason": "Requested negative/unmapped index branches are explicitly external holes of the canonical provider; aliasing back would recurse through the same hole."
+        }
+      ],
+      "classification": "registered-but-incompatible-or-unaccepted-domain"
+    },
+    {
+      "symbol": "?network_group_text_005e8e50@porsche@@3PADA",
+      "callers": [
+        "?network_member_group_remove_0048bda0@porsche@@YIXPAX00@Z"
+      ],
+      "candidate_va_tokens": [
+        "005e8e50"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_lifecycle_device_cancel_00561730@porsche@@YAXI@Z",
+      "callers": [
+        "?application_network_member_destroy_004935c0@porsche@@YIXPAX0@Z"
+      ],
+      "candidate_va_tokens": [
+        "00561730"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_lifecycle_device_release_005617d0@porsche@@YAXI@Z",
+      "callers": [
+        "?application_network_member_destroy_004935c0@porsche@@YIXPAX0@Z"
+      ],
+      "candidate_va_tokens": [
+        "005617d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_lifecycle_device_stop_00561b50@porsche@@YAXXZ",
+      "callers": [
+        "?application_network_member_destroy_004935c0@porsche@@YIXPAX0@Z"
+      ],
+      "candidate_va_tokens": [
+        "00561b50"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_lifecycle_tick_count_0048a9a0@porsche@@YGIXZ",
+      "callers": [
+        "?network_lifecycle_reset_0048e9c0@porsche@@YIIPAX0@Z"
+      ],
+      "candidate_va_tokens": [
+        "0048a9a0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_lifecycle_unregister_00561110@porsche@@YAXI@Z",
+      "callers": [
+        "?application_network_member_destroy_004935c0@porsche@@YIXPAX0@Z"
+      ],
+      "candidate_va_tokens": [
+        "00561110"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_lifecycle_wait_0053c380@porsche@@YAXH@Z",
+      "callers": [
+        "?network_lifecycle_reset_0048e9c0@porsche@@YIIPAX0@Z"
+      ],
+      "candidate_va_tokens": [
+        "0053c380"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_rtti_005c5190@porsche@@3QBEB",
+      "callers": [
+        null
+      ],
+      "candidate_va_tokens": [
+        "005c5190"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_rtti_005c51d8@porsche@@3QBEB",
+      "callers": [
+        null
+      ],
+      "candidate_va_tokens": [
+        "005c51d8"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?network_rtti_005c5228@porsche@@3QBEB",
+      "callers": [
+        null
+      ],
+      "candidate_va_tokens": [
+        "005c5228"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_clock_00555bc0@porsche@@YAIXZ",
+      "callers": [
+        "?render_display_prefix_004677e0@porsche@@YAXPAURenderDisplay@1@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00555bc0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_apply_004b70d0@porsche@@YAXII@Z",
+      "callers": [
+        "?render_startup_00467470@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004b70d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_compare_pixel_00468110@porsche@@YA_NII@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00468110"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_driver_alt_ctor_00556a90@porsche@@YAPAXPAX0@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00556a90"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_driver_ctor_00557100@porsche@@YAPAXPAX0@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00557100"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_driver_present_vslot0@porsche@@YAIPAXI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?render_display_driver_start_vslot1@porsche@@YAEPAX@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?render_display_fill_00537e00@porsche@@YAXI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00537e00"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_finish_driver_00537850@porsche@@YAXPAXI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00537850"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_finish_init_004b0eb0@porsche@@YAXXZ",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "004b0eb0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_local_transform_00466e80@porsche@@YAXPAXI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00466e80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_member_00466380@porsche@@YAXPAX@Z",
+      "callers": [
+        "?render_display_prefix_004677e0@porsche@@YAXPAURenderDisplay@1@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00466380"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_present_0044e870@porsche@@YAII@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "0044e870"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_prevideo_0044e2c0@porsche@@YAXXZ",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "0044e2c0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_release_texture_00533f80@porsche@@YAXPAX@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00533f80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_resource_ctor_00540390@porsche@@YAPAXPAXI@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00540390"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_surface_config_005392d0@porsche@@YAXPAXIII@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005392d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_surface_ctor_00538d10@porsche@@YAPAXPAXI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00538d10"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_surface_init_00538da0@porsche@@YAXPAXMMIIII@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00538da0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_surface_transform_00539f40@porsche@@YAPAXPAXIII@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00539f40"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_alloc_00554960@porsche@@YAPAXIIIIIPBD@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00554960"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_copy_00554d70@porsche@@YAXPAX0I@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00554d70"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_release_00555440@porsche@@YAXPAX@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00555440"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_report_005a177b@porsche@@YAXPBDI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005a177b"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_reserve_00553fc0@porsche@@YAHI@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00553fc0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_reset_0053c3d0@porsche@@YAXXZ",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "0053c3d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_texture_update_005550e0@porsche@@YAXXZ",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005550e0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_thr_cleanup_00555390@porsche@@YAXXZ",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00555390"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_transform_attach_00539b00@porsche@@YAXPAX0@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00539b00"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_transform_compose_00539b30@porsche@@YAXPAX0II@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00539b30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_display_transform_init_00539b80@porsche@@YAXPAX@Z",
+      "callers": [
+        "?render_construct_display_004677e0@porsche@@YAPAURenderDisplay@1@PAXPBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "00539b80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_draw_rectangle_bits_0056daf0@porsche@@YAXIIIII@Z",
+      "callers": [
+        "?render_buffer_draw_0056de20@porsche@@YAXMMI@Z"
+      ],
+      "candidate_va_tokens": [
+        "0056daf0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_event_invoke_callback_005debec@porsche@@YAXII@Z",
+      "callers": [
+        "?mouse_input_consumer_005728b0@porsche@@YAXIIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "005debec"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_get_desktop_005b2274@porsche@@YAIXZ",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005b2274"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_get_device_caps_005b2044@porsche@@YAHIH@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005b2044"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_get_window_dc_005b226c@porsche@@YAII@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005b226c"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_loader_directx_00574eb0@porsche@@YAXQAIPBD@Z",
+      "callers": [
+        "?render_load_thrash_00574fa0@porsche@@YAIPBD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00574eb0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_loader_report_00565340@porsche@@YAXPBD@Z",
+      "callers": [
+        "?render_load_thrash_00574fa0@porsche@@YAIPBD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00565340"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_loader_reset_00594f00@porsche@@YAXI@Z",
+      "callers": [
+        "?render_load_thrash_00574fa0@porsche@@YAIPBD@Z"
+      ],
+      "candidate_va_tokens": [
+        "00594f00"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_message_box_005b2270@porsche@@YAXIPBD0I@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005b2270"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_misc_00449b40@porsche@@YAXXZ",
+      "callers": [
+        "?render_startup_00467470@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00449b40"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_misc_00465df0@porsche@@YAXXZ",
+      "callers": [
+        "?render_startup_00467470@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00465df0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_missing_setup_00467535@porsche@@YAXXZ",
+      "callers": [
+        "?render_startup_00467470@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00467535"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_mode_clock_00555bc0@porsche@@YAIXZ",
+      "callers": [
+        "?render_mode_update_state_0044ed10@porsche@@YAXXZ",
+        null
+      ],
+      "candidate_va_tokens": [
+        "00555bc0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_mode_driver_prepare_vslot9@porsche@@YAXPAX@Z",
+      "callers": [
+        "?render_mode_commit_0044ebf0@porsche@@YAXI@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?render_release_dc_005b2268@porsche@@YAXII@Z",
+      "callers": [
+        "?render_display_through_004679c7@porsche@@YAPAURenderDisplay@1@PAU21@PBDII1@Z"
+      ],
+      "candidate_va_tokens": [
+        "005b2268"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?render_window_driver_select_mode_vslot7@porsche@@YAXPAXI@Z",
+      "callers": [
+        "?render_display_video_result_00468030@porsche@@YAXPAURenderDisplay@1@I@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?render_window_show_cursor@porsche@@YGHH@Z",
+      "callers": [
+        "?render_display_video_result_00468030@porsche@@YAXPAURenderDisplay@1@I@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?resource_drive_type_005b2060@porsche@@3P6GIPBD@ZA",
+      "callers": [
+        "?resource_paths_0059d650@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [
+        "005b2060"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?resource_invalid_module_path_0059d650@porsche@@YAXPBD@Z",
+      "callers": [
+        "?resource_paths_0059d650@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [
+        "0059d650"
+      ],
+      "registered_matches": [
+        {
+          "entry_va": "0059d650",
+          "status": "native-differential-verified",
+          "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/resource_paths.cpp",
+          "source_in_actual379_closure": true,
+          "source_sha256": "d98786e4178cc3fbd61b059a3b91ec86e946aeca5a07d9fbb31775a1398008b8",
+          "calling_convention": "x86 typed C++ adapter; original ECX/stack ABI documented in source",
+          "verification_boundary": "023-resource-paths: recording platform/callee boundaries; see run README; not a game launch.",
+          "unrecovered_branches": [],
+          "verification_report": "iterations/v2/001-original-recovery/runs/173-float-transport-integration/resource-paths/verification.json",
+          "decision": "NOT_BOUND",
+          "reason": "Error-path seam is tagged with containing caller VA, not a distinct original entry. Canonical provider takes noargs and itself calls this seam for missing slash; aliasing would recurse."
+        }
+      ],
+      "classification": "registered-but-incompatible-or-unaccepted-domain"
+    },
+    {
+      "symbol": "?resource_module_filename_005b2064@porsche@@3P6GIPAXPADI@ZA",
+      "callers": [
+        "?resource_paths_0059d650@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [
+        "005b2064"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?resource_open_transform_006ad750@porsche@@3P6APAXPAXPBDI@ZA",
+      "callers": [
+        "?resource_open_callback_00561ce0@porsche@@YAHIPAX@Z"
+      ],
+      "candidate_va_tokens": [
+        "006ad750"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_dispatch_004edc00@porsche@@YAXIPAPAXIH@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "004edc00"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_draw_overlay_00562810@porsche@@YAXPAXHHHH@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00562810"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_draw_sprite_00563160@porsche@@YAXPAXHHHH@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00563160"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_draw_text_00562680@porsche@@YAXHHIII@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00562680"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_draw_tile_00563440@porsche@@YAXPBXHHHH@Z",
+      "callers": [
+        "?draw_strip@?A0x5bb6b6e8@porsche@@YAXPAXIIHH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00563440"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_driver_draw_0053d570@porsche@@YAXIHH@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "0053d570"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_driver_frame_begin_00534540@porsche@@YAXXZ",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00534540"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_file_exists_0059dc30@porsche@@YAHPBD@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "0059dc30"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_find_item_0048d720@porsche@@YAHH@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "0048d720"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_item_data_004903f0@porsche@@YAPAXPAXF@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "004903f0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_item_visible_00490390@porsche@@YIEPAX@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00490390"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_release_stack_0048d550@porsche@@YAXPAX@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "0048d550"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_render_format_005032d0@porsche@@YAIXZ",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "005032d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_resource_begin_004ad670@porsche@@YAHXZ",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "004ad670"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_resource_end_004ad6c0@porsche@@YAHXZ",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "004ad6c0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?splash_progress_update_sprite_00563320@porsche@@YAXPAX@Z",
+      "callers": [
+        "?splash_progress_004a4a70@porsche@@YAXH@Z"
+      ],
+      "candidate_va_tokens": [
+        "00563320"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_create_process@porsche@@YGIPBDPADPAX2HI2022@Z",
+      "callers": [
+        "?startup_cd_relaunch_004a5c30@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?startup_drive_type@porsche@@YGIPBD@Z",
+      "callers": [
+        "?startup_cd_relaunch_004a5c30@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?startup_get_keyboard_type@porsche@@YAII@Z",
+      "callers": [
+        "?startup_keyboard_detect_00564e70@porsche@@YAHXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?startup_joy_get_dev_caps@porsche@@YAIIPAXI@Z",
+      "callers": [
+        "?startup_joystick_enumerate_00564ab0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?startup_joy_get_num_devs@porsche@@YAHXZ",
+      "callers": [
+        "?startup_joystick_enumerate_00564ab0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?startup_network_construct_0048fc80@porsche@@YAXPAX@Z",
+      "callers": [
+        "?startup_services_004a5410@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0048fc80"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_004121b0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004121b0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00413cf0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00413cf0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00414db0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00414db0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00415dc0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00415dc0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00424460@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00424460"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00434a90@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00434a90"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_0044dfb0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0044dfb0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00468fb0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00468fb0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_004690d0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004690d0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_00471b70@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00471b70"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_0048cdf0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0048cdf0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_004a4700@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004a4700"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_004a8cd0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004a8cd0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_004affd0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004affd0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_call_004b0fa0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004b0fa0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_report_005a177b@porsche@@YAXII@Z",
+      "callers": [
+        "?application_audio_shutdown_004a6960@porsche@@YAXXZ",
+        null
+      ],
+      "candidate_va_tokens": [
+        "005a177b"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_service_00536080@porsche@@YIXPAX0@Z",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "00536080"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_text_0044df10@porsche@@YAXI@Z",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "0044df10"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?startup_sequence_transfer_004691c0@porsche@@YAXXZ",
+      "callers": [
+        "?startup_sequence_004b67b0@porsche@@YAXXZ"
+      ],
+      "candidate_va_tokens": [
+        "004691c0"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?timer_diagnostic_boundary@porsche@@YAXPBDZZ",
+      "callers": [
+        "?report_timer_error@?A0x482edc7a@porsche@@YAXPBDI0@Z"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?window_register_diagnostic@porsche@@YAXPBDI@Z",
+      "callers": [
+        "?window_register_prefix_0053ac20@porsche@@YA_NXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?window_scheduler_diagnostic_00565340@porsche@@YAXPBD@Z",
+      "callers": [
+        "?window_scheduler_register_005365e0@porsche@@YAIP6AIII@ZII@Z"
+      ],
+      "candidate_va_tokens": [
+        "00565340"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?window_shutdown_close_handle_006bd92c@porsche@@YGIPAX@Z",
+      "callers": [
+        "?window_shutdown_callback_0053bae0@porsche@@YAIII@Z"
+      ],
+      "candidate_va_tokens": [
+        "006bd92c"
+      ],
+      "registered_matches": [],
+      "classification": "no-exact-VA-provider-match"
+    },
+    {
+      "symbol": "?window_worker_callback@porsche@@YAXXZ",
+      "callers": [
+        "?window_worker_0053b8d0@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    },
+    {
+      "symbol": "?window_worker_idle_callback@porsche@@YAIIII@Z",
+      "callers": [
+        "?window_worker_0053b8d0@porsche@@YAIXZ"
+      ],
+      "candidate_va_tokens": [],
+      "registered_matches": [],
+      "classification": "no-VA-token-platform-or-semantic-facade"
+    }
+  ],
+  "decision": "No coherent safe canonical alias batch. Evidence-only; do not convert automatic catalog entries or partial holes into providers."
+}

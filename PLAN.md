@@ -1,9 +1,9 @@
 # План восстановления Porsche Unleashed
 
-Current [Run379](iterations/v2/001-original-recovery/runs/379-pixel-path-integration/README.md):
-206 TUs/8 projects compile;198 names/205 refs,noEXE. Five originalpixel bodies
-integrated; caller closes and rectangle0056daf0 opens.1067246 comparisons/21
-mutations and shared519-input audit PASS. Next: rectangle and input imports.
+Current [Run384](iterations/v2/001-original-recovery/runs/384-startup-render-integration/README.md):
+209 TUs/8 projects compile;194 names/201 refs,noEXE. Original clipping and three
+input imports close4 names with no new dependency.63720 comparisons/14 mutations,
+524-input audit PASS. Next: audited heap-startup and diagnostic callback gaps.
 Older checkpoints below are historical.
 
 Checkpoint2026-10-20 Run332: constructor329 and drive331 recovered (2VAs/162B),

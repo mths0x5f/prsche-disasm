@@ -38,10 +38,10 @@ It is outside the production game graph and does not replace original recovery.
 три оригинальные цепочки CALL/RET, 36 864 сравнения регистров, флагов, памяти и стека
 прошли. Это проверка экспериментального backend, а не запуск полной игры.
 
-[Latest game build, Run379](iterations/v2/001-original-recovery/runs/379-pixel-path-integration/README.md):
-206 C++ TUs compile;198 names/205 refs,noEXE. Five original pixel-path bodies
-integrated after1067246 native comparisons/21 mutations;519-input audit PASS.
-Next: rectangle geometry and Windows input imports. Live startup/menu remain open.
+[Latest game build, Run384](iterations/v2/001-original-recovery/runs/384-startup-render-integration/README.md):
+209 C++ TUs compile;194 names/201 refs,noEXE. Original clipping and inputimports
+passed63720 native comparisons/14 mutations;524-input audit PASS. Next: earliest
+heap startup and diagnostic callback boundaries. Live startup/menu remain open.
 
 Общий layout и инициализация корневого объекта остаются открытыми. Срок полной игры
 не установлен.

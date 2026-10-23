@@ -1,5 +1,14 @@
 # Отложенные проверки восстановления v2
 
+Run384 accepts finite/defaultFP clipping and exactinputimports (63720comparisons/
+14mutations,524-input audit). Geometrynonfinite/denormal/extreme/ambientFP, actual
+OS/THRASH/concurrency and full startup/menu remain HOLD. Unchanged221readonlyowner
+is integrated after001 exposedmissingdependency; no duplicatefloatcell.
+385 audit rejectsunsafealiases and records earlyconditionalOSgaps, mandatoryheap
+poolcomposition, raw0059fbc0 callback and0048fc80 ECXconstructor behindcdeclfacade.
+386/387 must retain partial/error/terminal boundaries; do notinferwholeacceptance
+from BSSsuccess or map raworiginalVAs silently to nativepointers. No gameEXEyet.
+
 Run379 accepts five pixel-path bodies after1067246 comparisons/21mutations and
 519-input audit. Palette indices outside0..255, invalid spans/computedaliases,
 non-nearest FP/concurrency and full renderer composition remain HOLD.380 composes
