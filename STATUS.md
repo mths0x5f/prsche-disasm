@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run377](iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/README.md):
-203 TUs/8 projects compile;198 names/205 refs,noEXE. Original texture constructor,
-depth mapping and shared heap query close2 names without new dependencies.
-25288 comparisons/13 mutations and shared512-input audit PASS. Next: pixel path.
+Current [Run379](iterations/v2/001-original-recovery/runs/379-pixel-path-integration/README.md):
+206 TUs/8 projects compile;198 names/205 refs,noEXE. Five originalpixel bodies
+integrated; caller closes and rectangle0056daf0 opens.1067246 comparisons/21
+mutations and shared519-input audit PASS. Next: rectangle and input imports.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

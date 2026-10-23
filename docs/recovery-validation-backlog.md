@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run379 accepts five pixel-path bodies after1067246 comparisons/21mutations and
+519-input audit. Palette indices outside0..255, invalid spans/computedaliases,
+non-nearest FP/concurrency and full renderer composition remain HOLD.380 composes
+actual378+newhelpers with381 endpoint boundaries; actual381 rawtransport/store
+proof is separate. Rectangle0056daf0 geometry is next382;383 closes inputimports.
+No gameEXE/live startup/display/menu/gameplay acceptance.
+
 Run377 accepts constructor/depth map/globalheap query (25288 comparisons/13
 mutations,512-input audit). OOM/failure/diagnostic branches are compared with
 controlled endpoints; actual heap scan/state owners reused, no duplicatearena.

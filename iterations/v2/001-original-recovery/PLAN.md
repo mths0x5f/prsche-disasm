@@ -1,35 +1,35 @@
 # v2 / 001 - original source recovery plan
 
-Current377,2026-10-23:375 texture constructor/depth map +376 heap query integrated.
-Three newVAs/772B;25288 comparisons/13 mutations PASS. REA375/001 all3 dossiers
-pass, original/copy hashes unchanged. Fresh game001:203TUs/8 projects,198names/
-205refs,noEXE. Two names close,nonewdependency; shared512-input audit PASS.
-Passed375/376 source/native proof frozen. Reused342 actual heap scan; no duplicate
-scan/heap roots. New005deb80 error counter only; diagnostics remain canonical.
+Current379,2026-10-23:378 pixel-write +380 address/convert +381 draw/write integrated.
+Five newVAs/639B;1067246 comparisons/21mutations, shared519-input audit PASS.
+Fresh game001:206TUs/8 projects,198names/205refs,noEXE. Legacyselect_buffer caller
+closes and rectangle0056daf0 opens; unchangednetcount does not mean no recovery.
+Only newstate is proved256DWORDpalette BSS; canonicalconfig/THRASH reused.
+Passed378/380/381 source/proof frozen. RawARGB packing, modulo/SAR math, unusual
+size3 overwrite and SNaN transport retained; no approximated geometry.
 
-Next ready378:00556910 pixel-write293B, existing legacyselect_buffer3DWORDfacade,
-14230 comparisons/7mutations PASS. All4original callers prove(x,y,pixel)ABI; old
-header unchanged. No newstate. Workerinput_platform_367(Sol6.1/high) now owns ONLY
-new381 draw/write helpers0056de20/0056e301. Workercursor_snapshot_371(Sol6.1/high)
-owns ONLY new380 address/convert00574050/00574b70. Both use existingowners/shared
-native runner; ready378+380+381 share next integration379, NOT frozen377.
-Root owns integration/registry/docs. Preserve unusual 24bit-write byteorder in
-0056e301, rawfloat transport in0056de20 and original modulo/signed addressmath.
-Unknown rectangle0056daf0 stays explicit until separately recovered.
+Active382: input_platform_367(Sol6.1/high) owns only new382-rectangle0056daf0,
+656B clipping/UV/vertices. Newstate only2proved20Bblocks (006a6404,005dfa08),
+readonlyzero scalar if noowner; reuse221one scalar and357quad. Preserve80bitlive
+intermediates/FSTP32 boundaries; finite masked/nearest domain explicit; after2
+samehypothesis failures report evidence, no guessed C++double substitute.
+Active383: cursor_snapshot_371(Sol6.1/high) owns only new383-startup-input-imports,
+three early USER32/WINMM facade bindings. Reuse367 ownEXEIAT/nativefixture approach,
+SDK USER32/WINMM libs, exact partialwrite/failure/argument/return semantics.
+Root owns integration/registry/docs. Both new batches remain outside frozen379;
+ready382/383 share next integration384. No new customrunner or subdelegation.
 
-377 checks: build-v2-game-batch.py with377/build-config.json configure/build001;
-audit-v2-native-game-batch.py with377/acceptance.json. Native375/001+376/002;
-REA375/001. Reuse accepted unchangedproof.375 endpoints control allocator/fill/
-formatter/query/callback;376 controls externalroots/flags but pins canonical
-actualsource/COFF/BSS. ProductionCOFF proves unique providers and state ownership.
-Real allocator/formatter/renderer composition, malformed aliases/chains, ambient
-FP/concurrency, linked game/startup/display/menu/gameplay remain open.
+379 checks: build-v2-game-batch.py with379/build-config.json configure/build001;
+audit-v2-native-game-batch.py with379/acceptance.json. Native378/001+380/001+381/001.
+Reuse unchanged passedproof.380 actual378caller composition uses controlled381
+endpoints; full geometry/renderer composition still open. Invalidindices/spans,
+computed aliases, ambientFP/concurrency and fullgame startup/display/menu HOLD.
 
-374 accepted/pushed023ef6c: full descriptor path501B/5VAs (partial34480 upgraded),
-8800 comparisons/8mutations,201TUs/200names207refs,508-input audit. Oldnullwrapper
-and prior canonical source/proof unchanged.373 snapshot/async likewise frozen.
-Default6.1Sol; Astra only after2failed attempts on a specific ambiguoushypothesis.
-No newcustomrunner; originalresources read-only; root pointersbrief.
+377 accepted/pushededd96ad: constructor/depth/heapquery772B,25288 comparisons/
+13mutations,512-input audit,203TUs/198names205refs. Reused actual342heap scan,
+canonical formatter/allocator/fill/state; live composition remains unaccepted.
+374/373 source/proofs likewise frozen. Default6.1Sol; Astra only after2failed
+attempts on a specific ambiguoushypothesis. Prioritize real startupdependencies.
 
 Repo skill .agents/skills/porsche-recovery/SKILL.md validated/pushed4e9f2b4.
 Project-local rules allow five named shared scripts; no blanket Python/shell rule.

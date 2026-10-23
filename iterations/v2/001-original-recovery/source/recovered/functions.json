@@ -10418,6 +10418,83 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/377-texture-constructor-integration/validation.json",
       "verification_boundary": "Full59B global-flags variant reuses canonical342 scan; exact shared original scan bytes, existing374 flags and heap roots. Finite valid mapped chains and controlled extern data, not corruption/concurrency/full allocator acceptance."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00556910",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl3DWORDargs; signed x/y plus packed pixel; EAX unused",
+      "recovered_dependencies": [
+        "00574050",
+        "00574b70",
+        "0056de20",
+        "0056e301"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
+      "verification_boundary": "Full293B pixel-write core plus existing legacy facade; known signed clipping, post-address depth, GPU state/call ordering and nearest FLOAT32 coordinates. Actual helpers integrated379; controlled THRASH/live renderer boundaries remain."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00574050",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl2signedDWORDargs; pointer return",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
+      "verification_boundary": "Full39B original modulo32 products/address sum and arithmetic shift of horizontal product. Synthetic32bit results are not dereferenced; canonical config reused."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00574b70",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1DWORDarg; DWORD result",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
+      "verification_boundary": "Full218B depth/format dispatch, exact1555/4444/565 bits,24/32 passthrough and unchecked original palette lookup. Palette domain0..255; raw extent/initialization and actual378 caller composition proved."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0056de20",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl3DWORDstackwords; FLOAT32 x/y copied as bits; EAX unused",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "0056daf0"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
+      "verification_boundary": "Full34B wrapper forwards original x/y raw bits, two1.0 words and pixel to explicit five-DWORD geometry boundary. Includes SNaN payload and unchanged FPstate; geometry/live draw external."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0056e301",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl3args pointer,pixel,signedsize; advanced pointer result",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/379-pixel-path-integration/validation.json",
+      "verification_boundary": "Full55B separate adjacent entry; exact signed branches and unusual size3 word-then-byte0 overwrite, byte2 unchanged and pointer+3. Valid write spans/nonpositive null only; MMIO/concurrent stores unaccepted."
     }
   ]
 }

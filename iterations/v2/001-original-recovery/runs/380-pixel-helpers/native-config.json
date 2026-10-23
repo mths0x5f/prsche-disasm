@@ -1,0 +1,132 @@
+{
+  "run": 380,
+  "experiment": "local/experiments/v2-pixel-helpers-native-380",
+  "timeout_seconds": 90,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+    "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
+    "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/380-pixel-helpers",
+    "iterations/v2/001-original-recovery/runs/378-buffer-select",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.hpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_loader.cpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@ORIGINAL@",
+      "va": "00556910",
+      "bytes": 293,
+      "sha256": "f57cf7d7552cb585b1a7be40834d909f576554bfc576a2ca79402192c31e549b"
+    },
+    {
+      "token": "@JUMPS@",
+      "va": "00556a38",
+      "bytes": 24,
+      "sha256": "059994b79affea36916a39672f9395043ff96f7417355965dfe8be3d87dd5765"
+    },
+    {
+      "token": "@MAP@",
+      "va": "00556a50",
+      "bytes": 29,
+      "sha256": "883f476a227f8a3c3ecb5a7d17aadc3eac7446c36c28f278d6df6e8033277f8c"
+    },
+    {
+      "token": "@INITIAL@",
+      "va": "005de620",
+      "bytes": 48,
+      "sha256": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1"
+    },
+    {
+      "token": "@ADDRESS@",
+      "va": "00574050",
+      "bytes": 39,
+      "sha256": "c38591c8fb69fbdb15961e1c9824aa1c6bb4bf3af251389be778f5870ea798e2"
+    },
+    {
+      "token": "@CONVERT@",
+      "va": "00574b70",
+      "bytes": 218,
+      "sha256": "cd41a8a278048acb634ba2ff39534f1767064409a984c0d72f6471a21efd3144"
+    },
+    {
+      "token": "@CONVERT_JUMPS@",
+      "va": "00574c4c",
+      "bytes": 16,
+      "sha256": "9032da9696ad6ea2bec2a673c250799421bf1eb26b8ccd4cf82e634d7379407e"
+    },
+    {
+      "token": "@CONVERT_MAP@",
+      "va": "00574c5c",
+      "bytes": 18,
+      "sha256": "dcfbdbb0f546f4d2ddd2d6370cff0281b6f11f887ce249bc2796fc56a0673ea3"
+    }
+  ],
+  "pass_marker": "pixel_helpers_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "address-logical-shift",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "const auto shifted=(horizontal>>3)|((horizontal&0x80000000u)?0xe0000000u:0u);",
+      "new": "const auto shifted=horizontal>>3;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "address-wide-multiply",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "const auto horizontal=static_cast<std::uint32_t>(storage_bits)*static_cast<std::uint32_t>(x);",
+      "new": "const auto horizontal=static_cast<std::uint64_t>(storage_bits)*static_cast<std::uint32_t>(x);",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "address-wrong-pitch",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "const auto pitch=window_shutdown_config_005de620[9];",
+      "new": "const auto pitch=window_shutdown_config_005de620[8];",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "1555-alpha-bit",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "const auto alpha=(pixel&0x8000u)?0xffu:0u;",
+      "new": "const auto alpha=(pixel&0x4000u)?0xffu:0u;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "4444-format",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "if(config[12]==0x6d)",
+      "new": "if(config[12]==0x6c)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "565-alpha-low16",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "((pixel!=0?0xffu:0u)<<24)",
+      "new": "(((pixel&0xffffu)!=0?0xffu:0u)<<24)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "palette-index-mask",
+      "source": "iterations/v2/001-original-recovery/runs/380-pixel-helpers/pixel_helpers.cpp",
+      "old": "render_pixel_palette_006b4b20[pixel];",
+      "new": "render_pixel_palette_006b4b20[pixel&127u];",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    }
+  ]
+}
