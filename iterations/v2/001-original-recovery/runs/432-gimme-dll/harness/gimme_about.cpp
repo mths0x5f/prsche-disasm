@@ -57,5 +57,30 @@ int main(int argc, char **argv)
         PrintText(about + 0xbc, 32);
         printf("\n");
     }
+
+    // Filter table at 0x10432428 (5 entry points, 0x14 bytes each); FUN_100054ae matches the
+    // name at about+0x48.  Quantizer table at 0x10432720 (4 entry points); name at about+0x38.
+    struct { unsigned table, stride, name; const char *kind; } lists[] = {
+        { 0x10432428, 5, 0x48, "filter" }, { 0x10432720, 4, 0x38, "quantizer" } };
+    for (int l = 0; l < 2; ++l)
+    {
+        AboutFn *entries = (AboutFn *)(ULONG_PTR)lists[l].table;
+        for (int i = 0; entries[i * lists[l].stride]; ++i)
+        {
+            const unsigned char *about = entries[i * lists[l].stride]();
+            if (!about)
+                continue;
+            const unsigned *w = (const unsigned *)about;
+            printf("%s %2d tag=%08x size=%#x version=%u ", lists[l].kind, i, w[0], w[1], w[2]);
+            for (int t = 0x10; t < 0x80; t += 0x10)
+            {
+                printf(" +%02x ", t);
+                PrintText(about + t, 16);
+            }
+            printf(" name@%#x ", lists[l].name);
+            PrintText(about + lists[l].name, 32);
+            printf("\n");
+        }
+    }
     return 0;
 }
