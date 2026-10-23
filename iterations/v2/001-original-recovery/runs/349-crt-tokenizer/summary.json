@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 38,
+  "new_original_functions": 1,
+  "entry_vas": [
+    "005a30ee"
+  ],
+  "original_code_bytes": 164,
+  "mutation_controls": 7,
+  "native_receipt": "local/experiments/v2-crt-tokenizer-native-349/003/receipt.json",
+  "native_receipt_sha256": "461886bd22a3d8ccfc58c529d9f320bf9f1866c194737bac6deafcf3b1959244",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/349-crt-tokenizer/native-fixture.cpp.in": "1c6a57f7aa80bc9637d8d94031533222b1e86ece87cb8ae7dc648eddbbe715dc",
+    "iterations/v2/001-original-recovery/runs/349-crt-tokenizer/crt_tokenizer.cpp": "0e41abcc2edbdfc0cb11045bc11ceb7be9981b40961114eb68052e0ec91d22ca",
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.hpp": "b42e282f98f00da89d7f3c90510480dcd7060f8781f942d88594b3c14aaa1221",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_crt_runtime.hpp": "bac5720fbfd1436528dd99129bb2162811d9e703a652f2d2106954426a9680b1"
+  },
+  "holds": [
+    "Null input with a null TLS continuation would dereference null in the original and is not an accepted bounded case.",
+    "The original tokenizer stores state in canonical CRT TLS; shared concurrency and full game behavior require subsystem integration checks."
+  ]
+}

@@ -1,0 +1,124 @@
+#include "porsche/render_settings.hpp"
+#include "porsche/render_mode.hpp"
+#include "porsche/window_shutdown.hpp"
+#include "porsche/render_loader.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+// Original CALL [absolute cell] instructions; marshaling and RET are fixture construction.
+static const unsigned char original[5][6]={{@ABOUT@},{@GET@},{@SET@},{@ALIAS@},{@WINDOW@}};
+static const U original_cell[5]={0x6bd934,0x6bd984,0x6bd97c,0x6bd918,0x6bd9b0};
+static const U slot[5]={9,29,27,2,40},arity[5]={0,1,2,2,1};
+static const bool preserve_eax[5]={true,true,true,false,false};
+static unsigned char* code;
+static unsigned char* block[5];
+static U cases=0,event_count=0;
+struct Event{U cell,count,a,b;};
+static Event events[8]{};
+static porsche::RenderSettingsDevice device{};
+static U word(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void die(const char* s,U n=0){std::printf("fixture %s %u\n",s,n);ExitProcess(98);}
+static U record(U cell,U count,U a=0,U b=0){
+    if(event_count>=8)die("events");events[event_count++]={cell,count,a,b};return 0xb3570000u+cell;
+}
+extern "C" const porsche::RenderSettingsDevice* __stdcall about(){record(9,0);return &device;}
+extern "C" U __stdcall get(U key){return record(29,1,key);}
+extern "C" U __stdcall set(U key,U value){return record(27,2,key,value);}
+extern "C" U __stdcall alias_a(U key,U value){return record(2,2,key,value);}
+extern "C" U __stdcall alias_b(U key,U value){return record(102,2,key,value);}
+extern "C" U __stdcall window(U mode){return record(40,1,mode);}
+namespace porsche {U render_thrash_exports_006bd910[43]{};}
+static void install(){
+    auto* table=porsche::render_thrash_exports_006bd910;
+    table[9]=word(reinterpret_cast<const void*>(&about));
+    table[29]=word(reinterpret_cast<const void*>(&get));
+    table[27]=word(reinterpret_cast<const void*>(&set));
+    table[2]=word(reinterpret_cast<const void*>(&alias_a));
+    table[40]=word(reinterpret_cast<const void*>(&window));
+    code=static_cast<unsigned char*>(VirtualAlloc(nullptr,0x1000,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE));
+    if(!code)die("alloc");
+    for(U i=0;i<5;++i){
+        if(original[i][0]!=0xff||original[i][1]!=0x15)die("call-opcode",i);
+        U cell;std::memcpy(&cell,original[i]+2,4);
+        if(cell!=original_cell[i])die("original-cell",i);
+        block[i]=code+i*0x40;U p=0;
+        for(U n=0;n<arity[i];++n){
+            block[i][p++]=0xff;block[i][p++]=0x74;block[i][p++]=0x24;
+            block[i][p++]=static_cast<unsigned char>(arity[i]*4);
+        }
+        std::memcpy(block[i]+p,original[i],6);
+        U target=word(&table[slot[i]]);std::memcpy(block[i]+p+2,&target,4);p+=6;
+        if(i==0)block[i][p++]=0xc3; // cdecl facade
+        else {block[i][p++]=0xc2;block[i][p++]=static_cast<unsigned char>(arity[i]*4);block[i][p++]=0;}
+    }
+    FlushInstructionCache(GetCurrentProcess(),code,0x1000);
+}
+struct Capture{U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;};
+static Capture invoke(const void* fn,U argc,U a,U b){
+    Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        cmp argc,2
+        jb one
+        push b
+    one:
+        cmp argc,1
+        jb callit
+        push a
+    callit:
+        mov ecx,fn
+        call ecx
+        lea edx,r
+        mov [edx+40],eax
+        lea edx,r
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    return r;
+}
+static bool abi(const Capture& r){return r.esp0==r.esp1&&r.ebp0==r.ebp1&&r.ebx0==r.ebx1&&
+    r.esi0==r.esi1&&r.edi0==r.edi1&&r.ebx0==0x13579bdfu&&r.esi0==0x2468ace0u&&r.edi0==0x6a31c5e7u;}
+struct State{U count;Event log[8];};
+static void reset(){event_count=0;std::memset(events,0,sizeof(events));}
+static State state(){State s{};s.count=event_count;std::memcpy(s.log,events,sizeof(events));return s;}
+static const void* native[5]={
+    reinterpret_cast<const void*>(&porsche::render_settings_current_device_006bd934),
+    reinterpret_cast<const void*>(&porsche::render_settings_get_state_006bd984),
+    reinterpret_cast<const void*>(&porsche::render_settings_set_state_006bd97c),
+    reinterpret_cast<const void*>(&porsche::render_mode_setstate_iat_006bd918),
+    reinterpret_cast<const void*>(&porsche::window_shutdown_display_callback_006bd9b0)};
+static bool compare(U i,U a=0,U b=0){
+    reset();Capture x=invoke(block[i],arity[i],a,b);State expected=state();
+    reset();Capture y=invoke(native[i],arity[i],a,b);State actual=state();++cases;
+    if(!abi(x)||!abi(y)||std::memcmp(&expected,&actual,sizeof(State))||
+        (preserve_eax[i]&&x.eax!=y.eax)){
+        std::printf("divergence render-settings-%u case=%u abi=%u/%u events=%u/%u eax=%08x/%08x\n",
+            i,cases,abi(x),abi(y),expected.count,actual.count,x.eax,y.eax);return false;}
+    return true;
+}
+int main(){
+    install();bool ok=true;
+    ok&=compare(0);ok&=compare(1,0x24);ok&=compare(1,0x2f);
+    ok&=compare(2,0x24,0x80);ok&=compare(2,0x24,0x2f);
+    ok&=compare(3,0x2e,0x3f800000u);
+    porsche::render_thrash_exports_006bd910[2]=word(reinterpret_cast<const void*>(&alias_b));
+    ok&=compare(3,0x2e,0x41200000u);
+    ok&=compare(4,0);ok&=compare(4,2);
+    std::printf("render_settings_bindings_original_calls_vs_cpp=%s cases=%u\n",ok?"PASS":"FAIL",cases);
+    return ok?0:1;
+}

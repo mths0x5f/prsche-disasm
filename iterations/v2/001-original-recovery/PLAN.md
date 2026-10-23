@@ -1,34 +1,115 @@
-# v2 / 001 — план восстановления исходного кода
+# v2 / 001 - original source recovery plan
 
-Current346,2026-10-21: five diagnostic leaf bodies212B restored.100 original-byte
-comparisons (/Od,/O2),four mutations and460-input shared audit PASS. Canonical
-345tables and formatter_stdio owner reused; OutputDebugStringA platform binding
-is proven as a pure six-byte x86 jump to the original KERNEL32 import.
-Fresh181-TU/8-project build:252 unresolved names/269 refs,noEXE. Five names
-close,one mono-format seam exposed. Details: runs/346-diagnostic-leaves/README.md.
+Current384,2026-10-23:382 rectangle656B +383 three original inputAPI facades
+integrated; unchanged221 two-cell readonlyowner added once. Native63720 comparisons/
+14mutations, shared524-input audit PASS. Game002:209TUs/8projects,194names/201refs,
+noEXE; four names close/no new ones.001 exposed missing221scalar integration;
+002 adds actualacceptedowner, not a duplicate. No nativeproof rerun/sourcechange.
+Passed382/383 sources/nativeproof frozen. Geometryfinite/defaultFP only; live
+OS/quad, nonfinite/denormal/extreme/ambientFP/concurrency remain explicitHOLD.
 
-Prior345 remains accepted: diagnostic physical100B device image with prefix/
-interior view/tail word,512B channel table,readonly aliases and guard;36 original
-comparisons plus128 ABI fill checks/seven mutations.27648 unchanged fill-chain
-cases reused. No parser/environment/output approximation or duplicate provider.
-Same-VA ABI triage found0safe aliases; reasons stay in local346triage artifact.
+385 evidence-only startupreuse audit: four exactregistryhits all unsafealiases;
+no body/binding/state/build acceptance. Source/manifest pinned at baseline379,
+not regenerated cosmetically for384 counts. Audit finds raw0059fbc0 callback
+assignment, ECX0048fc80 networkconstructor behind cdeclfacade, partial005679f0
+and earlier conditionalCD/duplicateinstance OSgaps. Do notsilentlyalias these.
 
-Active347 root ownership: REA attempt002 completed six dossiers (device/channel
-parsers,environment,mono formatter,both name lookups). Attempt001 hit sandbox
-spawnEPERM;002 succeeded with proper escalation. The worker then hit quota before
-writing evidence; no unfinished production source was left. Root continues its
-bounded analysis and preserves both attempts; no active worker assignments.
-Next concrete step: bounded parser/lookup recovery using existing diagnostic
-state and setter owners; no host getenv/printf/tokenizer substitutes.
+Active386: input_platform_367(Sol6.1/high) owns new386-heap-startup only: concrete
+0059eafb caller(256,0,256), EAXunused, rawpool/disk/page/list/exit?actualcanonical
+provider composition with unchanged oldsources. InitialBSS/startup domain must be
+proved; oldpartialpoolstatus/failure/reinit/shutdown stayHOLD. Root decides exact
+binding intake afterproof; never promote partialbody byalias or successfulcases.
+Active387: cursor_snapshot_371(Sol6.1/high) owns new387-startup-diagnostic andnew
+supplementalindexfile only:93B0059fbc0 varargscallback using canonicalformatter/
+vsprintf/sharedstate.356B0059fc20 terminal stays external; opaque253rdbyte and
+thread/debugger/exit behavior need separatefulltrace. No sharedstartupsourceedit.
+Root owns integration/registry/docs and later actualfunctionpointerbinding+fresh
+startupdispatch proof. RawfileVAtokens require genuinecallertransport, no automap.
+
+384 check: sharedbuild-v2-game-batch.py with384/build-config.json configure/build002;
+audit-v2-native-game-batch.py with384/acceptance.json. Native382/001+383/001 reuse.
+Game linkswinmm.lib/user32.lib; SDK/importCOFF/nativePE evidencepinned. Actual
+221scalar+357quad reused, no guessedgeometry/platform replacement or newrunner.
+
+379 accepted/pushed27b0a6c: fivepixel-pathVAs639B,1067246 comparisons/21mutations,
+519-input audit;206TUs/198names205refs.377constructor/heap772B,25288comparisons/
+13mutations likewise frozen. Default6.1Sol; Astra only after2failedattempts on a
+specific ambiguoushypothesis. Prioritize realstartupchain; originals read-only.
+
+Repo skill .agents/skills/porsche-recovery/SKILL.md validated/pushed4e9f2b4.
+Project-local rules allow five named shared scripts; no blanket Python/shell rule.
+No new custom runner. Root pointers remain brief; detailed evidence in run files.
+
+370 closes original DINPUT.dll!DirectInputCreateA using lib.exe +unadornated.def
+and a compiledstdcall IAT-cell alias, with actual PE loader/import proofs. No
+LoadLibrary-on-first-use orDirectInput8 substitution. Cursor APIs preserve raw
+pointer/partial-write/failure semantics. Old361/364 sources/header proof unchanged.
+Legacy361 mousecallback is address-only;368 canonical provider is actualstdcall
+WindowHandler, verified by originalRET24, actual361 registration, stack/nonvolatile
+and linked-map identity. No cdecl-returning callback body exists. Originalqsort
+005a112b +shortsort005a127f/swap005a12cd preserve cutoff8,pivot/partition/stack30,
+exact comparison/tie order and forward byte overlap; no hostqsort in game.
+
+366 closes original frame initializer using existing canonical bounds/limits/gate
+and364 cursor state. New cursorz/counter/callbackcells have rawdata/zero-fill,
+HIGHLOW/alias and unique COFF ownership evidence. Three callbacks indexed against
+rawPE completeRET. Missing6B JMP[005debe8]005727b0 is evidence/oracle only. Callback
+cells transport canonical native addresses asuintptr_t; no invented common ABI.
+No e0/e4 reader or actual caller of005727b0 proved; concurrency/computed aliasesHOLD.
+365 remains honest partial navigation, not a whole-sessionPASS; no cold retry.
+
+361 review fixed draft swapped GUIDs: raw005bf9a0 CreateDevice vs005bf8c0 QI.
+Native pins axisGUIDs/objecttable/format/fullstrings before relocation; initialBSS
+checked before resets. Integer core preserves original EAX, void startup facade;
+known property-success/cursor.x overlap preserved. Failed GetCursorPos followed by
+successful ScreenToClient still exposes opaque y and remains HOLD. Real COM/OS,
+allocator failure, concurrency and full startup/display/menu remain unachieved.
 
 Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/acceptance.json.
-Native: local/experiments/v2-diagnostic-leaves-native-346/001/receipt.json.
-Build346/001 fresh. Platform evidence: same original IAT005b2208 API plus
-actual COFF sole DIR32 target__imp__OutputDebugStringA@4; no output/visual claim.
-Keep formatter/locale domains,invalid indices/arbitrary aliases,root296/301,
-006ad750 transform,fullallocator/OS/game/visual holds in backlog.
-Original SHA ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
+iterations/v2/001-original-recovery/runs/370-input-startup-integration/acceptance.json.
+Native367/001+368/002+369/002; game370/002. Reuse unchanged proof; build/audit once per
+ready batch. Configure/build through shared build-v2-game-batch.py with370 config.
+
+363 evidence records six original callsites and reused078/169 proof. Module name/
+last-error use actual canonical platform sources; mutex CreateMutexA exact COFF
+import pinned. ConditionalCD relaunch and duplicate-instance window handling
+remain outside scope. Read-only followup:0059eafb calls partial005679f0 with three
+args and discards EAX; current application_pool.cpp owns the existing provider.
+A future typed application_heap_finish binding needs focused caller/state proof;
+first normal BSS handoff does not establish failure/repeated-init/shutdown paths.
+Unlock006bd92c token provenance, OS/visual/full-game holds remain open.
+
+Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/363-startup-bindings/acceptance.json.
+Native local/experiments/v2-startup-bindings-native-363/002/receipt.json; game363/001.
+Configure/build use scripts/research/build-v2-game-batch.py with run363 build-config,
+--phase configure orbuild --attempt001 (new attempts afterchangedinputs). Native
+runner extra_libraries pinsSDK inputs; historical runnerSHA9c53c111 is verified
+only from committedGitblob0733c15bb343c2043d6e3f642e82bc40b26dccde. Other source/
+fixture drift stays strict. No unchanged accepted proof rerun for metadata.
+
+352 state/routing evidence complete; supplemental diagnostic-mono-callback-352
+indexes omitted151B00592ac0 with fullRET/exact original byte equality. REA347/350
+already supply needed dossiers; no new cold session. Default original mono device
+flags are0 and startup disables it, but PRINT_DEVICE can enable it. Preserve
+original display pointer0xb0000; no host screen/forced-off policy. Live enabled-
+path OS memory access, arbitrary aliases and formatting overflow remain HOLD.
+Explorer environment_state_349 has completed state/routing evidence; no pending edit.
+
+Startup report005a177b stays HOLD: uint32 format VAs005d6e3c/005d1400 are not
+host strings; variadic/return contract is not a safe linker alias. Environment
+startup005a2d1a calls005a940c then005a9106;006afcc8 ANSI/006afcd0 wide vectors and
+006c1528 guard lack canonical storage ownership proof. Adjacent006afccc/006afcd4
+sentinel/copy-on-write layout matters. Next bounded original set005a9106,005a9a4a,
+005aa28f,005aa039,005aa416,005aa1cc,005ad5fb; keep extern rather than guessed zeros.
+
+Check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/acceptance.json.
+Native local/experiments/v2-heap-lock-bindings-native-351/003/receipt.json; build351/001.
+Keep parser/TLS concurrency/composition,capacity-zero/parser>=255 overflow,
+formatter/locale,invalid indices,arbitrary aliases,root296/301,006ad750 transform,
+allocator/OS/game/visual holds in docs/recovery-validation-backlog.md. Original SHA
+ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39.
 
 Historical checkpoints below are not active assignments.
 

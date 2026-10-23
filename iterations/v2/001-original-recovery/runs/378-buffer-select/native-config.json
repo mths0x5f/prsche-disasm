@@ -1,0 +1,98 @@
+{
+  "run": 378,
+  "experiment": "local/experiments/v2-buffer-select-native-378",
+  "timeout_seconds": 45,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
+    "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/378-buffer-select/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/378-buffer-select",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_loader.cpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@ORIGINAL@",
+      "va": "00556910",
+      "bytes": 293,
+      "sha256": "f57cf7d7552cb585b1a7be40834d909f576554bfc576a2ca79402192c31e549b"
+    },
+    {
+      "token": "@JUMPS@",
+      "va": "00556a38",
+      "bytes": 24,
+      "sha256": "059994b79affea36916a39672f9395043ff96f7417355965dfe8be3d87dd5765"
+    },
+    {
+      "token": "@MAP@",
+      "va": "00556a50",
+      "bytes": 29,
+      "sha256": "883f476a227f8a3c3ecb5a7d17aadc3eac7446c36c28f278d6df6e8033277f8c"
+    },
+    {
+      "token": "@INITIAL@",
+      "va": "005de620",
+      "bytes": 48,
+      "sha256": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1"
+    }
+  ],
+  "pass_marker": "buffer_select_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "mode-ff-gpu",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "mode!=0&&mode!=255&&",
+      "new": "mode!=0&&mode!=254&&",
+      "expected_exit": 1
+    },
+    {
+      "name": "restore-wrong-state",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "texture(saved1);return;",
+      "new": "texture(saved10);return;",
+      "expected_exit": 1
+    },
+    {
+      "name": "float-coordinates-swapped",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "static_cast<float>(x),static_cast<float>(y),converted",
+      "new": "static_cast<float>(y),static_cast<float>(x),converted",
+      "expected_exit": 1
+    },
+    {
+      "name": "nibble-masked-even",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "(*destination&240u)|static_cast<std::uint8_t>(pixel)",
+      "new": "(*destination&240u)|static_cast<std::uint8_t>(pixel&15u)",
+      "expected_exit": 1
+    },
+    {
+      "name": "upper-clip-inclusive",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "x>=static_cast<std::int32_t>(window_shutdown_config_005de620[7])",
+      "new": "x>static_cast<std::int32_t>(window_shutdown_config_005de620[7])",
+      "expected_exit": 1
+    },
+    {
+      "name": "wrong-getstate",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "render_settings_get_state_006bd984(10)",
+      "new": "render_settings_get_state_006bd984(11)",
+      "expected_exit": 1
+    },
+    {
+      "name": "depth-before-address",
+      "source": "iterations/v2/001-original-recovery/runs/378-buffer-select/buffer_select.cpp",
+      "old": "auto* destination=static_cast<std::uint8_t*>(render_buffer_address_00574050(x,y));\n    // Original reads the depth byte after the address service returns.\n    const auto depth=reinterpret_cast<const std::uint8_t*>(window_shutdown_config_005de620)[13];",
+      "new": "const auto depth=reinterpret_cast<const std::uint8_t*>(window_shutdown_config_005de620)[13];\n    auto* destination=static_cast<std::uint8_t*>(render_buffer_address_00574050(x,y));",
+      "expected_exit": 1
+    }
+  ]
+}

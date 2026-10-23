@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-copy-backends-355-rea",
+  "queries": [
+    {
+      "label": "copy-dispatch",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005323e0"
+      }
+    },
+    {
+      "label": "copy-scalar",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005b0000"
+      }
+    },
+    {
+      "label": "copy-mmx",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005b0100"
+      }
+    },
+    {
+      "label": "copy-sse1",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005b02c0"
+      }
+    },
+    {
+      "label": "copy-sse2",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005b0480"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "run": 376,
+  "experiment": "local/experiments/v2-heap-largest-native-376",
+  "timeout_seconds": 35,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/376-heap-largest/heap_largest.cpp",
+    "iterations/v2/001-original-recovery/runs/342-heap-live-callbacks/heap_callbacks.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/376-heap-largest/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/376-heap-largest",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+    "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@ORIGINAL@",
+      "va": "00569a90",
+      "bytes": 59,
+      "sha256": "e8e77de9672a97b64b6a2b822cb875016e2a3d9b8026a8fde1d6747cd66e1110"
+    },
+    {
+      "token": "@FLAG@",
+      "va": "005deb60",
+      "bytes": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  ],
+  "pass_marker": "heap_largest_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "wrong-heap-index",
+      "source": "iterations/v2/001-original-recovery/runs/376-heap-largest/heap_largest.cpp",
+      "old": "return application_heap_measure_00569ad0(render_descriptor_flags_005deb60);",
+      "new": "return application_heap_measure_00569ad0(render_descriptor_flags_005deb60^1u);",
+      "expected_exit": 1
+    },
+    {
+      "name": "heap-index-lost",
+      "source": "iterations/v2/001-original-recovery/runs/376-heap-largest/heap_largest.cpp",
+      "old": "return application_heap_measure_00569ad0(render_descriptor_flags_005deb60);",
+      "new": "return application_heap_measure_00569ad0(render_descriptor_flags_005deb60&0xfffffff0u);",
+      "expected_exit": 1
+    },
+    {
+      "name": "return-value-changed",
+      "source": "iterations/v2/001-original-recovery/runs/376-heap-largest/heap_largest.cpp",
+      "old": "return application_heap_measure_00569ad0(render_descriptor_flags_005deb60);",
+      "new": "return application_heap_measure_00569ad0(render_descriptor_flags_005deb60)+1u;",
+      "expected_exit": 1
+    }
+  ]
+}

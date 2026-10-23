@@ -1,0 +1,148 @@
+#define PORSCHE_DEFINE_SHARED_RUNTIME_GLOBALS_FIXTURE
+#include "mouse_callbacks.hpp"
+#include "../361-startup-device-pool/startup_device.hpp"
+#include "../364-mouse-startup-children/startup_mouse_children.hpp"
+#include "porsche/shared_runtime_globals.hpp"
+#include "porsche/startup_input.hpp"
+#include <windows.h>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+#include <type_traits>
+using U=std::uint32_t;
+using I=std::int32_t;
+static_assert(sizeof(void*)==4);
+static_assert(std::is_same<decltype(&porsche::startup_mouse_window_handler_00537020),porsche::WindowHandler>::value);
+static const unsigned char pe_wheel[67]={@WHEEL@},pe_exit[16]={@EXIT@},pe_cleanup[62]={@CLEANUP@};
+static unsigned char *wheel_code,*exit_code,*cleanup_code;
+static U cases=0,checks=0,registered=0,registered_message=0,exit_registered=0;
+struct Event {U kind,initialized,wheel,device,base;};
+static Event events[8];static U count=0;
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const unsigned char* p){U r;std::memcpy(&r,p,4);return r;}
+static void die(const char* why,U value=0){std::printf("fixture %s %08x\n",why,value);std::fflush(stdout);ExitProcess(98);}
+namespace porsche {
+// Controlled external transports. Actual frozen361 startup and364 cleanup/mode
+// sources are linked; no fixture callback or cleanup provider is substituted.
+OriginalWindowConfiguration window_configuration_storage_006b77a0{};
+void*& window_hwnd_006b7bf8=window_configuration_storage_006b77a0.hwnd_006b7bf8;
+void* window_configuration_address_006b77a0=&window_configuration_storage_006b77a0;
+U render_display_texture_width_005deac8=640,render_display_texture_height_005deacc=480;
+U render_driver_bounds_a_006a643c=0,render_driver_bounds_b_006a6438=0,render_driver_bounds_c_006a6430=640,render_driver_bounds_d_006a6434=480;
+U render_driver_limit_a_006a6448=0,render_driver_limit_b_006a6444=0;
+void* thread_start_lock_006a57d8=nullptr;
+void (__cdecl* diagnostic_handler_005debf0)(const char*)=nullptr;
+void __cdecl startup_cursor_state_save_00570ed0(void* p){std::memset(p,0,96);}
+void __cdecl startup_cursor_state_restore_00570f00(const void*){}
+I __cdecl file_current_thread_0055f780(U){return 0;}
+U __cdecl window_shutdown_prepare_00534550(){return 0;}
+void __cdecl heap_enter_005322b0(void*){}
+void __cdecl heap_leave_005322c0(void*){}
+void __cdecl render_event_set_cursor_position_0053a970(void*,I,I){}
+void* __cdecl startup_window_handle_00557460(){return window_hwnd_006b7bf8;}
+void __cdecl startup_frame_init_00572690(){}
+U __stdcall window_handler_register_0053a800(U message,U callback){registered_message=message;registered=callback;return 1;}
+void* __stdcall window_module_handle(const char*){return nullptr;}
+U __stdcall startup_directinput_create_0056e940(void*,U,void**,void*){return 0x80004005u;}
+void __cdecl render_display_video_base_00537600(U,U,U,U,U,U){}
+void __cdecl thread_exit_register_00557380(void(__cdecl* callback)()){exit_registered=ptr(reinterpret_cast<const void*>(callback));}
+U __stdcall startup_get_cursor_pos(StartupPoint* p){p->x=0;p->y=0;return 1;}
+U __stdcall startup_screen_to_client(void*,StartupPoint*){return 0;}
+}
+extern "C" void __cdecl abi_failure(){std::printf("divergence ABI stack/nonvolatile\n");std::fflush(stdout);ExitProcess(1);}
+// Synthetic invocation harness; these pushes/sentinels are not original code.
+__declspec(naked) static U __cdecl invoke(U,U,U,U,U,U,U){
+    __asm {
+        push ebp
+        mov ebp,esp
+        push ebx
+        push esi
+        push edi
+        sub esp,8
+        mov [ebp-16],esp
+        mov ebx,12345678h
+        mov esi,23456789h
+        mov edi,3456789ah
+        push [ebp+32]
+        push [ebp+28]
+        push [ebp+24]
+        push [ebp+20]
+        push [ebp+16]
+        push [ebp+12]
+        call [ebp+8]
+        mov [ebp-20],eax
+        cmp esp,[ebp-16]
+        jne bad
+        cmp ebx,12345678h
+        jne bad
+        cmp esi,23456789h
+        jne bad
+        cmp edi,3456789ah
+        jne bad
+        mov eax,[ebp-20]
+        add esp,8
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
+        ret
+    bad:
+        call abi_failure
+    }
+}
+static unsigned char* install(const unsigned char* data,U n){auto p=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE));if(!p)die("alloc");std::memcpy(p,data,n);return p;}
+static void patch(unsigned char* p,U n,U before,U after,U expected){U found=0;for(U i=0;i+4<=n;++i)if(word(p+i)==before){std::memcpy(p+i,&after,4);++found;i+=3;}if(found!=expected)die("patch-count",before);}
+static void protect(unsigned char* p){DWORD old;if(!VirtualProtect(p,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),p,4096);}
+static void install_all(){using namespace porsche;
+    wheel_code=install(pe_wheel,67);exit_code=install(pe_exit,16);cleanup_code=install(pe_cleanup,62);
+    patch(wheel_code,67,0x6b7bf8,ptr(&window_hwnd_006b7bf8),1);patch(wheel_code,67,0x69e0a8,ptr(&startup_mouse_wheel_0069e0a8),2);
+    patch(exit_code,16,0x69e0a0,ptr(&startup_mouse_initialized_0069e0a0),1);
+    if(exit_code[0]!=0xe8||word(exit_code+1)!=0xffffffbb)die("exit-call");
+    U rel=ptr(cleanup_code)-ptr(exit_code+5);std::memcpy(exit_code+1,&rel,4);
+    patch(cleanup_code,62,0x69e098,ptr(&startup_directinput_0069e098),2);patch(cleanup_code,62,0x69e09c,ptr(&startup_mouse_device_0069e09c),3);
+    protect(wheel_code);protect(exit_code);protect(cleanup_code);
+}
+static void one(U high,U low,U seed,U active,U match){using namespace porsche;
+    const U window=ptr(window_hwnd_006b7bf8),parameter=(high<<16)|low;
+    I output=0x12345678;
+    startup_mouse_wheel_0069e0a8=seed;
+    U ar=invoke(ptr(wheel_code),active,match?window:window^1,0x20a,parameter,0x87654321,ptr(&output));
+    U expected=startup_mouse_wheel_0069e0a8;
+    startup_mouse_wheel_0069e0a8=seed;
+    U br=invoke(ptr(reinterpret_cast<const void*>(&startup_mouse_window_handler_00537020)),active,match?window:window^1,0x20a,parameter,0x87654321,ptr(&output));
+    checks+=4;
+    if(ar||br||expected!=startup_mouse_wheel_0069e0a8||output!=0x12345678){std::printf("divergence wheel high=%04x low=%04x seed=%08x active=%u match=%u expected=%08x cpp=%08x ret=%08x/%08x\n",high,low,seed,active,match,expected,startup_mouse_wheel_0069e0a8,ar,br);std::fflush(stdout);ExitProcess(1);}++cases;
+}
+struct Com{void** vtable;};static void* vtable[9];static Com device{vtable},base{vtable};
+static void event(U kind){using namespace porsche;if(count>=8)die("events");events[count++]={kind,startup_mouse_initialized_0069e0a0,startup_mouse_wheel_0069e0a8,ptr(startup_mouse_device_0069e09c),ptr(startup_directinput_0069e098)};}
+static U __stdcall unacquire(void* p){if(p!=&device)die("unacquire");event(1);return 0x80004005u;}
+static U __stdcall release(void* p){event(p==&device?2:3);return 0;}
+struct ExitState{U initialized,wheel,registered,device,base,n;Event events[8];};
+static ExitState snapshot(){using namespace porsche;ExitState s={startup_mouse_initialized_0069e0a0,startup_mouse_wheel_0069e0a8,startup_mouse_exit_registered_0069e0a4,ptr(startup_mouse_device_0069e09c),ptr(startup_directinput_0069e098),count,{}};std::memcpy(s.events,events,sizeof(events));return s;}
+static void reset_exit(U bits,U seed,U initialized){using namespace porsche;startup_mouse_initialized_0069e0a0=initialized;startup_mouse_wheel_0069e0a8=seed;startup_mouse_exit_registered_0069e0a4=0x778899aa;startup_mouse_device_0069e09c=(bits&1)?&device:nullptr;startup_directinput_0069e098=(bits&2)?&base:nullptr;count=0;std::memset(events,0,sizeof(events));}
+static void exit_case(U bits,U seed,U initialized){reset_exit(bits,seed,initialized);reinterpret_cast<void(__cdecl*)()>(exit_code)();auto a=snapshot();reset_exit(bits,seed,initialized);porsche::startup_mouse_exit_005370b0();auto b=snapshot();checks+=sizeof(a);if(std::memcmp(&a,&b,sizeof(a))){std::printf("divergence exit bits=%u\n",bits);std::fflush(stdout);ExitProcess(1);}++cases;}
+static void registration_case(){using namespace porsche;
+    startup_mouse_initialized_0069e0a0=0;startup_directinput_0069e098=nullptr;startup_mouse_device_0069e09c=nullptr;startup_mouse_exit_registered_0069e0a4=0;
+    startup_mouse_wheel_0069e0a8=0xabcdef00;
+    (void)startup_subsystem_result_00536e50();
+    const U actual=ptr(reinterpret_cast<const void*>(&startup_mouse_window_handler_00537020));
+    if(registered_message!=0x20a||registered!=actual||ptr(reinterpret_cast<const void*>(&startup_mouse_callback_00537020))!=actual||exit_registered!=ptr(reinterpret_cast<const void*>(&startup_mouse_exit_005370b0)))die("linked-address-identity");
+    // Invoke the address that the actual frozen361 startup registered, with
+    // the exact WindowHandler type used by0053aba0, rather than its legacy type.
+    auto handler=reinterpret_cast<WindowHandler>(static_cast<std::uintptr_t>(registered));I out=0x11223344;
+    U ret=handler(reinterpret_cast<void*>(1),window_hwnd_006b7bf8,0x20a,120u<<16,0,&out);
+    if(ret||startup_mouse_wheel_0069e0a8!=0xabcdef01||out!=0x11223344)die("registered-handler-dispatch");
+    checks+=7;++cases;
+}
+int main(){using namespace porsche;
+    if(startup_mouse_wheel_0069e0a8||startup_mouse_initialized_0069e0a0||startup_directinput_0069e098||startup_mouse_device_0069e09c)die("production-initial-state");
+    window_hwnd_006b7bf8=reinterpret_cast<void*>(0x11223344u);install_all();
+    for(U seed:{0u,1u,0x100u,0x7fffffffu,0x80000000u,0xffffff00u,0xffffffffu})for(U high=0;high<65536;++high)one(high,(high&1)?0xffff:0,seed,1,1);
+    for(U high:{0u,1u,119u,120u,121u,32767u,32768u,65415u,65416u,65417u,65535u})for(U low:{0u,0xffffu})for(U seed:{0u,0xffffffffu}){one(high,low,seed,0,1);one(high,low,seed,1,0);}
+    // A null canonical window still permits a match; only the first argument gates.
+    window_hwnd_006b7bf8=nullptr;one(120,0,0,1,1);window_hwnd_006b7bf8=reinterpret_cast<void*>(0x11223344u);
+    vtable[8]=reinterpret_cast<void*>(&unacquire);vtable[2]=reinterpret_cast<void*>(&release);
+    for(U bits=0;bits<4;++bits)for(U seed:{0u,0xffffffffu})for(U initialized:{0u,1u,0x87654321u})exit_case(bits,seed,initialized);
+    registration_case();
+    std::printf("mouse_callbacks_original_vs_cpp=PASS cases=%u checks=%u alias=identity registered=WindowHandler ABI=RET24/nonvolatile/ESP\n",cases,checks);return 0;
+}

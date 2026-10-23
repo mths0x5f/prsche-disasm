@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-mouse-children-365-rea",
+  "queries": [
+    {
+      "label": "device-cleanup",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00537070"
+      }
+    },
+    {
+      "label": "cursor-apply",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005727c0"
+      }
+    },
+    {
+      "label": "frame-callback-a",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00572640"
+      }
+    },
+    {
+      "label": "frame-callback-b",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00572670"
+      }
+    },
+    {
+      "label": "frame-callback-c",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00572680"
+      }
+    }
+  ]
+}

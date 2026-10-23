@@ -1,0 +1,232 @@
+#include "diagnostic_mono.hpp"
+#include "porsche/formatter_entry.hpp"
+#include "porsche/heap.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char pe_bodies[7][384]={
+    {@MONO_FORMAT@},{@MONO_XY@},{@MONO_WRITE@},{@MONO_SCROLL@},
+    {@MONO_CLEAR@},{@MONO_ATTRIBUTE@},{@MONO_VSPRINTF@}};
+static const unsigned char pe_jump_table[20]={@MONO_JUMP_TABLE@};
+static const unsigned char pe_initial_state[14]={@MONO_INITIAL_STATE@};
+static const U va[7]={0x592a50,0x592ac0,0x592b60,0x592d00,0x592d70,0x592e00,0x5a299e};
+static const U size[7]={101,151,384,105,77,10,81};
+static unsigned char* code;
+static unsigned char* body[7];
+static U jump_table[5],cases=0,event_count=0;
+static unsigned char frame[4100],formatted[300];
+static U fake_lock=0x349353u;
+struct Event{U kind,a,b,c;};
+static Event events[128]{};
+static U word(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void die(const char* why,U where=0){std::printf("fixture %s %08x\n",why,where);ExitProcess(98);}
+static U offset(const void* p){
+    U value=word(p),base=word(frame);
+    if(value<base||value>base+sizeof(frame))die("frame-pointer",value);
+    return value-base;
+}
+static void event(U kind,U a=0,U b=0,U c=0){if(event_count>=128)die("events");events[event_count++]={kind,a,b,c};}
+namespace porsche {
+void* __cdecl heap_lock_create_005321f0(){event(1);return &fake_lock;}
+void __cdecl heap_enter_005322b0(void* p){event(2,word(p));}
+void __cdecl heap_leave_005322c0(void* p){event(3,word(p));}
+void __cdecl heap_copy_dispatch_005323e0(void* dst,const void* src,U bytes){
+    event(4,offset(dst),offset(src),bytes);
+    if(offset(dst)+bytes>4000||offset(src)+bytes>4000)die("copy-span");
+    std::memmove(dst,src,bytes);
+}
+void __cdecl heap_fill_0053c290(void* dst,U byte,U bytes){
+    event(5,offset(dst),byte,bytes);
+    if(offset(dst)+bytes>4000)die("fill-span");
+    std::memset(dst,static_cast<int>(byte),bytes);
+}
+int __cdecl formatter_core_005a4371(FormatterDescriptor005a0fbf* descriptor,
+    const char* format,const U* arguments){
+    event(6,descriptor->cursor==descriptor->base,static_cast<U>(descriptor->remaining),descriptor->flags);
+    event(7,format?static_cast<U>(static_cast<unsigned char>(*format)):0,arguments?arguments[0]:0);
+    const char* output="A";
+    if(format&&*format=='C')output="\b\t\n";
+    else if(format&&*format=='A')output="\x0e\x1fQ";
+    else if(format&&*format=='F')output="\fX";
+    else if(format&&*format=='V')output="\vX";
+    else if(format&&*format=='H')output="\x80X";
+    const U length=static_cast<U>(std::strlen(output));
+    std::memcpy(descriptor->cursor,output,length);
+    descriptor->cursor+=length;
+    descriptor->remaining-=static_cast<std::int32_t>(length);
+    if(format&&*format=='Z')descriptor->remaining=0;
+    return 0x5234;
+}
+int __cdecl formatter_cleanup_005a4259(U character,FormatterOriginalDescriptor32* descriptor){
+    event(8,character,static_cast<U>(descriptor->remaining),descriptor->flags);
+    return 0;
+}
+}
+static void patch_abs(U f,U old,U replacement,U expected){
+    U count=0;
+    for(U i=0;i+4<=size[f];++i){U got;std::memcpy(&got,body[f]+i,4);
+        if(got==old){std::memcpy(body[f]+i,&replacement,4);++count;i+=3;}}
+    if(count!=expected)die("absolute-count",old);
+}
+static void patch_call(U f,U site,U expected,const void* replacement){
+    if(site<va[f]||site+5>va[f]+size[f])die("call-range",site);
+    unsigned char* p=body[f]+site-va[f];
+    if(*p!=0xe8)die("call-opcode",site);
+    std::int32_t rel;std::memcpy(&rel,p+1,4);
+    if(static_cast<U>(site+5+rel)!=expected)die("call-target",site);
+    U new_rel=word(replacement)-word(p+5);std::memcpy(p+1,&new_rel,4);
+}
+static void patch_data(){
+    const U old[8]={0x5e25dc,0x5e25e0,0x5e25e4,0x5e25e8,0x5e25e9,0x6af140,0x6af148,0x592ce0};
+    const U replacement[8]={word(porsche::diagnostic_mono_image_005e25dc),word(porsche::diagnostic_mono_image_005e25dc+4),
+        word(porsche::diagnostic_mono_image_005e25dc+8),word(porsche::diagnostic_mono_image_005e25dc+12),
+        word(porsche::diagnostic_mono_image_005e25dc+13),word(&porsche::diagnostic_mono_lock_006af140),
+        word(&porsche::diagnostic_mono_row_006af148),word(jump_table)};
+    const U counts[7][8]={{1,0,0,0,0,3,0,0},{1,0,1,0,0,3,0,0},
+        {1,1,8,1,2,0,1,1},{0,2,2,0,0,0,1,0},
+        {1,1,0,0,0,3,0,0},{0,0,0,1,0,0,0,0},{0,0,0,0,0,0,0,0}};
+    for(U f=0;f<7;++f)for(U j=0;j<8;++j)if(counts[f][j])patch_abs(f,old[j],replacement[j],counts[f][j]);
+}
+static void install(){
+    code=static_cast<unsigned char*>(VirtualAlloc(nullptr,0x2000,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE));
+    if(!code)die("alloc");
+    for(U f=0;f<7;++f){body[f]=code+f*0x400;std::memcpy(body[f],pe_bodies[f],size[f]);}
+    const U expected_targets[5]={0x592c19,0x592c2a,0x592c88,0x592cb9,0x592cb4};
+    for(U i=0;i<5;++i){U target;std::memcpy(&target,pe_jump_table+i*4,4);
+        if(target!=expected_targets[i])die("jump-target",target);
+        jump_table[i]=word(body[2]+target-va[2]);}
+    patch_data();
+    patch_call(0,0x592a69,0x5321f0,reinterpret_cast<const void*>(&porsche::heap_lock_create_005321f0));
+    patch_call(0,0x592a74,0x5322b0,reinterpret_cast<const void*>(&porsche::heap_enter_005322b0));
+    patch_call(0,0x592a8e,0x5a299e,body[6]);
+    patch_call(0,0x592a98,0x592b60,body[2]);
+    patch_call(0,0x592aa4,0x5322c0,reinterpret_cast<const void*>(&porsche::heap_leave_005322c0));
+    patch_call(1,0x592ad9,0x5321f0,reinterpret_cast<const void*>(&porsche::heap_lock_create_005321f0));
+    patch_call(1,0x592ae4,0x5322b0,reinterpret_cast<const void*>(&porsche::heap_enter_005322b0));
+    patch_call(1,0x592b30,0x5a299e,body[6]);
+    patch_call(1,0x592b3a,0x592b60,body[2]);
+    patch_call(1,0x592b46,0x5322c0,reinterpret_cast<const void*>(&porsche::heap_leave_005322c0));
+    patch_call(2,0x592ba8,0x592e00,body[5]);
+    patch_call(2,0x592bc9,0x592d00,body[3]);
+    patch_call(2,0x592ca7,0x592d00,body[3]);
+    patch_call(2,0x592cb4,0x592d70,body[4]);
+    patch_call(3,0x592d3d,0x5323e0,reinterpret_cast<const void*>(&porsche::heap_copy_dispatch_005323e0));
+    patch_call(3,0x592d56,0x53c290,reinterpret_cast<const void*>(&porsche::heap_fill_0053c290));
+    patch_call(4,0x592d82,0x5321f0,reinterpret_cast<const void*>(&porsche::heap_lock_create_005321f0));
+    patch_call(4,0x592d8d,0x5322b0,reinterpret_cast<const void*>(&porsche::heap_enter_005322b0));
+    patch_call(4,0x592db6,0x5322c0,reinterpret_cast<const void*>(&porsche::heap_leave_005322c0));
+    patch_call(6,0x5a29c6,0x5a4371,reinterpret_cast<const void*>(&porsche::formatter_core_005a4371));
+    patch_call(6,0x5a29e3,0x5a4259,reinterpret_cast<const void*>(&porsche::formatter_cleanup_005a4259));
+    FlushInstructionCache(GetCurrentProcess(),code,0x2000);
+}
+struct Capture{U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;};
+static Capture invoke(const void* fn,U a,U b,U c,U d,U e){
+    Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push e
+        push d
+        push c
+        push b
+        push a
+        mov ecx,fn
+        call ecx
+        add esp,20
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    return r;
+}
+static bool abi(const Capture& r){return r.esp0==r.esp1&&r.ebp0==r.ebp1&&r.ebx0==r.ebx1&&r.esi0==r.esi1&&r.edi0==r.edi1&&r.ebx0==0x13579bdfu&&r.esi0==0x2468ace0u&&r.edi0==0x6a31c5e7u;}
+struct State{unsigned char image[14],frame[4100],formatted[300];U lock,row,count;Event events[128];};
+static void reset(U level,U cursor,U row,U attribute,U tab,bool existing_lock){
+    std::memcpy(porsche::diagnostic_mono_image_005e25dc,pe_initial_state,14);
+    porsche::diagnostic_mono_lock_006af140=0;porsche::diagnostic_mono_row_006af148=0;
+    std::memcpy(porsche::diagnostic_mono_image_005e25dc,&level,4);
+    U display_word=word(frame);std::memcpy(porsche::diagnostic_mono_image_005e25dc+4,&display_word,4);
+    std::memcpy(porsche::diagnostic_mono_image_005e25dc+8,&cursor,4);
+    porsche::diagnostic_mono_image_005e25dc[12]=static_cast<unsigned char>(attribute);
+    porsche::diagnostic_mono_image_005e25dc[13]=static_cast<unsigned char>(tab);
+    porsche::diagnostic_mono_row_006af148=row;
+    if(existing_lock)porsche::diagnostic_mono_lock_006af140=word(&fake_lock);
+    for(U i=0;i<sizeof(frame);++i)frame[i]=static_cast<unsigned char>((i*7u+3u)&0xffu);
+    std::memset(formatted,0xa5,sizeof(formatted));
+    event_count=0;std::memset(events,0,sizeof(events));
+}
+static State state(){State s{};std::memcpy(s.image,porsche::diagnostic_mono_image_005e25dc,14);
+    std::memcpy(s.frame,frame,sizeof(frame));std::memcpy(s.formatted,formatted,sizeof(formatted));
+    s.lock=porsche::diagnostic_mono_lock_006af140;s.row=porsche::diagnostic_mono_row_006af148;
+    s.count=event_count;std::memcpy(s.events,events,sizeof(events));return s;}
+static const void* native[7]={
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_format_00592a50),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_xy_format_00592ac0),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_write_00592b60),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_scroll_00592d00),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_clear_00592d70),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_attribute_00592e00),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_mono_vsprintf_005a299e)};
+static bool compare(const char* label,U f,U a,U b,U c,U d,U e,
+    U level=2,U cursor=0x780,U row=0,U attribute=7,U tab=8,bool existing_lock=false){
+    reset(level,cursor,row,attribute,tab,existing_lock);
+    Capture x=invoke(body[f],a,b,c,d,e);State expected=state();
+    reset(level,cursor,row,attribute,tab,existing_lock);
+    Capture y=invoke(native[f],a,b,c,d,e);State actual=state();++cases;
+    bool return_value=f==0||f==1||f==6;
+    if(!abi(x)||!abi(y)||(return_value&&x.eax!=y.eax)||std::memcmp(&expected,&actual,sizeof(State))){
+        std::printf("divergence %s function=%08x case=%u abi=%u/%u eax=%08x/%08x event=%u/%u cursor=%u/%u\n",
+            label,va[f],cases,abi(x),abi(y),x.eax,y.eax,expected.count,actual.count,
+            *reinterpret_cast<U*>(expected.image+8),*reinterpret_cast<U*>(actual.image+8));return false;}
+    return true;
+}
+int main(){
+    if(std::memcmp(porsche::diagnostic_mono_image_005e25dc,pe_initial_state,14)||
+       porsche::diagnostic_mono_lock_006af140||porsche::diagnostic_mono_row_006af148){
+        std::printf("divergence native-initial-state\n");return 1;
+    }
+    install();bool ok=true;
+    const U args[2]={0x1234,0x5678};
+    for(U level:{0u,1u,2u,3u}){
+        ok&=compare("format-gate",0,word("A"),0x1234,0,0,0,level);
+        ok&=compare("xy-bound",1,10,2,word("A"),0x1234,0,level);
+        ok&=compare("clear-gate",4,0,0,0,0,0,level);
+    }
+    for(const char* text:{"ABC","\bX","\tX","\nX","\vX","\fX","\x0e\x1fQ","\x80X"})
+        ok&=compare("writer-control",2,word(text),0,0,0,0);
+    ok&=compare("writer-tab-width-one",2,word("\tA"),0,0,0,0,2,12,0,7,1);
+    ok&=compare("writer-tab-width-two",2,word("\tA"),0,0,0,0,2,12,0,7,2);
+    ok&=compare("writer-form-feed-row",2,word("\fX"),0,0,0,0,2,200,1);
+    for(std::int32_t signed_cursor:{-1,-80,-159,-160,-161,(-2147483647-1)}){
+        const U cursor=static_cast<U>(signed_cursor);
+        ok&=compare("signed-tab-only",2,word("\t"),0,0,0,0,2,cursor);
+        ok&=compare("signed-newline-only",2,word("\n"),0,0,0,0,2,cursor);
+    }
+    ok&=compare("writer-scroll",2,word("A"),0,0,0,0,2,4000);
+    ok&=compare("scroll-direct",3,0,0,0,0,0,2,4000,1);
+    ok&=compare("scroll-skip",3,0,0,0,0,0,2,3998);
+    ok&=compare("clear-existing-lock",4,0,0,0,0,0,2,0,0,7,8,true);
+    ok&=compare("attribute-byte",5,0x1234,0,0,0,0);
+    ok&=compare("vsprintf",6,word(formatted),word("A"),word(args),0,0);
+    ok&=compare("vsprintf-cleanup",6,word(formatted),word("Z"),word(args),0,0);
+    ok&=compare("xy-negative",1,0xffffffffu,2,word("A"),0,0);
+    ok&=compare("xy-edge",1,79,24,word("A"),0,0);
+    std::printf("diagnostic_mono_original_vs_cpp=%s cases=%u\n",ok?"PASS":"FAIL",cases);
+    return ok?0:1;
+}

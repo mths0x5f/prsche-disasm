@@ -84,6 +84,8 @@ def main():
     libs = [vc / 'lib/x86/libcmt.lib', vc / 'lib/x86/libvcruntime.lib',
             vc / 'lib/x86/oldnames.lib', sdk / 'Lib' / kit / 'ucrt/x86/libucrt.lib',
             sdk / 'Lib' / kit / 'um/x86/kernel32.lib']
+    assert all(Path(name).name == name and name.endswith('.lib') for name in cfg.get('extra_libraries', []))
+    libs += [sdk / 'Lib' / kit / 'um/x86' / name for name in cfg.get('extra_libraries', [])]
     pins = {p.resolve(): digest(p) for p in [Path(__file__), dependency_helper_path, config_path, pe, *src, fixture_template,fixture,
                                               cl, link, cl.parent/'c1xx.dll', cl.parent/'c2.dll', *libs]}
     for item in cfg.get('headers', []):

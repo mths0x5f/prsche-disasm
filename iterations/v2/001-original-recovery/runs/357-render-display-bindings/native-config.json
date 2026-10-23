@@ -1,0 +1,34 @@
+{
+  "run": 357,
+  "experiment": "local/experiments/v2-render-display-bindings-native-357",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/357-render-display-bindings/native-fixture.cpp.in",
+  "include_dirs": ["iterations/v2/001-original-recovery/source/include"],
+  "headers": ["iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp", "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp"],
+  "original_bodies": [
+    {"token":"@GET@","va":"00467c6e","bytes":6,"sha256":"28a06bc09a6188903b29f629d39c31f919dd8904f3c0aad67ebe143820a12612"},
+    {"token":"@SET@","va":"00467c66","bytes":6,"sha256":"062fbeb7c96fe0cc499955580116077ed082f9b6179034ca50f8d6d69610cc01"},
+    {"token":"@WINDOW@","va":"00467d2b","bytes":6,"sha256":"617f33ad6a41c4c97c9a3f4c7295dfa1151745832a845fff6f4c8363463391b6"},
+    {"token":"@TEXTURE@","va":"00467c8e","bytes":6,"sha256":"3c7a1b5a9949a786cf6022324b33d772f4b773d86d970667e5936cbceaa52c89"},
+    {"token":"@CLEAR@","va":"00467c94","bytes":6,"sha256":"77caf27dec0d6cce18483bebf95c9d485ce727c566dec06c82bc1b1b1d0c2e2a"},
+    {"token":"@QUAD@","va":"00467d16","bytes":6,"sha256":"14476c1b9dfb426256288a3f2fbb66ff2114205d62fdd43d384ffa50df8a9053"},
+    {"token":"@FLUSH@","va":"00467d1c","bytes":6,"sha256":"e24ded0a7df41d890c4d3b8fb5d038df4cc52c2dd1014a9dd2953a681722d89c"},
+    {"token":"@SYNC@","va":"00467d23","bytes":6,"sha256":"27eba0a98b7ac8d278fed547c342dff83edc2698f09d98112a2ca2681a7b71e7"},
+    {"token":"@RECT@","va":"00467d91","bytes":6,"sha256":"679d7e9fcb58438199af1792ee48225490d339eb3f3083ca5915fd817524d708"},
+    {"token":"@HELPER_SET@","va":"005755bb","bytes":6,"sha256":"062fbeb7c96fe0cc499955580116077ed082f9b6179034ca50f8d6d69610cc01"},
+    {"token":"@ABOUT@","va":"005755cf","bytes":6,"sha256":"b6532c16eab63c538ade75f732d979ad71c7ae7ece325b6dc8450a4225dbe953"}
+  ],
+  "pass_marker": "render_display_bindings_original_calls_vs_cpp=PASS",
+  "mutations": [
+    {"name":"getstate-result-lost","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_display_getstate_006bd984(std::uint32_t key){return slot<Get>(29)(key);}","new":"render_display_getstate_006bd984(std::uint32_t key){(void)slot<Get>(29)(key);return 0;}","expected_exit":1},
+    {"name":"setstate-argument-order","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_display_setstate_006bd97c(std::uint32_t key,std::uint32_t value){(void)slot<Set>(27)(key,value);}","new":"render_display_setstate_006bd97c(std::uint32_t key,std::uint32_t value){(void)slot<Set>(27)(value,key);}","expected_exit":1},
+    {"name":"window-wrong-slot","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_display_window_006bd9b0(std::uint32_t mode){slot<One>(40)(mode);}","new":"render_display_window_006bd9b0(std::uint32_t mode){slot<One>(17)(mode);}","expected_exit":1},
+    {"name":"quad-pointer-order","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_display_draw_quad_006bd9a8(const void* a,const void* b,const void* c,const void* d){slot<Quad>(38)(a,b,c,d);}","new":"render_display_draw_quad_006bd9a8(const void* a,const void* b,const void* c,const void* d){slot<Quad>(38)(b,a,c,d);}","expected_exit":1},
+    {"name":"readrect-extent-order","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_display_read_rect_006bd96c(std::uint32_t x,std::uint32_t y,std::uint32_t width,std::uint32_t height,void* output){slot<Rect>(23)(x,y,width,height,output);}","new":"render_display_read_rect_006bd96c(std::uint32_t x,std::uint32_t y,std::uint32_t width,std::uint32_t height,void* output){slot<Rect>(23)(x,y,height,width,output);}","expected_exit":1},
+    {"name":"helper-uses-global-table","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_loader_set_state_006bd97c(std::uint32_t proc,std::uint32_t key,std::uint32_t value){(void)address<Set>(proc)(key,value);}","new":"render_loader_set_state_006bd97c(std::uint32_t proc,std::uint32_t key,std::uint32_t value){(void)slot<Set>(27)(key,value);}","expected_exit":1},
+    {"name":"about-result-lost","source":"iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp","old":"render_loader_about_006bd934(std::uint32_t proc){return address<About>(proc)();}","new":"render_loader_about_006bd934(std::uint32_t proc){(void)address<About>(proc)();return nullptr;}","expected_exit":1}
+  ]
+}

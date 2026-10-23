@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "index_query": "research/binary-index/README.md, indexed KERNEL32 imports and caller functions 004a5c30, 005655f0, 0059e9d0; checked research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm and six raw PE callsite instructions",
+    "callsite_instructions": ["00565615 CALL [005b21ac] CreateMutexA", "00565620 CALL [005b213c] GetLastError", "004a5c51 CALL [005b2064] GetModuleFileNameA", "004a5c83 CALL 005a2c24", "0059e9d6 CALL 0055f320", "0059ea1a CALL 005321f0"],
+    "boundary": "The original instance check passes a name pointer, initial owner 1 and null security to CreateMutexA, then immediately consumes GetLastError EAX. CD preflight consumes GetModuleFileNameA length and the exact 005a2c24 classifier result. Heap startup invokes thread init with zero and stores lock-create EAX pointers."
+  },
+  "reused_proof": [
+    {"report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/application-instance/verification.json", "source_sha256": "2c3e9cfe5f534810e38d6fddad502c442814b486dd454e5f48bff2caef2bd4ad"},
+    {"report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/startup-services/verification.json", "source_sha256": "a8841d6a709fea89bcbaba3e693daf978bfb6e698049fa70bdf5e7df7ab16388"},
+    {"report": "iterations/v2/001-original-recovery/runs/169-vtable-output-integration/formatter-text/verification.json", "source_sha256": "9c74b82610047ec959b7187c44d6934b1cd752d86dbe94116887f6fbc6017330"},
+    {"report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/file-threads/verification.json", "source_sha256": "a9ea49f8fa11de3bf599e37f9cace5b2a220069dbb92f5502faf1ee44814a4a8"},
+    {"report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap-locks/verification.json", "source_sha256": "280a5903bb07b57e48c1ebc9f501b6683fa5b88624f9315446075662c3bf54ec"},
+    {"report": "iterations/v2/001-original-recovery/runs/340-heap-context-state/summary.json", "source_sha256": "24f76c27012810e0d2089b09a93575ee2379f35f27f3e8a1e71105e8a5b7fc04"}
+  ],
+  "production": {
+    "source": "iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp",
+    "direct_import_coff": "local/experiments/v2-startup-bindings-native-363/002/od-0.obj: dumpbin /symbols reports UNDEF __imp__CreateMutexA@12, matching original KERNEL32 IAT005b21ac.",
+    "platform_providers_compiled": ["iterations/v2/001-original-recovery/source/platform/formatter_error_links.cpp", "iterations/v2/001-original-recovery/source/platform/win32_core.cpp"],
+    "binding": "CreateMutexA uses the supplied host-owned name pointer and returns the raw Win32 handle. GetLastError reuses platform_last_error without intervening API calls; filename reuses formatter_error_module_name. Classifier, thread init and lock create forward to their exact-VA canonical providers without duplicate ctype, thread or lock state."
+  },
+  "native_proof": {
+    "receipt": "local/experiments/v2-startup-bindings-native-363/002/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 9,
+    "mutations_detected": 7,
+    "compared": "Six SHA-pinned original PE IAT/relative CALL instructions versus compiled C++ adapters. Actual filename and last-error platform provider TUs are linked; their EXE IAT entries and CreateMutexA are redirected to controlled stdcall endpoints, then restored. Three exact-VA algorithm providers are controlled callbacks here, with unchanged accepted original-body proof reused. Checked raw arguments/returns, filename output bytes and capacity, mutex then immediate error order, thread and lock callback effects, cdecl/stdcall ESP and nonvolatile registers.",
+    "harness_construction": "The PE bytes are callsite excerpts, not full original functions. The fixture validates absolute IAT cells or signed E8 targets, adds synthetic argument pushes and RET/RET N, and patches those call operands to its recording boundaries. It does not use raw original string VA005d1298 as a host pointer."
+  },
+  "hold": "FindWindow/ShowWindow/SetForegroundWindow on duplicate-instance error, drive-type/process relaunch, partial pool init 005679f0, and real lock contention remain outside this batch."
+}

@@ -1,0 +1,100 @@
+{
+  "tool": "F:/claude/porsche disasm/local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe",
+  "tool_sha256": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+  "variants": [
+    {
+      "variant": "od",
+      "object": "local/experiments/v2-startup-input-imports-native-383/001/od-0.obj",
+      "object_sha256": "854c1a9ce3e495ba4c1faf142bac3b9a41dccd2e5f58bb96be411f88902d7bf4",
+      "exe": "local/experiments/v2-startup-input-imports-native-383/001/od.exe",
+      "exe_sha256": "755ddfd17e8ee36844651cd196e7cdf902653cecdeac7118ddbc262d21febc3d",
+      "dumps": [
+        {
+          "kind": "symbols",
+          "path": "local/experiments/v2-startup-input-imports-native-383/coff-001/od-symbols.txt",
+          "sha256": "158c931603cc569e4efded328c1d4dc2dc283b0de46ef5ebd1828f19ff0dfac7",
+          "relevant_lines": [
+            "00D 00000000 UNDEF  notype       External     | __imp__GetKeyboardType@4",
+            "00E 00000000 UNDEF  notype       External     | __imp__joyGetNumDevs@0",
+            "00F 00000000 UNDEF  notype       External     | __imp__joyGetDevCapsA@12",
+            "010 00000000 SECT3  notype ()    External     | ?startup_get_keyboard_type@porsche@@YAII@Z (unsigned int __cdecl porsche::startup_get_keyboard_type(unsigned int))",
+            "011 00000000 SECT5  notype ()    External     | ?startup_joy_get_num_devs@porsche@@YAHXZ (int __cdecl porsche::startup_joy_get_num_devs(void))",
+            "012 00000000 SECT4  notype ()    External     | ?startup_joy_get_dev_caps@porsche@@YAIIPAXI@Z (unsigned int __cdecl porsche::startup_joy_get_dev_caps(unsigned int,void *,unsigned int))"
+          ]
+        },
+        {
+          "kind": "disasm",
+          "path": "local/experiments/v2-startup-input-imports-native-383/coff-001/od-disasm.txt",
+          "sha256": "12659396d114d03279f9bd9477fb96c88f89e45c925454c745104ed32ece0613",
+          "relevant_lines": [
+            "?startup_get_keyboard_type@porsche@@YAII@Z (unsigned int __cdecl porsche::startup_get_keyboard_type(unsigned int)):",
+            "  00000007: FF 15 00 00 00 00  call        dword ptr [__imp__GetKeyboardType@4]",
+            "?startup_joy_get_dev_caps@porsche@@YAIIPAXI@Z (unsigned int __cdecl porsche::startup_joy_get_dev_caps(unsigned int,void *,unsigned int)):",
+            "  0000000F: FF 15 00 00 00 00  call        dword ptr [__imp__joyGetDevCapsA@12]",
+            "?startup_joy_get_num_devs@porsche@@YAHXZ (int __cdecl porsche::startup_joy_get_num_devs(void)):",
+            "  00000003: FF 15 00 00 00 00  call        dword ptr [__imp__joyGetNumDevs@0]"
+          ]
+        },
+        {
+          "kind": "imports",
+          "path": "local/experiments/v2-startup-input-imports-native-383/coff-001/od-imports.txt",
+          "sha256": "af1d8813d53479d6267ff62e06826681f64262f8737d9a659e6a4b2ed220287b",
+          "relevant_lines": [
+            "    USER32.dll",
+            "                  176 GetKeyboardType",
+            "    WINMM.dll",
+            "                   17 joyGetDevCapsA",
+            "                   19 joyGetNumDevs"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "o2",
+      "object": "local/experiments/v2-startup-input-imports-native-383/001/o2-0.obj",
+      "object_sha256": "601881d2c231baa634a7da895b451aa19a6ffcab09e68061d92c47413dc0ccfb",
+      "exe": "local/experiments/v2-startup-input-imports-native-383/001/o2.exe",
+      "exe_sha256": "2cbfa032783dee0c79db7de3a6624d54db850d99ced0580c92e6e5efbcadfe4c",
+      "dumps": [
+        {
+          "kind": "symbols",
+          "path": "local/experiments/v2-startup-input-imports-native-383/coff-001/o2-symbols.txt",
+          "sha256": "0f5c6600cc874ce46d302621cec2b924630ac6122f719c57a67f586a49ee2489",
+          "relevant_lines": [
+            "013 00000000 UNDEF  notype       External     | __imp__GetKeyboardType@4",
+            "014 00000000 UNDEF  notype       External     | __imp__joyGetNumDevs@0",
+            "015 00000000 UNDEF  notype       External     | __imp__joyGetDevCapsA@12",
+            "016 00000000 SECT3  notype ()    External     | ?startup_get_keyboard_type@porsche@@YAII@Z (unsigned int __cdecl porsche::startup_get_keyboard_type(unsigned int))",
+            "017 00000000 SECT7  notype ()    External     | ?startup_joy_get_num_devs@porsche@@YAHXZ (int __cdecl porsche::startup_joy_get_num_devs(void))",
+            "018 00000000 SECT5  notype ()    External     | ?startup_joy_get_dev_caps@porsche@@YAIIPAXI@Z (unsigned int __cdecl porsche::startup_joy_get_dev_caps(unsigned int,void *,unsigned int))"
+          ]
+        },
+        {
+          "kind": "disasm",
+          "path": "local/experiments/v2-startup-input-imports-native-383/coff-001/o2-disasm.txt",
+          "sha256": "3655831449ee79a08372afc7cb31eaadd7e4e60d0e0731c17cbd16f2d1519604",
+          "relevant_lines": [
+            "?startup_get_keyboard_type@porsche@@YAII@Z (unsigned int __cdecl porsche::startup_get_keyboard_type(unsigned int)):",
+            "  00000004: FF 15 00 00 00 00  call        dword ptr [__imp__GetKeyboardType@4]",
+            "?startup_joy_get_dev_caps@porsche@@YAIIPAXI@Z (unsigned int __cdecl porsche::startup_joy_get_dev_caps(unsigned int,void *,unsigned int)):",
+            "  0000000C: FF 15 00 00 00 00  call        dword ptr [__imp__joyGetDevCapsA@12]",
+            "?startup_joy_get_num_devs@porsche@@YAHXZ (int __cdecl porsche::startup_joy_get_num_devs(void)):",
+            "  00000000: FF 25 00 00 00 00  jmp         dword ptr [__imp__joyGetNumDevs@0]"
+          ]
+        },
+        {
+          "kind": "imports",
+          "path": "local/experiments/v2-startup-input-imports-native-383/coff-001/o2-imports.txt",
+          "sha256": "89d2894876fa83cdf70075cb9bfda6f6c102808f355e49006acbc588f0224a25",
+          "relevant_lines": [
+            "    USER32.dll",
+            "                  176 GetKeyboardType",
+            "    WINMM.dll",
+            "                   17 joyGetDevCapsA",
+            "                   19 joyGetNumDevs"
+          ]
+        }
+      ]
+    }
+  ]
+}

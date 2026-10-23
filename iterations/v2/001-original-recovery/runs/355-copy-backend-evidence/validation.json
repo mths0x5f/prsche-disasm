@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "passed": true,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-copy-backends-355-rea/001/receipt.json",
+  "receipt_sha256": "e21c54b9d2dfeee0748a57de572300b45bb40d953904e284b53b75627eb8062c",
+  "config_sha256": "c4dc68554008131ecabd8ac2c510be31f086042d61ff6d60c07816a60c63f396",
+  "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+  "server_pid": 212800,
+  "same_server_identity": true,
+  "bodies": {
+    "copy-dispatch": {
+      "address": "0x5323e0",
+      "bytes": 129,
+      "sha256": "3b093f83e51aedbc7c49f02cb1372c5e78175f24366a15540d829b47d90d9357"
+    },
+    "copy-scalar": {
+      "address": "0x5b0000",
+      "bytes": 249,
+      "sha256": "2182fe5a95a648872ab43ff4bdb9f76bcbb5220ac8e83d61edcf8dff76e457ad"
+    },
+    "copy-mmx": {
+      "address": "0x5b0100",
+      "bytes": 359,
+      "sha256": "6e1fc07e2dd9ac924147d9aa7f1ba8c63f15c1b44780183a6b0afbe0a83ab1ac"
+    },
+    "copy-sse1": {
+      "address": "0x5b02c0",
+      "bytes": 389,
+      "sha256": "aab41f0f673efee07cd742dba834a794d2944f85e00cb4bc612f9a6509b92ea1"
+    },
+    "copy-sse2": {
+      "address": "0x5b0480",
+      "bytes": 267,
+      "sha256": "fa315048f67cff79b6df131edfb644621f58cbed79f7a426c16d401a0cc84863"
+    }
+  },
+  "repeated_equal": [],
+  "timings_ms": {
+    "initialize": 1328.732,
+    "open": 3687.466,
+    "session-before": 100.666,
+    "copy-dispatch": 84513.434,
+    "copy-scalar": 87.589,
+    "copy-mmx": 132.909,
+    "copy-sse1": 109.685,
+    "copy-sse2": 115.476,
+    "session-final": 60.647,
+    "close": 396.052
+  },
+  "native_acceptance": false,
+  "game_executed": false
+}

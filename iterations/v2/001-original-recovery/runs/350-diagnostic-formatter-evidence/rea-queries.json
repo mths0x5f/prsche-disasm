@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-diagnostic-formatter-350-rea",
+  "queries": [
+    {
+      "label": "tokenizer",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005a30ee"
+      }
+    },
+    {
+      "label": "vsprintf",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x005a299e"
+      }
+    },
+    {
+      "label": "mono-write",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00592b60"
+      }
+    },
+    {
+      "label": "mono-character",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00592d00"
+      }
+    },
+    {
+      "label": "mono-scroll",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00592d70"
+      }
+    },
+    {
+      "label": "mono-reset",
+      "tool": "analyze_function",
+      "arguments": {
+        "procedure": "0x00592e00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "kind": "exact-platform-import-bindings",
+  "new_original_vas": [],
+  "new_original_state": [],
+  "index_queries": [
+    "GetKeyboardType",
+    "joyGetNumDevs",
+    "joyGetDevCapsA",
+    "005b2298",
+    "005b2354",
+    "005b2358",
+    "00564e70",
+    "00564ab0"
+  ],
+  "original_pe_imports": [
+    {
+      "dll": "USER32.dll",
+      "symbol": "GetKeyboardType",
+      "iat_va": "005b2298",
+      "descriptor_va": "005c9b08",
+      "descriptor_hex": "4c9e1c000000000000000000cea11c0068221b00",
+      "original_first_thunk": "005c9e4c",
+      "first_thunk": "005b2268",
+      "raw_thunk_value": "001cae5c",
+      "hint": 0
+    },
+    {
+      "dll": "WINMM.dll",
+      "symbol": "joyGetNumDevs",
+      "iat_va": "005b2354",
+      "descriptor_va": "005c9b94",
+      "descriptor_hex": "209f1c000000000000000000aaa31c003c231b00",
+      "original_first_thunk": "005c9f20",
+      "first_thunk": "005b233c",
+      "raw_thunk_value": "001ca2d4",
+      "hint": 29
+    },
+    {
+      "dll": "WINMM.dll",
+      "symbol": "joyGetDevCapsA",
+      "iat_va": "005b2358",
+      "descriptor_va": "005c9b94",
+      "descriptor_hex": "209f1c000000000000000000aaa31c003c231b00",
+      "original_first_thunk": "005c9f20",
+      "first_thunk": "005b233c",
+      "raw_thunk_value": "001ca2c2",
+      "hint": 27
+    }
+  ],
+  "indexed_references": [
+    {
+      "from_va": "00564abe",
+      "to_va": "005b2354",
+      "from_function": "00564ab0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "PTR_joyGetNumDevs_005b2354"
+    },
+    {
+      "from_va": "00564abe",
+      "to_va": "EXTERNAL:000000e8",
+      "from_function": "00564ab0",
+      "to_function": "EXTERNAL:000000e8",
+      "type": "COMPUTED_CALL",
+      "source": "ANALYSIS",
+      "target_symbol": "WINMM.DLL::joyGetNumDevs"
+    },
+    {
+      "from_va": "00564ad0",
+      "to_va": "005b2358",
+      "from_function": "00564ab0",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "PTR_joyGetDevCapsA_005b2358"
+    },
+    {
+      "from_va": "00564ae1",
+      "to_va": "EXTERNAL:000000e9",
+      "from_function": "00564ab0",
+      "to_function": "EXTERNAL:000000e9",
+      "type": "COMPUTED_CALL",
+      "source": "ANALYSIS",
+      "target_symbol": "WINMM.DLL::joyGetDevCapsA"
+    },
+    {
+      "from_va": "00564e71",
+      "to_va": "005b2298",
+      "from_function": "00564e70",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "PTR_GetKeyboardType_005b2298"
+    },
+    {
+      "from_va": "00564e79",
+      "to_va": "EXTERNAL:00000096",
+      "from_function": "00564e70",
+      "to_function": "EXTERNAL:00000096",
+      "type": "COMPUTED_CALL",
+      "source": "ANALYSIS",
+      "target_symbol": "USER32.DLL::GetKeyboardType"
+    },
+    {
+      "from_va": "00564e82",
+      "to_va": "EXTERNAL:00000096",
+      "from_function": "00564e70",
+      "to_function": "EXTERNAL:00000096",
+      "type": "COMPUTED_CALL",
+      "source": "ANALYSIS",
+      "target_symbol": "USER32.DLL::GetKeyboardType"
+    },
+    {
+      "from_va": "005b2298",
+      "to_va": "EXTERNAL:00000096",
+      "to_function": "EXTERNAL:00000096",
+      "type": "DATA",
+      "source": "IMPORTED",
+      "target_symbol": "USER32.DLL::GetKeyboardType"
+    },
+    {
+      "from_va": "005b2354",
+      "to_va": "EXTERNAL:000000e8",
+      "to_function": "EXTERNAL:000000e8",
+      "type": "DATA",
+      "source": "IMPORTED",
+      "target_symbol": "WINMM.DLL::joyGetNumDevs"
+    },
+    {
+      "from_va": "005b2358",
+      "to_va": "EXTERNAL:000000e9",
+      "to_function": "EXTERNAL:000000e9",
+      "type": "DATA",
+      "source": "IMPORTED",
+      "target_symbol": "WINMM.DLL::joyGetDevCapsA"
+    }
+  ],
+  "caller_instructions": [
+    {
+      "va": "00564e70",
+      "bytes": 55,
+      "sha256": "b6d88ff30c995286198dac2a888cb24f2af77b4371d96993404124b026c3bf35",
+      "instructions": [
+        {
+          "va": "00564e70",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "00564e71",
+          "bytes": "8b3598225b00",
+          "instruction": "mov esi, dword ptr [0x5b2298]"
+        },
+        {
+          "va": "00564e77",
+          "bytes": "6a00",
+          "instruction": "push 0"
+        },
+        {
+          "va": "00564e79",
+          "bytes": "ffd6",
+          "instruction": "call esi"
+        },
+        {
+          "va": "00564e7b",
+          "bytes": "83f807",
+          "instruction": "cmp eax, 7"
+        },
+        {
+          "va": "00564e7e",
+          "bytes": "7523",
+          "instruction": "jne 0x564ea3"
+        },
+        {
+          "va": "00564e80",
+          "bytes": "6a01",
+          "instruction": "push 1"
+        },
+        {
+          "va": "00564e82",
+          "bytes": "ffd6",
+          "instruction": "call esi"
+        },
+        {
+          "va": "00564e84",
+          "bytes": "3d010d0000",
+          "instruction": "cmp eax, 0xd01"
+        },
+        {
+          "va": "00564e89",
+          "bytes": "7c18",
+          "instruction": "jl 0x564ea3"
+        },
+        {
+          "va": "00564e8b",
+          "bytes": "3d040d0000",
+          "instruction": "cmp eax, 0xd04"
+        },
+        {
+          "va": "00564e90",
+          "bytes": "7f11",
+          "instruction": "jg 0x564ea3"
+        },
+        {
+          "va": "00564e92",
+          "bytes": "c705a0e5690034f95d00",
+          "instruction": "mov dword ptr [0x69e5a0], 0x5df934"
+        },
+        {
+          "va": "00564e9c",
+          "bytes": "b801000000",
+          "instruction": "mov eax, 1"
+        },
+        {
+          "va": "00564ea1",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "va": "00564ea2",
+          "bytes": "c3",
+          "instruction": "ret "
+        },
+        {
+          "va": "00564ea3",
+          "bytes": "33c0",
+          "instruction": "xor eax, eax"
+        },
+        {
+          "va": "00564ea5",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "va": "00564ea6",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ]
+    },
+    {
+      "va": "00564ab0",
+      "bytes": 70,
+      "sha256": "f1151da25e993115e8b9a9b11cb3de36007c4c699c9271632e30ad637cda934b",
+      "instructions": [
+        {
+          "va": "00564ab0",
+          "bytes": "81ec94010000",
+          "instruction": "sub esp, 0x194"
+        },
+        {
+          "va": "00564ab6",
+          "bytes": "c605c4ea5d0001",
+          "instruction": "mov byte ptr [0x5deac4], 1"
+        },
+        {
+          "va": "00564abd",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "00564abe",
+          "bytes": "ff1554235b00",
+          "instruction": "call dword ptr [0x5b2354]"
+        },
+        {
+          "va": "00564ac4",
+          "bytes": "33f6",
+          "instruction": "xor esi, esi"
+        },
+        {
+          "va": "00564ac6",
+          "bytes": "a3f45b6a00",
+          "instruction": "mov dword ptr [0x6a5bf4], eax"
+        },
+        {
+          "va": "00564acb",
+          "bytes": "85c0",
+          "instruction": "test eax, eax"
+        },
+        {
+          "va": "00564acd",
+          "bytes": "7e1f",
+          "instruction": "jle 0x564aee"
+        },
+        {
+          "va": "00564acf",
+          "bytes": "57",
+          "instruction": "push edi"
+        },
+        {
+          "va": "00564ad0",
+          "bytes": "8b3d58235b00",
+          "instruction": "mov edi, dword ptr [0x5b2358]"
+        },
+        {
+          "va": "00564ad6",
+          "bytes": "8d442408",
+          "instruction": "lea eax, [esp + 8]"
+        },
+        {
+          "va": "00564ada",
+          "bytes": "6894010000",
+          "instruction": "push 0x194"
+        },
+        {
+          "va": "00564adf",
+          "bytes": "50",
+          "instruction": "push eax"
+        },
+        {
+          "va": "00564ae0",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "00564ae1",
+          "bytes": "ffd7",
+          "instruction": "call edi"
+        },
+        {
+          "va": "00564ae3",
+          "bytes": "a1f45b6a00",
+          "instruction": "mov eax, dword ptr [0x6a5bf4]"
+        },
+        {
+          "va": "00564ae8",
+          "bytes": "46",
+          "instruction": "inc esi"
+        },
+        {
+          "va": "00564ae9",
+          "bytes": "3bf0",
+          "instruction": "cmp esi, eax"
+        },
+        {
+          "va": "00564aeb",
+          "bytes": "7ce9",
+          "instruction": "jl 0x564ad6"
+        },
+        {
+          "va": "00564aed",
+          "bytes": "5f",
+          "instruction": "pop edi"
+        },
+        {
+          "va": "00564aee",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "va": "00564aef",
+          "bytes": "81c494010000",
+          "instruction": "add esp, 0x194"
+        },
+        {
+          "va": "00564af5",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ]
+    }
+  ],
+  "original_bodies": [
+    {
+      "token": "@KEYBOARD_LOAD@",
+      "va": "00564e71",
+      "bytes": 6,
+      "sha256": "2d3ccc9f74a84388fca92e1faa978477374e956cca7148b162a4227347cc1de3"
+    },
+    {
+      "token": "@KEYBOARD_CALL@",
+      "va": "00564e79",
+      "bytes": 2,
+      "sha256": "dbbb9d94ac78020db261961edf777d7c842eb70ae1a35a6301b9bf261c1d6e76"
+    },
+    {
+      "token": "@NUM_CALL@",
+      "va": "00564abe",
+      "bytes": 6,
+      "sha256": "8e5600cffeb957c46401731458dd4a130abcfff483fbd8d6adaa451d8327baa5"
+    },
+    {
+      "token": "@CAPS_LOAD@",
+      "va": "00564ad0",
+      "bytes": 6,
+      "sha256": "d8b947d61636c37e13e0434ad1b382799f3991803bcecf9f91e5c891324e75db"
+    },
+    {
+      "token": "@CAPS_CALL@",
+      "va": "00564ae1",
+      "bytes": 2,
+      "sha256": "7592d0fabc9e647414da30e303ba239e1b6047b0a3d102ac1f3a7223f131eac1"
+    }
+  ],
+  "sdk_pins": [
+    {
+      "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/WinUser.h",
+      "sha256": "014e26f0041535ebcc53c7b46f1d280f66283ec5eb4612b4e82f5b0f6c0d428c"
+    },
+    {
+      "path": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/joystickapi.h",
+      "sha256": "d87b7dd3517d2018478df501ba3ea578d7ecdc4dddf44720802c414376fb5734"
+    },
+    {
+      "path": "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/user32.lib",
+      "sha256": "ab26e29a6f06b0eba87861aebb9e61874a22f297d03d66e08296066ce0dbdbeb"
+    },
+    {
+      "path": "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x86/winmm.lib",
+      "sha256": "549fb561414304d3f48665497247d3c82c0fe6f0c127ac08aab0e4497e44dc71"
+    }
+  ],
+  "sdk_signatures": {
+    "GetKeyboardType": "int WINAPI(int), WinUser.h5984",
+    "joyGetNumDevs": "UINT WINAPI(void), joystickapi.h342",
+    "joyGetDevCapsA": "MMRESULT WINAPI(UINT_PTR,LPJOYCAPSA,UINT), joystickapi.h351"
+  },
+  "abi": "Existing C++ facades cdecl, all3 exact SDK APIs stdcall; x86 UINT_PTR32/JOYCAPSA0x194 asserted. AllDWORD argument/return bits forwarded without guards.",
+  "bounded_endpoints": "Only own fixture EXE IAT cells are patched. No live keyboard/joystick API calls execute; original instruction bytes point to controlled typed endpoints. Bounded partial writes also on failing rawreturns are synthetic transport tests, not asserted API semantics.",
+  "provenance": "Original importdescriptor/FirstThunk identities parsed directly from SHA-checked PE; index corroborates; SDK source/library versions pinned.",
+  "boundaries": [
+    "No new originalbody/state claim.",
+    "No live WinMM/USER32 device or full startup acceptance.",
+    "Unmodified canonical caller state/proofs remain unchanged.",
+    "No lazyloader, alternate API, Unicodecaps substitution, newsemantics or malformed-pointer dereference."
+  ]
+}

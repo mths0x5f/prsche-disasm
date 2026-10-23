@@ -1,0 +1,96 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+#include "pixel_draw_helpers.hpp"
+#include "../378-buffer-select/buffer_select.hpp"
+using U=std::uint32_t;using B=std::uint8_t;
+static_assert(sizeof(void*)==4);static_assert(sizeof(float)==4);
+static const B draw_raw[34]={@DRAW@},word_raw[55]={@WORD@};
+static B *draw_code,*word_code;static B data[64];static U cases=0,checks=0,count=0;
+struct Event{U x,y,w,h,pixel;};static Event events[4];
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U v;std::memcpy(&v,p,4);return v;}
+static void die(const char* s){std::printf("fixture %s\n",s);std::fflush(stdout);ExitProcess(98);}
+namespace porsche {
+void __cdecl render_draw_rectangle_bits_0056daf0(U x,U y,U w,U h,U pixel){
+    if(count>=4)die("events");events[count++]={x,y,w,h,pixel};
+    // Controlled boundary writes show that the wrapper really invokes it once.
+    data[3]^=static_cast<B>(x);data[9]^=static_cast<B>(y>>24);
+    data[17]^=static_cast<B>(w>>16);data[23]^=static_cast<B>(h>>24);data[31]^=static_cast<B>(pixel>>8);
+}
+}
+static B* install(const B* raw,U n){auto* p=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));if(!p)die("alloc");std::memcpy(p,raw,n);return p;}
+static void protect(B* p){DWORD old;if(!VirtualProtect(p,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),p,4096);}
+static void install_all(){draw_code=install(draw_raw,34);word_code=install(word_raw,55);
+    const U site=0x56de39,offset=site-0x56de20;
+    if(draw_code[offset]!=0xe8||site+5+word(draw_code+offset+1)!=0x56daf0)die("draw-target");
+    U displacement=ptr(reinterpret_cast<const void*>(&porsche::render_draw_rectangle_bits_0056daf0))-ptr(draw_code+offset+5);
+    std::memcpy(draw_code+offset+1,&displacement,4);protect(draw_code);protect(word_code);
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1,eax;};
+static Capture invoke(const void* fn,U a,U b,U c){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push c
+        push b
+        push a
+        mov ecx,fn
+        call ecx
+        add esp,12
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }return r;
+}
+static bool abi(const Capture& c){return c.sp0==c.sp1&&c.bp0==c.bp1&&c.bx0==c.bx1&&c.si0==c.si1&&c.di0==c.di1&&
+    c.bx0==0x13579bdfu&&c.si0==0x2468ace0u&&c.di0==0x6a31c5e7u;}
+struct State{B data[64];U count;Event events[4];U control,status,mxcsr;};
+static State state(){State s{};std::memcpy(s.data,data,64);s.count=count;std::memcpy(s.events,events,sizeof events);
+    U control=0,status=0,mxcsr=0;
+    __asm fnstcw control
+    __asm fnstsw status
+    __asm stmxcsr mxcsr
+    s.control=control;s.status=status;s.mxcsr=mxcsr;return s;
+}
+static U random(U& seed){seed=seed*1664525u+1013904223u;return seed;}
+static void reset(U seed){for(auto& v:data)v=static_cast<B>(random(seed)>>24);count=0;std::memset(events,0,sizeof events);}
+static void compare(U kind,U a,U b,U c,U seed){
+    reset(seed);State before=state();auto x=invoke(kind?word_code:draw_code,a,b,c);State expected=state();
+    reset(seed);auto y=invoke(kind?reinterpret_cast<const void*>(&porsche::render_buffer_word_0056e301):reinterpret_cast<const void*>(&porsche::render_buffer_draw_0056de20),a,b,c);State actual=state();
+    ++cases;checks+=4;
+    if(!abi(x)||!abi(y)||(kind&&x.eax!=y.eax)||std::memcmp(&expected,&actual,sizeof actual)||
+       before.control!=expected.control||before.status!=expected.status||before.mxcsr!=expected.mxcsr){
+        std::printf("divergence pixel-helper kind=%u case=%u abc=%08x/%08x/%08x eax=%08x/%08x abi=%u/%u events=%u/%u\n",kind,cases,a,b,c,x.eax,y.eax,abi(x),abi(y),expected.count,actual.count);
+        const auto* p=reinterpret_cast<const B*>(&expected);const auto* q=reinterpret_cast<const B*>(&actual);
+        for(U i=0;i<sizeof(State);++i)if(p[i]!=q[i]){std::printf("first-state-offset=%u value=%02x/%02x\n",i,p[i],q[i]);break;}
+        std::fflush(stdout);ExitProcess(1);
+    }
+}
+int main(){install_all();
+    const U values[]={0,0x80000000u,0x3f800000u,0xbf800000u,1,0x80000001u,0x007fffffu,0x00800000u,
+        0x7f7fffffu,0xff7fffffu,0x7f800000u,0xff800000u,0x7fc00000u,0xffc12345u,0x7f800001u,0xff812345u,0xffffffffu};
+    for(U x:values)for(U y:values)for(U pixel:{0u,0xffffffffu,0x87654321u})compare(0,x,y,pixel,0x1234abcd);
+    U seed=0x5381a276;for(U i=0;i<1024;++i){U x=random(seed),y=random(seed),pixel=random(seed);compare(0,x,y,pixel,seed);}
+    const U sizes[]={0x80000000u,0xfffffffdu,0xffffffffu,0,1,2,3,4,5,8,0x10000u,0x7fffffffu};
+    for(U n:sizes)for(U offset=0;offset<8;++offset){
+        for(U pixel:{0u,0xffffffffu,0x12345678u,0x87654321u,0x00ff00ffu,0xff00ff00u})compare(1,ptr(data+16+offset),pixel,n,0x98765432);
+        for(U bit=0;bit<32;++bit){compare(1,ptr(data+16+offset),1u<<bit,n,bit);compare(1,ptr(data+16+offset),~(1u<<bit),n,bit+32);}
+    }
+    for(U n:{0x80000000u,0xffffffffu,0u})compare(1,0,0x12345678,n,0);
+    std::printf("pixel_draw_helpers_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

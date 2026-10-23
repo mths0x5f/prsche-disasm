@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "indexed_functions": ["00592a50:101", "00592b60:384", "00592d00:105", "00592d70:77", "00592e00:10", "005a299e:81"],
+    "supplemental_callback": "research/binary-index/supplemental/diagnostic-mono-callback-352.jsonl:00592ac0:151",
+    "state_image": "005e25dc..005e25e9:14 file-backed bytes 02 00 00 00 00 00 0b 00 80 07 00 00 07 08",
+    "bss_cells": ["006af140:zero", "006af148:zero"]
+  },
+  "source_evidence": [
+    "local/experiments/v2-diagnostic-parser-347-rea/002/mono-format.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-write.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-character.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-scroll.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-reset.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/vsprintf.json",
+    "local/experiments/v2-mono-state-352/evidence.json",
+    "local/experiments/v2-mono-routing-352/evidence.json"
+  ],
+  "ownership": {
+    "file_backed": "diagnostic_mono_image_005e25dc owns exactly 14 bytes; no ownership of 005e25ea..eb",
+    "bss": "006af140 lock and 006af148 row are distinct cells; 006af144 remains unowned",
+    "production_display_pointer": "0x000b0000 retained from PE initial bytes; no replacement or forced output level",
+    "formatter_reuse": "005a299e forwards through actual canonical formatter_entry_raw_005a0fbf; its 32-byte descriptor prefix, uninitialized tail, limit decrement and cleanup are compared to original 005a299e in native proof",
+    "accepted_formatter_proof": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/formatter-entry/verification.json",
+    "accepted_formatter_source_sha256": "3c81a98b979195c05e8541d8a0b46bcc8c28fed9f0257ab4e8383135de4c451c"
+  },
+  "native_proof": {
+    "receipt": "local/experiments/v2-diagnostic-mono-native-353/003/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 44,
+    "mutations_detected": 9,
+    "checks": [
+      "Original native14-byte image and two BSS zero cells checked before fixture reset; SHA-pinned image, seven bodies and five-word control-character jump table",
+      "x86 cdecl ESP/nonvolatile registers and integer returns; state image, 4100-byte controlled framebuffer, formatter output buffer and ordered lock/copy/fill/core/cleanup callbacks",
+      "Level gates, lazy/existing lock, XY edge and negative coordinates, printable/high-byte output, backspace, tab widths 1/2/8, newline, vertical tab, nested form-feed clear, attribute escape, scroll, direct clear and formatter cleanup branch",
+      "Signed tab and newline cursor division at -1,-80,-159,-160,-161 and INT_MIN using control-only input; signed length gate retained"
+    ],
+    "boundary": "Fixture replaces the original display pointer with a controlled byte buffer and replaces accepted heap/core/cleanup children with recording endpoints; production calls canonical providers."
+  },
+  "holds": [
+    "Actual OS display mapping and PRINT_DEVICE-enabled writes to original 0x000b0000 are unproven. Default routing leaves mono device disabled, but an environment override can enable it.",
+    "Negative cursor tab/newline arithmetic is compared with original bytes, but printable glyph writes at a negative cursor and row indices above 24 remain outside bounded acceptance.",
+    "Original mono format buffers are 256 bytes while 005a299e gives the core a 0x7fffffff limit; malformed/overlong formats and spill are outside acceptance.",
+    "Formatter descriptor tail remains opaque/uninitialized; proof checks its initialized prefix and observed branch, not arbitrary tail contents."
+  ]
+}

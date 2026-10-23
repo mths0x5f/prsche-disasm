@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "index_query": "research/binary-index/README.md and indexed original callers 0044e890, 0044ed10, 0044f020, 00534430; checked research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm and PE bytes at the selected callsites",
+    "callsite_instructions": ["0044e893 CALL [006bd934]", "0044e8a4 CALL [006bd984]", "0044e8b3 CALL [006bd97c]", "0044ed60 CALL [006bd918]", "0053445f CALL [006bd9b0]"],
+    "table_indices": {"about": 9, "getstate": 29, "setstate": 27, "mode_setstate_alias": 2, "window": 40},
+    "result_use": "Settings about EAX is retained as an opaque RenderSettingsDevice pointer; getstate and setstate EAX values are consumed by original settings caller. Mode alias and shutdown window results are unused at selected callsites."
+  },
+  "reused_proof": {
+    "loader": {"report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/render-loader/verification.json", "current_source_sha256": "230047dbf667eb22601e6667f5c2ee8391957070f5a27aaff32a2fe2b7c3ffc8"},
+    "settings": {"report": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/render-settings/verification.json", "current_source_sha256": "38698f0e1c3ecd17d1f4c3274bc435d5fcd18523649c9165fdf6c5b4122a212f"},
+    "mode": {"report": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/render-mode/verification.json", "current_source_sha256": "7b9c1a7308bf43a96b4ffa8651f80991464626a36b7b67d9a4be203b6ff63267"},
+    "state_init": {"report": "iterations/v2/001-original-recovery/runs/136-formatter-context-integration/render-state-init/verification.json", "current_source_sha256": "d6e3b1a2801c3f7848046822164a803e19d2d3da091bcd7939e280682336ab81"},
+    "shutdown": {"report": "iterations/v2/001-original-recovery/runs/090-native-window-integration/window-shutdown/verification.json", "current_source_sha256": "34b3066a2ff001c469cb0dda2d3f3ae0a947794dd44af4afa0b5a12a32fefd5c"},
+    "source_hashes_match_current": true
+  },
+  "native_proof": {
+    "receipt": "local/experiments/v2-render-settings-bindings-native-359/002/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 9,
+    "mutations_detected": 6,
+    "compared": "Five SHA-pinned original PE CALL [cell] instructions versus compiled C++ facades at fixture-owned canonical 43-cell table. Checked pointer identity and EAX for about, uint32 EAX for getstate/setstate, key/value order, mode and shutdown window arguments, x86 cdecl/stdcall ESP cleanup and nonvolatile EBP/EBX/ESI/EDI.",
+    "live_alias_check": "The fixture installs different valid setstate endpoints at cell2 and cell27, compares an alias call, changes cell2 to a second endpoint, and compares another call. This detects reading or caching cell27 instead of reading live cell2.",
+    "harness_construction": "The original bytes are six-byte callsite excerpts, not full original function bodies. The fixture verifies each absolute cell operand and adds synthetic argument pushes and RET/RET N. Its stdcall endpoints record calls and supply controlled results; no renderer DLL behavior is claimed."
+  },
+  "hold": "window_shutdown_close_handle_006bd92c remains unresolved: original slot is _THRASH_unlockwindow@4, and its token provenance cannot be replaced with guessed Win32 CloseHandle semantics."
+}

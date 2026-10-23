@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "passed": true,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-startup-device-362-rea/001/receipt.json",
+  "receipt_sha256": "7b51e9311a585800377e027fa25a6ebf61c62cd963d0ed37a709eade385bd25c",
+  "config_sha256": "b7a69fb58002bdb8e1a2cabf751c9e678d3c82f7a3aab99b6c5e69c102b2a676",
+  "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+  "server_pid": 220724,
+  "same_server_identity": true,
+  "bodies": {
+    "device-setup": {
+      "address": "0x536e50",
+      "bytes": 456,
+      "sha256": "bfddf11bdb874a02573589ead619bb4fb21307af6379431817d7594007e29323"
+    },
+    "pool-setup": {
+      "address": "0x563ad0",
+      "bytes": 251,
+      "sha256": "6b4631dace78bb943013f9576bfbf32a41cc5917857e9f8dd4ea0b4387a65a54"
+    },
+    "device-child": {
+      "address": "0x572690",
+      "bytes": 82,
+      "sha256": "ea927be3d773a19b4b3d57eeb016f7d0dac8cef5f08c271ded2f0c18db0c9f04"
+    },
+    "pool-child": {
+      "address": "0x56e940",
+      "bytes": 6,
+      "sha256": "ddfd75c6f46c0d5236ec3c52d2574197580f739ff1609069788bbe087a42bfb0"
+    },
+    "display-child": {
+      "address": "0x5370c0",
+      "bytes": 446,
+      "sha256": "d779581b20df2d6364634783aa026d83491817be104c7cab23c86e2800d54bb2"
+    },
+    "startup-services": {
+      "address": "0x4a5410",
+      "bytes": 157,
+      "sha256": "c55f201048ac1ae45c183ab39b628121fab145f0b88b154b7dcd1de76682aa31"
+    }
+  },
+  "repeated_equal": [],
+  "timings_ms": {
+    "initialize": 9154.511,
+    "open": 3715.264,
+    "session-before": 94.434,
+    "device-setup": 87763.07,
+    "pool-setup": 100.19,
+    "device-child": 24.982,
+    "pool-child": 12.995,
+    "display-child": 153.613,
+    "startup-services": 43.077,
+    "session-final": 65.075,
+    "close": 381.014
+  },
+  "native_acceptance": false,
+  "game_executed": false
+}

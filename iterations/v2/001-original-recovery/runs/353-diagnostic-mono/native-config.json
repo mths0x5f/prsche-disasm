@@ -1,0 +1,44 @@
+{
+  "run": 353,
+  "experiment": "local/experiments/v2-diagnostic-mono-native-353",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_entry.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/353-diagnostic-mono",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@MONO_FORMAT@","va":"00592a50","bytes":101,"sha256":"ae25046bda0f46a47aca893a9ae995a4bf74d554ab7aecfa735f329af2c36dc2"},
+    {"token":"@MONO_XY@","va":"00592ac0","bytes":151,"sha256":"c8aaa2d05235c9ad49e2e46ba4e303f156bff4572bc2b877ffc8ebb2ff828fd5"},
+    {"token":"@MONO_WRITE@","va":"00592b60","bytes":384,"sha256":"d01741d6d49108b03ed1de6939f06c81c0fba97efab8a823b6a3f4a1d4054063"},
+    {"token":"@MONO_SCROLL@","va":"00592d00","bytes":105,"sha256":"3efe3f80f2161b2ebb2bb0ca348f736984576dceb37afbbd8a2bd5132cf6225b"},
+    {"token":"@MONO_CLEAR@","va":"00592d70","bytes":77,"sha256":"dc556a1ad4854ef1c2800caae23c7f0eaf486b3a8565418f26a91923fb105f93"},
+    {"token":"@MONO_ATTRIBUTE@","va":"00592e00","bytes":10,"sha256":"cbf4303e90456312b61168964852fbcae4c58f842851cea3e8088acee331f6bc"},
+    {"token":"@MONO_VSPRINTF@","va":"005a299e","bytes":81,"sha256":"af95e00c7add4ad752a0db1696f6c6c8131974d9ba58cbd9427b278dda65966d"},
+    {"token":"@MONO_JUMP_TABLE@","va":"00592ce0","bytes":20,"sha256":"814a30c963ebbff5a7bf22d64cba79d978e0a693c8f53a908096085d96bac88f"},
+    {"token":"@MONO_INITIAL_STATE@","va":"005e25dc","bytes":14,"sha256":"ae157d3b0f95a6f9579b3c8e7410aa949270c9b95436eea2883680aef65b49f6"}
+  ],
+  "pass_marker":"diagnostic_mono_original_vs_cpp=PASS",
+  "mutations": [
+    {"name":"wrong-initial-attribute","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"0x02,0,0,0, 0,0,0x0b,0, 0x80,0x07,0,0, 0x07,0x08","new":"0x02,0,0,0, 0,0,0x0b,0, 0x80,0x07,0,0, 0x06,0x08","expected_exit":1,"failure_marker":"divergence native-initial-state"},
+    {"name":"xy-reject-last-column","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"if(x>=0&&x<80&&y>=0&&y<25)","new":"if(x>=0&&x<79&&y>=0&&y<25)","expected_exit":1},
+    {"name":"tab-ignore-width-two","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"if(tab>1)","new":"if(tab>2)","expected_exit":1},
+    {"name":"scroll-short-fill","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"heap_fill_0053c290(base+0xf00,0,0xa0);","new":"heap_fill_0053c290(base+0xf00,0,0x80);","expected_exit":1},
+    {"name":"clear-last-cell-intact","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"for(U offset=0;offset<4000;offset+=4)","new":"for(U offset=0;offset<3996;offset+=4)","expected_exit":1},
+    {"name":"form-feed-skips-clear","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"if(byte==12)application_diagnostic_mono_clear_00592d70();","new":"if(byte==11)application_diagnostic_mono_clear_00592d70();","expected_exit":1},
+    {"name":"vsprintf-drops-varargs","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"return formatter_entry_raw_005a0fbf(output,format,arguments);","new":"return formatter_entry_raw_005a0fbf(output,format,nullptr);","expected_exit":1},
+    {"name":"tab-unsigned-cursor","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"const auto signed_cursor=static_cast<std::int32_t>(cursor);","new":"const auto signed_cursor=cursor;","expected_exit":1},
+    {"name":"newline-unsigned-cursor","source":"iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp","old":"const auto row=static_cast<std::int32_t>(cursor)/160;","new":"const auto row=cursor/160u;","expected_exit":1}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "run": 359,
+  "experiment": "local/experiments/v2-render-settings-bindings-native-359",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/native-fixture.cpp.in",
+  "include_dirs": ["iterations/v2/001-original-recovery/source/include"],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/include/porsche/render_settings.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_mode.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_shutdown.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@ABOUT@","va":"0044e893","bytes":6,"sha256":"b6532c16eab63c538ade75f732d979ad71c7ae7ece325b6dc8450a4225dbe953"},
+    {"token":"@GET@","va":"0044e8a4","bytes":6,"sha256":"28a06bc09a6188903b29f629d39c31f919dd8904f3c0aad67ebe143820a12612"},
+    {"token":"@SET@","va":"0044e8b3","bytes":6,"sha256":"062fbeb7c96fe0cc499955580116077ed082f9b6179034ca50f8d6d69610cc01"},
+    {"token":"@ALIAS@","va":"0044ed60","bytes":6,"sha256":"583b789a3586570bd4b3240305e1bd83c6c70abf82bfb1b5eef4082f8efa5697"},
+    {"token":"@WINDOW@","va":"0053445f","bytes":6,"sha256":"617f33ad6a41c4c97c9a3f4c7295dfa1151745832a845fff6f4c8363463391b6"}
+  ],
+  "pass_marker": "render_settings_bindings_original_calls_vs_cpp=PASS",
+  "mutations": [
+    {"name":"about-pointer-lost","source":"iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp","old":"return procedure<About>(9)();","new":"(void)procedure<About>(9)();return nullptr;","expected_exit":1},
+    {"name":"getstate-result-lost","source":"iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp","old":"return procedure<Get>(29)(key);","new":"(void)procedure<Get>(29)(key);return 0;","expected_exit":1},
+    {"name":"setstate-result-lost","source":"iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp","old":"return procedure<Set>(27)(key,value);","new":"(void)procedure<Set>(27)(key,value);return 0;","expected_exit":1},
+    {"name":"setstate-argument-order","source":"iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp","old":"return procedure<Set>(27)(key,value);","new":"return procedure<Set>(27)(value,key);","expected_exit":1},
+    {"name":"alias-reads-primary-cell","source":"iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp","old":"(void)procedure<Set>(2)(key,value);","new":"(void)procedure<Set>(27)(key,value);","expected_exit":1},
+    {"name":"window-mode-off-by-one","source":"iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp","old":"procedure<Window>(40)(mode);","new":"procedure<Window>(40)(mode+1u);","expected_exit":1}
+  ]
+}

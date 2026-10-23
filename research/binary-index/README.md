@@ -1,5 +1,21 @@
 # Индекс оригинальных бинарников
 
+Run368: [mouse-callbacks-368.jsonl](supplemental/mouse-callbacks-368.jsonl) adds
+omitted00537020 completeRET24 and005370b0 exit against SHA-checked raw PE bytes.
+Native callback/typed-window ABI and exact wheel arithmetic are accepted in
+[Run370](../../iterations/v2/001-original-recovery/runs/370-input-startup-integration/README.md).
+
+Run366: [frame-callbacks-366.jsonl](supplemental/frame-callbacks-366.jsonl) indexes
+three omitted complete callbacks00572640/70/80 and raw6B JMP[005debe8]005727b0.
+All indexed bytes equal the SHA-checked PE. Native proof/counts and limits are in
+[Run366](../../iterations/v2/001-original-recovery/runs/366-frame-init/README.md);
+the JMP reader is navigation/oracle only, not a new C++ provider.
+
+Run352 navigation: [diagnostic-mono-callback-352.jsonl](supplemental/diagnostic-mono-callback-352.jsonl)
+adds omitted00592ac0..00592b56 (151 raw PE bytes, fullRET). Exact indexed
+instructions match SHA-checked original bytes. Default mono dispatch is off;
+PRINT_DEVICE can enable it. This is evidence, not host-display acceptance.
+
 Run327 supplemental navigation: [resource-open-callback-327.json](resource-open-callback-327.json)
 records00561ce0..00561df3 (276B), exact PE SHA/decoded boundaries/call sites and
 fresh REA325 missing-procedure evidence. It is evidence-only, not an accepted

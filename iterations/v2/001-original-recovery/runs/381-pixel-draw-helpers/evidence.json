@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "module": "local/game/Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "index_query": [
+    "0056de20",
+    "0056e301",
+    "0056e2c0",
+    "0056daf0"
+  ],
+  "bodies": [
+    {
+      "va": "0056de20",
+      "end_exclusive": "0056de42",
+      "bytes": 34,
+      "sha256": "ebcc89472491df7f06e3805f43049a0cbf0f1e6720fc7c1599e96b12537fa691",
+      "indexed_equal_raw": true,
+      "raw_hex": "8b44240c8b4c24088b54240450680000803f680000803f5152e8b2fcffff83c414c3",
+      "assembly": [
+        "0056de20  8b44240c  MOV EAX,dword ptr [ESP + 0xc]",
+        "0056de24  8b4c2408  MOV ECX,dword ptr [ESP + 0x8]",
+        "0056de28  8b542404  MOV EDX,dword ptr [ESP + 0x4]",
+        "0056de2c  50  PUSH EAX",
+        "0056de2d  680000803f  PUSH 0x3f800000",
+        "0056de32  680000803f  PUSH 0x3f800000",
+        "0056de37  51  PUSH ECX",
+        "0056de38  52  PUSH EDX",
+        "0056de39  e8b2fcffff  CALL 0x0056daf0",
+        "0056de3e  83c414  ADD ESP,0x14",
+        "0056de41  c3  RET"
+      ]
+    },
+    {
+      "va": "0056e301",
+      "end_exclusive": "0056e338",
+      "bytes": 55,
+      "sha256": "489ec9e8e34ea65756304761e9d99a6d10d0ca1c362536dccf4ab0aaf81aa3bc",
+      "indexed_equal_raw": true,
+      "raw_hex": "8b4424048b5424088b4c240c83f9037c087418891083c004c383f9017c057f04881040c366891083c002c3668910c1ea10881083c003c3",
+      "assembly": [
+        "0056e301  8b442404  MOV EAX,dword ptr [ESP + 0x4]",
+        "0056e305  8b542408  MOV EDX,dword ptr [ESP + 0x8]",
+        "0056e309  8b4c240c  MOV ECX,dword ptr [ESP + 0xc]",
+        "0056e30d  83f903  CMP ECX,0x3",
+        "0056e310  7c08  JL 0x0056e31a",
+        "0056e312  7418  JZ 0x0056e32c",
+        "0056e314  8910  MOV dword ptr [EAX],EDX",
+        "0056e316  83c004  ADD EAX,0x4",
+        "0056e319  c3  RET",
+        "0056e31a  83f901  CMP ECX,0x1",
+        "0056e31d  7c05  JL 0x0056e324",
+        "0056e31f  7f04  JG 0x0056e325",
+        "0056e321  8810  MOV byte ptr [EAX],DL",
+        "0056e323  40  INC EAX",
+        "0056e324  c3  RET",
+        "0056e325  668910  MOV word ptr [EAX],DX",
+        "0056e328  83c002  ADD EAX,0x2",
+        "0056e32b  c3  RET",
+        "0056e32c  668910  MOV word ptr [EAX],DX",
+        "0056e32f  c1ea10  SHR EDX,0x10",
+        "0056e332  8810  MOV byte ptr [EAX],DL",
+        "0056e334  83c003  ADD EAX,0x3",
+        "0056e337  c3  RET"
+      ]
+    }
+  ],
+  "registry_before_intake": {
+    "path": "iterations/v2/001-original-recovery/source/recovered/functions.json",
+    "sha256": "3ea8eafbde7866aa3cbed506f4dfc177cd0776713a3795adec0ec0a997d4594d",
+    "owners": {
+      "0056de20": [],
+      "0056e301": []
+    },
+    "geometry_owner": [],
+    "adjacent_canonical": {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "0056e2c0",
+      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl, x86 32-bit",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "unrecovered_indirect_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-heap.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/078-shared-runtime-integration/heap/verification.json",
+      "verification_boundary": "Whole heap arena after every operation; OS/CRT/optimized-copy endpoints record only"
+    },
+    "overlap": "0056e2c0 canonical range ends0056e300 inclusive; distinct0056e301 begins immediatelyafter. No shared instructionbytes/interiorentry is duplicated."
+  },
+  "abi": {
+    "draw": "Existing378 void cdecl(float,float,U) facade; raw32bitx/y representations are copied withmemcpy into an explicitly5DWORDcdecl geometryboundary. No floatarithmetic/FPUload is used in the wrapper.",
+    "word": "Existing378 pointer-returning cdecl(void*,U,int32) facade; signedcountbranches, ordinaryunalignedRAMwrites and exact advancedpointer EAX are checked.",
+    "geometry": "render_draw_rectangle_bits_0056daf0(Ux_bits,Uy_bits,Uwidth_bits,Uheight_bits,Upixel) transports exactly the physical five stackDWORDs consumed asFLOAT32/FLOAT32/FLOAT32/FLOAT32/pixel by original656Bgeometrybody; body remainsunrecoveredextern."
+  },
+  "draw_semantics": {
+    "width_bits": "3f800000",
+    "height_bits": "3f800000",
+    "raw_immediate_offsets": [
+      14,
+      19
+    ],
+    "original_child_call": "0056de39 CALL0056daf0",
+    "forwarding": "Original MOV/PUSH-only wrapper forwards rawx/y/pixel and two1.0f immediates. NaN representations must not be quieted by a C++floatload/conversion. EAX is discarded by known378caller/voidfacade."
+  },
+  "word_semantics": {
+    "count_signed": true,
+    "nonpositive": "No access; return destination unchanged, includingNULL.",
+    "one": "Store low8bits; return+1.",
+    "two": "Store low16bits little-endian; return+2.",
+    "three": "0056e32c MOVWORD[EAX],DX;0056e32f SHREDX16;0056e332 MOVBYTE[EAX],DL. Finalbyte0=bits16..23,byte1=bits8..15,byte2untouched. Return+3.",
+    "above_three": "Store full32bits little-endian; return+4, regardlessoflargerpositivecount.",
+    "ordinary_memory": "Source preserves logical store order; MMIO/concurrentobservationofintermediatestores is outsideacceptance."
+  },
+  "state": {
+    "new_production_globals": 0,
+    "initialization": "Neither original function owns or reads persistentdata. Both embedded1.0FLOAT32words are raw-checked before relocation. Destinationtestbuffers/endpointlogs are explicitly fixture-owned."
+  },
+  "unknown_geometry": {
+    "index": {
+      "entry_va": "0056daf0",
+      "name": "FUN_0056daf0",
+      "signature": "undefined FUN_0056daf0(void)",
+      "ranges": [
+        [
+          "0056daf0",
+          "0056dd7f"
+        ]
+      ],
+      "body_bytes": 656,
+      "thunk": false,
+      "recovery_status": "unrecovered"
+    },
+    "body_sha256": "150a9cc22877628cf3ab4ab97048d0aab3ef27fb6e449f7d5bdbfde83137834e",
+    "scope": "Navigation/typedstackABIonly. No clipping,vertexconstruction,THRASHdeviceeffect orfallbackimplementation is inferred."
+  },
+  "native": {
+    "receipt": "local/experiments/v2-pixel-draw-helpers-native-381/001/receipt.json",
+    "receipt_sha256": "270996a9e72b797bcd17f06d030f6687f99840336a00db00f50e7e2851388b8b",
+    "comparisons_per_variant": 8614,
+    "total": 17228,
+    "mutations": 7,
+    "draw_cases_per_variant": 1891,
+    "word_cases_per_variant": 6723,
+    "raw_pins": [
+      {
+        "token": "@DRAW@",
+        "va": "0056de20",
+        "bytes": 34,
+        "sha256": "ebcc89472491df7f06e3805f43049a0cbf0f1e6720fc7c1599e96b12537fa691"
+      },
+      {
+        "token": "@WORD@",
+        "va": "0056e301",
+        "bytes": 55,
+        "sha256": "489ec9e8e34ea65756304761e9d99a6d10d0ca1c362536dccf4ab0aaf81aa3bc"
+      }
+    ],
+    "cases": [
+      "RawFLOAT32 x/y transport includesbothzeros,denormals,normalextremes,infinities,quietandsignalingNaNs,randomDWORDs",
+      "Fiveexactgeometryargumentwords,onecontrolledcallandendpointsideeffects",
+      "x87control/statusandMXCSRcheckedbefore/after; no wrapper-inducedfloatingexceptions/NaNquieting",
+      "SignedcountINTMIN,-3,-1,0,1,2,3,4,5,8,65536,INTMAX",
+      "Unaligneddestinationoffsets0..7,walkingbits/complements/patterns,complete64Bbuffercopy",
+      "Byte2andneighborspreservedforthree-bytecase;returnedEAXpointerforallsizesincludingNULLnonpositive",
+      "ESP/EBP/EBX/ESI/EDIcheckedboth/Odand/O2"
+    ]
+  },
+  "holds": [
+    "Actual0056daf0geometry/clippingandTHRASHdrawremainexternal",
+    "Invalidpositivewritespans,NULLpositivecounts,MMIOorconcurrentmemoryobservation",
+    "Full378+380+381renderercompositionandlivegameacceptance"
+  ]
+}

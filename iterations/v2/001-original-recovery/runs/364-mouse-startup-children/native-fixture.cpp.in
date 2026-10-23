@@ -1,0 +1,124 @@
+#define PORSCHE_DEFINE_SHARED_RUNTIME_GLOBALS_FIXTURE
+#include "startup_mouse_children.hpp"
+#include "../361-startup-device-pool/startup_device.hpp"
+#include "porsche/shared_runtime_globals.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+using I=std::int32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char pe_cleanup[62]={@CLEANUP@};
+static const unsigned char pe_mode[446]={@MODE@};
+static const unsigned char pe_cursor[229]={@CURSOR@};
+static const unsigned char pe_jump[28]={@JUMP_TABLE@};
+static const unsigned char pe_mode_data[12]={@MODE_DATA@};
+static const unsigned char pe_cursor_data[8]={@CURSOR_DATA@};
+static unsigned char *cleanup_code,*mode_code,*cursor_code;
+static U jump_table[7];
+static U cases=0,checks=0,acquire_result=0,coop_first=0,coop_second=0,coop_calls=0;
+static bool on_main=false;
+struct Event{U type,a,b,c;};
+static Event events[64];static U event_count=0;
+static U ptr(const void* value){return static_cast<U>(reinterpret_cast<std::uintptr_t>(value));}
+static U word(const unsigned char* bytes){U v;std::memcpy(&v,bytes,4);return v;}
+static void die(const char* why,U where=0){std::printf("fixture %s %08x\n",why,where);std::fflush(stdout);ExitProcess(98);}
+static void event(U type,U a=0,U b=0,U c=0){if(event_count>=64)die("event-overflow");events[event_count++]={type,a,b,c};}
+static U norm_source(U value){if(value==0x5bb728u)return 1;if(value && std::strcmp(reinterpret_cast<const char*>(value),"\\real\\patch3\\pc\\mouse.c")==0)return 1;return value;}
+static U norm_message(const char* message){U value=ptr(message);if(value==0x5bb740u)return 1;if(value==0x5bb70cu)return 2;if(!message)return 0;if(std::strcmp(message,"MOUSE_setstate(INPUT_STATE_ACCESSMODE) - Cannot change the access mode as Direct Input was not initialized correctly\n")==0)return 1;if(std::strcmp(message,"[MOUSE] - Invalid setstate\n")==0)return 2;return 3;}
+
+namespace porsche {
+U startup_mouse_slot0_0069e07c=0,startup_mouse_slot1_0069e080=0,startup_mouse_slot2_0069e084=0;
+void* startup_directinput_0069e098=nullptr;void* startup_mouse_device_0069e09c=nullptr;
+U render_driver_bounds_a_006a643c=0,render_driver_bounds_b_006a6438=0;
+U render_driver_bounds_c_006a6430=0,render_driver_bounds_d_006a6434=0;
+U render_driver_limit_a_006a6448=0,render_driver_limit_b_006a6444=0;
+void* thread_start_lock_006a57d8=reinterpret_cast<void*>(0x12121212u);
+void* window_configuration_address_006b77a0=reinterpret_cast<void*>(0x34343434u);
+void (__cdecl* diagnostic_handler_005debf0)(const char*)=nullptr;
+void __cdecl startup_cursor_state_save_00570ed0(void* data){event(10);std::memset(data,0x5a,96);}
+void __cdecl startup_cursor_state_restore_00570f00(const void* data){event(11,static_cast<const unsigned char*>(data)[0]);}
+std::int32_t __cdecl file_current_thread_0055f780(U arg){event(12,arg);return on_main?1:0;}
+U __cdecl window_shutdown_prepare_00534550(){event(13);return 0;}
+void __cdecl heap_enter_005322b0(void* lock){event(14,lock==thread_start_lock_006a57d8);}
+void __cdecl heap_leave_005322c0(void* lock){event(15,lock==thread_start_lock_006a57d8);}
+void __cdecl render_event_set_cursor_position_0053a970(void* config,I x,I y){event(16,config==window_configuration_address_006b77a0,static_cast<U>(x),static_cast<U>(y));}
+void* __cdecl startup_window_handle_00557460(){event(17);return reinterpret_cast<void*>(0x56565656u);}
+}
+struct FakeCom{void** vtable;};
+static void* device_vtable[16];static void* base_vtable[4];
+static FakeCom device{device_vtable},base{base_vtable};
+static U __stdcall com_acquire(void* self){event(1,self==&device);return acquire_result;}
+static U __stdcall com_unacquire(void* self){event(2,self==&device);return 0;}
+static U __stdcall com_release(void* self){event(3,self==&device?1:self==&base?2:0);return 1;}
+static U __stdcall com_coop(void* self,void* hwnd,U flags){event(4,self==&device,hwnd==reinterpret_cast<void*>(0x56565656u),flags);return coop_calls++?coop_second:coop_first;}
+static void __cdecl diagnostic_event(const char* message){event(5,norm_message(message),porsche::diagnostic_line_005deb78,norm_source(porsche::shared_runtime_word_005deb74));}
+static void setup_com(){std::memset(device_vtable,0,sizeof(device_vtable));std::memset(base_vtable,0,sizeof(base_vtable));device_vtable[2]=reinterpret_cast<void*>(&com_release);device_vtable[7]=reinterpret_cast<void*>(&com_unacquire);device_vtable[8]=reinterpret_cast<void*>(&com_acquire);device_vtable[13]=reinterpret_cast<void*>(&com_coop);base_vtable[2]=reinterpret_cast<void*>(&com_release);}
+static unsigned char* install(const unsigned char* raw,U size){auto* out=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));if(!out)die("alloc");std::memcpy(out,raw,size);return out;}
+static void patch_abs(unsigned char* body,U size,U old,U replacement,U minimum){U found=0;for(U i=0;i+4<=size;++i){if(word(body+i)==old){std::memcpy(body+i,&replacement,4);i+=3;++found;}}if(found<minimum)die("patch-absolute",old);}
+static void patch_call(unsigned char* body,U base,U size,U site,const void* destination){const U offset=site-base;if(offset+5>size||body[offset]!=0xe8)die("patch-call",site);const U displacement=ptr(destination)-ptr(body+offset+5);std::memcpy(body+offset+1,&displacement,4);}
+static void protect(unsigned char* body){DWORD old=0;if(!VirtualProtect(body,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),body,4096);}
+static void install_all(){
+    if(word(pe_mode_data)!=4||word(pe_mode_data+4)!=2||word(pe_mode_data+8)!=1)die("raw-mode-data");
+    if(word(pe_cursor_data)||word(pe_cursor_data+4))die("raw-cursor-data");
+    for(U i=0;i<7;++i){U va=word(pe_jump+4*i);if(va<0x5370c0u||va>0x53727du)die("raw-jump",i);}
+    cleanup_code=install(pe_cleanup,62);mode_code=install(pe_mode,446);cursor_code=install(pe_cursor,229);
+    patch_abs(cleanup_code,62,0x69e09cu,ptr(&porsche::startup_mouse_device_0069e09c),3);
+    patch_abs(cleanup_code,62,0x69e098u,ptr(&porsche::startup_directinput_0069e098),2);
+    for(U i=0;i<7;++i)jump_table[i]=ptr(mode_code+word(pe_jump+4*i)-0x5370c0u);
+    patch_abs(mode_code,446,0x537280u,ptr(jump_table),1);
+    patch_abs(mode_code,446,0x005de758u,ptr(&porsche::startup_mouse_access_005de758),1);
+    patch_abs(mode_code,446,0x005de75cu,ptr(&porsche::startup_mouse_option8_005de75c),1);
+    patch_abs(mode_code,446,0x005de760u,ptr(&porsche::startup_mouse_option9_005de760),1);
+    patch_abs(mode_code,446,0x0069e07cu,ptr(&porsche::startup_mouse_slot0_0069e07c),1);
+    patch_abs(mode_code,446,0x0069e080u,ptr(&porsche::startup_mouse_slot1_0069e080),1);
+    patch_abs(mode_code,446,0x0069e084u,ptr(&porsche::startup_mouse_slot2_0069e084),1);
+    patch_abs(mode_code,446,0x0069e098u,ptr(&porsche::startup_directinput_0069e098),1);
+    patch_abs(mode_code,446,0x0069e09cu,ptr(&porsche::startup_mouse_device_0069e09c),1);
+    patch_abs(mode_code,446,0x005deb74u,ptr(&porsche::shared_runtime_word_005deb74),1);
+    patch_abs(mode_code,446,0x005deb78u,ptr(&porsche::shared_runtime_word_005deb78),1);
+    patch_abs(mode_code,446,0x005debf0u,ptr(&porsche::diagnostic_handler_005debf0),1);
+    for(U va:{0x5370fdu,0x537129u,0x5371aeu})patch_call(mode_code,0x5370c0u,446,va,reinterpret_cast<const void*>(&porsche::startup_cursor_apply_005727c0));
+    for(U va:{0x5371d9u,0x53720eu})patch_call(mode_code,0x5370c0u,446,va,reinterpret_cast<const void*>(&porsche::startup_window_handle_00557460));
+    patch_abs(cursor_code,229,0x006a643cu,ptr(&porsche::render_driver_bounds_a_006a643c),1);
+    patch_abs(cursor_code,229,0x006a6430u,ptr(&porsche::render_driver_bounds_c_006a6430),1);
+    patch_abs(cursor_code,229,0x006a6438u,ptr(&porsche::render_driver_bounds_b_006a6438),1);
+    patch_abs(cursor_code,229,0x006a6434u,ptr(&porsche::render_driver_bounds_d_006a6434),1);
+    patch_abs(cursor_code,229,0x005deab0u,ptr(&porsche::startup_cursor_x_005deab0),2);
+    patch_abs(cursor_code,229,0x005deab4u,ptr(&porsche::startup_cursor_y_005deab4),2);
+    patch_abs(cursor_code,229,0x006a6448u,ptr(&porsche::render_driver_limit_a_006a6448),1);
+    patch_abs(cursor_code,229,0x006a6444u,ptr(&porsche::render_driver_limit_b_006a6444),1);
+    patch_abs(cursor_code,229,0x006a57d8u,ptr(&porsche::thread_start_lock_006a57d8),2);
+    patch_abs(cursor_code,229,0x006b77a0u,ptr(porsche::window_configuration_address_006b77a0),1);
+    for(U va:{0x5727c5u,0x572873u})patch_call(cursor_code,0x5727c0u,229,va,reinterpret_cast<const void*>(&porsche::file_current_thread_0055f780));
+    patch_call(cursor_code,0x5727c0u,229,0x5727d6u,reinterpret_cast<const void*>(&porsche::startup_cursor_state_save_00570ed0));
+    patch_call(cursor_code,0x5727c0u,229,0x5727deu,reinterpret_cast<const void*>(&porsche::window_shutdown_prepare_00534550));
+    patch_call(cursor_code,0x5727c0u,229,0x5727ecu,reinterpret_cast<const void*>(&porsche::heap_enter_005322b0));
+    patch_call(cursor_code,0x5727c0u,229,0x57286cu,reinterpret_cast<const void*>(&porsche::render_event_set_cursor_position_0053a970));
+    patch_call(cursor_code,0x5727c0u,229,0x572886u,reinterpret_cast<const void*>(&porsche::startup_cursor_state_restore_00570f00));
+    patch_call(cursor_code,0x5727c0u,229,0x572899u,reinterpret_cast<const void*>(&porsche::heap_leave_005322c0));
+    protect(cleanup_code);protect(mode_code);protect(cursor_code);
+}
+struct State{U words[16],events;Event calls[64];};
+static State snapshot(){State s{};s.words[0]=porsche::startup_mouse_access_005de758;s.words[1]=porsche::startup_mouse_option8_005de75c;s.words[2]=porsche::startup_mouse_option9_005de760;s.words[3]=porsche::startup_mouse_slot0_0069e07c;s.words[4]=porsche::startup_mouse_slot1_0069e080;s.words[5]=porsche::startup_mouse_slot2_0069e084;s.words[6]=ptr(porsche::startup_mouse_device_0069e09c);s.words[7]=ptr(porsche::startup_directinput_0069e098);s.words[8]=static_cast<U>(porsche::startup_cursor_x_005deab0);s.words[9]=static_cast<U>(porsche::startup_cursor_y_005deab4);s.words[10]=porsche::render_driver_limit_a_006a6448;s.words[11]=porsche::render_driver_limit_b_006a6444;s.words[12]=norm_source(porsche::shared_runtime_word_005deb74);s.words[13]=porsche::shared_runtime_word_005deb78;s.words[14]=coop_calls;s.words[15]=on_main?1:0;s.events=event_count;std::memcpy(s.calls,events,sizeof(events));return s;}
+static void compare(const State& a,const State& b,U original_result,U cpp_result,const char* label){++checks;if(original_result!=cpp_result){std::printf("divergence %s return %08x %08x\n",label,original_result,cpp_result);ExitProcess(1);}const auto* x=reinterpret_cast<const unsigned char*>(&a);const auto* y=reinterpret_cast<const unsigned char*>(&b);for(U i=0;i<sizeof(State);++i){++checks;if(x[i]!=y[i]){std::printf("divergence %s byte=%u original=%02x cpp=%02x\n",label,i,x[i],y[i]);for(U j=0;j<a.events||j<b.events;++j)std::printf(" event%u original=%u,%u,%u,%u cpp=%u,%u,%u,%u\n",j,a.calls[j].type,a.calls[j].a,a.calls[j].b,a.calls[j].c,b.calls[j].type,b.calls[j].a,b.calls[j].b,b.calls[j].c);std::fflush(stdout);ExitProcess(1);}}++cases;}
+static void reset(U access,bool direct,bool mouse,bool main_thread,U a,U b,U c,U d){
+    setup_com();porsche::startup_mouse_access_005de758=access;porsche::startup_mouse_option8_005de75c=2;porsche::startup_mouse_option9_005de760=1;porsche::startup_mouse_slot0_0069e07c=11;porsche::startup_mouse_slot1_0069e080=22;porsche::startup_mouse_slot2_0069e084=33;porsche::startup_directinput_0069e098=direct?&base:nullptr;porsche::startup_mouse_device_0069e09c=mouse?&device:nullptr;porsche::startup_cursor_x_005deab0=44;porsche::startup_cursor_y_005deab4=55;porsche::render_driver_limit_a_006a6448=66;porsche::render_driver_limit_b_006a6444=77;porsche::render_driver_bounds_a_006a643c=a;porsche::render_driver_bounds_b_006a6438=b;porsche::render_driver_bounds_c_006a6430=c;porsche::render_driver_bounds_d_006a6434=d;porsche::shared_runtime_word_005deb74=0;porsche::shared_runtime_word_005deb78=0;porsche::diagnostic_handler_005debf0=diagnostic_event;on_main=main_thread;coop_calls=0;event_count=0;std::memset(events,0,sizeof(events));
+}
+static void cleanup_case(bool direct,bool mouse){reset(4,direct,mouse,false,0,0,640,480);reinterpret_cast<void(__cdecl*)()>(cleanup_code)();const auto a=snapshot();reset(4,direct,mouse,false,0,0,640,480);porsche::startup_directinput_cleanup_00537070();compare(a,snapshot(),0,0,"cleanup");}
+static void mode_case(U selector,U value,U access,bool direct,bool mouse,U first=0,U second=0,U acquired=0){coop_first=first;coop_second=second;acquire_result=acquired;reset(access,direct,mouse,false,0,0,640,480);const U r1=reinterpret_cast<U(__cdecl*)(U,U)>(mode_code)(selector,value);const auto a=snapshot();reset(access,direct,mouse,false,0,0,640,480);const U r2=porsche::startup_mouse_mode_005370c0(selector,value);compare(a,snapshot(),r1,r2,"mode");}
+static void cursor_case(I x,I y,bool main_thread,U left,U top,U right,U bottom){reset(4,true,true,main_thread,left,top,right,bottom);reinterpret_cast<void(__cdecl*)(I,I)>(cursor_code)(x,y);const auto a=snapshot();reset(4,true,true,main_thread,left,top,right,bottom);porsche::startup_cursor_apply_005727c0(x,y);compare(a,snapshot(),0,0,"cursor");}
+int main(){
+    if(porsche::startup_mouse_access_005de758!=4||porsche::startup_mouse_option8_005de75c!=2||porsche::startup_mouse_option9_005de760!=1||porsche::startup_cursor_x_005deab0||porsche::startup_cursor_y_005deab4)die("production-initial-data");
+    install_all();
+    for(U d=0;d<2;++d)for(U m=0;m<2;++m)cleanup_case(d!=0,m!=0);
+    mode_case(3,99,5,true,true);mode_case(4,99,5,true,true);mode_case(3,99,4,true,true);mode_case(4,99,4,true,true);mode_case(5,99,4,true,true);
+    mode_case(7,4,4,true,true);mode_case(7,5,4,false,false);mode_case(7,4,5,true,true);mode_case(7,5,4,true,true);mode_case(7,2,5,true,true);
+    mode_case(7,5,4,true,true,0x80004005u,0,0);mode_case(7,5,4,true,true,0x80004005u,0,1);mode_case(7,5,4,true,true,0x80004005u,0,0x80004005u);mode_case(7,5,4,true,true,0x80004005u,0x80004005u,0);
+    mode_case(8,17,4,true,true);mode_case(9,19,4,true,true);mode_case(0,0,4,true,true);mode_case(6,0,4,true,true);mode_case(10,0,4,true,true);
+    for(bool main_thread:{false,true}){cursor_case(-20,800,main_thread,0,0,640,480);cursor_case(640,480,main_thread,0,0,640,480);cursor_case(50,60,main_thread,0,0,640,480);cursor_case(100,200,main_thread,300,250,50,20);}
+    std::printf("mouse_startup_children_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

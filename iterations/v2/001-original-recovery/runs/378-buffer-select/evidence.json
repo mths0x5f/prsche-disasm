@@ -1,0 +1,384 @@
+{
+  "schema": 1,
+  "module": "local/game/Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "query": [
+    "00556910",
+    "00574050",
+    "00574b70",
+    "0056de20",
+    "0056e301",
+    "005de630",
+    "005de64c",
+    "006bd984",
+    "006bd97c",
+    "006bd954"
+  ],
+  "body": {
+    "entry_va": "00556910",
+    "end_exclusive": "00556a35",
+    "bytes": 293,
+    "sha256": "f57cf7d7552cb585b1a7be40834d909f576554bfc576a2ca79402192c31e549b",
+    "indexed_instructions_equal_raw": true,
+    "assembly": [
+      "00556910  a030e65d00  MOV AL,[0x005de630]",
+      "00556915  53  PUSH EBX",
+      "00556916  84c0  TEST AL,AL",
+      "00556918  746f  JZ 0x00556989",
+      "0055691a  3cff  CMP AL,0xff",
+      "0055691c  746b  JZ 0x00556989",
+      "0055691e  a14ce65d00  MOV EAX,[0x005de64c]",
+      "00556923  85c0  TEST EAX,EAX",
+      "00556925  7562  JNZ 0x00556989",
+      "00556927  56  PUSH ESI",
+      "00556928  57  PUSH EDI",
+      "00556929  6a0a  PUSH 0xa",
+      "0055692b  ff1584d96b00  CALL dword ptr [0x006bd984]",
+      "00556931  6a01  PUSH 0x1",
+      "00556933  8bf0  MOV ESI,EAX",
+      "00556935  ff1584d96b00  CALL dword ptr [0x006bd984]",
+      "0055693b  6a00  PUSH 0x0",
+      "0055693d  6a0a  PUSH 0xa",
+      "0055693f  8bf8  MOV EDI,EAX",
+      "00556941  ff157cd96b00  CALL dword ptr [0x006bd97c]",
+      "00556947  6a00  PUSH 0x0",
+      "00556949  ff1554d96b00  CALL dword ptr [0x006bd954]",
+      "0055694f  8b442418  MOV EAX,dword ptr [ESP + 0x18]",
+      "00556953  50  PUSH EAX",
+      "00556954  e817e20100  CALL 0x00574b70",
+      "00556959  db442418  FILD dword ptr [ESP + 0x18]",
+      "0055695d  83c404  ADD ESP,0x4",
+      "00556960  50  PUSH EAX",
+      "00556961  51  PUSH ECX",
+      "00556962  d91c24  FSTP float ptr [ESP]",
+      "00556965  db442418  FILD dword ptr [ESP + 0x18]",
+      "00556969  51  PUSH ECX",
+      "0055696a  d91c24  FSTP float ptr [ESP]",
+      "0055696d  e8ae740100  CALL 0x0056de20",
+      "00556972  83c40c  ADD ESP,0xc",
+      "00556975  56  PUSH ESI",
+      "00556976  6a0a  PUSH 0xa",
+      "00556978  ff157cd96b00  CALL dword ptr [0x006bd97c]",
+      "0055697e  57  PUSH EDI",
+      "0055697f  ff1554d96b00  CALL dword ptr [0x006bd954]",
+      "00556985  5f  POP EDI",
+      "00556986  5e  POP ESI",
+      "00556987  5b  POP EBX",
+      "00556988  c3  RET",
+      "00556989  8b5c2408  MOV EBX,dword ptr [ESP + 0x8]",
+      "0055698d  a134e65d00  MOV EAX,[0x005de634]",
+      "00556992  3bd8  CMP EBX,EAX",
+      "00556994  0f8c99000000  JL 0x00556a33",
+      "0055699a  3b1d3ce65d00  CMP EBX,dword ptr [0x005de63c]",
+      "005569a0  0f8d8d000000  JGE 0x00556a33",
+      "005569a6  8b44240c  MOV EAX,dword ptr [ESP + 0xc]",
+      "005569aa  8b0d38e65d00  MOV ECX,dword ptr [0x005de638]",
+      "005569b0  3bc1  CMP EAX,ECX",
+      "005569b2  7c7f  JL 0x00556a33",
+      "005569b4  3b0540e65d00  CMP EAX,dword ptr [0x005de640]",
+      "005569ba  7d77  JGE 0x00556a33",
+      "005569bc  50  PUSH EAX",
+      "005569bd  53  PUSH EBX",
+      "005569be  e88dd60100  CALL 0x00574050",
+      "005569c3  33c9  XOR ECX,ECX",
+      "005569c5  83c408  ADD ESP,0x8",
+      "005569c8  8a0d2de65d00  MOV CL,byte ptr [0x005de62d]",
+      "005569ce  83c1fc  ADD ECX,-0x4",
+      "005569d1  83f91c  CMP ECX,0x1c",
+      "005569d4  775d  JA 0x00556a33",
+      "005569d6  33d2  XOR EDX,EDX",
+      "005569d8  8a91506a5500  MOV DL,byte ptr [ECX + 0x556a50]",
+      "005569de  ff2495386a5500  JMP dword ptr [EDX*0x4 + 0x556a38]",
+      "005569e5  8a08  MOV CL,byte ptr [EAX]",
+      "005569e7  f6c301  TEST BL,0x1",
+      "005569ea  7410  JZ 0x005569fc",
+      "005569ec  8a542410  MOV DL,byte ptr [ESP + 0x10]",
+      "005569f0  80e10f  AND CL,0xf",
+      "005569f3  c0e204  SHL DL,0x4",
+      "005569f6  0aca  OR CL,DL",
+      "005569f8  5b  POP EBX",
+      "005569f9  8808  MOV byte ptr [EAX],CL",
+      "005569fb  c3  RET",
+      "005569fc  8a542410  MOV DL,byte ptr [ESP + 0x10]",
+      "00556a00  80e1f0  AND CL,0xf0",
+      "00556a03  0aca  OR CL,DL",
+      "00556a05  5b  POP EBX",
+      "00556a06  8808  MOV byte ptr [EAX],CL",
+      "00556a08  c3  RET",
+      "00556a09  8a542410  MOV DL,byte ptr [ESP + 0x10]",
+      "00556a0d  5b  POP EBX",
+      "00556a0e  8810  MOV byte ptr [EAX],DL",
+      "00556a10  c3  RET",
+      "00556a11  668b4c2410  MOV CX,word ptr [ESP + 0x10]",
+      "00556a16  5b  POP EBX",
+      "00556a17  668908  MOV word ptr [EAX],CX",
+      "00556a1a  c3  RET",
+      "00556a1b  8b542410  MOV EDX,dword ptr [ESP + 0x10]",
+      "00556a1f  6a03  PUSH 0x3",
+      "00556a21  52  PUSH EDX",
+      "00556a22  50  PUSH EAX",
+      "00556a23  e8d9780100  CALL 0x0056e301",
+      "00556a28  83c40c  ADD ESP,0xc",
+      "00556a2b  5b  POP EBX",
+      "00556a2c  c3  RET",
+      "00556a2d  8b4c2410  MOV ECX,dword ptr [ESP + 0x10]",
+      "00556a31  8908  MOV dword ptr [EAX],ECX",
+      "00556a33  5b  POP EBX",
+      "00556a34  c3  RET"
+    ]
+  },
+  "preintegration_registry": {
+    "path": "iterations/v2/001-original-recovery/source/recovered/functions.json",
+    "sha256": "8e5255aa05d7f368b4e9d6559b0d169c0bedfc977d8f750ea2b138d4cb7e2069",
+    "entry_owners": {
+      "00556910": [],
+      "00574050": [],
+      "00574b70": [],
+      "0056de20": [],
+      "0056e301": []
+    },
+    "adjacent_canonical": "0056e2c0 owns only0056e2c0..0056e300; new external0056e301 begins immediately afterward and does not overlap its65-byte body."
+  },
+  "abi": {
+    "core": "cdecl3DWORD arguments: signed x,y, packedpixel; caller cleans12B; void facade preserves actual existing render_display caller ABI.",
+    "legacy": "render_display_select_buffer_00556910(U,U,U) keeps existing name/header unchanged; names index/zero/one were not behavioral evidence.",
+    "return_boundary": "Existing facade/known render_display call discards EAX; no portable return meaning is invented for the original path-dependent EAX."
+  },
+  "callsites": [
+    {
+      "call": "00467cc1",
+      "pushes": [
+        "00467cbd PUSH1 pixel",
+        "00467cbf PUSHEBX y",
+        "00467cc0 PUSHEDI x"
+      ],
+      "cleanup": "00467cc6 ADDESP12",
+      "consumer": "render_display.cpp loop i=0..3,x=i,y=0,pixel=1"
+    },
+    {
+      "call": "00556ecc",
+      "pushes": [
+        "00556ec8 PUSH1 pixel",
+        "00556eca PUSHEBP y",
+        "00556ecb PUSHESI x"
+      ],
+      "cleanup": "00556ed4 ADDESP12"
+    },
+    {
+      "call": "00573bb0",
+      "pushes": [
+        "00573bad PUSHEAX convertedpixel",
+        "00573bae PUSHEDI y",
+        "00573baf PUSHEDX x"
+      ],
+      "cleanup": "00573bb5 ADDESP16 also consumes prior conversion argument"
+    },
+    {
+      "call": "00573d7f",
+      "pushes": [
+        "00573d7c PUSHEAX pixel",
+        "00573d7d PUSHECX y",
+        "00573d7e PUSHEDX x"
+      ],
+      "cleanup": "00573d84 ADDESP12"
+    }
+  ],
+  "canonical_storage": {
+    "owner": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
+    "config": "005de620[12]",
+    "views": {
+      "mode": "byte+16 alias005de630",
+      "active": "DWORD+44 alias005de64c",
+      "left": "signedDWORD+20",
+      "top": "signedDWORD+24",
+      "right": "signedDWORD+28",
+      "bottom": "signedDWORD+32",
+      "depth": "byte+13"
+    },
+    "initial": "Actual canonical window_shutdown source is linked;48 raw bytes and known state/alias initial values are checked before overrides."
+  },
+  "thrash": {
+    "owner": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_loader.cpp",
+    "table": "006bd910[43]",
+    "loader_zero_fill": {
+      "name": ".data",
+      "rva": 1880064,
+      "virtual_bytes": 1008952,
+      "raw_bytes": 114688,
+      "raw_offset": 1880064
+    },
+    "slots": {
+      "29": "006bd984 GetState/stdcall1/EAX",
+      "27": "006bd97c SetState/stdcall2/returnignored",
+      "17": "006bd954 SetTexture/stdcall1/returnignored"
+    },
+    "control": "Fixture-only43DWORD table; original zero initialization checked before endpoint installation. Production owner source is pinned and reused, not redefined.",
+    "canonical_binding": {
+      "source": "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp",
+      "sha256": "aa358ed1f54b5430c20263309786ac874186cf817dd16d64586cc40aa781bff3",
+      "accepted_summary": "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/summary.json",
+      "summary_sha256": "b0cfe2218c8ecd0203306033ff1637b512697cc3c5767e9315aa833af26a706b",
+      "native_receipt": "local/experiments/v2-render-settings-bindings-native-359/002/receipt.json",
+      "native_receipt_sha256": "e59e84516574febff5ff8ed80b557461afd344b7315720c808029be032faad35"
+    }
+  },
+  "gpu_semantics": "Mode lowbyte neither0 nor255 and activeDWORD0 selects GPU path with no clipping. Ordered Get10/Get1/Set10=0/Texture0/convertpixel/draw(floatx,floaty,converted)/restore10/restoretexture. FILD signed y then x and FSTP32 packs draw arguments; comparisons require normal round-to-nearest x87/MXCSR.",
+  "software_semantics": "Signed half-open rectangle clipping precedes address helper. Depth is reread after helper returns. Depth4 merges unmasked lowpixelbyte on evenx and shifted lowbyte on oddx. Depth8 truncates8;15/16 truncates16;24 delegates explicit56e301 count3;32 writesDWORD. Otherdepths still call address helper but do not write.",
+  "raw_data_pins": [
+    {
+      "token": "@ORIGINAL@",
+      "va": "00556910",
+      "bytes": 293,
+      "sha256": "f57cf7d7552cb585b1a7be40834d909f576554bfc576a2ca79402192c31e549b"
+    },
+    {
+      "token": "@JUMPS@",
+      "va": "00556a38",
+      "bytes": 24,
+      "sha256": "059994b79affea36916a39672f9395043ff96f7417355965dfe8be3d87dd5765"
+    },
+    {
+      "token": "@MAP@",
+      "va": "00556a50",
+      "bytes": 29,
+      "sha256": "883f476a227f8a3c3ecb5a7d17aadc3eac7446c36c28f278d6df6e8033277f8c"
+    },
+    {
+      "token": "@INITIAL@",
+      "va": "005de620",
+      "bytes": 48,
+      "sha256": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1"
+    }
+  ],
+  "depth_dispatch": {
+    "4": "005569e5",
+    "5": "00556a33",
+    "6": "00556a33",
+    "7": "00556a33",
+    "8": "00556a09",
+    "9": "00556a33",
+    "10": "00556a33",
+    "11": "00556a33",
+    "12": "00556a33",
+    "13": "00556a33",
+    "14": "00556a33",
+    "15": "00556a11",
+    "16": "00556a11",
+    "17": "00556a33",
+    "18": "00556a33",
+    "19": "00556a33",
+    "20": "00556a33",
+    "21": "00556a33",
+    "22": "00556a33",
+    "23": "00556a33",
+    "24": "00556a1b",
+    "25": "00556a33",
+    "26": "00556a33",
+    "27": "00556a33",
+    "28": "00556a33",
+    "29": "00556a33",
+    "30": "00556a33",
+    "31": "00556a33",
+    "32": "00556a2d"
+  },
+  "external_helper_abi": [
+    {
+      "va": "00574050",
+      "body": {
+        "entry_va": "00574050",
+        "name": "FUN_00574050",
+        "signature": "undefined FUN_00574050(void)",
+        "ranges": [
+          [
+            "00574050",
+            "00574076"
+          ]
+        ],
+        "body_bytes": 39,
+        "thunk": false,
+        "recovery_status": "unrecovered"
+      },
+      "sha256": "c38591c8fb69fbdb15961e1c9824aa1c6bb4bf3af251389be778f5870ea798e2",
+      "scope": "Navigation/ABI evidence only; not a new recovered provider or production implementation."
+    },
+    {
+      "va": "00574b70",
+      "body": {
+        "entry_va": "00574b70",
+        "name": "FUN_00574b70",
+        "signature": "undefined FUN_00574b70(void)",
+        "ranges": [
+          [
+            "00574b70",
+            "00574c49"
+          ]
+        ],
+        "body_bytes": 218,
+        "thunk": false,
+        "recovery_status": "unrecovered"
+      },
+      "sha256": "cd41a8a278048acb634ba2ff39534f1767064409a984c0d72f6471a21efd3144",
+      "scope": "Navigation/ABI evidence only; not a new recovered provider or production implementation."
+    },
+    {
+      "va": "0056de20",
+      "body": {
+        "entry_va": "0056de20",
+        "name": "FUN_0056de20",
+        "signature": "undefined FUN_0056de20(void)",
+        "ranges": [
+          [
+            "0056de20",
+            "0056de41"
+          ]
+        ],
+        "body_bytes": 34,
+        "thunk": false,
+        "recovery_status": "unrecovered"
+      },
+      "sha256": "ebcc89472491df7f06e3805f43049a0cbf0f1e6720fc7c1599e96b12537fa691",
+      "scope": "Navigation/ABI evidence only; not a new recovered provider or production implementation."
+    },
+    {
+      "va": "0056e301",
+      "body": {
+        "entry_va": "0056e301",
+        "name": "FUN_0056e301",
+        "signature": "undefined FUN_0056e301(void)",
+        "ranges": [
+          [
+            "0056e301",
+            "0056e337"
+          ]
+        ],
+        "body_bytes": 55,
+        "thunk": false,
+        "recovery_status": "unrecovered"
+      },
+      "sha256": "489ec9e8e34ea65756304761e9d99a6d10d0ca1c362536dccf4ab0aaf81aa3bc",
+      "scope": "Navigation/ABI evidence only; not a new recovered provider or production implementation."
+    }
+  ],
+  "native": {
+    "receipt": "local/experiments/v2-buffer-select-native-378/001/receipt.json",
+    "receipt_sha256": "436e0b29014807b69d142193c11d5abc39584ed3039b458cf2fde09bc923d561",
+    "comparisons_per_variant": 7115,
+    "total": 14230,
+    "mutations": 7,
+    "scope": "Original293B native code vs actual new C++ core and legacy facade atOd/O2. Canonical window shutdown storage and359 Get/Set providers linked. Four unknown engine helpers and THRASH slots controlled only in fixture.",
+    "cases": [
+      "All256depthbytes withparity andpixeltruncation/highnibbles",
+      "Depthchangedbyaddresshelper andframebuffer/configoutputaliases",
+      "Signedclippingedges includingINTMIN/INTMAX",
+      "Mode0/1/255software withactive1 andGPUmode1/2/127/128/254 active0",
+      "GPU signedINTEGERtoFLOAT32 precisionboundaries andorderedget/set/texture restore",
+      "ESP/EBP/EBX/ESI/EDI andstate/event/pixelbytes; EAXunused"
+    ]
+  },
+  "holds": [
+    "Unknownenginehelpers00574050,00574b70,0056de20,0056e301 remainextern",
+    "Actualrenderer/deviceeffects andpixeladdressvalidity beyondcontrolledmappedspans",
+    "Ambientnon-nearestx87/MXCSR rounding,concurrency andcomputedaliases",
+    "Fullrenderer/startup/display/gameacceptance"
+  ]
+}

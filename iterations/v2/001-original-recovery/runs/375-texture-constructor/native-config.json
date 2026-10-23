@@ -1,0 +1,175 @@
+{
+  "run": 375,
+  "experiment": "local/experiments/v2-texture-constructor-native-375",
+  "timeout_seconds": 90,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+    "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
+    "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/shared_runtime_globals.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/375-texture-constructor/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/375-texture-constructor",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.hpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/splash_progress.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/files.cpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@CREATE@",
+      "va": "00535700",
+      "bytes": 584,
+      "sha256": "eca74949c7b3d956d41abe24d1808c9ee55eb8cc3f5219f817ccb8ac513ca209"
+    },
+    {
+      "token": "@FORMAT@",
+      "va": "00535380",
+      "bytes": 129,
+      "sha256": "fcbea3bf847ca3bc55431eb8c981ed7efbe3b21092a4e18f2f5767210c749b12"
+    },
+    {
+      "token": "@JUMP@",
+      "va": "00535404",
+      "bytes": 28,
+      "sha256": "05f642c57289299204253c6528f03bfa4819d53141eb82d67fe4740f3042b470"
+    },
+    {
+      "token": "@LOOKUP@",
+      "va": "00535420",
+      "bytes": 24,
+      "sha256": "765cd5f474d5198b42c913fb52948a0f5f54ef7f481b47cea4068b124fbb69d5"
+    },
+    {
+      "token": "@BITS@",
+      "va": "005de890",
+      "bytes": 128,
+      "sha256": "53737af6c13defa7dbf40505d07e95c8c0ccc412480df42bafd89bfd472b8450"
+    },
+    {
+      "token": "@ERRORS@",
+      "va": "005deb80",
+      "bytes": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "token": "@SOURCE@",
+      "va": "005bb660",
+      "bytes": 20,
+      "sha256": "96469041ad414ae79978ba6eba88f72536def5e6dccc46ca8034e356f1a24f84"
+    },
+    {
+      "token": "@TAG@",
+      "va": "005bb654",
+      "bytes": 9,
+      "sha256": "2aab37c64f0a4f6e6c1add20987c0a1e1df3d849a8264dd8a865b583c871a716"
+    },
+    {
+      "token": "@DIMENSIONS@",
+      "va": "005bb5b8",
+      "bytes": 78,
+      "sha256": "19141140e1925740be8e621b6b00f3ff566df17bcd577d8741b75ef93ec6e7f0"
+    },
+    {
+      "token": "@MEMORY@",
+      "va": "005bb608",
+      "bytes": 75,
+      "sha256": "f662b7a6d9f208344b7d2ea6913c1347b2ef5cea21fe24e5445deb05ad21bd61"
+    },
+    {
+      "token": "@DEPTH@",
+      "va": "005bb674",
+      "bytes": 84,
+      "sha256": "1f2768689100681a4a62a1d2733a537fc3e2a4547c93c2f722e661e8155bb371"
+    }
+  ],
+  "pass_marker": "texture_constructor_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "depth-map",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "case 1:return 0x79;",
+      "new": "case 1:return 0x7a;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "max-width",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "static_cast<I>(width)>0x4000",
+      "new": "static_cast<I>(width)>=0x4000",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "default-depth",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "if(depth==0)depth=16;",
+      "new": "if(depth==0)depth=32;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "storage15",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "bits==15?16:bits",
+      "new": "bits",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "pitch-rounding",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "storage_bits*width+7u",
+      "new": "storage_bits*width",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "allocator-flags",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "(tag,bytes,flags)",
+      "new": "(tag,bytes,0)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "sprite-high-bits",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "previous^((format^previous)&0xffu)",
+      "new": "format",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "pixel-pointer",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "address(result+0x40)",
+      "new": "address(result+0x30)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "float-byte",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "(float_word>>23)+0x7eu",
+      "new": "(float_word>>23)+0x7fu",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "oom-counter",
+      "source": "iterations/v2/001-original-recovery/runs/375-texture-constructor/texture_constructor.cpp",
+      "old": "texture_create_errors_005deb80=errors+1u;",
+      "new": "texture_create_errors_005deb80=errors;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    }
+  ]
+}
