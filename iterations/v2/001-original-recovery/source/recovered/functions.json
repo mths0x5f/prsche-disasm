@@ -3994,25 +3994,28 @@
       "module": "Porsche.exe",
       "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
       "entry_va": "00534480",
-      "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
-      "status": "partial-native-differential-verified",
-      "calling_convention": "Original x86 typed ABI; see recovered header and package address/stack evidence.",
+      "source": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg, DWORD result; existing pointer/integer and void facades",
       "recovered_dependencies": [
-        "00534430"
-      ],
-      "unrecovered_dependencies": [
+        "00534430",
         "00534360",
         "00535950",
         "0053c290"
       ],
+      "unrecovered_dependencies": [],
       "binary_matched": false,
-      "verification": "scripts/research/verify-v2-window-shutdown.py",
-      "verification_report": "iterations/v2/001-original-recovery/runs/090-native-window-integration/window-shutdown/verification.json",
-      "verification_boundary": "Only null-descriptor path reached from full wrapper00534550; non-null setup remains unrecovered.",
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/374-render-descriptor/validation.json",
+      "verification_boundary": "Full original169B including null, direct-copy, renderer-window and cached/allocated fallback branches. Known valid48B spans and controlled endpoints; failed allocation/arbitrary aliases/live renderer remain open. Old null wrapper/source unchanged.",
       "dependency_scope": "Indexed direct callees; indirect/omitted edges explicitly documented in report.",
-      "unrecovered_branches": [
-        "non-null descriptor setup/allocation in 00534480"
-      ]
+      "prior_partial_verification": {
+        "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
+        "status": "partial-native-differential-verified",
+        "verification": "scripts/research/verify-v2-window-shutdown.py",
+        "verification_report": "iterations/v2/001-original-recovery/runs/090-native-window-integration/window-shutdown/verification.json",
+        "verification_boundary": "Only null-descriptor path reached from full wrapper00534550; non-null setup remains unrecovered."
+      }
     },
     {
       "module": "Porsche.exe",
@@ -10301,6 +10304,67 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
       "verification_boundary": "Captured pre-unlock state drives completion; unsigned resource sentinel, current-ID masking and recycle order verified. Valid record/list domain; live concurrency open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00534360",
+      "source": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg; DWORD result",
+      "recovered_dependencies": [
+        "00556880",
+        "00537f90"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/374-render-descriptor/validation.json",
+      "verification_boundary": "Full200B; original low-byte mode and overlapping lock-buffer read/write order. Canonical window callback and slot21 stdcall0 transport; controlled renderer endpoints, valid48B descriptor/20B buffer spans."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00556880",
+      "source": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg; DWORD result",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/374-render-descriptor/validation.json",
+      "verification_boundary": "Original sign-bit mask, complete13-way jump table and zero default. All low-byte/sign variants plus high-bit unsupported values compared."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00537f90",
+      "source": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg; DWORD result",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/374-render-descriptor/validation.json",
+      "verification_boundary": "Original DWORD low7bits select raw128B table; all entries and upper-bit masking checked. Valid readable4B input only."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00535950",
+      "source": "iterations/v2/001-original-recovery/runs/374-render-descriptor/render_descriptor.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl4args; pointer result",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "00535700"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/374-render-descriptor/validation.json",
+      "verification_boundary": "Original35B forwards four inputs and live005deb88 fifth option, preserving allocator result. Existing pointer/integer facades share core; allocator/failed allocation remain external."
     }
   ]
 }

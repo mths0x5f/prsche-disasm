@@ -1,9 +1,9 @@
 # Состояние проекта
 
-Current [Run373](iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/README.md):
-200 TUs/8 projects compile;203 names/211 refs,noEXE. Original snapshot and async
-callbacks close3 names;15446 native comparisons/16 mutations and shared505-input
-audit PASS. Next374: full renderer descriptor binding reached by restore.
+Current [Run374](iterations/v2/001-original-recovery/runs/374-render-descriptor/README.md):
+201 TUs/8 projects compile;200 names/207 refs,noEXE. Full original descriptor
+binding closes4 caller names and exposes00535700 allocator.8800 comparisons/
+8 mutations and shared508-input audit PASS. Next: original texture constructor.
 Older entries below describe historical checkpoints.
 
 Run332 compiles171 current C++ TUs/8 projects, leaving261 unresolved names/

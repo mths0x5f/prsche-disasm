@@ -1,31 +1,36 @@
 # v2 / 001 - original source recovery plan
 
-Current373,2026-10-23:371 snapshot pair and372 async callback/list core integrated
-in one game build/audit. Six originalVAs/447B;15446 comparisons/16 mutations PASS.
-Fresh build001 compiles200TUs/8 projects:203names/211refs,noEXE. Three names close,
-no new dependencies; shared505-input audit PASS.371/372 sources/proof frozen.
-All workers finished;374 worker stopped at Sol capacity with an unfinished draft.
-Root owns374 completion, registry and integration. No model switch for capacity.
-Default6.1Sol; Astra only for a specific ambiguous blocker after two failed
-same-hypothesis attempts. Reuse shared runners and accepted unchanged proof.
+Current374,2026-10-23: full original renderer descriptor path integrated.
+Five completeVAs/501B;00534480 upgrades old partial entry, four VAs newly accepted.
+Native003:8800 comparisons/eight detected mutations. Actual game001 compiles201TUs/
+8 projects;200names/207refs,noEXE. Four caller names close, original00535700 opens.
+Shared508-input audit PASS. New source/native proof frozen. Old null wrapper and
+all canonical state owners unchanged. No active workers;374 was finished by root
+after worker Sol capacity. No model switch for capacity or new custom runner.
 
-Work order: finish one actual startup chain, first unconditional blockers first.
-Next374: complete00534480 non-null descriptor binding and helpers00534360,
-00556880,00537f90,00535950. Draft only in runs/374-render-descriptor, NOT game code.
-Reuse canonical window_shutdown state/cleanup,359 callback adapter and THRASH
-slots21/40. Prove raw format table/new flag/fallback ownership, exact descriptor/
-lock-buffer alias read/write order, float exponent calculation and fallback path.
-Original00535700 allocator remains external. Old null-only00534480 wrapper proof
-stays frozen; upgrade existing registry entry only after full-body acceptance.
+Next375: original00535700 texture constructor (decompiled.c:205782,
+disassembly.asm:390645), trace00535950?00535700 and its alloc/format/size children.
+Check canonical ownership before coding; reuse374 format/bits helpers and heap
+providers. Recover original arithmetic, flags, allocation/initialization order;
+no invented allocation failures or texture layout. Root owns next bounded batch.
+Prioritize first unconditional startup blockers and actual subsystem closure.
 
-373 check: py -3 scripts/research/audit-v2-native-game-batch.py --config
-iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/acceptance.json.
-Native371/002+372/003, game373/001. Sources use existing explicit fragmented
-second48B state view; all known snapshot callers have independent96B stackbuffers.
-Arbitrary/computed global aliases and live renderer/concurrency remain HOLD.
-Async queue views adapt adjacent-DWORD original ABI without new storage or fake
-binary aliases. Original captured/reloaded lock, saved-ID and stale-tail behavior
-verified; malformed queues/scheduler/allocator composition remain open.
+374 checks: shared verify-v2-native-batch.py with374/native-config.json attempt3;
+build-v2-game-batch.py with374/build-config.json configure/build attempt001;
+audit-v2-native-game-batch.py with374/acceptance.json. Reuse passed inputs.
+Attempt001 fixture linked full splash consumer and exposed unrelated dependencies;
+003 uses controlled external005dead0 plus pinned actual owner and production COFF
+ownership.002 normal passed but width-order mutation survived;003 callback side
+effect exposes byte16 restore/read ordering. No production semantic change.
+Valid48B descriptors/fallback and20B renderer buffers include selected aliases;
+invalid/computed spans, allocation failure, ambient x87/concurrency and actual
+snapshot?renderer composition/live startup/display/menu remain HOLD.
+
+373 remains accepted/pushedf89ada3: sixVAs/447B snapshot/async core,15446 comparisons/
+16 mutations,505-input audit. Canonical fragmented state/queue views unchanged;
+arbitrary snapshot aliases and malformed queues/scheduler composition remain open.
+Default6.1Sol; Astra only after two unsuccessful attempts on a specific ambiguous
+hypothesis. Reuse shared tooling, freeze passed batches, keep root pointers brief.
 
 Repo skill .agents/skills/porsche-recovery/SKILL.md validated/pushed4e9f2b4.
 Project-local rules allow five named shared scripts; no blanket Python/shell rule.

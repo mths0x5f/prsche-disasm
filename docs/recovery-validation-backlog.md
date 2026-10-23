@@ -1,5 +1,13 @@
 # Отложенные проверки восстановления v2
 
+Run374 accepts full00534480 plusfour helpers:8800 comparisons/8 mutations,
+508-input integration audit PASS. Existing null-only wrapper/source stays frozen.
+The test uses a controlled external005dead0; actual splash owner is pinned and
+unique in game COFF, not separately native-composed here. Selected descriptor/
+lock-buffer aliases proved; arbitrary spans, allocation failure, ambient x87,
+concurrency and actual snapshot?renderer composition remain HOLD. Next00535700
+constructor. No linked game, live startup/display/menu or gameplay acceptance.
+
 Run373 accepts371 snapshot and372 async callbacks:15446 comparisons/16 mutations,
 505-input audit PASS. Known snapshot buffers are independent96B stack allocations;
 arbitrary/computed global aliases remain HOLD. Typed queue views reuse existing
