@@ -10200,6 +10200,107 @@
       "verification": "scripts/research/verify-v2-native-batch.py",
       "verification_report": "iterations/v2/001-original-recovery/runs/370-input-startup-integration/validation.json",
       "verification_boundary": "Original ascending byte swaps preserve equal-address skip and forward overlap. Bounded valid buffer spans including zero width; invalid/wrapping spans remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00570ed0",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg; EAX unused",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
+      "verification_boundary": "Two ordered48B copies; known independent96B stack snapshots, canonical fragmented storage and raw defaults. Arbitrary/computed global aliases and concurrency remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00570f00",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg; EAX unused",
+      "recovered_dependencies": [],
+      "unrecovered_dependencies": [
+        "00534480"
+      ],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
+      "verification_boundary": "Second block restored first; low-byte mode/gate and original snapshot pointer. Canonical359 callback transport reused; non-null descriptor consumer and live renderer remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00563bd0",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl2args, DWORD return",
+      "recovered_dependencies": [
+        "00563c30",
+        "00563c70",
+        "00563cc0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
+      "verification_boundary": "Original queue/callback state including saved ID and reentrant endpoint mutations. Valid finite lists; scheduler, allocator composition and live concurrency remain open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00563c30",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; adapted typed AsyncQueueView plus record pointer",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
+      "verification_boundary": "Explicit views access existing separately owned head/tail slots; no original adjacent-object ABI alias. Ordered links and reloaded unlock cell verified; malformed aliases/concurrency open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00563c70",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl; adapted typed AsyncQueueView; record pointer return",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
+      "verification_boundary": "Captured unlock pointer, retained removed link and stale tail. Explicit C++ slot view adapts original adjacent-DWORD queue ABI; invalid spans/concurrency open."
+    },
+    {
+      "module": "Porsche.exe",
+      "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "entry_va": "00563cc0",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "status": "native-differential-verified",
+      "calling_convention": "cdecl1arg; EAX unused",
+      "recovered_dependencies": [
+        "005322b0",
+        "005322c0",
+        "00531f90",
+        "00563c30"
+      ],
+      "unrecovered_dependencies": [],
+      "binary_matched": false,
+      "verification": "scripts/research/verify-v2-native-batch.py",
+      "verification_report": "iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/validation.json",
+      "verification_boundary": "Captured pre-unlock state drives completion; unsigned resource sentinel, current-ID masking and recycle order verified. Valid record/list domain; live concurrency open."
     }
   ]
 }

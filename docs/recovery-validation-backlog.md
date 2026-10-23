@@ -1,5 +1,12 @@
 # Отложенные проверки восстановления v2
 
+Run373 accepts371 snapshot and372 async callbacks:15446 comparisons/16 mutations,
+505-input audit PASS. Known snapshot buffers are independent96B stack allocations;
+arbitrary/computed global aliases remain HOLD. Typed queue views reuse existing
+slots; malformed/cyclic lists, live concurrency and scheduler/allocator composition
+are unaccepted. Next374 completes non-null00534480; old null wrapper remains frozen.
+No linked EXE, live startup/display, menu or gameplay acceptance yet.
+
 Run370 closes exact input transports, typed wheel/exit callbacks and originalsort.
 Native923322 comparisons/14mutations plus500-input game audit PASS. Originalnamed
 DINPUT export/library loads in isolated probes; no device function executes there.

@@ -1,31 +1,35 @@
 # v2 / 001 - original source recovery plan
 
-Current370,2026-10-23:367input imports/368mouse callbacks/369originalsort integrated
-in one game build/audit. Six originalVAs/551B plusfour platform facades. Native
-923322 comparisons/14 mutations; shared500-input audit PASS. Fresh build002 compiles
-198TUs/8 projects:206names/213refs,noEXE. Eight names close with no new dependency.
-Attempt001 sandboxedMSBuild stopped before compilation; zero parsed names there
-are NOT a link frontier.002 was a full fresh unsandboxed build. Passed sources frozen.
-367/368 workers complete; cursor_snapshot_371(Sol6.1/high) owns only new371 source/
-native proof. Root owns integration/registry/docs. No new runner or audit script.
-Default model:6.1Sol for coordination/workers, Astra only for a specific blocker
-after two unsuccessful same-hypothesis attempts (user choice2026-10-22; saved).
+Current373,2026-10-23:371 snapshot pair and372 async callback/list core integrated
+in one game build/audit. Six originalVAs/447B;15446 comparisons/16 mutations PASS.
+Fresh build001 compiles200TUs/8 projects:203names/211refs,noEXE. Three names close,
+no new dependencies; shared505-input audit PASS.371/372 sources/proof frozen.
+All workers finished;374 worker stopped at Sol capacity with an unfinished draft.
+Root owns374 completion, registry and integration. No model switch for capacity.
+Default6.1Sol; Astra only for a specific ambiguous blocker after two failed
+same-hypothesis attempts. Reuse shared runners and accepted unchanged proof.
 
-Repo skill .agents/skills/porsche-recovery/SKILL.md validated and pushed4e9f2b4.
-Project-local ignored .codex/rules/porsche-recovery.rules allows five shared script
-entrypoints (10 positive/2 negative policy checks); loads on Codex restart. No
-blanket Python/shell allowance. Prefer existing commands over custom scripts;
-new tooling only when necessary and immediately eliminates repeated work.
+Work order: finish one actual startup chain, first unconditional blockers first.
+Next374: complete00534480 non-null descriptor binding and helpers00534360,
+00556880,00537f90,00535950. Draft only in runs/374-render-descriptor, NOT game code.
+Reuse canonical window_shutdown state/cleanup,359 callback adapter and THRASH
+slots21/40. Prove raw format table/new flag/fallback ownership, exact descriptor/
+lock-buffer alias read/write order, float exponent calculation and fallback path.
+Original00535700 allocator remains external. Old null-only00534480 wrapper proof
+stays frozen; upgrade existing registry entry only after full-body acceptance.
 
-Work order: finish one actual startup chain, prioritizing the first unconditional
-blocker, including state/callbacks. Do not select batches by net symbol count.
-Next371: original00570ed0 save38B and00570f00 restore79B. Reuse window_shutdown
-005de620[12] and mode/state aliases; second48B005de650 is fragmented by existing
-65c/65d bytes and67cDWORD. Worker proves explicit stateview/initialdata/knowncaller
-stack96buffer domain, no duplicated arena/guessed contiguity. Preserve restore's
-second-block-first order and actual00534480(snapshot) argument. Existing partial
-00534480 provider stays external until exact binding/state proof. Async callback/
-list service after snapshot closes this current mouse dependency slice.
+373 check: py -3 scripts/research/audit-v2-native-game-batch.py --config
+iterations/v2/001-original-recovery/runs/373-snapshot-async-integration/acceptance.json.
+Native371/002+372/003, game373/001. Sources use existing explicit fragmented
+second48B state view; all known snapshot callers have independent96B stackbuffers.
+Arbitrary/computed global aliases and live renderer/concurrency remain HOLD.
+Async queue views adapt adjacent-DWORD original ABI without new storage or fake
+binary aliases. Original captured/reloaded lock, saved-ID and stale-tail behavior
+verified; malformed queues/scheduler/allocator composition remain open.
+
+Repo skill .agents/skills/porsche-recovery/SKILL.md validated/pushed4e9f2b4.
+Project-local rules allow five named shared scripts; no blanket Python/shell rule.
+No new custom runner. Root pointers remain brief; detailed evidence in run files.
 
 370 closes original DINPUT.dll!DirectInputCreateA using lib.exe +unadornated.def
 and a compiledstdcall IAT-cell alias, with actual PE loader/import proofs. No
