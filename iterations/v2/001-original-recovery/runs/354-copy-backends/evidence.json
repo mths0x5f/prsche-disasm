@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "batch": "354-copy-backends",
+  "status": "native-pass-awaiting-root-integration",
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+    "index_query": "005b0100|005b02c0|005b0480 in research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/functions.jsonl and calls.jsonl; inspect research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm and REA355/001",
+    "rea_receipt": "local/experiments/v2-copy-backends-355-rea/001/receipt.json",
+    "indexed_body_bytes": [359, 389, 267],
+    "copied_contiguous_spans_including_padding": [386, 418, 268],
+    "entries": ["005b0100", "005b02c0", "005b0480"],
+    "callers": "005323e0 dispatch and direct calls 0053d462..0053d566",
+    "abi": "cdecl(destination,source,byte_count); EAX advances by copied byte count; EBX preserved",
+    "opcode_facts": "005b0100 uses FILD/FISTP qword and FXCH; 005b02c0 uses MMX MOVQ with no body EMMS; 005b0480 uses MOVUPS/MOVNTPS with no body SFENCE. All three peel alignment and copy forward in grouped chunks. Dispatcher EMMS follows only the MMX call at 0053241f."
+  },
+  "implementation": {
+    "source": "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.cpp",
+    "header": "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.hpp",
+    "model": "C++ signed-count control flow and scalar tails; isolated inline hardware helpers preserve original x87/MMX/SSE load-store order and measured CPU state. No globals, imported copy operation, body EMMS or SFENCE.",
+    "output_symbols": "three canonical heap_copy_* void entries plus three advanced-EAX core views, zero undefined externals"
+  },
+  "proof": {
+    "command": "py -3 scripts/research/verify-v2-native-batch.py --config iterations/v2/001-original-recovery/runs/354-copy-backends/native-config.json --attempt 8",
+    "receipt": "local/experiments/v2-copy-backends-native-354/008/receipt.json",
+    "variants": ["/Od", "/O2"],
+    "cases_per_variant": 41472,
+    "checks_per_variant": 4727808,
+    "coverage": "32 destination alignments; 36 byte counts from 0 to 257 around 8/16/32/128 boundaries; twelve source offsets including both overlap directions, exact alias and disjoint buffers; full 8192-byte buffer, advanced EAX, stack/nonvolatile ABI, x87 control/status/abridged tag, low ten bytes of x87/MMX slots 0-6, MXCSR and XMM0/1",
+    "initial_cpu_state": "Before each original and C++ call the fixture executes EMMS, FNINIT, PXOR XMM0/XMM0 and PXOR XMM1/XMM1. This proves the compared state under default x87 control with an empty stack and zero XMM0/1, not arbitrary ambient x87 stack/control or XMM state.",
+    "observation_boundary": "Fixture SFENCE occurs only after each call and before comparing memory. The original and C++ bodies execute no SFENCE; this proof does not assert concurrent visibility/ordering timing, FIP/FDP equality, or invalid-pointer behavior.",
+    "mutation_controls": ["x87-qword-order", "mmx-qword-order", "mmx-unwanted-emms", "sse-second-lane", "alignment-mask", "tail-word-threshold"],
+    "object_audit": {
+      "o2_object_sha256": "cc2c0c5bdb649560757c0166dc128a41f4806810532df1a93c41ad2aae899517",
+      "dumpbin_disassembly": "local/experiments/v2-copy-backends-native-354/object-shape-008.txt",
+      "dumpbin_disassembly_sha256": "2697edcc986198abd45fbcbe779168e02fc2f2da4206f80d3db3527c7422224b",
+      "instruction_counts": {"fild":42,"fistp":42,"fxch":16,"movq":84,"movups":5,"movntps":2,"movlps":6,"movaps":3,"emms":0,"sfence":0},
+      "undefined_externals": 0
+    }
+  }
+}
+

@@ -1,0 +1,194 @@
+#include "diagnostic_parsers.hpp"
+#include "porsche/application_heap_state.hpp"
+#include "porsche/exit_registry.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char originals[7][145]={{@COPY@},{@PREFIX@},{@DEVICE_LOOKUP@},{@CHANNEL_LOOKUP@},{@DEVICE_PARSE@},{@CHANNEL_PARSE@},{@ENVIRONMENT@}};
+static const U va[7]={0x55edf0,0x55eeb0,0x55ee70,0x55f0f0,0x55ed50,0x55f060,0x5a3050};
+static const U sizes[7]={117,100,63,63,145,140,33};
+static unsigned char* image;
+static unsigned char* body[7];
+static U cases=0;
+static U word(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void fail(const char* kind,U site){std::printf("fixture %s %08x\n",kind,site);ExitProcess(98);}
+static void patch_abs(U f,U old,U replacement,U expected){
+    U count=0;
+    for(U i=0;i+4<=sizes[f];++i){U got;std::memcpy(&got,body[f]+i,4);
+        if(got==old){std::memcpy(body[f]+i,&replacement,4);++count;i+=3;}}
+    if(count!=expected)fail("absolute-patch",old);
+}
+static void patch_call(U f,U site,U expected,const void* target){
+    unsigned char* p=body[f]+site-va[f];
+    if(site<va[f]||site+5>va[f]+sizes[f]||*p!=0xe8)fail("call-site",site);
+    std::int32_t relative;std::memcpy(&relative,p+1,4);
+    if(static_cast<U>(site+5+relative)!=expected)fail("call-target",site);
+    U replacement=word(target)-word(p+5);std::memcpy(p+1,&replacement,4);
+}
+static U event_count=0;
+struct Event{U kind,a,b;char text[272];};
+static Event events[128]{};
+static void record(U kind,U a,U b,const char* s=nullptr){
+    if(event_count>=128)fail("event-overflow",kind);
+    auto& e=events[event_count++];e.kind=kind;e.a=a;e.b=b;
+    if(s){std::strncpy(e.text,s,sizeof(e.text)-1);e.text[sizeof(e.text)-1]=0;}
+}
+static char* next_token=nullptr;
+namespace porsche {
+DiagnosticDeviceImage application_diagnostic_device_image_005e1c88{};
+DiagnosticDevice (&application_diagnostic_devices_005e1c8c)[8]=application_diagnostic_device_image_005e1c88.devices;
+DiagnosticChannel application_diagnostic_channels_005df4a0[64]{};
+void __cdecl application_diagnostic_device_set_0055ed20(U index,U enabled){record(1,index,enabled);}
+void __cdecl application_diagnostic_channel_set_0055efd0(U index,U enabled){record(2,index,enabled);}
+char* __cdecl application_diagnostic_tokenize_005a30ee(char* input,const char* separators){
+    record(3,input!=nullptr,0,separators);
+    if(input){record(4,0,0,input);next_token=input;}
+    if(!next_token)return nullptr;
+    char* p=next_token;
+    while(*p&&std::strchr(separators,*p))++p;
+    if(!*p){next_token=nullptr;return nullptr;}
+    char* begin=p;
+    while(*p&&!std::strchr(separators,*p))++p;
+    if(*p){*p=0;next_token=p+1;}else next_token=nullptr;
+    record(5,0,0,begin);
+    return begin;
+}
+void __cdecl exit_registry_lock_api_005a4ba4(U id){record(6,id,0);}
+void __cdecl exit_registry_unlock_api_005a4c05(U id){record(8,id,0);__asm mov eax,0xdeadbeef}
+static const char* inner_value=nullptr;
+const char* __cdecl application_diagnostic_environment_inner_005a3071(const char* name){
+    record(7,0,0,name);return inner_value;
+}
+}
+static const char device_names[8][12]={"alpha","alps","bravo","same","same","ZED","\x80X","omega"};
+static char channel_names[64][16]={"alpha","alps","bravo","same","same","ZED","\x80X","omega"};
+static bool null_environment=false;
+static void reset(){
+    std::memset(&porsche::application_diagnostic_device_image_005e1c88,0,sizeof(porsche::DiagnosticDeviceImage));
+    std::memset(porsche::application_diagnostic_channels_005df4a0,0,sizeof(porsche::application_diagnostic_channels_005df4a0));
+    // The device name at 005e1c88 precedes the callback view by four bytes.
+    porsche::application_diagnostic_device_image_005e1c88.preceding_name=word(device_names[0]);
+    for(U i=1;i<8;++i)porsche::application_diagnostic_devices_005e1c8c[i-1].name=word(device_names[i]);
+    for(U i=0;i<8;++i)porsche::application_diagnostic_devices_005e1c8c[i].callback=0xa0000000u+i;
+    for(U i=0;i<64;++i)porsche::application_diagnostic_channels_005df4a0[i].name=word(channel_names[i]);
+    event_count=0;std::memset(events,0,sizeof(events));next_token=nullptr;
+    porsche::inner_value=null_environment?nullptr:"cached-value";
+}
+static void install(){
+    for(U i=8;i<64;++i)std::snprintf(channel_names[i],sizeof(channel_names[i]),"ch%02u",i);
+    image=static_cast<unsigned char*>(VirtualAlloc(nullptr,0x1000,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE));
+    if(!image)fail("alloc",0);
+    for(U i=0;i<7;++i){body[i]=image+i*0x200;std::memcpy(body[i],originals[i],sizes[i]);}
+    patch_abs(2,0x5e1c88,word(&porsche::application_diagnostic_device_image_005e1c88),1);
+    patch_abs(2,0x5e1ce8,word(&porsche::application_diagnostic_device_image_005e1c88)+96,1);
+    patch_abs(3,0x5df4a0,word(porsche::application_diagnostic_channels_005df4a0),1);
+    patch_abs(3,0x5df6a0,word(porsche::application_diagnostic_channels_005df4a0)+512,1);
+    patch_abs(4,0x5bcc74,word(" ,"),1);
+    patch_abs(4,0x5bcc76,word(" ,")+2,1);
+    patch_abs(5,0x5bcc88,word(" ,;"),1);
+    patch_call(2,0x55ee8c,0x55eeb0,body[1]);
+    patch_call(3,0x55f10c,0x55eeb0,body[1]);
+    patch_call(4,0x55ed7d,0x55edf0,body[0]);
+    patch_call(4,0x55ed8c,0x5a30ee,reinterpret_cast<const void*>(&porsche::application_diagnostic_tokenize_005a30ee));
+    patch_call(4,0x55ed9f,0x55ee70,body[2]);
+    patch_call(4,0x55edb0,0x55ee70,body[2]);
+    patch_call(4,0x55edbf,0x55ed20,reinterpret_cast<const void*>(&porsche::application_diagnostic_device_set_0055ed20));
+    patch_call(4,0x55edce,0x5a30ee,reinterpret_cast<const void*>(&porsche::application_diagnostic_tokenize_005a30ee));
+    patch_call(5,0x55f081,0x55edf0,body[0]);
+    patch_call(5,0x55f090,0x5a30ee,reinterpret_cast<const void*>(&porsche::application_diagnostic_tokenize_005a30ee));
+    patch_call(5,0x55f0a9,0x55f0f0,body[3]);
+    patch_call(5,0x55f0bb,0x55f0f0,body[3]);
+    patch_call(5,0x55f0ca,0x55efd0,reinterpret_cast<const void*>(&porsche::application_diagnostic_channel_set_0055efd0));
+    patch_call(5,0x55f0d9,0x5a30ee,reinterpret_cast<const void*>(&porsche::application_diagnostic_tokenize_005a30ee));
+    patch_call(6,0x5a3053,0x5a4ba4,reinterpret_cast<const void*>(&porsche::exit_registry_lock_api_005a4ba4));
+    patch_call(6,0x5a305c,0x5a3071,reinterpret_cast<const void*>(&porsche::application_diagnostic_environment_inner_005a3071));
+    patch_call(6,0x5a3065,0x5a4c05,reinterpret_cast<const void*>(&porsche::exit_registry_unlock_api_005a4c05));
+    FlushInstructionCache(GetCurrentProcess(),image,0x1000);
+}
+struct Capture{U esp0,esp1,ebp0,ebp1,ebx0,ebx1,esi0,esi1,edi0,edi1,eax;};
+static Capture invoke(const void* fn,U a,U b,U c){
+    Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push c
+        push b
+        push a
+        mov ecx,fn
+        call ecx
+        add esp,12
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    return r;
+}
+static bool abi(const Capture& r){return r.esp0==r.esp1&&r.ebp0==r.ebp1&&r.ebx0==r.ebx1&&r.esi0==r.esi1&&r.edi0==r.edi1&&r.ebx0==0x13579bdfu&&r.esi0==0x2468ace0u&&r.edi0==0x6a31c5e7u;}
+struct State{U count;Event log[128];unsigned char output[300];};
+static State state(const unsigned char* output=nullptr){State s{};s.count=event_count;std::memcpy(s.log,events,sizeof(events));if(output)std::memcpy(s.output,output,sizeof(s.output));return s;}
+static const void* native[7]={
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_copy_lower_0055edf0),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_prefix_0055eeb0),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_device_lookup_0055ee70),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_channel_lookup_0055f0f0),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_device_parse_0055ed50),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_channel_parse_0055f060),
+    reinterpret_cast<const void*>(&porsche::application_diagnostic_environment_005a3050)};
+static bool compare(const char* label,U f,U a,U b=0,U c=0,bool returns=false){
+    reset();Capture x=invoke(body[f],a,b,c);State expected=state();
+    reset();Capture y=invoke(native[f],a,b,c);State actual=state();++cases;
+    if(!abi(x)||!abi(y)||(returns&&x.eax!=y.eax)||std::memcmp(&expected,&actual,sizeof(State))){
+        std::printf("divergence %s case=%u function=%08x abi=%u/%u eax=%08x/%08x events=%u/%u\n",label,cases,va[f],abi(x),abi(y),x.eax,y.eax,expected.count,actual.count);return false;}
+    return true;
+}
+static bool copy_case(const char* label,const char* source,U cap,U shift){
+    unsigned char before[300]{};std::memset(before,0x7d,sizeof(before));
+    std::memcpy(before+20,source,std::strlen(source)+1);
+    auto run=[&](const void* fn,Capture& capture,State& out){
+        unsigned char buf[300];std::memcpy(buf,before,sizeof(buf));reset();
+        capture=invoke(fn,word(buf+20),word(buf+20+shift),cap);out=state(buf);
+    };
+    Capture x{},y{};State expected{},actual{};run(body[0],x,expected);run(native[0],y,actual);++cases;
+    if(!abi(x)||!abi(y)||std::memcmp(&expected,&actual,sizeof(State))){
+        std::printf("divergence %s case=%u function=0055edf0 abi=%u/%u\n",label,cases,abi(x),abi(y));return false;}
+    return true;
+}
+int main(){
+    install();bool ok=true;
+    for(U cap:{1u,2u,5u,8u})for(const char* s:{"","A","AB","ABCD","ABCDEFGH","Ab\x80Z"})ok&=copy_case("copy-inclusive",s,cap,32);
+    ok&=copy_case("copy-overlap","ABCDEF",5,1);
+    ok&=copy_case("copy-overlap-same","ABCDEF",5,0);
+    for(const char* token:{"","a","ALPHA","alpine","same-more","\x80x","ZEd","?","CH63","ch32"}){
+        ok&=compare("device-lookup",2,word(token),0,0,true);
+        ok&=compare("channel-lookup",3,word(token),0,0,true);
+    }
+    for(const char* name:{"","alpha","AB\x80Z","Zed"})for(const char* token:{"","ALPHAX","ab\x80z","zed"})ok&=compare("prefix",1,word(name),word(token),0,true);
+    for(const char* input:{"","ALPHA","alpha,-alpha","bravo;zed","!alpha, -same","same,UNKNOWN","\x80X","alps alpha"}){
+        ok&=compare("device-parse",4,word(input));
+        ok&=compare("channel-parse",5,word(input));
+    }
+    char long_input[255];std::memset(long_input,'x',254);long_input[254]=0;
+    ok&=compare("device-parse-254",4,word(long_input));
+    ok&=compare("channel-parse-254",5,word(long_input));
+    ok&=compare("environment",6,word("NFS_DEBUG"),0,0,true);
+    null_environment=true;
+    ok&=compare("environment-null",6,word("NFS_DEBUG"),0,0,true);
+    std::printf("diagnostic_parsers_original_vs_cpp=%s cases=%u\n",ok?"PASS":"FAIL",cases);
+    return ok?0:1;
+}

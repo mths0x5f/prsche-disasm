@@ -1,0 +1,81 @@
+{
+  "run": 381,
+  "experiment": "local/experiments/v2-pixel-draw-helpers-native-381",
+  "timeout_seconds": 40,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers"
+  ],
+  "headers": [],
+  "original_bodies": [
+    {
+      "token": "@DRAW@",
+      "va": "0056de20",
+      "bytes": 34,
+      "sha256": "ebcc89472491df7f06e3805f43049a0cbf0f1e6720fc7c1599e96b12537fa691"
+    },
+    {
+      "token": "@WORD@",
+      "va": "0056e301",
+      "bytes": 55,
+      "sha256": "489ec9e8e34ea65756304761e9d99a6d10d0ca1c362536dccf4ab0aaf81aa3bc"
+    }
+  ],
+  "pass_marker": "pixel_draw_helpers_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "draw-width",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "x_bits,y_bits,0x3f800000u,0x3f800000u,pixel",
+      "new": "x_bits,y_bits,0x40000000u,0x3f800000u,pixel",
+      "expected_exit": 1
+    },
+    {
+      "name": "draw-coordinate-order",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "x_bits,y_bits,0x3f800000u,0x3f800000u,pixel",
+      "new": "y_bits,x_bits,0x3f800000u,0x3f800000u,pixel",
+      "expected_exit": 1
+    },
+    {
+      "name": "draw-pixel",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "0x3f800000u,0x3f800000u,pixel);",
+      "new": "0x3f800000u,0x3f800000u,pixel^1u);",
+      "expected_exit": 1
+    },
+    {
+      "name": "three-byte-overwrite-offset",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "out[0]=static_cast<std::uint8_t>(pixel>>16);return out+3;",
+      "new": "out[2]=static_cast<std::uint8_t>(pixel>>16);return out+3;",
+      "expected_exit": 1
+    },
+    {
+      "name": "three-byte-return",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "out[0]=static_cast<std::uint8_t>(pixel>>16);return out+3;",
+      "new": "out[0]=static_cast<std::uint8_t>(pixel>>16);return out+2;",
+      "expected_exit": 1
+    },
+    {
+      "name": "negative-size-unsigned",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "if(bytes>=3){",
+      "new": "if(static_cast<std::uint32_t>(bytes)>=3){",
+      "expected_exit": 1
+    },
+    {
+      "name": "zero-size-write",
+      "source": "iterations/v2/001-original-recovery/runs/381-pixel-draw-helpers/pixel_draw_helpers.cpp",
+      "old": "if(bytes<1)return out;",
+      "new": "if(bytes<0)return out;",
+      "expected_exit": 1
+    }
+  ]
+}

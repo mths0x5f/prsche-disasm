@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "module": "local/game/Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "query": "binary-index imports: DirectInputCreateA/GetCursorPos/ScreenToClient/GetModuleHandleA; indexed 0056e940 thunk and mouse/keyboard callers; canonical registry entry/body ownership check",
+  "imports": [
+    {
+      "dll": "KERNEL32.dll",
+      "symbol": "GetModuleHandleA",
+      "iat_va": "005b2138",
+      "lookup_rva": "001c9d1c",
+      "name_rva": "001ca3ce"
+    },
+    {
+      "dll": "USER32.dll",
+      "symbol": "GetCursorPos",
+      "iat_va": "005b2280",
+      "lookup_rva": "001c9e64",
+      "name_rva": "001cabe8"
+    },
+    {
+      "dll": "USER32.dll",
+      "symbol": "ScreenToClient",
+      "iat_va": "005b228c",
+      "lookup_rva": "001c9e70",
+      "name_rva": "001cabd6"
+    },
+    {
+      "dll": "DINPUT.dll",
+      "symbol": "DirectInputCreateA",
+      "iat_va": "005b202c",
+      "lookup_rva": "001c9c10",
+      "name_rva": "001ca282"
+    }
+  ],
+  "new_original_body": {
+    "entry_va": "0056e940",
+    "end_exclusive": "0056e946",
+    "bytes": 6,
+    "raw_hex": "ff252c205b00",
+    "sha256": "ddfd75c6f46c0d5236ec3c52d2574197580f739ff1609069788bbe087a42bfb0",
+    "calling_convention": "x86 stdcall4 arguments, DWORD/HRESULT bits in EAX; original tail JMP to DINPUT named import"
+  },
+  "canonical_registry_preintegration": {
+    "path": "iterations/v2/001-original-recovery/source/recovered/functions.json",
+    "sha256": "4fcc0e27be89dd674add26ee0ad02a997f709c4248b65da873e44200a44feec3",
+    "entry_owners": [],
+    "note": "No canonical entry at0056e940. Indexed original function is an isolated 6-byte import thunk. Cursor/module/keyboard facades are bindings, not additional original body counts."
+  },
+  "original_instruction_pins": [
+    {
+      "token": "@DINPUT@",
+      "va": "0056e940",
+      "bytes": 6,
+      "sha256": "ddfd75c6f46c0d5236ec3c52d2574197580f739ff1609069788bbe087a42bfb0"
+    },
+    {
+      "token": "@KEYBOARD@",
+      "va": "0055fd50",
+      "bytes": 5,
+      "sha256": "6a0404fe6ee7114d3ada9b3bbd021ccf3e99910f92b74412c95e14e76c7fc320"
+    },
+    {
+      "token": "@CURSOR@",
+      "va": "00536fd9",
+      "bytes": 6,
+      "sha256": "ba5c41311e36e64ed053dc5a4135aabd1934e815403fa53295350609a9b18cfa"
+    },
+    {
+      "token": "@SCREEN@",
+      "va": "00536fea",
+      "bytes": 6,
+      "sha256": "91b4e1e66c5f20fc0e3fe8ddb8dc46d96b24410d9b7228501e2f6177f14ec1b7"
+    },
+    {
+      "token": "@MODULE@",
+      "va": "0055fd49",
+      "bytes": 6,
+      "sha256": "34d52ded5b0f7adefa6a278f8818b8df09303aee5e53722231d9ca4d6e7162da"
+    }
+  ],
+  "indexed_sources": [
+    "research/binary-index/static/imports.jsonl",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/functions.jsonl"
+  ],
+  "callers": {
+    "mouse": [
+      "00536e89 outer=0",
+      "00536e8a &0069e098",
+      "00536e8f version=0x500",
+      "00536e94 NULL module argument",
+      "00536e95 GetModuleHandleA",
+      "00536e9b PUSH EAX",
+      "00536e9c CALL0056e940"
+    ],
+    "keyboard": [
+      "0055fd3b outer=0",
+      "0055fd3d &006a5b14",
+      "0055fd42 version=0x500",
+      "0055fd47 NULL module argument",
+      "0055fd49 GetModuleHandleA",
+      "0055fd4f PUSH EAX",
+      "0055fd50 CALL0056e940"
+    ],
+    "cursor": [
+      "00536fd9 GetCursorPos(point)",
+      "00536fea ScreenToClient(hwnd,samepoint)"
+    ]
+  },
+  "abi": {
+    "pointer_bytes": 4,
+    "point_bytes": 8,
+    "point_alignment": 4,
+    "point_offsets": {
+      "x": 0,
+      "y": 4
+    },
+    "facades": "DirectInput4args/stdcall; keyboard4args/stdcall; GetCursorPos1arg/stdcall; ScreenToClient2args/stdcall; startup_input_get_module_handle0args/stdcall wrapping canonical window_module_handle(NULL)"
+  },
+  "native_proof": {
+    "receipt": "local/experiments/v2-input-platform-native-367/001/receipt.json",
+    "comparisons_per_variant": 108,
+    "variants": [
+      "/Od",
+      "/O2"
+    ],
+    "mutation_controls": 6,
+    "boundary": "Controlled import endpoints. Tests preserve all argument pointers/bits, output including no/partial writes, HRESULT/BOOL/handle bits, event log, ESP and EBX/ESI/EDI/EBP. No actual COM or OS/device behavior is inferred."
+  },
+  "import_library_proof": {
+    "receipt": "local/experiments/v2-input-platform-native-367/import-proof-004/receipt.json",
+    "definition": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/dinput.def",
+    "library_symbol": "__imp__DirectInputCreateA",
+    "compiled_reference": "__imp__DirectInputCreateA@16",
+    "directive": "/alternatename:__imp__DirectInputCreateA@16=__imp__DirectInputCreateA",
+    "linked_pe_import": "DINPUT.dll!DirectInputCreateA",
+    "note": "Same frozen production Od/O2 objects link to actual generated library. Both PE loader-only probes exit0; no DirectInput function is called. Probe-only module provider is outside game graph. Failed decoration trials001/002 and alias trial003 remain preserved."
+  },
+  "holds": [
+    "Actual DirectInput initialization/devices",
+    "Full input and mouse startup with real Windows/COM",
+    "Failed GetCursorPos followed by successful ScreenToClient with opaque untouched coordinates remains361 hold",
+    "Concurrency, complete game execution and visual acceptance"
+  ]
+}

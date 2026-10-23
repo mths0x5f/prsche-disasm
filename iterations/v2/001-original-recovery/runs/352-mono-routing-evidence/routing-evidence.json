@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "kind": "read-only-original-mono-routing-trace",
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
+  },
+  "initial_device_image": {
+    "source": "SHA-checked raw PE 005e1c88..005e1ceb, Run345 accepted physical image",
+    "record_layout": "name prefix at 005e1c88; eight records of callback/flags/next-name at 005e1c8c + index*12",
+    "index_0_mono": {
+      "callback_cell": "005e1c8c",
+      "callback_va": "00586ca0",
+      "flags_cell": "005e1c90",
+      "initial_flags": 0
+    },
+    "index_1_console": {
+      "callback_cell": "005e1c98",
+      "callback_va": "00586cb0",
+      "flags_cell": "005e1c9c",
+      "initial_flags": 1
+    },
+    "index_2_debugger": {
+      "callback_cell": "005e1ca4",
+      "callback_va": "00586cc0",
+      "flags_cell": "005e1ca8",
+      "initial_flags": 0
+    },
+    "remaining_callbacks": "indices 3..7 initially null; 005e1ce8=1 is the last record name/tail word, not a flags bit"
+  },
+  "dispatch": {
+    "entry_va": "0055ec50",
+    "channel_gate": "tests bit0 of 005df4a4 + channel*8; if clear, does not format or invoke any device callback",
+    "device_gate": "after 005a299e formats into local 2048 bytes, scans callbacks at 005e1c8c + index*12 and invokes only if matching flags DWORD bit0 is set and callback pointer is nonnull",
+    "mono_callback": "index0 dispatch reaches 00586ca0, which forwards the message pointer to 00592a50; no direct indexed code call to 00586ca0 other than the table-driven computed call at 0055ecab",
+    "original_refs": [
+      "0055ec50:0055ec99 reads device flags",
+      "0055ec50:0055ecab computed callback call",
+      "005e1c8c data relocation to 00586ca0"
+    ]
+  },
+  "startup_and_environment": {
+    "lazy_setup_0055eba0": "BSS guard 006a57cc initially zero; sets guard first, clears bit0 of all eight device flags and 64 channel flags, preserves other bits, then invokes 0055ef90(2,1) and 0055ecd0(1,1)",
+    "default_after_lazy_setup": "mono index0 remains disabled; console index1 enabled; 0055ef90 enables channel2 before 0055ecd0 enables console",
+    "application_start_0059e9d0": "after 0055eba0, calls 0055ecd0(0,0), (1,0), (2,1) in that order: mono disabled, console disabled, debugger enabled, absent environment overrides",
+    "environment_path": "each 0055ecd0 call first checks callback cell, lazily initializes if needed, sets bit0 using 0055ed20, then looks up PRINT_DEVICE through 005a3050; if present, 0055ed50 parses device names and optional leading '-' and calls 0055ed20 again. PRINT_CHANNEL is handled separately by 0055ef90/0055f060 and can alter channel gating.",
+    "other_indexed_device_enable": "0048fc80 calls 0055ecd0(2,1), enabling debugger; direct 0055ed20 calls occur in 0055ecd0 and PRINT_DEVICE parser 0055ed50. No indexed direct default-path call enabling device index0 was found."
+  },
+  "conclusion": "With the original PE initial image and no PRINT_DEVICE override or later explicit device mutation, startup keeps mono device bit0 clear. Thus normal default table dispatch avoids 00586ca0 and 00592a50 even though the separate mono output level 005e25dc starts at 2. This is a static routing conclusion, not a claim that 0xb0000 display memory is usable, that all indirect writes are absent, or that runtime environment contents are known.",
+  "next_bounded_step": "If mono output is considered for live game integration, first pin an original process trace of PRINT_DEVICE value, device flags after 0055eba0 and 0059e9d0, and 0055ec50 callback events. Keep the existing canonical diagnostic table and parser owners; do not force mono off with a new host policy.",
+  "evidence": [
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/evidence.json",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.cpp",
+    "iterations/v2/001-original-recovery/runs/346-diagnostic-leaves/evidence.json",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/calls.jsonl",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/decompiled.c"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 88,
+  "new_original_functions": 7,
+  "entry_vas": [
+    "00592a50",
+    "00592ac0",
+    "00592b60",
+    "00592d00",
+    "00592d70",
+    "00592e00",
+    "005a299e"
+  ],
+  "original_code_bytes": 909,
+  "mutation_controls": 9,
+  "native_receipt": "local/experiments/v2-diagnostic-mono-native-353/003/receipt.json",
+  "native_receipt_sha256": "7f12c705fe45acbd19ca3e8e67f707f0da87b11eac963cc6df488dd862c69124",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/native-fixture.cpp.in": "3d8631c40521f34cde0e812964ef28fc19d64f66c95bcd982dbf78689331f716",
+    "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.cpp": "9ba90864b3fd1d082a76ff0a222554ccc560e3c9c56bdde8c66ea249dafdb6b0",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/formatter_entry.cpp": "3c81a98b979195c05e8541d8a0b46bcc8c28fed9f0257ab4e8383135de4c451c",
+    "iterations/v2/001-original-recovery/runs/353-diagnostic-mono/diagnostic_mono.hpp": "b8f94fce89eef61d5e9a145f4521ad8805766552556b3ee5514bc8f8cce59799",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_entry.hpp": "59fc26b6ef072abf3ea74336b98ebfc60320241ba2e2681c8f72f54ab3b34340",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf"
+  },
+  "holds": [
+    "Actual OS display mapping and PRINT_DEVICE-enabled writes to original 0x000b0000 are unproven. Default routing leaves mono device disabled, but an environment override can enable it.",
+    "Negative cursor tab/newline arithmetic is compared with original bytes, but printable glyph writes at a negative cursor and row indices above 24 remain outside bounded acceptance.",
+    "Original mono format buffers are 256 bytes while 005a299e gives the core a 0x7fffffff limit; malformed/overlong formats and spill are outside acceptance.",
+    "Formatter descriptor tail remains opaque/uninitialized; proof checks its initialized prefix and observed branch, not arbitrary tail contents."
+  ]
+}

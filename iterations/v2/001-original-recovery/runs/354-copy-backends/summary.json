@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 82944,
+  "checks": 9455616,
+  "new_original_functions": 3,
+  "entry_vas": [
+    "005b0100",
+    "005b02c0",
+    "005b0480"
+  ],
+  "indexed_code_bytes": 1015,
+  "raw_contiguous_bytes_including_padding": 1072,
+  "mutation_controls": 6,
+  "native_receipt": "local/experiments/v2-copy-backends-native-354/008/receipt.json",
+  "native_receipt_sha256": "babc7a8b5e9424b76d476ab467ecc0e9d61b7ed0f69caf25100d5a738f875a93",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/354-copy-backends/native-fixture.cpp.in": "b559fbd94211bee59d50ca122508448c56b5cb478a38cb2a49120b0e16088cfb",
+    "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.cpp": "242b72685d75e5d02bec998b76b5215593033e6ea318a004e292ad237f0cd05b",
+    "iterations/v2/001-original-recovery/runs/354-copy-backends/copy_backends.hpp": "d6a8553ac4412665f29fd3f51bfba14ba6c41e0fdda31762b34a67b2ef3db842",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf"
+  },
+  "boundary": "Before each original and C++ call the fixture executes EMMS, FNINIT, PXOR XMM0/XMM0 and PXOR XMM1/XMM1. This proves the compared state under default x87 control with an empty stack and zero XMM0/1, not arbitrary ambient x87 stack/control or XMM state. Fixture SFENCE occurs only after each call and before comparing memory. The original and C++ bodies execute no SFENCE; this proof does not assert concurrent visibility/ordering timing, FIP/FDP equality, or invalid-pointer behavior."
+}

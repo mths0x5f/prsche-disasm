@@ -1,0 +1,40 @@
+{
+  "run": 348,
+  "experiment": "local/experiments/v2-diagnostic-parser-native-348",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": ["iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp"],
+  "fixture": "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.hpp",
+    "iterations/v2/001-original-recovery/runs/345-diagnostic-devices/diagnostic_devices.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap_state.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/exit_registry.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@COPY@","va":"0055edf0","bytes":117,"sha256":"e743c3f4367bcf6095e764666c872739dd96ce8a4afe57a5ddb2aff4cf94c0bb"},
+    {"token":"@PREFIX@","va":"0055eeb0","bytes":100,"sha256":"a3ebce4107562e5a83d46c766addf3e8413e73c0675267730a1981b504268547"},
+    {"token":"@DEVICE_LOOKUP@","va":"0055ee70","bytes":63,"sha256":"81d1dfab19fd20cfb50f7255cd6ffd70e9a14e97ef1306b733c849b4e5ea0e8a"},
+    {"token":"@CHANNEL_LOOKUP@","va":"0055f0f0","bytes":63,"sha256":"1e91ad864aac0e19c3a93efa3c2accee0b8a54ab236b20dd90c10a7d34f44a54"},
+    {"token":"@DEVICE_PARSE@","va":"0055ed50","bytes":145,"sha256":"1c66f929396869e6dc15ef204f2db4a4329dd96580728accf801835c6f209913"},
+    {"token":"@CHANNEL_PARSE@","va":"0055f060","bytes":140,"sha256":"db5a53abd3a19a4457261474d2a5fdd7d08d22aa8d562206ea217e2713bad575"},
+    {"token":"@ENVIRONMENT@","va":"005a3050","bytes":33,"sha256":"85719c3f009db7359b201c9cc6cb924efc7bd9707dea98a34ca7b5aaaf49210b"}
+  ],
+  "pass_marker":"diagnostic_parsers_original_vs_cpp=PASS",
+  "mutations": [
+    {"name":"copy-skip-inclusive-byte","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"if (limit < index)","new":"if (limit <= index)","expected_exit":1},
+    {"name":"copy-no-ascii-lower","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"destination[index] = static_cast<char>(lower(static_cast<std::uint8_t>(source[index])));","new":"destination[index] = source[index];","expected_exit":1},
+    {"name":"prefix-exact-only","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"return static_cast<std::int32_t>(matched);","new":"return name[matched] == token[matched] ? static_cast<std::int32_t>(matched) : 0;","expected_exit":1},
+    {"name":"lookup-tie-last","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"application_diagnostic_channels_005df4a0[i].name;\n        if (name != 0) {\n            const auto score = application_diagnostic_prefix_0055eeb0(name_pointer(name),token);\n            if (maximum < score)","new":"application_diagnostic_channels_005df4a0[i].name;\n        if (name != 0) {\n            const auto score = application_diagnostic_prefix_0055eeb0(name_pointer(name),token);\n            if (maximum <= score)","expected_exit":1},
+    {"name":"device-ignore-disable","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"application_diagnostic_device_set_0055ed20(static_cast<std::uint32_t>(index),disable ? 0 : 1);","new":"application_diagnostic_device_set_0055ed20(static_cast<std::uint32_t>(index),1);","expected_exit":1},
+    {"name":"channel-no-bang-disable","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"token[0] == '-' || token[0] == '!'","new":"token[0] == '-'","expected_exit":1},
+    {"name":"environment-wrong-lock","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"exit_registry_lock_api_005a4ba4(12);","new":"exit_registry_lock_api_005a4ba4(11);","expected_exit":1},
+    {"name":"environment-drop-cached-pointer","source":"iterations/v2/001-original-recovery/runs/348-diagnostic-parsers/diagnostic_parsers.cpp","old":"return value;","new":"return nullptr;","expected_exit":1}
+  ]
+}

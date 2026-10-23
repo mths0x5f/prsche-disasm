@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 18,
+  "new_original_functions": 0,
+  "abi_bindings": 5,
+  "original_call_instruction_bytes": 30,
+  "mutation_controls": 6,
+  "native_receipt": "local/experiments/v2-render-settings-bindings-native-359/002/receipt.json",
+  "native_receipt_sha256": "e59e84516574febff5ff8ed80b557461afd344b7315720c808029be032faad35",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/native-fixture.cpp.in": "7f9c2c89360b54479af17e062b9bad3b6412b0f610a9b1d60fa6334f2493554b",
+    "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp": "aa358ed1f54b5430c20263309786ac874186cf817dd16d64586cc40aa781bff3",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_settings.hpp": "e665a1b514af6213ed2a447d3f535e00315de3d11b5ca3cad29dc737ed3731e0",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_mode.hpp": "51bd4f84e2ac30a21bd9a48c324595249e336c86e14857fa12b2370813c5953c",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_shutdown.hpp": "f7dc9946688c6e1f891621c3133a9b7a848f8fada0335a649dc00e69a7106c3d",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp": "791c31583efb742a11a7c55545766a19b8bed23dda44480e4f4cedd436b2344d"
+  },
+  "hold": "window_shutdown_close_handle_006bd92c remains unresolved: original slot is _THRASH_unlockwindow@4, and its token provenance cannot be replaced with guessed Win32 CloseHandle semantics."
+}

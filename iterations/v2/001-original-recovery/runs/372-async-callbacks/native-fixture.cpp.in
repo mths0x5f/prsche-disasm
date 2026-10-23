@@ -1,0 +1,155 @@
+#include "async_callbacks.hpp"
+#include "porsche/fe_stream.hpp"
+#include "porsche/heap.hpp"
+#include "porsche/window_scheduler.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+using U=std::uint32_t;
+static const unsigned char raw_callback[93]={@CALLBACK@};
+static const unsigned char raw_enqueue[64]={@ENQUEUE@};
+static const unsigned char raw_dequeue[68]={@DEQUEUE@};
+static const unsigned char raw_dispatch[105]={@DISPATCH@};
+static unsigned char* code;
+static U native_incoming[2],native_free[2];
+alignas(16) static U arena[8][11];
+static bool original_mode;
+static U hooks, enters, leaves, injected, cases, checks;
+static void* alias_tail;
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U* rec(U p){return reinterpret_cast<U*>(static_cast<std::uintptr_t>(p));}
+static void fail(const char* why){std::printf("fixture %s\n",why);std::fflush(stdout);ExitProcess(98);}
+struct Event {U type,arg,queues[4],lock,arena[8][11];};
+static Event events[128];
+static U event_count;
+static void get_queues(U* words){
+    if(original_mode){std::memcpy(words,native_incoming,8);std::memcpy(words+2,native_free,8);}
+    else {words[0]=porsche::async_pool_head_006a5bc8;words[1]=porsche::async_pool_tail_006a5bcc;
+        words[2]=ptr(porsche::async_pool_first_006a5bd0);words[3]=ptr(porsche::async_pool_last_006a5bd4);}
+}
+static void event(U type,U arg){
+    if(event_count==128)fail("event overflow");
+    Event& e=events[event_count++];e.type=type;e.arg=arg;get_queues(e.queues);
+    e.lock=ptr(porsche::async_pool_lock_006a5be8);std::memcpy(e.arena,arena,sizeof(arena));
+}
+using Enqueue=void (__cdecl*)(U*,U*);
+using Dequeue=U* (__cdecl*)(void*);
+using Dispatch=void (__cdecl*)(U*);
+using Callback=U (__cdecl*)(U,U);
+static void __cdecl callback(U id){
+    event(3,id);
+    U* target=nullptr;for(auto& item:arena)if(item[0]==id)target=item;
+    if(!target)fail("callback id");
+    target[0]=0xcafebabeu;target[3]=7;target[6]^=0x78342u;
+    if((hooks&8u)&&!injected){
+        injected=1;
+        if(original_mode)reinterpret_cast<Enqueue>(code+0x60)(native_incoming,arena[6]);
+        else porsche::async_enqueue_00563c30(porsche::async_incoming_queue(),arena[6]);
+    }
+    event(4,id);
+}
+namespace porsche {
+// Real 361 production state is linked; these are only bounded external endpoints.
+std::uint32_t shared_runtime_word_005deb74=0,shared_runtime_word_005deb78=0;
+std::uint32_t& class_error_file_005deb74=shared_runtime_word_005deb74;
+std::uint32_t& class_error_line_005deb78=shared_runtime_word_005deb78;
+void (__cdecl* diagnostic_handler_005debf0)(const char*)=nullptr;
+void* __cdecl allocate_00531ca0(const char*,std::int32_t,U){fail("unexpected allocate");return nullptr;}
+void* __cdecl heap_lock_create_005321f0(){fail("unexpected create");return nullptr;}
+U __cdecl window_scheduler_register_005365e0(TimedCallback,U,U){fail("unexpected register");return 0;}
+void __cdecl heap_enter_005322b0(void* lock){
+    event(1,ptr(lock));++enters;
+    if(hooks&1u)async_pool_lock_006a5be8=reinterpret_cast<void*>(0x81900000u+enters*16u);
+    if((hooks&32u)&&enters==1)arena[0][3]=1;
+}
+void __cdecl heap_leave_005322c0(void* lock){
+    event(2,ptr(lock));++leaves;
+    if((hooks&2u)&&leaves==1)arena[0][3]=4;
+}
+U __cdecl free_00531f90(void* p){
+    event(5,ptr(p));
+    if(hooks&16u){arena[0][0]=0xbadac0deu;arena[0][3]=9;arena[0][6]=0x87654321;}
+    event(6,ptr(p));return 0x5631f90u;
+}
+}
+static void patch_abs(U start,U size,U old,U replacement,U expected){
+    U found=0;for(U i=start;i+4<=start+size;++i){U v;std::memcpy(&v,code+i,4);
+        if(v==old){std::memcpy(code+i,&replacement,4);i+=3;++found;}}
+    if(found!=expected)fail("absolute patch count");
+}
+static void patch_call(U va,const void* target){
+    U at=va-0x563bd0u;if(code[at]!=0xe8)fail("call opcode");
+    U d=ptr(target)-ptr(code+at+5);std::memcpy(code+at+1,&d,4);
+}
+static void install(){
+    code=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE));
+    if(!code)fail("allocate code");
+    std::memcpy(code,raw_callback,93);std::memcpy(code+0x60,raw_enqueue,64);
+    std::memcpy(code+0xa0,raw_dequeue,68);std::memcpy(code+0xf0,raw_dispatch,105);
+    patch_abs(0,93,0x6a5bc8,ptr(native_incoming),2);
+    patch_abs(0,93,0x6a5bd0,ptr(native_free),1);
+    patch_abs(0x60,64,0x6a5be8,ptr(&porsche::async_pool_lock_006a5be8),2);
+    patch_abs(0xa0,68,0x6a5be8,ptr(&porsche::async_pool_lock_006a5be8),3);
+    patch_abs(0xf0,105,0x6a5be8,ptr(&porsche::async_pool_lock_006a5be8),2);
+    patch_abs(0xf0,105,0x6a5bd0,ptr(native_free),1);
+    for(U va:{0x563c36u,0x563c77u,0x563cc8u})patch_call(va,reinterpret_cast<void*>(&porsche::heap_enter_005322b0));
+    for(U va:{0x563c69u,0x563c90u,0x563ca8u,0x563ceau})patch_call(va,reinterpret_cast<void*>(&porsche::heap_leave_005322c0));
+    patch_call(0x563cffu,reinterpret_cast<void*>(&porsche::free_00531f90));
+    DWORD old;if(!VirtualProtect(code,4096,PAGE_EXECUTE_READ,&old))fail("protect code");
+    FlushInstructionCache(GetCurrentProcess(),code,4096);
+}
+static void reset(U count,U free_count,U state,U resource,U flags,bool native){
+    original_mode=native;hooks=flags;enters=leaves=injected=event_count=0;
+    std::memset(events,0,sizeof(events));
+    for(U i=0;i<8;++i){for(U j=0;j<11;++j)arena[i][j]=0xabc00000u+i*0x100u+j;
+        arena[i][0]=0xfedc0010u+i;arena[i][1]=i+1<count?ptr(arena[i+1]):0;
+        arena[i][3]=i==0?state:(i%3);arena[i][4]=resource;
+        arena[i][5]=ptr(reinterpret_cast<void*>(&callback));}
+    arena[6][1]=0;arena[6][3]=0;
+    arena[4][1]=free_count==2?ptr(arena[5]):0;arena[5][1]=0;
+    // Empty queues deliberately retain stale tails; dequeue must preserve them.
+    native_incoming[0]=count?ptr(arena[0]):0;native_incoming[1]=count?ptr(arena[count-1]):ptr(arena[7]);
+    native_free[0]=free_count?ptr(arena[4]):0;native_free[1]=free_count?ptr(arena[3+free_count]):ptr(arena[7]);
+    porsche::async_pool_head_006a5bc8=native_incoming[0];porsche::async_pool_tail_006a5bcc=native_incoming[1];
+    porsche::async_pool_first_006a5bd0=rec(native_free[0]);porsche::async_pool_last_006a5bd4=rec(native_free[1]);
+    porsche::async_pool_lock_006a5be8=reinterpret_cast<void*>(0x81818181u);alias_tail=arena[7];
+}
+struct State {U result,queues[4],lock,enters,leaves,injected,event_count;Event events[128];U arena[8][11];};
+static State snapshot(U result){
+    State s{};s.result=result;get_queues(s.queues);s.lock=ptr(porsche::async_pool_lock_006a5be8);
+    s.enters=enters;s.leaves=leaves;s.injected=injected;s.event_count=event_count;
+    std::memcpy(s.events,events,sizeof(events));std::memcpy(s.arena,arena,sizeof(arena));return s;
+}
+static U execute(U op,bool native){
+    if(op==0){if(native)reinterpret_cast<Enqueue>(code+0x60)(native_incoming,arena[3]);
+        else porsche::async_enqueue_00563c30(porsche::async_incoming_queue(),arena[3]);return 0;}
+    if(op==1)return ptr(native?reinterpret_cast<Dequeue>(code+0xa0)(native_incoming):porsche::async_dequeue_00563c70(porsche::async_incoming_queue()));
+    if(op==2){if(native)reinterpret_cast<Dispatch>(code+0xf0)(arena[0]);else porsche::async_dispatch_00563cc0(arena[0]);return 0;}
+    if(op==3)return native?reinterpret_cast<Callback>(code)(0x12345678,0x9abcdef0):porsche::async_pool_callback_00563bd0(0x12345678,0x9abcdef0);
+    // A proved local alias isolates capture-before-head-write; dequeue never reads tail.
+    porsche::async_pool_lock_006a5be8=arena[0];
+    if(native)return ptr(reinterpret_cast<Dequeue>(code+0xa0)(&porsche::async_pool_lock_006a5be8));
+    return ptr(porsche::async_dequeue_00563c70({porsche::AsyncQueueSlot(porsche::async_pool_lock_006a5be8),porsche::AsyncQueueSlot(alias_tail)}));
+}
+static void one(U op,U count,U free_count,U state,U resource,U flags){
+    reset(count,free_count,state,resource,flags,true);State a=snapshot(execute(op,true));
+    reset(count,free_count,state,resource,flags,false);State b=snapshot(execute(op,false));
+    const auto* x=reinterpret_cast<unsigned char*>(&a);const auto* y=reinterpret_cast<unsigned char*>(&b);
+    for(U i=0;i<sizeof(State);++i){++checks;if(x[i]!=y[i]){
+        std::printf("divergence op=%u count=%u free=%u state=%08x resource=%08x hooks=%u byte=%u original=%02x cpp=%02x\n",op,count,free_count,state,resource,flags,i,x[i],y[i]);std::fflush(stdout);ExitProcess(1);}}
+    ++cases;
+}
+int main(){
+    // Actual accepted state owner, before any fixture reset.
+    U initial[]={ptr(porsche::async_pool_base_006a5bc0),porsche::async_pool_head_006a5bc8,porsche::async_pool_tail_006a5bcc,
+        ptr(porsche::async_pool_first_006a5bd0),ptr(porsche::async_pool_last_006a5bd4),porsche::async_pool_priority_006a5bd8,
+        porsche::async_pool_capacity_006a5be0,porsche::async_pool_active_006a5be4,ptr(porsche::async_pool_lock_006a5be8)};
+    for(U v:initial){++checks;if(v)fail("production initial state");}install();
+    for(U op=0;op<4;++op)for(U count=0;count<4;++count)for(U free_count=0;free_count<3;++free_count)
+      for(U state:{0u,1u,2u,3u,0xffffffffu})for(U resource:{0u,1u,2u,0xffffffffu})
+        for(U flags:{0u,1u,2u,8u,16u,32u,59u})one(op,count,free_count,state,resource,flags);
+    for(U count:{1u,2u,3u})one(4,count,0,0,0,0);
+    std::printf("async_callbacks_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

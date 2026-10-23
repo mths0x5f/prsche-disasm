@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "object": "local/builds/v2/render-platform-bindings-358/entry-289/porsche_game_entry_bridges.dir/Release/F_/claude/porsche_disasm/iterations/v2/001-original-recovery/runs/358-render-platform-bindings/render_binding.cpp.obj",
+  "object_sha256": "9468eb52cc9ba2f6287d841fe94d730e8e5f8cc2134b6b6aa2a4c1d82ab0dae3",
+  "undefined": [
+    "?formatter_dialog_get_proc_address@porsche@@YGPAXPAXPBD@Z",
+    "?formatter_dialog_load_library@porsche@@YGPAXPBD@Z",
+    "?platform_last_error@porsche@@YGIXZ",
+    "?window_module_handle@porsche@@YGPAXPBD@Z",
+    "__imp__DisableThreadLibraryCalls@4",
+    "__imp__FreeLibrary@4"
+  ],
+  "original_imports": [
+    {
+      "path": "Porsche.exe",
+      "dll": "KERNEL32.dll",
+      "symbol": "FreeLibrary",
+      "iat_rva": "0x1b2088"
+    },
+    {
+      "path": "Porsche.exe",
+      "dll": "KERNEL32.dll",
+      "symbol": "DisableThreadLibraryCalls",
+      "iat_rva": "0x1b21b4"
+    }
+  ],
+  "scope": "Exact direct import identity; controlled native transport supplies the ABI/order proof. Real DLL/OS effects are unvalidated."
+}

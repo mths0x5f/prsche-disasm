@@ -1,0 +1,766 @@
+{
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "query": [
+    "00535700",
+    "00535380",
+    "00535950",
+    "005deb80",
+    "005deb74",
+    "005deb78",
+    "005debf0"
+  ],
+  "bodies": [
+    {
+      "va": "00535700",
+      "bytes": 584,
+      "sha256": "eca74949c7b3d956d41abe24d1808c9ee55eb8cc3f5219f817ccb8ac513ca209",
+      "raw_hex": "83ec18538b5c2420555685db570f8cec01000081fb004000000f8fe00100008b74243085f60f8cd801000081fe002000000f8fcc0100008b44243485c07515a1d0ea5d0085c0894424347508c7442434100000008b7c243457e822fcffff894424148d44241450e82428000083c40883f80f89442414750bb910000000894c242ceb068944242c8bc88b44241085c0753b8b44243c85c00f84a10100005756536874b65b00c70574eb5d0060b65b00c70578eb5d0066000000ff15f0eb5d0083c41033c05f5e5d5b83c418c38bc10fafc383c00724f899f7f98b4c24348d542418518bf88b4424340faf7c2430c1ff038bef500fafe8536854b65b005283c540e8bab706008b44244c8d4c242c505551e85bc7ffff8bf083c42085f675578b44243c85c00f84140100008b1580eb5d00c70574eb5d0060b65b0042c70578eb5d0083000000891580eb5d00e8404203008b542434508b442434555250536808b65b00ff15f0eb5d0083c41833c05f5e5d5b83c418c36a406a0056e8116a000083c40c8d46308b4c24108b28db44242c33cd8a54241481e1ff00000066895804d95c243433e98946288928c706444e49578a088b6c2430884e0c8b4c2434c1f91780c17e66896806884e0f33c988560d8a54242c83c010897e2489462c895e04896e08c646100088560e894e14894e18895e1c896e208bc65f5e5d5b83c418c38b7424308b44243c85c074338b5424346800200000680040000052565368b8b55b00c70574eb5d0060b65b00c70578eb5d0055000000ff15f0eb5d0083c4185f5e5d33c05b83c418c3",
+      "indexed": {
+        "entry_va": "00535700",
+        "name": "FUN_00535700",
+        "signature": "undefined FUN_00535700(void)",
+        "ranges": [
+          [
+            "00535700",
+            "00535947"
+          ]
+        ],
+        "body_bytes": 584,
+        "thunk": false,
+        "external": false,
+        "source": "DEFAULT"
+      },
+      "assembly": [
+        "00535700  83ec18  SUB ESP,0x18",
+        "00535703  53  PUSH EBX",
+        "00535704  8b5c2420  MOV EBX,dword ptr [ESP + 0x20]",
+        "00535708  55  PUSH EBP",
+        "00535709  56  PUSH ESI",
+        "0053570a  85db  TEST EBX,EBX",
+        "0053570c  57  PUSH EDI",
+        "0053570d  0f8cec010000  JL 0x005358ff",
+        "00535713  81fb00400000  CMP EBX,0x4000",
+        "00535719  0f8fe0010000  JG 0x005358ff",
+        "0053571f  8b742430  MOV ESI,dword ptr [ESP + 0x30]",
+        "00535723  85f6  TEST ESI,ESI",
+        "00535725  0f8cd8010000  JL 0x00535903",
+        "0053572b  81fe00200000  CMP ESI,0x2000",
+        "00535731  0f8fcc010000  JG 0x00535903",
+        "00535737  8b442434  MOV EAX,dword ptr [ESP + 0x34]",
+        "0053573b  85c0  TEST EAX,EAX",
+        "0053573d  7515  JNZ 0x00535754",
+        "0053573f  a1d0ea5d00  MOV EAX,[0x005dead0]",
+        "00535744  85c0  TEST EAX,EAX",
+        "00535746  89442434  MOV dword ptr [ESP + 0x34],EAX",
+        "0053574a  7508  JNZ 0x00535754",
+        "0053574c  c744243410000000  MOV dword ptr [ESP + 0x34],0x10",
+        "00535754  8b7c2434  MOV EDI,dword ptr [ESP + 0x34]",
+        "00535758  57  PUSH EDI",
+        "00535759  e822fcffff  CALL 0x00535380",
+        "0053575e  89442414  MOV dword ptr [ESP + 0x14],EAX",
+        "00535762  8d442414  LEA EAX,[ESP + 0x14]",
+        "00535766  50  PUSH EAX",
+        "00535767  e824280000  CALL 0x00537f90",
+        "0053576c  83c408  ADD ESP,0x8",
+        "0053576f  83f80f  CMP EAX,0xf",
+        "00535772  89442414  MOV dword ptr [ESP + 0x14],EAX",
+        "00535776  750b  JNZ 0x00535783",
+        "00535778  b910000000  MOV ECX,0x10",
+        "0053577d  894c242c  MOV dword ptr [ESP + 0x2c],ECX",
+        "00535781  eb06  JMP 0x00535789",
+        "00535783  8944242c  MOV dword ptr [ESP + 0x2c],EAX",
+        "00535787  8bc8  MOV ECX,EAX",
+        "00535789  8b442410  MOV EAX,dword ptr [ESP + 0x10]",
+        "0053578d  85c0  TEST EAX,EAX",
+        "0053578f  753b  JNZ 0x005357cc",
+        "00535791  8b44243c  MOV EAX,dword ptr [ESP + 0x3c]",
+        "00535795  85c0  TEST EAX,EAX",
+        "00535797  0f84a1010000  JZ 0x0053593e",
+        "0053579d  57  PUSH EDI",
+        "0053579e  56  PUSH ESI",
+        "0053579f  53  PUSH EBX",
+        "005357a0  6874b65b00  PUSH 0x5bb674",
+        "005357a5  c70574eb5d0060b65b00  MOV dword ptr [0x005deb74],0x5bb660",
+        "005357af  c70578eb5d0066000000  MOV dword ptr [0x005deb78],0x66",
+        "005357b9  ff15f0eb5d00  CALL dword ptr [0x005debf0]",
+        "005357bf  83c410  ADD ESP,0x10",
+        "005357c2  33c0  XOR EAX,EAX",
+        "005357c4  5f  POP EDI",
+        "005357c5  5e  POP ESI",
+        "005357c6  5d  POP EBP",
+        "005357c7  5b  POP EBX",
+        "005357c8  83c418  ADD ESP,0x18",
+        "005357cb  c3  RET",
+        "005357cc  8bc1  MOV EAX,ECX",
+        "005357ce  0fafc3  IMUL EAX,EBX",
+        "005357d1  83c007  ADD EAX,0x7",
+        "005357d4  24f8  AND AL,0xf8",
+        "005357d6  99  CDQ",
+        "005357d7  f7f9  IDIV ECX",
+        "005357d9  8b4c2434  MOV ECX,dword ptr [ESP + 0x34]",
+        "005357dd  8d542418  LEA EDX,[ESP + 0x18]",
+        "005357e1  51  PUSH ECX",
+        "005357e2  8bf8  MOV EDI,EAX",
+        "005357e4  8b442434  MOV EAX,dword ptr [ESP + 0x34]",
+        "005357e8  0faf7c2430  IMUL EDI,dword ptr [ESP + 0x30]",
+        "005357ed  c1ff03  SAR EDI,0x3",
+        "005357f0  8bef  MOV EBP,EDI",
+        "005357f2  50  PUSH EAX",
+        "005357f3  0fafe8  IMUL EBP,EAX",
+        "005357f6  53  PUSH EBX",
+        "005357f7  6854b65b00  PUSH 0x5bb654",
+        "005357fc  52  PUSH EDX",
+        "005357fd  83c540  ADD EBP,0x40",
+        "00535800  e8bab70600  CALL 0x005a0fbf",
+        "00535805  8b44244c  MOV EAX,dword ptr [ESP + 0x4c]",
+        "00535809  8d4c242c  LEA ECX,[ESP + 0x2c]",
+        "0053580d  50  PUSH EAX",
+        "0053580e  55  PUSH EBP",
+        "0053580f  51  PUSH ECX",
+        "00535810  e85bc7ffff  CALL 0x00531f70",
+        "00535815  8bf0  MOV ESI,EAX",
+        "00535817  83c420  ADD ESP,0x20",
+        "0053581a  85f6  TEST ESI,ESI",
+        "0053581c  7557  JNZ 0x00535875",
+        "0053581e  8b44243c  MOV EAX,dword ptr [ESP + 0x3c]",
+        "00535822  85c0  TEST EAX,EAX",
+        "00535824  0f8414010000  JZ 0x0053593e",
+        "0053582a  8b1580eb5d00  MOV EDX,dword ptr [0x005deb80]",
+        "00535830  c70574eb5d0060b65b00  MOV dword ptr [0x005deb74],0x5bb660",
+        "0053583a  42  INC EDX",
+        "0053583b  c70578eb5d0083000000  MOV dword ptr [0x005deb78],0x83",
+        "00535845  891580eb5d00  MOV dword ptr [0x005deb80],EDX",
+        "0053584b  e840420300  CALL 0x00569a90",
+        "00535850  8b542434  MOV EDX,dword ptr [ESP + 0x34]",
+        "00535854  50  PUSH EAX",
+        "00535855  8b442434  MOV EAX,dword ptr [ESP + 0x34]",
+        "00535859  55  PUSH EBP",
+        "0053585a  52  PUSH EDX",
+        "0053585b  50  PUSH EAX",
+        "0053585c  53  PUSH EBX",
+        "0053585d  6808b65b00  PUSH 0x5bb608",
+        "00535862  ff15f0eb5d00  CALL dword ptr [0x005debf0]",
+        "00535868  83c418  ADD ESP,0x18",
+        "0053586b  33c0  XOR EAX,EAX",
+        "0053586d  5f  POP EDI",
+        "0053586e  5e  POP ESI",
+        "0053586f  5d  POP EBP",
+        "00535870  5b  POP EBX",
+        "00535871  83c418  ADD ESP,0x18",
+        "00535874  c3  RET",
+        "00535875  6a40  PUSH 0x40",
+        "00535877  6a00  PUSH 0x0",
+        "00535879  56  PUSH ESI",
+        "0053587a  e8116a0000  CALL 0x0053c290",
+        "0053587f  83c40c  ADD ESP,0xc",
+        "00535882  8d4630  LEA EAX,[ESI + 0x30]",
+        "00535885  8b4c2410  MOV ECX,dword ptr [ESP + 0x10]",
+        "00535889  8b28  MOV EBP,dword ptr [EAX]",
+        "0053588b  db44242c  FILD dword ptr [ESP + 0x2c]",
+        "0053588f  33cd  XOR ECX,EBP",
+        "00535891  8a542414  MOV DL,byte ptr [ESP + 0x14]",
+        "00535895  81e1ff000000  AND ECX,0xff",
+        "0053589b  66895804  MOV word ptr [EAX + 0x4],BX",
+        "0053589f  d95c2434  FSTP float ptr [ESP + 0x34]",
+        "005358a3  33e9  XOR EBP,ECX",
+        "005358a5  894628  MOV dword ptr [ESI + 0x28],EAX",
+        "005358a8  8928  MOV dword ptr [EAX],EBP",
+        "005358aa  c706444e4957  MOV dword ptr [ESI],0x57494e44",
+        "005358b0  8a08  MOV CL,byte ptr [EAX]",
+        "005358b2  8b6c2430  MOV EBP,dword ptr [ESP + 0x30]",
+        "005358b6  884e0c  MOV byte ptr [ESI + 0xc],CL",
+        "005358b9  8b4c2434  MOV ECX,dword ptr [ESP + 0x34]",
+        "005358bd  c1f917  SAR ECX,0x17",
+        "005358c0  80c17e  ADD CL,0x7e",
+        "005358c3  66896806  MOV word ptr [EAX + 0x6],BP",
+        "005358c7  884e0f  MOV byte ptr [ESI + 0xf],CL",
+        "005358ca  33c9  XOR ECX,ECX",
+        "005358cc  88560d  MOV byte ptr [ESI + 0xd],DL",
+        "005358cf  8a54242c  MOV DL,byte ptr [ESP + 0x2c]",
+        "005358d3  83c010  ADD EAX,0x10",
+        "005358d6  897e24  MOV dword ptr [ESI + 0x24],EDI",
+        "005358d9  89462c  MOV dword ptr [ESI + 0x2c],EAX",
+        "005358dc  895e04  MOV dword ptr [ESI + 0x4],EBX",
+        "005358df  896e08  MOV dword ptr [ESI + 0x8],EBP",
+        "005358e2  c6461000  MOV byte ptr [ESI + 0x10],0x0",
+        "005358e6  88560e  MOV byte ptr [ESI + 0xe],DL",
+        "005358e9  894e14  MOV dword ptr [ESI + 0x14],ECX",
+        "005358ec  894e18  MOV dword ptr [ESI + 0x18],ECX",
+        "005358ef  895e1c  MOV dword ptr [ESI + 0x1c],EBX",
+        "005358f2  896e20  MOV dword ptr [ESI + 0x20],EBP",
+        "005358f5  8bc6  MOV EAX,ESI",
+        "005358f7  5f  POP EDI",
+        "005358f8  5e  POP ESI",
+        "005358f9  5d  POP EBP",
+        "005358fa  5b  POP EBX",
+        "005358fb  83c418  ADD ESP,0x18",
+        "005358fe  c3  RET",
+        "005358ff  8b742430  MOV ESI,dword ptr [ESP + 0x30]",
+        "00535903  8b44243c  MOV EAX,dword ptr [ESP + 0x3c]",
+        "00535907  85c0  TEST EAX,EAX",
+        "00535909  7433  JZ 0x0053593e",
+        "0053590b  8b542434  MOV EDX,dword ptr [ESP + 0x34]",
+        "0053590f  6800200000  PUSH 0x2000",
+        "00535914  6800400000  PUSH 0x4000",
+        "00535919  52  PUSH EDX",
+        "0053591a  56  PUSH ESI",
+        "0053591b  53  PUSH EBX",
+        "0053591c  68b8b55b00  PUSH 0x5bb5b8",
+        "00535921  c70574eb5d0060b65b00  MOV dword ptr [0x005deb74],0x5bb660",
+        "0053592b  c70578eb5d0055000000  MOV dword ptr [0x005deb78],0x55",
+        "00535935  ff15f0eb5d00  CALL dword ptr [0x005debf0]",
+        "0053593b  83c418  ADD ESP,0x18",
+        "0053593e  5f  POP EDI",
+        "0053593f  5e  POP ESI",
+        "00535940  5d  POP EBP",
+        "00535941  33c0  XOR EAX,EAX",
+        "00535943  5b  POP EBX",
+        "00535944  83c418  ADD ESP,0x18",
+        "00535947  c3  RET"
+      ]
+    },
+    {
+      "va": "00535380",
+      "bytes": 129,
+      "sha256": "fcbea3bf847ca3bc55431eb8c981ed7efbe3b21092a4e18f2f5767210c749b12",
+      "raw_hex": "8b4c240433c083f9207f2974684983f917776d33d28a9120545300ff249504545300b879000000c3b87a000000c3b87b000000c381f9130600007f29742181e92b020000741983e90a740e81e943010000752db87f000000c3b878000000c3b87e000000c381f95c110000740e81f9b8220000750bb87d000000c3b86d000000c3",
+      "indexed": {
+        "entry_va": "00535380",
+        "name": "FUN_00535380",
+        "signature": "undefined FUN_00535380(void)",
+        "ranges": [
+          [
+            "00535380",
+            "00535400"
+          ]
+        ],
+        "body_bytes": 129,
+        "thunk": false,
+        "external": false,
+        "source": "DEFAULT"
+      },
+      "assembly": [
+        "00535380  8b4c2404  MOV ECX,dword ptr [ESP + 0x4]",
+        "00535384  33c0  XOR EAX,EAX",
+        "00535386  83f920  CMP ECX,0x20",
+        "00535389  7f29  JG 0x005353b4",
+        "0053538b  7468  JZ 0x005353f5",
+        "0053538d  49  DEC ECX",
+        "0053538e  83f917  CMP ECX,0x17",
+        "00535391  776d  JA 0x00535400",
+        "00535393  33d2  XOR EDX,EDX",
+        "00535395  8a9120545300  MOV DL,byte ptr [ECX + 0x535420]",
+        "0053539b  ff249504545300  JMP dword ptr [EDX*0x4 + 0x535404]",
+        "005353a2  b879000000  MOV EAX,0x79",
+        "005353a7  c3  RET",
+        "005353a8  b87a000000  MOV EAX,0x7a",
+        "005353ad  c3  RET",
+        "005353ae  b87b000000  MOV EAX,0x7b",
+        "005353b3  c3  RET",
+        "005353b4  81f913060000  CMP ECX,0x613",
+        "005353ba  7f29  JG 0x005353e5",
+        "005353bc  7421  JZ 0x005353df",
+        "005353be  81e92b020000  SUB ECX,0x22b",
+        "005353c4  7419  JZ 0x005353df",
+        "005353c6  83e90a  SUB ECX,0xa",
+        "005353c9  740e  JZ 0x005353d9",
+        "005353cb  81e943010000  SUB ECX,0x143",
+        "005353d1  752d  JNZ 0x00535400",
+        "005353d3  b87f000000  MOV EAX,0x7f",
+        "005353d8  c3  RET",
+        "005353d9  b878000000  MOV EAX,0x78",
+        "005353de  c3  RET",
+        "005353df  b87e000000  MOV EAX,0x7e",
+        "005353e4  c3  RET",
+        "005353e5  81f95c110000  CMP ECX,0x115c",
+        "005353eb  740e  JZ 0x005353fb",
+        "005353ed  81f9b8220000  CMP ECX,0x22b8",
+        "005353f3  750b  JNZ 0x00535400",
+        "005353f5  b87d000000  MOV EAX,0x7d",
+        "005353fa  c3  RET",
+        "005353fb  b86d000000  MOV EAX,0x6d",
+        "00535400  c3  RET"
+      ]
+    }
+  ],
+  "data": [
+    {
+      "va": "00535404",
+      "bytes": 28,
+      "sha256": "05f642c57289299204253c6528f03bfa4819d53141eb82d67fe4740f3042b470",
+      "hex": "a2535300a8535300ae535300df535300d9535300d353530000545300"
+    },
+    {
+      "va": "00535420",
+      "bytes": 24,
+      "sha256": "765cd5f474d5198b42c913fb52948a0f5f54ef7f481b47cea4068b124fbb69d5",
+      "hex": "000606010606060206060606060603040606060606060605"
+    },
+    {
+      "va": "005de890",
+      "bytes": 128,
+      "sha256": "53737af6c13defa7dbf40505d07e95c8c0ccc412480df42bafd89bfd472b8450",
+      "hex": "0004080f1820100000000000000000000f2000000000000000000000000000000f2018001800000000102000200f20000000000000000000000000000000000004080f18010000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000001001040800200f18"
+    },
+    {
+      "va": "005deb80",
+      "bytes": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "hex": "00000000"
+    },
+    {
+      "va": "005bb660",
+      "bytes": 20,
+      "sha256": "96469041ad414ae79978ba6eba88f72536def5e6dccc46ca8034e356f1a24f84",
+      "hex": "5c7265616c5c636d6e5c637265617465772e6300"
+    },
+    {
+      "va": "005bb654",
+      "bytes": 9,
+      "sha256": "2aab37c64f0a4f6e6c1add20987c0a1e1df3d849a8264dd8a865b583c871a716",
+      "hex": "256478256478256400"
+    },
+    {
+      "va": "005bb5b8",
+      "bytes": 78,
+      "sha256": "19141140e1925740be8e621b6b00f3ff566df17bcd577d8741b75ef93ec6e7f0",
+      "hex": "57494e444f575f637265617465202d20494e56414c49442057494e444f572044494d454e53494f4e530a7265717565737465643a202564782564782564206d6178696d756d3a2025647825640a00"
+    },
+    {
+      "va": "005bb608",
+      "bytes": 75,
+      "sha256": "f662b7a6d9f208344b7d2ea6913c1347b2ef5cea21fe24e5445deb05ad21bd61",
+      "hex": "57494e444f575f637265617465202d204f5554204f46204d454d4f52590a7265717565737465643a2025647825647825642062797465733a20256420617661696c61626c653a2025640a00"
+    },
+    {
+      "va": "005bb674",
+      "bytes": 84,
+      "sha256": "1f2768689100681a4a62a1d2733a537fc3e2a4547c93c2f722e661e8155bb371",
+      "hex": "57494e444f575f637265617465202d20494e56414c49442044455054480a7265717565737465643a20256478256478256420425050204d55535420424520312c342c382c31352c31362c32342c4f522033320a00"
+    }
+  ],
+  "indexed_references": [
+    {
+      "from_va": "0041590a",
+      "to_va": "00535380",
+      "from_function": "004152e0",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "005350a9",
+      "to_va": "00535380",
+      "from_function": "005350a0",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "00535759",
+      "to_va": "00535380",
+      "from_function": "00535700",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "005357a5",
+      "to_va": "005deb74",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb74"
+    },
+    {
+      "from_va": "005357af",
+      "to_va": "005deb78",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb78"
+    },
+    {
+      "from_va": "005357b9",
+      "to_va": "005debf0",
+      "from_function": "00535700",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "PTR_FUN_005debf0"
+    },
+    {
+      "from_va": "0053582a",
+      "to_va": "005deb80",
+      "from_function": "00535700",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb80"
+    },
+    {
+      "from_va": "00535830",
+      "to_va": "005deb74",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb74"
+    },
+    {
+      "from_va": "0053583b",
+      "to_va": "005deb78",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb78"
+    },
+    {
+      "from_va": "00535845",
+      "to_va": "005deb80",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb80"
+    },
+    {
+      "from_va": "00535862",
+      "to_va": "005debf0",
+      "from_function": "00535700",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "PTR_FUN_005debf0"
+    },
+    {
+      "from_va": "00535921",
+      "to_va": "005deb74",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb74"
+    },
+    {
+      "from_va": "0053592b",
+      "to_va": "005deb78",
+      "from_function": "00535700",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb78"
+    },
+    {
+      "from_va": "00535935",
+      "to_va": "005debf0",
+      "from_function": "00535700",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "PTR_FUN_005debf0"
+    },
+    {
+      "from_va": "0053596a",
+      "to_va": "00535700",
+      "from_function": "00535950",
+      "to_function": "00535700",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535700"
+    },
+    {
+      "from_va": "00562895",
+      "to_va": "00535380",
+      "from_function": "00562810",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "005634e9",
+      "to_va": "00535380",
+      "from_function": "00563440",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "00565446",
+      "to_va": "005deb80",
+      "from_function": "00565340",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb80"
+    },
+    {
+      "from_va": "00574c8e",
+      "to_va": "00535380",
+      "from_function": "00574c70",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "00574ce7",
+      "to_va": "00535380",
+      "from_function": "00574c70",
+      "to_function": "00535380",
+      "type": "UNCONDITIONAL_CALL",
+      "source": "DEFAULT",
+      "target_symbol": "FUN_00535380"
+    },
+    {
+      "from_va": "00574d86",
+      "to_va": "005deb80",
+      "from_function": "00574c70",
+      "type": "READ",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb80"
+    },
+    {
+      "from_va": "00574da1",
+      "to_va": "005deb80",
+      "from_function": "00574c70",
+      "type": "WRITE",
+      "source": "DEFAULT",
+      "target_symbol": "DAT_005deb80"
+    }
+  ],
+  "registry_check": "Both new entry bodies unowned;374/342 and existing allocator/formatter/fill/diagnostic owners reused.",
+  "rea": {
+    "config": "iterations/v2/001-original-recovery/runs/375-texture-constructor/rea-queries.json",
+    "attempt": "001",
+    "pseudocode_sha256": "a0e21ab2593dbfc3820ae47f1cc4ca5e8a1c6b226d65b979d07a408205251459",
+    "callers": [
+      {
+        "address": "0x535950",
+        "name": "FUN_00535950",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x535950",
+              "end": "0x535972"
+            }
+          ],
+          "total_bytes": 35,
+          "span_bytes": 35,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      }
+    ],
+    "callees": [
+      {
+        "address": "0x531f70",
+        "name": "FUN_00531f70",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x531f70",
+              "end": "0x531f87"
+            }
+          ],
+          "total_bytes": 24,
+          "span_bytes": 24,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      },
+      {
+        "address": "0x535380",
+        "name": "FUN_00535380",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x535380",
+              "end": "0x535400"
+            }
+          ],
+          "total_bytes": 129,
+          "span_bytes": 129,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      },
+      {
+        "address": "0x537f90",
+        "name": "FUN_00537f90",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x537f90",
+              "end": "0x537fa1"
+            }
+          ],
+          "total_bytes": 18,
+          "span_bytes": 18,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      },
+      {
+        "address": "0x53c290",
+        "name": "FUN_0053c290",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x53c290",
+              "end": "0x53c2dc"
+            }
+          ],
+          "total_bytes": 77,
+          "span_bytes": 77,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      },
+      {
+        "address": "0x565340",
+        "name": "FUN_00565340",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x565340",
+              "end": "0x5654bc"
+            }
+          ],
+          "total_bytes": 381,
+          "span_bytes": 381,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      },
+      {
+        "address": "0x569a90",
+        "name": "FUN_00569a90",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x569a90",
+              "end": "0x569aca"
+            }
+          ],
+          "total_bytes": 59,
+          "span_bytes": 59,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      },
+      {
+        "address": "0x5a0fbf",
+        "name": "FUN_005a0fbf",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x5a0fbf",
+              "end": "0x5a1010"
+            }
+          ],
+          "total_bytes": 82,
+          "span_bytes": 82,
+          "non_contiguous": false,
+          "contains_entry": true
+        }
+      }
+    ]
+  },
+  "ownership": {
+    "new": [
+      "texture_create_errors_005deb80, raw initialized zero",
+      "Five immutable original strings at005bb5b8/608/654/660/674"
+    ],
+    "reused": [
+      "374 format-bit lookup/raw128B table",
+      "shared_runtime_globals.cpp diagnostic source/line aliases",
+      "files.cpp diagnostic callback005debf0",
+      "splash_progress.cpp format005dead0",
+      "application_alloc.cpp allocator00531f70",
+      "formatter_entry.cpp formatter005a0fbf",
+      "canonical fill0053c290",
+      "376 startup_sequence_value00569a90"
+    ]
+  },
+  "confirmed": [
+    "Signed inclusive dimension maxima16384x8192; zero dimensions allowed",
+    "Zero depth selects shared default, then16 only if default is alsozero",
+    "Exact format aliases and raw bit table;15bpp storage promotion",
+    "Original round/mask/signed division/multiply/shift pitch order; all proved inputs stay in signed32 range",
+    "Only64B header filled; sprite format preserves upper24bits and pointer fields target+48/+64",
+    "OOM counter wraps uint32 before heap query; original diagnostic lines85/102/131 and raw strings/args preserved"
+  ],
+  "native": {
+    "attempt": "001",
+    "comparisons": 22728,
+    "mutations": 10,
+    "boundary": "Actual374 bits helper and actual canonical window/state/359/shared diagnostic aliases linked; format/diagnostic callback cells and formatter/allocator/fill/heap-query are controlled endpoints. Actual canonical external owner sources pinned and gameCOFF will prove ownership."
+  },
+  "holds": [
+    "Formatter/allocator/fill/query effects beyond controlled contract; real heap/renderer composition",
+    "Arbitrary malformed pointers/aliases, ambient x87 state and concurrency",
+    "Live linked game/startup/display/menu/gameplay"
+  ]
+}

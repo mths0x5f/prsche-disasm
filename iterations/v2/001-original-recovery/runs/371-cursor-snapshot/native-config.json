@@ -1,0 +1,86 @@
+{
+  "run": 371,
+  "experiment": "local/experiments/v2-cursor-snapshot-native-371",
+  "timeout_seconds": 90,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/window_shutdown.cpp",
+    "iterations/v2/001-original-recovery/runs/359-render-settings-bindings/render_settings_binding.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/371-cursor-snapshot",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/window_shutdown.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@SAVE@",
+      "va": "00570ed0",
+      "bytes": 38,
+      "sha256": "60a72118f352a115a7c4d8519fd641993ac789a1b000976fcd04df562ef6b787"
+    },
+    {
+      "token": "@RESTORE@",
+      "va": "00570f00",
+      "bytes": 79,
+      "sha256": "e1e77b1cd4ebaa0229607581861a33e080c6194a4a9fb1330a74b988abe39b2d"
+    },
+    {
+      "token": "@INITIAL@",
+      "va": "005de620",
+      "bytes": 96,
+      "sha256": "eca72005ad2d3b90181df4cff4c3d8983ccbc196f10369efbcc419ac905c5a46"
+    }
+  ],
+  "pass_marker": "cursor_snapshot_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "save-second-block",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "old": "const auto word=second_read(4*i);",
+      "new": "const auto word=window_shutdown_config_005de620[i];",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "restore-shared-byte",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "old": "if(offset==12)return window_shutdown_source_005de65c;",
+      "new": "if(offset==12)return window_shutdown_source_005de65d;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "restore-mode-lowbyte",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "old": "const auto mode=window_shutdown_mode_005de630;",
+      "new": "const auto mode=window_shutdown_config_005de620[4];",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "restore-branch",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "old": "if(mode!=0&&window_shutdown_state_005de64c==0)",
+      "new": "if(mode!=0)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "restore-actual-argument",
+      "source": "iterations/v2/001-original-recovery/runs/371-cursor-snapshot/cursor_snapshot.cpp",
+      "old": "render_display_texture_bind_00534480(const_cast<void*>(snapshot));",
+      "new": "render_display_texture_bind_00534480(window_shutdown_config_005de620);",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    }
+  ]
+}

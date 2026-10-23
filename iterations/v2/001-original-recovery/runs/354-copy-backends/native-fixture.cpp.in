@@ -1,0 +1,106 @@
+#include "copy_backends.hpp"
+#include "porsche/heap.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+using Fn=void (__cdecl *)(void*,const void*,U);
+static_assert(sizeof(void*)==4);
+static const unsigned char pe_x87[386]={@COPY_X87@};
+static const unsigned char pe_mmx[418]={@COPY_MMX@};
+static const unsigned char pe_sse[268]={@COPY_SSE@};
+__declspec(align(32)) static unsigned char a[8192],b[8192];
+__declspec(align(16)) static unsigned char fx[512];
+static unsigned char* original[3];
+static U cases=0,checks=0;
+
+struct Capture { U before,after,ebx0,esi0,edi0,ebp0,eax,ebx1,esi1,edi1,ebp1; unsigned char fpu[192]; };
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static Capture invoke(Fn fn,unsigned char* d,const unsigned char* s,U n){
+    Capture c{};
+    __asm {
+        emms
+        fninit
+        pxor xmm0,xmm0
+        pxor xmm1,xmm1
+        mov ecx,fn
+        lea eax,c
+        mov [eax],esp
+        mov [eax+8],ebx
+        mov [eax+12],esi
+        mov [eax+16],edi
+        mov [eax+20],ebp
+        push n
+        push s
+        push d
+        call ecx
+        add esp,12
+        lea ecx,c
+        mov [ecx+24],eax
+        mov [ecx+4],esp
+        mov [ecx+28],ebx
+        mov [ecx+32],esi
+        mov [ecx+36],edi
+        mov [ecx+40],ebp
+        lea eax,fx
+        fxsave [eax]
+        sfence
+    }
+    std::memcpy(c.fpu,fx,sizeof(c.fpu));
+    return c;
+}
+static void fail(const char* field,U backend,U align,U size,int delta,U at=0){
+    std::printf("divergence %s backend=%u align=%u size=%u delta=%d at=%u\n",field,backend,align,size,delta,at);
+    std::fflush(stdout);
+    ExitProcess(1);
+}
+static void compare(const Capture& x,const Capture& y,U backend,U align,U size,int delta,U xa,U yb){
+    if(x.before!=x.after||y.before!=y.after||x.ebx0!=x.ebx1||x.esi0!=x.esi1||x.edi0!=x.edi1||x.ebp0!=x.ebp1||y.ebx0!=y.ebx1||y.esi0!=y.esi1||y.edi0!=y.edi1||y.ebp0!=y.ebp1)
+        fail("abi",backend,align,size,delta);
+    ++checks;
+    if(x.eax-xa!=y.eax-yb||x.eax-xa!=size)fail("eax",backend,align,size,delta);
+    ++checks;
+    // FIP/FDP differ because these are different code addresses. Control,
+    // status, abridged tag and MXCSR are the observable state here.
+    for(U i: {0u,1u,2u,3u,4u,24u,25u,26u,27u}){
+        if(x.fpu[i]!=y.fpu[i])fail("fp-environment",backend,align,size,delta,i);
+        ++checks;
+    }
+    // FXSAVE keeps each x87/MMX slot in 16 bytes, low 10 meaningful;
+    // compare the six MMX registers used by the original and XMM0/1.
+    for(U r=0;r<7;++r)for(U j=0;j<10;++j){U i=32+r*16+j;
+        if(x.fpu[i]!=y.fpu[i])fail("x87-mmx",backend,align,size,delta,i);++checks;}
+    for(U i=160;i<192;++i){if(x.fpu[i]!=y.fpu[i])fail("xmm",backend,align,size,delta,i);++checks;}
+}
+int main(){
+    const unsigned char* bodies[]={pe_x87,pe_mmx,pe_sse};
+    const U lengths[]={386,418,268};
+    void* region=VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);
+    if(!region)return 98;
+    for(U i=0,at=0;i<3;++i){original[i]=static_cast<unsigned char*>(region)+at;
+        std::memcpy(original[i],bodies[i],lengths[i]);at+=((lengths[i]+15)/16)*16;}
+    DWORD old=0;if(!VirtualProtect(region,4096,PAGE_EXECUTE_READ,&old))return 98;
+    FlushInstructionCache(GetCurrentProcess(),region,4096);
+    const Fn cpp[]={porsche::heap_copy_005b0100,porsche::heap_copy_005b02c0,porsche::heap_copy_005b0480};
+    const U sizes[]={0,1,2,3,4,5,7,8,9,15,16,17,23,24,25,31,32,33,39,40,63,64,65,95,96,97,119,120,127,128,129,159,160,255,256,257};
+    const int deltas[]={-64,-32,-16,-8,-1,0,1,8,16,32,64,4096};
+    for(U backend=0;backend<3;++backend)for(U align=0;align<32;++align)
+      for(U size:sizes)for(int delta:deltas){
+        const U dest=1024+align;
+        const U source=static_cast<U>(static_cast<int>(dest)+delta);
+        for(U j=0;j<sizeof(a);++j)a[j]=b[j]=static_cast<unsigned char>((j*37u+size*11u+backend*19u)&255u);
+        const auto x=invoke(reinterpret_cast<Fn>(original[backend]),a+dest,a+source,size);
+        const auto y=invoke(cpp[backend],b+dest,b+source,size);
+        if(std::memcmp(a,b,sizeof(a)))for(U j=0;j<sizeof(a);++j)if(a[j]!=b[j])
+            fail("memory",backend,align,size,delta,j);
+        ++checks;
+        compare(x,y,backend,align,size,delta,ptr(a+dest),ptr(b+dest));
+        ++cases;
+      }
+    std::printf("copy_backends_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);
+    return 0;
+}
+

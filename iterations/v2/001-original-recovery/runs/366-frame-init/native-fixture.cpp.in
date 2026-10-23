@@ -1,0 +1,63 @@
+#include "frame_init.hpp"
+#include "../364-mouse-startup-children/startup_mouse_children.hpp"
+#include "porsche/render_driver_calls.hpp"
+#include "porsche/render_event_route.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char pe_copy[40]={@COPY@},pe_inc[7]={@INC@},pe_dec[7]={@DEC@},pe_init[82]={@INIT@};
+static const unsigned char pe_wrapper[6]={@WRAPPER@},pe_callbacks[12]={@CALLBACK_DATA@},pe_z[4]={@Z_DATA@};
+static unsigned char *copy_code,*inc_code,*dec_code,*init_code,*wrapper_code;
+static U cases=0,checks=0;
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const unsigned char* p){U x;std::memcpy(&x,p,4);return x;}
+static void die(const char* why,U where=0){std::printf("fixture %s %08x\n",why,where);ExitProcess(98);}
+namespace porsche {
+U render_driver_bounds_a_006a643c=0,render_driver_bounds_b_006a6438=0,render_driver_bounds_c_006a6430=0,render_driver_bounds_d_006a6434=0;
+U render_driver_limit_a_006a6448=0,render_driver_limit_b_006a6444=0,render_driver_limit_c_006a6440=0;
+U render_display_texture_width_005deac8=0,render_display_texture_height_005deacc=0;
+U render_event_dispatch_gate_005deaac=0;
+std::int32_t startup_cursor_x_005deab0=0,startup_cursor_y_005deab4=0;
+// Accepted canonical no-op is an isolated transport endpoint here.
+U __cdecl render_event_default_callback_005367b0(U){return 0;}
+}
+static unsigned char* install(const unsigned char* data,U n){auto* p=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE));if(!p)die("alloc");std::memcpy(p,data,n);return p;}
+static void patch(unsigned char* p,U n,U before,U after,U expected){U count=0;for(U i=0;i+4<=n;++i)if(word(p+i)==before){std::memcpy(p+i,&after,4);++count;i+=3;}if(count!=expected)die("patch-count",before);}
+static void protect(unsigned char* p){DWORD old;if(!VirtualProtect(p,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),p,4096);}
+static void install_all(){
+    if(word(pe_callbacks)!=0x5367b0||word(pe_callbacks+4)!=0x5367b0||word(pe_callbacks+8)!=0x5367b0||word(pe_z))die("raw-initial-data");
+    copy_code=install(pe_copy,40);inc_code=install(pe_inc,7);dec_code=install(pe_dec,7);init_code=install(pe_init,82);wrapper_code=install(pe_wrapper,6);
+    using namespace porsche;
+    patch(copy_code,40,0x6a6448,ptr(&render_driver_limit_a_006a6448),1);patch(copy_code,40,0x6a6444,ptr(&render_driver_limit_b_006a6444),1);patch(copy_code,40,0x6a6440,ptr(&render_driver_limit_c_006a6440),1);
+    patch(copy_code,40,0x5deab0,ptr(&startup_cursor_x_005deab0),1);patch(copy_code,40,0x5deab4,ptr(&startup_cursor_y_005deab4),1);patch(copy_code,40,0x5deab8,ptr(&startup_cursor_z_005deab8),2);
+    patch(inc_code,7,0x6a644c,ptr(&startup_frame_counter_006a644c),1);patch(dec_code,7,0x6a644c,ptr(&startup_frame_counter_006a644c),1);
+    patch(init_code,82,0x5deac8,ptr(&render_display_texture_width_005deac8),1);patch(init_code,82,0x5deacc,ptr(&render_display_texture_height_005deacc),1);
+    patch(init_code,82,0x6a6430,ptr(&render_driver_bounds_c_006a6430),1);patch(init_code,82,0x6a6434,ptr(&render_driver_bounds_d_006a6434),1);patch(init_code,82,0x6a6438,ptr(&render_driver_bounds_b_006a6438),1);patch(init_code,82,0x6a643c,ptr(&render_driver_bounds_a_006a643c),1);
+    patch(init_code,82,0x6a644c,ptr(&startup_frame_counter_006a644c),1);patch(init_code,82,0x5deaac,ptr(&render_event_dispatch_gate_005deaac),1);
+    patch(init_code,82,0x5debe0,ptr(&startup_frame_callback_005debe0),1);patch(init_code,82,0x5debe4,ptr(&startup_frame_callback_005debe4),1);patch(init_code,82,0x5debe8,ptr(&startup_frame_callback_005debe8),1);
+    patch(init_code,82,0x572640,ptr(copy_code),1);patch(init_code,82,0x572670,ptr(inc_code),1);patch(init_code,82,0x572680,ptr(dec_code),1);
+    patch(wrapper_code,6,0x5debe8,ptr(&startup_frame_callback_005debe8),1);
+    for(auto* p:{copy_code,inc_code,dec_code,init_code,wrapper_code})protect(p);
+}
+static U normalize(std::uintptr_t value){using namespace porsche;if(value==ptr(copy_code)||value==reinterpret_cast<std::uintptr_t>(&startup_frame_copy_00572640))return 1;if(value==ptr(inc_code)||value==reinterpret_cast<std::uintptr_t>(&startup_frame_increment_00572670))return 2;if(value==ptr(dec_code)||value==reinterpret_cast<std::uintptr_t>(&startup_frame_decrement_00572680))return 3;return static_cast<U>(value);}
+struct State{U words[17];};
+static State snapshot(){using namespace porsche;return {{render_driver_bounds_a_006a643c,render_driver_bounds_b_006a6438,render_driver_bounds_c_006a6430,render_driver_bounds_d_006a6434,render_driver_limit_a_006a6448,render_driver_limit_b_006a6444,render_driver_limit_c_006a6440,render_display_texture_width_005deac8,render_display_texture_height_005deacc,render_event_dispatch_gate_005deaac,static_cast<U>(startup_cursor_x_005deab0),static_cast<U>(startup_cursor_y_005deab4),startup_cursor_z_005deab8,startup_frame_counter_006a644c,normalize(startup_frame_callback_005debe0),normalize(startup_frame_callback_005debe4),normalize(startup_frame_callback_005debe8)}};}
+static void compare(const State& a,const State& b,U ar,U br,const char* name){++checks;if(ar!=br){std::printf("divergence %s return=%08x/%08x\n",name,ar,br);std::fflush(stdout);ExitProcess(1);}for(U i=0;i<17;++i){++checks;if(a.words[i]!=b.words[i]){std::printf("divergence %s slot=%u %08x/%08x\n",name,i,a.words[i],b.words[i]);std::fflush(stdout);ExitProcess(1);}}++cases;}
+static void reset(U a,U b,U c){using namespace porsche;render_driver_bounds_a_006a643c=11;render_driver_bounds_b_006a6438=22;render_driver_bounds_c_006a6430=33;render_driver_bounds_d_006a6434=44;render_driver_limit_a_006a6448=a;render_driver_limit_b_006a6444=b;render_driver_limit_c_006a6440=c;render_display_texture_width_005deac8=a;render_display_texture_height_005deacc=b;render_event_dispatch_gate_005deaac=9;startup_cursor_x_005deab0=55;startup_cursor_y_005deab4=66;startup_cursor_z_005deab8=77;startup_frame_counter_006a644c=c;startup_frame_callback_005debe0=0x12345678;startup_frame_callback_005debe4=0x23456789;startup_frame_callback_005debe8=0x3456789a;}
+static void init_case(U a,U b,U c){reset(a,b,c);reinterpret_cast<void(__cdecl*)()>(init_code)();auto expected=snapshot();reset(a,b,c);porsche::startup_frame_init_00572690();compare(expected,snapshot(),0,0,"init");}
+static void copy_case(U a,U b,U c,bool wrapper){using namespace porsche;reset(a,b,c);startup_frame_callback_005debe8=ptr(copy_code);U ar=reinterpret_cast<U(__cdecl*)()>(wrapper?wrapper_code:copy_code)();auto expected=snapshot();reset(a,b,c);startup_frame_callback_005debe8=reinterpret_cast<std::uintptr_t>(&startup_frame_copy_00572640);U br=wrapper?reinterpret_cast<U(__cdecl*)()>(wrapper_code)():startup_frame_copy_00572640();compare(expected,snapshot(),ar,br,"copy");}
+static void counter_case(U seed,bool increment){reset(10,20,seed);reinterpret_cast<void(__cdecl*)()>(increment?inc_code:dec_code)();auto expected=snapshot();reset(10,20,seed);if(increment)porsche::startup_frame_increment_00572670();else porsche::startup_frame_decrement_00572680();compare(expected,snapshot(),0,0,"counter");}
+static void chain_case(){using namespace porsche;reset(0x80000000,0xffffffff,0x12345678);reinterpret_cast<void(__cdecl*)()>(init_code)();reinterpret_cast<void(__cdecl*)()>(startup_frame_callback_005debe0)();auto first=snapshot();reinterpret_cast<void(__cdecl*)()>(startup_frame_callback_005debe4)();auto second=snapshot();U ar=reinterpret_cast<U(__cdecl*)()>(wrapper_code)();auto final=snapshot();reset(0x80000000,0xffffffff,0x12345678);startup_frame_init_00572690();reinterpret_cast<void(__cdecl*)()>(startup_frame_callback_005debe0)();compare(first,snapshot(),0,0,"chain-dec");reinterpret_cast<void(__cdecl*)()>(startup_frame_callback_005debe4)();compare(second,snapshot(),0,0,"chain-inc");U br=reinterpret_cast<U(__cdecl*)()>(wrapper_code)();compare(final,snapshot(),ar,br,"chain-copy");}
+int main(){using namespace porsche;
+    auto default_address=reinterpret_cast<std::uintptr_t>(&render_event_default_callback_005367b0);
+    if(startup_cursor_z_005deab8||startup_frame_counter_006a644c||startup_frame_callback_005debe0!=default_address||startup_frame_callback_005debe4!=default_address||startup_frame_callback_005debe8!=default_address)die("production-initial-state");
+    install_all();
+    for(U a:{0u,640u,0x7fffffffu,0x80000000u,0xffffffffu})for(U b:{0u,480u,0xffffffffu}){init_case(a,b,0x87654321);copy_case(a,b,a^b,false);copy_case(a,b,a^b,true);}
+    for(U seed:{0u,1u,0x7fffffffu,0x80000000u,0xfffffffeu,0xffffffffu})for(bool inc:{false,true})counter_case(seed,inc);
+    chain_case();
+    std::printf("frame_init_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

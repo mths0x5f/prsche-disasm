@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "kind": "frame-init-original-state-and-ABI-evidence",
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
+  },
+  "queries": [
+    "rg exact00572640/70/80/90 in catalog/functions and original disassembly",
+    "rg case-insensitive005deab8/006a644c/005debe0/e4/e8 across source/runs C++ headers and sources including aliases",
+    "full raw PE HIGHLOW scan for exact cell addresses and interior bytes",
+    "raw original x86 decode005727b0..005727b5 found missing indexed indirect-jump consumer"
+  ],
+  "sections": [
+    {
+      "name": ".text",
+      "rva": 4096,
+      "virtual_size": 1763008,
+      "raw_size": 1765376,
+      "raw_pointer": 4096
+    },
+    {
+      "name": "PACODE",
+      "rva": 1769472,
+      "virtual_size": 6905,
+      "raw_size": 8192,
+      "raw_pointer": 1769472
+    },
+    {
+      "name": ".rdata",
+      "rva": 1777664,
+      "virtual_size": 102153,
+      "raw_size": 102400,
+      "raw_pointer": 1777664
+    },
+    {
+      "name": ".data",
+      "rva": 1880064,
+      "virtual_size": 1008952,
+      "raw_size": 114688,
+      "raw_pointer": 1880064
+    },
+    {
+      "name": ".rsrc",
+      "rva": 2891776,
+      "virtual_size": 2470,
+      "raw_size": 4096,
+      "raw_pointer": 1994752
+    },
+    {
+      "name": ".reloc",
+      "rva": 2895872,
+      "virtual_size": 130356,
+      "raw_size": 131072,
+      "raw_pointer": 1998848
+    }
+  ],
+  "highlow_scan": {
+    "entries": 56746,
+    "cell_operand_sites": {
+      "005deab8": [
+        "0057265e",
+        "00572663"
+      ],
+      "006a644c": [
+        "00572672",
+        "00572682",
+        "005726af"
+      ],
+      "005debe0": [
+        "005726c5"
+      ],
+      "005debe4": [
+        "005726cf"
+      ],
+      "005debe8": [
+        "005726d9",
+        "005727b2"
+      ]
+    },
+    "interior_cell_targets": [],
+    "limits": "No claim that absence of HIGHLOW targets excludes arbitrary computed aliases or unrelocated numerics."
+  },
+  "cells": {
+    "005deab8": {
+      "owner": "frame_init.cpp",
+      "initial": 0,
+      "storage": "file-backed DWORD",
+      "raw_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "read_write_sites": [
+        "0057265c write",
+        "00572662 read returned EAX"
+      ]
+    },
+    "006a644c": {
+      "owner": "frame_init.cpp",
+      "initial": 0,
+      "storage": ".data virtual tail beyond raw_size; PE loader zero-fills",
+      "read_write_sites": [
+        "00572670 INC DWORD",
+        "00572680 DEC DWORD",
+        "005726ae zero DWORD"
+      ],
+      "ABI": "INC/DEC RET bodies do not define EAX; void callers only in bounded fixture; no production readers established"
+    },
+    "005debe0/e4/e8": {
+      "owner": "frame_init.cpp",
+      "initial_raw": [
+        "005367b0",
+        "005367b0",
+        "005367b0"
+      ],
+      "native_transport": "uintptr_t of existing canonical render_event_default_callback_005367b0; original VAs never used as native call targets",
+      "frame_write_targets": [
+        "00572680",
+        "00572670",
+        "00572640"
+      ],
+      "consumer": "005727b0 tail-jumps through005debe8; missing indexed6B body pinned as original oracle only. No direct callers of005727b0 found. No e0/e4 read sites established."
+    }
+  },
+  "reused_owners": {
+    "006a6430/34/38/3c,006a6440/44/48": "source/recovered/Porsche.exe/render_driver_calls.cpp",
+    "005deac8/cc": "source/recovered/Porsche.exe/render_display.cpp",
+    "005deaac": "source/recovered/Porsche.exe/render_event_route.cpp",
+    "005deab0/b4": "runs/364-mouse-startup-children/startup_mouse_children.cpp",
+    "005367b0": "source/recovered/Porsche.exe/render_event_route.cpp"
+  },
+  "ABI": {
+    "00572690": "cdecl no stack args; startup call00536e69 discards EAX; source void",
+    "00572640": "no stack args; explicit EAX load of005deab8 before RET; uint32 return checked directly and through original005727b0",
+    "00572670/80": "no stack args, RET, EAX undefined; uint32 storage wraps modulo2^32",
+    "callback_cells": "opaque DWORD address transport; no homogeneous callable signature asserted"
+  },
+  "boundaries": [
+    "No new ownership of contiguous neighbours. Source/runs search found no existing storage definitions for the5 new cells; Run179 exported globals are declarations only.",
+    "No concurrency, externally computed alias, live callback invocation or complete startup/display acceptance established.",
+    "The fixture invokes e0/e4 via exact known target signatures for bounded comparison; no real reader ABI inferred.",
+    "No new function implementation or recovery count for005727b0 or005367b0."
+  ],
+  "registry_preimplementation_check": {
+    "file": "iterations/v2/001-original-recovery/source/recovered/functions.json",
+    "matching_owners_or_body_ranges": 0,
+    "new_entry_vas": [
+      "00572640",
+      "00572670",
+      "00572680",
+      "00572690"
+    ]
+  },
+  "canonical_default_transport": {
+    "source": "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/render_event_route.cpp",
+    "source_sha256": "a44c610e8900f823485f0ee235d66ba35f9d0f2fd84b0a4e3d900d966caec1d0",
+    "original_body_hex": "33c0c3",
+    "limits": "Existing canonical no-op is reused by address; fixture endpoint tests identity, not a new default-provider recovery."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "experiment": "local/experiments/v2-diagnostic-parser-347-rea",
+  "queries": [
+    {"label":"device-parser","tool":"analyze_function","arguments":{"procedure":"0x0055ed50"}},
+    {"label":"channel-parser","tool":"analyze_function","arguments":{"procedure":"0x0055f060"}},
+    {"label":"environment","tool":"analyze_function","arguments":{"procedure":"0x005a3050"}},
+    {"label":"mono-format","tool":"analyze_function","arguments":{"procedure":"0x00592a50"}},
+    {"label":"device-name-lookup","tool":"analyze_function","arguments":{"procedure":"0x0055ee70"}},
+    {"label":"channel-name-lookup","tool":"analyze_function","arguments":{"procedure":"0x0055f0f0"}}
+  ]
+}

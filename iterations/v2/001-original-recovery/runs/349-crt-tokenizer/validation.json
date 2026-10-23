@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "passed": true,
+  "native_cases": 38,
+  "mutations": 7,
+  "rea": [
+    {
+      "schema": 1,
+      "passed": true,
+      "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+      "receipt": "local/experiments/v2-diagnostic-formatter-350-rea/002/receipt.json",
+      "receipt_sha256": "2574dfb272fedc22cd6736e1a89556438d118a3b4744316c8d8010cb64b2adba",
+      "config_sha256": "0ba20fd18aac49412be8192dfef7b1655936bc17b7eb364d24bb668b3d243e10",
+      "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+      "server_pid": 211448,
+      "same_server_identity": true,
+      "bodies": {
+        "tokenizer": {
+          "address": "0x5a30ee",
+          "bytes": 164,
+          "sha256": "39ac14e07f59c472c601c18d6e56bb42f3ab3d2af8dce77cbc11421315e3b7eb"
+        },
+        "vsprintf": {
+          "address": "0x5a299e",
+          "bytes": 81,
+          "sha256": "af95e00c7add4ad752a0db1696f6c6c8131974d9ba58cbd9427b278dda65966d"
+        },
+        "mono-write": {
+          "address": "0x592b60",
+          "bytes": 384,
+          "sha256": "d01741d6d49108b03ed1de6939f06c81c0fba97efab8a823b6a3f4a1d4054063"
+        },
+        "mono-character": {
+          "address": "0x592d00",
+          "bytes": 105,
+          "sha256": "3efe3f80f2161b2ebb2bb0ca348f736984576dceb37afbbd8a2bd5132cf6225b"
+        },
+        "mono-scroll": {
+          "address": "0x592d70",
+          "bytes": 77,
+          "sha256": "dc556a1ad4854ef1c2800caae23c7f0eaf486b3a8565418f26a91923fb105f93"
+        },
+        "mono-reset": {
+          "address": "0x592e00",
+          "bytes": 10,
+          "sha256": "cbf4303e90456312b61168964852fbcae4c58f842851cea3e8088acee331f6bc"
+        }
+      },
+      "repeated_equal": [],
+      "timings_ms": {
+        "initialize": 8729.056,
+        "open": 3749.476,
+        "session-before": 107.757,
+        "tokenizer": 94503.77,
+        "vsprintf": 44.194,
+        "mono-write": 99.048,
+        "mono-character": 27.654,
+        "mono-scroll": 55.735,
+        "mono-reset": 29.142,
+        "session-final": 54.866,
+        "close": 425.588
+      },
+      "native_acceptance": false,
+      "game_executed": false
+    }
+  ],
+  "source_pins": 465,
+  "game_sources": 183,
+  "build_sha256": "a4b4f8af8230bc3d3a1deae74b2bb096453d304d1bbf9077519024fdc7e915df",
+  "unresolved_names": 250,
+  "unresolved_references": 267,
+  "closed_names": [
+    "?application_diagnostic_tokenize_005a30ee@porsche@@YAPADPADPBD@Z"
+  ],
+  "new_names": [],
+  "canonical_providers": {
+    "?platform_flush_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?context_selector_pointer_005e4fec@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_state_005e4fe8@porsche@@YAPAXXZ": "application_heap_state.obj",
+    "?application_context_heap_selector_005e4fec@porsche@@YAIXZ": "application_heap_state.obj",
+    "?application_main_function_004a54e0@porsche@@YAXXZ": "shutdown_helpers_311.obj",
+    "?application_heap_shutdown_0059eb20@porsche@@YAXXZ": "application_heap_state.obj",
+    "?application_heap_identity_0059e9b0@porsche@@YAPAXPAXH@Z": "application_heap_state.obj",
+    "?application_heap_zero_0059e9c0@porsche@@YAIZZ": "application_heap_state.obj",
+    "?application_heap_measure_00569ad0@porsche@@YAII@Z": "heap_callbacks.obj",
+    "?application_heap_queue_clean_0059ee30@porsche@@YAXI@Z": "heap_shutdown.obj",
+    "?application_heap_block_005aef20@porsche@@YAPAXPAX@Z": "heap_callbacks.obj",
+    "?application_heap_destroy_005699f0@porsche@@YAII@Z": "heap_shutdown.obj",
+    "?application_heap_tag_00556680@porsche@@YAIPBX@Z": "heap_callbacks.obj",
+    "?application_diagnostic_channels_005df4a0@porsche@@3PAUDiagnosticChannel@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_device_image_005e1c88@porsche@@3UDiagnosticDeviceImage@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_devices_005e1c8c@porsche@@3AAY07UDiagnosticDevice@1@A": "diagnostic_devices.obj",
+    "?application_diagnostic_started_006a57cc@porsche@@3IA": "diagnostic_devices.obj",
+    "?application_heap_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_heap_secondary_stop_0055ec30@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_printf_start@porsche@@YAXIPBD@Z": "diagnostic_devices.obj",
+    "?application_queue_kind@porsche@@YAXII@Z": "diagnostic_devices.obj",
+    "?application_secondary_start@porsche@@YAXXZ": "diagnostic_devices.obj",
+    "?application_fill@porsche@@YAXPAXII@Z": "fill_binding.obj",
+    "?heap_fill_0053c290@porsche@@YAXPAXII@Z": "0053c290.obj",
+    "?application_diagnostic_channel_set_0055efd0@porsche@@YAXII@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_callback_00586ca0@porsche@@YAXIPBD@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_callback_00586cb0@porsche@@YAXIPBD@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_callback_00586cc0@porsche@@YAXIPBD@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_device_set_0055ed20@porsche@@YAXII@Z": "diagnostic_leaves.obj",
+    "?application_diagnostic_output_debug_string@porsche@@YGXPBD@Z": "platform_debug_output.obj",
+    "?application_diagnostic_environment_005a3050@porsche@@YAPBDPBD@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_channel_parse_0055f060@porsche@@YAXPBD@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_device_parse_0055ed50@porsche@@YAXPBD@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_copy_lower_0055edf0@porsche@@YAXPBDPADI@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_prefix_0055eeb0@porsche@@YAHPBD0@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_device_lookup_0055ee70@porsche@@YAHPBD@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_channel_lookup_0055f0f0@porsche@@YAHPBD@Z": "diagnostic_parsers.obj",
+    "?application_diagnostic_tokenize_005a30ee@porsche@@YAPADPADPBD@Z": "crt_tokenizer.obj",
+    "?formatter_crt_thread_005a545c@porsche@@YAPAXXZ": "formatter_crt_runtime.obj"
+  },
+  "game_executed": false,
+  "executable": null,
+  "native_receipt_sha256": "461886bd22a3d8ccfc58c529d9f320bf9f1866c194737bac6deafcf3b1959244"
+}

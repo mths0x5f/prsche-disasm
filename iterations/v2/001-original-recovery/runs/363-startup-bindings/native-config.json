@@ -1,0 +1,42 @@
+{
+  "run": 363,
+  "experiment": "local/experiments/v2-startup-bindings-native-363",
+  "timeout_seconds": 30,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp",
+    "iterations/v2/001-original-recovery/source/platform/formatter_error_links.cpp",
+    "iterations/v2/001-original-recovery/source/platform/win32_core.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/363-startup-bindings/native-fixture.cpp.in",
+  "include_dirs": ["iterations/v2/001-original-recovery/source/include"],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/include/porsche/application_instance.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/startup_services.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_strings.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/formatter_text.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_threads.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp",
+    "iterations/v2/001-original-recovery/source/include/porsche/file_events.hpp"
+  ],
+  "original_bodies": [
+    {"token":"@MUTEX@","va":"00565615","bytes":6,"sha256":"18186c642c090f5b9dc202b95cbcce8217ad892c8e19b09e81c4297037804370"},
+    {"token":"@ERROR@","va":"00565620","bytes":6,"sha256":"9c83088269cfe6ba23fdb9ac6350e2e495fd5a425d324ac886025c994859c3e0"},
+    {"token":"@FILENAME@","va":"004a5c51","bytes":6,"sha256":"42d7a680ba85978ad193d75703d26491ebe1cf4e0a3e9d25765166e43fd8416f"},
+    {"token":"@ALPHA@","va":"004a5c83","bytes":5,"sha256":"19f4f8f469976d77729c696f147786566fad1c9470b5f81e2576b598eeede84b"},
+    {"token":"@THREAD@","va":"0059e9d6","bytes":5,"sha256":"2d71b923d5e3a25d8caeb66f56aa497833f1978805af7c2b5a20ce96a48e04c1"},
+    {"token":"@LOCK@","va":"0059ea1a","bytes":5,"sha256":"b88a052f740cdeaa91f19e092435bdbfd051db2b11c3eb5d4c9651b52e4222ac"}
+  ],
+  "pass_marker": "startup_bindings_original_calls_vs_cpp=PASS",
+  "mutations": [
+    {"name":"mutex-owner-lost","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"static_cast<BOOL>(initial_owner),name);","new":"static_cast<BOOL>(0),name);","expected_exit":1},
+    {"name":"mutex-name-lost","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"static_cast<BOOL>(initial_owner),name);","new":"static_cast<BOOL>(initial_owner),nullptr);","expected_exit":1},
+    {"name":"last-error-lost","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"application_instance_get_last_error(){return platform_last_error();}","new":"application_instance_get_last_error(){(void)platform_last_error();return 0;}","expected_exit":1},
+    {"name":"filename-capacity-changed","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"return formatter_error_module_name(module,buffer,capacity);","new":"return formatter_error_module_name(module,buffer,capacity+1u);","expected_exit":1},
+    {"name":"drive-byte-changed","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"return formatter_text_alpha_005a2c24(c);","new":"return formatter_text_alpha_005a2c24(c+1);","expected_exit":1},
+    {"name":"thread-count-changed","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"application_os_start(std::uint32_t count){thread_init_0055f320(count);}","new":"application_os_start(std::uint32_t count){thread_init_0055f320(count+1u);}","expected_exit":1},
+    {"name":"lock-pointer-lost","source":"iterations/v2/001-original-recovery/runs/363-startup-bindings/startup_binding.cpp","old":"application_lock_create(){return heap_lock_create_005321f0();}","new":"application_lock_create(){(void)heap_lock_create_005321f0();return nullptr;}","expected_exit":1}
+  ]
+}

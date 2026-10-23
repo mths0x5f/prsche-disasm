@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "passed": true,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-texture-constructor-375-rea/001/receipt.json",
+  "receipt_sha256": "5f66e473209356861013341d0b7c2b92ea40f35c19a9a700002e164acfd4ad7d",
+  "config_sha256": "9b47ba5cdbbe9d07f31cff9e9571b64999d0e7db5a8e6af92bedc0e1122f414e",
+  "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+  "server_pid": 232752,
+  "same_server_identity": true,
+  "bodies": {
+    "texture-constructor": {
+      "address": "0x535700",
+      "bytes": 584,
+      "sha256": "eca74949c7b3d956d41abe24d1808c9ee55eb8cc3f5219f817ccb8ac513ca209"
+    },
+    "depth-format": {
+      "address": "0x535380",
+      "bytes": 129,
+      "sha256": "fcbea3bf847ca3bc55431eb8c981ed7efbe3b21092a4e18f2f5767210c749b12"
+    },
+    "heap-largest": {
+      "address": "0x569a90",
+      "bytes": 59,
+      "sha256": "e8e77de9672a97b64b6a2b822cb875016e2a3d9b8026a8fde1d6747cd66e1110"
+    }
+  },
+  "repeated_equal": [],
+  "timings_ms": {
+    "initialize": 11325.607,
+    "open": 4214.552,
+    "session-before": 141.141,
+    "texture-constructor": 100043.125,
+    "depth-format": 71.566,
+    "heap-largest": 57.161,
+    "session-final": 87.188,
+    "close": 404.322
+  },
+  "native_acceptance": false,
+  "game_executed": false
+}

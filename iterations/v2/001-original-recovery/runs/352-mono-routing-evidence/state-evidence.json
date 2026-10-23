@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "kind": "read-only-original-mono-state-ownership-trace",
+  "original": {
+    "module": "Porsche.exe",
+    "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39"
+  },
+  "image_layout": {
+    "005e25dc_to_005e25e9": "file-backed .data, contiguous original cell block; raw bytes 02 00 00 00 00 00 0b 00 80 07 00 00 07 08",
+    "006af140_and_006af148": "same PE .data virtual section but beyond its raw_size; zero-filled on image load, not file-backed cells",
+    "source": "static/binaries.jsonl .data rva 1880064, raw_size 114688, vsize 1008952; defined-data.jsonl and SHA-checked inspect-pe-range"
+  },
+  "cells": {
+    "005e25dc": {
+      "initial": "2",
+      "indexed_reads": [
+        "0056a810:0056a81e",
+        "00592a50:00592a50",
+        "unpromoted 00592ac0",
+        "00592b60:00592b60",
+        "00592d70:00592d70"
+      ],
+      "indexed_writes": []
+    },
+    "005e25e0": {
+      "initial": "0x000b0000",
+      "indexed_reads": [
+        "00592b60:00592be5",
+        "00592d00:00592d2b,00592d42",
+        "00592d70:00592d97"
+      ],
+      "indexed_writes": []
+    },
+    "005e25e4": {
+      "initial": "0x780",
+      "indexed_writers": [
+        "unpromoted 00592ac0:00592b16",
+        "00592b60:00592c80,00592ca1,00592cc9",
+        "00592d00:00592d5e"
+      ],
+      "indexed_readers": [
+        "00592b60",
+        "00592d00"
+      ]
+    },
+    "005e25e8": {
+      "initial": "7",
+      "indexed_readers": [
+        "00592b60:00592bce"
+      ],
+      "indexed_writer": "00592e00:00592e04"
+    },
+    "005e25e9": {
+      "initial": "8",
+      "indexed_readers": [
+        "00592b60:00592c2a,00592c4c"
+      ],
+      "indexed_writes": []
+    },
+    "006af140": {
+      "initial": "zero-fill",
+      "indexed_writers": [
+        "00592a50:00592a6e",
+        "unpromoted 00592ac0:00592ade",
+        "00592d70:00592d87"
+      ],
+      "indexed_readers": [
+        "00592a50",
+        "unpromoted 00592ac0",
+        "00592d70"
+      ]
+    },
+    "006af148": {
+      "initial": "zero-fill",
+      "indexed_readers": [
+        "00592b60:00592cb9",
+        "00592d00:00592d0c"
+      ],
+      "indexed_writes": []
+    }
+  },
+  "unpromoted_callback": {
+    "entry_va": "00592ac0",
+    "last_instruction_va": "00592b56 RET",
+    "extent_bytes": 151,
+    "raw_body_sha256": "c8aaa2d05235c9ad49e2e46ba4e303f156bff4572bc2b877ffc8ebb2ff828fd5",
+    "padding": "00592ab5..00592abf and 00592b57..00592b5f are NOPs",
+    "incoming_index_ref": "0056a810:0056a829 takes 00592ac0 as callback address when flag bit0 and output level >2",
+    "abi": "x86 cdecl RET; x at [ESP+4], y at [ESP+8], format at [ESP+12], then varargs",
+    "effects": "if level >=2, lazy-create and enter 006af140 lock; if x 0..79 and y 0..24 set 005e25e4=(y*80+x)*2; format into local 256 bytes via 005a299e, write with 00592b60, leave lock, return zero",
+    "sources": [
+      "research/v2/binaries/Porsche.exe-ddd748fdbe6d/disassembly.asm:494361",
+      "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl",
+      "SHA-checked original PE range"
+    ]
+  },
+  "subsystem_closure": {
+    "00592a50": "101 bytes; level gate, lazy lock, vsprintf, mono writer",
+    "00592ac0": "151 bytes unpromoted XY callback",
+    "00592b60": "384 bytes; control characters, cursor, attribute, tab and display memory writes",
+    "00592d00": "105 bytes; scrolls rows via accepted 005323e0 and unrecovered 0053c290, resets cursor",
+    "00592d70": "77 bytes; clears 4000 bytes through display pointer under lock",
+    "00592e00": "10 bytes; attribute byte setter",
+    "005a299e": "81 bytes; original formatting bridge to already accepted core 005a4371 and cleanup 005a4259",
+    "accepted_lock_callees": [
+      "005321f0",
+      "005322b0",
+      "005322c0"
+    ],
+    "other_direct_unrecovered": [
+      "0053c290"
+    ]
+  },
+  "platform_boundary": "The indexed mono functions contain no display-map or OS-display call. 005e25e0 is never written by indexed direct refs and remains the file-backed 0x000b0000 value; the write/clear paths dereference that value as memory. Level starts at 2, so the >=2 gates alone do not disable writes. 0056a810 registers the optional XY callback only at level >2, but that does not establish memory usability or suppress other mono callers. No current original evidence proves a Win32 mapping or a safe host address for 0x000b0000. Indexed absence does not exclude indirect alias writes; those require separate relocation/consumer proof.",
+  "recommendation": "Treat the seven mono bodies and seven cells as one candidate original-image subsystem for native proof, with a single canonical storage owner only after overlapping byte layout and alias checks. First supplement the SHA-guarded 00592ac0 function index and verify display-memory access or original disable conditions against the original process; then test 00592a50/005a299e/00592b60/00592d00/00592d70/00592e00 in one bounded harness using original state transitions and output bytes. Keep 0x000b0000 display effects external to the game build until their platform provenance is established; do not add a host screen replacement or guess a disabled level.",
+  "evidence": [
+    "local/experiments/v2-diagnostic-parser-347-rea/002/mono-format.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-write.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-character.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-scroll.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/mono-reset.json",
+    "local/experiments/v2-diagnostic-formatter-350-rea/002/vsprintf.json",
+    "research/binary-index/ghidra/Porsche.exe-ddd748fdbe6d/references.jsonl",
+    "research/v2/binaries/Porsche.exe-ddd748fdbe6d/defined-data.jsonl"
+  ]
+}

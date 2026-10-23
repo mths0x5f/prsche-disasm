@@ -1,5 +1,143 @@
 # Отложенные проверки восстановления v2
 
+Run384 accepts finite/defaultFP clipping and exactinputimports (63720comparisons/
+14mutations,524-input audit). Geometrynonfinite/denormal/extreme/ambientFP, actual
+OS/THRASH/concurrency and full startup/menu remain HOLD. Unchanged221readonlyowner
+is integrated after001 exposedmissingdependency; no duplicatefloatcell.
+385 audit rejectsunsafealiases and records earlyconditionalOSgaps, mandatoryheap
+poolcomposition, raw0059fbc0 callback and0048fc80 ECXconstructor behindcdeclfacade.
+386/387 must retain partial/error/terminal boundaries; do notinferwholeacceptance
+from BSSsuccess or map raworiginalVAs silently to nativepointers. No gameEXEyet.
+
+Run379 accepts five pixel-path bodies after1067246 comparisons/21mutations and
+519-input audit. Palette indices outside0..255, invalid spans/computedaliases,
+non-nearest FP/concurrency and full renderer composition remain HOLD.380 composes
+actual378+newhelpers with381 endpoint boundaries; actual381 rawtransport/store
+proof is separate. Rectangle0056daf0 geometry is next382;383 closes inputimports.
+No gameEXE/live startup/display/menu/gameplay acceptance.
+
+Run377 accepts constructor/depth map/globalheap query (25288 comparisons/13
+mutations,512-input audit). OOM/failure/diagnostic branches are compared with
+controlled endpoints; actual heap scan/state owners reused, no duplicatearena.
+Real formatter/allocator/fill/renderer composition, malformed spans/chains and
+concurrency remain HOLD. Next378/380/381 originalpixel path, preserving legacy
+ABI and unusual byte/float transport. No linkedgame/live startup/display/menu.
+
+Run374 accepts full00534480 plusfour helpers:8800 comparisons/8 mutations,
+508-input integration audit PASS. Existing null-only wrapper/source stays frozen.
+The test uses a controlled external005dead0; actual splash owner is pinned and
+unique in game COFF, not separately native-composed here. Selected descriptor/
+lock-buffer aliases proved; arbitrary spans, allocation failure, ambient x87,
+concurrency and actual snapshot?renderer composition remain HOLD. Next00535700
+constructor. No linked game, live startup/display/menu or gameplay acceptance.
+
+Run373 accepts371 snapshot and372 async callbacks:15446 comparisons/16 mutations,
+505-input audit PASS. Known snapshot buffers are independent96B stack allocations;
+arbitrary/computed global aliases remain HOLD. Typed queue views reuse existing
+slots; malformed/cyclic lists, live concurrency and scheduler/allocator composition
+are unaccepted. Next374 completes non-null00534480; old null wrapper remains frozen.
+No linked EXE, live startup/display, menu or gameplay acceptance yet.
+
+Run370 closes exact input transports, typed wheel/exit callbacks and originalsort.
+Native923322 comparisons/14mutations plus500-input game audit PASS. Originalnamed
+DINPUT export/library loads in isolated probes; no device function executes there.
+Legacy callback ABI issue is resolved by proved address-only alias tostdcall;
+existing361/364 source unchanged. Sort invalid spans/inconsistent callbacks and
+stack capacity outside bounded valid cases remain open. Next snapshot371 must
+reuse fragmented state owners, preserve block order/actualargument and explicitly
+bound unknown aliases; real OS/COM/concurrency/fullstartup/display still HOLD.
+
+Run366 accepts original frameinit/three callbacks (120 comparisons/four mutations).
+Cell defaults relocate canonical005367b0; raw reader005727b0 is oracle/navigation
+only. Missing e0/e4 consumers, actual reader execution, computed aliases and
+concurrency remain open. Next mouse callback00537020 isstdcall RET0x18 despite
+legacy address-onlycdecl declaration361: prove binding or update affected proofs.
+DirectInput original import library and renderer snapshot composition remain open.
+
+Run364 restores mouse cleanup/mode/cursor (62 comparisons/three mutations).
+Live COM, snapshot00570ed0/00570f00 composition, thread transitions/concurrency
+and game/display remain HOLD. Initial mode words are4/2/1. Frame366 must index
+omitted callbacks and005727b0 jump and prove actual callback-cell transports.
+
+Run361 integrates original mouse/pool startup after138 comparisons/nine mutations.
+Original GUID/format data and BSS are checked before oracle relocation/reset;
+known property-success/cursor.x overlap preserved. Failed GetCursorPos followed
+by successful ScreenToClient leaves opaque y; real COM/OS, allocator failure,
+concurrency and full startup remain HOLD. Ten hidden child dependencies exposed.
+365 partial REA fails at unrecognized00572640; callback/index/ownership gap blocks
+frame00572690. Trace raw assembly callbacks before defining cells; no guessed VAs.
+
+Run363 closes six startup transports with18 comparisons/seven mutations and
+exact CreateMutexA/canonical provider identities. Controlled IAT endpoints are
+not real OS lifecycle, duplicate-instance or CD relaunch acceptance. Pending361
+requires rawPE GUID identity, returned EAX, cursor failure-state and initialBSS
+checks before its device/pool code enters production. Mouse-state child batch
+and partial005679f0 composition remain open; no game EXE/display/menu yet.
+
+Runs358/359 bind six Win32 loader and five settings/alias facades after34 native
+comparisons/12 mutations. Tests redirect only their own EXE IAT and restore it;
+no real DLL/display acceptance. Alias cell2 is read live, independently of cell27.
+Unlock006bd92c token provenance remains open. Startup360 identifies unconditional
+DirectInput00536e50 and pool00563ad0 before rendering; linked EXE, first display
+and playable menu remain separate, unachieved milestones.361 must prove original
+state/COM/pool behavior; no guessed services or device globals.
+
+
+Run357 adds11 renderer transports after26 comparisons/seven mutations. Original
+CALL excerpts plus synthetic argument/RET setup prove selected ABI, not runtime
+renderer behavior. Settings/alias/unlock cases remain separate. Full COFF paths
+now distinguish equal source basenames. SDK library support preserves historical
+native-runner provenance via its exact committed blob; source/fixture drift is
+still rejected, and accepted native cases are not rerun for tool-only changes.
+
+
+Run356 binds nine game_setup/splash renderer names after22 original-callsite
+comparisons/seven mutations. Synthetic snippet RET/EDI setup is harness-only;
+loader078 proof covers unchanged table acquisition, not live THRASH effects.
+357 display/proc helpers are separate; settings/unlock/alias-slot ABI, DLL/OS,
+framebuffer/visual and full-game acceptance remain open. No new renderer state.
+
+
+Run354 restores three original x87/MMX/SSE copy backends after82944 comparisons/
+six mutations. Bounds cover sizes0..257,32 alignments and both overlap directions.
+CPU checks use EMMS/FNINIT and zero XMM0/1; arbitrary ambient stack/control/XMM
+state, FIP/FDP equality, invalid spans, full dispatcher/backend composition and
+concurrent streaming visibility remain unaccepted. The fixture observes memory
+after SFENCE; production preserves no-fence SSE and dispatcher-only MMX EMMS.
+
+
+Run353 restores seven mono functions and exact initial state after88 comparisons/
+nine mutations. Signed tab/newline state now includes negative cursors; negative
+glyph writes,row>24 and output>=256 remain unsafe/unaccepted. Original0xb0000
+access with PRINT_DEVICE enabled, descriptor-tail arbitrary contents and full
+formatter/OS/game composition remain HOLD. Native003 supersedes001/002.
+
+
+Run351 binds canonical lock providers after18 pointer/ABI comparisons/five
+mutations; real contention/lifecycle remain unaccepted. Run352 pins omitted
+mono callback00592ac0 and original state/routing. Default device flags avoid mono,
+but PRINT_DEVICE may enable it;0xb0000 access in a live original/host process is
+not proven.353 may recover exact bounded algorithms/data, with this OS/alias/
+format-overflow domain kept explicit. Startup report raw original string VAs
+005d6e3c/005d1400 require mapping/variadic proof; a same-VA alias is not accepted.
+
+
+Run349 restores the original tokenizer and canonical CRT thread access after38
+native comparisons/seven mutations. Full parser+TLS concurrency/composition and
+null input with null saved continuation remain unaccepted; no host fallback.
+Mono formatting350 stays evidence-only pending display-state/lifecycle proof.
+
+
+Run348: seven diagnostic functions pass164 native comparisons/eight mutations;
+tokenizer and environment-inner remain explicit boundaries. Inclusive copy can
+write a terminator at destination[capacity]; capacity zero underflows and parser
+input>=255 can spill its original256-byte local. These are unaccepted domains,
+not authorization for a silent clamp. Full parser/TLS and environment lifecycle
+composition, arbitrary table aliases, formatter/display/OS/game/visual checks remain
+open. Original environment state is owned by CRT startup005a2d1a/005a9106;
+006afcc8/006afcd0 vectors and006c1528 guard must not receive guessed zero providers.
+
+
 Run346 diagnostic setters/callbacks pass100 bounded native cases/four mutations.
 OutputDebugStringA binding is structurally proven as a pure JMP to the original
 Win32 import; real output/OS/visual composition remains untested. Device/channel

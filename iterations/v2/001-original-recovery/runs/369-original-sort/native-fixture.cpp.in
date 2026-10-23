@@ -1,0 +1,88 @@
+#include "porsche/window_handlers.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+namespace porsche {
+void __cdecl original_sort_swap_005a12cd(void*,void*,U);
+void __cdecl original_sort_short_005a127f(std::uintptr_t,std::uintptr_t,U,
+                                        std::int32_t(__cdecl*)(const void*,const void*));
+}
+// Three adjacent original bodies: all relative calls stay within this image.
+static const unsigned char pe_sort[462]={@SORT_BODIES@};
+static unsigned char* oracle;
+static unsigned char arena[8192],expected[8192];
+struct Event {U left,right,ka,kb;};
+static Event trace[32768],saved[32768];
+static U calls,saved_calls,cases,mode,width;
+static unsigned char* base;
+static void die(const char* why){std::printf("divergence %s case=%u\n",why,cases);std::fflush(stdout);ExitProcess(1);}
+static std::int32_t __cdecl compare(const void* a,const void* b) {
+    if(calls>=32768)die("trace capacity");
+    const auto* x=static_cast<const unsigned char*>(a);
+    const auto* y=static_cast<const unsigned char*>(b);
+    trace[calls++]={static_cast<U>(x-base),static_cast<U>(y-base),*x,*y};
+    const int ka=mode ? static_cast<std::int8_t>(*x) : *x;
+    const int kb=mode ? static_cast<std::int8_t>(*y) : *y;
+    return ka<kb ? (-2147483647-1) : ka>kb ? 2147483647 : 0;
+}
+static void seed(U count,U size,U pattern,U alignment) {
+    std::memset(arena,0xa5,sizeof(arena));base=arena+32+alignment;width=size;calls=0;
+    U random=0x912abd57u;
+    for(U i=0;i<count && size;++i) {
+        random=random*1664525u+1013904223u;
+        U key=pattern==0?i:pattern==1?count-i:pattern==2?i%3:
+              pattern==3?random>>24:pattern==4?17:i<count/2?i:count-i;
+        base[i*size]=static_cast<unsigned char>(key);
+        for(U j=1;j<size;++j)base[i*size+j]=static_cast<unsigned char>(i*37u+j*13u);
+    }
+}
+using Sort=void(__cdecl*)(void*,U,U,std::int32_t(__cdecl*)(const void*,const void*));
+static void one(U count,U size,U pattern,U alignment,bool short_only=false) {
+    seed(count,size,pattern,alignment);
+    if(short_only) {
+        using Short=void(__cdecl*)(std::uintptr_t,std::uintptr_t,U,std::int32_t(__cdecl*)(const void*,const void*));
+        reinterpret_cast<Short>(oracle+340)(reinterpret_cast<std::uintptr_t>(base),
+            reinterpret_cast<std::uintptr_t>(base)+(count-1)*size,size,compare);
+    } else reinterpret_cast<Sort>(oracle)(base,count,size,compare);
+    std::memcpy(expected,arena,sizeof arena);saved_calls=calls;
+    std::memcpy(saved,trace,calls*sizeof(Event));
+    seed(count,size,pattern,alignment);
+    if(short_only)porsche::original_sort_short_005a127f(reinterpret_cast<std::uintptr_t>(base),
+        reinterpret_cast<std::uintptr_t>(base)+(count-1)*size,size,compare);
+    else porsche::window_handler_sort_005a112b(base,count,size,compare);
+    ++cases;
+    if(std::memcmp(expected,arena,sizeof arena))die("sort bytes");
+    if(calls!=saved_calls||std::memcmp(saved,trace,calls*sizeof(Event)))die("comparator order/arguments");
+}
+static void swap_case(U offset,U size) {
+    using Swap=void(__cdecl*)(void*,void*,U);
+    for(U direction=0;direction<2;++direction) {
+        for(U i=0;i<sizeof arena;++i)arena[i]=static_cast<unsigned char>(i*17+3);
+        auto* a=arena+64;auto* b=a+offset;if(direction){auto* t=a;a=b;b=t;}
+        reinterpret_cast<Swap>(oracle+418)(a,b,size);std::memcpy(expected,arena,sizeof arena);
+        for(U i=0;i<sizeof arena;++i)arena[i]=static_cast<unsigned char>(i*17+3);
+        porsche::original_sort_swap_005a12cd(a,b,size);++cases;
+        if(std::memcmp(expected,arena,sizeof arena))die("swap bytes/overlap");
+    }
+}
+int main() {
+    oracle=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE));
+    if(!oracle)die("allocation");std::memcpy(oracle,pe_sort,sizeof pe_sort);
+    DWORD old=0;if(!VirtualProtect(oracle,4096,PAGE_EXECUTE_READ,&old))die("protect");
+    FlushInstructionCache(GetCurrentProcess(),oracle,sizeof pe_sort);
+    const U counts[]={0,1,2,7,8,9,16,31,64,128};
+    const U sizes[]={1,2,3,4,8,13,31};
+    for(mode=0;mode<2;++mode)for(U count:counts)for(U size:sizes)
+      for(U pattern=0;pattern<6;++pattern)for(U align:{0u,1u,3u})one(count,size,pattern,align);
+    for(U count:{0u,1u,8u,128u})one(count,0,0,0);
+    for(U count:{1u,2u,7u,8u})for(U size:{1u,3u,8u})for(U pattern=0;pattern<6;++pattern)
+      one(count,size,pattern,0,true);
+    for(U offset=0;offset<9;++offset)for(U size:{0u,1u,7u,16u,33u})swap_case(offset,size);
+    reinterpret_cast<Sort>(oracle)(nullptr,0,8,compare);
+    porsche::window_handler_sort_005a112b(nullptr,0,8,compare);++cases;
+    std::printf("original_sort_pe_vs_cpp=PASS cases=%u\n",cases);return 0;
+}

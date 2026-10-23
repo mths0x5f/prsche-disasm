@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 18,
+  "new_original_functions": 0,
+  "abi_bindings": 2,
+  "entry_vas": [
+    "005322b0",
+    "005322c0"
+  ],
+  "original_code_bytes": 24,
+  "mutation_controls": 5,
+  "native_receipt": "local/experiments/v2-heap-lock-bindings-native-351/003/receipt.json",
+  "native_receipt_sha256": "513ae1b777655d4f8497025b47183fa2abbe88930c81c5aa90833bba5e5d1e54",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/native-fixture.cpp.in": "eafea9674db84b62a4b8934cd38c3c93fde584708d44f8ab1368ad89e06a71e2",
+    "iterations/v2/001-original-recovery/runs/351-heap-lock-bindings/lock_binding.cpp": "9ea8dfdd3bc72d6e4e58911dca40e56c1134e4ae70294eff335d914035b4d0b3",
+    "iterations/v2/001-original-recovery/source/recovered/Porsche.exe/heap_locks.cpp": "280a5903bb07b57e48c1ebc9f501b6683fa5b88624f9315446075662c3bf54ec",
+    "iterations/v2/001-original-recovery/source/include/porsche/application_heap.hpp": "0a81eebdef41820d773e553a061eda3c9a117aba88d1b42afc7a42a6fd6497ee",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap.hpp": "ab65110e0e6326deca139b06960dc5dce50d86da9f70779b29aea298d0eabddf",
+    "iterations/v2/001-original-recovery/source/include/porsche/heap_locks.hpp": "2aadb26f89cdf7ee84259187e6087d33beb3e9b969ac9a9885919429f4d6b92e"
+  },
+  "hold": "Lock contention and full game lifecycle remain outside the bounded adapter proof."
+}

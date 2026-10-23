@@ -1,0 +1,60 @@
+{
+  "run": 369,
+  "experiment": "local/experiments/v2-original-sort-native-369",
+  "timeout_seconds": 60,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/369-original-sort/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/source/include/porsche/window_handlers.hpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@SORT_BODIES@",
+      "va": "005a112b",
+      "bytes": 462,
+      "sha256": "4877db96dc3695decb9416d6414e8c63fd81de6b412f459a13e4ed5113790bf9"
+    }
+  ],
+  "pass_marker": "original_sort_pe_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "small-threshold",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "old": "if(size<=8)",
+      "new": "if(size<=7)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "pivot-position",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "old": "low+(size>>1)*width",
+      "new": "low+((size-1u)>>1)*width",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "short-ties",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "old": "reinterpret_cast<const void*>(maximum))>0)",
+      "new": "reinterpret_cast<const void*>(maximum))>=0)",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    },
+    {
+      "name": "swap-byte",
+      "source": "iterations/v2/001-original-recovery/runs/369-original-sort/original_sort.cpp",
+      "old": "*right++=saved;",
+      "new": "*right++=0;",
+      "expected_exit": 1,
+      "failure_marker": "divergence"
+    }
+  ]
+}

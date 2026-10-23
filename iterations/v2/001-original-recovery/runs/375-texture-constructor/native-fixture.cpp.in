@@ -1,0 +1,183 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <cstdarg>
+#include <initializer_list>
+#include <utility>
+#include "texture_constructor.hpp"
+#include "porsche/shared_runtime_globals.hpp"
+#include "porsche/files.hpp"
+#include "porsche/window_shutdown.hpp"
+#include "porsche/window_scheduler.hpp"
+#include "porsche/splash_progress.hpp"
+using U=std::uint32_t;using B=std::uint8_t;
+static const B create_raw[584]={@CREATE@},format_raw[129]={@FORMAT@},
+    jump_raw[28]={@JUMP@},lookup_raw[24]={@LOOKUP@},bits_raw[128]={@BITS@},errors_raw[4]={@ERRORS@},
+    source_raw[]={@SOURCE@},tag_raw[]={@TAG@},dimensions_raw[]={@DIMENSIONS@},memory_raw[]={@MEMORY@},depth_raw[]={@DEPTH@};
+static B *create_code,*format_code;static U jumps[7],cases,checks;
+static B arena[192];static bool fail_alloc;static U mutations,available;
+struct Event{U kind,args[6],file,line,errors,format;char text[128];B arena[192];};
+static Event log_events[8];static U log_count;
+static U address(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U value;std::memcpy(&value,p,4);return value;}
+static void put(void* p,U value){std::memcpy(p,&value,4);}
+static void die(const char* why,U detail=0){std::printf("fixture %s %08x\n",why,detail);std::fflush(stdout);ExitProcess(98);}
+static Event& event(U kind){using namespace porsche;if(log_count==8)die("events");auto& e=log_events[log_count++];e={};e.kind=kind;
+    e.file=shared_runtime_word_005deb74;e.line=shared_runtime_word_005deb78;e.errors=texture_create_errors_005deb80;
+    e.format=splash_progress_format_005dead0;std::memcpy(e.arena,arena,sizeof arena);return e;}
+extern "C" void __cdecl report_endpoint(const char* text,...){
+    auto& e=event(5);std::snprintf(e.text,sizeof e.text,"%s",text);
+    U n=std::strcmp(text,porsche::texture_create_depth_005bb674)==0?3:5;
+    va_list args;va_start(args,text);for(U i=0;i<n;++i)e.args[i]=va_arg(args,U);va_end(args);
+    if(mutations&8)porsche::texture_create_errors_005deb80^=0xa73b8c51u;
+}
+namespace porsche {
+// Explicit controlled external cells; their actual production owner sources
+// and accepted proofs are pinned separately. No game source defines duplicates.
+U render_thrash_exports_006bd910[43]{};
+U splash_progress_format_005dead0=0;
+void (__cdecl* diagnostic_handler_005debf0)(const char*)=reinterpret_cast<void(__cdecl*)(const char*)>(&report_endpoint);
+std::int32_t __cdecl formatter_entry_005a0fbf(char* out,const char* format,...){
+    auto& e=event(1);if(std::strcmp(format,texture_create_tag_005bb654))die("tag-format");
+    va_list args;va_start(args,format);for(U i=0;i<3;++i)e.args[i]=va_arg(args,U);va_end(args);
+    return std::snprintf(out,16,format,e.args[0],e.args[1],e.args[2]);
+}
+void* __cdecl application_allocator_entry_00531f70(const char* source,U bytes,U flags){
+    auto& e=event(2);e.args[0]=bytes;e.args[1]=flags;std::snprintf(e.text,sizeof e.text,"%s",source);
+    if(mutations&1){splash_progress_format_005dead0^=0x87654321u;texture_create_errors_005deb80+=7;}
+    return fail_alloc?nullptr:arena+32;
+}
+void __cdecl heap_fill_0053c290(void* p,U pattern,U bytes){
+    auto& e=event(3);e.args[0]=address(p);e.args[1]=pattern;e.args[2]=bytes;
+    if(p!=arena+32||pattern||bytes!=64)die("fill-span",bytes);
+    std::memset(p,0,bytes);
+    // Controlled child mutation checks the original low-byte sprite update.
+    if(mutations&2)put(arena+32+48,0xa735c200u);
+}
+U __cdecl startup_sequence_value_00569a90(){auto& e=event(4);e.args[0]=available;
+    if(mutations&4){texture_create_errors_005deb80^=0x34561278u;shared_runtime_word_005deb78^=0x76382514u;}return available;}
+U __stdcall window_shutdown_close_handle_006bd92c(void*){die("unexpected-close");return 0;}
+void __cdecl application_instance_exit_005a246e(U){die("unexpected-exit");}
+TimedCallbackSlot* __cdecl window_scheduler_remove_005366a0(TimedCallback){die("unexpected-scheduler");return nullptr;}
+}
+static B* install(const B* data,U bytes){auto* p=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));if(!p)die("alloc");std::memcpy(p,data,bytes);return p;}
+static void patch(B* code,U size,U before,U after,U expected){U n=0;for(U i=0;i+4<=size;++i)if(word(code+i)==before){put(code+i,after);++n;i+=3;}if(n!=expected)die("relocation",before);}
+static void call(U site,U target,const void* replacement){U i=site-0x535700;if(i+5>584||create_code[i]!=0xe8||site+5+word(create_code+i+1)!=target)die("callsite",site);put(create_code+i+1,address(replacement)-address(create_code+i+5));}
+static void protect(B* p){DWORD old;if(!VirtualProtect(p,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),p,4096);}
+static void install_all(){using namespace porsche;
+    create_code=install(create_raw,584);format_code=install(format_raw,129);
+    for(U i=0;i<7;++i){U va=word(jump_raw+4*i);if(va<0x535380||va>0x535400)die("jump-table");jumps[i]=address(format_code+va-0x535380);}
+    patch(format_code,129,0x535420,address(lookup_raw),1);patch(format_code,129,0x535404,address(jumps),1);
+    patch(create_code,584,0x5dead0,address(&splash_progress_format_005dead0),1);
+    patch(create_code,584,0x5deb74,address(&shared_runtime_word_005deb74),3);
+    patch(create_code,584,0x5deb78,address(&shared_runtime_word_005deb78),3);
+    patch(create_code,584,0x5deb80,address(&texture_create_errors_005deb80),2);
+    patch(create_code,584,0x5debf0,address(&diagnostic_handler_005debf0),3);
+    patch(create_code,584,0x5bb660,address(texture_create_source_005bb660),3);
+    patch(create_code,584,0x5bb654,address(texture_create_tag_005bb654),1);
+    patch(create_code,584,0x5bb5b8,address(texture_create_dimensions_005bb5b8),1);
+    patch(create_code,584,0x5bb608,address(texture_create_memory_005bb608),1);
+    patch(create_code,584,0x5bb674,address(texture_create_depth_005bb674),1);
+    call(0x535759,0x535380,format_code);
+    call(0x535767,0x537f90,reinterpret_cast<const void*>(&render_descriptor_bits_00537f90));
+    call(0x535800,0x5a0fbf,reinterpret_cast<const void*>(&formatter_entry_005a0fbf));
+    call(0x535810,0x531f70,reinterpret_cast<const void*>(&application_allocator_entry_00531f70));
+    call(0x53584b,0x569a90,reinterpret_cast<const void*>(&startup_sequence_value_00569a90));
+    call(0x53587a,0x53c290,reinterpret_cast<const void*>(&heap_fill_0053c290));
+    protect(create_code);protect(format_code);
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1,eax;};
+static Capture invoke(const void* fn,U argc,const U* args){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        mov ecx,argc
+        mov edx,args
+        cmp ecx,5
+        jb four
+        push dword ptr [edx+16]
+    four:
+        cmp ecx,4
+        jb three
+        push dword ptr [edx+12]
+    three:
+        cmp ecx,3
+        jb two
+        push dword ptr [edx+8]
+    two:
+        cmp ecx,2
+        jb one
+        push dword ptr [edx+4]
+    one:
+        cmp ecx,1
+        jb callit
+        push dword ptr [edx]
+    callit:
+        mov ecx,fn
+        call ecx
+        lea edx,r
+        mov [edx+40],eax
+        mov ecx,argc
+        shl ecx,2
+        add esp,ecx
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }return r;
+}
+
+static bool abi(const Capture& c){return c.sp0==c.sp1&&c.bp0==c.bp1&&c.bx0==c.bx1&&c.si0==c.si1&&c.di0==c.di1&&c.bx0==0x13579bdfu&&c.si0==0x2468ace0u&&c.di0==0x6a31c5e7u;}
+struct State{U file,line,errors,format,count;B arena[192];Event log[8];};
+static State state(){using namespace porsche;State s{};s.file=shared_runtime_word_005deb74;s.line=shared_runtime_word_005deb78;s.errors=texture_create_errors_005deb80;s.format=splash_progress_format_005dead0;s.count=log_count;std::memcpy(s.arena,arena,sizeof arena);std::memcpy(s.log,log_events,sizeof log_events);return s;}
+static U random(U& s){s=s*1664525u+1013904223u;return s;}
+static void reset(U seed,U format,U fail,U mutation,U errors){using namespace porsche;
+    for(auto& b:arena)b=static_cast<B>(random(seed)>>24);shared_runtime_word_005deb74=random(seed);shared_runtime_word_005deb78=random(seed);
+    texture_create_errors_005deb80=errors;splash_progress_format_005dead0=format;available=random(seed);fail_alloc=fail!=0;mutations=mutation;
+    log_count=0;std::memset(log_events,0,sizeof log_events);
+}
+static void compare(const Capture& a,const State& x,const Capture& b,const State& y,U kind){++cases;checks+=3;
+    if(!abi(a)||!abi(b)||a.eax!=b.eax||std::memcmp(&x,&y,sizeof x)){
+        std::printf("divergence texture kind=%u case=%u abi=%u/%u result=%08x/%08x events=%u/%u\n",kind,cases,abi(a),abi(b),a.eax,b.eax,x.count,y.count);
+        for(U i=0;i<sizeof x;++i)if(reinterpret_cast<const B*>(&x)[i]!=reinterpret_cast<const B*>(&y)[i]){std::printf("state-offset=%u\n",i);break;}
+        std::fflush(stdout);ExitProcess(1);
+    }
+}
+static void format_case(U depth){U args[5]={depth};reset(1,0,0,0,0);auto a=invoke(format_code,1,args);auto x=state();reset(1,0,0,0,0);auto b=invoke(reinterpret_cast<const void*>(&porsche::texture_depth_format_00535380),1,args);compare(a,x,b,state(),1);}
+static void create_case(U seed,U width,U height,U depth,U flags,U diagnostics,U format,U fail,U mutation,U errors){
+    U args[5]={width,height,depth,flags,diagnostics};reset(seed,format,fail,mutation,errors);auto a=invoke(create_code,5,args);auto x=state();reset(seed,format,fail,mutation,errors);auto b=invoke(reinterpret_cast<const void*>(&porsche::render_descriptor_allocate_00535700),5,args);compare(a,x,b,state(),2);
+}
+int main(){using namespace porsche;
+    // Check raw constants before relocation; production new/canonical state
+    // defaults before resetting. External fixture cells are explicit above.
+    if(texture_create_errors_005deb80!=word(errors_raw)||shared_runtime_word_005deb74||shared_runtime_word_005deb78)die("initial-state");
+    if(std::memcmp(render_descriptor_bits_005de890,bits_raw,128)||
+       sizeof(source_raw)!=std::strlen(texture_create_source_005bb660)+1||std::memcmp(source_raw,texture_create_source_005bb660,sizeof source_raw)||
+       sizeof(tag_raw)!=std::strlen(texture_create_tag_005bb654)+1||std::memcmp(tag_raw,texture_create_tag_005bb654,sizeof tag_raw)||
+       sizeof(dimensions_raw)!=std::strlen(texture_create_dimensions_005bb5b8)+1||std::memcmp(dimensions_raw,texture_create_dimensions_005bb5b8,sizeof dimensions_raw)||
+       sizeof(memory_raw)!=std::strlen(texture_create_memory_005bb608)+1||std::memcmp(memory_raw,texture_create_memory_005bb608,sizeof memory_raw)||
+       sizeof(depth_raw)!=std::strlen(texture_create_depth_005bb674)+1||std::memcmp(depth_raw,texture_create_depth_005bb674,sizeof depth_raw))die("raw-constants");
+    install_all();
+    for(U d=0;d<9000;++d)format_case(d);
+    U seed=0xc3816a72;for(U i=0;i<256;++i)format_case(random(seed));
+    for(U width:{0u,1u,2u,3u,7u,8u,9u,15u,16u,31u,640u,16384u})
+      for(U height:{0u,1u,3u,480u,8192u})
+        for(U depth:{0u,1u,4u,8u,15u,16u,24u,32u,0x22bu,0x235u,0x378u,0x613u,0x115cu,0x22b8u,3u,0xffffffffu})
+          for(U fail:{0u,1u})create_case(seed,width,height,depth,0xa73bc91fu,1,0,fail,15,0xffffffffu);
+    for(U width:{0xffffffffu,0x80000000u,0u,0x4000u,0x4001u,0x7fffffffu})
+      for(U height:{0xffffffffu,0x80000000u,0u,0x2000u,0x2001u,0x7fffffffu})
+        for(U diag:{0u,1u,0x80000000u})create_case(seed,width,height,16,0,diag,0,1,15,0xffffffffu);
+    for(U format:{0u,1u,4u,8u,15u,16u,24u,32u,3u,0xffffffffu})for(U diag:{0u,0xffffffffu})for(U fail:{0u,1u})
+      for(U mutation:{0u,15u})create_case(seed,13,17,0,0x80000001u,diag,format,fail,mutation,0xfffffff9u);
+    std::printf("texture_constructor_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "native_cpp_equal_original_x86": true,
+  "cases": 26,
+  "new_original_functions": 0,
+  "abi_bindings": 11,
+  "original_call_instruction_bytes": 66,
+  "mutation_controls": 7,
+  "native_receipt": "local/experiments/v2-render-display-bindings-native-357/002/receipt.json",
+  "native_receipt_sha256": "d630c92322560dbc63c304f5781e64165d653ee2224966259a42f93767c07e09",
+  "source_sha256": {
+    "iterations/v2/001-original-recovery/runs/357-render-display-bindings/native-fixture.cpp.in": "e110ad7ad78d98bec0a54f35c8704f68cb3a05046683d03d257f46077cfea352",
+    "iterations/v2/001-original-recovery/runs/357-render-display-bindings/render_binding.cpp": "baf00b81079e6105a324194c49e8248116a0dd3c07e3d1e33feac529f46d3b44",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_display.hpp": "f32055181c315a54038c6aaf2bd2ab54f4d773f50551f761aee0e9b27bad9e2d",
+    "iterations/v2/001-original-recovery/source/include/porsche/render_loader.hpp": "791c31583efb742a11a7c55545766a19b8bed23dda44480e4f4cedd436b2344d"
+  },
+  "holds": [
+    "The callsite proof establishes transport and selected caller result use, not THRASH renderer semantics or runtime visual acceptance.",
+    "render_settings result ABI, unlockwindow/close-handle same-VA naming, and loader alias-slot consumers remain separate unresolved work."
+  ]
+}

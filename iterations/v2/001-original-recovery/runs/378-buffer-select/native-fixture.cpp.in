@@ -1,0 +1,155 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+#include "buffer_select.hpp"
+#include "porsche/window_shutdown.hpp"
+#include "porsche/window_scheduler.hpp"
+#include "porsche/render_loader.hpp"
+#include "porsche/render_display.hpp"
+using U=std::uint32_t;using B=std::uint8_t;using I=std::int32_t;
+static_assert(sizeof(void*)==4);
+static const B original[293]={@ORIGINAL@},jumps_raw[24]={@JUMPS@},map_raw[29]={@MAP@},initial_raw[48]={@INITIAL@};
+static B* code;static U jumps[6],cases=0,checks=0;
+static B pixels[64];static U renderer[32],side_effect=0,next_depth=0,alias_output=0;
+struct Event{U kind,a,b,c;B config[48],pixels[64];};static Event events[16];static U count;
+namespace porsche {U render_thrash_exports_006bd910[43]{};}
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U v;std::memcpy(&v,p,4);return v;}
+static U bits(float f){U v;std::memcpy(&v,&f,4);return v;}
+static void die(const char* s,U n=0){std::printf("fixture %s %08x\n",s,n);std::fflush(stdout);ExitProcess(98);}
+static void rec(U kind,U a=0,U b=0,U c=0){if(count>=16)die("events");auto& e=events[count++];e={};
+    e.kind=kind;e.a=a;e.b=b;e.c=c;std::memcpy(e.config,porsche::window_shutdown_config_005de620,48);std::memcpy(e.pixels,pixels,64);
+}
+extern "C" U __stdcall get_endpoint(U key){if(key>=32)die("get-key",key);rec(0,key);return renderer[key];}
+extern "C" U __stdcall set_endpoint(U key,U value){if(key>=32)die("set-key",key);rec(1,key,value);renderer[key]=value;return 0x87654321u;}
+extern "C" void __stdcall texture_endpoint(U value){rec(2,value);renderer[1]=value;}
+namespace porsche {
+U __cdecl render_buffer_convert_00574b70(U pixel){rec(3,pixel);
+    if(side_effect&1){renderer[10]^=0x76543210u;renderer[1]^=0x90abcdefu;window_shutdown_mode_005de630=0;}
+    return pixel^0xa53c817eu;
+}
+void __cdecl render_buffer_draw_0056de20(float x,float y,U pixel){rec(4,bits(x),bits(y),pixel);
+    if(side_effect&2){pixels[7]^=0x5a;window_shutdown_config_005de620[7]^=0x12345678u;}
+}
+void* __cdecl render_buffer_address_00574050(I x,I y){rec(5,static_cast<U>(x),static_cast<U>(y));
+    if(side_effect&4){reinterpret_cast<B*>(window_shutdown_config_005de620)[13]=static_cast<B>(next_depth);
+        window_shutdown_mode_005de630=128;window_shutdown_config_005de620[5]^=0x87654321u;}
+    return alias_output?reinterpret_cast<B*>(window_shutdown_config_005de620)+36:pixels+17;
+}
+void* __cdecl render_buffer_word_0056e301(void* destination,U pixel,I bytes){rec(6,ptr(destination),pixel,static_cast<U>(bytes));
+    if(bytes!=3)die("word-bytes");auto* out=static_cast<B*>(destination);
+    // Controlled little-endian endpoint; the original helper stays external.
+    out[0]=static_cast<B>(pixel);out[1]=static_cast<B>(pixel>>8);out[2]=static_cast<B>(pixel>>16);
+    return out+3;
+}
+// Canonical shutdown owner is linked intact; these unused services fail closed.
+U __stdcall window_shutdown_close_handle_006bd92c(void*){die("unexpected-close");return 0;}
+void __cdecl application_instance_exit_005a246e(U){die("unexpected-exit");}
+TimedCallbackSlot* __cdecl window_scheduler_remove_005366a0(TimedCallback){die("unexpected-remove");return nullptr;}
+}
+static void patch(U before,U after,U expected){U n=0;
+    for(U i=0;i+4<=293;++i)if(word(code+i)==before){std::memcpy(code+i,&after,4);++n;i+=3;}
+    if(n!=expected)die("absolute-relocation",before);
+}
+static void call(U site,U target,const void* destination){U off=site-0x556910;
+    if(off+5>293||code[off]!=0xe8||site+5+word(code+off+1)!=target)die("call-target",site);
+    U rel=ptr(destination)-ptr(code+off+5);std::memcpy(code+off+1,&rel,4);
+}
+static void install(){using namespace porsche;
+    code=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));if(!code)die("alloc");std::memcpy(code,original,293);
+    for(U i=0;i<6;++i){U va=word(jumps_raw+4*i);if(va<0x556910||va>0x556a34)die("jump-target",va);jumps[i]=ptr(code+va-0x556910);}
+    patch(0x556a38,ptr(jumps),1);patch(0x556a50,ptr(map_raw),1);
+    patch(0x5de630,ptr(&window_shutdown_mode_005de630),1);patch(0x5de64c,ptr(&window_shutdown_state_005de64c),1);
+    patch(0x5de634,ptr(window_shutdown_config_005de620+5),1);patch(0x5de638,ptr(window_shutdown_config_005de620+6),1);
+    patch(0x5de63c,ptr(window_shutdown_config_005de620+7),1);patch(0x5de640,ptr(window_shutdown_config_005de620+8),1);
+    patch(0x5de62d,ptr(reinterpret_cast<B*>(window_shutdown_config_005de620)+13),1);
+    patch(0x6bd984,ptr(&render_thrash_exports_006bd910[29]),2);patch(0x6bd97c,ptr(&render_thrash_exports_006bd910[27]),2);
+    patch(0x6bd954,ptr(&render_thrash_exports_006bd910[17]),2);
+    call(0x556954,0x574b70,reinterpret_cast<const void*>(&render_buffer_convert_00574b70));
+    call(0x55696d,0x56de20,reinterpret_cast<const void*>(&render_buffer_draw_0056de20));
+    call(0x5569be,0x574050,reinterpret_cast<const void*>(&render_buffer_address_00574050));
+    call(0x556a23,0x56e301,reinterpret_cast<const void*>(&render_buffer_word_0056e301));
+    render_thrash_exports_006bd910[29]=ptr(reinterpret_cast<const void*>(&get_endpoint));
+    render_thrash_exports_006bd910[27]=ptr(reinterpret_cast<const void*>(&set_endpoint));
+    render_thrash_exports_006bd910[17]=ptr(reinterpret_cast<const void*>(&texture_endpoint));
+    DWORD old;if(!VirtualProtect(code,4096,PAGE_EXECUTE_READ,&old))die("protect");FlushInstructionCache(GetCurrentProcess(),code,293);
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1;};
+static Capture invoke(const void* fn,U x,U y,U pixel){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push pixel
+        push y
+        push x
+        mov ecx,fn
+        call ecx
+        add esp,12
+        lea edx,r
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }return r;
+}
+static bool abi(const Capture& c){return c.sp0==c.sp1&&c.bp0==c.bp1&&c.bx0==c.bx1&&c.si0==c.si1&&c.di0==c.di1&&
+    c.bx0==0x13579bdfu&&c.si0==0x2468ace0u&&c.di0==0x6a31c5e7u;}
+struct State{B config[48],pixels[64];U renderer[32],count;Event events[16];};
+static State state(){State s{};std::memcpy(s.config,porsche::window_shutdown_config_005de620,48);std::memcpy(s.pixels,pixels,64);
+    std::memcpy(s.renderer,renderer,sizeof renderer);s.count=count;std::memcpy(s.events,events,sizeof events);return s;
+}
+static U random(U& seed){seed=seed*1664525u+1013904223u;return seed;}
+static void reset(U seed,U mode,U active,U depth,U effects,U following,U alias){using namespace porsche;
+    for(auto& v:window_shutdown_config_005de620)v=random(seed);for(auto& b:pixels)b=static_cast<B>(random(seed)>>24);
+    for(auto& v:renderer)v=random(seed);window_shutdown_mode_005de630=static_cast<B>(mode);window_shutdown_state_005de64c=active;
+    window_shutdown_config_005de620[5]=static_cast<U>(-20);window_shutdown_config_005de620[6]=static_cast<U>(-10);
+    window_shutdown_config_005de620[7]=20;window_shutdown_config_005de620[8]=10;
+    reinterpret_cast<B*>(window_shutdown_config_005de620)[13]=static_cast<B>(depth);
+    side_effect=effects;next_depth=following;alias_output=alias;count=0;std::memset(events,0,sizeof events);
+}
+static void compare(U seed,U mode,U active,U depth,U x,U y,U pixel,U effects,U following,U alias,U facade){
+    reset(seed,mode,active,depth,effects,following,alias);auto a=invoke(code,x,y,pixel);auto expected=state();
+    reset(seed,mode,active,depth,effects,following,alias);const void* fn=facade?
+        reinterpret_cast<const void*>(&porsche::render_display_select_buffer_00556910):reinterpret_cast<const void*>(&porsche::render_buffer_select_00556910);
+    auto b=invoke(fn,x,y,pixel);auto actual=state();++cases;checks+=3;
+    if(!abi(a)||!abi(b)||std::memcmp(&expected,&actual,sizeof actual)){
+        std::printf("divergence buffer-select case=%u mode=%u active=%08x depth=%u xy=%08x/%08x events=%u/%u abi=%u/%u\n",cases,mode,active,depth,x,y,expected.count,actual.count,abi(a),abi(b));
+        const auto* e=reinterpret_cast<const B*>(&expected);const auto* c=reinterpret_cast<const B*>(&actual);
+        for(U i=0;i<sizeof(State);++i)if(e[i]!=c[i]){std::printf("first-state-offset=%u value=%02x/%02x\n",i,e[i],c[i]);break;}
+        std::fflush(stdout);ExitProcess(1);
+    }
+}
+int main(){using namespace porsche;
+    if(std::memcmp(window_shutdown_config_005de620,initial_raw,48)||window_shutdown_handle_0069dd18||window_shutdown_source_005de65c||window_shutdown_source_005de65d||window_shutdown_state_005de67c||window_shutdown_state_005de6ac)die("production-initial-state");
+    if(&window_shutdown_mode_005de630!=reinterpret_cast<B*>(window_shutdown_config_005de620)+16||&window_shutdown_state_005de64c!=window_shutdown_config_005de620+11)die("canonical-alias");
+    for(U v:render_thrash_exports_006bd910)if(v)die("fixture-table-initial");
+    U cw=0,mxcsr=0;__asm fnstcw cw
+    __asm stmxcsr mxcsr
+    if((cw&0xc00u)||(mxcsr&0x6000u))die("rounding-domain");install();
+    // Software branch: all256 depth bytes, pixel truncations/nibbles and parity.
+    for(U depth=0;depth<256;++depth)for(U x:{0u,1u,0xfffffffdu,0xfffffffeu})for(U pixel:{0u,15u,16u,0xffu,0x87654321u,0xffffffffu})
+        compare(0x5481a273,0,0,depth,x,0,pixel,0,0,0,0);
+    // Address side effects must precede the depth read; selected output aliases.
+    for(U before:{0u,4u,8u,15u,16u,24u,32u,255u})for(U after:{0u,4u,8u,15u,16u,24u,32u,255u})for(U alias:{0u,1u})
+        compare(0xffffffff,255,0,before,1,0,0x87ab43e1u,4,after,alias,1);
+    // Every signed clipping edge, independent of nominal pixel format.
+    for(U x:{0x80000000u,0xffffffebu,0xffffffecu,0xffffffedu,0u,19u,20u,21u,0x7fffffffu})
+        for(U y:{0x80000000u,0xfffffff5u,0xfffffff6u,0xfffffff7u,0u,9u,10u,11u,0x7fffffffu})
+            for(U mode:{0u,1u,255u})compare(0x81234567,mode,1,24,x,y,0x1234abcd,0,0,0,1);
+    // GPU branch bypasses clipping and converts signed DWORDs through FLOAT32.
+    for(U mode:{1u,2u,127u,128u,254u})for(U x:{0u,1u,0xffffffffu,0x80000000u,0x7fffffffu,0x1000001u})
+        for(U y:{0u,0xfffffffeu,0x80000000u,0x7fffffffu,0x1000003u})for(U effects:{0u,3u})
+            for(U facade:{0u,1u})compare(0x7edcba98,mode,0,32,x,y,0xfeed4321,effects,0,0,facade);
+    std::printf("buffer_select_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}

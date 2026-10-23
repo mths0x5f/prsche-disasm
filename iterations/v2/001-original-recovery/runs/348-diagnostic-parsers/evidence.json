@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "index_query": "research/binary-index/README.md; Porsche.exe disassembly 0055edf0, 0055eeb0, 0055ee70, 0055f0f0, 0055ed50, 0055f060, 005a3050; REA run347 attempt002",
+  "proof": {
+    "receipt": "local/experiments/v2-diagnostic-parser-native-348/003/receipt.json",
+    "status": "PASS",
+    "variants": ["/Od", "/O2"],
+    "original_vs_cpp_cases_per_variant": 82,
+    "mutations_detected": 8,
+    "original_byte_bodies": [
+      "0055edf0:117", "0055eeb0:100", "0055ee70:63", "0055f0f0:63",
+      "0055ed50:145", "0055f060:140", "005a3050:33"
+    ],
+    "abi": "x86 cdecl ESP, EBP, EBX, ESI, EDI; EAX for integer and pointer results",
+    "controlled_boundaries": [
+      "Tokenizer callback records input buffer, delimiters, and tokens; its body is a fixture boundary, not an original 005a30ee claim.",
+      "Diagnostic setters record selected index and enable value.",
+      "CRT lock 12, environment-inner, and unlock 12 record order; unlock clobbers EAX to test cached pointer return."
+    ],
+    "cases": [
+      "Lowercase copy: capacities 1, 2, 5, 8; source lengths around the inclusive limit, high bytes, overlapping buffers.",
+      "ASCII prefix scores and strict first-tie selection across eight device and 64 channel slots, including channel 63.",
+      "Device and channel tokens: spaces, commas, channel semicolon, minus and exclamation disable, unknown and high-byte tokens.",
+      "Parser input length 254 within the original fixed 256-byte local buffer.",
+      "Environment inner returns both nonnull and null pointers."
+    ]
+  },
+  "holds": [
+    "Capacity zero in 0055edf0 underflows the original unsigned limit and is not a bounded native case.",
+    "Parser inputs of length at least 255 can spill the original 256-byte local buffer and remain outside acceptance.",
+    "The original 005a30ee tokenizer body and 005a3071 environment-inner body remain unrecovered; only their caller contracts were compared."
+  ]
+}

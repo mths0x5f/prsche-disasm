@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "native_and_game": [
+    {
+      "object": "local/experiments/v2-copy-backends-native-354/008/o2-0.obj",
+      "sha256": "cc2c0c5bdb649560757c0166dc128a41f4806810532df1a93c41ad2aae899517",
+      "counts": {
+        "fild": 42,
+        "fistp": 42,
+        "fxch": 16,
+        "movq": 84,
+        "movups": 5,
+        "movntps": 2,
+        "movlps": 6,
+        "movaps": 3,
+        "emms": 0,
+        "sfence": 0
+      }
+    },
+    {
+      "object": "local/builds/v2/copy-backends-354/entry-289/porsche_game_entry_bridges.dir/Release/copy_backends.obj",
+      "sha256": "d391fb04b02049772a118510be5fd5e5d4f814bcbb009ae5e199db0bb1271fee",
+      "counts": {
+        "fild": 42,
+        "fistp": 42,
+        "fxch": 16,
+        "movq": 84,
+        "movups": 5,
+        "movntps": 2,
+        "movlps": 6,
+        "movaps": 3,
+        "emms": 0,
+        "sfence": 0
+      }
+    }
+  ],
+  "boundary": "Instruction shape only; concurrent streaming visibility and arbitrary ambient FPU state are not accepted."
+}

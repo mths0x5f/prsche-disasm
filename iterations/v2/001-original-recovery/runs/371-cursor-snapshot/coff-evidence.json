@@ -1,0 +1,94 @@
+{
+  "tool": "F:/claude/porsche disasm/local/tools/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/dumpbin.exe",
+  "tool_sha256": "364840933ceaf8e5d9b62c3a2b1fb66aef2f59fba854146e816751bc2f622ee5",
+  "objects": [
+    {
+      "path": "local/experiments/v2-cursor-snapshot-native-371/002/od-0.obj",
+      "sha256": "39da8254bdc21d1d3aabe6700bbefffc8ba0374129610876198c9c938ff4fd50",
+      "symbol_dump": "local/experiments/v2-cursor-snapshot-native-371/coff-002/od-0-symbols.txt",
+      "symbol_dump_sha256": "52a9ab1a6f11565a568af1b91859f2317ec9d77cf280b403d67ebc3d77434b1a",
+      "relevant_symbols": [
+        "009 00000000 SECT3  notype       External     | ?cursor_snapshot_prefix_005de650@porsche@@3PAEA (unsigned char * porsche::cursor_snapshot_prefix_005de650)",
+        "00C 00000000 SECT4  notype       External     | ?cursor_snapshot_suffix_005de65e@porsche@@3PAEA (unsigned char * porsche::cursor_snapshot_suffix_005de65e)",
+        "017 00000000 SECT9  notype ()    External     | ?startup_cursor_state_save_00570ed0@porsche@@YAXPAX@Z (void __cdecl porsche::startup_cursor_state_save_00570ed0(void *))",
+        "018 00000000 SECT8  notype ()    External     | ?startup_cursor_state_restore_00570f00@porsche@@YAXPBX@Z (void __cdecl porsche::startup_cursor_state_restore_00570f00(void const *))",
+        "019 00000000 UNDEF  notype ()    External     | ?window_shutdown_display_callback_006bd9b0@porsche@@YGXI@Z (void __stdcall porsche::window_shutdown_display_callback_006bd9b0(unsigned int))",
+        "01A 00000000 UNDEF  notype ()    External     | ?render_display_texture_bind_00534480@porsche@@YAXPAX@Z (void __cdecl porsche::render_display_texture_bind_00534480(void *))",
+        "01E 00000000 UNDEF  notype       External     | ?window_shutdown_mode_005de630@porsche@@3AAEA (unsigned char & porsche::window_shutdown_mode_005de630)",
+        "01F 00000000 UNDEF  notype       External     | ?window_shutdown_state_005de64c@porsche@@3AAIA (unsigned int & porsche::window_shutdown_state_005de64c)",
+        "020 00000000 UNDEF  notype       External     | ?window_shutdown_state_005de67c@porsche@@3IA (unsigned int porsche::window_shutdown_state_005de67c)",
+        "021 00000000 UNDEF  notype       External     | ?window_shutdown_config_005de620@porsche@@3PAIA (unsigned int * porsche::window_shutdown_config_005de620)",
+        "022 00000000 UNDEF  notype       External     | ?window_shutdown_source_005de65c@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65c)",
+        "023 00000000 UNDEF  notype       External     | ?window_shutdown_source_005de65d@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65d)"
+      ]
+    },
+    {
+      "path": "local/experiments/v2-cursor-snapshot-native-371/002/od-1.obj",
+      "sha256": "af352534e22d2f694223eda89af9c46265d99490150833a10a2e4bd2e6cb70af",
+      "symbol_dump": "local/experiments/v2-cursor-snapshot-native-371/coff-002/od-1-symbols.txt",
+      "symbol_dump_sha256": "9982dc638e9e567e95d5633faaf4be6ebe51c0d63c5c1e041174a8b7c1e4ef0c",
+      "relevant_symbols": [
+        "00C 00000000 SECT4  notype       External     | ?window_shutdown_mode_005de630@porsche@@3AAEA (unsigned char & porsche::window_shutdown_mode_005de630)",
+        "00D 00000004 SECT4  notype       External     | ?window_shutdown_state_005de64c@porsche@@3AAIA (unsigned int & porsche::window_shutdown_state_005de64c)",
+        "00E 00000004 SECT3  notype       External     | ?window_shutdown_state_005de67c@porsche@@3IA (unsigned int porsche::window_shutdown_state_005de67c)",
+        "010 0000000C SECT3  notype       External     | ?window_shutdown_config_005de620@porsche@@3PAIA (unsigned int * porsche::window_shutdown_config_005de620)",
+        "011 0000003C SECT3  notype       External     | ?window_shutdown_source_005de65c@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65c)",
+        "012 0000003D SECT3  notype       External     | ?window_shutdown_source_005de65d@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65d)",
+        "01C 00000000 UNDEF  notype ()    External     | ?window_shutdown_display_callback_006bd9b0@porsche@@YGXI@Z (void __stdcall porsche::window_shutdown_display_callback_006bd9b0(unsigned int))"
+      ]
+    },
+    {
+      "path": "local/experiments/v2-cursor-snapshot-native-371/002/od-2.obj",
+      "sha256": "59d7285df5275e727338a9d10e27a127c4831d5ef73a1f25c9602e773ff113a6",
+      "symbol_dump": "local/experiments/v2-cursor-snapshot-native-371/coff-002/od-2-symbols.txt",
+      "symbol_dump_sha256": "bf082f854c06688a37038c6f366a4cea2904f1b0c10f0c2e5b73126161ba6973",
+      "relevant_symbols": [
+        "01D 00000000 SECTB  notype ()    External     | ?window_shutdown_display_callback_006bd9b0@porsche@@YGXI@Z (void __stdcall porsche::window_shutdown_display_callback_006bd9b0(unsigned int))"
+      ]
+    },
+    {
+      "path": "local/experiments/v2-cursor-snapshot-native-371/002/o2-0.obj",
+      "sha256": "961267d2cf219f64f667b429d28c105c14cfc08a3f331b9d2e27036e1e8b8d3f",
+      "symbol_dump": "local/experiments/v2-cursor-snapshot-native-371/coff-002/o2-0-symbols.txt",
+      "symbol_dump_sha256": "0b5f2c087685c846bea674ec96b4d38ed971457ad97b79116ec160f3a5fb1924",
+      "relevant_symbols": [
+        "009 00000000 SECT3  notype       External     | ?cursor_snapshot_prefix_005de650@porsche@@3PAEA (unsigned char * porsche::cursor_snapshot_prefix_005de650)",
+        "00C 00000000 SECT4  notype       External     | ?cursor_snapshot_suffix_005de65e@porsche@@3PAEA (unsigned char * porsche::cursor_snapshot_suffix_005de65e)",
+        "021 00000000 SECTD  notype ()    External     | ?startup_cursor_state_save_00570ed0@porsche@@YAXPAX@Z (void __cdecl porsche::startup_cursor_state_save_00570ed0(void *))",
+        "022 00000000 SECTB  notype ()    External     | ?startup_cursor_state_restore_00570f00@porsche@@YAXPBX@Z (void __cdecl porsche::startup_cursor_state_restore_00570f00(void const *))",
+        "023 00000000 UNDEF  notype ()    External     | ?window_shutdown_display_callback_006bd9b0@porsche@@YGXI@Z (void __stdcall porsche::window_shutdown_display_callback_006bd9b0(unsigned int))",
+        "024 00000000 UNDEF  notype ()    External     | ?render_display_texture_bind_00534480@porsche@@YAXPAX@Z (void __cdecl porsche::render_display_texture_bind_00534480(void *))",
+        "028 00000000 UNDEF  notype       External     | ?window_shutdown_mode_005de630@porsche@@3AAEA (unsigned char & porsche::window_shutdown_mode_005de630)",
+        "029 00000000 UNDEF  notype       External     | ?window_shutdown_state_005de64c@porsche@@3AAIA (unsigned int & porsche::window_shutdown_state_005de64c)",
+        "02A 00000000 UNDEF  notype       External     | ?window_shutdown_state_005de67c@porsche@@3IA (unsigned int porsche::window_shutdown_state_005de67c)",
+        "02B 00000000 UNDEF  notype       External     | ?window_shutdown_config_005de620@porsche@@3PAIA (unsigned int * porsche::window_shutdown_config_005de620)",
+        "02C 00000000 UNDEF  notype       External     | ?window_shutdown_source_005de65c@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65c)",
+        "02D 00000000 UNDEF  notype       External     | ?window_shutdown_source_005de65d@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65d)"
+      ]
+    },
+    {
+      "path": "local/experiments/v2-cursor-snapshot-native-371/002/o2-1.obj",
+      "sha256": "9075874047e11edc99da85eb0a2a5599af88f9cc6a08af6842eea9420eea6b72",
+      "symbol_dump": "local/experiments/v2-cursor-snapshot-native-371/coff-002/o2-1-symbols.txt",
+      "symbol_dump_sha256": "413dc871478aad07543aea03a3d4d67488bc040ec1b0a704e23d0f8db298bcb3",
+      "relevant_symbols": [
+        "00C 00000000 SECT4  notype       External     | ?window_shutdown_mode_005de630@porsche@@3AAEA (unsigned char & porsche::window_shutdown_mode_005de630)",
+        "00D 00000004 SECT4  notype       External     | ?window_shutdown_state_005de64c@porsche@@3AAIA (unsigned int & porsche::window_shutdown_state_005de64c)",
+        "00E 00000004 SECT3  notype       External     | ?window_shutdown_state_005de67c@porsche@@3IA (unsigned int porsche::window_shutdown_state_005de67c)",
+        "010 0000000C SECT3  notype       External     | ?window_shutdown_config_005de620@porsche@@3PAIA (unsigned int * porsche::window_shutdown_config_005de620)",
+        "011 0000003C SECT3  notype       External     | ?window_shutdown_source_005de65c@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65c)",
+        "012 0000003D SECT3  notype       External     | ?window_shutdown_source_005de65d@porsche@@3EA (unsigned char porsche::window_shutdown_source_005de65d)",
+        "024 00000000 UNDEF  notype ()    External     | ?window_shutdown_display_callback_006bd9b0@porsche@@YGXI@Z (void __stdcall porsche::window_shutdown_display_callback_006bd9b0(unsigned int))"
+      ]
+    },
+    {
+      "path": "local/experiments/v2-cursor-snapshot-native-371/002/o2-2.obj",
+      "sha256": "d07e8dc9d6f4be9f1e0e672a5fe5f6f40e4891cb73c1c68d500df6955aa95783",
+      "symbol_dump": "local/experiments/v2-cursor-snapshot-native-371/coff-002/o2-2-symbols.txt",
+      "symbol_dump_sha256": "1f653d401816859e3723c5790eb2728c9ba0e4596f47ff65ff8b9ef758d2b0a0",
+      "relevant_symbols": [
+        "02F 00000000 SECT13 notype ()    External     | ?window_shutdown_display_callback_006bd9b0@porsche@@YGXI@Z (void __stdcall porsche::window_shutdown_display_callback_006bd9b0(unsigned int))"
+      ]
+    }
+  ]
+}

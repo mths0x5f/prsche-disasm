@@ -1,0 +1,250 @@
+#include "startup_device.hpp"
+#include "porsche/render_display.hpp"
+#include "porsche/startup_input.hpp"
+#include "porsche/window_create.hpp"
+#include "porsche/window_handlers.hpp"
+#include "porsche/file_threads.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+
+using U=std::uint32_t;
+static_assert(sizeof(void*)==4);
+static const unsigned char pe_body[456]={@DEVICE_BODY@};
+static const unsigned char pe_create_guid[16]={@CREATE_GUID@};
+static const unsigned char pe_query_guid[16]={@QUERY_GUID@};
+static const unsigned char pe_axis_guids[48]={@AXIS_GUIDS@};
+static const unsigned char pe_mouse_objects[112]={@MOUSE_OBJECTS@};
+static const unsigned char pe_mouse_format[24]={@MOUSE_FORMAT@};
+static unsigned char* original;
+static U scenario=0,cases=0,checks=0;
+struct Event{U type,a,b,c;};
+static Event events[64];
+static U event_count=0;
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static void event(U type,U a=0,U b=0,U c=0){if(event_count>=64)ExitProcess(98);events[event_count++]={type,a,b,c};}
+static void die(const char* why,U at=0){std::printf("fixture %s %08x\n",why,at);std::fflush(stdout);ExitProcess(98);}
+struct ObjectFormat{const porsche::StartupGuid* guid;U offset,type,flags;};
+struct DataFormat{U size,object_size,flags,data_size,object_count;const ObjectFormat* objects;};
+struct Property{U size,header_size,object,how,value;};
+static const porsche::StartupGuid sys_mouse={0x5944e682,0xc92e,0x11cf,{0xbf,0xc7,0x44,0x45,0x53,0x54,0,0}};
+static const porsche::StartupGuid input2a={0x6f1d2b60,0xd5a0,0x11cf,{0xbf,0xc7,0x44,0x45,0x53,0x54,0,0}};
+static const porsche::StartupGuid xaxis={0xa36d02e0,0xc9f3,0x11cf,{0xbf,0xc7,0x44,0x45,0x53,0x54,0,0}};
+static const porsche::StartupGuid yaxis={0xa36d02e1,0xc9f3,0x11cf,{0xbf,0xc7,0x44,0x45,0x53,0x54,0,0}};
+static const porsche::StartupGuid zaxis={0xa36d02e2,0xc9f3,0x11cf,{0xbf,0xc7,0x44,0x45,0x53,0x54,0,0}};
+static const ObjectFormat objects[7]={
+    {&xaxis,0,0x00ffff03,0},{&yaxis,4,0x00ffff03,0},{&zaxis,8,0x80ffff03,0},
+    {nullptr,12,0x00ffff0c,0},{nullptr,13,0x00ffff0c,0},
+    {nullptr,14,0x80ffff0c,0},{nullptr,15,0x80ffff0c,0}};
+static const DataFormat format={24,16,2,16,7,objects};
+static U word(const unsigned char* bytes){U value;std::memcpy(&value,bytes,4);return value;}
+static void validate_raw_format(){
+    for(U i=0;i<3;++i){
+        if(std::memcmp(pe_axis_guids+16*i,objects[i].guid,16)!=0)die("raw-axis-GUID",i);
+    }
+    const U original_guids[7]={0x005bf8f0u,0x005bf900u,0x005bf910u,0,0,0,0};
+    for(U i=0;i<7;++i){
+        const auto* raw=pe_mouse_objects+16*i;
+        if(word(raw)!=original_guids[i]||word(raw+4)!=objects[i].offset||
+           word(raw+8)!=objects[i].type||word(raw+12)!=objects[i].flags)
+            die("raw-object-format",i);
+    }
+    const U expected[6]={format.size,format.object_size,format.flags,
+        format.data_size,format.object_count,0x0056e950u};
+    for(U i=0;i<6;++i)if(word(pe_mouse_format+4*i)!=expected[i])
+        die("raw-mouse-format",i);
+}
+static bool guid(const porsche::StartupGuid* a,const porsche::StartupGuid& b){return a&&std::memcmp(a,&b,16)==0;}
+static bool valid_format(const DataFormat* f){
+    if(!f||f->size!=24||f->object_size!=16||f->flags!=2||f->data_size!=16||f->object_count!=7||!f->objects)return false;
+    for(U i=0;i<7;++i){const auto& a=f->objects[i];const auto& b=objects[i];
+        if(a.offset!=b.offset||a.type!=b.type||a.flags!=b.flags)return false;
+        if(i<3 && (!a.guid||std::memcmp(a.guid,b.guid,16)!=0))return false;
+        if(i>=3 && a.guid)return false;}
+    return true;
+}
+struct FakeCom{void** vtable;};
+static void* base_vtable[12];
+static void* temporary_vtable[12];
+static void* device_vtable[12];
+static FakeCom base_com{base_vtable},temporary_com{temporary_vtable},device_com{device_vtable};
+static U __stdcall com_create(void* self,const porsche::StartupGuid* which,void** out,void* outer){
+    event(4,self==&base_com,guid(which,input2a),outer==nullptr);
+    if(scenario==2)return 0x80004005u;
+    *out=&temporary_com;return 0;
+}
+static U __stdcall com_query(void* self,const porsche::StartupGuid* which,void** out){
+    event(5,self==&temporary_com,guid(which,sys_mouse));
+    if(scenario==3)return 0x80004005u;
+    *out=&device_com;return 0;
+}
+static U __stdcall com_release(void* self){event(6,self==&temporary_com);return 1;}
+static U __stdcall com_format(void* self,const DataFormat* input){
+    event(7,self==&device_com,valid_format(input));
+    return scenario==4?0x80004005u:0;
+}
+static U __stdcall com_property(void* self,const void* property_id,const Property* input){
+    event(8,self==&device_com,ptr(property_id),
+        input&&input->size==20&&input->header_size==16&&input->object==0&&input->how==0&&input->value==1);
+    return scenario==5?0x80004005u:0;
+}
+static void configure_com(){
+    std::memset(base_vtable,0,sizeof(base_vtable));
+    std::memset(temporary_vtable,0,sizeof(temporary_vtable));
+    std::memset(device_vtable,0,sizeof(device_vtable));
+    base_vtable[3]=reinterpret_cast<void*>(&com_create);
+    temporary_vtable[0]=reinterpret_cast<void*>(&com_query);
+    temporary_vtable[2]=reinterpret_cast<void*>(&com_release);
+    device_vtable[11]=reinterpret_cast<void*>(&com_format);
+    device_vtable[6]=reinterpret_cast<void*>(&com_property);
+}
+namespace porsche {
+U render_display_texture_width_005deac8=0,render_display_texture_height_005deacc=0;
+void __cdecl startup_frame_init_00572690(){event(1);}
+U __stdcall window_handler_register_0053a800(U message,U callback){
+    event(2,message,callback==ptr(&startup_mouse_callback_00537020));return 0x2468;
+}
+U __cdecl startup_mouse_callback_00537020(U,U,U,U,U,U){return 0;}
+void __cdecl startup_mouse_exit_005370b0(){}
+void* __stdcall window_module_handle(const char* name){event(3,name==nullptr);return reinterpret_cast<void*>(0x12345678u);}
+U __stdcall startup_directinput_create_0056e940(void* instance,U version,void** out,void* outer){
+    event(9,ptr(instance),version,outer==nullptr);
+    if(scenario==1)return 0x80004005u;
+    *out=&base_com;return 0;
+}
+void __cdecl startup_directinput_cleanup_00537070(){
+    event(10);
+    startup_directinput_0069e098=nullptr;
+    startup_mouse_device_0069e09c=nullptr;
+}
+U __cdecl startup_mouse_mode_005370c0(U mode,U value){event(11,mode,value);return 1;}
+void __cdecl render_display_video_base_00537600(U a,U b,U c,U width,U height,U flags){
+    event(12,a,b,c);event(13,width,height,flags);
+}
+void __cdecl thread_exit_register_00557380(void(__cdecl* callback)()){
+    event(14,callback==startup_mouse_exit_005370b0);
+}
+void* __cdecl startup_window_handle_00557460(){event(15);return reinterpret_cast<void*>(0x11223344u);}
+U __stdcall startup_get_cursor_pos(StartupPoint* point){event(16);if(scenario==7)return 0;point->x=123;point->y=456;return 1;}
+U __stdcall startup_screen_to_client(void* hwnd,StartupPoint* point){
+    if(scenario==7){event(17,ptr(hwnd));return 0;}
+    event(17,ptr(hwnd),static_cast<U>(point->x),static_cast<U>(point->y));
+    point->x-=10;point->y+=20;return 1;
+}
+}
+static void* (__stdcall* iat_module)(const char*)=porsche::window_module_handle;
+static U (__stdcall* iat_cursor)(porsche::StartupPoint*)=porsche::startup_get_cursor_pos;
+static U (__stdcall* iat_screen)(void*,porsche::StartupPoint*)=porsche::startup_screen_to_client;
+static void patch_abs(U old,U replacement,U expected){
+    U found=0;for(U i=0;i+4<=456;++i){U got=0;std::memcpy(&got,original+i,4);
+        if(got==old){std::memcpy(original+i,&replacement,4);i+=3;++found;}}
+    if(found!=expected)die("absolute-patch",old);
+}
+static void patch_call(U va,const void* target){
+    U at=va-0x536e50u;if(original[at]!=0xe8)die("call-patch",va);
+    U disp=ptr(target)-ptr(original+at+5);std::memcpy(original+at+1,&disp,4);
+}
+static void install(){
+    // These arrays come directly from SHA-pinned PE VAs, before oracle relocation.
+    if(std::memcmp(pe_create_guid,&input2a,16)!=0)die("raw-create-GUID",0x5bf9a0);
+    if(std::memcmp(pe_query_guid,&sys_mouse,16)!=0)die("raw-query-GUID",0x5bf8c0);
+    validate_raw_format();
+    original=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE));
+    if(!original)die("alloc-code");std::memcpy(original,pe_body,456);
+    patch_abs(0x0069e078u,ptr(&porsche::startup_mouse_mode_0069e078),1);
+    patch_abs(0x0069e07cu,ptr(&porsche::startup_mouse_slot0_0069e07c),1);
+    patch_abs(0x0069e080u,ptr(&porsche::startup_mouse_slot1_0069e080),1);
+    patch_abs(0x0069e084u,ptr(&porsche::startup_mouse_slot2_0069e084),1);
+    for(U i=0;i<4;++i)patch_abs(0x0069e088u+i,ptr(&porsche::startup_mouse_flags_0069e088[i]),1);
+    patch_abs(0x0069e098u,ptr(&porsche::startup_directinput_0069e098),4);
+    patch_abs(0x0069e09cu,ptr(&porsche::startup_mouse_device_0069e09c),3);
+    patch_abs(0x0069e0a0u,ptr(&porsche::startup_mouse_initialized_0069e0a0),3);
+    patch_abs(0x0069e0a4u,ptr(&porsche::startup_mouse_exit_registered_0069e0a4),2);
+    patch_abs(0x005deac8u,ptr(&porsche::render_display_texture_width_005deac8),1);
+    patch_abs(0x005deaccu,ptr(&porsche::render_display_texture_height_005deacc),1);
+    patch_abs(0x005bf8c0u,ptr(&sys_mouse),1);
+    patch_abs(0x005bf9a0u,ptr(&input2a),1);
+    patch_abs(0x0056e9c0u,ptr(&format),1);
+    patch_abs(0x00537020u,ptr(&porsche::startup_mouse_callback_00537020),1);
+    patch_abs(0x005370b0u,ptr(&porsche::startup_mouse_exit_005370b0),1);
+    patch_abs(0x005b2138u,ptr(&iat_module),1);
+    patch_abs(0x005b2280u,ptr(&iat_cursor),1);
+    patch_abs(0x005b228cu,ptr(&iat_screen),1);
+    patch_call(0x536e69u,reinterpret_cast<const void*>(&porsche::startup_frame_init_00572690));
+    patch_call(0x536e78u,reinterpret_cast<const void*>(&porsche::window_handler_register_0053a800));
+    patch_call(0x536e9cu,reinterpret_cast<const void*>(&porsche::startup_directinput_create_0056e940));
+    patch_call(0x536f39u,reinterpret_cast<const void*>(&porsche::startup_directinput_cleanup_00537070));
+    for(U va:{0x536f76u,0x536f7fu,0x536fabu,0x536ffbu,0x537007u})
+        patch_call(va,reinterpret_cast<const void*>(&porsche::startup_mouse_mode_005370c0));
+    patch_call(0x536f96u,reinterpret_cast<const void*>(&porsche::render_display_video_base_00537600));
+    patch_call(0x536fc2u,reinterpret_cast<const void*>(&porsche::thread_exit_register_00557380));
+    patch_call(0x536fe4u,reinterpret_cast<const void*>(&porsche::startup_window_handle_00557460));
+    DWORD old=0;if(!VirtualProtect(original,4096,PAGE_EXECUTE_READ,&old))die("protect-code");
+    FlushInstructionCache(GetCurrentProcess(),original,4096);
+}
+struct State{U globals[11],events;Event calls[64];};
+static void reset(U choice,U width,U height){
+    scenario=choice;configure_com();
+    porsche::startup_mouse_mode_0069e078=0xaaaaaaaau;
+    porsche::startup_mouse_slot0_0069e07c=0xbbbbbbbbu;
+    porsche::startup_mouse_slot1_0069e080=0xccccccccu;
+    porsche::startup_mouse_slot2_0069e084=0xddddddddu;
+    std::memset(porsche::startup_mouse_flags_0069e088,0xee,4);
+    porsche::startup_directinput_0069e098=choice==6?&base_com:nullptr;
+    porsche::startup_mouse_device_0069e09c=choice==6?&device_com:nullptr;
+    porsche::startup_mouse_initialized_0069e0a0=choice==6||choice==8?1u:0u;
+    porsche::startup_mouse_exit_registered_0069e0a4=choice==6?1u:0u;
+    porsche::render_display_texture_width_005deac8=width;
+    porsche::render_display_texture_height_005deacc=height;
+    event_count=0;std::memset(events,0,sizeof(events));
+}
+static State snapshot(){
+    State s{};s.globals[0]=porsche::startup_mouse_mode_0069e078;
+    s.globals[1]=porsche::startup_mouse_slot0_0069e07c;
+    s.globals[2]=porsche::startup_mouse_slot1_0069e080;
+    s.globals[3]=porsche::startup_mouse_slot2_0069e084;
+    std::memcpy(&s.globals[4],porsche::startup_mouse_flags_0069e088,4);
+    s.globals[5]=ptr(porsche::startup_directinput_0069e098);
+    s.globals[6]=ptr(porsche::startup_mouse_device_0069e09c);
+    s.globals[7]=porsche::startup_mouse_initialized_0069e0a0;
+    s.globals[8]=porsche::startup_mouse_exit_registered_0069e0a4;
+    s.globals[9]=porsche::render_display_texture_width_005deac8;
+    s.globals[10]=porsche::render_display_texture_height_005deacc;
+    s.events=event_count;std::memcpy(s.calls,events,sizeof(events));return s;
+}
+static void one(U choice,U width,U height){
+    reset(choice,width,height);
+    const U original_result=reinterpret_cast<U(__cdecl*)()>(original)();
+    const State a=snapshot();
+    reset(choice,width,height);
+    const U cpp_result=porsche::startup_subsystem_result_00536e50();
+    const State b=snapshot();
+    ++checks;if(original_result!=cpp_result)die("return-EAX",original_result);
+    const auto* x=reinterpret_cast<const unsigned char*>(&a);
+    const auto* y=reinterpret_cast<const unsigned char*>(&b);
+    for(U i=0;i<sizeof(State);++i){++checks;if(x[i]!=y[i]){
+        std::printf("divergence device scenario=%u width=%u height=%u byte=%u original=%02x cpp=%02x\n",choice,width,height,i,x[i],y[i]);
+        for(U j=0;j<a.events||j<b.events;++j) {
+            std::printf("event %u original=%u,%08x,%08x,%08x cpp=%u,%08x,%08x,%08x\n",j,
+                a.calls[j].type,a.calls[j].a,a.calls[j].b,a.calls[j].c,
+                b.calls[j].type,b.calls[j].a,b.calls[j].b,b.calls[j].c);
+        }
+        std::fflush(stdout);ExitProcess(1);}}
+    ++cases;
+}
+int main(){
+    const U initial[9]={porsche::startup_mouse_mode_0069e078,
+        porsche::startup_mouse_slot0_0069e07c,porsche::startup_mouse_slot1_0069e080,
+        porsche::startup_mouse_slot2_0069e084,
+        ptr(porsche::startup_directinput_0069e098),ptr(porsche::startup_mouse_device_0069e09c),
+        porsche::startup_mouse_initialized_0069e0a0,porsche::startup_mouse_exit_registered_0069e0a4,
+        U(porsche::startup_mouse_flags_0069e088[0]|porsche::startup_mouse_flags_0069e088[1]|
+            porsche::startup_mouse_flags_0069e088[2]|porsche::startup_mouse_flags_0069e088[3])};
+    for(U i=0;i<9;++i){++checks;if(initial[i]!=0)die("initial-device-BSS",i);}
+    install();
+    for(U choice=0;choice<=8;++choice){one(choice,0,0);one(choice,640,480);}
+    std::printf("startup_device_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);
+    return 0;
+}

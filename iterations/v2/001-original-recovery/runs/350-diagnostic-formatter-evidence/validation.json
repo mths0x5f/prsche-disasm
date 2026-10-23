@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "passed": true,
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "receipt": "local/experiments/v2-diagnostic-formatter-350-rea/002/receipt.json",
+  "receipt_sha256": "2574dfb272fedc22cd6736e1a89556438d118a3b4744316c8d8010cb64b2adba",
+  "config_sha256": "0ba20fd18aac49412be8192dfef7b1655936bc17b7eb364d24bb668b3d243e10",
+  "index_sha256": "8f95f5ce43aaf8c6f748ff3007bb6593efeb0f1d9d1193d5bf23ef687e9a648b",
+  "server_pid": 211448,
+  "same_server_identity": true,
+  "bodies": {
+    "tokenizer": {
+      "address": "0x5a30ee",
+      "bytes": 164,
+      "sha256": "39ac14e07f59c472c601c18d6e56bb42f3ab3d2af8dce77cbc11421315e3b7eb"
+    },
+    "vsprintf": {
+      "address": "0x5a299e",
+      "bytes": 81,
+      "sha256": "af95e00c7add4ad752a0db1696f6c6c8131974d9ba58cbd9427b278dda65966d"
+    },
+    "mono-write": {
+      "address": "0x592b60",
+      "bytes": 384,
+      "sha256": "d01741d6d49108b03ed1de6939f06c81c0fba97efab8a823b6a3f4a1d4054063"
+    },
+    "mono-character": {
+      "address": "0x592d00",
+      "bytes": 105,
+      "sha256": "3efe3f80f2161b2ebb2bb0ca348f736984576dceb37afbbd8a2bd5132cf6225b"
+    },
+    "mono-scroll": {
+      "address": "0x592d70",
+      "bytes": 77,
+      "sha256": "dc556a1ad4854ef1c2800caae23c7f0eaf486b3a8565418f26a91923fb105f93"
+    },
+    "mono-reset": {
+      "address": "0x592e00",
+      "bytes": 10,
+      "sha256": "cbf4303e90456312b61168964852fbcae4c58f842851cea3e8088acee331f6bc"
+    }
+  },
+  "repeated_equal": [],
+  "timings_ms": {
+    "initialize": 8729.056,
+    "open": 3749.476,
+    "session-before": 107.757,
+    "tokenizer": 94503.77,
+    "vsprintf": 44.194,
+    "mono-write": 99.048,
+    "mono-character": 27.654,
+    "mono-scroll": 55.735,
+    "mono-reset": 29.142,
+    "session-final": 54.866,
+    "close": 425.588
+  },
+  "native_acceptance": false,
+  "game_executed": false
+}

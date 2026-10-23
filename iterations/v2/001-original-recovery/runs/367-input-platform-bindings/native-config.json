@@ -1,0 +1,96 @@
+{
+  "run": 367,
+  "experiment": "local/experiments/v2-input-platform-native-367",
+  "timeout_seconds": 45,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/source/include",
+    "iterations/v2/001-original-recovery/runs/367-input-platform-bindings"
+  ],
+  "extra_libraries": [
+    "user32.lib"
+  ],
+  "headers": [],
+  "original_bodies": [
+    {
+      "token": "@DINPUT@",
+      "va": "0056e940",
+      "bytes": 6,
+      "sha256": "ddfd75c6f46c0d5236ec3c52d2574197580f739ff1609069788bbe087a42bfb0"
+    },
+    {
+      "token": "@KEYBOARD@",
+      "va": "0055fd50",
+      "bytes": 5,
+      "sha256": "6a0404fe6ee7114d3ada9b3bbd021ccf3e99910f92b74412c95e14e76c7fc320"
+    },
+    {
+      "token": "@CURSOR@",
+      "va": "00536fd9",
+      "bytes": 6,
+      "sha256": "ba5c41311e36e64ed053dc5a4135aabd1934e815403fa53295350609a9b18cfa"
+    },
+    {
+      "token": "@SCREEN@",
+      "va": "00536fea",
+      "bytes": 6,
+      "sha256": "91b4e1e66c5f20fc0e3fe8ddb8dc46d96b24410d9b7228501e2f6177f14ec1b7"
+    },
+    {
+      "token": "@MODULE@",
+      "va": "0055fd49",
+      "bytes": 6,
+      "sha256": "34d52ded5b0f7adefa6a278f8818b8df09303aee5e53722231d9ca4d6e7162da"
+    }
+  ],
+  "pass_marker": "input_platform_original_imports_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "directinput-version",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "old": "::DirectInputCreateA(instance,version,output,outer)",
+      "new": "::DirectInputCreateA(instance,version+1u,output,outer)",
+      "expected_exit": 1
+    },
+    {
+      "name": "keyboard-output",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "old": "startup_directinput_create_0056e940(instance,version,output,outer)",
+      "new": "startup_directinput_create_0056e940(instance,version,nullptr,outer)",
+      "expected_exit": 1
+    },
+    {
+      "name": "cursor-pointer",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "old": "::GetCursorPos(reinterpret_cast<POINT*>(point))",
+      "new": "::GetCursorPos(nullptr)",
+      "expected_exit": 1
+    },
+    {
+      "name": "screen-window",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "old": "::ScreenToClient(static_cast<HWND>(hwnd),reinterpret_cast<POINT*>(point))",
+      "new": "::ScreenToClient(nullptr,reinterpret_cast<POINT*>(point))",
+      "expected_exit": 1
+    },
+    {
+      "name": "module-name",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "old": "window_module_handle(nullptr)",
+      "new": "window_module_handle(\"incorrect-module\")",
+      "expected_exit": 1
+    },
+    {
+      "name": "return-bits",
+      "source": "iterations/v2/001-original-recovery/runs/367-input-platform-bindings/startup_input_platform.cpp",
+      "old": "static_cast<std::uint32_t>(::DirectInputCreateA(instance,version,output,outer))",
+      "new": "static_cast<std::uint32_t>(::DirectInputCreateA(instance,version,output,outer)) & 0x7fffffffu",
+      "expected_exit": 1
+    }
+  ]
+}

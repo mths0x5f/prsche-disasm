@@ -1,0 +1,128 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <mmsystem.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+#include "porsche/startup_subsystems.hpp"
+using U=std::uint32_t;using B=std::uint8_t;
+static_assert(sizeof(void*)==4);
+static const B keyboard_load[6]={@KEYBOARD_LOAD@},keyboard_call[2]={@KEYBOARD_CALL@};
+static const B num_call[6]={@NUM_CALL@},caps_load[6]={@CAPS_LOAD@},caps_call[2]={@CAPS_CALL@};
+static B *code,*block[3],caps_buffer[432];static U cells[3],cases,checks,result,write_mode;
+static DWORD *import_cells[3],old_imports[3];static void* backed_pointer;
+struct Event{U count,kind,a,b,c;};static Event event;
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U v;std::memcpy(&v,p,4);return v;}
+static void die(const char* what){std::printf("fixture %s\n",what);std::fflush(stdout);ExitProcess(98);}
+static void record(U kind,U a=0,U b=0,U c=0){if(event.count)die("multiple-calls");event={1,kind,a,b,c};}
+extern "C" int WINAPI keyboard_endpoint(int kind){record(0,static_cast<U>(kind));return static_cast<int>(result);}
+extern "C" UINT WINAPI num_endpoint(){record(1);return result;}
+extern "C" MMRESULT WINAPI caps_endpoint(UINT_PTR id,JOYCAPSA* caps,UINT bytes){
+    record(2,static_cast<U>(id),ptr(caps),bytes);
+    // Controlled endpoint contract only: bounded partial writes also on failure.
+    if(caps==backed_pointer&&write_mode){U n=write_mode==1?1u:17u;if(n>bytes)n=bytes;
+        auto* out=reinterpret_cast<B*>(caps);for(U i=0;i<n;++i)out[i]=static_cast<B>(0x91u+13u*i);
+    }
+    return result;
+}
+static void patch_imports(){
+    auto* base=reinterpret_cast<B*>(GetModuleHandleW(nullptr));
+    auto* dos=reinterpret_cast<IMAGE_DOS_HEADER*>(base);auto* nt=reinterpret_cast<IMAGE_NT_HEADERS32*>(base+dos->e_lfanew);
+    if(dos->e_magic!=IMAGE_DOS_SIGNATURE||nt->Signature!=IMAGE_NT_SIGNATURE||nt->OptionalHeader.Magic!=IMAGE_NT_OPTIONAL_HDR32_MAGIC)die("pe");
+    const char* dlls[3]={"USER32.dll","WINMM.dll","WINMM.dll"};
+    const char* names[3]={"GetKeyboardType","joyGetNumDevs","joyGetDevCapsA"};bool seen[3]{};
+    auto* desc=reinterpret_cast<IMAGE_IMPORT_DESCRIPTOR*>(base+nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT].VirtualAddress);
+    for(;desc->Name;++desc){
+        if(!desc->OriginalFirstThunk)die("original-thunks");
+        auto* name=reinterpret_cast<IMAGE_THUNK_DATA32*>(base+desc->OriginalFirstThunk);
+        auto* iat=reinterpret_cast<IMAGE_THUNK_DATA32*>(base+desc->FirstThunk);
+        for(;name->u1.AddressOfData;++name,++iat){
+            if(IMAGE_SNAP_BY_ORDINAL32(name->u1.Ordinal))continue;
+            auto* item=reinterpret_cast<IMAGE_IMPORT_BY_NAME*>(base+name->u1.AddressOfData);
+            for(U i=0;i<3;++i)if(!_stricmp(reinterpret_cast<const char*>(base+desc->Name),dlls[i])&&!std::strcmp(reinterpret_cast<const char*>(item->Name),names[i])){
+                if(seen[i])die("duplicate-import");DWORD old,ignored;import_cells[i]=&iat->u1.Function;old_imports[i]=iat->u1.Function;
+                if(!old_imports[i]||!VirtualProtect(import_cells[i],4,PAGE_READWRITE,&old))die("protect");
+                *import_cells[i]=cells[i];if(!VirtualProtect(import_cells[i],4,old,&ignored))die("protect-mode");seen[i]=true;
+            }
+        }
+    }
+    for(bool found:seen)if(!found)die("missing-exact-import");
+}
+static void restore_imports(){for(U i=0;i<3;++i){DWORD old,ignored;
+    if(!VirtualProtect(import_cells[i],4,PAGE_READWRITE,&old))die("restore-protect");
+    *import_cells[i]=old_imports[i];if(!VirtualProtect(import_cells[i],4,old,&ignored))die("restore-mode");
+}}
+static void install(){
+    if(keyboard_load[0]!=0x8b||keyboard_load[1]!=0x35||word(keyboard_load+2)!=0x5b2298||keyboard_call[0]!=0xff||keyboard_call[1]!=0xd6)die("keyboard-original");
+    if(num_call[0]!=0xff||num_call[1]!=0x15||word(num_call+2)!=0x5b2354)die("num-original");
+    if(caps_load[0]!=0x8b||caps_load[1]!=0x3d||word(caps_load+2)!=0x5b2358||caps_call[0]!=0xff||caps_call[1]!=0xd7)die("caps-original");
+    cells[0]=ptr(reinterpret_cast<const void*>(&keyboard_endpoint));cells[1]=ptr(reinterpret_cast<const void*>(&num_endpoint));cells[2]=ptr(reinterpret_cast<const void*>(&caps_endpoint));
+    code=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE));if(!code)die("alloc");
+    const U arity[3]={1,0,3};
+    for(U i=0;i<3;++i){block[i]=code+i*128;U n=0;const bool saved=i!=1;
+        // Saved-register pushes, argument forwarding and finalRET are harness.
+        if(saved)block[i][n++]=i==0?0x56:0x57;
+        for(U a=0;a<arity[i];++a){block[i][n++]=0xff;block[i][n++]=0x74;block[i][n++]=0x24;block[i][n++]=static_cast<B>(arity[i]*4+(saved?4:0));}
+        const B* load=i==0?keyboard_load:i==1?num_call:caps_load;std::memcpy(block[i]+n,load,6);
+        U cell=ptr(cells+i);std::memcpy(block[i]+n+2,&cell,4);n+=6;
+        if(saved){std::memcpy(block[i]+n,i==0?keyboard_call:caps_call,2);n+=2;block[i][n++]=i==0?0x5e:0x5f;}
+        block[i][n++]=0xc3;
+    }
+    DWORD old;if(!VirtualProtect(code,4096,PAGE_EXECUTE_READ,&old))die("code-protect");FlushInstructionCache(GetCurrentProcess(),code,4096);patch_imports();
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1,eax;};
+static Capture invoke(const void* fn,U argc,const U* args){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        mov ecx,argc
+        mov edx,args
+        cmp ecx,3
+        jb one
+        push dword ptr [edx+8]
+        push dword ptr [edx+4]
+    one:
+        test ecx,ecx
+        jz callit
+        push dword ptr [edx]
+    callit:
+        mov ecx,fn
+        call ecx
+        mov ecx,argc
+        lea esp,[esp+ecx*4]
+        lea edx,r
+        mov [edx+40],eax
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }return r;
+}
+static bool abi(const Capture& r){return r.sp0==r.sp1&&r.bp0==r.bp1&&r.bx0==r.bx1&&r.si0==r.si1&&r.di0==r.di1&&r.bx0==0x13579bdfu&&r.si0==0x2468ace0u&&r.di0==0x6a31c5e7u;}
+struct State{Event event;B caps[432];};
+static void reset(){event={};for(U i=0;i<432;++i)caps_buffer[i]=static_cast<B>(i*17u+3u);}
+static State state(){State s{};s.event=event;std::memcpy(s.caps,caps_buffer,432);return s;}
+static const void* native[3]={reinterpret_cast<const void*>(&porsche::startup_get_keyboard_type),reinterpret_cast<const void*>(&porsche::startup_joy_get_num_devs),reinterpret_cast<const void*>(&porsche::startup_joy_get_dev_caps)};
+static void compare(U i,const U* args){const U arity[3]={1,0,3};reset();auto a=invoke(block[i],arity[i],args);auto expected=state();reset();auto b=invoke(native[i],arity[i],args);auto actual=state();++cases;checks+=3;
+    if(!abi(a)||!abi(b)||a.eax!=b.eax||std::memcmp(&expected,&actual,sizeof actual)){
+        std::printf("divergence startup-import kind=%u case=%u eax=%08x/%08x abi=%u/%u\n",i,cases,a.eax,b.eax,abi(a),abi(b));std::fflush(stdout);ExitProcess(1);
+    }
+}
+int main(){install();for(U value:{0u,1u,0x80000000u,0xffffffffu}){result=value;
+    for(U kind:{0u,1u,2u,0x80000000u,0xffffffffu}){U args[3]={kind};compare(0,args);}
+    U empty[3]{};compare(1,empty);
+    for(U id:{0u,0x80000000u,0xffffffffu})for(U bytes:{0u,1u,0x194u,0x195u,0xffffffffu})for(U mode:{0u,1u,2u})for(U pointer:{0u,1u,2u}){
+        write_mode=mode;backed_pointer=caps_buffer+8+(id&1u);U arg=pointer==0?ptr(backed_pointer):pointer==1?0u:0x87654321u;
+        U args[3]={id,arg,bytes};compare(2,args);
+    }
+}restore_imports();std::printf("startup_input_imports_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;}

@@ -1,0 +1,24 @@
+{
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "checks": [
+    {
+      "va": "005bb728",
+      "bytes": 24,
+      "sha256": "dd47757ffef5e326db09fd1b7cd600a1fdc2c31e9f0f28c4a128a03dcd0f2d9a",
+      "value": "\\real\\patch3\\pc\\mouse.c"
+    },
+    {
+      "va": "005bb740",
+      "bytes": 118,
+      "sha256": "530fe71b2a4d4def556104c265e6c9fac72a6e40b3d2644d571ba4fc58381cf0",
+      "value": "MOUSE_setstate(INPUT_STATE_ACCESSMODE) - Cannot change the access mode as Direct Input was not initialized correctly\n"
+    },
+    {
+      "va": "005bb70c",
+      "bytes": 28,
+      "sha256": "b5b01adae7f4721bf654248d5edca1de2edba71a73ea32bcda4f48868e019f81",
+      "value": "[MOUSE] - Invalid setstate\n"
+    }
+  ],
+  "scope": "Raw PE strings equal native fixture normalization and C++ diagnostic literals; original VA values are not dereferenced as host pointers."
+}

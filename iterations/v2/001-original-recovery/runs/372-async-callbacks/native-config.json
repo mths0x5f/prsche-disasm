@@ -1,0 +1,137 @@
+{
+  "run": 372,
+  "experiment": "local/experiments/v2-async-callbacks-native-372",
+  "timeout_seconds": 180,
+  "original_pe": "local/game/Porsche.exe",
+  "original_sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "sources": [
+    "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+    "iterations/v2/001-original-recovery/runs/361-startup-device-pool/startup_pool.cpp"
+  ],
+  "fixture": "iterations/v2/001-original-recovery/runs/372-async-callbacks/native-fixture.cpp.in",
+  "include_dirs": [
+    "iterations/v2/001-original-recovery/runs/372-async-callbacks",
+    "iterations/v2/001-original-recovery/runs/361-startup-device-pool",
+    "iterations/v2/001-original-recovery/source/include"
+  ],
+  "headers": [
+    "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.hpp"
+  ],
+  "original_bodies": [
+    {
+      "token": "@CALLBACK@",
+      "va": "00563bd0",
+      "bytes": 93,
+      "sha256": "1872e019f7fbd6ec95d4ceb168e489e2c8f06af75b65c1917e5fdde884115c48"
+    },
+    {
+      "token": "@ENQUEUE@",
+      "va": "00563c30",
+      "bytes": 64,
+      "sha256": "f618f46bdf2466f6e5ec39b0bcc3f582440ea5f467c0f5a570312c78690e8d5c"
+    },
+    {
+      "token": "@DEQUEUE@",
+      "va": "00563c70",
+      "bytes": 68,
+      "sha256": "6c71719a60a8b2b7e387f4fba9a99662a5044024ae154bcad316a72dc8f3311c"
+    },
+    {
+      "token": "@DISPATCH@",
+      "va": "00563cc0",
+      "bytes": 105,
+      "sha256": "ebe1b0b2e5218b62bf8bf8e3e376c2a84fabda8679d1806434ee876d9da49361"
+    }
+  ],
+  "pass_marker": "async_callbacks_original_vs_cpp=PASS",
+  "mutations": [
+    {
+      "name": "saved-callback-id",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "record[0] = saved_id & 0xffu;",
+      "new": "record[0] &= 0xffu;",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "completion-current-id",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "record[0] &= 0xffu;",
+      "new": "record[0] = 0x10u;",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "completion-state",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "if (state == 1) record[3] = 2;",
+      "new": "if (state == 1) record[3] = 3;",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "resource-sentinel",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "if (record[4] > 1u)",
+      "new": "if (record[4] > 0u)",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "request-word-clear",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "record[6] = 0;",
+      "new": "record[6] = 1;",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "stale-tail",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "if (record) queue.head.set(record[1]);",
+      "new": "if (record) { queue.head.set(record[1]); if (!record[1]) queue.tail.set(0); }",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "enqueue-link",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "record[1] = 0;",
+      "new": "record[1] = 1;",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "dequeue-lock-capture",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "void* const leave_lock = async_pool_lock_006a5be8;",
+      "new": "void* const leave_lock = reinterpret_cast<void*>(0x81818181u);",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "dequeue-lock-reload",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "heap_leave_005322c0(leave_lock);",
+      "new": "heap_leave_005322c0(async_pool_lock_006a5be8);",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "captured-state",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "if (state == 1) {",
+      "new": "if (record[3] == 1) {",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    },
+    {
+      "name": "callback-return",
+      "source": "iterations/v2/001-original-recovery/runs/372-async-callbacks/async_callbacks.cpp",
+      "old": "return 0;",
+      "new": "return 1;",
+      "expected_exit": 1,
+      "failure_marker": "divergence "
+    }
+  ]
+}

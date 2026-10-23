@@ -1,0 +1,128 @@
+{
+  "module": "Porsche.exe",
+  "sha256": "ddd748fdbe6d2030e31f9257a4e01852749460b6b58560a6b4a8559d3799ff39",
+  "query": "00563bd0|00563c30|00563c70|00563cc0; incoming006a5bc8/cc, free006a5bd0/d4, lock006a5be8; callers and callees in indexed asm",
+  "index": "research/v2/binaries/Porsche.exe-ddd748fdbe6d/{functions.jsonl,disassembly.asm,decompiled.c}",
+  "registry_check": "No canonical entries/overlapping bodies for these four VAs; 00563bd0 occurs only in 361 unrecovered dependency list. Root owns final registration.",
+  "bodies": [
+    {
+      "token": "@CALLBACK@",
+      "va": "00563bd0",
+      "bytes": 93,
+      "sha256": "1872e019f7fbd6ec95d4ceb168e489e2c8f06af75b65c1917e5fdde884115c48",
+      "index_bytes_equal_raw_pe": true,
+      "highlow_operands": [
+        {
+          "operand_va": "00563bd2",
+          "target_va": "006a5bc8"
+        },
+        {
+          "operand_va": "00563c05",
+          "target_va": "006a5bd0"
+        },
+        {
+          "operand_va": "00563c14",
+          "target_va": "006a5bc8"
+        }
+      ]
+    },
+    {
+      "token": "@ENQUEUE@",
+      "va": "00563c30",
+      "bytes": 64,
+      "sha256": "f618f46bdf2466f6e5ec39b0bcc3f582440ea5f467c0f5a570312c78690e8d5c",
+      "index_bytes_equal_raw_pe": true,
+      "highlow_operands": [
+        {
+          "operand_va": "00563c31",
+          "target_va": "006a5be8"
+        },
+        {
+          "operand_va": "00563c64",
+          "target_va": "006a5be8"
+        }
+      ]
+    },
+    {
+      "token": "@DEQUEUE@",
+      "va": "00563c70",
+      "bytes": 68,
+      "sha256": "6c71719a60a8b2b7e387f4fba9a99662a5044024ae154bcad316a72dc8f3311c",
+      "index_bytes_equal_raw_pe": true,
+      "highlow_operands": [
+        {
+          "operand_va": "00563c71",
+          "target_va": "006a5be8"
+        },
+        {
+          "operand_va": "00563c8b",
+          "target_va": "006a5be8"
+        },
+        {
+          "operand_va": "00563c9e",
+          "target_va": "006a5be8"
+        }
+      ]
+    },
+    {
+      "token": "@DISPATCH@",
+      "va": "00563cc0",
+      "bytes": 105,
+      "sha256": "ebe1b0b2e5218b62bf8bf8e3e376c2a84fabda8679d1806434ee876d9da49361",
+      "index_bytes_equal_raw_pe": true,
+      "highlow_operands": [
+        {
+          "operand_va": "00563cc1",
+          "target_va": "006a5be8"
+        },
+        {
+          "operand_va": "00563ce5",
+          "target_va": "006a5be8"
+        },
+        {
+          "operand_va": "00563d11",
+          "target_va": "006a5bd0"
+        }
+      ]
+    }
+  ],
+  "source_abi": "Original cdecl queue-pointer ABI is adapted to AsyncQueueView with separately typed slot references. No adjacent C++ globals assumed. callback keeps existing (uint32,uint32)->uint32 scheduler declaration; ignores input words, returns final empty dequeue result zero. enqueue/dispatch EAX not consumed by indexed callers.",
+  "state_owner": "Unchanged runs/361-startup-device-pool/startup_pool.cpp/.hpp definitions. Both original and C++ paths use same lock object, explicit original contiguous queue arrays map to canonical slots. No fixture state linked in game.",
+  "callers": {
+    "00563bd0": [
+      "00563bbf scheduler registration after00563bb6 address push",
+      "00563de4 direct cdecl two zero args"
+    ],
+    "00563c30": [
+      "00563c0b callback recycle",
+      "00563d1e dispatch recycle"
+    ],
+    "00563c70": [
+      "00563bd6 initial dequeue",
+      "00563c18 repeat dequeue"
+    ],
+    "00563cc0": [
+      "00563bed nonzero-state dispatch",
+      "0056473c cancel dispatch"
+    ]
+  },
+  "external_boundaries": [
+    "005322b0 heap_enter",
+    "005322c0 heap_leave",
+    "00531f90 free",
+    "cdecl record[5](saved full ID)"
+  ],
+  "confirmed": [
+    "44-byte existing pool records; fields0=id,1=next,3=state,4=resource,5=callback,6=request word; all other words retained",
+    "enqueue enters lock, appends only if nonempty, updates tail, clears record next, reloads global lock for leave",
+    "dequeue captures lock after enter and before head write, preserves tail and removed next",
+    "dispatch captures state under lock; only prior1 changes to2 and then frees unsigned resource>1, masks current ID, clears word6, recycles",
+    "callback state0 saves full ID before callback, masks saved ID despite mutation; other states dispatch; loop sees reentrant queue injection"
+  ],
+  "holds": [
+    "Malformed arbitrary aliases/cyclic lists/invalid pointers and callbacks",
+    "Live concurrency, scheduler composition and allocator operation",
+    "Complete linked game/startup/display/gameplay acceptance"
+  ],
+  "fixture_transport": "Raw PE complete bodies copied at original relative offsets, verified against indexed assembly and SHA-pinned PE. External rel32 calls and HIGHLOW global operands patched with exact counts. Explicit queue arrays transport head/tail independently from C++ global layout. Local lock-as-head dequeue alias case isolates capture timing; all unknown aliases remain HOLD."
+}

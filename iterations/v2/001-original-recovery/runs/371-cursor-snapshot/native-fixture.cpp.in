@@ -1,0 +1,105 @@
+#include "cursor_snapshot.hpp"
+#include "porsche/window_shutdown.hpp"
+#include "porsche/render_display.hpp"
+#include "porsche/render_loader.hpp"
+#include "porsche/window_scheduler.hpp"
+#include <windows.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <initializer_list>
+using U=std::uint32_t;using B=std::uint8_t;
+static_assert(sizeof(void*)==4);
+static const B save_raw[38]={@SAVE@},restore_raw[79]={@RESTORE@},initial_raw[96]={@INITIAL@};
+static B original_state[96],buffer[128],*save_code,*restore_code;
+static bool cpp_side;static U cases,checks,event_kind,event_arg;
+static B event_state[96];static void* expected_arg;
+namespace porsche {U render_thrash_exports_006bd910[43]{};}
+static U ptr(const void* p){return static_cast<U>(reinterpret_cast<std::uintptr_t>(p));}
+static U word(const void* p){U n;std::memcpy(&n,p,4);return n;}
+static void die(const char* what,U detail=0){std::printf("fixture %s %08x\n",what,detail);std::fflush(stdout);ExitProcess(98);}
+static B* native_byte(U offset){using namespace porsche;
+    if(offset<48)return reinterpret_cast<B*>(window_shutdown_config_005de620)+offset;
+    if(offset<60)return cursor_snapshot_prefix_005de650+offset-48;
+    if(offset==60)return &window_shutdown_source_005de65c;
+    if(offset==61)return &window_shutdown_source_005de65d;
+    if(offset<92)return cursor_snapshot_suffix_005de65e+offset-62;
+    return reinterpret_cast<B*>(&window_shutdown_state_005de67c)+offset-92;
+}
+static void capture(B* out){for(U i=0;i<96;++i)out[i]=cpp_side?*native_byte(i):original_state[i];}
+static void set_byte(U offset,B value){if(cpp_side)*native_byte(offset)=value;else original_state[offset]=value;}
+static void endpoint(U kind,U arg){
+    if(event_kind)die("multiple-calls");event_kind=kind;event_arg=arg;capture(event_state);
+    // Controlled child writes expose state restoration timing and shared ownership.
+    set_byte(0,0xa1);set_byte(60,0xb2);set_byte(61,0xc3);set_byte(92,0xd4);
+    if(kind==2&&arg==ptr(expected_arg))static_cast<B*>(expected_arg)[95]^=0x5a;
+}
+extern "C" void __stdcall window_endpoint(U mode){endpoint(1,mode);}
+namespace porsche {
+void __cdecl render_display_texture_bind_00534480(void* snapshot){endpoint(2,ptr(snapshot));}
+// Frozen canonical storage owner is linked intact. Unused shutdown services
+// fail closed so the snapshot fixture cannot silently exercise an invented path.
+U __stdcall window_shutdown_close_handle_006bd92c(void*){die("unexpected-close");return 0;}
+void __cdecl application_instance_exit_005a246e(U){die("unexpected-exit");}
+TimedCallbackSlot* __cdecl window_scheduler_remove_005366a0(TimedCallback){die("unexpected-remove");return nullptr;}
+}
+static void patch(B* p,U size,U before,U after,U expected){U count=0;for(U i=0;i+4<=size;++i)if(word(p+i)==before){std::memcpy(p+i,&after,4);++count;i+=3;}if(count!=expected)die("patch-count",before);}
+static B* install(const B* raw,U size){auto* p=static_cast<B*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE));if(!p)die("alloc");std::memcpy(p,raw,size);return p;}
+static void install_all(){using namespace porsche;
+    // Assert original callback opcode and operand before any relocation.
+    if(restore_raw[64]!=0xff||restore_raw[65]!=0x15||word(restore_raw+66)!=0x6bd9b0)die("callback-metadata");
+    save_code=install(save_raw,38);restore_code=install(restore_raw,79);
+    patch(save_code,38,0x5de620,ptr(original_state),1);patch(save_code,38,0x5de650,ptr(original_state+48),1);
+    patch(restore_code,79,0x5de620,ptr(original_state),1);patch(restore_code,79,0x5de650,ptr(original_state+48),1);
+    patch(restore_code,79,0x5de630,ptr(original_state+16),1);patch(restore_code,79,0x5de64c,ptr(original_state+44),1);
+    patch(restore_code,79,0x6bd9b0,ptr(&render_thrash_exports_006bd910[40]),1);
+    if(restore_code[72]!=0xe8)die("direct-call-opcode");
+    U relative=ptr(reinterpret_cast<const void*>(&render_display_texture_bind_00534480))-ptr(restore_code+77);std::memcpy(restore_code+73,&relative,4);
+    render_thrash_exports_006bd910[40]=ptr(reinterpret_cast<const void*>(&window_endpoint));
+    FlushInstructionCache(GetCurrentProcess(),save_code,38);FlushInstructionCache(GetCurrentProcess(),restore_code,79);
+}
+struct Capture{U sp0,sp1,bp0,bp1,bx0,bx1,si0,si1,di0,di1;};
+static Capture invoke(const void* fn,void* arg){Capture r{};
+    __asm {
+        mov ebx,13579bdfh
+        mov esi,2468ace0h
+        mov edi,6a31c5e7h
+        lea edx,r
+        mov [edx],esp
+        mov [edx+8],ebp
+        mov [edx+16],ebx
+        mov [edx+24],esi
+        mov [edx+32],edi
+        push arg
+        mov ecx,fn
+        call ecx
+        add esp,4
+        lea edx,r
+        mov [edx+4],esp
+        mov [edx+12],ebp
+        mov [edx+20],ebx
+        mov [edx+28],esi
+        mov [edx+36],edi
+    }
+    return r;
+}
+static void abi(const Capture& r){if(r.sp0!=r.sp1||r.bp0!=r.bp1||r.bx0!=r.bx1||r.si0!=r.si1||r.di0!=r.di1||r.bx0!=0x13579bdf||r.si0!=0x2468ace0||r.di0!=0x6a31c5e7)die("abi");++checks;}
+struct Result{B state[96],data[128],called_state[96];U kind,arg;};
+static Result result(){Result r{};capture(r.state);std::memcpy(r.data,buffer,128);std::memcpy(r.called_state,event_state,96);r.kind=event_kind;r.arg=event_arg;return r;}
+static void compare(const Result& a,const Result& b){++checks;if(std::memcmp(&a,&b,sizeof(a))){std::printf("divergence case=%u kind=%u/%u arg=%08x/%08x\n",cases,a.kind,b.kind,a.arg,b.arg);std::fflush(stdout);ExitProcess(1);}++cases;}
+static U next(U& seed){seed=seed*1664525u+1013904223u;return seed;}
+static void reset(bool native,U seed,U offset,U mode,U state){cpp_side=native;event_kind=event_arg=0;std::memset(event_state,0,96);for(U i=0;i<96;++i)set_byte(i,static_cast<B>(next(seed)>>24));for(auto& b:buffer)b=static_cast<B>(next(seed)>>24);expected_arg=buffer+offset;
+    // High 24 mode bits are deliberately nonzero; branch and argument use CL.
+    U fullmode=0xa57e3400u|mode;std::memcpy(buffer+offset+16,&fullmode,4);std::memcpy(buffer+offset+44,&state,4);
+}
+static void save_case(U seed,U offset){reset(false,seed,offset,0,0);abi(invoke(save_code,buffer+offset));auto a=result();reset(true,seed,offset,0,0);abi(invoke(reinterpret_cast<const void*>(&porsche::startup_cursor_state_save_00570ed0),buffer+offset));compare(a,result());}
+static void restore_case(U seed,U offset,U mode,U state){reset(false,seed,offset,mode,state);abi(invoke(restore_code,buffer+offset));auto a=result();reset(true,seed,offset,mode,state);abi(invoke(reinterpret_cast<const void*>(&porsche::startup_cursor_state_restore_00570f00),buffer+offset));compare(a,result());}
+int main(){using namespace porsche;cpp_side=true;B initial[96];capture(initial);
+    // Production initialization, before any reset or callback installation.
+    if(std::memcmp(initial,initial_raw,96))die("production-initial-state");
+    if(window_shutdown_handle_0069dd18||window_shutdown_state_005de6ac||&window_shutdown_mode_005de630!=native_byte(16)||reinterpret_cast<B*>(&window_shutdown_state_005de64c)!=native_byte(44))die("canonical-alias-initial-state");
+    for(U i=0;i<43;++i)if(render_thrash_exports_006bd910[i])die("fixture-table-initial-state");
+    install_all();
+    for(U seed:{0u,1u,0x80000000u,0xffffffffu,0x12f05ba7u})for(U offset=0;offset<8;++offset){save_case(seed,offset);for(U mode:{0u,1u,2u,127u,128u,255u})for(U state:{0u,1u,0x80000000u,0xffffffffu})restore_case(seed,offset,mode,state);}
+    std::printf("cursor_snapshot_original_vs_cpp=PASS cases=%u checks=%u\n",cases,checks);return 0;
+}
