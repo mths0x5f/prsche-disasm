@@ -437,6 +437,20 @@ código rebaixado é lento o bastante para o leitor cair nela. Uma "ilha" em ass
 e **removida por decisão do usuário**: a correção deve vir do código humanizado de `stream.c`,
 e não de assembly. **Continua em aberto.**
 
+### Upstream Runs 347–384 e registro de recuperações (2026-10-23)
+
+A atribuição passou a colher nomes também do grafo do Run 384 da upstream (+37) e do registro
+canônico `source/recovered/functions.json`. O registro inclui funções recuperadas fora do
+catálogo, que o build gera como peças sintéticas (+50). Com isso, 594 → 644 nomes reais, sem
+trocar nenhum. Validação: 0 erros de compilação; trace do menu igual ao original em 2.140
+chamadas (só mudam os handles, como o endereço do `rasapi32.dll`); corrida conferida na captura
+aos 50 s.
+
+Ambiente: a chave `HKLM\SOFTWARE\WOW6432Node\Electronic Arts\Need for Speed - Porsche Unleashed`
+tinha sumido. Sem ela, o jogo (original e rebaixado) para em *"Run 3D Setup before running the
+game."*. Ela foi recriada com os valores do VirtualStore do usuário, a partir de
+`local/nfs5-registry.reg`.
+
 ## Próximos passos
 
 1. ~~Calibração de CPU~~: a `005560b0` e a `00555a10` estimam a frequência da CPU em Hz e
