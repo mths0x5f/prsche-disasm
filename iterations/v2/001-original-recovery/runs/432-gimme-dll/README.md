@@ -97,8 +97,8 @@ Recovered and proven against the original bytes (oracle `gimme_oracle`, same pro
 | BMP, TGA, PCX readers | 541/549 generated + Pillow files identical; 8 corrupt inputs are UB in the original |
 | ConvertFile on BMP/TGA/PCX photos | 51 Pillow photos identical; mode-1 TGA: no output on both sides |
 
-Boundaries (explicit stubs in `boundary.h`, reported through `gerror`): readers of the 63 other
-modules, all writers except FSH, JPG and PNG is() and the JPG/TIF/PNG readers (they need the public
+Boundaries (explicit stubs in `boundary.h`, reported through `gerror`): readers of the 61 modules
+other than Nil, FSH, BMP, TGA, PCX, JPG, TIF and PNG, all writers except FSH, JPG and PNG is() and the JPG/TIF/PNG readers (they need the public
 IJG 6a, libpng 1.0.3 and libtiff 3.4 sources), the QuickTime open used by MOV is().
 
 Second original defect, kept in both variants: a 1×1 source photo makes the Size filter read index −1
