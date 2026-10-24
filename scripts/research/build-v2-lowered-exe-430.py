@@ -23,6 +23,7 @@ import re
 import struct
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -83,6 +84,11 @@ def native_bytes(i):
     return raw[:k] + bytes([new]) + tail
 
 
+def emit_bytes(*data):
+    """Inline-assembly lines that place raw instruction bytes (VC6: _emit)."""
+    return [f'_emit 0x{b:02x}' for b in data]
+
+
 def native_code(i, address):
     """C++ with MSVC inline assembly that runs instruction `i` on the host CPU with the guest's
     operands: memory through ECX (host address = guest address), the GPR operand through EAX,
@@ -114,24 +120,25 @@ def native_code(i, address):
         pre.append('U f_=s.flags&0x8d5u;')
         asm += ['pushfd', 'pop eax', 'and eax, 0xfffff72a', 'or eax, f_', 'push eax', 'popfd']
     if xmms:
+        # VC6's inline assembler has no SSE mnemonics: every SSE instruction is _emit-ted.
+        # Guest XMMn is loaded into host XMMn, so the instruction keeps its own bytes.
         lanes = list(dict.fromkeys(xmms))
         for k, x in enumerate(lanes):
-            pre.append(f'U x{k}_=reinterpret_cast<U>(&s.xmm[{int(x[3:])}][0]);')
-            asm += [f'mov edx, x{k}_', f'movups {x}, [edx]']
+            n = int(x[3:])
+            pre.append(f'U x{k}_=reinterpret_cast<U>(&s.xmm[{n}][0]);')
+            asm += [f'mov edx, x{k}_'] + emit_bytes(0x0f, 0x10, (n << 3) | 2)       # movups xmmN,[edx]
         pre.append('U mx_=s.mxcsr; U hx_;')
-        asm += ['stmxcsr hx_', 'ldmxcsr mx_']
-        text = i.op_str.replace('xword ptr', 'tbyte ptr')
-        text = re.sub(r'\[[^\]]*\]', '[ecx]', text)
-        for g in gprs:
-            text = re.sub(rf'\b{g}\b', 'eax', text)
-        asm.append(f'{m} {text}')
-        asm.append('stmxcsr mx_')
+        asm += ['lea edx, hx_'] + emit_bytes(0x0f, 0xae, 0x1a)                       # stmxcsr [edx]
+        asm += ['lea edx, mx_'] + emit_bytes(0x0f, 0xae, 0x12)                       # ldmxcsr [edx]
+        asm += emit_bytes(*native_bytes(i))
+        asm += ['lea edx, mx_'] + emit_bytes(0x0f, 0xae, 0x1a)                       # stmxcsr [edx]
         for k, x in enumerate(lanes):
-            asm += [f'mov edx, x{k}_', f'movups [edx], {x}']
-        asm.append('ldmxcsr hx_')
+            n = int(x[3:])
+            asm += [f'mov edx, x{k}_'] + emit_bytes(0x0f, 0x11, (n << 3) | 2)       # movups [edx],xmmN
+        asm += ['lea edx, hx_'] + emit_bytes(0x0f, 0xae, 0x12)                       # ldmxcsr [edx]
         post.append('s.mxcsr=mx_;')
     else:
-        asm += [f'_emit 0x{b:02x}' for b in native_bytes(i)]
+        asm += emit_bytes(*native_bytes(i))
     if m == 'fnstsw' and ops and ops[0].type == 1:
         asm += ['movzx eax, ax', 'mov g_, eax']
     if m in ('fcomi', 'fcomip', 'fucomi', 'fucomip'):
@@ -291,6 +298,88 @@ FLAG_NEUTRAL = {'mov', 'movzx', 'movsx', 'lea', 'push', 'pop', 'nop', 'not', 'cd
                 'movss', 'movaps', 'movups', 'movd', 'movq'}
 NO_FLAGS = [('add257(s,', 'add257nf('), ('subtract257(s,', 'subtract257nf('), ('logical257(s,', 'logical257nf('),
             ('inc257(s,', 'inc257nf('), ('dec257(s,', 'dec257nf(')]
+VC6_PRELUDE = '// Visual C++ 6.0 code (the game\'s own compiler); it also builds with current MSVC.\n'
+STOP_NAMES = ('Running', 'Returned', 'MissingEntry', 'BadReturn', 'BudgetExhausted')
+
+
+def vc6_stops(text):
+    """Stop257::Running -> STOP257_RUNNING: a plain VC6 enum, no scoped-enum emulation."""
+    for n in STOP_NAMES:
+        text = text.replace(f'Stop257::{n}', 'STOP257_' + re.sub(r'(?<!^)([A-Z])', r'_\1', n).upper())
+    return text
+
+
+SSE_OPCODES = [('SseAddSs', 'addss', (0xf3, 0x0f, 0x58, 0xc1)), ('SseAddPs', 'addps', (0x0f, 0x58, 0xc1)),
+               ('SseSubSs', 'subss', (0xf3, 0x0f, 0x5c, 0xc1)), ('SseSubPs', 'subps', (0x0f, 0x5c, 0xc1)),
+               ('SseMulSs', 'mulss', (0xf3, 0x0f, 0x59, 0xc1)), ('SseMulPs', 'mulps', (0x0f, 0x59, 0xc1))]
+
+
+def vc6_sse_helpers():
+    """sse257 / cvt_i2f257 with every SSE instruction as _emit bytes (no SSE mnemonics in VC6)."""
+    def block(insn_bytes, insn):
+        lines = ['mov eax, d', 'mov edx, src', 'lea ecx, host'] + emit_bytes(0x0f, 0xae, 0x19) + \
+                ['lea ecx, guest'] + emit_bytes(0x0f, 0xae, 0x11) + emit_bytes(0x0f, 0x10, 0x00) + \
+                emit_bytes(0x0f, 0x10, 0x0a) + emit_bytes(*insn_bytes) + emit_bytes(0x0f, 0x11, 0x00) + \
+                ['lea ecx, guest'] + emit_bytes(0x0f, 0xae, 0x19) + ['lea ecx, host'] + emit_bytes(0x0f, 0xae, 0x11)
+        return ('            // stmxcsr host; ldmxcsr guest; movups xmm0,[eax]; movups xmm1,[edx];\n'
+                f'            // {insn} xmm0,xmm1; movups [eax],xmm0; stmxcsr guest; ldmxcsr host\n'
+                '            __asm {\n' + ''.join(f'                {x}\n' for x in lines) + '            }\n')
+    cases = ''.join(f'        case {name}:\n{block(b, insn)}            break;\n' for name, insn, b in SSE_OPCODES)
+    return ('enum Sse257 { SseAddSs, SseAddPs, SseSubSs, SseSubPs, SseMulSs, SseMulPs };\n'
+            'static __forceinline void sse257(Machine257& s, U op, U* d, const U* src) {\n'
+            '    U host, guest = s.mxcsr;\n    switch (op) {\n' + cases + '    }\n    s.mxcsr = guest;\n}\n'
+            '// cvtsi2ss / cvtpi2ps lane: int32 -> float under the guest MXCSR.\n'
+            'static __forceinline U cvt_i2f257(Machine257& s, U value) {\n'
+            '    U host, guest = s.mxcsr, r;\n'
+            '    // stmxcsr host; ldmxcsr guest; cvtsi2ss xmm0,eax; movss [ecx],xmm0; stmxcsr guest; ldmxcsr host\n'
+            '    __asm {\n' + ''.join(f'        {x}\n' for x in
+                                      ['lea ecx, host'] + emit_bytes(0x0f, 0xae, 0x19) + ['lea ecx, guest'] +
+                                      emit_bytes(0x0f, 0xae, 0x11) + ['mov eax, value'] +
+                                      emit_bytes(0xf3, 0x0f, 0x2a, 0xc0) + ['lea ecx, r'] +
+                                      emit_bytes(0xf3, 0x0f, 0x11, 0x01) + ['lea ecx, guest'] +
+                                      emit_bytes(0x0f, 0xae, 0x19) + ['lea ecx, host'] + emit_bytes(0x0f, 0xae, 0x11)) +
+            '    }\n    s.mxcsr = guest;\n    return r;\n}\n')
+
+
+def vc6_compatible(text):
+    """Write the backend header the way VC6 code is written: typedef, __int64, plain enum,
+    __asm; no C++11 constructs and no compatibility macros."""
+    reps = [
+        ('#include <intrin.h>\n', ''),
+        ('using U=unsigned int; using U64=unsigned long long; using B=unsigned char;',
+         'typedef unsigned int U; typedef unsigned __int64 U64; typedef unsigned char B;'),
+        ('static_assert(sizeof(U)==4,"32-bit register type required");\n', ''),
+        ('enum class Stop257:U {Running,Returned,MissingEntry,BadReturn,BudgetExhausted};',
+         'enum Stop257 { STOP257_RUNNING, STOP257_RETURNED, STOP257_MISSING_ENTRY, STOP257_BAD_RETURN,\n'
+         '               STOP257_BUDGET_EXHAUSTED };'),
+        ('extern "C" unsigned long __readfsdword(unsigned long);\n#pragma intrinsic(__readfsdword)\n'
+         'static __forceinline U fs257(){return static_cast<U>(__readfsdword(0x18));}',
+         'static __forceinline U fs257(){\n    U v;\n    __asm {\n        mov eax, fs:[0x18]\n        mov v, eax\n    }\n    return v;\n}'),
+    ]
+    for a, b in reps:
+        text = text.replace(a, b)
+    # 80-bit helpers: unused since x87 runs natively (and they need C99 math).
+    for fn in ('read_f80_430', 'write_f80_430'):
+        a = text.find(f'static __forceinline double {fn}' if fn.startswith('read') else f'static __forceinline void {fn}')
+        if a >= 0:
+            text = text[:a] + text[text.index('\n}\n', a) + 3:]
+    a = text.find('enum Sse257 : U {')
+    if a >= 0:
+        b = text.index('static __forceinline void shufps257', a)
+        text = text[:a] + vc6_sse_helpers() + text[b:]
+    text = re.sub(r'\b(\d+)LL\b', r'\1i64', text)
+    text = re.sub(r'\bunsigned long long\b', 'unsigned __int64', text)
+    text = re.sub(r'\blong long\b', '__int64', text)
+    text = re.sub(r'\b((?:0x[0-9a-fA-F]+)|[0-9]+)ull\b', r'\1ui64', text)
+    text = re.sub(r'\b((?:0x[0-9a-fA-F]+)|[0-9]+)ll\b', r'\1i64', text)
+    text = text.replace('_InterlockedExchangeAdd(reinterpret_cast<volatile long*>(',
+                        'InterlockedExchangeAdd(reinterpret_cast<long*>(')
+    # LOCK INC/DEC in the generated code use the Win32 interlocked add (kernel32).
+    text = text.replace('#pragma once\n', '#pragma once\nextern "C" __declspec(dllimport) long __stdcall '
+                        'InterlockedExchangeAdd(long*, long);\n', 1)
+    return vc6_stops(text).replace('#pragma once\n', '#pragma once\n' + VC6_PRELUDE, 1)
+
+
 HEADER_NF = r'''
 // Value-only forms used where the flags an instruction writes are provably dead.
 static __forceinline U add257nf(U a,U b,U bits){return (a+b)&mask257(bits);}
@@ -506,7 +595,7 @@ def generate(translate, header, img, entries, pointers=()):
         if not path.exists() or path.read_text(encoding='utf-8') != text:
             path.write_text(text, encoding='utf-8')
 
-    put(gen / 'machine257.h', header)
+    put(gen / 'machine257.h', vc6_compatible(header))
     table_rows, rejected = [], []
     tu, tu_index, insns, functions, ranges = [], 0, 0, 0, 0
     t0 = time.time()
@@ -553,6 +642,17 @@ def generate(translate, header, img, entries, pointers=()):
         spans = [(a, n) for a, n, _ in first[e['entry_va']]]
         rel, ident = layout[e['entry_va']]
         functions += 1
+        h = HUMANIZED.get(e['entry_va'])
+        if h:
+            # A humanized function replaces the whole lowered body: only when nothing else
+            # enters it in the middle (the bridge serves the entry address alone).
+            if len(spans) != 1 or out[0][2]:
+                raise ValueError(f"humanized {e['entry_va']} has several ranges or mid-entries")
+            a = spans[0][0]
+            files[rel].append((a, h['name'], (RUN / h['source']).read_text(encoding='utf-8')))
+            table_rows.append((a, h['name'] + '_430'))
+            STATS['humanized'] = STATS.get('humanized', 0) + 1
+            continue
         for k, ((a, _), (code, n, mids, _, _)) in enumerate(zip(spans, out)):
             ranges += 1
             insns += n
@@ -567,7 +667,9 @@ def generate(translate, header, img, entries, pointers=()):
         path = src / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         origin = SOURCE_NOTES.get(rel, '')
-        body = '\n'.join(code for _, _, code in sorted(items))
+        body = '\n'.join(code for _, _, code in sorted(items)).replace(
+            '_InterlockedExchangeAdd(reinterpret_cast<volatile long*>(', 'InterlockedExchangeAdd(reinterpret_cast<long*>(')
+        body = vc6_stops(body)
         put(path, f'// {origin}\n#include "machine257.h"\n' + body if origin else '#include "machine257.h"\n' + body)
         tu_index += 1
     fns = sorted({f for _, f in table_rows})
@@ -596,7 +698,7 @@ def generate(translate, header, img, entries, pointers=()):
     for d in sorted((p for p in src.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
         if not any(d.iterdir()) and str(d).lower() not in keep_dirs:
             d.rmdir()
-    return dict(dead_flag_writes=STATS["dead_flag_writes"], gap_pieces_added=added, lowered=functions, ranges=ranges,
+    return dict(dead_flag_writes=STATS["dead_flag_writes"], humanized=STATS.get("humanized", 0), gap_pieces_added=added, lowered=functions, ranges=ranges,
                 table_entries=len(table_rows), rejected=rejected, instructions=insns, source_files=tu_index,
                 generate_seconds=round(time.time() - t0, 1))
 
@@ -814,8 +916,74 @@ def build(jobs):
                 exe_bytes=exe.stat().st_size if exe.exists() else 0)
 
 
+# Humanized functions: readable VC6 C++ that replaces the lowered body of an entry (file in
+# runs/430-lowered-whole-game/humanized/, with its own bridge `<name>_430`). Each one is proven
+# against the original bytes by verify-v2-humanized-430.py before it is listed here.
+HUMANIZED = {
+    '00556640': dict(source='humanized/00556640.cpp', name='install_paths_size_00556640',
+                     args=['ptr'], **{'return': 'long'}),
+}
+
+VC6_ROOT = Path(os.environ.get('VC6_ROOT', r'D:\Microsoft Visual Studio\VC98'))
+# Files VC6's optimizer cannot finish (HReplay.cpp: over 2.5 h at /O2); built with /Od.
+VC6_NO_OPT = {'hreplay.cpp'}
+
+
+def vc6_env():
+    out = subprocess.run(f'cmd /c ""{VC6_ROOT / "Bin" / "VCVARS32.BAT"}" >nul && set"',
+                         capture_output=True, text=True, shell=True).stdout
+    return dict(line.split('=', 1) for line in out.splitlines() if '=' in line)
+
+
+def build_vc6(jobs):
+    """The same tree built with Visual C++ 6.0: cl per file (VC6 has no /MP), VC6 link."""
+    env = vc6_env()
+    gen, obj = GEN, OUT / ('obj-vc6' + os.environ.get('VC6_OBJ_SUFFIX', ''))
+    obj.mkdir(parents=True, exist_ok=True)
+    tree = [q for q in (gen / 'src').rglob('*') if q.suffix.lower() in ('.c', '.cpp')]
+    sources = sorted(q for q in tree if '#include "machine257.h"' in q.read_text(encoding='utf-8'))
+    sources += [gen / 'lowered_table.cpp', RUN / 'runtime_430.cpp', RUN / 'reserve_430.cpp']
+    header = gen / 'machine257.h'
+    target = {s: obj / f'{s.stem}.obj' for s in sources}
+
+    def stale(src):
+        o = target[src]
+        return not o.exists() or o.stat().st_mtime < max(src.stat().st_mtime, header.stat().st_mtime)
+
+    def compile_one(src):
+        opt = '/Od' if src.name.lower() in VC6_NO_OPT else os.environ.get('VC6_OPT', '/O2')
+        # /MT: the game is multithreaded, so the multithreaded static CRT (LIBCMT), as the original.
+        r = subprocess.run([str(VC6_ROOT / 'Bin' / 'CL.EXE'), '/nologo', '/c', '/TP', '/MT', opt, '/W0', '/GX-', '/Zm500',
+                            f'/I{gen}', f'/Fo{target[src]}', str(src)], capture_output=True, text=True, env=env)
+        return src, [ln for ln in r.stdout.splitlines() if ' error ' in ln or 'fatal error' in ln]
+
+    todo = [s for s in sources if stale(s)]
+    t0 = time.time()
+    with ThreadPoolExecutor(max(1, jobs)) as ex:
+        results = list(ex.map(compile_one, todo))
+    errors = [e for _, errs in results for e in errs]
+    compile_s = round(time.time() - t0, 1)
+    (OUT / 'compile-vc6.log').write_text('\n'.join(errors), encoding='utf-8')
+    if errors:
+        return dict(vc6=True, compile_seconds=compile_s, compile_errors=len(errors), first_errors=errors[:10])
+    exe = OUT / f"PorscheLowered-vc6{os.environ.get('VC6_OBJ_SUFFIX', '')}.exe"
+    rsp = OUT / 'link-vc6.rsp'
+    # reserve_430.obj first: its .text contribution must be the first one, at 0x00401000.
+    order = [target[RUN / 'reserve_430.cpp']] + [target[s] for s in sources if s.name != 'reserve_430.cpp']
+    rsp.write_text('\n'.join(f'"{p}"' for p in order), encoding='utf-8')
+    r = subprocess.run([str(VC6_ROOT / 'Bin' / 'LINK.EXE'), '/nologo', '/MACHINE:IX86', '/SUBSYSTEM:CONSOLE',
+                        '/BASE:0x400000', '/FIXED', '/LARGEADDRESSAWARE', '/STACK:0x200000,0x200000',
+                        f'/OUT:{exe}', f'/MAP:{OUT / "PorscheLowered-vc6.map"}', '/NODEFAULTLIB:libc.lib', f'@{rsp}',
+                        'libcmt.lib', 'kernel32.lib', 'user32.lib', 'winmm.lib'], capture_output=True, text=True, env=env, cwd=OUT)
+    (OUT / 'link-vc6.log').write_text(r.stdout + r.stderr, encoding='utf-8')
+    return dict(vc6=True, compiled_sources=len(todo), compile_seconds=compile_s, compile_errors=0,
+                link_exit=r.returncode, link_errors=[ln for ln in r.stdout.splitlines() if 'error' in ln][:10],
+                exe_bytes=exe.stat().st_size if exe.exists() else 0)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--vc6', action='store_true', help='build with Visual C++ 6.0 (VC6_ROOT)')
     ap.add_argument('--generate-only', action='store_true')
     ap.add_argument('--build-only', action='store_true')
     ap.add_argument('--jobs', type=int, default=os.cpu_count() or 4)
@@ -833,7 +1001,7 @@ def main():
         translate, header = backend()
         result.update(generate(translate, header, img, entries + synthetic, pointers))
     if not args.generate_only:
-        result.update(build(args.jobs))
+        result.update(build_vc6(args.jobs) if args.vc6 else build(args.jobs))
     print(json.dumps({k: v for k, v in result.items() if k != 'rejected'}, indent=1))
     (OUT / 'result.json').write_text(json.dumps(result, indent=1) + '\n', encoding='utf-8')
 

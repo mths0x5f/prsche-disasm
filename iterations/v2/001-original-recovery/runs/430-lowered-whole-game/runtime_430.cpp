@@ -72,7 +72,7 @@ void fatal(const char* what, const Machine257* s, U extra)
 void reset_machine(Machine257& m)
 {
     memset(&m, 0, sizeof m);
-    m.stop = Stop257::Running;
+    m.stop = STOP257_RUNNING;
     m.fpu_cw = 0x037fu;
     m.mxcsr = 0x1f80u;
     m.flags = 0x202u;
@@ -139,10 +139,10 @@ ImportName* find_import(U address)
 {
     for (U k = import_hash(address), probes = 0; probes < 8192; k = (k + 1) & 8191, ++probes) {
         U i = g_import_hash[k];
-        if (!i) return nullptr;
+        if (!i) return NULL;
         if (g_imports[i - 1].address == address) return &g_imports[i - 1];
     }
-    return nullptr;
+    return NULL;
 }
 
 void add_import(U address, U iat_slot, const char* fmt, const char* a, const char* b)
@@ -152,8 +152,8 @@ void add_import(U address, U iat_slot, const char* fmt, const char* a, const cha
     im.address = address;
     im.iat_slot = iat_slot;
     _snprintf(im.name, sizeof im.name, fmt, a, b);
-    for (const CallbackArg& c : kCallbackArgs)
-        if (!strcmp(im.name, c.name)) im.callback_arg = c.arg;
+    for (U c = 0; c < sizeof kCallbackArgs / sizeof kCallbackArgs[0]; ++c)
+        if (!strcmp(im.name, kCallbackArgs[c].name)) im.callback_arg = kCallbackArgs[c].arg;
     U k = import_hash(address);
     while (g_import_hash[k]) k = (k + 1) & 8191;
     g_import_hash[k] = ++g_import_count;
@@ -162,7 +162,7 @@ void add_import(U address, U iat_slot, const char* fmt, const char* a, const cha
 const char* import_name(U target)
 {
     ImportName* im = find_import(target);
-    return im ? im->name : nullptr;
+    return im ? im->name : NULL;
 }
 
 // ---- callback stubs: `push va; jmp reverse_asm` in executable memory ------------------
@@ -179,7 +179,7 @@ U stub_for(U va)
     while (g_stub_keys[k] && g_stub_keys[k] != va) k = (k + 1) & 1023;
     if (!g_stub_keys[k] && g_stub_used + 10u <= 0x10000u) {
         if (!g_stub_pool)
-            g_stub_pool = static_cast<BYTE*>(VirtualAlloc(nullptr, 0x10000, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
+            g_stub_pool = static_cast<BYTE*>(VirtualAlloc(NULL, 0x10000, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
         BYTE* p = g_stub_pool + g_stub_used;
         p[0] = 0x68; *reinterpret_cast<U*>(p + 1) = va;
         p[5] = 0xe9; *reinterpret_cast<U*>(p + 6) = reinterpret_cast<U>(&reverse_asm) - reinterpret_cast<U>(p + 10);
@@ -250,7 +250,8 @@ void native_call(Machine257& s, U target)
             write257(slot, 4u, stub_for(cb));
     }
     U return_pc = read257(s.r[4], 4u);
-    Fwd f{ s.r[0], s.r[1], s.r[2], s.r[4] + 4u, target, 0u };
+    Fwd f;
+    f.eax = s.r[0]; f.ecx = s.r[1]; f.edx = s.r[2]; f.esp = s.r[4] + 4u; f.target = target; f.host_esp = 0u;
     ++g_native_calls;
     g_last_native = target;
     U saved = t_host_sp;
@@ -269,7 +270,7 @@ void native_call(Machine257& s, U target)
             add_import(f.eax, 0, "proc!%s%s", reinterpret_cast<const char*>(proc), "");
     }
     s.pc = return_pc;
-    s.stop = Stop257::Returned;
+    s.stop = STOP257_RETURNED;
 }
 
 // ---- reverse bridge -------------------------------------------------------------------
@@ -283,8 +284,12 @@ ReverseCount g_reverse_counts[1024];
 void count_reverse(U va)
 {
     for (U k = (va * 2654435761u) >> 22, probes = 0; probes < 1024; k = (k + 1) & 1023, ++probes) {
-        LONG seen = InterlockedCompareExchange(&g_reverse_counts[k].va, static_cast<LONG>(va), 0);
-        if (seen == 0 || seen == static_cast<LONG>(va)) { InterlockedIncrement(&g_reverse_counts[k].n); return; }
+        LONG seen = reinterpret_cast<LONG>(InterlockedCompareExchange(
+            reinterpret_cast<PVOID*>(const_cast<LONG*>(&g_reverse_counts[k].va)), reinterpret_cast<PVOID>(va), NULL));
+        if (seen == 0 || seen == static_cast<LONG>(va)) {
+            InterlockedIncrement(const_cast<LONG*>(&g_reverse_counts[k].n));
+            return;
+        }
     }
 }
 
@@ -294,8 +299,8 @@ extern "C" U __cdecl pick_host_stack430()
         return t_host_sp;
     if (!t_side_top) {
         const SIZE_T size = 64u << 20;
-        void* p = VirtualAlloc(nullptr, size, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
-        if (!p) fatal("side stack allocation failed", nullptr, 0);
+        void* p = VirtualAlloc(NULL, size, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
+        if (!p) fatal("side stack allocation failed", NULL, 0);
         t_side_top = reinterpret_cast<U>(p) + static_cast<U>(size) - 64u;
     }
     return t_side_top;
@@ -316,7 +321,7 @@ extern "C" Resume* __cdecl reverse_entry430(U* block)
     t_current = &m;
     g_last = &m;
     dispatch257(m, target);
-    if (m.stop != Stop257::Returned)
+    if (m.stop != STOP257_RETURNED)
         fatal("reverse entry did not return", &m, target);
     t_current = outer;
     g_last = outer;
@@ -348,6 +353,17 @@ __declspec(naked) void reverse_asm()
     }
 }
 
+// Module that contains an address: the allocation base of its region (Win9x/NT4-compatible).
+HMODULE module_of(U address, char* path, DWORD room)
+{
+    MEMORY_BASIC_INFORMATION mb;
+    HMODULE mod = NULL;
+    if (VirtualQuery(reinterpret_cast<void*>(address), &mb, sizeof mb) && mb.AllocationBase)
+        mod = reinterpret_cast<HMODULE>(mb.AllocationBase);
+    if (!mod || !GetModuleFileNameA(mod, path, room)) lstrcpynA(path, "?", room);
+    return mod;
+}
+
 LONG CALLBACK vectored430(EXCEPTION_POINTERS* info)
 {
     EXCEPTION_RECORD* e = info->ExceptionRecord;
@@ -364,14 +380,11 @@ LONG CALLBACK vectored430(EXCEPTION_POINTERS* info)
         fprintf(stderr, "[430] exception %08lx at host eip=%08lx addr=%08lx\n", e->ExceptionCode, c->Eip,
                 e->NumberParameters > 1 ? static_cast<unsigned long>(e->ExceptionInformation[1]) : 0ul);
         // Module + offset of the faulting EIP, and the host registers (native code, e.g. a DLL).
-        HMODULE mod = nullptr;
-        char path[MAX_PATH] = "?";
-        if (GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-                               reinterpret_cast<LPCSTR>(static_cast<ULONG_PTR>(c->Eip)), &mod))
-            GetModuleFileNameA(mod, path, MAX_PATH);
+        char path[MAX_PATH];
+        HMODULE mod = module_of(c->Eip, path, MAX_PATH);
         fprintf(stderr, "[430]   in %s base=%08lx +%08lx; eax=%08lx ecx=%08lx edx=%08lx ebx=%08lx esp=%08lx ebp=%08lx esi=%08lx edi=%08lx\n",
-                path, static_cast<unsigned long>(reinterpret_cast<ULONG_PTR>(mod)),
-                static_cast<unsigned long>(c->Eip - reinterpret_cast<ULONG_PTR>(mod)),
+                path, static_cast<unsigned long>(reinterpret_cast<DWORD>(mod)),
+                static_cast<unsigned long>(c->Eip - reinterpret_cast<DWORD>(mod)),
                 c->Eax, c->Ecx, c->Edx, c->Ebx, c->Esp, c->Ebp, c->Esi, c->Edi);
         for (U k = 0; k < 16; ++k) {
             U a = c->Esp + 4 * k;
@@ -405,52 +418,54 @@ DWORD WINAPI shim_GetModuleFileNameA(HMODULE module, LPSTR out, DWORD size)
 
 void map_image(const char* path)
 {
-    HANDLE f = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, 0, nullptr);
-    if (f == INVALID_HANDLE_VALUE) fatal("cannot open original image", nullptr, GetLastError());
-    DWORD size = GetFileSize(f, nullptr), got = 0;
-    BYTE* file = static_cast<BYTE*>(VirtualAlloc(nullptr, size, MEM_COMMIT, PAGE_READWRITE));
-    ReadFile(f, file, size, &got, nullptr);
+    HANDLE f = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+    if (f == INVALID_HANDLE_VALUE) fatal("cannot open original image", NULL, GetLastError());
+    DWORD size = GetFileSize(f, NULL), got = 0;
+    BYTE* file = static_cast<BYTE*>(VirtualAlloc(NULL, size, MEM_COMMIT, PAGE_READWRITE));
+    ReadFile(f, file, size, &got, NULL);
     CloseHandle(f);
-    auto* nt = reinterpret_cast<IMAGE_NT_HEADERS32*>(file + reinterpret_cast<IMAGE_DOS_HEADER*>(file)->e_lfanew);
-    if (nt->OptionalHeader.ImageBase != kBase) fatal("unexpected image base", nullptr, nt->OptionalHeader.ImageBase);
+    IMAGE_NT_HEADERS* nt = reinterpret_cast<IMAGE_NT_HEADERS*>(file + reinterpret_cast<IMAGE_DOS_HEADER*>(file)->e_lfanew);
+    if (nt->OptionalHeader.ImageBase != kBase) fatal("unexpected image base", NULL, nt->OptionalHeader.ImageBase);
     U image_size = nt->OptionalHeader.SizeOfImage;
     // The host EXE is based at 0x00400000 and reserve_430.asm fills its first pages, so the
     // original sections land at their own VAs inside this module.
     if (reinterpret_cast<U>(&reserve430) != kBase + 0x1000u || image_size - 0x1000u > kReserveBytes)
-        fatal("reserve does not cover the original image", nullptr, reinterpret_cast<U>(&reserve430));
+        fatal("reserve does not cover the original image", NULL, reinterpret_cast<U>(&reserve430));
     BYTE* img = reinterpret_cast<BYTE*>(kBase);
     DWORD old = 0;
     if (!VirtualProtect(img + 0x1000, image_size - 0x1000u, PAGE_READWRITE, &old))
-        fatal("cannot unprotect the reserve", nullptr, GetLastError());
+        fatal("cannot unprotect the reserve", NULL, GetLastError());
     g_image_end = kBase + image_size;
     g_entry_va = kBase + nt->OptionalHeader.AddressOfEntryPoint;
     // Our own headers stay; only the resource directory is pointed at the original's.
-    auto* own = reinterpret_cast<IMAGE_NT_HEADERS32*>(img + reinterpret_cast<IMAGE_DOS_HEADER*>(img)->e_lfanew);
+    IMAGE_NT_HEADERS* own = reinterpret_cast<IMAGE_NT_HEADERS*>(img + reinterpret_cast<IMAGE_DOS_HEADER*>(img)->e_lfanew);
     VirtualProtect(img, 0x1000, PAGE_READWRITE, &old);
     own->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_RESOURCE] =
         nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_RESOURCE];
     VirtualProtect(img, 0x1000, old, &old);
     IMAGE_SECTION_HEADER* sec = IMAGE_FIRST_SECTION(nt);
     g_code_lo = 0xffffffffu; g_code_hi = 0;
-    for (U i = 0; i < nt->FileHeader.NumberOfSections; ++i) {
-        U raw = sec[i].SizeOfRawData < sec[i].Misc.VirtualSize ? sec[i].SizeOfRawData : sec[i].Misc.VirtualSize;
-        memcpy(img + sec[i].VirtualAddress, file + sec[i].PointerToRawData, raw);
-        if (sec[i].Characteristics & IMAGE_SCN_MEM_EXECUTE) {
-            U lo = kBase + sec[i].VirtualAddress, hi = lo + sec[i].Misc.VirtualSize;
+    U si;
+    for (si = 0; si < nt->FileHeader.NumberOfSections; ++si) {
+        U raw = sec[si].SizeOfRawData < sec[si].Misc.VirtualSize ? sec[si].SizeOfRawData : sec[si].Misc.VirtualSize;
+        memcpy(img + sec[si].VirtualAddress, file + sec[si].PointerToRawData, raw);
+        if (sec[si].Characteristics & IMAGE_SCN_MEM_EXECUTE) {
+            U lo = kBase + sec[si].VirtualAddress, hi = lo + sec[si].Misc.VirtualSize;
             if (lo < g_code_lo) g_code_lo = lo;
             if (hi > g_code_hi) g_code_hi = hi;
         }
     }
     const U import_rva = nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT].VirtualAddress;
     VirtualFree(file, 0, MEM_RELEASE);
-    for (auto* d = reinterpret_cast<IMAGE_IMPORT_DESCRIPTOR*>(img + import_rva); d->Name; ++d) {
+    IMAGE_IMPORT_DESCRIPTOR* d;
+    for (d = reinterpret_cast<IMAGE_IMPORT_DESCRIPTOR*>(img + import_rva); d->Name; ++d) {
         const char* dll = reinterpret_cast<const char*>(img + d->Name);
         HMODULE h = LoadLibraryA(dll);
         if (!h) { fprintf(stderr, "[430] missing DLL %s\n", dll); continue; }
-        auto* names = reinterpret_cast<U*>(img + (d->OriginalFirstThunk ? d->OriginalFirstThunk : d->FirstThunk));
-        auto* iat = reinterpret_cast<U*>(img + d->FirstThunk);
+        U* names = reinterpret_cast<U*>(img + (d->OriginalFirstThunk ? d->OriginalFirstThunk : d->FirstThunk));
+        U* iat = reinterpret_cast<U*>(img + d->FirstThunk);
         for (; *names; ++names, ++iat) {
-            const char* fn = (*names & 0x80000000u) ? reinterpret_cast<const char*>(static_cast<ULONG_PTR>(*names & 0xffffu))
+            const char* fn = (*names & 0x80000000u) ? reinterpret_cast<const char*>(static_cast<DWORD>(*names & 0xffffu))
                                                      : reinterpret_cast<const char*>(img + *names + 2);
             FARPROC p = GetProcAddress(h, fn);
             if (!(*names & 0x80000000u)) {
@@ -466,9 +481,9 @@ void map_image(const char* path)
         }
     }
     g_entries = static_cast<void (**)(Machine257&)>(
-        VirtualAlloc(nullptr, (g_code_hi - g_code_lo) * sizeof(void*), MEM_COMMIT, PAGE_READWRITE));
-    for (U i = 0; i < lowered_count430; ++i)
-        g_entries[lowered_table430[i].va - g_code_lo] = lowered_table430[i].fn;
+        VirtualAlloc(NULL, (g_code_hi - g_code_lo) * sizeof(void*), MEM_COMMIT, PAGE_READWRITE));
+    for (si = 0; si < lowered_count430; ++si)
+        g_entries[lowered_table430[si].va - g_code_lo] = lowered_table430[si].fn;
 }
 
 // Sampling profiler (PORSCHE430_PROFILE=<seconds>, PORSCHE430_PROFILE_OUT=<file>): samples
@@ -476,17 +491,19 @@ void map_image(const char* path)
 // (symbolized afterwards with the linker map); other samples are grouped by module.
 DWORD WINAPI profile430(void* arg)
 {
-    const DWORD seconds = static_cast<DWORD>(reinterpret_cast<ULONG_PTR>(arg));
-    if (const char* delay = getenv("PORSCHE430_PROFILE_DELAY"))
+    const DWORD seconds = reinterpret_cast<DWORD>(arg);
+    const char* delay = getenv("PORSCHE430_PROFILE_DELAY");
+    if (delay)
         Sleep(static_cast<DWORD>(atol(delay)) * 1000u);
-    auto* own = reinterpret_cast<IMAGE_NT_HEADERS32*>(kBase + reinterpret_cast<IMAGE_DOS_HEADER*>(kBase)->e_lfanew);
+    IMAGE_NT_HEADERS* own = reinterpret_cast<IMAGE_NT_HEADERS*>(kBase + reinterpret_cast<IMAGE_DOS_HEADER*>(kBase)->e_lfanew);
     const U host_end = kBase + own->OptionalHeader.SizeOfImage;
-    U* hits = static_cast<U*>(VirtualAlloc(nullptr, (host_end - kBase) / 4u * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
+    U* hits = static_cast<U*>(VirtualAlloc(NULL, (host_end - kBase) / 4u * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
     const U kMaxNative = 1u << 20;
-    U* native = static_cast<U*>(VirtualAlloc(nullptr, kMaxNative * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
+    U* native = static_cast<U*>(VirtualAlloc(NULL, kMaxNative * sizeof(U), MEM_COMMIT, PAGE_READWRITE));
     U total = 0, native_n = 0;
     static LONG reverse_before[1024];
-    for (U k = 0; k < 1024; ++k) reverse_before[k] = g_reverse_counts[k].n;
+    U k, i;
+    for (k = 0; k < 1024; ++k) reverse_before[k] = g_reverse_counts[k].n;
     const DWORD end = GetTickCount() + seconds * 1000u;
     timeBeginPeriod(1);
     while (GetTickCount() < end) {
@@ -506,17 +523,14 @@ DWORD WINAPI profile430(void* arg)
     FILE* out = fopen(path ? path : "profile430.txt", "w");
     if (!out) return 0;
     fprintf(out, "total %u\n", total);
-    for (U k = 0; k < 1024; ++k)
+    for (k = 0; k < 1024; ++k)
         if (g_reverse_counts[k].n - reverse_before[k])
             fprintf(out, "reverse %08lx %ld\n", g_reverse_counts[k].va, g_reverse_counts[k].n - reverse_before[k]);
-    for (U i = 0; i < (host_end - kBase) / 4u; ++i)
+    for (i = 0; i < (host_end - kBase) / 4u; ++i)
         if (hits[i]) fprintf(out, "host %08x %u\n", kBase + 4u * i, hits[i]);
-    for (U i = 0; i < native_n; ++i) {
-        HMODULE m = nullptr;
-        char name[MAX_PATH] = "?";
-        if (GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-                               reinterpret_cast<LPCSTR>(static_cast<ULONG_PTR>(native[i])), &m) && m)
-            GetModuleFileNameA(m, name, MAX_PATH);
+    for (i = 0; i < native_n; ++i) {
+        char name[MAX_PATH];
+        module_of(native[i], name, MAX_PATH);
         const char* base = strrchr(name, '\\');
         fprintf(out, "native %s %08x\n", base ? base + 1 : name, native[i]);
     }
@@ -546,7 +560,7 @@ void __cdecl run_guest(U guest_esp)
     t_current = &m;
     g_last = &m;
     dispatch257(m, g_entry_va);
-    fatal(m.stop == Stop257::Returned ? "entry returned" : "entry stopped", &m, g_entry_va);
+    fatal(m.stop == STOP257_RETURNED ? "entry returned" : "entry stopped", &m, g_entry_va);
 }
 
 __declspec(naked) void __cdecl switch_to_side(U, void (__cdecl*)(U))
@@ -604,17 +618,15 @@ void run_native()
     // Code becomes executable again; IAT entries go through `push index; jmp common`.
     DWORD old = 0;
     VirtualProtect(reinterpret_cast<void*>(g_code_lo), g_code_hi - g_code_lo, PAGE_EXECUTE_READWRITE, &old);
-    auto* stubs = static_cast<BYTE*>(VirtualAlloc(nullptr, g_import_count * 10u, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
-    auto* nt = reinterpret_cast<IMAGE_NT_HEADERS32*>(
-        reinterpret_cast<BYTE*>(kBase) + reinterpret_cast<IMAGE_DOS_HEADER*>(kBase)->e_lfanew);
-    (void)nt;
-    for (U i = 0; i < g_import_count; ++i) {
+    BYTE* stubs = static_cast<BYTE*>(VirtualAlloc(NULL, g_import_count * 10u, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
+    U i;
+    for (i = 0; i < g_import_count; ++i) {
         BYTE* p = stubs + 10u * i;
         p[0] = 0x68; *reinterpret_cast<U*>(p + 1) = i;
         p[5] = 0xe9;
         *reinterpret_cast<U*>(p + 6) = reinterpret_cast<U>(&import_hook_common430) - reinterpret_cast<U>(p + 10);
     }
-    for (U i = 0; i < g_import_count; ++i)
+    for (i = 0; i < g_import_count; ++i)
         if (g_imports[i].iat_slot) *reinterpret_cast<U*>(g_imports[i].iat_slot) = reinterpret_cast<U>(stubs + 10u * i);
     reinterpret_cast<void (*)()>(g_entry_va)();
 }
@@ -641,17 +653,18 @@ void unlowered430(Machine257& s)
 void dispatch257(Machine257& s, U target)
 {
     if (target >= g_code_lo && target < g_code_hi) {
-        if (auto fn = g_entries[target - g_code_lo]) {
+        void (*fn)(Machine257&) = g_entries[target - g_code_lo];
+        if (fn) {
             s.pc = target;  // selects the entry of a multi-entry range
             fn(s);
             return;
         }
         s.pc = target;
-        s.stop = Stop257::MissingEntry;
+        s.stop = STOP257_MISSING_ENTRY;
         fatal("no lowered body", &s, target);
     }
     if (target >= kBase && target < g_image_end) {
-        s.stop = Stop257::MissingEntry;
+        s.stop = STOP257_MISSING_ENTRY;
         fatal("jump into non-code image range", &s, target);
     }
     native_call(s, target);
@@ -660,27 +673,46 @@ void dispatch257(Machine257& s, U target)
 int main(int argc, char** argv)
 {
     const char* path = argc > 1 ? argv[1] : "Porsche.exe";
-    if (!GetFullPathNameA(path, MAX_PATH, g_original_path, nullptr)) return 2;
+    if (!GetFullPathNameA(path, MAX_PATH, g_original_path, NULL)) return 2;
     g_t0 = GetTickCount();
+    // The reverse bridge needs DEP: native code entering the (non-executable) original image
+    // must fault. VC6's linker has no /NXCOMPAT, so DEP is switched on here (XP SP3 and later).
+    typedef BOOL (WINAPI *SetDepProc)(DWORD);
+    typedef BOOL (WINAPI *GetDepProc)(HANDLE, DWORD*, BOOL*);
+    HMODULE kernel = GetModuleHandleA("kernel32.dll");
+    SetDepProc set_dep = reinterpret_cast<SetDepProc>(GetProcAddress(kernel, "SetProcessDEPPolicy"));
+    GetDepProc get_dep = reinterpret_cast<GetDepProc>(GetProcAddress(kernel, "GetProcessDEPPolicy"));
+    DWORD dep_flags = 0;
+    BOOL dep_permanent = FALSE;
+    if (set_dep) set_dep(1);  // PROCESS_DEP_ENABLE; fails harmlessly when already permanent
+    if (!get_dep || !get_dep(GetCurrentProcess(), &dep_flags, &dep_permanent) || !(dep_flags & 1))
+        fatal("DEP could not be enabled", NULL, dep_flags);
     InitializeCriticalSection(&g_stub_lock);
     DuplicateHandle(GetCurrentProcess(), GetCurrentThread(), GetCurrentProcess(), &g_main_thread, 0, FALSE,
                     DUPLICATE_SAME_ACCESS);
     map_image(g_original_path);
-    if (const char* p = getenv("PORSCHE430_PROFILE"))
-        CreateThread(nullptr, 0, &profile430, reinterpret_cast<void*>(static_cast<ULONG_PTR>(atol(p))), 0, nullptr);
-    AddVectoredExceptionHandler(1, &vectored430);
-    if (const char* t = getenv("PORSCHE430_TRACE"))
-        g_trace_left = atol(t);
+    const char* profile = getenv("PORSCHE430_PROFILE");
+    if (profile)
+        CreateThread(NULL, 0, &profile430, reinterpret_cast<void*>(atol(profile)), 0, NULL);
+    // AddVectoredExceptionHandler (Windows XP) is not in the VC6 SDK: bind it at run time.
+    typedef PVOID (WINAPI *AddVehProc)(ULONG, LONG (CALLBACK *)(EXCEPTION_POINTERS*));
+    AddVehProc add_veh = reinterpret_cast<AddVehProc>(
+        GetProcAddress(GetModuleHandleA("kernel32.dll"), "AddVectoredExceptionHandler"));
+    if (!add_veh) fatal("AddVectoredExceptionHandler is not available", NULL, 0);
+    add_veh(1, &vectored430);
+    const char* trace = getenv("PORSCHE430_TRACE");
+    if (trace)
+        g_trace_left = atol(trace);
     g_trace_filter = getenv("PORSCHE430_TRACE_FILTER");
     if (getenv("PORSCHE430_WATCHDOG"))
-        CreateThread(nullptr, 0, &watchdog430, nullptr, 0, nullptr);
+        CreateThread(NULL, 0, &watchdog430, NULL, 0, NULL);
     if (getenv("PORSCHE430_NATIVE")) {
         fprintf(stderr, "[430] image mapped, NATIVE reference mode, entry %08x\n", g_entry_va);
         run_native();
         return 0;
     }
     fprintf(stderr, "[430] image mapped, %u lowered bodies, entry %08x\n", lowered_count430, g_entry_va);
-    char* side = static_cast<char*>(VirtualAlloc(nullptr, 64u << 20, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE));
+    char* side = static_cast<char*>(VirtualAlloc(NULL, 64u << 20, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE));
     switch_to_side(reinterpret_cast<U>(side) + (64u << 20) - 64u, &run_guest);
     return 0;
 }
