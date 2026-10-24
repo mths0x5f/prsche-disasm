@@ -79,8 +79,10 @@ harness\build-host.cmd <out>
 
 ## 3. Recovered source and builds
 
-Source: `source/recovered/gimme.dll` (`build.cmd <out>` → `gimme-faithful.dll`, `gimme-fixed.dll`,
-`gimme_oracle.exe`). The only difference between the variants is `GIMEX_FIX_DESCRIPTOR_COPY` in
+Source: moved out of the repository on 2026-10-24 (user decision) to `D:\projetos\gimme-src`, with a
+Visual C++ 6 workspace `gimme.dsw` (configurations Faithful and Fixed, built and verified with VC6
+12.00.8168) and `build.cmd <out>` for current MSVC (→ `gimme-faithful.dll`, `gimme-fixed.dll`,
+`gimme_oracle.exe`). The last in-repo version is commit `1d2378a`. The only difference between the variants is `GIMEX_FIX_DESCRIPTOR_COPY` in
 `dev/FaceInRace/FaceInRace.cpp`: descriptor copies allocate and copy the source's own `size`, as the
 same-size branch of `10001450` already does. `_sem_arquivo/platform.cpp` selects the x87 `sin()` of
 the static CRT (the VC6 CRT of the original has no SSE2 path).
@@ -121,5 +123,10 @@ the game converts `ALLdrivr.fsh` image 8 ("driv").
 | original | 12 | 3 (`gimme+0x1055ac`) | — |
 | gimme-fixed.dll (FSH + filters, 04b1893) | 20 | 0 | 20, all identical |
 | gimme-fixed.dll (with JPG/TIF/PNG, 39cf569) | 20 | 0 | 20, all identical |
+| Fixed\gimme.dll built with VC6 (D:\projetos\gimme-src) | 20 | 0 | 20, all identical |
+
+The VC6 Faithful build also faults like the original under `--guard` (9/9, block offset 0x28c0) and
+converts the photo corpus identically (291 photos; 79 where both crash; 3 PNG with process-dependent
+memory).
 
 The 20 pic16.fsh files (MD5 `61a160ea…`) equal the original DLL's output for the same image.
