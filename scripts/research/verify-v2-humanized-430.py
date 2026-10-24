@@ -147,6 +147,8 @@ def main():
     decls, cases = [], []
     units = []
     for va, h in sorted(b.HUMANIZED.items()):
+        if h.get('oracle'):
+            continue   # proven by its own oracle (e.g. verify-v2-humanized-stream-430.py)
         lo, hi = (int(x, 16) for x in catalog[va]['ranges'][0])
         code = img.read(lo, hi - lo + 1)
         kinds = [KIND[k] for k in h['args']] + [0] * (4 - len(h['args']))
@@ -176,7 +178,7 @@ def main():
     if not args.mutate:
         (RUN / 'humanized-oracle.json').write_text(json.dumps(dict(
             schema=2, compiler=f'Visual C++ 6.0 ({b.VC6_ROOT})', cases_per_function=args.cases,
-            functions=sorted(b.HUMANIZED), output=run.stdout.splitlines(), exit_code=run.returncode),
+            functions=sorted(v for v, h in b.HUMANIZED.items() if not h.get('oracle')), output=run.stdout.splitlines(), exit_code=run.returncode),
             indent=1) + '\n', encoding='utf-8')
 
 

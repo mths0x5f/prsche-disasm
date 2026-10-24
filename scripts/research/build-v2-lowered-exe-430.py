@@ -198,6 +198,8 @@ static inline void write_f80_430(U a,double v){
     write257(a,4u,static_cast<U>(man));write257(a+4u,4u,static_cast<U>(man>>32));write257(a+8u,2u,se);
 }
 void unlowered430(Machine257&);  // 3DNow!/FPU environment images: fatal if reached
+extern "C" U __cdecl humanized_enter430();          // host stack for calls out of humanized code
+extern "C" void __cdecl humanized_leave430(U saved);
 void repne_scasb_down430(Machine257&);  // repne scasb with DF set
 // Target is evaluated by the generated caller before ESP changes.
 static inline bool call257(Machine257&s,U target,U returnPC){
@@ -954,6 +956,16 @@ HUMANIZED = {
                      call='network_address_text_mode_0055d750((const NetworkWorker *)a0)'),
     '005a2870': dict(source='humanized/005a2870.cpp', abi='cdecl', args=['str', 'char'], ret=True,
                      call='formatter_text_find_last_005a2870((const char *)a0, (int)a1)'),
+    # stream.c (verify-v2-humanized-stream-430.py: the functions call the stream lock and the
+    # error handler, so they are proven with the original image mapped).
+    '0056b380': dict(source='humanized/0056b380.cpp', abi='cdecl', args=['ptr', 'ptr', 'ptr'], ret=True,
+                     oracle='stream', call='stream_handle_0056b380((StreamTap *)a0, (Stream **)a1, (StreamTap **)a2)'),
+    '0056c000': dict(source='humanized/0056c000.cpp', abi='cdecl', args=['ptr', 'ptr'], ret=True,
+                     oracle='stream', call='stream_filter_0056c000((Stream *)a0, (const StreamChunk *)a1)'),
+    '0056be40': dict(source='humanized/0056be40.cpp', abi='cdecl', args=['ptr'], ret=True, calls_out=True,
+                     oracle='stream', call='stream_classify_0056be40((Stream *)a0)'),
+    '0056c540': dict(source='humanized/0056c540.cpp', abi='cdecl', args=['ptr'], ret=True, calls_out=True,
+                     oracle='stream', call='STREAM_get((StreamTap *)a0)'),
 }
 
 
@@ -966,7 +978,11 @@ def bridge_code(va, h):
     lines += [f'    U a{k} = read257(esp + {4 * (k + 1)}, 4);' for k in range(n)]
     if h['abi'] == 'thiscall':
         lines.append('    U self = s.r[1];')
+    if h.get('calls_out'):
+        lines.append('    U host = humanized_enter430();')
     lines.append(f'    s.r[0] = (U){h["call"]};' if h['ret'] else f'    {h["call"]};')
+    if h.get('calls_out'):
+        lines.append('    humanized_leave430(host);')
     pop = 4 + (4 * n if h['abi'] == 'thiscall' else 0)
     lines += ['    s.pc = read257(esp, 4);', f'    s.r[4] = esp + {pop};', '    s.stop = STOP257_RETURNED;', '}']
     return '\n'.join(lines) + '\n'

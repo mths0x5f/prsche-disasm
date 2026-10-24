@@ -293,6 +293,23 @@ void count_reverse(U va)
     }
 }
 
+// Humanized code runs on the host stack; when it calls a game function by its original
+// address, the call faults on the non-executable image and the reverse bridge runs the
+// lowered body. The bridge of the humanized function sets where that host work goes: well
+// below its own frames, as native_call does.
+extern "C" U __cdecl humanized_enter430()
+{
+    U saved = t_host_sp;
+    char here;
+    t_host_sp = (reinterpret_cast<U>(&here) - 0x1000u) & ~15u;
+    return saved;
+}
+
+extern "C" void __cdecl humanized_leave430(U saved)
+{
+    t_host_sp = saved;
+}
+
 extern "C" U __cdecl pick_host_stack430()
 {
     if (t_host_sp)
