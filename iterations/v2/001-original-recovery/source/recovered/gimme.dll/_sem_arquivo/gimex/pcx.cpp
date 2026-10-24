@@ -245,9 +245,11 @@ GINFO *GCALL PCX_info(void *handle, int frame)
     return info;
 }
 
-// 100d7a37.  Reads one stored line (bytesperline per plane; three planes counted above 8 bits,
-// whatever the plane count) into `row`, RLE-decoded or raw (an odd raw line reads one byte
-// more), then converts it into `destination`.  The planes of a planar line are taken
+// 100d7a37.  Reads one stored line into `row`: bytesperline bytes up to 8 bits of depth (so a
+// planar 1-bit image reads only one plane's bytes per row and the other planes come from what
+// the row buffer already holds), three times bytesperline above 8 bits whatever the plane
+// count; RLE-decoded or raw (an odd raw line reads one byte more), then converts it into
+// `destination`.  The planes of a planar line are taken
 // width / 8 (1-bit planes) or width (8-bit planes) bytes apart, not bytesperline.  4-bit lines are
 // planar unless GINFO.attributes is 1, which info() never sets.  Depths other than 1, 2, 3, 4,
 // 8 and 24 store nothing.
