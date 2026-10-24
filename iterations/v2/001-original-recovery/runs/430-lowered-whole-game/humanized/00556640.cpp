@@ -20,13 +20,3 @@ long __cdecl install_paths_size_00556640(const void *data)
     const HeapBlockHeader *block = (const HeapBlockHeader *)((const char *)data - sizeof(HeapBlockHeader));
     return block->bytes;
 }
-
-/* Called from lowered code: argument on the guest stack, result in EAX, cdecl RET. */
-void install_paths_size_00556640_430(Machine257 &s)
-{
-    U esp = s.r[4];
-    s.r[0] = (U)install_paths_size_00556640((const void *)read257(esp + 4, 4));
-    s.pc = read257(esp, 4);
-    s.r[4] = esp + 4;
-    s.stop = STOP257_RETURNED;
-}

@@ -1,13 +1,18 @@
-"""Run 430: hardware oracle for humanized functions (Visual C++ 6.0 build).
+"""Run 430: hardware oracle for humanized functions, built with Visual C++ 6.0.
 
-For every humanized function listed in HUMANIZED (build-v2-lowered-exe-430.py), the original
-bytes from local/game/Porsche.exe are copied into executable memory and called natively next to
-the humanized C++ compiled by VC6, from the same random inputs. Arguments are described per
-function: 'dword' (random), 'ptr' (pointer 16..240 bytes into a random 256-byte buffer).
-Return value (EAX) and the buffer are compared. --mutate checks that a wrong body fails.
+For every function in HUMANIZED (build-v2-lowered-exe-430.py) the oracle runs, from the same
+random inputs:
+- the original bytes from local/game/Porsche.exe, copied into executable memory and called
+  natively (arguments pushed, ECX = this for thiscall);
+- the generated bridge `humanized_<va>_430` with the humanized C++ behind it, on a Machine257
+  whose stack is a real array.
+It compares EAX (functions with a result), the 4 KB buffer the arguments point into, the
+return address the bridge takes and how many bytes the RET removes (cdecl 4, thiscall 4+4n).
+Argument kinds: 'ptr' (into the buffer), 'str' (a short string in the buffer, from a small
+alphabet), 'char' (a character of that alphabet or 0), 'dword' (random).
+--mutate VA perturbs that function's result: the oracle must fail it.
 
 Usage: py -3 scripts/research/verify-v2-humanized-430.py [--cases N] [--mutate VA]
-Output: local/experiments/v2-humanized-430/ and runs/430-lowered-whole-game/humanized-oracle.json
 """
 import argparse
 import importlib.util
@@ -26,43 +31,98 @@ HARNESS = r'''#include <windows.h>
 %DECLS%
 static unsigned long rng = 0x2545F491;
 static unsigned long rnd() { rng ^= rng << 13; rng ^= rng >> 17; rng ^= rng << 5; return rng; }
-static unsigned char buf_n[256], buf_h[256], buf_in[256];
-typedef unsigned long (__cdecl *Fn4)(unsigned long, unsigned long, unsigned long, unsigned long);
+static const char alphabet[] = "ab/\\.cd";
+static unsigned char buf_in[4096], buf_n[4096];
+static unsigned long g_args[4], g_self, g_code, g_eax, g_saved, g_after;
+
+/* Native call of the original bytes: four DWORDs pushed (a3..a0), ECX = this. */
+static void call_native()
+{
+    __asm {
+        mov g_saved, esp
+        push dword ptr g_args + 12
+        push dword ptr g_args + 8
+        push dword ptr g_args + 4
+        push dword ptr g_args
+        mov ecx, g_self
+        call dword ptr g_code
+        mov g_eax, eax
+        mov g_after, esp
+        mov esp, g_saved
+    }
+}
+
+static unsigned long make_arg(int kind)
+{
+    unsigned long off = 16 + rnd() % (4096 - 512);
+    int n, k;
+    switch (kind) {
+    case 1: return (unsigned long)(buf_n + off);                       /* ptr */
+    case 2:                                                              /* str */
+        n = (int)(rnd() % 24);
+        for (k = 0; k < n; ++k) buf_n[off + k] = alphabet[rnd() % 7];
+        buf_n[off + n] = 0;
+        return (unsigned long)(buf_n + off);
+    case 3: return (rnd() % 8) ? (unsigned char)alphabet[rnd() % 7] : 0; /* char */
+    default: return rnd();                                               /* dword */
+    }
+}
+
 int main(int argc, char **argv)
 {
-    int cases = argc > 1 ? atoi(argv[1]) : 10000, failed = 0, f, c, k;
+    int cases = argc > 1 ? atoi(argv[1]) : 10000, failed = 0, c, k;
     unsigned char *exec = (unsigned char *)VirtualAlloc(NULL, 4096, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+    g_code = (unsigned long)exec;
 %CASES%
-    printf("functions %d failed %d\n", (int)(sizeof(names) / sizeof(names[0])), failed);
+    printf("functions %d failed %d\n", %COUNT%, failed);
     return failed != 0;
 }
 '''
 
-CASE = r'''    /* %VA% */
-    {
+CASE = r'''    {   /* %VA% */
         static const unsigned char code[] = { %BYTES% };
+        static const int kinds[4] = { %KINDS% };
         int bad = 0;
         memcpy(exec, code, sizeof code);
         FlushInstructionCache(GetCurrentProcess(), exec, sizeof code);
         for (c = 0; c < cases; ++c) {
-            unsigned long a[4], n, h;
-            for (k = 0; k < 256; ++k) buf_in[k] = (unsigned char)rnd();
-            for (k = 0; k < 4; ++k) a[k] = rnd();
-%ARGS%
-            memcpy(buf_n, buf_in, 256);
-            n = ((Fn4)exec)(%NARGS%);
-            memcpy(buf_h, buf_n, 256);
-            memcpy(buf_n, buf_in, 256);
-            h = (unsigned long)%NAME%(%HARGS%)%MUT%;
-            if (n != h || memcmp(buf_h, buf_n, 256)) {
-                if (!bad) printf("  %VA% case %d: original %08lx humanized %08lx\n", c, n, h);
-                ++bad;
+            Machine257 s;
+            U stack[8];
+            unsigned long eax_n, pop_n;
+            for (k = 0; k < 4096; ++k) buf_n[k] = (unsigned char)rnd();
+            for (k = 0; k < 4; ++k) g_args[k] = make_arg(kinds[k]);
+            g_self = make_arg(%SELF%);
+            memcpy(buf_in, buf_n, 4096);
+            call_native();
+            eax_n = g_eax;
+            pop_n = g_after - (g_saved - 16);
+            memcpy(stack + 4, buf_n, 0);              /* keep the native result buffer aside */
+            {
+                static unsigned char after_n[4096];
+                memcpy(after_n, buf_n, 4096);
+                memcpy(buf_n, buf_in, 4096);
+                memset(&s, 0, sizeof s);
+                s.stop = STOP257_RUNNING;
+                stack[0] = 0xdeadbeefu;
+                for (k = 0; k < 4; ++k) stack[1 + k] = g_args[k];
+                s.r[4] = (U)stack;
+                s.r[1] = g_self;
+                humanized_%VA%_430(s);
+                %MUT%
+                if ((%RET% && s.r[0] != eax_n) || memcmp(after_n, buf_n, 4096) || s.pc != 0xdeadbeefu ||
+                    s.r[4] - (U)stack != 4 + pop_n || s.stop != STOP257_RETURNED) {
+                    if (!bad) printf("  %VA% case %d: eax %08lx/%08lx pop %lu/%lu\n", c, eax_n,
+                                     (unsigned long)s.r[0], pop_n, (unsigned long)(s.r[4] - (U)stack - 4));
+                    ++bad;
+                }
             }
         }
-        printf("%s %VA% %NAME% %d/%d\n", bad ? "FAIL" : "PASS", cases - bad, cases);
+        printf("%s %VA% %d/%d\n", bad ? "FAIL" : "PASS", cases - bad, cases);
         if (bad) ++failed;
     }
 '''
+
+KIND = {'dword': 0, 'ptr': 1, 'str': 2, 'char': 3}
 
 
 def load_build():
@@ -75,55 +135,49 @@ def load_build():
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--cases', type=int, default=20000)
-    ap.add_argument('--mutate', help='VA whose humanized result is perturbed (+1): must fail')
+    ap.add_argument('--mutate', help='VA whose result is perturbed (+1): the oracle must fail it')
     args = ap.parse_args()
     b = load_build()
-    data = b.PE_PATH.read_bytes()
-    img = b.Image(data)
+    img = b.Image(b.PE_PATH.read_bytes())
     catalog = {json.loads(l)['entry_va']: json.loads(l) for l in b.CATALOG.read_text(encoding='utf-8').splitlines()}
     WORK.mkdir(parents=True, exist_ok=True)
-    decls, cases, sources, names = [], [], [], []
+    (WORK / 'humanized').mkdir(exist_ok=True)
+    for hdr in (RUN / 'humanized').glob('*.h'):
+        (WORK / 'humanized' / hdr.name).write_text(hdr.read_text(encoding='utf-8'), encoding='utf-8')
+    decls, cases = [], []
+    units = []
     for va, h in sorted(b.HUMANIZED.items()):
         lo, hi = (int(x, 16) for x in catalog[va]['ranges'][0])
         code = img.read(lo, hi - lo + 1)
-        src = RUN / h['source']
-        sources.append(src)
-        sig = ', '.join(('const void *' if k == 'ptr' else 'unsigned long') for k in h['args'])
-        decls.append(f'{h["return"]} __cdecl {h["name"]}({sig});')
-        setup, nargs, hargs = [], [], []
-        for i, kind in enumerate(h['args']):
-            if kind == 'ptr':
-                setup.append(f'            a[{i}] = (unsigned long)(buf_n + 16 + (rnd() % 225));')
-                hargs.append(f'(const void *)a[{i}]')
-            else:
-                hargs.append(f'a[{i}]')
-            nargs.append(f'a[{i}]')
-        nargs += ['0'] * (4 - len(nargs))
+        kinds = [KIND[k] for k in h['args']] + [0] * (4 - len(h['args']))
+        unit = WORK / f'h_{va}.cpp'
+        unit.write_text('#include "machine257.h"\n' + (RUN / h['source']).read_text(encoding='utf-8') + '\n' +
+                        b.bridge_code(va, h), encoding='utf-8')
+        units.append(unit.name)
+        decls.append(f'void humanized_{va}_430(Machine257 &s);')
         cases.append(CASE.replace('%VA%', va).replace('%BYTES%', ', '.join(f'0x{x:02x}' for x in code))
-                     .replace('%ARGS%', '\n'.join(setup)).replace('%NARGS%', ', '.join(nargs))
-                     .replace('%NAME%', h['name']).replace('%HARGS%', ', '.join(hargs))
-                     .replace('%MUT%', ' + 1' if args.mutate == va else ''))
-        names.append(f'"{va}"')
-    src = HARNESS.replace('%DECLS%', '\n'.join(decls) + '\nstatic const char *names[] = { ' + ', '.join(names) + ' };') \
-                 .replace('%CASES%', ''.join(cases))
+                     .replace('%KINDS%', ', '.join(map(str, kinds)))
+                     .replace('%SELF%', str(KIND[h.get('this', 'dword')]))
+                     .replace('%RET%', '1' if h['ret'] else '0')
+                     .replace('%MUT%', 's.r[0] += 1;' if args.mutate == va else ''))
+    src = HARNESS.replace('%DECLS%', '\n'.join(decls)).replace('%CASES%', ''.join(cases)) \
+                 .replace('%COUNT%', str(len(cases)))
     (WORK / 'oracle.cpp').write_text(src, encoding='utf-8')
     (WORK / 'machine257.h').write_text((b.GEN / 'machine257.h').read_text(encoding='utf-8'), encoding='utf-8')
-    unit = WORK / 'humanized.cpp'
-    unit.write_text('#include "machine257.h"\n' + '\n'.join(s.read_text(encoding='utf-8') for s in sources),
-                    encoding='utf-8')
     env = b.vc6_env()
-    cl = str(b.VC6_ROOT / 'Bin' / 'CL.EXE')
-    r = subprocess.run([cl, '/nologo', '/TP', '/O2', '/W3', f'/I{WORK}', 'oracle.cpp', 'humanized.cpp',
-                        '/Feoracle.exe', '/link', 'kernel32.lib'], cwd=WORK, capture_output=True, text=True, env=env)
+    r = subprocess.run([str(b.VC6_ROOT / 'Bin' / 'CL.EXE'), '/nologo', '/TP', '/MT', '/O2', '/W3', f'/I{WORK}',
+                        'oracle.cpp', *units, '/Feoracle.exe', '/link', 'kernel32.lib'],
+                       cwd=WORK, capture_output=True, text=True, env=env)
     if r.returncode:
-        print(r.stdout[-3000:])
+        print(r.stdout[-4000:])
         raise SystemExit('VC6 compile failed')
     run = subprocess.run([str(WORK / 'oracle.exe'), str(args.cases)], cwd=WORK, capture_output=True, text=True)
     print(run.stdout.strip())
     if not args.mutate:
         (RUN / 'humanized-oracle.json').write_text(json.dumps(dict(
-            schema=1, compiler='Visual C++ 6.0 (' + str(b.VC6_ROOT) + ')', cases=args.cases,
-            output=run.stdout.splitlines(), exit_code=run.returncode), indent=1) + '\n', encoding='utf-8')
+            schema=2, compiler=f'Visual C++ 6.0 ({b.VC6_ROOT})', cases_per_function=args.cases,
+            functions=sorted(b.HUMANIZED), output=run.stdout.splitlines(), exit_code=run.returncode),
+            indent=1) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

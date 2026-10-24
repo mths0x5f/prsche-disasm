@@ -1,10 +1,31 @@
 {
- "schema": 1,
+ "schema": 2,
  "compiler": "Visual C++ 6.0 (D:\\Microsoft Visual Studio\\VC98)",
- "cases": 50000,
+ "cases_per_function": 50000,
+ "functions": [
+  "00423610",
+  "004d6510",
+  "004d6520",
+  "004d6530",
+  "00556640",
+  "0055d730",
+  "0055d750",
+  "0055f730",
+  "0055f7e0",
+  "005a2870"
+ ],
  "output": [
-  "PASS 00556640 install_paths_size_00556640 50000/50000",
-  "functions 1 failed 0"
+  "PASS 00423610 50000/50000",
+  "PASS 004d6510 50000/50000",
+  "PASS 004d6520 50000/50000",
+  "PASS 004d6530 50000/50000",
+  "PASS 00556640 50000/50000",
+  "PASS 0055d730 50000/50000",
+  "PASS 0055d750 50000/50000",
+  "PASS 0055f730 50000/50000",
+  "PASS 0055f7e0 50000/50000",
+  "PASS 005a2870 50000/50000",
+  "functions 10 failed 0"
  ],
  "exit_code": 0
 }

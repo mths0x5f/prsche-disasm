@@ -596,6 +596,10 @@ def generate(translate, header, img, entries, pointers=()):
             path.write_text(text, encoding='utf-8')
 
     put(gen / 'machine257.h', vc6_compatible(header))
+    # Types shared by humanized functions (included as "humanized/<name>.h").
+    (gen / 'humanized').mkdir(exist_ok=True)
+    for hdr in (RUN / 'humanized').glob('*.h'):
+        put(gen / 'humanized' / hdr.name, hdr.read_text(encoding='utf-8'))
     table_rows, rejected = [], []
     tu, tu_index, insns, functions, ranges = [], 0, 0, 0, 0
     t0 = time.time()
@@ -643,14 +647,18 @@ def generate(translate, header, img, entries, pointers=()):
         rel, ident = layout[e['entry_va']]
         functions += 1
         h = HUMANIZED.get(e['entry_va'])
+        only = os.environ.get('HUMANIZED_ONLY')  # diagnostics: comma-separated VAs to keep humanized
+        if h and only is not None and e['entry_va'] not in only.split(','):
+            h = None
         if h:
             # A humanized function replaces the whole lowered body: only when nothing else
             # enters it in the middle (the bridge serves the entry address alone).
             if len(spans) != 1 or out[0][2]:
                 raise ValueError(f"humanized {e['entry_va']} has several ranges or mid-entries")
             a = spans[0][0]
-            files[rel].append((a, h['name'], (RUN / h['source']).read_text(encoding='utf-8')))
-            table_rows.append((a, h['name'] + '_430'))
+            body = (RUN / h['source']).read_text(encoding='utf-8') + '\n' + bridge_code(e['entry_va'], h)
+            files[rel].append((a, f"humanized_{e['entry_va']}_430", body))
+            table_rows.append((a, f"humanized_{e['entry_va']}_430"))
             STATS['humanized'] = STATS.get('humanized', 0) + 1
             continue
         for k, ((a, _), (code, n, mids, _, _)) in enumerate(zip(spans, out)):
@@ -919,10 +927,49 @@ def build(jobs):
 # Humanized functions: readable VC6 C++ that replaces the lowered body of an entry (file in
 # runs/430-lowered-whole-game/humanized/, with its own bridge `<name>_430`). Each one is proven
 # against the original bytes by verify-v2-humanized-430.py before it is listed here.
+#   abi:  'cdecl' (caller pops) or 'thiscall' (this in ECX, callee pops the stack arguments)
+#   args: kinds of the stack arguments, used by the oracle: 'ptr' (into a buffer), 'str' (a
+#         NUL-terminated string in it), 'dword', 'char'
+#   this: kind of ECX for thiscall
+#   call: C++ expression the bridge evaluates, with a0..a3 (stack arguments) and self (ECX)
+#   ret:  True when the function returns a value (EAX)
 HUMANIZED = {
-    '00556640': dict(source='humanized/00556640.cpp', name='install_paths_size_00556640',
-                     args=['ptr'], **{'return': 'long'}),
+    '00556640': dict(source='humanized/00556640.cpp', abi='cdecl', args=['ptr'], ret=True,
+                     call='install_paths_size_00556640((const void *)a0)'),
+    '0055f730': dict(source='humanized/0055f730.cpp', abi='cdecl', args=['ptr'], ret=True,
+                     call='thread_handle_0055f730((const ThreadRecord *)a0)'),
+    '0055f7e0': dict(source='humanized/0055f7e0.cpp', abi='cdecl', args=['ptr'], ret=True,
+                     call='thread_id_0055f7e0((const ThreadRecord *)a0)'),
+    '004d6510': dict(source='humanized/004d6510.cpp', abi='thiscall', this='ptr', args=[], ret=True,
+                     call='((const PointerVector *)self)->count()'),
+    '004d6520': dict(source='humanized/004d6520.cpp', abi='thiscall', this='ptr', args=['dword'], ret=True,
+                     call='((const PointerVector *)self)->at(a0)'),
+    '004d6530': dict(source='humanized/004d6530.cpp', abi='thiscall', this='ptr', args=[], ret=False,
+                     call='((PointerVector *)self)->pop_back()'),
+    '00423610': dict(source='humanized/00423610.cpp', abi='thiscall', this='ptr', args=[], ret=True,
+                     call='((ContextObject *)self)->self()'),
+    '0055d730': dict(source='humanized/0055d730.cpp', abi='cdecl', args=['ptr'], ret=True,
+                     call='network_address_provider_mode_0055d730((const NetworkWorker *)a0)'),
+    '0055d750': dict(source='humanized/0055d750.cpp', abi='cdecl', args=['ptr'], ret=True,
+                     call='network_address_text_mode_0055d750((const NetworkWorker *)a0)'),
+    '005a2870': dict(source='humanized/005a2870.cpp', abi='cdecl', args=['str', 'char'], ret=True,
+                     call='formatter_text_find_last_005a2870((const char *)a0, (int)a1)'),
 }
+
+
+def bridge_code(va, h):
+    """The lowered-code entry of a humanized function: arguments from the guest stack (and ECX),
+    result in EAX, the original RET (cdecl: caller pops; thiscall: RET 4*n)."""
+    n = len(h['args'])
+    lines = [f'/* {va}: entry from lowered code ({h["abi"]}, {n} stack argument{"s" if n != 1 else ""}). */',
+             f'void humanized_{va}_430(Machine257 &s)', '{', '    U esp = s.r[4];']
+    lines += [f'    U a{k} = read257(esp + {4 * (k + 1)}, 4);' for k in range(n)]
+    if h['abi'] == 'thiscall':
+        lines.append('    U self = s.r[1];')
+    lines.append(f'    s.r[0] = (U){h["call"]};' if h['ret'] else f'    {h["call"]};')
+    pop = 4 + (4 * n if h['abi'] == 'thiscall' else 0)
+    lines += ['    s.pc = read257(esp, 4);', f'    s.r[4] = esp + {pop};', '    s.stop = STOP257_RETURNED;', '}']
+    return '\n'.join(lines) + '\n'
 
 VC6_ROOT = Path(os.environ.get('VC6_ROOT', r'D:\Microsoft Visual Studio\VC98'))
 # Files VC6's optimizer cannot finish (HReplay.cpp: over 2.5 h at /O2); built with /Od.
