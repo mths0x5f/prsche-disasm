@@ -44,7 +44,7 @@ struct GINFO
     unsigned tag;                // +0x000 format tag ('SHPI', '.BMP', …)
     int size;                    // +0x004 sizeof this descriptor (version test)
     int version;                 // +0x008 GINFO_VERSION
-    int frames;                  // +0x00c
+    int frames;                  // +0x00c FSH info() stores the frame index here (10109112)
     int width;                   // +0x010
     int height;                  // +0x014
     int bpp;                     // +0x018 storage bits per pixel (8 or 32 in FaceInRace)
@@ -53,7 +53,9 @@ struct GINFO
     int numcolours;              // +0x024 palette entries in use
     GCOLOUR colour[256];         // +0x028
     unsigned attributes;         // +0x428 per-format section flags (FSH writer gates on bits)
-    int unknown_42c[3];          // +0x42c
+    int compression;             // +0x42c FSH: 0 none, 2 RefPack 10fb/11fb, 3 block 18fb (10107f04)
+    int unknown_430;             // +0x430 FSH info() writes 100
+    int shapesize;               // +0x434 FSH: bytes of all blocks of the shape (10107f04)
     int alphabits;               // +0x438
     int redbits;                 // +0x43c
     int greenbits;               // +0x440
@@ -62,21 +64,31 @@ struct GINFO
     int centrey;                 // +0x44c
     int positionx;               // +0x450
     int positiony;               // +0x454
-    unsigned char unknown_458[GINFO_SIZE_LEGACY - 0x458];
+    int pointcount;              // +0x458 FSH 0x7c block entries (1010a645, unbounded)
+    char name[0x20];             // +0x45c FSH: shape name [0..3], palette name [4..7] (100f9b76)
+    char comment[0x400];         // +0x47c FSH 0x6f block text (1010a805, unbounded strcpy)
+    int point[0x402][2];         // +0x87c FSH 0x7c block pairs; the real bound is not known
+    int unknown_288c;            // +0x288c
     // Shape extension, valid only when size == GINFO_SIZE_SHAPE.
-    int shapeflagsx;             // +0x2890
-    int shapeflagsy;             // +0x2894
+    int clutx;                   // +0x2890 PSH palette header +0x0c (10109112), CLUT word (10105606)
+    int cluty;                   // +0x2894 PSH palette header +0x0e
     int shaperecordcount;        // +0x2898 at most 32 (reader cap at 1010a6fa)
-    GSHAPERECORD shaperecord[32]; // +0x289c
-    int unknown_2a9c[2];         // +0x2a9c
+    GSHAPERECORD shaperecord[32]; // +0x289c FSH 0x6e block, 4 bytes per record
+    int tpage;                   // +0x2a9c FSH 0x6b block word +4 (1010a85f, 10105606)
+    unsigned char tpageclut;     // +0x2aa0 low byte of the 0x6b block word +6
+    unsigned char tpageextra;    // +0x2aa1 low byte of the 0x6b block word +8
+    unsigned char unknown_2aa2[2]; // +0x2aa2
 };
 
 static_assert(offsetof(GINFO, colour) == 0x28, "GINFO layout");
 static_assert(offsetof(GINFO, attributes) == 0x428, "GINFO layout");
 static_assert(offsetof(GINFO, alphabits) == 0x438, "GINFO layout");
 static_assert(offsetof(GINFO, positiony) == 0x454, "GINFO layout");
-static_assert(offsetof(GINFO, shapeflagsx) == GINFO_SIZE_LEGACY, "GINFO layout");
+static_assert(offsetof(GINFO, clutx) == GINFO_SIZE_LEGACY, "GINFO layout");
 static_assert(offsetof(GINFO, shaperecord) == 0x289c, "GINFO layout");
+static_assert(offsetof(GINFO, compression) == 0x42c && offsetof(GINFO, pointcount) == 0x458, "GINFO layout");
+static_assert(offsetof(GINFO, comment) == 0x47c && offsetof(GINFO, point) == 0x87c, "GINFO layout");
+static_assert(offsetof(GINFO, tpage) == 0x2a9c && offsetof(GINFO, tpageextra) == 0x2aa1, "GINFO layout");
 static_assert(sizeof(GINFO) == GINFO_SIZE_SHAPE, "GINFO layout");
 
 // An image as FaceInRace passes it around: descriptor, pixels and row stride (12 bytes).
@@ -98,11 +110,11 @@ struct GABOUT
     int size;                    // +0x04 sizeof(GABOUT)
     int version;                 // +0x08 GINFO_VERSION
     unsigned flags;              // +0x0c
-    int unknown_10;              // +0x10
-    int unknown_14;              // +0x14
-    int unknown_18;              // +0x18
-    unsigned unknown_1c[2];      // +0x1c
-    unsigned char unknown_24[0x3c - 0x24];
+    int unknown_10;              // +0x10 0x10 in the four font modules, else 0
+    int unknown_14;              // +0x14 4 (shape modules), 0x20, 0x4f, 0xff or 0
+    int unknown_18;              // +0x18 100 in most modules; 0x12, 0x46, 0x5a or 8 in some
+    unsigned mactype[3];         // +0x1c Macintosh file types ('8BPS', 'PICT', 'MooV', 'TIFF', …)
+    unsigned char unknown_28[0x3c - 0x28]; // always zero
     char extension[8][8];        // +0x3c ".fsh", …
     char author[32];             // +0x7c
     char moduleversion[8];       // +0x9c "2.07"

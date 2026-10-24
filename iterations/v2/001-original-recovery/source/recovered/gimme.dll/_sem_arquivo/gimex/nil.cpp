@@ -19,7 +19,7 @@ GABOUT *NIL_about(void)
         about->flags = 0x1000;
         about->unknown_14 = 0;
         about->unknown_18 = 100;
-        about->unknown_1c[0] = 0;
+        about->mactype[0] = 0;
         strcpy(about->author, "FrANK G. Barchard");
         strcpy(about->moduleversion, "1.02");
         strcpy(about->shortname, "Nil");

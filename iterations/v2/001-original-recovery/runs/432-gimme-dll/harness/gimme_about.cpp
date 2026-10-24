@@ -55,6 +55,9 @@ int main(int argc, char **argv)
         PrintText(about + 0xac, 16);
         printf(" bc ");
         PrintText(about + 0xbc, 32);
+        printf("\n   raw ");
+        for (unsigned i = 0; i < w[1]; ++i)
+            printf("%02x", about[i]);
         printf("\n");
     }
 

@@ -348,14 +348,25 @@ static int Abouts(int argc, char **argv)
     return failures != 0;
 }
 
+#include "filters_oracle.h"
+
 int main(int argc, char **argv)
 {
+    if (argc > 1 && strcmp(argv[1], "filters") == 0)
+        return filteroracle::Filters(argc, argv);
     if (argc > 1 && strcmp(argv[1], "convert") == 0)
         return Convert(argc, argv);
     if (argc > 1 && strcmp(argv[1], "module") == 0)
         return Module(argc, argv);
     if (argc > 1 && strcmp(argv[1], "abouts") == 0)
         return Abouts(argc, argv);
+    if (argc > 3 && strcmp(argv[1], "is") == 0)
+    {
+        int IsOracle(int argc, char **argv);   // is_oracle.cpp
+        HMODULE original = LoadOriginal(argv[2]);
+        ApplyHeapMode(original, argc, argv, 4);
+        return IsOracle(argc, argv);
+    }
     fprintf(stderr, "usage: gimme_oracle convert <original.dll> <source> <frame> <outdir> [--pad|--guard]\n"
                     "       gimme_oracle module <original.dll> <module> <file> <frames> <outdir> [--pad|--guard]\n");
     return 2;
