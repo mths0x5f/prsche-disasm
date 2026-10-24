@@ -1114,13 +1114,13 @@ static void BuildPoints(const GINFO *info, unsigned char **result, int *resultsi
     *result = block;
 }
 
-// 101054a0.  0x6e block from the shape extension ('MBLI' or 'SHP?' of GINFO_SIZE_SHAPE only).
+// 101054a0.  0x6e block from the shape extension ('ILBM' or 'SHP?' of GINFO_SIZE_SHAPE only).
 static void BuildRecords(const GINFO *info, unsigned char **result, int *resultsize, int skip)
 {
     unsigned size = 0;
     unsigned char *block = 0;
     int i;
-    if ((info->tag == GTAG('M', 'B', 'L', 'I') || (info->tag & 0xffffff00) == GTAG('S', 'H', 'P', 0)) &&
+    if ((info->tag == GTAG('I', 'L', 'B', 'M') || (info->tag & 0xffffff00) == GTAG('S', 'H', 'P', 0)) &&
         info->size == GINFO_SIZE_SHAPE && info->shaperecordcount > 0 && skip == 0)
     {
         size = info->shaperecordcount * 8 + 8;
@@ -1149,7 +1149,7 @@ static void BuildTpage(const GINFO *info, unsigned char **result, int *resultsiz
     int size = 0;
     unsigned char *block = 0;
     const GINFO *shape = info;
-    if ((info->tag == GTAG('M', 'B', 'L', 'I') || (info->tag & 0xffffff00) == GTAG('S', 'H', 'P', 0)) &&
+    if ((info->tag == GTAG('I', 'L', 'B', 'M') || (info->tag & 0xffffff00) == GTAG('S', 'H', 'P', 0)) &&
         info->size == GINFO_SIZE_SHAPE && skip == 0 && (shape->tpage != 0 || shape->tpageextra != 0))
     {
         size = 0xc;
