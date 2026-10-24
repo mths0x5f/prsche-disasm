@@ -1,5 +1,11 @@
 # План восстановления Porsche Unleashed
 
+Checkpoint 2026-10-24, Run 432 (ветка feat/gimme-dll-432): gimme.dll восстановлен в C++.
+- Причина падения доказана: FaceInRace копирует GINFO как 0x2890 байт, модуль FSH (GINFO 0x2aa4) верит полю size
+  и читает за блок; исправление изолировано в GIMEX_FIX_DESCRIPTOR_COPY. Fixed DLL: 20/20 запусков без падения.
+- Следующий шаг: читатели остальных 61 модуля и писатели (кроме FSH) остаются явными границами (boundary.h).
+  Подробности: iterations/v2/001-original-recovery/runs/432-gimme-dll/README.md.
+
 Checkpoint 2026-10-21, Run 431: точный бэкенд x86, проверенный на железе.
 - scripts/research/x86-cpp-backend-exact.py наследует замороженный x86-cpp-backend-fpu.py (SHA-проверка, файл не тронут).
   Исправлено переносимым C++: PF/AF во всех флаговых помощниках; неопределённые флаги MUL/IMUL как у целевого CPU;

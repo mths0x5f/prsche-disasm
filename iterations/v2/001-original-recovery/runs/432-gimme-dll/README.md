@@ -96,10 +96,16 @@ Recovered and proven against the original bytes (oracle `gimme_oracle`, same pro
 | Crop, Size, Remap filters, Wu quantizer | 1371 generated cases identical; mutations detected |
 | BMP, TGA, PCX readers | 541/549 generated + Pillow files identical; 8 corrupt inputs are UB in the original |
 | ConvertFile on BMP/TGA/PCX photos | 51 Pillow photos identical; mode-1 TGA: no output on both sides |
+| JPG, TIF, PNG readers + EA GSTREAM glue | ConvertFile identical on 45 JPG, 146 TIF, 51 PNG photos |
+| IJG 6a, libtiff 3.4, libpng 1.0.3, zlib 1.1.3 | unmodified release sources (URLs/SHA-256 in each library README); IJG: 120 messages and 684 decodes equal the binary's copy; libtiff release proven by its fax sync code and generated state tables |
+
+The remaining JPG/TIF/PNG differences are original crashes (1-pixel images, failed opens) or reads of
+memory that differs between processes (an unset TIFF resolution, a text pointer stored in PNG output).
 
 Boundaries (explicit stubs in `boundary.h`, reported through `gerror`): readers of the 61 modules
-other than Nil, FSH, BMP, TGA, PCX, JPG, TIF and PNG, all writers except FSH, JPG and PNG is() and the JPG/TIF/PNG readers (they need the public
-IJG 6a, libpng 1.0.3 and libtiff 3.4 sources), the QuickTime open used by MOV is().
+other than Nil, FSH, BMP, TGA, PCX, JPG, TIF and PNG; all writers except FSH; the QuickTime open used
+by MOV is(); the IJG compressor, zlib deflate and a second IJG copy near `10203440` (linked in the
+binary, not reached by ConvertFile).
 
 Second original defect, kept in both variants: a 1×1 source photo makes the Size filter read index −1
 (`gimme+0x246d3`, address `fffffffc`); the faithful DLL faults at the same address.
@@ -113,6 +119,7 @@ the game converts `ALLdrivr.fsh` image 8 ("driv").
 | DLL | Runs | Crashes | pic16.fsh written |
 |---|---|---|---|
 | original | 12 | 3 (`gimme+0x1055ac`) | — |
-| gimme-fixed.dll | 20 | 0 | 20, all identical |
+| gimme-fixed.dll (FSH + filters, 04b1893) | 20 | 0 | 20, all identical |
+| gimme-fixed.dll (with JPG/TIF/PNG, 39cf569) | 20 | 0 | 20, all identical |
 
 The 20 pic16.fsh files (MD5 `61a160ea…`) equal the original DLL's output for the same image.

@@ -1,5 +1,9 @@
 # Состояние проекта
 
+Checkpoint 2026-10-24, Run 432: gimme.dll — faithful и fixed DLL собираются из восстановленных исходников
+(FaceInRace, ядро GIMEX, FSH, BMP/TGA/PCX/JPG/TIF/PNG, фильтры Crop/Size/Remap, Wu; IJG 6a, libtiff 3.4,
+libpng 1.0.3, zlib 1.1.3 без изменений). Оракул: совпадение с оригиналом; игра: 20/20 без падения (оригинал 3/12).
+
 Checkpoint 2026-10-21, Run 431: точный бэкенд x86, проверенный на железе.
 - scripts/research/x86-cpp-backend-exact.py наследует замороженный x86-cpp-backend-fpu.py (SHA-проверка, файл не тронут).
   Исправлено переносимым C++: PF/AF во всех флаговых помощниках; неопределённые флаги MUL/IMUL как у целевого CPU;
