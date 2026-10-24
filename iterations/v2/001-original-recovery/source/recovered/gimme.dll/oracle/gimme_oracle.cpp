@@ -240,6 +240,18 @@ static int Module(int argc, char **argv)
         const char *what = same ? "" : "results";
         if (same && frame[0].info)
         {
+            // --mask <offset>: four descriptor bytes the original leaves to uninitialised stack
+            // (TIF info() without XResolution); both sides are cleared there before comparing.
+            for (int a = 7; a + 1 < argc; ++a)
+                if (strcmp(argv[a], "--mask") == 0)
+                {
+                    int offset = strtol(argv[a + 1], 0, 16);
+                    if (offset + 4 <= frame[0].info->size && offset + 4 <= frame[1].info->size)
+                    {
+                        memset((unsigned char *)frame[0].info + offset, 0, 4);
+                        memset((unsigned char *)frame[1].info + offset, 0, 4);
+                    }
+                }
             if (frame[0].info->size != frame[1].info->size ||
                 memcmp(frame[0].info, frame[1].info, frame[0].info->size) != 0)
             {
@@ -257,6 +269,16 @@ static int Module(int argc, char **argv)
             {
                 same = false;
                 what = "pixels";
+                int bytes = frame[0].rowbytes * frame[0].info->height, count = 0, first = -1;
+                for (int i = 0; i < bytes; ++i)
+                    if (frame[0].pixels[i] != frame[1].pixels[i])
+                    {
+                        if (first < 0)
+                            first = i;
+                        ++count;
+                    }
+                printf("  pixels differ: %d bytes, first at row %d byte %d\n", count, first / frame[0].rowbytes,
+                       first % frame[0].rowbytes);
             }
         }
         printf("frame %d: is %d/%d open %d/%d read %d/%d %s%s\n", f, score[0], score[1], opened[0], opened[1],
@@ -350,6 +372,11 @@ static int Abouts(int argc, char **argv)
 
 #include "filters_oracle.h"
 
+namespace liboracle
+{
+int JpegLib(int argc, char **argv);    // lib_oracle.cpp
+}
+
 int main(int argc, char **argv)
 {
     if (argc > 1 && strcmp(argv[1], "filters") == 0)
@@ -360,6 +387,13 @@ int main(int argc, char **argv)
         return Module(argc, argv);
     if (argc > 1 && strcmp(argv[1], "abouts") == 0)
         return Abouts(argc, argv);
+    if (argc > 3 && strncmp(argv[1], "jpeglib", 7) == 0)
+    {
+        namespace lo = liboracle;
+        HMODULE original = LoadOriginal(argv[2]);
+        ApplyHeapMode(original, argc, argv, 4);
+        return lo::JpegLib(argc, argv);
+    }
     if (argc > 3 && strcmp(argv[1], "is") == 0)
     {
         int IsOracle(int argc, char **argv);   // is_oracle.cpp
