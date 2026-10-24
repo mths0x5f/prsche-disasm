@@ -76,3 +76,43 @@ harness\build-host.cmd <out>
 
 `harness/gimme_about.cpp` calls every module's `about()` in the original DLL. The full dump is in
 [components.md](components.md).
+
+## 3. Recovered source and builds
+
+Source: `source/recovered/gimme.dll` (`build.cmd <out>` → `gimme-faithful.dll`, `gimme-fixed.dll`,
+`gimme_oracle.exe`). The only difference between the variants is `GIMEX_FIX_DESCRIPTOR_COPY` in
+`dev/FaceInRace/FaceInRace.cpp`: descriptor copies allocate and copy the source's own `size`, as the
+same-size branch of `10001450` already does. `_sem_arquivo/platform.cpp` selects the x87 `sin()` of
+the static CRT (the VC6 CRT of the original has no SSE2 path).
+
+Recovered and proven against the original bytes (oracle `gimme_oracle`, same process, `--pad` heaps):
+
+| Part | Evidence |
+|---|---|
+| FaceInRace, GIMEX core, Nil | ConvertFile on ALLdrivr.fsh frames 0–8 identical; `--guard` faults identically |
+| about() of 69 modules, 37 filters, 10 quantizers | 116 records byte-identical; mutation detected |
+| is() of 67 modules + GIMEX_detect | 15 504 scores on a 228-file corpus; only PNG differs (libpng pending) |
+| FSH module (92 functions) | 554 game files: 7295 frames read, 7293 rewritten identically |
+| Crop, Size, Remap filters, Wu quantizer | 1371 generated cases identical; mutations detected |
+| BMP, TGA, PCX readers | 541/549 generated + Pillow files identical; 8 corrupt inputs are UB in the original |
+| ConvertFile on BMP/TGA/PCX photos | 51 Pillow photos identical; mode-1 TGA: no output on both sides |
+
+Boundaries (explicit stubs in `boundary.h`, reported through `gerror`): readers of the 63 other
+modules, all writers except FSH, JPG and PNG is() and the JPG/TIF/PNG readers (they need the public
+IJG 6a, libpng 1.0.3 and libtiff 3.4 sources), the QuickTime open used by MOV is().
+
+Second original defect, kept in both variants: a 1×1 source photo makes the Size filter read index −1
+(`gimme+0x246d3`, address `fffffffc`); the faithful DLL faults at the same address.
+
+## 4. Game test
+
+`PorscheLowered.exe Porsche.exe` with `PORSCHE430_NATIVE=1` in `local/run-430` (original game code;
+startup reaches ConvertFile on its own via `004dbe11`), killed after 22 s per run. Without a player photo
+the game converts `ALLdrivr.fsh` image 8 ("driv").
+
+| DLL | Runs | Crashes | pic16.fsh written |
+|---|---|---|---|
+| original | 12 | 3 (`gimme+0x1055ac`) | — |
+| gimme-fixed.dll | 20 | 0 | 20, all identical |
+
+The 20 pic16.fsh files (MD5 `61a160ea…`) equal the original DLL's output for the same image.
