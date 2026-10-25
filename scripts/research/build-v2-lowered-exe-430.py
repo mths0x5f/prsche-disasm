@@ -669,6 +669,8 @@ def generate(translate, header, img, entries, pointers=()):
             name = ident if k == 0 else f'{ident}_part_{a:08x}'
             code = code.replace('#include "machine257.h"\n', '')
             code = code.replace(f'void translated_{a:08x}(Machine257&s){{', f'void {name}(Machine257&s){{', 1)
+            if a in VC6_NO_FPO:
+                code = f'#pragma optimize("y", off)\n{code}\n#pragma optimize("y", on)\n'
             files[rel].append((a, name, code))
             table_rows.append((a, name))
             table_rows.extend((t, name) for t in mids)
@@ -1053,6 +1055,10 @@ def bridge_code(va, h):
 VC6_ROOT = Path(os.environ.get('VC6_ROOT', r'D:\Microsoft Visual Studio\VC98'))
 # Files VC6's optimizer cannot finish (HReplay.cpp: over 2.5 h at /O2); built with /Od.
 VC6_NO_OPT = {'hreplay.cpp'}
+# Functions VC6 /O2 miscompiles with frame-pointer omission (/Oy): the race crashes at start.
+# Found by linking /O2 and /Od objects mixed, then per-function #pragma optimize; /Oy- (or /Og-)
+# on this function alone fixes it. Kept with a frame pointer in every build.
+VC6_NO_FPO = {0x004eb470}
 
 
 def vc6_env():
