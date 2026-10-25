@@ -1010,6 +1010,17 @@ HUMANIZED = {
     '005a12cd': dict(source='humanized/005a12cd.cpp', abi='cdecl', args=['ptr', 'ptr', 'small'], ret=False, call='sort_swap_005a12cd((char *)a0, (char *)a1, a2)'),
     '005adb5b': dict(source='humanized/005adb5b.cpp', abi='cdecl', args=['ptr'], ret=False, call='float_shift_right_005adb5b((unsigned long *)a0)'),
 }
+# Later batches: humanized/specs/<batch>.json, {va: spec} with the same keys, plus
+#   stubs: {callee_va: [nargs, 'cdecl'|'thiscall'|'stdcall']} for functions that call other
+#          game code (the oracle replaces each callee by a recorder; calls_out is implied).
+# Only functions whose oracle passed are listed (the oracle writes <batch>.oracle.json).
+for _spec_file in sorted((RUN / 'humanized' / 'specs').glob('*.json')):
+    if _spec_file.name.endswith('.oracle.json'):
+        continue
+    for _va, _h in json.loads(_spec_file.read_text(encoding='utf-8-sig')).items():
+        if _h.get('stubs'):
+            _h['calls_out'] = True
+        HUMANIZED.setdefault(_va, _h)
 
 
 def bridge_code(va, h):
@@ -1025,6 +1036,8 @@ def bridge_code(va, h):
         lines.append('    U host = humanized_enter430();')
     if h['ret'] == 'ax':        # a 16-bit result: the upper half of EAX is not part of it
         lines.append(f'    s.r[0] = (s.r[0] & 0xffff0000u) | (unsigned short){h["call"]};')
+    elif h['ret'] == 'al':        # an 8-bit result (bool)
+        lines.append(f'    s.r[0] = (s.r[0] & 0xffffff00u) | (unsigned char){h["call"]};')
     elif h['ret'] == 'edx:eax':
         lines.append(f'    {{ __int64 v = {h["call"]}; s.r[0] = (U)v; s.r[2] = (U)(v >> 32); }}')
     elif h['ret']:
