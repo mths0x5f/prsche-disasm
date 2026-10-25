@@ -966,6 +966,49 @@ HUMANIZED = {
                      oracle='stream', call='stream_classify_0056be40((Stream *)a0)'),
     '0056c540': dict(source='humanized/0056c540.cpp', abi='cdecl', args=['ptr'], ret=True, calls_out=True,
                      oracle='stream', call='STREAM_get((StreamTap *)a0)'),
+    # Batch 2: leaf functions, some reading or writing globals at their original addresses.
+    '00516950': dict(source='humanized/00516950.cpp', abi='cdecl', args=[], ret=False, call='startup_service_00516950()'),
+    '005367b0': dict(source='humanized/005367b0.cpp', abi='cdecl', args=[], ret=True, call='window_runtime_zero_005367b0()'),
+    '0059e9c0': dict(source='humanized/0059e9c0.cpp', abi='cdecl', args=['dword'], ret=True, call='heap_state_report_0059e9c0((const char *)a0)'),
+    '00557460': dict(source='humanized/00557460.cpp', abi='cdecl', args=[], ret=True, call='startup_input_device_00557460()', globals=[('bytes', 7044088, 4)]),
+    '00573980': dict(source='humanized/00573980.cpp', abi='cdecl', args=[], ret=True, call='window_main_handle_00573980()', globals=[('bytes', 6972576, 4)]),
+    '005654d0': dict(source='humanized/005654d0.cpp', abi='cdecl', args=[], ret=False, call='window_input_binding_changed_005654d0()', globals=[('bytes', 6970412, 4)]),
+    '005809f0': dict(source='humanized/005809f0.cpp', abi='cdecl', args=['ptr'], ret=True, call='network_worker_first_005809f0((const unsigned long *)a0)'),
+    '0055c260': dict(source='humanized/0055c260.cpp', abi='cdecl', args=['dword'], ret=True, call='network_object_header_0055c260((void *)a0)'),
+    '00535b40': dict(source='humanized/00535b40.cpp', abi='cdecl', args=['dword'], ret=False, call='render_mode_set_flag_00535b40((unsigned char)a0)', globals=[('bytes', 6937885, 1)]),
+    '00592e00': dict(source='humanized/00592e00.cpp', abi='cdecl', args=['dword'], ret=False, call='mono_set_attribute_00592e00((unsigned char)a0)', globals=[('bytes', 6170088, 1)]),
+    '00529050': dict(source='humanized/00529050.cpp', abi='thiscall', this='ptr', args=['ptr'], ret=True, call='((const NetworkMember *)self)->copy_to((unsigned long *)a0)'),
+    '005aba53': dict(source='humanized/005aba53.cpp', abi='cdecl', args=['ptr'], ret=False, call='float_parse_clear_005aba53((unsigned long *)a0)'),
+    '004c3150': dict(source='humanized/004c3150.cpp', abi='thiscall', this='ptrptr', args=['ptr'], ret=True, call='((const NetworkHolder *)self)->copy_to((unsigned long *)a0)'),
+    '0050e140': dict(source='humanized/0050e140.cpp', abi='thiscall', this='ptr', args=['ptr'], ret=True, call='((NetworkValue *)self)->assign((const NetworkValue *)a0)'),
+    '005a4b50': dict(source='humanized/005a4b50.cpp', abi='cdecl', args=['cursor'], ret=True, call='format_next_int_005a4b50((char **)a0)'),
+    '005a4b6d': dict(source='humanized/005a4b6d.cpp', abi='cdecl', args=['cursor'], ret='ax', call='format_next_short_005a4b6d((char **)a0)'),
+    '00505810': dict(source='humanized/00505810.cpp', abi='thiscall', this='ptr', args=['dword'], ret=True, call='((ContextRange *)self)->make_empty(a0)'),
+    '005a4b5d': dict(source='humanized/005a4b5d.cpp', abi='cdecl', args=['cursor'], ret='edx:eax', call='format_next_int64_005a4b5d((char **)a0)'),
+    '00537f90': dict(source='humanized/00537f90.cpp', abi='cdecl', args=['ptr'], ret=True, call='render_descriptor_bits_00537f90((const unsigned long *)a0)', globals=[('bytes', 6154384, 128)]),
+    '00556620': dict(source='humanized/00556620.cpp', abi='cdecl', args=['dword'], ret=True, call='heap_suffix_00556620(a0)', globals=[('ptrs', 7032608, 16)]),
+    '004d55c0': dict(source='humanized/004d55c0.cpp', abi='cdecl', args=['str'], ret=True, call='context_strlen_004d55c0((const char *)a0)'),
+    '005a5449': dict(source='humanized/005a5449.cpp', abi='cdecl', args=['ptr'], ret=True, call='crt_stream_default_005a5449((CrtStreamRecord *)a0)'),
+    '004d67b0': dict(source='humanized/004d67b0.cpp', abi='cdecl', args=['ptr', 'ptr'], ret=True, call='context_word_not_equal_004d67b0((const unsigned long *)a0, (const unsigned long *)a1)'),
+    '00529a20': dict(source='humanized/00529a20.cpp', abi='thiscall', this='ptr', args=['ptr'], ret=False, call='((DequeIterator *)self)->set_node((char **)a0)'),
+    '00565560': dict(source='humanized/00565560.cpp', abi='cdecl', args=[], ret=True, call='window_input_ready_00565560()', globals=[('maybezero', 7044116, 4), ('maybezero', 7044088, 4)]),
+    '005aba38': dict(source='humanized/005aba38.cpp', abi='cdecl', args=['ptr', 'ptr'], ret=False, call='float_parse_copy_005aba38((unsigned long *)a0, (const unsigned long *)a1)'),
+    '005aba5f': dict(source='humanized/005aba5f.cpp', abi='cdecl', args=['maybezero12'], ret=True, call='float_parse_is_zero_005aba5f((const unsigned long *)a0)'),
+    '00569a70': dict(source='humanized/00569a70.cpp', abi='cdecl', args=[], ret=True, call='heap_first_free_00569a70()', globals=[('maybezero', 7032608, 64)]),
+    '00580b70': dict(source='humanized/00580b70.cpp', abi='cdecl', args=['list', 'small'], ret=True, call='network_list_at_00580b70((ListNode **)a0, a1)'),
+    '005299d0': dict(source='humanized/005299d0.cpp', abi='thiscall', this='ptr', args=['ptr'], ret=True, call='((DequeIterator16 *)self)->assign((const DequeIterator16 *)a0)'),
+    '00467700': dict(source='humanized/00467700.cpp', abi='thiscall', this='ptr', args=['dword', 'dword'], ret=True, call='((RenderCore *)self)->construct(a0, a1)'),
+    '005adaae': dict(source='humanized/005adaae.cpp', abi='cdecl', args=['dword', 'dword', 'ptr'], ret=True, call='float_add_carry_005adaae(a0, a1, (unsigned long *)a2)'),
+    '00570ed0': dict(source='humanized/00570ed0.cpp', abi='cdecl', args=['ptr'], ret=False, call='cursor_state_save_00570ed0((unsigned long *)a0)', globals=[('bytes', 6153760, 96)]),
+    '00560180': dict(source='humanized/00560180.cpp', abi='cdecl', args=['table:0x6b7c20:8'], ret=False, call='network_callback_remove_00560180(a0)', globals=[('bytes', 7044128, 32)]),
+    '00574050': dict(source='humanized/00574050.cpp', abi='cdecl', args=['dword', 'dword'], ret=True, call='pixel_address_00574050((long)a0, (long)a1)', globals=[('bytes', 6153774, 1), ('bytes', 6153796, 4), ('bytes', 6153804, 4)]),
+    '005a6abf': dict(source='humanized/005a6abf.cpp', abi='cdecl', args=[], ret=False, call='locale_reset_005a6abf()', globals=[('bytes', 7078636, 20), ('bytes', 7078912, 264)]),
+    '005abf35': dict(source='humanized/005abf35.cpp', abi='cdecl', args=['handle'], ret=True, call='crt_handle_is_device_005abf35(a0)', globals=[('count', 7078624, 4), ('ptrs', 7078368, 4)]),
+    '0055ed20': dict(source='humanized/0055ed20.cpp', abi='cdecl', args=['small8', 'dword'], ret=False, call='diagnostic_device_enable_0055ed20(a0, (long)a1)', globals=[('bytes', 6167696, 96)]),
+    '005aa9aa': dict(source='humanized/005aa9aa.cpp', abi='cdecl', args=['dword'], ret=True, call='small_heap_find_005aa9aa((char *)a0)', globals=[('count', 7078352, 4), ('ptrs', 7078356, 1)]),
+    '005ad2bf': dict(source='humanized/005ad2bf.cpp', abi='cdecl', args=['str', 'small'], ret=True, call='locale_strnlen_005ad2bf((const char *)a0, a1)'),
+    '005a12cd': dict(source='humanized/005a12cd.cpp', abi='cdecl', args=['ptr', 'ptr', 'small'], ret=False, call='sort_swap_005a12cd((char *)a0, (char *)a1, a2)'),
+    '005adb5b': dict(source='humanized/005adb5b.cpp', abi='cdecl', args=['ptr'], ret=False, call='float_shift_right_005adb5b((unsigned long *)a0)'),
 }
 
 
@@ -980,7 +1023,14 @@ def bridge_code(va, h):
         lines.append('    U self = s.r[1];')
     if h.get('calls_out'):
         lines.append('    U host = humanized_enter430();')
-    lines.append(f'    s.r[0] = (U){h["call"]};' if h['ret'] else f'    {h["call"]};')
+    if h['ret'] == 'ax':        # a 16-bit result: the upper half of EAX is not part of it
+        lines.append(f'    s.r[0] = (s.r[0] & 0xffff0000u) | (unsigned short){h["call"]};')
+    elif h['ret'] == 'edx:eax':
+        lines.append(f'    {{ __int64 v = {h["call"]}; s.r[0] = (U)v; s.r[2] = (U)(v >> 32); }}')
+    elif h['ret']:
+        lines.append(f'    s.r[0] = (U){h["call"]};')
+    else:
+        lines.append(f'    {h["call"]};')
     if h.get('calls_out'):
         lines.append('    humanized_leave430(host);')
     pop = 4 + (4 * n if h['abi'] == 'thiscall' else 0)
