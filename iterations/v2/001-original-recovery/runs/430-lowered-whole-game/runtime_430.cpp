@@ -301,7 +301,7 @@ extern "C" U __cdecl humanized_enter430()
 {
     U saved = t_host_sp;
     char here;
-    t_host_sp = (reinterpret_cast<U>(&here) - 0x1000u) & ~15u;
+    t_host_sp = (reinterpret_cast<U>(&here) - 0x40000u) & ~15u;
     return saved;
 }
 

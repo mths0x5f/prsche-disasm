@@ -274,7 +274,7 @@
                       "005ae8d1",
                       "005aef00"
                   ],
-    "method":  "verify-v2-humanized-430.py --batch in groups of 80, 20000 cases per function; oracle failures/crashers dropped (375), 91 held for calling-convention risk, 2 held after crashing the game (00534550, 004e1c70)",
+    "method":  "verify-v2-humanized-430.py --batch in groups of 80, 20000 cases per function; oracle failures/crashers dropped (375), 91 held for calling-convention risk; 00534550 and 004e1c70 crashed the game until the runtime fix (humanized_enter430 host gap 4 KB -> 256 KB)",
     "schema":  3,
     "passed":  273
 }
