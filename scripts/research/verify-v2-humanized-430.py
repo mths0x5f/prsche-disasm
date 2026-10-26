@@ -43,7 +43,7 @@ static const char alphabet[] = "ab/\\.cd";
 #define BUF 16384
 static unsigned char *buf_n, buf_in[BUF], after_n[BUF];
 static unsigned char gl_in[8192], gl_n[8192];
-static unsigned long g_code_ret, g_args[4], g_self, g_code, g_eax, g_edx, g_saved, g_after;
+static unsigned long g_code_ret, g_args[4], g_self, g_code, g_eax, g_edx, g_saved, g_after, g_kept;
 /* calls out run natively here, on the harness stack */
 extern "C" void __cdecl humanized_on_guest430(void (__cdecl *body)(Machine257 *), Machine257 *s) { body(s); }
 
@@ -116,6 +116,14 @@ static void stubs_remove(void)
 static void call_native()
 {
     __asm {
+        push ebp
+        push ebx
+        push esi
+        push edi
+        mov ebx, 0x0b0b0b0b
+        mov esi, 0x05050505
+        mov edi, 0x0d0d0d0d
+        mov ebp, 0x0e0e0e0e
         mov g_saved, esp
         push dword ptr g_args + 12
         push dword ptr g_args + 8
@@ -127,6 +135,18 @@ static void call_native()
         mov g_edx, edx
         mov g_after, esp
         mov esp, g_saved
+        xor ebx, 0x0b0b0b0b
+        xor esi, 0x05050505
+        xor edi, 0x0d0d0d0d
+        xor ebp, 0x0e0e0e0e
+        or ebx, esi
+        or ebx, edi
+        or ebx, ebp
+        mov g_kept, ebx
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
     }
 }
 
@@ -233,7 +253,7 @@ CASE = r'''    {   /* %VA% */
                     gdiff |= memcmp(gl_n + off, (void *)g_at[g], g_size[g]) != 0;
                 if (%RETCMP% || nlog_n != st_logn || memcmp(log_n, st_log, 4 * nlog_n) ||
                     memcmp(after_n, buf_n, BUF) || gdiff || s.pc != 0xdeadbeefu ||
-                    s.r[4] - (U)stack != 4 + pop_n || s.stop != STOP257_RETURNED) {
+                    s.r[4] - (U)stack != 4 + pop_n || g_kept || s.stop != STOP257_RETURNED) {
                     if (!bad) printf("  %VA% case %d: eax %08lx/%08lx pop %lu/%lu globals %d calls %d/%d buffer %d\n",
                                      c, eax_n, (unsigned long)s.r[0], pop_n, (unsigned long)(s.r[4] - (U)stack - 4),
                                      gdiff, nlog_n, st_logn, memcmp(after_n, buf_n, BUF) != 0);

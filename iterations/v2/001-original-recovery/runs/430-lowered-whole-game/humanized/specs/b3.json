@@ -98,6 +98,21 @@
    ]
   }
  },
+ "00415e70": {
+  "abi": "cdecl",
+  "args": [],
+  "call": "set_flags_00415e70()",
+  "globals": [
+   [
+    "bytes",
+    6080540,
+    2
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/00415e70.cpp",
+  "stubs": {}
+ },
  "00415f60": {
   "abi": "cdecl",
   "args": [
@@ -134,6 +149,17 @@
   ],
   "ret": true,
   "source": "humanized/0041b100.cpp",
+  "this": "ptr"
+ },
+ "0041b2e0": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_0041b2e0 *)self)->set_field_fc_0041b2e0(a0)",
+  "ret": false,
+  "source": "humanized/0041b2e0.cpp",
+  "stubs": {},
   "this": "ptr"
  },
  "0041b2f0": {
@@ -177,6 +203,27 @@
    ]
   },
   "this": "dword"
+ },
+ "0041dd20": {
+  "abi": "thiscall",
+  "args": [
+   "maybezero"
+  ],
+  "call": "((Object_0041dd20 *)self)->set(a0)",
+  "ret": false,
+  "source": "humanized/0041dd20.cpp",
+  "this": "ptr"
+ },
+ "0041e130": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_0041e130 *)self)->set_field_ac_0041e130(a0)",
+  "ret": false,
+  "source": "humanized/0041e130.cpp",
+  "stubs": {},
+  "this": "ptr"
  },
  "0041e160": {
   "abi": "cdecl",
@@ -233,6 +280,108 @@
   ],
   "ret": "al",
   "source": "humanized/0041e840.cpp"
+ },
+ "004206e0": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_004206e0(a0, a1)",
+  "globals": [
+   [
+    "bytes",
+    6342720,
+    8
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/004206e0.cpp"
+ },
+ "00420720": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_00420720(a0, a1)",
+  "globals": [
+   [
+    "bytes",
+    6342736,
+    8
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/00420720.cpp"
+ },
+ "00420740": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_00420740(a0, a1)",
+  "globals": [
+   [
+    "bytes",
+    6342728,
+    8
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/00420740.cpp"
+ },
+ "00420780": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_00420780(a0, a1)",
+  "globals": [
+   [
+    "bytes",
+    6342768,
+    8
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/00420780.cpp"
+ },
+ "004207a0": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_004207a0(a0, a1)",
+  "globals": [
+   [
+    "bytes",
+    6342776,
+    8
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/004207a0.cpp"
+ },
+ "004207e0": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_004207e0(a0, a1)",
+  "globals": [
+   [
+    "bytes",
+    6342760,
+    8
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/004207e0.cpp"
  },
  "00420940": {
   "abi": "cdecl",
@@ -576,6 +725,17 @@
   "source": "humanized/00422de0.cpp",
   "stubs": {}
  },
+ "00423d60": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_00423d60 *)self)->set_byte_ed_00423d60((unsigned char)a0)",
+  "ret": false,
+  "source": "humanized/00423d60.cpp",
+  "stubs": {},
+  "this": "ptr"
+ },
  "00423e90": {
   "abi": "thiscall",
   "args": [
@@ -717,6 +877,23 @@
   },
   "this": "ptr"
  },
+ "0044a190": {
+  "abi": "cdecl",
+  "args": [
+   "dword"
+  ],
+  "call": "store_bit9_0044a190(a0)",
+  "globals": [
+   [
+    "bytes",
+    6395745,
+    1
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0044a190.cpp",
+  "stubs": {}
+ },
  "0044af60": {
   "abi": "thiscall",
   "args": [],
@@ -802,6 +979,37 @@
    ]
   }
  },
+ "0044e870": {
+  "abi": "cdecl",
+  "args": [
+   "dword",
+   "dword"
+  ],
+  "call": "set_0044e870((unsigned char)a0, (unsigned char)a1)",
+  "globals": [
+   [
+    "bytes",
+    6395819,
+    2
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0044e870.cpp"
+ },
+ "0044f220": {
+  "abi": "cdecl",
+  "args": [],
+  "call": "advance_counter_0044f220()",
+  "globals": [
+   [
+    "count",
+    6651248,
+    4
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0044f220.cpp"
+ },
  "0044fe70": {
   "abi": "thiscall",
   "args": [
@@ -826,54 +1034,6 @@
   ],
   "ret": true,
   "source": "humanized/0044fe90.cpp"
- },
- "0044ff60": {
-  "abi": "thiscall",
-  "args": [
-   "dword"
-  ],
-  "call": "((Object_0044ff60 *)self)->construct(a0)",
-  "ret": true,
-  "source": "humanized/0044ff60.cpp",
-  "stubs": {
-   "00450c40": [
-    1,
-    "thiscall"
-   ]
-  },
-  "this": "ptr"
- },
- "00450960": {
-  "abi": "thiscall",
-  "args": [],
-  "call": "((Object_00450960 *)self)->get()",
-  "ret": true,
-  "source": "humanized/00450960.cpp",
-  "this": "ptr"
- },
- "00452100": {
-  "abi": "thiscall",
-  "args": [],
-  "call": "((Object_00452100 *)self)->both_zero()",
-  "ret": "al",
-  "source": "humanized/00452100.cpp",
-  "this": "maybezero12"
- },
- "00453c60": {
-  "abi": "thiscall",
-  "args": [
-   "dword"
-  ],
-  "call": "((Object_00453c60 *)self)->construct(a0)",
-  "ret": true,
-  "source": "humanized/00453c60.cpp",
-  "stubs": {
-   "0053f320": [
-    2,
-    "thiscall"
-   ]
-  },
-  "this": "ptr"
  },
  "00455250": {
   "abi": "thiscall",
@@ -917,6 +1077,26 @@
   "ret": true,
   "source": "humanized/00456300.cpp"
  },
+ "0045a330": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Ring_0045a330 *)self)->set_current((long)a0)",
+  "ret": false,
+  "source": "humanized/0045a330.cpp",
+  "this": "ptr"
+ },
+ "0045a540": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Ring_0045a540 *)self)->set_current((long)a0)",
+  "ret": false,
+  "source": "humanized/0045a540.cpp",
+  "this": "ptr"
+ },
  "0045aaa0": {
   "abi": "thiscall",
   "args": [
@@ -934,6 +1114,26 @@
   "ret": false,
   "source": "humanized/0045aae0.cpp",
   "this": "ptr"
+ },
+ "0045ccb0": {
+  "abi": "cdecl",
+  "args": [],
+  "call": "free_blocks_0045ccb0()",
+  "globals": [
+   [
+    "ptrs",
+    6454840,
+    2
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0045ccb0.cpp",
+  "stubs": {
+   "0059f050": [
+    1,
+    "cdecl"
+   ]
+  }
  },
  "0045cfb0": {
   "abi": "cdecl",
@@ -969,6 +1169,27 @@
   "call": "((Object_0045d3a0 *)self)->fn_0045d3a0()",
   "ret": true,
   "source": "humanized/0045d3a0.cpp",
+  "this": "ptr"
+ },
+ "0045db90": {
+  "abi": "thiscall",
+  "args": [],
+  "call": "((Object_0045db90 *)self)->start_once()",
+  "globals": [
+   [
+    "bytes",
+    6454812,
+    4
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0045db90.cpp",
+  "stubs": {
+   "00459a20": [
+    0,
+    "thiscall"
+   ]
+  },
   "this": "ptr"
  },
  "0045dd00": {
@@ -1306,6 +1527,17 @@
   "source": "humanized/0046edf0.cpp",
   "this": "ptr"
  },
+ "0046ee00": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_0046ee00 *)self)->set_word_d8_0046ee00((unsigned short)a0)",
+  "ret": false,
+  "source": "humanized/0046ee00.cpp",
+  "stubs": {},
+  "this": "ptr"
+ },
  "0046ee10": {
   "abi": "thiscall",
   "args": [],
@@ -1314,12 +1546,34 @@
   "source": "humanized/0046ee10.cpp",
   "this": "ptr"
  },
+ "0046ee20": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_0046ee20 *)self)->set_word_dc_0046ee20((unsigned short)a0)",
+  "ret": false,
+  "source": "humanized/0046ee20.cpp",
+  "stubs": {},
+  "this": "ptr"
+ },
  "0046ee30": {
   "abi": "thiscall",
   "args": [],
   "call": "((Object_0046ee30 *)self)->fn_0046ee30()",
   "ret": "ax",
   "source": "humanized/0046ee30.cpp",
+  "this": "ptr"
+ },
+ "0046ee40": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_0046ee40 *)self)->set_word_de_0046ee40((unsigned short)a0)",
+  "ret": false,
+  "source": "humanized/0046ee40.cpp",
+  "stubs": {},
   "this": "ptr"
  },
  "0046ee50": {
@@ -1417,6 +1671,26 @@
   "ret": true,
   "source": "humanized/0047bac0.cpp",
   "this": "ptr"
+ },
+ "0047ee40": {
+  "abi": "cdecl",
+  "args": [],
+  "call": "make_record_0047ee40()",
+  "globals": [
+   [
+    "bytes",
+    6458272,
+    4
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0047ee40.cpp",
+  "stubs": {
+   "0059ef90": [
+    1,
+    "cdecl"
+   ]
+  }
  },
  "004817a0": {
   "abi": "thiscall",
@@ -2048,6 +2322,35 @@
   "ret": true,
   "source": "humanized/0052cb20.cpp"
  },
+ "0052dc00": {
+  "abi": "cdecl",
+  "args": [],
+  "call": "setup_components_0052dc00()",
+  "globals": [
+   [
+    "bytes",
+    6933244,
+    4
+   ],
+   [
+    "bytes",
+    6933240,
+    4
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/0052dc00.cpp",
+  "stubs": {
+   "0052df20": [
+    0,
+    "thiscall"
+   ],
+   "0052dfa0": [
+    0,
+    "thiscall"
+   ]
+  }
+ },
  "0052dc20": {
   "abi": "cdecl",
   "args": [
@@ -2337,6 +2640,24 @@
   "ret": "al",
   "source": "humanized/005360d0.cpp"
  },
+ "005360e0": {
+  "abi": "thiscall",
+  "args": [],
+  "call": "((Shared_005360e0 *)self)->release_005360e0()",
+  "ret": false,
+  "source": "humanized/005360e0.cpp",
+  "stubs": {
+   "00554cc0": [
+    1,
+    "cdecl"
+   ],
+   "0059f050": [
+    1,
+    "cdecl"
+   ]
+  },
+  "this": "deep"
+ },
  "00536460": {
   "abi": "thiscall",
   "args": [],
@@ -2556,6 +2877,27 @@
   "source": "humanized/005379f0.cpp",
   "this": "ptr"
  },
+ "00537a30": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_00537a30 *)self)->fn_00537a30(a0)",
+  "ret": false,
+  "source": "humanized/00537a30.cpp",
+  "this": "ptr"
+ },
+ "00537a70": {
+  "abi": "thiscall",
+  "args": [
+   "dword"
+  ],
+  "call": "((Object_00537a70 *)self)->set_00537a70(a0)",
+  "ret": false,
+  "source": "humanized/00537a70.cpp",
+  "stubs": {},
+  "this": "ptr"
+ },
  "00537f30": {
   "abi": "cdecl",
   "args": [
@@ -2647,6 +2989,14 @@
    ]
   },
   "this": "dword"
+ },
+ "00539c90": {
+  "abi": "thiscall",
+  "args": [],
+  "call": "((Matrix_00539c90 *)self)->identity_00539c90()",
+  "ret": false,
+  "source": "humanized/00539c90.cpp",
+  "this": "ptr"
  },
  "00539d90": {
   "abi": "thiscall",
@@ -2788,6 +3138,38 @@
   "ret": false,
   "source": "humanized/0053e5b0.cpp",
   "stubs": {}
+ },
+ "0053eea0": {
+  "abi": "cdecl",
+  "args": [
+   "ptr",
+   "dword",
+   "dword"
+  ],
+  "call": "set_0053eea0((Block_0053eea0 *)a0, a1, a2)",
+  "ret": false,
+  "source": "humanized/0053eea0.cpp"
+ },
+ "00540280": {
+  "abi": "cdecl",
+  "args": [
+   "dword"
+  ],
+  "call": "ramp_set_step_00540280(a0)",
+  "globals": [
+   [
+    "bytes",
+    6941880,
+    4
+   ],
+   [
+    "bytes",
+    6941624,
+    256
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/00540280.cpp"
  },
  "00554930": {
   "abi": "cdecl",
@@ -3221,6 +3603,34 @@
   "ret": true,
   "source": "humanized/0056e301.cpp"
  },
+ "00570490": {
+  "abi": "cdecl",
+  "args": [
+   "ptr",
+   "ptr",
+   "small"
+  ],
+  "call": "pack_words_00570490((unsigned short *)a0, (unsigned long *)a1, (long)a2)",
+  "ret": false,
+  "source": "humanized/00570490.cpp"
+ },
+ "00570610": {
+  "abi": "cdecl",
+  "args": [
+   "ptr",
+   "ptr",
+   "small"
+  ],
+  "call": "convert_array_00570610((unsigned long *)a0, (const unsigned long *)a1, (long)a2)",
+  "ret": false,
+  "source": "humanized/00570610.cpp",
+  "stubs": {
+   "00572f30": [
+    1,
+    "cdecl"
+   ]
+  }
+ },
  "00571470": {
   "abi": "cdecl",
   "args": [
@@ -3483,6 +3893,34 @@
   "stubs": {
    "005abb07": [
     3,
+    "cdecl"
+   ]
+  }
+ },
+ "005ac154": {
+  "abi": "cdecl",
+  "args": [],
+  "call": "init_once_005ac154()",
+  "globals": [
+   [
+    "maybezero",
+    7012240,
+    4
+   ]
+  ],
+  "ret": false,
+  "source": "humanized/005ac154.cpp",
+  "stubs": {
+   "005a4ba4": [
+    1,
+    "cdecl"
+   ],
+   "005a4c05": [
+    1,
+    "cdecl"
+   ],
+   "005ac182": [
+    0,
     "cdecl"
    ]
   }
