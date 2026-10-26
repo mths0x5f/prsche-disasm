@@ -44,8 +44,8 @@ static const char alphabet[] = "ab/\\.cd";
 static unsigned char *buf_n, buf_in[BUF], after_n[BUF];
 static unsigned char gl_in[8192], gl_n[8192];
 static unsigned long g_code_ret, g_args[4], g_self, g_code, g_eax, g_edx, g_saved, g_after;
-extern "C" U __cdecl humanized_enter430() { return 0; }   /* calls out run natively here */
-extern "C" void __cdecl humanized_leave430(U) {}
+/* calls out run natively here, on the harness stack */
+extern "C" void __cdecl humanized_on_guest430(void (__cdecl *body)(Machine257 *), Machine257 *s) { body(s); }
 
 %MAP_IMAGE%
 

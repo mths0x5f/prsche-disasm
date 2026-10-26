@@ -293,20 +293,32 @@ void count_reverse(U va)
     }
 }
 
-// Humanized code runs on the host stack; when it calls a game function by its original
-// address, the call faults on the non-executable image and the reverse bridge runs the
-// lowered body. The bridge of the humanized function sets where that host work goes: well
-// below its own frames, as native_call does.
-extern "C" U __cdecl humanized_enter430()
+// A humanized function that calls game code runs on the guest stack, below the guest ESP,
+// as the original did: when it calls a game function by its original address, the call
+// faults on the non-executable image and the reverse bridge runs the lowered body right
+// there on the guest stack, while its own host work goes to the host stack, idle meanwhile.
+__declspec(naked) void __cdecl switch_and_call430(void (__cdecl *body)(Machine257 *), Machine257 *s, U stack)
+{
+    __asm {
+        push ebp
+        mov ebp, esp
+        mov eax, [ebp + 8]
+        mov ecx, [ebp + 12]
+        mov esp, [ebp + 16]
+        push ecx
+        call eax
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
+
+extern "C" void __cdecl humanized_on_guest430(void (__cdecl *body)(Machine257 *), Machine257 *s)
 {
     U saved = t_host_sp;
     char here;
-    t_host_sp = (reinterpret_cast<U>(&here) - 0x40000u) & ~15u;
-    return saved;
-}
-
-extern "C" void __cdecl humanized_leave430(U saved)
-{
+    t_host_sp = (reinterpret_cast<U>(&here) - 0x1000u) & ~15u;
+    switch_and_call430(body, s, (s->r[4] - 64u) & ~15u);
     t_host_sp = saved;
 }
 

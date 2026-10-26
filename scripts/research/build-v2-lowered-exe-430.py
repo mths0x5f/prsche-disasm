@@ -198,8 +198,8 @@ static inline void write_f80_430(U a,double v){
     write257(a,4u,static_cast<U>(man));write257(a+4u,4u,static_cast<U>(man>>32));write257(a+8u,2u,se);
 }
 void unlowered430(Machine257&);  // 3DNow!/FPU environment images: fatal if reached
-extern "C" U __cdecl humanized_enter430();          // host stack for calls out of humanized code
-extern "C" void __cdecl humanized_leave430(U saved);
+// Runs the body of a humanized function that calls game code on the guest stack.
+extern "C" void __cdecl humanized_on_guest430(void (__cdecl *body)(Machine257 *), Machine257 *s);
 void repne_scasb_down430(Machine257&);  // repne scasb with DF set
 // Target is evaluated by the generated caller before ESP changes.
 static inline bool call257(Machine257&s,U target,U returnPC){
@@ -1029,13 +1029,18 @@ def bridge_code(va, h):
     """The lowered-code entry of a humanized function: arguments from the guest stack (and ECX),
     result in EAX, the original RET (cdecl: caller pops; thiscall: RET 4*n)."""
     n = len(h['args'])
-    lines = [f'/* {va}: entry from lowered code ({h["abi"]}, {n} stack argument{"s" if n != 1 else ""}). */',
-             f'void humanized_{va}_430(Machine257 &s)', '{', '    U esp = s.r[4];']
+    out = h.get('calls_out')
+    lines = [f'/* {va}: entry from lowered code ({h["abi"]}, {n} stack argument{"s" if n != 1 else ""}). */']
+    if out:
+        # It calls game code: the body runs on the guest stack, like the original, so a lowered
+        # callee continues right below it and the reverse bridge works on the idle host stack.
+        lines += [f'static void __cdecl humanized_{va}_body(Machine257 *ps)', '{', '    Machine257 &s = *ps;']
+    else:
+        lines += [f'void humanized_{va}_430(Machine257 &s)', '{']
+    lines.append('    U esp = s.r[4];')
     lines += [f'    U a{k} = read257(esp + {4 * (k + 1)}, 4);' for k in range(n)]
     if h['abi'] == 'thiscall':
         lines.append('    U self = s.r[1];')
-    if h.get('calls_out'):
-        lines.append('    U host = humanized_enter430();')
     if h['ret'] == 'ax':        # a 16-bit result: the upper half of EAX is not part of it
         lines.append(f'    s.r[0] = (s.r[0] & 0xffff0000u) | (unsigned short){h["call"]};')
     elif h['ret'] == 'al':        # an 8-bit result (bool)
@@ -1046,10 +1051,10 @@ def bridge_code(va, h):
         lines.append(f'    s.r[0] = (U){h["call"]};')
     else:
         lines.append(f'    {h["call"]};')
-    if h.get('calls_out'):
-        lines.append('    humanized_leave430(host);')
     pop = 4 + (4 * n if h['abi'] == 'thiscall' else 0)
     lines += ['    s.pc = read257(esp, 4);', f'    s.r[4] = esp + {pop};', '    s.stop = STOP257_RETURNED;', '}']
+    if out:
+        lines += ['', f'void humanized_{va}_430(Machine257 &s)', '{', f'    humanized_on_guest430(humanized_{va}_body, &s);', '}']
     return '\n'.join(lines) + '\n'
 
 VC6_ROOT = Path(os.environ.get('VC6_ROOT', r'D:\Microsoft Visual Studio\VC98'))
