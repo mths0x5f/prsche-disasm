@@ -1,5 +1,18 @@
 # Trabalho no Projeto
 
+## Reconstrução verbatim (decisão do usuário, 2026-10-26)
+
+- O código recuperado é reconstrução da história, não só um programa que roda. Deve ser o mais
+  próximo possível do fonte verbatim que gerou o binário: não inventar absolutamente nada.
+- Linguagem e compilador do original (pelo cabeçalho Rich e pelo CRT): C continua C89 para o
+  compilador C do VC6, C++ continua C++. Nunca passar C para C++ por conveniência.
+- Estrutura do original: não criar funções auxiliares, não fatorar laços repetidos, não juntar nem
+  dividir funções, não criar abstrações, macros ou tabelas que o binário não mostra.
+- Nada que não seja original dentro da árvore do original (stubs, fronteiras, camadas de
+  plataforma): isso fica numa pasta separada e marcada. Nomes da EA têm prioridade; os demais
+  nomes, nomes de arquivos e de pastas são marcados como não atestados.
+- Esta regra vai em toda instrução a executores e é conferida antes da aceitação.
+
 ## Restauração do original — método principal
 
 - A decisão do usuário de 04/10/2026 é válida para todo o projeto e código antigo:
