@@ -178,6 +178,7 @@ static unsigned long make_arg(int kind, unsigned long table, int n)
     case 10: return (rnd() % 3) ? ((unsigned long *)table)[rnd() % n] : rnd();
     case 11: return (rnd() % 2) ? 0 : rnd();                            /* maybezero dword */
     case 12: return (rnd() % 2) ? 0 : buf_ptr();                        /* null or ptr */
+    case 14: return buf_ptr();                                          /* aligned pointer (soup) */
     case 13: p = buf_ptr(); for (k = 0; k < 64; ++k) ((unsigned long *)p)[k] = buf_ptr(); return p;  /* deep: pointers to pointers */
     default: return rnd();
     }
@@ -198,6 +199,7 @@ static void set_global(int kind, unsigned long at, int size)
 int main(int argc, char **argv)
 {
     int cases = argc > 1 ? atoi(argv[1]) : 10000, failed = 0, c, k;
+    setvbuf(stdout, NULL, _IONBF, 0);   /* a crash must not lose the lines already printed */
     if (!map_image(argc > 2 ? argv[2] : "Porsche.exe")) { printf("cannot map the original at 0x00400000\n"); return 2; }
     buf_n = (unsigned char *)VirtualAlloc(NULL, BUF, MEM_COMMIT, PAGE_READWRITE);
     tramp = (unsigned char *)VirtualAlloc(NULL, 4096, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
@@ -220,7 +222,8 @@ CASE = r'''    {   /* %VA% */
             Machine257 s;
             U stack[8];
             unsigned long eax_n, edx_n, pop_n;
-            for (k = 0; k < BUF; ++k) buf_n[k] = (unsigned char)rnd();
+            if (%SOUP%) for (k = 0; k < BUF / 4; ++k) ((unsigned long *)buf_n)[k] = buf_ptr();
+            else for (k = 0; k < BUF; ++k) buf_n[k] = (unsigned char)rnd();
             for (g = 0; g < ng; ++g) set_global(g_kind[g], g_at[g], g_size[g]);
             for (k = 0; k < 4; ++k) g_args[k] = make_arg(kinds[k], %TABLE%, %TABLEN%);
             g_self = make_arg(%SELF%, 0, 0);
@@ -268,7 +271,7 @@ CASE = r'''    {   /* %VA% */
 '''
 
 KIND = {'dword': 0, 'ptr': 1, 'str': 2, 'char': 3, 'cursor': 4, 'ptrptr': 4, 'list': 5, 'small': 6,
-        'small8': 7, 'handle': 8, 'maybezero12': 9, 'table': 10, 'maybezero': 11, 'nullptr': 12, 'deep': 13}
+        'small8': 7, 'handle': 8, 'maybezero12': 9, 'table': 10, 'maybezero': 11, 'nullptr': 12, 'deep': 13, 'sptr': 14}
 GKIND = {'bytes': 0, 'ptrs': 1, 'maybezero': 2, 'count': 3}
 CONV = {'cdecl': 0, 'thiscall': 1, 'stdcall': 2}
 RETCMP = {True: 's.r[0] != eax_n', False: '0', 'ax': '(s.r[0] & 0xffff) != (eax_n & 0xffff)',
@@ -336,7 +339,7 @@ def main():
                      .replace('%GAT%', ''.join(f'0x{at:08x}u, ' for _, at, _ in gl))
                      .replace('%GKIND%', ''.join(f'{GKIND[kind]}, ' for kind, _, _ in gl))
                      .replace('%GSIZE%', ''.join(f'{n}, ' for n in sizes))
-                     .replace('%NG%', str(len(gl)))
+                     .replace('%NG%', str(len(gl))).replace('%SOUP%', '1' if h.get('soup') else '0')
                      .replace('%STUBS%', stub_lines).replace('%NSTUBS%', str(len(stubs)))
                      .replace('%TABLE%', table + 'u').replace('%TABLEN%', tablen)
                      .replace('%SELF%', str(KIND[h.get('this', 'dword')]))
