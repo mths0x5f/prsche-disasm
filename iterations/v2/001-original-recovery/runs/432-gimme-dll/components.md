@@ -42,6 +42,27 @@ and FaceInRace use `0x2890` (allocation sites `10041144`, `10052f22`, `100669b7`
 `100c3a62`, `10109112` versus `push 0x2890` in the others). See the [README](README.md) for why this
 matters.
 
+## GIMEX library version: 3.00–3.11 (bounded, not exact)
+
+The binary has no GIMEX version string. EA's public headers bound it: `gimex.h` 2.26
+(`electronicarts/CnC_Renegade` `Code/Tools/WWConfig/gimex.h`) and 3.46 with its 3.01–3.46 changelog
+(`electronicarts/CnC_Generals_Zero_Hour` `Generals/Code/Libraries/Source/Compression/EAC/gimex.h`).
+
+- At least 3.00: GINFO `version` = 300, the value 3.46 documents (2.26 documents 200). The 0x2890 GINFO
+  has 3.46's layout (`fps`, 1024-byte comment, 1024 hotspot pairs); the 2.26 GINFO is 0xd94 bytes.
+- Below 3.12: GABOUT is 0xdc bytes, the exact 2.26 size. It lacks the max*bits fields added in 3.12, the
+  maxwidth/align fields added in 3.25 and `pad2`. The framename is 32 bytes; 3.40 made it 512.
+- 3.10 ("16 bpp import"): no instruction in `.text` compares or stores 16 in GINFO `bpp`
+  (`cmp/mov [reg+0x18],0x10`). The only two hits, `1000b1fb` and `1000d468`, test `[ebp+0x18]`, a
+  stack argument. Every recovered reader, filter and FaceInRace path handles 8 or 32 bpp only. This
+  points to before 3.10 (3.00–3.0x), but it is negative evidence, and the six shape modules (2.07) show
+  the modules were not all built together.
+- 3.01 (`gref void *`), 3.02 (`const GIMEX_write`) and 3.11 change only types and leave no layout trace.
+- Changelog 3.31 lists "GIMEX_COMMENT_SIZE 1024", yet this earlier copy already has 1024. Pre-3.01
+  history is not in the changelog.
+
+The recovered `gimex.h` now uses EA's field names where both public headers agree.
+
 ## GIMEX format modules
 
 Reached by `Porsche.exe`: detection runs over all 69 modules; readers BMP (2), TGA (5), PCX (16),
